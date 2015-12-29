@@ -18,11 +18,6 @@
             </para>
             </summary>
         </member>
-        <member name="T:Amazon.Lambda.AmazonLambdaRequest">
-            <summary>
-            Base class for Lambda operation requests.
-            </summary>
-        </member>
         <member name="P:Amazon.Lambda.Model.CreateFunctionRequest.StreamTransferProgress">
             <summary>
             Attach a callback that will be called as data is being sent to the AWS Service.
@@ -292,242 +287,6 @@
             results in invocation of the $LATEST version.
             </para>
             </summary>
-        </member>
-        <member name="T:Amazon.Lambda.AmazonLambdaConfig">
-            <summary>
-            Configuration for accessing Amazon Lambda service
-            </summary>
-        </member>
-        <member name="M:Amazon.Lambda.AmazonLambdaConfig.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="P:Amazon.Lambda.AmazonLambdaConfig.RegionEndpointServiceName">
-            <summary>
-            The constant used to lookup in the region hash the endpoint.
-            </summary>
-        </member>
-        <member name="P:Amazon.Lambda.AmazonLambdaConfig.ServiceVersion">
-            <summary>
-            Gets the ServiceVersion property.
-            </summary>
-        </member>
-        <member name="P:Amazon.Lambda.AmazonLambdaConfig.UserAgent">
-            <summary>
-            Gets the value of UserAgent property.
-            </summary>
-        </member>
-        <member name="T:Amazon.Lambda.AmazonLambdaException">
-            <summary>
-             Common exception for the Lambda service.
-             </summary>
-        </member>
-        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.String)">
-            <summary>
-            Construct instance of AmazonLambdaException
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.String,System.Exception)">
-            <summary>
-            Construct instance of AmazonLambdaException
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.Exception)">
-            <summary>
-            Construct instance of AmazonLambdaException
-            </summary>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
-            <summary>
-            Construct instance of AmazonLambdaException
-            </summary>
-            <param name="message"></param>
-            <param name="errorType"></param>
-            <param name="errorCode"></param>
-            <param name="requestId"></param>
-            <param name="statusCode"></param>
-        </member>
-        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
-            <summary>
-            Construct instance of AmazonLambdaException
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-            <param name="errorType"></param>
-            <param name="errorCode"></param>
-            <param name="requestId"></param>
-            <param name="statusCode"></param>
-        </member>
-        <member name="T:Amazon.Lambda.EventSourcePosition">
-            <summary>
-            Constants used for properties of type EventSourcePosition.
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.EventSourcePosition.LATEST">
-            <summary>
-            Constant LATEST for EventSourcePosition
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.EventSourcePosition.TRIM_HORIZON">
-            <summary>
-            Constant TRIM_HORIZON for EventSourcePosition
-            </summary>
-        </member>
-        <member name="M:Amazon.Lambda.EventSourcePosition.#ctor(System.String)">
-            <summary>
-            This constant constructor does not need to be called if the constant
-            you are attempting to use is already defined as a static instance of 
-            this class.
-            This constructor should be used to construct constants that are not
-            defined as statics, for instance if attempting to use a feature that is
-            newer than the current version of the SDK.
-            </summary>
-        </member>
-        <member name="M:Amazon.Lambda.EventSourcePosition.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The unique value for the constant</param>
-            <returns>The constant for the unique value</returns>
-        </member>
-        <member name="M:Amazon.Lambda.EventSourcePosition.op_Implicit(System.String)~Amazon.Lambda.EventSourcePosition">
-            <summary>
-            Utility method to convert strings to the constant class.
-            </summary>
-            <param name="value">The string value to convert to the constant class.</param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.Lambda.InvocationType">
-            <summary>
-            Constants used for properties of type InvocationType.
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.InvocationType.DryRun">
-            <summary>
-            Constant DryRun for InvocationType
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.InvocationType.Event">
-            <summary>
-            Constant Event for InvocationType
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.InvocationType.RequestResponse">
-            <summary>
-            Constant RequestResponse for InvocationType
-            </summary>
-        </member>
-        <member name="M:Amazon.Lambda.InvocationType.#ctor(System.String)">
-            <summary>
-            This constant constructor does not need to be called if the constant
-            you are attempting to use is already defined as a static instance of 
-            this class.
-            This constructor should be used to construct constants that are not
-            defined as statics, for instance if attempting to use a feature that is
-            newer than the current version of the SDK.
-            </summary>
-        </member>
-        <member name="M:Amazon.Lambda.InvocationType.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The unique value for the constant</param>
-            <returns>The constant for the unique value</returns>
-        </member>
-        <member name="M:Amazon.Lambda.InvocationType.op_Implicit(System.String)~Amazon.Lambda.InvocationType">
-            <summary>
-            Utility method to convert strings to the constant class.
-            </summary>
-            <param name="value">The string value to convert to the constant class.</param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.Lambda.LogType">
-            <summary>
-            Constants used for properties of type LogType.
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.LogType.None">
-            <summary>
-            Constant None for LogType
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.LogType.Tail">
-            <summary>
-            Constant Tail for LogType
-            </summary>
-        </member>
-        <member name="M:Amazon.Lambda.LogType.#ctor(System.String)">
-            <summary>
-            This constant constructor does not need to be called if the constant
-            you are attempting to use is already defined as a static instance of 
-            this class.
-            This constructor should be used to construct constants that are not
-            defined as statics, for instance if attempting to use a feature that is
-            newer than the current version of the SDK.
-            </summary>
-        </member>
-        <member name="M:Amazon.Lambda.LogType.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The unique value for the constant</param>
-            <returns>The constant for the unique value</returns>
-        </member>
-        <member name="M:Amazon.Lambda.LogType.op_Implicit(System.String)~Amazon.Lambda.LogType">
-            <summary>
-            Utility method to convert strings to the constant class.
-            </summary>
-            <param name="value">The string value to convert to the constant class.</param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.Lambda.Runtime">
-            <summary>
-            Constants used for properties of type Runtime.
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.Runtime.Java8">
-            <summary>
-            Constant Java8 for Runtime
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.Runtime.Nodejs">
-            <summary>
-            Constant Nodejs for Runtime
-            </summary>
-        </member>
-        <member name="F:Amazon.Lambda.Runtime.Python27">
-            <summary>
-            Constant Python27 for Runtime
-            </summary>
-        </member>
-        <member name="M:Amazon.Lambda.Runtime.#ctor(System.String)">
-            <summary>
-            This constant constructor does not need to be called if the constant
-            you are attempting to use is already defined as a static instance of 
-            this class.
-            This constructor should be used to construct constants that are not
-            defined as statics, for instance if attempting to use a feature that is
-            newer than the current version of the SDK.
-            </summary>
-        </member>
-        <member name="M:Amazon.Lambda.Runtime.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The unique value for the constant</param>
-            <returns>The constant for the unique value</returns>
-        </member>
-        <member name="M:Amazon.Lambda.Runtime.op_Implicit(System.String)~Amazon.Lambda.Runtime">
-            <summary>
-            Utility method to convert strings to the constant class.
-            </summary>
-            <param name="value">The string value to convert to the constant class.</param>
-            <returns></returns>
         </member>
         <member name="T:Amazon.Lambda.Model.AddPermissionRequest">
             <summary>
@@ -3601,7 +3360,7 @@
             Response Unmarshaller for AliasConfiguration Object
             </summary>  
         </member>
-        <member name="M:Amazon.Lambda.Model.Internal.MarshallTransformations.AliasConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Lambda#Model#AliasConfiguration@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Lambda.Model.Internal.MarshallTransformations.AliasConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Lambda#Model#AliasConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -3895,7 +3654,7 @@
             Response Unmarshaller for EventSourceMappingConfiguration Object
             </summary>  
         </member>
-        <member name="M:Amazon.Lambda.Model.Internal.MarshallTransformations.EventSourceMappingConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Lambda#Model#EventSourceMappingConfiguration@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Lambda.Model.Internal.MarshallTransformations.EventSourceMappingConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Lambda#Model#EventSourceMappingConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -3919,7 +3678,7 @@
             Response Unmarshaller for FunctionCodeLocation Object
             </summary>  
         </member>
-        <member name="M:Amazon.Lambda.Model.Internal.MarshallTransformations.FunctionCodeLocationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Lambda#Model#FunctionCodeLocation@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Lambda.Model.Internal.MarshallTransformations.FunctionCodeLocationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Lambda#Model#FunctionCodeLocation,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -3961,7 +3720,7 @@
             Response Unmarshaller for FunctionConfiguration Object
             </summary>  
         </member>
-        <member name="M:Amazon.Lambda.Model.Internal.MarshallTransformations.FunctionConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Lambda#Model#FunctionConfiguration@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Lambda.Model.Internal.MarshallTransformations.FunctionConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Lambda#Model#FunctionConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -4745,6 +4504,247 @@
             Gets the singleton.
             </summary>  
         </member>
+        <member name="T:Amazon.Lambda.AmazonLambdaConfig">
+            <summary>
+            Configuration for accessing Amazon Lambda service
+            </summary>
+        </member>
+        <member name="M:Amazon.Lambda.AmazonLambdaConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.Lambda.AmazonLambdaConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.Lambda.AmazonLambdaConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.Lambda.AmazonLambdaConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.Lambda.AmazonLambdaException">
+            <summary>
+             Common exception for the Lambda service.
+             </summary>
+        </member>
+        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonLambdaException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonLambdaException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonLambdaException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonLambdaException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Lambda.AmazonLambdaException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonLambdaException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Lambda.EventSourcePosition">
+            <summary>
+            Constants used for properties of type EventSourcePosition.
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.EventSourcePosition.LATEST">
+            <summary>
+            Constant LATEST for EventSourcePosition
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.EventSourcePosition.TRIM_HORIZON">
+            <summary>
+            Constant TRIM_HORIZON for EventSourcePosition
+            </summary>
+        </member>
+        <member name="M:Amazon.Lambda.EventSourcePosition.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Lambda.EventSourcePosition.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Lambda.EventSourcePosition.op_Implicit(System.String)~Amazon.Lambda.EventSourcePosition">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Lambda.InvocationType">
+            <summary>
+            Constants used for properties of type InvocationType.
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.InvocationType.DryRun">
+            <summary>
+            Constant DryRun for InvocationType
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.InvocationType.Event">
+            <summary>
+            Constant Event for InvocationType
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.InvocationType.RequestResponse">
+            <summary>
+            Constant RequestResponse for InvocationType
+            </summary>
+        </member>
+        <member name="M:Amazon.Lambda.InvocationType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Lambda.InvocationType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Lambda.InvocationType.op_Implicit(System.String)~Amazon.Lambda.InvocationType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Lambda.LogType">
+            <summary>
+            Constants used for properties of type LogType.
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.LogType.None">
+            <summary>
+            Constant None for LogType
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.LogType.Tail">
+            <summary>
+            Constant Tail for LogType
+            </summary>
+        </member>
+        <member name="M:Amazon.Lambda.LogType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Lambda.LogType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Lambda.LogType.op_Implicit(System.String)~Amazon.Lambda.LogType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Lambda.Runtime">
+            <summary>
+            Constants used for properties of type Runtime.
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.Runtime.Java8">
+            <summary>
+            Constant Java8 for Runtime
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.Runtime.Nodejs">
+            <summary>
+            Constant Nodejs for Runtime
+            </summary>
+        </member>
+        <member name="F:Amazon.Lambda.Runtime.Python27">
+            <summary>
+            Constant Python27 for Runtime
+            </summary>
+        </member>
+        <member name="M:Amazon.Lambda.Runtime.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Lambda.Runtime.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Lambda.Runtime.op_Implicit(System.String)~Amazon.Lambda.Runtime">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Lambda.AmazonLambdaRequest">
+            <summary>
+            Base class for Lambda operation requests.
+            </summary>
+        </member>
         <member name="T:Amazon.Lambda.AmazonLambdaClient">
              <summary>
              Implementation for accessing Lambda
@@ -4761,295 +4761,6 @@
              Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
              </para>
              </summary>
-        </member>
-        <member name="T:Amazon.Lambda.IAmazonLambda">
-             <summary>
-             Interface for accessing Lambda
-            
-             AWS Lambda 
-             <para>
-             <b>Overview</b>
-             </para>
-              
-             <para>
-             This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
-             additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
-             is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-             Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
-             </para>
-             </summary>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.AddPermissionAsync(Amazon.Lambda.Model.AddPermissionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.AddPermissionRequest,Amazon.Lambda.Model.AddPermissionResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the AddPermission operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the AddPermission operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.CreateAliasAsync(Amazon.Lambda.Model.CreateAliasRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.CreateAliasRequest,Amazon.Lambda.Model.CreateAliasResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the CreateAlias operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the CreateAlias operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.CreateEventSourceMappingAsync(Amazon.Lambda.Model.CreateEventSourceMappingRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.CreateEventSourceMappingRequest,Amazon.Lambda.Model.CreateEventSourceMappingResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the CreateEventSourceMapping operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the CreateEventSourceMapping operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.CreateFunctionAsync(Amazon.Lambda.Model.CreateFunctionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.CreateFunctionRequest,Amazon.Lambda.Model.CreateFunctionResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the CreateFunction operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the CreateFunction operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.GetAliasAsync(Amazon.Lambda.Model.GetAliasRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetAliasRequest,Amazon.Lambda.Model.GetAliasResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetAlias operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetAlias operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.GetEventSourceMappingAsync(Amazon.Lambda.Model.GetEventSourceMappingRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetEventSourceMappingRequest,Amazon.Lambda.Model.GetEventSourceMappingResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetEventSourceMapping operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetEventSourceMapping operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetFunctionRequest,Amazon.Lambda.Model.GetFunctionResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Returns the configuration information of the Lambda function and a presigned URL link
-            to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip
-            file. Note that the URL is valid for up to 10 minutes. The configuration information
-            is the same information you provided as parameters when uploading the function.
-            
-             
-            <para>
-            Using the optional <code>Qualifier</code> parameter, you can specify a specific function
-            version for which you want this information. If you don't specify this parameter,
-            the API uses unqualified function ARN which return information about the $LATEST version
-            of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
-            Lambda Function Versioning and Aliases</a>.
-            </para>
-             
-            <para>
-            This operation requires permission for the <code>lambda:GetFunction</code> action.
-            </para>
-            </summary>
-            <param name="functionName">The Lambda function name.   You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
-            <exception cref="T:Amazon.Lambda.Model.InvalidParameterValueException">
-            One of the parameters in the request is invalid. For example, if you provided an IAM
-            role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-            API, that AWS Lambda is unable to assume you will get this exception.
-            </exception>
-            <exception cref="T:Amazon.Lambda.Model.ResourceNotFoundException">
-            The resource (for example, a Lambda function or access policy statement) specified
-            in the request does not exist.
-            </exception>
-            <exception cref="T:Amazon.Lambda.Model.ServiceException">
-            The AWS Lambda service encountered an internal error.
-            </exception>
-            <exception cref="T:Amazon.Lambda.Model.TooManyRequestsException">
-            
-            </exception>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionAsync(Amazon.Lambda.Model.GetFunctionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetFunctionRequest,Amazon.Lambda.Model.GetFunctionResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetFunction operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetFunction operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionConfigurationAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetFunctionConfigurationRequest,Amazon.Lambda.Model.GetFunctionConfigurationResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Returns the configuration information of the Lambda function. This the same information
-            you provided as parameters when uploading the function by using <a>CreateFunction</a>.
-            
-             
-            <para>
-            You can use the optional <code>Qualifier</code> parameter to retrieve configuration
-            information for a specific Lambda function version. If you don't provide it, the API
-            returns information about the $LATEST version of the function. For more information
-            about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
-            Lambda Function Versioning and Aliases</a>.
-            </para>
-             
-            <para>
-            This operation requires permission for the <code>lambda:GetFunctionConfiguration</code>
-            operation.
-            </para>
-            </summary>
-            <param name="functionName">The name of the Lambda function for which you want to retrieve the configuration information.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
-            <exception cref="T:Amazon.Lambda.Model.InvalidParameterValueException">
-            One of the parameters in the request is invalid. For example, if you provided an IAM
-            role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
-            API, that AWS Lambda is unable to assume you will get this exception.
-            </exception>
-            <exception cref="T:Amazon.Lambda.Model.ResourceNotFoundException">
-            The resource (for example, a Lambda function or access policy statement) specified
-            in the request does not exist.
-            </exception>
-            <exception cref="T:Amazon.Lambda.Model.ServiceException">
-            The AWS Lambda service encountered an internal error.
-            </exception>
-            <exception cref="T:Amazon.Lambda.Model.TooManyRequestsException">
-            
-            </exception>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionConfigurationAsync(Amazon.Lambda.Model.GetFunctionConfigurationRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetFunctionConfigurationRequest,Amazon.Lambda.Model.GetFunctionConfigurationResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetFunctionConfiguration operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetFunctionConfiguration operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.GetPolicyAsync(Amazon.Lambda.Model.GetPolicyRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetPolicyRequest,Amazon.Lambda.Model.GetPolicyResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetPolicy operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetPolicy operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.InvokeAsync(Amazon.Lambda.Model.InvokeRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.InvokeRequest,Amazon.Lambda.Model.InvokeResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the Invoke operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the Invoke operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.InvokeAsyncAsync(Amazon.Lambda.Model.InvokeAsyncRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.InvokeAsyncRequest,Amazon.Lambda.Model.InvokeAsyncResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the InvokeAsync operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the InvokeAsync operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.ListAliasesAsync(Amazon.Lambda.Model.ListAliasesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListAliasesRequest,Amazon.Lambda.Model.ListAliasesResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListAliases operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListAliases operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.ListEventSourceMappingsAsync(Amazon.Lambda.Model.ListEventSourceMappingsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListEventSourceMappingsRequest,Amazon.Lambda.Model.ListEventSourceMappingsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListEventSourceMappings operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.ListFunctionsAsync(Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListFunctionsRequest,Amazon.Lambda.Model.ListFunctionsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Returns a list of your Lambda functions. For each function, the response includes
-            the function configuration information. You must use <a>GetFunction</a> to retrieve
-            the code for your function.
-            
-             
-            <para>
-            This operation requires permission for the <code>lambda:ListFunctions</code> action.
-            </para>
-            </summary>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
-            <exception cref="T:Amazon.Lambda.Model.ServiceException">
-            The AWS Lambda service encountered an internal error.
-            </exception>
-            <exception cref="T:Amazon.Lambda.Model.TooManyRequestsException">
-            
-            </exception>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.ListFunctionsAsync(Amazon.Lambda.Model.ListFunctionsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListFunctionsRequest,Amazon.Lambda.Model.ListFunctionsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListFunctions operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListFunctions operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.ListVersionsByFunctionAsync(Amazon.Lambda.Model.ListVersionsByFunctionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListVersionsByFunctionRequest,Amazon.Lambda.Model.ListVersionsByFunctionResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListVersionsByFunction operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Lambda.IAmazonLambda.PublishVersionAsync(Amazon.Lambda.Model.PublishVersionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.PublishVersionRequest,Amazon.Lambda.Model.PublishVersionResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the PublishVersion operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the PublishVersion operation on AmazonLambdaClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
         </member>
         <member name="M:Amazon.Lambda.AmazonLambdaClient.#ctor(Amazon.Runtime.AWSCredentials)">
             <summary>
@@ -5391,6 +5102,295 @@
                      procedure using the AsyncState property.</param>
         </member>
         <member name="M:Amazon.Lambda.AmazonLambdaClient.PublishVersionAsync(Amazon.Lambda.Model.PublishVersionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.PublishVersionRequest,Amazon.Lambda.Model.PublishVersionResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the PublishVersion operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the PublishVersion operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="T:Amazon.Lambda.IAmazonLambda">
+             <summary>
+             Interface for accessing Lambda
+            
+             AWS Lambda 
+             <para>
+             <b>Overview</b>
+             </para>
+              
+             <para>
+             This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
+             additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
+             is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+             Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.AddPermissionAsync(Amazon.Lambda.Model.AddPermissionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.AddPermissionRequest,Amazon.Lambda.Model.AddPermissionResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the AddPermission operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the AddPermission operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.CreateAliasAsync(Amazon.Lambda.Model.CreateAliasRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.CreateAliasRequest,Amazon.Lambda.Model.CreateAliasResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the CreateAlias operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the CreateAlias operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.CreateEventSourceMappingAsync(Amazon.Lambda.Model.CreateEventSourceMappingRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.CreateEventSourceMappingRequest,Amazon.Lambda.Model.CreateEventSourceMappingResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the CreateEventSourceMapping operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the CreateEventSourceMapping operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.CreateFunctionAsync(Amazon.Lambda.Model.CreateFunctionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.CreateFunctionRequest,Amazon.Lambda.Model.CreateFunctionResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the CreateFunction operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the CreateFunction operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.GetAliasAsync(Amazon.Lambda.Model.GetAliasRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetAliasRequest,Amazon.Lambda.Model.GetAliasResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetAlias operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetAlias operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.GetEventSourceMappingAsync(Amazon.Lambda.Model.GetEventSourceMappingRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetEventSourceMappingRequest,Amazon.Lambda.Model.GetEventSourceMappingResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetEventSourceMapping operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetEventSourceMapping operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetFunctionRequest,Amazon.Lambda.Model.GetFunctionResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Returns the configuration information of the Lambda function and a presigned URL link
+            to the .zip file you uploaded with <a>CreateFunction</a> so you can download the .zip
+            file. Note that the URL is valid for up to 10 minutes. The configuration information
+            is the same information you provided as parameters when uploading the function.
+            
+             
+            <para>
+            Using the optional <code>Qualifier</code> parameter, you can specify a specific function
+            version for which you want this information. If you don't specify this parameter,
+            the API uses unqualified function ARN which return information about the $LATEST version
+            of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+            Lambda Function Versioning and Aliases</a>.
+            </para>
+             
+            <para>
+            This operation requires permission for the <code>lambda:GetFunction</code> action.
+            </para>
+            </summary>
+            <param name="functionName">The Lambda function name.   You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
+            <exception cref="T:Amazon.Lambda.Model.InvalidParameterValueException">
+            One of the parameters in the request is invalid. For example, if you provided an IAM
+            role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+            API, that AWS Lambda is unable to assume you will get this exception.
+            </exception>
+            <exception cref="T:Amazon.Lambda.Model.ResourceNotFoundException">
+            The resource (for example, a Lambda function or access policy statement) specified
+            in the request does not exist.
+            </exception>
+            <exception cref="T:Amazon.Lambda.Model.ServiceException">
+            The AWS Lambda service encountered an internal error.
+            </exception>
+            <exception cref="T:Amazon.Lambda.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionAsync(Amazon.Lambda.Model.GetFunctionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetFunctionRequest,Amazon.Lambda.Model.GetFunctionResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetFunction operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetFunction operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionConfigurationAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetFunctionConfigurationRequest,Amazon.Lambda.Model.GetFunctionConfigurationResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Returns the configuration information of the Lambda function. This the same information
+            you provided as parameters when uploading the function by using <a>CreateFunction</a>.
+            
+             
+            <para>
+            You can use the optional <code>Qualifier</code> parameter to retrieve configuration
+            information for a specific Lambda function version. If you don't provide it, the API
+            returns information about the $LATEST version of the function. For more information
+            about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+            Lambda Function Versioning and Aliases</a>.
+            </para>
+             
+            <para>
+            This operation requires permission for the <code>lambda:GetFunctionConfiguration</code>
+            operation.
+            </para>
+            </summary>
+            <param name="functionName">The name of the Lambda function for which you want to retrieve the configuration information.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
+            <exception cref="T:Amazon.Lambda.Model.InvalidParameterValueException">
+            One of the parameters in the request is invalid. For example, if you provided an IAM
+            role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+            API, that AWS Lambda is unable to assume you will get this exception.
+            </exception>
+            <exception cref="T:Amazon.Lambda.Model.ResourceNotFoundException">
+            The resource (for example, a Lambda function or access policy statement) specified
+            in the request does not exist.
+            </exception>
+            <exception cref="T:Amazon.Lambda.Model.ServiceException">
+            The AWS Lambda service encountered an internal error.
+            </exception>
+            <exception cref="T:Amazon.Lambda.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionConfigurationAsync(Amazon.Lambda.Model.GetFunctionConfigurationRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetFunctionConfigurationRequest,Amazon.Lambda.Model.GetFunctionConfigurationResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetFunctionConfiguration operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetFunctionConfiguration operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.GetPolicyAsync(Amazon.Lambda.Model.GetPolicyRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.GetPolicyRequest,Amazon.Lambda.Model.GetPolicyResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetPolicy operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetPolicy operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.InvokeAsync(Amazon.Lambda.Model.InvokeRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.InvokeRequest,Amazon.Lambda.Model.InvokeResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the Invoke operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the Invoke operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.InvokeAsyncAsync(Amazon.Lambda.Model.InvokeAsyncRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.InvokeAsyncRequest,Amazon.Lambda.Model.InvokeAsyncResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the InvokeAsync operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the InvokeAsync operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.ListAliasesAsync(Amazon.Lambda.Model.ListAliasesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListAliasesRequest,Amazon.Lambda.Model.ListAliasesResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListAliases operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListAliases operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.ListEventSourceMappingsAsync(Amazon.Lambda.Model.ListEventSourceMappingsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListEventSourceMappingsRequest,Amazon.Lambda.Model.ListEventSourceMappingsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListEventSourceMappings operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.ListFunctionsAsync(Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListFunctionsRequest,Amazon.Lambda.Model.ListFunctionsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Returns a list of your Lambda functions. For each function, the response includes
+            the function configuration information. You must use <a>GetFunction</a> to retrieve
+            the code for your function.
+            
+             
+            <para>
+            This operation requires permission for the <code>lambda:ListFunctions</code> action.
+            </para>
+            </summary>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
+            <exception cref="T:Amazon.Lambda.Model.ServiceException">
+            The AWS Lambda service encountered an internal error.
+            </exception>
+            <exception cref="T:Amazon.Lambda.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.ListFunctionsAsync(Amazon.Lambda.Model.ListFunctionsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListFunctionsRequest,Amazon.Lambda.Model.ListFunctionsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListFunctions operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListFunctions operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.ListVersionsByFunctionAsync(Amazon.Lambda.Model.ListVersionsByFunctionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.ListVersionsByFunctionRequest,Amazon.Lambda.Model.ListVersionsByFunctionResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListVersionsByFunction operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction operation on AmazonLambdaClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Lambda.IAmazonLambda.PublishVersionAsync(Amazon.Lambda.Model.PublishVersionRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Lambda.Model.PublishVersionRequest,Amazon.Lambda.Model.PublishVersionResponse},Amazon.Runtime.AsyncOptions)">
             <summary>
             Initiates the asynchronous execution of the PublishVersion operation.
             </summary>

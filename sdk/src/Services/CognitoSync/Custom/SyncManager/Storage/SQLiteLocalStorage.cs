@@ -89,6 +89,16 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 STORAGE_SIZE_BYTES, RECORD_COUNT,
                 LAST_SYNC_COUNT, LAST_SYNC_TIMESTAMP, LAST_SYNC_RESULT,
             };
+            internal static readonly int IDENTITY_ID_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.IDENTITY_ID);
+            internal static readonly int DATASET_NAME_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.DATASET_NAME);
+            internal static readonly int CREATION_TIMESTAMP_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.CREATION_TIMESTAMP);
+            internal static readonly int LAST_MODIFIED_TIMESTAMP_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.LAST_MODIFIED_TIMESTAMP);
+            internal static readonly int LAST_MODIFIED_BY_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.LAST_MODIFIED_BY);
+            internal static readonly int STORAGE_SIZE_BYTES_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.STORAGE_SIZE_BYTES);
+            internal static readonly int RECORD_COUNT_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.RECORD_COUNT);
+            internal static readonly int LAST_SYNC_COUNT_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.LAST_SYNC_COUNT);
+            internal static readonly int LAST_SYNC_TIMESTAMP_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.LAST_SYNC_TIMESTAMP);
+            internal static readonly int LAST_SYNC_RESULT_IDX = Array.IndexOf(DatasetColumns.ALL, DatasetColumns.LAST_SYNC_RESULT);
 
             public static string BuildQuery(string conditions)
             {
@@ -167,6 +177,16 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 IDENTITY_ID, DATASET_NAME, KEY, VALUE, SYNC_COUNT, LAST_MODIFIED_TIMESTAMP,
                 LAST_MODIFIED_BY, DEVICE_LAST_MODIFIED_TIMESTAMP, MODIFIED
             };
+
+            internal static readonly int IDENTITY_ID_IDX = Array.IndexOf(RecordColumns.ALL, RecordColumns.IDENTITY_ID);
+            internal static readonly int DATASET_NAME_IDX = Array.IndexOf(RecordColumns.ALL, RecordColumns.DATASET_NAME);
+            internal static readonly int KEY_IDX = Array.IndexOf(RecordColumns.ALL, RecordColumns.KEY);
+            internal static readonly int VALUE_IDX = Array.IndexOf(RecordColumns.ALL, RecordColumns.VALUE);
+            internal static readonly int SYNC_COUNT_IDX = Array.IndexOf(RecordColumns.ALL, RecordColumns.SYNC_COUNT);
+            internal static readonly int LAST_MODIFIED_TIMESTAMP_IDX = Array.IndexOf(RecordColumns.ALL, RecordColumns.LAST_MODIFIED_TIMESTAMP);
+            internal static readonly int LAST_MODIFIED_BY_IDX = Array.IndexOf(RecordColumns.ALL, RecordColumns.LAST_MODIFIED_BY);
+            internal static readonly int DEVICE_LAST_MODIFIED_TIMESTAMP_IDX = Array.IndexOf(RecordColumns.ALL, RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP);
+            internal static readonly int MODIFIED_IDX = Array.IndexOf(RecordColumns.ALL, RecordColumns.MODIFIED);
 
             public static string BuildQuery(string conditions)
             {
@@ -269,7 +289,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 if (metadata == null)
                 {
                     string query = DatasetColumns.BuildInsert(
-                        new string[] 
+                        new string[]
                         {
                             DatasetColumns.IDENTITY_ID,
                             DatasetColumns.DATASET_NAME,
@@ -462,7 +482,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
         public void PutRecords(string identityId, string datasetName, List<Record> records)
         {
-            // TODO: Make sure this lock is desired. Was there in unity but not in 45
             lock (sqlite_lock)
             {
                 foreach (Record record in records)
@@ -866,7 +885,8 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 {
                     if (!UpdateDatasetMetadataInternal(identityId, metadata))
                     {
-                        // TODO: Log error while updating metadata
+                        string message = string.Format("Failure to update dataset metadata with Identity Id {0}", identityId);
+                        _logger.Error(new Exception(message), message);
                     }
                 }
             }
@@ -964,10 +984,10 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 {
                     string insertRecord =
                     RecordColumns.BuildUpdate(
-                        new string[] { 
-                                RecordColumns.IDENTITY_ID, RecordColumns.DATASET_NAME, RecordColumns.KEY, 
-                                RecordColumns.VALUE, RecordColumns.MODIFIED, RecordColumns.SYNC_COUNT, 
-                                RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP 
+                        new string[] {
+                                RecordColumns.IDENTITY_ID, RecordColumns.DATASET_NAME, RecordColumns.KEY,
+                                RecordColumns.VALUE, RecordColumns.MODIFIED, RecordColumns.SYNC_COUNT,
+                                RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP
                             },
                         RecordColumns.IDENTITY_ID + " = @whereIdentityId AND " +
                         RecordColumns.DATASET_NAME + " = @whereDatasetName AND " +

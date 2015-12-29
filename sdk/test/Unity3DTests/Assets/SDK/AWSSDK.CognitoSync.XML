@@ -29,6 +29,11 @@
             set the fields on the request.
             </summary>
         </member>
+        <member name="T:Amazon.CognitoSync.Internal.CognitoCredentialsRetriever.CSRequestCache.CSRequest">
+            <summary>
+            This class holds on to the reflection objects to invoke the setters for IdentityId and IdentityPoolId for the given type.
+            </summary>
+        </member>
         <member name="M:Amazon.CognitoSync.Internal.CognitoCredentialsRetriever.CSRequestCache.SetFields(Amazon.CognitoSync.AmazonCognitoSyncRequest,System.String,System.String)">
             <summary>
             Set the IdentityId and IdentityPoolId properties on the request object
@@ -36,11 +41,6 @@
             <param name="request"></param>
             <param name="identityPoolId"></param>
             <param name="identityId"></param>
-        </member>
-        <member name="T:Amazon.CognitoSync.Internal.CognitoCredentialsRetriever.CSRequestCache.CSRequest">
-            <summary>
-            This class holds on to the reflection objects to invoke the setters for IdentityId and IdentityPoolId for the given type.
-            </summary>
         </member>
         <member name="M:Amazon.CognitoSync.Internal.AmazonCognitoSyncPostMarshallHandler.InvokeSync(Amazon.Runtime.IExecutionContext)">
             <summary>
@@ -173,6 +173,13 @@
             synced will be lost. This method is usually used when customer logs out.
             </summary>
         </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.CognitoSyncManager.IdentityId">
+            <summary>
+            Returns the IdentityId, if the application is not online then an 
+            Unknown Identity Will be returned
+            </summary>
+            <returns>Identity ID</returns>
+        </member>
         <member name="M:Amazon.CognitoSync.SyncManager.CognitoSyncManager.RefreshDatasetMetadataAsync(Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata}},Amazon.Runtime.AsyncOptions)">
             <summary>
             Refreshes dataset metadata. Dataset metadata is pulled from remote
@@ -183,13 +190,6 @@
             <param name="options">Options for asynchronous execution</param>
             <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException">Thrown when fail to fresh dataset metadata</exception>
         </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.CognitoSyncManager.IdentityId">
-            <summary>
-            Returns the IdentityId, if the application is not online then an 
-            Unknown Identity Will be returned
-            </summary>
-            <returns>Identity ID</returns>
-        </member>
         <member name="T:Amazon.CognitoSync.SyncManager.Dataset">
             <summary>
             Dataset is the container of <see cref="T:Amazon.CognitoSync.SyncManager.Record"/>s. It can have up to 1k
@@ -198,16 +198,16 @@
             
             <code>
             //open or create dataset
-            Dataset dataset = cognitoSyncManger.OpenOrCreateDataset("new dataset");
+            Dataset dataset = cognitoSyncManger.OpenOrCreateDataset(&quot;new dataset&quot;);
             // synchronize. It pulls down latest changes from remote storage
             // and push local changes to remote storage
             dataset.Synchronize();
             // reads value
-            String highScore = dataset.Get("high_score");
-            String name = dataset.Get("name");
+            String highScore = dataset.Get(&quot;high_score&quot;);
+            String name = dataset.Get(&quot;name&quot;);
             // sets value
-            dataset.Put("high_score", "90");
-            dataset.Put("name", "John");
+            dataset.Put(&quot;high_score&quot;, &quot;90&quot;);
+            dataset.Put(&quot;name&quot;, &quot;John&quot;);
             // push changes to remote if needed
             dataset.synchronize();
             </code>
@@ -216,6 +216,26 @@
         <member name="F:Amazon.CognitoSync.SyncManager.Dataset.MAX_RETRY">
             <summary>
             Max number of retries during synchronize before it gives up.
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.DatasetName">
+            <summary>
+            The name of the dataset
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.Local">
+            <summary>
+            Instance of <see cref="T:Amazon.CognitoSync.SyncManager.ILocalStorage"/>
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.Remote">
+            <summary>
+            Instance of <see cref="T:Amazon.CognitoSync.SyncManager.IRemoteDataStorage"/>
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.CognitoCredentials">
+            <summary>
+            Instance of <see cref="T:Amazon.CognitoIdentity.CognitoAWSCredentials"/>
             </summary>
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Dataset.#ctor(System.String,Amazon.CognitoIdentity.CognitoAWSCredentials,Amazon.CognitoSync.SyncManager.ILocalStorage,Amazon.CognitoSync.SyncManager.IRemoteDataStorage)">
@@ -232,6 +252,12 @@
             Releases the resources consumed by this object
             </summary>
         </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.Metadata">
+            <summary>
+            Retrieves the associated <see cref="T:Amazon.CognitoSync.SyncManager.DatasetMetadata"/> from local storage.
+            </summary>
+            <value>The metadata for the Dataset.</value>
+        </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Dataset.Delete">
             <summary>
             Delete this <see cref="T:Amazon.CognitoSync.SyncManager.Dataset"/>. You cannot do any more operations
@@ -240,7 +266,8 @@
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Dataset.Get(System.String)">
             <summary>
-            Gets the value of a <see cref="T:Amazon.CognitoSync.SyncManager.Record"/> with the given key. If the
+            Gets the value of a <see cref=
+            "T:Amazon.CognitoSync.SyncManager.Record"/> with the given key. If the
             <see cref="T:Amazon.CognitoSync.SyncManager.Record"/> doesn't exist or is marked deleted, null will be returned.
             </summary>
             <param name="key">Key of the record in the dataset.</param>
@@ -252,6 +279,19 @@
             </summary>
             <param name="key">Key of the record in the dataset.</param>
         </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.ActiveRecords">
+            <summary>
+            Gets the Key/Value representation of all records of this dataset. Datasets marked
+            as deleted records are excluded.
+            </summary>
+            <returns>Key/Value representation of all records, excluding deleted ones</returns>
+        </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.Records">
+            <summary>
+            Retrieves all raw records, including those marked as deleted, from local storage.
+            </summary>
+            <returns>List of all raw records</returns>
+        </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Dataset.GetSizeInBytes(System.String)">
             <summary>
             Gets the size of a record with the given key. If the key is deleted, -1
@@ -260,6 +300,14 @@
             </summary>
             <returns>The size in bytes.</returns>
             <param name="key">The key of a record</param>
+        </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.TotalSizeInBytes">
+            <summary>
+            Gets the total size in bytes of this dataset. Records that are marked as
+            deleted don't contribute to the total size.
+            The size is calculated as sum of UTF-8 string length of key and value for all the records
+            </summary>
+            <returns>The total size in bytes</returns>
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Dataset.IsModified(System.String)">
             <summary>
@@ -298,11 +346,26 @@
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Dataset.Resolve(System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record})">
             <summary>
-            Saves resolved conflicting <see cref="T:Amazon.CognitoSync.SyncManager.Record"/> into local storage. This is
+            Saves resolved conflicting <see cref="T:Amazon.CognitoSync.SyncManager.Record" /> into local storage. This is
             used inside <see cref="T:Amazon.CognitoSync.SyncManager.Dataset.SyncConflictDelegate"/> after you
             resolve all conflicts.
             </summary>
             <param name="remoteRecords">A list of records to save into local storage</param>
+        </member>
+        <member name="E:Amazon.CognitoSync.SyncManager.Dataset.OnSyncSuccess">
+            <summary>
+            This is called after remote changes are downloaded to local storage
+            and local changes are uploaded to remote storage. Updated records
+            from remote storage are passed in the callback. If conflicts occur
+            during synchronize and are resolved in <see cref="T:Amazon.CognitoSync.SyncManager.Dataset.SyncConflictDelegate"/> after
+            several retries, then updatedRecords will be what are pulled down
+            from remote in the last retry.   
+            </summary>
+        </member>
+        <member name="E:Amazon.CognitoSync.SyncManager.Dataset.OnSyncFailure">
+            <summary>
+            This is called when an exception occurs during sync
+            </summary>
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Dataset.FireSyncSuccessEvent(System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record})">
             <summary>
@@ -315,6 +378,30 @@
             Fires a Sync Failer event.
             </summary>
             <param name="exception">Exception object which caused the sync Failure</param>
+        </member>
+        <member name="T:Amazon.CognitoSync.SyncManager.Dataset.SyncConflictDelegate">
+            <summary>
+            Delegate which is invoked when a sync conflict occurs
+            </summary>
+            <param name="dataset">The data set which resulted in conflict</param>
+            <param name="conflicts">List of Objects which have conflicts</param>
+            <returns>true if you want to retry synchronization, else false</returns>
+        </member>
+        <member name="T:Amazon.CognitoSync.SyncManager.Dataset.DatasetDeletedDelegate">
+            <summary>
+            Delegate which is invoked when a data set is deleted
+            </summary>
+            <param name="dataset">The dataset which was deleted</param>
+            <returns>true if you want to remove local dataset, or false if you want to
+            keep it</returns>
+        </member>
+        <member name="T:Amazon.CognitoSync.SyncManager.Dataset.DatasetMergedDelegate">
+            <summary>
+            Delegate which is invoked when a dataset is merged due to an identity merge
+            </summary>
+            <param name="dataset">The dataset which was merged, due to an identity merge</param>
+            <param name="datasetNames">identity id's on which merge occured</param>
+            <returns></returns>
         </member>
         <member name="F:Amazon.CognitoSync.SyncManager.Dataset.OnSyncConflict">
             <summary>
@@ -378,92 +465,6 @@
             , this method will not perform a sync and the callback won't fire.
             </summary>
         </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.DatasetName">
-            <summary>
-            The name of the dataset
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.Local">
-            <summary>
-            Instance of <see cref="T:Amazon.CognitoSync.SyncManager.ILocalStorage"/>
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.Remote">
-            <summary>
-            Instance of <see cref="T:Amazon.CognitoSync.SyncManager.IRemoteDataStorage"/>
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.CognitoCredentials">
-            <summary>
-            Instance of <see cref="T:Amazon.CognitoIdentity.CognitoAWSCredentials"/>
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.Metadata">
-            <summary>
-            Retrieves the associated <see cref="T:Amazon.CognitoSync.SyncManager.DatasetMetadata"/> from local storage.
-            </summary>
-            <value>The metadata for the Dataset.</value>
-        </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.ActiveRecords">
-            <summary>
-            Gets the Key/Value representation of all records of this dataset. Datasets marked
-            as deleted records are excluded.
-            </summary>
-            <returns>Key/Value representation of all records, excluding deleted ones</returns>
-        </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.Records">
-            <summary>
-            Retrieves all raw records, including those marked as deleted, from local storage.
-            </summary>
-            <returns>List of all raw records</returns>
-        </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.Dataset.TotalSizeInBytes">
-            <summary>
-            Gets the total size in bytes of this dataset. Records that are marked as
-            deleted don't contribute to the total size.
-            The size is calculated as sum of UTF-8 string length of key and value for all the records
-            </summary>
-            <returns>The total size in bytes</returns>
-        </member>
-        <member name="E:Amazon.CognitoSync.SyncManager.Dataset.OnSyncSuccess">
-            <summary>
-            This is called after remote changes are downloaded to local storage
-            and local changes are uploaded to remote storage. Updated records
-            from remote storage are passed in the callback. If conflicts occur
-            during synchronize and are resolved in <see cref="T:Amazon.CognitoSync.SyncManager.Dataset.SyncConflictDelegate"/> after
-            several retries, then updatedRecords will be what are pulled down
-            from remote in the last retry.   
-            </summary>
-        </member>
-        <member name="E:Amazon.CognitoSync.SyncManager.Dataset.OnSyncFailure">
-            <summary>
-            This is called when an exception occurs during sync
-            </summary>
-        </member>
-        <member name="T:Amazon.CognitoSync.SyncManager.Dataset.SyncConflictDelegate">
-            <summary>
-            Delegate which is invoked when a sync conflict occurs
-            </summary>
-            <param name="dataset">The data set which resulted in conflict</param>
-            <param name="conflicts">List of Objects which have conflicts</param>
-            <returns>true if you want to retry synchronization, else false</returns>
-        </member>
-        <member name="T:Amazon.CognitoSync.SyncManager.Dataset.DatasetDeletedDelegate">
-            <summary>
-            Delegate which is invoked when a data set is deleted
-            </summary>
-            <param name="dataset">The dataset which was deleted</param>
-            <returns>true if you want to remove local dataset, or false if you want to
-            keep it</returns>
-        </member>
-        <member name="T:Amazon.CognitoSync.SyncManager.Dataset.DatasetMergedDelegate">
-            <summary>
-            Delegate which is invoked when a dataset is merged due to an identity merge
-            </summary>
-            <param name="dataset">The dataset which was merged, due to an identity merge</param>
-            <param name="datasetNames">identity id's on which merge occured</param>
-            <returns></returns>
-        </member>
         <member name="T:Amazon.CognitoSync.SyncManager.SyncSuccessEventArgs">
             <summary>
             A sync success event
@@ -487,48 +488,6 @@
         <member name="T:Amazon.CognitoSync.SyncManager.DataConflictException">
             <summary>
             This exception is thrown when an update fails due to conflicting states
-            </summary>
-        </member>
-        <member name="T:Amazon.CognitoSync.SyncManager.DataStorageException">
-            <summary>
-            This exception is thrown when an error occurs during an data storage
-            operation.
-            </summary>
-        </member>
-        <member name="T:Amazon.CognitoSync.SyncManager.SyncManagerException">
-            <summary>
-            This exception is thrown when an error occurs during an data storage
-            operation.
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.SyncManagerException.#ctor(System.String,System.Exception)">
-            <summary>
-            Constructs a new SyncManagerException with the specified message and an existing exception object
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.SyncManagerException.#ctor(System.String)">
-            <summary>
-            Constructs a new SyncManagerException with the specified message
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.SyncManagerException.#ctor(System.Exception)">
-            <summary>
-            Constructs a new SyncManagerException with an existing exception object
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.DataStorageException.#ctor(System.String,System.Exception)">
-            <summary>
-            Constructs a new DataStorageException with the specified message and an existing exception object
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.DataStorageException.#ctor(System.String)">
-            <summary>
-            Constructs a new DataStorageException with the specified message 
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.DataStorageException.#ctor(System.Exception)">
-            <summary>
-            Constructs a new DataStorageException with an existing exception object
             </summary>
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.DataConflictException.#ctor(System.String,System.Exception)">
@@ -589,6 +548,27 @@
             Constructs a new DatasetNotFoundException with  an existing exception object
             </summary>
         </member>
+        <member name="T:Amazon.CognitoSync.SyncManager.DataStorageException">
+            <summary>
+            This exception is thrown when an error occurs during an data storage
+            operation.
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.DataStorageException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a new DataStorageException with the specified message and an existing exception object
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.DataStorageException.#ctor(System.String)">
+            <summary>
+            Constructs a new DataStorageException with the specified message 
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.DataStorageException.#ctor(System.Exception)">
+            <summary>
+            Constructs a new DataStorageException with an existing exception object
+            </summary>
+        </member>
         <member name="T:Amazon.CognitoSync.SyncManager.NetworkException">
             <summary>
             This exception is thrown when a service request failed due to network
@@ -610,27 +590,31 @@
             Constructs a new NetworkException with an existing exception object
             </summary>
         </member>
+        <member name="T:Amazon.CognitoSync.SyncManager.SyncManagerException">
+            <summary>
+            This exception is thrown when an error occurs during an data storage
+            operation.
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.SyncManagerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a new SyncManagerException with the specified message and an existing exception object
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.SyncManagerException.#ctor(System.String)">
+            <summary>
+            Constructs a new SyncManagerException with the specified message
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.SyncManagerException.#ctor(System.Exception)">
+            <summary>
+            Constructs a new SyncManagerException with an existing exception object
+            </summary>
+        </member>
         <member name="T:Amazon.CognitoSync.SyncManager.DatasetMetadata">
             <summary>
             Metadata information representing a dataset
             </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.DatasetMetadata.#ctor(System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.Int64,System.Int64)">
-            <summary>
-            
-            </summary>
-            <param name="datasetName"></param>
-            <param name="creationDate"></param>
-            <param name="lastModifiedDate"></param>
-            <param name="lastModifiedBy"></param>
-            <param name="storageSizeBytes"></param>
-            <param name="recordCount"></param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.DatasetMetadata.ToString">
-            <summary>
-            A string representation of DatasetMetadata
-            </summary>
-            <returns></returns>
         </member>
         <member name="P:Amazon.CognitoSync.SyncManager.DatasetMetadata.DatasetName">
             <summary>
@@ -668,22 +652,27 @@
             </summary>
             <value>The record count.</value>
         </member>
-        <member name="T:Amazon.CognitoSync.SyncManager.DatasetUpdates">
-            <summary>
-            A model class which stores a list of updated dataset. 
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.DatasetUpdates.#ctor(System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record},System.Int64,System.String,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String})">
+        <member name="M:Amazon.CognitoSync.SyncManager.DatasetMetadata.#ctor(System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.Int64,System.Int64)">
             <summary>
             
             </summary>
             <param name="datasetName"></param>
-            <param name="records"></param>
-            <param name="syncCount"></param>
-            <param name="syncSessionToken"></param>
-            <param name="exists"></param>
-            <param name="deleted"></param>
-            <param name="mergedDatasetNameList"></param>
+            <param name="creationDate"></param>
+            <param name="lastModifiedDate"></param>
+            <param name="lastModifiedBy"></param>
+            <param name="storageSizeBytes"></param>
+            <param name="recordCount"></param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.DatasetMetadata.ToString">
+            <summary>
+            A string representation of DatasetMetadata
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.CognitoSync.SyncManager.DatasetUpdates">
+            <summary>
+            A model class which stores a list of updated dataset. 
+            </summary>
         </member>
         <member name="P:Amazon.CognitoSync.SyncManager.DatasetUpdates.DatasetName">
             <summary>
@@ -720,29 +709,23 @@
             
             </summary>
         </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.DatasetUpdates.#ctor(System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record},System.Int64,System.String,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="datasetName"></param>
+            <param name="records"></param>
+            <param name="syncCount"></param>
+            <param name="syncSessionToken"></param>
+            <param name="exists"></param>
+            <param name="deleted"></param>
+            <param name="mergedDatasetNameList"></param>
+        </member>
         <member name="T:Amazon.CognitoSync.SyncManager.Record">
             <summary>
             A Record is the element stored in a <see cref="T:Amazon.CognitoSync.SyncManager.Dataset"/>. 
             There can be up to 1k records or up to 1 MB in size in a <see cref="T:Amazon.CognitoSync.SyncManager.Dataset"/>.
             </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Record.#ctor(System.String,System.String,System.Int64,System.Nullable{System.DateTime},System.String,System.Nullable{System.DateTime},System.Boolean)">
-            <summary>
-            Creates an instance of the Record.
-            </summary>
-            <param name="key">The key representing the record</param>
-            <param name="value">The value for the record</param>
-            <param name="syncCount">THe number of times this record has been synchronized</param>
-            <param name="lastModifiedDate">The last time the record was modified in UTC</param>
-            <param name="lastModifiedBy"></param>
-            <param name="deviceLastModifiedDate"></param>
-            <param name="modified">Flag indicating the record was modified</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Record.ToString">
-            <summary>
-            A string representation of the record
-            </summary>
-            <returns></returns>
         </member>
         <member name="P:Amazon.CognitoSync.SyncManager.Record.Key">
             <summary>
@@ -789,6 +772,18 @@
             </summary>
             <value><c>true</c> if modified; otherwise, <c>false</c>.</value>
         </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Record.#ctor(System.String,System.String,System.Int64,System.Nullable{System.DateTime},System.String,System.Nullable{System.DateTime},System.Boolean)">
+            <summary>
+            Creates an instance of the Record.
+            </summary>
+            <param name="key">The key representing the record</param>
+            <param name="value">The value for the record</param>
+            <param name="syncCount">THe number of times this record has been synchronized</param>
+            <param name="lastModifiedDate">The last time the record was modified in UTC</param>
+            <param name="lastModifiedBy"></param>
+            <param name="deviceLastModifiedDate"></param>
+            <param name="modified">Flag indicating the record was modified</param>
+        </member>
         <member name="P:Amazon.CognitoSync.SyncManager.Record.IsDeleted">
             <summary>
             Gets whether the record is marked as deleted. True if value is null,
@@ -796,9 +791,30 @@
             </summary>
             <returns><c>true</c> if the record is marked as deleted; otherwise, <c>false</c>.</returns>
         </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Record.ToString">
+            <summary>
+            A string representation of the record
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Amazon.CognitoSync.SyncManager.SyncConflict">
             <summary>
             A model which stores conflicting record from the remote storage and the local storage.
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.SyncConflict.Key">
+            <summary>
+            The record Key
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.SyncConflict.RemoteRecord">
+            <summary>
+            Return the record which is present on the server
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoSync.SyncManager.SyncConflict.LocalRecord">
+            <summary>
+            Return the record which is present locally on the device
             </summary>
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.SyncConflict.#ctor(Amazon.CognitoSync.SyncManager.Record,Amazon.CognitoSync.SyncManager.Record)">
@@ -827,101 +843,11 @@
             <returns>Resolved record.</returns>
             <param name="newValue">new value of the record</param>
         </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.SyncConflict.Key">
-            <summary>
-            The record Key
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.SyncConflict.RemoteRecord">
-            <summary>
-            Return the record which is present on the server
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoSync.SyncManager.SyncConflict.LocalRecord">
-            <summary>
-            Return the record which is present locally on the device
-            </summary>
-        </member>
         <member name="T:Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage">
             <summary>
             An <see cref="T:Amazon.CognitoSync.SyncManager.IRemoteDataStorage"/> implementation 
             using Cognito Sync service on which we can invoke actions like creating a dataset, or record
             </summary>
-        </member>
-        <member name="T:Amazon.CognitoSync.SyncManager.IRemoteDataStorage">
-            <summary>
-            A remote storage like a cognito sync service on which we can invoke actions like creating a dataset, or record
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.GetDatasetMetadataAsync(Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata}},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Gets a list of <see cref="T:Amazon.CognitoSync.SyncManager.DatasetMetadata"/>
-            </summary>
-            <param name="callback">An Action delegate that is invoked when the operation completes</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. 
-            	Retrieve this object from within the callback
-            	procedure using the AsyncState property.</param>
-            <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.GetDatasetMetadataAsync(System.String,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{Amazon.CognitoSync.SyncManager.DatasetMetadata},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Retrieves the metadata of a dataset.
-            </summary>
-            <param name="datasetName">Dataset name.</param>
-            <param name="callback">An Action delegate that is invoked when 
-            	the operation completes with AmazonServiceResult result</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. 
-            	Retrieve this object from within the callback
-            	procedure using the AsyncState property.</param>
-            <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.ListUpdatesAsync(System.String,System.Int64,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{Amazon.CognitoSync.SyncManager.DatasetUpdates},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Gets a list of records which have been updated since lastSyncCount
-            (inclusive). If the value of a record equals null, then the record is
-            deleted. If you pass 0 as lastSyncCount, the full list of records will be
-            returned.
-            </summary>
-            <returns>A list of records which have been updated since lastSyncCount.</returns>
-            <param name="datasetName">Dataset name.</param>
-            <param name="callback">An AsyncCallback delegate that is invoked when 
-            	the operation completes with AmazonServiceResult result</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. 
-            	Retrieve this object from within the callback
-            	procedure using the AsyncState property.</param>
-            <param name="lastSyncCount">Last sync count.</param>
-            <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.PutRecordsAsync(System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record},System.String,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record}},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Post updates to remote storage. Each record has a sync count. If the sync
-            count doesn't match what's on the remote storage, i.e. the record is
-            modified by a different device, this operation throws ConflictException.
-            Otherwise it returns a list of records that are updated successfully.
-            </summary>
-            <returns>The records.</returns>
-            <param name="datasetName">Dataset name.</param>
-            <param name="records">Records.</param>
-            <param name="syncSessionToken">Sync session token.</param>
-            <param name="callback">An AsyncCallback delegate that is invoked when 
-            	the operation completes with AmazonServiceResult result</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. 
-            	Retrieve this object from within the callback
-            	procedure using the AsyncState property.</param>
-            <exception cref="T:Amazon.CognitoSync.SyncManager.DatasetNotFoundException"></exception>
-            <exception cref="T:Amazon.CognitoSync.SyncManager.DataConflictException"></exception>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.DeleteDatasetAsync(System.String,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback,Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Deletes a dataset.
-            </summary>
-            <param name="datasetName">Dataset name.</param>
-            <param name="callback">An AsyncCallback delegate that is invoked when 
-            	the operation completes with AmazonServiceResult result</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. 
-            	Retrieve this object from within the callback
-            	procedure using the AsyncState property.</param>
-            <exception cref="T:Amazon.CognitoSync.SyncManager.DatasetNotFoundException"></exception>
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage.Dispose">
             <summary>
@@ -948,6 +874,259 @@
             <param name="callback">An AsyncCallback delegate that is invoked when the operation completes</param>
             <param name="state">A user-defined state object that is passed to the callback procedure. </param>
             <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        </member>
+        <member name="T:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage">
+            <summary>
+            An implementation for <see cref="T:Amazon.CognitoSync.SyncManager.ILocalStorage"/> 
+            using <see href="http://sqlite.org">SQLite</see>
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.Dispose">
+            <summary>
+            Releases the resources consumed by this object
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.CreateDataset(System.String,System.String)">
+            <summary>
+            Create a dataset 
+            </summary>
+            <param name="identityId">Identity Id</param>
+            <param name="datasetName">Dataset name.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetValue(System.String,System.String,System.String)">
+            <summary>
+            Retrieves the string value of a key in dataset. The value can be null
+            when the record doesn't exist or is marked as deleted.
+            </summary>
+            <returns>string value of the record, or null if not present or deleted.</returns>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+            <param name="key">record key.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.PutValue(System.String,System.String,System.String,System.String)">
+            <summary>
+            Puts the value of a key in dataset. If a new value is assigned to the
+            key, the record is marked as dirty. If the value is null, then the record
+            is marked as deleted. The changed record will be synced with remote
+            storage.
+            </summary>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+            <param name="key">record key.</param>
+            <param name="value">string value. If null, the record is marked as deleted.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetValueMap(System.String,System.String)">
+            <summary>
+            Retrieves a key-value map from dataset, excluding marked as deleted
+            values.
+            </summary>
+            <returns>a key-value map of all but deleted values.</returns>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.PutAllValues(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Puts a key-value map into a dataset. This is optimized for batch
+            operation. It's the preferred way to put a list of records into dataset.
+            </summary>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+            <param name="values">a key-value map.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetDatasetMetadata(System.String)">
+            <summary>
+            Gets a list of dataset's metadata information.
+            </summary>
+            <returns>a list of dataset metadata</returns>
+            <param name="identityId">Identity identifier.</param>
+            <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetDatasetMetadata(System.String,System.String)">
+            <summary>
+            Retrieves the metadata of a dataset.
+            </summary>
+            <returns>The dataset metadata.</returns>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+            <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetRecord(System.String,System.String,System.String)">
+            <summary>
+            Gets a raw record from local store. If the dataset/key combo doesn't
+            // exist, null will be returned.
+            </summary>
+            <returns>a Record object if found, null otherwise.</returns>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+            <param name="key">Key for the record.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetRecords(System.String,System.String)">
+            <summary>
+            Gets a list of all records.
+            </summary>
+            <returns>A list of records which have been updated since lastSyncCount.</returns>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.ConditionallyPutRecords(System.String,System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record},System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record})">
+            <summary>
+            Puts a list of raw records into that dataset if 
+            the local version hasn't changed (to be used in 
+            synchronizations). 
+            </summary> 
+            <param name="identityId">Identity id.</param>
+            <param name="datasetName">Dataset name.</param>
+            /// <param name="records">A list of remote records to compare with</param>
+            <param name="localRecords">A list of records to check for changes.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.DeleteDataset(System.String,System.String)">
+            <summary>
+            Deletes a dataset. All the records associated with dataset are cleared and 
+            dataset is marked as deleted for future sync.
+            </summary>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+            <exception cref="T:Amazon.CognitoSync.SyncManager.DatasetNotFoundException"></exception>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.PurgeDataset(System.String,System.String)">
+            <summary>
+            This is different from <see cref="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.DeleteDataset(System.String,System.String)"/>. Not only does it
+            clears all records in the dataset, it also remove it from metadata table.
+            It won't be visible in <see cref="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetDatasetMetadata(System.String,System.String)"/>.
+            </summary>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetLastSyncCount(System.String,System.String)">
+            <summary>
+            Retrieves the last sync count. This sync count is a counter that
+            represents when the last sync happened. The counter should be updated on
+            a successful sync.
+            </summary>
+            <returns>The last sync count.</returns>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetModifiedRecords(System.String,System.String)">
+            <summary>
+            Retrieves a list of locally modified records since last successful sync
+            operation.
+            </summary>
+            <returns>a list of locally modified records</returns>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.UpdateLastSyncCount(System.String,System.String,System.Int64)">
+            <summary>
+            Updates the last sync count after successful sync with the remote data
+            store.
+            </summary>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+            <param name="lastSyncCount">Last sync count.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.WipeData">
+            <summary>
+            Wipes all locally cached data including dataset metadata and records. All
+            opened dataset handler should not perform further operations to avoid
+            inconsistent state.
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.ChangeIdentityId(System.String,System.String)">
+            <summary>
+            Reparents all datasets from old identity id to a new one.
+            </summary>
+            <param name="oldIdentityId">Old identity identifier.</param>
+            <param name="newIdentityId">New identity identifier.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.UpdateDatasetMetadata(System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata})">
+            <summary>
+            Updates local dataset metadata
+            </summary>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetMetadata">Dataset metadata.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.UpdateLastModifiedTimestamp(System.String,System.String)">
+            <summary>
+            Updates the last modified timestamp
+            </summary>
+            <param name="identityId">Identity Identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.Dispose(System.Boolean)">
+            <summary>
+            Implements the Dispose pattern
+            </summary>
+            <param name="disposing">Whether this object is being disposed via a call to Dispose
+            or garbage collected.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.CacheIdentity(System.String,System.String)">
+            <summary>
+            cache the identity
+            </summary>
+            <param name="key"></param>
+            <param name="identity"></param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.DeleteCachedIdentity(System.String)">
+            <summary>
+            Delete the cached identity id
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="T:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils">
+            <summary>
+            A Utility class for all the dataset operations
+            </summary>
+        </member>
+        <member name="F:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.DATASET_NAME_PATTERN">
+            <summary>
+            Valid dataset name pattern
+            </summary>
+        </member>
+        <member name="F:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.UNKNOWN_IDENTITY_ID">
+            <summary>
+            Unknown identity id when the identity id is null
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.ValidateDatasetName(System.String)">
+            <summary>
+            Validates the dataset name.
+            </summary>
+            <returns>The dataset name.</returns>
+            <param name="datasetName">Dataset name.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.ValidateRecordKey(System.String)">
+            <summary>
+            Validates the record key. It must be non empty and its length must be no
+            greater than 128. Otherwise {@link IllegalArgumentException} will be
+            thrown.
+            </summary>
+            <returns>The record key.</returns>
+            <param name="key">Key.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.ComputeRecordSize(Amazon.CognitoSync.SyncManager.Record)">
+            <summary>
+            A helper function to compute record size which equals the sum of the
+            UTF-8 string length of record key and value. 0 if record is null.
+            </summary>
+            <returns>The record size.</returns>
+            <param name="record">Record.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.GetIdentityId(Amazon.CognitoIdentity.CognitoAWSCredentials)">
+            <summary>
+            A helper function to get the identity id of the dataset from credentials
+            provider. If the identity id is null, UNKNOWN_IDENTITY_ID will be
+            returned.
+            </summary>
+            <param name="credentials">The Cognito Credentials.</param>
+            <returns>The identity identifier.</returns>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.TruncateToSeconds(System.DateTime)">
+            <summary>
+            A helper function to truncate a DateTime object to whole seconds.
+            </summary>
+            <returns>The truncated DateTime</returns>
+            <param name="dateTime">The DateTime to be truncated.</param>
         </member>
         <member name="T:Amazon.CognitoSync.SyncManager.ILocalStorage">
             <summary>
@@ -1122,145 +1301,80 @@
             <param name="identityId">Identity identifier.</param>
             <param name="datasetMetadata">Dataset metadata.</param>
         </member>
-        <member name="T:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage">
+        <member name="T:Amazon.CognitoSync.SyncManager.IRemoteDataStorage">
             <summary>
-            An implementation for <see cref="T:Amazon.CognitoSync.SyncManager.ILocalStorage"/> 
-            using <see href="http://sqlite.org">SQLite</see>
+            A remote storage like a cognito sync service on which we can invoke actions like creating a dataset, or record
             </summary>
         </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.Dispose">
+        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.GetDatasetMetadataAsync(Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata}},Amazon.Runtime.AsyncOptions)">
             <summary>
-            Releases the resources consumed by this object
+            Gets a list of <see cref="T:Amazon.CognitoSync.SyncManager.DatasetMetadata"/>
             </summary>
+            <param name="callback">An Action delegate that is invoked when the operation completes</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. 
+            	Retrieve this object from within the callback
+            	procedure using the AsyncState property.</param>
+            <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
         </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetValue(System.String,System.String,System.String)">
-            <summary>
-            Retrieves the string value of a key in dataset. The value can be null
-            when the record doesn't exist or is marked as deleted.
-            </summary>
-            <returns>string value of the record, or null if not present or deleted.</returns>
-            <param name="identityId">Identity identifier.</param>
-            <param name="datasetName">Dataset name.</param>
-            <param name="key">record key.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.PutValue(System.String,System.String,System.String,System.String)">
-            <summary>
-            Puts the value of a key in dataset. If a new value is assigned to the
-            key, the record is marked as dirty. If the value is null, then the record
-            is marked as deleted. The changed record will be synced with remote
-            storage.
-            </summary>
-            <param name="identityId">Identity identifier.</param>
-            <param name="datasetName">Dataset name.</param>
-            <param name="key">record key.</param>
-            <param name="value">string value. If null, the record is marked as deleted.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetValueMap(System.String,System.String)">
-            <summary>
-            Retrieves a key-value map from dataset, excluding marked as deleted
-            values.
-            </summary>
-            <returns>a key-value map of all but deleted values.</returns>
-            <param name="identityId">Identity identifier.</param>
-            <param name="datasetName">Dataset name.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.PutAllValues(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
-            <summary>
-            Puts a key-value map into a dataset. This is optimized for batch
-            operation. It's the preferred way to put a list of records into dataset.
-            </summary>
-            <param name="identityId">Identity identifier.</param>
-            <param name="datasetName">Dataset name.</param>
-            <param name="values">a key-value map.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.GetDatasetMetadata(System.String,System.String)">
+        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.GetDatasetMetadataAsync(System.String,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{Amazon.CognitoSync.SyncManager.DatasetMetadata},Amazon.Runtime.AsyncOptions)">
             <summary>
             Retrieves the metadata of a dataset.
             </summary>
-            <returns>The dataset metadata.</returns>
-            <param name="identityId">Identity identifier.</param>
             <param name="datasetName">Dataset name.</param>
+            <param name="callback">An Action delegate that is invoked when 
+            	the operation completes with AmazonServiceResult result</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. 
+            	Retrieve this object from within the callback
+            	procedure using the AsyncState property.</param>
             <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
         </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.ConditionallyPutRecords(System.String,System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record},System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record})">
+        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.ListUpdatesAsync(System.String,System.Int64,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{Amazon.CognitoSync.SyncManager.DatasetUpdates},Amazon.Runtime.AsyncOptions)">
             <summary>
-            Puts a list of raw records into that dataset if 
-            the local version hasn't changed (to be used in 
-            synchronizations). 
-            </summary> 
-            <param name="identityId">Identity id.</param>
-            <param name="datasetName">Dataset name.</param>
-            /// <param name="records">A list of remote records to compare with</param>
-            <param name="localRecords">A list of records to check for changes.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.UpdateDatasetMetadata(System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata})">
-            <summary>
-            Updates local dataset metadata
-            </summary>
-            <param name="identityId">Identity identifier.</param>
-            <param name="datasetMetadata">Dataset metadata.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.Dispose(System.Boolean)">
-            <summary>
-            Implements the Dispose pattern
-            </summary>
-            <param name="disposing">Whether this object is being disposed via a call to Dispose
-            or garbage collected.</param>
-        </member>
-        <member name="T:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils">
-            <summary>
-            A Utility class for all the dataset operations
-            </summary>
-        </member>
-        <member name="F:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.DATASET_NAME_PATTERN">
-            <summary>
-            Valid dataset name pattern
-            </summary>
-        </member>
-        <member name="F:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.UNKNOWN_IDENTITY_ID">
-            <summary>
-            Unknown identity id when the identity id is null
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.ValidateDatasetName(System.String)">
-            <summary>
-            Validates the dataset name.
-            </summary>
-            <returns>The dataset name.</returns>
-            <param name="datasetName">Dataset name.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.ValidateRecordKey(System.String)">
-            <summary>
-            Validates the record key. It must be non empty and its length must be no
-            greater than 128. Otherwise {@link IllegalArgumentException} will be
-            thrown.
-            </summary>
-            <returns>The record key.</returns>
-            <param name="key">Key.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.ComputeRecordSize(Amazon.CognitoSync.SyncManager.Record)">
-            <summary>
-            A helper function to compute record size which equals the sum of the
-            UTF-8 string length of record key and value. 0 if record is null.
-            </summary>
-            <returns>The record size.</returns>
-            <param name="record">Record.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.GetIdentityId(Amazon.CognitoIdentity.CognitoAWSCredentials)">
-            <summary>
-            A helper function to get the identity id of the dataset from credentials
-            provider. If the identity id is null, UNKNOWN_IDENTITY_ID will be
+            Gets a list of records which have been updated since lastSyncCount
+            (inclusive). If the value of a record equals null, then the record is
+            deleted. If you pass 0 as lastSyncCount, the full list of records will be
             returned.
             </summary>
-            <param name="credentials">The Cognito Credentials.</param>
-            <returns>The identity identifier.</returns>
+            <returns>A list of records which have been updated since lastSyncCount.</returns>
+            <param name="datasetName">Dataset name.</param>
+            <param name="callback">An AsyncCallback delegate that is invoked when 
+            	the operation completes with AmazonServiceResult result</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. 
+            	Retrieve this object from within the callback
+            	procedure using the AsyncState property.</param>
+            <param name="lastSyncCount">Last sync count.</param>
+            <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
         </member>
-        <member name="M:Amazon.CognitoSync.SyncManager.Internal.DatasetUtils.TruncateToSeconds(System.DateTime)">
+        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.PutRecordsAsync(System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record},System.String,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record}},Amazon.Runtime.AsyncOptions)">
             <summary>
-            A helper function to truncate a DateTime object to whole seconds.
+            Post updates to remote storage. Each record has a sync count. If the sync
+            count doesn't match what's on the remote storage, i.e. the record is
+            modified by a different device, this operation throws ConflictException.
+            Otherwise it returns a list of records that are updated successfully.
             </summary>
-            <returns>The truncated DateTime</returns>
-            <param name="dateTime">The DateTime to be truncated.</param>
+            <returns>The records.</returns>
+            <param name="datasetName">Dataset name.</param>
+            <param name="records">Records.</param>
+            <param name="syncSessionToken">Sync session token.</param>
+            <param name="callback">An AsyncCallback delegate that is invoked when 
+            	the operation completes with AmazonServiceResult result</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. 
+            	Retrieve this object from within the callback
+            	procedure using the AsyncState property.</param>
+            <exception cref="T:Amazon.CognitoSync.SyncManager.DatasetNotFoundException"></exception>
+            <exception cref="T:Amazon.CognitoSync.SyncManager.DataConflictException"></exception>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.DeleteDatasetAsync(System.String,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback,Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Deletes a dataset.
+            </summary>
+            <param name="datasetName">Dataset name.</param>
+            <param name="callback">An AsyncCallback delegate that is invoked when 
+            	the operation completes with AmazonServiceResult result</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. 
+            	Retrieve this object from within the callback
+            	procedure using the AsyncState property.</param>
+            <exception cref="T:Amazon.CognitoSync.SyncManager.DatasetNotFoundException"></exception>
         </member>
         <member name="T:Amazon.CognitoSync.AmazonCognitoSyncConfig">
             <summary>
@@ -1555,11 +1669,6 @@
             <param name="errorCode"></param>
             <param name="requestId"></param>
             <param name="statusCode"></param>
-        </member>
-        <member name="T:Amazon.CognitoSync.AmazonCognitoSyncRequest">
-            <summary>
-            Base class for CognitoSync operation requests.
-            </summary>
         </member>
         <member name="T:Amazon.CognitoSync.Model.BulkPublishRequest">
             <summary>
@@ -3334,7 +3443,7 @@
             Response Unmarshaller for CognitoStreams Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.CognitoStreamsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#CognitoStreams@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.CognitoStreamsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#CognitoStreams,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -3358,7 +3467,7 @@
             Response Unmarshaller for Dataset Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.DatasetUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#Dataset@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.DatasetUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#Dataset,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -3697,7 +3806,7 @@
             Response Unmarshaller for IdentityPoolUsage Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.IdentityPoolUsageUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#IdentityPoolUsage@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.IdentityPoolUsageUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#IdentityPoolUsage,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -3721,7 +3830,7 @@
             Response Unmarshaller for IdentityUsage Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.IdentityUsageUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#IdentityUsage@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.IdentityUsageUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#IdentityUsage,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -3898,7 +4007,7 @@
             Response Unmarshaller for PushSync Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.PushSyncUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#PushSync@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.PushSyncUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#PushSync,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -3940,7 +4049,7 @@
             Response Unmarshaller for Record Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.RecordUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#Record@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoSync.Model.Internal.MarshallTransformations.RecordUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoSync#Model#Record,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -4229,6 +4338,11 @@
             Gets the singleton.
             </summary>  
         </member>
+        <member name="T:Amazon.CognitoSync.AmazonCognitoSyncRequest">
+            <summary>
+            Base class for CognitoSync operation requests.
+            </summary>
+        </member>
         <member name="T:Amazon.CognitoSync.AmazonCognitoSyncClient">
              <summary>
              Implementation for accessing CognitoSync
@@ -4259,275 +4373,6 @@
              Guide for iOS</a>.
              </para>
              </summary>
-        </member>
-        <member name="T:Amazon.CognitoSync.IAmazonCognitoSync">
-             <summary>
-             Interface for accessing CognitoSync
-            
-             Amazon Cognito Sync 
-             <para>
-             Amazon Cognito Sync provides an AWS service and client library that enable cross-device
-             syncing of application-related user data. High-level client libraries are available
-             for both iOS and Android. You can use these libraries to persist data locally so that
-             it's available even if the device is offline. Developer credentials don't need to
-             be stored on the mobile device to access the service. You can use Amazon Cognito to
-             obtain a normalized user ID and credentials. User data is persisted in a dataset that
-             can store up to 1 MB of key-value pairs, and you can have up to 20 datasets per user
-             identity.
-             </para>
-              
-             <para>
-             With Amazon Cognito Sync, the data stored for each identity is accessible only to
-             credentials assigned to that identity. In order to use the Cognito Sync service, you
-             need to make API calls using credentials retrieved with <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html">Amazon
-             Cognito Identity service</a>.
-             </para>
-              
-             <para>
-             If you want to use Cognito Sync in an Android or iOS application, you will probably
-             want to make API calls via the AWS Mobile SDK. To learn more, see the <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html">Developer
-             Guide for Android</a> and the <a href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html">Developer
-             Guide for iOS</a>.
-             </para>
-             </summary>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.BulkPublishAsync(Amazon.CognitoSync.Model.BulkPublishRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.BulkPublishRequest,Amazon.CognitoSync.Model.BulkPublishResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the BulkPublish operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the BulkPublish operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DeleteDatasetAsync(Amazon.CognitoSync.Model.DeleteDatasetRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DeleteDatasetRequest,Amazon.CognitoSync.Model.DeleteDatasetResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DeleteDataset operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DeleteDataset operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DescribeDatasetAsync(Amazon.CognitoSync.Model.DescribeDatasetRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DescribeDatasetRequest,Amazon.CognitoSync.Model.DescribeDatasetResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DescribeDataset operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DescribeDataset operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DescribeIdentityPoolUsageAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DescribeIdentityPoolUsageRequest,Amazon.CognitoSync.Model.DescribeIdentityPoolUsageResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Gets usage details (for example, data storage) about a particular identity pool.
-            
-             
-            <para>
-            This API can only be called with developer credentials. You cannot call this API with
-            the temporary user credentials provided by Cognito Identity.
-            </para>
-            </summary>
-            <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the DescribeIdentityPoolUsage service method, as returned by CognitoSync.</returns>
-            <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-            Indicates an internal service error.
-            </exception>
-            <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-            Thrown when a request parameter does not comply with the associated constraints.
-            </exception>
-            <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
-            Thrown if the resource doesn't exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoSync.Model.TooManyRequestsException">
-            Thrown if the request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DescribeIdentityPoolUsageAsync(Amazon.CognitoSync.Model.DescribeIdentityPoolUsageRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DescribeIdentityPoolUsageRequest,Amazon.CognitoSync.Model.DescribeIdentityPoolUsageResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DescribeIdentityPoolUsage operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DescribeIdentityUsageAsync(Amazon.CognitoSync.Model.DescribeIdentityUsageRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DescribeIdentityUsageRequest,Amazon.CognitoSync.Model.DescribeIdentityUsageResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DescribeIdentityUsage operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.GetBulkPublishDetailsAsync(Amazon.CognitoSync.Model.GetBulkPublishDetailsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.GetBulkPublishDetailsRequest,Amazon.CognitoSync.Model.GetBulkPublishDetailsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetBulkPublishDetails operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetBulkPublishDetails operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.GetCognitoEventsAsync(Amazon.CognitoSync.Model.GetCognitoEventsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.GetCognitoEventsRequest,Amazon.CognitoSync.Model.GetCognitoEventsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetCognitoEvents operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetCognitoEvents operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.GetIdentityPoolConfigurationAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.GetIdentityPoolConfigurationRequest,Amazon.CognitoSync.Model.GetIdentityPoolConfigurationResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Gets the configuration settings of an identity pool.
-            
-             
-            <para>
-            This API can only be called with developer credentials. You cannot call this API with
-            the temporary user credentials provided by Cognito Identity.
-            </para>
-            </summary>
-            <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the GetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
-            <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
-            Indicates an internal service error.
-            </exception>
-            <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
-            Thrown when a request parameter does not comply with the associated constraints.
-            </exception>
-            <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
-            Thrown if the resource doesn't exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoSync.Model.TooManyRequestsException">
-            Thrown if the request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.GetIdentityPoolConfigurationAsync(Amazon.CognitoSync.Model.GetIdentityPoolConfigurationRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.GetIdentityPoolConfigurationRequest,Amazon.CognitoSync.Model.GetIdentityPoolConfigurationResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetIdentityPoolConfiguration operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetIdentityPoolConfiguration operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.ListDatasetsAsync(Amazon.CognitoSync.Model.ListDatasetsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.ListDatasetsRequest,Amazon.CognitoSync.Model.ListDatasetsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListDatasets operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListDatasets operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.ListIdentityPoolUsageAsync(Amazon.CognitoSync.Model.ListIdentityPoolUsageRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.ListIdentityPoolUsageRequest,Amazon.CognitoSync.Model.ListIdentityPoolUsageResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListIdentityPoolUsage operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.ListRecordsAsync(Amazon.CognitoSync.Model.ListRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.ListRecordsRequest,Amazon.CognitoSync.Model.ListRecordsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListRecords operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListRecords operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.RegisterDeviceAsync(Amazon.CognitoSync.Model.RegisterDeviceRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.RegisterDeviceRequest,Amazon.CognitoSync.Model.RegisterDeviceResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the RegisterDevice operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the RegisterDevice operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.SetCognitoEventsAsync(Amazon.CognitoSync.Model.SetCognitoEventsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.SetCognitoEventsRequest,Amazon.CognitoSync.Model.SetCognitoEventsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the SetCognitoEvents operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the SetCognitoEvents operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.SetIdentityPoolConfigurationAsync(Amazon.CognitoSync.Model.SetIdentityPoolConfigurationRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.SetIdentityPoolConfigurationRequest,Amazon.CognitoSync.Model.SetIdentityPoolConfigurationResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the SetIdentityPoolConfiguration operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the SetIdentityPoolConfiguration operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.SubscribeToDatasetAsync(Amazon.CognitoSync.Model.SubscribeToDatasetRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.SubscribeToDatasetRequest,Amazon.CognitoSync.Model.SubscribeToDatasetResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the SubscribeToDataset operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the SubscribeToDataset operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.UnsubscribeFromDatasetAsync(Amazon.CognitoSync.Model.UnsubscribeFromDatasetRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.UnsubscribeFromDatasetRequest,Amazon.CognitoSync.Model.UnsubscribeFromDatasetResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the UnsubscribeFromDataset operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the UnsubscribeFromDataset operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.UpdateRecordsAsync(Amazon.CognitoSync.Model.UpdateRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.UpdateRecordsRequest,Amazon.CognitoSync.Model.UpdateRecordsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the UpdateRecords operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the UpdateRecords operation on AmazonCognitoSyncClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
         </member>
         <member name="M:Amazon.CognitoSync.AmazonCognitoSyncClient.#ctor(Amazon.Runtime.AWSCredentials)">
             <summary>
@@ -5372,6 +5217,275 @@
             </exception>
         </member>
         <member name="M:Amazon.CognitoSync.AmazonCognitoSyncClient.UpdateRecordsAsync(Amazon.CognitoSync.Model.UpdateRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.UpdateRecordsRequest,Amazon.CognitoSync.Model.UpdateRecordsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the UpdateRecords operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the UpdateRecords operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="T:Amazon.CognitoSync.IAmazonCognitoSync">
+             <summary>
+             Interface for accessing CognitoSync
+            
+             Amazon Cognito Sync 
+             <para>
+             Amazon Cognito Sync provides an AWS service and client library that enable cross-device
+             syncing of application-related user data. High-level client libraries are available
+             for both iOS and Android. You can use these libraries to persist data locally so that
+             it's available even if the device is offline. Developer credentials don't need to
+             be stored on the mobile device to access the service. You can use Amazon Cognito to
+             obtain a normalized user ID and credentials. User data is persisted in a dataset that
+             can store up to 1 MB of key-value pairs, and you can have up to 20 datasets per user
+             identity.
+             </para>
+              
+             <para>
+             With Amazon Cognito Sync, the data stored for each identity is accessible only to
+             credentials assigned to that identity. In order to use the Cognito Sync service, you
+             need to make API calls using credentials retrieved with <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html">Amazon
+             Cognito Identity service</a>.
+             </para>
+              
+             <para>
+             If you want to use Cognito Sync in an Android or iOS application, you will probably
+             want to make API calls via the AWS Mobile SDK. To learn more, see the <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-sync.html">Developer
+             Guide for Android</a> and the <a href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html">Developer
+             Guide for iOS</a>.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.BulkPublishAsync(Amazon.CognitoSync.Model.BulkPublishRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.BulkPublishRequest,Amazon.CognitoSync.Model.BulkPublishResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the BulkPublish operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the BulkPublish operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DeleteDatasetAsync(Amazon.CognitoSync.Model.DeleteDatasetRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DeleteDatasetRequest,Amazon.CognitoSync.Model.DeleteDatasetResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DeleteDataset operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DeleteDataset operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DescribeDatasetAsync(Amazon.CognitoSync.Model.DescribeDatasetRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DescribeDatasetRequest,Amazon.CognitoSync.Model.DescribeDatasetResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DescribeDataset operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DescribeDataset operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DescribeIdentityPoolUsageAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DescribeIdentityPoolUsageRequest,Amazon.CognitoSync.Model.DescribeIdentityPoolUsageResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Gets usage details (for example, data storage) about a particular identity pool.
+            
+             
+            <para>
+            This API can only be called with developer credentials. You cannot call this API with
+            the temporary user credentials provided by Cognito Identity.
+            </para>
+            </summary>
+            <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the DescribeIdentityPoolUsage service method, as returned by CognitoSync.</returns>
+            <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+            Indicates an internal service error.
+            </exception>
+            <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+            Thrown when a request parameter does not comply with the associated constraints.
+            </exception>
+            <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
+            Thrown if the resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoSync.Model.TooManyRequestsException">
+            Thrown if the request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DescribeIdentityPoolUsageAsync(Amazon.CognitoSync.Model.DescribeIdentityPoolUsageRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DescribeIdentityPoolUsageRequest,Amazon.CognitoSync.Model.DescribeIdentityPoolUsageResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DescribeIdentityPoolUsage operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DescribeIdentityPoolUsage operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.DescribeIdentityUsageAsync(Amazon.CognitoSync.Model.DescribeIdentityUsageRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.DescribeIdentityUsageRequest,Amazon.CognitoSync.Model.DescribeIdentityUsageResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DescribeIdentityUsage operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DescribeIdentityUsage operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.GetBulkPublishDetailsAsync(Amazon.CognitoSync.Model.GetBulkPublishDetailsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.GetBulkPublishDetailsRequest,Amazon.CognitoSync.Model.GetBulkPublishDetailsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetBulkPublishDetails operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetBulkPublishDetails operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.GetCognitoEventsAsync(Amazon.CognitoSync.Model.GetCognitoEventsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.GetCognitoEventsRequest,Amazon.CognitoSync.Model.GetCognitoEventsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetCognitoEvents operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetCognitoEvents operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.GetIdentityPoolConfigurationAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.GetIdentityPoolConfigurationRequest,Amazon.CognitoSync.Model.GetIdentityPoolConfigurationResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Gets the configuration settings of an identity pool.
+            
+             
+            <para>
+            This API can only be called with developer credentials. You cannot call this API with
+            the temporary user credentials provided by Cognito Identity.
+            </para>
+            </summary>
+            <param name="identityPoolId">A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the GetIdentityPoolConfiguration service method, as returned by CognitoSync.</returns>
+            <exception cref="T:Amazon.CognitoSync.Model.InternalErrorException">
+            Indicates an internal service error.
+            </exception>
+            <exception cref="T:Amazon.CognitoSync.Model.InvalidParameterException">
+            Thrown when a request parameter does not comply with the associated constraints.
+            </exception>
+            <exception cref="T:Amazon.CognitoSync.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoSync.Model.ResourceNotFoundException">
+            Thrown if the resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoSync.Model.TooManyRequestsException">
+            Thrown if the request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.GetIdentityPoolConfigurationAsync(Amazon.CognitoSync.Model.GetIdentityPoolConfigurationRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.GetIdentityPoolConfigurationRequest,Amazon.CognitoSync.Model.GetIdentityPoolConfigurationResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetIdentityPoolConfiguration operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetIdentityPoolConfiguration operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.ListDatasetsAsync(Amazon.CognitoSync.Model.ListDatasetsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.ListDatasetsRequest,Amazon.CognitoSync.Model.ListDatasetsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListDatasets operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListDatasets operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.ListIdentityPoolUsageAsync(Amazon.CognitoSync.Model.ListIdentityPoolUsageRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.ListIdentityPoolUsageRequest,Amazon.CognitoSync.Model.ListIdentityPoolUsageResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListIdentityPoolUsage operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListIdentityPoolUsage operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.ListRecordsAsync(Amazon.CognitoSync.Model.ListRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.ListRecordsRequest,Amazon.CognitoSync.Model.ListRecordsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListRecords operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListRecords operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.RegisterDeviceAsync(Amazon.CognitoSync.Model.RegisterDeviceRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.RegisterDeviceRequest,Amazon.CognitoSync.Model.RegisterDeviceResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the RegisterDevice operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the RegisterDevice operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.SetCognitoEventsAsync(Amazon.CognitoSync.Model.SetCognitoEventsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.SetCognitoEventsRequest,Amazon.CognitoSync.Model.SetCognitoEventsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the SetCognitoEvents operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the SetCognitoEvents operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.SetIdentityPoolConfigurationAsync(Amazon.CognitoSync.Model.SetIdentityPoolConfigurationRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.SetIdentityPoolConfigurationRequest,Amazon.CognitoSync.Model.SetIdentityPoolConfigurationResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the SetIdentityPoolConfiguration operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the SetIdentityPoolConfiguration operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.SubscribeToDatasetAsync(Amazon.CognitoSync.Model.SubscribeToDatasetRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.SubscribeToDatasetRequest,Amazon.CognitoSync.Model.SubscribeToDatasetResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the SubscribeToDataset operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the SubscribeToDataset operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.UnsubscribeFromDatasetAsync(Amazon.CognitoSync.Model.UnsubscribeFromDatasetRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.UnsubscribeFromDatasetRequest,Amazon.CognitoSync.Model.UnsubscribeFromDatasetResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the UnsubscribeFromDataset operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the UnsubscribeFromDataset operation on AmazonCognitoSyncClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.IAmazonCognitoSync.UpdateRecordsAsync(Amazon.CognitoSync.Model.UpdateRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoSync.Model.UpdateRecordsRequest,Amazon.CognitoSync.Model.UpdateRecordsResponse},Amazon.Runtime.AsyncOptions)">
             <summary>
             Initiates the asynchronous execution of the UpdateRecords operation.
             </summary>

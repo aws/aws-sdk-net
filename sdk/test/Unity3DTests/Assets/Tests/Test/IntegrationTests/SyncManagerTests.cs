@@ -1,10 +1,8 @@
 ﻿//#define INCLUDE_FACEBOOK_TESTS
 using Amazon.CognitoIdentity;
 using Amazon.CognitoIdentity.Model;
-using Amazon.CognitoSync;
 using Amazon.CognitoSync.SyncManager;
 using Amazon.Runtime;
-using Amazon.Util.Internal;
 using AWSSDK.Tests.Framework;
 using AWSSDK.IntegrationTests.Utilities;
 using NUnit.Framework;
@@ -79,29 +77,6 @@ namespace AWSSDK.IntegrationTests.SyncManager
             if (facebookUser != null)
                 FacebookUtilities.DeleteFacebookUser(facebookUser);
 #endif
-            // TODO:
-            //    //drop all the tables from the db
-            //    var filePath = InternalSDKUtils.DetermineAppLocalStoragePath(DB_FILE_NAME);
-            //    if (File.Exists(filePath))
-            //    {
-            //        using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};Version=3;", filePath)))
-            //        {
-            //            connection.Open();
-
-            //            SQLiteCommand cmd = connection.CreateCommand();
-
-            //            cmd.CommandText = "DROP TABLE IF EXISTS records";
-            //            cmd.ExecuteNonQuery();
-
-            //            cmd = connection.CreateCommand();
-            //            cmd.CommandText = "DROP TABLE IF EXISTS datasets";
-            //            cmd.ExecuteNonQuery();
-
-            //            cmd = connection.CreateCommand();
-            //            cmd.CommandText = "DROP TABLE IF EXISTS kvstore";
-            //            cmd.ExecuteNonQuery();
-            //        }
-            //    }
         }
 
 #if INCLUDE_FACEBOOK_TESTS
@@ -424,7 +399,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
             });
             mainThreadArs.WaitOne();
             syncManager.WipeData(false);
-            using (Dataset d = syncManager.OpenOrCreateDataset("testDataset3"))
+            using (Dataset d = syncManager.OpenOrCreateDataset("testDataset6"))
             {
                 d.Put("testKey3", "the initial value");
 
@@ -477,6 +452,8 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     }
                     if (initialDate != synchronizedDate)
                     {
+                        Debug.LogWarning(initialDate);
+                        Debug.LogWarning(synchronizedDate);
                         failureMessage += "Expected initialDate == synchronizedDate\n";
                     }
                     ars.Set();
@@ -882,7 +859,6 @@ namespace AWSSDK.IntegrationTests.SyncManager
 
             //Thread.Sleep(2000);
         }
-
 
         private IEnumerable<IdentityPoolShortDescription> GetAllPoolsHelper()
         {

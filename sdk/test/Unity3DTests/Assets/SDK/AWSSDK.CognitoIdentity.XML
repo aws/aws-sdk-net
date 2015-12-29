@@ -16,12 +16,116 @@
             Depending on configured Logins, credentials may be authenticated or unauthenticated.
             </summary>
         </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.CloneLogins">
+            <summary>
+            Returns clone of the Logins dictionary
+            </summary>
+            <returns>The Clone of Logins dictionary.</returns>
+        </member>
         <member name="M:Amazon.CognitoIdentity.CognitoAWSCredentials.GetNamespacedKey(System.String)">
             <summary>
             Gives a namespaced key for supporting multiple identity pool id's
             </summary>
             <param name="key"></param>
             <returns></returns>
+        </member>
+        <member name="F:Amazon.CognitoIdentity.CognitoAWSCredentials.RefreshIdentityOptions.None">
+            <summary>
+            Dont refresh identity. 
+            </summary>
+        </member>
+        <member name="F:Amazon.CognitoIdentity.CognitoAWSCredentials.RefreshIdentityOptions.Refresh">
+            <summary>
+            Refresh if Id not set or If Identity Provider is BYOI
+            </summary>
+        </member>
+        <member name="T:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs">
+            <summary>
+            Information about an identity change in the CognitoAWSCredentials.
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs.OldIdentityId">
+            <summary>
+            Gets the OldIdentityId property.
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs.NewIdentityId">
+            <summary>
+            Gets the NewIdentityId property.
+            </summary>
+        </member>
+        <member name="T:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState">
+            <summary>
+            Information about the state of the identity
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.IdentityId">
+            <summary>
+            Gets the Identity Id
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.LoginProvider">
+            <summary>
+            Gets the Login Provider
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.LoginToken">
+            <summary>
+            Gets the Login Token
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.FromCache">
+            <summary>
+            Indicates if the identity Id is from cache
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.#ctor(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Creates an instance of the Identity State using identity id , token, provider, fromCache flag
+            </summary>
+            <param name="identityId"></param>
+            <param name="provider"></param>
+            <param name="token"></param>
+            <param name="fromCache"></param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.#ctor(System.String,System.Boolean)">
+            <summary>
+            Creates an instance using the identity id and from cache flag
+            </summary>
+            <param name="identityId"></param>
+            <param name="fromCache"></param>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.LoginSpecified">
+            <summary>
+            returns true is the Login provider and login token values are present
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.AccountId">
+            <summary>
+            The AWS accountId for the account with Amazon Cognito
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityPoolId">
+            <summary>
+            The Amazon Cogntio identity pool to use
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.UnAuthRoleArn">
+            <summary>
+            The ARN of the IAM Role that will be assumed when unauthenticated
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.AuthRoleArn">
+            <summary>
+            The ARN of the IAM Role that will be assumed when authenticated
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.Logins">
+            <summary>
+            Logins map used to authenticated with Amazon Cognito.
+            Note: After modifying this field, you must manually call Clear on this
+            instance of the CognitoAWSCredentials, as your Identity Id may have changed.
+            </summary>
         </member>
         <member name="F:Amazon.CognitoIdentity.CognitoAWSCredentials._identityState">
             <summary>
@@ -32,6 +136,11 @@
             <summary>
             Clears current credentials state. This will reset the IdentityId.
             Use <see cref="M:Amazon.Runtime.RefreshingAWSCredentials.ClearCredentials"/> instead if you just want to trigger a credentials refresh.
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.CurrentLoginProviders">
+            <summary>
+            The list of current providers that are used for authenticated credentials.
             </summary>
         </member>
         <member name="M:Amazon.CognitoIdentity.CognitoAWSCredentials.ContainsProvider(System.String)">
@@ -53,6 +162,12 @@
             </summary>
             <param name="providerName">The provider name for the login (i.e. graph.facebook.com)</param>
             <param name="token">The token provided by the identity provider.</param>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.LoginsCount">
+            <summary>
+            Returns count of Login Providers.
+            </summary>
+            <returns>The count of the login provider.</returns>
         </member>
         <member name="M:Amazon.CognitoIdentity.CognitoAWSCredentials.GetIdentityId">
             <summary>
@@ -77,6 +192,12 @@
             <param name="e"></param>
             <param name="status"></param>
             <returns></returns>
+        </member>
+        <member name="E:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedEvent">
+            <summary>
+            Event for identity change notifications.
+            This event will fire whenever the Identity Id changes.
+            </summary>
         </member>
         <member name="M:Amazon.CognitoIdentity.CognitoAWSCredentials.#ctor(System.String,Amazon.RegionEndpoint)">
             <summary>
@@ -165,121 +286,6 @@
             <param name="callback">The callback which is executed when the asynchronous operations is completed</param>
             <param name="options">Options for executing asynchronous operation</param>
         </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.AccountId">
-            <summary>
-            The AWS accountId for the account with Amazon Cognito
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityPoolId">
-            <summary>
-            The Amazon Cogntio identity pool to use
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.UnAuthRoleArn">
-            <summary>
-            The ARN of the IAM Role that will be assumed when unauthenticated
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.AuthRoleArn">
-            <summary>
-            The ARN of the IAM Role that will be assumed when authenticated
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.Logins">
-            <summary>
-            Logins map used to authenticated with Amazon Cognito.
-            Note: After modifying this field, you must manually call Clear on this
-            instance of the CognitoAWSCredentials, as your Identity Id may have changed.
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.CurrentLoginProviders">
-            <summary>
-            The list of current providers that are used for authenticated credentials.
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.LoginsCount">
-            <summary>
-            Returns count of Login Providers.
-            </summary>
-            <returns>The count of the login provider.</returns>
-        </member>
-        <member name="E:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedEvent">
-            <summary>
-            Event for identity change notifications.
-            This event will fire whenever the Identity Id changes.
-            </summary>
-        </member>
-        <member name="F:Amazon.CognitoIdentity.CognitoAWSCredentials.RefreshIdentityOptions.None">
-            <summary>
-            Dont refresh identity. 
-            </summary>
-        </member>
-        <member name="F:Amazon.CognitoIdentity.CognitoAWSCredentials.RefreshIdentityOptions.Refresh">
-            <summary>
-            Refresh if Id not set or If Identity Provider is BYOI
-            </summary>
-        </member>
-        <member name="T:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs">
-            <summary>
-            Information about an identity change in the CognitoAWSCredentials.
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs.OldIdentityId">
-            <summary>
-            Gets the OldIdentityId property.
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs.NewIdentityId">
-            <summary>
-            Gets the NewIdentityId property.
-            </summary>
-        </member>
-        <member name="T:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState">
-            <summary>
-            Information about the state of the identity
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.#ctor(System.String,System.String,System.String,System.Boolean)">
-            <summary>
-            Creates an instance of the Identity State using identity id , token, provider, fromCache flag
-            </summary>
-            <param name="identityId"></param>
-            <param name="provider"></param>
-            <param name="token"></param>
-            <param name="fromCache"></param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.#ctor(System.String,System.Boolean)">
-            <summary>
-            Creates an instance using the identity id and from cache flag
-            </summary>
-            <param name="identityId"></param>
-            <param name="fromCache"></param>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.IdentityId">
-            <summary>
-            Gets the Identity Id
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.LoginProvider">
-            <summary>
-            Gets the Login Provider
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.LoginToken">
-            <summary>
-            Gets the Login Token
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.FromCache">
-            <summary>
-            Indicates if the identity Id is from cache
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityState.LoginSpecified">
-            <summary>
-            returns true is the Login provider and login token values are present
-            </summary>
-        </member>
         <member name="T:Amazon.CognitoIdentity.Model.Credentials">
             <summary>
             <para>AWS credentials for API authentication.</para>
@@ -324,120 +330,6 @@
             <para>
             The Session Token portion of the credentials
             </para>
-            </summary>
-        </member>
-        <member name="T:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig">
-            <summary>
-            Configuration for accessing Amazon CognitoIdentity service
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig.RegionEndpointServiceName">
-            <summary>
-            The constant used to lookup in the region hash the endpoint.
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig.ServiceVersion">
-            <summary>
-            Gets the ServiceVersion property.
-            </summary>
-        </member>
-        <member name="P:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig.UserAgent">
-            <summary>
-            Gets the value of UserAgent property.
-            </summary>
-        </member>
-        <member name="T:Amazon.CognitoIdentity.AmazonCognitoIdentityException">
-            <summary>
-             Common exception for the CognitoIdentity service.
-             </summary>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.String)">
-            <summary>
-            Construct instance of AmazonCognitoIdentityException
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.String,System.Exception)">
-            <summary>
-            Construct instance of AmazonCognitoIdentityException
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.Exception)">
-            <summary>
-            Construct instance of AmazonCognitoIdentityException
-            </summary>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
-            <summary>
-            Construct instance of AmazonCognitoIdentityException
-            </summary>
-            <param name="message"></param>
-            <param name="errorType"></param>
-            <param name="errorCode"></param>
-            <param name="requestId"></param>
-            <param name="statusCode"></param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
-            <summary>
-            Construct instance of AmazonCognitoIdentityException
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-            <param name="errorType"></param>
-            <param name="errorCode"></param>
-            <param name="requestId"></param>
-            <param name="statusCode"></param>
-        </member>
-        <member name="T:Amazon.CognitoIdentity.ErrorCode">
-            <summary>
-            Constants used for properties of type ErrorCode.
-            </summary>
-        </member>
-        <member name="F:Amazon.CognitoIdentity.ErrorCode.AccessDenied">
-            <summary>
-            Constant AccessDenied for ErrorCode
-            </summary>
-        </member>
-        <member name="F:Amazon.CognitoIdentity.ErrorCode.InternalServerError">
-            <summary>
-            Constant InternalServerError for ErrorCode
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.ErrorCode.#ctor(System.String)">
-            <summary>
-            This constant constructor does not need to be called if the constant
-            you are attempting to use is already defined as a static instance of 
-            this class.
-            This constructor should be used to construct constants that are not
-            defined as statics, for instance if attempting to use a feature that is
-            newer than the current version of the SDK.
-            </summary>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.ErrorCode.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The unique value for the constant</param>
-            <returns>The constant for the unique value</returns>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.ErrorCode.op_Implicit(System.String)~Amazon.CognitoIdentity.ErrorCode">
-            <summary>
-            Utility method to convert strings to the constant class.
-            </summary>
-            <param name="value">The string value to convert to the constant class.</param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.CognitoIdentity.AmazonCognitoIdentityRequest">
-            <summary>
-            Base class for CognitoIdentity operation requests.
             </summary>
         </member>
         <member name="T:Amazon.CognitoIdentity.Model.ConcurrentModificationException">
@@ -2123,7 +2015,7 @@
             Response Unmarshaller for Credentials Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoIdentity.Model.Internal.MarshallTransformations.CredentialsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoIdentity#Model#Credentials@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoIdentity.Model.Internal.MarshallTransformations.CredentialsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoIdentity#Model#Credentials,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2552,7 +2444,7 @@
             Response Unmarshaller for IdentityDescription Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoIdentity.Model.Internal.MarshallTransformations.IdentityDescriptionUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoIdentity#Model#IdentityDescription@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoIdentity.Model.Internal.MarshallTransformations.IdentityDescriptionUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoIdentity#Model#IdentityDescription,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2576,7 +2468,7 @@
             Response Unmarshaller for IdentityPoolShortDescription Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoIdentity.Model.Internal.MarshallTransformations.IdentityPoolShortDescriptionUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoIdentity#Model#IdentityPoolShortDescription@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoIdentity.Model.Internal.MarshallTransformations.IdentityPoolShortDescriptionUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoIdentity#Model#IdentityPoolShortDescription,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2915,7 +2807,7 @@
             Response Unmarshaller for UnprocessedIdentityId Object
             </summary>  
         </member>
-        <member name="M:Amazon.CognitoIdentity.Model.Internal.MarshallTransformations.UnprocessedIdentityIdUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoIdentity#Model#UnprocessedIdentityId@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.CognitoIdentity.Model.Internal.MarshallTransformations.UnprocessedIdentityIdUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#CognitoIdentity#Model#UnprocessedIdentityId,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2979,6 +2871,120 @@
             Gets the singleton.
             </summary>  
         </member>
+        <member name="T:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig">
+            <summary>
+            Configuration for accessing Amazon CognitoIdentity service
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.CognitoIdentity.AmazonCognitoIdentityConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.CognitoIdentity.AmazonCognitoIdentityException">
+            <summary>
+             Common exception for the CognitoIdentity service.
+             </summary>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonCognitoIdentityException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonCognitoIdentityException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonCognitoIdentityException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonCognitoIdentityException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonCognitoIdentityException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.CognitoIdentity.ErrorCode">
+            <summary>
+            Constants used for properties of type ErrorCode.
+            </summary>
+        </member>
+        <member name="F:Amazon.CognitoIdentity.ErrorCode.AccessDenied">
+            <summary>
+            Constant AccessDenied for ErrorCode
+            </summary>
+        </member>
+        <member name="F:Amazon.CognitoIdentity.ErrorCode.InternalServerError">
+            <summary>
+            Constant InternalServerError for ErrorCode
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.ErrorCode.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.ErrorCode.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.ErrorCode.op_Implicit(System.String)~Amazon.CognitoIdentity.ErrorCode">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.CognitoIdentity.AmazonCognitoIdentityRequest">
+            <summary>
+            Base class for CognitoIdentity operation requests.
+            </summary>
+        </member>
         <member name="T:Amazon.CognitoIdentity.AmazonCognitoIdentityClient">
              <summary>
              Implementation for accessing CognitoIdentity
@@ -3026,551 +3032,6 @@
              href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.
              </para>
              </summary>
-        </member>
-        <member name="T:Amazon.CognitoIdentity.IAmazonCognitoIdentity">
-             <summary>
-             Interface for accessing CognitoIdentity
-            
-             Amazon Cognito 
-             <para>
-             Amazon Cognito is a web service that delivers scoped temporary credentials to mobile
-             devices and other untrusted environments. Amazon Cognito uniquely identifies a device
-             and supplies the user with a consistent identity over the lifetime of an application.
-             </para>
-              
-             <para>
-             Using Amazon Cognito, you can enable authentication with one or more third-party identity
-             providers (Facebook, Google, or Login with Amazon), and you can also choose to support
-             unauthenticated access from your app. Cognito delivers a unique identifier for each
-             user and acts as an OpenID token provider trusted by AWS Security Token Service (STS)
-             to access temporary, limited-privilege AWS credentials.
-             </para>
-              
-             <para>
-             To provide end-user credentials, first make an unsigned call to <a>GetId</a>. If the
-             end user is authenticated with one of the supported identity providers, set the <code>Logins</code>
-             map with the identity provider token. <code>GetId</code> returns a unique identifier
-             for the user.
-             </para>
-              
-             <para>
-             Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects
-             the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code>
-             originally returned by <code>GetId</code>. Assuming your identity pool has been configured
-             via the <a>SetIdentityPoolRoles</a> operation, <code>GetCredentialsForIdentity</code>
-             will return AWS credentials for your use. If your pool has not been configured with
-             <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned
-             call to <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS
-             and retrieve AWS credentials. This call expects the same <code>Logins</code> map as
-             the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned
-             by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed
-             to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
-             to retrieve AWS credentials.
-             </para>
-              
-             <para>
-             If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will
-             probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a
-             href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.
-             </para>
-             </summary>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.CreateIdentityPoolAsync(Amazon.CognitoIdentity.Model.CreateIdentityPoolRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.CreateIdentityPoolRequest,Amazon.CognitoIdentity.Model.CreateIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the CreateIdentityPool operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the CreateIdentityPool operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DeleteIdentitiesAsync(Amazon.CognitoIdentity.Model.DeleteIdentitiesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DeleteIdentitiesRequest,Amazon.CognitoIdentity.Model.DeleteIdentitiesResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DeleteIdentities operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DeleteIdentities operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DeleteIdentityPoolAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DeleteIdentityPoolRequest,Amazon.CognitoIdentity.Model.DeleteIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
-            with the pool.
-            
-             
-            <para>
-            You must use AWS Developer credentials to call this API.
-            </para>
-            </summary>
-            <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the DeleteIdentityPool service method, as returned by CognitoIdentity.</returns>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
-            Thrown when the service encounters an error during processing the request.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
-            Thrown for missing or bad input parameter(s).
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-            Thrown when the requested resource (for example, a dataset or record) does not exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
-            Thrown when a request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DeleteIdentityPoolAsync(Amazon.CognitoIdentity.Model.DeleteIdentityPoolRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DeleteIdentityPoolRequest,Amazon.CognitoIdentity.Model.DeleteIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DeleteIdentityPool operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DescribeIdentityAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DescribeIdentityRequest,Amazon.CognitoIdentity.Model.DescribeIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Returns metadata related to the given identity, including when the identity was created
-            and any associated linked logins.
-            
-             
-            <para>
-            You must use AWS Developer credentials to call this API.
-            </para>
-            </summary>
-            <param name="identityId">A unique identifier in the format REGION:GUID.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the DescribeIdentity service method, as returned by CognitoIdentity.</returns>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
-            Thrown when the service encounters an error during processing the request.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
-            Thrown for missing or bad input parameter(s).
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-            Thrown when the requested resource (for example, a dataset or record) does not exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
-            Thrown when a request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DescribeIdentityAsync(Amazon.CognitoIdentity.Model.DescribeIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DescribeIdentityRequest,Amazon.CognitoIdentity.Model.DescribeIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DescribeIdentity operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DescribeIdentity operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DescribeIdentityPoolAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DescribeIdentityPoolRequest,Amazon.CognitoIdentity.Model.DescribeIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Gets details about a particular identity pool, including the pool name, ID description,
-            creation date, and current number of users.
-            
-             
-            <para>
-            You must use AWS Developer credentials to call this API.
-            </para>
-            </summary>
-            <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the DescribeIdentityPool service method, as returned by CognitoIdentity.</returns>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
-            Thrown when the service encounters an error during processing the request.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
-            Thrown for missing or bad input parameter(s).
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-            Thrown when the requested resource (for example, a dataset or record) does not exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
-            Thrown when a request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DescribeIdentityPoolAsync(Amazon.CognitoIdentity.Model.DescribeIdentityPoolRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DescribeIdentityPoolRequest,Amazon.CognitoIdentity.Model.DescribeIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DescribeIdentityPool operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetCredentialsForIdentityAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest,Amazon.CognitoIdentity.Model.GetCredentialsForIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Returns credentials for the provided identity ID. Any provided logins will be validated
-            against supported login providers. If the token is for cognito-identity.amazonaws.com,
-            it will be passed through to AWS Security Token Service with the appropriate role
-            for the token.
-            
-             
-            <para>
-            This is a public API. You do not need any credentials to call this API.
-            </para>
-            </summary>
-            <param name="identityId">A unique identifier in the format REGION:GUID.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ExternalServiceException">
-            An exception thrown when a dependent service such as Facebook or Twitter is not responding
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
-            Thrown when the service encounters an error during processing the request.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
-            Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
-            or if the AssumeRole fails.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
-            Thrown for missing or bad input parameter(s).
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
-            Thrown when a user tries to use a login which is already linked to another account.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-            Thrown when the requested resource (for example, a dataset or record) does not exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
-            Thrown when a request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetCredentialsForIdentityAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String},Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest,Amazon.CognitoIdentity.Model.GetCredentialsForIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Returns credentials for the provided identity ID. Any provided logins will be validated
-            against supported login providers. If the token is for cognito-identity.amazonaws.com,
-            it will be passed through to AWS Security Token Service with the appropriate role
-            for the token.
-            
-             
-            <para>
-            This is a public API. You do not need any credentials to call this API.
-            </para>
-            </summary>
-            <param name="identityId">A unique identifier in the format REGION:GUID.</param>
-            <param name="logins">A set of optional name-value pairs that map provider names to provider tokens.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ExternalServiceException">
-            An exception thrown when a dependent service such as Facebook or Twitter is not responding
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
-            Thrown when the service encounters an error during processing the request.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
-            Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
-            or if the AssumeRole fails.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
-            Thrown for missing or bad input parameter(s).
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
-            Thrown when a user tries to use a login which is already linked to another account.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-            Thrown when the requested resource (for example, a dataset or record) does not exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
-            Thrown when a request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetCredentialsForIdentityAsync(Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest,Amazon.CognitoIdentity.Model.GetCredentialsForIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetCredentialsForIdentity operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetCredentialsForIdentity operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetIdAsync(Amazon.CognitoIdentity.Model.GetIdRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetIdRequest,Amazon.CognitoIdentity.Model.GetIdResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetId operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetId operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetIdentityPoolRolesAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetIdentityPoolRolesRequest,Amazon.CognitoIdentity.Model.GetIdentityPoolRolesResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Gets the roles for an identity pool.
-            
-             
-            <para>
-            You must use AWS Developer credentials to call this API.
-            </para>
-            </summary>
-            <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the GetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
-            Thrown when the service encounters an error during processing the request.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
-            Thrown for missing or bad input parameter(s).
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
-            Thrown when a user tries to use a login which is already linked to another account.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-            Thrown when the requested resource (for example, a dataset or record) does not exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
-            Thrown when a request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetIdentityPoolRolesAsync(Amazon.CognitoIdentity.Model.GetIdentityPoolRolesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetIdentityPoolRolesRequest,Amazon.CognitoIdentity.Model.GetIdentityPoolRolesResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetIdentityPoolRoles operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetIdentityPoolRoles operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetOpenIdTokenAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetOpenIdTokenRequest,Amazon.CognitoIdentity.Model.GetOpenIdTokenResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
-            by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying
-            multiple logins creates an implicit link.
-            
-             
-            <para>
-            The OpenId token is valid for 15 minutes.
-            </para>
-             
-            <para>
-            This is a public API. You do not need any credentials to call this API.
-            </para>
-            </summary>
-            <param name="identityId">A unique identifier in the format REGION:GUID.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the GetOpenIdToken service method, as returned by CognitoIdentity.</returns>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ExternalServiceException">
-            An exception thrown when a dependent service such as Facebook or Twitter is not responding
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
-            Thrown when the service encounters an error during processing the request.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
-            Thrown for missing or bad input parameter(s).
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
-            Thrown when a user tries to use a login which is already linked to another account.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-            Thrown when the requested resource (for example, a dataset or record) does not exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
-            Thrown when a request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetOpenIdTokenAsync(Amazon.CognitoIdentity.Model.GetOpenIdTokenRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetOpenIdTokenRequest,Amazon.CognitoIdentity.Model.GetOpenIdTokenResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetOpenIdToken operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetOpenIdToken operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetOpenIdTokenForDeveloperIdentityAsync(Amazon.CognitoIdentity.Model.GetOpenIdTokenForDeveloperIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetOpenIdTokenForDeveloperIdentityRequest,Amazon.CognitoIdentity.Model.GetOpenIdTokenForDeveloperIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetOpenIdTokenForDeveloperIdentity operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.ListIdentitiesAsync(Amazon.CognitoIdentity.Model.ListIdentitiesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.ListIdentitiesRequest,Amazon.CognitoIdentity.Model.ListIdentitiesResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListIdentities operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListIdentities operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.ListIdentityPoolsAsync(Amazon.CognitoIdentity.Model.ListIdentityPoolsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.ListIdentityPoolsRequest,Amazon.CognitoIdentity.Model.ListIdentityPoolsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListIdentityPools operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListIdentityPools operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.LookupDeveloperIdentityAsync(Amazon.CognitoIdentity.Model.LookupDeveloperIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.LookupDeveloperIdentityRequest,Amazon.CognitoIdentity.Model.LookupDeveloperIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the LookupDeveloperIdentity operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the LookupDeveloperIdentity operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.MergeDeveloperIdentitiesAsync(Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesRequest,Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the MergeDeveloperIdentities operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the MergeDeveloperIdentities operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.SetIdentityPoolRolesAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String},Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.SetIdentityPoolRolesRequest,Amazon.CognitoIdentity.Model.SetIdentityPoolRolesResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
-            action.
-            
-             
-            <para>
-            You must use AWS Developer credentials to call this API.
-            </para>
-            </summary>
-            <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
-            <param name="roles">The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the SetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ConcurrentModificationException">
-            Thrown if there are parallel requests to modify a resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
-            Thrown when the service encounters an error during processing the request.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
-            Thrown for missing or bad input parameter(s).
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
-            Thrown when a user is not authorized to access the requested resource.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
-            Thrown when a user tries to use a login which is already linked to another account.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-            Thrown when the requested resource (for example, a dataset or record) does not exist.
-            </exception>
-            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
-            Thrown when a request is throttled.
-            </exception>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.SetIdentityPoolRolesAsync(Amazon.CognitoIdentity.Model.SetIdentityPoolRolesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.SetIdentityPoolRolesRequest,Amazon.CognitoIdentity.Model.SetIdentityPoolRolesResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the SetIdentityPoolRoles operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the SetIdentityPoolRoles operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.UnlinkDeveloperIdentityAsync(Amazon.CognitoIdentity.Model.UnlinkDeveloperIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.UnlinkDeveloperIdentityRequest,Amazon.CognitoIdentity.Model.UnlinkDeveloperIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the UnlinkDeveloperIdentity operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the UnlinkDeveloperIdentity operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.UnlinkIdentityAsync(Amazon.CognitoIdentity.Model.UnlinkIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.UnlinkIdentityRequest,Amazon.CognitoIdentity.Model.UnlinkIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the UnlinkIdentity operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the UnlinkIdentity operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.UpdateIdentityPoolAsync(Amazon.CognitoIdentity.Model.UpdateIdentityPoolRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.UpdateIdentityPoolRequest,Amazon.CognitoIdentity.Model.UpdateIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the UpdateIdentityPool operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool operation on AmazonCognitoIdentityClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
         </member>
         <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityClient.#ctor(Amazon.Runtime.AWSCredentials)">
             <summary>
@@ -4727,6 +4188,551 @@
             </exception>
         </member>
         <member name="M:Amazon.CognitoIdentity.AmazonCognitoIdentityClient.UpdateIdentityPoolAsync(Amazon.CognitoIdentity.Model.UpdateIdentityPoolRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.UpdateIdentityPoolRequest,Amazon.CognitoIdentity.Model.UpdateIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the UpdateIdentityPool operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="T:Amazon.CognitoIdentity.IAmazonCognitoIdentity">
+             <summary>
+             Interface for accessing CognitoIdentity
+            
+             Amazon Cognito 
+             <para>
+             Amazon Cognito is a web service that delivers scoped temporary credentials to mobile
+             devices and other untrusted environments. Amazon Cognito uniquely identifies a device
+             and supplies the user with a consistent identity over the lifetime of an application.
+             </para>
+              
+             <para>
+             Using Amazon Cognito, you can enable authentication with one or more third-party identity
+             providers (Facebook, Google, or Login with Amazon), and you can also choose to support
+             unauthenticated access from your app. Cognito delivers a unique identifier for each
+             user and acts as an OpenID token provider trusted by AWS Security Token Service (STS)
+             to access temporary, limited-privilege AWS credentials.
+             </para>
+              
+             <para>
+             To provide end-user credentials, first make an unsigned call to <a>GetId</a>. If the
+             end user is authenticated with one of the supported identity providers, set the <code>Logins</code>
+             map with the identity provider token. <code>GetId</code> returns a unique identifier
+             for the user.
+             </para>
+              
+             <para>
+             Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects
+             the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code>
+             originally returned by <code>GetId</code>. Assuming your identity pool has been configured
+             via the <a>SetIdentityPoolRoles</a> operation, <code>GetCredentialsForIdentity</code>
+             will return AWS credentials for your use. If your pool has not been configured with
+             <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned
+             call to <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS
+             and retrieve AWS credentials. This call expects the same <code>Logins</code> map as
+             the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned
+             by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed
+             to the STS operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
+             to retrieve AWS credentials.
+             </para>
+              
+             <para>
+             If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will
+             probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a
+             href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.CreateIdentityPoolAsync(Amazon.CognitoIdentity.Model.CreateIdentityPoolRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.CreateIdentityPoolRequest,Amazon.CognitoIdentity.Model.CreateIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the CreateIdentityPool operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the CreateIdentityPool operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DeleteIdentitiesAsync(Amazon.CognitoIdentity.Model.DeleteIdentitiesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DeleteIdentitiesRequest,Amazon.CognitoIdentity.Model.DeleteIdentitiesResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DeleteIdentities operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DeleteIdentities operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DeleteIdentityPoolAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DeleteIdentityPoolRequest,Amazon.CognitoIdentity.Model.DeleteIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
+            with the pool.
+            
+             
+            <para>
+            You must use AWS Developer credentials to call this API.
+            </para>
+            </summary>
+            <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the DeleteIdentityPool service method, as returned by CognitoIdentity.</returns>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+            Thrown when the service encounters an error during processing the request.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+            Thrown for missing or bad input parameter(s).
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+            Thrown when the requested resource (for example, a dataset or record) does not exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+            Thrown when a request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DeleteIdentityPoolAsync(Amazon.CognitoIdentity.Model.DeleteIdentityPoolRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DeleteIdentityPoolRequest,Amazon.CognitoIdentity.Model.DeleteIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DeleteIdentityPool operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DescribeIdentityAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DescribeIdentityRequest,Amazon.CognitoIdentity.Model.DescribeIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Returns metadata related to the given identity, including when the identity was created
+            and any associated linked logins.
+            
+             
+            <para>
+            You must use AWS Developer credentials to call this API.
+            </para>
+            </summary>
+            <param name="identityId">A unique identifier in the format REGION:GUID.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the DescribeIdentity service method, as returned by CognitoIdentity.</returns>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+            Thrown when the service encounters an error during processing the request.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+            Thrown for missing or bad input parameter(s).
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+            Thrown when the requested resource (for example, a dataset or record) does not exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+            Thrown when a request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DescribeIdentityAsync(Amazon.CognitoIdentity.Model.DescribeIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DescribeIdentityRequest,Amazon.CognitoIdentity.Model.DescribeIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DescribeIdentity operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DescribeIdentity operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DescribeIdentityPoolAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DescribeIdentityPoolRequest,Amazon.CognitoIdentity.Model.DescribeIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Gets details about a particular identity pool, including the pool name, ID description,
+            creation date, and current number of users.
+            
+             
+            <para>
+            You must use AWS Developer credentials to call this API.
+            </para>
+            </summary>
+            <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the DescribeIdentityPool service method, as returned by CognitoIdentity.</returns>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+            Thrown when the service encounters an error during processing the request.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+            Thrown for missing or bad input parameter(s).
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+            Thrown when the requested resource (for example, a dataset or record) does not exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+            Thrown when a request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.DescribeIdentityPoolAsync(Amazon.CognitoIdentity.Model.DescribeIdentityPoolRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.DescribeIdentityPoolRequest,Amazon.CognitoIdentity.Model.DescribeIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DescribeIdentityPool operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetCredentialsForIdentityAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest,Amazon.CognitoIdentity.Model.GetCredentialsForIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Returns credentials for the provided identity ID. Any provided logins will be validated
+            against supported login providers. If the token is for cognito-identity.amazonaws.com,
+            it will be passed through to AWS Security Token Service with the appropriate role
+            for the token.
+            
+             
+            <para>
+            This is a public API. You do not need any credentials to call this API.
+            </para>
+            </summary>
+            <param name="identityId">A unique identifier in the format REGION:GUID.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ExternalServiceException">
+            An exception thrown when a dependent service such as Facebook or Twitter is not responding
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+            Thrown when the service encounters an error during processing the request.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
+            Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
+            or if the AssumeRole fails.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+            Thrown for missing or bad input parameter(s).
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+            Thrown when a user tries to use a login which is already linked to another account.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+            Thrown when the requested resource (for example, a dataset or record) does not exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+            Thrown when a request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetCredentialsForIdentityAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String},Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest,Amazon.CognitoIdentity.Model.GetCredentialsForIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Returns credentials for the provided identity ID. Any provided logins will be validated
+            against supported login providers. If the token is for cognito-identity.amazonaws.com,
+            it will be passed through to AWS Security Token Service with the appropriate role
+            for the token.
+            
+             
+            <para>
+            This is a public API. You do not need any credentials to call this API.
+            </para>
+            </summary>
+            <param name="identityId">A unique identifier in the format REGION:GUID.</param>
+            <param name="logins">A set of optional name-value pairs that map provider names to provider tokens.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ExternalServiceException">
+            An exception thrown when a dependent service such as Facebook or Twitter is not responding
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+            Thrown when the service encounters an error during processing the request.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
+            Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
+            or if the AssumeRole fails.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+            Thrown for missing or bad input parameter(s).
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+            Thrown when a user tries to use a login which is already linked to another account.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+            Thrown when the requested resource (for example, a dataset or record) does not exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+            Thrown when a request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetCredentialsForIdentityAsync(Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest,Amazon.CognitoIdentity.Model.GetCredentialsForIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetCredentialsForIdentity operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetCredentialsForIdentity operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetIdAsync(Amazon.CognitoIdentity.Model.GetIdRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetIdRequest,Amazon.CognitoIdentity.Model.GetIdResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetId operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetId operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetIdentityPoolRolesAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetIdentityPoolRolesRequest,Amazon.CognitoIdentity.Model.GetIdentityPoolRolesResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Gets the roles for an identity pool.
+            
+             
+            <para>
+            You must use AWS Developer credentials to call this API.
+            </para>
+            </summary>
+            <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the GetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+            Thrown when the service encounters an error during processing the request.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+            Thrown for missing or bad input parameter(s).
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+            Thrown when a user tries to use a login which is already linked to another account.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+            Thrown when the requested resource (for example, a dataset or record) does not exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+            Thrown when a request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetIdentityPoolRolesAsync(Amazon.CognitoIdentity.Model.GetIdentityPoolRolesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetIdentityPoolRolesRequest,Amazon.CognitoIdentity.Model.GetIdentityPoolRolesResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetIdentityPoolRoles operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetIdentityPoolRoles operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetOpenIdTokenAsync(System.String,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetOpenIdTokenRequest,Amazon.CognitoIdentity.Model.GetOpenIdTokenResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
+            by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying
+            multiple logins creates an implicit link.
+            
+             
+            <para>
+            The OpenId token is valid for 15 minutes.
+            </para>
+             
+            <para>
+            This is a public API. You do not need any credentials to call this API.
+            </para>
+            </summary>
+            <param name="identityId">A unique identifier in the format REGION:GUID.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the GetOpenIdToken service method, as returned by CognitoIdentity.</returns>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ExternalServiceException">
+            An exception thrown when a dependent service such as Facebook or Twitter is not responding
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+            Thrown when the service encounters an error during processing the request.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+            Thrown for missing or bad input parameter(s).
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+            Thrown when a user tries to use a login which is already linked to another account.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+            Thrown when the requested resource (for example, a dataset or record) does not exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+            Thrown when a request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetOpenIdTokenAsync(Amazon.CognitoIdentity.Model.GetOpenIdTokenRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetOpenIdTokenRequest,Amazon.CognitoIdentity.Model.GetOpenIdTokenResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetOpenIdToken operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetOpenIdToken operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.GetOpenIdTokenForDeveloperIdentityAsync(Amazon.CognitoIdentity.Model.GetOpenIdTokenForDeveloperIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.GetOpenIdTokenForDeveloperIdentityRequest,Amazon.CognitoIdentity.Model.GetOpenIdTokenForDeveloperIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetOpenIdTokenForDeveloperIdentity operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.ListIdentitiesAsync(Amazon.CognitoIdentity.Model.ListIdentitiesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.ListIdentitiesRequest,Amazon.CognitoIdentity.Model.ListIdentitiesResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListIdentities operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListIdentities operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.ListIdentityPoolsAsync(Amazon.CognitoIdentity.Model.ListIdentityPoolsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.ListIdentityPoolsRequest,Amazon.CognitoIdentity.Model.ListIdentityPoolsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListIdentityPools operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListIdentityPools operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.LookupDeveloperIdentityAsync(Amazon.CognitoIdentity.Model.LookupDeveloperIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.LookupDeveloperIdentityRequest,Amazon.CognitoIdentity.Model.LookupDeveloperIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the LookupDeveloperIdentity operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the LookupDeveloperIdentity operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.MergeDeveloperIdentitiesAsync(Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesRequest,Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the MergeDeveloperIdentities operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the MergeDeveloperIdentities operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.SetIdentityPoolRolesAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String},Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.SetIdentityPoolRolesRequest,Amazon.CognitoIdentity.Model.SetIdentityPoolRolesResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
+            action.
+            
+             
+            <para>
+            You must use AWS Developer credentials to call this API.
+            </para>
+            </summary>
+            <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
+            <param name="roles">The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the SetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ConcurrentModificationException">
+            Thrown if there are parallel requests to modify a resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InternalErrorException">
+            Thrown when the service encounters an error during processing the request.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.InvalidParameterException">
+            Thrown for missing or bad input parameter(s).
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.NotAuthorizedException">
+            Thrown when a user is not authorized to access the requested resource.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceConflictException">
+            Thrown when a user tries to use a login which is already linked to another account.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+            Thrown when the requested resource (for example, a dataset or record) does not exist.
+            </exception>
+            <exception cref="T:Amazon.CognitoIdentity.Model.TooManyRequestsException">
+            Thrown when a request is throttled.
+            </exception>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.SetIdentityPoolRolesAsync(Amazon.CognitoIdentity.Model.SetIdentityPoolRolesRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.SetIdentityPoolRolesRequest,Amazon.CognitoIdentity.Model.SetIdentityPoolRolesResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the SetIdentityPoolRoles operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the SetIdentityPoolRoles operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.UnlinkDeveloperIdentityAsync(Amazon.CognitoIdentity.Model.UnlinkDeveloperIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.UnlinkDeveloperIdentityRequest,Amazon.CognitoIdentity.Model.UnlinkDeveloperIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the UnlinkDeveloperIdentity operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the UnlinkDeveloperIdentity operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.UnlinkIdentityAsync(Amazon.CognitoIdentity.Model.UnlinkIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.UnlinkIdentityRequest,Amazon.CognitoIdentity.Model.UnlinkIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the UnlinkIdentity operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the UnlinkIdentity operation on AmazonCognitoIdentityClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoIdentity.IAmazonCognitoIdentity.UpdateIdentityPoolAsync(Amazon.CognitoIdentity.Model.UpdateIdentityPoolRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.CognitoIdentity.Model.UpdateIdentityPoolRequest,Amazon.CognitoIdentity.Model.UpdateIdentityPoolResponse},Amazon.Runtime.AsyncOptions)">
             <summary>
             Initiates the asynchronous execution of the UpdateIdentityPool operation.
             </summary>

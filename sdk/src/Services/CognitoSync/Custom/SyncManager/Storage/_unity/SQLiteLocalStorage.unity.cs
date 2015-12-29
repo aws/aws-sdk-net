@@ -179,7 +179,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     {
                         if (reader.HasRows && reader.Read())
                         {
-                            metadata = SqliteStmtToDatasetMetadata(reader);
+                            metadata = DatasetMetadataFromReader(reader);
                         }
                     }
                 }
@@ -195,37 +195,15 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             return metadata;
         }
 
-        private static DatasetMetadata SqliteStmtToDatasetMetadata(SqliteDataReader reader)
+        private static DatasetMetadata DatasetMetadataFromReader(SqliteDataReader reader)
         {
-            var values = new object[reader.FieldCount];
-            int valueCount = reader.GetValues(values);
-            string datasetName = string.Empty;
-            DateTime creationTimestamp = DateTime.MinValue;
-            DateTime lastModifiedTimestamp = DateTime.MinValue;
-            string lastModifiedBy = string.Empty;
-            int storageSizeBytes = -1;
-            int recordCount = -1;
-
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            for (int i = 0; i < valueCount; i++)
-            {
-                Debug.LogWarning(string.Format("Value {0} in SqliteStmtToDatasetMetadata is {1}.", i, values[i].ToString()));
-            }
-
-            return null;
-            //return new DatasetMetadata(
-            //    stmt.DataType(RecordColumns.DATASET_NAME) == SQLiteType.NULL ? string.Empty : stmt.GetText(DatasetColumns.DATASET_NAME),
-            //    new DateTime(long.Parse(stmt.GetText(DatasetColumns.CREATION_TIMESTAMP))),
-            //    new DateTime(long.Parse(stmt.GetText(DatasetColumns.LAST_MODIFIED_TIMESTAMP))),
-            //    stmt.DataType(DatasetColumns.LAST_MODIFIED_BY) == SQLiteType.NULL ? string.Empty : stmt.GetText(DatasetColumns.LAST_MODIFIED_BY),
-            //    stmt.GetInteger(DatasetColumns.STORAGE_SIZE_BYTES),
-            //    stmt.GetInteger(DatasetColumns.RECORD_COUNT)
-            //);
+            return new DatasetMetadata(
+                reader.GetString(DatasetColumns.DATASET_NAME_IDX) ?? string.Empty,
+                new DateTime(long.Parse(reader.GetString(DatasetColumns.CREATION_TIMESTAMP_IDX), CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
+                new DateTime(long.Parse(reader.GetString(DatasetColumns.LAST_MODIFIED_TIMESTAMP_IDX), CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
+                reader.IsDBNull(DatasetColumns.LAST_MODIFIED_BY_IDX) ? string.Empty : reader.GetString(DatasetColumns.LAST_MODIFIED_BY_IDX),
+                reader.GetInt32(DatasetColumns.STORAGE_SIZE_BYTES_IDX),
+                reader.GetInt32(DatasetColumns.RECORD_COUNT_IDX));
         }
 
 
@@ -265,7 +243,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     {
                         while (reader.HasRows && reader.Read())
                         {
-                            datasetMetadataList.Add(SqliteStmtToDatasetMetadata(reader));
+                            datasetMetadataList.Add(DatasetMetadataFromReader(reader));
                         }
                     }
                 }
@@ -297,7 +275,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     {
                         if (reader.Read())
                         {
-                            record = SqliteStmtToRecord(reader);
+                            record = RecordFromReader(reader);
                         }
                     }
                 }
@@ -330,7 +308,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     {
                         while (reader.HasRows && reader.Read())
                         {
-                            records.Add(SqliteStmtToRecord(reader));
+                            records.Add(RecordFromReader(reader));
                         }
                     }
                 }
@@ -363,21 +341,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     {
                         if (reader.HasRows && reader.Read())
                         {
-
-                            //TODO
-                            //TODO
-                            //TODO
-                            //TODO
-                            var values = new object[reader.FieldCount];
-                            int valueCount = reader.GetValues(values);
-                            for (int i = 0; i < valueCount; i++)
-                            {
-                                Debug.LogWarning(string.Format("Value {0} in GetLastSyncCountHelper is {1}.", i, values[i].ToString()));
-                            }
-                            //TODO
-                            //TODO
-                            //var nvc = reader.GetValues();
-                            //lastSyncCount = long.Parse(nvc[DatasetColumns.LAST_SYNC_COUNT], CultureInfo.InvariantCulture);
+                            lastSyncCount = reader.GetInt64(DatasetColumns.LAST_SYNC_COUNT_IDX);
                         }
                     }
                 }
@@ -409,7 +373,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     {
                         while (reader.HasRows && reader.Read())
                         {
-                            records.Add(SqliteStmtToRecord(reader));
+                            records.Add(RecordFromReader(reader));
                         }
                     }
                 }
@@ -479,7 +443,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     else
                     {
                         string insertRecord = RecordColumns.BuildInsert();
-                        // TODO: unduplicate with bcl. Only this line is different +++ try/catch for connection mgmt
                         using (var command = new SqliteCommand(insertRecord, connection))
                         {
                             BindData(command, identityId, datasetName, record.Key, record.Value, record.SyncCount, record.LastModifiedDate, record.LastModifiedBy, record.DeviceLastModifiedDate, record.IsModified ? 1 : 0);
@@ -498,37 +461,18 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        private static Record SqliteStmtToRecord(SqliteDataReader reader)
+        private static Record RecordFromReader(SqliteDataReader reader)
         {
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            var values = new object[reader.FieldCount];
-            int valueCount = reader.GetValues(values);
-            for (int i = 0; i < valueCount; i++)
-            {
-                Debug.LogWarning(string.Format("Value {0} in SqliteStmtToRecord is {1}.", i, values[i].ToString()));
-            }
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            //TODO
-            return null;
-            //var nvc = reader.GetValues();
-            //return new Record(nvc[RecordColumns.KEY], nvc[RecordColumns.VALUE],
-            //                   int.Parse(nvc[RecordColumns.SYNC_COUNT], CultureInfo.InvariantCulture), new DateTime(long.Parse(nvc[RecordColumns.LAST_MODIFIED_TIMESTAMP], CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
-            //                   nvc[RecordColumns.LAST_MODIFIED_BY], new DateTime(long.Parse(nvc[RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP], CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
-            //                   int.Parse(nvc[RecordColumns.MODIFIED], CultureInfo.InvariantCulture) == 1);
+            return new Record(
+                reader.GetString(RecordColumns.KEY_IDX),
+                reader.IsDBNull(RecordColumns.VALUE_IDX) ? string.Empty : reader.GetString(RecordColumns.VALUE_IDX),
+                reader.GetInt32(RecordColumns.SYNC_COUNT_IDX),
+                new DateTime(long.Parse(reader.GetString(RecordColumns.LAST_MODIFIED_TIMESTAMP_IDX), CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
+                reader.IsDBNull(RecordColumns.LAST_MODIFIED_BY_IDX) ? string.Empty : reader.GetString(RecordColumns.LAST_MODIFIED_BY_IDX),
+                new DateTime(long.Parse(reader.GetString(RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP_IDX), CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
+                reader.GetInt32(RecordColumns.MODIFIED_IDX) == 1);
         }
 
-        //TODO: unduplicate this code with bcl unless try/catch for connection mgmt is kept
         /// <summary>
         /// cache the identity
         /// </summary>
@@ -559,7 +503,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        //TODO: unduplicate this code with bcl unless try/catch for connection mgmt is kept
         /// <summary>
         /// Delete the cached identity id
         /// </summary>
@@ -589,7 +532,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        //TODO: unduplicate this code with bcl unless try/catch for connection mgmt is kept
         internal void ExecuteMultipleHelper(List<Statement> statements)
         {
             try
@@ -622,7 +564,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        //TODO: unduplicate this code with bcl unless try/catch for connection mgmt is kept
         internal void UpdateLastSyncCountHelper(string query, params object[] parameters)
         {
             try
@@ -647,7 +588,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        //TODO: unduplicate this code with bcl unless try/catch for connection mgmt is kept
         internal void UpdateLastModifiedTimestampHelper(string query, params object[] parameters)
         {
             try

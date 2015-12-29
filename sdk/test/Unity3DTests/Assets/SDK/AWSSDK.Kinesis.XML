@@ -185,11 +185,6 @@
             </para>
             </summary>
         </member>
-        <member name="T:Amazon.Kinesis.AmazonKinesisRequest">
-            <summary>
-            Base class for Kinesis operation requests.
-            </summary>
-        </member>
         <member name="P:Amazon.Kinesis.Model.AddTagsToStreamRequest.StreamName">
             <summary>
             Gets and sets the property StreamName. 
@@ -2250,7 +2245,7 @@
             Response Unmarshaller for HashKeyRange Object
             </summary>  
         </member>
-        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.HashKeyRangeUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#HashKeyRange@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.HashKeyRangeUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#HashKeyRange,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2562,7 +2557,7 @@
             Response Unmarshaller for PutRecordsResultEntry Object
             </summary>  
         </member>
-        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResultEntryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#PutRecordsResultEntry@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResultEntryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#PutRecordsResultEntry,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2586,7 +2581,7 @@
             Response Unmarshaller for Record Object
             </summary>  
         </member>
-        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.RecordUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#Record@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.RecordUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#Record,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2655,7 +2650,7 @@
             Response Unmarshaller for SequenceNumberRange Object
             </summary>  
         </member>
-        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.SequenceNumberRangeUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#SequenceNumberRange@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.SequenceNumberRangeUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#SequenceNumberRange,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2679,7 +2674,7 @@
             Response Unmarshaller for Shard Object
             </summary>  
         </member>
-        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ShardUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#Shard@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ShardUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#Shard,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2748,7 +2743,7 @@
             Response Unmarshaller for StreamDescription Object
             </summary>  
         </member>
-        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.StreamDescriptionUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#StreamDescription@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.StreamDescriptionUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#StreamDescription,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2772,7 +2767,7 @@
             Response Unmarshaller for Tag Object
             </summary>  
         </member>
-        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.TagUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#Tag@Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.TagUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#Tag,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
             <summary>
             Unmarshaller the response from the service to the response class.
             </summary>  
@@ -2791,6 +2786,11 @@
             Gets the singleton.
             </summary>  
         </member>
+        <member name="T:Amazon.Kinesis.AmazonKinesisRequest">
+            <summary>
+            Base class for Kinesis operation requests.
+            </summary>
+        </member>
         <member name="T:Amazon.Kinesis.AmazonKinesisClient">
              <summary>
              Implementation for accessing Kinesis
@@ -2801,248 +2801,6 @@
              of streaming big data.
              </para>
              </summary>
-        </member>
-        <member name="T:Amazon.Kinesis.IAmazonKinesis">
-             <summary>
-             Interface for accessing Kinesis
-            
-             Amazon Kinesis Service API Reference 
-             <para>
-             Amazon Kinesis is a managed service that scales elastically for real time processing
-             of streaming big data.
-             </para>
-             </summary>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.AddTagsToStreamAsync(Amazon.Kinesis.Model.AddTagsToStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.AddTagsToStreamRequest,Amazon.Kinesis.Model.AddTagsToStreamResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the AddTagsToStream operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the AddTagsToStream operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.CreateStreamAsync(Amazon.Kinesis.Model.CreateStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.CreateStreamRequest,Amazon.Kinesis.Model.CreateStreamResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the CreateStream operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the CreateStream operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.DecreaseStreamRetentionPeriodAsync(System.String,System.Int32,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Decreases the stream's retention period, which is the length of time data records
-            are accessible after they are added to the stream. The minimum value of a stream’s
-            retention period is 24 hours. 
-            
-             
-            <para>
-            This operation may result in lost data. For example, if the stream's retention period
-            is 48 hours and is decreased to 24 hours, any data already in the stream that is older
-            than 24 hours is inaccessible.
-            </para>
-            </summary>
-            <param name="streamName">The name of the stream to modify.</param>
-            <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be less than the current retention period.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
-            <exception cref="T:Amazon.Kinesis.Model.InvalidArgumentException">
-            A specified parameter exceeds its restrictions, is not supported, or can't be used.
-            For more information, see the returned message.
-            </exception>
-            <exception cref="T:Amazon.Kinesis.Model.LimitExceededException">
-            The requested resource exceeds the maximum number allowed, or the number of concurrent
-            stream requests exceeds the maximum number allowed (5).
-            </exception>
-            <exception cref="T:Amazon.Kinesis.Model.ResourceInUseException">
-            The resource is not available for this operation. For successful operation, the resource
-            needs to be in the <code>ACTIVE</code> state.
-            </exception>
-            <exception cref="T:Amazon.Kinesis.Model.ResourceNotFoundException">
-            The requested resource could not be found. The stream might not be specified correctly,
-            or it might not be in the <code>ACTIVE</code> state if the operation requires it.
-            </exception>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.DecreaseStreamRetentionPeriodAsync(Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DecreaseStreamRetentionPeriod operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.DeleteStreamAsync(Amazon.Kinesis.Model.DeleteStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DeleteStreamRequest,Amazon.Kinesis.Model.DeleteStreamResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DeleteStream operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DeleteStream operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.DescribeStreamAsync(Amazon.Kinesis.Model.DescribeStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DescribeStreamRequest,Amazon.Kinesis.Model.DescribeStreamResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DescribeStream operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DescribeStream operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.GetRecordsAsync(Amazon.Kinesis.Model.GetRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.GetRecordsRequest,Amazon.Kinesis.Model.GetRecordsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetRecords operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetRecords operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.GetShardIteratorAsync(Amazon.Kinesis.Model.GetShardIteratorRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.GetShardIteratorRequest,Amazon.Kinesis.Model.GetShardIteratorResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetShardIterator operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetShardIterator operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.IncreaseStreamRetentionPeriodAsync(System.String,System.Int32,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Increases the stream's retention period, which is the length of time data records
-            are accessible after they are added to the stream. The maximum value of a stream’s
-            retention period is 168 hours (7 days).
-            
-             
-            <para>
-            Upon choosing a longer stream retention period, this operation will increase the time
-            period records are accessible that have not yet expired. However, it will not make
-            previous data that has expired (older than the stream’s previous retention period)
-            accessible after the operation has been called. For example, if a stream’s retention
-            period is set to 24 hours and is increased to 168 hours, any data that is older than
-            24 hours will remain inaccessible to consumer applications.
-            </para>
-            </summary>
-            <param name="streamName">The name of the stream to modify.</param>
-            <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be more than the current retention period.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">
-                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                procedure using the AsyncState property.
-            </param>
-            
-            <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
-            <exception cref="T:Amazon.Kinesis.Model.InvalidArgumentException">
-            A specified parameter exceeds its restrictions, is not supported, or can't be used.
-            For more information, see the returned message.
-            </exception>
-            <exception cref="T:Amazon.Kinesis.Model.LimitExceededException">
-            The requested resource exceeds the maximum number allowed, or the number of concurrent
-            stream requests exceeds the maximum number allowed (5).
-            </exception>
-            <exception cref="T:Amazon.Kinesis.Model.ResourceInUseException">
-            The resource is not available for this operation. For successful operation, the resource
-            needs to be in the <code>ACTIVE</code> state.
-            </exception>
-            <exception cref="T:Amazon.Kinesis.Model.ResourceNotFoundException">
-            The requested resource could not be found. The stream might not be specified correctly,
-            or it might not be in the <code>ACTIVE</code> state if the operation requires it.
-            </exception>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.IncreaseStreamRetentionPeriodAsync(Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the IncreaseStreamRetentionPeriod operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.ListStreamsAsync(Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Kinesis.Model.ListStreamsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListStreams operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListStreams operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.ListTagsForStreamAsync(Amazon.Kinesis.Model.ListTagsForStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListTagsForStreamRequest,Amazon.Kinesis.Model.ListTagsForStreamResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the ListTagsForStream operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the ListTagsForStream operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.MergeShardsAsync(Amazon.Kinesis.Model.MergeShardsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.MergeShardsRequest,Amazon.Kinesis.Model.MergeShardsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the MergeShards operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the MergeShards operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.PutRecordAsync(Amazon.Kinesis.Model.PutRecordRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.PutRecordRequest,Amazon.Kinesis.Model.PutRecordResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the PutRecord operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the PutRecord operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.PutRecordsAsync(Amazon.Kinesis.Model.PutRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.PutRecordsRequest,Amazon.Kinesis.Model.PutRecordsResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the PutRecords operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the PutRecords operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.RemoveTagsFromStreamAsync(Amazon.Kinesis.Model.RemoveTagsFromStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.RemoveTagsFromStreamRequest,Amazon.Kinesis.Model.RemoveTagsFromStreamResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the RemoveTagsFromStream operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the RemoveTagsFromStream operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.Kinesis.IAmazonKinesis.SplitShardAsync(Amazon.Kinesis.Model.SplitShardRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.SplitShardRequest,Amazon.Kinesis.Model.SplitShardResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the SplitShard operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the SplitShard operation on AmazonKinesisClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
         </member>
         <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(Amazon.Runtime.AWSCredentials)">
             <summary>
@@ -3283,6 +3041,32 @@
                      procedure using the AsyncState property.</param>
         </member>
         <member name="M:Amazon.Kinesis.AmazonKinesisClient.ListStreamsAsync(Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Kinesis.Model.ListStreamsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Lists your streams.
+            
+             
+            <para>
+             The number of streams may be too large to return from a single call to <code>ListStreams</code>.
+            You can limit the number of returned streams using the <code>Limit</code> parameter.
+            If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+            uses the default limit, which is currently 10.
+            </para>
+             
+            <para>
+             You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+            flag from the returned output. If there are more streams available, you can request
+            more streams by using the name of the last stream returned by the <code>ListStreams</code>
+            request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
+            to <code>ListStreams</code>. The group of stream names returned by the subsequent
+            request is then added to the list. You can continue this process until all the stream
+            names have been collected in the list. 
+            </para>
+             
+            <para>
+            <a>ListStreams</a> has a limit of 5 transactions per second per account.
+            </para>
+            </summary>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
             <param name="options">
                 A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
                 procedure using the AsyncState property.
@@ -3355,6 +3139,248 @@
                      procedure using the AsyncState property.</param>
         </member>
         <member name="M:Amazon.Kinesis.AmazonKinesisClient.SplitShardAsync(Amazon.Kinesis.Model.SplitShardRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.SplitShardRequest,Amazon.Kinesis.Model.SplitShardResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the SplitShard operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the SplitShard operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="T:Amazon.Kinesis.IAmazonKinesis">
+             <summary>
+             Interface for accessing Kinesis
+            
+             Amazon Kinesis Service API Reference 
+             <para>
+             Amazon Kinesis is a managed service that scales elastically for real time processing
+             of streaming big data.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.AddTagsToStreamAsync(Amazon.Kinesis.Model.AddTagsToStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.AddTagsToStreamRequest,Amazon.Kinesis.Model.AddTagsToStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the AddTagsToStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the AddTagsToStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.CreateStreamAsync(Amazon.Kinesis.Model.CreateStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.CreateStreamRequest,Amazon.Kinesis.Model.CreateStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the CreateStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the CreateStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.DecreaseStreamRetentionPeriodAsync(System.String,System.Int32,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Decreases the stream's retention period, which is the length of time data records
+            are accessible after they are added to the stream. The minimum value of a stream’s
+            retention period is 24 hours. 
+            
+             
+            <para>
+            This operation may result in lost data. For example, if the stream's retention period
+            is 48 hours and is decreased to 24 hours, any data already in the stream that is older
+            than 24 hours is inaccessible.
+            </para>
+            </summary>
+            <param name="streamName">The name of the stream to modify.</param>
+            <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be less than the current retention period.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+            <exception cref="T:Amazon.Kinesis.Model.InvalidArgumentException">
+            A specified parameter exceeds its restrictions, is not supported, or can't be used.
+            For more information, see the returned message.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.LimitExceededException">
+            The requested resource exceeds the maximum number allowed, or the number of concurrent
+            stream requests exceeds the maximum number allowed (5).
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceInUseException">
+            The resource is not available for this operation. For successful operation, the resource
+            needs to be in the <code>ACTIVE</code> state.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceNotFoundException">
+            The requested resource could not be found. The stream might not be specified correctly,
+            or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+            </exception>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.DecreaseStreamRetentionPeriodAsync(Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DecreaseStreamRetentionPeriod operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.DeleteStreamAsync(Amazon.Kinesis.Model.DeleteStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DeleteStreamRequest,Amazon.Kinesis.Model.DeleteStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DeleteStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DeleteStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.DescribeStreamAsync(Amazon.Kinesis.Model.DescribeStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DescribeStreamRequest,Amazon.Kinesis.Model.DescribeStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DescribeStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DescribeStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.GetRecordsAsync(Amazon.Kinesis.Model.GetRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.GetRecordsRequest,Amazon.Kinesis.Model.GetRecordsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetRecords operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetRecords operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.GetShardIteratorAsync(Amazon.Kinesis.Model.GetShardIteratorRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.GetShardIteratorRequest,Amazon.Kinesis.Model.GetShardIteratorResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetShardIterator operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetShardIterator operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.IncreaseStreamRetentionPeriodAsync(System.String,System.Int32,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Increases the stream's retention period, which is the length of time data records
+            are accessible after they are added to the stream. The maximum value of a stream’s
+            retention period is 168 hours (7 days).
+            
+             
+            <para>
+            Upon choosing a longer stream retention period, this operation will increase the time
+            period records are accessible that have not yet expired. However, it will not make
+            previous data that has expired (older than the stream’s previous retention period)
+            accessible after the operation has been called. For example, if a stream’s retention
+            period is set to 24 hours and is increased to 168 hours, any data that is older than
+            24 hours will remain inaccessible to consumer applications.
+            </para>
+            </summary>
+            <param name="streamName">The name of the stream to modify.</param>
+            <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be more than the current retention period.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+            <exception cref="T:Amazon.Kinesis.Model.InvalidArgumentException">
+            A specified parameter exceeds its restrictions, is not supported, or can't be used.
+            For more information, see the returned message.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.LimitExceededException">
+            The requested resource exceeds the maximum number allowed, or the number of concurrent
+            stream requests exceeds the maximum number allowed (5).
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceInUseException">
+            The resource is not available for this operation. For successful operation, the resource
+            needs to be in the <code>ACTIVE</code> state.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceNotFoundException">
+            The requested resource could not be found. The stream might not be specified correctly,
+            or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+            </exception>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.IncreaseStreamRetentionPeriodAsync(Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the IncreaseStreamRetentionPeriod operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.ListStreamsAsync(Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Kinesis.Model.ListStreamsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListStreams operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListStreams operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.ListTagsForStreamAsync(Amazon.Kinesis.Model.ListTagsForStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListTagsForStreamRequest,Amazon.Kinesis.Model.ListTagsForStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListTagsForStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListTagsForStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.MergeShardsAsync(Amazon.Kinesis.Model.MergeShardsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.MergeShardsRequest,Amazon.Kinesis.Model.MergeShardsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the MergeShards operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the MergeShards operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.PutRecordAsync(Amazon.Kinesis.Model.PutRecordRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.PutRecordRequest,Amazon.Kinesis.Model.PutRecordResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the PutRecord operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the PutRecord operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.PutRecordsAsync(Amazon.Kinesis.Model.PutRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.PutRecordsRequest,Amazon.Kinesis.Model.PutRecordsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the PutRecords operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the PutRecords operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.RemoveTagsFromStreamAsync(Amazon.Kinesis.Model.RemoveTagsFromStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.RemoveTagsFromStreamRequest,Amazon.Kinesis.Model.RemoveTagsFromStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the RemoveTagsFromStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the RemoveTagsFromStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.SplitShardAsync(Amazon.Kinesis.Model.SplitShardRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.SplitShardRequest,Amazon.Kinesis.Model.SplitShardResponse},Amazon.Runtime.AsyncOptions)">
             <summary>
             Initiates the asynchronous execution of the SplitShard operation.
             </summary>

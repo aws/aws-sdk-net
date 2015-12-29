@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -104,14 +104,14 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CognitoIdentity\AWSSDK.CognitoIdentity.PCL.csproj">
-      <Project>{1C5F7691-6DD8-400B-8EC1-788317AF0BFE}</Project>
-      <Name>AWSSDK.CognitoIdentity.PCL</Name>
+        <Project>{1C5F7691-6DD8-400B-8EC1-788317AF0BFE}</Project>
+        <Name>AWSSDK.CognitoIdentity.PCL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.PCL.csproj">
-      <Project>{BFC96F19-CADF-41EB-804C-10DBEF3F9126}</Project>
-      <Name>AWSSDK.Core.PCL</Name>
+        <Project>{BFC96F19-CADF-41EB-804C-10DBEF3F9126}</Project>
+        <Name>AWSSDK.Core.PCL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

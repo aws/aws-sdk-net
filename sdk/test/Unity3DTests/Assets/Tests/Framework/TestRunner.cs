@@ -4,15 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using NUnit.Framework;
 using UnityEngine;
 using ThirdParty.Json.LitJson;
 using NUnit.Framework.Api;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
 using System.IO;
-using ThirdParty.iOS4Unity;
 
 namespace AWSSDK.Tests.Framework
 {

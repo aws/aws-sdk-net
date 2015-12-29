@@ -141,7 +141,6 @@ namespace Amazon.CognitoSync.SyncManager
         /// </summary>
         public void Dispose()
         {
-            // TODO: what to do for 35?
             Dispose(true);
             GC.SuppressFinalize(this);
         }

@@ -109,81 +109,6 @@
             </para>
             </summary>
         </member>
-        <member name="T:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig">
-            <summary>
-            Configuration for accessing Amazon SecurityTokenService service
-            </summary>
-        </member>
-        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="P:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig.RegionEndpointServiceName">
-            <summary>
-            The constant used to lookup in the region hash the endpoint.
-            </summary>
-        </member>
-        <member name="P:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig.ServiceVersion">
-            <summary>
-            Gets the ServiceVersion property.
-            </summary>
-        </member>
-        <member name="P:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig.UserAgent">
-            <summary>
-            Gets the value of UserAgent property.
-            </summary>
-        </member>
-        <member name="T:Amazon.SecurityToken.AmazonSecurityTokenServiceException">
-            <summary>
-             Common exception for the SecurityTokenService service.
-             </summary>
-        </member>
-        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.String)">
-            <summary>
-            Construct instance of AmazonSecurityTokenServiceException
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.String,System.Exception)">
-            <summary>
-            Construct instance of AmazonSecurityTokenServiceException
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.Exception)">
-            <summary>
-            Construct instance of AmazonSecurityTokenServiceException
-            </summary>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
-            <summary>
-            Construct instance of AmazonSecurityTokenServiceException
-            </summary>
-            <param name="message"></param>
-            <param name="errorType"></param>
-            <param name="errorCode"></param>
-            <param name="requestId"></param>
-            <param name="statusCode"></param>
-        </member>
-        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
-            <summary>
-            Construct instance of AmazonSecurityTokenServiceException
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-            <param name="errorType"></param>
-            <param name="errorCode"></param>
-            <param name="requestId"></param>
-            <param name="statusCode"></param>
-        </member>
-        <member name="T:Amazon.SecurityToken.AmazonSecurityTokenServiceRequest">
-            <summary>
-            Base class for SecurityTokenService operation requests.
-            </summary>
-        </member>
         <member name="T:Amazon.SecurityToken.Model.AssumedRoleUser">
             <summary>
             The identifiers for the temporary security credentials that the operation returns.
@@ -1954,6 +1879,81 @@
             Gets the singleton.
             </summary>  
         </member>
+        <member name="T:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig">
+            <summary>
+            Configuration for accessing Amazon SecurityTokenService service
+            </summary>
+        </member>
+        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.SecurityToken.AmazonSecurityTokenServiceConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.SecurityToken.AmazonSecurityTokenServiceException">
+            <summary>
+             Common exception for the SecurityTokenService service.
+             </summary>
+        </member>
+        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonSecurityTokenServiceException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonSecurityTokenServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonSecurityTokenServiceException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonSecurityTokenServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonSecurityTokenServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.SecurityToken.AmazonSecurityTokenServiceRequest">
+            <summary>
+            Base class for SecurityTokenService operation requests.
+            </summary>
+        </member>
         <member name="T:Amazon.SecurityToken.AmazonSecurityTokenServiceClient">
              <summary>
              Implementation for accessing SecurityTokenService
@@ -2019,132 +2019,6 @@
              CloudTrail User Guide</a>.
              </para>
              </summary>
-        </member>
-        <member name="T:Amazon.SecurityToken.IAmazonSecurityTokenService">
-             <summary>
-             Interface for accessing SecurityTokenService
-            
-             AWS Security Token Service 
-             <para>
-             The AWS Security Token Service (STS) is a web service that enables you to request
-             temporary, limited-privilege credentials for AWS Identity and Access Management (IAM)
-             users or for users that you authenticate (federated users). This guide provides descriptions
-             of the STS API. For more detailed information about using this service, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
-             Security Credentials</a>. 
-             </para>
-              <note> As an alternative to using the API, you can use one of the AWS SDKs, which
-             consist of libraries and sample code for various programming languages and platforms
-             (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
-             programmatic access to STS. For example, the SDKs take care of cryptographically signing
-             requests, managing errors, and retrying requests automatically. For information about
-             the AWS SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
-             for Amazon Web Services page</a>. </note> 
-             <para>
-             For information about setting up signatures and authorization through the API, go
-             to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
-             target="_blank">Signing AWS API Requests</a> in the <i>AWS General Reference</i>.
-             For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
-             target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For information about
-             using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-             Services That Work with IAM</a> in the <i>Using IAM</i>. 
-             </para>
-              
-             <para>
-             If you're new to AWS and need additional technical information about a specific AWS
-             product, you can find the product's technical documentation at <a href="http://aws.amazon.com/documentation/"
-             target="_blank">http://aws.amazon.com/documentation/</a>. 
-             </para>
-              
-             <para>
-              <b>Endpoints</b> 
-             </para>
-              
-             <para>
-             The AWS Security Token Service (STS) has a default endpoint of https://sts.amazonaws.com
-             that maps to the US East (N. Virginia) region. Additional regions are available, but
-             must first be activated in the AWS Management Console before you can use a different
-             region's endpoint. For more information about activating a region for STS see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-             STS in a New Region</a> in the <i>Using IAM</i>.
-             </para>
-              
-             <para>
-             For information about STS endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions
-             and Endpoints</a> in the <i>AWS General Reference</i>.
-             </para>
-              
-             <para>
-              <b>Recording API requests</b> 
-             </para>
-              
-             <para>
-             STS supports AWS CloudTrail, which is a service that records AWS calls for your AWS
-             account and delivers log files to an Amazon S3 bucket. By using information collected
-             by CloudTrail, you can determine what requests were successfully made to STS, who
-             made the request, when it was made, and so on. To learn more about CloudTrail, including
-             how to turn it on and find your log files, see the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS
-             CloudTrail User Guide</a>.
-             </para>
-             </summary>
-        </member>
-        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoleAsync(Amazon.SecurityToken.Model.AssumeRoleRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.AssumeRoleRequest,Amazon.SecurityToken.Model.AssumeRoleResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the AssumeRole operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the AssumeRole operation on AmazonSecurityTokenServiceClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoleWithSAMLAsync(Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest,Amazon.SecurityToken.Model.AssumeRoleWithSAMLResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the AssumeRoleWithSAML operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the AssumeRoleWithSAML operation on AmazonSecurityTokenServiceClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoleWithWebIdentityAsync(Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest,Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the AssumeRoleWithWebIdentity operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the AssumeRoleWithWebIdentity operation on AmazonSecurityTokenServiceClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.DecodeAuthorizationMessageAsync(Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest,Amazon.SecurityToken.Model.DecodeAuthorizationMessageResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the DecodeAuthorizationMessage operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the DecodeAuthorizationMessage operation on AmazonSecurityTokenServiceClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetFederationTokenAsync(Amazon.SecurityToken.Model.GetFederationTokenRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.GetFederationTokenRequest,Amazon.SecurityToken.Model.GetFederationTokenResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetFederationToken operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetFederationToken operation on AmazonSecurityTokenServiceClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
-        </member>
-        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetSessionTokenAsync(Amazon.SecurityToken.Model.GetSessionTokenRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.GetSessionTokenRequest,Amazon.SecurityToken.Model.GetSessionTokenResponse},Amazon.Runtime.AsyncOptions)">
-            <summary>
-            Initiates the asynchronous execution of the GetSessionToken operation.
-            </summary>
-            
-            <param name="request">Container for the necessary parameters to execute the GetSessionToken operation on AmazonSecurityTokenServiceClient.</param>
-            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-                     procedure using the AsyncState property.</param>
         </member>
         <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.#ctor(Amazon.Runtime.AWSCredentials)">
             <summary>
@@ -2316,8 +2190,10 @@
             the user's hardware or virtual MFA device. The <code>TokenCode</code> is the time-based
             one-time password (TOTP) that the MFA devices produces. 
             </para>
-             <member name="RoleArn" target="arnType"></member> <member name="RoleSessionName" target="userNameType"></member> <member name="Policy" target="sessionPolicyDocumentType"></member>
-            <member name="DurationSeconds" target="roleDurationSecondsType"></member> <member name="ExternalId" target="externalIdType"></member>
+             <member name="RoleArn" target="arnType"></member> <member name="RoleSessionName"
+            target="userNameType"></member> <member name="Policy" target="sessionPolicyDocumentType"></member>
+            <member name="DurationSeconds" target="roleDurationSecondsType"></member> <member
+            name="ExternalId" target="externalIdType"></member>
             </summary>
             
             <returns>The response from the AssumeRole service method, as returned by SecurityTokenService.</returns>
@@ -2395,8 +2271,10 @@
             SAML 2.0-based Federation</a> in the <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
             SAML Identity Providers</a> in the <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
             a Relying Party and Claims</a> in the <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
-            a Role for SAML 2.0 Federation</a> in the <i>Using IAM</i>. </li> </ul> <member name="RoleArn" target="arnType"></member> <member name="SAMLAssertion" target="SAMLAssertionType"></member>
-            <member name="Policy" target="sessionPolicyDocumentType"></member> <member name="DurationSeconds" target="roleDurationSecondsType"></member>
+            a Role for SAML 2.0 Federation</a> in the <i>Using IAM</i>. </li> </ul> <member name="RoleArn"
+            target="arnType"></member> <member name="SAMLAssertion" target="SAMLAssertionType"></member>
+            <member name="Policy" target="sessionPolicyDocumentType"></member> <member name="DurationSeconds"
+            target="roleDurationSecondsType"></member>
             </summary>
             
             <returns>The response from the AssumeRoleWithSAML service method, as returned by SecurityTokenService.</returns>
@@ -2456,7 +2334,8 @@
              
             <para>
             To learn more about Amazon Cognito, see <a href="http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
-            Cognito Overview</a> in the <i>AWS SDK for Android Developer Guide</i> guide and <a href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
+            Cognito Overview</a> in the <i>AWS SDK for Android Developer Guide</i> guide and <a
+            href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
             Cognito Overview</a> in the <i>AWS SDK for iOS Developer Guide</i>.
             </para>
              </note> 
@@ -2632,7 +2511,8 @@
              If you are creating a mobile-based or browser-based app that can authenticate users
             using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
             Connect-compatible identity provider, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
-            Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+            Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
+            href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
             Through a Web-based Identity Provider</a>.
             </para>
              </note> 
@@ -2813,6 +2693,49 @@
             <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
         </member>
         <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.GetSessionTokenAsync(Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.GetSessionTokenRequest,Amazon.SecurityToken.Model.GetSessionTokenResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Returns a set of temporary credentials for an AWS account or IAM user. The credentials
+            consist of an access key ID, a secret access key, and a security token. Typically,
+            you use <code>GetSessionToken</code> if you want to use MFA to protect programmatic
+            calls to specific AWS APIs like Amazon EC2 <code>StopInstances</code>. MFA-enabled
+            IAM users would need to call <code>GetSessionToken</code> and submit an MFA code that
+            is associated with their MFA device. Using the temporary security credentials that
+            are returned from the call, IAM users can then make programmatic calls to APIs that
+            require MFA authentication. If you do not supply a correct MFA code, then the API
+            returns an access denied error.
+            
+             
+            <para>
+            The <code>GetSessionToken</code> action must be called by using the long-term AWS
+            security credentials of the AWS account or an IAM user. Credentials that are created
+            by IAM users are valid for the duration that you specify, between 900 seconds (15
+            minutes) and 129600 seconds (36 hours); credentials that are created by using account
+            credentials have a maximum duration of 3600 seconds (1 hour). 
+            </para>
+             <note> 
+            <para>
+            We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
+            Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
+            practices</a> by creating one or more IAM users, giving them the necessary permissions,
+            and using IAM users for everyday interaction with AWS. 
+            </para>
+             </note> 
+            <para>
+            The permissions associated with the temporary security credentials returned by <code>GetSessionToken</code>
+            are based on the permissions associated with account or IAM user whose credentials
+            are used to call the action. If <code>GetSessionToken</code> is called using root
+            account credentials, the temporary credentials have root account permissions. Similarly,
+            if <code>GetSessionToken</code> is called using the credentials of an IAM user, the
+            temporary credentials have the same permissions as the IAM user. 
+            </para>
+             
+            <para>
+            For more information about using <code>GetSessionToken</code> to create temporary
+            credentials, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+            Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>. 
+            </para>
+            </summary>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
             <param name="options">
                 A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
                 procedure using the AsyncState property.
@@ -2821,6 +2744,132 @@
             <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
         </member>
         <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.GetSessionTokenAsync(Amazon.SecurityToken.Model.GetSessionTokenRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.GetSessionTokenRequest,Amazon.SecurityToken.Model.GetSessionTokenResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetSessionToken operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetSessionToken operation on AmazonSecurityTokenServiceClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="T:Amazon.SecurityToken.IAmazonSecurityTokenService">
+             <summary>
+             Interface for accessing SecurityTokenService
+            
+             AWS Security Token Service 
+             <para>
+             The AWS Security Token Service (STS) is a web service that enables you to request
+             temporary, limited-privilege credentials for AWS Identity and Access Management (IAM)
+             users or for users that you authenticate (federated users). This guide provides descriptions
+             of the STS API. For more detailed information about using this service, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
+             Security Credentials</a>. 
+             </para>
+              <note> As an alternative to using the API, you can use one of the AWS SDKs, which
+             consist of libraries and sample code for various programming languages and platforms
+             (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
+             programmatic access to STS. For example, the SDKs take care of cryptographically signing
+             requests, managing errors, and retrying requests automatically. For information about
+             the AWS SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
+             for Amazon Web Services page</a>. </note> 
+             <para>
+             For information about setting up signatures and authorization through the API, go
+             to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
+             target="_blank">Signing AWS API Requests</a> in the <i>AWS General Reference</i>.
+             For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
+             target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For information about
+             using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+             Services That Work with IAM</a> in the <i>Using IAM</i>. 
+             </para>
+              
+             <para>
+             If you're new to AWS and need additional technical information about a specific AWS
+             product, you can find the product's technical documentation at <a href="http://aws.amazon.com/documentation/"
+             target="_blank">http://aws.amazon.com/documentation/</a>. 
+             </para>
+              
+             <para>
+              <b>Endpoints</b> 
+             </para>
+              
+             <para>
+             The AWS Security Token Service (STS) has a default endpoint of https://sts.amazonaws.com
+             that maps to the US East (N. Virginia) region. Additional regions are available, but
+             must first be activated in the AWS Management Console before you can use a different
+             region's endpoint. For more information about activating a region for STS see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+             STS in a New Region</a> in the <i>Using IAM</i>.
+             </para>
+              
+             <para>
+             For information about STS endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions
+             and Endpoints</a> in the <i>AWS General Reference</i>.
+             </para>
+              
+             <para>
+              <b>Recording API requests</b> 
+             </para>
+              
+             <para>
+             STS supports AWS CloudTrail, which is a service that records AWS calls for your AWS
+             account and delivers log files to an Amazon S3 bucket. By using information collected
+             by CloudTrail, you can determine what requests were successfully made to STS, who
+             made the request, when it was made, and so on. To learn more about CloudTrail, including
+             how to turn it on and find your log files, see the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS
+             CloudTrail User Guide</a>.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoleAsync(Amazon.SecurityToken.Model.AssumeRoleRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.AssumeRoleRequest,Amazon.SecurityToken.Model.AssumeRoleResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the AssumeRole operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the AssumeRole operation on AmazonSecurityTokenServiceClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoleWithSAMLAsync(Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest,Amazon.SecurityToken.Model.AssumeRoleWithSAMLResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the AssumeRoleWithSAML operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the AssumeRoleWithSAML operation on AmazonSecurityTokenServiceClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoleWithWebIdentityAsync(Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest,Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the AssumeRoleWithWebIdentity operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the AssumeRoleWithWebIdentity operation on AmazonSecurityTokenServiceClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.DecodeAuthorizationMessageAsync(Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest,Amazon.SecurityToken.Model.DecodeAuthorizationMessageResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DecodeAuthorizationMessage operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DecodeAuthorizationMessage operation on AmazonSecurityTokenServiceClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetFederationTokenAsync(Amazon.SecurityToken.Model.GetFederationTokenRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.GetFederationTokenRequest,Amazon.SecurityToken.Model.GetFederationTokenResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetFederationToken operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetFederationToken operation on AmazonSecurityTokenServiceClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.GetSessionTokenAsync(Amazon.SecurityToken.Model.GetSessionTokenRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.SecurityToken.Model.GetSessionTokenRequest,Amazon.SecurityToken.Model.GetSessionTokenResponse},Amazon.Runtime.AsyncOptions)">
             <summary>
             Initiates the asynchronous execution of the GetSessionToken operation.
             </summary>
