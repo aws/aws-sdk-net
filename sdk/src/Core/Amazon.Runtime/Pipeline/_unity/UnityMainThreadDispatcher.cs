@@ -19,6 +19,7 @@ using System.Collections;
 using System.Threading;
 using UnityEngine;
 using Logger = Amazon.Runtime.Internal.Util.Logger;
+using Amazon.Util.Internal.PlatformServices;
 
 namespace Amazon.Runtime.Internal
 {
@@ -31,6 +32,7 @@ namespace Amazon.Runtime.Internal
         private Logger _logger;
         private float _nextUpdateTime;
         private float _updateInterval = 0.1f;
+        private NetworkStatus _currentStatus;
 
         /// <summary>
         /// This method is called called when the script instance is
@@ -104,14 +106,13 @@ namespace Amazon.Runtime.Internal
                 }
             }
 
-            //network updates
-            //TODO: need to check for performance
-            NetworkReachability _networkReachability = Application.internetReachability;
-            if (OnRefresh != null)
+            //trigger network updates if status has changed
+            var nr = ServiceFactory.Instance.GetService<INetworkReachability>() as Amazon.Util.Internal.PlatformServices.NetworkReachability;
+            if (_currentStatus != nr.NetworkStatus)
             {
-                OnRefresh(this, new NetworkStatusRefreshed(_networkReachability));
+                _currentStatus = nr.NetworkStatus;
+                nr.OnNetworkReachabilityChanged(_currentStatus);
             }
-
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.Runtime.Internal
                 // is unblocked.
                 if (!request.Response.IsSuccessStatusCode)
                 {
-                    request.Exception=  new HttpErrorResponseException(request.Response);
+                    request.Exception = new HttpErrorResponseException(request.Response);
                 }
                 request.WaitHandle.Set();
             }
@@ -174,18 +175,5 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        /// Public callback API to send the status of network.
-        /// </summary>
-        public class NetworkStatusRefreshed : EventArgs
-        {
-            public NetworkReachability NetworkReachability;
-
-            public NetworkStatusRefreshed(NetworkReachability reachability)
-            {
-                NetworkReachability = reachability;
-            }
-        }
-
-        public static event EventHandler<NetworkStatusRefreshed> OnRefresh;
     }
 }

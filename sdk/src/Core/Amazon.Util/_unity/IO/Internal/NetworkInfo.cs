@@ -25,25 +25,28 @@ namespace Amazon.Util.Storage.Internal
 {
     public class NetworkInfo
     {
-        public static NetworkReachability GetReachability()
+        public static NetworkReachability Reachability
         {
-            //if the thread is main thread. Then return the rechability status directly
-            if (UnityInitializer.IsMainThread())
+            get
             {
-                return Application.internetReachability;
-            }
-            else
-            {
-                NetworkReachability _networkReachability = NetworkReachability.NotReachable;
-                AutoResetEvent asyncEvent = new AutoResetEvent(false);
-                UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                //if the thread is main thread. Then return the rechability status directly
+                if (UnityInitializer.IsMainThread())
                 {
-                    _networkReachability = Application.internetReachability;
-                    asyncEvent.Set();
-                });
-                asyncEvent.WaitOne();
+                    return Application.internetReachability;
+                }
+                else
+                {
+                    NetworkReachability _networkReachability = NetworkReachability.NotReachable;
+                    AutoResetEvent asyncEvent = new AutoResetEvent(false);
+                    UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                    {
+                        _networkReachability = Application.internetReachability;
+                        asyncEvent.Set();
+                    });
+                    asyncEvent.WaitOne();
 
-                return _networkReachability;
+                    return _networkReachability;
+                }
             }
         }
     }
