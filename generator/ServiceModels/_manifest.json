@@ -282,7 +282,6 @@
             "service-url": "http://cognito-identity.us-east-1.amazonaws.com",
             "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
             "dependencies": [ "SecurityToken" ],
-            "pcl-variants": [ "iOS" ],
             "platforms": [ "Unity" ],
             "enable-xamarin-component": true
         },
@@ -296,8 +295,9 @@
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
             "synopsis": "This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.",
-            "dependencies": [ "CognitoIdentity" ], 
+            "dependencies": [ "CognitoIdentity" ],
             "pcl-variants": [ "iOS" ],
+            "use-pcl-project-dependencies": true,
             "reference-dependencies": {
                 "Net35": [
                     { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net20\\System.Data.SQLite.dll" },
@@ -713,7 +713,6 @@
             "default-region": "USEast1",
             "synopsis": "The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.",
             "tags": [ "STS" ],
-            "pcl-variants": [ "iOS" ],
             "platforms": [ "Unity" ]
         },
         {

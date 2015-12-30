@@ -32,7 +32,7 @@ namespace Amazon.Runtime.Internal
         private Logger _logger;
         private float _nextUpdateTime;
         private float _updateInterval = 0.1f;
-        private NetworkStatus _currentStatus;
+        private NetworkStatus _currentNetworkStatus;
 
         /// <summary>
         /// This method is called called when the script instance is
@@ -108,10 +108,10 @@ namespace Amazon.Runtime.Internal
 
             //trigger network updates if status has changed
             var nr = ServiceFactory.Instance.GetService<INetworkReachability>() as Amazon.Util.Internal.PlatformServices.NetworkReachability;
-            if (_currentStatus != nr.NetworkStatus)
+            if (_currentNetworkStatus != nr.NetworkStatus)
             {
-                _currentStatus = nr.NetworkStatus;
-                nr.OnNetworkReachabilityChanged(_currentStatus);
+                _currentNetworkStatus = nr.NetworkStatus;
+                nr.OnNetworkReachabilityChanged(_currentNetworkStatus);
             }
         }
 

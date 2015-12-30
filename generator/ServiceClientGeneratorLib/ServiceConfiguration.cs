@@ -143,6 +143,7 @@ namespace ServiceClientGenerator
         public string LockedApiVersion { get; set; }
         public string Synopsis { get; set; }
         public Dictionary<string, string> ServiceDependencies { get; set; }
+        public bool UsePclProjectDependencies { get; set; }
         public Dictionary<string, List<Dependency>> ReferenceDependencies { get; set; }
         public Dictionary<string, List<Dependency>> NugetDependencies { get; set; }
         public List<string> PclVariants { get; set; }

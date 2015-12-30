@@ -106,15 +106,15 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CognitoIdentity\AWSSDK.CognitoIdentity.iOS.csproj">
-        <Project>{C63712CB-D35D-494E-B7CF-1EC06B75658D}</Project>
-        <Name>AWSSDK.CognitoIdentity.iOS</Name>
+    <ProjectReference Include="..\CognitoIdentity\AWSSDK.CognitoIdentity.PCL.csproj">
+        <Project>{1C5F7691-6DD8-400B-8EC1-788317AF0BFE}</Project>
+        <Name>AWSSDK.CognitoIdentity.PCL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.iOS.csproj">
-        <Project>{17CD6458-5668-46C1-A00B-D82EEF813B5D}</Project>
-        <Name>AWSSDK.Core.iOS</Name>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.PCL.csproj">
+        <Project>{BFC96F19-CADF-41EB-804C-10DBEF3F9126}</Project>
+        <Name>AWSSDK.Core.PCL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
