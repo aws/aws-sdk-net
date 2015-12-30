@@ -16,6 +16,7 @@
 //
 
 using Amazon.Runtime;
+using System;
 using System.Collections.Generic;
 
 namespace Amazon.CognitoSync.SyncManager
@@ -34,7 +35,17 @@ namespace Amazon.CognitoSync.SyncManager
         /// 	Retrieve this object from within the callback
         /// 	procedure using the AsyncState property.</param>
         /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        [Obsolete("This method is obsolete. Please use the ListDatasetMetadataAsync method instead.")]
         void GetDatasetMetadataAsync(AmazonCognitoSyncCallback<List<DatasetMetadata>> callback, AsyncOptions options = null);
+        /// <summary>
+        /// Gets a list of <see cref="DatasetMetadata"/>
+        /// </summary>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. 
+        /// 	Retrieve this object from within the callback
+        /// 	procedure using the AsyncState property.</param>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        void ListDatasetMetadataAsync(AmazonCognitoSyncCallback<List<DatasetMetadata>> callback, AsyncOptions options = null);
         #endregion
 
 

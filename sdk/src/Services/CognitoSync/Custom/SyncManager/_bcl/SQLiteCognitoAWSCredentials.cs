@@ -1,11 +1,6 @@
 ﻿using Amazon.CognitoIdentity;
 using Amazon.CognitoSync.SyncManager.Internal;
 using System;
-using System.Collections.Generic;
-using System.Data.SQLite;
-using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace Amazon.CognitoSync.SyncManager
 {

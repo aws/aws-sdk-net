@@ -98,6 +98,9 @@
     <Compile Include="Custom\SyncManager\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\SyncManager\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\SyncManager\_bcl45\*.cs">
       <SubType>Code</SubType>
     </Compile>

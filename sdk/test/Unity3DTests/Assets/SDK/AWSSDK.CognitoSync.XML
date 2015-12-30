@@ -97,6 +97,11 @@
             </code>
             </summary>
         </member>
+        <member name="F:Amazon.CognitoSync.SyncManager.CognitoSyncManager.DATABASE_NAME">
+            <summary>
+            File name of the database in which Cognito data is cached.
+            </summary>
+        </member>
         <member name="M:Amazon.CognitoSync.SyncManager.CognitoSyncManager.#ctor(Amazon.CognitoIdentity.CognitoAWSCredentials)">
             <summary>
             Creates an instance of CognitoSyncManager using Cognito Credentials, the region is picked up from the config if it available
@@ -141,8 +146,8 @@
             Opens or creates a dataset. If the dataset doesn't exist, an empty one
             with the given name will be created. Otherwise, the dataset is loaded from
             local storage. If a dataset is marked as deleted but hasn't been deleted
-            on remote via <see cref="M:Amazon.CognitoSync.SyncManager.CognitoSyncManager.RefreshDatasetMetadataAsync(Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata}},Amazon.Runtime.AsyncOptions)"/>, 
-            it will throw <see cref="T:System.InvalidOperationException"/>.
+            on remote via  the RefreshDatasetMetadata operation, it will throw
+            <see cref="T:System.InvalidOperationException"/>.
             <code>
             Dataset dataset = cognitoSyncManager.OpenOrCreateDataset("myDatasetName");
             </code>
@@ -153,8 +158,8 @@
         <member name="M:Amazon.CognitoSync.SyncManager.CognitoSyncManager.ListDatasets">
             <summary>
             Retrieves a list of datasets from local storage. It may not reflect the
-            latest dataset on the remote storage until <see cref="M:Amazon.CognitoSync.SyncManager.CognitoSyncManager.RefreshDatasetMetadataAsync(Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata}},Amazon.Runtime.AsyncOptions)"/> is
-            called.
+            latest dataset on the remote storage until the RefreshDatasetMetadata
+            operation is performed.
             </summary>
             <returns>List of datasets</returns>
         </member>
@@ -172,6 +177,17 @@
             credentials, dataset metadata, and all records. Any data that hasn't been
             synced will be lost. This method is usually used when customer logs out.
             </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.CognitoSyncManager.IdentityChanged(System.Object,System.EventArgs)">
+            <summary>
+            This is triggered when an Identity Change event occurs. 
+            The dataset are then remapped to the new identity id.
+            This may happend for example when a user is working with 
+            unauthenticated id and later decides to authenticate 
+            himself with a public login provider
+            </summary>
+            <param name="sender">The object which triggered this methos</param>
+            <param name="e">Event Arguments</param>
         </member>
         <member name="P:Amazon.CognitoSync.SyncManager.CognitoSyncManager.IdentityId">
             <summary>
@@ -463,6 +479,11 @@
             this method is called multiple times, only the last synchronize request
             is kept. If either the dataset or the callback is garbage collected
             , this method will not perform a sync and the callback won't fire.
+            </summary>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Dataset.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources consumed by this object if disposing is true. 
             </summary>
         </member>
         <member name="T:Amazon.CognitoSync.SyncManager.SyncSuccessEventArgs">
@@ -871,9 +892,65 @@
             <summary>
             Gets a list of <see cref="T:Amazon.CognitoSync.SyncManager.DatasetMetadata"/>
             </summary>
-            <param name="callback">An AsyncCallback delegate that is invoked when the operation completes</param>
-            <param name="state">A user-defined state object that is passed to the callback procedure. </param>
-            <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage.ListDatasetMetadataAsync(Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata}},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Gets a list of <see cref="T:Amazon.CognitoSync.SyncManager.DatasetMetadata"/>
+            </summary>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage.ListUpdatesAsync(System.String,System.Int64,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{Amazon.CognitoSync.SyncManager.DatasetUpdates},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Gets a list of records which have been updated since lastSyncCount
+            (inclusive). If the value of a record equals null, then the record is
+            deleted. If you pass 0 as lastSyncCount, the full list of records will be
+            returned.
+            </summary>
+            <param name="datasetName">Dataset name.</param>
+            <param name="lastSyncCount">Last sync count.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage.PutRecordsAsync(System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record},System.String,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record}},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Post updates to remote storage. Each record has a sync count. If the sync
+            count doesn't match what's on the remote storage, i.e. the record is
+            modified by a different device, this operation sets the exception in the 
+            callback response to ConflictException. Otherwise it returns a list of 
+            records that are updated successfully.
+            </summary>
+            <returns>The records.</returns>
+            <param name="datasetName">Dataset name.</param>
+            <param name="records">Records.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage.DeleteDatasetAsync(System.String,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback,Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Deletes a dataset.
+            </summary>
+            <returns>The records.</returns>
+            <param name="datasetName">Dataset name.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage.GetDatasetMetadataAsync(System.String,Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{Amazon.CognitoSync.SyncManager.DatasetMetadata},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Retrieves the metadata of a dataset.
+            </summary>
+            <returns>The records.</returns>
+            <param name="datasetName">Dataset name.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
         </member>
         <member name="T:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage">
             <summary>
@@ -1307,6 +1384,16 @@
             </summary>
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.GetDatasetMetadataAsync(Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata}},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Gets a list of <see cref="T:Amazon.CognitoSync.SyncManager.DatasetMetadata"/>
+            </summary>
+            <param name="callback">An Action delegate that is invoked when the operation completes</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. 
+            	Retrieve this object from within the callback
+            	procedure using the AsyncState property.</param>
+            <exception cref="T:Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.IRemoteDataStorage.ListDatasetMetadataAsync(Amazon.CognitoSync.SyncManager.AmazonCognitoSyncCallback{System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.DatasetMetadata}},Amazon.Runtime.AsyncOptions)">
             <summary>
             Gets a list of <see cref="T:Amazon.CognitoSync.SyncManager.DatasetMetadata"/>
             </summary>

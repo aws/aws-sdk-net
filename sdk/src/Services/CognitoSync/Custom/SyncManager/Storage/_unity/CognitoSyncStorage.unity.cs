@@ -23,21 +23,35 @@ using Amazon.Util.Internal;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
-    public partial class CognitoSyncStorage : IRemoteDataStorage, IDisposable {
-        #region GetDataset
+    public partial class CognitoSyncStorage : IRemoteDataStorage, IDisposable
+    {
+        #region ListDataset
         /// <summary>
         /// Gets a list of <see cref="DatasetMetadata"/>
         /// </summary>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. </param>
-        /// <exception cref="DataStorageException"></exception>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        [Obsolete("This method is obsolete. Please use the ListDatasetMetadataAsync method instead.")]
         public void GetDatasetMetadataAsync(AmazonCognitoSyncCallback<List<DatasetMetadata>> callback, AsyncOptions options = null)
         {
             options = options ?? new AsyncOptions();
-            PopulateGetDatasetMetadataAsync(null, new List<DatasetMetadata>(), callback, options);
+            PopulateListDatasetMetadataAsync(null, new List<DatasetMetadata>(), callback, options);
         }
 
-        private void PopulateGetDatasetMetadataAsync(string nextToken, List<DatasetMetadata> datasets, AmazonCognitoSyncCallback<List<DatasetMetadata>> callback, AsyncOptions options)
+        /// <summary>
+        /// Gets a list of <see cref="DatasetMetadata"/>
+        /// </summary>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void ListDatasetMetadataAsync(AmazonCognitoSyncCallback<List<DatasetMetadata>> callback, AsyncOptions options = null)
+        {
+            options = options ?? new AsyncOptions();
+            PopulateListDatasetMetadataAsync(null, new List<DatasetMetadata>(), callback, options);
+        }
+
+        private void PopulateListDatasetMetadataAsync(string nextToken, List<DatasetMetadata> datasets, AmazonCognitoSyncCallback<List<DatasetMetadata>> callback, AsyncOptions options)
         {
 
             ListDatasetsRequest request = new ListDatasetsRequest();
@@ -68,7 +82,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                         InternalSDKUtils.AsyncExecutor(() => callback(new AmazonCognitoSyncResult<List<DatasetMetadata>>(datasets, null, obj)), options);
                         return;
                     }
-                    PopulateGetDatasetMetadataAsync(nextToken, datasets, callback, options);
+                    PopulateListDatasetMetadataAsync(nextToken, datasets, callback, options);
                 }
             },
             options);
@@ -78,6 +92,17 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         #region ListUpdates
 
 
+        /// <summary>
+        /// Gets a list of records which have been updated since lastSyncCount
+        /// (inclusive). If the value of a record equals null, then the record is
+        /// deleted. If you pass 0 as lastSyncCount, the full list of records will be
+        /// returned.
+        /// </summary>
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="lastSyncCount">Last sync count.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
         public void ListUpdatesAsync(string datasetName, long lastSyncCount, AmazonCognitoSyncCallback<DatasetUpdates> callback, AsyncOptions options = null)
         {
             options = options ?? new AsyncOptions();
@@ -144,8 +169,19 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
 
         #region PutRecords
-
-
+        /// <summary>
+        /// Post updates to remote storage. Each record has a sync count. If the sync
+        /// count doesn't match what's on the remote storage, i.e. the record is
+        /// modified by a different device, this operation sets the exception in the 
+        /// callback response to ConflictException. Otherwise it returns a list of 
+        /// records that are updated successfully.
+        /// </summary>
+        /// <returns>The records.</returns>
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="records">Records.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
         public void PutRecordsAsync(string datasetName, List<Record> records, string syncSessionToken, AmazonCognitoSyncCallback<List<Record>> callback, AsyncOptions options = null)
         {
             options = options ?? new AsyncOptions();
@@ -188,13 +224,18 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             },
             options);
         }
-
         #endregion
 
 
         #region DeleteDataset
-
-
+        /// <summary>
+        /// Deletes a dataset.
+        /// </summary>
+        /// <returns>The records.</returns>
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
         public void DeleteDatasetAsync(string datasetName, AmazonCognitoSyncCallback callback, AsyncOptions options = null)
         {
             options = options ?? new AsyncOptions();
@@ -217,12 +258,18 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             },
             options);
         }
-
         #endregion
 
 
         #region GetDatasetMetadata
-
+        /// <summary>
+        /// Retrieves the metadata of a dataset.
+        /// </summary>
+        /// <returns>The records.</returns>
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
         public void GetDatasetMetadataAsync(string datasetName, AmazonCognitoSyncCallback<DatasetMetadata> callback, AsyncOptions options = null)
         {
             options = options ?? new AsyncOptions();

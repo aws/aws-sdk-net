@@ -156,7 +156,7 @@ namespace Amazon.CognitoSync.SyncManager
         {
             get
             {
-                return Local.GetDatasetMetadata(GetIdentityId(), DatasetName);
+                return Local.GetDatasetMetadata(IdentityId, DatasetName);
             }
         }
 
@@ -194,7 +194,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// <param name="key">Key of the record in the dataset.</param>
         public string Get(string key)
         {
-            return Local.GetValue(GetIdentityId(), DatasetName,
+            return Local.GetValue(IdentityId, DatasetName,
                                   DatasetUtils.ValidateRecordKey(key));
         }
 
@@ -352,7 +352,6 @@ namespace Amazon.CognitoSync.SyncManager
             if (queuedSync)
             {
                 queuedSync = false;
-                // TODO: Why is this not done for bcl45?? If it is a bug fix it. If running the queued sync is done elsewhere, find where.
 #if UNITY || BCL35
                 SynchronizeHelperAsync();
 #endif
@@ -377,7 +376,7 @@ namespace Amazon.CognitoSync.SyncManager
 #if BCL35
                     Remote.DeleteDataset(DatasetName);
 #else
-                    await Remote.DeleteDatasetAsync(DatasetName, cancellationToken);
+                    await Remote.DeleteDatasetAsync(DatasetName, cancellationToken).ConfigureAwait(false);
 #endif
                 }
                 catch (DatasetNotFoundException)
@@ -406,7 +405,7 @@ namespace Amazon.CognitoSync.SyncManager
 #if BCL35
                 datasetUpdates = Remote.ListUpdates(DatasetName, lastSyncCount);
 #else
-                datasetUpdates = await Remote.ListUpdatesAsync(DatasetName, lastSyncCount, cancellationToken);
+                datasetUpdates = await Remote.ListUpdatesAsync(DatasetName, lastSyncCount, cancellationToken).ConfigureAwait(false);
 #endif
             }
             catch (Exception listUpdatesException)
@@ -432,7 +431,7 @@ namespace Amazon.CognitoSync.SyncManager
 #if BCL35
                         this.RunSyncOperationAsync(--retry);
 #else
-                        await this.RunSyncOperationAsync(--retry, cancellationToken);
+                        await this.RunSyncOperationAsync(--retry, cancellationToken).ConfigureAwait(false);
 #endif
                     }
                     return;
@@ -598,7 +597,7 @@ namespace Amazon.CognitoSync.SyncManager
                             RunSyncOperationAsync(--retry);
                         });
 #else
-                        this.RunSyncOperationAsync(--retry, cancellationToken);
+                        await this.RunSyncOperationAsync(--retry, cancellationToken).ConfigureAwait(false);
 #endif
                     }
                     return;
@@ -621,17 +620,12 @@ namespace Amazon.CognitoSync.SyncManager
         }
 #endif
 
-        // TODO have only one of the two following methods
         internal String IdentityId
         {
             get
             {
                 return DatasetUtils.GetIdentityId(CognitoCredentials);
             }
-        }
-        internal String GetIdentityId()
-        {
-            return IdentityId;
         }
 
         internal List<Record> ModifiedRecords
@@ -641,7 +635,6 @@ namespace Amazon.CognitoSync.SyncManager
                 return Local.GetModifiedRecords(IdentityId, DatasetName);
             }
         }
-
 
 
         #endregion
@@ -857,7 +850,7 @@ namespace Amazon.CognitoSync.SyncManager
 #if UNITY || BCL35
                 RunSyncOperationAsync(MAX_RETRY);
 #else
-                await RunSyncOperationAsync(MAX_RETRY, cancellationToken);
+                await RunSyncOperationAsync(MAX_RETRY, cancellationToken).ConfigureAwait(false);
 #endif
             }
             catch (Exception e)

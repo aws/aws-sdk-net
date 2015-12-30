@@ -80,7 +80,7 @@ namespace Amazon.CognitoSync.SyncManager
         private void RunSyncOperationAsync(int retry)
         {
 
-            long lastSyncCount = _local.GetLastSyncCount(GetIdentityId(), _datasetName);
+            long lastSyncCount = _local.GetLastSyncCount(IdentityId, _datasetName);
 
             // if dataset is deleted locally, push it to remote
             if (lastSyncCount == -1)
@@ -103,7 +103,7 @@ namespace Amazon.CognitoSync.SyncManager
                         }
                     }
 
-                    _local.PurgeDataset(GetIdentityId(), _datasetName);
+                    _local.PurgeDataset(IdentityId, _datasetName);
                     _logger.InfoFormat("OnSyncSuccess: dataset delete is pushed to remote - {0}", this._datasetName);
                     EndSynchronizeAndCleanup();
                     FireSyncSuccessEvent(new List<Record>());
@@ -163,8 +163,8 @@ namespace Amazon.CognitoSync.SyncManager
                     if (resume)
                     {
                         // remove both records and metadata
-                        _local.DeleteDataset(GetIdentityId(), _datasetName);
-                        _local.PurgeDataset(GetIdentityId(), _datasetName);
+                        _local.DeleteDataset(IdentityId, _datasetName);
+                        _local.PurgeDataset(IdentityId, _datasetName);
                         _logger.InfoFormat("OnSyncSuccess");
                         EndSynchronizeAndCleanup();
                         FireSyncSuccessEvent(new List<Record>());
@@ -188,7 +188,7 @@ namespace Amazon.CognitoSync.SyncManager
                     List<Record> conflictRecords = new List<Record>();
                     foreach (Record remoteRecord in remoteRecords)
                     {
-                        Record localRecord = _local.GetRecord(GetIdentityId(),
+                        Record localRecord = _local.GetRecord(IdentityId,
                                                               _datasetName,
                                                               remoteRecord.Key);
                         // only when local is changed and its value is different
@@ -228,13 +228,13 @@ namespace Amazon.CognitoSync.SyncManager
                     if (remoteRecords.Count > 0)
                     {
                         _logger.InfoFormat("save {0} records to local", remoteRecords.Count);
-                        _local.PutRecords(GetIdentityId(), _datasetName, remoteRecords);
+                        _local.PutRecords(IdentityId, _datasetName, remoteRecords);
                     }
 
 
                     // new last sync count
                     _logger.InfoFormat("updated sync count {0}", datasetUpdates.SyncCount);
-                    _local.UpdateLastSyncCount(GetIdentityId(), _datasetName,
+                    _local.UpdateLastSyncCount(IdentityId, _datasetName,
                                               datasetUpdates.SyncCount);
                 }
 
@@ -271,7 +271,7 @@ namespace Amazon.CognitoSync.SyncManager
                                     //it's possible there is a local dirty record with a stale sync count this will fix it
                                     if (lastSyncCount > maxPatchSyncCount)
                                     {
-                                        _local.UpdateLastSyncCount(GetIdentityId(), _datasetName, maxPatchSyncCount);
+                                        _local.UpdateLastSyncCount(IdentityId, _datasetName, maxPatchSyncCount);
                                     }
                                     this.RunSyncOperationAsync(--retry);
                                 }
@@ -289,7 +289,7 @@ namespace Amazon.CognitoSync.SyncManager
                         List<Record> result = putRecordsResult.Response;
 
                         // update local meta data
-                        _local.ConditionallyPutRecords(GetIdentityId(), _datasetName, result, localChanges);
+                        _local.ConditionallyPutRecords(IdentityId, _datasetName, result, localChanges);
 
                         // verify the server sync count is increased exactly by one, aka no
                         // other updates were made during this update.
@@ -303,7 +303,7 @@ namespace Amazon.CognitoSync.SyncManager
                         if (newSyncCount == lastSyncCount + 1)
                         {
                             _logger.InfoFormat("updated sync count {0}", newSyncCount);
-                            _local.UpdateLastSyncCount(GetIdentityId(), _datasetName,
+                            _local.UpdateLastSyncCount(IdentityId, _datasetName,
                                                       newSyncCount);
                         }
 
@@ -336,6 +336,9 @@ namespace Amazon.CognitoSync.SyncManager
             }
         }
 
+        /// <summary>
+        /// Releases the resources consumed by this object if disposing is true. 
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

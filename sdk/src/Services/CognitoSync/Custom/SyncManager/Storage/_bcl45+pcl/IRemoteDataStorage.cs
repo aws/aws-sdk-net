@@ -15,6 +15,7 @@
 // limitations under the License.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace Amazon.CognitoSync.SyncManager
     /// </summary>
     public interface IRemoteDataStorage
     {
-        #region GetDatasets
+        #region ListDatasets
         /// <summary>
         /// Gets a list of <see cref="DatasetMetadata"/>
         /// </summary>
@@ -34,9 +35,17 @@ namespace Amazon.CognitoSync.SyncManager
         ///  A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        [Obsolete("This method is obsolete. Please use the ListDatasetMetadataAsync method instead.")]
         Task<List<DatasetMetadata>> GetDatasetMetadataAsync(CancellationToken cancellationToken);
+        /// <summary>
+        /// Gets a list of <see cref="DatasetMetadata"/>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///  A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        Task<List<DatasetMetadata>> ListDatasetMetadataAsync(CancellationToken cancellationToken);
         #endregion
-
 
         #region GetDatasetMetadata
         /// <summary>
@@ -51,8 +60,7 @@ namespace Amazon.CognitoSync.SyncManager
         Task<DatasetMetadata> GetDatasetMetadataAsync(string datasetName, CancellationToken cancellationToken);
         #endregion
 
-
-        #region ListUpdate
+        #region ListUpdates
         /// <summary>
         /// Gets a list of records which have been updated since lastSyncCount
         /// (inclusive). If the value of a record equals null, then the record is
@@ -68,7 +76,6 @@ namespace Amazon.CognitoSync.SyncManager
         /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
         Task<DatasetUpdates> ListUpdatesAsync(string datasetName, long lastSyncCount, CancellationToken cancellationToken);
         #endregion
-
 
         #region PutRecords
         /// <summary>
@@ -88,7 +95,6 @@ namespace Amazon.CognitoSync.SyncManager
         /// <exception cref="Amazon.CognitoSync.SyncManager.DataConflictException"></exception>
         Task<List<Record>> PutRecordsAsync(string datasetName, List<Record> records, string syncSessionToken, CancellationToken cancellationToken);
         #endregion
-
 
         #region DeleteDataset
         /// <summary>

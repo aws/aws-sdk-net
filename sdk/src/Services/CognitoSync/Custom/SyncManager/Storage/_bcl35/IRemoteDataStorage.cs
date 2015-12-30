@@ -25,58 +25,163 @@ namespace Amazon.CognitoSync.SyncManager
     /// </summary>
     public interface IRemoteDataStorage
     {
-        #region GetDataset
-        //TODO: document
-        List<DatasetMetadata> GetAllDatasetMetadata();
+        #region ListDataset
+        /// <summary>
+        /// Gets a list of <see cref="DatasetMetadata"/>
+        /// </summary>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        List<DatasetMetadata> ListDatasetMetadata();
 
-        //TODO: document
-        IAsyncResult BeginGetAllDatasetMetadata(AsyncCallback callback, object state);
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDatasetMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBulkPublish
+        ///         operation.</returns>
+        IAsyncResult BeginListDatasetMetadata(AsyncCallback callback, object state);
 
-        //TODO: document
-        List<DatasetMetadata> EndGetAllDatasetMetadata(IAsyncResult asyncResult);
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListDatasetMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatasetMetadata.</param>
+        List<DatasetMetadata> EndListDatasetMetadata(IAsyncResult asyncResult);
         #endregion
 
         #region ListUpdates
-        //TODO: document
+
+        /// <summary>
+        /// Gets a list of records which have been updated since lastSyncCount
+        /// (inclusive). If the value of a record equals null, then the record is
+        /// deleted. If you pass 0 as lastSyncCount, the full list of records will be
+        /// returned.
+        /// </summary>
+        /// <returns>A list of records which have been updated since lastSyncCount.</returns>
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="lastSyncCount">Last sync count.</param>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
         DatasetUpdates ListUpdates(string datasetName, long lastSyncCount);
 
-        //TODO: document
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="lastSyncCount">Last sync count.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBulkPublish
+        ///         operation.</returns>
         IAsyncResult BeginListUpdates(string datasetName, long lastSyncCount, AsyncCallback callback, object state);
 
-        //TODO: document
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUpdates.</param>
+        /// <returns>A list of records which have been updated since lastSyncCount.</returns>
         DatasetUpdates EndListUpdates(IAsyncResult asyncResult);
         #endregion
 
         #region PutRecords
-        //TODO: document
+        /// <summary>
+        /// Post updates to remote storage. Each record has a sync count. If the sync
+        /// count doesn't match what's on the remote storage, i.e. the record is
+        /// modified by a different device, this operation throws ConflictException.
+        /// Otherwise it returns a list of records that are updated successfully.
+        /// </summary>
+        /// <returns>The records.</returns>
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="records">Records.</param>
+        /// <param name="syncSessionToken">Sync session token.</param>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DatasetNotFoundException"></exception>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DataConflictException"></exception>
         List<Record> PutRecords(string datasetName, List<Record> records, string syncSessionToken);
 
-        //TODO: document
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="records">Records.</param>
+        /// <param name="syncSessionToken">Sync session token.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRecords
+        ///         operation.</returns>
         IAsyncResult BeginPutRecords(string datasetName, List<Record> records, string syncSessionToken, AsyncCallback callback, object state);
 
-        //TODO: document
+        /// <summary>
+        /// Finishes the asynchronous execution of the PutRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRecords.</param>
         List<Record> EndPutRecords(IAsyncResult asyncResult);
         #endregion
 
         #region DeleteDataset
-        //TODO: document
+        /// <summary>
+        /// Deletes a dataset.
+        /// </summary>
+        /// <param name="datasetName">Dataset name.</param>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DatasetNotFoundException"></exception>
         void DeleteDataset(string datasetName);
 
-        //TODO: document
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataset
+        ///         operation.</returns>
         IAsyncResult BeginDeleteDataset(string datasetName, AsyncCallback callback, object state);
 
-        //TODO: document
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataset.</param>
         void EndDeleteDataset(IAsyncResult asyncResult);
         #endregion
 
         #region GetDatasetMetadata
-        //TODO: document
+        /// <summary>
+        /// Retrieves the metadata of a dataset.
+        /// </summary>
+        /// <param name="datasetName">Dataset name.</param>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
         DatasetMetadata GetDatasetMetadata(string datasetName);
 
-        //TODO: document
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDatasetMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDatasetMetadata
+        ///         operation.</returns>
         IAsyncResult BeginGetDatasetMetadata(string datasetName, AsyncCallback callback, object state);
 
-        //TODO: document
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetDatasetMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDatasetMetadata.</param>
         DatasetMetadata EndGetDatasetMetadata(IAsyncResult asyncResult);
         #endregion
     }

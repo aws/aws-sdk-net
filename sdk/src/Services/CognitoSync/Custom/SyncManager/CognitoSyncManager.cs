@@ -64,6 +64,9 @@ namespace Amazon.CognitoSync.SyncManager
         private readonly CognitoAWSCredentials CognitoCredentials;
 
 #if UNITY || BCL35
+        /// <summary>
+        /// File name of the database in which Cognito data is cached.
+        /// </summary>
         protected static readonly string DATABASE_NAME = "aws_cognito_cache.db";
 #endif
 
@@ -158,8 +161,8 @@ namespace Amazon.CognitoSync.SyncManager
         /// Opens or creates a dataset. If the dataset doesn't exist, an empty one
         /// with the given name will be created. Otherwise, the dataset is loaded from
         /// local storage. If a dataset is marked as deleted but hasn't been deleted
-        /// on remote via <see cref="Amazon.CognitoSync.SyncManager.CognitoSyncManager.RefreshDatasetMetadataAsync"/>, 
-        /// it will throw <see cref="System.InvalidOperationException"/>.
+        /// on remote via  the RefreshDatasetMetadata operation, it will throw
+        /// <see cref="System.InvalidOperationException"/>.
         /// <code>
         /// Dataset dataset = cognitoSyncManager.OpenOrCreateDataset("myDatasetName");
         /// </code>
@@ -176,8 +179,8 @@ namespace Amazon.CognitoSync.SyncManager
 
         /// <summary>
         /// Retrieves a list of datasets from local storage. It may not reflect the
-        /// latest dataset on the remote storage until <see cref="Amazon.CognitoSync.SyncManager.CognitoSyncManager.RefreshDatasetMetadataAsync"/> is
-        /// called.
+        /// latest dataset on the remote storage until the RefreshDatasetMetadata
+        /// operation is performed.
         /// </summary>
         /// <returns>List of datasets</returns>
         public List<DatasetMetadata> ListDatasets()
@@ -219,20 +222,7 @@ namespace Amazon.CognitoSync.SyncManager
         #endregion
 
         #region Protected Methods
-        // TODO: Determine if null check is desired for all platforms
-#if UNITY || BCL35
-        protected void IdentityChanged(object sender, EventArgs e)
-        {
-            Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs identityChangedEvent = e as Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs;
-            if (identityChangedEvent.NewIdentityId != null)
-            {
-                String oldIdentity = string.IsNullOrEmpty(identityChangedEvent.OldIdentityId) ? DatasetUtils.UNKNOWN_IDENTITY_ID : identityChangedEvent.OldIdentityId;
-                String newIdentity = identityChangedEvent.NewIdentityId;
-                _logger.InfoFormat("Identity changed from {0} to {1}", oldIdentity, newIdentity);
-                Local.ChangeIdentityId(oldIdentity, newIdentity);
-            }
-        }
-#else
+
         /// <summary>
         /// This is triggered when an Identity Change event occurs. 
         /// The dataset are then remapped to the new identity id.
@@ -244,13 +234,15 @@ namespace Amazon.CognitoSync.SyncManager
         /// <param name="e">Event Arguments</param>
         protected void IdentityChanged(object sender, EventArgs e)
         {
-            var identityChangedEvent = e as Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs;
-            String oldIdentity = identityChangedEvent.OldIdentityId == null ? DatasetUtils.UNKNOWN_IDENTITY_ID : identityChangedEvent.OldIdentityId;
-            String newIdentity = identityChangedEvent.NewIdentityId == null ? DatasetUtils.UNKNOWN_IDENTITY_ID : identityChangedEvent.NewIdentityId;
-            _logger.InfoFormat("Identity change detected: {0}, {1}", oldIdentity, newIdentity);
-            if (oldIdentity != newIdentity) Local.ChangeIdentityId(oldIdentity, newIdentity);
+            Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs identityChangedEvent = e as Amazon.CognitoIdentity.CognitoAWSCredentials.IdentityChangedArgs;
+            if (identityChangedEvent.NewIdentityId != null)
+            {
+                String oldIdentity = string.IsNullOrEmpty(identityChangedEvent.OldIdentityId) ? DatasetUtils.UNKNOWN_IDENTITY_ID : identityChangedEvent.OldIdentityId;
+                String newIdentity = identityChangedEvent.NewIdentityId;
+                _logger.InfoFormat("Identity changed from {0} to {1}", oldIdentity, newIdentity);
+                Local.ChangeIdentityId(oldIdentity, newIdentity);
+            }
         }
-#endif
 
         /// <summary>
         /// Returns the IdentityId, if the application is not online then an 
@@ -281,7 +273,7 @@ namespace Amazon.CognitoSync.SyncManager
         {
             options = options ?? new AsyncOptions();
 
-            Remote.GetDatasetMetadataAsync((cognitoResult) =>
+            Remote.ListDatasetMetadataAsync((cognitoResult) =>
             {
                 Exception ex = cognitoResult.Exception;
                 List<DatasetMetadata> res = cognitoResult.Response;
@@ -314,18 +306,38 @@ namespace Amazon.CognitoSync.SyncManager
         }
         
 #elif BCL35
-        //TODO Document
+
+        private delegate List<DatasetMetadata> RefreshDatasetMetadataInnerDelegate(IRemoteDataStorage remote, ILocalStorage local, string identityId);
+        private RefreshDatasetMetadataInnerDelegate RefreshDatasetMetadataInnerHandler = delegate (IRemoteDataStorage remote, ILocalStorage local, string identityId)
+        {
+            List<DatasetMetadata> response = remote.ListDatasetMetadata();
+            local.UpdateDatasetMetadata(identityId, response);
+            return response;
+        };
+        /// <summary>
+        /// Initiates the asynchronous execution of the RefreshDatasetMetadata operation.
+        /// 
+        /// Refreshes dataset metadata. Dataset metadata is pulled from remote
+        /// storage and stored in local storage. Their record data isn't pulled down
+        /// until you sync each dataset.
+        /// </summary>
+        /// 
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
         public IAsyncResult BeginRefreshDatasetMetadata(AsyncCallback callback, object state)
         {
-            return Remote.BeginGetAllDatasetMetadata(callback, state);
+            return RefreshDatasetMetadataInnerHandler.BeginInvoke(Remote, Local, IdentityId, callback, state);
         }
 
+        /// <summary>
+        /// Finishes the asynchronous execution of the RefreshDatasetMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRefreshDatasetMetadata.</param>
         public List<DatasetMetadata> EndRefreshDatasetMetadata(IAsyncResult asyncResult)
         {
-            List<DatasetMetadata> response = Remote.EndGetAllDatasetMetadata(asyncResult);
-            // TODO: is it okay to do this only after EndRefreshDatasetMetadata is called? I can't think of a way to do it as soon as the EndGetAllDatasetMetadata is finished without adding a new api in remote. Not sure if that is okay to do. Should I create a callback that calls the other callback...?
-            Local.UpdateDatasetMetadata(IdentityId, response);
-            return response;
+            return RefreshDatasetMetadataInnerHandler.EndInvoke(asyncResult);
         }
 #endif
         #endregion

@@ -9,7 +9,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 {
     public partial class CognitoSyncStorage : IRemoteDataStorage, IDisposable
     {
-        #region GetDataset
+        #region ListDataset
         /// <summary>
         /// Gets a list of <see cref="DatasetMetadata"/>
         /// </summary>
@@ -17,12 +17,25 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         ///  A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        [Obsolete("This method is obsolete. Please use the ListDatasetMetadataAsync method instead.")]
         public async Task<List<DatasetMetadata>> GetDatasetMetadataAsync(CancellationToken cancellationToken)
         {
-            return await PopulateGetDatasetMetadata(null, new List<DatasetMetadata>(), cancellationToken).ConfigureAwait(false);
+            return await ListDatasetMetadataAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task<List<DatasetMetadata>> PopulateGetDatasetMetadata(string nextToken, List<DatasetMetadata> datasets, CancellationToken cancellationToken)
+        /// <summary>
+        /// Gets a list of <see cref="DatasetMetadata"/>
+        /// </summary>
+        /// <param name="cancellationToken">
+        ///  A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
+        public async Task<List<DatasetMetadata>> ListDatasetMetadataAsync(CancellationToken cancellationToken)
+        {
+            return await PopulateListDatasetMetadata(null, new List<DatasetMetadata>(), cancellationToken).ConfigureAwait(false);
+        }
+
+        private async Task<List<DatasetMetadata>> PopulateListDatasetMetadata(string nextToken, List<DatasetMetadata> datasets, CancellationToken cancellationToken)
         {
             ListDatasetsRequest request = new ListDatasetsRequest();
             // a large enough number to reduce # of requests
@@ -39,7 +52,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
             if (nextToken != null)
             {
-                await PopulateGetDatasetMetadata(nextToken, datasets, cancellationToken).ConfigureAwait(false);
+                await PopulateListDatasetMetadata(nextToken, datasets, cancellationToken).ConfigureAwait(false);
             }
             return datasets;
         }
