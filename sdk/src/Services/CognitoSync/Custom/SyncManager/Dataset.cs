@@ -18,7 +18,7 @@ using Amazon.CognitoIdentity;
 using Amazon.CognitoSync.SyncManager.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
-
+using Amazon.Util.Internal.PlatformServices;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -129,7 +129,8 @@ namespace Amazon.CognitoSync.SyncManager
             this._remote = remote;
             _logger = Logger.GetLogger(this.GetType());
 #if UNITY
-            UnityMainThreadDispatcher.OnRefresh += HandleConnectivityRefresh;
+            NetReachability = new NetworkReachability();
+            NetReachability.NetworkReachabilityChanged += OnNetworkReachabilityChanged;
 #endif
         }
 

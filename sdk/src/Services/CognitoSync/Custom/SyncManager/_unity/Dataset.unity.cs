@@ -14,28 +14,26 @@
 // for the specific language governing permissions and 
 // limitations under the License.
 //
-using Amazon.CognitoIdentity;
-using Amazon.CognitoSync.SyncManager.Internal;
-using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util.Storage.Internal;
+using Amazon.Util.Internal.PlatformServices;
 using System;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
 using System.Threading;
-using UnityEngine;
 
 
 namespace Amazon.CognitoSync.SyncManager
 {
     public partial class Dataset : IDisposable
     {
+
+        NetworkReachability NetReachability;
+
         /// <summary>
         /// Synchronize <see cref="Dataset"/> between local storage and remote storage.
         /// </summary>
         public virtual void Synchronize()
         {
-            if (NetworkInfo.GetReachability() == NetworkReachability.NotReachable)
+            if (NetReachability.NetworkStatus == NetworkStatus.NotReachable)
             {
                 FireSyncFailureEvent(new NetworkException("Network connectivity unavailable."));
                 return;
@@ -67,7 +65,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// </summary>
         public virtual void SynchronizeOnConnectivity()
         {
-            if (NetworkInfo.GetReachability() != NetworkReachability.NotReachable)
+            if (NetReachability.NetworkStatus != NetworkStatus.NotReachable)
             {
                 Synchronize();
             }
@@ -323,14 +321,14 @@ namespace Amazon.CognitoSync.SyncManager
             });
         }
 
-        private void HandleConnectivityRefresh(object sender, UnityMainThreadDispatcher.NetworkStatusRefreshed result)
+        private void OnNetworkReachabilityChanged(object sender, NetworkStatusEventArgs e)
         {
             if (!waitingForConnectivity)
             {
                 return;
             }
 
-            if (result.NetworkReachability != NetworkReachability.NotReachable)
+            if (e.Status != NetworkStatus.NotReachable)
             {
                 Synchronize();
             }
@@ -347,7 +345,7 @@ namespace Amazon.CognitoSync.SyncManager
             if (disposing)
             {
                 ClearAllDelegates();
-                UnityMainThreadDispatcher.OnRefresh -= HandleConnectivityRefresh;
+                NetReachability.NetworkReachabilityChanged -= OnNetworkReachabilityChanged;
                 _disposed = true;
             }
         }

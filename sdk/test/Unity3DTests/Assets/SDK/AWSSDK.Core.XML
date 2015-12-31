@@ -5926,7 +5926,6 @@
             <param name="request"></param>
             <returns>IEnumerator which indicated if the operation is pending.</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:Amazon.Runtime.Internal.UnityMainThreadDispatcher.NetworkStatusRefreshed" -->
         <member name="T:Amazon.Runtime.Internal.UnityRequestQueue">
             <summary>
             A singleton which stores the list of pending web requests and pending callbacks.

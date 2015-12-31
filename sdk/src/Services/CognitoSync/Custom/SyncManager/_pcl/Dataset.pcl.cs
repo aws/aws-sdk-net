@@ -14,14 +14,8 @@
 // for the specific language governing permissions and 
 // limitations under the License.
 //
-using Amazon.CognitoIdentity;
-using Amazon.CognitoSync.SyncManager.Internal;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal.PlatformServices;
 using System;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
 using System.Threading;
 using System.Threading.Tasks;
 
