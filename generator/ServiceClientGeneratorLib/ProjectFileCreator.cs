@@ -198,6 +198,8 @@ namespace ServiceClientGenerator
                     templateSession["NuGetTargetFramework"] = projectFileConfiguration.NuGetTargetPlatform;
                 }
 
+                
+
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
             }
         }

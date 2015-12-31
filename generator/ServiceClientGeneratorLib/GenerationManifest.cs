@@ -46,6 +46,8 @@ namespace ServiceClientGenerator
             public const string EnableXamarinComponent = "enable-xamarin-component";
             public const string TagsKey = "tags";
             public const string UsePclProjectDependenciesKey = "use-pcl-project-dependencies";
+            public const string LicenseUrlKey = "license-url";
+
         }
 
         abstract class ProjectsSectionKeys
@@ -240,6 +242,14 @@ namespace ServiceClientGenerator
                     config.UsePclProjectDependencies = bool.Parse(modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey].ToString());
                 else
                     config.UsePclProjectDependencies = false;
+
+                if (modelNode[ModelsSectionKeys.LicenseUrlKey] != null && modelNode[ModelsSectionKeys.LicenseUrlKey].IsString)
+                {
+                    config.LicenseUrl = modelNode[ModelsSectionKeys.LicenseUrlKey].ToString();
+                    config.RequireLicenseAcceptance = true;
+                }
+                else
+                    config.LicenseUrl = @"http://aws.amazon.com/apache2.0/";
 
                 var serviceName = config.ServiceNameRoot;
                 var versionInfoJson = versions[serviceName];

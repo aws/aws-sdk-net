@@ -7,10 +7,12 @@
     <authors>Amazon Web Services</authors>
     <description>This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.</description>
     <language>en-US</language>
-    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <licenseUrl>http://aws.amazon.com/asl/</licenseUrl>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud CognitoSync aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+  
+    <requireLicenseAcceptance>True</requireLicenseAcceptance>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
       <dependency id="AWSSDK.CognitoIdentity" version="[3.1.0.5, 3.2)" />

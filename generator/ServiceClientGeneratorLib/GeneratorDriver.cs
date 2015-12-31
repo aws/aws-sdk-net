@@ -998,8 +998,10 @@ namespace ServiceClientGenerator
                 { "BaseName", this.Configuration.BaseName },
                 { "CodeAnalysisServiceFolder", this.Configuration.Namespace.Replace("Amazon.", "") },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
-                { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
-            };
+                { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
+                { "licenseUrl", Configuration.LicenseUrl },
+                { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance }
+        };
 
             if (Configuration.NugetDependencies != null)
                 session.Add("NugetDependencies", Configuration.NugetDependencies);

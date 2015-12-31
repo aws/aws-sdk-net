@@ -298,6 +298,7 @@
             "dependencies": [ "CognitoIdentity" ],
             "pcl-variants": [ "iOS" ],
             "use-pcl-project-dependencies": true,
+            "license-url": "http://aws.amazon.com/asl/",
             "reference-dependencies": {
                 "Net35": [
                     { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net20\\System.Data.SQLite.dll" },
@@ -323,7 +324,7 @@
                 "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
                 "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
             },
-            "platforms": [ "Unity" ]           
+          "platforms": [ "Unity" ]
         },
         {
             "active": true,
