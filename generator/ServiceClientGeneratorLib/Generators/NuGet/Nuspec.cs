@@ -91,20 +91,19 @@ namespace ServiceClientGenerator.Generators.NuGet
  
     if (bool.Parse(this.Session["requireLicenseAcceptance"].ToString()))
 	{
-
             
             #line default
             #line hidden
-            this.Write("  \r\n    <requireLicenseAcceptance>");
+            this.Write("    <requireLicenseAcceptance>");
             
-            #line 23 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 22 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["requireLicenseAcceptance"]));
             
             #line default
             #line hidden
             this.Write("</requireLicenseAcceptance>\r\n");
             
-            #line 24 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 23 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
  
 	}
 
@@ -114,7 +113,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("    <dependencies>\r\n      <group targetFramework=\"portable-net45+netcore45+wpa81+" +
                     "wp8+MonoAndroid10+xamarinios10+MonoTouch10\">\r\n");
             
-            #line 29 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 28 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
@@ -124,21 +123,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      <dependency id=\"");
             
-            #line 33 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 32 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Key));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 33 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 32 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Value));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 34 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 33 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     }
 
@@ -146,7 +145,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line default
             #line hidden
             
-            #line 37 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 36 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 	if(this.Session.ContainsKey("NugetDependencies"))
     {
@@ -161,21 +160,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("\t\t<dependency id=\"");
             
-            #line 46 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 45 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency.Name));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 46 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 45 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency.Version));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 47 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 46 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 		
 			}
 		}
@@ -186,7 +185,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      </group>\r\n");
             
-            #line 53 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 52 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 	if(this.Session.ContainsKey("NugetDependencies"))
     {
@@ -204,14 +203,14 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("\t\t\t\r\n      <group targetFramework=\"");
             
-            #line 65 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 64 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(targetFramework));
             
             #line default
             #line hidden
             this.Write("\">\r\n");
             
-            #line 66 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 65 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
             foreach(var dependency in dependencyList.Value)
             {
@@ -221,21 +220,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("        <dependency id=\"");
             
-            #line 70 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 69 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency.Name));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 70 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 69 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency.Version));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 71 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 70 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 		
             }
 
@@ -243,7 +242,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line default
             #line hidden
             
-            #line 74 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 73 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
             foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
             {
@@ -253,21 +252,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("        <dependency id=\"");
             
-            #line 78 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 77 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Key));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 78 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 77 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Value));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 79 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 78 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
             }
 
@@ -276,7 +275,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      </group>\r\n");
             
-            #line 83 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 82 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
 		}
 	}	
@@ -286,7 +285,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("      <group>\r\n");
             
-            #line 88 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 87 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
     {
@@ -296,21 +295,21 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("        <dependency id=\"");
             
-            #line 92 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 91 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Key));
             
             #line default
             #line hidden
             this.Write("\" version=\"");
             
-            #line 92 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 91 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(awsDependencyKVP.Value));
             
             #line default
             #line hidden
             this.Write("\" />\r\n");
             
-            #line 93 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 92 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     }
 
@@ -320,7 +319,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n\r\n    <file src=\"" +
                     "..\\..\\..\\code-analysis\\ServiceAnalysis\\");
             
-            #line 101 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 100 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["CodeAnalysisServiceFolder"]));
             
             #line default
@@ -330,49 +329,49 @@ namespace ServiceClientGenerator.Generators.NuGet
 
     <file src="".\bin\Release\net35\");
             
-            #line 104 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 103 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".dll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\");
             
-            #line 105 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 104 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".xml\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\");
             
-            #line 106 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 105 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\");
             
-            #line 108 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 107 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
             
-            #line 109 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 108 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\");
             
-            #line 110 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 109 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write(".pdb\" target=\"lib\\net45\" />\r\n\r\n    <file src=\".\\bin\\Release\\pcl\\");
             
-            #line 112 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 111 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -380,7 +379,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write(".dll\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+M" +
                     "onoTouch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\");
             
-            #line 113 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 112 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -388,7 +387,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write(".xml\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+M" +
                     "onoTouch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\");
             
-            #line 114 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 113 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -396,7 +395,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write(".pdb\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+M" +
                     "onoTouch10\" />\r\n");
             
-            #line 115 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 114 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
   
     if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
     {
@@ -409,7 +408,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     <file src="".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.pdb"" target=""lib\Xamarin.iOS10"" />
 ");
             
-            #line 122 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
+            #line 121 "C:\d\cc\cognito\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
 
     }
 
