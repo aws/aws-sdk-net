@@ -84,7 +84,7 @@ namespace ServiceClientGenerator
         private const string MobileSubFolder = "_mobile";
         private const string UnitySubFolder = "_unity";
         private string MarshallingTestsSubFolder = string.Format("UnitTests{0}Generated{0}Marshalling", Path.DirectorySeparatorChar);
-        private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations",Path.DirectorySeparatorChar);
+        private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.DirectorySeparatorChar);
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
@@ -123,7 +123,7 @@ namespace ServiceClientGenerator
             ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, serviceNameRoot);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
 
-            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername,"ServiceAnalysis", serviceNameRoot);
+            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername, "ServiceAnalysis", serviceNameRoot);
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
 
@@ -660,13 +660,13 @@ namespace ServiceClientGenerator
         public static void UpdateNuGetPackagesInReadme(GenerationManifest manifest, GeneratorOptions options)
         {
             var nugetPackages = new Dictionary<string, string>();
-            foreach(var service in manifest.ServiceConfigurations.OrderBy(x => x.BaseName))
+            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.BaseName))
             {
                 // Service like DynamoDB streams are included in a parent service.
                 if (service.ParentConfig != null)
                     continue;
 
-                if(string.IsNullOrEmpty(service.Synopsis))
+                if (string.IsNullOrEmpty(service.Synopsis))
                     throw new Exception(string.Format("{0} is missing a synopsis in the manifest.", service.BaseName));
                 var assemblyName = service.Namespace.Replace("Amazon.", "AWSSDK.");
                 nugetPackages[assemblyName] = service.Synopsis;
@@ -883,7 +883,7 @@ namespace ServiceClientGenerator
 
             if (string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath))
                 throw new Exception("Xamarin component flag enabled but samples are missing");
-            
+
             var session = new Dictionary<string, object>
             {
                 { "AssemblyName", assemblyName },
@@ -1000,7 +1000,7 @@ namespace ServiceClientGenerator
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
                 { "licenseUrl", Configuration.LicenseUrl },
-                { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance }
+                { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" }
         };
 
             if (Configuration.NugetDependencies != null)

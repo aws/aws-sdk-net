@@ -7076,6 +7076,11 @@
             Path returned by Application.persistentDataPath
             </summary>
         </member>
+        <member name="P:Amazon.Util.Internal.AmazonHookedPlatformInfo.UnityVersion">
+            <summary>
+            Version returned by Application.unityVersion
+            </summary>
+        </member>
         <member name="P:Amazon.Util.Internal.AmazonHookedPlatformInfo.Locale">
             <summary>
             Current Locale for the device.
