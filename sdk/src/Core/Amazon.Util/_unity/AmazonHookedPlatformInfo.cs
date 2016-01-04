@@ -151,6 +151,11 @@ namespace Amazon.Util.Internal
         public string PersistentDataPath { get; set; }
 
         /// <summary>
+        /// Version returned by Application.unityVersion
+        /// </summary>
+        public string UnityVersion { get; set; }
+
+        /// <summary>
         /// Current Locale for the device.
         /// 
         /// On iOS this is the the value returned by NSLocale.AutoUpdatingCurrentLocale
@@ -263,12 +268,14 @@ namespace Amazon.Util.Internal
 
             PersistentDataPath = Application.persistentDataPath;
 
+            UnityVersion = Application.unityVersion;
+
             if (InternalSDKUtils.IsAndroid)
             {
                 //device related information
                 PlatformVersion = AndroidInterop.GetStaticJavaField<string>("android.os.Build$VERSION", "RELEASE");
-		Platform = ANDROID_OS;
-		Model = AndroidInterop.GetStaticJavaField<string>("android.os.Build", "MODEL");
+                Platform = ANDROID_OS;
+                Model = AndroidInterop.GetStaticJavaField<string>("android.os.Build", "MODEL");
 
                 Make = AndroidInterop.GetStaticJavaField<string>("android.os.Build", "MANUFACTURER");
 

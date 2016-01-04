@@ -86,6 +86,7 @@ namespace Amazon
                     if (_mainThread == null || !_mainThread.Equals(Thread.CurrentThread))
                         _mainThread = Thread.CurrentThread;
 
+                    AmazonHookedPlatformInfo.Instance.Init();
 
                     // preventing the instance from getting destroyed between scenes
                     DontDestroyOnLoad(this);
@@ -97,8 +98,6 @@ namespace Amazon
                     // Associate the main thread dispatcher
                     _instance.gameObject.AddComponent<UnityMainThreadDispatcher>();
 
-                    // add callback for Editor Mode change
-                    AmazonHookedPlatformInfo.Instance.Init();
 
                 }
                 else
