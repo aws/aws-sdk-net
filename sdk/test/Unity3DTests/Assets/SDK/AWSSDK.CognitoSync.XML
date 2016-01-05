@@ -1045,6 +1045,14 @@
             <param name="identityId">Identity identifier.</param>
             <param name="datasetName">Dataset name.</param>
         </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.PutRecords(System.String,System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record})">
+            <summary>
+            Puts a list of raw records into dataset.
+            </summary>
+            <param name="identityId">Identity identifier.</param>
+            <param name="datasetName">Dataset name.</param>
+            <param name="records">A list of Records.</param>
+        </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.ConditionallyPutRecords(System.String,System.String,System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record},System.Collections.Generic.List{Amazon.CognitoSync.SyncManager.Record})">
             <summary>
             Puts a list of raw records into that dataset if 
@@ -1129,6 +1137,12 @@
             </summary>
             <param name="identityId">Identity Identifier.</param>
             <param name="datasetName">Dataset name.</param>
+        </member>
+        <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.#ctor">
+            <summary>
+            An implementation for <see cref="T:Amazon.CognitoSync.SyncManager.ILocalStorage"/> 
+            using <see href="http://sqlite.org">SQLite</see>
+            </summary>
         </member>
         <member name="M:Amazon.CognitoSync.SyncManager.Internal.SQLiteLocalStorage.Dispose(System.Boolean)">
             <summary>

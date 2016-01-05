@@ -26,14 +26,14 @@ namespace Amazon.CognitoSync.SyncManager
     public partial class Dataset : IDisposable
     {
 
-        INetworkReachability NetReachability;
+        INetworkReachability _netReachability;
 
         /// <summary>
         /// Synchronize <see cref="Dataset"/> between local storage and remote storage.
         /// </summary>
         public virtual void Synchronize()
         {
-            if (NetReachability.NetworkStatus == NetworkStatus.NotReachable)
+            if (_netReachability.NetworkStatus == NetworkStatus.NotReachable)
             {
                 FireSyncFailureEvent(new NetworkException("Network connectivity unavailable."));
                 return;
@@ -56,8 +56,8 @@ namespace Amazon.CognitoSync.SyncManager
 
         private void DatasetSetupInternal()
         {
-            NetReachability = ServiceFactory.Instance.GetService<INetworkReachability>();
-            NetReachability.NetworkReachabilityChanged += OnNetworkReachabilityChanged;
+            _netReachability = ServiceFactory.Instance.GetService<INetworkReachability>();
+            _netReachability.NetworkReachabilityChanged += OnNetworkReachabilityChanged;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// </summary>
         public virtual void SynchronizeOnConnectivity()
         {
-            if (NetReachability.NetworkStatus != NetworkStatus.NotReachable)
+            if (_netReachability.NetworkStatus != NetworkStatus.NotReachable)
             {
                 Synchronize();
             }
@@ -351,7 +351,7 @@ namespace Amazon.CognitoSync.SyncManager
             if (disposing)
             {
                 ClearAllDelegates();
-                NetReachability.NetworkReachabilityChanged -= OnNetworkReachabilityChanged;
+                _netReachability.NetworkReachabilityChanged -= OnNetworkReachabilityChanged;
                 _disposed = true;
             }
         }

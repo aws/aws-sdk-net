@@ -153,7 +153,7 @@ namespace Amazon.Util.Internal
         /// <summary>
         /// Version returned by Application.unityVersion
         /// </summary>
-        public string UnityVersion { get; set; }
+        public string UnityVersion { get; private set; }
 
         /// <summary>
         /// Current Locale for the device.
