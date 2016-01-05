@@ -26,7 +26,7 @@ namespace Amazon.CognitoSync.SyncManager
     {
         INetworkReachability reachability;
 
-        internal Dataset()
+        private void DatasetSetupInternal()
         {
             reachability = ServiceFactory.Instance.GetService<INetworkReachability>();
             reachability.NetworkReachabilityChanged += HandleNetworkChange;

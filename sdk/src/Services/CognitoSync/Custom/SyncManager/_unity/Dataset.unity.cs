@@ -26,7 +26,7 @@ namespace Amazon.CognitoSync.SyncManager
     public partial class Dataset : IDisposable
     {
 
-        NetworkReachability NetReachability;
+        INetworkReachability NetReachability;
 
         /// <summary>
         /// Synchronize <see cref="Dataset"/> between local storage and remote storage.
@@ -52,6 +52,12 @@ namespace Amazon.CognitoSync.SyncManager
                     SynchronizeHelperAsync();
                 }));
             }
+        }
+
+        private void DatasetSetupInternal()
+        {
+            NetReachability = ServiceFactory.Instance.GetService<INetworkReachability>();
+            NetReachability.NetworkReachabilityChanged += OnNetworkReachabilityChanged;
         }
 
         /// <summary>

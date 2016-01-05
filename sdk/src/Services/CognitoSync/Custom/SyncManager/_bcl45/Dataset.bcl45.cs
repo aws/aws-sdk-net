@@ -1,4 +1,4 @@
-﻿//
+//
 // Copyright 2014-2015 Amazon.com, 
 // Inc. or its affiliates. All Rights Reserved.
 // 
@@ -22,13 +22,16 @@ using System;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Threading;
+using System.Threading.Tasks;
 
 
 namespace Amazon.CognitoSync.SyncManager
 {
+
     public partial class Dataset : IDisposable
     {
-        internal Dataset()
+
+        private void DatasetSetupInternal()
         {
             NetworkChange.NetworkAvailabilityChanged += HandleNetworkChange;
         }
@@ -45,60 +48,40 @@ namespace Amazon.CognitoSync.SyncManager
             if (disposing)
             {
                 ClearAllDelegates();
-// TODO BCL35
-#if BCL45
                 NetworkChange.NetworkAvailabilityChanged -= HandleNetworkChange;
-#endif
                 _disposed = true;
             }
         }
         #endregion
 
         #region Public Methods
-        /// <summary>
-        /// Synchronize <see cref="Dataset"/> between local storage and remote storage.
-        /// </summary>
-        public virtual void Synchronize()
-        {
-            if (!NetworkInterface.GetIsNetworkAvailable())
-            {
-                FireSyncFailureEvent(new NetworkException("Network connectivity unavailable."));
-                return;
-            }
-
-            ThreadPool.QueueUserWorkItem((state) =>
-            {
-                SynchronizeHelperAsync();
-            });
-        }
 
         /// <summary>
         /// Attempt to synchronize <see cref="Dataset"/> when connectivity is available. If
         /// the connectivity is available right away, it behaves the same as
-        /// <see cref="Dataset.Synchronize()"/>. Otherwise it listens to connectivity
+        /// <see cref="Dataset.SynchronizeAsync"/>. Otherwise it listens to connectivity
         /// changes, and will do a sync once the connectivity is back. Note that if
         /// this method is called multiple times, only the last synchronize request
         /// is kept. If either the dataset or the callback is garbage collected
         /// , this method will not perform a sync and the callback won't fire.
         /// </summary>
-        public virtual void SynchronizeOnConnectivity()
+        public async void SynchronizeOnConnectivity(CancellationToken cancellationToken = default(CancellationToken))
         {
             if (NetworkInterface.GetIsNetworkAvailable())
             {
-                ThreadPool.QueueUserWorkItem((state) =>
-                {
-                    SynchronizeHelperAsync();
-                });
+                await SynchronizeHelperAsync(cancellationToken);
             }
             else
             {
                 waitingForConnectivity = true;
             }
         }
+
         #endregion
 
         #region Private Methods
-        private void HandleNetworkChange(object sender, NetworkAvailabilityEventArgs e)
+
+        private async void HandleNetworkChange(object sender, NetworkAvailabilityEventArgs e)
         {
             if (!waitingForConnectivity)
             {
@@ -107,10 +90,26 @@ namespace Amazon.CognitoSync.SyncManager
 
             if (e.IsAvailable)
             {
-                Synchronize();
+                await SynchronizeAsync();
             }
         }
+
         #endregion
+
+        /// <summary>
+        /// Synchronize <see cref="Dataset"/> between local storage and remote storage.
+        /// </summary>
+        public async Task SynchronizeAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (!NetworkInterface.GetIsNetworkAvailable())
+            {
+                FireSyncFailureEvent(new NetworkException("Network connectivity unavailable."));
+                return;
+            }
+
+            await SynchronizeHelperAsync(cancellationToken);
+        }
     }
+
 }
 

@@ -128,10 +128,7 @@ namespace Amazon.CognitoSync.SyncManager
             this._local = local;
             this._remote = remote;
             _logger = Logger.GetLogger(this.GetType());
-#if UNITY
-            NetReachability = new NetworkReachability();
-            NetReachability.NetworkReachabilityChanged += OnNetworkReachabilityChanged;
-#endif
+            DatasetSetupInternal();
         }
 
         #endregion
