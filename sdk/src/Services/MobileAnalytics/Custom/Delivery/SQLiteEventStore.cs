@@ -14,18 +14,7 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-
-using Amazon.MobileAnalytics.Model;
-
-using ThirdParty.Json.LitJson;
-using Amazon.MobileAnalytics.MobileAnalyticsManager;
-using Amazon.Util;
-using Amazon.Runtime.Internal.Util;
-using Amazon.Util.Internal;
-using System.Globalization;
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {

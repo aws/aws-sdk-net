@@ -25,7 +25,7 @@ using System.Reflection;
 using System.Threading;
 using System.Xml.Linq;
 using UnityEngine;
-
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 
 namespace Amazon
 {

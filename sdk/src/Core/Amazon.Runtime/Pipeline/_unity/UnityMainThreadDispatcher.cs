@@ -18,6 +18,7 @@ using System;
 using System.Collections;
 using System.Threading;
 using UnityEngine;
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 
 namespace Amazon.Runtime.Internal
 {

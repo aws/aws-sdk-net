@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal.Util;
 using System;
 using System.Linq;
 using ThirdParty.iOS4Unity;
-
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 
 namespace Amazon.Util.Internal
 {

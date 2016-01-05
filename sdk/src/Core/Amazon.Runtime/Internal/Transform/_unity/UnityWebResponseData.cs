@@ -21,7 +21,8 @@ using System.Net;
 using System.Linq;
 using UnityEngine;
 using Amazon.Runtime.Internal.Util;
-
+using Logger = Amazon.Runtime.Internal.Util.Logger;
+using ILogger = Amazon.Runtime.Internal.Util.ILogger;
 
 namespace Amazon.Runtime.Internal.Transform
 {
