@@ -24,6 +24,7 @@ using Amazon.CognitoSync.SyncManager;
 using Amazon.CognitoSync.SyncManager.Internal;
 using System.Text;
 using Amazon.Runtime.Internal.Util;
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 using Amazon.Util;
 using System.Globalization;
 
@@ -480,6 +481,12 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
+        /// <summary>
+        /// Puts a list of raw records into dataset.
+        /// </summary>
+        /// <param name="identityId">Identity identifier.</param>
+        /// <param name="datasetName">Dataset name.</param>
+        /// <param name="records">A list of Records.</param>
         public void PutRecords(string identityId, string datasetName, List<Record> records)
         {
             lock (sqlite_lock)

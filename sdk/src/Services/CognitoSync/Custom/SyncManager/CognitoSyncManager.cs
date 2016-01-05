@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.CognitoSync.SyncManager.Internal;
 using Amazon.CognitoIdentity;
-using Amazon.Runtime.Internal.Util;
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 using Amazon.Util.Internal;
 #if UNITY
 using UnityEngine;

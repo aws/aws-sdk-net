@@ -17,7 +17,7 @@
 using Amazon.CognitoIdentity;
 using Amazon.CognitoSync.SyncManager.Internal;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Util;
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 using Amazon.Util.Internal.PlatformServices;
 using System;
 using System.Collections.Generic;

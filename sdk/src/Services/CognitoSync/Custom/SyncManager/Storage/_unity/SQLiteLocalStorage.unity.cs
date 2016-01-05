@@ -15,13 +15,11 @@
 // limitations under the License.
 //
 
-using Amazon.Util.Storage.Internal;
 using Mono.Data.Sqlite;
-using UnityEngine;
 using Amazon.Util.Internal;
 using System.IO;
 using System.Text.RegularExpressions;
-using Amazon.Runtime.Internal.Util;
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 using System;
 using System.Globalization;
 using System.Collections.Generic;
@@ -33,6 +31,10 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         internal readonly string directoryPath;
         internal readonly string filePath;
 
+        /// <summary>
+        /// An implementation for <see cref="Amazon.CognitoSync.SyncManager.ILocalStorage"/> 
+        /// using <see href="http://sqlite.org">SQLite</see>
+        /// </summary>
         public SQLiteLocalStorage()
         {
             _logger = Logger.GetLogger(this.GetType());
