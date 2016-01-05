@@ -135,6 +135,7 @@ namespace AWSSDK.Tests.Framework
         {
             private HashSet<String> FixtureNames;
             private HashSet<String> TestCaseNames;
+            public bool InvertMatch = false;
 
             public FixtureAndCaseFilter(HashSet<String> fixtureNames, HashSet<String> testCaseNames)
             {
@@ -167,24 +168,33 @@ namespace AWSSDK.Tests.Framework
 
             bool ITestFilter.Pass(ITest test)
             {
-                if (FixtureNames.Count == 0 || test.IsSuite)
+                if (FixtureNames.Count == 0)
                 {
+                    // match
+                    return !InvertMatch;
+                }
+                if (test.IsSuite)
+                {
+                    // continue to deeper matching level
                     return true;
                 }
                 if (FixtureNames.Contains(test.TypeInfo.Name))
                 {
                     if (TestCaseNames.Count == 0)
                     {
-                        return true;
+                        // match
+                        return !InvertMatch;
                     }
                     else
                     {
-                        return TestCaseNames.Contains(test.Name);
+                        // match is test name is in set of matching names
+                        return InvertMatch != TestCaseNames.Contains(test.Name);
                     }
                 }
                 else
                 {
-                    return false;
+                    // no match
+                    return InvertMatch;
                 }
             }
             public TNode ToXml(bool b)

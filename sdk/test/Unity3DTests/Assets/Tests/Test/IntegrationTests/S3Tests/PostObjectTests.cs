@@ -27,10 +27,8 @@ namespace AWSSDK.IntegrationTests.S3
         [OneTimeSetUp]
         public void SetUp()
         {
-            Debug.LogWarningFormat("setup start");
             BucketName = "unity-test-bucket" + DateTime.Now.Ticks;
             MissingAPILambdaFunctions.CreateBucket(BucketName, TestRunner.RegionEndpoint);
-            Debug.LogWarningFormat("setup end");
         }
 
         [OneTimeTearDown]
@@ -148,7 +146,6 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
-        // TODO: Get Post object with path working
         public void SimplePathPostObjectTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
