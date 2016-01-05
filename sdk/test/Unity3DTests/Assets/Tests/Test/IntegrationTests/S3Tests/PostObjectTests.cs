@@ -27,8 +27,10 @@ namespace AWSSDK.IntegrationTests.S3
         [OneTimeSetUp]
         public void SetUp()
         {
+            Debug.LogWarningFormat("setup start");
             BucketName = "unity-test-bucket" + DateTime.Now.Ticks;
             MissingAPILambdaFunctions.CreateBucket(BucketName, TestRunner.RegionEndpoint);
+            Debug.LogWarningFormat("setup end");
         }
 
         [OneTimeTearDown]
@@ -98,7 +100,7 @@ namespace AWSSDK.IntegrationTests.S3
             var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
 
             // Authenticated Read
-            S3TestUtils.PostObjectHelper(Client, BucketName, key, delegate(PostObjectRequest request) { request.CannedACL = S3CannedACL.AuthenticatedRead; });
+            S3TestUtils.PostObjectHelper(Client, BucketName, key, delegate (PostObjectRequest request) { request.CannedACL = S3CannedACL.AuthenticatedRead; });
             var grants = S3TestUtils.GetACLHelper(Client, BucketName, key).AccessControlList.Grants;
             Utils.AssertTrue(GrantsContain(grants, AuthenticatedUsersUriSubstring, S3Permission.READ));
             Utils.AssertTrue(GrantsDoNotContain(grants, AllUsersUriSubstring));
@@ -112,7 +114,7 @@ namespace AWSSDK.IntegrationTests.S3
             Utils.AssertTrue(GrantsDoNotContain(grants, LogDeliveryUriSubstring));
 
             // Private
-            S3TestUtils.PostObjectHelper(Client, BucketName, key, delegate(PostObjectRequest request) { request.CannedACL = S3CannedACL.Private; });
+            S3TestUtils.PostObjectHelper(Client, BucketName, key, delegate (PostObjectRequest request) { request.CannedACL = S3CannedACL.Private; });
             grants = S3TestUtils.GetACLHelper(Client, BucketName, key).AccessControlList.Grants;
             Utils.AssertTrue(GrantsDoNotContain(grants, AuthenticatedUsersUriSubstring));
             Utils.AssertTrue(GrantsDoNotContain(grants, AllUsersUriSubstring));
@@ -155,6 +157,7 @@ namespace AWSSDK.IntegrationTests.S3
             string filePath = S3TestUtils.GetFileHelper(fileName);
             Client.PostObjectAsync(new PostObjectRequest()
             {
+                Key = fileName,
                 Bucket = BucketName,
                 Path = filePath,
                 CannedACL = S3CannedACL.Private

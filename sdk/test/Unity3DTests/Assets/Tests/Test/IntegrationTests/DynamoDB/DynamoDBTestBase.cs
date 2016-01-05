@@ -183,7 +183,6 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             hashRangeTableName = TableNamePrefix + "HashRangeTable";
             bool createHashTable = true;
             bool createHashRangeTable = true;
-
             if (ReuseTables)
             {
                 if (GetStatus(Client, hashTableName) != null)
@@ -202,19 +201,19 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             {
                 // Create hash-key table with global index
                 Client.CreateTableAsync(new CreateTableRequest
-                 {
-                     TableName = hashTableName,
-                     AttributeDefinitions = new List<AttributeDefinition>
+                {
+                    TableName = hashTableName,
+                    AttributeDefinitions = new List<AttributeDefinition>
                     {
                         new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
                         new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
                         new AttributeDefinition { AttributeName = "Price", AttributeType = ScalarAttributeType.N }
                     },
-                     KeySchema = new List<KeySchemaElement>
+                    KeySchema = new List<KeySchemaElement>
                     {
                         new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
                     },
-                     GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
+                    GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
                     {
                         new GlobalSecondaryIndex
                         {
@@ -228,12 +227,12 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                             Projection = new Projection { ProjectionType = ProjectionType.ALL }
                         }
                     },
-                     ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
-                 }, (result) =>
-                 {
-                     exception = result.Exception;
-                     ars.Set();
-                 }, options);
+                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                }, (result) =>
+                {
+                    exception = result.Exception;
+                    ars.Set();
+                }, options);
 
                 ars.WaitOne();
                 Assert.IsNull(exception);
@@ -248,9 +247,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             {
                 // Create hash-and-range-key table with local and global indexes
                 Client.CreateTableAsync(new CreateTableRequest
-                  {
-                      TableName = hashRangeTableName,
-                      AttributeDefinitions = new List<AttributeDefinition>
+                {
+                    TableName = hashRangeTableName,
+                    AttributeDefinitions = new List<AttributeDefinition>
                     {
                         new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S },
                         new AttributeDefinition { AttributeName = "Age", AttributeType = ScalarAttributeType.N },
@@ -258,12 +257,12 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                         new AttributeDefinition { AttributeName = "Score", AttributeType = ScalarAttributeType.N },
                         new AttributeDefinition { AttributeName = "Manager", AttributeType = ScalarAttributeType.S }
                     },
-                      KeySchema = new List<KeySchemaElement>
+                    KeySchema = new List<KeySchemaElement>
                     {
                         new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
                         new KeySchemaElement { AttributeName = "Age", KeyType = KeyType.RANGE }
                     },
-                      GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
+                    GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
                     {
                         new GlobalSecondaryIndex
                         {
@@ -277,7 +276,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                             Projection = new Projection { ProjectionType = ProjectionType.ALL }
                         }
                     },
-                      LocalSecondaryIndexes = new List<LocalSecondaryIndex> 
+                    LocalSecondaryIndexes = new List<LocalSecondaryIndex>
                     {
                         new LocalSecondaryIndex
                         {
@@ -294,12 +293,12 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                             }
                         }
                     },
-                      ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
-                  }, (result) =>
-                  {
-                      exception = result.Exception;
-                      ars.Set();
-                  }, options);
+                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                }, (result) =>
+                {
+                    exception = result.Exception;
+                    ars.Set();
+                }, options);
 
                 ars.WaitOne();
                 Assert.IsNull(exception);
@@ -378,29 +377,29 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         public static TableStatus GetStatus(AmazonDynamoDBClient client, string tableName)
         {
             var ars = new AutoResetEvent(false);
-            var exception = new Exception();
+            var responseException = new Exception();
 
             TableStatus status = null;
-            DescribeTableResponse resp = null;
-            try
+            client.DescribeTableAsync(new DescribeTableRequest() { TableName = tableName }, (result) =>
             {
-                client.DescribeTableAsync(new DescribeTableRequest() { TableName = tableName }, (result) =>
+                responseException = result.Exception;
+                if (responseException == null)
                 {
-                    exception = result.Exception;
-                    resp = result.Response;
-                    ars.Set();
-                }, options);
+                    status = result.Response.Table.TableStatus;
+                }
+                ars.Set();
+            }, options);
 
-                ars.WaitOne();
-                Assert.IsNull(exception);
+            ars.WaitOne();
 
-                status = resp.Table.TableStatus;
-            }
-            catch (ResourceNotFoundException)
+            if (responseException != null)
             {
-                status = null;
+                if (responseException is ResourceNotFoundException)
+                {
+                    return null;
+                }
+                Utils.AssertExceptionIsNull(responseException);
             }
-
             return status;
         }
     }
