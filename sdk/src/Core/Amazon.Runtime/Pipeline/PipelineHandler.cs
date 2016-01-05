@@ -107,13 +107,8 @@ namespace Amazon.Runtime.Internal
                 executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
                 LogMetrics(ExecutionContext.CreateFromAsyncContext(executionContext));
 
-                var asyncResult = executionContext.ResponseContext.AsyncResult;
-                asyncResult.Exception = exception;
-                asyncResult.SignalWaitHandle();
-                if (asyncResult.AsyncCallback != null)
-                {
-                    asyncResult.AsyncCallback(asyncResult);
-                }
+                // Sets the exception on the AsyncResult, signals the wait handle and calls the user callback.
+                executionContext.ResponseContext.AsyncResult.HandleException(exception);
             }
         }
 
@@ -139,14 +134,10 @@ namespace Amazon.Runtime.Internal
             {
                 // No more outer handlers to process, signal completion
                 executionContext.ResponseContext.AsyncResult.Response =
-                    executionContext.ResponseContext.Response;                
-                
-                var asyncResult = executionContext.ResponseContext.AsyncResult;                
-                asyncResult.SignalWaitHandle();
-                if (asyncResult.AsyncCallback != null)
-                {
-                    asyncResult.AsyncCallback(asyncResult);
-                }
+                    executionContext.ResponseContext.Response;
+
+                // Signals the wait handle and calls the user callback.
+                executionContext.ResponseContext.AsyncResult.InvokeCallback();
             }
         }
 #endif

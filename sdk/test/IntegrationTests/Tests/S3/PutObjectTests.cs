@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string bucketName;
         private const string testContent = "This is the content body!";
 
-        [ClassInitialize()]
+        //[ClassInitialize()]
         public static void Initialize(TestContext a)
         {
             StreamWriter writer = File.CreateText("PutObjectFile.txt");
@@ -43,31 +43,125 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
 
-        [ClassCleanup]
+        //[ClassCleanup]
         public static void ClassCleanup()
         {
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             BaseClean();
         }
 
-#if AWS_APM_API        
+#if AWS_APM_API
+
+        private int _callbackInvocationCount = 0;
+
         [TestMethod]
         [TestCategory("S3")]
         public void TestAsyncExceptionHandling()
         {
-                GetObjectRequest request = new GetObjectRequest
-                {
-                    BucketName = "NonExistentBucket",
-                    Key = "NonExistentKey",
-                };
-                
-                IAsyncResult result = Client.BeginGetObject(request, null, null);
 
-                var exception = AssertExtensions.ExpectException<AmazonS3Exception>(
-                    () => Client.EndGetObject(result));
-                Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
-                Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
+            var s3Client = new AmazonS3Client(new AmazonS3Config
+            {
+            });
+
+            GetObjectRequest request = new GetObjectRequest
+            {
+                BucketName = "NonExistentBucket",
+                Key = "NonExistentKey",
+            };
+
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
+            IAsyncResult result = s3Client.BeginGetObject(request, new AsyncCallback(GetObjectExceptionCallback), null);
+            stopwatch.Stop();
+            Console.WriteLine("{0} BeginGetObject returned in {1} ms", DateTime.UtcNow, stopwatch.Elapsed.Milliseconds);
+            Assert.IsTrue(stopwatch.Elapsed < TimeSpan.FromSeconds(1));
+
+            result.AsyncWaitHandle.WaitOne();
         }
+
+        void GetObjectExceptionCallback(IAsyncResult result)
+        {
+            _callbackInvocationCount++;
+            Assert.IsTrue(_callbackInvocationCount == 1);
+            Console.WriteLine("{0} GetObjectCallback was triggered", DateTime.UtcNow);
+
+            var exception = AssertExtensions.ExpectException<AmazonS3Exception>(
+                () => Client.EndGetObject(result));
+            throw exception;
+
+            Console.WriteLine("{0} EndGetObject returned", DateTime.UtcNow);
+        }
+
+
+        private ManualResetEvent _testWaitHandle;
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestPutGetObjectAsync()
+        {
+            _testWaitHandle = new ManualResetEvent(false);
+
+            var key = "contentBodyPut" + random.Next();
+            PutObjectRequest putRequest = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = key,
+                ContentBody = testContent,
+                CannedACL = S3CannedACL.AuthenticatedRead
+            };
+            putRequest.Metadata.Add("Subject", "Content-As-Object");
+
+            Client.BeginPutObject(putRequest, new AsyncCallback(PutObjectCallback), key);
+            _testWaitHandle.WaitOne();
+        }
+
+        void PutObjectCallback(IAsyncResult result)
+        {
+            try
+            {
+                var putResponse = Client.EndPutObject(result);
+                var key = result.AsyncState as string;
+                Console.WriteLine("S3 generated ETag: {0}", putResponse.ETag);
+                Assert.IsTrue(putResponse.ETag.Length > 0);
+
+                var getRequest = new GetObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                };
+                Client.BeginGetObject(getRequest, new AsyncCallback(GetObjectCallback), "GetState");
+            }
+            catch (Exception exception)
+            {
+                Assert.Fail(exception.Message);
+                _testWaitHandle.Set();
+            }
+        }
+
+        void GetObjectCallback(IAsyncResult result)
+        {
+            try
+            {
+                string responseData;
+                Assert.IsTrue(((string)result.AsyncState).Equals("GetState"));
+                using (var response = Client.EndGetObject(result))
+                using (var responseStream = response.ResponseStream)
+                using (StreamReader reader = new StreamReader(responseStream))
+                {
+                    responseData = reader.ReadToEnd();
+                    Assert.AreEqual(testContent, responseData);
+                }
+            }
+            catch (Exception exception)
+            {
+                Assert.Fail(exception.Message);
+            }
+            finally
+            {
+                _testWaitHandle.Set();
+            }
+        }
+
 #endif
 
 
