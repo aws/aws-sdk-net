@@ -132,6 +132,9 @@
     <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\SharedInterfaces\*.cs">
       <SubType>Code</SubType>
     </Compile>
