@@ -49,7 +49,6 @@ namespace AWSSDK.Tests.Framework
             var options = new Dictionary<string, string>();
             var tests = runner.Load(currentAssembly, options);
             var result = runner.Run(this, TestFilter.Empty);
-            var result = runner.Run(this, new FixtureAndCaseFilter("SyncManagerTests"));
         }
 
         /// <summary>

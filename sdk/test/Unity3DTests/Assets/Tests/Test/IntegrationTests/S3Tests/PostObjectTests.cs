@@ -27,8 +27,10 @@ namespace AWSSDK.IntegrationTests.S3
         [OneTimeSetUp]
         public void SetUp()
         {
+            Debug.LogWarningFormat("setup start");
             BucketName = "unity-test-bucket" + DateTime.Now.Ticks;
             MissingAPILambdaFunctions.CreateBucket(BucketName, TestRunner.RegionEndpoint);
+            Debug.LogWarningFormat("setup end");
         }
 
         [OneTimeTearDown]
