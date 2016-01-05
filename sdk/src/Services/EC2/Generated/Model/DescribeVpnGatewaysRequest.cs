@@ -60,7 +60,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone for the virtual private gateway.
+        /// <code>availability-zone</code> - The Availability Zone for the virtual private gateway
+        /// (if applicable).
         /// </para>
         ///  </li> <li> 
         /// <para>

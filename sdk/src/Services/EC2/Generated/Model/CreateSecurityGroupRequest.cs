@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// EC2-VPC: You can create up to 100 security groups per VPC.
+    /// EC2-VPC: You can create up to 500 security groups per VPC.
     /// </para>
     ///  </important> 
     /// <para>
