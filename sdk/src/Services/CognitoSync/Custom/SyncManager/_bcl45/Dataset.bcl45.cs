@@ -65,11 +65,11 @@ namespace Amazon.CognitoSync.SyncManager
         /// is kept. If either the dataset or the callback is garbage collected
         /// , this method will not perform a sync and the callback won't fire.
         /// </summary>
-        public async void SynchronizeOnConnectivity(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task SynchronizeOnConnectivity(CancellationToken cancellationToken = default(CancellationToken))
         {
             if (NetworkInterface.GetIsNetworkAvailable())
             {
-                await SynchronizeHelperAsync(cancellationToken);
+                await SynchronizeHelperAsync(cancellationToken).ConfigureAwait(false);
             }
             else
             {
@@ -107,7 +107,7 @@ namespace Amazon.CognitoSync.SyncManager
                 return;
             }
 
-            await SynchronizeHelperAsync(cancellationToken);
+            await SynchronizeHelperAsync(cancellationToken).ConfigureAwait(false);
         }
     }
 

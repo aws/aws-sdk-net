@@ -63,10 +63,7 @@ namespace Amazon.CognitoSync.SyncManager
                 return;
             }
 
-            ThreadPool.QueueUserWorkItem((state) =>
-            {
-                SynchronizeHelperAsync();
-            });
+            SynchronizeHelperAsync();
         }
 
         /// <summary>
@@ -82,10 +79,7 @@ namespace Amazon.CognitoSync.SyncManager
         {
             if (NetworkInterface.GetIsNetworkAvailable())
             {
-                ThreadPool.QueueUserWorkItem((state) =>
-                {
-                    SynchronizeHelperAsync();
-                });
+                SynchronizeHelperAsync();
             }
             else
             {

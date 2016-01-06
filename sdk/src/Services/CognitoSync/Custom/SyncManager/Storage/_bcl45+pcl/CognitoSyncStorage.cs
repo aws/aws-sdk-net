@@ -151,7 +151,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
             try
             {
-
                 UpdateRecordsResponse updateRecordsResponse = await client.UpdateRecordsAsync(request, cancellationToken).ConfigureAwait(false);
                 foreach (Amazon.CognitoSync.Model.Record remoteRecord in updateRecordsResponse.Records)
                 {
@@ -161,7 +160,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
             catch (Exception ex)
             {
-                throw HandleException(ex, "Failed to update records in dataset: " + datasetName);
+                throw new DataStorageException("Failed to update records in dataset: " + datasetName, ex);
             }
         }
 
@@ -190,7 +189,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
             catch (Exception ex)
             {
-                throw HandleException(ex, "Failed to delete dataset: " + datasetName);
+                throw new DataStorageException("Failed to delete dataset: " + datasetName, ex);
             }
         }
 
