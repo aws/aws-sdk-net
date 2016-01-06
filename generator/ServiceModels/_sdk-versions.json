@@ -1,437 +1,437 @@
 
 {
-    "ProductVersion" : "3.1.36.0",
-    "CoreVersion"    : "3.1.4.2",
+    "ProductVersion" : "3.1.36.1",
+    "CoreVersion"    : "3.1.4.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "AutoScaling" : {
-            "Version" : "3.1.2.0",
+            "Version" : "3.1.2.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "AWSSupport"  : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CloudFormation" : {
-            "Version" : "3.1.1.2",
+            "Version" : "3.1.1.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CloudFront"     : {
-            "Version" : "3.1.2.0",
+            "Version" : "3.1.2.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CloudSearch"    : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CloudSearchDomain" : {
-            "Version" : "3.1.0.5",
+            "Version" : "3.1.0.6",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CloudTrail"        : {
-            "Version" : "3.1.2.0",
+            "Version" : "3.1.2.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ConfigService"     : {
-            "Version" : "3.1.3.0",
+            "Version" : "3.1.3.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CloudWatch"        : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CloudWatchLogs"    : {
-            "Version" : "3.1.2.2",
+            "Version" : "3.1.2.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CognitoIdentity"   : {
-            "Version" : "3.1.0.5",
+            "Version" : "3.1.0.6",
             "Dependencies" : {
-                "Core" : "3.1.4.0",
-                "SecurityToken" : "3.1.0.3"
+                "Core" : "3.1.4.3",
+                "SecurityToken" : "3.1.1.2"
             },
             "InPreview"    : false
         },
         "CognitoSync"       : {
-            "Version" : "3.1.0.4",
+            "Version" : "3.1.0.5",
             "Dependencies" : {
-                "Core" : "3.1.4.0",
-                "CognitoIdentity" : "3.1.0.5"
+                "Core" : "3.1.4.3",
+                "CognitoIdentity" : "3.1.0.6"
             },
             "InPreview"    : false
         },
         "DataPipeline"      : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "DeviceFarm"        : {
-            "Version" : "3.1.3.1",
+            "Version" : "3.1.3.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "DirectConnect"     : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "DynamoDBv2"        : {
-            "Version" : "3.1.1.3",
+            "Version" : "3.1.1.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "EC2"               : {
-            "Version" : "3.1.7.0",
+            "Version" : "3.1.7.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ECS"               : {
-            "Version" : "3.1.3.0",
+            "Version" : "3.1.3.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ElastiCache"       : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ElasticBeanstalk"  : {
-            "Version" : "3.1.2.1",
+            "Version" : "3.1.2.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ElasticLoadBalancing" : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ElasticMapReduce"     : {
-            "Version" : "3.1.2.0",
+            "Version" : "3.1.2.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ElasticTranscoder"    : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "Glacier"              : {
-            "Version" : "3.1.0.4",
+            "Version" : "3.1.0.5",
             "Dependencies" : {
-                "Core" : "3.1.4.0",
-                "SQS"  : "3.1.0.4",
-                "SimpleNotificationService" : "3.1.0.3"
+                "Core" : "3.1.4.3",
+                "SQS"  : "3.1.0.5",
+                "SimpleNotificationService" : "3.1.0.4"
             },
             "InPreview"    : false
         },
         "IdentityManagement"   : {
-            "Version" : "3.1.3.1",
+            "Version" : "3.1.3.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ImportExport"         : {
-            "Version" : "3.1.1.2",
+            "Version" : "3.1.1.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "Kinesis"              : {
-            "Version" : "3.1.2.1",
+            "Version" : "3.1.2.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "Lambda"               : {
-            "Version" : "3.1.2.4",
+            "Version" : "3.1.2.5",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "KeyManagementService" : {
-            "Version" : "3.1.1.1",
+            "Version" : "3.1.1.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "MachineLearning"      : {
-            "Version" : "3.1.1.2",
+            "Version" : "3.1.1.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "MobileAnalytics"      : {
-            "Version" : "3.1.1.4",
+            "Version" : "3.1.1.5",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "OpsWorks"             : {
-            "Version" : "3.1.1.3",
+            "Version" : "3.1.1.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "RDS"                  : {
-            "Version" : "3.1.7.0",
+            "Version" : "3.1.7.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "Redshift"             : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "Route53"              : {
-            "Version" : "3.1.2.0",
+            "Version" : "3.1.2.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "Route53Domains"       : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "S3"                   : {
-            "Version" : "3.1.3.9",
+            "Version" : "3.1.3.10",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "SecurityToken"        : {
-            "Version" : "3.1.1.1",
+            "Version" : "3.1.1.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "SimpleDB"             : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "SimpleEmail"          : {
-            "Version" : "3.1.1.2",
+            "Version" : "3.1.1.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "SimpleNotificationService" : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "SimpleWorkflow"            : {
-            "Version" : "3.1.1.3",
+            "Version" : "3.1.1.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "SQS"                       : {
-            "Version" : "3.1.0.4",
+            "Version" : "3.1.0.5",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.1.1.1",
+            "Version" : "3.1.1.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "StorageGateway"            : {
-            "Version" : "3.1.1.2",
+            "Version" : "3.1.1.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.1.1.2",
+            "Version" : "3.1.1.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "DirectoryService"          : {
-            "Version" : "3.1.1.0",
+            "Version" : "3.1.1.1",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ElasticFileSystem"         : {
-            "Version" : "3.1.1.2",
+            "Version" : "3.1.1.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CodeCommit"                : {
-            "Version" : "3.1.0.3",
+            "Version" : "3.1.0.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "CodePipeline"              : {
-            "Version" : "3.1.1.3",
+            "Version" : "3.1.1.4",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "Elasticsearch"             : {
-            "Version" : "3.1.0.2",
+            "Version" : "3.1.0.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "WAF"                       : {
-            "Version" : "3.1.0.2",
+            "Version" : "3.1.0.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "KinesisFirehose"           : {
-            "Version" : "3.1.0.1",
+            "Version" : "3.1.0.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "AWSMarketplaceCommerceAnalytics" : {
-            "Version" : "3.1.0.1",
+            "Version" : "3.1.0.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "Inspector"                       : {
-            "Version" : "3.1.0.2",
+            "Version" : "3.1.0.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "IoT"                             : {
-            "Version" : "3.1.0.4",
+            "Version" : "3.1.0.5",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "IotData"                         : {
-            "Version" : "3.1.0.2",
+            "Version" : "3.1.0.3",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "APIGateway"                      : {
-            "Version" : "3.1.1.1",
+            "Version" : "3.1.1.2",
             "Dependencies" : {
-                "Core" : "3.1.4.0"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ECR"                             : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.0.1",
             "Dependencies" : {
-                "Core" : "3.1.4.2"
+                "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         }

@@ -40,7 +40,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.1")]
-[assembly: AssemblyFileVersion("3.1.2.2")]
+[assembly: AssemblyFileVersion("3.1.2.3")]
 
 #if WINDOWS_PHONE
 [assembly: System.CLSCompliant(false)]
