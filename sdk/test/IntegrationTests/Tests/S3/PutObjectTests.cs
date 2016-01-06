@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string bucketName;
         private const string testContent = "This is the content body!";
 
-        //[ClassInitialize()]
+        [ClassInitialize()]
         public static void Initialize(TestContext a)
         {
             StreamWriter writer = File.CreateText("PutObjectFile.txt");
@@ -43,7 +43,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
 
-        //[ClassCleanup]
+        [ClassCleanup]
         public static void ClassCleanup()
         {
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
