@@ -42,11 +42,11 @@ namespace Amazon.DirectConnect
     /// for each of the actions and data types for AWS Direct Connect. Use the following links
     /// to get started using the <i>AWS Direct Connect API Reference</i>:
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html">Actions</a>:
-    /// An alphabetical list of all AWS Direct Connect actions.</li> <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html">Data
-    /// Types</a>: An alphabetical list of all AWS Direct Connect data types.</li> <li> <a
+    ///  <ul> <li><a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html">Actions</a>:
+    /// An alphabetical list of all AWS Direct Connect actions.</li> <li><a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html">Data
+    /// Types</a>: An alphabetical list of all AWS Direct Connect data types.</li> <li><a
     /// href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html">Common
-    /// Query Parameters</a>: Parameters that all Query actions can use.</li> <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html">Common
+    /// Query Parameters</a>: Parameters that all Query actions can use.</li> <li><a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html">Common
     /// Errors</a>: Client and server errors that all actions can return.</li> </ul>
     /// </summary>
     public partial interface IAmazonDirectConnect : IDisposable

@@ -49,35 +49,35 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("CloudTrailARNInvalid"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CloudTrailARNInvalidException"))
             {
                 return new CloudTrailARNInvalidException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagParameter"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagParameterException"))
             {
                 return new InvalidTagParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailName"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailNameException"))
             {
                 return new InvalidTrailNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermitted"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
             {
                 return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceTypeNotSupported"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceTypeNotSupportedException"))
             {
                 return new ResourceTypeNotSupportedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TagsLimitExceeded"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TagsLimitExceededException"))
             {
                 return new TagsLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
             {
                 return new UnsupportedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }

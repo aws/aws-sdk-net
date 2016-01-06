@@ -30,7 +30,8 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the CreateTrail operation.
     /// Creates a trail that specifies the settings for delivery of log data to an Amazon
-    /// S3 bucket.
+    /// S3 bucket. A maximum of five trails can exist in a region, irrespective of the region
+    /// in which they were created.
     /// </summary>
     public partial class CreateTrailRequest : AmazonCloudTrailRequest
     {
@@ -38,6 +39,7 @@ namespace Amazon.CloudTrail.Model
         private string _cloudWatchLogsRoleArn;
         private bool? _enableLogFileValidation;
         private bool? _includeGlobalServiceEvents;
+        private bool? _isMultiRegionTrail;
         private string _kmsKeyId;
         private string _name;
         private string _s3BucketName;
@@ -125,6 +127,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetIncludeGlobalServiceEvents()
         {
             return this._includeGlobalServiceEvents.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMultiRegionTrail. 
+        /// <para>
+        /// Specifies whether the trail is created in the current region or in all regions. The
+        /// default is false.
+        /// </para>
+        /// </summary>
+        public bool IsMultiRegionTrail
+        {
+            get { return this._isMultiRegionTrail.GetValueOrDefault(); }
+            set { this._isMultiRegionTrail = value; }
+        }
+
+        // Check to see if IsMultiRegionTrail property is set
+        internal bool IsSetIsMultiRegionTrail()
+        {
+            return this._isMultiRegionTrail.HasValue; 
         }
 
         /// <summary>

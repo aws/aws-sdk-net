@@ -78,6 +78,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirstActivatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FirstEvaluationStarted", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.FirstEvaluationStarted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -90,10 +96,22 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastFailedEvaluationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastFailedEvaluationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastFailedInvocationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastFailedInvocationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastSuccessfulEvaluationTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastSuccessfulEvaluationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastSuccessfulInvocationTime", targetDepth))

@@ -33,6 +33,7 @@ namespace Amazon.ECS.Model
     public partial class Service
     {
         private string _clusterArn;
+        private DeploymentConfiguration _deploymentConfiguration;
         private List<Deployment> _deployments = new List<Deployment>();
         private int? _desiredCount;
         private List<ServiceEvent> _events = new List<ServiceEvent>();
@@ -61,6 +62,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetClusterArn()
         {
             return this._clusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfiguration. 
+        /// <para>
+        /// Optional deployment parameters that control how many tasks run during the deployment
+        /// and the ordering of stopping and starting tasks.
+        /// </para>
+        /// </summary>
+        public DeploymentConfiguration DeploymentConfiguration
+        {
+            get { return this._deploymentConfiguration; }
+            set { this._deploymentConfiguration = value; }
+        }
+
+        // Check to see if DeploymentConfiguration property is set
+        internal bool IsSetDeploymentConfiguration()
+        {
+            return this._deploymentConfiguration != null;
         }
 
         /// <summary>
@@ -219,7 +239,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// A user-generated string that you can use to identify your service.
+        /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+        /// and underscores are allowed. Service names must be unique within a cluster, but you
+        /// can have similarly named services in multiple clusters within a region or across multiple
+        /// regions.
         /// </para>
         /// </summary>
         public string ServiceName

@@ -64,6 +64,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.IncludeGlobalServiceEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsMultiRegionTrail", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsMultiRegionTrail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -114,75 +120,83 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("CloudWatchLogsDeliveryUnavailable"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CloudWatchLogsDeliveryUnavailableException"))
             {
                 return new CloudWatchLogsDeliveryUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientEncryptionPolicy"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientEncryptionPolicyException"))
             {
                 return new InsufficientEncryptionPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientS3BucketPolicy"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientS3BucketPolicyException"))
             {
                 return new InsufficientS3BucketPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientSnsTopicPolicy"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientSnsTopicPolicyException"))
             {
                 return new InsufficientSnsTopicPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCloudWatchLogsLogGroupArn"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCloudWatchLogsLogGroupArnException"))
             {
                 return new InvalidCloudWatchLogsLogGroupArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCloudWatchLogsRoleArn"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCloudWatchLogsRoleArnException"))
             {
                 return new InvalidCloudWatchLogsRoleArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidKmsKeyId"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidHomeRegionException"))
+            {
+                return new InvalidHomeRegionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidKmsKeyIdException"))
             {
                 return new InvalidKmsKeyIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3BucketName"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
+            {
+                return new InvalidParameterCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3BucketNameException"))
             {
                 return new InvalidS3BucketNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3Prefix"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3PrefixException"))
             {
                 return new InvalidS3PrefixException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSnsTopicName"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSnsTopicNameException"))
             {
                 return new InvalidSnsTopicNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailName"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailNameException"))
             {
                 return new InvalidTrailNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyDisabled"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyDisabledException"))
             {
                 return new KmsKeyDisabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyNotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyNotFoundException"))
             {
                 return new KmsKeyNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermitted"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
             {
                 return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("S3BucketDoesNotExist"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("S3BucketDoesNotExistException"))
             {
                 return new S3BucketDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotFoundException"))
             {
                 return new TrailNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotProvided"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotProvidedException"))
             {
                 return new TrailNotProvidedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
             {
                 return new UnsupportedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }

@@ -57,6 +57,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetIncludeShadowTrails())
+                {
+                    context.Writer.WritePropertyName("includeShadowTrails");
+                    context.Writer.Write(publicRequest.IncludeShadowTrails);
+                }
+
                 if(publicRequest.IsSetTrailNameList())
                 {
                     context.Writer.WritePropertyName("trailNameList");

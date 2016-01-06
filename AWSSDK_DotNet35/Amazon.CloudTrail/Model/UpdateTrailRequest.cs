@@ -32,7 +32,9 @@ namespace Amazon.CloudTrail.Model
     /// Updates the settings that specify delivery of log files. Changes to a trail do not
     /// require stopping the CloudTrail service. Use this action to designate an existing
     /// bucket for log delivery. If the existing bucket has previously been a target for CloudTrail
-    /// log files, an IAM policy exists for the bucket.
+    /// log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called
+    /// from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code>
+    /// is thrown.
     /// </summary>
     public partial class UpdateTrailRequest : AmazonCloudTrailRequest
     {
@@ -40,6 +42,7 @@ namespace Amazon.CloudTrail.Model
         private string _cloudWatchLogsRoleArn;
         private bool? _enableLogFileValidation;
         private bool? _includeGlobalServiceEvents;
+        private bool? _isMultiRegionTrail;
         private string _kmsKeyId;
         private string _name;
         private string _s3BucketName;
@@ -127,6 +130,29 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetIncludeGlobalServiceEvents()
         {
             return this._includeGlobalServiceEvents.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMultiRegionTrail. 
+        /// <para>
+        /// Specifies whether the trail applies only to the current region or to all regions.
+        /// The default is false. If the trail exists only in the current region and this value
+        /// is set to true, shadow trails (replications of the trail) will be created in the other
+        /// regions. If the trail exists in all regions and this value is set to false, the trail
+        /// will remain in the region where it was created, and its shadow trails in other regions
+        /// will be deleted.
+        /// </para>
+        /// </summary>
+        public bool IsMultiRegionTrail
+        {
+            get { return this._isMultiRegionTrail.GetValueOrDefault(); }
+            set { this._isMultiRegionTrail = value; }
+        }
+
+        // Check to see if IsMultiRegionTrail property is set
+        internal bool IsSetIsMultiRegionTrail()
+        {
+            return this._isMultiRegionTrail.HasValue; 
         }
 
         /// <summary>

@@ -514,7 +514,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whetehr the DB cluster is encrypted.
+        /// Specifies whether the DB cluster is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted

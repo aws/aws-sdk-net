@@ -38,7 +38,12 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property SourcePath. 
         /// <para>
         /// The path on the host container instance that is presented to the container. If this
-        /// parameter is empty, then the Docker daemon has assigned a host path for you.
+        /// parameter is empty, then the Docker daemon has assigned a host path for you. If the
+        /// <code>host</code> parameter contains a <code>sourcePath</code> file location, then
+        /// the data volume persists at the specified location on the host container instance
+        /// until you delete it manually. If the <code>sourcePath</code> value does not exist
+        /// on the host container instance, the Docker daemon creates it. If the location does
+        /// exist, the contents of the source path folder are exported.
         /// </para>
         /// </summary>
         public string SourcePath

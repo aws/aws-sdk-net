@@ -244,7 +244,8 @@ namespace Amazon.CloudTrail
         /// Adds one or more tags to a trail, up to a limit of 10. Tags must be unique per trail.
         /// Overwrites an existing tag's value when a new value is specified for an existing tag
         /// key. If you specify a key without a value, the tag will be created with the specified
-        /// key and a value of null.
+        /// key and a value of null. You can tag a trail that applies to all regions only from
+        /// the region in which the trail was created (that is, from its home region).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
@@ -282,9 +283,7 @@ namespace Amazon.CloudTrail
         /// is 10.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
-        /// This exception is thrown when the requested operation is not supported. For example,
-        /// this exception will occur if an attempt is made to tag a trail and tagging is not
-        /// supported in the current region.
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         public AddTagsResponse AddTags(AddTagsRequest request)
         {
@@ -332,7 +331,8 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Creates a trail that specifies the settings for delivery of log data to an Amazon
-        /// S3 bucket.
+        /// S3 bucket. A maximum of five trails can exist in a region, irrespective of the region
+        /// in which they were created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrail service method.</param>
         /// 
@@ -357,6 +357,9 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
         /// This exception is thrown when the KMS key ARN is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
+        /// This exception is thrown when the combination of parameters provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidS3BucketNameException">
         /// This exception is thrown when the provided S3 bucket name is not valid.
@@ -401,9 +404,7 @@ namespace Amazon.CloudTrail
         /// This exception is deprecated.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
-        /// This exception is thrown when the requested operation is not supported. For example,
-        /// this exception will occur if an attempt is made to tag a trail and tagging is not
-        /// supported in the current region.
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         public CreateTrailResponse CreateTrail(CreateTrailRequest request)
         {
@@ -451,11 +452,16 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Deletes a trail. This operation must be called from the region in which the trail
-        /// was created.
+        /// was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated
+        /// trails in other regions) of a trail that is enabled in all regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrail service method.</param>
         /// 
         /// <returns>The response from the DeleteTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
+        /// This exception is thrown when an operation is called on a trail from a region other
+        /// than the region in which the trail was created.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -523,9 +529,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
-        /// This exception is thrown when the requested operation is not supported. For example,
-        /// this exception will occur if an attempt is made to tag a trail and tagging is not
-        /// supported in the current region.
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         public DescribeTrailsResponse DescribeTrails()
         {
@@ -542,9 +546,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
-        /// This exception is thrown when the requested operation is not supported. For example,
-        /// this exception will occur if an attempt is made to tag a trail and tagging is not
-        /// supported in the current region.
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         public DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request)
         {
@@ -681,9 +683,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
-        /// This exception is thrown when the requested operation is not supported. For example,
-        /// this exception will occur if an attempt is made to tag a trail and tagging is not
-        /// supported in the current region.
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         public ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
         {
@@ -730,7 +730,12 @@ namespace Amazon.CloudTrail
         #region  ListTags
 
         /// <summary>
+        /// Lists the tags for the specified trail or trails in the current region.
+        /// 
+        ///  
+        /// <para>
         /// Lists the tags for the trail in the current region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -763,9 +768,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the specified resource type is not supported by CloudTrail.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
-        /// This exception is thrown when the requested operation is not supported. For example,
-        /// this exception will occur if an attempt is made to tag a trail and tagging is not
-        /// supported in the current region.
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         public ListTagsResponse ListTags(ListTagsRequest request)
         {
@@ -923,9 +926,7 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the specified resource type is not supported by CloudTrail.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
-        /// This exception is thrown when the requested operation is not supported. For example,
-        /// this exception will occur if an attempt is made to tag a trail and tagging is not
-        /// supported in the current region.
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
@@ -972,11 +973,18 @@ namespace Amazon.CloudTrail
         #region  StartLogging
 
         /// <summary>
-        /// Starts the recording of AWS API calls and log file delivery for a trail.
+        /// Starts the recording of AWS API calls and log file delivery for a trail. For a trail
+        /// that is enabled in all regions, this operation must be called from the region in which
+        /// the trail was created. This operation cannot be called on the shadow trails (replicated
+        /// trails in other regions) of a trail that is enabled in all regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartLogging service method.</param>
         /// 
         /// <returns>The response from the StartLogging service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
+        /// This exception is thrown when an operation is called on a trail from a region other
+        /// than the region in which the trail was created.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -1038,11 +1046,19 @@ namespace Amazon.CloudTrail
         /// <summary>
         /// Suspends the recording of AWS API calls and log file delivery for the specified trail.
         /// Under most circumstances, there is no need to use this action. You can update a trail
-        /// without stopping it first. This action is the only way to stop recording.
+        /// without stopping it first. This action is the only way to stop recording. For a trail
+        /// enabled in all regions, this operation must be called from the region in which the
+        /// trail was created, or an <code>InvalidHomeRegionException</code> will occur. This
+        /// operation cannot be called on the shadow trails (replicated trails in other regions)
+        /// of a trail enabled in all regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopLogging service method.</param>
         /// 
         /// <returns>The response from the StopLogging service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
+        /// This exception is thrown when an operation is called on a trail from a region other
+        /// than the region in which the trail was created.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -1105,7 +1121,9 @@ namespace Amazon.CloudTrail
         /// Updates the settings that specify delivery of log files. Changes to a trail do not
         /// require stopping the CloudTrail service. Use this action to designate an existing
         /// bucket for log delivery. If the existing bucket has previously been a target for CloudTrail
-        /// log files, an IAM policy exists for the bucket.
+        /// log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called
+        /// from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code>
+        /// is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method.</param>
         /// 
@@ -1128,8 +1146,15 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidCloudWatchLogsRoleArnException">
         /// This exception is thrown when the provided role is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
+        /// This exception is thrown when an operation is called on a trail from a region other
+        /// than the region in which the trail was created.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
         /// This exception is thrown when the KMS key ARN is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
+        /// This exception is thrown when the combination of parameters provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidS3BucketNameException">
         /// This exception is thrown when the provided S3 bucket name is not valid.
@@ -1171,9 +1196,7 @@ namespace Amazon.CloudTrail
         /// This exception is deprecated.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
-        /// This exception is thrown when the requested operation is not supported. For example,
-        /// this exception will occur if an attempt is made to tag a trail and tagging is not
-        /// supported in the current region.
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         public UpdateTrailResponse UpdateTrail(UpdateTrailRequest request)
         {

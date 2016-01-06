@@ -136,6 +136,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetServiceAccessSecurityGroup())
+            {
+                context.Writer.WritePropertyName("ServiceAccessSecurityGroup");
+                context.Writer.Write(requestObject.ServiceAccessSecurityGroup);
+            }
+
             if(requestObject.IsSetSlaveInstanceType())
             {
                 context.Writer.WritePropertyName("SlaveInstanceType");

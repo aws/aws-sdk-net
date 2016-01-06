@@ -43,9 +43,12 @@ namespace Amazon.ConfigService.Model
         private string _configRuleId;
         private string _configRuleName;
         private DateTime? _firstActivatedTime;
+        private bool? _firstEvaluationStarted;
         private string _lastErrorCode;
         private string _lastErrorMessage;
+        private DateTime? _lastFailedEvaluationTime;
         private DateTime? _lastFailedInvocationTime;
+        private DateTime? _lastSuccessfulEvaluationTime;
         private DateTime? _lastSuccessfulInvocationTime;
 
         /// <summary>
@@ -121,6 +124,28 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FirstEvaluationStarted. 
+        /// <para>
+        /// Indicates whether AWS Config has evaluated your resources against the rule at least
+        /// once.
+        /// </para>
+        ///  <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against
+        /// the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished
+        /// evaluating your AWS resources against the rule.</li> </ul>
+        /// </summary>
+        public bool FirstEvaluationStarted
+        {
+            get { return this._firstEvaluationStarted.GetValueOrDefault(); }
+            set { this._firstEvaluationStarted = value; }
+        }
+
+        // Check to see if FirstEvaluationStarted property is set
+        internal bool IsSetFirstEvaluationStarted()
+        {
+            return this._firstEvaluationStarted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastErrorCode. 
         /// <para>
         /// The error code that AWS Config returned when the rule last failed.
@@ -157,6 +182,24 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastFailedEvaluationTime. 
+        /// <para>
+        /// The time that AWS Config last failed to evaluate your AWS resources against the rule.
+        /// </para>
+        /// </summary>
+        public DateTime LastFailedEvaluationTime
+        {
+            get { return this._lastFailedEvaluationTime.GetValueOrDefault(); }
+            set { this._lastFailedEvaluationTime = value; }
+        }
+
+        // Check to see if LastFailedEvaluationTime property is set
+        internal bool IsSetLastFailedEvaluationTime()
+        {
+            return this._lastFailedEvaluationTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastFailedInvocationTime. 
         /// <para>
         /// The time that AWS Config last failed to invoke the AWS Config rule to evaluate your
@@ -173,6 +216,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetLastFailedInvocationTime()
         {
             return this._lastFailedInvocationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSuccessfulEvaluationTime. 
+        /// <para>
+        /// The time that AWS Config last successfully evaluated your AWS resources against the
+        /// rule.
+        /// </para>
+        /// </summary>
+        public DateTime LastSuccessfulEvaluationTime
+        {
+            get { return this._lastSuccessfulEvaluationTime.GetValueOrDefault(); }
+            set { this._lastSuccessfulEvaluationTime = value; }
+        }
+
+        // Check to see if LastSuccessfulEvaluationTime property is set
+        internal bool IsSetLastSuccessfulEvaluationTime()
+        {
+            return this._lastSuccessfulEvaluationTime.HasValue; 
         }
 
         /// <summary>

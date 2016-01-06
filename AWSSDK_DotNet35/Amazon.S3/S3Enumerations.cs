@@ -66,6 +66,12 @@ namespace Amazon.S3
         public static readonly S3CannedACL AuthenticatedRead = new S3CannedACL("authenticated-read");
 
         /// <summary>
+        /// Owner gets FULL_CONTROL. Amazon EC2 gets READ access to GET an
+        /// Amazon Machine Image (AMI) bundle from Amazon S3.
+        /// </summary>
+        public static readonly S3CannedACL AWSExecRead = new S3CannedACL("aws-exec-read");
+
+        /// <summary>
         /// Object Owner gets FULL_CONTROL, Bucket Owner gets READ
         /// This ACL applies only to objects and is equivalent to private when used with PUT Bucket. 
         /// You use this ACL to let someone other than the bucket owner write content (get full control) 
@@ -161,6 +167,10 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use the AP-NORTHEAST-1 locality.
         /// </summary>
         public static readonly S3Region APN1 = new S3Region("ap-northeast-1");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the AP-NORTHEAST-2 locality.
+        /// </summary>
+        public static readonly S3Region APN2 = new S3Region("ap-northeast-2");
         /// <summary>
         /// Specifies that the S3 Bucket should use the SA-EAST-1 locality.
         /// </summary>

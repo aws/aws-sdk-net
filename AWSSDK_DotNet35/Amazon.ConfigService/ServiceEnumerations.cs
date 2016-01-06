@@ -522,6 +522,22 @@ namespace Amazon.ConfigService
         /// Constant AWSEC2VPNGateway for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
+        /// <summary>
+        /// Constant AWSIAMGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIAMGroup = new ResourceType("AWS::IAM::Group");
+        /// <summary>
+        /// Constant AWSIAMPolicy for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIAMPolicy = new ResourceType("AWS::IAM::Policy");
+        /// <summary>
+        /// Constant AWSIAMRole for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIAMRole = new ResourceType("AWS::IAM::Role");
+        /// <summary>
+        /// Constant AWSIAMUser for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIAMUser = new ResourceType("AWS::IAM::User");
 
         /// <summary>
         /// Default Constructor

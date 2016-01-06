@@ -34,7 +34,9 @@ namespace Amazon.CloudTrail.Model
     {
         private string _cloudWatchLogsLogGroupArn;
         private string _cloudWatchLogsRoleArn;
+        private string _homeRegion;
         private bool? _includeGlobalServiceEvents;
+        private bool? _isMultiRegionTrail;
         private string _kmsKeyId;
         private bool? _logFileValidationEnabled;
         private string _name;
@@ -82,6 +84,24 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HomeRegion. 
+        /// <para>
+        /// The region in which the trail was created.
+        /// </para>
+        /// </summary>
+        public string HomeRegion
+        {
+            get { return this._homeRegion; }
+            set { this._homeRegion = value; }
+        }
+
+        // Check to see if HomeRegion property is set
+        internal bool IsSetHomeRegion()
+        {
+            return this._homeRegion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludeGlobalServiceEvents. 
         /// <para>
         /// Set to <b>True</b> to include AWS API calls from AWS global services such as IAM.
@@ -98,6 +118,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetIncludeGlobalServiceEvents()
         {
             return this._includeGlobalServiceEvents.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMultiRegionTrail. 
+        /// <para>
+        /// Specifies whether the trail belongs only to one region or exists in all regions.
+        /// </para>
+        /// </summary>
+        public bool IsMultiRegionTrail
+        {
+            get { return this._isMultiRegionTrail.GetValueOrDefault(); }
+            set { this._isMultiRegionTrail = value; }
+        }
+
+        // Check to see if IsMultiRegionTrail property is set
+        internal bool IsSetIsMultiRegionTrail()
+        {
+            return this._isMultiRegionTrail.HasValue; 
         }
 
         /// <summary>

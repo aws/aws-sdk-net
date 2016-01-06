@@ -158,39 +158,6 @@
         "DeleteVpcPeeringConnectionResult": {
             "exclude": [ "Return" ]
         },
-        "DescribeNetworkInterfaceAttributeRequest": {
-            "exclude": [ "Attribute" ],
-            "inject": [
-                {
-                    "Description": {
-                        "shape": "String",
-                        "documentation": "<p>The <c>description</c> attribute.</p>",
-                        "locationName": "description"
-                    }
-                },
-                {
-                    "SourceDestCheck": {
-                        "shape": "String",
-                        "documentation": "<p>The <c>sourceDestCheck</c> attribute.</p>",
-                        "locationName": "sourceDestCheck"
-                    }
-                },
-                {
-                    "Groups": {
-                        "shape": "String",
-                        "documentation": "<p>The <c>groupSet</c> attribute.</p>",
-                        "locationName": "groupSet"
-                    }
-                },
-                {
-                    "Attachment": {
-                        "shape": "String",
-                        "documentation": "<p>The <c>attachment</c> attribute.</p>",
-                        "locationName": "attachment"
-                    }
-                }
-            ]
-        },
         "DetachVolumeResult": {
             "modify": [
                 {

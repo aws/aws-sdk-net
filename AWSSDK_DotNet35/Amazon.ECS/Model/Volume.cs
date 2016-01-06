@@ -38,9 +38,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
-        /// The path on the host container instance that is presented to the containers which
-        /// access the volume. If this parameter is empty, then the Docker daemon assigns a host
-        /// path for you.
+        /// The contents of the <code>host</code> parameter determine whether your data volume
+        /// persists on the host container instance and where it is stored. If the host parameter
+        /// is empty, then the Docker daemon assigns a host path for your data volume, but the
+        /// data is not guaranteed to persist after the containers associated with it stop running.
         /// </para>
         /// </summary>
         public HostVolumeProperties Host
@@ -58,8 +59,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the volume. This name is referenced in the <code>sourceVolume</code> parameter
-        /// of container definition <code>mountPoints</code>.
+        /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
+        /// and underscores are allowed. This name is referenced in the <code>sourceVolume</code>
+        /// parameter of container definition <code>mountPoints</code>.
         /// </para>
         /// </summary>
         public string Name

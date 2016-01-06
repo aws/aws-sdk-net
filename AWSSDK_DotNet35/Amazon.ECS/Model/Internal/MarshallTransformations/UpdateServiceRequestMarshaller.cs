@@ -63,6 +63,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Cluster);
                 }
 
+                if(publicRequest.IsSetDeploymentConfiguration())
+                {
+                    context.Writer.WritePropertyName("deploymentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeploymentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeploymentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDesiredCount())
                 {
                     context.Writer.WritePropertyName("desiredCount");

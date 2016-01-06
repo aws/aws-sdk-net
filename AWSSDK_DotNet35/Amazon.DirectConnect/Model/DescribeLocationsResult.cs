@@ -28,14 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// 
+    /// A location is a network facility where AWS Direct Connect routers are available to
+    /// be connected. Generally, these are colocation hubs where many network providers have
+    /// equipment, and where cross connects can be delivered. Locations include a name and
+    /// facility code, and must be provided when creating a connection.
     /// </summary>
     public partial class DescribeLocationsResult : AmazonWebServiceResponse
     {
         private List<Location> _locations = new List<Location>();
 
         /// <summary>
-        /// Gets and sets the property Locations.
+        /// Gets and sets the property Locations. 
+        /// <para>
+        /// A list of colocation hubs where network providers have equipment. Most regions have
+        /// multiple locations available.
+        /// </para>
         /// </summary>
         public List<Location> Locations
         {

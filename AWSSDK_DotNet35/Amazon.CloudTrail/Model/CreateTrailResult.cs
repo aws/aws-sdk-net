@@ -35,6 +35,7 @@ namespace Amazon.CloudTrail.Model
         private string _cloudWatchLogsLogGroupArn;
         private string _cloudWatchLogsRoleArn;
         private bool? _includeGlobalServiceEvents;
+        private bool? _isMultiRegionTrail;
         private string _kmsKeyId;
         private bool? _logFileValidationEnabled;
         private string _name;
@@ -98,6 +99,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetIncludeGlobalServiceEvents()
         {
             return this._includeGlobalServiceEvents.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsMultiRegionTrail. 
+        /// <para>
+        /// Specifies whether the trail exists in one region or in all regions.
+        /// </para>
+        /// </summary>
+        public bool IsMultiRegionTrail
+        {
+            get { return this._isMultiRegionTrail.GetValueOrDefault(); }
+            set { this._isMultiRegionTrail = value; }
+        }
+
+        // Check to see if IsMultiRegionTrail property is set
+        internal bool IsSetIsMultiRegionTrail()
+        {
+            return this._isMultiRegionTrail.HasValue; 
         }
 
         /// <summary>
