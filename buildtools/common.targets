@@ -24,7 +24,7 @@
         <fxcopcmdexe>C:\Program Files (x86)\Microsoft Fxcop 10.0\FxCopCmd.exe</fxcopcmdexe>
         <fxcopcmd>&quot;$(fxcopcmdexe)&quot;</fxcopcmd>
         
-		<xpkgexe>C:\xpkg\xamarin-component.exe</xpkgexe>
+		<xpkgexe>C:\xpkg\xamarin-component-1.exe</xpkgexe>
 		<xpkg>&quot;$(xpkgexe)&quot;</xpkg>
 		
 	    <unitypath>C:\Program Files\Unity</unitypath>
