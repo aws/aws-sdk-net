@@ -160,7 +160,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
             catch (Exception ex)
             {
-                throw new DataStorageException("Failed to update records in dataset: " + datasetName, ex);
+                throw HandleException(ex, "Failed to update records in dataset: " + datasetName);
             }
         }
 
@@ -189,7 +189,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
             catch (Exception ex)
             {
-                throw new DataStorageException("Failed to delete dataset: " + datasetName, ex);
+                throw HandleException(ex, "Failed to delete dataset: " + datasetName);
             }
         }
 
