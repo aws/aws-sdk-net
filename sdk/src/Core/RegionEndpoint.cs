@@ -93,7 +93,7 @@ namespace Amazon
         public static readonly RegionEndpoint APNortheast1 = NewEndpoint("ap-northeast-1", "Asia Pacific (Tokyo)");
 
         /// <summary>
-        /// The Asia Pacific (South Korea) endpoint.
+        /// The Asia Pacific (Seoul) endpoint.
         /// </summary>
         public static readonly RegionEndpoint APNortheast2 = NewEndpoint("ap-northeast-2", "Asia Pacific (Seoul)");
 
