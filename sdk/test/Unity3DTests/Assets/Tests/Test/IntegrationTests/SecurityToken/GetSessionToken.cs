@@ -16,6 +16,7 @@ namespace AWSSDK.IntegrationTests.SecurityToken
     {
         [Test]
         [Category("SecurityTokenService")]
+        [Category("WWW")]
         public void TestGetSessionToken()
         {
             var gstRequest = new GetSessionTokenRequest()
@@ -51,6 +52,7 @@ namespace AWSSDK.IntegrationTests.SecurityToken
 
         [Test]
         [Category("SecurityTokenService")]
+        [Category("WWW")]
         public void TestGetSessionTokenRegional()
         {
             using (var uswest2Client = TestBase.CreateClient<AmazonSecurityTokenServiceClient>(endpoint: RegionEndpoint.USWest2))
@@ -89,6 +91,7 @@ namespace AWSSDK.IntegrationTests.SecurityToken
 
         [Test]
         [Category("SecurityTokenService")]
+        [Category("WWW")]
         public void TestGetSessionTokenAsync()
         {
             var gstRequest = new GetSessionTokenRequest()

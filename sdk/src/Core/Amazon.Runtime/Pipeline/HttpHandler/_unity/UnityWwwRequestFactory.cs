@@ -14,22 +14,26 @@
  */
 
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Threading;
-using UnityEngine.Experimental.Networking;
+using UnityEngine;
 
 namespace Amazon.Runtime.Internal
 {
     /// <summary>
     /// The web request factory for Unity.
     /// </summary>
-    public sealed class UnityWebRequestFactory : IHttpRequestFactory<string>
+    public sealed class UnityWwwRequestFactory : IHttpRequestFactory<string>
     {
-        private UnityRequest _unityRequest;
-
+        private UnityWwwRequest _unityWwwRequest;
         /// <summary>
         /// Creates an HTTP request for the given URI.
         /// </summary>
@@ -37,20 +41,19 @@ namespace Amazon.Runtime.Internal
         /// <returns>An HTTP request.</returns>
         public IHttpRequest<string> CreateHttpRequest(Uri requestUri)
         {
-            //_unityRequest =
-            return  new UnityRequest(requestUri); ;
+            return new UnityWwwRequest(requestUri);
         }
 
         public void Dispose()
         {
-            //_unityRequest.Dispose();
+            //_unityWwwRequest.Dispose();
         }
     }
 
     /// <summary>
     /// An IHttpRequest implementation for Unity's WWW API.
     /// </summary>
-    public sealed class UnityRequest : IHttpRequest<string>
+    public sealed class UnityWwwRequest : IHttpRequest<string>
     {
         /// <summary>
         /// The request URI.
@@ -65,7 +68,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// The content to be sent in the request body.
         /// </summary>
-        public byte[] RequestContent { get; private set; }
+        public byte[] RequestContent { get; internal set; }
 
         /// <summary>
         /// The headers to be sent for this request.
@@ -116,7 +119,7 @@ namespace Amazon.Runtime.Internal
         /// The contructor for UnityWebRequest.
         /// </summary>
         /// <param name="requestUri">Uri for the request.</param>
-        public UnityRequest(Uri requestUri)
+        public UnityWwwRequest(Uri requestUri)
         {
             this.RequestUri = requestUri;
             this.Headers = new Dictionary<string, string>();
@@ -281,12 +284,37 @@ namespace Amazon.Runtime.Internal
 
         public void Dispose()
         {
-            /*
-            UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
-            {
-                WwwRequest.Dispose();
-            });
-            */
+           // WwwRequest.Dispose();
+        }
+    }
+
+    /// <summary>
+    /// Represents a simplified async result that stores the result from a completed operation.
+    /// It does not provide an implemention of the AsyncWaitHandle property
+    /// as the internal consumers of this class don't use this property.    
+    /// </summary>
+    internal class SimpleAsyncResult : IAsyncResult
+    {
+        public SimpleAsyncResult(object state)
+        {
+            this.AsyncState = state;
+        }
+
+        public object AsyncState { get; private set; }
+
+        public System.Threading.WaitHandle AsyncWaitHandle
+        {
+            get { throw new NotSupportedException(); }
+        }
+
+        public bool CompletedSynchronously
+        {
+            get { return true; }
+        }
+
+        public bool IsCompleted
+        {
+            get { return true; }
         }
     }
 }

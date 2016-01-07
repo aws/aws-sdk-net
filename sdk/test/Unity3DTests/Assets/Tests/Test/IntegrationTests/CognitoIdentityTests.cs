@@ -50,6 +50,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
         }
 
         [Test]
+        [Category("WWW")]
         public void GetIdentityTests()
         {
             string identityId = null;
@@ -69,6 +70,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
         }
 
         [Test]
+        [Category("WWW")]
         public void CredentialsTests()
         {
             CognitoAWSCredentials cred1 = new CognitoAWSCredentials(poolId, ActualEndpoint);
@@ -114,6 +116,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
         }
 
         [Test]
+        [Category("WWW")]
         public void MultipleIdentityPoolTests()
         {
             CreatePool();

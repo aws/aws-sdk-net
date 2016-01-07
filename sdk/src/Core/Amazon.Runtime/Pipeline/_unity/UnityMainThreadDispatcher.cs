@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 using System.Collections;
 using System.Threading;
@@ -104,14 +105,39 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="request"></param>
         /// <returns>IEnumerator which indicated if the operation is pending.</returns>
-        IEnumerator InvokeRequest(UnityWebRequest request)
+        IEnumerator InvokeRequest(IHttpRequest<string> request)
         {
-            // Fire the request            
-            request.WwwRequest = new WWW(request.RequestUri.AbsoluteUri,
-                request.RequestContent, request.Headers);
+            // Fire the request
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                var wwwRequest = new WWW(request.RequestUri.AbsoluteUri,
+                    request.RequestContent, request.Headers);
+                request.WwwRequest = wwwRequest;
 
-            yield return request.WwwRequest;
-            request.Response = new UnityWebResponseData(request.WwwRequest);
+                yield return wwwRequest;
+
+                request.Response = new UnityWebResponseData(wwwRequest);
+            }
+            else
+            {
+                var unityWebRequest = new UnityEngine.Experimental.Networking.UnityWebRequest(request.RequestUri.AbsoluteUri, request.Method);
+                unityWebRequest.downloadHandler = new UnityEngine.Experimental.Networking.DownloadHandlerBuffer();
+                unityWebRequest.uploadHandler = new UnityEngine.Experimental.Networking.UploadHandlerRaw(request.RequestContent);
+                foreach (var header in request.Headers)
+                {
+                    if (header.Key.Equals(HeaderKeys.UserAgentHeader, StringComparison.InvariantCultureIgnoreCase)
+                        || header.Key.Equals(HeaderKeys.HostHeader, StringComparison.InvariantCultureIgnoreCase)
+                        || header.Key.Equals(HeaderKeys.ContentLengthHeader, StringComparison.InvariantCultureIgnoreCase))
+                        continue;
+                    unityWebRequest.SetRequestHeader(header.Key, header.Value);
+                }
+                request.WwwRequest = unityWebRequest;
+
+                yield return unityWebRequest.Send();
+
+                request.Response = new UnityWebResponseData(unityWebRequest);
+            }
+
 
             if (request.IsSync)
             {
@@ -120,7 +146,7 @@ namespace Amazon.Runtime.Internal
                 // is unblocked.
                 if (!request.Response.IsSuccessStatusCode)
                 {
-                    request.Exception=  new HttpErrorResponseException(request.Response);
+                    request.Exception = new HttpErrorResponseException(request.Response);
                 }
                 request.WaitHandle.Set();
             }

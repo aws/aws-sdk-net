@@ -11,6 +11,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
 {
     [TestFixture(TestOf = typeof(RolesTests))]
     [Category("Integration")]
+
     class RolesTests : TestBase<AmazonIdentityManagementServiceClient>
     {
         public static string roleName = "UnityTestRole";
@@ -128,6 +129,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
         }
 
         [Test]
+        [Category("WWW")]
         public void Roles()
         {
             var roles = GetRoles();
@@ -254,6 +256,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
         }
 
         [Test]
+        [Category("WWW")]
         public void RolePolicies()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
@@ -444,6 +447,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
         }
 
         [Test]
+        [Category("WWW")]
         public void IdentityProfiles()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
@@ -651,6 +655,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
 
         [Test]
         [Category("IAM")]
+        [Category("WWW")]
         public void AssumeRolePolicyDocument()
         {
             AutoResetEvent ars = new AutoResetEvent(false);

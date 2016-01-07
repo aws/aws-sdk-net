@@ -50,6 +50,7 @@ namespace AWSSDK.IntegrationTests.SQS
         }
 
         [Test]
+        [Category("WWW")]
         public void SendRecieveDeleteTest()
         {
             string queueName = prefix + new Random().Next();
@@ -63,6 +64,7 @@ namespace AWSSDK.IntegrationTests.SQS
         }
 
         [Test]
+        [Category("WWW")]
         public void GetQueueUrlTest()
         {
             string queueName = prefix + "GetQueueUrl" + DateTime.Now.Ticks;
@@ -90,6 +92,7 @@ namespace AWSSDK.IntegrationTests.SQS
         }
 
         [Test]
+        [Category("WWW")]
         public void GetNonExistantQueueUrlTest()
         {
             string queueName = prefix + "GetQueueUrl" + DateTime.Now.Ticks;
@@ -110,6 +113,7 @@ namespace AWSSDK.IntegrationTests.SQS
         }
 
         [Test]
+        [Category("WWW")]
         public void TestListQueues()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
@@ -130,6 +134,7 @@ namespace AWSSDK.IntegrationTests.SQS
         }
 
         [Test]
+        [Category("WWW")]
         public void DLQTest()
         {
             string mainQueueName = prefix + new Random().Next() + "MQ";

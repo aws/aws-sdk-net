@@ -133,7 +133,7 @@
 		<Exec LogStandardErrorAsError="true" Command="$(mono) $(pdb2mdb) %(DllFiles.Identity)" /> 
 	</Target>
 	
-	<Target Name="unity-build-test-project" Condition="Exists('$(unityexe)')">
+	<Target Name="update-unity-tests" DependsOnTargets="build-custom-tasks" Condition="Exists('$(unityexe)')">
 		
 		<MSBuild Projects="..\sdk\AWSSDK.Unity.sln"
             Targets="Clean;Build"
@@ -145,11 +145,11 @@
 		
 		<!-- copy all new assemblies to the test project -->
 		<ItemGroup>
-			<DllFiles Include="..\sdk\src\Core\bin\Release\unity\*.dll"/>
-			<PdbFiles Include="..\sdk\src\Core\bin\Release\unity\*.pdb"/>
+			<DllFiles Include="..\sdk\src\Core\bin\Release\unity\AWSSDK.*.dll"/>
+			<PdbFiles Include="..\sdk\src\Core\bin\Release\unity\AWSSDK.*.pdb"/>
 			
-			<DllFiles Include="..\sdk\src\Services\**\bin\Release\unity\*.dll"/>
-			<PdbFiles Include="..\sdk\src\Services\**\bin\Release\unity\*.pdb"/>
+			<DllFiles Include="..\sdk\src\Services\**\bin\Release\unity\AWSSDK.*.dll"/>
+			<PdbFiles Include="..\sdk\src\Services\**\bin\Release\unity\AWSSDK.*.pdb"/>
 		</ItemGroup>
 		
 		<Copy
@@ -161,6 +161,10 @@
 		
 		<!-- need to copy credentials as well -->
 		
+	</Target>
+	
+	<Target Name="build-unity-test" DependsOnTargets="update-unity-tests" >
+	
 		<!-- build the projects 
 		<MakeDir Directories="$(Deployment)" />
 		<MakeDir Directories="$(Deployment)\unity" /> -->
@@ -186,9 +190,7 @@
 			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity3DTests\))"
 			Platform="ios32"
 			/>
-		
 	</Target>
-	
 	
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;xam-pack">
         <Message Text="Collating assemblies for downstream doc generation" />

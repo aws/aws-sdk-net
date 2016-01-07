@@ -16,6 +16,7 @@ namespace AWSSDK.IntegrationTests.SecurityToken
 
         [Test]
         [Category("SecurityTokenService")]
+        [Category("WWW")]
         public void TestGetFederationToken()
         {
             var gftRequest = new GetFederationTokenRequest
@@ -58,6 +59,7 @@ namespace AWSSDK.IntegrationTests.SecurityToken
 
         [Test]
         [Category("SecurityTokenService")]
+        [Category("WWW")]
         public void TestGetFederationTokenAsync()
         {
             var gftRequest = new GetFederationTokenRequest

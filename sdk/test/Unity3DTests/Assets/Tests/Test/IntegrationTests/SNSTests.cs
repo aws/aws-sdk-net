@@ -19,6 +19,7 @@ namespace AWSSDK.IntegrationTests.SNS
     public class SNSTests : TestBase<AmazonSimpleNotificationServiceClient>
     {
         [Test]
+        [Category("WWW")]
         public void CRUDTopics()
         {
             // list all topics
@@ -115,6 +116,7 @@ namespace AWSSDK.IntegrationTests.SNS
         }
 
         [Test]
+        [Category("WWW")]
         public void TestPublishAsJson()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
@@ -185,6 +187,7 @@ namespace AWSSDK.IntegrationTests.SNS
         // to run this test, a valid email address must be supplied and
         // the subscription confirmed within two minutes by default
         //[Test]
+        // [Category("WWW")]
         public void SubscribeTopicTest()
         {
             const string emailAddress = "replaceme@example.com";

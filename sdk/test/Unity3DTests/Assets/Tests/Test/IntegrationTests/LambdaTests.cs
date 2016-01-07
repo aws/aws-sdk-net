@@ -31,6 +31,7 @@ namespace AWSSDK.IntegrationTests.Lambda
         private string FunctionName = null;
 
         [Test]
+        [Category("WWW")]
         public void ListFunctionsTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
@@ -52,6 +53,7 @@ namespace AWSSDK.IntegrationTests.Lambda
         }
 
         [Test]
+        [Category("WWW")]
         public void LambdaFunctionTest()
         {
             // Call the function

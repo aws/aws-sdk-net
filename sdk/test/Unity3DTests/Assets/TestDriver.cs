@@ -24,7 +24,7 @@ namespace AWSSDK.Tests
             //set sleep timeout to infinity
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-
+            AWSConfigs.WebRequestApiOption = AWSConfigs.HttpWebRequestApiOption.UnityWebRequest;
 
             //set up logging
             var loggingConfig = AWSConfigs.LoggingConfig;
@@ -33,6 +33,7 @@ namespace AWSSDK.Tests
             loggingConfig.LogResponses = ResponseLoggingOption.Always;
             loggingConfig.LogResponsesSizeLimit = 4096;
             loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
+			
             var context = AWSConfigsDynamoDB.Context;
 
             var runner = new TestRunner();

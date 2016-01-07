@@ -117,7 +117,11 @@ namespace Amazon.S3
                 url = string.Format(CultureInfo.InvariantCulture, "https://{0}.{1}.amazonaws.com", request.Bucket, subdomain);
             Uri uri = new Uri(url);
 
-            UnityWebRequest webRequest = new UnityWebRequest(uri);
+            IHttpRequest<string> webRequest = null;
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+                webRequest = new UnityWwwRequest(uri);
+            else
+                webRequest = new UnityRequest(uri);
 
             var boundary = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Replace('=', 'z');
 
@@ -176,12 +180,12 @@ namespace Amazon.S3
         private void ProcessPostResponse(IAsyncResult result)
         {
             IAsyncExecutionContext executionContext = null;
-            UnityWebRequest httpRequest = null;
+            IHttpRequest<string> httpRequest = null;
             bool isException = false;
             try
             {
                 executionContext = result.AsyncState as IAsyncExecutionContext;
-                httpRequest = executionContext.RuntimeState as UnityWebRequest;
+                httpRequest = executionContext.RuntimeState as IHttpRequest<string>;
 
                 var httpResponse = httpRequest.EndGetResponse(result);
                 executionContext.ResponseContext.HttpResponse = httpResponse;

@@ -44,6 +44,7 @@ namespace AWSSDK.IntegrationTests.Kinesis
         }
 
         [Test]
+        [Category("WWW")]
         public void DescribeStreamTest()
         {
             StreamDescription streamDescription = DescribeStream();
@@ -58,6 +59,7 @@ namespace AWSSDK.IntegrationTests.Kinesis
         }
 
         [Test]
+        [Category("WWW")]
         public void DescribeNonexistantStreamTest()
         {
             Exception responseException = new Exception();
@@ -78,6 +80,7 @@ namespace AWSSDK.IntegrationTests.Kinesis
 
         [Test]
         [Category("Kinesis")]
+        [Category("WWW")]
         public void IncreaseAndDecreaseStreamRetentionTest()
         {
             StreamDescription streamDescription = WaitForStreamToExitPhase(StreamStatus.CREATING, true);
@@ -141,6 +144,7 @@ namespace AWSSDK.IntegrationTests.Kinesis
         }
 
         [Test]
+        [Category("WWW")]
         public void ListStreamsTest()
         {
             List<string> streamNames = ListStreamsHelper();

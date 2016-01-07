@@ -18,6 +18,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         [Test]
         [Category("DynamoDB")]
         [Category("Integration")]
+        [Category("WWW")]
         public void TestContext()
         {
             foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })

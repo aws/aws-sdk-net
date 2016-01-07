@@ -43,7 +43,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="policyFactory">An instance of IDeliveryPolicyFactory <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IDeliveryPolicyFactory"/></param>
         /// <param name="maConfig"></param>
-        /// <param param name="maManager"></param>
+        /// <param name="maManager"></param>
         /// <param name="clientContext">An instance of ClientContext <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.ClientContext"/></param>
         /// <param name="credentials">An instance of Credentials <see cref="Amazon.Runtime.AWSCredentials"/></param>
         /// <param name="regionEndPoint">Region end point <see cref="Amazon.RegionEndpoint"/></param>

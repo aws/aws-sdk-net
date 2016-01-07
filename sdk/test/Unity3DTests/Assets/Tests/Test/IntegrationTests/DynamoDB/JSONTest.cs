@@ -33,6 +33,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         [Test]
         [Category("Integration")]
         [Category("DynamoDB")]
+        [Category("WWW")]
         public void TestJSON()
         {
             TestJsonConversions();

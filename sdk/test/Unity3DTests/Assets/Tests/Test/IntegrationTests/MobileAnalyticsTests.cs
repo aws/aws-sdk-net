@@ -45,6 +45,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
 
         // This test passes but is related to bug issues/mobilesdk-1249
         [Test]
+        [Category("WWW")]
         public void TestConstructor()
         {
             string appID1 = Guid.NewGuid().ToString();
@@ -73,6 +74,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
 
 
         [Test]
+        [Category("WWW")]
         public void TestRecordEvent()
         {
             string appID = Guid.NewGuid().ToString();
@@ -117,6 +119,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
 
         // This test passes but is related to bug issues/mobilesdk-1249
         [Test]
+        [Category("WWW")]
         public void TestSessionTimeout()
         {
             MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
@@ -178,6 +181,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
 
 
         [Test]
+        [Category("WWW")]
         public void TestLowLevelAPI()
         {
             List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
@@ -210,6 +214,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
         }
 
         [Test]
+        [Category("WWW")]
         public void TestLowLevelAPIErrorCaseEmptyEvent()
         {
             PutEventsRequest putRequest = new PutEventsRequest()
@@ -241,6 +246,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
         }
 
         [Test]
+        [Category("WWW")]
         public void TestLowLevelAPIErrorCaseWrongClientContext()
         {
 
@@ -285,6 +291,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
 
 
         [Test]
+        [Category("WWW")]
         public void TestLowLevelAPIErrorCaseWrongCognitoCred()
         {
             List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
@@ -326,6 +333,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
         }
 
         [Test]
+        [Category("WWW")]
         public void TestSessionEvent()
         {
             string sessionID = Guid.NewGuid().ToString();
@@ -364,6 +372,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
 
 
         [Test]
+        [Category("WWW")]
         public void TestEventStore()
         {
             // Create table
@@ -427,6 +436,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
         private List<bool> resultList = new List<bool>();
 
         //[Test]
+        // [Category("WWW")]
         public void TestErrorEventHandler()
         {
             string appID = Guid.NewGuid().ToString();

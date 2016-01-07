@@ -39,6 +39,7 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
+        [Category("WWW")]
         public void SimpleTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
@@ -78,6 +79,7 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
+        [Category("WWW")]
         public void TestHttpErrorResponseUnmarshalling()
         {
             try
@@ -93,6 +95,7 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
+        [Category("WWW")]
         public void TestCannedACL()
         {
             var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
@@ -146,6 +149,7 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
+        [Category("WWW")]
         // TODO: Get Post object with path working
         public void SimplePathPostObjectTest()
         {
@@ -155,6 +159,7 @@ namespace AWSSDK.IntegrationTests.S3
             string filePath = S3TestUtils.GetFileHelper(fileName);
             Client.PostObjectAsync(new PostObjectRequest()
             {
+                Key = fileName,
                 Bucket = BucketName,
                 Path = filePath,
                 CannedACL = S3CannedACL.Private

@@ -82,7 +82,7 @@ namespace Amazon.Runtime.Internal.Transform
             {
 
                 long contentLength;
-
+                
                 bool parsedContentLengthHeader = long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength);
 
                 //possible scenario in unity where the content length in header does not match responseData.ContentLength

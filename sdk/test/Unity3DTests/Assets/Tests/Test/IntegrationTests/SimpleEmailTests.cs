@@ -56,6 +56,7 @@ namespace AWSSDK.IntegrationTests.SimpleEmail
 
 
         [Test]
+        [Category("WWW")]
         public void SendEmailToInvalidAddressTest()
         {
             var sendEmailRequest = new SendEmailRequest

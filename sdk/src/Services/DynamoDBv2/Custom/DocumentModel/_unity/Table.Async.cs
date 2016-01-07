@@ -39,8 +39,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="ddbClient">Client to use to access DynamoDB.</param>
         /// <param name="tableName">Name of the table.</param>
-        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</para>
-        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</para>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
         public static void LoadTableAsync(IAmazonDynamoDB ddbClient, string tableName, AmazonDynamoDBCallback<Table> callback, AsyncOptions asyncOptions = null)
         {
             LoadTableAsync(ddbClient,tableName, DynamoDBEntryConversion.CurrentConversion, callback,asyncOptions);
@@ -55,8 +55,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="ddbClient">Client to use to access DynamoDB.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
-        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</para>
-        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</para>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
         public static void LoadTableAsync(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, AmazonDynamoDBCallback<Table> callback, AsyncOptions asyncOptions = null)
         {
             LoadTableAsync(ddbClient,tableName, DynamoDBConsumer.DocumentModel, conversion,callback,asyncOptions);

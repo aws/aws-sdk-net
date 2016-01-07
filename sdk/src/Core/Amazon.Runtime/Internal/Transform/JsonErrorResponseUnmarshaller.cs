@@ -91,7 +91,7 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                 }
             }
-
+            
             return response;
         }
 

@@ -30,9 +30,10 @@ namespace Amazon.Runtime.Internal
         private static readonly object _callbacksLock = new object();
         private static readonly object _mainThreadCallbackLock = new object();
 
-        private Queue<UnityWebRequest> _requests = new Queue<UnityWebRequest>();
+        private Queue<IHttpRequest<string>> _requests = new Queue<IHttpRequest<string>>();
         private Queue<RuntimeAsyncResult> _callbacks = new Queue<RuntimeAsyncResult>();
         private Queue<Action> _mainThreadCallbacks = new Queue<Action>();
+
         /// <summary>
         /// The private contructor for the singleton class.
         /// </summary>
@@ -54,7 +55,7 @@ namespace Amazon.Runtime.Internal
         /// Unity 
         /// </summary>
         /// <param name="request">An instance of UnityWebRequest.</param>
-        public void EnqueueRequest(UnityWebRequest request)
+        public void EnqueueRequest(IHttpRequest<string> request)
         {
             lock (_requestsLock)
             {
@@ -66,9 +67,9 @@ namespace Amazon.Runtime.Internal
         /// Dequeues a request from the queue of pending requests.
         /// </summary>
         /// <returns>An instance of UnityWebRequest.</returns>
-        public UnityWebRequest DequeueRequest()
+        public IHttpRequest<string> DequeueRequest()
         {
-            UnityWebRequest request = null;
+            IHttpRequest<string> request = null;
             lock (_requestsLock)
             {
                 if (_requests.Count > 0)

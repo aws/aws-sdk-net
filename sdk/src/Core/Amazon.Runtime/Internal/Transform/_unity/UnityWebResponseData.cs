@@ -1,17 +1,17 @@
-   /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+/*
+* Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+* 
+*  http://aws.amazon.com/apache2.0
+* 
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
 using Amazon.Util;
 using System;
@@ -23,6 +23,7 @@ using UnityEngine;
 using Amazon.Runtime.Internal.Util;
 using Logger = Amazon.Runtime.Internal.Util.Logger;
 using ILogger = Amazon.Runtime.Internal.Util.ILogger;
+using UnityEngine.Experimental.Networking;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -31,12 +32,47 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public sealed class UnityWebResponseData : IWebResponseData, IHttpResponseBody
     {
-        
+
         private Dictionary<string, string> _headers;
         private Stream _responseStream;
         private byte[] _responseBody;
-        
+
         private ILogger _logger;
+
+        public UnityWebResponseData(UnityWebRequest unityWebRequest)
+        {
+            if (!unityWebRequest.isError)
+            {
+                _headers = unityWebRequest.GetResponseHeaders();
+
+                _responseBody = unityWebRequest.downloadHandler.data;
+               
+
+                if ((_responseBody != null && _responseBody.Length > 0) || (_responseBody.Length == 0 && unityWebRequest.error == null))
+                {
+                    _responseStream = new MemoryStream(_responseBody);
+                }
+                this.ContentLength = (long)unityWebRequest.downloadedBytes;
+
+                string contentType = null;
+                this.ContentType = contentType;
+                this.StatusCode = (HttpStatusCode)unityWebRequest.responseCode;
+                this.IsSuccessStatusCode = this.StatusCode >= HttpStatusCode.OK && this.StatusCode <= (HttpStatusCode)299;
+            }
+            else
+            {
+                this.IsSuccessStatusCode = false;
+                this._responseBody = System.Text.UTF8Encoding.UTF8.GetBytes(unityWebRequest.error);
+                if ((_responseBody != null && _responseBody.Length > 0) || (_responseBody.Length == 0 && unityWebRequest.error == null))
+                {
+                    _responseStream = new MemoryStream(_responseBody);
+                }
+                this.ContentLength = (long)this._responseBody.Length;
+                this.StatusCode = 0;
+            }
+        }
+
+
         /// <summary>
         /// The constructor for UnityWebResponseData.
         /// </summary>
@@ -46,7 +82,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// </param>
         public UnityWebResponseData(WWW wwwRequest)
         {
-            _logger= Logger.GetLogger(this.GetType());
+            _logger = Logger.GetLogger(this.GetType());
             _headers = wwwRequest.responseHeaders;
             try
             {
@@ -70,11 +106,11 @@ namespace Amazon.Runtime.Internal.Transform
             this.ContentType = contentType;
             try
             {
-                if(string.IsNullOrEmpty(wwwRequest.error))
+                if (string.IsNullOrEmpty(wwwRequest.error))
                 {
                     string statusHeader = string.Empty;
-                    this._headers.TryGetValue(HeaderKeys.StatusHeader.ToUpperInvariant(),out statusHeader);
-                    if(!string.IsNullOrEmpty(statusHeader))
+                    this._headers.TryGetValue(HeaderKeys.StatusHeader.ToUpperInvariant(), out statusHeader);
+                    if (!string.IsNullOrEmpty(statusHeader))
                     {
                         this.StatusCode = (HttpStatusCode)Enum.Parse(
                         typeof(HttpStatusCode),
@@ -88,9 +124,9 @@ namespace Amazon.Runtime.Internal.Transform
                 else
                 {
                     int statusCode;
-                    if (Int32.TryParse(wwwRequest.error.Substring(0,3), out statusCode))
-                        this.StatusCode =  (HttpStatusCode)Enum.Parse(typeof(HttpStatusCode),
-                                            wwwRequest.error.Substring(3).Replace(" ", "").Replace(":","").Trim(),true);//ignored case
+                    if (Int32.TryParse(wwwRequest.error.Substring(0, 3), out statusCode))
+                        this.StatusCode = (HttpStatusCode)Enum.Parse(typeof(HttpStatusCode),
+                                            wwwRequest.error.Substring(3).Replace(" ", "").Replace(":", "").Trim(), true);//ignored case
                     else
                         this.StatusCode = 0;
                 }
@@ -99,7 +135,7 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 this.StatusCode = 0;
             }
-            this.IsSuccessStatusCode = wwwRequest.error == null?true:false;
+            this.IsSuccessStatusCode = wwwRequest.error == null ? true : false;
         }
 
         /// <summary>
@@ -140,7 +176,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>True if the header is present, else false.</returns>
         public bool IsHeaderPresent(string headerName)
         {
-            return _headers.ContainsKey(headerName.ToUpperInvariant());
+            return _headers.ContainsKey(headerName.ToUpperInvariant()) || _headers.ContainsKey(headerName);
         }
 
         /// <summary>
@@ -151,7 +187,9 @@ namespace Amazon.Runtime.Internal.Transform
         public string GetHeaderValue(string headerName)
         {
             string headerValue = null;
-            _headers.TryGetValue(headerName.ToUpperInvariant(), out headerValue);
+            if (!_headers.TryGetValue(headerName.ToUpperInvariant(), out headerValue))
+                _headers.TryGetValue(headerName, out headerValue);
+
             return headerValue;
         }
 

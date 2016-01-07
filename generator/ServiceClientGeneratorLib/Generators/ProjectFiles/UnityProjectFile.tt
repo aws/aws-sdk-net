@@ -35,7 +35,7 @@
     if(this.Session.ContainsKey("SupressWarnings"))
     {
 #>
-	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+	<NoWarn>3001,3002,3003,3008,3009,<#=this.Session["SupressWarnings"]#></NoWarn>
 <#
     }
 #>

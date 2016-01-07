@@ -39,6 +39,7 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
+        [Category("WWW")]
         public void TestSingleUploads()
         {
             // Test simple PostObject upload

@@ -15,6 +15,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         [Test]
         [Category("DynamoDB")]
         [Category("Integration")]
+        [Category("WWW")]
         public void TestTableCalls()
         {
 

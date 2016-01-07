@@ -56,6 +56,7 @@ namespace Amazon
 
         #endregion
 
+        #region public api's
         /// <summary>
         /// For backward compatibility for App.Config on .Net35 and .Net45 platforms only. This functions returns Null in Unity
         /// </summary>
@@ -66,6 +67,37 @@ namespace Amazon
             return null;
         }
 
+        /// <summary>
+        /// The Unity Api used for making HTTP calls. Defaults to WWW.
+        /// UnityWebRequest API is allows you access to more AWS Services 
+        /// but is restricted to Versions of Unity > 5.3
+        /// </summary>
+        public static HttpWebRequestApiOption WebRequestApiOption
+        {
+            get;
+            set;
+        }
+
+
+        /// <summary>
+        /// The Unity Api used for making HTTP calls
+        /// </summary>
+        public enum HttpWebRequestApiOption
+        {
+            /// <summary>
+            /// Uses UnityEngined.WWW
+            /// </summary>
+            WWW = 0,
+
+            /// <summary>
+            /// Uses UnityEngine.Experimental.Networking.UnityWebRequest
+            /// </summary>
+            UnityWebRequest = 1
+        }
+
+        #endregion
+
+        #region internal methods
         internal static T GetSection<T>(string sectionName)
             where T : AWSSection, new()
         {
@@ -105,7 +137,7 @@ namespace Amazon
         {
             return configPresent && xmlDoc.Element(sectionName) != null;
         }
-
+        #endregion
 
         #region tracelistener
 

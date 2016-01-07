@@ -43,7 +43,7 @@ namespace Amazon.Runtime
 
         #region Events
 
-        
+
         private PreRequestEventHandler mBeforeMarshallingEvent;
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Runtime
             }
         }
 
-        
+
         private RequestEventHandler mBeforeRequestEvent;
 
         /// <summary>
@@ -183,8 +183,8 @@ namespace Amazon.Runtime
         #region Invoke methods
 
         protected TResponse Invoke<TRequest, TResponse>(TRequest request,
-            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller)            
-            where TRequest: AmazonWebServiceRequest
+            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller)
+            where TRequest : AmazonWebServiceRequest
             where TResponse : AmazonWebServiceResponse
         {
             ThrowIfDisposed();
@@ -265,7 +265,7 @@ namespace Amazon.Runtime
         protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
             AsyncCallback callback, object state)
-            where TRequest : AmazonWebServiceRequest            
+            where TRequest : AmazonWebServiceRequest
         {
             ThrowIfDisposed();
 
@@ -312,7 +312,7 @@ namespace Amazon.Runtime
                     throw asyncResult.Exception;
                 }
 
-                return (TResponse) asyncResult.Response;
+                return (TResponse)asyncResult.Response;
             }
         }
 #endif
@@ -407,8 +407,19 @@ namespace Amazon.Runtime
             var httpRequestFactory = new HttpWebRequestFactory();
             var httpHandler = new HttpHandler<Stream>(httpRequestFactory, this);
 #elif UNITY
-            var httpRequestFactory = new UnityWebRequestFactory();
-            var httpHandler = new HttpHandler<string>(httpRequestFactory, this);
+            IHttpRequestFactory<string> httpRequestFactory = null;
+            HttpHandler<string> httpHandler = null;
+
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                httpRequestFactory = new UnityWwwRequestFactory();
+                httpHandler = new HttpHandler<string>(httpRequestFactory, this);
+            }
+            else
+            {
+                httpRequestFactory = new UnityWebRequestFactory();
+                httpHandler = new HttpHandler<string>(httpRequestFactory, this);
+            }
 #else
             var httpRequestFactory = new HttpRequestMessageFactory(this.Config);
             var httpHandler = new HttpHandler<System.Net.Http.HttpContent>(httpRequestFactory, this);
@@ -428,7 +439,7 @@ namespace Amazon.Runtime
             // Build default runtime pipeline.
             this.RuntimePipeline = new RuntimePipeline(new List<IPipelineHandler>
                 {
-                    httpHandler,                    
+                    httpHandler,
                     new Unmarshaller(this.SupportResponseLogging),
                     new ErrorHandler(_logger),
                     postUnmarshallHandler,
@@ -436,7 +447,7 @@ namespace Amazon.Runtime
                     new CredentialsRetriever(this.Credentials),
                     new RetryHandler(new DefaultRetryPolicy(this.Config.MaxErrorRetry)),
                     postMarshallHandler,
-                    new EndpointResolver(),                    
+                    new EndpointResolver(),
                     new Marshaller(),
                     preMarshallHandler,
                     errorCallbackHandler,

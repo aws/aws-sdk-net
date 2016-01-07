@@ -27,7 +27,7 @@
 		<xpkgexe>C:\xpkg\xamarin-component.exe</xpkgexe>
 		<xpkg>&quot;$(xpkgexe)&quot;</xpkg>
 		
-	    <unitypath>C:\Program Files\Unity</unitypath>
+	    <unitypath>C:\Program Files\Unity5.3</unitypath>
 		 
 		<unityexe>$(unitypath)\Editor\Unity.Exe</unityexe>
 		<unity>&quot;$(unityexe)&quot;</unity>
