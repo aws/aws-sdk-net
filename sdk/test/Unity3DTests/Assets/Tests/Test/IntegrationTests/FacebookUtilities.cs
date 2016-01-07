@@ -56,7 +56,7 @@ namespace AWSSDK.IntegrationTests.Utilities
             var accessTokenRequest = new UnityWebRequest(new Uri(facebookAppAccessTokenUri));
             var accessTokenResponse = accessTokenRequest.GetResponse();
 
-            using (var streamReader = new StreamReader(accessTokenResponse.ResponseBody.OpenResponse(), Encoding.GetEncoding(1252)))
+            using (var streamReader = new StreamReader(accessTokenResponse.ResponseBody.OpenResponse(), Encoding.GetEncoding("UTF-8")))
             {
                 accessToken = streamReader.ReadToEnd();
             }

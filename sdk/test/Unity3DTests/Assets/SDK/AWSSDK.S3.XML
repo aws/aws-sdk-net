@@ -827,6 +827,11 @@
             Specifies that the S3 Bucket should use the AP-NORTHEAST-1 locality.
             </summary>
         </member>
+        <member name="F:Amazon.S3.S3Region.APN2">
+            <summary>
+            Specifies that the S3 Bucket should use the AP-NORTHEAST-2 locality.
+            </summary>
+        </member>
         <member name="F:Amazon.S3.S3Region.SAE1">
             <summary>
             Specifies that the S3 Bucket should use the SA-EAST-1 locality.

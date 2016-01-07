@@ -161,12 +161,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 {
                     d.Put("key", "he who must not be named");
 
-                    d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+                    d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
                     {
                         d.ClearAllDelegates();
                         string erasedValue = d.Get("key");
                         syncManager.WipeData(false);
-                        d.OnSyncSuccess += delegate(object sender2, SyncSuccessEventArgs e2)
+                        d.OnSyncSuccess += delegate (object sender2, SyncSuccessEventArgs e2)
                         {
                             string restoredValues = d.Get("key");
                             if (erasedValue == null)
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                 failureMessage += "erasedValue should equal restoredValues\n";
                             }
                         };
-                        d.OnSyncFailure += delegate(object sender2, SyncFailureEventArgs e2)
+                        d.OnSyncFailure += delegate (object sender2, SyncFailureEventArgs e2)
                         {
                             failureMessage += "sync failed\n";
                         };
@@ -192,11 +192,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         RunAsSync(async () => await d.SynchronizeAsync());
 #endif
                     };
-                    d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
+                    d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
                     {
                         failureMessage += "sync failed\n";
                     };
-                    d.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+                    d.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
                     {
                         failureMessage += "Expected SyncSuccess instead of SyncConflict\n";
                         return false;
@@ -241,12 +241,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             using (CognitoSyncManager sm1 = new CognitoSyncManager(AuthCredentials))
             {
-                sm1.WipeData();
+                sm1.WipeData(false);
                 Thread.Sleep(2000);
                 using (Dataset d = sm1.OpenOrCreateDataset("test"))
                 {
                     d.Put(uniqueName, uniqueName);
-                    d.OnSyncSuccess += delegate(object s1, SyncSuccessEventArgs e1)
+                    d.OnSyncSuccess += delegate (object s1, SyncSuccessEventArgs e1)
                     {
                         UnAuthCredentials.Clear();
 
@@ -256,7 +256,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             using (Dataset d2 = sm2.OpenOrCreateDataset("test"))
                             {
                                 d2.Put(uniqueName2, uniqueName2);
-                                d2.OnSyncSuccess += delegate(object s2, SyncSuccessEventArgs e2)
+                                d2.OnSyncSuccess += delegate (object s2, SyncSuccessEventArgs e2)
                                 {
                                     AuthCredentials.Clear();
                                     UnAuthCredentials.Clear();
@@ -291,16 +291,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                             d3.OnDatasetMerged += (Dataset ds, List<string> datasetNames) =>
                                             {
                                                 mergeTriggered = true;
-                                                datasetNames.ForEach((mergeds) =>
-                                                {
-                                                    Dataset mergedDataset = sm3.OpenOrCreateDataset(mergeds);
-                                                    mergedDataset.Delete();
-#if BCL35
-                                                    mergedDataset.Synchronize();
-#else
-                                                    RunAsSync(async () => await mergedDataset.SynchronizeAsync());
-#endif
-                                                });
                                                 return true;
                                             };
 #if BCL35
@@ -338,7 +328,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             }
                         }
                     };
-                    d.OnSyncFailure += delegate(object s, SyncFailureEventArgs e)
+                    d.OnSyncFailure += delegate (object s, SyncFailureEventArgs e)
                     {
                         failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
                     };
@@ -394,7 +384,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     bool initialDirty = r.IsModified;
                     DateTime initialDate = r.DeviceLastModifiedDate.Value;
 
-                    d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+                    d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
                     {
                         //Properties after Synchronize
                         Record r2 = d.Records[records.Count - 1];
@@ -473,7 +463,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 using (Dataset d = syncManager.OpenOrCreateDataset("testDataset3"))
                 {
                     d.Put("testKey3", "the initial value");
-                    d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+                    d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
                     {
                         d.ClearAllDelegates();
                         syncManager.WipeData(false);
@@ -482,16 +472,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             bool conflictTriggered = false;
                             d2.Put("testKey3", "a different value");
 
-                            d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+                            d2.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
                             {
                                 conflictTriggered = true;
                                 return false;
                             };
-                            d2.OnSyncSuccess += delegate(object sender4, SyncSuccessEventArgs e4)
+                            d2.OnSyncSuccess += delegate (object sender4, SyncSuccessEventArgs e4)
                             {
                                 failureMessage += "Expecting OnSyncConflict instead of OnSyncSuccess\n";
                             };
-                            d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
+                            d2.OnSyncFailure += delegate (object sender4, SyncFailureEventArgs e4)
                             {
                                 if (!conflictTriggered)
                                 {
@@ -505,7 +495,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 #endif
                         }
                     };
-                    d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
+                    d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
                     {
                         failureMessage += "Expecting OnSyncSuccess instead of OnSyncFailure\n";
                     };
@@ -540,7 +530,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     d.Put("a", "1");
                     d.Put("b", "2");
                     d.Put("c", "3");
-                    d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+                    d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
                     {
                         d.ClearAllDelegates();
                         syncManager.WipeData(false);
@@ -551,7 +541,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             d2.Put("c", "30");
 
                             bool resolved = false;
-                            d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+                            d2.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
                             {
                                 List<Amazon.CognitoSync.SyncManager.Record> resolvedRecords = new List<Amazon.CognitoSync.SyncManager.Record>();
                                 int i = 0;
@@ -566,7 +556,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                 resolved = true;
                                 return true;
                             };
-                            d2.OnSyncSuccess += delegate(object sender4, SyncSuccessEventArgs e4)
+                            d2.OnSyncSuccess += delegate (object sender4, SyncSuccessEventArgs e4)
                             {
                                 if (resolved)
                                 {
@@ -589,7 +579,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                 }
 
                             };
-                            d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
+                            d2.OnSyncFailure += delegate (object sender4, SyncFailureEventArgs e4)
                             {
                                 failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
                             };
@@ -630,17 +620,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             syncManager.WipeData(false);
             Dataset d = syncManager.OpenOrCreateDataset("testDataset5");
             d.Put("testKey", "testValue");
-            d.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+            d.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
             {
                 failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
                 return false;
             };
-            d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
+            d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
             {
                 failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
             };
 
-            d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+            d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
             {
                 syncManager.WipeData();
                 Dataset d2 = syncManager.OpenOrCreateDataset("testDataset5");
@@ -649,16 +639,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     failureMessage += "Expecting dataset to be empty due to local data wipe.\n";
                 }
                 d2.Put("testKey", "newTestValue");
-                d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+                d2.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
                 {
                     failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
                     return false;
                 };
-                d2.OnSyncFailure += delegate(object sender2, SyncFailureEventArgs e2)
+                d2.OnSyncFailure += delegate (object sender2, SyncFailureEventArgs e2)
                 {
                     failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
                 };
-                d2.OnSyncSuccess += delegate(object sender2, SyncSuccessEventArgs e2)
+                d2.OnSyncSuccess += delegate (object sender2, SyncSuccessEventArgs e2)
                 {
                     if (d2.Get("testKey") != "newTestValue")
                     {
@@ -689,7 +679,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             get
             {
                 if (_AuthCredentials != null)
+                {
+                    if (_AuthCredentials.LoginsCount == 0 && facebookUser != null)
+                    {
+                        _AuthCredentials.AddLogin(FacebookProvider, facebookUser.AccessToken);
+                    }
                     return _AuthCredentials;
+                }
+
 
                 if (poolid == null)
                 {

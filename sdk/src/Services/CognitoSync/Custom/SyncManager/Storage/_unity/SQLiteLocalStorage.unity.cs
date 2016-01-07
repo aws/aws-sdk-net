@@ -37,6 +37,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         /// </summary>
         public SQLiteLocalStorage()
         {
+
             _logger = Logger.GetLogger(this.GetType());
             directoryPath = AmazonHookedPlatformInfo.Instance.PersistentDataPath;
             filePath = System.IO.Path.Combine(directoryPath, DB_FILE_NAME);
@@ -541,19 +542,14 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 connection = new SqliteConnection("URI=file:" + filePath);
                 connection.Open();
 
-                using (var transaction = connection.BeginTransaction())
+                foreach (var stmt in statements)
                 {
-                    foreach (var stmt in statements)
+                    using (var command = connection.CreateCommand())
                     {
-                        using (var command = connection.CreateCommand())
-                        {
-                            command.CommandText = stmt.Query;
-                            command.Transaction = transaction;
-                            BindData(command, stmt.Parameters);
-                            command.ExecuteNonQuery();
-                        }
+                        command.CommandText = stmt.Query;
+                        BindData(command, stmt.Parameters);
+                        command.ExecuteNonQuery();
                     }
-                    transaction.Commit();
                 }
             }
             finally

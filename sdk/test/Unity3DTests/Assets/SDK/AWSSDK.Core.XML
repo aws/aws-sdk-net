@@ -412,6 +412,11 @@
             The Asia Pacific (Tokyo) endpoint.
             </summary>
         </member>
+        <member name="F:Amazon.RegionEndpoint.APNortheast2">
+            <summary>
+            The Asia Pacific (Seoul) endpoint.
+            </summary>
+        </member>
         <member name="F:Amazon.RegionEndpoint.APSoutheast1">
             <summary>
             The Asia Pacific (Singapore) endpoint.
@@ -5029,18 +5034,6 @@
             <param name="executionContext">The execution context, it contains the
             request and response context.</param>
         </member>
-        <member name="M:Amazon.Runtime.Internal.RuntimeAsyncResult.Dispose(System.Boolean)">
-            <summary>
-            Implements the Dispose pattern
-            </summary>
-            <param name="disposing">Whether this object is being disposed via a call to Dispose
-            or garbage collected.</param>
-        </member>
-        <member name="M:Amazon.Runtime.Internal.RuntimeAsyncResult.Dispose">
-            <summary>
-            Disposes of all managed and unmanaged resources.
-            </summary>
-        </member>
         <member name="T:Amazon.Runtime.Internal.RuntimePipeline">
             <summary>
             A runtime pipeline contains a collection of handlers which represent
@@ -5896,6 +5889,18 @@
             </summary>
             <param name="requestContext">Request context containing the state of the request.</param>
         </member>
+        <member name="M:Amazon.Runtime.Internal.RuntimeAsyncResult.Dispose(System.Boolean)">
+            <summary>
+            Implements the Dispose pattern
+            </summary>
+            <param name="disposing">Whether this object is being disposed via a call to Dispose
+            or garbage collected.</param>
+        </member>
+        <member name="M:Amazon.Runtime.Internal.RuntimeAsyncResult.Dispose">
+            <summary>
+            Disposes of all managed and unmanaged resources.
+            </summary>
+        </member>
         <member name="T:Amazon.Runtime.Internal.ThreadPoolExecutionHandler">
             <summary>
             This handler executes the subsequent handlers on a ThreadPool thread.
@@ -5912,6 +5917,11 @@
             <summary>
             This method is called called when the script instance is
             being loaded.
+            </summary>
+        </member>
+        <member name="M:Amazon.Runtime.Internal.UnityMainThreadDispatcher.Update">
+            <summary>
+            This method is called as often as possible.
             </summary>
         </member>
         <member name="M:Amazon.Runtime.Internal.UnityMainThreadDispatcher.ProcessRequests">

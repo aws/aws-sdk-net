@@ -782,7 +782,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     };
 
                     statements.Add(UpdateIdentityRecordsStatement);
-
                 }
                 else
                 {

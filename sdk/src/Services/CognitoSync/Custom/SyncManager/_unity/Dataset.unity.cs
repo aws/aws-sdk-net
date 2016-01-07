@@ -14,6 +14,7 @@
 // for the specific language governing permissions and 
 // limitations under the License.
 //
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal.PlatformServices;
 using System;
@@ -353,6 +354,63 @@ namespace Amazon.CognitoSync.SyncManager
                 ClearAllDelegates();
                 _netReachability.NetworkReachabilityChanged -= OnNetworkReachabilityChanged;
                 _disposed = true;
+            }
+        }
+
+
+
+        private void SynchronizeHelperAsync()
+        {
+            try
+            {
+                if (locked)
+                {
+                    _logger.InfoFormat("Already in a Synchronize. Queueing new request.", DatasetName);
+                    queuedSync = true;
+                    return;
+                }
+                else
+                {
+                    locked = true;
+                }
+
+                waitingForConnectivity = false;
+                CognitoCredentials.GetIdentityIdAsync((response) =>
+                {
+                    try
+                    {
+                        bool resume = true;
+                        List<string> mergedDatasets = LocalMergedDatasets;
+                        if (mergedDatasets.Count > 0)
+                        {
+                            _logger.InfoFormat("Detected merge datasets - {0}", DatasetName);
+
+                            if (this.OnDatasetMerged != null)
+                            {
+                                resume = this.OnDatasetMerged(this, mergedDatasets);
+                            }
+                        }
+
+                        if (!resume)
+                        {
+                            EndSynchronizeAndCleanup();
+
+                            FireSyncFailureEvent(new OperationCanceledException(string.Format("Sync canceled on merge for dataset - {0}", this.DatasetName)));
+                            return;
+                        }
+                        RunSyncOperationAsync(MAX_RETRY);
+                    }
+                    catch (Exception e)
+                    {
+                        FireSyncFailureEvent(e);
+                        _logger.Error(e, "");
+                    }
+                }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
+            }
+            catch (Exception e)
+            {
+                FireSyncFailureEvent(e);
+                _logger.Error(e, "");
             }
         }
     }

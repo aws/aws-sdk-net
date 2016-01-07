@@ -102,6 +102,54 @@ namespace Amazon.CognitoSync.SyncManager
             }
         }
         #endregion
+
+        private void SynchronizeHelperAsync()
+        {
+            try
+            {
+                if (locked)
+                {
+                    _logger.InfoFormat("Already in a Synchronize. Queueing new request.", DatasetName);
+                    queuedSync = true;
+                    return;
+                }
+                else
+                {
+                    locked = true;
+                }
+
+                waitingForConnectivity = false;
+
+                CognitoCredentials.GetIdentityId();
+
+                bool resume = true;
+                List<string> mergedDatasets = LocalMergedDatasets;
+                if (mergedDatasets.Count > 0)
+                {
+                    _logger.InfoFormat("Detected merge datasets - {0}", DatasetName);
+
+                    if (this.OnDatasetMerged != null)
+                    {
+                        resume = this.OnDatasetMerged(this, mergedDatasets);
+                    }
+                }
+
+                if (!resume)
+                {
+                    EndSynchronizeAndCleanup();
+
+                    FireSyncFailureEvent(new OperationCanceledException(string.Format("Sync canceled on merge for dataset - {0}", this.DatasetName)));
+                    return;
+                }
+                RunSyncOperationAsync(MAX_RETRY);
+            }
+            catch (Exception e)
+            {
+                FireSyncFailureEvent(e);
+                _logger.Error(e, "");
+            }
+        }
+
     }
 }
 

@@ -42,8 +42,6 @@ namespace AWSSDK.IntegrationTests.SyncManager
         public const string FacebookAppSecret = "";
         private const string FacebookProvider = "graph.facebook.com";
         FacebookUtilities.FacebookCreateUserResponse facebookUser = null;
-        string authPoolid = null;
-        string authPoolName = null;
 #endif
 
         private List<string> roleNames = new List<string>();
@@ -78,6 +76,16 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 FacebookUtilities.DeleteFacebookUser(facebookUser);
 #endif
         }
+
+        [TearDown]
+        public void TearDown()
+        {
+            if (_UnauthCredentials != null) { _UnauthCredentials.Clear(); }
+#if INCLUDE_FACEBOOK_TESTS
+            if (_AuthCredentials != null) { _AuthCredentials.Clear(); }
+#endif
+        }
+
 
 #if INCLUDE_FACEBOOK_TESTS
         [Test]
@@ -153,12 +161,12 @@ namespace AWSSDK.IntegrationTests.SyncManager
 
             d.Put("key", "he who must not be named");
 
-            d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+            d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
             {
                 d.ClearAllDelegates();
                 string erasedValue = d.Get("key");
                 syncManager.WipeData(false);
-                d.OnSyncSuccess += delegate(object sender2, SyncSuccessEventArgs e2)
+                d.OnSyncSuccess += delegate (object sender2, SyncSuccessEventArgs e2)
                 {
                     string restoredValues = d.Get("key");
                     if (erasedValue == null)
@@ -175,19 +183,19 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     }
                     ars.Set();
                 };
-                d.OnSyncFailure += delegate(object sender2, SyncFailureEventArgs e2)
+                d.OnSyncFailure += delegate (object sender2, SyncFailureEventArgs e2)
                 {
                     failureMessage += "sync failed\n";
                     ars.Set();
                 };
                 d.Synchronize();
             };
-            d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
+            d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
             {
                 failureMessage += "sync failed\n";
                 ars.Set();
             };
-            d.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+            d.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
             {
                 failureMessage += "Expected SyncSuccess instead of SyncConflict\n";
                 return false;
@@ -239,11 +247,11 @@ namespace AWSSDK.IntegrationTests.SyncManager
             Thread.Sleep(2000);
             Dataset d = sm1.OpenOrCreateDataset("test");
             d.Put(uniqueName, uniqueName);
-            d.OnSyncSuccess += delegate(object s1, SyncSuccessEventArgs e1)
+            d.OnSyncSuccess += delegate (object s1, SyncSuccessEventArgs e1)
             {
                 ars.Set();
             };
-            d.OnSyncFailure += delegate(object s, SyncFailureEventArgs e)
+            d.OnSyncFailure += delegate (object s, SyncFailureEventArgs e)
             {
                 failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
                 ars.Set();
@@ -275,7 +283,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
             CognitoSyncManager sm2 = null;
             Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
             {
-                sm2 = new CognitoSyncManager(AuthCredentials, TestRunner.RegionEndpoint);
+                sm2 = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
                 mainThreadArs.Set();
             });
             mainThreadArs.WaitOne();
@@ -283,7 +291,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
 
             Dataset d2 = sm2.OpenOrCreateDataset("test");
             d2.Put(uniqueName2, uniqueName2);
-            d2.OnSyncSuccess += delegate(object s2, SyncSuccessEventArgs e2)
+            d2.OnSyncSuccess += delegate (object s2, SyncSuccessEventArgs e2)
             {
                 ars.Set();
             };
@@ -352,26 +360,9 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 failureMessage += "Not expecting OnDatasetDeleted\n";
                 return false;
             };
-            d3.OnDatasetMerged += delegate(Dataset ds, List<string> datasetNames)
+            d3.OnDatasetMerged += delegate (Dataset ds, List<string> datasetNames)
             {
                 mergeTriggered = true;
-                AutoResetEvent mergeArs = new AutoResetEvent(false);
-                datasetNames.ForEach((mergeds) =>
-                {
-                    Dataset mergedDataset = sm3.OpenOrCreateDataset(mergeds);
-                    mergedDataset.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
-                    {
-                        failureMessage += string.Format("Not expecting OnSyncFailure Got exception {0}\n", e.Exception.Message);
-                        ars.Set();
-                    };
-                    mergedDataset.OnSyncSuccess += (object sender, SyncSuccessEventArgs e) =>
-                    {
-                        ars.Set();
-                    };
-                    mergedDataset.Delete();
-                    mergedDataset.Synchronize();
-                    mergeArs.WaitOne();
-                });
                 return true;
             };
             d3.Synchronize();
@@ -410,7 +401,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 bool initialDirty = r.IsModified;
                 DateTime initialDate = r.DeviceLastModifiedDate.Value;
 
-                d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+                d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
                 {
                     //Properties after Synchronize
                     Record r2 = d.Records[records.Count - 1];
@@ -493,7 +484,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
             Dataset d = syncManager.OpenOrCreateDataset("testDataset3");
             Dataset d2 = null;
             d.Put("testKey3", "the initial value");
-            d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+            d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
             {
                 d.ClearAllDelegates();
                 syncManager.WipeData(false);
@@ -502,17 +493,17 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 bool conflictTriggered = false;
                 d2.Put("testKey3", "a different value");
 
-                d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+                d2.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
                 {
                     conflictTriggered = true;
                     return false;
                 };
-                d2.OnSyncSuccess += delegate(object sender4, SyncSuccessEventArgs e4)
+                d2.OnSyncSuccess += delegate (object sender4, SyncSuccessEventArgs e4)
                 {
                     failureMessage += "Expecting OnSyncConflict instead of OnSyncSuccess\n";
                     ars.Set();
                 };
-                d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
+                d2.OnSyncFailure += delegate (object sender4, SyncFailureEventArgs e4)
                 {
                     if (!conflictTriggered)
                     {
@@ -522,7 +513,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 };
                 d2.Synchronize();
             };
-            d.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
+            d.OnSyncFailure += delegate (object sender4, SyncFailureEventArgs e4)
             {
                 failureMessage += "Expecting OnSyncSuccess instead of OnSyncFailure\n";
                 ars.Set();
@@ -564,7 +555,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
             d.Put("a", "1");
             d.Put("b", "2");
             d.Put("c", "3");
-            d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+            d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
             {
                 d.ClearAllDelegates();
                 syncManager.WipeData(false);
@@ -574,7 +565,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 d2.Put("c", "30");
 
                 bool resolved = false;
-                d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+                d2.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
                 {
                     List<Amazon.CognitoSync.SyncManager.Record> resolvedRecords = new List<Amazon.CognitoSync.SyncManager.Record>();
                     int i = 0;
@@ -589,7 +580,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     resolved = true;
                     return true;
                 };
-                d2.OnSyncSuccess += delegate(object sender4, SyncSuccessEventArgs e4)
+                d2.OnSyncSuccess += delegate (object sender4, SyncSuccessEventArgs e4)
                 {
                     if (resolved)
                     {
@@ -612,14 +603,14 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     }
                     ars.Set();
                 };
-                d2.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
+                d2.OnSyncFailure += delegate (object sender4, SyncFailureEventArgs e4)
                 {
                     failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
                     ars.Set();
                 };
                 d2.Synchronize();
             };
-            d.OnSyncFailure += delegate(object sender4, SyncFailureEventArgs e4)
+            d.OnSyncFailure += delegate (object sender4, SyncFailureEventArgs e4)
             {
                 failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
                 ars.Set();
@@ -660,18 +651,18 @@ namespace AWSSDK.IntegrationTests.SyncManager
             Dataset d = syncManager.OpenOrCreateDataset("testDataset5");
             Dataset d2 = null;
             d.Put("testKey", "testValue");
-            d.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+            d.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
             {
                 failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
                 return false;
             };
-            d.OnSyncFailure += delegate(object sender, SyncFailureEventArgs e)
+            d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
             {
                 failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
                 ars.Set();
             };
 
-            d.OnSyncSuccess += delegate(object sender, SyncSuccessEventArgs e)
+            d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
             {
                 syncManager.WipeData();
                 d2 = syncManager.OpenOrCreateDataset("testDataset5");
@@ -680,17 +671,17 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     failureMessage += "Expecting dataset to be empty due to local data wipe.\n";
                 }
                 d2.Put("testKey", "newTestValue");
-                d2.OnSyncConflict += delegate(Dataset dataset, List<SyncConflict> conflicts)
+                d2.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
                 {
                     failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
                     return false;
                 };
-                d2.OnSyncFailure += delegate(object sender2, SyncFailureEventArgs e2)
+                d2.OnSyncFailure += delegate (object sender2, SyncFailureEventArgs e2)
                 {
                     failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
                     ars.Set();
                 };
-                d2.OnSyncSuccess += delegate(object sender2, SyncSuccessEventArgs e2)
+                d2.OnSyncSuccess += delegate (object sender2, SyncSuccessEventArgs e2)
                 {
                     if (d2.Get("testKey") != "newTestValue")
                     {
@@ -718,7 +709,13 @@ namespace AWSSDK.IntegrationTests.SyncManager
             get
             {
                 if (_AuthCredentials != null)
+                {
+                    if (_AuthCredentials.LoginsCount == 0 && facebookUser != null)
+                    {
+                        _AuthCredentials.AddLogin(FacebookProvider, facebookUser.AccessToken);
+                    }
                     return _AuthCredentials;
+                }
 
                 if (poolid == null)
                 {
