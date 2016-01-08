@@ -1,3 +1,15 @@
+### 3.1.36.1 (2016-01-06 20:50 UTC)
+* EC2 (3.1.7.1)
+	* Fixed incorrect request class and marshaling code for the DescribeNetworkInterfaceAttribute api. The class should have contained a single 'Attribute' member, not multiple members corresponding to the allows values for 'Attribute'.
+* S3 (3.1.3.10)
+	* Updated to use new Core, version 3.1.4.3
+	* Add more defensive code while processing xml error responses
+* Core 3.1.4.3
+	* Add more defensive code while processing xml error responses. 
+Fixed issue with callbacks being invoked multiple times when unhandled exception occurs in .NET 3.5 async code.
+Updated RegionEndpoint constants for new Asia Pacific (Seoul) (ap-northeast-2) region.
+	* all services packages updated to require new core
+
 ### 3.1.36.0 (2015-12-21 22:04 UTC)
 * ECR (3.1.0.0)
 	* Add SDK support for the Amazon EC2 Container Registry, a secure, fully-managed Docker image registry that makes it easy for developers to store and retrieve Docker container images.

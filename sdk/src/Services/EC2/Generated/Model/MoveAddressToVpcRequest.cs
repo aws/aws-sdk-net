@@ -30,11 +30,13 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the MoveAddressToVpc operation.
     /// Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform.
-    /// The Elastic IP address must be allocated to your account, and it must not be associated
-    /// with an instance. After the Elastic IP address is moved, it is no longer available
-    /// for use in the EC2-Classic platform, unless you move it back using the <a>RestoreAddressToClassic</a>
-    /// request. You cannot move an Elastic IP address that's allocated for use in the EC2-VPC
-    /// platform to the EC2-Classic platform.
+    /// The Elastic IP address must be allocated to your account for more than 24 hours, and
+    /// it must not be associated with an instance. After the Elastic IP address is moved,
+    /// it is no longer available for use in the EC2-Classic platform, unless you move it
+    /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
+    /// IP address that's allocated for use in the EC2-VPC platform to the EC2-Classic platform.
+    /// You cannot migrate an Elastic IP address that's associated with a reverse DNS record.
+    /// Contact AWS account and billing support to remove the reverse DNS record.
     /// </summary>
     public partial class MoveAddressToVpcRequest : AmazonEC2Request
     {

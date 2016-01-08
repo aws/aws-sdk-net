@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CodeDeploy</id>
     <title>AWSSDK - AWS CodeDeploy</title>
-    <version>3.1.0.3</version> 
+    <version>3.1.0.4</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications.</description>
     <language>en-US</language>
@@ -13,10 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+      <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
