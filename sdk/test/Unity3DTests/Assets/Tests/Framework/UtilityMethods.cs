@@ -121,7 +121,7 @@ namespace AWSSDK.Tests.Framework
             }
             else
             {
-                Assert.IsInstanceOf(typeof(AmazonLambdaException), responseException);
+                Assert.IsInstanceOf(typeof(ResourceNotFoundException), responseException);
             }
             return functionArn;
         }

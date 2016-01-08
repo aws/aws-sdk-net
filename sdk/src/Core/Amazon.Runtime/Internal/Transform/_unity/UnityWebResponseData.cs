@@ -44,17 +44,16 @@ namespace Amazon.Runtime.Internal.Transform
             if (!unityWebRequest.isError)
             {
                 _headers = unityWebRequest.GetResponseHeaders();
-
+                
                 _responseBody = unityWebRequest.downloadHandler.data;
-               
 
                 if ((_responseBody != null && _responseBody.Length > 0) || (_responseBody.Length == 0 && unityWebRequest.error == null))
                 {
                     _responseStream = new MemoryStream(_responseBody);
                 }
                 this.ContentLength = (long)unityWebRequest.downloadedBytes;
-
                 string contentType = null;
+                this._headers.TryGetValue(HeaderKeys.ContentTypeHeader, out contentType);
                 this.ContentType = contentType;
                 this.StatusCode = (HttpStatusCode)unityWebRequest.responseCode;
                 this.IsSuccessStatusCode = this.StatusCode >= HttpStatusCode.OK && this.StatusCode <= (HttpStatusCode)299;

@@ -87,6 +87,7 @@ namespace Amazon.Runtime.Internal
                 requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
             + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
 #endif
+
             var method = requestContext.Request.HttpMethod.ToUpper(CultureInfo.InvariantCulture);
             if (method != "GET" && method != "DELETE" && method != "HEAD")
             {

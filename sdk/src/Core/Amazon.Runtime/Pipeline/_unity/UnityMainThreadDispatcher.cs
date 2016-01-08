@@ -17,6 +17,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
 using System.Collections;
+using System.Reflection;
 using System.Threading;
 using UnityEngine;
 using Logger = Amazon.Runtime.Internal.Util.Logger;
@@ -101,7 +102,7 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Makes a single web request using the WWW API.
+        /// Makes a single web request using the WWW or UnityWebRequest API.
         /// </summary>
         /// <param name="request"></param>
         /// <returns>IEnumerator which indicated if the operation is pending.</returns>
@@ -125,9 +126,9 @@ namespace Amazon.Runtime.Internal
                 unityWebRequest.uploadHandler = new UnityEngine.Experimental.Networking.UploadHandlerRaw(request.RequestContent);
                 foreach (var header in request.Headers)
                 {
-                    if (header.Key.Equals(HeaderKeys.UserAgentHeader, StringComparison.InvariantCultureIgnoreCase)
-                        || header.Key.Equals(HeaderKeys.HostHeader, StringComparison.InvariantCultureIgnoreCase)
-                        || header.Key.Equals(HeaderKeys.ContentLengthHeader, StringComparison.InvariantCultureIgnoreCase))
+                    if (header.Key.Equals(HeaderKeys.HostHeader, StringComparison.InvariantCultureIgnoreCase)
+                        || header.Key.Equals(HeaderKeys.ContentLengthHeader, StringComparison.InvariantCultureIgnoreCase)
+                        || header.Key.Equals(HeaderKeys.UserAgentHeader, StringComparison.InvariantCultureIgnoreCase))
                         continue;
                     unityWebRequest.SetRequestHeader(header.Key, header.Value);
                 }

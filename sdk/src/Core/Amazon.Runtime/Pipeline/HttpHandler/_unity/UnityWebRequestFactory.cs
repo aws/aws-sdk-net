@@ -37,13 +37,13 @@ namespace Amazon.Runtime.Internal
         /// <returns>An HTTP request.</returns>
         public IHttpRequest<string> CreateHttpRequest(Uri requestUri)
         {
-            //_unityRequest =
-            return  new UnityRequest(requestUri); ;
+            _unityRequest = new UnityRequest(requestUri);
+            return _unityRequest;
         }
 
         public void Dispose()
         {
-            //_unityRequest.Dispose();
+            _unityRequest.Dispose();
         }
     }
 
@@ -281,12 +281,10 @@ namespace Amazon.Runtime.Internal
 
         public void Dispose()
         {
-            /*
             UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
             {
                 WwwRequest.Dispose();
             });
-            */
         }
     }
 }

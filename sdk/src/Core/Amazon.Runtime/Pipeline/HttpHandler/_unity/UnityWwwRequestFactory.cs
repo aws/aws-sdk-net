@@ -41,12 +41,13 @@ namespace Amazon.Runtime.Internal
         /// <returns>An HTTP request.</returns>
         public IHttpRequest<string> CreateHttpRequest(Uri requestUri)
         {
-            return new UnityWwwRequest(requestUri);
+            _unityWwwRequest = new UnityWwwRequest(requestUri);
+            return _unityWwwRequest;
         }
 
         public void Dispose()
         {
-            //_unityWwwRequest.Dispose();
+            _unityWwwRequest.Dispose();
         }
     }
 
@@ -284,7 +285,7 @@ namespace Amazon.Runtime.Internal
 
         public void Dispose()
         {
-           // WwwRequest.Dispose();
+            WwwRequest.Dispose();
         }
     }
 
