@@ -29,6 +29,8 @@ namespace Amazon.Runtime.Internal
     public class UnityMainThreadDispatcher : MonoBehaviour
     {
         private Logger _logger;
+        private float _nextUpdateTime;
+        private float _updateInterval = 0.1f;
 
         /// <summary>
         /// This method is called called when the script instance is
@@ -38,7 +40,20 @@ namespace Amazon.Runtime.Internal
         {
             _logger = Logger.GetLogger(this.GetType());
             // Call the method to process requests at a regular interval.
-            InvokeRepeating("ProcessRequests", 0.1f, 0.1f);
+            _nextUpdateTime = Time.unscaledTime;
+            _nextUpdateTime += _updateInterval;
+        }
+
+        /// <summary>
+        /// This method is called as often as possible.
+        /// </summary>
+        void Update()
+        {
+            if (Time.unscaledTime >= _nextUpdateTime)
+            {
+                ProcessRequests();
+                _nextUpdateTime += _updateInterval;
+            }
         }
 
         /// <summary>
