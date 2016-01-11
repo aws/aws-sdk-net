@@ -116,14 +116,14 @@ namespace Amazon.DNXCore.IntegrationTests
 
         #endregion
 
-        //public ServiceResponseCounter CountServiceResponses()
-        //{
-        //    return CountServiceResponses(Client);
-        //}
-        //public static ServiceResponseCounter CountServiceResponses(AmazonServiceClient client)
-        //{
-        //    return new ServiceResponseCounter(client);
-        //}
+        public ServiceResponseCounter CountServiceResponses()
+        {
+            return CountServiceResponses(Client);
+        }
+        public static ServiceResponseCounter CountServiceResponses(AmazonServiceClient client)
+        {
+            return new ServiceResponseCounter(client);
+        }
     }
 
 
