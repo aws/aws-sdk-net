@@ -42,7 +42,9 @@
     <UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
     <UsingTask TaskName="CustomTasks.PackageComponents" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
     
-    <Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
+    <Target Name="init" DependsOnTargets="clean;build-custom-tasks">
+        <Message Text="Running SDK generation and build for configuration: $(Configuration)" Importance="normal" />
+    </Target>
 
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;keyscan;consolidate-docartifacts;save-build"/>
 
