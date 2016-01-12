@@ -1,27 +1,18 @@
-//#define INCLUDE_FACEBOOK_TESTS
+﻿//#define INCLUDE_FACEBOOK_TESTS
 
-using Amazon;
 using Amazon.CognitoIdentity;
 using Amazon.CognitoIdentity.Model;
-using Amazon.CognitoSync;
 using Amazon.CognitoSync.SyncManager;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using CommonTests.Framework;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using Amazon.Runtime;
-using System.IO;
-using System.Data.SQLite;
-using System.Threading;
-#if BCL45
-using System.Threading.Tasks;
-#endif
-using Amazon.Util.Internal;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class SyncManager : TestBase<AmazonCognitoIdentityClient>
     {
         //tests that require facebook app id and secret are currently disabled.
@@ -56,21 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         internal const string DB_FILE_NAME = "aws_cognito_sync.db";
 
-#if BCL45
-        protected static void RunAsSync(Func<Task> asyncFunc)
-        {
-            try
-            {
-                asyncFunc().Wait();
-            }
-            finally
-            {
-
-            }
-        }
-#endif
-
-        [TestCleanup]
+        [OneTimeTearDown]
         public void Cleanup()
         {
             if (poolid != null)
@@ -82,36 +59,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             if (facebookUser != null)
                 FacebookUtilities.DeleteFacebookUser(facebookUser);
 #endif
-            //drop all the tables from the db
-#if !BCL35
-            var filePath = InternalSDKUtils.DetermineAppLocalStoragePath(DB_FILE_NAME);
-            if (File.Exists(filePath))
-            {
-                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};Version=3;", filePath)))
-                {
-                    connection.Open();
-
-                    SQLiteCommand cmd = connection.CreateCommand();
-
-                    cmd.CommandText = "DROP TABLE IF EXISTS records";
-                    cmd.ExecuteNonQuery();
-
-                    cmd = connection.CreateCommand();
-                    cmd.CommandText = "DROP TABLE IF EXISTS datasets";
-                    cmd.ExecuteNonQuery();
-
-                    cmd = connection.CreateCommand();
-                    cmd.CommandText = "DROP TABLE IF EXISTS kvstore";
-                    cmd.ExecuteNonQuery();
-                }
-            }
-#endif
             BaseClean();
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            if (_UnauthCredentials != null) { _UnauthCredentials.Clear(); }
 #if INCLUDE_FACEBOOK_TESTS
-        [TestMethod]
-        [TestCategory("SyncManager")]
+            if (_AuthCredentials != null) { _AuthCredentials.Clear(); }
+#endif
+        }
+
+
+#if INCLUDE_FACEBOOK_TESTS
+        [Test]
+        [Category("SyncManager")]
         public void AuthenticatedCredentialsTest()
         {
             CognitoAWSCredentials authCred = AuthCredentials;
@@ -123,12 +86,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 #endif
 
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
+        [Category("SyncManager")]
         public void DatasetLocalStorageTest()
         {
             {
-                using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+                using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint))
                 {
                     syncManager.WipeData(false);
                     Dataset d = syncManager.OpenOrCreateDataset("testDataset");
@@ -136,7 +99,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             }
             {
-                using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+                using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint))
                 {
                     Dataset d = syncManager.OpenOrCreateDataset("testDataset");
                     Assert.AreEqual("testValue", d.Get("testKey"));
@@ -148,15 +111,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// Test case: Store a value in a dataset and sync it. Wipe all local data.
         /// After synchronizing the dataset we should have our stored value back.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
+        [Category("SyncManager")]
         public void DatasetCloudStorageTest()
         {
             string failureMessage = string.Empty;
-            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint))
             {
                 syncManager.WipeData(false);
-                Thread.Sleep(2000);
+                UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
                 using (Dataset d = syncManager.OpenOrCreateDataset("testDataset2"))
                 {
                     d.Put("key", "he who must not be named");
@@ -186,11 +149,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         {
                             failureMessage += "sync failed\n";
                         };
-#if BCL35
-                        d.Synchronize();
-#else
                         RunAsSync(async () => await d.SynchronizeAsync());
-#endif
                     };
                     d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
                     {
@@ -211,11 +170,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         failureMessage += "Did not expect DatasetDeleted\n";
                         return false;
                     };
-#if BCL35
-                    d.Synchronize();
-#else
                     RunAsSync(async () => await d.SynchronizeAsync());
-#endif
                 }
             }
             if (!string.IsNullOrEmpty(failureMessage))
@@ -228,8 +183,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// <summary>
         /// Test Case: 
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
+        [Category("SyncManager")]
         public void MergeTest()
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -239,10 +194,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             string failureMessage = string.Empty;
             UnAuthCredentials.Clear();
 
-            using (CognitoSyncManager sm1 = new CognitoSyncManager(AuthCredentials))
+            using (CognitoSyncManager sm1 = new CognitoSyncManager(AuthCredentials, TestRunner.RegionEndpoint))
             {
                 sm1.WipeData(false);
-                Thread.Sleep(2000);
+                UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
                 using (Dataset d = sm1.OpenOrCreateDataset("test"))
                 {
                     d.Put(uniqueName, uniqueName);
@@ -250,9 +205,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     {
                         UnAuthCredentials.Clear();
 
-                        using (CognitoSyncManager sm2 = new CognitoSyncManager(UnAuthCredentials))
+                        using (CognitoSyncManager sm2 = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint))
                         {
-                            Thread.Sleep(2000);
+                            UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
                             using (Dataset d2 = sm2.OpenOrCreateDataset("test"))
                             {
                                 d2.Put(uniqueName2, uniqueName2);
@@ -261,9 +216,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                     AuthCredentials.Clear();
                                     UnAuthCredentials.Clear();
                                     //now we will use auth credentials.
-                                    using (CognitoSyncManager sm3 = new CognitoSyncManager(AuthCredentials))
+                                    using (CognitoSyncManager sm3 = new CognitoSyncManager(AuthCredentials, TestRunner.RegionEndpoint))
                                     {
-                                        Thread.Sleep(2000);
+                                        UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
                                         using (Dataset d3 = sm3.OpenOrCreateDataset("test"))
                                         {
                                             bool mergeTriggered = false;
@@ -293,11 +248,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                                 mergeTriggered = true;
                                                 return true;
                                             };
-#if BCL35
-                                            d3.Synchronize();
-#else
                                             RunAsSync(async () => await d3.SynchronizeAsync());
-#endif
                                         }
                                     }
                                 };
@@ -320,11 +271,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                     failureMessage += "Not expecting OnDatasetMerged\n";
                                     return false;
                                 };
-#if BCL35
-                                d2.Synchronize();
-#else
                                 RunAsSync(async () => await d2.SynchronizeAsync());
-#endif
                             }
                         }
                     };
@@ -347,11 +294,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         failureMessage += "Not expecting OnDatasetMerged\n";
                         return false;
                     };
-#if BCL35
-                    d.Synchronize();
-#else
                     RunAsSync(async () => await d.SynchronizeAsync());
-#endif
                 }
             }
             if (!string.IsNullOrEmpty(failureMessage))
@@ -365,12 +308,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// Test case: Check that the dataset metadata is modified appropriately when calling Synchronize.
         /// We test for the dirty bit, the sync count and the last modified timmestamp.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
+        [Category("SyncManager")]
         public void MetadataTest()
         {
             string failureMessage = string.Empty;
-            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint))
             {
                 syncManager.WipeData(false);
                 using (Dataset d = syncManager.OpenOrCreateDataset("testDataset6"))
@@ -426,18 +369,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         }
                         if (initialDate != synchronizedDate)
                         {
-                            failureMessage += "Expected initialDate == synchronizedDate\n";
+                            failureMessage += string.Format("Expected initialDate ({0}) == synchronizedDate ({1}) \n", initialDate, synchronizedDate);
                         }
                     };
                     d.OnSyncFailure += (object sender, SyncFailureEventArgs e) =>
                     {
                         failureMessage += e.Exception.ToString() + "\n";
                     };
-#if BCL35
-                    d.Synchronize();
-#else
                     RunAsSync(async () => await d.SynchronizeAsync());
-#endif
                     if (!string.IsNullOrEmpty(failureMessage))
                     {
                         Assert.Fail(failureMessage);
@@ -452,12 +391,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// Also check that by returning false in SyncConflict, the Synchronize operation
         /// is aborted and nothing else gets called. 
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
+        [Category("SyncManager")]
         public void ConflictTest()
         {
             string failureMessage = string.Empty;
-            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint))
             {
                 syncManager.WipeData(false);
                 using (Dataset d = syncManager.OpenOrCreateDataset("testDataset3"))
@@ -488,22 +427,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                     failureMessage += "Expecting OnSyncConflict instead of OnSyncFailure\n";
                                 }
                             };
-#if BCL35
-                            d2.Synchronize();
-#else
                             RunAsSync(async () => await d2.SynchronizeAsync());
-#endif
                         }
                     };
                     d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
                     {
                         failureMessage += "Expecting OnSyncSuccess instead of OnSyncFailure\n";
                     };
-#if BCL35
-                    d.Synchronize();
-#else
                     RunAsSync(async () => await d.SynchronizeAsync());
-#endif
                 }
             }
             if (!string.IsNullOrEmpty(failureMessage))
@@ -517,12 +448,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// for resolving a conflict (local wins, remote wins, and override) work. We also check
         /// that returning true in SyncConflict allows the Synchronization operationn to continue.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
+        [Category("SyncManager")]
         public void ResolveConflictTest()
         {
             string failureMessage = string.Empty;
-            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials))
+            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint))
             {
                 syncManager.WipeData(false);
                 using (Dataset d = syncManager.OpenOrCreateDataset("testDataset4"))
@@ -583,18 +514,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             {
                                 failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
                             };
-#if BCL35
-                            d2.Synchronize();
-#else
                             RunAsSync(async () => await d2.SynchronizeAsync());
-#endif
                         }
                     };
-#if BCL35
-                    d.Synchronize();
-#else
                     RunAsSync(async () => await d.SynchronizeAsync());
-#endif
                 }
             }
             if (!string.IsNullOrEmpty(failureMessage))
@@ -611,12 +534,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// Check that the dataset is no longer in local memory and that syncing a
         /// dataset with the same record key does not cause a conflict.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        [Test]
+        [Category("SyncManager")]
         public void WipeDataTest()
         {
             string failureMessage = string.Empty;
-            CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials);
+            CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
             syncManager.WipeData(false);
             Dataset d = syncManager.OpenOrCreateDataset("testDataset5");
             d.Put("testKey", "testValue");
@@ -655,17 +578,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         failureMessage += "Value for key 'testKey' should be 'newTestValue'\n";
                     }
                 };
-#if BCL35
-                d2.Synchronize();
-#else
                 RunAsSync(async () => await d2.SynchronizeAsync());
-#endif
             };
-#if BCL35
-            d.Synchronize();
-#else
             RunAsSync(async () => await d.SynchronizeAsync());
-#endif
             if (!string.IsNullOrEmpty(failureMessage))
             {
                 Assert.Fail(failureMessage);
@@ -691,11 +606,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 if (poolid == null)
                 {
                     CreateIdentityPool(out poolid, out poolName);
-                    Thread.Sleep(2000);
+                    UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
                 }
                 facebookUser = FacebookUtilities.CreateFacebookUser(FacebookAppId, FacebookAppSecret);
 
-                _AuthCredentials = new SQLiteCognitoAWSCredentials(poolid, Client.Config.RegionEndpoint);
+                _AuthCredentials = new CognitoAWSCredentials(poolid, TestRunner.RegionEndpoint);
                 _AuthCredentials.AddLogin(FacebookProvider, facebookUser.AccessToken);
                 //create facebook token
                 return _AuthCredentials;
@@ -715,7 +630,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 if (poolid == null)
                     CreateIdentityPool(out poolid, out poolName);
 
-                _UnauthCredentials = new SQLiteCognitoAWSCredentials(poolid, Client.Config.RegionEndpoint);
+                _UnauthCredentials = new CognitoAWSCredentials(poolid, TestRunner.RegionEndpoint);
                 return _UnauthCredentials;
             }
         }
@@ -734,21 +649,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 #endif
             };
 
-            var createPoolResult = Client.CreateIdentityPool(request);
+            var createPoolResult = Client.CreateIdentityPoolAsync(request).Result;
             Assert.IsNotNull(createPoolResult.IdentityPoolId);
             Assert.IsNotNull(createPoolResult.IdentityPoolName);
             Assert.AreEqual(request.AllowUnauthenticatedIdentities, createPoolResult.AllowUnauthenticatedIdentities);
             poolId = createPoolResult.IdentityPoolId;
             allPoolIds.Add(poolId);
 
-            var describePoolResult = Client.DescribeIdentityPool(new DescribeIdentityPoolRequest
+            var describePoolResult = Client.DescribeIdentityPoolAsync(new DescribeIdentityPoolRequest
             {
                 IdentityPoolId = poolId
-            });
+            }).Result;
             Assert.AreEqual(poolId, describePoolResult.IdentityPoolId);
             Assert.AreEqual(poolName, describePoolResult.IdentityPoolName);
 
-            var getIdentityPoolRolesResult = Client.GetIdentityPoolRoles(poolId);
+            var getIdentityPoolRolesResult = Client.GetIdentityPoolRolesAsync(poolId).Result;
             Assert.AreEqual(poolId, getIdentityPoolRolesResult.IdentityPoolId);
             Assert.AreEqual(0, getIdentityPoolRolesResult.Roles.Count);
 
@@ -758,17 +673,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             if ((poolRoles & PoolRoles.Authenticated) == PoolRoles.Authenticated)
                 roles["authenticated"] = PrepareRole();
 
-            Client.SetIdentityPoolRoles(new SetIdentityPoolRolesRequest
+            Client.SetIdentityPoolRolesAsync(new SetIdentityPoolRolesRequest
             {
                 IdentityPoolId = poolId,
                 Roles = roles
-            });
+            }).Wait();
 
-            getIdentityPoolRolesResult = Client.GetIdentityPoolRoles(poolId);
+            getIdentityPoolRolesResult = Client.GetIdentityPoolRolesAsync(poolId).Result;
             Assert.AreEqual(poolId, getIdentityPoolRolesResult.IdentityPoolId);
             Assert.AreEqual(NumberOfPoolRoles, getIdentityPoolRolesResult.Roles.Count);
 
-            Thread.Sleep(2000);
+            UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
         }
 
 
@@ -778,7 +693,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             ListIdentityPoolsResponse result;
             do
             {
-                result = Client.ListIdentityPools(request);
+                result = Client.ListIdentityPoolsAsync(request).Result;
                 foreach (var pool in result.IdentityPools)
                 {
                     Assert.IsNotNull(pool);
@@ -801,7 +716,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             ListIdentitiesResponse result;
             do
             {
-                result = Client.ListIdentities(request);
+                result = Client.ListIdentitiesAsync(request).Result;
                 foreach (var ident in result.Identities)
                 {
                     Assert.IsNotNull(ident);
@@ -837,10 +752,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                     try
                     {
-                        Client.DeleteIdentityPool(new DeleteIdentityPoolRequest
+                        Client.DeleteIdentityPoolAsync(new DeleteIdentityPoolRequest
                         {
                             IdentityPoolId = poolId
-                        });
+                        }).Wait();
                     }
                     catch (Exception e)
                     {
@@ -876,7 +791,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             if (providers != null && providers.Count > 0)
                 updateRequest.SupportedLoginProviders = providers;
 
-            Client.UpdateIdentityPool(updateRequest);
+            Client.UpdateIdentityPoolAsync(updateRequest).Wait();
         }
 
 
@@ -914,25 +829,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     ]
 }";
             string roleArn;
-            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
+            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient(TestRunner.Credentials))
             {
                 string roleName = "NetWebIdentityRole" + new Random().Next();
-                var response = identityClient.CreateRole(new Amazon.IdentityManagement.Model.CreateRoleRequest
+                var response = identityClient.CreateRoleAsync(new Amazon.IdentityManagement.Model.CreateRoleRequest
                 {
                     AssumeRolePolicyDocument = assumeRolePolicy,
                     RoleName = roleName
-                });
+                }).Result;
 
-                Thread.Sleep(2000);
+                UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
 
-                identityClient.PutRolePolicy(new Amazon.IdentityManagement.Model.PutRolePolicyRequest
+                identityClient.PutRolePolicyAsync(new Amazon.IdentityManagement.Model.PutRolePolicyRequest
                 {
                     PolicyDocument = allowPolicy,
                     PolicyName = policyName,
                     RoleName = response.Role.RoleName
-                });
+                }).Wait();
 
-                Thread.Sleep(2000);
+                UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
 
                 roleArn = response.Role.Arn;
                 roleNames.Add(roleName);
@@ -952,19 +867,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private void DeleteRole(string roleName)
         {
-            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
+            using (var identityClient = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient(TestRunner.Credentials))
             {
-                identityClient.DeleteRolePolicy(new Amazon.IdentityManagement.Model.DeleteRolePolicyRequest
+                identityClient.DeleteRolePolicyAsync(new Amazon.IdentityManagement.Model.DeleteRolePolicyRequest
                 {
                     PolicyName = policyName,
                     RoleName = roleName
-                });
-                Thread.Sleep(2000);
-                identityClient.DeleteRole(new Amazon.IdentityManagement.Model.DeleteRoleRequest
+                }).Wait();
+                UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
+                identityClient.DeleteRoleAsync(new Amazon.IdentityManagement.Model.DeleteRoleRequest
                 {
                     RoleName = roleName
-                });
-                Thread.Sleep(2000);
+                }).Wait();
+                UtilityMethods.Sleep(TimeSpan.FromMilliseconds(2000));
             }
         }
     }

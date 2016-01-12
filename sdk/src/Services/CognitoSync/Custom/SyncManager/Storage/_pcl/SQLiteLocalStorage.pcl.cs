@@ -21,6 +21,7 @@ using SQLitePCL;
 using SQLitePCL.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
@@ -317,7 +318,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         private static DatasetMetadata SqliteStmtToDatasetMetadata(ISQLiteStatement stmt)
         {
             return new DatasetMetadata(
-                stmt.DataType(RecordColumns.DATASET_NAME) == SQLiteType.NULL ?string.Empty:stmt.GetText(DatasetColumns.DATASET_NAME),
+                stmt.DataType(RecordColumns.DATASET_NAME) == SQLiteType.NULL ? string.Empty : stmt.GetText(DatasetColumns.DATASET_NAME),
                 new DateTime(long.Parse(stmt.GetText(DatasetColumns.CREATION_TIMESTAMP))),
                 new DateTime(long.Parse(stmt.GetText(DatasetColumns.LAST_MODIFIED_TIMESTAMP))),
                 stmt.DataType(DatasetColumns.LAST_MODIFIED_BY) == SQLiteType.NULL ? string.Empty : stmt.GetText(DatasetColumns.LAST_MODIFIED_BY),
@@ -331,9 +332,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             return new Record(stmt.GetText(RecordColumns.KEY),
                                stmt.GetText(RecordColumns.VALUE),
                                stmt.GetInteger(RecordColumns.SYNC_COUNT),
-                               new DateTime(long.Parse(stmt.GetText(RecordColumns.LAST_MODIFIED_TIMESTAMP))),
+                               new DateTime(long.Parse(stmt.GetText(RecordColumns.LAST_MODIFIED_TIMESTAMP), CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
                                stmt.DataType(RecordColumns.LAST_MODIFIED_BY) == SQLiteType.NULL ? string.Empty : stmt.GetText(RecordColumns.LAST_MODIFIED_BY),
-                               new DateTime(long.Parse(stmt.GetText(RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP))),
+                               new DateTime(long.Parse(stmt.GetText(RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP), CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
                                stmt.GetInteger(RecordColumns.MODIFIED) == 1);
         }
         #endregion
