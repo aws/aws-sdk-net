@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// The capacity information for instances launched onto the Dedicated host.
     /// </summary>
     public partial class AvailableCapacity
     {

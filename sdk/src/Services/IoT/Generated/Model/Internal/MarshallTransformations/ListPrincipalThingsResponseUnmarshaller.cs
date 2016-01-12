@@ -54,7 +54,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    response.NextMarker = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("things", targetDepth))

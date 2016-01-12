@@ -43,7 +43,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// For example: {\"attributes\":{\"string1\":\"string2\”}}
+        /// For example: {\"attributes\":{\"string1\":\"string2\"}}
         /// </para>
         /// </summary>
         public AttributePayload AttributePayload

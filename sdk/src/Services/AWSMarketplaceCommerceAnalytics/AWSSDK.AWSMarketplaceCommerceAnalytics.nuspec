@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.AWSMarketplaceCommerceAnalytics</id>
     <title>AWSSDK - AWS Marketplace Commerce Analytics</title>
-    <version>3.2.1.0-beta</version> 
+    <version>3.2.2.0-beta</version> 
     <authors>Amazon Web Services</authors>
     <description>The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports.</description>
     <language>en-US</language>
@@ -13,10 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.2.1.0-beta, 3.3-beta)" />
+      <dependency id="AWSSDK.Core" version="[3.2.2.0-beta, 3.3-beta)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.2.1.0-beta, 3.3-beta)" />
+        <dependency id="AWSSDK.Core" version="[3.2.2.0-beta, 3.3-beta)" />
       </group>
     </dependencies>
   </metadata> 

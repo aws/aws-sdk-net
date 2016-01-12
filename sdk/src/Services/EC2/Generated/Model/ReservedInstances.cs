@@ -143,7 +143,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of Reserved instances purchased.
+        /// The number of reservations purchased.
         /// </para>
         /// </summary>
         public int InstanceCount

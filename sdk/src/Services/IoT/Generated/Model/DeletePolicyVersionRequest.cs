@@ -29,14 +29,10 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePolicyVersion operation.
-    /// Deletes the specified version of the specified policy. The default version of the
-    /// policy cannot be deleted.
-    /// 
-    ///  
-    /// <para>
-    /// To delete the default version use the <a>DeletePolicy</a> API or mark the policy as
-    /// non-default and then delete it.
-    /// </para>
+    /// Deletes the specified version of the specified policy. You cannot delete the default
+    /// version of a policy using this API. To delete the default version of a policy, use
+    /// <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
+    /// version, use ListPolicyVersions.
     /// </summary>
     public partial class DeletePolicyVersionRequest : AmazonIoTRequest
     {

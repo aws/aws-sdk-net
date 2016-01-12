@@ -15,6 +15,9 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+// Avoid empty interfaces
+[module: SuppressMessage("Microsoft.Design", "CA1040:AvoidEmptyInterfaces", Scope="type", Target="Amazon.Runtime.IAsyncResponseContext")]
+
 // Suppressions for identifiers in base classes
 [module: SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Scope = "member", Target = "Amazon.Runtime.Internal.Util.ILogger.#Error(System.Exception,System.String,System.Object[])", MessageId = "Error")]
 

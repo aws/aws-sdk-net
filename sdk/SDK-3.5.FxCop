@@ -46,6 +46,7 @@
       <Directory>$(ProjectDir)/src/Services/directoryservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/dynamodbv2/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/ec2/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/ecr/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/ecs/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticache/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticbeanstalk/bin/Release/net35/</Directory>
@@ -108,6 +109,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DirectoryService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DynamoDBv2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.EC2.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ECR.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ECS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElastiCache.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticBeanstalk.dll" Analyze="True" AnalyzeAllChildren="True" />

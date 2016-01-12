@@ -64,10 +64,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DeliverLogsErrorMessage. 
         /// <para>
         /// Information about the error that occurred. <code>Rate limited</code> indicates that
-        /// CloudWatch logs throttling has been applied for one or more network interfaces. <code>Access
-        /// error</code> indicates that the IAM role associated with the flow log does not have
-        /// sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
-        /// an internal error.
+        /// CloudWatch logs throttling has been applied for one or more network interfaces, or
+        /// that you've reached the limit on the number of CloudWatch Logs log groups that you
+        /// can create. <code>Access error</code> indicates that the IAM role associated with
+        /// the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown
+        /// error</code> indicates an internal error.
         /// </para>
         /// </summary>
         public string DeliverLogsErrorMessage

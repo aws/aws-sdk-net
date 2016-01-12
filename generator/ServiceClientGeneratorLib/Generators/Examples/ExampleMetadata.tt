@@ -1,0 +1,38 @@
+﻿<#@ template language="C#" inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+<#
+	var servicename = this.Config.Namespace.Split('.').Last();
+	foreach(var operation in this.Config.ServiceModel.Operations)
+	{
+		foreach(var example in operation.Examples)
+		{
+#>
+	<doc>
+		<members>
+			<member name="M:<#=this.Config.Namespace#>.IAmazon<#=this.Config.BaseName#>.<#=operation.Name#>(<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request)" />
+			<member name="M:<#=this.Config.Namespace#>.Amazon<#=this.Config.BaseName#>Client.<#=operation.Name#>(<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request)" />
+			<member name="T:<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request" />
+			<member name="T:<#=this.Config.Namespace#>.Model.<#=operation.Name#>Response" />
+		</members>
+		<value>
+			<example>
+				<para>
+					<#=example.Description#>
+				</para>
+				<code
+					title="<#=example.Title#>"
+					source=".\AWSSDKDocSamples\\<#=servicename#>\\<#=servicename#>.GeneratedSamples.cs"
+					region="<#=example.Id#>" />
+			</example>
+		</value>
+	</doc>
+<#
+		}
+	}
+#>
+</docs>

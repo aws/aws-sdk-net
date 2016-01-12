@@ -200,7 +200,8 @@ namespace Amazon.Runtime.Internal
         public static void WaitBeforeRetry(int retries, int maxBackoffInMilliseconds)
         {
             int delay = (int)(Math.Pow(4, retries) * 100);
-            delay = Math.Min(delay, maxBackoffInMilliseconds);
+            if (retries > 0 && (delay > maxBackoffInMilliseconds || delay <= 0))
+                delay = maxBackoffInMilliseconds;
             AWSSDKUtils.Sleep(delay);
         }
 

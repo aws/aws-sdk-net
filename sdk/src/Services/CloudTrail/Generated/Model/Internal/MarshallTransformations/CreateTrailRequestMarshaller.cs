@@ -91,6 +91,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IncludeGlobalServiceEvents);
                 }
 
+                if(publicRequest.IsSetIsMultiRegionTrail())
+                {
+                    context.Writer.WritePropertyName("IsMultiRegionTrail");
+                    context.Writer.Write(publicRequest.IsMultiRegionTrail);
+                }
+
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("KmsKeyId");

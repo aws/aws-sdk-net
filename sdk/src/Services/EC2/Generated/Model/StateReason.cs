@@ -90,7 +90,8 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// <code>Client.VolumeLimitExceeded</code>: The volume limit was exceeded.
+        /// <code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or
+        /// total storage was exceeded. Decrease usage or request an increase in your limits.
         /// </para>
         /// </li> <li>
         /// <para>

@@ -28,11 +28,7 @@ namespace Amazon.IotData
     /// <summary>
     /// Interface for accessing IotData
     ///
-    /// AWS IoT (Beta) 
-    /// <para>
-    /// <b>AWS IoT is considered a beta service as defined in the Service Terms</b>
-    /// </para>
-    ///  
+    /// AWS IoT 
     /// <para>
     /// AWS IoT-Data enables secure, bi-directional communication between Internet-connected
     /// things (such as sensors, actuators, embedded devices, or smart appliances) and the

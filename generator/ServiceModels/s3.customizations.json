@@ -4,15 +4,15 @@
             { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3PreMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3PostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3KmsHandler", "targetType": "Amazon.Runtime.Internal.EndpointResolver" },
-            { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3ResponseHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },			
+            { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3ResponseHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3ExceptionHandler", "targetType": "Amazon.Runtime.Internal.ErrorCallbackHandler" },
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3RedirectHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" }
 
-            { 
-                "operation": "replace", 
-                "newType":"Amazon.Runtime.Internal.RetryHandler", 
-                "targetType":"Amazon.Runtime.Internal.RetryHandler",
-                "constructorInput":"new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config.MaxErrorRetry)" 
+            {
+                "operation": "replace",
+                "newType": "Amazon.Runtime.Internal.RetryHandler",
+                "targetType": "Amazon.Runtime.Internal.RetryHandler",
+                "constructorInput": "new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config.MaxErrorRetry)"
             }
         ]
     },
@@ -114,10 +114,15 @@
                 }
             ]
         },
-        "PutBucketLifecycleRequest": {
-            "modify": [
+        "PutBucketLifecycleConfigurationRequest": { 
+            "exclude": [
+                "LifecycleConfiguration"
+            ],
+            "inject": [
                 {
-                    "LifecycleConfiguration": { "emitPropertyName": "Configuration" }
+                    "Configuration": {
+                        "shape": "LifecycleConfiguration"
+                    }
                 }
             ]
         },
@@ -125,7 +130,7 @@
             "exclude": [ "RestoreRequest" ],
             "inject": [
                 {
-                    "Days": { 
+                    "Days": {
                         "shape": "Days"
                     }
                 }
@@ -185,9 +190,6 @@
         "GetBucketCors": {
             "name": "GetCORSConfiguration"
         },
-        "GetBucketLifecycle": {
-            "name": "GetLifecycleConfiguration"
-        },
         "GetObjectAcl": {
             "exclude": true
         },
@@ -206,14 +208,38 @@
         "PutBucketCors": {
             "name": "PutCORSConfiguration"
         },
-        "PutBucketLifecycle": {
-            "name": "PutLifecycleConfiguration"
-        },
         "PutObjectAcl": {
             "exclude": true
         },
         "UploadPartCopy": {
             "name": "CopyPart"
+        },
+		
+
+        "GetBucketNotification": {
+            "exclude": true
+        },
+        "GetBucketLifecycle": {
+            "exclude": true
+        },
+        "PutBucketLifecycle": {
+            "exclude": true
+        },
+        "PutBucketNotification": {
+            "exclude": true
+        },
+		
+        "PutBucketNotificationConfiguration": {
+            "name": "PutBucketNotification"
+        },
+        "PutBucketLifecycleConfiguration": {
+            "name": "PutLifecycleConfiguration"
+        },
+        "GetBucketLifecycleConfiguration": {
+            "name": "GetLifecycleConfiguration"
+        },
+        "GetBucketNotificationConfiguration": {
+            "name": "GetBucketNotification"
         }
     }
 }

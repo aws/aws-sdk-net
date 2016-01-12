@@ -112,6 +112,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MinSize", StringUtils.FromInt(publicRequest.MinSize));
                 }
+                if(publicRequest.IsSetNewInstancesProtectedFromScaleIn())
+                {
+                    request.Parameters.Add("NewInstancesProtectedFromScaleIn", StringUtils.FromBool(publicRequest.NewInstancesProtectedFromScaleIn));
+                }
                 if(publicRequest.IsSetPlacementGroup())
                 {
                     request.Parameters.Add("PlacementGroup", StringUtils.FromString(publicRequest.PlacementGroup));

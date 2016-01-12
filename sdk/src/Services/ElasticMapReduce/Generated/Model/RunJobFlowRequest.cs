@@ -237,9 +237,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property JobFlowRole. 
         /// <para>
-        /// An IAM role for the job flow. The EC2 instances of the job flow assume this role.
-        /// The default role is <code>EMRJobflowDefault</code>. In order to use the default role,
-        /// you must have already created it using the CLI.
+        /// Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
+        /// instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>.
+        /// In order to use the default role, you must have already created it using the CLI or
+        /// console.
         /// </para>
         /// </summary>
         public string JobFlowRole

@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.IotData</id>
     <title>AWSSDK - AWS IoT Data Plane</title>
-    <version>3.2.1.0-beta</version> 
+    <version>3.2.2.0-beta</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.</description>
     <language>en-US</language>
@@ -13,10 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.2.1.0-beta, 3.3-beta)" />
+      <dependency id="AWSSDK.Core" version="[3.2.2.0-beta, 3.3-beta)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.2.1.0-beta, 3.3-beta)" />
+        <dependency id="AWSSDK.Core" version="[3.2.2.0-beta, 3.3-beta)" />
       </group>
     </dependencies>
   </metadata> 

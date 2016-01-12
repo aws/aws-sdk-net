@@ -41,6 +41,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _emrManagedMasterSecurityGroup;
         private string _emrManagedSlaveSecurityGroup;
         private string _iamInstanceProfile;
+        private string _serviceAccessSecurityGroup;
 
         /// <summary>
         /// Gets and sets the property AdditionalMasterSecurityGroups. 
@@ -144,8 +145,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EmrManagedMasterSecurityGroup. 
         /// <para>
-        /// The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce)
-        /// for the master node.
+        /// The identifier of the Amazon EC2 security group for the master node.
         /// </para>
         /// </summary>
         public string EmrManagedMasterSecurityGroup
@@ -163,8 +163,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EmrManagedSlaveSecurityGroup. 
         /// <para>
-        /// The identifier of the Amazon EC2 security group (managed by Amazon Elastic MapReduce)
-        /// for the slave nodes.
+        /// The identifier of the Amazon EC2 security group for the slave nodes.
         /// </para>
         /// </summary>
         public string EmrManagedSlaveSecurityGroup
@@ -196,6 +195,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetIamInstanceProfile()
         {
             return this._iamInstanceProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccessSecurityGroup. 
+        /// <para>
+        /// The identifier of the Amazon EC2 security group for the Amazon EMR service to access
+        /// clusters in VPC private subnets.
+        /// </para>
+        /// </summary>
+        public string ServiceAccessSecurityGroup
+        {
+            get { return this._serviceAccessSecurityGroup; }
+            set { this._serviceAccessSecurityGroup = value; }
+        }
+
+        // Check to see if ServiceAccessSecurityGroup property is set
+        internal bool IsSetServiceAccessSecurityGroup()
+        {
+            return this._serviceAccessSecurityGroup != null;
         }
 
     }

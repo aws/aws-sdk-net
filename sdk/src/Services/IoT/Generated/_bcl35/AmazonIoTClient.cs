@@ -33,11 +33,7 @@ namespace Amazon.IoT
     /// <summary>
     /// Implementation for accessing IoT
     ///
-    /// AWS IoT (Beta) 
-    /// <para>
-    /// <b>AWS IoT is in beta and is subject to change</b>
-    /// </para>
-    ///  
+    /// AWS IoT 
     /// <para>
     /// AWS IoT provides secure, bi-directional communication between Internet-connected things
     /// (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud.
@@ -669,6 +665,62 @@ namespace Amazon.IoT
         /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
         /// </para>
+        ///  
+        /// <para>
+        /// You can create multiple certificates in a batch by creating a directory and copying
+        /// multiple .csr files into that directory and specifying that directory on the command
+        /// line. The following commands show how to create a batch of certificates given a batch
+        /// of CSRs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
+        /// </para>
+        /// &gt; 
+        /// <para>
+        /// On Linux and OSX, the command is:
+        /// </para>
+        ///  
+        /// <para>
+        /// $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
+        /// </para>
+        ///  
+        /// <para>
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
+        /// for the corresponding CSR. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{} 
+        /// </para>
+        ///  
+        /// <para>
+        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_} 
+        /// </para>
+        ///  
+        /// <para>
+        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
+        /// --certificate-signing-request file://@path"
+        /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
         /// 
@@ -703,6 +755,62 @@ namespace Amazon.IoT
         /// <para>
         /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create multiple certificates in a batch by creating a directory and copying
+        /// multiple .csr files into that directory and specifying that directory on the command
+        /// line. The following commands show how to create a batch of certificates given a batch
+        /// of CSRs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
+        /// </para>
+        /// &gt; 
+        /// <para>
+        /// On Linux and OSX, the command is:
+        /// </para>
+        ///  
+        /// <para>
+        /// $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
+        /// </para>
+        ///  
+        /// <para>
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
+        /// for the corresponding CSR. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{} 
+        /// </para>
+        ///  
+        /// <para>
+        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_} 
+        /// </para>
+        ///  
+        /// <para>
+        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
+        /// --certificate-signing-request file://@path"
         /// </para>
         /// </summary>
         /// <param name="certificateSigningRequest">The certificate signing request (CSR).</param>
@@ -740,6 +848,62 @@ namespace Amazon.IoT
         /// <para>
         /// <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct
         /// certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create multiple certificates in a batch by creating a directory and copying
+        /// multiple .csr files into that directory and specifying that directory on the command
+        /// line. The following commands show how to create a batch of certificates given a batch
+        /// of CSRs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
+        /// </para>
+        /// &gt; 
+        /// <para>
+        /// On Linux and OSX, the command is:
+        /// </para>
+        ///  
+        /// <para>
+        /// $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{}
+        /// </para>
+        ///  
+        /// <para>
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
+        /// for the corresponding CSR. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The aws iot create-certificate-from-csr part of the command can also be run in parallel
+        /// to speed up the certificate creation process: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/{} 
+        /// </para>
+        ///  
+        /// <para>
+        ///  On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory
+        /// is: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+        /// file://my-csr-directory/$_} 
+        /// </para>
+        ///  
+        /// <para>
+        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        /// is: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  &gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
+        /// --certificate-signing-request file://@path"
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCertificateFromCsr service method.</param>
@@ -1069,10 +1233,20 @@ namespace Amazon.IoT
         #region  CreatePolicyVersion
 
         /// <summary>
-        /// Creates a new version of the specified AWS IoT policy.
+        /// Creates a new version of the specified AWS IoT policy. To update a policy, create
+        /// a new policy version. A managed policy can have up to five versions. If the policy
+        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
+        /// before you create a new version.
+        /// 
+        ///  
+        /// <para>
+        /// Optionally, you can set the new version as the policy's default version. The default
+        /// version is the operative version; that is, the version that is in effect for the certificates
+        /// that the policy is attached to.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy.</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</param>
         /// 
         /// <returns>The response from the CreatePolicyVersion service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -1109,11 +1283,21 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new version of the specified AWS IoT policy.
+        /// Creates a new version of the specified AWS IoT policy. To update a policy, create
+        /// a new policy version. A managed policy can have up to five versions. If the policy
+        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
+        /// before you create a new version.
+        /// 
+        ///  
+        /// <para>
+        /// Optionally, you can set the new version as the policy's default version. The default
+        /// version is the operative version; that is, the version that is in effect for the certificates
+        /// that the policy is attached to.
+        /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy.</param>
-        /// <param name="setAsDefault">Specifies whether the policy version is set as the default.</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</param>
+        /// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</param>
         /// 
         /// <returns>The response from the CreatePolicyVersion service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -1151,7 +1335,17 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new version of the specified AWS IoT policy.
+        /// Creates a new version of the specified AWS IoT policy. To update a policy, create
+        /// a new policy version. A managed policy can have up to five versions. If the policy
+        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
+        /// before you create a new version.
+        /// 
+        ///  
+        /// <para>
+        /// Optionally, you can set the new version as the policy's default version. The default
+        /// version is the operative version; that is, the version that is in effect for the certificates
+        /// that the policy is attached to.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicyVersion service method.</param>
         /// 
@@ -1362,14 +1556,10 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A certificate cannot be deleted if it has a policy attached to it. To delete a certificate,
-        /// first detach all policies using the <a>DetachPrincipalPolicy</a> operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// In addition, a certificate cannot be deleted if it is in ACTIVE status. To delete
-        /// a certificate, first change the status to INACTIVE using the <a>UpdateCertificate</a>
-        /// operation.
+        /// A certificate cannot be deleted if it has a policy attached to it or if its status
+        /// is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a>
+        /// API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
+        /// status.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -1397,14 +1587,10 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A certificate cannot be deleted if it has a policy attached to it. To delete a certificate,
-        /// first detach all policies using the <a>DetachPrincipalPolicy</a> operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// In addition, a certificate cannot be deleted if it is in ACTIVE status. To delete
-        /// a certificate, first change the status to INACTIVE using the <a>UpdateCertificate</a>
-        /// operation.
+        /// A certificate cannot be deleted if it has a policy attached to it or if its status
+        /// is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a>
+        /// API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
+        /// status.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
@@ -1468,32 +1654,18 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A policy cannot be deleted if: 
+        /// A policy cannot be deleted if it has non-default versions and/or it is attached to
+        /// any certificate.
         /// </para>
         ///  
         /// <para>
-        ///  - it has non-default versions
+        /// To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion
+        /// API, detach the policy from any certificate using the DetachPrincipalPolicy API, and
+        /// then use the DeletePolicy API to delete the policy.
         /// </para>
         ///  
         /// <para>
-        ///  - it is attached to any certificate
-        /// </para>
-        ///  
-        /// <para>
-        /// To delete a policy:
-        /// </para>
-        ///  
-        /// <para>
-        ///  - First delete all the non-default versions of the policy using the <a>DeletePolicyVersion</a>
-        /// API.
-        /// </para>
-        ///  
-        /// <para>
-        ///  - Detach it from any certificate using the <a>DetachPrincipalPolicy</a> API.
-        /// </para>
-        ///  
-        /// <para>
-        /// When a policy is deleted, its default version is deleted with it.
+        /// When a policy is deleted using DeletePolicy, its default version is deleted with it.
         /// </para>
         /// </summary>
         /// <param name="policyName">The name of the policy to delete.</param>
@@ -1533,32 +1705,18 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A policy cannot be deleted if: 
+        /// A policy cannot be deleted if it has non-default versions and/or it is attached to
+        /// any certificate.
         /// </para>
         ///  
         /// <para>
-        ///  - it has non-default versions
+        /// To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion
+        /// API, detach the policy from any certificate using the DetachPrincipalPolicy API, and
+        /// then use the DeletePolicy API to delete the policy.
         /// </para>
         ///  
         /// <para>
-        ///  - it is attached to any certificate
-        /// </para>
-        ///  
-        /// <para>
-        /// To delete a policy:
-        /// </para>
-        ///  
-        /// <para>
-        ///  - First delete all the non-default versions of the policy using the <a>DeletePolicyVersion</a>
-        /// API.
-        /// </para>
-        ///  
-        /// <para>
-        ///  - Detach it from any certificate using the <a>DetachPrincipalPolicy</a> API.
-        /// </para>
-        ///  
-        /// <para>
-        /// When a policy is deleted, its default version is deleted with it.
+        /// When a policy is deleted using DeletePolicy, its default version is deleted with it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
@@ -1630,14 +1788,10 @@ namespace Amazon.IoT
         #region  DeletePolicyVersion
 
         /// <summary>
-        /// Deletes the specified version of the specified policy. The default version of the
-        /// policy cannot be deleted.
-        /// 
-        ///  
-        /// <para>
-        /// To delete the default version use the <a>DeletePolicy</a> API or mark the policy as
-        /// non-default and then delete it.
-        /// </para>
+        /// Deletes the specified version of the specified policy. You cannot delete the default
+        /// version of a policy using this API. To delete the default version of a policy, use
+        /// <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
+        /// version, use ListPolicyVersions.
         /// </summary>
         /// <param name="policyName">The name of the policy.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -1674,14 +1828,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes the specified version of the specified policy. The default version of the
-        /// policy cannot be deleted.
-        /// 
-        ///  
-        /// <para>
-        /// To delete the default version use the <a>DeletePolicy</a> API or mark the policy as
-        /// non-default and then delete it.
-        /// </para>
+        /// Deletes the specified version of the specified policy. You cannot delete the default
+        /// version of a policy using this API. To delete the default version of a policy, use
+        /// <a>DeletePolicy</a>. To find out which version of a policy is marked as the default
+        /// version, use ListPolicyVersions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicyVersion service method.</param>
         /// 
@@ -2040,14 +2190,16 @@ namespace Amazon.IoT
         #region  DescribeEndpoint
 
         /// <summary>
-        /// Returns a unique URL specific to the AWS account making the call. The URL points to
-        /// the AWS IoT data plane endpoint. The customer-specific endpoint should be provided
-        /// to all data plane operations.
+        /// Returns a unique endpoint specific to the AWS account making the call. You specify
+        /// the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEndpoint service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
         /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -2060,15 +2212,17 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique URL specific to the AWS account making the call. The URL points to
-        /// the AWS IoT data plane endpoint. The customer-specific endpoint should be provided
-        /// to all data plane operations.
+        /// Returns a unique endpoint specific to the AWS account making the call. You specify
+        /// the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// 
         /// <returns>The response from the DescribeEndpoint service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
         /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -3732,7 +3886,9 @@ namespace Amazon.IoT
         #region  SetDefaultPolicyVersion
 
         /// <summary>
-        /// Sets the specified policy version as the default for the specified policy.
+        /// Sets the specified version of the specified policy as the policy's default (operative)
+        /// version. This action affects all certificates that the policy is attached to. To list
+        /// the principals the policy is attached to, use the ListPrincipalPolicy API.
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -3766,7 +3922,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Sets the specified policy version as the default for the specified policy.
+        /// Sets the specified version of the specified policy as the policy's default (operative)
+        /// version. This action affects all certificates that the policy is attached to. To list
+        /// the principals the policy is attached to, use the ListPrincipalPolicy API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDefaultPolicyVersion service method.</param>
         /// 
@@ -3912,7 +4070,7 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// The certificate must not have any policies attached to it. These can be detached using
-        /// the <a>DetachPrincipalPolicy</a> API.
+        /// the DetachPrincipalPolicy API.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -3972,7 +4130,7 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// The certificate must not have any policies attached to it. These can be detached using
-        /// the <a>DetachPrincipalPolicy</a> API.
+        /// the DetachPrincipalPolicy API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TransferCertificate service method.</param>

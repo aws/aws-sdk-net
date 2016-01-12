@@ -39,7 +39,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.InstanceId</property>
     <min>1</min>
-    <max>16</max>
+    <max>19</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.LaunchConfigurationName</property>
@@ -74,7 +74,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest.InstanceId</property>
     <min>1</min>
-    <max>16</max>
+    <max>19</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest.InstanceType</property>
@@ -405,7 +405,12 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.SetInstanceHealthRequest.InstanceId</property>
     <min>1</min>
-    <max>16</max>
+    <max>19</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.SetInstanceProtectionRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.SuspendProcessesRequest.AutoScalingGroupName</property>
@@ -415,7 +420,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupRequest.InstanceId</property>
     <min>1</min>
-    <max>16</max>
+    <max>19</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.AutoScalingGroupName</property>
@@ -539,7 +544,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.InstanceId</property>
     <min>1</min>
-    <max>16</max>
+    <max>19</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.LaunchConfigurationName</property>
@@ -607,7 +612,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.Instance.InstanceId</property>
     <min>1</min>
-    <max>16</max>
+    <max>19</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.Instance.LaunchConfigurationName</property>

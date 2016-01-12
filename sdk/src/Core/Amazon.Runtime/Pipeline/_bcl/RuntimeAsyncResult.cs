@@ -15,6 +15,7 @@
 
 using System;
 using System.Threading;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Internal
 {
@@ -24,11 +25,13 @@ namespace Amazon.Runtime.Internal
         private ManualResetEvent _waitHandle;
         private bool _disposed = false;
         private bool _callbackInvoked = false;
+        private ILogger _logger;
 
         public RuntimeAsyncResult(AsyncCallback asyncCallback, object asyncState)
         {
             _lockObj = new object();
             _callbackInvoked = false;
+            _logger = Logger.GetLogger(typeof(RuntimeAsyncResult));
 
             this.AsyncState = asyncState;
             this.IsCompleted = false;
@@ -36,7 +39,7 @@ namespace Amazon.Runtime.Internal
             this.CompletedSynchronously = false;
         }
 
-        public AsyncCallback AsyncCallback { get; private set; }
+        private AsyncCallback AsyncCallback { get; set; }
 
         public object AsyncState { get; private set; }
 
@@ -68,7 +71,7 @@ namespace Amazon.Runtime.Internal
 
         public AmazonWebServiceResponse Response { get; set; }
 
-        internal void SignalWaitHandle()
+        private void SignalWaitHandle()
         {
             this.IsCompleted = true;
             if (this._waitHandle != null)
@@ -89,7 +92,17 @@ namespace Amazon.Runtime.Internal
             if (!_callbackInvoked && this.AsyncCallback != null)
             {
                 _callbackInvoked = true;
-                this.AsyncCallback(this);
+                try
+                {
+                    this.AsyncCallback(this);
+                }
+                catch(Exception exception)
+                {
+                    // Log unhandled exceptions thrown from the user callback for the async method.
+                    // Do not rethrow the exception.
+                    _logger.Error(exception, "An unhandled exception of type {0} was thrown from the user callback method {1}.{2}",
+                    exception.GetType().Name, this.AsyncCallback.Method.DeclaringType.FullName, this.AsyncCallback.Method.Name);
+                }
             }
         }
 

@@ -129,7 +129,12 @@
 				jQuery("#versionData").hide();
 			}
 		});
-	}
+	},
+
+    setCopyrightText: function () {
+        var c = "&copy; Copyright 2008-" + new Date().getFullYear() + " Amazon.com, Inc. or its affiliates. All Rights Reserved.";
+        jQuery("#copyright").html(c);
+    }
 };
 
 (function() {

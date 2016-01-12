@@ -558,6 +558,28 @@ namespace ServiceClientGenerator
             }
         }
 
+        public IList<Example> Examples
+        {
+            get
+            {
+                var list = new List<Example>();
+                var data = this.model.Customizations.GetExamples(this.name);
+                foreach(JsonData example in data)
+                {
+                    list.Add(new Example(this.model, this.name, example));
+                }
+                return list;
+            }
+        }
+
+        public bool HasExamples
+        {
+            get
+            {
+                return this.model.Customizations.GetExamples(this.Name).Count > 0;
+            }
+        }
+
         /// <summary>
         /// Represents the operation as a string
         /// </summary>

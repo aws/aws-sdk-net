@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// The results describe only the Dedicated hosts in the region you're currently using.
     /// All listed instances consume capacity on your Dedicated host. Dedicated hosts that
-    /// have recently been released will be listed with the status "released".
+    /// have recently been released will be listed with the state <code>released</code>.
     /// </para>
     /// </summary>
     public partial class DescribeHostsRequest : AmazonEC2Request

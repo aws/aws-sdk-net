@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.WAF</id>
     <title>AWSSDK - AWS WAF</title>
-    <version>3.2.1.0-beta</version> 
+    <version>3.2.2.0-beta</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.</description>
     <language>en-US</language>
@@ -13,10 +13,10 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.2.1.0-beta, 3.3-beta)" />
+      <dependency id="AWSSDK.Core" version="[3.2.2.0-beta, 3.3-beta)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.2.1.0-beta, 3.3-beta)" />
+        <dependency id="AWSSDK.Core" version="[3.2.2.0-beta, 3.3-beta)" />
       </group>
     </dependencies>
   </metadata> 
