@@ -1,3 +1,7 @@
+### 3.1.37.0 (2016-01-12 20:08 UTC)
+* EC2 (3.1.8.0)
+	* Added support for DNS over classiclink.
+
 ### 3.1.36.1 (2016-01-06 20:50 UTC)
 * EC2 (3.1.7.1)
 	* Fixed incorrect request class and marshaling code for the DescribeNetworkInterfaceAttribute api. The class should have contained a single 'Attribute' member, not multiple members corresponding to the allows values for 'Attribute'.
