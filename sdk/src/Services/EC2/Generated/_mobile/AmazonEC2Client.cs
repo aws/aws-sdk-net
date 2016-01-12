@@ -5120,6 +5120,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcClassicLinkDnsSupport
+
+        internal DescribeVpcClassicLinkDnsSupportResponse DescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request)
+        {
+            var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcClassicLinkDnsSupportRequest,DescribeVpcClassicLinkDnsSupportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeVpcClassicLinkDnsSupportResponse> DescribeVpcClassicLinkDnsSupportAsync(DescribeVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcClassicLinkDnsSupportRequest,DescribeVpcClassicLinkDnsSupportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVpcEndpoints
 
         internal DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
@@ -5609,6 +5640,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableVpcClassicLinkDnsSupport
+
+        internal DisableVpcClassicLinkDnsSupportResponse DisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request)
+        {
+            var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return Invoke<DisableVpcClassicLinkDnsSupportRequest,DisableVpcClassicLinkDnsSupportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisableVpcClassicLinkDnsSupportResponse> DisableVpcClassicLinkDnsSupportAsync(DisableVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableVpcClassicLinkDnsSupportRequest,DisableVpcClassicLinkDnsSupportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateAddress
 
         internal DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
@@ -5759,6 +5821,37 @@ namespace Amazon.EC2
             var unmarshaller = EnableVpcClassicLinkResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableVpcClassicLinkRequest,EnableVpcClassicLinkResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableVpcClassicLinkDnsSupport
+
+        internal EnableVpcClassicLinkDnsSupportResponse EnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request)
+        {
+            var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return Invoke<EnableVpcClassicLinkDnsSupportRequest,EnableVpcClassicLinkDnsSupportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<EnableVpcClassicLinkDnsSupportResponse> EnableVpcClassicLinkDnsSupportAsync(EnableVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableVpcClassicLinkDnsSupportRequest,EnableVpcClassicLinkDnsSupportResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

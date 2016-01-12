@@ -29,15 +29,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyIdFormat operation.
-    /// <b>Important: This command is reserved for future use, and is currently not available
-    /// for you to use.</b>
-    /// 
-    ///  
-    /// <para>
     /// Modifies the ID format for the specified resource on a per-region basis. You can specify
     /// that resources should receive longer IDs (17-character IDs) when they are created.
     /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// This setting applies to the IAM user who makes the request; it does not apply to the

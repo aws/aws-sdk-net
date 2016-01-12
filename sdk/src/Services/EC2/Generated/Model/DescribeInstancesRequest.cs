@@ -357,7 +357,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface-private-dns-name</code> - The private DNS name of the network
+        /// <code>network-interface.private-dns-name</code> - The private DNS name of the network
         /// interface.
         /// </para>
         ///  </li> <li> 

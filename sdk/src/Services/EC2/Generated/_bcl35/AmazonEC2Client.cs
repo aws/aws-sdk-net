@@ -5718,16 +5718,11 @@ namespace Amazon.EC2
         #region  DescribeIdFormat
 
         /// <summary>
-        /// <b>Important: This command is reserved for future use, and is currently not available
-        /// for you to use.</b>
-        /// 
-        ///  
-        /// <para>
         /// Describes the ID format settings for your resources on a per-region basis, for example,
         /// to view which resource types are enabled for longer IDs. This request only returns
         /// information about resource types whose ID formats can be modified; it does not return
         /// information about other resource types. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
@@ -8551,6 +8546,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcClassicLinkDnsSupport
+
+        /// <summary>
+        /// Describes the ClassicLink DNS support status of one or more VPCs. If enabled, the
+        /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
+        /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
+        /// of an instance in a VPC resolves to its private IP address when addressed from a linked
+        /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        public DescribeVpcClassicLinkDnsSupportResponse DescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request)
+        {
+            var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcClassicLinkDnsSupportRequest,DescribeVpcClassicLinkDnsSupportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcClassicLinkDnsSupport
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeVpcClassicLinkDnsSupportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcClassicLinkDnsSupport.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcClassicLinkDnsSupportResult from EC2.</returns>
+        public  DescribeVpcClassicLinkDnsSupportResponse EndDescribeVpcClassicLinkDnsSupport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVpcClassicLinkDnsSupportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeVpcEndpoints
 
         /// <summary>
@@ -9301,6 +9351,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableVpcClassicLinkDnsSupport
+
+        /// <summary>
+        /// Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to
+        /// public IP addresses when addressed between a linked EC2-Classic instance and instances
+        /// in the VPC to which it's linked. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
+        /// 
+        /// <returns>The response from the DisableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        public DisableVpcClassicLinkDnsSupportResponse DisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request)
+        {
+            var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return Invoke<DisableVpcClassicLinkDnsSupportRequest,DisableVpcClassicLinkDnsSupportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableVpcClassicLinkDnsSupport
+        ///         operation.</returns>
+        public IAsyncResult BeginDisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisableVpcClassicLinkDnsSupportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableVpcClassicLinkDnsSupport.</param>
+        /// 
+        /// <returns>Returns a  DisableVpcClassicLinkDnsSupportResult from EC2.</returns>
+        public  DisableVpcClassicLinkDnsSupportResponse EndDisableVpcClassicLinkDnsSupport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableVpcClassicLinkDnsSupportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateAddress
 
         /// <summary>
@@ -9576,6 +9679,61 @@ namespace Amazon.EC2
         public  EnableVpcClassicLinkResponse EndEnableVpcClassicLink(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableVpcClassicLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  EnableVpcClassicLinkDnsSupport
+
+        /// <summary>
+        /// Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled, the
+        /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
+        /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
+        /// of an instance in a VPC resolves to its private IP address when addressed from a linked
+        /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
+        /// 
+        /// <returns>The response from the EnableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        public EnableVpcClassicLinkDnsSupportResponse EnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request)
+        {
+            var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return Invoke<EnableVpcClassicLinkDnsSupportRequest,EnableVpcClassicLinkDnsSupportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableVpcClassicLinkDnsSupport
+        ///         operation.</returns>
+        public IAsyncResult BeginEnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnableVpcClassicLinkDnsSupportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableVpcClassicLinkDnsSupport.</param>
+        /// 
+        /// <returns>Returns a  EnableVpcClassicLinkDnsSupportResult from EC2.</returns>
+        public  EnableVpcClassicLinkDnsSupportResponse EndEnableVpcClassicLinkDnsSupport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableVpcClassicLinkDnsSupportResponse>(asyncResult);
         }
 
         #endregion
@@ -10056,15 +10214,10 @@ namespace Amazon.EC2
         #region  ModifyIdFormat
 
         /// <summary>
-        /// <b>Important: This command is reserved for future use, and is currently not available
-        /// for you to use.</b>
-        /// 
-        ///  
-        /// <para>
         /// Modifies the ID format for the specified resource on a per-region basis. You can specify
         /// that resources should receive longer IDs (17-character IDs) when they are created.
         /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// This setting applies to the IAM user who makes the request; it does not apply to the

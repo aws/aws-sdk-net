@@ -3507,16 +3507,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <b>Important: This command is reserved for future use, and is currently not available
-        /// for you to use.</b>
-        /// 
-        ///  
-        /// <para>
         /// Describes the ID format settings for your resources on a per-region basis, for example,
         /// to view which resource types are enabled for longer IDs. This request only returns
         /// information about resource types whose ID formats can be modified; it does not return
         /// information about other resource types. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
@@ -5871,6 +5866,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcClassicLinkDnsSupport
+
+
+        /// <summary>
+        /// Describes the ClassicLink DNS support status of one or more VPCs. If enabled, the
+        /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
+        /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
+        /// of an instance in a VPC resolves to its private IP address when addressed from a linked
+        /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        DescribeVpcClassicLinkDnsSupportResponse DescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeVpcClassicLinkDnsSupportResponse> DescribeVpcClassicLinkDnsSupportAsync(DescribeVpcClassicLinkDnsSupportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeVpcEndpoints
 
 
@@ -6346,6 +6371,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableVpcClassicLinkDnsSupport
+
+
+        /// <summary>
+        /// Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to
+        /// public IP addresses when addressed between a linked EC2-Classic instance and instances
+        /// in the VPC to which it's linked. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
+        /// 
+        /// <returns>The response from the DisableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        DisableVpcClassicLinkDnsSupportResponse DisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DisableVpcClassicLinkDnsSupportResponse> DisableVpcClassicLinkDnsSupportAsync(DisableVpcClassicLinkDnsSupportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateAddress
 
 
@@ -6497,6 +6550,36 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<EnableVpcClassicLinkResponse> EnableVpcClassicLinkAsync(EnableVpcClassicLinkRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableVpcClassicLinkDnsSupport
+
+
+        /// <summary>
+        /// Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled, the
+        /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
+        /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
+        /// of an instance in a VPC resolves to its private IP address when addressed from a linked
+        /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
+        /// 
+        /// <returns>The response from the EnableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        EnableVpcClassicLinkDnsSupportResponse EnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<EnableVpcClassicLinkDnsSupportResponse> EnableVpcClassicLinkDnsSupportAsync(EnableVpcClassicLinkDnsSupportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6777,15 +6860,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <b>Important: This command is reserved for future use, and is currently not available
-        /// for you to use.</b>
-        /// 
-        ///  
-        /// <para>
         /// Modifies the ID format for the specified resource on a per-region basis. You can specify
         /// that resources should receive longer IDs (17-character IDs) when they are created.
         /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// This setting applies to the IAM user who makes the request; it does not apply to the
