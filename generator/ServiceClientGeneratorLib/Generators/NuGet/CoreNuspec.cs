@@ -83,20 +83,20 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "=\"4.0.0\" />\r\n        <dependency id=\"System.Linq\" version=\"4.0.0\" />\r\n        <d" +
                     "ependency id=\"System.Net.Http\" version=\"4.0.0\" />\r\n        <dependency id=\"Syste" +
                     "m.Runtime.Extensions\" version=\"4.0.10\" />\r\n        <dependency id=\"System.Securi" +
-                    "ty.Cryptography.Algorithms\": \"4.0.0-beta-23516\" version=\"4.0.0-beta-23516\" />\r\n " +
-                    "       <dependency id=\"System.Text.Encoding.Extensions\" version=\"4.0.10\" />\r\n   " +
-                    "     <dependency id=\"System.Text.RegularExpressions\" version=\"4.0.10\" />\r\n      " +
-                    "  <dependency id=\"System.Threading\" version=\"4.0.10\" />\r\n        <dependency id=" +
-                    "\"System.Threading.Thread\" version=\"4.0.0-beta-23123\" />\r\n        <dependency id=" +
-                    "\"System.Xml.XDocument\" version=\"4.0.10\" />\r\n        <dependency id=\"Microsoft.CS" +
-                    "harp\" version=\"4.0.0\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata> \r\n " +
-                    " <files>\r\n\r\n    <file src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"t" +
-                    "ools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net3" +
-                    "5\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />" +
-                    "\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n " +
-                    "   <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <f" +
-                    "ile src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <file s" +
-                    "rc=\".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n");
+                    "ty.Cryptography.Algorithms\" \"4.0.0-beta-23516\" version=\"4.0.0-beta-23516\" />\r\n  " +
+                    "      <dependency id=\"System.Text.Encoding.Extensions\" version=\"4.0.10\" />\r\n    " +
+                    "    <dependency id=\"System.Text.RegularExpressions\" version=\"4.0.10\" />\r\n       " +
+                    " <dependency id=\"System.Threading\" version=\"4.0.10\" />\r\n        <dependency id=\"" +
+                    "System.Threading.Thread\" version=\"4.0.0-beta-23123\" />\r\n        <dependency id=\"" +
+                    "System.Xml.XDocument\" version=\"4.0.10\" />\r\n        <dependency id=\"Microsoft.CSh" +
+                    "arp\" version=\"4.0.0\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  " +
+                    "<files>\r\n\r\n    <file src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"to" +
+                    "ols\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35" +
+                    "\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r" +
+                    "\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n  " +
+                    "  <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <fi" +
+                    "le src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <file sr" +
+                    "c=\".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n");
             
             #line 64 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
