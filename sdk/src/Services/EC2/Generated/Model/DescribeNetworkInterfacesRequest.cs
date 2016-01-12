@@ -91,6 +91,21 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// <code>attachment.attach.time</code> - The time that the network interface was attached
+        /// to an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>attachment.delete-on-termination</code> - Indicates whether the attachment is
+        /// deleted when an instance is terminated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>attachment.device-index</code> - The device index to which the network interface
+        /// is attached.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// <code>attachment.instance-id</code> - The ID of the instance to which the network
         /// interface is attached.
         /// </para>
@@ -101,23 +116,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>attachment.device-index</code> - The device index to which the network interface
-        /// is attached.
+        /// <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network
+        /// interface is attached.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// <code>attachment.status</code> - The status of the attachment (<code>attaching</code>
         /// | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// <code>attachment.attach.time</code> - The time that the network interface was attached
-        /// to an instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// <code>attachment.delete-on-termination</code> - Indicates whether the attachment is
-        /// deleted when an instance is terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -173,7 +178,7 @@ namespace Amazon.EC2.Model
         /// <code>source-desk-check</code> - Indicates whether the network interface performs
         /// source/destination checking. A value of <code>true</code> means checking is enabled,
         /// and <code>false</code> means checking is disabled. The value must be <code>false</code>
-        /// for the network interface to perform Network Address Translation (NAT) in your VPC.
+        /// for the network interface to perform network address translation (NAT) in your VPC.
         /// 
         /// </para>
         ///  </li> <li> 

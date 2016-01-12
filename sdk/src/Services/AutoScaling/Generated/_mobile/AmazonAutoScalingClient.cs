@@ -1994,6 +1994,37 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  SetInstanceProtection
+
+        internal SetInstanceProtectionResponse SetInstanceProtection(SetInstanceProtectionRequest request)
+        {
+            var marshaller = new SetInstanceProtectionRequestMarshaller();
+            var unmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
+
+            return Invoke<SetInstanceProtectionRequest,SetInstanceProtectionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetInstanceProtection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetInstanceProtection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetInstanceProtectionResponse> SetInstanceProtectionAsync(SetInstanceProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetInstanceProtectionRequestMarshaller();
+            var unmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetInstanceProtectionRequest,SetInstanceProtectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SuspendProcesses
 
         internal SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request)

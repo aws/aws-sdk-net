@@ -56,7 +56,9 @@ namespace Amazon.Runtime
 
     public interface IAsyncResponseContext : IResponseContext
     {
+#if AWS_APM_API
         Amazon.Runtime.Internal.RuntimeAsyncResult AsyncResult { get; set; }
+#endif
     }
 
     public interface IExecutionContext
@@ -127,7 +129,9 @@ namespace Amazon.Runtime.Internal
 
     public class AsyncResponseContext : ResponseContext, IAsyncResponseContext
     {
+#if AWS_APM_API
         public Amazon.Runtime.Internal.RuntimeAsyncResult AsyncResult { get; set; }
+#endif
     }
 
     public class ExecutionContext : IExecutionContext

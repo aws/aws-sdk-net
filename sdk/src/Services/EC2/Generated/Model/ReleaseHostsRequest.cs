@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ReleaseHosts operation.
     /// When you no longer want to use a Dedicated host it can be released. On-Demand billing
-    /// is stopped and the host goes into "released" state. The host ID of Dedicated hosts
-    /// that have been released can no longer be specified in another request, e.g., ModifyHosts.
-    /// You must stop or terminate all instances on a host before it can be released.
+    /// is stopped and the host goes into <code>released</code> state. The host ID of Dedicated
+    /// hosts that have been released can no longer be specified in another request, e.g.,
+    /// ModifyHosts. You must stop or terminate all instances on a host before it can be released.
     /// 
     ///  
     /// <para>

@@ -93,6 +93,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         response.MaxNumberOfLaunchConfigurations = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("NumberOfAutoScalingGroups", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        response.NumberOfAutoScalingGroups = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("NumberOfLaunchConfigurations", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        response.NumberOfLaunchConfigurations = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 

@@ -97,6 +97,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// <code>route.nat-gateway-id</code> - The ID of a NAT gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// <code>route.origin</code> - Describes how the route was created. <code>CreateRouteTable</code>
         /// indicates that the route was automatically created when the route table was created;
         /// <code>CreateRoute</code> indicates that the route was manually added to the route

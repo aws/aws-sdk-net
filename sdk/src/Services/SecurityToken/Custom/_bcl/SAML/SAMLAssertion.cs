@@ -129,21 +129,30 @@ namespace Amazon.SecurityToken.SAML
             {
                 var roleNodes = roleAttributeNodes[0].ChildNodes;
 
+                // we use this in case we encounter a provider that does allow duplicate
+                // role definitions (unlikely)
+                var seenRoles = new HashSet<string>(StringComparer.Ordinal);
                 foreach (XmlNode roleNode in roleNodes)
                 {
                     if (!string.IsNullOrEmpty(roleNode.InnerText))
                     {
                         var chunks = roleNode.InnerText.Split(new[] { ',' }, 3);
                         var samlRole = chunks[0] + ',' + chunks[1];
-                        var roleNameStart = samlRole.LastIndexOf("/", StringComparison.Ordinal);
-                        // if not >= 0, we have malformed role data in the document. Rather than skip,
-                        // in case this is the only role the user has, we'll just take the full string
-                        string roleName;
-                        if (roleNameStart >= 0)
-                            roleName = samlRole.Substring(roleNameStart + 1);
-                        else
-                            roleName = samlRole;
-                        discoveredRoles.Add(roleName, samlRole);
+                        if (!seenRoles.Contains(samlRole))
+                        {
+                            // It is possible to configure the same role name across different accounts
+                            // so we much take account number into consideration to get the friendly name
+                            // to avoid duplicate keys
+                            var roleNameStart = chunks[1].LastIndexOf("::", StringComparison.Ordinal);
+                            string roleName;
+                            if (roleNameStart >= 0)
+                                roleName = chunks[1].Substring(roleNameStart + 2);
+                            else
+                                roleName = chunks[1];
+                            discoveredRoles.Add(roleName, samlRole);
+
+                            seenRoles.Add(samlRole);
+                        }
                     }
                 }
             }

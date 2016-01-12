@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Information about the instance type that the Dedicated host supports.
     /// </summary>
     public partial class InstanceCapacity
     {

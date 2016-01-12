@@ -58,25 +58,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAttachment())
+                if(publicRequest.IsSetAttribute())
                 {
-                    request.Parameters.Add("Attachment", StringUtils.FromString(publicRequest.Attachment));
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
-                }
-                if(publicRequest.IsSetGroups())
-                {
-                    request.Parameters.Add("GroupSet", StringUtils.FromString(publicRequest.Groups));
+                    request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
                 }
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
-                }
-                if(publicRequest.IsSetSourceDestCheck())
-                {
-                    request.Parameters.Add("SourceDestCheck", StringUtils.FromString(publicRequest.SourceDestCheck));
                 }
             }
             return request;

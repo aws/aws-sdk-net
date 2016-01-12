@@ -627,22 +627,18 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Adds one or more egress rules to a security group for use with a VPC. Specifically,
-        /// this action permits instances to send traffic to one or more destination CIDR IP address
-        /// ranges, or to one or more destination security groups for the same VPC.
+        /// [EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC.
+        /// Specifically, this action permits instances to send traffic to one or more destination
+        /// CIDR IP address ranges, or to one or more destination security groups for the same
+        /// VPC. This action doesn't apply to security groups for use in EC2-Classic. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  <important> 
         /// <para>
         /// You can have up to 50 rules per security group (covering both ingress and egress rules).
         /// </para>
         ///  </important> 
-        /// <para>
-        /// A security group is for use with instances either in the EC2-Classic platform or in
-        /// a specific VPC. This action doesn't apply to security groups for use in EC2-Classic.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-        /// </para>
-        ///  
         /// <para>
         /// Each rule consists of the protocol (for example, TCP), plus either a CIDR range or
         /// a source group. For the TCP and UDP protocols, you must also specify the destination
@@ -1147,7 +1143,6 @@ namespace Amazon.EC2
         /// <summary>
         /// Initiates the copy of an AMI from the specified source region to the current region.
         /// You specify the destination region by using its endpoint when making the request.
-        /// AMIs that use encrypted EBS snapshots cannot be copied with this method.
         /// 
         ///  
         /// <para>
@@ -1634,6 +1629,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNatGateway
+
+
+        /// <summary>
+        /// Creates a NAT gateway in the specified subnet. A NAT gateway can be used to enable
+        /// instances in a private subnet to connect to the Internet. This action creates a network
+        /// interface in the specified subnet with a private IP address from the IP address range
+        /// of the subnet. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
+        /// Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateNatGateway service method, as returned by EC2.</returns>
+        CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNatGateway
+        ///         operation.</returns>
+        IAsyncResult BeginCreateNatGateway(CreateNatGatewayRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNatGateway.</param>
+        /// 
+        /// <returns>Returns a  CreateNatGatewayResult from EC2.</returns>
+        CreateNatGatewayResponse EndCreateNatGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateNetworkAcl
 
 
@@ -1838,13 +1874,13 @@ namespace Amazon.EC2
         /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
         /// Reserved instances bought and sold through the Reserved Instance Marketplace work
-        /// like any other Reserved instances. 
+        /// like any other Reserved instances.
         /// </para>
         ///  
         /// <para>
         /// To sell your Reserved instances, you must first register as a seller in the Reserved
         /// Instance Marketplace. After completing the registration process, you can create a
-        /// Reserved Instance Marketplace listing of some or all of your Reserved Instances, and
+        /// Reserved Instance Marketplace listing of some or all of your Reserved instances, and
         /// specify the upfront price to receive for them. Your Reserved instance listings then
         /// become available for purchase. To view the details of your Reserved instance listing,
         /// you can use the <a>DescribeReservedInstancesListings</a> operation.
@@ -1895,7 +1931,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must specify one of the following targets: Internet gateway or virtual private
-        /// gateway, NAT instance, VPC peering connection, or network interface.
+        /// gateway, NAT instance, NAT gateway, VPC peering connection, or network interface.
         /// </para>
         ///  
         /// <para>
@@ -2018,7 +2054,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// EC2-VPC: You can create up to 100 security groups per VPC.
+        /// EC2-VPC: You can create up to 500 security groups per VPC.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2852,6 +2888,45 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DeleteKeyPairResult from EC2.</returns>
         DeleteKeyPairResponse EndDeleteKeyPair(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteNatGateway
+
+
+        /// <summary>
+        /// Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its Elastic
+        /// IP address, but does not release the address from your account. Deleting a NAT gateway
+        /// does not delete any NAT gateway routes in your route tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNatGateway service method, as returned by EC2.</returns>
+        DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNatGateway
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteNatGateway(DeleteNatGatewayRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNatGateway.</param>
+        /// 
+        /// <returns>Returns a  DeleteNatGatewayResult from EC2.</returns>
+        DeleteNatGatewayResponse EndDeleteNatGateway(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4230,7 +4305,7 @@ namespace Amazon.EC2
         /// <para>
         /// The results describe only the Dedicated hosts in the region you're currently using.
         /// All listed instances consume capacity on your Dedicated host. Dedicated hosts that
-        /// have recently been released will be listed with the status "released".
+        /// have recently been released will be listed with the state <code>released</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHosts service method.</param>
@@ -4273,10 +4348,10 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// Describes the ID format settings for your resources, for example, to view which resource
-        /// types are enabled for longer IDs. This request only returns information about resource
-        /// types whose ID formats can be modified; it does not return information about other
-        /// resource types. 
+        /// Describes the ID format settings for your resources on a per-region basis, for example,
+        /// to view which resource types are enabled for longer IDs. This request only returns
+        /// information about resource types whose ID formats can be modified; it does not return
+        /// information about other resource types. 
         /// </para>
         ///  
         /// <para>
@@ -4288,7 +4363,9 @@ namespace Amazon.EC2
         /// These settings apply to the IAM user who makes the request; they do not apply to the
         /// entire AWS account. By default, an IAM user defaults to the same settings as the root
         /// user, unless they explicitly override the settings by running the <a>ModifyIdFormat</a>
-        /// command. These settings are applied on a per-region basis.
+        /// command. Resources created with longer IDs are visible to all IAM users, regardless
+        /// of these settings and provided that they have permission to use the relevant <code>Describe</code>
+        /// command for the resource type.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdFormat service method.</param>
@@ -4848,6 +4925,43 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeNatGateways
+
+
+        /// <summary>
+        /// Describes one or more of the your NAT gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNatGateways service method, as returned by EC2.</returns>
+        DescribeNatGatewaysResponse DescribeNatGateways(DescribeNatGatewaysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNatGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNatGateways
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeNatGateways(DescribeNatGatewaysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNatGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNatGateways.</param>
+        /// 
+        /// <returns>Returns a  DescribeNatGatewaysResult from EC2.</returns>
+        DescribeNatGatewaysResponse EndDescribeNatGateways(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeNetworkAcls
 
 
@@ -5288,7 +5402,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved Instances modification requests is returned. If
+        /// information about all your Reserved instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -5304,7 +5418,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved Instances modification requests is returned. If
+        /// information about all your Reserved instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -5356,6 +5470,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// they will be excluded from these results. This is to ensure that you do not purchase
+        /// your own Reserved instances.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
@@ -5370,6 +5490,12 @@ namespace Amazon.EC2
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
+        ///  
+        /// <para>
+        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// they will be excluded from these results. This is to ensure that you do not purchase
+        /// your own Reserved instances.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -7634,16 +7760,18 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// Modifies the ID format for the specified resource. You can specify that resources
-        /// should receive longer IDs (17-character IDs) when they are created. The following
-        /// resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
+        /// Modifies the ID format for the specified resource on a per-region basis. You can specify
+        /// that resources should receive longer IDs (17-character IDs) when they are created.
+        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
         /// </para>
         ///  
         /// <para>
         /// This setting applies to the IAM user who makes the request; it does not apply to the
         /// entire AWS account. By default, an IAM user defaults to the same settings as the root
-        /// user, unless they explicitly override the settings by running this request. These
-        /// settings are applied on a per-region basis.
+        /// user, unless they explicitly override the settings by running this request. Resources
+        /// created with longer IDs are visible to all IAM users, regardless of these settings
+        /// and provided that they have permission to use the relevant <code>Describe</code> command
+        /// for the resource type.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIdFormat service method.</param>
@@ -7872,7 +8000,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the Availability Zone, instance count, instance type, or network platform
-        /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
+        /// (EC2-Classic or EC2-VPC) of your Reserved instances. The Reserved instances to be
         /// modified must be identical, except for Availability Zone, network platform, and instance
         /// type.
         /// 
@@ -8234,11 +8362,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform.
-        /// The Elastic IP address must be allocated to your account, and it must not be associated
-        /// with an instance. After the Elastic IP address is moved, it is no longer available
-        /// for use in the EC2-Classic platform, unless you move it back using the <a>RestoreAddressToClassic</a>
-        /// request. You cannot move an Elastic IP address that's allocated for use in the EC2-VPC
-        /// platform to the EC2-Classic platform.
+        /// The Elastic IP address must be allocated to your account for more than 24 hours, and
+        /// it must not be associated with an instance. After the Elastic IP address is moved,
+        /// it is no longer available for use in the EC2-Classic platform, unless you move it
+        /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
+        /// IP address that's allocated for use in the EC2-VPC platform to the EC2-Classic platform.
+        /// You cannot migrate an Elastic IP address that's associated with a reverse DNS record.
+        /// Contact AWS account and billing support to remove the reverse DNS record.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
         /// 
@@ -8561,9 +8691,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// When you no longer want to use a Dedicated host it can be released. On-Demand billing
-        /// is stopped and the host goes into "released" state. The host ID of Dedicated hosts
-        /// that have been released can no longer be specified in another request, e.g., ModifyHosts.
-        /// You must stop or terminate all instances on a host before it can be released.
+        /// is stopped and the host goes into <code>released</code> state. The host ID of Dedicated
+        /// hosts that have been released can no longer be specified in another request, e.g.,
+        /// ModifyHosts. You must stop or terminate all instances on a host before it can be released.
         /// 
         ///  
         /// <para>
@@ -8691,8 +8821,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
-        /// of the following: Internet gateway or virtual private gateway, NAT instance, VPC peering
-        /// connection, or network interface.
+        /// of the following: Internet gateway or virtual private gateway, NAT instance, NAT gateway,
+        /// VPC peering connection, or network interface.
         /// 
         ///  
         /// <para>
@@ -9104,7 +9234,9 @@ namespace Amazon.EC2
         /// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
         /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
         /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
-        /// instance or network interface.
+        /// instance or network interface. You cannot restore an Elastic IP address that's associated
+        /// with a reverse DNS record. Contact AWS account and billing support to remove the reverse
+        /// DNS record.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic service method.</param>
         /// 
@@ -9141,7 +9273,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Removes one or more egress rules from a security group for EC2-VPC. The values that
+        /// [EC2-VPC only] Removes one or more egress rules from a security group for EC2-VPC.
+        /// This action doesn't apply to security groups for use in EC2-Classic. The values that
         /// you specify in the revoke request (for example, ports) must match the existing rule's
         /// values for the rule to be revoked.
         /// 

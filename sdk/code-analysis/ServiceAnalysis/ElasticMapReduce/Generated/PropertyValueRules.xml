@@ -191,6 +191,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.JobFlowInstancesConfig.ServiceAccessSecurityGroup</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.JobFlowInstancesConfig.SlaveInstanceType</property>
     <min>1</min>
     <max>256</max>

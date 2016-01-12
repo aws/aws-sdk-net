@@ -59,7 +59,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token obtained from a <code class="code">FilterLogEvents</code> response
-        /// to continue paginating the FilterLogEvents results.
+        /// to continue paginating the FilterLogEvents results. This token is omitted from the
+        /// response when there are no other events to display.
         /// </para>
         /// </summary>
         public string NextToken

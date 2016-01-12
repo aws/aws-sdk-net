@@ -37,7 +37,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property EndpointAddress. 
         /// <para>
-        /// The address.
+        /// The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.
         /// </para>
         /// </summary>
         public string EndpointAddress

@@ -249,7 +249,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 }
             }, sleepSeconds, maxWaitSeconds);
         }
-        public static void WaitUntil(Func<bool> matchFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
+        public static void WaitUntil(Func<bool> matchFunction, int sleepSeconds = 5, int maxWaitSeconds = 300, bool failIfNotCompleted = true)
         {
             if (sleepSeconds < 0) throw new ArgumentOutOfRangeException("sleepSeconds");
             if (maxWaitSeconds < 0) throw new ArgumentOutOfRangeException("maxWaitSeconds");
@@ -265,7 +265,8 @@ namespace Amazon.DNXCore.IntegrationTests
                 Sleep(sleepTime);
             }
 
-            throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
+            if(failIfNotCompleted)
+                throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
         }
 
         public static void Sleep(TimeSpan ts)

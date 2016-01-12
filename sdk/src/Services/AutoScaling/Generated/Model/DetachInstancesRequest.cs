@@ -29,10 +29,18 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachInstances operation.
-    /// Removes one or more instances from the specified Auto Scaling group. After the instances
-    /// are detached, you can manage them independently from the rest of the Auto Scaling
-    /// group.
+    /// Removes one or more instances from the specified Auto Scaling group.
     /// 
+    ///  
+    /// <para>
+    /// After the instances are detached, you can manage them independently from the rest
+    /// of the Auto Scaling group.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you do not specify the option to decrement the desired capacity, Auto Scaling launches
+    /// instances to replace the ones that are detached.
+    /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach

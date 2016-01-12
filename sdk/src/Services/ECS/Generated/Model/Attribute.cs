@@ -56,7 +56,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the container instance attribute.
+        /// The value of the container instance attribute (at this time, the value here is <code>Null</code>,
+        /// but this could change in future revisions for expandability).
         /// </para>
         /// </summary>
         public string Value

@@ -65,7 +65,7 @@ namespace Amazon.Runtime.Internal
                 if (exception != null)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
-                    throw exception;
+                    System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(exception).Throw();
                 }
 
                 return result;

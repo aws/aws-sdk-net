@@ -1287,6 +1287,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNatGateway
+
+        internal CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request)
+        {
+            var marshaller = new CreateNatGatewayRequestMarshaller();
+            var unmarshaller = CreateNatGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNatGatewayRequest,CreateNatGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateNatGatewayResponse> CreateNatGatewayAsync(CreateNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateNatGatewayRequestMarshaller();
+            var unmarshaller = CreateNatGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNatGatewayRequest,CreateNatGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateNetworkAcl
 
         internal CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request)
@@ -2026,6 +2057,37 @@ namespace Amazon.EC2
             var unmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteKeyPairRequest,DeleteKeyPairResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNatGateway
+
+        internal DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request)
+        {
+            var marshaller = new DeleteNatGatewayRequestMarshaller();
+            var unmarshaller = DeleteNatGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNatGatewayRequest,DeleteNatGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNatGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteNatGatewayResponse> DeleteNatGatewayAsync(DeleteNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteNatGatewayRequestMarshaller();
+            var unmarshaller = DeleteNatGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteNatGatewayRequest,DeleteNatGatewayResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3682,6 +3744,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeNatGateways
+
+        internal DescribeNatGatewaysResponse DescribeNatGateways(DescribeNatGatewaysRequest request)
+        {
+            var marshaller = new DescribeNatGatewaysRequestMarshaller();
+            var unmarshaller = DescribeNatGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNatGatewaysRequest,DescribeNatGatewaysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNatGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeNatGatewaysResponse> DescribeNatGatewaysAsync(DescribeNatGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeNatGatewaysRequestMarshaller();
+            var unmarshaller = DescribeNatGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNatGatewaysRequest,DescribeNatGatewaysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeNetworkAcls
 
         internal DescribeNetworkAclsResponse DescribeNetworkAcls()
@@ -4102,7 +4195,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved Instances modification requests is returned. If
+        /// information about all your Reserved instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -4164,6 +4257,12 @@ namespace Amazon.EC2
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
+        ///  
+        /// <para>
+        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// they will be excluded from these results. This is to ensure that you do not purchase
+        /// your own Reserved instances.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved

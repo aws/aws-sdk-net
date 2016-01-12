@@ -141,6 +141,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         public static readonly ScalingActivityStatusCode MidLifecycleAction = new ScalingActivityStatusCode("MidLifecycleAction");
         /// <summary>
+        /// Constant PendingSpotBidPlacement for ScalingActivityStatusCode
+        /// </summary>
+        public static readonly ScalingActivityStatusCode PendingSpotBidPlacement = new ScalingActivityStatusCode("PendingSpotBidPlacement");
+        /// <summary>
         /// Constant PreInService for ScalingActivityStatusCode
         /// </summary>
         public static readonly ScalingActivityStatusCode PreInService = new ScalingActivityStatusCode("PreInService");

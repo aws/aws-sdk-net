@@ -58,12 +58,15 @@ namespace Amazon.RDS.Model
         private Endpoint _endpoint;
         private string _engine;
         private string _engineVersion;
+        private string _enhancedMonitoringResourceArn;
         private DateTime? _instanceCreateTime;
         private int? _iops;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _licenseModel;
         private string _masterUsername;
+        private int? _monitoringInterval;
+        private string _monitoringRoleArn;
         private bool? _multiAZ;
         private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
         private PendingModifiedValues _pendingModifiedValues;
@@ -474,6 +477,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnhancedMonitoringResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives
+        /// the Enhanced Monitoring metrics data for the DB instance.
+        /// </para>
+        /// </summary>
+        public string EnhancedMonitoringResourceArn
+        {
+            get { return this._enhancedMonitoringResourceArn; }
+            set { this._enhancedMonitoringResourceArn = value; }
+        }
+
+        // Check to see if EnhancedMonitoringResourceArn property is set
+        internal bool IsSetEnhancedMonitoringResourceArn()
+        {
+            return this._enhancedMonitoringResourceArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
         ///  Provides the date and time the DB instance was created. 
@@ -581,6 +603,44 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUsername()
         {
             return this._masterUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringInterval. 
+        /// <para>
+        /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+        /// for the DB instance.
+        /// </para>
+        /// </summary>
+        public int MonitoringInterval
+        {
+            get { return this._monitoringInterval.GetValueOrDefault(); }
+            set { this._monitoringInterval = value; }
+        }
+
+        // Check to see if MonitoringInterval property is set
+        internal bool IsSetMonitoringInterval()
+        {
+            return this._monitoringInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringRoleArn. 
+        /// <para>
+        /// The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to CloudWatch
+        /// Logs.
+        /// </para>
+        /// </summary>
+        public string MonitoringRoleArn
+        {
+            get { return this._monitoringRoleArn; }
+            set { this._monitoringRoleArn = value; }
+        }
+
+        // Check to see if MonitoringRoleArn property is set
+        internal bool IsSetMonitoringRoleArn()
+        {
+            return this._monitoringRoleArn != null;
         }
 
         /// <summary>

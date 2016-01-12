@@ -112,6 +112,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.IamInstanceProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServiceAccessSecurityGroup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceAccessSecurityGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -175,6 +175,10 @@
       <Project>{22819F48-B00A-411A-A558-4E77B890A99F}</Project>
       <Name>AWSSDK.EC2.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ECR\AWSSDK.ECR.Net45.csproj">
+      <Project>{e181d5d6-c28d-4ffe-b951-2c9d96a5c25f}</Project>
+      <Name>AWSSDK.ECR.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ECS\AWSSDK.ECS.Net45.csproj">
       <Project>{8A3D5F46-C927-417F-AAF0-8D057B4CAA60}</Project>
       <Name>AWSSDK.ECS.Net45</Name>

@@ -23,6 +23,9 @@ namespace ServiceClientGenerator
 
         void SetupProjectFile(string codeAnalysisRoot, ServiceConfiguration serviceConfiguration)
         {
+            if (!Directory.Exists(codeAnalysisRoot))
+                Directory.CreateDirectory(codeAnalysisRoot);
+
             var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1] + ".CodeAnalysis";
             var projectFilename = string.Concat(assemblyName, ".csproj");
             string projectGuid;

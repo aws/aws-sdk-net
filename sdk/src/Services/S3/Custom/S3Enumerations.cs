@@ -164,6 +164,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3Region APN1 = new S3Region("ap-northeast-1");
         /// <summary>
+        /// Specifies that the S3 Bucket should use the AP-NORTHEAST-2 locality.
+        /// </summary>
+        public static readonly S3Region APN2 = new S3Region("ap-northeast-2");
+        /// <summary>
         /// Specifies that the S3 Bucket should use the SA-EAST-1 locality.
         /// </summary>
         public static readonly S3Region SAE1 = new S3Region("sa-east-1");

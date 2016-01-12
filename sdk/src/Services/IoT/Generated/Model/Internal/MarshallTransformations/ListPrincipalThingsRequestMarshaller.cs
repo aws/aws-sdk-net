@@ -58,10 +58,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/principals/things";
+            
+            if (publicRequest.IsSetMarker())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.Marker));
+            
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             request.ResourcePath = uriResourcePath;
         
             if(publicRequest.IsSetPrincipal())
                 request.Headers["x-amzn-principal"] = publicRequest.Principal;
+            request.UseQueryString = true;
 
             return request;
         }

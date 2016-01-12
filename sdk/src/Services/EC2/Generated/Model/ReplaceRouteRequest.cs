@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ReplaceRoute operation.
     /// Replaces an existing route within a route table in a VPC. You must provide only one
-    /// of the following: Internet gateway or virtual private gateway, NAT instance, VPC peering
-    /// connection, or network interface.
+    /// of the following: Internet gateway or virtual private gateway, NAT instance, NAT gateway,
+    /// VPC peering connection, or network interface.
     /// 
     ///  
     /// <para>
@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private string _destinationCidrBlock;
         private string _gatewayId;
         private string _instanceId;
+        private string _natGatewayId;
         private string _networkInterfaceId;
         private string _routeTableId;
         private string _vpcPeeringConnectionId;
@@ -101,6 +102,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NatGatewayId. 
+        /// <para>
+        /// The ID of a NAT gateway.
+        /// </para>
+        /// </summary>
+        public string NatGatewayId
+        {
+            get { return this._natGatewayId; }
+            set { this._natGatewayId = value; }
+        }
+
+        // Check to see if NatGatewayId property is set
+        internal bool IsSetNatGatewayId()
+        {
+            return this._natGatewayId != null;
         }
 
         /// <summary>

@@ -33,7 +33,28 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class DescribeTrailsRequest : AmazonCloudTrailRequest
     {
+        private bool? _includeShadowTrails;
         private List<string> _trailNameList = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property IncludeShadowTrails. 
+        /// <para>
+        /// Specifies whether to include shadow trails in the response. A shadow trail is the
+        /// replication in a region of a trail that was created in a different region. The default
+        /// is true.
+        /// </para>
+        /// </summary>
+        public bool IncludeShadowTrails
+        {
+            get { return this._includeShadowTrails.GetValueOrDefault(); }
+            set { this._includeShadowTrails = value; }
+        }
+
+        // Check to see if IncludeShadowTrails property is set
+        internal bool IsSetIncludeShadowTrails()
+        {
+            return this._includeShadowTrails.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property TrailNameList. 
@@ -43,6 +64,14 @@ namespace Amazon.CloudTrail.Model
         /// If an empty list is specified, information for the trail in the current region is
         /// returned.
         /// </para>
+        ///  <ul> <li>If an empty list is specified and <code>IncludeShadowTrails</code> is false,
+        /// then information for all trails in the current region is returned.</li> <li> If an
+        /// empty list is specified and IncludeShadowTrails is null or true, then information
+        /// for all trails in the current region and any associated shadow trails in other regions
+        /// is returned. </li> </ul> <note>If one or more trail names are specified, information
+        /// is returned only if the names match the names of trails belonging only to the current
+        /// region. To return information about a trail in another region, you must specify its
+        /// trail ARN.</note>
         /// </summary>
         public List<string> TrailNameList
         {

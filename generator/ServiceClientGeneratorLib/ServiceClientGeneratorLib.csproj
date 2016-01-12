@@ -49,9 +49,11 @@
   <ItemGroup>
     <Compile Include="CodeAnalysisProjectCreator.cs" />
     <Compile Include="CodeAnalysisSolutionCreator.cs" />
+    <Compile Include="CodeBuilder.cs" />
     <Compile Include="CoreUpdater.cs" />
     <Compile Include="CustomizationCompiler.cs" />
     <Compile Include="Customizations.cs" />
+    <Compile Include="Example.cs" />
     <Compile Include="GenerationManifest.cs" />
     <Compile Include="Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
@@ -97,6 +99,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GettingStarted.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\Examples\ExampleCode.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExampleCode.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\Examples\ExampleMetadata.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExampleMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generators\NuGet\CoreNuspec.cs">
       <AutoGen>True</AutoGen>
@@ -635,6 +647,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>VsixTestProfileFile.cs</LastGenOutput>
     </Content>
+    <None Include="Generators\Examples\ExampleCode.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExampleCode.cs</LastGenOutput>
+    </None>
+    <None Include="Generators\Examples\ExampleMetadata.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExampleMetadata.cs</LastGenOutput>
+    </None>
     <Content Include="Generators\NuGet\NuGetPackageReadmeSection.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>NuGetPackageReadmeSection.cs</LastGenOutput>

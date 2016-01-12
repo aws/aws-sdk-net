@@ -43,8 +43,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// {\"attributes\":{\"some-name1\":\"some-value1\”}, {\"some-name2\":\"some-value2\”},
-        /// {\"some-name3\":\"some-value3\”}}
+        /// {\"attributes\":{\"some-name1\":\"some-value1\"}, {\"some-name2\":\"some-value2\"},
+        /// {\"some-name3\":\"some-value3\"}}
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

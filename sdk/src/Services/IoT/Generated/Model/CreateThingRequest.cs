@@ -40,7 +40,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AttributePayload. 
         /// <para>
         /// The attribute payload. Which consists of up to 3 name/value pairs in a JSON document.
-        /// For example: {\"attributes\":{\"string1\":\"string2\”}}
+        /// For example: {\"attributes\":{\"string1\":\"string2\"}}
         /// </para>
         /// </summary>
         public AttributePayload AttributePayload

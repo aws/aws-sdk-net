@@ -51,6 +51,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AllSupported);
             }
 
+            if(requestObject.IsSetIncludeGlobalResourceTypes())
+            {
+                context.Writer.WritePropertyName("includeGlobalResourceTypes");
+                context.Writer.Write(requestObject.IncludeGlobalResourceTypes);
+            }
+
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("resourceTypes");

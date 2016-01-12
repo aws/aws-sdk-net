@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of instances available for the price.
+        /// The number of reservations available for the price.
         /// </para>
         /// </summary>
         public int Count

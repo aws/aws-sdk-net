@@ -420,19 +420,30 @@ namespace SDKDocGenerator
         {
             if (!string.IsNullOrEmpty(samplesDir))
             {
-                var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER , serviceName + ".extra.xml");
-                if (File.Exists(extraFile))
+                var extraDocNodes = new List<XmlNode>(); 
+                foreach (var pattern in new [] {".extra.xml", ".GeneratedSamples.extra.xml"})
                 {
-                    Trace.WriteLine(String.Format("Merging {0} code samples into {1} from {2}", serviceName, filePath, extraFile));
+                    var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER, serviceName + pattern);
+                    if (File.Exists(extraFile))
+                    {
+                        var extraDoc = new XmlDocument();
+                        extraDoc.Load(extraFile);
+                        foreach(XmlNode node in extraDoc.SelectNodes("docs/doc"))
+                        {
+                            extraDocNodes.Add(node);
+                        }
+                    }
+                }
+
+                if (extraDocNodes.Any())
+                {
+                    Trace.WriteLine(String.Format("Merging {0} code samples into {1}", serviceName, filePath));
 
                     var sdkDoc = new XmlDocument();
                     sdkDoc.Load(filePath);
 
-                    var extraDoc = new XmlDocument();
-                    extraDoc.Load(extraFile);
-
-                    ProcessReferences(sdkDoc, extraDoc, extraFile);
-                    ProcessExtraDoc(sdkDoc, extraDoc);
+                    var examplesMap = BuildExamplesMap(extraDocNodes);
+                    ProcessExtraDoc(sdkDoc, examplesMap);
 
                     return XDocument.Load(new XmlNodeReader(sdkDoc), LoadOptions.PreserveWhitespace);
                 }
@@ -441,61 +452,58 @@ namespace SDKDocGenerator
             return XDocument.Load(filePath, LoadOptions.PreserveWhitespace);
         }
 
-        private static void ProcessReferences(XmlDocument sdkDocument, XmlDocument extraDoc, string ExtraXml)
+        private static IDictionary<string, string> BuildExamplesMap(List<XmlNode> docNodes)
         {
-            var refNodes = extraDoc.SelectNodes("docs/ref");
-            Trace.WriteLine(String.Format("Found {0} ref nodes", refNodes.Count), "verbose");
-            foreach (XmlNode refNode in refNodes)
-            {
-                var refAttribute = refNode.Attributes["src"];
-                if (refAttribute == null) throw new InvalidDataException("Unable to retrieve 'src' attribute for ref node");
-
-                string refSrc = refAttribute.Value;
-                Trace.WriteLine(String.Format("Referencing XML from {0}", refSrc), "verbose");
-                if (!Path.IsPathRooted(refSrc))
-                {
-                    refSrc = Path.Combine(Path.GetDirectoryName(ExtraXml), refSrc);
-                }
-
-                Trace.WriteLine(String.Format("Loading referenced Extra XML from {0}", refSrc), "verbose");
-                XmlDocument refExtraDoc = new XmlDocument();
-                refExtraDoc.Load(refSrc);
-                ProcessExtraDoc(sdkDocument, refExtraDoc);
-            }
-        }
-
-        private static void ProcessExtraDoc(XmlDocument sdkDocument, XmlDocument extraDoc)
-        {
-            var docNodes = extraDoc.SelectNodes("docs/doc");
             Trace.WriteLine(String.Format("Found {0} extra doc nodes", docNodes.Count), "verbose");
-            foreach (XmlNode docNode in docNodes)
+            var map = new Dictionary<string, string>(StringComparer.Ordinal);
+
+            foreach (var docNode in docNodes)
             {
-                var valueNode = docNode.SelectSingleNode("value");
-                string extraXml = valueNode.InnerXml;
-                extraXml = extraXml == null ? string.Empty : extraXml.Trim();
-                if (string.IsNullOrEmpty(extraXml)) throw new InvalidDataException("Extra XML is empty");
-
-                var memberNodes = docNode.SelectNodes("members/member");
-                Trace.WriteLine(String.Format("Found {0} member nodes", memberNodes.Count), "verbose");
-                foreach (XmlNode memberNode in memberNodes)
+                var members = docNode.SelectNodes("members/member");
+                foreach (XmlNode memberNode in members)
                 {
-                    var attribute = memberNode.Attributes["name"];
-                    if (attribute == null) throw new InvalidDataException("Unable to retrieve 'name' attribute for member node");
-                    string memberName = attribute.Value;
+                    var nameAttribute = memberNode.Attributes["name"];
+                    if (null == nameAttribute)
+                        throw new InvalidDataException("unable to retrieve 'name' attribute for member node.");
 
-                    XmlNode node = sdkDocument.SelectSingleNode(string.Format("doc/members/member[@name='{0}']", memberName));
-                    if (node == null)
-                    {
-                        Trace.WriteLine(String.Format("** member name not found, skipping: {0}", memberName), "verbose");
-                        continue;
-                    }
+                    var memberSpec = nameAttribute.Value;
+                    var exampleNode = docNode.SelectSingleNode("value/example");
+                    var content = exampleNode.InnerXml;
 
-                    string sdkXml = node.InnerXml;
-                    sdkXml += extraXml;
-                    node.InnerXml = sdkXml;
-
-                    Trace.WriteLine(String.Format("Successfully updated SDK XML for member {0}", memberName), "verbose");
+                    if (map.ContainsKey(memberSpec))
+                        map[memberSpec] += content;
+                    else
+                        map[memberSpec] = content;
                 }
+            }
+
+            return map;
+        }
+            
+        private static void ProcessExtraDoc(XmlDocument sdkDocument, IDictionary<string, string> examplesMap)
+        {
+            foreach (var memberSpec in examplesMap.Keys)
+            {
+                var docNode = sdkDocument.SelectSingleNode(string.Format("doc/members/member[@name='{0}']", memberSpec));
+                if (null == docNode)
+                {
+                    Trace.WriteLine(String.Format("** member name not found, skipping: {0}", memberSpec), "verbose");
+                    continue;
+                }
+
+                XmlNode sdkExampleNode = docNode.SelectSingleNode("example");
+                if (null != sdkExampleNode)
+                {
+                    sdkExampleNode.InnerXml = examplesMap[memberSpec];
+                }
+                else
+                {
+                    string sdkXml = docNode.InnerXml;
+                    sdkXml += String.Format("<example>{0}</example>", examplesMap[memberSpec]);
+                    docNode.InnerXml = sdkXml;
+                }
+
+                Trace.WriteLine(string.Format("Successfully updated SDK XML for member {0}", memberSpec), "verbose");
             }
         }
     }

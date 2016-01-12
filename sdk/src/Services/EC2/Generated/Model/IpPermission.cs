@@ -61,15 +61,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpProtocol. 
         /// <para>
-        /// The protocol.
+        /// The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>)
+        /// or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+        /// Numbers</a>). 
         /// </para>
         ///  
         /// <para>
-        /// When you call <a>DescribeSecurityGroups</a>, the protocol value returned is the number.
-        /// Exception: For TCP, UDP, and ICMP, the value returned is the name (for example, <code>tcp</code>,
-        /// <code>udp</code>, or <code>icmp</code>). For a list of protocol numbers, see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-        /// Numbers</a>. (VPC only) When you call <a>AuthorizeSecurityGroupIngress</a>, you can
-        /// use <code>-1</code> to specify all.
+        /// [EC2-VPC only] When you authorize or revoke security group rules, you can use <code>-1</code>
+        /// to specify all.
         /// </para>
         /// </summary>
         public string IpProtocol
