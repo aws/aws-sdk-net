@@ -1,12 +1,11 @@
 ﻿# Script parameters
-Param(
-    [string]
-    $PublicKeyTokenToCheck,
+Param
+(
+    [string]$PublicKeyTokenToCheck,
 
     # The build type. If not specified defaults to 'release'.
     [Parameter()]
-    [string]
-    $BuildType = "release"
+    [string]$BuildType = "release"
 )
 
 # Functions
@@ -14,12 +13,13 @@ Param(
 Function Get-PublicKeyToken
 {
     [CmdletBinding()]
-    Param(
+	Param
+	(
         # The assembly in question
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true, Position=0)]
-        [string]
-        $AssemblyPath
-    )
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true, ValueFromPipeline=$true, Position=0)]
+        [string]$AssemblyPath
+	)
+	
     $token = $null
     $token = [System.Reflection.Assembly]::LoadFrom($AssemblyPath).GetName().GetPublicKeyToken()
     if ( $token )
@@ -33,11 +33,11 @@ Function Get-PublicKeyToken
     }
     else
     {
-        Write-Error "NO TOKEN!!"
+        Write-Error "NO TOKEN!! - $AssemblyPath"
     }
 }
 
-Function Copy-SDKAssemblies
+Function Copy-SdkAssemblies
 {
     [CmdletBinding()]
     Param
@@ -60,7 +60,7 @@ Function Copy-SDKAssemblies
         # The platforms to copy. Defaults to all if not specified.
         [Parameter()]
         [string[]]
-        $Platforms = @("net35","net45","pcl"),
+        $Platforms = @("net35","net45", "pcl", "monoandroid", "Xamarin.iOS10", "windows8", "wpa81"),
         
         # The public key token that all assemblies should have. Optional.
         [Parameter()]
@@ -120,16 +120,78 @@ Function Copy-SDKAssemblies
     }
 }
 
-#Script code
-#$ErrorActionPreference = "Stop"
+Function Copy-CoreClrSdkAssemblies
+{
+	[CmdletBinding()]
+	Param
+	(
+		# The root folder containing the core runtime or a service
+		[Parameter(Mandatory = $true, ValueFromPipelineByPropertyName = $true, Position = 0)]
+		[string]$SourceRoot,
+		# The location to copy the built dll and pdb to
+		[Parameter(Mandatory = $true, Position = 1)]
+		[string]$Destination,
+		# The build type. If not specified defaults to 'release'.
+		[Parameter()]
+		[string]$BuildType = "release",
+		# The platforms to copy. Defaults to all if not specified.
+		[Parameter()]
+		[string[]]$Platforms = @("dnxcore50"),
+		# The public key token that all assemblies should have. Optional.
+		[Parameter()]
+		[string]$PublicKeyToken = ""
+	)
+	
+	Process
+	{
+		Write-Verbose "Copying built CoreCLR SDK assemblies beneath $SourceRoot to $Destination"
+		
+		if (!(Test-Path $Destination))
+		{
+			New-Item $Destination -ItemType Directory
+		}
+		
+		$assemblyFoldersPattern = Join-Path $SourceRoot "*.Dnx"
+		$assemblyFolderRoots = gci $assemblyFoldersPattern
+		foreach ($afr in $assemblyFolderRoots)
+		{
+			foreach ($p in $Platforms)
+			{
+				$platformFolder = Join-Path $afr (Join-Path $BuildType $p)
+				$targetFolder = Join-Path $Destination $p
+				
+				Write-Verbose "Copying from $platformFolder to $targetFolder..."
+				
+				$files = gci $platformFolder
+				
+				foreach ($f in $files)
+				{
+					Copy-Item -Path $f -Destination $targetFolder
+				}
+			}
+		}
+	}
+}
 
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81") -BuildType $BuildType
+Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for BCL/PCL platforms"
+$args = @{
+	"Destination" = "..\Deployment\assemblies"
+	"PublicKeyToken" = $PublicKeyTokenToCheck
+	"BuildType" = $BuildType
+}
 
+Copy-SdkAssemblies -SourceRoot ..\sdk\src\Core @args -Verbose
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
 {
-    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType
+    Copy-SdkAssemblies -SourceRoot $s.FullName @args -Verbose
 }
 
-#Write-Verbose "Copying assembly versions manifest..."
-#Copy-Item ..\generator\ServiceModels\_sdk-versions.json ..\Deployment\assemblies\_sdk-versions.json
+Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for CoreCLR platforms"
+$args = @{
+	"Destination" = "..\Deployment\assemblies"
+	"PublicKeyToken" = $PublicKeyTokenToCheck
+	"BuildType" = $BuildType
+}
+Copy-CoreClrSdkAssemblies -SourceRoot ..\sdk\artifacts\bin @args -Verbose
+
