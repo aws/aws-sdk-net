@@ -15,6 +15,8 @@ namespace AWSSDK.Tests.Framework
 {
     class UtilityMethods
     {
+        public const string SDK_TEST_PREFIX = "aws-net-sdk";
+
         public static readonly string LambdaAssumeRolePolicyDocument =
 @"
 {
@@ -262,5 +264,17 @@ namespace AWSSDK.Tests.Framework
             ars.WaitOne();
             Assert.IsNull(responseException);
         }
+
+
+        public static string GenerateName()
+        {
+            return GenerateName(SDK_TEST_PREFIX + "-");
+        }
+
+        public static string GenerateName(string name)
+        {
+            return name + new System.Random().Next();
+        }
+
     }
 }

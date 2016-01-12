@@ -193,10 +193,6 @@ namespace <#=this.Config.Namespace#>
 		// Generates methods for each operation in the model
         foreach(var operation in this.Config.ServiceModel.Operations)
         {
-			if(!this.Config.ServiceModel.AvailableInWWW(operation))
-			{
-				continue;
-			}
         #>
 
         #region  <#=operation.Name#>
@@ -230,6 +226,17 @@ namespace <#=this.Config.Namespace#>
 #>
 		internal <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
+<#
+			if(!this.Config.ServiceModel.AvailableInWWW(operation))
+			{
+#>
+		    if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+		    {
+				throw new InvalidOperationException("<#=operation.Name#> is only allowed with UnityWebRequest api option");
+		    }
+<#
+			}
+#>
             var marshaller = new <#=operation.Name#>RequestMarshaller();
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
 
@@ -270,6 +277,17 @@ namespace <#=this.Config.Namespace#>
 #>
         <#=operation.IsInternal ? "internal" : "public"#> void <#=operation.Name#>Async(<#=operation.Name#>Request request, AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
         {
+<#
+			if(!this.Config.ServiceModel.AvailableInWWW(operation))
+			{
+#>
+		    if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+		    {
+				throw new InvalidOperationException("<#=operation.Name#> is only allowed with UnityWebRequest api option");
+		    }
+<#
+			}
+#>
         	options = options == null?new AsyncOptions():options;
             var marshaller = new <#=operation.Name#>RequestMarshaller();
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;

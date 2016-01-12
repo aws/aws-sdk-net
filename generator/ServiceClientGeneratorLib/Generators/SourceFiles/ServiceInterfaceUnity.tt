@@ -26,11 +26,6 @@ namespace <#=this.Config.Namespace#>
             if(operation.IsInternal)
                 continue;
 			
-			if(!this.Config.ServiceModel.AvailableInWWW(operation))
-			{
-				continue;
-			}
-
 		#>
 
 		#region  <#=operation.Name#>

@@ -280,6 +280,156 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  DeleteAlias
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlias operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DeleteAliasAsync(DeleteAliasRequest request, AmazonServiceCallback<DeleteAliasRequest, DeleteAliasResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                throw new InvalidOperationException("DeleteAlias is only allowed with UnityWebRequest api option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteAliasRequestMarshaller();
+            var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteAliasRequest,DeleteAliasResponse> responseObject 
+                            = new AmazonServiceResult<DeleteAliasRequest,DeleteAliasResponse>((DeleteAliasRequest)req, (DeleteAliasResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteAliasRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteEventSourceMapping
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventSourceMapping operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DeleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request, AmazonServiceCallback<DeleteEventSourceMappingRequest, DeleteEventSourceMappingResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                throw new InvalidOperationException("DeleteEventSourceMapping is only allowed with UnityWebRequest api option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteEventSourceMappingRequestMarshaller();
+            var unmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteEventSourceMappingRequest,DeleteEventSourceMappingResponse> responseObject 
+                            = new AmazonServiceResult<DeleteEventSourceMappingRequest,DeleteEventSourceMappingResponse>((DeleteEventSourceMappingRequest)req, (DeleteEventSourceMappingResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteEventSourceMappingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteFunction
+
+        /// <summary>
+        /// Deletes the specified Lambda function code and configuration.
+        /// 
+        ///  
+        /// <para>
+        /// If you don't specify a function version, AWS Lambda will delete the function, including
+        /// all its versions, and any aliases pointing to the function versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a function the associated resource policy is also deleted. You will
+        /// need to delete the event source mappings explicitly.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about function versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="functionName">The Lambda function to delete.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">
+        ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///     procedure using the AsyncState property.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public void DeleteFunctionAsync(string functionName,  AmazonServiceCallback<DeleteFunctionRequest, DeleteFunctionResponse> callback, AsyncOptions options = null)
+        {
+            var request = new DeleteFunctionRequest();
+            request.FunctionName = functionName;
+            DeleteFunctionAsync(request, callback, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DeleteFunctionAsync(DeleteFunctionRequest request, AmazonServiceCallback<DeleteFunctionRequest, DeleteFunctionResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                throw new InvalidOperationException("DeleteFunction is only allowed with UnityWebRequest api option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteFunctionRequestMarshaller();
+            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteFunctionRequest,DeleteFunctionResponse> responseObject 
+                            = new AmazonServiceResult<DeleteFunctionRequest,DeleteFunctionResponse>((DeleteFunctionRequest)req, (DeleteFunctionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteFunctionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetAlias
 
         /// <summary>
@@ -730,6 +880,161 @@ namespace Amazon.Lambda
                         callback(responseObject); 
                 };
             BeginInvoke<PublishVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  RemovePermission
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemovePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void RemovePermissionAsync(RemovePermissionRequest request, AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                throw new InvalidOperationException("RemovePermission is only allowed with UnityWebRequest api option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<RemovePermissionRequest,RemovePermissionResponse> responseObject 
+                            = new AmazonServiceResult<RemovePermissionRequest,RemovePermissionResponse>((RemovePermissionRequest)req, (RemovePermissionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<RemovePermissionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateAlias
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlias operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void UpdateAliasAsync(UpdateAliasRequest request, AmazonServiceCallback<UpdateAliasRequest, UpdateAliasResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                throw new InvalidOperationException("UpdateAlias is only allowed with UnityWebRequest api option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateAliasRequestMarshaller();
+            var unmarshaller = UpdateAliasResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateAliasRequest,UpdateAliasResponse> responseObject 
+                            = new AmazonServiceResult<UpdateAliasRequest,UpdateAliasResponse>((UpdateAliasRequest)req, (UpdateAliasResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateAliasRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateEventSourceMapping
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEventSourceMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourceMapping operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void UpdateEventSourceMappingAsync(UpdateEventSourceMappingRequest request, AmazonServiceCallback<UpdateEventSourceMappingRequest, UpdateEventSourceMappingResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                throw new InvalidOperationException("UpdateEventSourceMapping is only allowed with UnityWebRequest api option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateEventSourceMappingRequestMarshaller();
+            var unmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateEventSourceMappingRequest,UpdateEventSourceMappingResponse> responseObject 
+                            = new AmazonServiceResult<UpdateEventSourceMappingRequest,UpdateEventSourceMappingResponse>((UpdateEventSourceMappingRequest)req, (UpdateEventSourceMappingResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateEventSourceMappingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateFunctionCode
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFunctionCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionCode operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void UpdateFunctionCodeAsync(UpdateFunctionCodeRequest request, AmazonServiceCallback<UpdateFunctionCodeRequest, UpdateFunctionCodeResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                throw new InvalidOperationException("UpdateFunctionCode is only allowed with UnityWebRequest api option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateFunctionCodeRequestMarshaller();
+            var unmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateFunctionCodeRequest,UpdateFunctionCodeResponse> responseObject 
+                            = new AmazonServiceResult<UpdateFunctionCodeRequest,UpdateFunctionCodeResponse>((UpdateFunctionCodeRequest)req, (UpdateFunctionCodeResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateFunctionCodeRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateFunctionConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFunctionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionConfiguration operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void UpdateFunctionConfigurationAsync(UpdateFunctionConfigurationRequest request, AmazonServiceCallback<UpdateFunctionConfigurationRequest, UpdateFunctionConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            {
+                throw new InvalidOperationException("UpdateFunctionConfiguration is only allowed with UnityWebRequest api option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateFunctionConfigurationRequestMarshaller();
+            var unmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateFunctionConfigurationRequest,UpdateFunctionConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<UpdateFunctionConfigurationRequest,UpdateFunctionConfigurationResponse>((UpdateFunctionConfigurationRequest)req, (UpdateFunctionConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateFunctionConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

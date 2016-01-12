@@ -253,6 +253,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     wsArgs.Headers[HeaderKeys.UserAgentHeader] =
                         currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
                 }
+                else if(wsArgs.Headers.Keys.Contains(HeaderKeys.XAmzUserAgentHeader))
+                {
+                    string currentUserAgent = wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader];
+                    wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader] =
+                        currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
+                }
             }
         }
 

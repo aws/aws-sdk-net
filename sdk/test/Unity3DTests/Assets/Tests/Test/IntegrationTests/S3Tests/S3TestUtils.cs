@@ -2,6 +2,7 @@
 using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
+using AWSSDK.Tests.Framework;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -184,6 +185,116 @@ namespace AWSSDK.IntegrationTests.S3
             });
             ars.WaitOne();
             return filePath;
+        }
+
+        public static string CreateBucket(IAmazonS3 s3Client)
+        {
+            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
+            var mre = new ManualResetEvent(false);
+            var exception = new Exception();
+            s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName }, (result) =>
+            {
+                exception = result.Exception;
+                mre.Set();
+            }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
+            mre.WaitOne();
+            if (exception != null)
+                throw exception;
+
+            return bucketName;
+        }
+
+        public static void DeleteBucketWithObjects(IAmazonS3 s3Client, string bucketName)
+        {
+            // Validations.
+            if (s3Client == null)
+            {
+                throw new ArgumentNullException("s3Client", "The s3Client cannot be null!");
+            }
+
+            if (string.IsNullOrEmpty(bucketName))
+            {
+                throw new ArgumentNullException("bucketName", "The bucketName cannot be null or empty string!");
+            }
+
+            var listVersionsRequest = new ListVersionsRequest
+            {
+                BucketName = bucketName
+            };
+
+            ListVersionsResponse listVersionsResponse = null;
+            string lastRequestId = null;
+
+            var exception = new Exception();
+            var mre = new ManualResetEvent(false);
+
+            // Iterate through the objects in the bucket and delete them.
+            do
+            {
+                // List all the versions of all the objects in the bucket.
+                s3Client.ListVersionsAsync(listVersionsRequest, (result) =>
+               {
+                   exception = result.Exception;
+                   listVersionsResponse = result.Response;
+                   mre.Set();
+               }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
+
+                Assert.IsNull(exception);
+                mre.WaitOne();
+
+                lastRequestId = listVersionsResponse.ResponseMetadata.RequestId;
+
+                if (listVersionsResponse.Versions.Count == 0)
+                {
+                    // If the bucket has no objects break the loop.
+                    break;
+                }
+
+                var keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
+                for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
+                {
+                    keyVersionList.Add(new KeyVersion
+                    {
+                        Key = listVersionsResponse.Versions[index].Key,
+                        VersionId = listVersionsResponse.Versions[index].VersionId
+                    });
+                }
+
+
+                var deleteObjectsResponse = new DeleteObjectsResponse();
+                // Delete the current set of objects.
+                s3Client.DeleteObjectsAsync(new DeleteObjectsRequest
+                {
+                    BucketName = bucketName,
+                    Objects = keyVersionList,
+                    Quiet = true
+                }, (result) =>
+                {
+                    deleteObjectsResponse = result.Response;
+                    exception = result.Exception;
+                    mre.Set();
+                }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
+                mre.WaitOne();
+                Assert.IsNull(exception);
+
+                // Set the markers to get next set of objects from the bucket.
+                listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
+                listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
+
+            }
+            // Continue listing objects and deleting them until the bucket is empty.
+            while (listVersionsResponse.IsTruncated);
+
+            // Bucket is empty, delete the bucket.
+            s3Client.DeleteBucketAsync(new DeleteBucketRequest
+            {
+                BucketName = bucketName
+            }, (result) =>
+            {
+                exception = result.Exception;
+                mre.Set();
+            }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
+            Assert.IsNull(exception);
         }
     }
 }

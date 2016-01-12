@@ -86,6 +86,9 @@ namespace Amazon.Runtime.Internal
             if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
                 requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
             + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
+            else
+                requestContext.Request.Headers[HeaderKeys.XAmzUserAgentHeader] = requestContext.ClientConfig.UserAgent
+            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
 #endif
 
             var method = requestContext.Request.HttpMethod.ToUpper(CultureInfo.InvariantCulture);

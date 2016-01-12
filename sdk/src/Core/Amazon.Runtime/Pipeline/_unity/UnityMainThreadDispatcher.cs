@@ -31,6 +31,8 @@ namespace Amazon.Runtime.Internal
     public class UnityMainThreadDispatcher : MonoBehaviour
     {
         private Logger _logger;
+        private float _nextUpdateTime;
+        private float _updateInterval = 0.1f;
 
         /// <summary>
         /// This method is called called when the script instance is
@@ -40,7 +42,20 @@ namespace Amazon.Runtime.Internal
         {
             _logger = Logger.GetLogger(this.GetType());
             // Call the method to process requests at a regular interval.
-            InvokeRepeating("ProcessRequests", 0.1f, 0.1f);
+            _nextUpdateTime = Time.unscaledTime;
+            _nextUpdateTime += _updateInterval;
+        }
+
+        /// <summary>
+        /// This method is called as often as possible.
+        /// </summary>
+        void Update()
+        {
+            if (Time.unscaledTime >= _nextUpdateTime)
+            {
+                ProcessRequests();
+                _nextUpdateTime += _updateInterval;
+            }
         }
 
         /// <summary>
@@ -123,7 +138,8 @@ namespace Amazon.Runtime.Internal
             {
                 var unityWebRequest = new UnityEngine.Experimental.Networking.UnityWebRequest(request.RequestUri.AbsoluteUri, request.Method);
                 unityWebRequest.downloadHandler = new UnityEngine.Experimental.Networking.DownloadHandlerBuffer();
-                unityWebRequest.uploadHandler = new UnityEngine.Experimental.Networking.UploadHandlerRaw(request.RequestContent);
+                if (request.RequestContent != null && request.RequestContent.Length > 0)
+                    unityWebRequest.uploadHandler = new UnityEngine.Experimental.Networking.UploadHandlerRaw(request.RequestContent);
                 foreach (var header in request.Headers)
                 {
                     if (header.Key.Equals(HeaderKeys.HostHeader, StringComparison.InvariantCultureIgnoreCase)
@@ -178,8 +194,8 @@ namespace Amazon.Runtime.Internal
                         // Log the exception, in case we get an unhandled exception 
                         // from the callback.
                         _logger.Error(exception,
-                            "An exception was thrown from the callback method executed from" +
-                            "UnityMainThreadDispatcher.InvokeRequest method.");
+                    "An exception was thrown from the callback method executed from"
+                    + "UnityMainThreadDispatcher.InvokeRequest method.");
 
                     }
                 });
