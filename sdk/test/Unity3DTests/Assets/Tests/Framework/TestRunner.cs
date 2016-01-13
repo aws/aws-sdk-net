@@ -51,7 +51,7 @@ namespace AWSSDK.Tests.Framework
             var currentAssembly = this.GetType().Assembly;
             var options = new Dictionary<string, string>();
             var tests = runner.Load(currentAssembly, options);
-            var result = runner.Run(this, new FixtureAndCaseFilter("DynamoDBTests", "TestContext"));
+            var result = runner.Run(this, TestFilter.Empty);
         }
 
         /// <summary>
