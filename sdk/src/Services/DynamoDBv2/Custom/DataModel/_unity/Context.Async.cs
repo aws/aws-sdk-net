@@ -29,11 +29,50 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public partial class DynamoDBContext : IDynamoDBContext
     {
+
+        #region Factory Creates
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write</typeparam>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>     
+        public void CreateBatchWriteAsync<T>(AmazonDynamoDBCallback<BatchWrite<T>> callback, AsyncOptions asyncOptions = null)
+        {
+            CreateBatchWriteAsync<T>(null, callback, asyncOptions);
+        }
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
+        public void CreateBatchWriteAsync<T>(DynamoDBOperationConfig operationConfig, AmazonDynamoDBCallback<BatchWrite<T>> callback, AsyncOptions asyncOptions = null)
+        {
+            asyncOptions = asyncOptions ?? new AsyncOptions();
+
+            DynamoDBAsyncExecutor.ExecuteAsync(
+                () =>
+                {
+                    DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
+                    return new BatchWrite<T>(this, config); ;
+                },
+                asyncOptions,
+                callback);
+        }
+
+        #endregion
+
         #region Save async
 
         /// <summary>
         /// Initiates the asynchronous execution of the Save operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
         /// </summary>
         /// <typeparam name="T">Type to save as.</typeparam>
         /// <param name="value">Object to save.</param>        
@@ -43,14 +82,13 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { SaveHelper<T>(value, null, true);},
+                () => { SaveHelper<T>(value, null, true); },
                 asyncOptions,
                 callback);
         }
 
         /// <summary>
         /// Initiates the asynchronous execution of the Save operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
         /// </summary>
         /// <typeparam name="T">Type to save as.</typeparam>
         /// <param name="value">Object to save.</param>
@@ -197,7 +235,7 @@ namespace Amazon.DynamoDBv2.DataModel
                        asyncOptions,
                        callback);
         }
-        
+
         #endregion
 
         #region Delete async
@@ -233,7 +271,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                       () => { DeleteHelper<T>(value, operationConfig, true);},
+                       () => { DeleteHelper<T>(value, operationConfig, true); },
                        asyncOptions,
                        callback);
         }
@@ -423,6 +461,57 @@ namespace Amazon.DynamoDBv2.DataModel
             return FromSearchAsync<T>(scan);
         }
 
+        /// <summary>
+        ///  Configures an async Scan operation against DynamoDB, finding items
+        /// that match the specified conditions.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="conditions">
+        /// Conditions that the results should meet.
+        /// </param>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
+        public void ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig, AmazonDynamoDBCallback<AsyncSearch<T>> callback, AsyncOptions asyncOptions = null)
+        {
+            asyncOptions = asyncOptions ?? new AsyncOptions();
+            DynamoDBAsyncExecutor.ExecuteAsync<AsyncSearch<T>>(
+                () =>
+                {
+                    if (conditions == null)
+                        throw new ArgumentNullException("conditions");
+
+                    var scan = ConvertScan<T>(conditions, operationConfig);
+                    return FromSearchAsync<T>(scan);
+                },
+                asyncOptions,
+                callback);
+        }
+
+        /// <summary>
+        ///  Configures an async Scan operation against DynamoDB, finding items
+        /// that match the specified conditions.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="scanConfig">Scan request object.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
+        public void FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig, AmazonDynamoDBCallback<AsyncSearch<T>> callback, AsyncOptions asyncOptions = null)
+        {
+            asyncOptions = asyncOptions ?? new AsyncOptions();
+            DynamoDBAsyncExecutor.ExecuteAsync<AsyncSearch<T>>(
+                () =>
+                {
+                    if (scanConfig == null) throw new ArgumentNullException("scanConfig");
+
+                    var scan = ConvertFromScan<T>(scanConfig, operationConfig);
+                    return FromSearchAsync<T>(scan);
+                },
+                asyncOptions,
+                callback);
+        }
+        
         #endregion
 
         #region Query async
@@ -474,30 +563,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return QueryAsync<T>(hashKeyValue, op, values, null);
         }
-
-        /// <summary>
-        /// Configures an async Query operation against DynamoDB, finding items
-        /// that match the specified range element condition for a hash-and-range primary key.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <param name="op">Operation of the condition.</param>
-        /// <param name="values">
-        /// Value(s) of the condition.
-        /// For all operations except QueryOperator.Between, values should be one value.
-        /// For QueryOperator.Between, values should be two values.
-        /// </param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
-        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
-        {
-            if (values == null)
-                throw new ArgumentNullException("values");
-
-            ContextSearch query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
-            return FromSearchAsync<T>(query);
-        }
-
+        
         /// <summary>
         /// Configures an async Query operation against DynamoDB, finding items
         /// that match the specified conditions.
@@ -524,6 +590,163 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var query = ConvertFromQuery<T>(queryConfig, operationConfig);
             return FromSearchAsync<T>(query);
+        }
+
+        /// <summary>
+        /// Configures an async Query operation against DynamoDB, finding items
+        /// that match the specified range element condition for a hash-and-range primary key.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKeyValue">Hash key of the items to query.</param>
+        /// <param name="op">Operation of the condition.</param>
+        /// <param name="values">
+        /// Value(s) of the condition.
+        /// For all operations except QueryOperator.Between, values should be one value.
+        /// For QueryOperator.Between, values should be two values.
+        /// </param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
+        {
+            if (values == null)
+                throw new ArgumentNullException("values");
+
+            ContextSearch query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
+            return FromSearchAsync<T>(query);
+        }
+
+        /// <summary>
+        /// Configures an async Query operation against DynamoDB, finding items
+        /// that match the specified conditions.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="queryConfig">Query request object.</param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
+        public void FromQueryAsync<T>(QueryOperationConfig queryConfig, AmazonDynamoDBCallback<AsyncSearch<T>> callback, AsyncOptions asyncOptions = null)
+        {
+            FromQueryAsync<T>(queryConfig, null, callback, asyncOptions);
+        }
+
+        /// <summary>
+        /// Configures an async Query operation against DynamoDB, finding items
+        /// that match the specified conditions.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="queryConfig">Query request object.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
+        public void FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig, AmazonDynamoDBCallback<AsyncSearch<T>> callback, AsyncOptions asyncOptions = null)
+        {
+            asyncOptions = asyncOptions ?? new AsyncOptions();
+            DynamoDBAsyncExecutor.ExecuteAsync<AsyncSearch<T>>(
+                () =>
+                {
+                    if (queryConfig == null) throw new ArgumentNullException("queryConfig");
+
+                    var query = ConvertFromQuery<T>(queryConfig, operationConfig);
+                    return FromSearchAsync<T>(query);
+                },
+                asyncOptions,
+                callback);
+        }
+
+        /// <summary>
+        /// Configures an async Query operation against DynamoDB, finding items
+        /// that match the specified hash primary key.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKeyValue">Hash key of the items to query.</param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>     
+        public void QueryAsync<T>(object hashKeyValue, AmazonDynamoDBCallback<AsyncSearch<T>> callback, AsyncOptions asyncOptions = null)
+        {
+            asyncOptions = asyncOptions ?? new AsyncOptions();
+            DynamoDBAsyncExecutor.ExecuteAsync<AsyncSearch<T>>(
+                () =>
+                {
+                    var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
+                    return FromSearchAsync<T>(query);
+                },
+                asyncOptions,
+                callback);
+        }
+
+        /// <summary>
+        /// Configures an async Query operation against DynamoDB, finding items
+        /// that match the specified hash primary key.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKeyValue">Hash key of the items to query.</param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>     
+        public void QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig, AmazonDynamoDBCallback<AsyncSearch<T>> callback, AsyncOptions asyncOptions = null)
+        {
+            asyncOptions = asyncOptions ?? new AsyncOptions();
+            DynamoDBAsyncExecutor.ExecuteAsync<AsyncSearch<T>>(
+                () =>
+                {
+                    ContextSearch query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
+                    return FromSearchAsync<T>(query);
+                },
+                asyncOptions,
+                callback);
+        }
+
+        /// <summary>
+        /// Configures an async Query operation against DynamoDB, finding items
+        /// that match the specified range element condition for a hash-and-range primary key.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKeyValue">Hash key of the items to query.</param>
+        /// <param name="op">Operation of the condition.</param>
+        /// <param name="values">
+        /// Value(s) of the condition.
+        /// For all operations except QueryOperator.Between, values should be one value.
+        /// For QueryOperator.Between, values should be two values.
+        /// </param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>     
+        public void QueryAsync<T>(object hashKeyValue, QueryOperator op, AmazonDynamoDBCallback<AsyncSearch<T>> callback, AsyncOptions asyncOptions = null, params object[] values)
+        {
+
+            if (values == null || values.Length == 0)
+                throw new ArgumentOutOfRangeException("values");
+
+            QueryAsync<T>(hashKeyValue, op, values, null, callback, asyncOptions);
+
+        }
+
+        /// <summary>
+        /// Configures an async Query operation against DynamoDB, finding items
+        /// that match the specified range element condition for a hash-and-range primary key.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKeyValue">Hash key of the items to query.</param>
+        /// <param name="op">Operation of the condition.</param>
+        /// <param name="values">
+        /// Value(s) of the condition.
+        /// For all operations except QueryOperator.Between, values should be one value.
+        /// For QueryOperator.Between, values should be two values.
+        /// </param>
+        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
+        public void QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig, AmazonDynamoDBCallback<AsyncSearch<T>> callback, AsyncOptions asyncOptions = null)
+        {
+            asyncOptions = asyncOptions ?? new AsyncOptions();
+            DynamoDBAsyncExecutor.ExecuteAsync<AsyncSearch<T>>(
+                () =>
+                {
+                    if (values == null)
+                        throw new ArgumentNullException("values");
+
+                    ContextSearch query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
+                    return FromSearchAsync<T>(query);
+                },
+                asyncOptions,
+                callback);
         }
 
         #endregion
