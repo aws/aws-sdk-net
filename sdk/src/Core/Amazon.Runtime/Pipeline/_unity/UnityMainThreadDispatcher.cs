@@ -16,6 +16,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections;
+using System.Net;
 using System.Threading;
 using UnityEngine;
 using Logger = Amazon.Runtime.Internal.Util.Logger;
@@ -121,27 +122,34 @@ namespace Amazon.Runtime.Internal
         /// <returns>IEnumerator which indicated if the operation is pending.</returns>
         IEnumerator InvokeRequest(UnityWebRequest request)
         {
-            // Fire the request            
-            request.WwwRequest = new WWW(request.RequestUri.AbsoluteUri,
+            // Fire the request
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+            {
+                request.WwwRequest = new WWW(request.RequestUri.AbsoluteUri,
                 request.RequestContent, request.Headers);
 
-            yield return request.WwwRequest;
-            request.Response = new UnityWebResponseData(request.WwwRequest);
-
+                yield return request.WwwRequest;
+                request.Response = new UnityWebResponseData(request.WwwRequest);
+            }
+            else
+            {
+                request.Exception = new WebException("Network Unavailable", WebExceptionStatus.ConnectFailure);
+            }
+            
             if (request.IsSync)
             {
                 // For synchronous calls, signal the wait handle 
                 // so that the calling thread which waits on the wait handle
                 // is unblocked.
-                if (!request.Response.IsSuccessStatusCode)
+                if (request.Response != null && !request.Response.IsSuccessStatusCode)
                 {
-                    request.Exception=  new HttpErrorResponseException(request.Response);
+                    request.Exception = new HttpErrorResponseException(request.Response);
                 }
                 request.WaitHandle.Set();
             }
             else
             {
-                if (!request.Response.IsSuccessStatusCode)
+                if (request.Response != null && !request.Response.IsSuccessStatusCode)
                 {
                     request.Exception = new HttpErrorResponseException(request.Response);
                 }
