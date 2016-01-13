@@ -1,6 +1,12 @@
 <Project ToolsVersion="14.0" 
     DefaultTargets="full-build-nodocs"
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+        <!-- properties used in sdk generation/build -->
+    <PropertyGroup>
+        <!-- perform a release build by default -->
+        <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
+    </PropertyGroup>
     
     <PropertyGroup>
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
@@ -16,12 +22,6 @@
 	<Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
 	<Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 
-    <!-- properties used in sdk generation/build -->
-    <PropertyGroup>
-        <!-- perform a release build by default -->
-        <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
-    </PropertyGroup>
-    
     <!-- properties used in documentation generation -->
     <PropertyGroup>
         <!-- resources folder where test settings should be placed -->

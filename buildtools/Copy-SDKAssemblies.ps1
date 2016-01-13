@@ -157,16 +157,21 @@ Function Copy-CoreClrSdkAssemblies
 		{
 			foreach ($p in $Platforms)
 			{
-				$platformFolder = Join-Path $afr (Join-Path $BuildType $p)
+				$sourceFolder = Join-Path $afr (Join-Path $BuildType $p)
 				$targetFolder = Join-Path $Destination $p
+
+                if (!(Test-Path $targetFolder))
+                {
+                    New-Item $targetFolder -ItemType Directory
+                }
+
+				Write-Verbose "Copying from $sourceFolder to $targetFolder..."
 				
-				Write-Verbose "Copying from $platformFolder to $targetFolder..."
-				
-				$files = gci $platformFolder
+				$files = gci $sourceFolder
 				
 				foreach ($f in $files)
 				{
-					Copy-Item -Path $f -Destination $targetFolder
+					Copy-Item -Path $f.FullName -Destination $targetFolder
 				}
 			}
 		}
