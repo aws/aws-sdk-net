@@ -68,6 +68,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service.
 * [AWSSDK.CloudWatch](https://www.nuget.org/packages/AWSSDK.CloudWatch/)
 	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
+* [AWSSDK.CloudWatchEvents](https://www.nuget.org/packages/AWSSDK.CloudWatchEvents/)
+	* Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.
 * [AWSSDK.CloudWatchLogs](https://www.nuget.org/packages/AWSSDK.CloudWatchLogs/)
 	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
 * [AWSSDK.CodeCommit](https://www.nuget.org/packages/AWSSDK.CodeCommit/)

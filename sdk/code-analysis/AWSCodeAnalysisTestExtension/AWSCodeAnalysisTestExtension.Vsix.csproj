@@ -96,6 +96,10 @@
       <Project>{477E2CEA-CD04-44FA-8B95-52B3BE6B17D6}</Project>
       <Name>AWSSDK.CloudWatch.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudWatchEvents/AWSSDK.CloudWatchEvents.CodeAnalysis.csproj">
+      <Project>{F037AE5A-E823-428E-9958-559FEDC00267}</Project>
+      <Name>AWSSDK.CloudWatchEvents.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CloudWatchLogs/AWSSDK.CloudWatchLogs.CodeAnalysis.csproj">
       <Project>{CF63ED2A-7FFE-4851-B21F-FCCF802D101B}</Project>
       <Name>AWSSDK.CloudWatchLogs.CodeAnalysis</Name>

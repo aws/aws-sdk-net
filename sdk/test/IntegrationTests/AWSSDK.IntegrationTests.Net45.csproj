@@ -131,6 +131,10 @@
       <Project>{C330247E-010B-45E7-87F7-AF4AEA8402CF}</Project>
       <Name>AWSSDK.CloudTrail.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CloudWatchEvents\AWSSDK.CloudWatchEvents.Net45.csproj">
+      <Project>{94f723c5-14f7-4d54-bb34-412afe4cb4ab}</Project>
+      <Name>AWSSDK.CloudWatchEvents.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.Net45.csproj">
       <Project>{8C4E574E-7466-4B4B-81BD-A5C0F66ABD77}</Project>
       <Name>AWSSDK.CloudWatch.Net45</Name>
