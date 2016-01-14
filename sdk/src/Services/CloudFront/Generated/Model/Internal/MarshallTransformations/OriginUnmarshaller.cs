@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-13.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -55,6 +55,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CustomHeaders", targetDepth))
+                    {
+                        var unmarshaller = CustomHeadersUnmarshaller.Instance;
+                        unmarshalledObject.CustomHeaders = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CustomOriginConfig", targetDepth))
                     {
                         var unmarshaller = CustomOriginConfigUnmarshaller.Instance;

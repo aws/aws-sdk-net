@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-13.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,11 +33,28 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class Origin
     {
+        private CustomHeaders _customHeaders;
         private CustomOriginConfig _customOriginConfig;
         private string _domainName;
         private string _id;
         private string _originPath;
         private S3OriginConfig _s3OriginConfig;
+
+        /// <summary>
+        /// Gets and sets the property CustomHeaders. A complex type that contains information
+        /// about the custom headers associated with this Origin.
+        /// </summary>
+        public CustomHeaders CustomHeaders
+        {
+            get { return this._customHeaders; }
+            set { this._customHeaders = value; }
+        }
+
+        // Check to see if CustomHeaders property is set
+        internal bool IsSetCustomHeaders()
+        {
+            return this._customHeaders != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomOriginConfig. A complex type that contains information

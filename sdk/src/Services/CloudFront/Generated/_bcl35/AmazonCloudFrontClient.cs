@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-13.normal.json service model.
  */
 
 
@@ -394,6 +394,9 @@ namespace Amazon.CloudFront
         /// allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
@@ -1855,6 +1858,9 @@ namespace Amazon.CloudFront
         /// Your request contains more CNAMEs than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
