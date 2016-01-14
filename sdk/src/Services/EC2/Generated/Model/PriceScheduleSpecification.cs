@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the price for a Reserved instance.
+    /// Describes the price for a Reserved Instance.
     /// </summary>
     public partial class PriceScheduleSpecification
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency for transacting the Reserved instance resale. At this time, the only
+        /// The currency for transacting the Reserved Instance resale. At this time, the only
         /// supported currency is <code>USD</code>.
         /// </para>
         /// </summary>

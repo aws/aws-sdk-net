@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesModifications. 
         /// <para>
-        /// The Reserved instance modification information.
+        /// The Reserved Instance modification information.
         /// </para>
         /// </summary>
         public List<ReservedInstancesModification> ReservedInstancesModifications

@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesId. 
         /// <para>
-        /// The ID for the Reserved instances that were created as part of the modification request.
+        /// The ID for the Reserved Instances that were created as part of the modification request.
         /// This field is only available when the modification is fulfilled.
         /// </para>
         /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetConfiguration. 
         /// <para>
-        /// The target Reserved instances configurations supplied as part of the modification
+        /// The target Reserved Instances configurations supplied as part of the modification
         /// request.
         /// </para>
         /// </summary>
