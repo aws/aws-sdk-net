@@ -1,3 +1,11 @@
+### 3.1.38.0 (2016-01-14 21:41 UTC)
+* CloudFront (3.1.3.0)
+	* Enforce HTTPS-only connection between CloudFront and your origin webserver, support for TLSv1.1 and TLSv1.2 between CloudFront and your origin webserver, add or modify request headers forwarded from CloudFront to your origin webserver.
+* CloudWatchEvents (3.1.0.0)
+	* Added support for the new CloudWatch Events service. CloudWatch Events allows you to Monitor and rapidly react to changes in your AWS resources.
+* EC2 (3.1.9.0)
+	* Scheduled instances is a new EC2 service offering which allows customers to purchase reserved capacity for specific slots of time on a one-time or recurring basis.
+
 ### 3.1.37.0 (2016-01-12 20:08 UTC)
 * EC2 (3.1.8.0)
 	* Added support for DNS over classiclink.
