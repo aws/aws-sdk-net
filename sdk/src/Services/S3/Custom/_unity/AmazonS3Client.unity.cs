@@ -118,7 +118,7 @@ namespace Amazon.S3
             Uri uri = new Uri(url);
 
             IHttpRequest<string> webRequest = null;
-            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
                 webRequest = new UnityWwwRequest(uri);
             else
                 webRequest = new UnityRequest(uri);

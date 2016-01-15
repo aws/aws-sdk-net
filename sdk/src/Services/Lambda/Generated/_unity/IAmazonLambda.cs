@@ -112,6 +112,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteAlias operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlias operation on AmazonLambdaClient.</param>
@@ -128,6 +129,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteEventSourceMapping operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventSourceMapping operation on AmazonLambdaClient.</param>
@@ -164,6 +166,7 @@ namespace Amazon.Lambda
         /// <para>
         /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
         /// </para>
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="functionName">The Lambda function to delete.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -195,6 +198,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteFunction operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction operation on AmazonLambdaClient.</param>
@@ -516,6 +520,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the RemovePermission operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission operation on AmazonLambdaClient.</param>
@@ -532,6 +537,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateAlias operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias operation on AmazonLambdaClient.</param>
@@ -548,6 +554,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateEventSourceMapping operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourceMapping operation on AmazonLambdaClient.</param>
@@ -564,6 +571,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateFunctionCode operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionCode operation on AmazonLambdaClient.</param>
@@ -580,6 +588,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateFunctionConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionConfiguration operation on AmazonLambdaClient.</param>

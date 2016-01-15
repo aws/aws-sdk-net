@@ -44,6 +44,7 @@ namespace Amazon.S3
         /// To verify that all parts have been removed, so you don't get charged for the part
         /// storage, you should call the List Parts operation and ensure the parts list is empty.
         /// </para>
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of AbortMultipartUploadRequest used to execute the AbortMultipartUpload service method.</param>
         /// <param name="key">A property of AbortMultipartUploadRequest used to execute the AbortMultipartUpload service method.</param>
@@ -59,6 +60,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the AbortMultipartUpload operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartUpload operation on AmazonS3Client.</param>
@@ -75,6 +77,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the CompleteMultipartUpload operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartUpload operation on AmazonS3Client.</param>
@@ -91,6 +94,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a copy of an object that is already stored in Amazon S3.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
@@ -107,6 +111,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a copy of an object that is already stored in Amazon S3.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
@@ -124,6 +129,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyObject operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyObject operation on AmazonS3Client.</param>
@@ -140,6 +146,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Uploads a part by copying data from an existing object as data source.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
@@ -157,6 +164,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Uploads a part by copying data from an existing object as data source.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
@@ -175,6 +183,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the CopyPart operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CopyPart operation on AmazonS3Client.</param>
@@ -192,6 +201,7 @@ namespace Amazon.S3
         /// <summary>
         /// Deletes the bucket. All objects (including all object versions and Delete Markers)
         /// in the bucket must be deleted before the bucket itself can be deleted.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteBucketRequest used to execute the DeleteBucket service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -205,6 +215,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucket operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucket operation on AmazonS3Client.</param>
@@ -221,6 +232,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Deletes the policy from the bucket.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteBucketPolicyRequest used to execute the DeleteBucketPolicy service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -234,6 +246,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketPolicy operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy operation on AmazonS3Client.</param>
@@ -250,6 +263,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketReplication operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication operation on AmazonS3Client.</param>
@@ -266,6 +280,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Deletes the tags from the bucket.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteBucketTaggingRequest used to execute the DeleteBucketTagging service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -279,6 +294,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketTagging operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging operation on AmazonS3Client.</param>
@@ -295,6 +311,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// This operation removes the website configuration from the bucket.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteBucketWebsiteRequest used to execute the DeleteBucketWebsite service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -308,6 +325,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteBucketWebsite operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketWebsite operation on AmazonS3Client.</param>
@@ -324,6 +342,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Deletes the cors configuration information set for the bucket.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -337,6 +356,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteCORSConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration operation on AmazonS3Client.</param>
@@ -353,6 +373,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Deletes the lifecycle configuration from the bucket.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteLifecycleConfigurationRequest used to execute the DeleteLifecycleConfiguration service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -366,6 +387,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteLifecycleConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleConfiguration operation on AmazonS3Client.</param>
@@ -384,6 +406,7 @@ namespace Amazon.S3
         /// Removes the null version (if there is one) of an object and inserts a delete marker,
         /// which becomes the latest version of the object. If there isn't a null version, Amazon
         /// S3 does not remove any objects.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
         /// <param name="key">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
@@ -400,6 +423,7 @@ namespace Amazon.S3
         /// Removes the null version (if there is one) of an object and inserts a delete marker,
         /// which becomes the latest version of the object. If there isn't a null version, Amazon
         /// S3 does not remove any objects.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
         /// <param name="key">A property of DeleteObjectRequest used to execute the DeleteObject service method.</param>
@@ -415,6 +439,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteObject operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject operation on AmazonS3Client.</param>
@@ -593,6 +618,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetBucketReplication operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetBucketReplication operation on AmazonS3Client.</param>
@@ -817,6 +843,7 @@ namespace Amazon.S3
         /// The HEAD operation retrieves metadata from an object without returning the object
         /// itself. This operation is useful if you're only interested in an object's metadata.
         /// To use HEAD, you must have READ access to the object.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
         /// <param name="key">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
@@ -833,6 +860,7 @@ namespace Amazon.S3
         /// The HEAD operation retrieves metadata from an object without returning the object
         /// itself. This operation is useful if you're only interested in an object's metadata.
         /// To use HEAD, you must have READ access to the object.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
         /// <param name="key">A property of GetObjectMetadataRequest used to execute the GetObjectMetadata service method.</param>
@@ -848,6 +876,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetObjectMetadata operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetObjectMetadata operation on AmazonS3Client.</param>
@@ -902,6 +931,7 @@ namespace Amazon.S3
         /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
         /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
         /// </para>
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of InitiateMultipartUploadRequest used to execute the InitiateMultipartUpload service method.</param>
         /// <param name="key">A property of InitiateMultipartUploadRequest used to execute the InitiateMultipartUpload service method.</param>
@@ -916,6 +946,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the InitiateMultipartUpload operation on AmazonS3Client.</param>
@@ -948,6 +979,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// This operation lists in-progress multipart uploads.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of ListMultipartUploadsRequest used to execute the ListMultipartUploads service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -961,6 +993,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// This operation lists in-progress multipart uploads.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of ListMultipartUploadsRequest used to execute the ListMultipartUploads service method.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix.</param>
@@ -975,6 +1008,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListMultipartUploads operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartUploads operation on AmazonS3Client.</param>
@@ -1036,6 +1070,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Lists the parts that have been uploaded for a specific multipart upload.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of ListPartsRequest used to execute the ListParts service method.</param>
         /// <param name="key">A property of ListPartsRequest used to execute the ListParts service method.</param>
@@ -1051,6 +1086,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListParts operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ListParts operation on AmazonS3Client.</param>
@@ -1110,6 +1146,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutACL operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutACL operation on AmazonS3Client.</param>
@@ -1126,6 +1163,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a new bucket.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutBucketRequest used to execute the PutBucket service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -1139,6 +1177,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucket operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucket operation on AmazonS3Client.</param>
@@ -1155,6 +1194,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketLogging operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketLogging operation on AmazonS3Client.</param>
@@ -1171,6 +1211,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketNotification operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketNotification operation on AmazonS3Client.</param>
@@ -1188,6 +1229,7 @@ namespace Amazon.S3
         /// <summary>
         /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
         /// request completely replaces it.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutBucketPolicyRequest used to execute the PutBucketPolicy service method.</param>
         /// <param name="policy">The bucket policy as a JSON document.</param>
@@ -1203,6 +1245,7 @@ namespace Amazon.S3
         /// <summary>
         /// Replaces a policy on a bucket. If the bucket already has a policy, the one in this
         /// request completely replaces it.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutBucketPolicyRequest used to execute the PutBucketPolicy service method.</param>
         /// <param name="policy">The bucket policy as a JSON document.</param>
@@ -1218,6 +1261,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketPolicy operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketPolicy operation on AmazonS3Client.</param>
@@ -1234,6 +1278,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketReplication operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication operation on AmazonS3Client.</param>
@@ -1253,6 +1298,7 @@ namespace Amazon.S3
         /// pays for downloads from the bucket. This configuration parameter enables the bucket
         /// owner (only) to specify that the person requesting the download will be charged for
         /// the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutBucketRequestPaymentRequest used to execute the PutBucketRequestPayment service method.</param>
         /// <param name="requestPaymentConfiguration">A property of PutBucketRequestPaymentRequest used to execute the PutBucketRequestPayment service method.</param>
@@ -1267,6 +1313,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketRequestPayment operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketRequestPayment operation on AmazonS3Client.</param>
@@ -1283,6 +1330,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Sets the tags for a bucket.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
         /// <param name="tagSet">A property of PutBucketTaggingRequest used to execute the PutBucketTagging service method.</param>
@@ -1297,6 +1345,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketTagging operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketTagging operation on AmazonS3Client.</param>
@@ -1313,6 +1362,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketVersioning operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning operation on AmazonS3Client.</param>
@@ -1329,6 +1379,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Set the website configuration for a bucket.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutBucketWebsiteRequest used to execute the PutBucketWebsite service method.</param>
         /// <param name="websiteConfiguration">A property of PutBucketWebsiteRequest used to execute the PutBucketWebsite service method.</param>
@@ -1343,6 +1394,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutBucketWebsite operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutBucketWebsite operation on AmazonS3Client.</param>
@@ -1359,6 +1411,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Sets the cors configuration for a bucket.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
         /// <param name="configuration">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
@@ -1373,6 +1426,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutCORSConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration operation on AmazonS3Client.</param>
@@ -1390,6 +1444,7 @@ namespace Amazon.S3
         /// <summary>
         /// Sets lifecycle configuration for your bucket. If a lifecycle configuration exists,
         /// it replaces it.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
         /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
@@ -1404,6 +1459,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutLifecycleConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration operation on AmazonS3Client.</param>
@@ -1420,6 +1476,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutObject operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the PutObject operation on AmazonS3Client.</param>
@@ -1512,6 +1569,7 @@ namespace Amazon.S3
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadPart operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UploadPart operation on AmazonS3Client.</param>

@@ -72,7 +72,7 @@ namespace Amazon
         /// UnityWebRequest API is allows you access to more AWS Services 
         /// but is restricted to Versions of Unity > 5.3
         /// </summary>
-        public static HttpWebRequestApiOption WebRequestApiOption
+        public static HttpClientOption HttpClient
         {
             get;
             set;
@@ -82,12 +82,12 @@ namespace Amazon
         /// <summary>
         /// The Unity Api used for making HTTP calls
         /// </summary>
-        public enum HttpWebRequestApiOption
+        public enum HttpClientOption
         {
             /// <summary>
-            /// Uses UnityEngined.WWW
+            /// Uses UnityEngine.WWW
             /// </summary>
-            WWW = 0,
+            UnityWWW = 0,
 
             /// <summary>
             /// Uses UnityEngine.Experimental.Networking.UnityWebRequest

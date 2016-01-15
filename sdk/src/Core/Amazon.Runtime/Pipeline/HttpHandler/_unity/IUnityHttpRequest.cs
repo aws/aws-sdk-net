@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Amazon.Runtime
 {
-    public partial interface IHttpRequest<TRequestContent>
+    public interface IUnityHttpRequest
     {
         /// <summary>
         /// The content to be sent in the request body.

@@ -121,12 +121,12 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="request"></param>
         /// <returns>IEnumerator which indicated if the operation is pending.</returns>
-        IEnumerator InvokeRequest(IHttpRequest<string> request)
+        IEnumerator InvokeRequest(IUnityHttpRequest request)
         {
             // Fire the request
-            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
             {
-                var wwwRequest = new WWW(request.RequestUri.AbsoluteUri,
+                var wwwRequest = new WWW((request as UnityWwwRequest).RequestUri.AbsoluteUri,
                     request.RequestContent, request.Headers);
                 request.WwwRequest = wwwRequest;
 
@@ -136,7 +136,9 @@ namespace Amazon.Runtime.Internal
             }
             else
             {
-                var unityWebRequest = new UnityEngine.Experimental.Networking.UnityWebRequest(request.RequestUri.AbsoluteUri, request.Method);
+                var unityWebRequest = new UnityEngine.Experimental.Networking.UnityWebRequest(
+                    (request as UnityRequest).RequestUri.AbsoluteUri,
+                    (request as UnityRequest).Method);
                 unityWebRequest.downloadHandler = new UnityEngine.Experimental.Networking.DownloadHandlerBuffer();
                 if (request.RequestContent != null && request.RequestContent.Length > 0)
                     unityWebRequest.uploadHandler = new UnityEngine.Experimental.Networking.UploadHandlerRaw(request.RequestContent);

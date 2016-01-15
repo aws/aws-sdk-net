@@ -38,7 +38,7 @@ namespace Amazon.Runtime
     /// The interface for an HTTP request that is agnostic of the underlying HTTP API.
     /// </summary>
     /// <typeparam name="TRequestContent">The type used by the underlying HTTP API to represent the HTTP request content.</typeparam>
-    public partial interface IHttpRequest<TRequestContent> : IDisposable
+    public interface IHttpRequest<TRequestContent> : IDisposable
     {
         /// <summary>
         /// The HTTP method or verb.

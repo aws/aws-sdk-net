@@ -34,7 +34,7 @@ namespace <#=this.Config.Namespace#>
         AddSimpleClientMethodInterfacesForUnity(operation,false);
 #>
 
-<#AddUnityAsyncDocumentation(operation.Name);
+<#AddUnityAsyncDocumentation(operation.Name, !this.Config.ServiceModel.AvailableInWWW(operation));
 if(operation.IsDeprecated)
 		{
 #>

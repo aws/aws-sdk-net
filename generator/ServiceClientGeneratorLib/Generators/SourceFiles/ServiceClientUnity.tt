@@ -201,7 +201,7 @@ namespace <#=this.Config.Namespace#>
 		{
 			if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
 			{
-		this.FormatUnityOperationDocumentationSync(operation, false);
+		this.FormatUnityOperationDocumentationSync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
 				if(operation.IsDeprecated)
 				{
 #>
@@ -216,7 +216,7 @@ namespace <#=this.Config.Namespace#>
 <#
 			}
 
-		this.FormatUnityOperationDocumentationSync(operation, false);
+		this.FormatUnityOperationDocumentationSync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
 			if(operation.IsDeprecated)
 			{
 #>
@@ -230,9 +230,9 @@ namespace <#=this.Config.Namespace#>
 			if(!this.Config.ServiceModel.AvailableInWWW(operation))
 			{
 #>
-		    if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+		    if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
 		    {
-				throw new InvalidOperationException("<#=operation.Name#> is only allowed with UnityWebRequest api option");
+				throw new InvalidOperationException("<#=operation.Name#> is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
 		    }
 <#
 			}
@@ -249,7 +249,7 @@ namespace <#=this.Config.Namespace#>
         {
 #>
 <#
-        this.FormatUnityOperationDocumentationAsync(operation, false);
+        this.FormatUnityOperationDocumentationAsync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
 		if(operation.IsDeprecated)
 		{
 #>
@@ -267,7 +267,7 @@ namespace <#=this.Config.Namespace#>
         AddSimpleClientMethodsForUnity(operation,false);
 #>
 
-<#AddUnityAsyncDocumentation(operation.Name);
+<#AddUnityAsyncDocumentation(operation.Name, !this.Config.ServiceModel.AvailableInWWW(operation));
 		if(operation.IsDeprecated)
 		{
 #>
@@ -281,9 +281,9 @@ namespace <#=this.Config.Namespace#>
 			if(!this.Config.ServiceModel.AvailableInWWW(operation))
 			{
 #>
-		    if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+		    if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
 		    {
-				throw new InvalidOperationException("<#=operation.Name#> is only allowed with UnityWebRequest api option");
+				throw new InvalidOperationException("<#=operation.Name#> is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
 		    }
 <#
 			}

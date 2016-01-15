@@ -54,7 +54,7 @@ namespace Amazon.Runtime.Internal
     /// <summary>
     /// An IHttpRequest implementation for Unity's WWW API.
     /// </summary>
-    public sealed class UnityWwwRequest : IHttpRequest<string>
+    public sealed class UnityWwwRequest : IHttpRequest<string>, IUnityHttpRequest
     {
         /// <summary>
         /// The request URI.

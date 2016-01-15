@@ -226,7 +226,7 @@ namespace AWSSDK.IntegrationTests.S3
             string lastRequestId = null;
 
             var exception = new Exception();
-            var mre = new ManualResetEvent(false);
+            var mre = new AutoResetEvent(false);
 
             // Iterate through the objects in the bucket and delete them.
             do
@@ -238,9 +238,9 @@ namespace AWSSDK.IntegrationTests.S3
                    listVersionsResponse = result.Response;
                    mre.Set();
                }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
-
-                Assert.IsNull(exception);
                 mre.WaitOne();
+                Utils.AssertExceptionIsNull(exception);
+
 
                 lastRequestId = listVersionsResponse.ResponseMetadata.RequestId;
 
@@ -275,7 +275,7 @@ namespace AWSSDK.IntegrationTests.S3
                     mre.Set();
                 }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
                 mre.WaitOne();
-                Assert.IsNull(exception);
+                Utils.AssertExceptionIsNull(exception);
 
                 // Set the markers to get next set of objects from the bucket.
                 listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
@@ -294,7 +294,9 @@ namespace AWSSDK.IntegrationTests.S3
                 exception = result.Exception;
                 mre.Set();
             }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
-            Assert.IsNull(exception);
+
+            mre.WaitOne();
+            Utils.AssertExceptionIsNull(exception);
         }
     }
 }

@@ -410,7 +410,7 @@ namespace Amazon.Runtime
             IHttpRequestFactory<string> httpRequestFactory = null;
             HttpHandler<string> httpHandler = null;
 
-            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
             {
                 httpRequestFactory = new UnityWwwRequestFactory();
                 httpHandler = new HttpHandler<string>(httpRequestFactory, this);

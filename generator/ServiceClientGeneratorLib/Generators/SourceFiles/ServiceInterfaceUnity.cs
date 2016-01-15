@@ -99,7 +99,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n");
             
             #line 37 "C:\d\cc\unitywebrequest\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceUnity.tt"
-AddUnityAsyncDocumentation(operation.Name);
+AddUnityAsyncDocumentation(operation.Name, !this.Config.ServiceModel.AvailableInWWW(operation));
 if(operation.IsDeprecated)
 		{
 

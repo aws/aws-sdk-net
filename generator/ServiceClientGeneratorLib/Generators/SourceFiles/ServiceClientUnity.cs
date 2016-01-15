@@ -507,7 +507,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
 		{
 			if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
 			{
-		this.FormatUnityOperationDocumentationSync(operation, false);
+		this.FormatUnityOperationDocumentationSync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
 				if(operation.IsDeprecated)
 				{
 
@@ -564,7 +564,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
 
 			}
 
-		this.FormatUnityOperationDocumentationSync(operation, false);
+		this.FormatUnityOperationDocumentationSync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
 			if(operation.IsDeprecated)
 			{
 
@@ -618,15 +618,16 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("\t\t    if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WW" +
-                    "W)\r\n\t\t    {\r\n\t\t\t\tthrow new InvalidOperationException(\"");
+            this.Write("\t\t    if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)\r\n\t\t    {" +
+                    "\r\n\t\t\t\tthrow new InvalidOperationException(\"");
             
             #line 235 "C:\d\cc\unitywebrequest\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write(" is only allowed with UnityWebRequest api option\");\r\n\t\t    }\r\n");
+            this.Write(" is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option\");\r\n" +
+                    "\t\t    }\r\n");
             
             #line 237 "C:\d\cc\unitywebrequest\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
@@ -678,7 +679,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line 251 "C:\d\cc\unitywebrequest\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 
-        this.FormatUnityOperationDocumentationAsync(operation, false);
+        this.FormatUnityOperationDocumentationAsync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
 		if(operation.IsDeprecated)
 		{
 
@@ -749,7 +750,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n");
             
             #line 270 "C:\d\cc\unitywebrequest\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-AddUnityAsyncDocumentation(operation.Name);
+AddUnityAsyncDocumentation(operation.Name, !this.Config.ServiceModel.AvailableInWWW(operation));
 		if(operation.IsDeprecated)
 		{
 
@@ -817,15 +818,16 @@ AddUnityAsyncDocumentation(operation.Name);
             
             #line default
             #line hidden
-            this.Write("\t\t    if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WW" +
-                    "W)\r\n\t\t    {\r\n\t\t\t\tthrow new InvalidOperationException(\"");
+            this.Write("\t\t    if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)\r\n\t\t    {" +
+                    "\r\n\t\t\t\tthrow new InvalidOperationException(\"");
             
             #line 286 "C:\d\cc\unitywebrequest\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write(" is only allowed with UnityWebRequest api option\");\r\n\t\t    }\r\n");
+            this.Write(" is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option\");\r\n" +
+                    "\t\t    }\r\n");
             
             #line 288 "C:\d\cc\unitywebrequest\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
 

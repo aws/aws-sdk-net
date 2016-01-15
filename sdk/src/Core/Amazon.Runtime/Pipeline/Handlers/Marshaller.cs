@@ -83,7 +83,7 @@ namespace Amazon.Runtime.Internal
             requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
             + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
 #else
-            if (AWSConfigs.WebRequestApiOption == AWSConfigs.HttpWebRequestApiOption.WWW)
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
                 requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
             + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
             else

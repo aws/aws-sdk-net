@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,8 @@
     <OutputType>Library</OutputType>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <AssemblyName>AWSSDK.Core</AssemblyName>
     <RootNamespace>Amazon</RootNamespace>
     <BaseIntermediateOutputPath>obj\unity</BaseIntermediateOutputPath>
@@ -127,7 +128,13 @@
     <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\_unity\*.cs">
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\_unity\IHttpRequest.unity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\_unity\UnityWebRequestFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\_unity\UnityWwwRequestFactory.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\*.cs">

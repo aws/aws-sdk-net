@@ -52,11 +52,19 @@
     }
 
 	// Generates documentation for async calls for unity based on the operation name
-	public void AddUnityAsyncDocumentation(string operationName)
+	public void AddUnityAsyncDocumentation(string operationName, bool isSupportedOnlyByUnityWebRequest = false)
     {
 #>
         /// <summary>
         /// Initiates the asynchronous execution of the <#=operationName#> operation.
+<#+
+		if(isSupportedOnlyByUnityWebRequest)
+		{
+#>
+		/// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+<#+
+		}
+#>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the <#=operationName#> operation on Amazon<#=this.Config.BaseName#>Client.</param>
@@ -65,6 +73,7 @@
         ///          procedure using the AsyncState property.</param>
 <#+
     }
+
 
     // Adds documentation to the begin operation based on the name
     public void AddBeginAsyncDocumentation(string operationName)
@@ -174,18 +183,18 @@
         FormatOperationDocumentationHelper(operation, includeRequest, true, false);
     }
 
-	public void FormatUnityOperationDocumentationSync(Operation operation, bool includeRequest)
+	public void FormatUnityOperationDocumentationSync(Operation operation, bool includeRequest,bool isSupportedOnlyByUnityWebRequest = false)
 	{
-		FormatOperationDocumentationHelper(operation, includeRequest, false, false);
+		FormatOperationDocumentationHelper(operation, includeRequest, false, false, isSupportedOnlyByUnityWebRequest);
 	}
 	
-	public void FormatUnityOperationDocumentationAsync(Operation operation, bool includeRequest)
+	public void FormatUnityOperationDocumentationAsync(Operation operation, bool includeRequest,bool isSupportedOnlyByUnityWebRequest = false)
 	{
-		FormatOperationDocumentationHelper(operation, includeRequest, true, true);
+		FormatOperationDocumentationHelper(operation, includeRequest, true, true, isSupportedOnlyByUnityWebRequest);
 	}
 
     // Documents the operation in a client or interface and optionally includes request param
-    private void FormatOperationDocumentationHelper(Operation operation, bool includeRequest, bool isAsync, bool isUnity)
+    private void FormatOperationDocumentationHelper(Operation operation, bool includeRequest, bool isAsync, bool isUnity, bool isSupportedOnlyByUnityWebRequest = false)
     {
         var documentation = CleanupDocumentation(operation.Documentation);
 
@@ -194,6 +203,12 @@
         /// <summary>
 <#+
         WriteCommentBlock("        ", documentation);
+		if(isUnity && isSupportedOnlyByUnityWebRequest)
+		{
+#>
+		/// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+<#+
+		}
 #>
         /// </summary>
 <#+
@@ -245,7 +260,7 @@
     }
 
         // Generates operation documentation with a param tag for each member in the list
-        public void FormatUnityOperationDocumentation(Operation operation, List<Member> members, bool isSync)
+        public void FormatUnityOperationDocumentation(Operation operation, List<Member> members, bool isSync, bool isSupportedOnlyByUnityWebRequest = false)
     {
         var documentation = CleanupDocumentation(operation.Documentation);
 
@@ -254,6 +269,12 @@
         /// <summary>
 <#+
         WriteCommentBlock("        ", documentation);
+		if(isSupportedOnlyByUnityWebRequest)
+		{
+#>
+		/// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+<#+
+		}
 #>
         /// </summary>
 <#+  foreach(var item in members)
@@ -559,7 +580,7 @@ foreach (var member in docMembers)
                 string currentParams = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetSimpleParameters(form, members);
                 var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
 
-        this.FormatUnityOperationDocumentation(operation, docMembers, isSync);
+        this.FormatUnityOperationDocumentation(operation, docMembers, isSync, !this.Config.ServiceModel.AvailableInWWW(operation));
         if (isSync)
         {
 			if(operation.IsDeprecated)
@@ -678,7 +699,7 @@ foreach (var member in docMembers)
                 string currentParams = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetSimpleParameters(form, members);
                 var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
 
-        this.FormatUnityOperationDocumentation(operation, docMembers, isSync);
+        this.FormatUnityOperationDocumentation(operation, docMembers, isSync, !this.Config.ServiceModel.AvailableInWWW(operation));
         if (isSync)
         {
 					if(operation.IsDeprecated)

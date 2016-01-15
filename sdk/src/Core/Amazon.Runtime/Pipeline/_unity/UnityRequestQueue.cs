@@ -30,7 +30,7 @@ namespace Amazon.Runtime.Internal
         private static readonly object _callbacksLock = new object();
         private static readonly object _mainThreadCallbackLock = new object();
 
-        private Queue<IHttpRequest<string>> _requests = new Queue<IHttpRequest<string>>();
+        private Queue<IUnityHttpRequest> _requests = new Queue<IUnityHttpRequest>();
         private Queue<RuntimeAsyncResult> _callbacks = new Queue<RuntimeAsyncResult>();
         private Queue<Action> _mainThreadCallbacks = new Queue<Action>();
 
@@ -55,7 +55,7 @@ namespace Amazon.Runtime.Internal
         /// Unity 
         /// </summary>
         /// <param name="request">An instance of UnityWebRequest.</param>
-        public void EnqueueRequest(IHttpRequest<string> request)
+        public void EnqueueRequest(IUnityHttpRequest request)
         {
             lock (_requestsLock)
             {
@@ -67,9 +67,9 @@ namespace Amazon.Runtime.Internal
         /// Dequeues a request from the queue of pending requests.
         /// </summary>
         /// <returns>An instance of UnityWebRequest.</returns>
-        public IHttpRequest<string> DequeueRequest()
+        public IUnityHttpRequest DequeueRequest()
         {
-            IHttpRequest<string> request = null;
+            IUnityHttpRequest request = null;
             lock (_requestsLock)
             {
                 if (_requests.Count > 0)
