@@ -438,5 +438,24 @@ namespace Amazon.Runtime.Internal
         {
             // NOP since HttWebRequest does not implement IDisposable.
         }
+
+        /// <summary>
+        /// Sets up the progress listeners
+        /// </summary>
+        /// <param name="originalStream">The content stream</param>
+        /// <param name="progressUpdateInterval">The internal for publishing progress</param>
+        /// <param name="sender">The objects which is trigerring the progress changes</param>
+        /// <param name="callback">The callback which will be invoked when the progress changed event is trigerred</param>
+        public void SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
+        {
+            if (callback != null)
+            {
+                var eventStream = new EventStream(originalStream, true);
+                var tracker = new StreamReadTracker(sender, callback, originalStream.Length,
+                    progressUpdateInterval);
+                eventStream.OnRead += tracker.ReadProgress;
+                originalStream = eventStream;
+            }
+        }
     }
 }

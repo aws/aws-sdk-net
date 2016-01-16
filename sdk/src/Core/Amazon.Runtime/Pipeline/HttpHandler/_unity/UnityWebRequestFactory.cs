@@ -19,6 +19,7 @@ using Amazon.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -114,12 +115,14 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public string Method { get; set; }
 
+        private StreamReadTracker Tracker { get; set; }
+
         /// <summary>
         /// The contructor for UnityWebRequest.
         /// </summary>
         /// <param name="requestUri">Uri for the request.</param>
         public UnityWebRequest(Uri requestUri)
-        {         
+        {
             this.RequestUri = requestUri;
             this.Headers = new Dictionary<string, string>();
         }
@@ -139,7 +142,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="headers">A dictionary of header names and values.</param>
         public void SetRequestHeaders(IDictionary<string, string> headers)
-        {            
+        {
             foreach (var item in headers)
             {
                 this.Headers.Add(item);
@@ -284,6 +287,38 @@ namespace Amazon.Runtime.Internal
         public void Dispose()
         {
             // This class does not have any disposable resources.
+        }
+
+        /// <summary>
+        /// Sets up the progress listeners
+        /// </summary>
+        /// <param name="originalStream">The content stream</param>
+        /// <param name="progressUpdateInterval">The internal for publishing progress</param>
+        /// <param name="sender">The objects which is trigerring the progress changes</param>
+        /// <param name="callback">The callback which will be invoked when the progress changed event is trigerred</param>
+        public void SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
+        {
+            if (callback != null)
+            {
+                Tracker = new StreamReadTracker(sender, callback, originalStream.Length,
+                    progressUpdateInterval);
+            }
+        }
+        
+        internal void OnUploadProgressChanged(float progress)
+        {
+            if(Tracker!=null)
+            {
+                Tracker.ReadProgress(progress);
+            }
+        }
+
+        internal void OnDownloadProgressChanged(float progress)
+        {
+            if (Tracker != null)
+            {
+                Tracker.ReadProgress(progress);
+            }
         }
     }
 

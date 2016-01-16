@@ -372,13 +372,7 @@ namespace Amazon.Runtime.Internal
                 var originalStream = wrappedRequest.ContentStream;
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
                 if (callback != null)
-                {
-                    var eventStream = new EventStream(originalStream, true);
-                    var tracker = new StreamReadTracker(this.CallbackSender, callback, originalStream.Length,
-                        requestContext.ClientConfig.ProgressUpdateInterval);
-                    eventStream.OnRead += tracker.ReadProgress;
-                    originalStream = eventStream;
-                }
+                    httpRequest.SetupProgressListeners(originalStream, requestContext.ClientConfig.ProgressUpdateInterval, this.CallbackSender, callback);
 
                 var inputStream = wrappedRequest.UseChunkEncoding && wrappedRequest.AWS4SignerResult != null
                     ? new ChunkedUploadWrapperStream(originalStream,

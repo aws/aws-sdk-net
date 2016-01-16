@@ -300,6 +300,11 @@ namespace AWSSDK_DotNet.IntegrationTests
             public void Dispose()
             {
             }
+
+            public void SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
+            {
+                
+            }
         }
         private class MockWebResponse
         {

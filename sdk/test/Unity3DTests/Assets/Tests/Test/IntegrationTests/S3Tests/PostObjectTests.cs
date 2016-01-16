@@ -9,6 +9,7 @@ using System.Threading;
 using AWSSDK.Tests.Framework;
 using System.IO;
 using UnityEngine;
+using Amazon.Runtime.Internal;
 
 namespace AWSSDK.IntegrationTests.S3
 {
@@ -168,5 +169,48 @@ namespace AWSSDK.IntegrationTests.S3
             Assert.IsNull(responseException);
         }
 
+
+        [Test]
+        public void LargeFilePostObjectTest()
+        {
+            AutoResetEvent ars = new AutoResetEvent(false);
+
+            Exception responseException = new Exception();
+            string fileName = string.Format(FileNameFormat, DateTime.Now.Ticks);
+            TextAsset largeFile = null;
+            byte[] buffer = null;
+            UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+            {
+                largeFile = Resources.Load("20MBFile") as TextAsset;
+                buffer = largeFile.bytes;
+                ars.Set();
+            });
+
+            ars.WaitOne();
+
+            var memoryStream = new MemoryStream(buffer);
+
+            var request = new PostObjectRequest()
+            {
+                Key = fileName,
+                Bucket = BucketName,
+                InputStream = memoryStream,
+                CannedACL = S3CannedACL.Private
+            };
+
+            request.StreamTransferProgress = (object sender, StreamTransferProgressArgs args) =>
+            {
+                Assert.LessOrEqual(args.PercentDone, 100);
+            };
+
+            Client.PostObjectAsync(request, (response) =>
+            {
+                responseException = response.Exception;
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = true });
+
+            ars.WaitOne();
+            Assert.IsNull(responseException);
+        }
     }
 }

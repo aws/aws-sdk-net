@@ -127,15 +127,30 @@ namespace Amazon.Runtime.Internal
             {
                 request.WwwRequest = new WWW(request.RequestUri.AbsoluteUri,
                 request.RequestContent, request.Headers);
+                bool uploadCompleted = false;
+                while (!request.WwwRequest.isDone)
+                {
+                    var uploadProgress = request.WwwRequest.uploadProgress;
+                    if (uploadProgress <= 1 && !uploadCompleted)
+                    {
+                        request.OnUploadProgressChanged(uploadProgress);
 
-                yield return request.WwwRequest;
+                        if (uploadCompleted == true)
+                            uploadCompleted = true;
+                    }
+                    else
+                    {
+                        request.OnDownloadProgressChanged(request.WwwRequest.progress);
+                    }
+                    yield return null;
+                }
                 request.Response = new UnityWebResponseData(request.WwwRequest);
             }
             else
             {
                 request.Exception = new WebException("Network Unavailable", WebExceptionStatus.ConnectFailure);
             }
-            
+
             if (request.IsSync)
             {
                 // For synchronous calls, signal the wait handle 

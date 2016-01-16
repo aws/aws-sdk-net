@@ -61,5 +61,31 @@ namespace Amazon.Runtime.Internal
                 }
             }
         }
+
+        public void ReadProgress(float progress)
+        {
+            if (callback == null)
+                return;
+
+            long bytesRead = (long)(progress * contentLength) - totalBytesRead;
+
+            if (bytesRead == 0)
+                return;
+
+            totalBytesRead = (long)(progress * contentLength);
+            totalIncrementTransferred += bytesRead;
+
+            if (totalIncrementTransferred >= this.progressUpdateInterval ||
+                    totalBytesRead == contentLength)
+            {
+                AWSSDKUtils.InvokeInBackground<StreamTransferProgressArgs>(
+                                            callback,
+                                            new StreamTransferProgressArgs(totalIncrementTransferred, totalBytesRead, contentLength),
+                                            sender);
+
+                totalIncrementTransferred = 0;
+            }
+        }
+
     }
 }

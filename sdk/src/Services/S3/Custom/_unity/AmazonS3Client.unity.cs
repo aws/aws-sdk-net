@@ -42,6 +42,9 @@ namespace Amazon.S3
         /// For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
         /// </remarks>
         /// <param name="request">Request object which describes the data to POST</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
         public void PostObjectAsync(PostObjectRequest request, AmazonServiceCallback<PostObjectRequest, PostObjectResponse> callback, AsyncOptions options = null)
         {
             options = options == null ? new AsyncOptions() : options;
@@ -145,8 +148,12 @@ namespace Amazon.S3
                 byte[] endBoundaryBytes = Encoding.UTF8.GetBytes(string.Format(CultureInfo.InvariantCulture, "\r\n--{0}--", boundary));
                 reqStream.Write(endBoundaryBytes, 0, endBoundaryBytes.Length);
                 webRequest.WriteToRequestBody(null, reqStream.ToArray(), headers);
-            }
 
+                var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).StreamUploadProgressCallback;
+                if (callback != null)
+                    webRequest.SetupProgressListeners(reqStream, 0, request, callback);
+            }
+            
             var executionContext = new AsyncExecutionContext(
                 new AsyncRequestContext(this.Config.LogMetrics)
                 {
