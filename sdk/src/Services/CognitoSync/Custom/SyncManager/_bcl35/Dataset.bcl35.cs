@@ -63,7 +63,7 @@ namespace Amazon.CognitoSync.SyncManager
                 return;
             }
 
-            SynchronizeHelperAsync();
+            SynchronizeHelper();
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.CognitoSync.SyncManager
         {
             if (NetworkInterface.GetIsNetworkAvailable())
             {
-                SynchronizeHelperAsync();
+                SynchronizeHelper();
             }
             else
             {
@@ -103,7 +103,7 @@ namespace Amazon.CognitoSync.SyncManager
         }
         #endregion
 
-        private void SynchronizeHelperAsync()
+        private void SynchronizeHelper()
         {
             try
             {
@@ -120,28 +120,7 @@ namespace Amazon.CognitoSync.SyncManager
 
                 waitingForConnectivity = false;
 
-                CognitoCredentials.GetIdentityId();
-
-                bool resume = true;
-                List<string> mergedDatasets = LocalMergedDatasets;
-                if (mergedDatasets.Count > 0)
-                {
-                    _logger.InfoFormat("Detected merge datasets - {0}", DatasetName);
-
-                    if (this.OnDatasetMerged != null)
-                    {
-                        resume = this.OnDatasetMerged(this, mergedDatasets);
-                    }
-                }
-
-                if (!resume)
-                {
-                    EndSynchronizeAndCleanup();
-
-                    FireSyncFailureEvent(new OperationCanceledException(string.Format("Sync canceled on merge for dataset - {0}", this.DatasetName)));
-                    return;
-                }
-                RunSyncOperationAsync(MAX_RETRY);
+                SynchornizeInternal();
             }
             catch (Exception e)
             {

@@ -72,13 +72,16 @@
     <Compile Include="Custom\SyncManager\Storage\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\SyncManager\Storage\_bcl45+pcl\*.cs">
+    <Compile Include="Custom\SyncManager\Storage\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\SyncManager\Storage\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\SyncManager\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\SyncManager\_pcl\*.cs">

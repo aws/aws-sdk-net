@@ -128,29 +128,8 @@ namespace Amazon.CognitoSync.SyncManager
                 waitingForConnectivity = false;
 
                 //make a call to fetch the identity id before the synchronization starts
-                await CognitoCredentials.GetIdentityIdAsync().ConfigureAwait(false);
-
-                // there could be potential merges that could have happened due to reparenting from the previous step,
-                // check and call onDatasetMerged
-
-                bool resume = true;
-                List<string> mergedDatasets = LocalMergedDatasets;
-                if (mergedDatasets.Count > 0)
-                {
-                    _logger.InfoFormat("Detected merge datasets - {0}", DatasetName);
-
-                    if (this.OnDatasetMerged != null)
-                    {
-                        resume = this.OnDatasetMerged(this, mergedDatasets);
-                    }
-                }
-
-                if (!resume)
-                {
-                    FireSyncFailureEvent(new OperationCanceledException(string.Format("Sync canceled on merge for dataset - {0}", this.DatasetName)));
-                    return;
-                }
-                await RunSyncOperationAsync(MAX_RETRY, cancellationToken).ConfigureAwait(false);
+                await SynchornizeInternalAsync(cancellationToken).ConfigureAwait(false);
+                
             }
             catch (Exception e)
             {
