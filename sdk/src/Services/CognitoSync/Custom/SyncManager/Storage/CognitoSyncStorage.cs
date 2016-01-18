@@ -23,14 +23,16 @@ using Amazon.CognitoSync.Model;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
-    /// <summary>
-    /// An <see cref="Amazon.CognitoSync.SyncManager.IRemoteDataStorage"/> implementation 
-    /// using Cognito Sync service on which we can invoke actions like creating a dataset, or record
-    /// </summary>
-    public partial class CognitoSyncStorage : IRemoteDataStorage, IDisposable
+    public partial class CognitoSyncStorage : IDisposable
     {
         private readonly string identityPoolId;
+
+#if UNITY
         private readonly AmazonCognitoSyncClient client;
+#else
+        private readonly IAmazonCognitoSync client;
+#endif
+
         private readonly CognitoAWSCredentials cognitoCredentials;
 
         #region Dispose

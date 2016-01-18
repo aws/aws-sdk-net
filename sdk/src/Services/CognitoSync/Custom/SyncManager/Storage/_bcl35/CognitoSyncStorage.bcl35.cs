@@ -23,12 +23,12 @@ using Amazon.Util.Internal;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
-    public partial class CognitoSyncStorage : IRemoteDataStorage, IDisposable
+    public partial class CognitoSyncStorage
     {
         #region GetDataset
 
-        private delegate List<DatasetMetadata> PopulateDatasetMetadataDelegate(AmazonCognitoSyncClient client, ListDatasetsRequest request);
-        private PopulateDatasetMetadataDelegate DatasetMetadataPopulator = delegate (AmazonCognitoSyncClient client, ListDatasetsRequest request)
+        private delegate List<DatasetMetadata> PopulateDatasetMetadataDelegate(IAmazonCognitoSync client, ListDatasetsRequest request);
+        private PopulateDatasetMetadataDelegate DatasetMetadataPopulator = delegate (IAmazonCognitoSync client, ListDatasetsRequest request)
         {
             var datasets = new List<DatasetMetadata>();
             string nextToken = null;
@@ -45,7 +45,8 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             } while (nextToken != null);
             return datasets;
         };
-        private ListDatasetsRequest PrepareListDatasetsRequest()
+
+        private static ListDatasetsRequest PrepareListDatasetsRequest()
         {
             ListDatasetsRequest request = new ListDatasetsRequest();
             // a large enough number to reduce # of requests
@@ -101,8 +102,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             request.MaxResults = 1024;
             return request;
         }
-        private delegate DatasetUpdates PopulateUpdatesDelegate(AmazonCognitoSyncClient client, ListRecordsRequest request);
-        private PopulateUpdatesDelegate UpdatesPopulator = delegate (AmazonCognitoSyncClient client, ListRecordsRequest request)
+
+        private delegate DatasetUpdates PopulateUpdatesDelegate(IAmazonCognitoSync client, ListRecordsRequest request);
+        private PopulateUpdatesDelegate UpdatesPopulator = delegate (IAmazonCognitoSync client, ListRecordsRequest request)
         {
             var records = new List<Record>();
             ListRecordsResponse response;
@@ -194,7 +196,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             return request;
         }
 
-        private List<Record> ExtractRecords(UpdateRecordsResponse response)
+        private static List<Record> ExtractRecords(UpdateRecordsResponse response)
         {
             List<Record> updatedRecords = new List<Record>();
             foreach (Amazon.CognitoSync.Model.Record remoteRecord in response.Records)

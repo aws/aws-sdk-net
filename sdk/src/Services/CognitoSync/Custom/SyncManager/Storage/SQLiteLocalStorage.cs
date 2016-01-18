@@ -72,6 +72,8 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         internal const string TABLE_DATASETS = "datasets";
         internal const string TABLE_RECORDS = "records";
 
+        public object CurrentCulture { get; private set; }
+
         static class DatasetColumns
         {
             internal const string IDENTITY_ID = "identity_id";
@@ -891,8 +893,8 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 {
                     if (!UpdateDatasetMetadataInternal(identityId, metadata))
                     {
-                        string message = string.Format("Failure to update dataset metadata with Identity Id {0}", identityId);
-                        _logger.Error(new Exception(message), message);
+                        string message = string.Format(CultureInfo.InvariantCulture, "Failure to update dataset metadata with Identity Id {0}", identityId);
+                        _logger.Error(new AmazonClientException(message), message);
                     }
                 }
             }

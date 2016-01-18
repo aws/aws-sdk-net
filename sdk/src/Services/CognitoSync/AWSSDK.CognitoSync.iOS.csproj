@@ -84,6 +84,9 @@
     <Compile Include="Custom\SyncManager\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\SyncManager\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\SyncManager\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -7,22 +7,10 @@ using Amazon.CognitoSync.Model;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
-    public partial class CognitoSyncStorage : IRemoteDataStorage, IDisposable
+    public partial class CognitoSyncStorage :  IDisposable
     {
         #region ListDataset
-        /// <summary>
-        /// Gets a list of <see cref="DatasetMetadata"/>
-        /// </summary>
-        /// <param name="cancellationToken">
-        ///  A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <exception cref="Amazon.CognitoSync.SyncManager.DataStorageException"></exception>
-        [Obsolete("This method is obsolete. Please use the ListDatasetMetadataAsync method instead.")]
-        public async Task<List<DatasetMetadata>> GetDatasetMetadataAsync(CancellationToken cancellationToken)
-        {
-            return await ListDatasetMetadataAsync(cancellationToken).ConfigureAwait(false);
-        }
-
+        
         /// <summary>
         /// Gets a list of <see cref="DatasetMetadata"/>
         /// </summary>

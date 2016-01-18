@@ -23,35 +23,19 @@ using Amazon.Util.Internal;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
-    public partial class CognitoSyncStorage : IRemoteDataStorage, IDisposable
+    public partial class CognitoSyncStorage: IDisposable
     {
         #region ListDataset
-        /// <summary>
-        /// Gets a list of <see cref="DatasetMetadata"/>
-        /// </summary>
-        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        [Obsolete("This method is obsolete. Please use the ListDatasetMetadataAsync method instead.")]
-        public void GetDatasetMetadataAsync(AmazonCognitoSyncCallback<List<DatasetMetadata>> callback, AsyncOptions options = null)
-        {
-            options = options ?? new AsyncOptions();
-            PopulateListDatasetMetadataAsync(null, new List<DatasetMetadata>(), callback, options);
-        }
 
         /// <summary>
         /// Gets a list of <see cref="DatasetMetadata"/>
         /// </summary>
-        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        public void ListDatasetMetadataAsync(AmazonCognitoSyncCallback<List<DatasetMetadata>> callback, AsyncOptions options = null)
+        public List<DatasetMetadata> ListDatasetMetadata()
         {
-            options = options ?? new AsyncOptions();
-            PopulateListDatasetMetadataAsync(null, new List<DatasetMetadata>(), callback, options);
+            return PopulateListDatasetMetadata(null, new List<DatasetMetadata>());
         }
 
-        private void PopulateListDatasetMetadataAsync(string nextToken, List<DatasetMetadata> datasets, AmazonCognitoSyncCallback<List<DatasetMetadata>> callback, AsyncOptions options)
+        private List<DatasetMetadata> PopulateListDatasetMetadata(string nextToken, List<DatasetMetadata> datasets)
         {
 
             ListDatasetsRequest request = new ListDatasetsRequest();
@@ -59,33 +43,21 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             request.MaxResults = 64;
             request.NextToken = nextToken;
 
-            client.ListDatasetsAsync(request, (responseObj) =>
+            ListDatasetsResponse response = client.ListDatasets(request);
+            foreach (Amazon.CognitoSync.Model.Dataset dataset in response.Datasets)
             {
-                Exception ex = responseObj.Exception;
-                ListDatasetsResponse response = responseObj.Response;
-                object obj = responseObj.state;
-                if (ex != null)
-                {
-                    InternalSDKUtils.AsyncExecutor(() => callback(new AmazonCognitoSyncResult<List<DatasetMetadata>>(null, ex, obj)), options);
-                }
-                else
-                {
-                    foreach (Amazon.CognitoSync.Model.Dataset dataset in response.Datasets)
-                    {
-                        datasets.Add(ModelToDatasetMetadata(dataset));
-                    }
+                datasets.Add(ModelToDatasetMetadata(dataset));
+            }
 
-                    nextToken = response.NextToken;
+            nextToken = response.NextToken;
 
-                    if (nextToken == null)
-                    {
-                        InternalSDKUtils.AsyncExecutor(() => callback(new AmazonCognitoSyncResult<List<DatasetMetadata>>(datasets, null, obj)), options);
-                        return;
-                    }
-                    PopulateListDatasetMetadataAsync(nextToken, datasets, callback, options);
-                }
-            },
-            options);
+            if (nextToken != null)
+            {
+
+                PopulateListDatasetMetadata(nextToken, datasets);
+            }
+
+            return datasets;
         }
         #endregion
 
@@ -100,16 +72,12 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         /// </summary>
         /// <param name="datasetName">Dataset name.</param>
         /// <param name="lastSyncCount">Last sync count.</param>
-        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        public void ListUpdatesAsync(string datasetName, long lastSyncCount, AmazonCognitoSyncCallback<DatasetUpdates> callback, AsyncOptions options = null)
+        public DatasetUpdates ListUpdates(string datasetName, long lastSyncCount)
         {
-            options = options ?? new AsyncOptions();
-            PopulateListUpdatesAsync(datasetName, lastSyncCount, new List<Record>(), null, callback, options);
+            return PopulateListUpdates(datasetName, lastSyncCount, new List<Record>(), null);
         }
 
-        private void PopulateListUpdatesAsync(string datasetName, long lastSyncCount, List<Record> records, string nextToken, AmazonCognitoSyncCallback<DatasetUpdates> callback, AsyncOptions options)
+        private DatasetUpdates PopulateListUpdates(string datasetName, long lastSyncCount, List<Record> records, string nextToken)
         {
             ListRecordsRequest request = new ListRecordsRequest();
             request.IdentityPoolId = identityPoolId;
@@ -120,53 +88,35 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             request.MaxResults = 1024;
             request.NextToken = nextToken;
 
-            client.ListRecordsAsync(request, (responseObj) =>
+
+            ListRecordsResponse listRecordsResponse = client.ListRecords(request);
+
+            foreach (Amazon.CognitoSync.Model.Record remoteRecord in listRecordsResponse.Records)
             {
-                ListRecordsResponse res = responseObj.Response;
-                Exception ex = responseObj.Exception;
-                object obj = responseObj.state;
+                records.Add(ModelToRecord(remoteRecord));
+            }
+            if (listRecordsResponse.NextToken != null)
+            {
+                // update last evaluated key
+                nextToken = listRecordsResponse.NextToken;
+                PopulateListUpdates(datasetName, lastSyncCount, records, nextToken);
+            }
 
-                if (ex != null)
-                {
-                    InternalSDKUtils.AsyncExecutor(() => callback(new AmazonCognitoSyncResult<DatasetUpdates>(null, ex, obj)), options); ;
-                }
-                else
-                {
-                    ListRecordsResponse listRecordsResponse = res;
-                    foreach (Amazon.CognitoSync.Model.Record remoteRecord in listRecordsResponse.Records)
-                    {
-                        //builder.addRecord(modelToRecord(remoteRecord));
-                        records.Add(ModelToRecord(remoteRecord));
-                    }
-                    if (listRecordsResponse.NextToken == null)
-                    {
-                        DatasetUpdates updates = new DatasetUpdates(
-                            datasetName,
-                            records,
-                            listRecordsResponse.DatasetSyncCount,
-                            listRecordsResponse.SyncSessionToken,
-                            listRecordsResponse.DatasetExists,
-                            listRecordsResponse.DatasetDeletedAfterRequestedSyncCount,
-                            listRecordsResponse.MergedDatasetNames
-                        );
 
-                        InternalSDKUtils.AsyncExecutor(() => callback(new AmazonCognitoSyncResult<DatasetUpdates>(updates, ex, obj)), options);
+            DatasetUpdates updates = new DatasetUpdates(
+                datasetName,
+                records,
+                listRecordsResponse.DatasetSyncCount,
+                listRecordsResponse.SyncSessionToken,
+                listRecordsResponse.DatasetExists,
+                listRecordsResponse.DatasetDeletedAfterRequestedSyncCount,
+                listRecordsResponse.MergedDatasetNames
+            );
 
-                        return;
-                    }
-                    // update last evaluated key
-                    nextToken = listRecordsResponse.NextToken;
-
-                    // emulating the while loop
-                    PopulateListUpdatesAsync(datasetName, lastSyncCount, records, nextToken, callback, new AsyncOptions() { ExecuteCallbackOnMainThread = false, State = obj });
-                }
-            },
-            options);
-
+            return updates;
         }
 
         #endregion
-
 
         #region PutRecords
         /// <summary>
@@ -179,17 +129,14 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         /// <returns>The records.</returns>
         /// <param name="datasetName">Dataset name.</param>
         /// <param name="records">Records.</param>
-        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        public void PutRecordsAsync(string datasetName, List<Record> records, string syncSessionToken, AmazonCognitoSyncCallback<List<Record>> callback, AsyncOptions options = null)
+        public List<Record> PutRecords(string datasetName, List<Record> records, string syncSessionToken)
         {
-            options = options ?? new AsyncOptions();
             UpdateRecordsRequest request = new UpdateRecordsRequest();
             request.DatasetName = datasetName;
             request.IdentityPoolId = identityPoolId;
             request.IdentityId = this.GetCurrentIdentityId();
             request.SyncSessionToken = syncSessionToken;
+            List<Record> updatedRecords = new List<Record>();
 
             // create patches
             List<RecordPatch> patches = new List<RecordPatch>();
@@ -199,33 +146,23 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
             request.RecordPatches = patches;
 
-            List<Record> updatedRecords = new List<Record>();
-
-            client.UpdateRecordsAsync(request, (responseObj) =>
+            try
             {
-                Exception ex = responseObj.Exception;
-                UpdateRecordsResponse updateRecordsResponse = responseObj.Response;
-                Exception putRecordsException = null;
-                object obj = responseObj.state;
-                if (ex != null)
-                {
-                    putRecordsException = HandleException(ex, "Failed to update records in dataset: " + datasetName);
-                }
-                else
-                {
-                    foreach (Amazon.CognitoSync.Model.Record remoteRecord in updateRecordsResponse.Records)
-                    {
-                        updatedRecords.Add(ModelToRecord(remoteRecord));
-                    }
-                }
+                UpdateRecordsResponse updateRecordsResponse = client.UpdateRecords(request);
 
-                InternalSDKUtils.AsyncExecutor(() => callback(new AmazonCognitoSyncResult<List<Record>>(updatedRecords, putRecordsException, obj)), options);
-
-            },
-            options);
+                foreach (Amazon.CognitoSync.Model.Record remoteRecord in updateRecordsResponse.Records)
+                {
+                    updatedRecords.Add(ModelToRecord(remoteRecord));
+                }
+            }
+            catch (Exception e)
+            {
+                throw HandleException(e, "Failed to update records in dataset: " + datasetName);
+            }
+            
+            return updatedRecords;
         }
         #endregion
-
 
         #region DeleteDataset
         /// <summary>
@@ -233,33 +170,23 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         /// </summary>
         /// <returns>The records.</returns>
         /// <param name="datasetName">Dataset name.</param>
-        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        public void DeleteDatasetAsync(string datasetName, AmazonCognitoSyncCallback callback, AsyncOptions options = null)
+        public void DeleteDataset(string datasetName)
         {
-            options = options ?? new AsyncOptions();
-
             DeleteDatasetRequest request = new DeleteDatasetRequest();
             request.IdentityPoolId = identityPoolId;
             request.IdentityId = this.GetCurrentIdentityId();
             request.DatasetName = datasetName;
 
-            client.DeleteDatasetAsync(request, (responseObj) =>
+            try
             {
-                if (responseObj.Exception != null)
-                {
-                    InternalSDKUtils.AsyncExecutor(() => callback(new AmazonCognitoSyncResult(HandleException(responseObj.Exception, "Failed to delete dataset: " + datasetName), responseObj.state)), options);
-                }
-                else
-                {
-                    InternalSDKUtils.AsyncExecutor(() => callback(new AmazonCognitoSyncResult(null, responseObj.state)), options);
-                }
-            },
-            options);
+                client.DeleteDataset(request);
+            }
+            catch (Exception e)
+            {
+                throw HandleException(e, "Failed to delete dataset: " + datasetName);
+            }
         }
         #endregion
-
 
         #region GetDatasetMetadata
         /// <summary>
@@ -267,35 +194,27 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         /// </summary>
         /// <returns>The records.</returns>
         /// <param name="datasetName">Dataset name.</param>
-        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
-        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        public void GetDatasetMetadataAsync(string datasetName, AmazonCognitoSyncCallback<DatasetMetadata> callback, AsyncOptions options = null)
+        public DatasetMetadata GetDatasetMetadata(string datasetName)
         {
-            options = options ?? new AsyncOptions();
 
             DescribeDatasetRequest request = new DescribeDatasetRequest();
             request.IdentityPoolId = identityPoolId;
             request.IdentityId = this.GetCurrentIdentityId();
             request.DatasetName = datasetName;
+            DatasetMetadata metadata = null;
 
-            client.DescribeDatasetAsync(request, (responseObj) =>
+            try
             {
-                Exception dataStorageException = null;
-                DatasetMetadata metadata = null;
-                if (responseObj.Exception != null)
-                {
-                    dataStorageException = new DataStorageException("Failed to get metadata of dataset: "
-                                                                        + datasetName, responseObj.Exception);
-                }
-                else
-                {
-                    metadata = ModelToDatasetMetadata(responseObj.Response.Dataset);
-                }
+                var describeResponse = client.DescribeDataset(request);
+                metadata = ModelToDatasetMetadata(describeResponse.Dataset);
+            }
+            catch (Exception e)
+            {
+                throw new DataStorageException("Failed to get metadata of dataset: "
+                                                                        + datasetName, e);
+            }
 
-                InternalSDKUtils.AsyncExecutor(() => callback(new AmazonCognitoSyncResult<DatasetMetadata>(metadata, dataStorageException, responseObj.state)), options);
-            },
-            options);
+            return metadata;
         }
 
         #endregion
