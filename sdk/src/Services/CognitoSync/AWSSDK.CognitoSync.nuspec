@@ -13,11 +13,6 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.CognitoIdentity" version="[3.1.0.6, 3.2)" />
-      <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
-        <dependency id="SQLitePCL" version="3.8.7.2" />
-      </group>
             
       <group targetFramework="net35">
         <dependency id="System.Data.SQLite" version="1.0.97.0" />
@@ -36,6 +31,13 @@
         <dependency id="AWSSDK.CognitoIdentity" version="[3.1.0.6, 3.2)" />
         <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
+
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+        <dependency id="AWSSDK.CognitoIdentity" version="[3.1.0.6, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="SQLitePCL" version="3.8.7.2" />
+      </group>
+
       <group>
         <dependency id="AWSSDK.CognitoIdentity" version="[3.1.0.6, 3.2)" />
         <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
@@ -54,6 +56,11 @@
     <file src=".\bin\Release\net45\AWSSDK.CognitoSync.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CognitoSync.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CognitoSync.pdb" target="lib\net45" />
+
+
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.CognitoSync.dll" target="lib\Xamarin.iOS10" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.CognitoSync.xml" target="lib\Xamarin.iOS10" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.CognitoSync.pdb" target="lib\Xamarin.iOS10" />
 
     <file src=".\bin\Release\pcl\AWSSDK.CognitoSync.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.CognitoSync.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />

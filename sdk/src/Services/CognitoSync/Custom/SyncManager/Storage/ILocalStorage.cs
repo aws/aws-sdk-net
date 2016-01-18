@@ -24,7 +24,7 @@ namespace Amazon.CognitoSync.SyncManager
     /// <summary>
     /// A local storage like a sqlite database on which we can invoke actions like creating a dataset, or record
     /// </summary>
-    public partial interface ILocalStorage
+    public partial interface ILocalStorage : IDisposable
     {
         /// <summary>
         /// Create a dataset 

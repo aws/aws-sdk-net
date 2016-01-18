@@ -117,11 +117,13 @@ namespace Amazon.CognitoSync.SyncManager
 
             this.CognitoCredentials = cognitoCredentials;
             Local = new SQLiteLocalStorage();
+            GC.SuppressFinalize(Local);
             Remote = new CognitoSyncStorage(CognitoCredentials, config);
 
             cognitoCredentials.IdentityChangedEvent += this.IdentityChanged;
 
             _logger = Logger.GetLogger(this.GetType());
+            _logger.Error(new Exception("csm ctor 1"), "csm ctor 1");
         }
 
         #endregion
@@ -133,6 +135,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// </summary>
         public void Dispose()
         {
+            _logger.Error(new Exception("csm dispose 1"), "csm dispose 1");
             Dispose(true);
             GC.SuppressFinalize(this);
         }
@@ -148,8 +151,12 @@ namespace Amazon.CognitoSync.SyncManager
             if (disposing)
             {
                 Remote.Dispose();
+                _logger.Error(new Exception("csm disposed 1"), "csm disposed 2");
+                Local.Dispose();
+                _logger.Error(new Exception("csm disposed 3"), "csm disposed 3");
                 CognitoCredentials.IdentityChangedEvent -= this.IdentityChanged;
                 _disposed = true;
+                _logger.Error(new Exception("csm disposed 4"), "csm disposed 4");
             }
         }
 

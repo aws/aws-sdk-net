@@ -539,51 +539,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void WipeDataTest()
         {
             string failureMessage = string.Empty;
-            CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
-            syncManager.WipeData(false);
-            Dataset d = syncManager.OpenOrCreateDataset("testDataset5");
-            d.Put("testKey", "testValue");
-            d.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
+            using (CognitoSyncManager syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint))
             {
-                failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
-                return false;
-            };
-            d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
-            {
-                failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
-            };
-
-            d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
-            {
-                syncManager.WipeData();
-                Dataset d2 = syncManager.OpenOrCreateDataset("testDataset5");
-                if (d2.Records.Count != 0)
-                {
-                    failureMessage += "Expecting dataset to be empty due to local data wipe.\n";
-                }
-                d2.Put("testKey", "newTestValue");
-                d2.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
+                syncManager.WipeData(false);
+                Dataset d = syncManager.OpenOrCreateDataset("testDataset5");
+                d.Put("testKey", "testValue");
+                d.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
                 {
                     failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
                     return false;
                 };
-                d2.OnSyncFailure += delegate (object sender2, SyncFailureEventArgs e2)
+                d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
                 {
                     failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
                 };
-                d2.OnSyncSuccess += delegate (object sender2, SyncSuccessEventArgs e2)
+
+                d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
                 {
-                    if (d2.Get("testKey") != "newTestValue")
+                    syncManager.WipeData();
+                    Dataset d2 = syncManager.OpenOrCreateDataset("testDataset5");
+                    if (d2.Records.Count != 0)
                     {
-                        failureMessage += "Value for key 'testKey' should be 'newTestValue'\n";
+                        failureMessage += "Expecting dataset to be empty due to local data wipe.\n";
                     }
+                    d2.Put("testKey", "newTestValue");
+                    d2.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
+                    {
+                        failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
+                        return false;
+                    };
+                    d2.OnSyncFailure += delegate (object sender2, SyncFailureEventArgs e2)
+                    {
+                        failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
+                    };
+                    d2.OnSyncSuccess += delegate (object sender2, SyncSuccessEventArgs e2)
+                    {
+                        if (d2.Get("testKey") != "newTestValue")
+                        {
+                            failureMessage += "Value for key 'testKey' should be 'newTestValue'\n";
+                        }
+                    };
+                    RunAsSync(async () => await d2.SynchronizeAsync());
                 };
-                RunAsSync(async () => await d2.SynchronizeAsync());
-            };
-            RunAsSync(async () => await d.SynchronizeAsync());
-            if (!string.IsNullOrEmpty(failureMessage))
-            {
-                Assert.Fail(failureMessage);
+                RunAsSync(async () => await d.SynchronizeAsync());
+                if (!string.IsNullOrEmpty(failureMessage))
+                {
+                    Assert.Fail(failureMessage);
+                }
             }
         }
 
