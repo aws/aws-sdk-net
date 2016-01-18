@@ -33,7 +33,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.BatchWrite.Execute"/>
         /// </summary>        
         /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param> 
         /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
@@ -59,7 +58,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.MultiTableBatchWrite.Execute"/>
         /// </summary>        
         /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
         /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>

@@ -388,12 +388,19 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
 
         #region dispose pattern implementation
+        /// <summary>
+        /// Dispose pattern implementation
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Dispose pattern implementation
+        /// </summary>
+        /// <param name="disposing">if disposing</param>
         protected virtual void Dispose(bool disposing)
         {
 

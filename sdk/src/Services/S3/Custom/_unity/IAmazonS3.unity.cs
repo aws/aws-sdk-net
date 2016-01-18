@@ -30,6 +30,8 @@ namespace Amazon.S3
         /// For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
         /// </remarks>
         /// <param name="request">Request object which describes the data to POST</param>
+        /// <param name="callback">The callback which needs to be invoked once the PostObjectRequest is completed</param>
+        /// <param name="options">An optional configuration parameter</param>
         void PostObjectAsync(PostObjectRequest request,AmazonServiceCallback<PostObjectRequest,PostObjectResponse> callback,  AsyncOptions options = null);
         
         #endregion

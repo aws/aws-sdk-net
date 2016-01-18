@@ -16,7 +16,6 @@
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Threading;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Internal
 {

@@ -37,7 +37,6 @@ namespace Amazon.Runtime.Internal
         /// Initializes a new instance of the
         /// <see cref="Amazon.Runtime.Internal.ClientContext"/> class.
         /// </summary>
-        /// <param name="config">Config <see cref="Amazon.Runtime.Internal.ClientContextConfig"/></param>
         public ClientContext(string appId)
         {
             this.AppID = appId;

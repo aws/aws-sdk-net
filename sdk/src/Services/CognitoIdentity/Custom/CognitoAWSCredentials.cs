@@ -414,7 +414,6 @@ namespace Amazon.CognitoIdentity
         /// is cleared and true is return.
         /// </summary>
         /// <param name="e"></param>
-        /// <param name="status"></param>
         /// <returns></returns>
         private bool ShouldRetry(AmazonCognitoIdentityException e)
         {

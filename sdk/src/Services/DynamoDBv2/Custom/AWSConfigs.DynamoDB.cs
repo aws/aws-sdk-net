@@ -303,7 +303,7 @@ namespace Amazon.Util
         /// <summary>
         /// Initializes a PropertyConfig object for a specific property
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="propertyName"></param>
         public PropertyConfig(string propertyName)
         {
             Name = propertyName;
