@@ -1,3 +1,11 @@
+### 3.1.39.0 (2016-01-19 20:54 UTC)
+* DeviceFarm (3.1.4.0)
+	* Api update with new enumeration values for uploads.
+* OpsWorks (3.1.1.5)
+	* Minor documentation update.
+* SecurityToken (3.1.2.0)
+	* Add support for RegionDisabledException.
+
 ### 3.1.38.0 (2016-01-14 21:41 UTC)
 * CloudFront (3.1.3.0)
 	* Enforce HTTPS-only connection between CloudFront and your origin webserver, support for TLSv1.1 and TLSv1.2 between CloudFront and your origin webserver, add or modify request headers forwarded from CloudFront to your origin webserver.
