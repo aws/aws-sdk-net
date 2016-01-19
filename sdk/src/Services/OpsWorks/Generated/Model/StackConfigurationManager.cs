@@ -56,8 +56,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value
-        /// is 11.4.
+        /// The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux stacks,
+        /// and to 12.2 for Windows stacks. The default value for Linux stacks is 11.4.
         /// </para>
         /// </summary>
         public string Version
