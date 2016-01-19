@@ -236,6 +236,14 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// XCTEST_TEST_PACKAGE: An XCode test package upload.
         /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+        /// </para>
         /// </li> </ul>
         /// </summary>
         public UploadType Type
