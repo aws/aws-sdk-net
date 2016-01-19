@@ -21,6 +21,7 @@ using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using Amazon.Util.Internal;
+using Amazon.Runtime.Internal;
 #if PCL || BCL45
 using System.Threading.Tasks;
 #endif
@@ -102,6 +103,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             _sessionStorageFileFullPath = InternalSDKUtils.DetermineAppLocalStoragePath(appID + _sessionStorageFileName);
 #elif PCL
             _sessionStorageFileFullPath = System.IO.Path.Combine(PCLStorage.FileSystem.Current.LocalStorage.Path, appID + _sessionStorageFileName);
+#elif UNITY
+            _sessionStorageFileFullPath = System.IO.Path.Combine(AmazonHookedPlatformInfo.Instance.PersistentDataPath, appID + _sessionStorageFileName);
 #endif
             _logger.InfoFormat("Initialize a new session. The session storage file is {0}.", _sessionStorageFileFullPath);
             _sessionStorage = new SessionStorage();
@@ -281,7 +284,41 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 Directory.CreateDirectory(directory);
             }
             File.WriteAllText(_sessionStorageFileFullPath, JsonMapper.ToJson(_sessionStorage));
+#elif UNITY
+            Action action = () =>
+            {
+                // create a file to store session info
+                if (!File.Exists(_sessionStorageFileFullPath))
+                {
+                    FileStream fs = File.Create(_sessionStorageFileFullPath);
+                    fs.Close();
+
+                    File.WriteAllText(_sessionStorageFileFullPath, JsonMapper.ToJson(_sessionStorage));
+                }
+                else
+                {
+                    File.WriteAllText(_sessionStorageFileFullPath, String.Empty);
+                    File.WriteAllText(_sessionStorageFileFullPath, JsonMapper.ToJson(_sessionStorage));
+                }
+            };
+
+
+            if (UnityInitializer.IsMainThread())
+            {
+                action();
+            }
+            else
+            {
+                ManualResetEvent e = new ManualResetEvent(false);
+                UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                {
+                    action();
+                    e.Set();
+                });
+                e.WaitOne();
+            }
 #endif
+
         }
 
         private void RetrieveSessionStorage()
@@ -308,6 +345,39 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             {
                 _logger.DebugFormat("Mobile Analytics session file does not exist.");
             }
+#elif UNITY
+            Action action = () =>
+            {
+                if (File.Exists(_sessionStorageFileFullPath))
+                {
+                    System.IO.StreamReader sessionFile = new System.IO.StreamReader(_sessionStorageFileFullPath);
+                    sessionString = sessionFile.ReadToEnd();
+                    sessionFile.Close();
+                    _logger.DebugFormat("Mobile Analytics retrieves session info: {0}", sessionString);
+                }
+                else
+                {
+                    _logger.DebugFormat("Mobile Analytics session file does not exist.");
+                }
+            };
+
+
+            if (UnityInitializer.IsMainThread())
+            {
+                action();
+            }
+            else
+            {
+                ManualResetEvent e = new ManualResetEvent(false);
+                UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                {
+                    action();
+                    e.Set();
+                });
+
+                e.WaitOne();
+            }
+
 #endif
             if (!string.IsNullOrEmpty(sessionString))
             {

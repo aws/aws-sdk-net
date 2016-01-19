@@ -16,7 +16,7 @@ using System.Threading;
 
 namespace AWSSDK.IntegrationTests.DynamoDB
 {
-    [TestFixture]
+    [TestFixture(TestOf = typeof(DynamoDBTests))]
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
     {
         public static string TableCacheIdentifier = typeof(Table).FullName;
