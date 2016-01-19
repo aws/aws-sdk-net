@@ -111,6 +111,7 @@ namespace Amazon.CognitoSync.SyncManager
 
             this.CognitoCredentials = cognitoCredentials;
             Local = new SQLiteLocalStorage();
+            GC.SuppressFinalize(Local);
             Remote = new CognitoSyncStorage(CognitoCredentials, config);
 
             cognitoCredentials.IdentityChangedEvent += this.IdentityChanged;
@@ -142,6 +143,7 @@ namespace Amazon.CognitoSync.SyncManager
             if (disposing)
             {
                 Remote.Dispose();
+                Local.Dispose();
                 CognitoCredentials.IdentityChangedEvent -= this.IdentityChanged;
                 _disposed = true;
             }

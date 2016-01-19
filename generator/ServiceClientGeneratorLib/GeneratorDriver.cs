@@ -986,6 +986,13 @@ namespace ServiceClientGenerator
             var nugetTitle = assemblyTitle;
             if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
                 nugetTitle += " " + Configuration.NugetPackageTitleSuffix;
+            bool iOSPclVariant = false;
+            bool androidPclVariant = false;
+            if (Configuration.PclVariants != null)
+            {
+                iOSPclVariant = Configuration.PclVariants.Contains("iOS");
+                androidPclVariant = Configuration.PclVariants.Contains("Android");
+            }
 
             var session = new Dictionary<string, object>
             {

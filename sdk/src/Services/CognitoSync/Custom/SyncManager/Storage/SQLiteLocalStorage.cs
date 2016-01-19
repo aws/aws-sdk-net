@@ -34,7 +34,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
     /// An implementation for <see cref="Amazon.CognitoSync.SyncManager.ILocalStorage"/> 
     /// using <see href="http://sqlite.org">SQLite</see>
     /// </summary>
-    public partial class SQLiteLocalStorage : ILocalStorage, IDisposable
+    public partial class SQLiteLocalStorage : ILocalStorage
     {
         internal Logger _logger;
 

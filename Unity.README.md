@@ -1,6 +1,6 @@
 ## Download the Unity Package
 
-You can directly download the Unity Packages build [here](<location of Unity Packages>)
+You can directly download the Unity Packages build [here](https://s3.amazonaws.com/aws-unity-sdk/latest/aws-unity-sdk-v3-preview.zip)
 
 ## Supported Services
 

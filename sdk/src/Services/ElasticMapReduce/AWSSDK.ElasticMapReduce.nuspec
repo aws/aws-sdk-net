@@ -12,9 +12,11 @@
     <tags>AWS Amazon cloud ElasticMapReduce aws-sdk-v3 EMR</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
+
       <group>
         <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
@@ -32,6 +34,7 @@
     <file src=".\bin\Release\net45\AWSSDK.ElasticMapReduce.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.ElasticMapReduce.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.ElasticMapReduce.pdb" target="lib\net45" />
+
 
     <file src=".\bin\Release\pcl\AWSSDK.ElasticMapReduce.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.ElasticMapReduce.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />

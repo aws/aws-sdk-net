@@ -43,13 +43,15 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             if (disposing)
             {
+#if !__IOS__
                 connection.Dispose();
+#endif
             }
         }
 
-        #endregion
+#endregion
 
-        #region helper methods
+#region helper methods
 
 
         private void SetupDatabase()
@@ -290,9 +292,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        #endregion
+#endregion
 
-        #region private methods
+#region private methods
         private static void BindData(ISQLiteStatement statement, params object[] parameters)
         {
             if (parameters != null)
@@ -337,7 +339,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                                new DateTime(long.Parse(stmt.GetText(RecordColumns.DEVICE_LAST_MODIFIED_TIMESTAMP), CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
                                stmt.GetInteger(RecordColumns.MODIFIED) == 1);
         }
-        #endregion
+#endregion
 
     }
 }

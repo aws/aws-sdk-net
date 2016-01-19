@@ -12,9 +12,11 @@
     <tags>AWS Amazon cloud S3 aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
+
       <group>
         <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
@@ -32,6 +34,7 @@
     <file src=".\bin\Release\net45\AWSSDK.S3.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.S3.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.S3.pdb" target="lib\net45" />
+
 
     <file src=".\bin\Release\pcl\AWSSDK.S3.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.S3.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
