@@ -446,6 +446,11 @@ namespace Amazon.SecurityToken
         /// </param>
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// create temporary credentials. The account administrator must activate STS in that
+        /// region using the IAM Console.
+        /// </exception>
         public Task<GetSessionTokenResponse> GetSessionTokenAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetSessionTokenAsync(new GetSessionTokenRequest(), cancellationToken);
