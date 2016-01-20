@@ -16,7 +16,6 @@
 //
 using Amazon.Util.Internal.PlatformServices;
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -52,7 +51,6 @@ namespace Amazon.CognitoSync.SyncManager
         #endregion
 
         #region Public Methods
-
         /// <summary>
         /// Synchronize <see cref="Dataset"/> between local storage and remote storage.
         /// </summary>
@@ -92,7 +90,6 @@ namespace Amazon.CognitoSync.SyncManager
         #endregion
 
         #region Private Methods
-
         private async void HandleNetworkChange(object sender, NetworkStatusEventArgs e)
         {
 
@@ -108,7 +105,6 @@ namespace Amazon.CognitoSync.SyncManager
         }
 
         #endregion
-
 
         internal async Task SynchronizeHelperAsync(CancellationToken cancellationToken)
         {

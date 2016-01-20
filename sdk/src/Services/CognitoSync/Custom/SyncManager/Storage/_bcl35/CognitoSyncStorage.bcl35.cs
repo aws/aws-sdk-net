@@ -23,6 +23,10 @@ using Amazon.Util.Internal;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
+    /// <summary>
+    /// Remote data storage using Cognito Sync service on which we can invoke
+    /// actions like creating a dataset or record.
+    /// </summary>
     public partial class CognitoSyncStorage
     {
         #region GetDataset

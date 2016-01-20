@@ -72,8 +72,6 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         internal const string TABLE_DATASETS = "datasets";
         internal const string TABLE_RECORDS = "records";
 
-        public object CurrentCulture { get; private set; }
-
         static class DatasetColumns
         {
             internal const string IDENTITY_ID = "identity_id";
