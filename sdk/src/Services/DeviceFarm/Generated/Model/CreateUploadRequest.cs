@@ -123,6 +123,10 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// CALABASH_TEST_PACKAGE: A Calabash test package upload.
         /// </para>
         /// </li> <li>
@@ -145,10 +149,14 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
         /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+        /// </para>
         /// </li> </ul> 
         /// <para>
         /// <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified,
-        /// AWS Device Farm throws an <a>ArgumentException</a> error.
+        /// AWS Device Farm throws an <code>ArgumentException</code> error.
         /// </para>
         /// </summary>
         public UploadType Type

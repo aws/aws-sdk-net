@@ -222,6 +222,10 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// CALABASH_TEST_PACKAGE: A Calabash test package upload.
         /// </para>
         /// </li> <li>
@@ -243,6 +247,10 @@ namespace Amazon.DeviceFarm.Model
         /// </li> <li>
         /// <para>
         /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
         /// </para>
         /// </li> </ul>
         /// </summary>
