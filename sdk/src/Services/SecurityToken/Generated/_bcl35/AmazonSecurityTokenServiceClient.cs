@@ -395,7 +395,8 @@ namespace Amazon.SecurityToken
         /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
         /// STS is not activated in the requested region for the account that is being asked to
         /// create temporary credentials. The account administrator must activate STS in that
-        /// region using the IAM Console.
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
         /// </exception>
         public AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
@@ -532,7 +533,8 @@ namespace Amazon.SecurityToken
         /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
         /// STS is not activated in the requested region for the account that is being asked to
         /// create temporary credentials. The account administrator must activate STS in that
-        /// region using the IAM Console.
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
         /// </exception>
         public AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
@@ -700,7 +702,8 @@ namespace Amazon.SecurityToken
         /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
         /// STS is not activated in the requested region for the account that is being asked to
         /// create temporary credentials. The account administrator must activate STS in that
-        /// region using the IAM Console.
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
         /// </exception>
         public AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
@@ -925,7 +928,8 @@ namespace Amazon.SecurityToken
         /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
         /// STS is not activated in the requested region for the account that is being asked to
         /// create temporary credentials. The account administrator must activate STS in that
-        /// region using the IAM Console.
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
         /// </exception>
         public GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
@@ -1018,7 +1022,8 @@ namespace Amazon.SecurityToken
         /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
         /// STS is not activated in the requested region for the account that is being asked to
         /// create temporary credentials. The account administrator must activate STS in that
-        /// region using the IAM Console.
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
         /// </exception>
         public GetSessionTokenResponse GetSessionToken()
         {
@@ -1073,7 +1078,8 @@ namespace Amazon.SecurityToken
         /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
         /// STS is not activated in the requested region for the account that is being asked to
         /// create temporary credentials. The account administrator must activate STS in that
-        /// region using the IAM Console.
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
         /// </exception>
         public GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
