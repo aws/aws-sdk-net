@@ -1,10 +1,6 @@
 ### 3.1.40.0 (2016-01-21 18:45 UTC)
 * AWS Certificate Manager (3.1.0.0)
-	* Further project cleanup
-* CloudFormation (3.1.2.0)
-	* API update for CloudFormation; new operation &#39;ContinueUpdateRollback&#39;.
-* CloudFront (3.1.4.0)
-	* Add support for using AWS Certificate Manager certs with CloudFront distributions.
+	* AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform. SSL is the standard protocol for encrypting communications and establishing the identity of a website over the Internet. ACM takes care of all of the complexity of obtaining, deploying, and renewing the digital certificates used with SSLCertificate Manager certs with CloudFront distributions.
 * DeviceFarm (3.1.4.1)
 	* Minor documentation update.
 * IoT (3.1.1.0)
