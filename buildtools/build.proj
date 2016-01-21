@@ -205,6 +205,7 @@
             Condition="Exists('$(InternalBuildTools)\references.targets') And $(RunKeyScan)" 
             DependsOnTargets="build-tools">
         <ItemGroup>
+            <PrivateKeyException Include="generator\ServiceModels\acm-2015-12-08.normal.json" />
             <PrivateKeyException Include="generator\ServiceModels\ec2-2014-02-01.normal.json" />
             <PrivateKeyException Include="generator\ServiceModels\iam-2010-05-08.normal.json" />
             <PrivateKeyException Include="sdk\test\UnitTests\Custom\EC2\PasswordTest.cs" />
