@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SecurityToken</id>
     <title>AWSSDK - AWS Security Token Service</title>
-    <version>3.1.2.0</version> 
+    <version>3.1.2.1</version> 
     <authors>Amazon Web Services</authors>
     <description>The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.</description>
     <language>en-US</language>

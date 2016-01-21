@@ -1,3 +1,17 @@
+### 3.1.40.0 (2016-01-21 18:45 UTC)
+* AWS Certificate Manager (3.1.0.0)
+	* Further project cleanup
+* CloudFormation (3.1.2.0)
+	* API update for CloudFormation; new operation &#39;ContinueUpdateRollback&#39;.
+* CloudFront (3.1.4.0)
+	* Add support for using AWS Certificate Manager certs with CloudFront distributions.
+* DeviceFarm (3.1.4.1)
+	* Minor documentation update.
+* IoT (3.1.1.0)
+	* IoT api update to support enabling and disabling topic rules, and return arns in some structures.
+* SecurityToken (3.1.2.1)
+	* Minor documentation update.
+
 ### 3.1.39.0 (2016-01-19 20:54 UTC)
 * DeviceFarm (3.1.4.0)
 	* Api update with new enumeration values for uploads.
