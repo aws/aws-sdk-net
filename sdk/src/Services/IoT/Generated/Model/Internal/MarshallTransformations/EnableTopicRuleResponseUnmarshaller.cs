@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetTopicRule operation
+    /// Response Unmarshaller for EnableTopicRule operation
     /// </summary>  
-    public class GetTopicRuleResponseUnmarshaller : JsonResponseUnmarshaller
+    public class EnableTopicRuleResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetTopicRuleResponse response = new GetTopicRuleResponse();
+            EnableTopicRuleResponse response = new EnableTopicRuleResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("rule", targetDepth))
-                {
-                    var unmarshaller = TopicRuleUnmarshaller.Instance;
-                    response.Rule = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ruleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RuleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -97,9 +80,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             return new AmazonIoTException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetTopicRuleResponseUnmarshaller _instance = new GetTopicRuleResponseUnmarshaller();        
+        private static EnableTopicRuleResponseUnmarshaller _instance = new EnableTopicRuleResponseUnmarshaller();        
 
-        internal static GetTopicRuleResponseUnmarshaller GetInstance()
+        internal static EnableTopicRuleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +90,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTopicRuleResponseUnmarshaller Instance
+        public static EnableTopicRuleResponseUnmarshaller Instance
         {
             get
             {

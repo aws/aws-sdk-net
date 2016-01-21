@@ -28,47 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The output from the GetTopicRule operation.
+    /// Container for the parameters to the EnableTopicRule operation.
+    /// Enables the specified rule.
     /// </summary>
-    public partial class GetTopicRuleResponse : AmazonWebServiceResponse
+    public partial class EnableTopicRuleRequest : AmazonIoTRequest
     {
-        private TopicRule _rule;
-        private string _ruleArn;
+        private string _ruleName;
 
         /// <summary>
-        /// Gets and sets the property Rule. 
+        /// Gets and sets the property RuleName. 
         /// <para>
-        /// The rule.
+        /// The name of the topic rule to enable.
         /// </para>
         /// </summary>
-        public TopicRule Rule
+        public string RuleName
         {
-            get { return this._rule; }
-            set { this._rule = value; }
+            get { return this._ruleName; }
+            set { this._ruleName = value; }
         }
 
-        // Check to see if Rule property is set
-        internal bool IsSetRule()
+        // Check to see if RuleName property is set
+        internal bool IsSetRuleName()
         {
-            return this._rule != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RuleArn. 
-        /// <para>
-        /// The rule ARN.
-        /// </para>
-        /// </summary>
-        public string RuleArn
-        {
-            get { return this._ruleArn; }
-            set { this._ruleArn = value; }
-        }
-
-        // Check to see if RuleArn property is set
-        internal bool IsSetRuleArn()
-        {
-            return this._ruleArn != null;
+            return this._ruleName != null;
         }
 
     }
