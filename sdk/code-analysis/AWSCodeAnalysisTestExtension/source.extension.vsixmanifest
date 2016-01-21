@@ -23,6 +23,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis" Path="|AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AWSSupport.CodeAnalysis" Path="|AWSSDK.AWSSupport.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AWSSupport.CodeAnalysis" Path="|AWSSDK.AWSSupport.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CertificateManager.CodeAnalysis" Path="|AWSSDK.CertificateManager.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CertificateManager.CodeAnalysis" Path="|AWSSDK.CertificateManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CloudFormation.CodeAnalysis" Path="|AWSSDK.CloudFormation.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CloudFormation.CodeAnalysis" Path="|AWSSDK.CloudFormation.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CloudFront.CodeAnalysis" Path="|AWSSDK.CloudFront.CodeAnalysis|"/>

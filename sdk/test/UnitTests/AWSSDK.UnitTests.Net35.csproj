@@ -308,6 +308,10 @@
       <Project>{E6221D2C-82C9-4701-9B47-262C1BE13069}</Project>
       <Name>AWSSDK.ECR.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net35.csproj">
+      <Project>{16A1EEDF-CD98-4844-B608-F3F120D7A542}</Project>
+      <Name>AWSSDK.CertificateManager.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudWatchEvents\AWSSDK.CloudWatchEvents.Net35.csproj">
       <Project>{968970D4-64AE-4067-AA9D-C258CE720B38}</Project>
       <Name>AWSSDK.CloudWatchEvents.Net35</Name>

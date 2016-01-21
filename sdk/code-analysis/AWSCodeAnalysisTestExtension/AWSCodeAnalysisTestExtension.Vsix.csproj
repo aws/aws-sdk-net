@@ -68,6 +68,10 @@
       <Project>{CF64C0A4-25F7-42E9-9B3D-632CB520B666}</Project>
       <Name>AWSSDK.AWSSupport.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CertificateManager/AWSSDK.CertificateManager.CodeAnalysis.csproj">
+      <Project>{0AB37C0F-A819-4054-9853-F5645C120F8D}</Project>
+      <Name>AWSSDK.CertificateManager.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CloudFormation/AWSSDK.CloudFormation.CodeAnalysis.csproj">
       <Project>{37B67435-4269-4917-A6D1-12D9478EA743}</Project>
       <Name>AWSSDK.CloudFormation.CodeAnalysis</Name>

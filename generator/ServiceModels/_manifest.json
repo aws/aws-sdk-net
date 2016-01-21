@@ -105,6 +105,15 @@
         {
             "active": true,
 
+            "model": "acm",
+            "base-name": "CertificateManager",
+            "region-lookup-name": "acm",
+            "authentication-service-name": "acm",
+            "synopsis": "AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform."
+        },
+        {
+            "active": true,
+
             "model": "apigateway",
             "base-name": "APIGateway",
             "region-lookup-name": "apigateway",
