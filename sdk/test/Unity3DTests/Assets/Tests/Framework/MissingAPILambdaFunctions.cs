@@ -27,6 +27,7 @@ namespace AWSSDK.Tests.Framework
             ""Action"": [
                 ""s3:CreateBucket"",
                 ""s3:DeleteBucket"",
+                ""s3:PutBucketVersioning"",
                 ""lambda:DeleteFunction""
             ],
             ""Resource"": ""*""
@@ -38,10 +39,11 @@ namespace AWSSDK.Tests.Framework
         private static readonly string CreateBucketFunctionName = "UnityTestUtilsCreateBucket";
         private static readonly string DeleteBucketFunctionName = "UnityTestUtilsDeleteBucket";
         private static readonly string DeleteLambdaFunctionFunctionName = "UnityTestUtilsDeleteLambdaFunction";
+        private static readonly string EnableBucketVersioningFunctionName = "UnityTestUtilsEnableBucketVersioning";
         // The third string in each array is a Base64 representation of the Zip file of
         // the Lambda function's code. See the comments for
         // UtilityMethods.CreateFunctionIfNotExists for more information.
-        private static List<string[]> FunctionNames = new List<string[]> 
+        private static List<string[]> FunctionNames = new List<string[]>
         {
             new string[] {
                 "UnityTestUtilsCreateBucket",
@@ -57,6 +59,11 @@ namespace AWSSDK.Tests.Framework
                 "UnityTestUtilsDeleteLambdaFunction",
                 "unitytestutils-deletelambdafunction",
                 "UEsDBBQAAAAIAG6CbEff3UROLQEAALwCAAAmAAAAdW5pdHl0ZXN0dXRpbHMtZGVsZXRlbGFtYmRhZnVuY3Rpb24uanONUb1uwyAQ3vMUdIJItpU06hKra6e0Q4dOWa7mnKJicAE7kSq/e8EkBCkZyoDE3ffH3QiGwNGSZ2LwZxAGGfXP0vJvuqwXi0YrqyVWUh8Y3WngQh0IjqhcaOOp18bZ6gsUl2i8SDuoxgmt2IwpiOc7PLkl+V0Qf0bvtoPuk8PLGfgGHXreDK/yYj0TREvYwy3johfO2aJqQUhGXwfrSG/0KDiSPc1JexoyB8qUwrzjwXdTgPjMrGPh33YRnhslpx4MdGHOV6k83PbOXKJEnSTkjPASCo9haVWksKsi9OIDjfX8LaGPq/VTudqUmzUtEsLED2/PP5/CkkM9alccJTq8hGAxdJGt1ZiCcHCQjyRMyjfy0s2kQr9O7Slc6YXS4n2qHZoGkbOcGqfiK9MfUEsBAhQAFAAAAAgAboJsR9/dRE4tAQAAvAIAACYAAAAAAAAAAAAAAAAAAAAAAHVuaXR5dGVzdHV0aWxzLWRlbGV0ZWxhbWJkYWZ1bmN0aW9uLmpzUEsFBgAAAAABAAEAVAAAAHEBAAAAAA=="
+            },
+            new string[] {
+                "UnityTestUtilsEnableBucketVersioning",
+                "unitytestutils-enablebucketversioning",
+                "UEsDBBQAAAAIABJyMkiPCi6JfAEAAEkDAAAoAAAAdW5pdHl0ZXN0dXRpbHMtZW5hYmxlYnVja2V0dmVyc2lvbmluZy5qc42SP0/DMBDF93wKMzmV2qgQxNCKASidKEJUYupikmtq1bWD/6RFqN+dc9zGATFwm3337v3il4ZpwvaG3BINH45rSCkeR6bc0sE0SQoljRKQCVWl9EmxksuKQAPS+jYcaqWtyTZMlgI0Llk7WViuZNrODAnqLRzsgHwlBKtBt3tXbME+sx3gfDuWxatpO8bXJL2Il2e1r9PCbM24SOnCGUtqrRpeAlnRKFlRz+cFx874FSok60zDsWcYLv5tFsb7Rp2TydFFwt6/bLbM07iR1fwNtEHhhNCr8fhmNM5H40s67CZ0oJyccGPD8Eoy6zScFuAIba57SpPPlS7ghdnN0n4KwAGrHRx9jmeymmm282lHpPBok14uceXJCkN/UHLNK6eZbdmj3NdifjcDARYQacYNexdQ9sB8LS2yG+w/ytDuuiGgY3jEJHxIVjsbeCJBGtiHvX9M6yEpmWX9zHyU2Bj8QvwRpe9PI0Bn7AuEgb+lxhUFQJn2pYEdb47fUEsBAhQAFAAAAAgAEnIySI8KLol8AQAASQMAACgAAAAAAAAAAAAAAAAAAAAAAHVuaXR5dGVzdHV0aWxzLWVuYWJsZWJ1Y2tldHZlcnNpb25pbmcuanNQSwUGAAAAAAEAAQBWAAAAwgEAAAAA"
             },
         };
 
@@ -117,6 +124,34 @@ namespace AWSSDK.Tests.Framework
                     break;
                 }
                 Thread.Sleep(TimeSpan.FromSeconds(30));
+            }
+            Utils.AssertStringIsNullOrEmpty(functionError);
+        }
+
+        public static void EnableBucketVersioning(string bucketName, RegionEndpoint region)
+        {
+            AutoResetEvent ars = new AutoResetEvent(false);
+            string functionError = null;
+            Exception responseException = new Exception();
+            string payload = string.Format(@"{{""BucketName"":""{0}"",""Region"":""{1}""}}", bucketName, region.SystemName);
+            LambdaClient.InvokeAsync(new InvokeRequest()
+            {
+                FunctionName = EnableBucketVersioningFunctionName,
+                InvocationType = InvocationType.RequestResponse,
+                Payload = payload
+            }, (response) =>
+            {
+                responseException = response.Exception;
+                if (responseException == null)
+                {
+                    functionError = response.Response.FunctionError;
+                }
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+            ars.WaitOne();
+            if (responseException != null)
+            {
+                throw responseException;
             }
             Utils.AssertStringIsNullOrEmpty(functionError);
         }

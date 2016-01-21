@@ -58,14 +58,14 @@ namespace AWSSDK.IntegrationTests.S3
             }
         }
 
-        public static void DeleteObjectHelper(AmazonS3Client client, string bucketName, string key)
+        public static void DeleteObjectHelper(AmazonS3Client client, string bucketName, string key, string versionId = null)
         {
             Exception responseException = null;
             AutoResetEvent ars = new AutoResetEvent(false);
             client.DeleteObjectsAsync(new DeleteObjectsRequest()
             {
                 BucketName = bucketName,
-                Objects = new List<KeyVersion> { new KeyVersion() { Key = key } }
+                Objects = new List<KeyVersion> { new KeyVersion() { Key = key, VersionId = versionId } }
             }, (response) =>
             {
                 responseException = response.Exception;
@@ -77,10 +77,10 @@ namespace AWSSDK.IntegrationTests.S3
 
         public static void CleanBucket(AmazonS3Client client, string bucketName)
         {
-            var s3ObjectList = ListObjectsHelper(client, bucketName);
-            foreach (var s3Object in s3ObjectList)
+            var s3ObjectVersionList = ListVersionsHelper(client, bucketName);
+            foreach (var s3ObjectVersion in s3ObjectVersionList)
             {
-                DeleteObjectHelper(client, bucketName, s3Object.Key);
+                DeleteObjectHelper(client, bucketName, s3ObjectVersion.Key, s3ObjectVersion.VersionId);
             }
         }
 
@@ -164,6 +164,32 @@ namespace AWSSDK.IntegrationTests.S3
                 throw responseException;
             }
             return s3Objects;
+        }
+
+        public static List<S3ObjectVersion> ListVersionsHelper(AmazonS3Client client, string bucketName)
+        {
+            AutoResetEvent ars = new AutoResetEvent(false);
+            Exception responseException = new Exception();
+            List<S3ObjectVersion> s3ObjectVersions = null;
+            client.ListVersionsAsync(new ListVersionsRequest()
+            {
+                BucketName = bucketName
+            }, (response) =>
+            {
+                responseException = response.Exception;
+                if (responseException == null)
+                {
+                    s3ObjectVersions = response.Response.Versions;
+                }
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
+
+            ars.WaitOne();
+            if (responseException != null)
+            {
+                throw responseException;
+            }
+            return s3ObjectVersions;
         }
 
         // Used for SimplePathPostObjectTest

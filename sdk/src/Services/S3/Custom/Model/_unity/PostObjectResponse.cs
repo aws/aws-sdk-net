@@ -25,5 +25,7 @@ namespace Amazon.S3.Model
     {
         public string RequestId { get; set; }
         public string HostId { get; set; }
+        public string VersionId { get; set; }
     }
 }
+    

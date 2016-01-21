@@ -1,0 +1,3394 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.Kinesis</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.Kinesis.AmazonKinesisConfig">
+            <summary>
+            Configuration for accessing Amazon Kinesis service
+            </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.AmazonKinesisConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.AmazonKinesisConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.AmazonKinesisConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.AmazonKinesisException">
+            <summary>
+             Common exception for the Kinesis service.
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonKinesisException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonKinesisException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonKinesisException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonKinesisException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonKinesisException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Kinesis.ShardIteratorType">
+            <summary>
+            Constants used for properties of type ShardIteratorType.
+            </summary>
+        </member>
+        <member name="F:Amazon.Kinesis.ShardIteratorType.AFTER_SEQUENCE_NUMBER">
+            <summary>
+            Constant AFTER_SEQUENCE_NUMBER for ShardIteratorType
+            </summary>
+        </member>
+        <member name="F:Amazon.Kinesis.ShardIteratorType.AT_SEQUENCE_NUMBER">
+            <summary>
+            Constant AT_SEQUENCE_NUMBER for ShardIteratorType
+            </summary>
+        </member>
+        <member name="F:Amazon.Kinesis.ShardIteratorType.LATEST">
+            <summary>
+            Constant LATEST for ShardIteratorType
+            </summary>
+        </member>
+        <member name="F:Amazon.Kinesis.ShardIteratorType.TRIM_HORIZON">
+            <summary>
+            Constant TRIM_HORIZON for ShardIteratorType
+            </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.ShardIteratorType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.ShardIteratorType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Kinesis.ShardIteratorType.op_Implicit(System.String)~Amazon.Kinesis.ShardIteratorType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.StreamStatus">
+            <summary>
+            Constants used for properties of type StreamStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.Kinesis.StreamStatus.ACTIVE">
+            <summary>
+            Constant ACTIVE for StreamStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Kinesis.StreamStatus.CREATING">
+            <summary>
+            Constant CREATING for StreamStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Kinesis.StreamStatus.DELETING">
+            <summary>
+            Constant DELETING for StreamStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Kinesis.StreamStatus.UPDATING">
+            <summary>
+            Constant UPDATING for StreamStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.StreamStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.StreamStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Kinesis.StreamStatus.op_Implicit(System.String)~Amazon.Kinesis.StreamStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.AddTagsToStreamRequest">
+            <summary>
+            Container for the parameters to the AddTagsToStream operation.
+            Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have
+            up to 10 tags. 
+            
+             
+            <para>
+            If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites
+            any existing tags that correspond to the specified tag keys.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.AddTagsToStreamRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.AddTagsToStreamRequest.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The set of key-value pairs to use to create the tags.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.AddTagsToStreamResponse">
+            <summary>
+            Empty class reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.CreateStreamRequest">
+            <summary>
+            Container for the parameters to the CreateStream operation.
+            Creates a Amazon Kinesis stream. A stream captures and transports data records that
+            are continuously emitted from different data sources or <i>producers</i>. Scale-out
+            within an Amazon Kinesis stream is explicitly supported by means of shards, which
+            are uniquely identified groups of data records in an Amazon Kinesis stream.
+            
+             
+            <para>
+            You specify and control the number of shards that a stream is composed of. Each shard
+            can support reads up to 5 transactions per second, up to a maximum data read total
+            of 2 MB per second. Each shard can support writes up to 1,000 records per second,
+            up to a maximum data write total of 1 MB per second. You can add shards to a stream
+            if the amount of data input increases and you can remove shards if the amount of data
+            input decreases.
+            </para>
+             
+            <para>
+            The stream name identifies the stream. The name is scoped to the AWS account used
+            by the application. It is also scoped by region. That is, two streams in two different
+            accounts can have the same name, and two streams in the same account, but in two different
+            regions, can have the same name. 
+            </para>
+             
+            <para>
+            <code>CreateStream</code> is an asynchronous operation. Upon receiving a <code>CreateStream</code>
+            request, Amazon Kinesis immediately returns and sets the stream status to <code>CREATING</code>.
+            After the stream is created, Amazon Kinesis sets the stream status to <code>ACTIVE</code>.
+            You should perform read and write operations only on an <code>ACTIVE</code> stream.
+            
+            </para>
+             
+            <para>
+            You receive a <code>LimitExceededException</code> when making a <code>CreateStream</code>
+            request if you try to do one of the following:
+            </para>
+             <ul> <li>Have more than five streams in the <code>CREATING</code> state at any point
+            in time.</li> <li>Create more shards than are authorized for your account.</li> </ul>
+            
+            <para>
+            For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+            Kinesis Limits</a>. If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+            AWS Support</a>.
+            </para>
+             
+            <para>
+            You can use <code>DescribeStream</code> to check the stream status, which is returned
+            in <code>StreamStatus</code>.
+            </para>
+             
+            <para>
+            <a>CreateStream</a> has a limit of 5 transactions per second per account.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.CreateStreamRequest.ShardCount">
+            <summary>
+            Gets and sets the property ShardCount. 
+            <para>
+            The number of shards that the stream will use. The throughput of the stream is a function
+            of the number of shards; more shards are required for greater provisioned throughput.
+            </para>
+             
+            <para>
+            DefaultShardLimit;
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.CreateStreamRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            A name to identify the stream. The stream name is scoped to the AWS account used by
+            the application that creates the stream. It is also scoped by region. That is, two
+            streams in two different AWS accounts can have the same name, and two streams in the
+            same AWS account, but in two different regions, can have the same name.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.CreateStreamResponse">
+            <summary>
+            Empty class reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest">
+            <summary>
+            Container for the parameters to the DecreaseStreamRetentionPeriod operation.
+            Decreases the stream's retention period, which is the length of time data records
+            are accessible after they are added to the stream. The minimum value of a stream’s
+            retention period is 24 hours. 
+            
+             
+            <para>
+            This operation may result in lost data. For example, if the stream's retention period
+            is 48 hours and is decreased to 24 hours, any data already in the stream that is older
+            than 24 hours is inaccessible.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest.RetentionPeriodHours">
+            <summary>
+            Gets and sets the property RetentionPeriodHours. 
+            <para>
+            The new retention period of the stream, in hours. Must be less than the current retention
+            period.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream to modify.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodResponse">
+            <summary>
+            Empty class reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.DeleteStreamRequest">
+            <summary>
+            Container for the parameters to the DeleteStream operation.
+            Deletes a stream and all its shards and data. You must shut down any applications
+            that are operating on the stream before you delete the stream. If an application attempts
+            to operate on a deleted stream, it will receive the exception <code>ResourceNotFoundException</code>.
+            
+             
+            <para>
+            If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code>
+            request, the specified stream is in the <code>DELETING</code> state until Amazon Kinesis
+            completes the deletion.
+            </para>
+             
+            <para>
+            <b>Note:</b> Amazon Kinesis might continue to accept data read and write operations,
+            such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in
+            the <code>DELETING</code> state until the stream deletion is complete.
+            </para>
+             
+            <para>
+            When you delete a stream, any shards in that stream are also deleted, and any tags
+            are dissociated from the stream.
+            </para>
+             
+            <para>
+            You can use the <a>DescribeStream</a> operation to check the state of the stream,
+            which is returned in <code>StreamStatus</code>.
+            </para>
+             
+            <para>
+            <a>DeleteStream</a> has a limit of 5 transactions per second per account.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.DeleteStreamRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream to delete.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.DeleteStreamResponse">
+            <summary>
+            Empty class reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.DescribeStreamRequest">
+            <summary>
+            Container for the parameters to the DescribeStream operation.
+            Describes the specified stream.
+            
+             
+            <para>
+            The information about the stream includes its current status, its Amazon Resource
+            Name (ARN), and an array of shard objects. For each shard object, there is information
+            about the hash key and sequence number ranges that the shard spans, and the IDs of
+            any earlier shards that played in a role in creating the shard. A sequence number
+            is the identifier associated with every record ingested in the Amazon Kinesis stream.
+            The sequence number is assigned when a record is put into the stream.
+            </para>
+             
+            <para>
+            You can limit the number of returned shards using the <code>Limit</code> parameter.
+            The number of shards in a stream may be too large to return from a single call to
+            <code>DescribeStream</code>. You can detect this by using the <code>HasMoreShards</code>
+            flag in the returned output. <code>HasMoreShards</code> is set to <code>true</code>
+            when there is more data available. 
+            </para>
+             
+            <para>
+            <code>DescribeStream</code> is a paginated operation. If there are more shards available,
+            you can request them using the shard ID of the last shard returned. Specify this ID
+            in the <code>ExclusiveStartShardId</code> parameter in a subsequent request to <code>DescribeStream</code>.
+            
+            </para>
+             
+            <para>
+            <a>DescribeStream</a> has a limit of 10 transactions per second per account.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.DescribeStreamRequest.ExclusiveStartShardId">
+            <summary>
+            Gets and sets the property ExclusiveStartShardId. 
+            <para>
+            The shard ID of the shard to start with.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.DescribeStreamRequest.Limit">
+            <summary>
+            Gets and sets the property Limit. 
+            <para>
+            The maximum number of shards to return.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.DescribeStreamRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream to describe.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.DescribeStreamResponse">
+            <summary>
+            Represents the output for <code>DescribeStream</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.DescribeStreamResponse.StreamDescription">
+            <summary>
+            Gets and sets the property StreamDescription. 
+            <para>
+            The current status of the stream, the stream ARN, an array of shard objects that comprise
+            the stream, and states whether there are more shards available.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.ExpiredIteratorException">
+            <summary>
+             Kinesis exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ExpiredIteratorException.#ctor(System.String)">
+            <summary>
+            Constructs a new ExpiredIteratorException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ExpiredIteratorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ExpiredIteratorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ExpiredIteratorException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ExpiredIteratorException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ExpiredIteratorException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ExpiredIteratorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ExpiredIteratorException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ExpiredIteratorException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.GetRecordsRequest">
+            <summary>
+            Container for the parameters to the GetRecords operation.
+            Gets data records from a shard.
+            
+             
+            <para>
+            Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
+            iterator specifies the position in the shard from which you want to start reading
+            data records sequentially. If there are no records available in the portion of the
+            shard that the iterator points to, <a>GetRecords</a> returns an empty list. Note that
+            it might take multiple calls to get to a portion of the shard that contains records.
+            </para>
+             
+            <para>
+            You can scale by provisioning multiple shards. Your application should have one thread
+            per shard, each reading continuously from its stream. To read from a stream continually,
+            call <a>GetRecords</a> in a loop. Use <a>GetShardIterator</a> to get the shard iterator
+            to specify in the first <a>GetRecords</a> call. <a>GetRecords</a> returns a new shard
+            iterator in <code>NextShardIterator</code>. Specify the shard iterator returned in
+            <code>NextShardIterator</code> in subsequent calls to <a>GetRecords</a>. Note that
+            if the shard has been closed, the shard iterator can't return more data and <a>GetRecords</a>
+            returns <code>null</code> in <code>NextShardIterator</code>. You can terminate the
+            loop when the shard is closed, or when the shard iterator reaches the record with
+            the sequence number or other attribute that marks it as the last record to process.
+            </para>
+             
+            <para>
+            Each data record can be up to 1 MB in size, and each shard can read up to 2 MB per
+            second. You can ensure that your calls don't exceed the maximum supported size or
+            throughput by using the <code>Limit</code> parameter to specify the maximum number
+            of records that <a>GetRecords</a> can return. Consider your average record size when
+            determining this limit.
+            </para>
+             
+            <para>
+            The size of the data returned by <a>GetRecords</a> will vary depending on the utilization
+            of the shard. The maximum size of data that <a>GetRecords</a> can return is 10 MB.
+            If a call returns this amount of data, subsequent calls made within the next 5 seconds
+            throw <code>ProvisionedThroughputExceededException</code>. If there is insufficient
+            provisioned throughput on the shard, subsequent calls made within the next 1 second
+            throw <code>ProvisionedThroughputExceededException</code>. Note that <a>GetRecords</a>
+            won't return any data when it throws an exception. For this reason, we recommend that
+            you wait one second between calls to <a>GetRecords</a>; however, it's possible that
+            the application will get exceptions for longer than 1 second.
+            </para>
+             
+            <para>
+            To detect whether the application is falling behind in processing, you can use the
+            <code>MillisBehindLatest</code> response attribute. You can also monitor the stream
+            using CloudWatch metrics (see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring
+            Amazon Kinesis</a> in the <i>Amazon Kinesis Developer Guide</i>).
+            </para>
+             
+            <para>
+            Each Amazon Kinesis record includes a value, <code>ApproximateArrivalTimestamp</code>,
+            that is set when an Amazon Kinesis stream successfully receives and stores a record.
+            This is commonly referred to as a server-side timestamp, which is different than a
+            client-side timestamp, where the timestamp is set when a data producer creates or
+            sends the record to a stream. The timestamp has millisecond precision. There are no
+            guarantees about the timestamp accuracy, or that the timestamp is always increasing.
+            For example, records in a shard or across a stream might have timestamps that are
+            out of order.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetRecordsRequest.Limit">
+            <summary>
+            Gets and sets the property Limit. 
+            <para>
+            The maximum number of records to return. Specify a value of up to 10,000. If you specify
+            a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetRecordsRequest.ShardIterator">
+            <summary>
+            Gets and sets the property ShardIterator. 
+            <para>
+            The position in the shard from which you want to start sequentially reading data records.
+            A shard iterator specifies this position using the sequence number of a data record
+            in the shard.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.GetRecordsResponse">
+            <summary>
+            Represents the output for <a>GetRecords</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetRecordsResponse.MillisBehindLatest">
+            <summary>
+            Gets and sets the property MillisBehindLatest. 
+            <para>
+            The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream,
+            indicating how far behind current time the consumer is. A value of zero indicates
+            record processing is caught up, and there are no new records to process at this moment.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetRecordsResponse.NextShardIterator">
+            <summary>
+            Gets and sets the property NextShardIterator. 
+            <para>
+            The next position in the shard from which to start sequentially reading data records.
+            If set to <code>null</code>, the shard has been closed and the requested iterator
+            will not return any more data. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetRecordsResponse.Records">
+            <summary>
+            Gets and sets the property Records. 
+            <para>
+            The data records retrieved from the shard.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.GetShardIteratorRequest">
+            <summary>
+            Container for the parameters to the GetShardIterator operation.
+            Gets a shard iterator. A shard iterator expires five minutes after it is returned
+            to the requester.
+            
+             
+            <para>
+            A shard iterator specifies the position in the shard from which to start reading data
+            records sequentially. A shard iterator specifies this position using the sequence
+            number of a data record in a shard. A sequence number is the identifier associated
+            with every record ingested in the Amazon Kinesis stream. The sequence number is assigned
+            when a record is put into the stream. 
+            </para>
+             
+            <para>
+            You must specify the shard iterator type. For example, you can set the <code>ShardIteratorType</code>
+            parameter to read exactly from the position denoted by a specific sequence number
+            by using the <code>AT_SEQUENCE_NUMBER</code> shard iterator type, or right after the
+            sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code> shard iterator type,
+            using sequence numbers returned by earlier calls to <a>PutRecord</a>, <a>PutRecords</a>,
+            <a>GetRecords</a>, or <a>DescribeStream</a>. You can specify the shard iterator type
+            <code>TRIM_HORIZON</code> in the request to cause <code>ShardIterator</code> to point
+            to the last untrimmed record in the shard in the system, which is the oldest data
+            record in the shard. Or you can point to just after the most recent record in the
+            shard, by using the shard iterator type <code>LATEST</code>, so that you always read
+            the most recent data in the shard. 
+            </para>
+             
+            <para>
+            When you repeatedly read from an Amazon Kinesis stream use a <a>GetShardIterator</a>
+            request to get the first shard iterator for use in your first <a>GetRecords</a> request
+            and then use the shard iterator returned by the <a>GetRecords</a> request in <code>NextShardIterator</code>
+            for subsequent reads. A new shard iterator is returned by every <a>GetRecords</a>
+            request in <code>NextShardIterator</code>, which you use in the <code>ShardIterator</code>
+            parameter of the next <a>GetRecords</a> request. 
+            </para>
+             
+            <para>
+            If a <a>GetShardIterator</a> request is made too often, you receive a <code>ProvisionedThroughputExceededException</code>.
+            For more information about throughput limits, see <a>GetRecords</a>.
+            </para>
+             
+            <para>
+            If the shard is closed, the iterator can't return more data, and <a>GetShardIterator</a>
+            returns <code>null</code> for its <code>ShardIterator</code>. A shard can be closed
+            using <a>SplitShard</a> or <a>MergeShards</a>.
+            </para>
+             
+            <para>
+            <a>GetShardIterator</a> has a limit of 5 transactions per second per account per open
+            shard.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetShardIteratorRequest.ShardId">
+            <summary>
+            Gets and sets the property ShardId. 
+            <para>
+            The shard ID of the shard to get the iterator for.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetShardIteratorRequest.ShardIteratorType">
+            <summary>
+            Gets and sets the property ShardIteratorType. 
+            <para>
+            Determines how the shard iterator is used to start reading data records from the shard.
+            </para>
+             
+            <para>
+            The following are the valid shard iterator types:
+            </para>
+             <ul> <li>AT_SEQUENCE_NUMBER - Start reading exactly from the position denoted by
+            a specific sequence number.</li> <li>AFTER_SEQUENCE_NUMBER - Start reading right after
+            the position denoted by a specific sequence number.</li> <li>TRIM_HORIZON - Start
+            reading at the last untrimmed record in the shard in the system, which is the oldest
+            data record in the shard.</li> <li>LATEST - Start reading just after the most recent
+            record in the shard, so that you always read the most recent data in the shard.</li>
+            </ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetShardIteratorRequest.StartingSequenceNumber">
+            <summary>
+            Gets and sets the property StartingSequenceNumber. 
+            <para>
+            The sequence number of the data record in the shard from which to start reading from.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetShardIteratorRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.GetShardIteratorResponse">
+            <summary>
+            Represents the output for <code>GetShardIterator</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.GetShardIteratorResponse.ShardIterator">
+            <summary>
+            Gets and sets the property ShardIterator. 
+            <para>
+            The position in the shard from which to start reading data records sequentially. A
+            shard iterator specifies this position using the sequence number of a data record
+            in a shard.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.HashKeyRange">
+            <summary>
+            The range of possible hash key values for the shard, which is a set of ordered contiguous
+            positive integers.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.HashKeyRange.EndingHashKey">
+            <summary>
+            Gets and sets the property EndingHashKey. 
+            <para>
+            The ending hash key of the hash key range.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.HashKeyRange.StartingHashKey">
+            <summary>
+            Gets and sets the property StartingHashKey. 
+            <para>
+            The starting hash key of the hash key range.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest">
+            <summary>
+            Container for the parameters to the IncreaseStreamRetentionPeriod operation.
+            Increases the stream's retention period, which is the length of time data records
+            are accessible after they are added to the stream. The maximum value of a stream’s
+            retention period is 168 hours (7 days).
+            
+             
+            <para>
+            Upon choosing a longer stream retention period, this operation will increase the time
+            period records are accessible that have not yet expired. However, it will not make
+            previous data that has expired (older than the stream’s previous retention period)
+            accessible after the operation has been called. For example, if a stream’s retention
+            period is set to 24 hours and is increased to 168 hours, any data that is older than
+            24 hours will remain inaccessible to consumer applications.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest.RetentionPeriodHours">
+            <summary>
+            Gets and sets the property RetentionPeriodHours. 
+            <para>
+            The new retention period of the stream, in hours. Must be more than the current retention
+            period.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream to modify.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodResponse">
+            <summary>
+            Empty class reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.InvalidArgumentException">
+            <summary>
+             Kinesis exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.InvalidArgumentException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidArgumentException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.InvalidArgumentException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidArgumentException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.InvalidArgumentException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidArgumentException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.InvalidArgumentException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidArgumentException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.InvalidArgumentException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidArgumentException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.LimitExceededException">
+            <summary>
+             Kinesis exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.LimitExceededException.#ctor(System.String)">
+            <summary>
+            Constructs a new LimitExceededException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.LimitExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.LimitExceededException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.LimitExceededException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.LimitExceededException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.ListStreamsRequest">
+            <summary>
+            Container for the parameters to the ListStreams operation.
+            Lists your streams.
+            
+             
+            <para>
+             The number of streams may be too large to return from a single call to <code>ListStreams</code>.
+            You can limit the number of returned streams using the <code>Limit</code> parameter.
+            If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+            uses the default limit, which is currently 10.
+            </para>
+             
+            <para>
+             You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+            flag from the returned output. If there are more streams available, you can request
+            more streams by using the name of the last stream returned by the <code>ListStreams</code>
+            request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
+            to <code>ListStreams</code>. The group of stream names returned by the subsequent
+            request is then added to the list. You can continue this process until all the stream
+            names have been collected in the list. 
+            </para>
+             
+            <para>
+            <a>ListStreams</a> has a limit of 5 transactions per second per account.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.ListStreamsRequest.ExclusiveStartStreamName">
+            <summary>
+            Gets and sets the property ExclusiveStartStreamName. 
+            <para>
+            The name of the stream to start the list with.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.ListStreamsRequest.Limit">
+            <summary>
+            Gets and sets the property Limit. 
+            <para>
+            The maximum number of streams to list.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.ListStreamsResponse">
+            <summary>
+            Represents the output for <code>ListStreams</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.ListStreamsResponse.HasMoreStreams">
+            <summary>
+            Gets and sets the property HasMoreStreams. 
+            <para>
+            If set to <code>true</code>, there are more streams available to list.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.ListStreamsResponse.StreamNames">
+            <summary>
+            Gets and sets the property StreamNames. 
+            <para>
+            The names of the streams that are associated with the AWS account making the <code>ListStreams</code>
+            request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.ListTagsForStreamRequest">
+            <summary>
+            Container for the parameters to the ListTagsForStream operation.
+            Lists the tags for the specified Amazon Kinesis stream.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.ListTagsForStreamRequest.ExclusiveStartTagKey">
+            <summary>
+            Gets and sets the property ExclusiveStartTagKey. 
+            <para>
+            The key to use as the starting point for the list of tags. If this parameter is set,
+            <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.ListTagsForStreamRequest.Limit">
+            <summary>
+            Gets and sets the property Limit. 
+            <para>
+            The number of tags to return. If this number is less than the total number of tags
+            associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>.
+            To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in
+            the response.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.ListTagsForStreamRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.ListTagsForStreamResponse">
+            <summary>
+            Represents the output for <code>ListTagsForStream</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.ListTagsForStreamResponse.HasMoreTags">
+            <summary>
+            Gets and sets the property HasMoreTags. 
+            <para>
+            If set to <code>true</code>, more tags are available. To request additional tags,
+            set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.ListTagsForStreamResponse.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            A list of tags associated with <code>StreamName</code>, starting with the first tag
+            after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.MergeShardsRequest">
+            <summary>
+            Container for the parameters to the MergeShards operation.
+            Merges two adjacent shards in a stream and combines them into a single shard to reduce
+            the stream's capacity to ingest and transport data. Two shards are considered adjacent
+            if the union of the hash key ranges for the two shards form a contiguous set with
+            no gaps. For example, if you have two shards, one with a hash key range of 276...381
+            and the other with a hash key range of 382...454, then you could merge these two shards
+            into a single shard that would have a hash key range of 276...454. After the merge,
+            the single child shard receives data for all hash key values covered by the two parent
+            shards.
+            
+             
+            <para>
+            <code>MergeShards</code> is called when there is a need to reduce the overall capacity
+            of a stream because of excess capacity that is not being used. You must specify the
+            shard to be merged and the adjacent shard for a stream. For more information about
+            merging shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
+            Two Shards</a> in the <i>Amazon Kinesis Developer Guide</i>.
+            </para>
+             
+            <para>
+            If the stream is in the <code>ACTIVE</code> state, you can call <code>MergeShards</code>.
+            If a stream is in the <code>CREATING</code>, <code>UPDATING</code>, or <code>DELETING</code>
+            state, <code>MergeShards</code> returns a <code>ResourceInUseException</code>. If
+            the specified stream does not exist, <code>MergeShards</code> returns a <code>ResourceNotFoundException</code>.
+            
+            </para>
+             
+            <para>
+            You can use <a>DescribeStream</a> to check the state of the stream, which is returned
+            in <code>StreamStatus</code>.
+            </para>
+             
+            <para>
+            <code>MergeShards</code> is an asynchronous operation. Upon receiving a <code>MergeShards</code>
+            request, Amazon Kinesis immediately returns a response and sets the <code>StreamStatus</code>
+            to <code>UPDATING</code>. After the operation is completed, Amazon Kinesis sets the
+            <code>StreamStatus</code> to <code>ACTIVE</code>. Read and write operations continue
+            to work while the stream is in the <code>UPDATING</code> state. 
+            </para>
+             
+            <para>
+            You use <a>DescribeStream</a> to determine the shard IDs that are specified in the
+            <code>MergeShards</code> request. 
+            </para>
+             
+            <para>
+            If you try to operate on too many streams in parallel using <a>CreateStream</a>, <a>DeleteStream</a>,
+            <code>MergeShards</code> or <a>SplitShard</a>, you will receive a <code>LimitExceededException</code>.
+            
+            </para>
+             
+            <para>
+            <code>MergeShards</code> has limit of 5 transactions per second per account.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.MergeShardsRequest.AdjacentShardToMerge">
+            <summary>
+            Gets and sets the property AdjacentShardToMerge. 
+            <para>
+            The shard ID of the adjacent shard for the merge.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.MergeShardsRequest.ShardToMerge">
+            <summary>
+            Gets and sets the property ShardToMerge. 
+            <para>
+            The shard ID of the shard to combine with the adjacent shard for the merge.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.MergeShardsRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream for the merge.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.MergeShardsResponse">
+            <summary>
+            Empty class reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
+            <summary>
+             Kinesis exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ProvisionedThroughputExceededException.#ctor(System.String)">
+            <summary>
+            Constructs a new ProvisionedThroughputExceededException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ProvisionedThroughputExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ProvisionedThroughputExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ProvisionedThroughputExceededException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ProvisionedThroughputExceededException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ProvisionedThroughputExceededException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ProvisionedThroughputExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ProvisionedThroughputExceededException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ProvisionedThroughputExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.PutRecordRequest">
+            <summary>
+            Container for the parameters to the PutRecord operation.
+            Writes a single data record from a producer into an Amazon Kinesis stream. Call <code>PutRecord</code>
+            to send data from the producer into the Amazon Kinesis stream for real-time ingestion
+            and subsequent processing, one record at a time. Each shard can support writes up
+            to 1,000 records per second, up to a maximum data write total of 1 MB per second.
+            
+             
+            <para>
+            You must specify the name of the stream that captures, stores, and transports the
+            data; a partition key; and the data blob itself.
+            </para>
+             
+            <para>
+            The data blob can be any type of data; for example, a segment from a log file, geographic/location
+            data, website clickstream data, and so on.
+            </para>
+             
+            <para>
+            The partition key is used by Amazon Kinesis to distribute data across shards. Amazon
+            Kinesis segregates the data records that belong to a data stream into multiple shards,
+            using the partition key associated with each data record to determine which shard
+            a given data record belongs to. 
+            </para>
+             
+            <para>
+            Partition keys are Unicode strings, with a maximum length limit of 256 characters
+            for each key. An MD5 hash function is used to map partition keys to 128-bit integer
+            values and to map associated data records to shards using the hash key ranges of the
+            shards. You can override hashing the partition key to determine the shard by explicitly
+            specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more
+            information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+            Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
+            </para>
+             
+            <para>
+            <code>PutRecord</code> returns the shard ID of where the data record was placed and
+            the sequence number that was assigned to the data record.
+            </para>
+             
+            <para>
+            Sequence numbers generally increase over time. To guarantee strictly increasing ordering,
+            use the <code>SequenceNumberForOrdering</code> parameter. For more information, see
+            <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+            Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
+            </para>
+             
+            <para>
+            If a <code>PutRecord</code> request cannot be processed because of insufficient provisioned
+            throughput on the shard involved in the request, <code>PutRecord</code> throws <code>ProvisionedThroughputExceededException</code>.
+            
+            </para>
+             
+            <para>
+            By default, data records are accessible for only 24 hours from the time that they
+            are added to an Amazon Kinesis stream. This retention period can be modified using
+            the <a>DecreaseStreamRetentionPeriod</a> and <a>IncreaseStreamRetentionPeriod</a>
+            operations.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordRequest.Data">
+            <summary>
+            Gets and sets the property Data. 
+            <para>
+            The data blob to put into the record, which is base64-encoded when the blob is serialized.
+            When the data blob (the payload before base64-encoding) is added to the partition
+            key size, the total size must not exceed the maximum record size (1 MB). 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordRequest.ExplicitHashKey">
+            <summary>
+            Gets and sets the property ExplicitHashKey. 
+            <para>
+            The hash value used to explicitly determine the shard the data record is assigned
+            to by overriding the partition key hash.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordRequest.PartitionKey">
+            <summary>
+            Gets and sets the property PartitionKey. 
+            <para>
+            Determines which shard in the stream the data record is assigned to. Partition keys
+            are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
+            Kinesis uses the partition key as input to a hash function that maps the partition
+            key and associated data to a specific shard. Specifically, an MD5 hash function is
+            used to map partition keys to 128-bit integer values and to map associated data records
+            to shards. As a result of this hashing mechanism, all data records with the same partition
+            key will map to the same shard within the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordRequest.SequenceNumberForOrdering">
+            <summary>
+            Gets and sets the property SequenceNumberForOrdering. 
+            <para>
+            Guarantees strictly increasing sequence numbers, for puts from the same client and
+            to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
+            record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result
+            when putting record <i>n-1</i>). If this parameter is not set, records will be coarsely
+            ordered based on arrival time.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream to put the data record into.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.PutRecordResponse">
+            <summary>
+            Represents the output for <code>PutRecord</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordResponse.SequenceNumber">
+            <summary>
+            Gets and sets the property SequenceNumber. 
+            <para>
+            The sequence number identifier that was assigned to the put data record. The sequence
+            number for the record is unique across all records in the stream. A sequence number
+            is the identifier associated with every record put into the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordResponse.ShardId">
+            <summary>
+            Gets and sets the property ShardId. 
+            <para>
+            The shard ID of the shard where the data record was placed.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.PutRecordsRequest">
+            <summary>
+            Container for the parameters to the PutRecords operation.
+            Writes multiple data records from a producer into an Amazon Kinesis stream in a single
+            call (also referred to as a <code>PutRecords</code> request). Use this operation to
+            send data from a data producer into the Amazon Kinesis stream for data ingestion and
+            processing. 
+            
+             
+            <para>
+            Each <code>PutRecords</code> request can support up to 500 records. Each record in
+            the request can be as large as 1 MB, up to a limit of 5 MB for the entire request,
+            including partition keys. Each shard can support writes up to 1,000 records per second,
+            up to a maximum data write total of 1 MB per second.
+            </para>
+             
+            <para>
+            You must specify the name of the stream that captures, stores, and transports the
+            data; and an array of request <code>Records</code>, with each record in the array
+            requiring a partition key and data blob. The record size limit applies to the total
+            size of the partition key and data blob.
+            </para>
+             
+            <para>
+            The data blob can be any type of data; for example, a segment from a log file, geographic/location
+            data, website clickstream data, and so on.
+            </para>
+             
+            <para>
+            The partition key is used by Amazon Kinesis as input to a hash function that maps
+            the partition key and associated data to a specific shard. An MD5 hash function is
+            used to map partition keys to 128-bit integer values and to map associated data records
+            to shards. As a result of this hashing mechanism, all data records with the same partition
+            key map to the same shard within the stream. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+            Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.
+            </para>
+             
+            <para>
+            Each record in the <code>Records</code> array may include an optional parameter, <code>ExplicitHashKey</code>,
+            which overrides the partition key to shard mapping. This parameter allows a data producer
+            to determine explicitly the shard where the record is stored. For more information,
+            see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
+            Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer Guide</i>.
+            </para>
+             
+            <para>
+            The <code>PutRecords</code> response includes an array of response <code>Records</code>.
+            Each record in the response array directly correlates with a record in the request
+            array using natural ordering, from the top to the bottom of the request and response.
+            The response <code>Records</code> array always includes the same number of records
+            as the request array.
+            </para>
+             
+            <para>
+            The response <code>Records</code> array includes both successfully and unsuccessfully
+            processed records. Amazon Kinesis attempts to process all records in each <code>PutRecords</code>
+            request. A single record failure does not stop the processing of subsequent records.
+            </para>
+             
+            <para>
+            A successfully-processed record includes <code>ShardId</code> and <code>SequenceNumber</code>
+            values. The <code>ShardId</code> parameter identifies the shard in the stream where
+            the record is stored. The <code>SequenceNumber</code> parameter is an identifier assigned
+            to the put record, unique to all records in the stream.
+            </para>
+             
+            <para>
+            An unsuccessfully-processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code>
+            values. <code>ErrorCode</code> reflects the type of error and can be one of the following
+            values: <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.
+            <code>ErrorMessage</code> provides more detailed information about the <code>ProvisionedThroughputExceededException</code>
+            exception including the account ID, stream name, and shard ID of the record that was
+            throttled. For more information about partially successful responses, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
+            Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer Guide</i>.
+            </para>
+             
+            <para>
+            By default, data records are accessible for only 24 hours from the time that they
+            are added to an Amazon Kinesis stream. This retention period can be modified using
+            the <a>DecreaseStreamRetentionPeriod</a> and <a>IncreaseStreamRetentionPeriod</a>
+            operations.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsRequest.Records">
+            <summary>
+            Gets and sets the property Records. 
+            <para>
+            The records associated with the request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The stream name associated with the request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.PutRecordsRequestEntry">
+            <summary>
+            Represents the output for <code>PutRecords</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsRequestEntry.Data">
+            <summary>
+            Gets and sets the property Data. 
+            <para>
+            The data blob to put into the record, which is base64-encoded when the blob is serialized.
+            When the data blob (the payload before base64-encoding) is added to the partition
+            key size, the total size must not exceed the maximum record size (1 MB).
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsRequestEntry.ExplicitHashKey">
+            <summary>
+            Gets and sets the property ExplicitHashKey. 
+            <para>
+            The hash value used to determine explicitly the shard that the data record is assigned
+            to by overriding the partition key hash.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsRequestEntry.PartitionKey">
+            <summary>
+            Gets and sets the property PartitionKey. 
+            <para>
+            Determines which shard in the stream the data record is assigned to. Partition keys
+            are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
+            Kinesis uses the partition key as input to a hash function that maps the partition
+            key and associated data to a specific shard. Specifically, an MD5 hash function is
+            used to map partition keys to 128-bit integer values and to map associated data records
+            to shards. As a result of this hashing mechanism, all data records with the same partition
+            key map to the same shard within the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.PutRecordsResponse">
+            <summary>
+            <code>PutRecords</code> results.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsResponse.FailedRecordCount">
+            <summary>
+            Gets and sets the property FailedRecordCount. 
+            <para>
+            The number of unsuccessfully processed records in a <code>PutRecords</code> request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsResponse.Records">
+            <summary>
+            Gets and sets the property Records. 
+            <para>
+            An array of successfully and unsuccessfully processed record results, correlated with
+            the request by natural ordering. A record that is successfully added to your Amazon
+            Kinesis stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the
+            result. A record that fails to be added to your Amazon Kinesis stream includes <code>ErrorCode</code>
+            and <code>ErrorMessage</code> in the result.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.PutRecordsResultEntry">
+            <summary>
+            Represents the result of an individual record from a <code>PutRecords</code> request.
+            A record that is successfully added to your Amazon Kinesis stream includes SequenceNumber
+            and ShardId in the result. A record that fails to be added to your Amazon Kinesis
+            stream includes ErrorCode and ErrorMessage in the result.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsResultEntry.ErrorCode">
+            <summary>
+            Gets and sets the property ErrorCode. 
+            <para>
+            The error code for an individual record result. <code>ErrorCodes</code> can be either
+            <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsResultEntry.ErrorMessage">
+            <summary>
+            Gets and sets the property ErrorMessage. 
+            <para>
+            The error message for an individual record result. An <code>ErrorCode</code> value
+            of <code>ProvisionedThroughputExceededException</code> has an error message that includes
+            the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code>
+            has the error message <code>"Internal Service Failure"</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsResultEntry.SequenceNumber">
+            <summary>
+            Gets and sets the property SequenceNumber. 
+            <para>
+            The sequence number for an individual record result.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.PutRecordsResultEntry.ShardId">
+            <summary>
+            Gets and sets the property ShardId. 
+            <para>
+            The shard ID for an individual record result.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Record">
+            <summary>
+            The unit of data of the Amazon Kinesis stream, which is composed of a sequence number,
+            a partition key, and a data blob.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Record.ApproximateArrivalTimestamp">
+            <summary>
+            Gets and sets the property ApproximateArrivalTimestamp. 
+            <para>
+            The approximate time that the record was inserted into the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Record.Data">
+            <summary>
+            Gets and sets the property Data. 
+            <para>
+            The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis
+            service, which does not inspect, interpret, or change the data in the blob in any
+            way. When the data blob (the payload before base64-encoding) is added to the partition
+            key size, the total size must not exceed the maximum record size (1 MB).
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Record.PartitionKey">
+            <summary>
+            Gets and sets the property PartitionKey. 
+            <para>
+            Identifies which shard in the stream the data record is assigned to.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Record.SequenceNumber">
+            <summary>
+            Gets and sets the property SequenceNumber. 
+            <para>
+            The unique identifier of the record in the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.RemoveTagsFromStreamRequest">
+            <summary>
+            Container for the parameters to the RemoveTagsFromStream operation.
+            Deletes tags from the specified Amazon Kinesis stream.
+            
+             
+            <para>
+            If you specify a tag that does not exist, it is ignored.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.RemoveTagsFromStreamRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.RemoveTagsFromStreamRequest.TagKeys">
+            <summary>
+            Gets and sets the property TagKeys. 
+            <para>
+            A list of tag keys. Each corresponding tag is removed from the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.RemoveTagsFromStreamResponse">
+            <summary>
+            Empty class reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.ResourceInUseException">
+            <summary>
+             Kinesis exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceInUseException.#ctor(System.String)">
+            <summary>
+            Constructs a new ResourceInUseException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceInUseException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ResourceInUseException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceInUseException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ResourceInUseException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceInUseException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceInUseException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceInUseException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceInUseException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.ResourceNotFoundException">
+            <summary>
+             Kinesis exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceNotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new ResourceNotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceNotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.ResourceNotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.SequenceNumberRange">
+            <summary>
+            The range of possible sequence numbers for the shard.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.SequenceNumberRange.EndingSequenceNumber">
+            <summary>
+            Gets and sets the property EndingSequenceNumber. 
+            <para>
+            The ending sequence number for the range. Shards that are in the OPEN state have an
+            ending sequence number of <code>null</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.SequenceNumberRange.StartingSequenceNumber">
+            <summary>
+            Gets and sets the property StartingSequenceNumber. 
+            <para>
+            The starting sequence number for the range.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Shard">
+            <summary>
+            A uniquely identified group of data records in an Amazon Kinesis stream.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Shard.AdjacentParentShardId">
+            <summary>
+            Gets and sets the property AdjacentParentShardId. 
+            <para>
+            The shard Id of the shard adjacent to the shard's parent.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Shard.HashKeyRange">
+            <summary>
+            Gets and sets the property HashKeyRange. 
+            <para>
+            The range of possible hash key values for the shard, which is a set of ordered contiguous
+            positive integers.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Shard.ParentShardId">
+            <summary>
+            Gets and sets the property ParentShardId. 
+            <para>
+            The shard Id of the shard's parent.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Shard.SequenceNumberRange">
+            <summary>
+            Gets and sets the property SequenceNumberRange. 
+            <para>
+            The range of possible sequence numbers for the shard.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Shard.ShardId">
+            <summary>
+            Gets and sets the property ShardId. 
+            <para>
+            The unique identifier of the shard within the Amazon Kinesis stream.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.SplitShardRequest">
+            <summary>
+            Container for the parameters to the SplitShard operation.
+            Splits a shard into two new shards in the stream, to increase the stream's capacity
+            to ingest and transport data. <code>SplitShard</code> is called when there is a need
+            to increase the overall capacity of stream because of an expected increase in the
+            volume of data records being ingested. 
+            
+             
+            <para>
+            You can also use <code>SplitShard</code> when a shard appears to be approaching its
+            maximum utilization, for example, when the set of producers sending data into the
+            specific shard are suddenly sending more than previously anticipated. You can also
+            call <code>SplitShard</code> to increase stream capacity, so that more Amazon Kinesis
+            applications can simultaneously read data from the stream for real-time processing.
+            
+            </para>
+             
+            <para>
+            You must specify the shard to be split and the new hash key, which is the position
+            in the shard where the shard gets split in two. In many cases, the new hash key might
+            simply be the average of the beginning and ending hash key, but it can be any hash
+            key value in the range being mapped into the shard. For more information about splitting
+            shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
+            a Shard</a> in the <i>Amazon Kinesis Developer Guide</i>.
+            </para>
+             
+            <para>
+            You can use <a>DescribeStream</a> to determine the shard ID and hash key values for
+            the <code>ShardToSplit</code> and <code>NewStartingHashKey</code> parameters that
+            are specified in the <code>SplitShard</code> request.
+            </para>
+             
+            <para>
+            <code>SplitShard</code> is an asynchronous operation. Upon receiving a <code>SplitShard</code>
+            request, Amazon Kinesis immediately returns a response and sets the stream status
+            to <code>UPDATING</code>. After the operation is completed, Amazon Kinesis sets the
+            stream status to <code>ACTIVE</code>. Read and write operations continue to work while
+            the stream is in the <code>UPDATING</code> state. 
+            </para>
+             
+            <para>
+            You can use <code>DescribeStream</code> to check the status of the stream, which is
+            returned in <code>StreamStatus</code>. If the stream is in the <code>ACTIVE</code>
+            state, you can call <code>SplitShard</code>. If a stream is in <code>CREATING</code>
+            or <code>UPDATING</code> or <code>DELETING</code> states, <code>DescribeStream</code>
+            returns a <code>ResourceInUseException</code>.
+            </para>
+             
+            <para>
+            If the specified stream does not exist, <code>DescribeStream</code> returns a <code>ResourceNotFoundException</code>.
+            If you try to create more shards than are authorized for your account, you receive
+            a <code>LimitExceededException</code>. 
+            </para>
+             
+            <para>
+            For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+            Kinesis Limits</a>. If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+            AWS Support</a>.
+            </para>
+             
+            <para>
+            If you try to operate on too many streams in parallel using <a>CreateStream</a>, <a>DeleteStream</a>,
+            <a>MergeShards</a> or <a>SplitShard</a>, you receive a <code>LimitExceededException</code>.
+            
+            </para>
+             
+            <para>
+            <code>SplitShard</code> has limit of 5 transactions per second per account.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.SplitShardRequest.NewStartingHashKey">
+            <summary>
+            Gets and sets the property NewStartingHashKey. 
+            <para>
+            A hash key value for the starting hash key of one of the child shards created by the
+            split. The hash key range for a given shard constitutes a set of ordered contiguous
+            positive integers. The value for <code>NewStartingHashKey</code> must be in the range
+            of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash
+            key value and all higher hash key values in hash key range are distributed to one
+            of the child shards. All the lower hash key values in the range are distributed to
+            the other child shard.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.SplitShardRequest.ShardToSplit">
+            <summary>
+            Gets and sets the property ShardToSplit. 
+            <para>
+            The shard ID of the shard to split.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.SplitShardRequest.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream for the shard split.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.SplitShardResponse">
+            <summary>
+            Empty class reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.StreamDescription">
+            <summary>
+            Represents the output for <a>DescribeStream</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.StreamDescription.HasMoreShards">
+            <summary>
+            Gets and sets the property HasMoreShards. 
+            <para>
+            If set to <code>true</code>, more shards in the stream are available to describe.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.StreamDescription.RetentionPeriodHours">
+            <summary>
+            Gets and sets the property RetentionPeriodHours. 
+            <para>
+            The current retention period, in hours.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.StreamDescription.Shards">
+            <summary>
+            Gets and sets the property Shards. 
+            <para>
+            The shards that comprise the stream.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.StreamDescription.StreamARN">
+            <summary>
+            Gets and sets the property StreamARN. 
+            <para>
+            The Amazon Resource Name (ARN) for the stream being described.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.StreamDescription.StreamName">
+            <summary>
+            Gets and sets the property StreamName. 
+            <para>
+            The name of the stream being described.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.StreamDescription.StreamStatus">
+            <summary>
+            Gets and sets the property StreamStatus. 
+            <para>
+            The current status of the stream being described.
+            </para>
+             
+            <para>
+            The stream status is one of the following states:
+            </para>
+             <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately
+            returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code>
+            - The stream is being deleted. The specified stream is in the <code>DELETING</code>
+            state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> -
+            The stream exists and is ready for read and write operations or deletion. You should
+            perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li>
+            <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write
+            operations continue to work while the stream is in the <code>UPDATING</code> state.</li>
+            </ul>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Tag">
+            <summary>
+            Metadata assigned to the stream, consisting of a key-value pair.
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Tag.Key">
+            <summary>
+            Gets and sets the property Key. 
+            <para>
+            A unique identifier for the tag. Maximum length: 128 characters. Valid characters:
+            Unicode letters, digits, white space, _ . / = + - % @
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Tag.Value">
+            <summary>
+            Gets and sets the property Value. 
+            <para>
+            An optional string, typically used to describe or define the tag. Maximum length:
+            256 characters. Valid characters: Unicode letters, digits, white space, _ . / = +
+            - % @
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.AddTagsToStreamRequestMarshaller">
+            <summary>
+            AddTagsToStream Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.AddTagsToStreamRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.AddTagsToStreamRequestMarshaller.Marshall(Amazon.Kinesis.Model.AddTagsToStreamRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.AddTagsToStreamResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for AddTagsToStream operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.AddTagsToStreamResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.AddTagsToStreamResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.AddTagsToStreamResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.CreateStreamRequestMarshaller">
+            <summary>
+            CreateStream Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.CreateStreamRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.CreateStreamRequestMarshaller.Marshall(Amazon.Kinesis.Model.CreateStreamRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.CreateStreamResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for CreateStream operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.CreateStreamResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.CreateStreamResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.CreateStreamResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.DecreaseStreamRetentionPeriodRequestMarshaller">
+            <summary>
+            DecreaseStreamRetentionPeriod Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DecreaseStreamRetentionPeriodRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DecreaseStreamRetentionPeriodRequestMarshaller.Marshall(Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.DecreaseStreamRetentionPeriodResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DecreaseStreamRetentionPeriod operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DecreaseStreamRetentionPeriodResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DecreaseStreamRetentionPeriodResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.DeleteStreamRequestMarshaller">
+            <summary>
+            DeleteStream Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DeleteStreamRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DeleteStreamRequestMarshaller.Marshall(Amazon.Kinesis.Model.DeleteStreamRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.DeleteStreamResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeleteStream operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DeleteStreamResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DeleteStreamResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.DeleteStreamResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.DescribeStreamRequestMarshaller">
+            <summary>
+            DescribeStream Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DescribeStreamRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DescribeStreamRequestMarshaller.Marshall(Amazon.Kinesis.Model.DescribeStreamRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.DescribeStreamResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DescribeStream operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DescribeStreamResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.DescribeStreamResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.DescribeStreamResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetRecordsRequestMarshaller">
+            <summary>
+            GetRecords Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetRecordsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetRecordsRequestMarshaller.Marshall(Amazon.Kinesis.Model.GetRecordsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetRecordsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetRecords operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetRecordsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetRecordsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetRecordsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetShardIteratorRequestMarshaller">
+            <summary>
+            GetShardIterator Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetShardIteratorRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetShardIteratorRequestMarshaller.Marshall(Amazon.Kinesis.Model.GetShardIteratorRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetShardIteratorResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetShardIterator operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetShardIteratorResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetShardIteratorResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.GetShardIteratorResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.HashKeyRangeUnmarshaller">
+            <summary>
+            Response Unmarshaller for HashKeyRange Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.HashKeyRangeUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#HashKeyRange,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.HashKeyRangeUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.HashKeyRangeUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.IncreaseStreamRetentionPeriodRequestMarshaller">
+            <summary>
+            IncreaseStreamRetentionPeriod Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.IncreaseStreamRetentionPeriodRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.IncreaseStreamRetentionPeriodRequestMarshaller.Marshall(Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.IncreaseStreamRetentionPeriodResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for IncreaseStreamRetentionPeriod operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.IncreaseStreamRetentionPeriodResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.IncreaseStreamRetentionPeriodResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListStreamsRequestMarshaller">
+            <summary>
+            ListStreams Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListStreamsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListStreamsRequestMarshaller.Marshall(Amazon.Kinesis.Model.ListStreamsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListStreamsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListStreams operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListStreamsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListStreamsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListStreamsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListTagsForStreamRequestMarshaller">
+            <summary>
+            ListTagsForStream Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListTagsForStreamRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListTagsForStreamRequestMarshaller.Marshall(Amazon.Kinesis.Model.ListTagsForStreamRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListTagsForStreamResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListTagsForStream operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListTagsForStreamResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListTagsForStreamResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.ListTagsForStreamResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.MergeShardsRequestMarshaller">
+            <summary>
+            MergeShards Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.MergeShardsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.MergeShardsRequestMarshaller.Marshall(Amazon.Kinesis.Model.MergeShardsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.MergeShardsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for MergeShards operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.MergeShardsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.MergeShardsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.MergeShardsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordRequestMarshaller">
+            <summary>
+            PutRecord Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordRequestMarshaller.Marshall(Amazon.Kinesis.Model.PutRecordRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for PutRecord operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsRequestEntryMarshaller">
+            <summary>
+            PutRecordsRequestEntry Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsRequestEntryMarshaller.Marshall(Amazon.Kinesis.Model.PutRecordsRequestEntry,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsRequestEntryMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsRequestMarshaller">
+            <summary>
+            PutRecords Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsRequestMarshaller.Marshall(Amazon.Kinesis.Model.PutRecordsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for PutRecords operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResultEntryUnmarshaller">
+            <summary>
+            Response Unmarshaller for PutRecordsResultEntry Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResultEntryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#PutRecordsResultEntry,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResultEntryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.PutRecordsResultEntryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.RecordUnmarshaller">
+            <summary>
+            Response Unmarshaller for Record Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.RecordUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#Record,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.RecordUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.RecordUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.RemoveTagsFromStreamRequestMarshaller">
+            <summary>
+            RemoveTagsFromStream Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.RemoveTagsFromStreamRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.RemoveTagsFromStreamRequestMarshaller.Marshall(Amazon.Kinesis.Model.RemoveTagsFromStreamRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.RemoveTagsFromStreamResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for RemoveTagsFromStream operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.RemoveTagsFromStreamResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.RemoveTagsFromStreamResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.RemoveTagsFromStreamResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.SequenceNumberRangeUnmarshaller">
+            <summary>
+            Response Unmarshaller for SequenceNumberRange Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.SequenceNumberRangeUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#SequenceNumberRange,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.SequenceNumberRangeUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.SequenceNumberRangeUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.ShardUnmarshaller">
+            <summary>
+            Response Unmarshaller for Shard Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ShardUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#Shard,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.ShardUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.ShardUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.SplitShardRequestMarshaller">
+            <summary>
+            SplitShard Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.SplitShardRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.SplitShardRequestMarshaller.Marshall(Amazon.Kinesis.Model.SplitShardRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.SplitShardResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for SplitShard operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.SplitShardResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.SplitShardResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.SplitShardResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.StreamDescriptionUnmarshaller">
+            <summary>
+            Response Unmarshaller for StreamDescription Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.StreamDescriptionUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#StreamDescription,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.StreamDescriptionUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.StreamDescriptionUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.Model.Internal.MarshallTransformations.TagUnmarshaller">
+            <summary>
+            Response Unmarshaller for Tag Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.TagUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Kinesis#Model#Tag,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Kinesis.Model.Internal.MarshallTransformations.TagUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Kinesis.Model.Internal.MarshallTransformations.TagUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Kinesis.AmazonKinesisRequest">
+            <summary>
+            Base class for Kinesis operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.Kinesis.AmazonKinesisClient">
+             <summary>
+             Implementation for accessing Kinesis
+            
+             Amazon Kinesis Service API Reference 
+             <para>
+             Amazon Kinesis is a managed service that scales elastically for real time processing
+             of streaming big data.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonKinesisClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonKinesisClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.Kinesis.AmazonKinesisConfig)">
+            <summary>
+            Constructs AmazonKinesisClient with AWS Credentials and an
+            AmazonKinesisClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonKinesisClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonKinesisClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonKinesisClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(System.String,System.String,Amazon.Kinesis.AmazonKinesisConfig)">
+            <summary>
+            Constructs AmazonKinesisClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonKinesisClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonKinesisClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonKinesisClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonKinesisClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.#ctor(System.String,System.String,System.String,Amazon.Kinesis.AmazonKinesisConfig)">
+            <summary>
+            Constructs AmazonKinesisClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonKinesisClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonKinesisClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.AddTagsToStreamAsync(Amazon.Kinesis.Model.AddTagsToStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.AddTagsToStreamRequest,Amazon.Kinesis.Model.AddTagsToStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the AddTagsToStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the AddTagsToStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.CreateStreamAsync(Amazon.Kinesis.Model.CreateStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.CreateStreamRequest,Amazon.Kinesis.Model.CreateStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the CreateStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the CreateStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.DecreaseStreamRetentionPeriodAsync(System.String,System.Int32,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Decreases the stream's retention period, which is the length of time data records
+            are accessible after they are added to the stream. The minimum value of a stream’s
+            retention period is 24 hours. 
+            
+             
+            <para>
+            This operation may result in lost data. For example, if the stream's retention period
+            is 48 hours and is decreased to 24 hours, any data already in the stream that is older
+            than 24 hours is inaccessible.
+            </para>
+            </summary>
+            <param name="streamName">The name of the stream to modify.</param>
+            <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be less than the current retention period.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+            <exception cref="T:Amazon.Kinesis.Model.InvalidArgumentException">
+            A specified parameter exceeds its restrictions, is not supported, or can't be used.
+            For more information, see the returned message.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.LimitExceededException">
+            The requested resource exceeds the maximum number allowed, or the number of concurrent
+            stream requests exceeds the maximum number allowed (5).
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceInUseException">
+            The resource is not available for this operation. For successful operation, the resource
+            needs to be in the <code>ACTIVE</code> state.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceNotFoundException">
+            The requested resource could not be found. The stream might not be specified correctly,
+            or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+            </exception>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.DecreaseStreamRetentionPeriodAsync(Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DecreaseStreamRetentionPeriod operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.DeleteStreamAsync(Amazon.Kinesis.Model.DeleteStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DeleteStreamRequest,Amazon.Kinesis.Model.DeleteStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DeleteStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DeleteStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.DescribeStreamAsync(Amazon.Kinesis.Model.DescribeStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DescribeStreamRequest,Amazon.Kinesis.Model.DescribeStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DescribeStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DescribeStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.GetRecordsAsync(Amazon.Kinesis.Model.GetRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.GetRecordsRequest,Amazon.Kinesis.Model.GetRecordsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetRecords operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetRecords operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.GetShardIteratorAsync(Amazon.Kinesis.Model.GetShardIteratorRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.GetShardIteratorRequest,Amazon.Kinesis.Model.GetShardIteratorResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetShardIterator operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetShardIterator operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.IncreaseStreamRetentionPeriodAsync(System.String,System.Int32,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Increases the stream's retention period, which is the length of time data records
+            are accessible after they are added to the stream. The maximum value of a stream’s
+            retention period is 168 hours (7 days).
+            
+             
+            <para>
+            Upon choosing a longer stream retention period, this operation will increase the time
+            period records are accessible that have not yet expired. However, it will not make
+            previous data that has expired (older than the stream’s previous retention period)
+            accessible after the operation has been called. For example, if a stream’s retention
+            period is set to 24 hours and is increased to 168 hours, any data that is older than
+            24 hours will remain inaccessible to consumer applications.
+            </para>
+            </summary>
+            <param name="streamName">The name of the stream to modify.</param>
+            <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be more than the current retention period.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+            <exception cref="T:Amazon.Kinesis.Model.InvalidArgumentException">
+            A specified parameter exceeds its restrictions, is not supported, or can't be used.
+            For more information, see the returned message.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.LimitExceededException">
+            The requested resource exceeds the maximum number allowed, or the number of concurrent
+            stream requests exceeds the maximum number allowed (5).
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceInUseException">
+            The resource is not available for this operation. For successful operation, the resource
+            needs to be in the <code>ACTIVE</code> state.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceNotFoundException">
+            The requested resource could not be found. The stream might not be specified correctly,
+            or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+            </exception>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.IncreaseStreamRetentionPeriodAsync(Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the IncreaseStreamRetentionPeriod operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.ListStreamsAsync(Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Kinesis.Model.ListStreamsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Lists your streams.
+            
+             
+            <para>
+             The number of streams may be too large to return from a single call to <code>ListStreams</code>.
+            You can limit the number of returned streams using the <code>Limit</code> parameter.
+            If you do not specify a value for the <code>Limit</code> parameter, Amazon Kinesis
+            uses the default limit, which is currently 10.
+            </para>
+             
+            <para>
+             You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+            flag from the returned output. If there are more streams available, you can request
+            more streams by using the name of the last stream returned by the <code>ListStreams</code>
+            request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
+            to <code>ListStreams</code>. The group of stream names returned by the subsequent
+            request is then added to the list. You can continue this process until all the stream
+            names have been collected in the list. 
+            </para>
+             
+            <para>
+            <a>ListStreams</a> has a limit of 5 transactions per second per account.
+            </para>
+            </summary>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the ListStreams service method, as returned by Kinesis.</returns>
+            <exception cref="T:Amazon.Kinesis.Model.LimitExceededException">
+            The requested resource exceeds the maximum number allowed, or the number of concurrent
+            stream requests exceeds the maximum number allowed (5).
+            </exception>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.ListStreamsAsync(Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Kinesis.Model.ListStreamsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListStreams operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListStreams operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.ListTagsForStreamAsync(Amazon.Kinesis.Model.ListTagsForStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListTagsForStreamRequest,Amazon.Kinesis.Model.ListTagsForStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListTagsForStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListTagsForStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.MergeShardsAsync(Amazon.Kinesis.Model.MergeShardsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.MergeShardsRequest,Amazon.Kinesis.Model.MergeShardsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the MergeShards operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the MergeShards operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.PutRecordAsync(Amazon.Kinesis.Model.PutRecordRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.PutRecordRequest,Amazon.Kinesis.Model.PutRecordResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the PutRecord operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the PutRecord operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.PutRecordsAsync(Amazon.Kinesis.Model.PutRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.PutRecordsRequest,Amazon.Kinesis.Model.PutRecordsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the PutRecords operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the PutRecords operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.RemoveTagsFromStreamAsync(Amazon.Kinesis.Model.RemoveTagsFromStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.RemoveTagsFromStreamRequest,Amazon.Kinesis.Model.RemoveTagsFromStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the RemoveTagsFromStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the RemoveTagsFromStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.AmazonKinesisClient.SplitShardAsync(Amazon.Kinesis.Model.SplitShardRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.SplitShardRequest,Amazon.Kinesis.Model.SplitShardResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the SplitShard operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the SplitShard operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="T:Amazon.Kinesis.IAmazonKinesis">
+             <summary>
+             Interface for accessing Kinesis
+            
+             Amazon Kinesis Service API Reference 
+             <para>
+             Amazon Kinesis is a managed service that scales elastically for real time processing
+             of streaming big data.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.AddTagsToStreamAsync(Amazon.Kinesis.Model.AddTagsToStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.AddTagsToStreamRequest,Amazon.Kinesis.Model.AddTagsToStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the AddTagsToStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the AddTagsToStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.CreateStreamAsync(Amazon.Kinesis.Model.CreateStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.CreateStreamRequest,Amazon.Kinesis.Model.CreateStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the CreateStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the CreateStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.DecreaseStreamRetentionPeriodAsync(System.String,System.Int32,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Decreases the stream's retention period, which is the length of time data records
+            are accessible after they are added to the stream. The minimum value of a stream’s
+            retention period is 24 hours. 
+            
+             
+            <para>
+            This operation may result in lost data. For example, if the stream's retention period
+            is 48 hours and is decreased to 24 hours, any data already in the stream that is older
+            than 24 hours is inaccessible.
+            </para>
+            </summary>
+            <param name="streamName">The name of the stream to modify.</param>
+            <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be less than the current retention period.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the DecreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+            <exception cref="T:Amazon.Kinesis.Model.InvalidArgumentException">
+            A specified parameter exceeds its restrictions, is not supported, or can't be used.
+            For more information, see the returned message.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.LimitExceededException">
+            The requested resource exceeds the maximum number allowed, or the number of concurrent
+            stream requests exceeds the maximum number allowed (5).
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceInUseException">
+            The resource is not available for this operation. For successful operation, the resource
+            needs to be in the <code>ACTIVE</code> state.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceNotFoundException">
+            The requested resource could not be found. The stream might not be specified correctly,
+            or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+            </exception>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.DecreaseStreamRetentionPeriodAsync(Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DecreaseStreamRetentionPeriod operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DecreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.DeleteStreamAsync(Amazon.Kinesis.Model.DeleteStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DeleteStreamRequest,Amazon.Kinesis.Model.DeleteStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DeleteStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DeleteStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.DescribeStreamAsync(Amazon.Kinesis.Model.DescribeStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.DescribeStreamRequest,Amazon.Kinesis.Model.DescribeStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the DescribeStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DescribeStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.GetRecordsAsync(Amazon.Kinesis.Model.GetRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.GetRecordsRequest,Amazon.Kinesis.Model.GetRecordsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetRecords operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetRecords operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.GetShardIteratorAsync(Amazon.Kinesis.Model.GetShardIteratorRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.GetShardIteratorRequest,Amazon.Kinesis.Model.GetShardIteratorResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the GetShardIterator operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetShardIterator operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.IncreaseStreamRetentionPeriodAsync(System.String,System.Int32,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Increases the stream's retention period, which is the length of time data records
+            are accessible after they are added to the stream. The maximum value of a stream’s
+            retention period is 168 hours (7 days).
+            
+             
+            <para>
+            Upon choosing a longer stream retention period, this operation will increase the time
+            period records are accessible that have not yet expired. However, it will not make
+            previous data that has expired (older than the stream’s previous retention period)
+            accessible after the operation has been called. For example, if a stream’s retention
+            period is set to 24 hours and is increased to 168 hours, any data that is older than
+            24 hours will remain inaccessible to consumer applications.
+            </para>
+            </summary>
+            <param name="streamName">The name of the stream to modify.</param>
+            <param name="retentionPeriodHours">The new retention period of the stream, in hours. Must be more than the current retention period.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">
+                A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                procedure using the AsyncState property.
+            </param>
+            
+            <returns>The response from the IncreaseStreamRetentionPeriod service method, as returned by Kinesis.</returns>
+            <exception cref="T:Amazon.Kinesis.Model.InvalidArgumentException">
+            A specified parameter exceeds its restrictions, is not supported, or can't be used.
+            For more information, see the returned message.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.LimitExceededException">
+            The requested resource exceeds the maximum number allowed, or the number of concurrent
+            stream requests exceeds the maximum number allowed (5).
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceInUseException">
+            The resource is not available for this operation. For successful operation, the resource
+            needs to be in the <code>ACTIVE</code> state.
+            </exception>
+            <exception cref="T:Amazon.Kinesis.Model.ResourceNotFoundException">
+            The requested resource could not be found. The stream might not be specified correctly,
+            or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+            </exception>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.IncreaseStreamRetentionPeriodAsync(Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest,Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the IncreaseStreamRetentionPeriod operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the IncreaseStreamRetentionPeriod operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.ListStreamsAsync(Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListStreamsRequest,Amazon.Kinesis.Model.ListStreamsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListStreams operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListStreams operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.ListTagsForStreamAsync(Amazon.Kinesis.Model.ListTagsForStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.ListTagsForStreamRequest,Amazon.Kinesis.Model.ListTagsForStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the ListTagsForStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the ListTagsForStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.MergeShardsAsync(Amazon.Kinesis.Model.MergeShardsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.MergeShardsRequest,Amazon.Kinesis.Model.MergeShardsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the MergeShards operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the MergeShards operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.PutRecordAsync(Amazon.Kinesis.Model.PutRecordRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.PutRecordRequest,Amazon.Kinesis.Model.PutRecordResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the PutRecord operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the PutRecord operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.PutRecordsAsync(Amazon.Kinesis.Model.PutRecordsRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.PutRecordsRequest,Amazon.Kinesis.Model.PutRecordsResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the PutRecords operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the PutRecords operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.RemoveTagsFromStreamAsync(Amazon.Kinesis.Model.RemoveTagsFromStreamRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.RemoveTagsFromStreamRequest,Amazon.Kinesis.Model.RemoveTagsFromStreamResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the RemoveTagsFromStream operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the RemoveTagsFromStream operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+        <member name="M:Amazon.Kinesis.IAmazonKinesis.SplitShardAsync(Amazon.Kinesis.Model.SplitShardRequest,Amazon.Runtime.AmazonServiceCallback{Amazon.Kinesis.Model.SplitShardRequest,Amazon.Kinesis.Model.SplitShardResponse},Amazon.Runtime.AsyncOptions)">
+            <summary>
+            Initiates the asynchronous execution of the SplitShard operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the SplitShard operation on AmazonKinesisClient.</param>
+            <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+            <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+                     procedure using the AsyncState property.</param>
+        </member>
+    </members>
+</doc>
