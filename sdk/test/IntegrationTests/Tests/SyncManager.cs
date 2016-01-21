@@ -21,6 +21,7 @@ using Amazon.Util.Internal;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
+    // Test methods in this class disabled due to lack of platform emulation for running tests build server
     [TestClass]
     public class SyncManager : TestBase<AmazonCognitoIdentityClient>
     {
@@ -110,8 +111,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
 #if INCLUDE_FACEBOOK_TESTS
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        //[TestMethod]
+        //[TestCategory("SyncManager")]
         public void AuthenticatedCredentialsTest()
         {
             CognitoAWSCredentials authCred = AuthCredentials;
@@ -123,8 +124,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 #endif
 
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        //[TestMethod]
+        //[TestCategory("SyncManager")]
         public void DatasetLocalStorageTest()
         {
             {
@@ -148,8 +149,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// Test case: Store a value in a dataset and sync it. Wipe all local data.
         /// After synchronizing the dataset we should have our stored value back.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        //[TestMethod]
+        //[TestCategory("SyncManager")]
         public void DatasetCloudStorageTest()
         {
             string failureMessage = string.Empty;
@@ -228,8 +229,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// <summary>
         /// Test Case: 
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        //[TestMethod]
+        //[TestCategory("SyncManager")]
         public void MergeTest()
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -365,8 +366,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// Test case: Check that the dataset metadata is modified appropriately when calling Synchronize.
         /// We test for the dirty bit, the sync count and the last modified timmestamp.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        //[TestMethod]
+        //[TestCategory("SyncManager")]
         public void MetadataTest()
         {
             string failureMessage = string.Empty;
@@ -452,8 +453,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// Also check that by returning false in SyncConflict, the Synchronize operation
         /// is aborted and nothing else gets called. 
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        //[TestMethod]
+        //[TestCategory("SyncManager")]
         public void ConflictTest()
         {
             string failureMessage = string.Empty;
@@ -517,8 +518,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// for resolving a conflict (local wins, remote wins, and override) work. We also check
         /// that returning true in SyncConflict allows the Synchronization operationn to continue.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        //[TestMethod]
+        //[TestCategory("SyncManager")]
         public void ResolveConflictTest()
         {
             string failureMessage = string.Empty;
@@ -611,8 +612,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         /// Check that the dataset is no longer in local memory and that syncing a
         /// dataset with the same record key does not cause a conflict.
         /// </summary>
-        [TestMethod]
-        [TestCategory("SyncManager")]
+        //[TestMethod]
+        //[TestCategory("SyncManager")]
         public void WipeDataTest()
         {
             string failureMessage = string.Empty;
