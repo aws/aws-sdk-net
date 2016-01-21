@@ -99,7 +99,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NotificationARNs. 
         /// <para>
-        /// Update the ARNs for the Amazon SNS topics that are associated with the stack.
+        /// Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that AWS CloudFormation
+        /// associates with the stack. Specify an empty list to remove all notification topics.
         /// </para>
         /// </summary>
         public List<string> NotificationARNs
@@ -147,7 +148,7 @@ namespace Amazon.CloudFormation.Model
         /// stack update fails. By default, AWS CloudFormation grants permissions to all resource
         /// types. AWS Identity and Access Management (IAM) uses this parameter for AWS CloudFormation-specific
         /// condition keys in IAM policies. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-        /// Access with AWS Identity and Access Management</a>
+        /// Access with AWS Identity and Access Management</a>.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes

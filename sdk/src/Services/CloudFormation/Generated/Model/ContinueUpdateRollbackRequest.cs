@@ -28,48 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListStackResources operation.
-    /// Returns descriptions of all resources of the specified stack.
+    /// Container for the parameters to the ContinueUpdateRollback operation.
+    /// For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues
+    /// rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the
+    /// cause of the failure, you can manually <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+    /// fix the error</a> and continue the rollback. By continuing the rollback, you can return
+    /// your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), return
+    /// the stack to its original settings, and then try to update the stack again.
     /// 
     ///  
     /// <para>
-    /// For deleted stacks, ListStackResources returns resource information for up to 90 days
-    /// after the stack has been deleted.
+    /// A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS CloudFormation
+    /// cannot roll back all changes after a failed stack update. For example, you might have
+    /// a stack that is rolling back to an old database instance that was deleted outside
+    /// of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was deleted,
+    /// it assumes that the database instance still exists and attempts to roll back to it,
+    /// causing the update rollback to fail.
     /// </para>
     /// </summary>
-    public partial class ListStackResourcesRequest : AmazonCloudFormationRequest
+    public partial class ContinueUpdateRollbackRequest : AmazonCloudFormationRequest
     {
-        private string _nextToken;
         private string _stackName;
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// A string that identifies the next page of stack resources that you want to retrieve.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
 
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the unique stack ID that is associated with the stack, which are not always
-        /// interchangeable:
-        /// </para>
-        ///  <ul> <li>Running stacks: You can specify either the stack's name or its unique stack
-        /// ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> 
-        /// <para>
-        /// Default: There is no default value.
+        /// The name or the unique ID of the stack that you want to continue rolling back.
         /// </para>
         /// </summary>
         public string StackName

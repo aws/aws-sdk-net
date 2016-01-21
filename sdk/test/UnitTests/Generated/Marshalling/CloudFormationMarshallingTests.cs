@@ -63,6 +63,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void ContinueUpdateRollbackMarshallTest()
+        {
+            var operation = service_model.FindOperation("ContinueUpdateRollback");
+
+            var request = InstantiateClassGenerator.Execute<ContinueUpdateRollbackRequest>();
+            var marshaller = new ContinueUpdateRollbackRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ContinueUpdateRollbackResponseUnmarshaller.Instance.Unmarshall(context)
+                as ContinueUpdateRollbackResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void CreateStackMarshallTest()
         {
             var operation = service_model.FindOperation("CreateStack");
