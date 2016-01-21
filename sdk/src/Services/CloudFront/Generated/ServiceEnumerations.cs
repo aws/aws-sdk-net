@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-13.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
  */
 
 using System;
@@ -30,6 +30,10 @@ namespace Amazon.CloudFront
     public class CertificateSource : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Acm for CertificateSource
+        /// </summary>
+        public static readonly CertificateSource Acm = new CertificateSource("acm");
         /// <summary>
         /// Constant Cloudfront for CertificateSource
         /// </summary>
