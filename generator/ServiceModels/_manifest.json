@@ -17,7 +17,7 @@
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net45",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+unity", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+unity", "_bcl+pcl", "_bcl45+pcl" ],
             "nugetTargetPlatform": "net45"
         },
         {
@@ -27,7 +27,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
             "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
 
             "extraTestProjects": [
@@ -52,7 +52,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "MonoAndroid10"
         },
@@ -63,7 +63,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "xamarinios10"
         },
@@ -74,7 +74,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "netcore45"
         },
@@ -85,7 +85,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
             "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wpa81"
         },
@@ -96,7 +96,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;WP_SL",
             "binSubFolder": "wp8",
             "template": "WinPhoneSilverlight8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl", "_bcl45+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wp8"
         },
@@ -290,13 +290,40 @@
 
             "model": "cognito-sync",
             "base-name": "CognitoSync",
-            "nuget-package-title-suffix": "(Low Level Service Client)",
             "region-lookup-name": "cognito-sync",
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
-            "synopsis": "This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.",
+            "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
             "dependencies": [ "CognitoIdentity" ],
-            "platforms": [ "Unity" ]
+            "pcl-variants": [ "iOS" ],
+            "use-pcl-project-dependencies": true,
+            "license-url": "http://aws.amazon.com/asl/",
+            "reference-dependencies": {
+                "Net35": [
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net20\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Linq.1.0.97.0\\lib\\net20\\System.Data.SQLite.Linq.dll" }
+                ],
+                "Net45": [
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net45\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.EF6", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.EF6.1.0.97.0\\lib\\net45\\System.Data.SQLite.EF6.dll" }
+                ],
+                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" } ],
+                "iOS": [
+                    { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" },
+                    { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.Ext.dll" }
+                ],
+                "Unity": [
+                    { "name": "System.Data", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\System.Data.dll" },
+                    { "name": "Mono.Data.SQLite", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll"}
+                ]
+            },
+            "nuget-dependencies": {
+                "Net35": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
+                "Net45": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
+                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
+                "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
+            },
+          "platforms": [ "Unity" ]
         },
         {
             "active": true,

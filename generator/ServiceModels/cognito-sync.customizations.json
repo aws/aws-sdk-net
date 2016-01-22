@@ -22,7 +22,8 @@
                 { "operation": "addAfter", "newType": "Amazon.CognitoSync.Internal.AmazonCognitoSyncPostSignHandler", "targetType": "Amazon.Runtime.Internal.Signer" }
 			 ]
 		},
-		"xHttpMethodOverride":true
+        "xHttpMethodOverride": true,
+        "generateSyncClient" : true
 	},
     "simpleMethods" : {
         "operations" : {

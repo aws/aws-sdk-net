@@ -50,7 +50,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("<#=this.Session["Version"]#>")]
 [assembly: AssemblyFileVersion("<#=this.Session["FileVersion"] #>")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

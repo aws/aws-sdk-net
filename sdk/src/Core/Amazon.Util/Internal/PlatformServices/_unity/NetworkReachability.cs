@@ -9,16 +9,11 @@ namespace Amazon.Util.Internal.PlatformServices
 {
     public class NetworkReachability : INetworkReachability
     {
-
-        public NetworkReachability()
-        { 
-        }
-
         public NetworkStatus NetworkStatus
         {
             get
             {
-                var networkReachability = NetworkInfo.GetReachability();
+                var networkReachability = NetworkInfo.Reachability;
                 if (networkReachability == UnityEngine.NetworkReachability.ReachableViaCarrierDataNetwork)
                     return NetworkStatus.ReachableViaCarrierDataNetwork;
                 else if (networkReachability == UnityEngine.NetworkReachability.ReachableViaLocalAreaNetwork)
@@ -28,16 +23,36 @@ namespace Amazon.Util.Internal.PlatformServices
             }
         }
 
+        internal EventHandler<NetworkStatusEventArgs> mNetworkReachabilityChanged;
+
+        internal static readonly object reachabilityChangedLock = new object();
+
         public event EventHandler<NetworkStatusEventArgs> NetworkReachabilityChanged
         {
             add
             {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+                lock (reachabilityChangedLock)
+                {
+                    mNetworkReachabilityChanged += value;
+                }
             }
             remove
             {
-                throw new NotImplementedException(ServiceFactory.NotImplementedErrorMessage);
+                lock (reachabilityChangedLock)
+                {
+                    mNetworkReachabilityChanged -= value;
+                }
             }
         }
+
+        internal void OnNetworkReachabilityChanged(NetworkStatus status)
+        {
+            EventHandler<NetworkStatusEventArgs> handler = mNetworkReachabilityChanged;
+            if (handler != null)
+            {
+                handler(null, new NetworkStatusEventArgs(status));
+            }
+        }
+
     }
 }

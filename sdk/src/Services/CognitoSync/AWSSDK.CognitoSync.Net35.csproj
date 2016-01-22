@@ -59,12 +59,49 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    
+    <Reference Include="System.Data.SQLite.Core">
+      <HintPath>..\..\..\packages\System.Data.SQLite.Core.1.0.97.0\lib\net20\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\..\packages\System.Data.SQLite.Linq.1.0.97.0\lib\net20\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Custom\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Exceptions\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Storage\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Storage\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Storage\_bcl35\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\SyncManager\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">

@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Data.SQLite.Core.1.0.97.0\lib\net45\System.Data.SQLite.dll</HintPath>
       <Private>True</Private>
@@ -82,9 +83,61 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include=".\Tests\*.cs" Exclude=".\Tests\35\*.cs" />
+    <Compile Include=".\Tests\APIGateway.cs" />
+    <Compile Include=".\Tests\AutoScaling.cs" />
+    <Compile Include=".\Tests\AWSMarketplaceCommerceAnalytics.cs" />
+    <Compile Include=".\Tests\AWSPublicIpAddressRanges.cs" />
+    <Compile Include=".\Tests\AWSSupport.cs" />
+    <Compile Include=".\Tests\Beanstalk.cs" />
+    <Compile Include=".\Tests\Cache.cs" />
+    <Compile Include=".\Tests\CloudFormation.cs" />
+    <Compile Include=".\Tests\CloudFront.cs" />
+    <Compile Include=".\Tests\CloudHSM.cs" />
+    <Compile Include=".\Tests\CloudSearch.cs" />
+    <Compile Include=".\Tests\CloudTrail.cs" />
+    <Compile Include=".\Tests\CloudWatch.cs" />
+    <Compile Include=".\Tests\CloudWatchLogs.cs" />
+    <Compile Include=".\Tests\CodeDeploy.cs" />
+    <Compile Include=".\Tests\CognitoIdentity.cs" />
+    <Compile Include=".\Tests\CognitoSync.cs" />
+    <Compile Include=".\Tests\ConfigServiceTests.cs" />
+    <Compile Include=".\Tests\CredentialsTests.cs" />
+    <Compile Include=".\Tests\DataPipeline.cs" />
+    <Compile Include=".\Tests\DirectConnect.cs" />
+    <Compile Include=".\Tests\DirectoryService.cs" />
+    <Compile Include=".\Tests\ECS.cs" />
+    <Compile Include=".\Tests\ElastiCache.cs" />
+    <Compile Include=".\Tests\ElasticLoadBalancing.cs" />
+    <Compile Include=".\Tests\Elasticsearch.cs" />
+    <Compile Include=".\Tests\ElasticTranscoder.cs" />
+    <Compile Include=".\Tests\General.cs" />
+    <Compile Include=".\Tests\Glacier.cs" />
+    <Compile Include=".\Tests\ImportExport.cs" />
+    <Compile Include=".\Tests\Inspector.cs" />
+    <Compile Include=".\Tests\IoT.cs" />
+    <Compile Include=".\Tests\IotData.cs" />
+    <Compile Include=".\Tests\KeyManagementService.cs" />
+    <Compile Include=".\Tests\Kinesis.cs" />
+    <Compile Include=".\Tests\KinesisFirehose.cs" />
+    <Compile Include=".\Tests\LambdaTests.cs" />
+    <Compile Include=".\Tests\MachineLearning.cs" />
+    <Compile Include=".\Tests\MobileAnalytics.cs" />
+    <Compile Include=".\Tests\OpsWorks.cs" />
+    <Compile Include=".\Tests\Redshift.cs" />
+    <Compile Include=".\Tests\Route53.cs" />
+    <Compile Include=".\Tests\Route53Domains.cs" />
+    <Compile Include=".\Tests\SimpleDB.cs" />
+    <Compile Include=".\Tests\SimpleEmail.cs" />
+    <Compile Include=".\Tests\SimpleSystemsManagement.cs" />
+    <Compile Include=".\Tests\SimpleWorkflow.cs" />
+    <Compile Include=".\Tests\SNS.cs" />
+    <Compile Include=".\Tests\SQS.cs" />
+    <Compile Include=".\Tests\StorageGateway.cs" />
+    <Compile Include=".\Tests\TestBase.cs" />
+    <Compile Include=".\Tests\WAF.cs" />
     <Compile Include=".\Tests\*\*.cs" Exclude=".\Tests\35\*.cs" />
     <Compile Include=".\Utils\*.cs" />
+    <Compile Include="Tests\SyncManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj">

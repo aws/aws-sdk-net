@@ -3,6 +3,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
 <?xml version="1.0" encoding="utf-8"?>
 <package> 
   <metadata> 
@@ -12,36 +13,18 @@
     <authors>Amazon Web Services</authors>
     <description><#=this.Session["AssemblyDescription"]#></description>
     <language>en-US</language>
-    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <licenseUrl><#=this.Session["licenseUrl"]#></licenseUrl>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud <#=this.Session["BaseName"]#> aws-sdk-v3<#=this.Session["ExtraTags"]#></tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+<# 
+    if (bool.Parse(this.Session["requireLicenseAcceptance"].ToString()))
+	{#>
+    <requireLicenseAcceptance><#=this.Session["requireLicenseAcceptance"]#></requireLicenseAcceptance>
+<# 
+	}
+#>
     <dependencies>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-<#
-    foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
-    {
-#>
-      <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
-<#
-    }
-#>
-<#
-	if(this.Session.ContainsKey("NugetDependencies"))
-    {
-		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
-		if(dependencies.ContainsKey("PCL"))
-		{
-			foreach(var dependency in dependencies["PCL"])
-			{
-#>
-		<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
-<#		
-			}
-		}
-	}	
-#>
-      </group>
 <#
 	if(this.Session.ContainsKey("NugetDependencies"))
     {
@@ -76,6 +59,33 @@
 		}
 	}	
 #>
+
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+<#
+    foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+    {
+#>
+        <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+<#
+    }
+#>
+<#
+	if(this.Session.ContainsKey("NugetDependencies"))
+    {
+		var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
+		if(dependencies.ContainsKey("PCL"))
+		{
+			foreach(var dependency in dependencies["PCL"])
+			{
+#>
+		<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
+<#		
+			}
+		}
+	}	
+#>
+      </group>
+
       <group>
 <#
     foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
@@ -101,18 +111,20 @@
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-<#  
-    if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
+<#
+    if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase) || ((string)this.Session["AssemblyName"]).Equals("AWSSDK.CognitoSync",StringComparison.CurrentCultureIgnoreCase))
     {
 #>
-    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.dll" target="lib\Xamarin.iOS10" />
-    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.xml" target="lib\Xamarin.iOS10" />
-    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.MobileAnalytics.pdb" target="lib\Xamarin.iOS10" />
+
+    <file src="<#=Path.Combine(".", "bin", "Release", "Xamarin.iOS10", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\Xamarin.iOS10" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "Xamarin.iOS10", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\Xamarin.iOS10" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "Xamarin.iOS10", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\Xamarin.iOS10" />
 <#
     }
 #>
+
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
   </files>
 </package>

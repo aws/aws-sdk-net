@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 
+
 namespace Amazon.Util.Internal
 {
     public static partial class InternalSDKUtils
@@ -78,7 +79,6 @@ namespace Amazon.Util.Internal
         {
             return Type.GetType(string.Format("UnityEngine.{0}, UnityEngine", typeName));
         }
-
 
         private static Logger Logger = Logger.GetLogger(typeof(InternalSDKUtils));
 

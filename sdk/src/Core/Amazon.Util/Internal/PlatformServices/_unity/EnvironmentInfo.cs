@@ -22,7 +22,7 @@ namespace Amazon.Util.Internal.PlatformServices
                 ".NET_Runtime/{0}.{1} UnityVersion/{2}",
                  Environment.Version.Major,
                  Environment.Version.MajorRevision,
-                 DetermineFramework());
+                 AmazonHookedPlatformInfo.Instance.UnityVersion);
             this.PclPlatform = "Unity";
             this.PlatformUserAgent = string.Format(@"unity_{0}_{1}", this.Platform, this.PlatformVersion);
         }
@@ -42,28 +42,5 @@ namespace Amazon.Util.Internal.PlatformServices
         public string PclPlatform { get; private set; }
 
         public string PlatformUserAgent { get; private set; }
-
-        private static string DetermineFramework()
-        {
-            if (UnityInitializer.IsMainThread())
-            {
-                return UnityEngine.Application.unityVersion;
-            }
-            else
-            {
-                string value = string.Empty;
-                AutoResetEvent asyncEvent = new AutoResetEvent(false);
-                UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
-                {
-                    value = UnityEngine.Application.unityVersion;
-                    asyncEvent.Set();
-                });
-                asyncEvent.WaitOne();
-                return value;
-            }
-        }
-
-
-
     }
 }

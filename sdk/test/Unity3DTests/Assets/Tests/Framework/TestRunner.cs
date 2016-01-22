@@ -4,15 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using NUnit.Framework;
 using UnityEngine;
 using ThirdParty.Json.LitJson;
 using NUnit.Framework.Api;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
 using System.IO;
-using ThirdParty.iOS4Unity;
 
 namespace AWSSDK.Tests.Framework
 {
@@ -137,13 +134,18 @@ namespace AWSSDK.Tests.Framework
             private HashSet<String> TestCaseNames;
             public bool InvertMatch = false;
 
-            public FixtureAndCaseFilter(HashSet<String> fixtureNames, HashSet<String> testCaseNames)
+            public FixtureAndCaseFilter(HashSet<string> fixtureNames, HashSet<string> testCaseNames)
             {
                 FixtureNames = fixtureNames;
                 TestCaseNames = testCaseNames;
             }
+            public FixtureAndCaseFilter(string fixtureName, HashSet<string> testCaseNames)
+            {
+                FixtureNames = new HashSet<string> { fixtureName };
+                TestCaseNames = testCaseNames;
+            }
 
-            public FixtureAndCaseFilter(HashSet<String> fixtureNames)
+            public FixtureAndCaseFilter(HashSet<string> fixtureNames)
             {
                 FixtureNames = fixtureNames;
                 TestCaseNames = new HashSet<string>();

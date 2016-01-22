@@ -44,7 +44,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.1")]
 [assembly: AssemblyFileVersion("3.1.0.2")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]
