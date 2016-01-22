@@ -215,6 +215,8 @@ namespace Amazon.S3
                     postResponse.RequestId = response.GetHeaderValue(HeaderKeys.XAmzRequestIdHeader);
                 if (response.IsHeaderPresent(HeaderKeys.XAmzId2Header))
                     postResponse.HostId = response.GetHeaderValue(HeaderKeys.XAmzId2Header);
+                if (response.IsHeaderPresent(HeaderKeys.XAmzVersionIdHeader))
+                    postResponse.VersionId = response.GetHeaderValue(HeaderKeys.XAmzVersionIdHeader);
 
                 PostObjectRequest request = executionContext.RequestContext.OriginalRequest as PostObjectRequest;
                 asyncResult.Request = request;
