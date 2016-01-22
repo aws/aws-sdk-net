@@ -4,6 +4,8 @@
     
     <PropertyGroup>
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
+		<SmokeBuild></SmokeBuild>
+		
     </PropertyGroup>
     
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
@@ -98,7 +100,7 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />
     </Target>
 
-    <Target Name="xam-pack" DependsOnTargets="build-custom-tasks;nuget-pack" Condition="Exists('$(xpkgexe)')">
+    <Target Name="xam-pack" DependsOnTargets="" Condition="Exists('$(xpkgexe)') And $(SmokeBuild) == ''">
         <PackageComponents 
             ComponentRootPath="..\sdk\xamarin-components\" 
             NugetExe="..\sdk\.nuget\NuGet.exe" 
