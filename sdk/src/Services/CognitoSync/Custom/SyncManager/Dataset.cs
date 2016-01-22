@@ -87,7 +87,7 @@ namespace Amazon.CognitoSync.SyncManager
         private CognitoSyncStorage _remote;
 
         /// <summary>
-        /// Instance of <see cref="Amazon.CognitoSync.SyncManager.IRemoteDataStorage"/>
+        /// Instance of <see cref="Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage"/>
         /// </summary>
         protected CognitoSyncStorage Remote
         {

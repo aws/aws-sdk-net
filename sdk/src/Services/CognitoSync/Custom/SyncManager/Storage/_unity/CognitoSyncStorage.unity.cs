@@ -23,6 +23,10 @@ using Amazon.Util.Internal;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
+    /// <summary>
+    /// Remote data storage using Cognito Sync service on which we can invoke
+    /// actions like creating a dataset or record.
+    /// </summary>
     public partial class CognitoSyncStorage: IDisposable
     {
         #region ListDataset
@@ -129,6 +133,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         /// <returns>The records.</returns>
         /// <param name="datasetName">Dataset name.</param>
         /// <param name="records">Records.</param>
+        /// <param name="syncSessionToken">Sync session token.</param>
         public List<Record> PutRecords(string datasetName, List<Record> records, string syncSessionToken)
         {
             UpdateRecordsRequest request = new UpdateRecordsRequest();

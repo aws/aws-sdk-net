@@ -7,10 +7,14 @@ using Amazon.CognitoSync.Model;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
-    public partial class CognitoSyncStorage :  IDisposable
+    /// <summary>
+    /// Remote data storage using Cognito Sync service on which we can invoke
+    /// actions like creating a dataset or record.
+    /// </summary>
+    public partial class CognitoSyncStorage : IDisposable
     {
         #region ListDataset
-        
+
         /// <summary>
         /// Gets a list of <see cref="DatasetMetadata"/>
         /// </summary>

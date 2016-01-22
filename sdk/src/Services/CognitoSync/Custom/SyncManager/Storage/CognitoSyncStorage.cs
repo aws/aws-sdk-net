@@ -23,6 +23,10 @@ using Amazon.CognitoSync.Model;
 
 namespace Amazon.CognitoSync.SyncManager.Internal
 {
+    /// <summary>
+    /// Remote data storage using Cognito Sync service on which we can invoke
+    /// actions like creating a dataset or record.
+    /// </summary>
     public partial class CognitoSyncStorage : IDisposable
     {
         private readonly string identityPoolId;
@@ -64,7 +68,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         #region Constructor
 
         /// <summary>
-        /// Creates an insance of IRemoteStorage Interface. 
+        /// Creates an insance of CognitoSyncStorage. 
         /// </summary>
         /// <param name="cognitoCredentials"><see cref="Amazon.CognitoIdentity.CognitoAWSCredentials"/></param>
         /// <param name="config"><see cref="Amazon.CognitoSync.AmazonCognitoSyncConfig"/></param>
