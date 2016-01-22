@@ -121,9 +121,12 @@ namespace CustomTasks
                 DeleteDirectory(UnityTempProjectPath);
             }
 
+            Log.LogMessage(@"Finished creating all unitypackages\n Copying them to a single zip location");
+            
             //copy the notice file
             string noticeFilePath = Path.Combine(DeploymentPath, "..", "Notice.txt");
-            File.Copy(noticeFilePath, unityFiles);
+            string destinationNoticeFilePath = Path.Combine(unityFiles, "Notice.txt");
+            File.Copy(noticeFilePath, destinationNoticeFilePath);
 
             //combine all unitypackage and create a zip file.
             string zipFileName = string.Format(@"aws-unity-sdk-{0}.zip", ProductVersion);
