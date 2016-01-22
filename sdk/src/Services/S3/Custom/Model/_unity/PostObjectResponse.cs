@@ -36,5 +36,7 @@ namespace Amazon.S3.Model
         /// The host id returned by the post object request
         /// </summary>
         public string HostId { get; set; }
+        public string VersionId { get; set; }
     }
 }
+    

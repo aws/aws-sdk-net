@@ -20,6 +20,7 @@ namespace AWSSDK.IntegrationTests.S3
         private static readonly string FileNamePrefix = "UnityTestFile";
         private static readonly string FileNameFormat = FileNamePrefix + "{0}.txt";
         private static string BucketName = null;
+        private static string VersionedBucketName = null;
 
         private static readonly string AuthenticatedUsersUriSubstring = "acs.amazonaws.com/groups/global/AuthenticatedUsers";
         private static readonly string AllUsersUriSubstring = "acs.amazonaws.com/groups/global/AuthenticatedUsers";
@@ -29,7 +30,10 @@ namespace AWSSDK.IntegrationTests.S3
         public void SetUp()
         {
             BucketName = "unity-test-bucket" + DateTime.Now.Ticks;
+            VersionedBucketName = "unity-test-bucket-versioned" + DateTime.Now.Ticks;
             MissingAPILambdaFunctions.CreateBucket(BucketName, TestRunner.RegionEndpoint);
+            MissingAPILambdaFunctions.CreateBucket(VersionedBucketName, TestRunner.RegionEndpoint);
+            MissingAPILambdaFunctions.EnableBucketVersioning(VersionedBucketName, TestRunner.RegionEndpoint);
         }
 
         [OneTimeTearDown]
@@ -37,6 +41,8 @@ namespace AWSSDK.IntegrationTests.S3
         {
             S3TestUtils.CleanBucket(Client, BucketName);
             MissingAPILambdaFunctions.DeleteBucket(BucketName, TestRunner.RegionEndpoint);
+            S3TestUtils.CleanBucket(Client, VersionedBucketName);
+            MissingAPILambdaFunctions.DeleteBucket(VersionedBucketName, TestRunner.RegionEndpoint);
         }
 
         [Test]
@@ -94,6 +100,25 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
+        public void TestPostObjectVersioning()
+        {
+            var key = "Key";
+            var response = S3TestUtils.PostObjectHelper(Client, VersionedBucketName, key);
+            var version1 = response.VersionId;
+            Utils.AssertFalse(string.IsNullOrEmpty(version1));
+            response = S3TestUtils.PostObjectHelper(Client, VersionedBucketName, key);
+            var version2 = response.VersionId;
+            Utils.AssertFalse(string.IsNullOrEmpty(version2));
+            Utils.AssertTrue(version1 != version2);
+            response = S3TestUtils.PostObjectHelper(Client, VersionedBucketName, key);
+            var version3 = response.VersionId;
+            Utils.AssertFalse(string.IsNullOrEmpty(version3));
+            Utils.AssertTrue(version1 != version3);
+            Utils.AssertTrue(version2 != version3);
+
+        }
+
+        [Test]
         public void TestCannedACL()
         {
             var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
@@ -105,7 +130,7 @@ namespace AWSSDK.IntegrationTests.S3
             Utils.AssertTrue(GrantsDoNotContain(grants, AllUsersUriSubstring));
             Utils.AssertTrue(GrantsDoNotContain(grants, LogDeliveryUriSubstring));
 
-            // No canned ACL equivalent to Provate
+            // No canned ACL equivalent to Private
             S3TestUtils.PostObjectHelper(Client, BucketName, key);
             grants = S3TestUtils.GetACLHelper(Client, BucketName, key).AccessControlList.Grants;
             Utils.AssertTrue(GrantsDoNotContain(grants, AuthenticatedUsersUriSubstring));
