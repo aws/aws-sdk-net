@@ -14,7 +14,7 @@ namespace SDKDocGenerator
         public static Dictionary<string, string> ServiceNamespaceContractions = new Dictionary<string, string>
         {
             {"ElasticLoadBalancing", "ELB"},
-            {"ElasticBeanstalk", "EB_"},
+            {"ElasticBeanstalk", "EB"},
             {"ElasticMapReduce", "EMR"},
             {"ElasticTranscoder", "ETS"},
             {"SimpleNotificationService", "SNS"},
