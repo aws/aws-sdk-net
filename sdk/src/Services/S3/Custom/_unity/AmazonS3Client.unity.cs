@@ -20,6 +20,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.S3.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -57,14 +58,22 @@ namespace Amazon.S3
                     if (callback != null)
                         callback(responseObject);
                 };
+
             ThreadPool.QueueUserWorkItem(new WaitCallback(delegate
             {
                 // Provide a default policy if user doesn't set it.
-                if (request.SignedPolicy == null)
+                try
                 {
-                    CreateSignedPolicy(request);
+                    if (request.SignedPolicy == null)
+                    {
+                        CreateSignedPolicy(request);
+                    }
+                    PostObject(request, options, callbackHelper);
                 }
-                PostObject(request, options, callbackHelper);
+                catch (Exception e)
+                {
+                    callback(new AmazonServiceResult<PostObjectRequest, PostObjectResponse>(request, null, e, options.State));
+                }
             }));
 
         }
@@ -153,7 +162,7 @@ namespace Amazon.S3
                 if (callback != null)
                     webRequest.SetupProgressListeners(reqStream, 0, request, callback);
             }
-            
+
             var executionContext = new AsyncExecutionContext(
                 new AsyncRequestContext(this.Config.LogMetrics)
                 {

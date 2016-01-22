@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 using System.Linq;
+using System.IO.Compression;
 
 namespace CustomTasks
 {
@@ -52,9 +53,9 @@ namespace CustomTasks
                 SamplesPath = @"..\..\aws-sdk-unity-samples";
             }
 
-            if(!Directory.Exists(SamplesPath))
+            if (!Directory.Exists(SamplesPath))
             {
-                new ArgumentException(@"Directory {0} does not exist",SamplesPath);
+                new ArgumentException(@"Directory {0} does not exist", SamplesPath);
             }
 
             string unityAssemblies = Path.Combine(DeploymentPath, "assemblies", "unity");
@@ -63,7 +64,7 @@ namespace CustomTasks
 
             SdkVersionFile = Path.Combine(DeploymentPath, @"_sdk-versions.json");
 
-            string unityFiles = Path.Combine(DeploymentPath, "unity");
+            string unityFiles = Path.Combine(DeploymentPath, "unity", "unitypackages");
 
             UnityTempProjectPath = Path.Combine(unityFiles, "temp");
 
@@ -97,7 +98,7 @@ namespace CustomTasks
                 var awssdkDirectory = Path.Combine(assetsFolder, @"AWSSDK");
 
                 Directory.CreateDirectory(awssdkDirectory);
-               
+
                 //copy assembly files
                 CopyAssemblies(ServiceName, unityAssemblies, awssdkDirectory);
 
@@ -110,7 +111,7 @@ namespace CustomTasks
                     CopyDirectory(samplesSourceDirectory, samplesDestinationDirectory);
 
                     //copy the license for samples
-                    File.Copy(Path.Combine(SamplesPath, @"License.txt"), Path.Combine(samplesDestinationDirectory,@"License.txt"));
+                    File.Copy(Path.Combine(SamplesPath, @"License.txt"), Path.Combine(samplesDestinationDirectory, @"License.txt"));
                 }
 
                 //create unitypackage
@@ -119,6 +120,16 @@ namespace CustomTasks
                 //delete the temp file
                 DeleteDirectory(UnityTempProjectPath);
             }
+
+            //copy the notice file
+            string noticeFilePath = Path.Combine(DeploymentPath, "..", "Notice.txt");
+            File.Copy(noticeFilePath, unityFiles);
+
+            //combine all unitypackage and create a zip file.
+            string zipFileName = string.Format(@"aws-unity-sdk-{0}.zip", ProductVersion);
+            string zipFilePath = Path.Combine(DeploymentPath, "unity", zipFileName);
+            ZipFile.CreateFromDirectory(unityFiles, zipFilePath);
+            
             return true;
         }
 
@@ -150,7 +161,6 @@ namespace CustomTasks
 
             Directory.Delete(target_dir, true);
         }
-
 
         private void CreateUnityPackage(string path)
         {
@@ -203,6 +213,16 @@ namespace CustomTasks
             }
         }
 
+        private string ProductVersion
+        {
+            get
+            {
+                string file = File.ReadAllText(SdkVersionFile).Trim();
+                var sdkversions = JsonConvert.DeserializeObject<Versions>(file);
+                return sdkversions.ProductVersion;
+            }
+        }
+
         private IEnumerable<string> DependantServices
         {
             get
@@ -232,7 +252,7 @@ namespace CustomTasks
             StringBuilder buffer = new StringBuilder();
             process.OutputDataReceived += new DataReceivedEventHandler
             (
-                delegate(object sender, DataReceivedEventArgs e)
+                delegate (object sender, DataReceivedEventArgs e)
                 {
                     Console.WriteLine(e.Data);
                     buffer.AppendLine(e.Data);
@@ -240,7 +260,7 @@ namespace CustomTasks
             );
             process.ErrorDataReceived += new DataReceivedEventHandler
             (
-                delegate(object sender, DataReceivedEventArgs e)
+                delegate (object sender, DataReceivedEventArgs e)
                 {
                     Console.WriteLine(e.Data);
                     buffer.AppendLine(e.Data);

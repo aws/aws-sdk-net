@@ -26,7 +26,10 @@ using System.Text;
 
 using System.Globalization;
 using UnityEngine;
-
+using System.Threading;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Util.Internal
 {
@@ -77,6 +80,52 @@ namespace Amazon.Util.Internal
         }
 
 
+        private static Logger Logger = Logger.GetLogger(typeof(InternalSDKUtils));
+
+        public static void AsyncExecutor(Action action, AsyncOptions options)
+        {
+            if (options.ExecuteCallbackOnMainThread)
+            {
+                if (UnityInitializer.IsMainThread())
+                {
+                    SafeExecute(action);
+                }
+                else
+                {
+                    UnityRequestQueue.Instance.ExecuteOnMainThread(action);
+                }
+            }
+            else
+            {
+                if (!UnityInitializer.IsMainThread())
+                {
+                    SafeExecute(action);
+                }
+                else
+                {
+                    ThreadPool.QueueUserWorkItem((state) =>
+                    {
+                        SafeExecute(action);
+                    });
+                }
+            }
+        }
+
+        public static void SafeExecute(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception exception)
+            {
+                // Catch any unhandled exceptions from the user callback 
+                // and log it. 
+                Logger.Error(exception,
+                    "An unhandled exception was thrown from the callback method {0}.",
+                    action.Method.Name);
+            }
+        }
 
     }
 }
