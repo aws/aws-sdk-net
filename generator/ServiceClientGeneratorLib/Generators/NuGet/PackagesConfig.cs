@@ -46,8 +46,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write(@"  <package id=""SQLitePCL"" version=""3.8.7.2"" targetFramework=""xamarinios10"" />
-  <package id=""SQLitePCL"" version=""3.8.7.2"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+            this.Write(@"  <package id=""SQLitePCL"" version=""3.8.7.2"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
   <package id=""System.Data.SQLite"" version=""1.0.97.0"" targetFramework=""net35"" />
   <package id=""System.Data.SQLite.Core"" version=""1.0.97.0"" targetFramework=""net35"" />
   <package id=""System.Data.SQLite.Linq"" version=""1.0.97.0"" targetFramework=""net35"" />
@@ -58,7 +57,7 @@ namespace ServiceClientGenerator.Generators.NuGet
   <package id=""System.Data.SQLite.EF6"" version=""1.0.97.0"" targetFramework=""net45"" />
 ");
             
-            #line 28 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+            #line 27 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
 
     }
 
