@@ -131,16 +131,12 @@ namespace Amazon.Runtime.Internal
                 while (!request.WwwRequest.isDone)
                 {
                     var uploadProgress = request.WwwRequest.uploadProgress;
-                    if (uploadProgress <= 1 && !uploadCompleted)
+                    if (!uploadCompleted)
                     {
                         request.OnUploadProgressChanged(uploadProgress);
 
-                        if (uploadCompleted == true)
+                        if (uploadProgress == 1)
                             uploadCompleted = true;
-                    }
-                    else
-                    {
-                        request.OnDownloadProgressChanged(request.WwwRequest.progress);
                     }
                     yield return null;
                 }

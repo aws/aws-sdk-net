@@ -14,13 +14,10 @@
  */
 
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 using Amazon.Util;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Net;

@@ -115,8 +115,6 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public string Method { get; set; }
 
-        private StreamReadTracker Tracker { get; set; }
-
         /// <summary>
         /// The contructor for UnityWebRequest.
         /// </summary>
@@ -288,36 +286,31 @@ namespace Amazon.Runtime.Internal
         {
             // This class does not have any disposable resources.
         }
+        
+        private StreamReadTracker Tracker { get; set; }
 
         /// <summary>
         /// Sets up the progress listeners
         /// </summary>
         /// <param name="originalStream">The content stream</param>
-        /// <param name="progressUpdateInterval">The internal for publishing progress</param>
+        /// <param name="progressUpdateInterval">The interval at which progress needs to be published</param>
         /// <param name="sender">The objects which is trigerring the progress changes</param>
         /// <param name="callback">The callback which will be invoked when the progress changed event is trigerred</param>
         public void SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
         {
-            if (callback != null)
-            {
-                Tracker = new StreamReadTracker(sender, callback, originalStream.Length,
-                    progressUpdateInterval);
-            }
-        }
-        
-        internal void OnUploadProgressChanged(float progress)
-        {
-            if(Tracker!=null)
-            {
-                Tracker.ReadProgress(progress);
-            }
+            this.Tracker = new StreamReadTracker(sender, callback, originalStream.Length,
+                progressUpdateInterval);
         }
 
-        internal void OnDownloadProgressChanged(float progress)
+        /// <summary>
+        /// Track upload progress changes
+        /// </summary>
+        /// <param name="progress"></param>
+        internal void OnUploadProgressChanged(float progress)
         {
-            if (Tracker != null)
+            if (this.Tracker != null)
             {
-                Tracker.ReadProgress(progress);
+                this.Tracker.UpdateProgress(progress);
             }
         }
     }
