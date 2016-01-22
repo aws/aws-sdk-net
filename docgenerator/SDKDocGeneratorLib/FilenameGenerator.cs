@@ -28,11 +28,11 @@ namespace SDKDocGenerator
             // and the link fails
             fixedUpName = fixedUpName.Replace("&lt;", "!").Replace("&gt;", "!");
             fixedUpName = fixedUpName.Replace("Amazon", "");
-            fixedUpName = fixedUpName.Replace("__", "");
             fixedUpName = fixedUpName.Replace("_Model_", "");
             fixedUpName = fixedUpName.Replace("_Begin", "");
             fixedUpName = fixedUpName.Replace("_End", "");
             fixedUpName = fixedUpName.Replace("Client_", "");
+            fixedUpName = fixedUpName.Replace("_", "");
 
             foreach (var k in ServiceNamespaceContractions.Keys)
             {
