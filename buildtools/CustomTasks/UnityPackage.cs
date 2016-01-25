@@ -30,11 +30,10 @@ namespace CustomTasks
             {"SimpleEmail","SimpleEmail"},
             {"SimpleNotificationService","SNS"},
             {"MobileAnalytics","Mobile Analytics"},
+            {"CognitoSync","Cognito Sync"},
             {"Lambda","Lambda"},
             {"S3","S3"}
         };
-
-        //We Will not include cognito sync sample untill we can have sync manager as well
 
         public override bool Execute()
         {
