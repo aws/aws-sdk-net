@@ -80,6 +80,11 @@ namespace ServiceClientGenerator
         /// </summary>
         public bool ForceSolutionRebuilt { get; set; }
 
+        /// <summary>
+        /// If true the nuspec files will be generated without including references to PCL versions.
+        /// </summary>
+        public bool DisablePCLSupport { get; set; }
+
         public string SelfServiceModel { get; set; }
         public string SelfServiceBaseName { get; set; }
         public string SelfServiceEndpointPrefix { get; set; }
@@ -89,6 +94,7 @@ namespace ServiceClientGenerator
         {
             Verbose = false;
             WaitOnExit = false;
+            DisablePCLSupport = false;
 
             // default paths are relative to executing generator assembly
             // in bin/debug or bin/release
@@ -97,6 +103,8 @@ namespace ServiceClientGenerator
             ModelsFolder = Path.Combine("..", "..", "..", "ServiceModels");
             SdkRootFolder = Path.Combine("..", "..", "..", "..", "sdk");
             SamplesRootFolder = Path.Combine("..", "..", "..", "..", "aws-sdk-net-samples");
+
+            //TODO: fix for OSX environments
             UnityPath = Path.Combine("C:\\", "Program Files", "Unity");
 
             ServiceModels = string.Empty; // process all services

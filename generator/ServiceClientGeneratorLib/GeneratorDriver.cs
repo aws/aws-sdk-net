@@ -1007,7 +1007,8 @@ namespace ServiceClientGenerator
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
                 { "licenseUrl", Configuration.LicenseUrl },
-                { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" }
+                { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" },
+                {"DisablePCLSupport", this.Options.DisablePCLSupport}
         };
 
             if (Configuration.NugetDependencies != null)
