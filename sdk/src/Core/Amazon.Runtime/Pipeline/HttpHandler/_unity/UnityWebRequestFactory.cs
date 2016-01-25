@@ -286,7 +286,7 @@ namespace Amazon.Runtime.Internal
         {
             // This class does not have any disposable resources.
         }
-        
+
         private StreamReadTracker Tracker { get; set; }
 
         /// <summary>
@@ -296,10 +296,13 @@ namespace Amazon.Runtime.Internal
         /// <param name="progressUpdateInterval">The interval at which progress needs to be published</param>
         /// <param name="sender">The objects which is trigerring the progress changes</param>
         /// <param name="callback">The callback which will be invoked when the progress changed event is trigerred</param>
-        public void SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
+        /// <returns>an <see cref="EventStream"/> object, incase the progress is setup, else returns the original stream</returns>
+        public Stream SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
         {
             this.Tracker = new StreamReadTracker(sender, callback, originalStream.Length,
                 progressUpdateInterval);
+
+            return originalStream;
         }
 
         /// <summary>
