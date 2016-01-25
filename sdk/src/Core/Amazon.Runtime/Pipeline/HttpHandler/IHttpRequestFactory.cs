@@ -14,6 +14,7 @@
  */
 
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -98,7 +99,8 @@ namespace Amazon.Runtime
         /// <param name="progressUpdateInterval">The interval at which progress needs to be published</param>
         /// <param name="sender">The objects which is trigerring the progress changes</param>
         /// <param name="callback">The callback which will be invoked when the progress changed event is trigerred</param>
-        void SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback);
+        /// <returns>an <see cref="EventStream"/> object, incase the progress is setup, else returns the original stream</returns>
+        Stream SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback);
 
         /// <summary>
         /// Aborts the HTTP request.
