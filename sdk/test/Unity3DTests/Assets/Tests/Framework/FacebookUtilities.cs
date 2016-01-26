@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using ThirdParty.Json.LitJson;
 
-namespace AWSSDK.IntegrationTests.Utilities
+namespace AWSSDK.Tests.Framework
 {
     public static class FacebookUtilities
     {

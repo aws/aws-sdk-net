@@ -4,7 +4,7 @@ using Amazon.CognitoIdentity.Model;
 using Amazon.CognitoSync.SyncManager;
 using Amazon.Runtime;
 using AWSSDK.Tests.Framework;
-using AWSSDK.IntegrationTests.Utilities;
+using AWSSDK.Tests.Framework;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
