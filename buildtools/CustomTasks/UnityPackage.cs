@@ -128,7 +128,7 @@ namespace CustomTasks
             File.Copy(noticeFilePath, destinationNoticeFilePath);
 
             //combine all unitypackage and create a zip file.
-            string zipFileName = string.Format(@"aws-unity-sdk-{0}.zip", ProductVersion);
+            string zipFileName = string.Format(@"aws-sdk-unity_{0}.zip", ProductVersion);
             string zipFilePath = Path.Combine(DeploymentPath, "unity", zipFileName);
             ZipFile.CreateFromDirectory(unityFiles, zipFilePath);
             

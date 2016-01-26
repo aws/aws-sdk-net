@@ -33,6 +33,7 @@ namespace ServiceClientGenerator
             };
 
             session["NuGetPreviewFlag"] = manifest.DefaultToPreview ? GeneratorDriver.NuGetPreviewFlag : "";
+            session["DisablePCLSupport"] = options.DisablePCLSupport;
         }
 
         public void Execute()
