@@ -673,6 +673,54 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        [TestMethod]
+        [TestCategory("SyncManager")]
+        public void RemoveEntryTest()
+        {
+            string failureMessage = string.Empty;
+            using (var syncManager = new CognitoSyncManager(UnAuthCredentials))
+            {
+                syncManager.WipeData(false);
+                Dataset d = syncManager.OpenOrCreateDataset("testRemoveDataset");
+                long originalCount = d.Metadata.RecordCount;
+                d.Put("testKey", "testValue");
+                d.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
+                {
+                    failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
+                    return false;
+                };
+                d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
+                {
+                    failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
+                };
+#if BCL35
+                d.Synchronize();
+#else
+                RunAsSync(async () => await d.SynchronizeAsync());
+#endif
+                if (!string.IsNullOrEmpty(failureMessage))
+                {
+                    Assert.Fail(failureMessage);
+                }
+                d.Remove("testKey");
+#if BCL35
+                d.Synchronize();
+#else
+                RunAsSync(async () => await d.SynchronizeAsync());
+#endif
+                if (d.Metadata.RecordCount != originalCount)
+                {
+                    failureMessage += "d.Metadata.RecordCount != originalCount\n";
+                }
+
+                d.Dispose();
+                if (!string.IsNullOrEmpty(failureMessage))
+                {
+                    Assert.Fail(failureMessage);
+                }
+            }
+        }
+
 #if INCLUDE_FACEBOOK_TESTS
         private CognitoAWSCredentials _AuthCredentials;
         private CognitoAWSCredentials AuthCredentials

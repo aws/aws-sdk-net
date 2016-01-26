@@ -589,6 +589,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        [Test]
+        [Category("SyncManager")]
+        public void RemoveEntryTest()
+        {
+            string failureMessage = string.Empty;
+            using (var syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint))
+            {
+                syncManager.WipeData(false);
+                Dataset d = syncManager.OpenOrCreateDataset("testRemoveDataset");
+                long originalCount = d.Metadata.RecordCount;
+                d.Put("testKey", "testValue");
+                d.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
+                {
+                    failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
+                    return false;
+                };
+                d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
+                {
+                    failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
+                };
+
+                RunAsSync(async () => await d.SynchronizeAsync());
+                if (!string.IsNullOrEmpty(failureMessage))
+                {
+                    Assert.Fail(failureMessage);
+                }
+                d.Remove("testKey");
+                RunAsSync(async () => await d.SynchronizeAsync());
+
+                if (d.Metadata.RecordCount != originalCount)
+                {
+                    failureMessage += "d.Metadata.RecordCount != originalCount\n";
+                }
+
+                d.Dispose();
+                if (!string.IsNullOrEmpty(failureMessage))
+                {
+                    Assert.Fail(failureMessage);
+                }
+            }
+        }
+
 #if INCLUDE_FACEBOOK_TESTS
         private CognitoAWSCredentials _AuthCredentials;
         private CognitoAWSCredentials AuthCredentials

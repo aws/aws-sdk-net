@@ -332,7 +332,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         private static Record SqliteStmtToRecord(ISQLiteStatement stmt)
         {
             return new Record(stmt.GetText(RecordColumns.KEY),
-                               stmt.GetText(RecordColumns.VALUE),
+                               stmt.DataType(RecordColumns.VALUE) == SQLiteType.NULL ? string.Empty : stmt.GetText(RecordColumns.VALUE),
                                stmt.GetInteger(RecordColumns.SYNC_COUNT),
                                new DateTime(long.Parse(stmt.GetText(RecordColumns.LAST_MODIFIED_TIMESTAMP), CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
                                stmt.DataType(RecordColumns.LAST_MODIFIED_BY) == SQLiteType.NULL ? string.Empty : stmt.GetText(RecordColumns.LAST_MODIFIED_BY),

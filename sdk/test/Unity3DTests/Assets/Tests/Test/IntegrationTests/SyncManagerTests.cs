@@ -701,6 +701,56 @@ namespace AWSSDK.IntegrationTests.SyncManager
             }
             Utils.AssertStringIsNullOrEmpty(failureMessage);
         }
+        
+        [Test]
+        public void RemoveEntryTest()
+        {
+            AutoResetEvent ars = new AutoResetEvent(false);
+            string failureMessage = string.Empty;
+            CognitoSyncManager syncManager = null;
+            AutoResetEvent mainThreadArs = new AutoResetEvent(false);
+            Amazon.Runtime.Internal.UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+            {
+                syncManager = new CognitoSyncManager(UnAuthCredentials, TestRunner.RegionEndpoint);
+                mainThreadArs.Set();
+            });
+            mainThreadArs.WaitOne();
+            syncManager.WipeData(false);
+            Dataset d = syncManager.OpenOrCreateDataset("testRemoveDataset");
+            long originalCount = d.Metadata.RecordCount;
+            d.Put("testKey", "testValue");
+            d.OnSyncConflict += delegate (Dataset dataset, List<SyncConflict> conflicts)
+            {
+                failureMessage += "Expecting SyncSuccess instead of SyncConflict\n";
+                return false;
+            };
+            d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
+            {
+                failureMessage += "Expecting SyncSuccess instead of SyncFailure\n";
+                ars.Set();
+            };
+
+            d.OnSyncSuccess += delegate (object sender, SyncSuccessEventArgs e)
+            {
+                ars.Set();
+            };
+            d.Synchronize();
+            ars.WaitOne();
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
+
+            d.Remove("testKey");
+            d.Synchronize();
+            ars.WaitOne();
+
+            if (d.Metadata.RecordCount != originalCount)
+            {
+                failureMessage += "d.Metadata.RecordCount != originalCount\n";
+            }
+
+            syncManager.Dispose();
+            d.Dispose();
+            Utils.AssertStringIsNullOrEmpty(failureMessage);
+        }
 
 #if INCLUDE_FACEBOOK_TESTS
         private CognitoAWSCredentials _AuthCredentials;
