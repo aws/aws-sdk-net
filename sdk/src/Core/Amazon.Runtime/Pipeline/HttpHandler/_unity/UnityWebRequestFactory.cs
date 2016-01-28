@@ -17,6 +17,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Threading;
 using UnityEngine.Experimental.Networking;
@@ -117,8 +118,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="requestUri">Uri for the request.</param>
         public UnityRequest(Uri requestUri)
-        {
-            this.RequestUri = requestUri;
+        {            this.RequestUri = requestUri;
             this.Headers = new Dictionary<string, string>();
         }
 
@@ -137,7 +137,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="headers">A dictionary of header names and values.</param>
         public void SetRequestHeaders(IDictionary<string, string> headers)
-        {
+        { 
             foreach (var header in headers)
             {
                 //unity web request doesnt allow us to add the Host, User-Agent and Content-Length headers
@@ -291,6 +291,36 @@ namespace Amazon.Runtime.Internal
             {
                 WwwRequest.Dispose();
             });
+        }
+
+        private StreamReadTracker Tracker { get; set; }
+
+        /// <summary>
+        /// Sets up the progress listeners
+        /// </summary>
+        /// <param name="originalStream">The content stream</param>
+        /// <param name="progressUpdateInterval">The interval at which progress needs to be published</param>
+        /// <param name="sender">The objects which is trigerring the progress changes</param>
+        /// <param name="callback">The callback which will be invoked when the progress changed event is trigerred</param>
+        /// <returns>an <see cref="EventStream"/> object, incase the progress is setup, else returns the original stream</returns>
+        public Stream SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
+        {
+            this.Tracker = new StreamReadTracker(sender, callback, originalStream.Length,
+                progressUpdateInterval);
+
+            return originalStream;
+        }
+
+        /// <summary>
+        /// Track upload progress changes
+        /// </summary>
+        /// <param name="progress"></param>
+        public void OnUploadProgressChanged(float progress)
+        {
+            if (this.Tracker != null)
+            {
+                this.Tracker.UpdateProgress(progress);
+            }
         }
     }
 }

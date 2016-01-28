@@ -379,6 +379,11 @@ namespace AWSSDK.UnitTests
             {
                 this.IsDisposed = true;
             }
+
+            public Stream SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
+            {
+                return originalStream;
+            }
         }
     }
 }

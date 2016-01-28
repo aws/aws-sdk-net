@@ -348,7 +348,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return false;
         }
 
-        #endregion
+#endregion
 
     }
 }

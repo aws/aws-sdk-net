@@ -25,13 +25,13 @@ namespace Amazon.Runtime.Internal
         private ManualResetEvent _waitHandle;
         private bool _disposed = false;
         private bool _callbackInvoked = false;
-
-        private Logger _logger;
+        private ILogger _logger;
 
         public RuntimeAsyncResult(AsyncCallback asyncCallback, object asyncState)
         {
             _lockObj = new object();
             _callbackInvoked = false;
+            _logger = Logger.GetLogger(typeof(RuntimeAsyncResult));
 
             this.AsyncState = asyncState;
             this.IsCompleted = false;
@@ -41,7 +41,7 @@ namespace Amazon.Runtime.Internal
             this._logger = Logger.GetLogger(this.GetType());
         }
 
-        public AsyncCallback AsyncCallback { get; private set; }
+        private AsyncCallback AsyncCallback { get; set; }
 
         public object AsyncState { get; private set; }
 

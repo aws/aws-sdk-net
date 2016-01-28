@@ -1,6 +1,6 @@
 ## Download the Unity Package
 
-You can directly download the Unity Packages build [here](<location of Unity Packages>)
+You can directly download the Unity Packages build [here](https://s3.amazonaws.com/aws-unity-sdk/latest/aws-unity-sdk-v3-preview.zip)
 
 ## Supported Services
 
@@ -64,5 +64,4 @@ You can also do this configuration in a script
 
 ## Known Issues
 
-* Sync Manager is Currently not Supported.
 * Crypto Issues - When running on device with .NET 2.0 subset you get an error saying `System.TypeLoadException: Could not load type 'System.Security.Cryptography.SHA256CryptoServiceProvider' from assembly 'AWSSDK.Core'`. We recommend using .NET 2.0 instead.

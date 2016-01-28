@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Redshift</id>
     <title>AWSSDK - Amazon Redshift</title>
-    <version>3.1.0.3</version> 
+    <version>3.1.0.4</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools.</description>
     <language>en-US</language>
@@ -12,11 +12,13 @@
     <tags>AWS Amazon cloud Redshift aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
+
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
@@ -32,6 +34,7 @@
     <file src=".\bin\Release\net45\AWSSDK.Redshift.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Redshift.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Redshift.pdb" target="lib\net45" />
+
 
     <file src=".\bin\Release\pcl\AWSSDK.Redshift.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.Redshift.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />

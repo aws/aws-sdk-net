@@ -157,7 +157,11 @@ namespace ServiceClientGenerator
                 {
                     foreach (var dependency in serviceConfiguration.ServiceDependencies)
                     {
-                        var dependencyProjectName = "AWSSDK." + dependency.Key + "." + projectType;
+                        var pt = projectType;
+                        if (!(pt.StartsWith(@"Net") || pt.StartsWith(@"Unity")) && serviceConfiguration.UsePclProjectDependencies)
+                            pt = @"PCL";
+
+                        var dependencyProjectName = "AWSSDK." + dependency.Key + "." + pt;
                         string dependencyProject;
                         if (string.Equals(dependency.Key, "Core", StringComparison.InvariantCultureIgnoreCase))
                         {
@@ -193,6 +197,8 @@ namespace ServiceClientGenerator
                     templateSession["ReferenceDependencies"] = serviceConfiguration.ReferenceDependencies[projectFileConfiguration.Name];
                     templateSession["NuGetTargetFramework"] = projectFileConfiguration.NuGetTargetPlatform;
                 }
+
+                
 
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
             }

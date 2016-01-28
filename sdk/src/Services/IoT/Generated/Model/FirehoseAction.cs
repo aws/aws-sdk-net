@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// 
+    /// Describes an action that writes data to a Kinesis Firehose stream.
     /// </summary>
     public partial class FirehoseAction
     {
@@ -36,7 +36,10 @@ namespace Amazon.IoT.Model
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property DeliveryStreamName.
+        /// Gets and sets the property DeliveryStreamName. 
+        /// <para>
+        /// The delivery stream name.
+        /// </para>
         /// </summary>
         public string DeliveryStreamName
         {
@@ -51,7 +54,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn.
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The IAM role that grants access to the firehose stream.
+        /// </para>
         /// </summary>
         public string RoleArn
         {

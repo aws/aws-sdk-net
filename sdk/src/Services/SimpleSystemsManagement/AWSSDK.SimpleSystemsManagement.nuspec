@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SimpleSystemsManagement</id>
     <title>AWSSDK - Amazon Simple Systems Management Service</title>
-    <version>3.1.1.1</version> 
+    <version>3.1.1.2</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.</description>
     <language>en-US</language>
@@ -12,11 +12,13 @@
     <tags>AWS Amazon cloud SimpleSystemsManagement aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
+
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
@@ -32,6 +34,7 @@
     <file src=".\bin\Release\net45\AWSSDK.SimpleSystemsManagement.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.SimpleSystemsManagement.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.SimpleSystemsManagement.pdb" target="lib\net45" />
+
 
     <file src=".\bin\Release\pcl\AWSSDK.SimpleSystemsManagement.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.SimpleSystemsManagement.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />

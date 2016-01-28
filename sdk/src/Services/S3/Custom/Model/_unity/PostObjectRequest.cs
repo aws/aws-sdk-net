@@ -14,8 +14,6 @@
  */
 
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 using Amazon.Util;
 using System;
@@ -49,6 +47,12 @@ namespace Amazon.S3.Model
             _isSetStorageClass = false,
             _isSetActionStatus = false;
 
+        /// <summary>
+        /// Upload data to Amazon S3 using HTTP POST.
+        /// </summary>
+        /// <remarks>
+        /// For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
+        /// </remarks>
         public PostObjectRequest()
         {
             this.Metadata = new Dictionary<string, string>();
@@ -166,6 +170,22 @@ namespace Amazon.S3.Model
         /// If keys do not begin with 'x-amz-meta-' it will be added at POST time.
         /// </remarks>
         public IDictionary<string, string> Metadata { get; set; }
+        
+        /// <summary>
+        /// Attach a callback that will be called as data is being sent to the AWS Service.
+        /// </summary>
+        public EventHandler<Amazon.Runtime.StreamTransferProgressArgs> StreamTransferProgress
+        {
+            get
+            {
+                return ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)this).StreamUploadProgressCallback;
+            }
+            set
+            {
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)this).StreamUploadProgressCallback = value;
+            }
+        }
+
 
         /// <summary>
         /// Write the multipart/form-data for this request for all fields except the file data to a stream

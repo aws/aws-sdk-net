@@ -36,8 +36,11 @@ namespace Amazon.CloudFormation.Model
         private List<Stack> _stacks = new List<Stack>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. String that identifies the start of the next
-        /// list of stacks, if there is one.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
+        /// If no additional page exists, this value is null.
+        /// </para>
         /// </summary>
         public string NextToken
         {

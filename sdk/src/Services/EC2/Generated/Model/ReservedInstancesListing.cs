@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Reserved instance listing.
+    /// Describes a Reserved Instance listing.
     /// </summary>
     public partial class ReservedInstancesListing
     {
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PriceSchedules. 
         /// <para>
-        /// The price of the Reserved instance listing.
+        /// The price of the Reserved Instance listing.
         /// </para>
         /// </summary>
         public List<PriceSchedule> PriceSchedules
@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesId. 
         /// <para>
-        /// The ID of the Reserved instance.
+        /// The ID of the Reserved Instance.
         /// </para>
         /// </summary>
         public string ReservedInstancesId
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesListingId. 
         /// <para>
-        /// The ID of the Reserved instance listing.
+        /// The ID of the Reserved Instance listing.
         /// </para>
         /// </summary>
         public string ReservedInstancesListingId
@@ -156,7 +156,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Reserved instance listing.
+        /// The status of the Reserved Instance listing.
         /// </para>
         /// </summary>
         public ListingStatus Status
@@ -174,7 +174,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The reason for the current status of the Reserved instance listing. The response can
+        /// The reason for the current status of the Reserved Instance listing. The response can
         /// be blank.
         /// </para>
         /// </summary>

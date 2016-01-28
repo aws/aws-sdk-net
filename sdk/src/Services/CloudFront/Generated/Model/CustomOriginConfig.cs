@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,7 @@ namespace Amazon.CloudFront.Model
         private int? _httpPort;
         private int? _httpsPort;
         private OriginProtocolPolicy _originProtocolPolicy;
+        private OriginSslProtocols _originSslProtocols;
 
         /// <summary>
         /// Gets and sets the property HTTPPort. The HTTP port the custom origin listens on.
@@ -80,6 +81,22 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetOriginProtocolPolicy()
         {
             return this._originProtocolPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginSslProtocols. The SSL/TLS protocols that you want
+        /// CloudFront to use when communicating with your origin over HTTPS.
+        /// </summary>
+        public OriginSslProtocols OriginSslProtocols
+        {
+            get { return this._originSslProtocols; }
+            set { this._originSslProtocols = value; }
+        }
+
+        // Check to see if OriginSslProtocols property is set
+        internal bool IsSetOriginSslProtocols()
+        {
+            return this._originSslProtocols != null;
         }
 
     }

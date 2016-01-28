@@ -106,14 +106,14 @@ namespace Amazon.Runtime.Internal
                 var response = _request.GetResponse() as HttpWebResponse;
                 return new HttpWebRequestResponseData(response);
             }
-            catch(WebException webException)
+            catch (WebException webException)
             {
                 var errorResponse = webException.Response as HttpWebResponse;
                 if (errorResponse != null)
                 {
                     throw new HttpErrorResponseException(webException.Message,
                         webException,
-                        new HttpWebRequestResponseData(errorResponse));                    
+                        new HttpWebRequestResponseData(errorResponse));
                 }
                 throw;
             }
@@ -139,7 +139,7 @@ namespace Amazon.Runtime.Internal
             IDictionary<string, string> contentHeaders, IRequestContext requestContext)
         {
             bool gotException = false;
-            try            
+            try
             {
                 var buffer = new byte[requestContext.ClientConfig.BufferSize];
                 int bytesRead = 0;
@@ -153,7 +153,7 @@ namespace Amazon.Runtime.Internal
                     requestContent.Write(buffer, 0, bytesRead);
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 gotException = true;
 
@@ -171,7 +171,7 @@ namespace Amazon.Runtime.Internal
                 {
                     requestContent.Close();
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     if (!gotException)
                         throw;
@@ -437,6 +437,23 @@ namespace Amazon.Runtime.Internal
         protected virtual void Dispose(bool disposing)
         {
             // NOP since HttWebRequest does not implement IDisposable.
+        }
+
+        /// <summary>
+        /// Sets up the progress listeners
+        /// </summary>
+        /// <param name="originalStream">The content stream</param>
+        /// <param name="progressUpdateInterval">The interval at which progress needs to be published</param>
+        /// <param name="sender">The objects which is trigerring the progress changes</param>
+        /// <param name="callback">The callback which will be invoked when the progress changed event is trigerred</param>
+        /// <returns>an <see cref="EventStream"/> object, incase the progress is setup, else returns the original stream</returns>
+        public Stream SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
+        {
+            var eventStream = new EventStream(originalStream, true);
+            var tracker = new StreamReadTracker(sender, callback, originalStream.Length,
+                progressUpdateInterval);
+            eventStream.OnRead += tracker.ReadProgress;
+            return eventStream;
         }
     }
 }

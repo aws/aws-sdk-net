@@ -1996,6 +1996,104 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DisableTopicRule
+
+
+        /// <summary>
+        /// Disables the specified rule
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableTopicRule service method.</param>
+        /// 
+        /// <returns>The response from the DisableTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        DisableTopicRuleResponse DisableTopicRule(DisableTopicRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableTopicRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableTopicRule operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableTopicRule
+        ///         operation.</returns>
+        IAsyncResult BeginDisableTopicRule(DisableTopicRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableTopicRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableTopicRule.</param>
+        /// 
+        /// <returns>Returns a  DisableTopicRuleResult from IoT.</returns>
+        DisableTopicRuleResponse EndDisableTopicRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableTopicRule
+
+
+        /// <summary>
+        /// Enables the specified rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableTopicRule service method.</param>
+        /// 
+        /// <returns>The response from the EnableTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        EnableTopicRuleResponse EnableTopicRule(EnableTopicRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableTopicRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableTopicRule operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableTopicRule
+        ///         operation.</returns>
+        IAsyncResult BeginEnableTopicRule(EnableTopicRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableTopicRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableTopicRule.</param>
+        /// 
+        /// <returns>Returns a  EnableTopicRuleResult from IoT.</returns>
+        EnableTopicRuleResponse EndEnableTopicRule(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetLoggingOptions
 
 
@@ -3338,7 +3436,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status.</param>
+        /// <param name="newStatus">The new status. Note: setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and is not meant to be used by developers.</param>
         /// 
         /// <returns>The response from the UpdateCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.CertificateStateException">

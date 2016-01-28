@@ -34,7 +34,7 @@ packages
 /sdk/xamarin-components/MobileAnalytics/*.xam
 /sdk/xamarin-components/S3/*.xam
 /sdk/test/Unity3DTests/Assets/Resources/settings.txt
-/sdk/test/Unity3DTests/Assets/Resources/settings.txt.meta
+/sdk/test/Unity3DTests/Assets/Resources/awsconfig.xml
 /sdk/test/Unity3DTests/Unity3DTests.CSharp.csproj
 /sdk/test/Unity3DTests/Unity3DTests.CSharp.Editor.csproj
 /sdk/test/Unity3DTests/Unity3DTests.sln

@@ -74,9 +74,9 @@ namespace Amazon.OpsWorks.Model
         /// AWS OpsWorks then automatically installs that version on the stack's instances.</li>
         /// </ul> 
         /// <para>
-        /// The default setting is <code>LATEST</code>. To specify an agent version, you must
-        /// use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
+        /// The default setting is the most recent release of the agent. To specify an agent version,
+        /// you must use the complete version number, not the abbreviated number shown on the
+        /// console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
         /// </para>
         ///  <note>You can also specify an agent version when you create or update an instance,
         /// which overrides the stack's default setting.</note>
@@ -134,9 +134,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ConfigurationManager. 
         /// <para>
-        /// The configuration manager. When you clone a stack we recommend that you use the configuration
-        /// manager to specify the Chef version: 0.9, 11.4, or 11.10. The default value is currently
-        /// 11.4.
+        /// The configuration manager. When you create a stack we recommend that you use the configuration
+        /// manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2
+        /// for Windows stacks. The default value for Linux stacks is currently 11.4.
         /// </para>
         /// </summary>
         public StackConfigurationManager ConfigurationManager
@@ -246,7 +246,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
         /// Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04
-        /// LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server
+        /// LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
         /// 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify the custom
         /// AMI you want to use when you create instances. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
         /// Using Custom AMIs</a>.</li> </ul> 

@@ -21,9 +21,22 @@ using System.Text;
 
 namespace Amazon.S3.Model
 {
+    /// <summary>
+    /// Response object returned after HTTP browser post
+    /// For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
+    /// </summary>
     public class PostObjectResponse : AmazonWebServiceResponse
     {
+        /// <summary>
+        /// The request id returned by the post object request
+        /// </summary>
         public string RequestId { get; set; }
+
+        /// <summary>
+        /// The host id returned by the post object request
+        /// </summary>
         public string HostId { get; set; }
+        public string VersionId { get; set; }
     }
 }
+    

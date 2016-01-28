@@ -261,6 +261,20 @@ namespace Amazon.Runtime.Internal
 
         private void GetRequestStreamCallback(IAsyncResult result)
         {
+            if (result.CompletedSynchronously)
+            {
+                System.Threading.ThreadPool.QueueUserWorkItem(GetRequestStreamCallbackHelper, result);
+            }
+            else
+            {
+                GetRequestStreamCallbackHelper(result);
+            }
+        }
+
+        private void GetRequestStreamCallbackHelper(object state)
+        {
+            IAsyncResult result = state as IAsyncResult;
+
             IAsyncExecutionContext executionContext = null;
             IHttpRequest<TRequestContent> httpRequest = null;
             try
@@ -273,8 +287,8 @@ namespace Amazon.Runtime.Internal
                 //var requestStream = httpRequest.EndSetRequestBody(result);                
                 httpRequest.BeginGetResponse(new AsyncCallback(GetResponseCallback), executionContext);
             }
-            catch(Exception exception)
-            {   
+            catch (Exception exception)
+            {
                 httpRequest.Dispose();
 
                 // Capture the exception and invoke outer handlers to 
@@ -286,6 +300,20 @@ namespace Amazon.Runtime.Internal
 
         private void GetResponseCallback(IAsyncResult result)
         {
+            if (result.CompletedSynchronously)
+            {
+                System.Threading.ThreadPool.QueueUserWorkItem(GetResponseCallbackHelper, result);
+            }
+            else
+            {
+                GetResponseCallbackHelper(result);
+            }
+        }
+
+        private void GetResponseCallbackHelper(object state)
+        {
+            IAsyncResult result = state as IAsyncResult;
+
             IAsyncExecutionContext executionContext = null;
             IHttpRequest<TRequestContent> httpRequest = null;
             try
@@ -297,7 +325,7 @@ namespace Amazon.Runtime.Internal
                 executionContext.ResponseContext.HttpResponse = httpResponse;
             }
             catch (Exception exception)
-            {   
+            {
                 // Capture the exception and invoke outer handlers to 
                 // process the exception.
                 executionContext.ResponseContext.AsyncResult.Exception = exception;
@@ -308,7 +336,8 @@ namespace Amazon.Runtime.Internal
                 httpRequest.Dispose();
                 base.InvokeAsyncCallback(executionContext);
             }
-        }       
+
+        }
 
 #endif
 
@@ -343,13 +372,7 @@ namespace Amazon.Runtime.Internal
                 var originalStream = wrappedRequest.ContentStream;
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
                 if (callback != null)
-                {
-                    var eventStream = new EventStream(originalStream, true);
-                    var tracker = new StreamReadTracker(this.CallbackSender, callback, originalStream.Length,
-                        requestContext.ClientConfig.ProgressUpdateInterval);
-                    eventStream.OnRead += tracker.ReadProgress;
-                    originalStream = eventStream;
-                }
+                    originalStream = httpRequest.SetupProgressListeners(originalStream, requestContext.ClientConfig.ProgressUpdateInterval, this.CallbackSender, callback);
 
                 var inputStream = wrappedRequest.UseChunkEncoding && wrappedRequest.AWS4SignerResult != null
                     ? new ChunkedUploadWrapperStream(originalStream,

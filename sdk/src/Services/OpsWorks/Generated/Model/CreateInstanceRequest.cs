@@ -65,8 +65,8 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The default AWS OpsWorks agent version. You have the following options:
         /// </para>
-        ///  <ul> <li> <code>INHERIT</code> - Use the stack's default agent version setting.</li>
-        /// <li> <i>version_number</i> - Use the specified agent version. This value overrides
+        ///  <ul> <li><code>INHERIT</code> - Use the stack's default agent version setting.</li>
+        /// <li><i>version_number</i> - Use the specified agent version. This value overrides
         /// the stack's default setting. To update the agent version, edit the instance configuration
         /// and specify a new version. AWS OpsWorks then automatically installs that version on
         /// the instance.</li> </ul> 
@@ -173,7 +173,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
         /// devices. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-        /// Device Mapping</a>.
+        /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -301,7 +301,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
         /// Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04
-        /// LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li> <code>Microsoft Windows Server
+        /// LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
         /// 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> 
         /// <para>
         /// For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
@@ -311,8 +311,9 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The default option is the current Amazon Linux version. If you set this parameter
         /// to <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter
-        /// to specify the custom AMI that you want to use. For more information on the supported
-        /// operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+        /// to specify the custom AMI that you want to use. Block device mappings are not supported
+        /// if the value is <code>Custom</code>. For more information on the supported operating
+        /// systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
         /// Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a
         /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.

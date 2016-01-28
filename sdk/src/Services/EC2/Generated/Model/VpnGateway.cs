@@ -42,7 +42,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone where the virtual private gateway was created.
+        /// The Availability Zone where the virtual private gateway was created, if applicable.
+        /// This field may be empty or not returned. 
         /// </para>
         /// </summary>
         public string AvailabilityZone

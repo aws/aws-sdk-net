@@ -60,7 +60,7 @@ namespace Amazon.CognitoIdentity
             string oldIdentityId = identityId;
             identityId = newIdentityId;
             // Fire the event
-            var handler = IdentityChangedEvent;
+            var handler = mIdentityChangedEvent;
             if (handler != null)
             {
                 var args = new IdentityChangedArgs(oldIdentityId, newIdentityId);
@@ -414,7 +414,6 @@ namespace Amazon.CognitoIdentity
         /// is cleared and true is return.
         /// </summary>
         /// <param name="e"></param>
-        /// <param name="status"></param>
         /// <returns></returns>
         private bool ShouldRetry(AmazonCognitoIdentityException e)
         {
@@ -431,12 +430,29 @@ namespace Amazon.CognitoIdentity
 
             return false;
         }
+        private EventHandler<IdentityChangedArgs> mIdentityChangedEvent;
 
         /// <summary>
         /// Event for identity change notifications.
         /// This event will fire whenever the Identity Id changes.
         /// </summary>
-        public event EventHandler<IdentityChangedArgs> IdentityChangedEvent;
+        public event EventHandler<IdentityChangedArgs> IdentityChangedEvent
+        {
+            add
+            {
+                lock (this)
+                {
+                    mIdentityChangedEvent += value;
+                }
+            }
+            remove
+            {
+                lock (this)
+                {
+                    mIdentityChangedEvent -= value;
+                }
+            }
+        }
 
         #endregion
 

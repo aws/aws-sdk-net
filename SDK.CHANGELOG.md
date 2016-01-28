@@ -1,3 +1,45 @@
+### 3.1.40.0 (2016-01-21 18:45 UTC)
+* AWS Certificate Manager (3.1.0.0)
+	* AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform. SSL is the standard protocol for encrypting communications and establishing the identity of a website over the Internet. ACM takes care of all of the complexity of obtaining, deploying, and renewing the digital certificates used with SSLCertificate Manager certs with CloudFront distributions.
+* DeviceFarm (3.1.4.1)
+	* Minor documentation update.
+* IoT (3.1.1.0)
+	* IoT api update to support enabling and disabling topic rules, and return arns in some structures.
+* SecurityToken (3.1.2.1)
+	* Minor documentation update.
+
+### 3.1.39.0 (2016-01-19 20:54 UTC)
+* DeviceFarm (3.1.4.0)
+	* Api update with new enumeration values for uploads.
+* OpsWorks (3.1.1.5)
+	* Minor documentation update.
+* SecurityToken (3.1.2.0)
+	* Add support for RegionDisabledException.
+
+### 3.1.38.0 (2016-01-14 21:41 UTC)
+* CloudFront (3.1.3.0)
+	* Enforce HTTPS-only connection between CloudFront and your origin webserver, support for TLSv1.1 and TLSv1.2 between CloudFront and your origin webserver, add or modify request headers forwarded from CloudFront to your origin webserver.
+* CloudWatchEvents (3.1.0.0)
+	* Added support for the new CloudWatch Events service. CloudWatch Events allows you to Monitor and rapidly react to changes in your AWS resources.
+* EC2 (3.1.9.0)
+	* Scheduled instances is a new EC2 service offering which allows customers to purchase reserved capacity for specific slots of time on a one-time or recurring basis.
+
+### 3.1.37.0 (2016-01-12 20:08 UTC)
+* EC2 (3.1.8.0)
+	* Added support for DNS over classiclink.
+
+### 3.1.36.1 (2016-01-06 20:50 UTC)
+* EC2 (3.1.7.1)
+	* Fixed incorrect request class and marshaling code for the DescribeNetworkInterfaceAttribute api. The class should have contained a single 'Attribute' member, not multiple members corresponding to the allows values for 'Attribute'.
+* S3 (3.1.3.10)
+	* Updated to use new Core, version 3.1.4.3
+	* Add more defensive code while processing xml error responses
+* Core 3.1.4.3
+	* Add more defensive code while processing xml error responses. 
+Fixed issue with callbacks being invoked multiple times when unhandled exception occurs in .NET 3.5 async code.
+Updated RegionEndpoint constants for new Asia Pacific (Seoul) (ap-northeast-2) region.
+	* all services packages updated to require new core
+
 ### 3.1.36.0 (2015-12-21 22:04 UTC)
 * ECR (3.1.0.0)
 	* Add SDK support for the Amazon EC2 Container Registry, a secure, fully-managed Docker image registry that makes it easy for developers to store and retrieve Docker container images.

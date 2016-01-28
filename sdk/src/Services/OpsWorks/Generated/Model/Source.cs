@@ -51,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         /// secret access key.</li> <li>For HTTP bundles and Subversion repositories, set <code>Password</code>
         /// to the password.</li> </ul> 
         /// <para>
-        /// For more information on how to safely handle IAM credentials, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.
+        /// For more information on how to safely handle IAM credentials, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
         /// </para>
         ///  
         /// <para>

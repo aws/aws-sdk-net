@@ -66,6 +66,44 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The subscription ARN as returned by Amazon SNS when the queue is 
         /// successfully subscribed to the topic.</returns>
         string SubscribeQueue(string topicArn, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
+        
+        /// <summary>
+        /// Subscribes an existing Amazon SQS queue to existing Amazon SNS topics.
+        /// <para>
+        /// The policy applied to the SQS queue is similar to this:
+        /// <code>
+        /// {
+        /// 	"Version" : "2008-10-17",
+        /// 	"Statement" : [{
+        /// 	    "Sid" : "topic-subscription-arn:aws:sns:us-west-2:599109622955:myTopic",
+        /// 		"Effect" : "Allow",
+        /// 		"Principal" : "*",
+        /// 		"Action" : ["sqs:SendMessage"],
+        /// 		"Resource":["arn:aws:sqs:us-west-2:599109622955:myQueue"],
+        /// 		"Condition" : {
+        /// 			"ArnLike":{
+        /// 				"aws:SourceArn":["arn:aws:sns:us-west-2:599109622955:myTopic"]
+        /// 			}
+        /// 		}
+        ///     }]
+        /// }
+        /// </code>
+        /// </para>
+        /// <para>
+        /// There might be a small time period immediately after
+        /// subscribing the SQS queue to the SNS topic and updating the SQS queue's
+        /// policy, where messages are not able to be delivered to the queue. After a
+        /// moment, the new queue policy will propagate and the queue will be able to
+        /// receive messages. This delay only occurs immediately after initially
+        /// subscribing the queue.
+        /// </para>
+        /// </summary>
+        /// <param name="topicArns">The topics to subscribe to</param>
+        /// <param name="sqsClient">The SQS client used to get attributes and set the policy on the SQS queue.</param>
+        /// <param name="sqsQueueUrl">The queue to add a subscription to.</param>
+        /// <returns>The mapping of topic ARNs to subscription ARNs as returned by Amazon SNS when the queue is 
+        /// successfully subscribed to each topic.</returns>
+        IDictionary<string, string> SubscribeQueueToTopics(IList<string> topicArns, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
         #endregion
 
         #region FindTopic

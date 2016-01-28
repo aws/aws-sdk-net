@@ -50,7 +50,7 @@
 		var queryString = "?page=" + page + "&tocid=" + tocid;
 
 		var pos = window.location.href.lastIndexOf('/items/');
-		var baseUrl = window.location.href.substr(0, pos) + '/Index.html' + queryString;
+		var baseUrl = window.location.href.substr(0, pos) + '/index.html' + queryString;
 
 		prompt('Copy this URL to use to navigate to this page', baseUrl);
 	},
@@ -129,7 +129,12 @@
 				jQuery("#versionData").hide();
 			}
 		});
-	}
+	},
+
+    setCopyrightText: function () {
+        var c = "&copy; Copyright 2008-" + new Date().getFullYear() + " Amazon.com, Inc. or its affiliates. All Rights Reserved.";
+        jQuery("#copyright").html(c);
+    }
 };
 
 (function() {

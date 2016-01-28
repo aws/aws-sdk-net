@@ -41,6 +41,14 @@ namespace AWSSDK.Tests.Framework
             }
         }
 
+        public static void AssertStringIsNotNullOrEmpty(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+            {
+                Assert.Fail("Expected non-null and non-empty string");
+            }
+        }
+
         public static void AssertExceptionExpected(Action action)
         {
             AssertExceptionExpected(action, typeof(Exception));

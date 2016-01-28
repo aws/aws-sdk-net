@@ -8,6 +8,9 @@ using System.Text;
 
 namespace Amazon.CognitoSync.Internal
 {
+    /// <summary>
+    /// Cognito Sync post sign handler to handle XHttpMethodOverrideHeader
+    /// </summary>
     public class AmazonCognitoSyncPostSignHandler : PipelineHandler
     {
         /// <summary>
@@ -54,12 +57,12 @@ namespace Amazon.CognitoSync.Internal
         }
 #endif
 
-        protected void PreInvoke(IExecutionContext executionContext)
+        private void PreInvoke(IExecutionContext executionContext)
         {
             ProcessRequestHandlers(executionContext);
         }
 
-        public void ProcessRequestHandlers(IExecutionContext executionContext)
+        private void ProcessRequestHandlers(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
 

@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Route53</id>
     <title>AWSSDK - Amazon Route 53</title>
-    <version>3.1.2.0</version> 
+    <version>3.1.2.1</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.</description>
     <language>en-US</language>
@@ -12,11 +12,13 @@
     <tags>AWS Amazon cloud Route53 aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
+
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
@@ -32,6 +34,7 @@
     <file src=".\bin\Release\net45\AWSSDK.Route53.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Route53.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Route53.pdb" target="lib\net45" />
+
 
     <file src=".\bin\Release\pcl\AWSSDK.Route53.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.Route53.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />

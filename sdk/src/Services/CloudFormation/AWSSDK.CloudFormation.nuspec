@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CloudFormation</id>
     <title>AWSSDK - AWS CloudFormation</title>
-    <version>3.1.1.2</version> 
+    <version>3.1.2.0</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.</description>
     <language>en-US</language>
@@ -12,11 +12,13 @@
     <tags>AWS Amazon cloud CloudFormation aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
+
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
@@ -32,6 +34,7 @@
     <file src=".\bin\Release\net45\AWSSDK.CloudFormation.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CloudFormation.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.CloudFormation.pdb" target="lib\net45" />
+
 
     <file src=".\bin\Release\pcl\AWSSDK.CloudFormation.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.CloudFormation.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />

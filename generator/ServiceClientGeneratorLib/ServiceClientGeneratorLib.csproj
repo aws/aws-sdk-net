@@ -627,10 +627,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Nuspec.cs</LastGenOutput>
     </None>
-    <None Include="Generators\NuGet\CoreNuspec.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>CoreNuspec.cs</LastGenOutput>
-    </None>
     <None Include="Generators\NuGet\PackagesConfig.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PackagesConfig.cs</LastGenOutput>

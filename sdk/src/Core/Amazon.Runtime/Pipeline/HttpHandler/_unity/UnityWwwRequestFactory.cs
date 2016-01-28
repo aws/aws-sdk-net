@@ -116,6 +116,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public string Method { get; set; }
 
+
         /// <summary>
         /// The contructor for UnityWebRequest.
         /// </summary>
@@ -281,6 +282,36 @@ namespace Amazon.Runtime.Internal
             }
 
             return this.Response;
+        }
+        
+        private StreamReadTracker Tracker { get; set; }
+
+        /// <summary>
+        /// Sets up the progress listeners
+        /// </summary>
+        /// <param name="originalStream">The content stream</param>
+        /// <param name="progressUpdateInterval">The interval at which progress needs to be published</param>
+        /// <param name="sender">The objects which is trigerring the progress changes</param>
+        /// <param name="callback">The callback which will be invoked when the progress changed event is trigerred</param>
+        /// <returns>an <see cref="EventStream"/> object, incase the progress is setup, else returns the original stream</returns>
+        public Stream SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
+        {
+            this.Tracker = new StreamReadTracker(sender, callback, originalStream.Length,
+                progressUpdateInterval);
+
+            return originalStream;
+        }
+
+        /// <summary>
+        /// Track upload progress changes
+        /// </summary>
+        /// <param name="progress"></param>
+        public void OnUploadProgressChanged(float progress)
+        {
+            if (this.Tracker != null)
+            {
+                this.Tracker.UpdateProgress(progress);
+            }
         }
 
         public void Dispose()

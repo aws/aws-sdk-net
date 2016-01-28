@@ -3,6 +3,12 @@
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
+        <DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
+        <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
+		
+        <GeneratorDisablePCLSupport Condition="'$(DisablePCLSupport)'=='true'">-disable.pcl-support</GeneratorDisablePCLSupport>
+		
+        <SmokeBuild></SmokeBuild>
     </PropertyGroup>
     
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
@@ -12,6 +18,8 @@
     <PropertyGroup>
         <!-- perform a release build by default -->
         <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
+		
+		<GeneratorUnityPath>--unitypath &quot;$(unitypath)&quot;</GeneratorUnityPath>
     </PropertyGroup>
     
     <!-- properties used in documentation generation -->
@@ -28,7 +36,6 @@
         <MSBuild Projects=".\CustomTasks\CustomTasks.sln"
             Targets="Clean;Build"
             Properties="Configuration=Release" />
-            
     </Target>
     
     <UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
@@ -44,8 +51,10 @@
 
     <Target Name="restore-nuget">
         <Message Text="Restore nuget packages"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.Desktop.sln"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.PCL.sln"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.Unity.sln"/>
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\generator\AWSSDKGenerator.sln"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.All.sln"/>
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
     </Target>
 
@@ -54,27 +63,45 @@
         <MSBuild Projects="..\generator\AWSSDKGenerator.sln"
             Targets="Clean;Build"
             Properties="Configuration=Release" />
-        <Exec Command="ServiceClientGenerator.exe --unitypath &quot;$(unitypath)&quot;"
+        <Exec Command="ServiceClientGenerator.exe $(GeneratorDisablePCLSupport) $(GeneratorUnityPath)"
             WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
     </Target>
     
-    <Target Name="build-sdk" DependsOnTargets="restore-nuget;run-generator">
-        <Message Text="Compile the SDK"/>
-        <MSBuild Projects="..\sdk\AWSSDK.All.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
-			
-        <MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
-			
-
+    <Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
     </Target>
  
+	<Target Name="build-sdk-desktop" DependsOnTargets="restore-nuget;run-generator">
+		<Message Text="Compile the Desktop SDK"/>
+		<MSBuild Projects="..\sdk\AWSSDK.Desktop.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />			
+	</Target>
+	
+	<Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
+		<MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
+					Targets="Clean;Build"
+					Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />			
+	</Target>
+	
+	<Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisablePCLSupport)">
+		<Message Text="Compile the Portable Class Library SDK"/>
+		<MSBuild Projects="..\sdk\AWSSDK.PCL.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+	</Target>
+ 
+	<Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
+		<Message Text="Compile the Unity SDK"/>
+		<MSBuild Projects="..\sdk\AWSSDK.Unity.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+	</Target>
+ 
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
+	
     <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk">
         <MSBuild
             Projects="$(MSBuildProjectFile)"
@@ -85,6 +112,7 @@
             Targets="run-tests"
             Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll" />
     </Target>
+	
     <Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
         <MSBuild
             Projects="$(MSBuildProjectFile)"
@@ -97,7 +125,7 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />
     </Target>
 
-    <Target Name="xam-pack" DependsOnTargets="build-custom-tasks;nuget-pack" Condition="Exists('$(xpkgexe)')">
+    <Target Name="xam-pack" DependsOnTargets="build-custom-tasks;nuget-pack" Condition="!$(DisablePCLSupport) AND Exists('$(xpkgexe)')  And $(SmokeBuild) == ''">
         <XamarinComponent 
             ComponentRootPath="..\sdk\xamarin-components\" 
             NugetExe="..\sdk\.nuget\NuGet.exe" 
@@ -113,7 +141,7 @@
             DestinationFolder="$(Deployment)\xamarin-components"/>
     </Target>
 	
-	<Target Name="unity-pack" DependsOnTargets="build-custom-tasks;nuget-pack;copy-assemblies;pdb-mdb" Condition="Exists('$(unityexe)')">
+	<Target Name="unity-pack" DependsOnTargets="build-custom-tasks;nuget-pack;copy-assemblies;pdb-mdb" Condition="!$(DisableUnitySupport)">
         
 		<UnityPackage 
             DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))" 
@@ -133,7 +161,7 @@
 		<Exec LogStandardErrorAsError="true" Command="$(mono) $(pdb2mdb) %(DllFiles.Identity)" /> 
 	</Target>
 	
-	<Target Name="update-unity-tests" DependsOnTargets="build-custom-tasks" Condition="Exists('$(unityexe)')">
+	<Target Name="update-unity-tests" DependsOnTargets="build-custom-tasks" Condition="!$(DisableUnitySupport)">
 		
 		<MSBuild Projects="..\sdk\AWSSDK.Unity.sln"
             Targets="Clean;Build"
@@ -163,7 +191,7 @@
 		
 	</Target>
 	
-	<Target Name="build-unity-test" DependsOnTargets="update-unity-tests" >
+	<Target Name="build-unity-test" DependsOnTargets="update-unity-tests" Condition="!$(DisableUnitySupport)">
 	
 		<!-- build the projects 
 		<MakeDir Directories="$(Deployment)" />

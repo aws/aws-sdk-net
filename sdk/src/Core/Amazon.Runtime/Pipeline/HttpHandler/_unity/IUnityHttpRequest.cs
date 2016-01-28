@@ -58,5 +58,11 @@ namespace Amazon.Runtime
         /// The response for this web request.
         /// </summary>
         IWebResponseData Response { get; set; }
+
+        /// <summary>
+        /// Track upload progress changes
+        /// </summary>
+        /// <param name="progress"></param>
+        void OnUploadProgressChanged(float progress);
     }
 }

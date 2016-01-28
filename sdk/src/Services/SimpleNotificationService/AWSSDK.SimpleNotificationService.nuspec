@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SimpleNotificationService</id>
     <title>AWSSDK - Amazon Simple Notification Service</title>
-    <version>3.1.0.3</version> 
+    <version>3.1.0.4</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services.</description>
     <language>en-US</language>
@@ -12,11 +12,13 @@
     <tags>AWS Amazon cloud SimpleNotificationService aws-sdk-v3 SNS</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
+
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
@@ -32,6 +34,7 @@
     <file src=".\bin\Release\net45\AWSSDK.SimpleNotificationService.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.SimpleNotificationService.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.SimpleNotificationService.pdb" target="lib\net45" />
+
 
     <file src=".\bin\Release\pcl\AWSSDK.SimpleNotificationService.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.SimpleNotificationService.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />

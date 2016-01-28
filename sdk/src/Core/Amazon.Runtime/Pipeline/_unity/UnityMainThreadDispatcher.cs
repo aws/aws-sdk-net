@@ -18,9 +18,11 @@ using Amazon.Util;
 using System;
 using System.Collections;
 using System.Reflection;
+using System.Net;
 using System.Threading;
 using UnityEngine;
 using Logger = Amazon.Runtime.Internal.Util.Logger;
+using Amazon.Util.Internal.PlatformServices;
 
 namespace Amazon.Runtime.Internal
 {
@@ -33,7 +35,7 @@ namespace Amazon.Runtime.Internal
         private Logger _logger;
         private float _nextUpdateTime;
         private float _updateInterval = 0.1f;
-
+        private NetworkStatus _currentNetworkStatus;
         /// <summary>
         /// This method is called called when the script instance is
         /// being loaded.
@@ -106,14 +108,13 @@ namespace Amazon.Runtime.Internal
                 }
             }
 
-            //network updates
-            //TODO: need to check for performance
-            NetworkReachability _networkReachability = Application.internetReachability;
-            if (OnRefresh != null)
+            //trigger network updates if status has changed
+            var nr = ServiceFactory.Instance.GetService<INetworkReachability>() as Amazon.Util.Internal.PlatformServices.NetworkReachability;
+            if (_currentNetworkStatus != nr.NetworkStatus)
             {
-                OnRefresh(this, new NetworkStatusRefreshed(_networkReachability));
+                _currentNetworkStatus = nr.NetworkStatus;
+                nr.OnNetworkReachabilityChanged(_currentNetworkStatus);
             }
-
         }
 
         /// <summary>
@@ -124,42 +125,72 @@ namespace Amazon.Runtime.Internal
         IEnumerator InvokeRequest(IUnityHttpRequest request)
         {
             // Fire the request
-            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            var nr = ServiceFactory.Instance.GetService<INetworkReachability>() as Amazon.Util.Internal.PlatformServices.NetworkReachability;
+            if (nr.NetworkStatus != NetworkStatus.NotReachable)
             {
-                var wwwRequest = new WWW((request as UnityWwwRequest).RequestUri.AbsoluteUri,
-                    request.RequestContent, request.Headers);
-                request.WwwRequest = wwwRequest;
+                if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+                {
+                    var wwwRequest = new WWW((request as UnityWwwRequest).RequestUri.AbsoluteUri, request.RequestContent, request.Headers);
+                    bool uploadCompleted = false;
+                    while (!wwwRequest.isDone)
+                    {
+                        var uploadProgress = wwwRequest.uploadProgress;
+                        if (!uploadCompleted)
+                        {
+                            request.OnUploadProgressChanged(uploadProgress);
 
-                yield return wwwRequest;
+                            if (uploadProgress == 1)
+                                uploadCompleted = true;
+                        }
+                        yield return null;
+                    }
+                    request.WwwRequest = wwwRequest;
+                    request.Response = new UnityWebResponseData(wwwRequest);
+                }
+                else
+                {
+                    var unityWebRequest = new UnityEngine.Experimental.Networking.UnityWebRequest(
+                        (request as UnityRequest).RequestUri.AbsoluteUri,
+                        (request as UnityRequest).Method);
+                    unityWebRequest.downloadHandler = new UnityEngine.Experimental.Networking.DownloadHandlerBuffer();
 
-                request.Response = new UnityWebResponseData(wwwRequest);
+                    if (request.RequestContent != null && request.RequestContent.Length > 0)
+                        unityWebRequest.uploadHandler = new UnityEngine.Experimental.Networking.UploadHandlerRaw(request.RequestContent);
+
+                    bool uploadCompleted = false;
+
+                    foreach (var header in request.Headers)
+                    {
+                        unityWebRequest.SetRequestHeader(header.Key, header.Value);
+                    }
+
+                    while (!unityWebRequest.isDone)
+                    {
+                        var uploadProgress = unityWebRequest.uploadProgress;
+                        if (!uploadCompleted)
+                        {
+                            request.OnUploadProgressChanged(uploadProgress);
+
+                            if (uploadProgress == 1)
+                                uploadCompleted = true;
+                        }
+                        yield return null;
+                    }
+                    request.WwwRequest = unityWebRequest;
+                    request.Response = new UnityWebResponseData(unityWebRequest);
+                }
             }
             else
             {
-                var unityWebRequest = new UnityEngine.Experimental.Networking.UnityWebRequest(
-                    (request as UnityRequest).RequestUri.AbsoluteUri,
-                    (request as UnityRequest).Method);
-                unityWebRequest.downloadHandler = new UnityEngine.Experimental.Networking.DownloadHandlerBuffer();
-                if (request.RequestContent != null && request.RequestContent.Length > 0)
-                    unityWebRequest.uploadHandler = new UnityEngine.Experimental.Networking.UploadHandlerRaw(request.RequestContent);
-                foreach (var header in request.Headers)
-                {
-                    unityWebRequest.SetRequestHeader(header.Key, header.Value);
-                }
-                request.WwwRequest = unityWebRequest;
-
-                yield return unityWebRequest.Send();
-
-                request.Response = new UnityWebResponseData(unityWebRequest);
+                request.Exception = new WebException("Network Unavailable", WebExceptionStatus.ConnectFailure);
             }
-
 
             if (request.IsSync)
             {
                 // For synchronous calls, signal the wait handle 
                 // so that the calling thread which waits on the wait handle
                 // is unblocked.
-                if (!request.Response.IsSuccessStatusCode)
+                if (request.Response != null && !request.Response.IsSuccessStatusCode)
                 {
                     request.Exception = new HttpErrorResponseException(request.Response);
                 }
@@ -167,7 +198,7 @@ namespace Amazon.Runtime.Internal
             }
             else
             {
-                if (!request.Response.IsSuccessStatusCode)
+                if (request.Response != null && !request.Response.IsSuccessStatusCode)
                 {
                     request.Exception = new HttpErrorResponseException(request.Response);
                 }
@@ -200,18 +231,5 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        /// Public callback API to send the status of network.
-        /// </summary>
-        public class NetworkStatusRefreshed : EventArgs
-        {
-            public NetworkReachability NetworkReachability;
-
-            public NetworkStatusRefreshed(NetworkReachability reachability)
-            {
-                NetworkReachability = reachability;
-            }
-        }
-
-        public static event EventHandler<NetworkStatusRefreshed> OnRefresh;
     }
 }

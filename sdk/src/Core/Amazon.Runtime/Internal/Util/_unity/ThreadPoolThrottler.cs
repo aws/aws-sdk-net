@@ -54,9 +54,6 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// This is the constructor for ThreadPoolThrottler.
         /// </summary>
-        /// <param name="callback">The method that will be invoked by the threadpool.</param>
-        /// <param name="errorCallback">The method that will be invoked if an exception is 
-        /// thown by the method specified by the callback parameter.</param>
         /// <param name="maxConcurrentRequests">Maximum number of requests to be enqueued to
         /// the threadpool at any given time.
         /// </param>

@@ -476,17 +476,22 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.AreEqual(firstId, product.Id);
 
             // Query GlobalIndex
-            asyncSearch = Context.QueryAsync<Product>(
+            Context.QueryAsync<Product>(
                product.CompanyName,            // Hash-key for the index is Company
                QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
                new object[] { 90 },            // condition is against a numerical value
                new DynamoDBOperationConfig     // Configure the index to use
                {
                    IndexName = "GlobalIndex",
-               });
+               }, (result) =>
+               {
+                   asyncSearch = result.Result;
+                   ars.Set();
+               }, options);
+            ars.WaitOne();
+
             asyncSearch.GetRemainingAsync((result) =>
             {
-
                 products = result.Result;
                 ars.Set();
             }, options);
@@ -494,25 +499,31 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.AreEqual(2, products.Count());
 
             // Query GlobalIndex with an additional non-key condition
-            asyncSearch = Context.QueryAsync<Product>(
+            Context.QueryAsync<Product>(
                 product.CompanyName,            // Hash-key for the index is Company
                 QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
                 new object[] { 90 },            // condition is against a numerical value
                 new DynamoDBOperationConfig     // Configure the index to use
                 {
                     IndexName = "GlobalIndex",
-                    QueryFilter = new List<ScanCondition> 
+                    QueryFilter = new List<ScanCondition>
                     {
                         new ScanCondition("TagSet", ScanOperator.Contains, "1.0")
                     }
-                });
+                }, (result) =>
+                {
+                    asyncSearch = result.Result;
+                    ars.Set();
+                }, options);
 
+            ars.WaitOne();
             asyncSearch.GetRemainingAsync((result) =>
             {
 
                 products = result.Result;
                 ars.Set();
             }, options);
+
             ars.WaitOne();
             Assert.AreEqual(1, products.Count());
 
@@ -535,11 +546,13 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.IsNull(product);
 
             // Scan the table
-            Context.ScanAsync<Product>(new ScanCondition[] { }).GetRemainingAsync((result) =>
-            {
-                products = result.Result;
-                ars.Set();
-            }, options);
+            Context.ScanAsync<Product>(new ScanCondition[] { }, null, (result) => { asyncSearch = result.Result; ars.Set(); }, options);
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
+        {
+            products = result.Result;
+            ars.Set();
+        }, options);
             ars.WaitOne();
             Assert.AreEqual(1, products.Count());
 
@@ -763,9 +776,17 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             ars.WaitOne();
 
             Assert.AreEqual(4, employees.Count);
+            AsyncSearch<Employee> asyncSearch = null;
 
             // Query for items with Hash-Key = "Diane"
-            Context.QueryAsync<Employee>("Diane").GetRemainingAsync((result) =>
+            Context.QueryAsync<Employee>("Diane", (result) =>
+            {
+                asyncSearch = result.Result;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
             {
                 employees = result.Result; ars.Set();
 
@@ -774,7 +795,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.AreEqual(2, employees.Count);
 
             // Query for items with Hash-Key = "Diane" and Range-Key > 30
-            Context.QueryAsync<Employee>("Diane", QueryOperator.GreaterThan, new object[] { 30 }).GetRemainingAsync((result) =>
+            Context.QueryAsync<Employee>("Diane", QueryOperator.GreaterThan, (result) =>
+            {
+                asyncSearch = result.Result;
+                ars.Set();
+            }, options, new object[] { 30 });
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
             {
                 employees = result.Result;
                 ars.Set();
@@ -786,7 +814,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             // Index Query
 
             // Query local index for items with Hash-Key = "Diane"
-            Context.QueryAsync<Employee>("Diane", new DynamoDBOperationConfig { IndexName = "LocalIndex" }).GetRemainingAsync((result) =>
+            Context.QueryAsync<Employee>("Diane", new DynamoDBOperationConfig { IndexName = "LocalIndex" }, (result) =>
+            {
+                asyncSearch = result.Result;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
             {
                 employees = result.Result;
                 ars.Set();
@@ -796,7 +831,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
 
             // Query local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
             Context.QueryAsync<Employee>("Diane", QueryOperator.Equal, new object[] { "Eva" },
-                 new DynamoDBOperationConfig { IndexName = "LocalIndex" }).GetRemainingAsync((result) =>
+                 new DynamoDBOperationConfig { IndexName = "LocalIndex" },(result) =>
+            {
+                asyncSearch = result.Result;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
                  {
                      employees = result.Result;
                      ars.Set();
@@ -805,7 +847,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             Assert.AreEqual(2, employees.Count);
 
             // Query global index for item with Hash-Key (Company) = "Big River"
-            Context.QueryAsync<Employee>("Big River", new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).GetRemainingAsync((result) =>
+            Context.QueryAsync<Employee>("Big River", new DynamoDBOperationConfig { IndexName = "GlobalIndex" }, (result) =>
+            {
+                asyncSearch = result.Result;
+                ars.Set();
+            }, options);
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
             {
                 employees = result.Result;
                 ars.Set();
@@ -822,7 +871,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     {
                         new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active)
                     }
-                }).GetRemainingAsync((result) =>
+                }, (result) =>
+                {
+                    asyncSearch = result.Result;
+                    ars.Set();
+                }, options);
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
                 {
                     employees = result.Result;
                     ars.Set();
@@ -836,7 +892,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             // Scan local index for items with Hash-Key = "Diane"
             Context.ScanAsync<Employee>(
                 new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, "Diane") },
-                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).GetRemainingAsync((result) =>
+                new DynamoDBOperationConfig { IndexName = "LocalIndex" }, (result) =>
+                {
+                    asyncSearch = result.Result;
+                    ars.Set();
+                }, options);
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
                 {
                     employees = result.Result;
                     ars.Set();
@@ -851,7 +914,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                     new ScanCondition("Name", ScanOperator.Equal, "Diane"),
                     new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
                 },
-                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).GetRemainingAsync((result) =>
+                new DynamoDBOperationConfig { IndexName = "LocalIndex" }, (result) =>
+                {
+                    asyncSearch = result.Result;
+                    ars.Set();
+                }, options);
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
                 {
                     employees = result.Result;
                     ars.Set();
@@ -862,7 +932,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             // Scan global index for item with Hash-Key (Company) = "Big River"
             Context.ScanAsync<Employee>(
                 new List<ScanCondition> { new ScanCondition("CompanyName", ScanOperator.Equal, "Big River") },
-                new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).GetRemainingAsync((result) =>
+                new DynamoDBOperationConfig { IndexName = "GlobalIndex" }, (result) =>
+                {
+                    asyncSearch = result.Result;
+                    ars.Set();
+                }, options);
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
                 {
                     employees = result.Result;
                     ars.Set();
@@ -880,7 +957,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 new DynamoDBOperationConfig
                 {
                     IndexName = "GlobalIndex"
-                }).GetRemainingAsync((result) =>
+                }, (result) =>
+                {
+                    asyncSearch = result.Result;
+                    ars.Set();
+                }, options);
+
+            ars.WaitOne();
+            asyncSearch.GetRemainingAsync((result) =>
                 {
                     employees = result.Result;
                     ars.Set();

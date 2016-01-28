@@ -3228,6 +3228,104 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DisableTopicRule
+
+
+        /// <summary>
+        /// Disables the specified rule
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableTopicRule service method.</param>
+        /// 
+        /// <returns>The response from the DisableTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public DisableTopicRuleResponse DisableTopicRule(DisableTopicRuleRequest request)
+        {
+            var marshaller = new DisableTopicRuleRequestMarshaller();
+            var unmarshaller = DisableTopicRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DisableTopicRuleRequest,DisableTopicRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableTopicRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableTopicRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisableTopicRuleResponse> DisableTopicRuleAsync(DisableTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisableTopicRuleRequestMarshaller();
+            var unmarshaller = DisableTopicRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableTopicRuleRequest,DisableTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableTopicRule
+
+
+        /// <summary>
+        /// Enables the specified rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableTopicRule service method.</param>
+        /// 
+        /// <returns>The response from the EnableTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public EnableTopicRuleResponse EnableTopicRule(EnableTopicRuleRequest request)
+        {
+            var marshaller = new EnableTopicRuleRequestMarshaller();
+            var unmarshaller = EnableTopicRuleResponseUnmarshaller.Instance;
+
+            return Invoke<EnableTopicRuleRequest,EnableTopicRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableTopicRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableTopicRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<EnableTopicRuleResponse> EnableTopicRuleAsync(EnableTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new EnableTopicRuleRequestMarshaller();
+            var unmarshaller = EnableTopicRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableTopicRuleRequest,EnableTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLoggingOptions
 
 
@@ -5167,7 +5265,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status.</param>
+        /// <param name="newStatus">The new status. Note: setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and is not meant to be used by developers.</param>
         /// 
         /// <returns>The response from the UpdateCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.CertificateStateException">
@@ -5262,7 +5360,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status.</param>
+        /// <param name="newStatus">The new status. Note: setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and is not meant to be used by developers.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

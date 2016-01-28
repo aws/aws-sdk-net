@@ -77,6 +77,15 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
         [Category("WWW")]
         public void TestRecordEvent()
         {
+            // Need to make sure that background runner does not attempt to deliver events during
+            // test (and consequently delete them from local storage). Restart Background runner
+            // and sleep until after it checks for events to send.
+            BackgroundRunner.AbortBackgroundThread();
+            System.Reflection.FieldInfo fieldInfo = typeof(MobileAnalyticsManager).GetField("_backgroundRunner", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+            BackgroundRunner backgroundRunner = fieldInfo.GetValue(null) as BackgroundRunner;
+            backgroundRunner.StartWork();
+            Thread.Sleep(1000);
+
             string appID = Guid.NewGuid().ToString();
             MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID, TestRunner.Credentials, RegionEndpoint.USEast1);
             SQLiteEventStore eventStore = new SQLiteEventStore(new MobileAnalyticsManagerConfig());

@@ -4,15 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using NUnit.Framework;
 using UnityEngine;
 using ThirdParty.Json.LitJson;
 using NUnit.Framework.Api;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
 using System.IO;
-using ThirdParty.iOS4Unity;
 
 namespace AWSSDK.Tests.Framework
 {
@@ -51,8 +48,7 @@ namespace AWSSDK.Tests.Framework
             var currentAssembly = this.GetType().Assembly;
             var options = new Dictionary<string, string>();
             var tests = runner.Load(currentAssembly, options);
-            var result = runner.Run(this, new FixtureAndCaseFilter("PutObjectTests"));
-        }
+            var result = runner.Run(this, TestFilter.Empty);        }
 
         /// <summary>
         /// Determines if Unity scripting backend is IL2CPP.
@@ -135,14 +131,20 @@ namespace AWSSDK.Tests.Framework
         {
             private HashSet<String> FixtureNames;
             private HashSet<String> TestCaseNames;
+            public bool InvertMatch = false;
 
-            public FixtureAndCaseFilter(HashSet<String> fixtureNames, HashSet<String> testCaseNames)
+            public FixtureAndCaseFilter(HashSet<string> fixtureNames, HashSet<string> testCaseNames)
             {
                 FixtureNames = fixtureNames;
                 TestCaseNames = testCaseNames;
             }
+            public FixtureAndCaseFilter(string fixtureName, HashSet<string> testCaseNames)
+            {
+                FixtureNames = new HashSet<string> { fixtureName };
+                TestCaseNames = testCaseNames;
+            }
 
-            public FixtureAndCaseFilter(HashSet<String> fixtureNames)
+            public FixtureAndCaseFilter(HashSet<string> fixtureNames)
             {
                 FixtureNames = fixtureNames;
                 TestCaseNames = new HashSet<string>();
@@ -167,24 +169,33 @@ namespace AWSSDK.Tests.Framework
 
             bool ITestFilter.Pass(ITest test)
             {
-                if (FixtureNames.Count == 0 || test.IsSuite)
+                if (FixtureNames.Count == 0)
                 {
+                    // match
+                    return !InvertMatch;
+                }
+                if (test.IsSuite)
+                {
+                    // continue to deeper matching level
                     return true;
                 }
                 if (FixtureNames.Contains(test.TypeInfo.Name))
                 {
                     if (TestCaseNames.Count == 0)
                     {
-                        return true;
+                        // match
+                        return !InvertMatch;
                     }
                     else
                     {
-                        return TestCaseNames.Contains(test.Name);
+                        // match is test name is in set of matching names
+                        return InvertMatch != TestCaseNames.Contains(test.Name);
                     }
                 }
                 else
                 {
-                    return false;
+                    // no match
+                    return InvertMatch;
                 }
             }
             public TNode ToXml(bool b)

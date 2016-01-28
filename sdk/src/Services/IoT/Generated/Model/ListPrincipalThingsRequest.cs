@@ -38,7 +38,10 @@ namespace Amazon.IoT.Model
         private string _principal;
 
         /// <summary>
-        /// Gets and sets the property Marker.
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// A token used to retrieve the next value.
+        /// </para>
         /// </summary>
         public string Marker
         {

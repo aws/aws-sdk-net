@@ -84,6 +84,5 @@ namespace Amazon.Util
         public const string XAmzCopySourceIfUnmodifiedSinceHeader = "x-amz-copy-source-if-unmodified-since";
         public const string XAmzMetadataDirectiveHeader = "x-amz-metadata-directive";
         public const string XAmzMfaHeader = "x-amz-mfa";
-        public const string XAmzUserAgentHeader = "x-amz-user-agent";
-    }
+        public const string XAmzVersionIdHeader = "x-amz-version-id";        public const string XAmzUserAgentHeader = "x-amz-user-agent";    }
 }

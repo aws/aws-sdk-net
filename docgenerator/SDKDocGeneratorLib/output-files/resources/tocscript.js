@@ -21,9 +21,9 @@
             this.setActiveTopic(jQuery("li#" + tgtid).children("a.nav"));
         }
         if (page)
-            this.setContentPane(page);
+            this.setContentPane(page.replace("_", ""));
         else
-            this.setContentPane("./items/" + member + ".html");
+            this.setContentPane("./items/" + member.replace("_", "") + ".html");
     },
 
     clearActiveTopic: function () {

@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Elasticsearch</id>
     <title>AWSSDK - Amazon Elasticsearch Service</title>
-    <version>3.1.0.2</version> 
+    <version>3.1.0.3</version> 
     <authors>Amazon Web Services</authors>
     <description>Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.</description>
     <language>en-US</language>
@@ -12,11 +12,13 @@
     <tags>AWS Amazon cloud Elasticsearch aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
+
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
@@ -32,6 +34,7 @@
     <file src=".\bin\Release\net45\AWSSDK.Elasticsearch.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Elasticsearch.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Elasticsearch.pdb" target="lib\net45" />
+
 
     <file src=".\bin\Release\pcl\AWSSDK.Elasticsearch.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.Elasticsearch.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />

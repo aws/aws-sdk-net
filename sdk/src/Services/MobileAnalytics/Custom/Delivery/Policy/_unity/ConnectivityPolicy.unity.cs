@@ -32,7 +32,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <returns><c>true</c> if this instance has network connectivity; otherwise, <c>false</c>.</returns>
         private bool HasNetworkConnectivity ()
         {
-            NetworkReachability networkReachability = NetworkInfo.GetReachability();
+            NetworkReachability networkReachability = NetworkInfo.Reachability;
             bool networkFlag = false;
             switch (networkReachability) {
                 case NetworkReachability.NotReachable:

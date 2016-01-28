@@ -33,64 +33,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeNetworkInterfaceAttributeRequest : AmazonEC2Request
     {
-        private string _attachment;
-        private string _description;
-        private string _groups;
+        private NetworkInterfaceAttribute _attribute;
         private string _networkInterfaceId;
-        private string _sourceDestCheck;
 
         /// <summary>
-        /// Gets and sets the property Attachment. 
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// The <c>attachment</c> attribute.
+        /// The attribute of the network interface.
         /// </para>
         /// </summary>
-        public string Attachment
+        public NetworkInterfaceAttribute Attribute
         {
-            get { return this._attachment; }
-            set { this._attachment = value; }
+            get { return this._attribute; }
+            set { this._attribute = value; }
         }
 
-        // Check to see if Attachment property is set
-        internal bool IsSetAttachment()
+        // Check to see if Attribute property is set
+        internal bool IsSetAttribute()
         {
-            return this._attachment != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// The <c>description</c> attribute.
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Groups. 
-        /// <para>
-        /// The <c>groupSet</c> attribute.
-        /// </para>
-        /// </summary>
-        public string Groups
-        {
-            get { return this._groups; }
-            set { this._groups = value; }
-        }
-
-        // Check to see if Groups property is set
-        internal bool IsSetGroups()
-        {
-            return this._groups != null;
+            return this._attribute != null;
         }
 
         /// <summary>
@@ -109,24 +70,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceId()
         {
             return this._networkInterfaceId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceDestCheck. 
-        /// <para>
-        /// The <c>sourceDestCheck</c> attribute.
-        /// </para>
-        /// </summary>
-        public string SourceDestCheck
-        {
-            get { return this._sourceDestCheck; }
-            set { this._sourceDestCheck = value; }
-        }
-
-        // Check to see if SourceDestCheck property is set
-        internal bool IsSetSourceDestCheck()
-        {
-            return this._sourceDestCheck != null;
         }
 
     }

@@ -16,7 +16,7 @@ using System.Threading;
 
 namespace AWSSDK.IntegrationTests.DynamoDB
 {
-    [TestFixture]
+    [TestFixture(TestOf = typeof(DynamoDBTests))]
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
     {
         public static string TableCacheIdentifier = typeof(Table).FullName;
@@ -196,7 +196,6 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             hashRangeTableName = TableNamePrefix + "HashRangeTable";
             bool createHashTable = true;
             bool createHashRangeTable = true;
-
             if (ReuseTables)
             {
                 if (GetStatus(Client, hashTableName) != null)
@@ -394,7 +393,6 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             var responseException = new Exception();
 
             TableStatus status = null;
-
             client.DescribeTableAsync(new DescribeTableRequest() { TableName = tableName }, (result) =>
             {
                 responseException = result.Exception;
@@ -406,15 +404,14 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             }, options);
 
             ars.WaitOne();
-            if (responseException != null)
-            {
+
+            if (responseException != null)            {
                 if (responseException is ResourceNotFoundException)
                 {
                     return null;
                 }
                 Utils.AssertExceptionIsNull(responseException);
             }
-
             return status;
         }
     }

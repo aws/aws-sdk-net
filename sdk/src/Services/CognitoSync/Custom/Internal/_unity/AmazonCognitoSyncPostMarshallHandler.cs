@@ -9,6 +9,9 @@ using System.Text;
 
 namespace Amazon.CognitoSync.Internal
 {
+    /// <summary>
+    /// Cognito Sync post marshall handler to handle XHttpMethodOverrideHeader
+    /// </summary>
     public class AmazonCognitoSyncPostMarshallHandler : PipelineHandler
     {
         /// <summary>
@@ -54,13 +57,13 @@ namespace Amazon.CognitoSync.Internal
             return base.InvokeAsync(executionContext);
         }
 #endif
-
-        protected void PreInvoke(IExecutionContext executionContext)
+        
+        private void PreInvoke(IExecutionContext executionContext)
         {
             ProcessRequestHandlers(executionContext);
         }
 
-        public void ProcessRequestHandlers(IExecutionContext executionContext)
+        private void ProcessRequestHandlers(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.Request;
 
