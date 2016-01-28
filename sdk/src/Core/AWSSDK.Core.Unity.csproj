@@ -128,13 +128,7 @@
     <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\_unity\IHttpRequest.unity.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\_unity\UnityWebRequestFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\_unity\UnityWwwRequestFactory.cs">
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\_unity\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\*.cs">

@@ -138,9 +138,15 @@ namespace Amazon.Runtime.Internal
         /// <param name="headers">A dictionary of header names and values.</param>
         public void SetRequestHeaders(IDictionary<string, string> headers)
         {
-            foreach (var item in headers)
+            foreach (var header in headers)
             {
-                this.Headers.Add(item);
+                //unity web request doesnt allow us to add the Host, User-Agent and Content-Length headers
+                if (header.Key.Equals(HeaderKeys.HostHeader, StringComparison.InvariantCultureIgnoreCase)
+                        || header.Key.Equals(HeaderKeys.ContentLengthHeader, StringComparison.InvariantCultureIgnoreCase)
+                        || header.Key.Equals(HeaderKeys.UserAgentHeader, StringComparison.InvariantCultureIgnoreCase))
+                    continue;
+
+                this.Headers.Add(header);
             }
         }
 

@@ -144,10 +144,6 @@ namespace Amazon.Runtime.Internal
                     unityWebRequest.uploadHandler = new UnityEngine.Experimental.Networking.UploadHandlerRaw(request.RequestContent);
                 foreach (var header in request.Headers)
                 {
-                    if (header.Key.Equals(HeaderKeys.HostHeader, StringComparison.InvariantCultureIgnoreCase)
-                        || header.Key.Equals(HeaderKeys.ContentLengthHeader, StringComparison.InvariantCultureIgnoreCase)
-                        || header.Key.Equals(HeaderKeys.UserAgentHeader, StringComparison.InvariantCultureIgnoreCase))
-                        continue;
                     unityWebRequest.SetRequestHeader(header.Key, header.Value);
                 }
                 request.WwwRequest = unityWebRequest;
