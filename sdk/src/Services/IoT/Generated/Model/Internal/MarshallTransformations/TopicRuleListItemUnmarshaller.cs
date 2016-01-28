@@ -70,6 +70,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ruleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ruleDisabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

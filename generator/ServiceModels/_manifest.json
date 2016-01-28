@@ -114,6 +114,15 @@
         {
             "active": true,
 
+            "model": "acm",
+            "base-name": "CertificateManager",
+            "region-lookup-name": "acm",
+            "authentication-service-name": "acm",
+            "synopsis": "AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform."
+        },
+        {
+            "active": true,
+
             "model": "apigateway",
             "base-name": "APIGateway",
             "region-lookup-name": "apigateway",
@@ -231,6 +240,16 @@
             "authentication-service-name": "monitoring",
             "service-url": "https://monitoring.us-east-1.amazonaws.com",
             "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
+        },
+        {
+            "active": true,
+
+            "model": "events",
+            "base-name": "CloudWatchEvents",
+            "region-lookup-name": "events",
+            "authentication-service-name": "events",
+            "service-url": "https://events.us-east-1.amazonaws.com",
+            "synopsis": "Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule."
         },
         {
             "active": true,

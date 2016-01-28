@@ -114,7 +114,7 @@ namespace SDKDocGenerator.Writers
                 // the page title for now
                 writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
                 writer.WriteLine("<title>{0} | AWS SDK for .NET V3</title>", GetTitle());
-                writer.WriteLine("<link rel=\"canonical\" href=\"http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html?page={0}&tocid={1}\"/>",
+                writer.WriteLine("<link rel=\"canonical\" href=\"http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page={0}&tocid={1}\"/>",
                                 FilenameGenerator.Escape(this.GenerateFilename()),
                                 FilenameGenerator.Escape(this.GetTOCID()));
 

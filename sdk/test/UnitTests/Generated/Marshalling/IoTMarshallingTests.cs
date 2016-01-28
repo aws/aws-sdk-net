@@ -548,6 +548,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void DisableTopicRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableTopicRule");
+
+            var request = InstantiateClassGenerator.Execute<DisableTopicRuleRequest>();
+            var marshaller = new DisableTopicRuleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("DisableTopicRule", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void EnableTopicRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableTopicRule");
+
+            var request = InstantiateClassGenerator.Execute<EnableTopicRuleRequest>();
+            var marshaller = new EnableTopicRuleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("EnableTopicRule", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void GetLoggingOptionsMarshallTest()
         {
             var operation = service_model.FindOperation("GetLoggingOptions");

@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstances. 
         /// <para>
-        /// A list of Reserved instances.
+        /// A list of Reserved Instances.
         /// </para>
         /// </summary>
         public List<ReservedInstances> ReservedInstances

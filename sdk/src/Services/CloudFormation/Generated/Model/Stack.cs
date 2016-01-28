@@ -108,7 +108,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        ///  <ul> <li> <code>true</code>: disable rollback</li> <li> <code>false</code>: enable
+        ///  <ul> <li><code>true</code>: disable rollback</li> <li><code>false</code>: enable
         /// rollback</li> </ul> 
         /// </para>
         /// </summary>

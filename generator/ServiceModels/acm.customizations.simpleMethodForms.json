@@ -1,0 +1,34 @@
+{
+    "simpleMethods" : {
+        "operations" : {
+            "DeleteCertificate" : {
+                "methodForms" : [
+                    [
+                        "CertificateArn"
+                    ]
+                ]
+            },
+            "DescribeCertificate" : {
+                "methodForms" : [
+                    [
+                        "CertificateArn"
+                    ]
+                ]
+            },
+            "GetCertificate" : {
+                "methodForms" : [
+                    [
+                        "CertificateArn"
+                    ]
+                ]
+            },
+            "RequestCertificate" : {
+                "methodForms" : [
+                    [
+                        "DomainName"
+                    ]
+                ]
+            }
+       }
+    }
+}

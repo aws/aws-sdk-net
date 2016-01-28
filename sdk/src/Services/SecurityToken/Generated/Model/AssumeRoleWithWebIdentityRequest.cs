@@ -97,18 +97,18 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  <ul> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
     /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
-    /// Through a Web-based Identity Provider</a>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+    /// Through a Web-based Identity Provider</a>. </li> <li><a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
     /// Web Identity Federation Playground</a>. This interactive website lets you walk through
     /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
     /// temporary security credentials, and then using those credentials to make a request
-    /// to AWS. </li> <li> <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a>
-    /// and <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These
-    /// toolkits contain sample apps that show how to invoke the identity providers, and then
-    /// how to use the information from these providers to get and use temporary security
-    /// credentials. </li> <li> <a href="http://aws.amazon.com/articles/4617974389850313">Web
-    /// Identity Federation with Mobile Applications</a>. This article discusses web identity
-    /// federation and shows an example of how to use web identity federation to get access
-    /// to content in Amazon S3. </li> </ul>
+    /// to AWS. </li> <li><a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and
+    /// <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These toolkits
+    /// contain sample apps that show how to invoke the identity providers, and then how to
+    /// use the information from these providers to get and use temporary security credentials.
+    /// </li> <li><a href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
+    /// with Mobile Applications</a>. This article discusses web identity federation and shows
+    /// an example of how to use web identity federation to get access to content in Amazon
+    /// S3. </li> </ul>
     /// </summary>
     public partial class AssumeRoleWithWebIdentityRequest : AmazonSecurityTokenServiceRequest
     {

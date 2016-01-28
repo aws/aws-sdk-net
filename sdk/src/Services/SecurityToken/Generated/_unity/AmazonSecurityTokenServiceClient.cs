@@ -318,10 +318,9 @@ namespace Amazon.SecurityToken
         /// the user's hardware or virtual MFA device. The <code>TokenCode</code> is the time-based
         /// one-time password (TOTP) that the MFA devices produces. 
         /// </para>
-        ///  <member name="RoleArn" target="arnType"></member> <member name="RoleSessionName"
-        /// target="userNameType"></member> <member name="Policy" target="sessionPolicyDocumentType"></member>
-        /// <member name="DurationSeconds" target="roleDurationSecondsType"></member> <member
-        /// name="ExternalId" target="externalIdType"></member>
+        ///  <member name="RoleArn" target="arnType"/> <member name="RoleSessionName" target="userNameType"/>
+        /// <member name="Policy" target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
+        /// target="roleDurationSecondsType"/> <member name="ExternalId" target="externalIdType"/>
         /// </summary>
         /// 
         /// <returns>The response from the AssumeRole service method, as returned by SecurityTokenService.</returns>
@@ -333,6 +332,12 @@ namespace Amazon.SecurityToken
         /// The request was rejected because the policy document was too large. The error message
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// create temporary credentials. The account administrator must activate STS in that
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
         /// </exception>
         internal AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
@@ -418,14 +423,14 @@ namespace Amazon.SecurityToken
         /// <para>
         /// For more information, see the following resources:
         /// </para>
-        ///  <ul> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+        ///  <ul> <li><a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
         /// SAML 2.0-based Federation</a> in the <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
         /// SAML Identity Providers</a> in the <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
         /// a Relying Party and Claims</a> in the <i>Using IAM</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
         /// a Role for SAML 2.0 Federation</a> in the <i>Using IAM</i>. </li> </ul> <member name="RoleArn"
-        /// target="arnType"></member> <member name="SAMLAssertion" target="SAMLAssertionType"></member>
-        /// <member name="Policy" target="sessionPolicyDocumentType"></member> <member name="DurationSeconds"
-        /// target="roleDurationSecondsType"></member>
+        /// target="arnType"/> <member name="SAMLAssertion" target="SAMLAssertionType"/> <member
+        /// name="Policy" target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
+        /// target="roleDurationSecondsType"/>
         /// </summary>
         /// 
         /// <returns>The response from the AssumeRoleWithSAML service method, as returned by SecurityTokenService.</returns>
@@ -455,6 +460,12 @@ namespace Amazon.SecurityToken
         /// The request was rejected because the policy document was too large. The error message
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// create temporary credentials. The account administrator must activate STS in that
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
         /// </exception>
         internal AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
@@ -560,18 +571,18 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  <ul> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
         /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
-        /// Through a Web-based Identity Provider</a>. </li> <li> <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+        /// Through a Web-based Identity Provider</a>. </li> <li><a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
         /// Web Identity Federation Playground</a>. This interactive website lets you walk through
         /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
         /// temporary security credentials, and then using those credentials to make a request
-        /// to AWS. </li> <li> <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a>
-        /// and <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These
-        /// toolkits contain sample apps that show how to invoke the identity providers, and then
-        /// how to use the information from these providers to get and use temporary security
-        /// credentials. </li> <li> <a href="http://aws.amazon.com/articles/4617974389850313">Web
-        /// Identity Federation with Mobile Applications</a>. This article discusses web identity
-        /// federation and shows an example of how to use web identity federation to get access
-        /// to content in Amazon S3. </li> </ul>
+        /// to AWS. </li> <li><a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and
+        /// <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These toolkits
+        /// contain sample apps that show how to invoke the identity providers, and then how to
+        /// use the information from these providers to get and use temporary security credentials.
+        /// </li> <li><a href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
+        /// with Mobile Applications</a>. This article discusses web identity federation and shows
+        /// an example of how to use web identity federation to get access to content in Amazon
+        /// S3. </li> </ul>
         /// </summary>
         /// 
         /// <returns>The response from the AssumeRoleWithWebIdentity service method, as returned by SecurityTokenService.</returns>
@@ -608,6 +619,12 @@ namespace Amazon.SecurityToken
         /// The request was rejected because the policy document was too large. The error message
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// create temporary credentials. The account administrator must activate STS in that
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
         /// </exception>
         internal AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
@@ -809,6 +826,12 @@ namespace Amazon.SecurityToken
         /// describes how big the policy document is, in packed form, as a percentage of what
         /// the API allows.
         /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// create temporary credentials. The account administrator must activate STS in that
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
+        /// </exception>
         internal GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
             var marshaller = new GetFederationTokenRequestMarshaller();
@@ -888,6 +911,12 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// create temporary credentials. The account administrator must activate STS in that
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
+        /// </exception>
         internal GetSessionTokenResponse GetSessionToken()
         {
             return GetSessionToken(new GetSessionTokenRequest());
@@ -937,6 +966,12 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// create temporary credentials. The account administrator must activate STS in that
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
+        /// </exception>
         internal GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
             var marshaller = new GetSessionTokenRequestMarshaller();
@@ -995,6 +1030,12 @@ namespace Amazon.SecurityToken
          /// </param>
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// create temporary credentials. The account administrator must activate STS in that
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
+        /// </exception>
         public void GetSessionTokenAsync(AmazonServiceCallback<GetSessionTokenRequest, GetSessionTokenResponse> callback, AsyncOptions options = null)
         {
             GetSessionTokenAsync(new GetSessionTokenRequest(), callback, options);

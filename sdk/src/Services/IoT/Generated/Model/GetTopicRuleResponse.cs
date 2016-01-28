@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class GetTopicRuleResponse : AmazonWebServiceResponse
     {
         private TopicRule _rule;
+        private string _ruleArn;
 
         /// <summary>
         /// Gets and sets the property Rule. 
@@ -50,6 +51,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetRule()
         {
             return this._rule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleArn. 
+        /// <para>
+        /// The rule ARN.
+        /// </para>
+        /// </summary>
+        public string RuleArn
+        {
+            get { return this._ruleArn; }
+            set { this._ruleArn = value; }
+        }
+
+        // Check to see if RuleArn property is set
+        internal bool IsSetRuleArn()
+        {
+            return this._ruleArn != null;
         }
 
     }

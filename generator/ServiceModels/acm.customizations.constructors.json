@@ -1,0 +1,28 @@
+
+{
+    "simpleConstructors" : {
+        "constructors" : {
+            "DeleteCertificateRequest" : {
+                "constructorForms" : [
+                    [
+                        "CertificateArn"
+                    ]
+                ]
+            },
+            "DescribeCertificateRequest" : {
+                "constructorForms" : [
+                    [
+                        "CertificateArn"
+                    ]
+                ]
+            },
+            "GetCertificateRequest" : {
+                "constructorForms" : [
+                    [
+                        "CertificateArn"
+                    ]
+                ]
+            }
+        }
+    }
+}

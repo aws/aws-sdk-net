@@ -57,7 +57,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The console output, Base64 encoded.
+        /// The console output, Base64 encoded. If using a command line tool, the tools decode
+        /// the output for you. 
         /// </para>
         /// </summary>
         public string Output

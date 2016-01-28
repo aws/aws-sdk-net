@@ -60,7 +60,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Firehose.
+        /// Gets and sets the property Firehose. 
+        /// <para>
+        /// Write to a Kinesis Firehose stream.
+        /// </para>
         /// </summary>
         public FirehoseAction Firehose
         {

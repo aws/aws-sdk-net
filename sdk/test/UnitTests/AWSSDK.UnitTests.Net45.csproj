@@ -310,6 +310,14 @@
       <Project>{E181D5D6-C28D-4FFE-B951-2C9D96A5C25F}</Project>
       <Name>AWSSDK.ECR.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net45.csproj">
+      <Project>{6F369C20-64C0-46F4-899B-B9A0C8B177CB}</Project>
+      <Name>AWSSDK.CertificateManager.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CloudWatchEvents\AWSSDK.CloudWatchEvents.Net45.csproj">
+      <Project>{94F723C5-14F7-4D54-BB34-412AFE4CB4AB}</Project>
+      <Name>AWSSDK.CloudWatchEvents.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">
