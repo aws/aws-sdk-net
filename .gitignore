@@ -40,4 +40,12 @@ packages
 /sdk/test/Unity3DTests/Unity3DTests.sln
 /sdk/test/Unity3DTests/Library
 
+
+
+
+sdk/test/Unity3DTests/Assets/Resources/settings.json
+*.bak
+generator/.vs/**
+*.mdb
+*.apk
 *.meta
