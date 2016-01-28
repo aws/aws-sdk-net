@@ -32,6 +32,27 @@ namespace AWSSDK.Tests.Framework
 }
 ".Trim();
 
+        public static readonly string FirehoseAssumeRolePolicyDocumentFormat =
+@"{{
+  ""Version"": ""2012-10-17"",
+  ""Statement"": [
+    {{
+      ""Sid"": """",
+      ""Effect"": ""Allow"",
+      ""Principal"": {{
+        ""Service"": ""firehose.amazonaws.com""
+      }},
+      ""Action"": ""sts:AssumeRole"",
+      ""Condition"": {{
+        ""StringEquals"": {{
+          ""sts:ExternalId"": ""{0}""
+        }}
+      }}
+    }}
+  ]
+}}
+".Trim();
+
         public static string CreateRoleIfNotExists(IAmazonIdentityManagementService iamClient, string roleName, string assumeRolePolicyDocument, bool waitForEventualConsistency = true)
         {
             AutoResetEvent ars = new AutoResetEvent(false);
@@ -59,7 +80,7 @@ namespace AWSSDK.Tests.Framework
             if (waitForEventualConsistency)
             {
                 // Wait for eventual consistency of IAM role:
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+                Thread.Sleep(TimeSpan.FromSeconds(10));
             }
             return role.Arn;
         }

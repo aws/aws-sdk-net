@@ -673,8 +673,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        //[TestMethod]
-        //[TestCategory("SyncManager")]
+        [TestMethod]
+        [TestCategory("SyncManager")]
         public void RemoveEntryTest()
         {
             string failureMessage = string.Empty;

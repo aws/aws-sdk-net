@@ -1,25 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.KinesisFirehose;
+﻿using Amazon.KinesisFirehose;
 using Amazon.KinesisFirehose.Model;
+using NUnit.Framework;
+using CommonTests.Framework;
+using System.Collections.Generic;
+using System.IO;
+using System;
 using Amazon.IdentityManagement;
 using Amazon.S3;
 using Amazon.IdentityManagement.Model;
-using Amazon.S3.Util;
-using System.IO;
-using AWSSDK_DotNet.IntegrationTests.Utils;
 
-namespace AWSSDK_DotNet.IntegrationTests.Tests
+namespace CommonTests.IntegrationTests
 {
-    [TestClass]
+    [TestFixture]
     public class KinesisFirehose : TestBase<AmazonKinesisFirehoseClient>
     {
+
         private static string TestAccountId = UtilityMethods.AccountId;
-        static IAmazonIdentityManagementService iamClient = new AmazonIdentityManagementServiceClient();
-        static AmazonS3Client s3Client = new AmazonS3Client();
+        static IAmazonIdentityManagementService iamClient = CreateClient<AmazonIdentityManagementServiceClient>();
+        static AmazonS3Client s3Client = CreateClient<AmazonS3Client>();
 
         private string BucketName = null;
         private string RoleName = null;
@@ -69,44 +67,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     }}
   ]
 }}";
-
-
-        [TestInitialize]
-        public void TestInitialize()
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
         {
             // Create S3 Bucket
             BucketName = "sdk-dotnet-integ-test-bucket-firehose" + DateTime.Now.Ticks;
-            s3Client.PutBucket(BucketName);
+            s3Client.PutBucketAsync(BucketName).Wait();
 
             // Create IAM Role
             RoleName = "NetFirehoseTestRole" + DateTime.Now.Ticks;
             if (string.IsNullOrEmpty(TestAccountId))
                 Assert.Fail("TestAccountId must be specified to run these tests");
 
-            var iamCreateResponse = iamClient.CreateRole(new CreateRoleRequest
+            var iamCreateResponse = iamClient.CreateRoleAsync(new CreateRoleRequest
             {
                 RoleName = RoleName,
                 AssumeRolePolicyDocument = string.Format(FirehoseAssumeRolePolicyDocumentFormat, TestAccountId)
-            });
+            }).Result;
             string roleArn = iamCreateResponse.Role.Arn;
             Assert.IsNotNull(roleArn);
 
             // Attach Policy to Role
             PolicyName = "NetFirehoseTestRolePolicy" + DateTime.Now.Ticks;
-            iamClient.PutRolePolicy(new PutRolePolicyRequest()
+            iamClient.PutRolePolicyAsync(new PutRolePolicyRequest()
             {
                 PolicyDocument = string.Format(RolePolicyDocumentFormat, BucketName),
                 PolicyName = PolicyName,
                 RoleName = RoleName
-            });
+            }).Wait();
 
             // Wait for eventual consistency of role.
-            Thread.Sleep(TimeSpan.FromSeconds(10)); 
+            UtilityMethods.Sleep(TimeSpan.FromSeconds(10));
 
             // Create Firehose Delivery Stream
             string bucketArn = "arn:aws:s3:::" + BucketName;
             DeliveryStreamName = "dotnet-test-delivery-stream" + DateTime.Now.Ticks;
-            string deliveryStreamArn = Client.CreateDeliveryStream(new CreateDeliveryStreamRequest()
+            string deliveryStreamArn = Client.CreateDeliveryStreamAsync(new CreateDeliveryStreamRequest()
             {
                 DeliveryStreamName = DeliveryStreamName,
                 S3DestinationConfiguration = new S3DestinationConfiguration()
@@ -114,7 +110,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     BucketARN = bucketArn,
                     RoleARN = roleArn
                 }
-            }).DeliveryStreamARN;
+            }).Result.DeliveryStreamARN;
             if (string.IsNullOrEmpty(deliveryStreamArn))
             {
                 Assert.Fail("Expected a deliveryStreamArn value");
@@ -125,47 +121,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var timeout = DateTime.Now.AddSeconds(120);
             while (streamStatus != DeliveryStreamStatus.ACTIVE && DateTime.Now.Ticks < timeout.Ticks)
             {
-                streamStatus = Client.DescribeDeliveryStream(new DescribeDeliveryStreamRequest()
+                streamStatus = Client.DescribeDeliveryStreamAsync(new DescribeDeliveryStreamRequest()
                 {
                     DeliveryStreamName = DeliveryStreamName
-                }).DeliveryStreamDescription.DeliveryStreamStatus;
+                }).Result.DeliveryStreamDescription.DeliveryStreamStatus;
                 Assert.AreNotEqual(streamStatus, DeliveryStreamStatus.DELETING);
-                Thread.Sleep(TimeSpan.FromSeconds(2));
+                UtilityMethods.Sleep(TimeSpan.FromSeconds(2));
             }
             Assert.AreNotEqual(streamStatus, DeliveryStreamStatus.CREATING, "Did not exit CREATING state within time limit.");
         }
 
-        [TestCleanup]
-        public void TestCleanup()
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
         {
             // Delete Delivery Stream
-            Client.DeleteDeliveryStream(DeliveryStreamName);
+            Client.DeleteDeliveryStreamAsync(DeliveryStreamName).Wait();
 
             // Delete Role Policy
-            iamClient.DeleteRolePolicy(new DeleteRolePolicyRequest()
+            iamClient.DeleteRolePolicyAsync(new DeleteRolePolicyRequest()
             {
                 RoleName = RoleName,
                 PolicyName = PolicyName
-            });
+            }).Wait();
 
             // Delete Role
-            iamClient.DeleteRole(new DeleteRoleRequest()
+            iamClient.DeleteRoleAsync(new DeleteRoleRequest()
             {
                 RoleName = RoleName
-            });
+            }).Wait();
 
             // Delete Bucket
-            AmazonS3Util.DeleteS3BucketWithObjects(s3Client, BucketName);
+            UtilityMethods.DeleteBucketWithObjectsAsync(s3Client, BucketName).Wait();
         }
 
-        [TestMethod]
+        [Test]
+        [Category("KinesisFirehose")]
         public void TestListDeliveryStreams()
         {
-            List<string> streamNames = Client.ListDeliveryStreams().DeliveryStreamNames;
+            List<string> streamNames = Client.ListDeliveryStreamsAsync().Result.DeliveryStreamNames;
             Assert.IsNotNull(streamNames);
         }
 
-        [TestMethod]
+        [Test]
+        [Category("KinesisFirehose")]
         public void TestPutRecord()
         {
             using (var data = new MemoryStream())
@@ -176,7 +174,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     writer.Flush();
                     data.Position = 0;
                 }
-                string recordId = Client.PutRecord(DeliveryStreamName, new Record() { Data = data }).RecordId;
+                string recordId = Client.PutRecordAsync(DeliveryStreamName, new Record() { Data = data }).Result.RecordId;
                 if (string.IsNullOrEmpty(recordId))
                 {
                     Assert.Fail("Expected recordId to have a value.");
@@ -184,8 +182,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ResourceNotFoundException))]
+        [Test]
+        [Category("KinesisFirehose")]
         public void TestPutRecordNonExistantStream()
         {
             using (var data = new MemoryStream())
@@ -197,11 +195,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     data.Position = 0;
                 }
 
-                Client.PutRecord("NonExistantStream", new Record() { Data = data });
+                var exception = AssertExtensions.ExpectExceptionAsync<ResourceNotFoundException>(Client.PutRecordAsync("NonExistantStream", new Record() { Data = data })).Result;
+                Assert.NotNull(exception);
             }
         }
 
-        [TestMethod]
+        [Test]
+        [Category("KinesisFirehose")]
         public void TestPutRecordBatch()
         {
             int recordCount = 8;
@@ -220,7 +220,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     }
                     records.Add(new Record { Data = data });
                 }
-                var response = Client.PutRecordBatch(DeliveryStreamName, records);
+                var response = Client.PutRecordBatchAsync(DeliveryStreamName, records).Result;
 
                 HashSet<string> recordIds = new HashSet<string>();
                 foreach (var individualResponse in response.RequestResponses)

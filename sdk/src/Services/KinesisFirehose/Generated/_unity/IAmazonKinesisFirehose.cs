@@ -17,12 +17,9 @@
  * Do not modify this file. This file is generated from the firehose-2015-08-04.normal.json service model.
  */
 
-
 using System;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Collections.Generic;
-
+using Amazon.Runtime;
 using Amazon.KinesisFirehose.Model;
 
 namespace Amazon.KinesisFirehose
@@ -38,7 +35,8 @@ namespace Amazon.KinesisFirehose
     /// </summary>
     public partial interface IAmazonKinesisFirehose : IDisposable
     {
-                
+
+        
         #region  CreateDeliveryStream
 
 
@@ -46,15 +44,15 @@ namespace Amazon.KinesisFirehose
         /// Initiates the asynchronous execution of the CreateDeliveryStream operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDeliveryStream operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<CreateDeliveryStreamResponse> CreateDeliveryStreamAsync(CreateDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeliveryStream operation on AmazonKinesisFirehoseClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void CreateDeliveryStreamAsync(CreateDeliveryStreamRequest request, AmazonServiceCallback<CreateDeliveryStreamRequest, CreateDeliveryStreamResponse> callback, AsyncOptions options = null);
+
 
         #endregion
-                
+        
         #region  DeleteDeliveryStream
 
 
@@ -80,8 +78,10 @@ namespace Amazon.KinesisFirehose
         /// </para>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">
+        ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///     procedure using the AsyncState property.
         /// </param>
         /// 
         /// <returns>The response from the DeleteDeliveryStream service method, as returned by KinesisFirehose.</returns>
@@ -91,21 +91,21 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
-        Task<DeleteDeliveryStreamResponse> DeleteDeliveryStreamAsync(string deliveryStreamName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        void DeleteDeliveryStreamAsync(string deliveryStreamName,  AmazonServiceCallback<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResponse> callback, AsyncOptions options = null);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteDeliveryStream operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDeliveryStream operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DeleteDeliveryStreamResponse> DeleteDeliveryStreamAsync(DeleteDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeliveryStream operation on AmazonKinesisFirehoseClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void DeleteDeliveryStreamAsync(DeleteDeliveryStreamRequest request, AmazonServiceCallback<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResponse> callback, AsyncOptions options = null);
+
 
         #endregion
-                
+        
         #region  DescribeDeliveryStream
 
 
@@ -113,53 +113,31 @@ namespace Amazon.KinesisFirehose
         /// Initiates the asynchronous execution of the DescribeDeliveryStream operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeDeliveryStream operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<DescribeDeliveryStreamResponse> DescribeDeliveryStreamAsync(DescribeDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDeliveryStream operation on AmazonKinesisFirehoseClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void DescribeDeliveryStreamAsync(DescribeDeliveryStreamRequest request, AmazonServiceCallback<DescribeDeliveryStreamRequest, DescribeDeliveryStreamResponse> callback, AsyncOptions options = null);
+
 
         #endregion
-                
+        
         #region  ListDeliveryStreams
-
-
-        /// <summary>
-        /// Lists your delivery streams.
-        /// 
-        ///  
-        /// <para>
-        /// The number of delivery streams might be too large to return using a single call to
-        /// <a>ListDeliveryStreams</a>. You can limit the number of delivery streams returned,
-        /// using the <code>Limit</code> parameter. To determine whether there are more delivery
-        /// streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output.
-        /// If there are more delivery streams to list, you can request them by specifying the
-        /// name of the last delivery stream returned in the call in the <code>ExclusiveStartDeliveryStreamName</code>
-        /// parameter of a subsequent call.
-        /// </para>
-        /// </summary>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
-        Task<ListDeliveryStreamsResponse> ListDeliveryStreamsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
         /// Initiates the asynchronous execution of the ListDeliveryStreams operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDeliveryStreams operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<ListDeliveryStreamsResponse> ListDeliveryStreamsAsync(ListDeliveryStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="request">Container for the necessary parameters to execute the ListDeliveryStreams operation on AmazonKinesisFirehoseClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void ListDeliveryStreamsAsync(ListDeliveryStreamsRequest request, AmazonServiceCallback<ListDeliveryStreamsRequest, ListDeliveryStreamsResponse> callback, AsyncOptions options = null);
+
 
         #endregion
-                
+        
         #region  PutRecord
 
 
@@ -219,8 +197,10 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
         /// <param name="record">The record.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">
+        ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///     procedure using the AsyncState property.
         /// </param>
         /// 
         /// <returns>The response from the PutRecord service method, as returned by KinesisFirehose.</returns>
@@ -236,21 +216,21 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
-        Task<PutRecordResponse> PutRecordAsync(string deliveryStreamName, Record record, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        void PutRecordAsync(string deliveryStreamName, Record record,  AmazonServiceCallback<PutRecordRequest, PutRecordResponse> callback, AsyncOptions options = null);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecord operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutRecord operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutRecordResponse> PutRecordAsync(PutRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="request">Container for the necessary parameters to execute the PutRecord operation on AmazonKinesisFirehoseClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void PutRecordAsync(PutRecordRequest request, AmazonServiceCallback<PutRecordRequest, PutRecordResponse> callback, AsyncOptions options = null);
+
 
         #endregion
-                
+        
         #region  PutRecordBatch
 
 
@@ -331,8 +311,10 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
         /// <param name="records">One or more records.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">
+        ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///     procedure using the AsyncState property.
         /// </param>
         /// 
         /// <returns>The response from the PutRecordBatch service method, as returned by KinesisFirehose.</returns>
@@ -348,21 +330,21 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
-        Task<PutRecordBatchResponse> PutRecordBatchAsync(string deliveryStreamName, List<Record> records, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        void PutRecordBatchAsync(string deliveryStreamName, List<Record> records,  AmazonServiceCallback<PutRecordBatchRequest, PutRecordBatchResponse> callback, AsyncOptions options = null);
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutRecordBatch operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutRecordBatch operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<PutRecordBatchResponse> PutRecordBatchAsync(PutRecordBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="request">Container for the necessary parameters to execute the PutRecordBatch operation on AmazonKinesisFirehoseClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void PutRecordBatchAsync(PutRecordBatchRequest request, AmazonServiceCallback<PutRecordBatchRequest, PutRecordBatchResponse> callback, AsyncOptions options = null);
+
 
         #endregion
-                
+        
         #region  UpdateDestination
 
 
@@ -370,12 +352,12 @@ namespace Amazon.KinesisFirehose
         /// Initiates the asynchronous execution of the UpdateDestination operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDestination operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task<UpdateDestinationResponse> UpdateDestinationAsync(UpdateDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDestination operation on AmazonKinesisFirehoseClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void UpdateDestinationAsync(UpdateDestinationRequest request, AmazonServiceCallback<UpdateDestinationRequest, UpdateDestinationResponse> callback, AsyncOptions options = null);
+
 
         #endregion
         

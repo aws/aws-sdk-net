@@ -19,7 +19,7 @@ namespace AWSSDK.Tests.Framework
 
         public static RegionEndpoint RegionEndpoint { get; private set; }
 
-        public static string TestAccount { get; private set; }
+        public static string TestAccountId { get; private set; }
 
         private static bool Loaded = false;
         private TextWriter LogWriter { get; set; }
@@ -30,6 +30,8 @@ namespace AWSSDK.Tests.Framework
             {
                 var resource = Resources.Load(@"settings") as TextAsset;
                 var settings = JsonMapper.ToObject(resource.text);
+
+                TestAccountId = settings["AccountId"] == null ? null : settings["AccountId"].ToString();
                 Credentials = new BasicAWSCredentials(settings["AccessKeyId"].ToString(), settings["SecretAccessKey"].ToString());
                 RegionEndpoint = RegionEndpoint.GetBySystemName(settings["RegionEndpoint"].ToString());
                 Loaded = true;
