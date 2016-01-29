@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.1.41.0",
+    "ProductVersion" : "3.1.41.1",
     "CoreVersion"    : "3.1.4.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -182,7 +182,7 @@
             "InPreview"    : false
         },
         "Glacier"              : {
-            "Version" : "3.1.0.5",
+            "Version" : "3.1.0.6",
             "Dependencies" : {
                 "Core" : "3.1.4.3",
                 "SQS"  : "3.1.0.5",

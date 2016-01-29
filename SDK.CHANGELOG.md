@@ -1,3 +1,7 @@
+### 3.1.41.1 (2016-01-29 19:46 UTC)
+* Glacier (3.1.0.6)
+	* Bug fix for ArchiveTransferManager not creating unique topics and queues
+
 ### 3.1.41.0 (2016-01-29 00:12 UTC)
 * SimpleSystemsManagement (3.1.1.3)
 	* Documentation update for the new 63-bit id formats.
