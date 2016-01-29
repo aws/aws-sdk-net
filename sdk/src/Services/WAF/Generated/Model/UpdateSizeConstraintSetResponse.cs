@@ -30,31 +30,28 @@ namespace Amazon.WAF.Model
     /// <summary>
     /// 
     /// </summary>
-    public partial class GetIPSetResponse : AmazonWebServiceResponse
+    public partial class UpdateSizeConstraintSetResponse : AmazonWebServiceResponse
     {
-        private IPSet _ipSet;
+        private string _changeToken;
 
         /// <summary>
-        /// Gets and sets the property IPSet. 
+        /// Gets and sets the property ChangeToken. 
         /// <para>
-        /// Information about the <a>IPSet</a> that you specified in the <code>GetIPSet</code>
-        /// request. For more information, see the following topics:
+        /// The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code>
+        /// request. You can also use this value to query the status of the request. For more
+        /// information, see <a>GetChangeTokenStatus</a>.
         /// </para>
-        ///  <ul> <li><a>IPSet</a>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>,
-        /// and <code>Name</code></li> <li><code>IPSetDescriptors</code>: Contains an array of
-        /// <a>IPSetDescriptor</a> objects. Each <code>IPSetDescriptor</code> object contains
-        /// <code>Type</code> and <code>Value</code></li> </ul>
         /// </summary>
-        public IPSet IPSet
+        public string ChangeToken
         {
-            get { return this._ipSet; }
-            set { this._ipSet = value; }
+            get { return this._changeToken; }
+            set { this._changeToken = value; }
         }
 
-        // Check to see if IPSet property is set
-        internal bool IsSetIPSet()
+        // Check to see if ChangeToken property is set
+        internal bool IsSetChangeToken()
         {
-            return this._ipSet != null;
+            return this._changeToken != null;
         }
 
     }

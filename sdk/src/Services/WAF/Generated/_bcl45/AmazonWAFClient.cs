@@ -38,7 +38,7 @@ namespace Amazon.WAF
     ///
     /// This is the <i>AWS WAF API Reference</i>. This guide is for developers who need detailed
     /// information about the AWS WAF API actions, data types, and errors. For detailed information
-    /// about AWS WAF features and an overview of how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/dev/">AWS
+    /// about AWS WAF features and an overview of how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
     /// WAF Developer Guide</a>.
     /// </summary>
     public partial class AmazonWAFClient : AmazonServiceClient, IAmazonWAF
@@ -290,7 +290,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -364,7 +364,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -442,7 +442,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -537,7 +537,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -609,7 +609,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -685,7 +685,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -730,8 +730,8 @@ namespace Amazon.WAF
         /// the specifications to be allowed or blocked. For example, suppose you add the following
         /// to a <code>Rule</code>:
         /// 
-        ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
-        /// </li> <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
+        ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></li>
+        /// <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
         /// header</li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
@@ -789,7 +789,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -813,8 +813,8 @@ namespace Amazon.WAF
         /// the specifications to be allowed or blocked. For example, suppose you add the following
         /// to a <code>Rule</code>:
         /// 
-        ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
-        /// </li> <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
+        ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></li>
+        /// <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
         /// header</li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
@@ -870,7 +870,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -893,8 +893,8 @@ namespace Amazon.WAF
         /// the specifications to be allowed or blocked. For example, suppose you add the following
         /// to a <code>Rule</code>:
         /// 
-        ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
-        /// </li> <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
+        ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></li>
+        /// <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
         /// header</li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
@@ -955,7 +955,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -986,6 +986,102 @@ namespace Amazon.WAF
             var unmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRuleRequest,CreateRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSizeConstraintSet
+
+
+        /// <summary>
+        /// Creates a <code>SizeConstraintSet</code>. You then use <a>UpdateSizeConstraintSet</a>
+        /// to identify the part of a web request that you want AWS WAF to check for length, such
+        /// as the length of the <code>User-Agent</code> header or the length of the query string.
+        /// For example, you can create a <code>SizeConstraintSet</code> that matches any requests
+        /// that have a query string that is longer than 100 bytes. You can then configure AWS
+        /// WAF to reject those requests.
+        /// 
+        ///  
+        /// <para>
+        /// To create and configure a <code>SizeConstraintSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
+        /// <code>ChangeToken</code> parameter of a <code>CreateSizeConstraintSet</code> request.</li>
+        /// <li>Submit a <code>CreateSizeConstraintSet</code> request.</li> <li>Use <code>GetChangeToken</code>
+        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
+        /// of an <code>UpdateSizeConstraintSet</code> request.</li> <li>Submit an <a>UpdateSizeConstraintSet</a>
+        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
+        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
+        /// 
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSizeConstraintSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateSizeConstraintSet service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFDisallowedNameException">
+        /// The name specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
+        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
+        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
+        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
+        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
+        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
+        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
+        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
+        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+        /// value for <code>Data</code>.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        public CreateSizeConstraintSetResponse CreateSizeConstraintSet(CreateSizeConstraintSetRequest request)
+        {
+            var marshaller = new CreateSizeConstraintSetRequestMarshaller();
+            var unmarshaller = CreateSizeConstraintSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSizeConstraintSetRequest,CreateSizeConstraintSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSizeConstraintSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSizeConstraintSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateSizeConstraintSetResponse> CreateSizeConstraintSetAsync(CreateSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateSizeConstraintSetRequestMarshaller();
+            var unmarshaller = CreateSizeConstraintSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSizeConstraintSetRequest,CreateSizeConstraintSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1050,7 +1146,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -1121,7 +1217,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -1196,7 +1292,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -1299,7 +1395,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
@@ -1967,6 +2063,91 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  DeleteSizeConstraintSet
+
+
+        /// <summary>
+        /// Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a <code>SizeConstraintSet</code>
+        /// if it's still used in any <code>Rules</code> or if it still includes any <a>SizeConstraint</a>
+        /// objects (any filters).
+        /// 
+        ///  
+        /// <para>
+        /// If you just want to remove a <code>SizeConstraintSet</code> from a <code>Rule</code>,
+        /// use <a>UpdateRule</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To permanently delete a <code>SizeConstraintSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li>Update the <code>SizeConstraintSet</code> to remove filters, if any. For
+        /// more information, see <a>UpdateSizeConstraintSet</a>.</li> <li>Use <a>GetChangeToken</a>
+        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
+        /// of a <code>DeleteSizeConstraintSet</code> request.</li> <li>Submit a <code>DeleteSizeConstraintSet</code>
+        /// request.</li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSizeConstraintSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSizeConstraintSet service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
+        /// The operation failed because you tried to delete an object that isn't empty. For example:
+        /// 
+        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
+        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
+        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
+        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
+        /// more IP addresses.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
+        /// The operation failed because you tried to delete an object that is still in use. For
+        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
+        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
+        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        public DeleteSizeConstraintSetResponse DeleteSizeConstraintSet(DeleteSizeConstraintSetRequest request)
+        {
+            var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
+            var unmarshaller = DeleteSizeConstraintSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSizeConstraintSetRequest,DeleteSizeConstraintSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSizeConstraintSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSizeConstraintSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteSizeConstraintSetResponse> DeleteSizeConstraintSetAsync(DeleteSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSizeConstraintSetRequestMarshaller();
+            var unmarshaller = DeleteSizeConstraintSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSizeConstraintSetRequest,DeleteSizeConstraintSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSqlInjectionMatchSet
 
 
@@ -2613,10 +2794,10 @@ namespace Amazon.WAF
         /// Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
         /// <code>ChangeTokenStatus</code> is one of the following values:
         /// 
-        ///  <ul> <li> <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
+        ///  <ul> <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
         /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-        /// <li> <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
-        /// to all AWS WAF servers.</li> <li> <code>IN_SYNC</code>: Propagation is complete.</li>
+        /// <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
+        /// to all AWS WAF servers.</li> <li><code>IN_SYNC</code>: Propagation is complete.</li>
         /// </ul>
         /// </summary>
         /// <param name="changeToken">The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</param>
@@ -2641,10 +2822,10 @@ namespace Amazon.WAF
         /// Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
         /// <code>ChangeTokenStatus</code> is one of the following values:
         /// 
-        ///  <ul> <li> <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
+        ///  <ul> <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
         /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-        /// <li> <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
-        /// to all AWS WAF servers.</li> <li> <code>IN_SYNC</code>: Propagation is complete.</li>
+        /// <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
+        /// to all AWS WAF servers.</li> <li><code>IN_SYNC</code>: Propagation is complete.</li>
         /// </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChangeTokenStatus service method.</param>
@@ -2670,10 +2851,10 @@ namespace Amazon.WAF
         /// Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
         /// <code>ChangeTokenStatus</code> is one of the following values:
         /// 
-        ///  <ul> <li> <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
+        ///  <ul> <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
         /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-        /// <li> <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
-        /// to all AWS WAF servers.</li> <li> <code>IN_SYNC</code>: Propagation is complete.</li>
+        /// <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
+        /// to all AWS WAF servers.</li> <li><code>IN_SYNC</code>: Propagation is complete.</li>
         /// </ul>
         /// </summary>
         /// <param name="changeToken">The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</param>
@@ -2942,6 +3123,10 @@ namespace Amazon.WAF
         /// <param name="request">Container for the necessary parameters to execute the GetSampledRequests service method.</param>
         /// 
         /// <returns>The response from the GetSampledRequests service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
@@ -2968,6 +3153,54 @@ namespace Amazon.WAF
             var unmarshaller = GetSampledRequestsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSampledRequestsRequest,GetSampledRequestsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSizeConstraintSet
+
+
+        /// <summary>
+        /// Returns the <a>SizeConstraintSet</a> specified by <code>SizeConstraintSetId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSizeConstraintSet service method.</param>
+        /// 
+        /// <returns>The response from the GetSizeConstraintSet service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        public GetSizeConstraintSetResponse GetSizeConstraintSet(GetSizeConstraintSetRequest request)
+        {
+            var marshaller = new GetSizeConstraintSetRequestMarshaller();
+            var unmarshaller = GetSizeConstraintSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetSizeConstraintSetRequest,GetSizeConstraintSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSizeConstraintSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSizeConstraintSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetSizeConstraintSetResponse> GetSizeConstraintSetAsync(GetSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSizeConstraintSetRequestMarshaller();
+            var unmarshaller = GetSizeConstraintSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSizeConstraintSetRequest,GetSizeConstraintSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3310,6 +3543,51 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  ListSizeConstraintSets
+
+
+        /// <summary>
+        /// Returns an array of <a>SizeConstraintSetSummary</a> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSizeConstraintSets service method.</param>
+        /// 
+        /// <returns>The response from the ListSizeConstraintSets service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        public ListSizeConstraintSetsResponse ListSizeConstraintSets(ListSizeConstraintSetsRequest request)
+        {
+            var marshaller = new ListSizeConstraintSetsRequestMarshaller();
+            var unmarshaller = ListSizeConstraintSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSizeConstraintSetsRequest,ListSizeConstraintSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSizeConstraintSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSizeConstraintSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListSizeConstraintSetsResponse> ListSizeConstraintSetsAsync(ListSizeConstraintSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListSizeConstraintSetsRequestMarshaller();
+            var unmarshaller = ListSizeConstraintSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSizeConstraintSetsRequest,ListSizeConstraintSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSqlInjectionMatchSets
 
 
@@ -3439,7 +3717,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="byteMatchSetId">The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li> <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </li> <li> <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </li> <li> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </li> </ul></param>
+        /// <param name="updates">An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li> <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// 
         /// <returns>The response from the UpdateByteMatchSet service method, as returned by WAF.</returns>
@@ -3484,7 +3762,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -3595,7 +3873,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -3662,7 +3940,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="byteMatchSetId">The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li> <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </li> <li> <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </li> <li> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </li> </ul></param>
+        /// <param name="updates">An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li> <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3710,7 +3988,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -3808,7 +4086,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
-        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li> <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </li> <li> <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code> </li> </ul></param>
+        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li> <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// 
         /// <returns>The response from the UpdateIPSet service method, as returned by WAF.</returns>
@@ -3853,7 +4131,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -3978,7 +4256,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -4059,7 +4337,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
-        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li> <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </li> <li> <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code> </li> </ul></param>
+        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li> <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4107,7 +4385,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -4177,7 +4455,7 @@ namespace Amazon.WAF
         /// 
         ///  <ul> <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in
         /// the <code>User-Agent</code> header</li> <li>An <code>IPSet</code> that matches the
-        /// IP address <code>192.0.2.44</code> </li> </ul> 
+        /// IP address <code>192.0.2.44</code></li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
         /// to block requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -4206,7 +4484,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="ruleId">The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <a>ListRules</a>.</param>
-        /// <param name="updates">An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li> <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code> </li> <li> <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </li> <li> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </li> </ul></param>
+        /// <param name="updates">An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// 
         /// <returns>The response from the UpdateRule service method, as returned by WAF.</returns>
@@ -4251,7 +4529,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -4299,7 +4577,7 @@ namespace Amazon.WAF
         /// 
         ///  <ul> <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in
         /// the <code>User-Agent</code> header</li> <li>An <code>IPSet</code> that matches the
-        /// IP address <code>192.0.2.44</code> </li> </ul> 
+        /// IP address <code>192.0.2.44</code></li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
         /// to block requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -4371,7 +4649,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -4418,7 +4696,7 @@ namespace Amazon.WAF
         /// 
         ///  <ul> <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in
         /// the <code>User-Agent</code> header</li> <li>An <code>IPSet</code> that matches the
-        /// IP address <code>192.0.2.44</code> </li> </ul> 
+        /// IP address <code>192.0.2.44</code></li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
         /// to block requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -4447,7 +4725,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="ruleId">The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <a>ListRules</a>.</param>
-        /// <param name="updates">An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li> <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code> </li> <li> <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </li> <li> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </li> </ul></param>
+        /// <param name="updates">An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4495,7 +4773,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -4552,6 +4830,146 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  UpdateSizeConstraintSet
+
+
+        /// <summary>
+        /// Inserts or deletes <a>SizeConstraint</a> objects (filters) in a <a>SizeConstraintSet</a>.
+        /// For each <code>SizeConstraint</code> object, you specify the following values: 
+        /// 
+        ///  <ul> <li>Whether to insert or delete the object from the array. If you want to change
+        /// a <code>SizeConstraintSetUpdate</code> object, you delete the existing object and
+        /// add a new one.</li> <li>The part of a web request that you want AWS WAF to evaluate,
+        /// such as the length of a query string or the length of the <code>User-Agent</code>
+        /// header.</li> <li>Whether to perform any transformations on the request, such as converting
+        /// it to lowercase, before checking its length. Note that transformations of the request
+        /// body are not supported because the AWS resource forwards only the first <code>8192</code>
+        /// bytes of your request to AWS WAF.</li> <li>A <code>ComparisonOperator</code> used
+        /// for evaluating the selected part of the request against the specified <code>Size</code>,
+        /// such as equals, greater than, less than, and so on.</li> <li>The length, in bytes,
+        /// that you want AWS WAF to watch for in selected part of the request. The length is
+        /// computed after applying the transformation.</li> </ul> 
+        /// <para>
+        /// For example, you can add a <code>SizeConstraintSetUpdate</code> object that matches
+        /// web requests in which the length of the <code>User-Agent</code> header is greater
+        /// than 100 bytes. You can then configure AWS WAF to block those requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create and configure a <code>SizeConstraintSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li>Create a <code>SizeConstraintSet.</code> For more information, see <a>CreateSizeConstraintSet</a>.</li>
+        /// <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateSizeConstraintSet</code> request.</li> <li>Submit an <code>UpdateSizeConstraintSet</code>
+        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
+        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
+        /// 
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSizeConstraintSet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSizeConstraintSet service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
+        /// The operation failed because there was nothing to do. For example:
+        /// 
+        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
+        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
+        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
+        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
+        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
+        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
+        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
+        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
+        /// in the specified <code>WebACL</code>.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
+        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
+        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
+        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
+        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
+        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
+        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
+        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
+        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+        /// value for <code>Data</code>.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
+        /// The operation failed because you tried to add an object to or delete an object from
+        /// another object that doesn't exist. For example:
+        /// 
+        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
+        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
+        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
+        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
+        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
+        /// exist.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
+        /// The operation failed because you tried to delete an object that is still in use. For
+        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
+        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
+        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        public UpdateSizeConstraintSetResponse UpdateSizeConstraintSet(UpdateSizeConstraintSetRequest request)
+        {
+            var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
+            var unmarshaller = UpdateSizeConstraintSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSizeConstraintSetRequest,UpdateSizeConstraintSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSizeConstraintSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSizeConstraintSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateSizeConstraintSetResponse> UpdateSizeConstraintSetAsync(UpdateSizeConstraintSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateSizeConstraintSetRequestMarshaller();
+            var unmarshaller = UpdateSizeConstraintSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSizeConstraintSetRequest,UpdateSizeConstraintSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateSqlInjectionMatchSet
 
 
@@ -4559,11 +4977,11 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>.
         /// For each <code>SqlInjectionMatchTuple</code> object, you specify the following values:
         /// 
-        ///  <ul> <li> <code>Action</code>: Whether to insert the object into or delete the object
+        ///  <ul> <li><code>Action</code>: Whether to insert the object into or delete the object
         /// from the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
-        /// object and add a new one.</li> <li> <code>FieldToMatch</code>: The part of web requests
+        /// object and add a new one.</li> <li><code>FieldToMatch</code>: The part of web requests
         /// that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-        /// name of the header.</li> <li> <code>TextTransformation</code>: Which text transformation,
+        /// name of the header.</li> <li><code>TextTransformation</code>: Which text transformation,
         /// if any, to perform on the web request before inspecting the request for snippets of
         /// malicious SQL code.</li> </ul> 
         /// <para>
@@ -4590,7 +5008,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="sqlInjectionMatchSetId">The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li> <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code> </li> <li> <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </li> <li> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </li> </ul></param>
+        /// <param name="updates">An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li><a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li> <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// 
         /// <returns>The response from the UpdateSqlInjectionMatchSet service method, as returned by WAF.</returns>
@@ -4635,7 +5053,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -4671,11 +5089,11 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>.
         /// For each <code>SqlInjectionMatchTuple</code> object, you specify the following values:
         /// 
-        ///  <ul> <li> <code>Action</code>: Whether to insert the object into or delete the object
+        ///  <ul> <li><code>Action</code>: Whether to insert the object into or delete the object
         /// from the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
-        /// object and add a new one.</li> <li> <code>FieldToMatch</code>: The part of web requests
+        /// object and add a new one.</li> <li><code>FieldToMatch</code>: The part of web requests
         /// that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-        /// name of the header.</li> <li> <code>TextTransformation</code>: Which text transformation,
+        /// name of the header.</li> <li><code>TextTransformation</code>: Which text transformation,
         /// if any, to perform on the web request before inspecting the request for snippets of
         /// malicious SQL code.</li> </ul> 
         /// <para>
@@ -4745,7 +5163,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -4780,11 +5198,11 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>.
         /// For each <code>SqlInjectionMatchTuple</code> object, you specify the following values:
         /// 
-        ///  <ul> <li> <code>Action</code>: Whether to insert the object into or delete the object
+        ///  <ul> <li><code>Action</code>: Whether to insert the object into or delete the object
         /// from the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
-        /// object and add a new one.</li> <li> <code>FieldToMatch</code>: The part of web requests
+        /// object and add a new one.</li> <li><code>FieldToMatch</code>: The part of web requests
         /// that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-        /// name of the header.</li> <li> <code>TextTransformation</code>: Which text transformation,
+        /// name of the header.</li> <li><code>TextTransformation</code>: Which text transformation,
         /// if any, to perform on the web request before inspecting the request for snippets of
         /// malicious SQL code.</li> </ul> 
         /// <para>
@@ -4811,7 +5229,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="sqlInjectionMatchSetId">The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li> <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code> </li> <li> <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </li> <li> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </li> </ul></param>
+        /// <param name="updates">An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li><a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li> <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4859,7 +5277,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
@@ -4998,7 +5416,7 @@ namespace Amazon.WAF
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
-        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html">Limits</a>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
         /// in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">

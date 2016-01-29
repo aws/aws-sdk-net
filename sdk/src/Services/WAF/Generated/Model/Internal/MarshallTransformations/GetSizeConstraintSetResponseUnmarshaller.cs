@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetSampledRequests operation
+    /// Response Unmarshaller for GetSizeConstraintSet operation
     /// </summary>  
-    public class GetSampledRequestsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetSizeConstraintSetResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,16 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetSampledRequestsResponse response = new GetSampledRequestsResponse();
+            GetSizeConstraintSetResponse response = new GetSizeConstraintSetResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("PopulationSize", targetDepth))
+                if (context.TestExpression("SizeConstraintSet", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.PopulationSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SampledRequests", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SampledHTTPRequest, SampledHTTPRequestUnmarshaller>(SampledHTTPRequestUnmarshaller.Instance);
-                    response.SampledRequests = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeWindow", targetDepth))
-                {
-                    var unmarshaller = TimeWindowUnmarshaller.Instance;
-                    response.TimeWindow = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SizeConstraintSetUnmarshaller.Instance;
+                    response.SizeConstraintSet = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,6 +76,10 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidAccountException"))
+            {
+                return new WAFInvalidAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
             {
                 return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -95,9 +87,9 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             return new AmazonWAFException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetSampledRequestsResponseUnmarshaller _instance = new GetSampledRequestsResponseUnmarshaller();        
+        private static GetSizeConstraintSetResponseUnmarshaller _instance = new GetSizeConstraintSetResponseUnmarshaller();        
 
-        internal static GetSampledRequestsResponseUnmarshaller GetInstance()
+        internal static GetSizeConstraintSetResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +97,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetSampledRequestsResponseUnmarshaller Instance
+        public static GetSizeConstraintSetResponseUnmarshaller Instance
         {
             get
             {

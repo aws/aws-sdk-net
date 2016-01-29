@@ -77,7 +77,7 @@ namespace Amazon.WAF.Model
         /// <code>RuleId</code> is one of two values:
         /// </para>
         ///  <ul> <li>The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code>
-        /// to return a sample of requests.</li> <li> <code>Default_Action</code>, which causes
+        /// to return a sample of requests.</li> <li><code>Default_Action</code>, which causes
         /// <code>GetSampledRequests</code> to return a sample of the requests that didn't match
         /// any of the rules in the specified <code>WebACL</code>.</li> </ul>
         /// </summary>

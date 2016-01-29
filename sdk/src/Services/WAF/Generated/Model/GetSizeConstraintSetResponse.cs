@@ -30,32 +30,32 @@ namespace Amazon.WAF.Model
     /// <summary>
     /// 
     /// </summary>
-    public partial class GetByteMatchSetResponse : AmazonWebServiceResponse
+    public partial class GetSizeConstraintSetResponse : AmazonWebServiceResponse
     {
-        private ByteMatchSet _byteMatchSet;
+        private SizeConstraintSet _sizeConstraintSet;
 
         /// <summary>
-        /// Gets and sets the property ByteMatchSet. 
+        /// Gets and sets the property SizeConstraintSet. 
         /// <para>
-        /// Information about the <a>ByteMatchSet</a> that you specified in the <code>GetByteMatchSet</code>
+        /// Information about the <a>SizeConstraintSet</a> that you specified in the <code>GetSizeConstraintSet</code>
         /// request. For more information, see the following topics:
         /// </para>
-        ///  <ul> <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>,
-        /// and <code>Name</code></li> <li><code>ByteMatchTuples</code>: Contains an array of
-        /// <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>,
-        /// <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></li>
+        ///  <ul> <li><a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>,
+        /// and <code>Name</code></li> <li><code>SizeConstraints</code>: Contains an array of
+        /// <a>SizeConstraint</a> objects. Each <code>SizeConstraint</code> object contains <a>FieldToMatch</a>,
+        /// <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code></li>
         /// <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>
         /// </summary>
-        public ByteMatchSet ByteMatchSet
+        public SizeConstraintSet SizeConstraintSet
         {
-            get { return this._byteMatchSet; }
-            set { this._byteMatchSet = value; }
+            get { return this._sizeConstraintSet; }
+            set { this._sizeConstraintSet = value; }
         }
 
-        // Check to see if ByteMatchSet property is set
-        internal bool IsSetByteMatchSet()
+        // Check to see if SizeConstraintSet property is set
+        internal bool IsSetSizeConstraintSet()
         {
-            return this._byteMatchSet != null;
+            return this._sizeConstraintSet != null;
         }
 
     }

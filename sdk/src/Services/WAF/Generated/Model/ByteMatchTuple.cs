@@ -85,15 +85,15 @@ namespace Amazon.WAF.Model
         /// (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which
         /// means one of the following:
         /// </para>
-        ///  <ul> <li> <code>TargetString</code> exactly matches the value of the specified part
-        /// of the web request, such as the value of a header.</li> <li> <code>TargetString</code>
+        ///  <ul> <li><code>TargetString</code> exactly matches the value of the specified part
+        /// of the web request, such as the value of a header.</li> <li><code>TargetString</code>
         /// is at the beginning of the specified part of the web request and is followed by a
         /// character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</li>
-        /// <li> <code>TargetString</code> is at the end of the specified part of the web request
+        /// <li><code>TargetString</code> is at the end of the specified part of the web request
         /// and is preceded by a character other than an alphanumeric character or underscore
-        /// (_), for example, <code>;BadBot</code>.</li> <li> <code>TargetString</code> is in
-        /// the middle of the specified part of the web request and is preceded and followed by
-        /// characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</li>
+        /// (_), for example, <code>;BadBot</code>.</li> <li><code>TargetString</code> is in the
+        /// middle of the specified part of the web request and is preceded and followed by characters
+        /// other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</li>
         /// </ul> 
         /// <para>
         /// <b>EXACTLY</b>
@@ -145,17 +145,23 @@ namespace Amazon.WAF.Model
         /// <para>
         /// Valid values depend on the values that you specified for <code>FieldToMatch</code>:
         /// </para>
-        ///  <ul> <li> <code>HEADER</code>: The value that you want AWS WAF to search for in the
+        ///  <ul> <li><code>HEADER</code>: The value that you want AWS WAF to search for in the
         /// request header that you specified in <a>FieldToMatch</a>, for example, the value of
-        /// the <code>User-Agent</code> or <code>Referer</code> header.</li> <li> <code>METHOD</code>:
+        /// the <code>User-Agent</code> or <code>Referer</code> header.</li> <li><code>METHOD</code>:
         /// The HTTP method, which indicates the type of operation specified in the request. CloudFront
         /// supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>,
         /// <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</li>
-        /// <li> <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the
+        /// <li><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the
         /// query string, which is the part of a URL that appears after a <code>?</code> character.</li>
-        /// <li> <code>URI</code>: The value that you want AWS WAF to search for in the part of
+        /// <li><code>URI</code>: The value that you want AWS WAF to search for in the part of
         /// a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</li>
-        /// </ul> 
+        /// <li><code>BODY</code>: The part of a request that contains any additional data that
+        /// you want to send to your web server as the HTTP request body, such as data from a
+        /// form. The request body immediately follows the request headers. Note that only the
+        /// first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection.
+        /// To allow or block requests based on the length of the body, you can create a size
+        /// constraint set. For more information, see <a>CreateSizeConstraintSet</a>. </li> </ul>
+        /// 
         /// <para>
         /// If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that
         /// the value is case sensitive.
@@ -244,10 +250,10 @@ namespace Amazon.WAF.Model
         /// Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
         /// performs the following operations:
         /// </para>
-        ///  <ul> <li>Replaces <code>(ampersand)quot;</code> with <code>"</code> </li> <li>Replaces
+        ///  <ul> <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li> <li>Replaces
         /// <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</li> <li>Replaces
         /// <code>(ampersand)lt;</code> with a "less than" symbol</li> <li>Replaces <code>(ampersand)gt;</code>
-        /// with <code>&gt;</code> </li> <li>Replaces characters that are represented in hexadecimal
+        /// with <code>></code></li> <li>Replaces characters that are represented in hexadecimal
         /// format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li> <li>Replaces
         /// characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
         /// with the corresponding characters</li> </ul> 

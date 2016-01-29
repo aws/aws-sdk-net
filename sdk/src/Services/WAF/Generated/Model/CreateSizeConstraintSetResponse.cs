@@ -28,25 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetChangeTokenStatus operation.
-    /// Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
-    /// <code>ChangeTokenStatus</code> is one of the following values:
     /// 
-    ///  <ul> <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
-    /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-    /// <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
-    /// to all AWS WAF servers.</li> <li><code>IN_SYNC</code>: Propagation is complete.</li>
-    /// </ul>
     /// </summary>
-    public partial class GetChangeTokenStatusRequest : AmazonWAFRequest
+    public partial class CreateSizeConstraintSetResponse : AmazonWebServiceResponse
     {
         private string _changeToken;
+        private SizeConstraintSet _sizeConstraintSet;
 
         /// <summary>
         /// Gets and sets the property ChangeToken. 
         /// <para>
-        /// The change token for which you want to get the status. This change token was previously
-        /// returned in the <code>GetChangeToken</code> response.
+        /// The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code>
+        /// request. You can also use this value to query the status of the request. For more
+        /// information, see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>
         public string ChangeToken
@@ -59,6 +53,24 @@ namespace Amazon.WAF.Model
         internal bool IsSetChangeToken()
         {
             return this._changeToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SizeConstraintSet. 
+        /// <para>
+        /// A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.
+        /// </para>
+        /// </summary>
+        public SizeConstraintSet SizeConstraintSet
+        {
+            get { return this._sizeConstraintSet; }
+            set { this._sizeConstraintSet = value; }
+        }
+
+        // Check to see if SizeConstraintSet property is set
+        internal bool IsSetSizeConstraintSet()
+        {
+            return this._sizeConstraintSet != null;
         }
 
     }

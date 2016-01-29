@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetSampledRequests operation
+    /// Response Unmarshaller for UpdateSizeConstraintSet operation
     /// </summary>  
-    public class GetSampledRequestsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateSizeConstraintSetResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,16 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetSampledRequestsResponse response = new GetSampledRequestsResponse();
+            UpdateSizeConstraintSetResponse response = new UpdateSizeConstraintSetResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("PopulationSize", targetDepth))
+                if (context.TestExpression("ChangeToken", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.PopulationSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SampledRequests", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SampledHTTPRequest, SampledHTTPRequestUnmarshaller>(SampledHTTPRequestUnmarshaller.Instance);
-                    response.SampledRequests = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeWindow", targetDepth))
-                {
-                    var unmarshaller = TimeWindowUnmarshaller.Instance;
-                    response.TimeWindow = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ChangeToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,16 +76,44 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidAccountException"))
+            {
+                return new WAFInvalidAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
+            {
+                return new WAFInvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
+            {
+                return new WAFInvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFLimitsExceededException"))
+            {
+                return new WAFLimitsExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentContainerException"))
+            {
+                return new WAFNonexistentContainerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
             {
                 return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFReferencedItemException"))
+            {
+                return new WAFReferencedItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFStaleDataException"))
+            {
+                return new WAFStaleDataException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonWAFException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetSampledRequestsResponseUnmarshaller _instance = new GetSampledRequestsResponseUnmarshaller();        
+        private static UpdateSizeConstraintSetResponseUnmarshaller _instance = new UpdateSizeConstraintSetResponseUnmarshaller();        
 
-        internal static GetSampledRequestsResponseUnmarshaller GetInstance()
+        internal static UpdateSizeConstraintSetResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +121,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetSampledRequestsResponseUnmarshaller Instance
+        public static UpdateSizeConstraintSetResponseUnmarshaller Instance
         {
             get
             {

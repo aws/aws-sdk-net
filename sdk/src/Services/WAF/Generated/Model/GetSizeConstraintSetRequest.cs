@@ -28,33 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// 
+    /// Container for the parameters to the GetSizeConstraintSet operation.
+    /// Returns the <a>SizeConstraintSet</a> specified by <code>SizeConstraintSetId</code>.
     /// </summary>
-    public partial class GetIPSetResponse : AmazonWebServiceResponse
+    public partial class GetSizeConstraintSetRequest : AmazonWAFRequest
     {
-        private IPSet _ipSet;
+        private string _sizeConstraintSetId;
 
         /// <summary>
-        /// Gets and sets the property IPSet. 
+        /// Gets and sets the property SizeConstraintSetId. 
         /// <para>
-        /// Information about the <a>IPSet</a> that you specified in the <code>GetIPSet</code>
-        /// request. For more information, see the following topics:
+        /// The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want
+        /// to get. <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a>
+        /// and by <a>ListSizeConstraintSets</a>.
         /// </para>
-        ///  <ul> <li><a>IPSet</a>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>,
-        /// and <code>Name</code></li> <li><code>IPSetDescriptors</code>: Contains an array of
-        /// <a>IPSetDescriptor</a> objects. Each <code>IPSetDescriptor</code> object contains
-        /// <code>Type</code> and <code>Value</code></li> </ul>
         /// </summary>
-        public IPSet IPSet
+        public string SizeConstraintSetId
         {
-            get { return this._ipSet; }
-            set { this._ipSet = value; }
+            get { return this._sizeConstraintSetId; }
+            set { this._sizeConstraintSetId = value; }
         }
 
-        // Check to see if IPSet property is set
-        internal bool IsSetIPSet()
+        // Check to see if SizeConstraintSetId property is set
+        internal bool IsSetSizeConstraintSetId()
         {
-            return this._ipSet != null;
+            return this._sizeConstraintSetId != null;
         }
 
     }

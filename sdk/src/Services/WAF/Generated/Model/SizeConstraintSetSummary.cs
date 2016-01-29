@@ -28,17 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// The <code>Id</code> and <code>Name</code> of a <code>SqlInjectionMatchSet</code>.
+    /// The <code>Id</code> and <code>Name</code> of a <code>SizeConstraintSet</code>.
     /// </summary>
-    public partial class SqlInjectionMatchSetSummary
+    public partial class SizeConstraintSetSummary
     {
         private string _name;
-        private string _sqlInjectionMatchSetId;
+        private string _sizeConstraintSetId;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.
+        /// The name of the <code>SizeConstraintSet</code>, if any.
         /// </para>
         /// </summary>
         public string Name
@@ -54,31 +54,31 @@ namespace Amazon.WAF.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SqlInjectionMatchSetId. 
+        /// Gets and sets the property SizeConstraintSetId. 
         /// <para>
-        /// A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code>
-        /// to get information about a <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>),
-        /// update a <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>,
-        /// insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one
-        /// from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a <code>SqlInjectionMatchSet</code>
-        /// from AWS WAF (see <a>DeleteSqlInjectionMatchSet</a>).
+        /// A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code>
+        /// to get information about a <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>),
+        /// update a <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>, insert
+        /// a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code>
+        /// (see <a>UpdateRule</a>), and delete a <code>SizeConstraintSet</code> from AWS WAF
+        /// (see <a>DeleteSizeConstraintSet</a>).
         /// </para>
         ///  
         /// <para>
-        /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a>
-        /// and by <a>ListSqlInjectionMatchSets</a>.
+        /// <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and
+        /// by <a>ListSizeConstraintSets</a>.
         /// </para>
         /// </summary>
-        public string SqlInjectionMatchSetId
+        public string SizeConstraintSetId
         {
-            get { return this._sqlInjectionMatchSetId; }
-            set { this._sqlInjectionMatchSetId = value; }
+            get { return this._sizeConstraintSetId; }
+            set { this._sizeConstraintSetId = value; }
         }
 
-        // Check to see if SqlInjectionMatchSetId property is set
-        internal bool IsSetSqlInjectionMatchSetId()
+        // Check to see if SizeConstraintSetId property is set
+        internal bool IsSetSizeConstraintSetId()
         {
-            return this._sqlInjectionMatchSetId != null;
+            return this._sizeConstraintSetId != null;
         }
 
     }

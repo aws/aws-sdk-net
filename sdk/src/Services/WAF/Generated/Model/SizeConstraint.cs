@@ -28,14 +28,68 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// Specifies the part of a web request that you want AWS WAF to inspect for snippets
-    /// of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the
-    /// header.
+    /// Specifies a constraint on the size of a part of the web request. AWS WAF uses the
+    /// <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code>
+    /// to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code>
+    /// size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code>
+    /// is considered to match.
     /// </summary>
-    public partial class SqlInjectionMatchTuple
+    public partial class SizeConstraint
     {
+        private ComparisonOperator _comparisonOperator;
         private FieldToMatch _fieldToMatch;
+        private long? _size;
         private TextTransformation _textTransformation;
+
+        /// <summary>
+        /// Gets and sets the property ComparisonOperator. 
+        /// <para>
+        /// The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination
+        /// with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression
+        /// in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of
+        /// <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code>
+        /// is considered to match.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size
+        /// of the <code>FieldToMatch</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of
+        /// the <code>FieldToMatch</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size
+        /// of the <code>FieldToMatch</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size
+        /// of the <code>FieldToMatch</code>
+        /// </para>
+        /// </summary>
+        public ComparisonOperator ComparisonOperator
+        {
+            get { return this._comparisonOperator; }
+            set { this._comparisonOperator = value; }
+        }
+
+        // Check to see if ComparisonOperator property is set
+        internal bool IsSetComparisonOperator()
+        {
+            return this._comparisonOperator != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FieldToMatch.
@@ -53,6 +107,38 @@ namespace Amazon.WAF.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Size. 
+        /// <para>
+        /// The size in bytes that you want AWS WAF to compare against the size of the specified
+        /// <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code>
+        /// and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code>
+        /// <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that
+        /// expression is true, the <code>SizeConstraint</code> is considered to match.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for size are 0 - 21474836480 bytes (0 - 20 GB). 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI
+        /// counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters
+        /// long.
+        /// </para>
+        /// </summary>
+        public long Size
+        {
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
+        }
+
+        // Check to see if Size property is set
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TextTransformation. 
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
@@ -62,11 +148,25 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
+        /// Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you
+        /// must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront
+        /// forwards only the first 8192 bytes for inspection. 
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>NONE</b>
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify <code>NONE</code> if you don't want to perform any text transformations.
+        /// </para>
+        ///  
+        /// <para>
         /// <b>CMD_LINE</b>
         /// </para>
         ///  
         /// <para>
-        /// When you're concerned that attackers are injecting an operating system commandline
+        /// When you're concerned that attackers are injecting an operating system command line
         /// command and using unusual formatting to disguise some or all of the command, use this
         /// option to perform the following transformations:
         /// </para>
@@ -118,14 +218,6 @@ namespace Amazon.WAF.Model
         ///  
         /// <para>
         /// Use this option to decode a URL-encoded value.
-        /// </para>
-        ///  
-        /// <para>
-        /// <b>NONE</b>
-        /// </para>
-        ///  
-        /// <para>
-        /// Specify <code>NONE</code> if you don't want to perform any text transformations.
         /// </para>
         /// </summary>
         public TextTransformation TextTransformation

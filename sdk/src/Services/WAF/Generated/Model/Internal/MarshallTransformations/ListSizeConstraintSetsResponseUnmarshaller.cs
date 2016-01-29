@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetSampledRequests operation
+    /// Response Unmarshaller for ListSizeConstraintSets operation
     /// </summary>  
-    public class GetSampledRequestsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListSizeConstraintSetsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,22 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetSampledRequestsResponse response = new GetSampledRequestsResponse();
+            ListSizeConstraintSetsResponse response = new ListSizeConstraintSetsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("PopulationSize", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.PopulationSize = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextMarker = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SampledRequests", targetDepth))
+                if (context.TestExpression("SizeConstraintSets", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SampledHTTPRequest, SampledHTTPRequestUnmarshaller>(SampledHTTPRequestUnmarshaller.Instance);
-                    response.SampledRequests = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeWindow", targetDepth))
-                {
-                    var unmarshaller = TimeWindowUnmarshaller.Instance;
-                    response.TimeWindow = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<SizeConstraintSetSummary, SizeConstraintSetSummaryUnmarshaller>(SizeConstraintSetSummaryUnmarshaller.Instance);
+                    response.SizeConstraintSets = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,16 +82,16 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidAccountException"))
             {
-                return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new WAFInvalidAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonWAFException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetSampledRequestsResponseUnmarshaller _instance = new GetSampledRequestsResponseUnmarshaller();        
+        private static ListSizeConstraintSetsResponseUnmarshaller _instance = new ListSizeConstraintSetsResponseUnmarshaller();        
 
-        internal static GetSampledRequestsResponseUnmarshaller GetInstance()
+        internal static ListSizeConstraintSetsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +99,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetSampledRequestsResponseUnmarshaller Instance
+        public static ListSizeConstraintSetsResponseUnmarshaller Instance
         {
             get
             {
