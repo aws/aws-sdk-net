@@ -92,6 +92,10 @@
       <Project>{663AA578-CBBF-4E69-9753-577480DEED1D}</Project>
       <Name>AWSSDK.AWSSupport.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net35.csproj">
+      <Project>{16a1eedf-cd98-4844-b608-f3f120d7a542}</Project>
+      <Name>AWSSDK.CertificateManager.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net35.csproj">
       <Project>{8311AA7C-5553-45E2-AA0D-11981F8F7DBE}</Project>
       <Name>AWSSDK.CloudFormation.Net35</Name>
@@ -115,6 +119,10 @@
     <ProjectReference Include="..\..\src\Services\CloudTrail\AWSSDK.CloudTrail.Net35.csproj">
       <Project>{D0D5AD3D-9737-47B4-8E0E-D7D4AADBDFCF}</Project>
       <Name>AWSSDK.CloudTrail.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CloudWatchEvents\AWSSDK.CloudWatchEvents.Net35.csproj">
+      <Project>{968970d4-64ae-4067-aa9d-c258ce720b38}</Project>
+      <Name>AWSSDK.CloudWatchEvents.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.Net35.csproj">
       <Project>{1A2903F6-896B-4397-8151-B0CC8DC3BCED}</Project>

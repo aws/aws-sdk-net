@@ -44,11 +44,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// String that identifies the start of the next list of events, if there is one.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: There is no default value.
+        /// A string that identifies the next page of events that you want to retrieve.
         /// </para>
         /// </summary>
         public string NextToken

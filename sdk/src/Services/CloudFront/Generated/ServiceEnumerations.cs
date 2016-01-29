@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
  */
 
 using System;
@@ -30,6 +30,10 @@ namespace Amazon.CloudFront
     public class CertificateSource : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Acm for CertificateSource
+        /// </summary>
+        public static readonly CertificateSource Acm = new CertificateSource("acm");
         /// <summary>
         /// Constant Cloudfront for CertificateSource
         /// </summary>
@@ -313,6 +317,10 @@ namespace Amazon.CloudFront
         /// </summary>
         public static readonly OriginProtocolPolicy HttpOnly = new OriginProtocolPolicy("http-only");
         /// <summary>
+        /// Constant HttpsOnly for OriginProtocolPolicy
+        /// </summary>
+        public static readonly OriginProtocolPolicy HttpsOnly = new OriginProtocolPolicy("https-only");
+        /// <summary>
         /// Constant MatchViewer for OriginProtocolPolicy
         /// </summary>
         public static readonly OriginProtocolPolicy MatchViewer = new OriginProtocolPolicy("match-viewer");
@@ -400,6 +408,64 @@ namespace Amazon.CloudFront
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PriceClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SslProtocol.
+    /// </summary>
+    public class SslProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SSLv3 for SslProtocol
+        /// </summary>
+        public static readonly SslProtocol SSLv3 = new SslProtocol("SSLv3");
+        /// <summary>
+        /// Constant TLSv1 for SslProtocol
+        /// </summary>
+        public static readonly SslProtocol TLSv1 = new SslProtocol("TLSv1");
+        /// <summary>
+        /// Constant TLSv11 for SslProtocol
+        /// </summary>
+        public static readonly SslProtocol TLSv11 = new SslProtocol("TLSv1.1");
+        /// <summary>
+        /// Constant TLSv12 for SslProtocol
+        /// </summary>
+        public static readonly SslProtocol TLSv12 = new SslProtocol("TLSv1.2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SslProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SslProtocol FindValue(string value)
+        {
+            return FindValue<SslProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SslProtocol(string value)
         {
             return FindValue(value);
         }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Reserved instance offering.
+    /// Describes a Reserved Instance offering.
     /// </summary>
     public partial class ReservedInstancesOffering
     {
@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in which the Reserved instance can be used.
+        /// The Availability Zone in which the Reserved Instance can be used.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency of the Reserved instance offering you are purchasing. It's specified
+        /// The currency of the Reserved Instance offering you are purchasing. It's specified
         /// using ISO 4217 standard currency codes. At this time, the only supported currency
         /// is <code>USD</code>.
         /// </para>
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// The duration of the Reserved instance, in seconds.
+        /// The duration of the Reserved Instance, in seconds.
         /// </para>
         /// </summary>
         public long Duration
@@ -105,7 +105,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
-        /// The purchase price of the Reserved instance.
+        /// The purchase price of the Reserved Instance.
         /// </para>
         /// </summary>
         public float FixedPrice
@@ -123,7 +123,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTenancy. 
         /// <para>
-        /// The tenancy of the reserved instance.
+        /// The tenancy of the instance.
         /// </para>
         /// </summary>
         public Tenancy InstanceTenancy
@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type on which the Reserved instance can be used.
+        /// The instance type on which the Reserved Instance can be used.
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -178,7 +178,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
-        /// The Reserved instance offering type.
+        /// The Reserved Instance offering type.
         /// </para>
         /// </summary>
         public OfferingTypeValues OfferingType
@@ -196,7 +196,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PricingDetails. 
         /// <para>
-        /// The pricing details of the Reserved instance offering.
+        /// The pricing details of the Reserved Instance offering.
         /// </para>
         /// </summary>
         public List<PricingDetail> PricingDetails
@@ -214,7 +214,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductDescription. 
         /// <para>
-        /// The Reserved instance product platform description.
+        /// The Reserved Instance product platform description.
         /// </para>
         /// </summary>
         public RIProductDescription ProductDescription
@@ -250,7 +250,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesOfferingId. 
         /// <para>
-        /// The ID of the Reserved instance offering.
+        /// The ID of the Reserved Instance offering.
         /// </para>
         /// </summary>
         public string ReservedInstancesOfferingId
@@ -268,7 +268,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UsagePrice. 
         /// <para>
-        /// The usage price of the Reserved instance, per hour.
+        /// The usage price of the Reserved Instance, per hour.
         /// </para>
         /// </summary>
         public float UsagePrice

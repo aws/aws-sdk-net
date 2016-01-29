@@ -68,6 +68,10 @@
       <Project>{CF64C0A4-25F7-42E9-9B3D-632CB520B666}</Project>
       <Name>AWSSDK.AWSSupport.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CertificateManager/AWSSDK.CertificateManager.CodeAnalysis.csproj">
+      <Project>{0AB37C0F-A819-4054-9853-F5645C120F8D}</Project>
+      <Name>AWSSDK.CertificateManager.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CloudFormation/AWSSDK.CloudFormation.CodeAnalysis.csproj">
       <Project>{37B67435-4269-4917-A6D1-12D9478EA743}</Project>
       <Name>AWSSDK.CloudFormation.CodeAnalysis</Name>
@@ -95,6 +99,10 @@
     <ProjectReference Include="../ServiceAnalysis/CloudWatch/AWSSDK.CloudWatch.CodeAnalysis.csproj">
       <Project>{477E2CEA-CD04-44FA-8B95-52B3BE6B17D6}</Project>
       <Name>AWSSDK.CloudWatch.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudWatchEvents/AWSSDK.CloudWatchEvents.CodeAnalysis.csproj">
+      <Project>{F037AE5A-E823-428E-9958-559FEDC00267}</Project>
+      <Name>AWSSDK.CloudWatchEvents.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CloudWatchLogs/AWSSDK.CloudWatchLogs.CodeAnalysis.csproj">
       <Project>{CF63ED2A-7FFE-4851-B21F-FCCF802D101B}</Project>

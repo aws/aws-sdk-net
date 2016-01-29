@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Reserved instance modification.
+    /// Describes a Reserved Instance modification.
     /// </summary>
     public partial class ReservedInstancesModification
     {
@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ModificationResults. 
         /// <para>
-        /// Contains target configurations along with their corresponding new Reserved instance
+        /// Contains target configurations along with their corresponding new Reserved Instance
         /// IDs.
         /// </para>
         /// </summary>
@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesIds. 
         /// <para>
-        /// The IDs of one or more Reserved instances.
+        /// The IDs of one or more Reserved Instances.
         /// </para>
         /// </summary>
         public List<ReservedInstancesId> ReservedInstancesIds
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesModificationId. 
         /// <para>
-        /// A unique ID for the Reserved instance modification.
+        /// A unique ID for the Reserved Instance modification.
         /// </para>
         /// </summary>
         public string ReservedInstancesModificationId
@@ -156,7 +156,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Reserved instances modification request.
+        /// The status of the Reserved Instances modification request.
         /// </para>
         /// </summary>
         public string Status

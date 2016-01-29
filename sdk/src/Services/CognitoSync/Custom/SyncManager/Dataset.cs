@@ -26,6 +26,7 @@ using System.Threading;
 using System.Globalization;
 #if BCL45 || PCL
 using System.Threading.Tasks;
+using System.Runtime.ExceptionServices;
 #endif
 
 namespace Amazon.CognitoSync.SyncManager
@@ -363,7 +364,9 @@ namespace Amazon.CognitoSync.SyncManager
 #endif
         {
             long lastSyncCount = Local.GetLastSyncCount(IdentityId, DatasetName);
-
+#if !(BCL35 || UNITY)
+            ExceptionDispatchInfo capturedException = null;
+#endif
             // if dataset is deleted locally, push it to remote
             if (lastSyncCount == -1)
             {
@@ -589,12 +592,14 @@ namespace Amazon.CognitoSync.SyncManager
                         }
 #if BCL35||UNITY
                         RunSyncOperation(--retry);
-#else
-                        await this.RunSyncOperationAsync(--retry, cancellationToken).ConfigureAwait(false);
-#endif
                     }
                     return;
                 }
+#else
+                         capturedException = ExceptionDispatchInfo.Capture(e);
+                    }
+                }
+#endif
                 catch (Exception e)
                 {
                     _logger.InfoFormat("OnSyncFailure {0}", e.Message);
@@ -602,6 +607,12 @@ namespace Amazon.CognitoSync.SyncManager
                     FireSyncFailureEvent(e);
                     return;
                 }
+#if !(BCL35||UNITY)
+                if (capturedException != null)
+                    await RunSyncOperationAsync(--retry, cancellationToken).ConfigureAwait(false);
+
+                return;
+#endif
             }
             else
             {

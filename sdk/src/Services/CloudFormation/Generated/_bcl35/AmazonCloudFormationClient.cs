@@ -57,7 +57,7 @@ namespace Amazon.CloudFormation
     /// <para>
     /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
     /// information about a specific AWS product, you can find the product's technical documentation
-    /// at <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.
+    /// at <a href="http://docs.aws.amazon.com/documentation/">http://docs.aws.amazon.com/documentation/</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
@@ -305,6 +305,71 @@ namespace Amazon.CloudFormation
         public  CancelUpdateStackResponse EndCancelUpdateStack(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelUpdateStackResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ContinueUpdateRollback
+
+        /// <summary>
+        /// For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues
+        /// rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the
+        /// cause of the failure, you can manually <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+        /// fix the error</a> and continue the rollback. By continuing the rollback, you can return
+        /// your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), return
+        /// the stack to its original settings, and then try to update the stack again.
+        /// 
+        ///  
+        /// <para>
+        /// A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS CloudFormation
+        /// cannot roll back all changes after a failed stack update. For example, you might have
+        /// a stack that is rolling back to an old database instance that was deleted outside
+        /// of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was deleted,
+        /// it assumes that the database instance still exists and attempts to roll back to it,
+        /// causing the update rollback to fail.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
+        /// 
+        /// <returns>The response from the ContinueUpdateRollback service method, as returned by CloudFormation.</returns>
+        public ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request)
+        {
+            var marshaller = new ContinueUpdateRollbackRequestMarshaller();
+            var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
+
+            return Invoke<ContinueUpdateRollbackRequest,ContinueUpdateRollbackResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ContinueUpdateRollback operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndContinueUpdateRollback
+        ///         operation.</returns>
+        public IAsyncResult BeginContinueUpdateRollback(ContinueUpdateRollbackRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ContinueUpdateRollbackRequestMarshaller();
+            var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ContinueUpdateRollbackRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ContinueUpdateRollback operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginContinueUpdateRollback.</param>
+        /// 
+        /// <returns>Returns a  ContinueUpdateRollbackResult from CloudFormation.</returns>
+        public  ContinueUpdateRollbackResponse EndContinueUpdateRollback(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ContinueUpdateRollbackResponse>(asyncResult);
         }
 
         #endregion
@@ -604,7 +669,7 @@ namespace Amazon.CloudFormation
         /// You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>,
         /// but not both. In addition, you can specify <code>LogicalResourceId</code> to filter
         /// the returned result. For more information about resources, the <code>LogicalResourceId</code>
-        /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+        /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
         /// CloudFormation User Guide</a>.
         /// </para>
         ///  <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code>

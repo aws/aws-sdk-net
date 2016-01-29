@@ -7,7 +7,8 @@
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
 		
         <GeneratorDisablePCLSupport Condition="'$(DisablePCLSupport)'=='true'">-disable.pcl-support</GeneratorDisablePCLSupport>
-
+		
+        <SmokeBuild></SmokeBuild>
     </PropertyGroup>
     
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
@@ -124,7 +125,7 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />
     </Target>
 
-    <Target Name="xam-pack" DependsOnTargets="build-custom-tasks;nuget-pack" Condition="!$(DisablePCLSupport) AND Exists('$(xpkgexe)')">
+    <Target Name="xam-pack" DependsOnTargets="build-custom-tasks;nuget-pack" Condition="!$(DisablePCLSupport) AND Exists('$(xpkgexe)')  And $(SmokeBuild) == ''">
         <XamarinComponent 
             ComponentRootPath="..\sdk\xamarin-components\" 
             NugetExe="..\sdk\.nuget\NuGet.exe" 
@@ -310,6 +311,7 @@
             Condition="Exists('$(InternalBuildTools)\references.targets') And $(RunKeyScan)" 
             DependsOnTargets="build-tools">
         <ItemGroup>
+		    <PrivateKeyException Include="generator\ServiceModels\acm-2015-12-08.normal.json" />
             <PrivateKeyException Include="generator\ServiceModels\ec2-2014-02-01.normal.json" />
             <PrivateKeyException Include="generator\ServiceModels\iam-2010-05-08.normal.json" />
             <PrivateKeyException Include="sdk\test\UnitTests\Custom\EC2\PasswordTest.cs" />

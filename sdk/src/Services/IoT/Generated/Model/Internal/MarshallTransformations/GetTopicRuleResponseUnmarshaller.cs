@@ -57,6 +57,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.Rule = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ruleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RuleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

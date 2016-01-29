@@ -21,7 +21,7 @@
 
             var params = parseUri($(window.parent.location).attr('href')).queryKey;
             if (params && params.page) {
-                AWSTOCObj.setContentPane("./items/" + params.page);
+                AWSTOCObj.setContentPane("./items/" + params.page.replace(/_/g, ""));
             }
             else {
                 AWSTOCObj.setContentPane("./items/sdk-api-home.html");

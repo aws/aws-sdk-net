@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ModifyReservedInstances operation.
     /// Modifies the Availability Zone, instance count, instance type, or network platform
-    /// (EC2-Classic or EC2-VPC) of your Reserved instances. The Reserved instances to be
+    /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
     /// modified must be identical, except for Availability Zone, network platform, and instance
     /// type.
     /// 
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesIds. 
         /// <para>
-        /// The IDs of the Reserved instances to modify.
+        /// The IDs of the Reserved Instances to modify.
         /// </para>
         /// </summary>
         public List<string> ReservedInstancesIds
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetConfigurations. 
         /// <para>
-        /// The configuration settings for the Reserved instances to modify.
+        /// The configuration settings for the Reserved Instances to modify.
         /// </para>
         /// </summary>
         public List<ReservedInstancesConfiguration> TargetConfigurations

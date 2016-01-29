@@ -156,7 +156,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A list of <code>Parameter</code> structures that specify input parameters for the
-        /// stack.
+        /// stack. For more information, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+        /// data type.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -211,7 +212,7 @@ namespace Amazon.CloudFormation.Model
         /// in which you are creating the stack.
         /// </para>
         ///  <note>A stack name can contain only alphanumeric characters (case sensitive) and
-        /// hyphens. It must start with an alphabetic character and cannot be longer than 255
+        /// hyphens. It must start with an alphabetic character and cannot be longer than 128
         /// characters.</note>
         /// </summary>
         public string StackName
@@ -271,9 +272,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A set of user-defined <code>Tags</code> to associate with this stack, represented
-        /// by key/value pairs. Tags defined for the stack are propagated to EC2 resources that
-        /// are created as part of the stack. A maximum number of 10 tags can be specified.
+        /// Key-value pairs to associate with this stack. AWS CloudFormation also propagates these
+        /// tags to the resources created in the stack. A maximum number of 10 tags can be specified.
         /// </para>
         /// </summary>
         public List<Tag> Tags
