@@ -1,3 +1,9 @@
+### 3.1.41.0 (2016-01-29 00:12 UTC)
+* SimpleSystemsManagement (3.1.1.3)
+	* Documentation update for the new 63-bit id formats.
+* WAF (3.1.1.0)
+	* You can now configure AWS WAF to block, allow, or monitor (count) requests based on the content in HTTP request bodies. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from an HTML form.
+
 ### 3.1.40.0 (2016-01-21 18:45 UTC)
 * AWS Certificate Manager (3.1.0.0)
 	* AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform. SSL is the standard protocol for encrypting communications and establishing the identity of a website over the Internet. ACM takes care of all of the complexity of obtaining, deploying, and renewing the digital certificates used with SSLCertificate Manager certs with CloudFront distributions.
