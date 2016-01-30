@@ -28,6 +28,7 @@ namespace AWSSDK.Tests.Framework
         {
             if (!Loaded)
             {
+                failedTestFixtures = new HashSet<string>();
                 var resource = Resources.Load(@"settings") as TextAsset;
                 var settings = JsonMapper.ToObject(resource.text);
                 Credentials = new BasicAWSCredentials(settings["AccessKeyId"].ToString(), settings["SecretAccessKey"].ToString());
@@ -212,6 +213,8 @@ namespace AWSSDK.Tests.Framework
 
         #region ITestListener
 
+        private HashSet<string> failedTestFixtures;
+
         public void TestFinished(ITestResult result)
         {
             var testAssembly = result.Test as TestAssembly;
@@ -223,7 +226,8 @@ namespace AWSSDK.Tests.Framework
 
                 Debug.Log(string.Format("\nPassed : {0}\tFailed : {1}",
                     result.PassCount, result.FailCount));
-
+                
+                TestDriver.Instance.OnTestFinished(result.PassCount, result.FailCount, failedTestFixtures);
             }
 
             var testFixture = result.Test as TestFixture;
@@ -245,6 +249,10 @@ namespace AWSSDK.Tests.Framework
 
                     Debug.Log(string.Format("\tMessage : {0}", result.Message));
                     Debug.Log(string.Format("\tStack trace : {0}", result.StackTrace));
+
+
+                    failedTestFixtures.Add(testFixture.FullName);
+
                 }
                 Debug.Log(string.Format("  --- Executed tests in class {0}   ---\n", testFixture.FullName));
             }
