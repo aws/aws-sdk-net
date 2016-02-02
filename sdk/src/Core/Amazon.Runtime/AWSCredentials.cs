@@ -504,7 +504,7 @@ namespace Amazon.Runtime
             private const string profileNamePrefix = "[";
             private const string profileNameSuffix = "]";
             private const string dataPrefix = "aws_";
-            private const string keyValueSeparator = "=";
+            private const string keyValueSeparator = " = ";
             private const string accessKeyName = "aws_access_key_id";
             private const string secretKeyName = "aws_secret_access_key";
             private const string tokenName = "aws_session_token";
