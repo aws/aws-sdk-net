@@ -504,7 +504,7 @@ namespace Amazon.Runtime
             private const string profileNamePrefix = "[";
             private const string profileNameSuffix = "]";
             private const string dataPrefix = "aws_";
-            private const string keyValueSeparator = " = ";
+            private const string keyValueSeparator = "=";
             private const string accessKeyName = "aws_access_key_id";
             private const string secretKeyName = "aws_secret_access_key";
             private const string tokenName = "aws_session_token";
@@ -556,7 +556,7 @@ namespace Amazon.Runtime
             private static List<string> SplitData(string line)
             {
                 var split = line
-                    .Split(new string[] { keyValueSeparator }, StringSplitOptions.None)
+                    .Split(new string[] { keyValueSeparator }, 3, StringSplitOptions.None)
                     .Select(s => s.Trim())
                     .Where(s => !string.IsNullOrEmpty(s))
                     .ToList();
