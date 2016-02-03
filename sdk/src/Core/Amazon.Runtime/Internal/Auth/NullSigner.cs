@@ -25,7 +25,7 @@ namespace Amazon.Runtime.Internal.Auth
     /// </summary>
     public class NullSigner : AbstractAWSSigner
     {
-        public override void Sign(IRequest request, ClientConfig clientConfig, Util.RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, IClientConfig clientConfig, Util.RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             // This is a null signer which a does no-op
             return;

@@ -45,7 +45,7 @@ namespace Amazon.S3.Internal
             get { return ClientProtocol.RestProtocol; }
         }
 
-        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             var signer = SelectSigner(this, _useSigV4, request, clientConfig);
             var aws4Signer = signer as AWS4Signer;

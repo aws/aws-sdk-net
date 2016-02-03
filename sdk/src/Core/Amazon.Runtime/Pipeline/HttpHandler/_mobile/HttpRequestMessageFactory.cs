@@ -34,13 +34,13 @@ namespace Amazon.Runtime
     [CLSCompliant(false)]
     public class HttpRequestMessageFactory : IHttpRequestFactory<HttpContent>
     {
-        private ClientConfig _clientConfig;
+        private IClientConfig _clientConfig;
 
         /// <summary>
         /// The constructor for HttpRequestMessageFactory.
         /// </summary>
         /// <param name="clientConfig">Configuration setting for a client.</param>
-        public HttpRequestMessageFactory(ClientConfig clientConfig)
+        public HttpRequestMessageFactory(IClientConfig clientConfig)
         {
             _clientConfig = clientConfig;
         }
@@ -92,14 +92,14 @@ namespace Amazon.Runtime
         private bool _disposed;
         private HttpRequestMessage _request;
         private HttpClient _httpClient;
-        private ClientConfig _clientConfig;
+        private IClientConfig _clientConfig;
 
         /// <summary>
         /// The constructor for HttpWebRequestMessage.
         /// </summary>
         /// <param name="requestUri">The request URI.</param>
         /// <param name="config">The service client config.</param>
-        public HttpWebRequestMessage(Uri requestUri, ClientConfig config)
+        public HttpWebRequestMessage(Uri requestUri, IClientConfig config)
         {
             _clientConfig = config;
             _httpClient = CreateHttpClient();

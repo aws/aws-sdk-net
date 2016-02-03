@@ -28,7 +28,7 @@ namespace Amazon.Runtime
     /// This class is the base class of all the configurations settings to connect
     /// to a service.
     /// </summary>
-    public abstract partial class ClientConfig
+    public abstract partial class ClientConfig : IClientConfig
     {
         // Represents infinite timeout. http://msdn.microsoft.com/en-us/library/system.threading.timeout.infinite.aspx
         internal static readonly TimeSpan InfiniteTimeout = TimeSpan.FromMilliseconds(-1);
@@ -269,7 +269,7 @@ namespace Amazon.Runtime
         /// This flag controls if .NET HTTP infrastructure should follow redirection
         ///  responses (e.g. HTTP 307 - temporary redirect).
         /// </summary>
-        protected internal bool AllowAutoRedirect
+        public bool AllowAutoRedirect
         {
             get
             {

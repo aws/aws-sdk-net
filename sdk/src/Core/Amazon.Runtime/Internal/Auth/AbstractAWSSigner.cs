@@ -78,7 +78,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
-        public abstract void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey);
+        public abstract void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey);
 
         public abstract ClientProtocol Protocol { get; }
 
@@ -89,7 +89,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="request">The request.</param>
         /// <param name="config">Configuration for the client</param>
         /// <returns>True if signature v4 request signing should be used</returns>
-        protected static bool UseV4Signing(bool useSigV4Setting, IRequest request, ClientConfig config)
+        protected static bool UseV4Signing(bool useSigV4Setting, IRequest request, IClientConfig config)
         {
             if (useSigV4Setting || request.UseSigV4 || config.SignatureVersion == "4")
                 return true;
@@ -121,13 +121,13 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         
-        protected AbstractAWSSigner SelectSigner(IRequest request, ClientConfig config)
+        protected AbstractAWSSigner SelectSigner(IRequest request, IClientConfig config)
         {
             return SelectSigner(this, useSigV4Setting: false, request: request, config: config);
         }
 
         protected AbstractAWSSigner SelectSigner(AbstractAWSSigner defaultSigner,bool useSigV4Setting, 
-            IRequest request, ClientConfig config)
+            IRequest request, IClientConfig config)
         {
             bool usev4Signing = UseV4Signing(useSigV4Setting, request, config);
 

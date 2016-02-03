@@ -53,8 +53,12 @@ namespace Amazon.Glacier
         /// </summary>
         protected override void Initialize()
         {
-            this.Config.SetUseNagleIfAvailable(true);
-            this.Config.ResignRetries = true;
+            var clientConfig = this.Config as ClientConfig;
+            if (clientConfig != null)
+            {
+                clientConfig.SetUseNagleIfAvailable(true);
+                clientConfig.ResignRetries = true;
+            }
             base.Initialize();
         }
     }

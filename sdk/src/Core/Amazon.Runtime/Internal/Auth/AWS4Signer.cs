@@ -81,7 +81,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// If any problems are encountered while signing the request.
         /// </exception>
         public override void Sign(IRequest request, 
-                                  ClientConfig clientConfig, 
+                                  IClientConfig clientConfig, 
                                   RequestMetrics metrics, 
                                   string awsAccessKeyId, 
                                   string awsSecretAccessKey)
@@ -121,7 +121,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// construction of the canonical request.
         /// </remarks>
         public AWS4SigningResult SignRequest(IRequest request,
-                                             ClientConfig clientConfig,
+                                             IClientConfig clientConfig,
                                              RequestMetrics metrics,
                                              string awsAccessKeyId,
                                              string awsSecretAccessKey)
@@ -481,7 +481,7 @@ namespace Amazon.Runtime.Internal.Auth
 
         #region Private Signing Helpers
 
-        public static string DetermineSigningRegion(ClientConfig clientConfig, 
+        public static string DetermineSigningRegion(IClientConfig clientConfig, 
                                                     string serviceName, 
                                                     RegionEndpoint alternateEndpoint,
                                                     IRequest request)
@@ -513,7 +513,7 @@ namespace Amazon.Runtime.Internal.Auth
             return string.Empty;
         }
 
-        internal static string DetermineService(ClientConfig clientConfig)
+        internal static string DetermineService(IClientConfig clientConfig)
         {
             return !string.IsNullOrEmpty(clientConfig.AuthenticationServiceName) 
                 ? clientConfig.AuthenticationServiceName 
@@ -818,7 +818,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// If any problems are encountered while signing the request.
         /// </exception>
         public override void Sign(IRequest request,
-                                  ClientConfig clientConfig,
+                                  IClientConfig clientConfig,
                                   RequestMetrics metrics,
                                   string awsAccessKeyId,
                                   string awsSecretAccessKey)
@@ -857,7 +857,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// construction of the canonical request.
         /// </remarks>
         public new AWS4SigningResult SignRequest(IRequest request,
-                                                 ClientConfig clientConfig,
+                                                 IClientConfig clientConfig,
                                                  RequestMetrics metrics,
                                                  string awsAccessKeyId,
                                                  string awsSecretAccessKey)
@@ -902,7 +902,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// construction of the canonical request.
         /// </remarks>
         public static AWS4SigningResult SignRequest(IRequest request,
-                                                 ClientConfig clientConfig,
+                                                 IClientConfig clientConfig,
                                                  RequestMetrics metrics,
                                                  string awsAccessKeyId,
                                                  string awsSecretAccessKey,
