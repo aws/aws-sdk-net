@@ -47,3 +47,4 @@ generator/.vs/**
 *.apk
 *.meta
 /sdk/test/Unity/AWSAndroidHelper/.settings
+/sdk/test/Unity3DTests/Assets/SDK/*.mdb
