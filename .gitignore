@@ -33,19 +33,17 @@ packages
 /sdk/xamarin-components/DynamoDBv2/*.xam
 /sdk/xamarin-components/MobileAnalytics/*.xam
 /sdk/xamarin-components/S3/*.xam
-/sdk/test/Unity3DTests/Assets/Resources/settings.txt
-/sdk/test/Unity3DTests/Assets/Resources/awsconfig.xml
-/sdk/test/Unity3DTests/Unity3DTests.CSharp.csproj
-/sdk/test/Unity3DTests/Unity3DTests.CSharp.Editor.csproj
-/sdk/test/Unity3DTests/Unity3DTests.sln
-/sdk/test/Unity3DTests/Library
+/sdk/test/Unity/Unity3DTests/Assets/Resources/settings.json
+/sdk/test/Unity/Unity3DTests/Assets/Resources/awsconfig.xml
+/sdk/test/Unity/Unity3DTests/Unity3DTests.CSharp.csproj
+/sdk/test/Unity/Unity3DTests/Unity3DTests.CSharp.Editor.csproj
+/sdk/test/Unity/Unity3DTests/Unity3DTests.sln
+/sdk/test/Unity/Unity3DTests/Library
 
 
-
-
-sdk/test/Unity3DTests/Assets/Resources/settings.json
 *.bak
 generator/.vs/**
 *.mdb
 *.apk
 *.meta
+/sdk/test/Unity/AWSAndroidHelper/.settings
