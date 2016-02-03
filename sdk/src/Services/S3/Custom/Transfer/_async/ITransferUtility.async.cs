@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ namespace Amazon.S3.Transfer
     /// 	you should clean up any multipart uploads	that are incomplete.
     /// 	</para>
     /// </remarks>
-    public partial class TransferUtility : ITransferUtility
+    public partial interface ITransferUtility : IDisposable
     {
         #region Upload
         /// <summary>
@@ -80,11 +80,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadAsync(string filePath, string bucketName, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = ConstructUploadRequest(filePath, bucketName);
-            return UploadAsync(request, cancellationToken);
-        }
+        Task UploadAsync(string filePath, string bucketName, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 	Uploads the specified file.  
@@ -115,11 +111,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = ConstructUploadRequest(filePath, bucketName,key);
-            return UploadAsync(request, cancellationToken);            
-        }
+        Task UploadAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 	Uploads the contents of the specified stream.  
@@ -149,11 +141,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadAsync(Stream stream, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = ConstructUploadRequest(stream, bucketName, key);
-            return UploadAsync(request, cancellationToken);                    
-        }
+        Task UploadAsync(Stream stream, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 	Uploads the file or stream specified by the request.  
@@ -179,11 +167,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var command = GetUploadCommand(request, null);
-            return command.ExecuteAsync(cancellationToken);
-        }
+        Task UploadAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
         #endregion
 
         #region AbortMultipartUploads
@@ -200,11 +184,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task AbortMultipartUploadsAsync(string bucketName, DateTime initiatedDate, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var command = new AbortMultipartUploadsCommand(this._s3Client, bucketName, initiatedDate, this._config);
-            return command.ExecuteAsync(cancellationToken);
-        }
+        Task AbortMultipartUploadsAsync(string bucketName, DateTime initiatedDate, CancellationToken cancellationToken = default(CancellationToken));
         #endregion
 
         #region Download
@@ -221,11 +201,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task DownloadAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var command = new DownloadCommand(this._s3Client, request);
-            return command.ExecuteAsync(cancellationToken);
-        }
+        Task DownloadAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
 
@@ -245,15 +221,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<Stream> OpenStreamAsync(string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            TransferUtilityOpenStreamRequest request = new TransferUtilityOpenStreamRequest()
-            {
-                BucketName = bucketName,
-                Key = key
-            };
-            return OpenStreamAsync(request, cancellationToken);
-        }
+        Task<Stream> OpenStreamAsync(string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 	Returns a stream to read the contents from Amazon S3 as 
@@ -267,30 +235,8 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public async Task<Stream> OpenStreamAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            OpenStreamCommand command = new OpenStreamCommand(this._s3Client, request);
-            await command.ExecuteAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
-            return command.ResponseStream;
-        }
+        Task<Stream> OpenStreamAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
-
-        internal BaseCommand GetUploadCommand(TransferUtilityUploadRequest request, SemaphoreSlim asyncThrottler)
-        {
-            validate(request);
-            if (IsMultipartUpload(request))
-            {
-                var command = new MultipartUploadCommand(this._s3Client, this._config, request);
-                command.AsyncThrottler = asyncThrottler;
-                return command;
-            }
-            else
-            {
-                var command = new SimpleUploadCommand(this._s3Client, this._config, request);
-                command.AsyncThrottler = asyncThrottler;
-                return command;
-            }
-        }
     }
 }

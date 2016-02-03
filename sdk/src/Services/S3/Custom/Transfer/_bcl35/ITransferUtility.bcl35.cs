@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -57,7 +57,7 @@ namespace Amazon.S3.Transfer
     /// 	you should clean up any multipart uploads	that are incomplete.
     /// 	</para>
     /// </remarks>
-    public partial class TransferUtility : ITransferUtility
+    public partial interface ITransferUtility : IDisposable
     {
 
         #region UploadDirectory
@@ -84,11 +84,7 @@ namespace Amazon.S3.Transfer
         /// <param name="bucketName">
         /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the files to.
         /// </param>
-        public void UploadDirectory(string directory, string bucketName)
-        {
-            UploadDirectoryHelper(directory, bucketName);
-        }
-
+        void UploadDirectory(string directory, string bucketName);
 
         /// <summary>
         /// 	Uploads files from a specified directory.  
@@ -120,10 +116,7 @@ namespace Amazon.S3.Transfer
         /// 	A search option that specifies whether to recursively search for files to upload
         /// 	in subdirectories.
         /// </param>
-        public void UploadDirectory(string directory, string bucketName, string searchPattern, SearchOption searchOption)
-        {
-            UploadDirectoryHelper(directory, bucketName, searchPattern, searchOption);
-        }
+        void UploadDirectory(string directory, string bucketName, string searchPattern, SearchOption searchOption);
 
         /// <summary>
         /// 	Uploads files from a specified directory.  
@@ -145,10 +138,7 @@ namespace Amazon.S3.Transfer
         /// <param name="request">
         /// 	The request that contains all the parameters required to upload a directory.
         /// </param>
-        public void UploadDirectory(TransferUtilityUploadDirectoryRequest request)
-        {
-            UploadDirectoryHelper(request);
-        }
+        void UploadDirectory(TransferUtilityUploadDirectoryRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadDirectory operation. 
@@ -178,15 +168,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This value is also needed when invoking EndUploadDirectory.</returns>
-        public IAsyncResult BeginUploadDirectory(string directory, string bucketName, AsyncCallback callback, object state)
-        {
-            TransferUtilityUploadDirectoryRequest request = new TransferUtilityUploadDirectoryRequest()
-            {
-                BucketName = bucketName,
-                Directory = directory
-            };
-            return BeginUploadDirectory(request, callback, state);
-        }
+        IAsyncResult BeginUploadDirectory(string directory, string bucketName, AsyncCallback callback, object state);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadDirectory operation. 
@@ -221,18 +203,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This value is also needed when invoking EndUploadDirectory.</returns>
-        public IAsyncResult BeginUploadDirectory(string directory, string bucketName, string searchPattern, SearchOption searchOption, AsyncCallback callback, object state)
-        {
-            TransferUtilityUploadDirectoryRequest request = new TransferUtilityUploadDirectoryRequest()
-            {
-                BucketName = bucketName,
-                Directory = directory,
-                SearchPattern = searchPattern,
-                SearchOption = searchOption
-            };
-
-            return BeginUploadDirectory(request, callback, state);
-        }
+        IAsyncResult BeginUploadDirectory(string directory, string bucketName, string searchPattern, SearchOption searchOption, AsyncCallback callback, object state);
 
         /// <summary>
         /// Initiates the asynchronous execution of the UploadDirectory operation. 
@@ -257,12 +228,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This value is also needed when invoking EndUploadDirectory.</returns>
-        public IAsyncResult BeginUploadDirectory(TransferUtilityUploadDirectoryRequest request, AsyncCallback callback, object state)
-        {
-            validate(request);
-            UploadDirectoryCommand command = new UploadDirectoryCommand(this, this._config, request);
-            return beginOperation(command, callback, state);
-        }
+        IAsyncResult BeginUploadDirectory(TransferUtilityUploadDirectoryRequest request, AsyncCallback callback, object state);
 
         /// <summary>
         /// Finishes the asynchronous execution of the UploadDirectory operation.
@@ -272,10 +238,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        public void EndUploadDirectory(IAsyncResult asyncResult)
-        {
-            endOperation(asyncResult);
-        }
+        void EndUploadDirectory(IAsyncResult asyncResult);
         #endregion
 
         #region Upload
@@ -303,10 +266,7 @@ namespace Amazon.S3.Transfer
         /// <param name="bucketName">
         /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the file to.
         /// </param>
-        public void Upload(string filePath, string bucketName)
-        {
-            UploadHelper(filePath, bucketName);
-        }
+        void Upload(string filePath, string bucketName);
 
         /// <summary>
         /// 	Uploads the specified file.  
@@ -333,10 +293,7 @@ namespace Amazon.S3.Transfer
         /// <param name="key">
         /// 	The key under which the Amazon S3 object is stored.
         /// </param>
-        public void Upload(string filePath, string bucketName, string key)
-        {
-            UploadHelper(filePath, bucketName, key);
-        }
+        void Upload(string filePath, string bucketName, string key);
 
 
         /// <summary>
@@ -363,10 +320,7 @@ namespace Amazon.S3.Transfer
         /// <param name="key">
         /// 	The key under which the Amazon S3 object is stored.
         /// </param>
-        public void Upload(Stream stream, string bucketName, string key)
-        {
-            UploadHelper(stream, bucketName, key);
-        }
+        void Upload(Stream stream, string bucketName, string key);
 
         /// <summary>
         /// 	Uploads the file or stream specified by the request.  
@@ -388,10 +342,7 @@ namespace Amazon.S3.Transfer
         /// <param name="request">
         /// 	Contains all the parameters required to upload to Amazon S3.
         /// </param>
-        public void Upload(TransferUtilityUploadRequest request)
-        {
-            this.UploadHelper(request);
-        }
+        void Upload(TransferUtilityUploadRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the Upload operation. 
@@ -419,25 +370,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndUpload.</returns>
-        public IAsyncResult BeginUpload(string filePath, string bucketName, AsyncCallback callback, object state)
-        {
-            if (string.IsNullOrEmpty(filePath))
-            {
-                throw new ArgumentNullException("filePath");
-            }
-            if (!File.Exists(filePath))
-            {
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "The file {0} does not exists!", filePath));
-            }
-
-            TransferUtilityUploadRequest request = new TransferUtilityUploadRequest()
-            {
-                BucketName = bucketName,
-                FilePath = filePath
-            };
-
-            return BeginUpload(request, callback, state);
-        }
+        IAsyncResult BeginUpload(string filePath, string bucketName, AsyncCallback callback, object state);
 
         /// <summary>
         /// Initiates the asynchronous execution of the Upload operation. 
@@ -468,26 +401,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndUpload.</returns>
-        public IAsyncResult BeginUpload(string filePath, string bucketName, string key, AsyncCallback callback, object state)
-        {
-            if (string.IsNullOrEmpty(filePath))
-            {
-                throw new ArgumentNullException("filePath");
-            }
-            if (!File.Exists(filePath))
-            {
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "The file {0} does not exists!", filePath));
-            }
-
-            TransferUtilityUploadRequest request = new TransferUtilityUploadRequest()
-            {
-                BucketName = bucketName,
-                Key = key,
-                FilePath = filePath
-            };
-
-            return BeginUpload(request, callback, state);
-        }
+        IAsyncResult BeginUpload(string filePath, string bucketName, string key, AsyncCallback callback, object state);
 
         /// <summary>
         /// Initiates the asynchronous execution of the Upload operation. 
@@ -518,26 +432,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndUpload.</returns>
-        public IAsyncResult BeginUpload(Stream stream, string bucketName, string key, AsyncCallback callback, object state)
-        {
-            if (stream == null)
-            {
-                throw new ArgumentNullException("stream");
-            }
-            if (string.IsNullOrEmpty(key))
-            {
-                throw new ArgumentNullException("key");
-            }
-
-            TransferUtilityUploadRequest request = new TransferUtilityUploadRequest()
-            {
-                BucketName = bucketName,
-                Key = key,
-                InputStream = stream
-            };
-
-            return BeginUpload(request, callback, state);
-        }
+        IAsyncResult BeginUpload(Stream stream, string bucketName, string key, AsyncCallback callback, object state);
 
         /// <summary>
         /// Initiates the asynchronous execution of the Upload operation. 
@@ -562,21 +457,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndUpload.</returns>
-        public IAsyncResult BeginUpload(TransferUtilityUploadRequest request, AsyncCallback callback, object state)
-        {
-            validate(request);
-            BaseCommand command;
-            if (request.ContentLength < this._config.MinSizeBeforePartUpload)
-            {
-                command = new SimpleUploadCommand(this._s3Client, this._config, request);
-            }
-            else
-            {
-                command = new MultipartUploadCommand(this._s3Client, this._config, request);
-            }
-
-            return beginOperation(command, callback, state);
-        }
+        IAsyncResult BeginUpload(TransferUtilityUploadRequest request, AsyncCallback callback, object state);
 
         /// <summary>
         /// Finishes the asynchronous execution of the Upload operation.
@@ -586,10 +467,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        public void EndUpload(IAsyncResult asyncResult)
-        {
-            endOperation(asyncResult);
-        }
+        void EndUpload(IAsyncResult asyncResult);
 
         #endregion
 
@@ -609,10 +487,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	A stream of the contents from the specified Amazon S3 and key.
         /// </returns>
-        public Stream OpenStream(string bucketName, string key)
-        {
-            return OpenStreamHelper(bucketName, key);
-        }
+        Stream OpenStream(string bucketName, string key);
 
         /// <summary>
         /// 	Returns a stream to read the contents from Amazon S3 as 
@@ -625,10 +500,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	A stream of the contents from Amazon S3.
         /// </returns>
-        public Stream OpenStream(TransferUtilityOpenStreamRequest request)
-        {
-            return OpenStreamHelper(request);
-        }
+        Stream OpenStream(TransferUtilityOpenStreamRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the OpenStream operation. 
@@ -647,16 +519,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndOpenStream.</returns>
-        public IAsyncResult BeginOpenStream(string bucketName, string key, AsyncCallback callback, object state)
-        {
-            TransferUtilityOpenStreamRequest request = new TransferUtilityOpenStreamRequest()
-            {
-                BucketName = bucketName,
-                Key = key
-            };
-
-            return BeginOpenStream(request, callback, state);
-        }
+        IAsyncResult BeginOpenStream(string bucketName, string key, AsyncCallback callback, object state);
 
         /// <summary>
         /// Initiates the asynchronous execution of the OpenStream operation. 
@@ -672,11 +535,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndOpenStream.</returns>
-        public IAsyncResult BeginOpenStream(TransferUtilityOpenStreamRequest request, AsyncCallback callback, object state)
-        {
-            OpenStreamCommand command = new OpenStreamCommand(this._s3Client, request);
-            return beginOperation(command, callback, state);
-        }
+        IAsyncResult BeginOpenStream(TransferUtilityOpenStreamRequest request, AsyncCallback callback, object state);
 
         /// <summary>
         /// Finishes the asynchronous execution of the OpenStream operation.
@@ -686,10 +545,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        public Stream EndOpenStream(IAsyncResult asyncResult)
-        {
-            return endOperation(asyncResult) as Stream;
-        }
+        Stream EndOpenStream(IAsyncResult asyncResult);
 
         #endregion
 
@@ -706,10 +562,7 @@ namespace Amazon.S3.Transfer
         /// <param name="key">
         /// 	The key under which the Amazon S3 object is stored.
         /// </param>
-        public void Download(string filePath, string bucketName, string key)
-        {
-            DownloadHelper(filePath, bucketName, key);
-        }
+        void Download(string filePath, string bucketName, string key);
 
         /// <summary>
         /// 	Downloads the content from Amazon S3 and writes it to the specified file.    
@@ -719,10 +572,7 @@ namespace Amazon.S3.Transfer
         /// <param name="request">
         /// 	Contains all the parameters required to download an Amazon S3 object.
         /// </param>
-        public void Download(TransferUtilityDownloadRequest request)
-        {
-            DownloadHelper(request);
-        }
+        void Download(TransferUtilityDownloadRequest request);
 
         /// <summary>
         /// Initiates the asynchronous execution of the Download operation. 
@@ -744,17 +594,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndDownload.</returns>
-        public IAsyncResult BeginDownload(string filePath, string bucketName, string key, AsyncCallback callback, object state)
-        {
-            TransferUtilityDownloadRequest request = new TransferUtilityDownloadRequest()
-            {
-                BucketName = bucketName,
-                Key = key,
-                FilePath = filePath
-            };
-
-            return BeginDownload(request, callback, state);
-        }
+        IAsyncResult BeginDownload(string filePath, string bucketName, string key, AsyncCallback callback, object state);
 
         /// <summary>
         /// Initiates the asynchronous execution of the Download operation. 
@@ -770,12 +610,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndDownload.</returns>
-        public IAsyncResult BeginDownload(TransferUtilityDownloadRequest request, AsyncCallback callback, object state)
-        {
-            BaseCommand command = new DownloadCommand(this._s3Client, request);
-            return beginOperation(command, callback, state);
-
-        }
+        IAsyncResult BeginDownload(TransferUtilityDownloadRequest request, AsyncCallback callback, object state);
 
         /// <summary>
         /// Finishes the asynchronous execution of the Download operation.
@@ -785,10 +620,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        public void EndDownload(IAsyncResult asyncResult)
-        {
-            endOperation(asyncResult);
-        }
+        void EndDownload(IAsyncResult asyncResult);
         #endregion
 
         #region DownloadDirectory
@@ -805,10 +637,7 @@ namespace Amazon.S3.Transfer
         /// <param name="localDirectory">
         /// 	The local directory to download the objects to.
         /// </param>
-        public void DownloadDirectory(string bucketName, string s3Directory, string localDirectory)
-        {
-            DownloadDirectoryHelper(bucketName, s3Directory, localDirectory);
-        }
+        void DownloadDirectory(string bucketName, string s3Directory, string localDirectory);
 
         /// <summary>
         /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
@@ -819,10 +648,7 @@ namespace Amazon.S3.Transfer
         /// 	Contains all the parameters required to download objects from Amazon S3 
         /// 	into a local directory.
         /// </param>
-        public void DownloadDirectory(TransferUtilityDownloadDirectoryRequest request)
-        {
-            DownloadDirectoryHelper(request);
-        }
+        void DownloadDirectory(TransferUtilityDownloadDirectoryRequest request);
 
 
         /// <summary>
@@ -845,17 +671,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndDownloadDirectory.</returns>
-        public IAsyncResult BeginDownloadDirectory(string bucketName, string s3Directory, string localDirectory, AsyncCallback callback, object state)
-        {
-            TransferUtilityDownloadDirectoryRequest request = new TransferUtilityDownloadDirectoryRequest()
-            {
-                BucketName = bucketName,
-                S3Directory = s3Directory,
-                LocalDirectory = localDirectory
-            };
-
-            return BeginDownloadDirectory(request, callback, state);
-        }
+        IAsyncResult BeginDownloadDirectory(string bucketName, string s3Directory, string localDirectory, AsyncCallback callback, object state);
 
         /// <summary>
         /// Initiates the asynchronous execution of the DownloadDirectory operation. 
@@ -872,12 +688,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndDownload.</returns>
-        public IAsyncResult BeginDownloadDirectory(TransferUtilityDownloadDirectoryRequest request, AsyncCallback callback, object state)
-        {
-            BaseCommand command = new DownloadDirectoryCommand(this._s3Client, request);
-            return beginOperation(command, callback, state);
-
-        }
+        IAsyncResult BeginDownloadDirectory(TransferUtilityDownloadDirectoryRequest request, AsyncCallback callback, object state);
 
         /// <summary>
         /// Finishes the asynchronous execution of the DownloadDirectory operation.
@@ -887,10 +698,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        public void EndDownloadDirectory(IAsyncResult asyncResult)
-        {
-            endOperation(asyncResult);
-        }
+        void EndDownloadDirectory(IAsyncResult asyncResult);
         #endregion
 
         #region AbortMultipartUploads
@@ -904,10 +712,7 @@ namespace Amazon.S3.Transfer
         /// <param name="initiatedDate">
         /// 	The date before which the multipart uploads were initiated.
         /// </param>
-        public void AbortMultipartUploads(string bucketName, DateTime initiatedDate)
-        {
-            AbortMultipartUploadsHelper(bucketName, initiatedDate);
-        }
+        void AbortMultipartUploads(string bucketName, DateTime initiatedDate);
 
 
         /// <summary>
@@ -927,11 +732,7 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>An IAsyncResult that can be used to poll, or wait for results, or both. 
         /// This values is also needed when invoking EndAbortMultipartUploads.</returns>
-        public IAsyncResult BeginAbortMultipartUploads(string bucketName, DateTime initiatedDate, AsyncCallback callback, object state)
-        {
-            BaseCommand command = new AbortMultipartUploadsCommand(this._s3Client, bucketName, initiatedDate);
-            return beginOperation(command, callback, state);
-        }
+        IAsyncResult BeginAbortMultipartUploads(string bucketName, DateTime initiatedDate, AsyncCallback callback, object state);
 
         /// <summary>
         /// Finishes the asynchronous execution of the AbortMultipartUploads operation.
@@ -941,338 +742,8 @@ namespace Amazon.S3.Transfer
         /// <exception cref="T:System.ArgumentNullException"></exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
-        public void EndAbortMultipartUploads(IAsyncResult asyncResult)
-        {
-            endOperation(asyncResult);
-        }
-
-        #endregion
-
-        #region UploadDirectory helper methods
-
-        private void UploadDirectoryHelper(string directory, string bucketName)
-        {
-            var request = ConstructUploadDirectoryRequest(directory, bucketName);
-            UploadDirectoryHelper(request);
-        }
-                
-        private void UploadDirectoryHelper(string directory, string bucketName, string searchPattern, SearchOption searchOption)
-        {
-            var request = ConstructUploadDirectoryRequest(directory, bucketName, searchPattern, searchOption);
-            UploadDirectoryHelper(request);
-        }
-
-        private void UploadDirectoryHelper(TransferUtilityUploadDirectoryRequest request)
-        {
-            validate(request);
-            UploadDirectoryCommand command = new UploadDirectoryCommand(this, this._config, request);
-            command.Execute();
-        }
-                
-        #endregion
-
-        #region Upload helper methods
-
-        private void UploadHelper(string filePath, string bucketName)
-        {
-            var request = ConstructUploadRequest(filePath, bucketName);
-            UploadHelper(request);
-        }
-
-        /// <summary>
-        /// 	Uploads the specified file.  
-        /// 	Multiple threads are used to read the file and perform multiple uploads in parallel.  
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <param name="filePath">
-        /// 	The file path of the file to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the file to.
-        /// </param>
-        /// <param name="key">
-        /// 	The key under which the Amazon S3 object is stored.
-        /// </param>
-        private void UploadHelper(string filePath, string bucketName, string key)
-        {
-            var request = ConstructUploadRequest(filePath, bucketName, key);
-            UploadHelper(request);
-        }
-                
-        /// <summary>
-        /// 	Uploads the contents of the specified stream.  
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <param name="stream">
-        /// 	The stream to read to obtain the content to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the stream to.
-        /// </param>
-        /// <param name="key">
-        /// 	The key under which the Amazon S3 object is stored.
-        /// </param>
-        private void UploadHelper(Stream stream, string bucketName, string key)
-        {
-            var request = ConstructUploadRequest(stream, bucketName, key);
-            UploadHelper(request);
-        }        
-
-        /// <summary>
-        /// 	Uploads the file or stream specified by the request.  
-        /// 	To track the progress of the upload,
-        /// 	add an event listener to the request's <c>UploadProgressEvent</c>.
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required to upload to Amazon S3.
-        /// </param>
-        private void UploadHelper(TransferUtilityUploadRequest request)
-        {
-            var command = GetUploadCommand(request);
-            command.Execute();
-        }
-        
-        #endregion
-
-        #region OpenStream helper methods
-
-        private Stream OpenStreamHelper(string bucketName, string key)
-        {
-            TransferUtilityOpenStreamRequest request = new TransferUtilityOpenStreamRequest()
-            {
-                BucketName = bucketName,
-                Key = key
-            };
-
-            return OpenStreamHelper(request);
-        }
-
-
-        private Stream OpenStreamHelper(TransferUtilityOpenStreamRequest request)
-        {
-            OpenStreamCommand command = new OpenStreamCommand(this._s3Client, request);
-            command.Execute();
-            return command.ResponseStream;
-        }
-        #endregion
-
-        #region Download helper methods
-
-        private void DownloadHelper(string filePath, string bucketName, string key)
-        {
-            TransferUtilityDownloadRequest request = ConstructDownloadRequest(filePath, bucketName, key);
-            DownloadHelper(request);
-        }
-
-        private void DownloadHelper(TransferUtilityDownloadRequest request)
-        {
-            BaseCommand command = new DownloadCommand(this._s3Client, request);
-            command.Execute();
-        }
-        #endregion
-
-        #region DownloadDirectory helper methods
-
-        private void DownloadDirectoryHelper(string bucketName, string s3Directory, string localDirectory)
-        {
-            var request = ConstructDownloadDirectoryRequest(bucketName, s3Directory, localDirectory);
-            DownloadDirectoryHelper(request);
-        }
-
-        private void DownloadDirectoryHelper(TransferUtilityDownloadDirectoryRequest request)
-        {
-            BaseCommand command = new DownloadDirectoryCommand(this._s3Client, request);
-            command.Execute();
-        }
-        #endregion
-
-        #region AbortMultipartUploads helper methods
-
-        private void AbortMultipartUploadsHelper(string bucketName, DateTime initiatedDate)
-        {
-            BaseCommand command = new AbortMultipartUploadsCommand(this._s3Client, bucketName, initiatedDate);
-            command.Execute();
-        }
-
-        #endregion
-
-        #region Private Methods
-
-        static IAsyncResult beginOperation(BaseCommand command, AsyncCallback callback, object state)
-        {
-            Executer exe = new Executer(callback, state, command);
-            ThreadPool.QueueUserWorkItem(s => exe.Execute());
-
-            return exe.AsyncResult;
-        }
-
-        static object endOperation(IAsyncResult result)
-        {
-            TransferAsyncResult transferAsyncResult = result as TransferAsyncResult;
-            if (transferAsyncResult == null)
-                return null;
-
-            using (transferAsyncResult)
-            {
-                if (!transferAsyncResult.CompletedSynchronously)
-                {
-                    WaitHandle.WaitAll(new WaitHandle[] { transferAsyncResult.AsyncWaitHandle });
-                }
-
-                if (transferAsyncResult.LastException != null)
-                {
-                    AWSSDKUtils.PreserveStackTrace(transferAsyncResult.LastException);
-                    throw transferAsyncResult.LastException;
-                }
-
-                return transferAsyncResult.Return;
-            }
-        }
+        void EndAbortMultipartUploads(IAsyncResult asyncResult);
 
         #endregion
     }
-
-
-    internal class Executer
-    {
-        TransferAsyncResult _asyncResult;
-        BaseCommand _command;
-
-        private Executer(TransferAsyncResult asyncResult, BaseCommand command)
-        {
-            this._asyncResult = asyncResult;
-            this._command = command;
-        }
-        internal Executer(AsyncCallback callback, object state, BaseCommand command)
-            : this(new TransferAsyncResult(callback, state), command)
-        { }
-
-        internal void Execute()
-        {
-            try
-            {
-                this._command.Execute();
-                this._asyncResult.Return = this._command.Return;
-
-            }
-            catch (Exception e)
-            {
-                this._asyncResult.LastException = e;
-            }
-            finally
-            {
-                this._asyncResult.SignalWaitHandle();
-                if (this._asyncResult.Callback != null)
-                {
-                    this._asyncResult.Callback(this._asyncResult);
-                }
-            }
-        }
-
-        internal TransferAsyncResult AsyncResult
-        {
-            get { return _asyncResult; }
-        }
-    }
-
-    internal class TransferAsyncResult : IAsyncResult, IDisposable
-    {
-        AsyncCallback _callback;
-        object _state;
-        bool _isComplete;
-        ManualResetEvent _waitHandle;
-        Exception _lastException;
-        object _return;
-        bool _disposed = false;
-
-        internal TransferAsyncResult(AsyncCallback callback, object state)
-        {
-            this._callback = callback;
-            this._state = state;
-            this._waitHandle = new ManualResetEvent(false);
-        }
-
-        public bool CompletedSynchronously
-        {
-            get { return false; }
-        }
-
-        public bool IsCompleted
-        {
-            get { return this._isComplete; }
-        }
-
-        public object AsyncState
-        {
-            get { return this._state; }
-        }
-
-        public WaitHandle AsyncWaitHandle
-        {
-            get { return this._waitHandle; }
-        }
-
-        internal void SignalWaitHandle()
-        {
-            this._isComplete = true;
-            this._waitHandle.Set();
-        }
-
-        internal AsyncCallback Callback
-        {
-            get { return this._callback; }
-        }
-
-        internal Exception LastException
-        {
-            get { return this._lastException; }
-            set { this._lastException = value; }
-        }
-
-        internal object Return
-        {
-            get { return this._return; }
-            set { this._return = value; }
-        }
-
-        #region Dispose Pattern Implementation
-
-        /// <summary>
-        /// Implements the Dispose pattern
-        /// </summary>
-        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
-        /// or garbage collected.</param>
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!this._disposed)
-            {
-                if (disposing && _waitHandle != null)
-                {
-                    _waitHandle.Close();
-                    _waitHandle = null;
-                }
-                this._disposed = true;
-            }
-        }
-
-        /// <summary>
-        /// Disposes of all managed and unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        #endregion
-
-    }
-
 }
