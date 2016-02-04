@@ -23,7 +23,7 @@ namespace ThirdParty.iOS4Unity
         [DllImport("/usr/lib/libobjc.dylib", EntryPoint = "class_addMethod")]
         public static extern bool AddMethod(IntPtr cls, IntPtr selector, Delegate imp, string types);
 
-        //HACK: return object instead of DateTime or we get an invalid IL exception
+        //Note: return object instead of DateTime or we get an invalid IL exception
         [DllImport("/usr/lib/libobjc.dylib", EntryPoint = "objc_msgSend")]
         public static extern void MessageSend(IntPtr receiver, IntPtr selector, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NSDateReleaseMarshaler))] object arg1);
 

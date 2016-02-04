@@ -218,9 +218,9 @@ namespace Amazon.Glacier.Transfer.Internal
 
         internal void setupTopicAndQueue()
         {
-            long ticks = DateTime.Now.Ticks;
-            this.topicArn = this.snsClient.CreateTopic(new CreateTopicRequest() { Name = "GlacierDownload-" + ticks }).TopicArn;
-            this.queueUrl = this.sqsClient.CreateQueue(new CreateQueueRequest() { QueueName = "GlacierDownload-" + ticks }).QueueUrl;
+            var guidStr = Guid.NewGuid().ToString("N");
+            this.topicArn = this.snsClient.CreateTopic(new CreateTopicRequest() { Name = "GlacierDownload-" + guidStr }).TopicArn;
+            this.queueUrl = this.sqsClient.CreateQueue(new CreateQueueRequest() { QueueName = "GlacierDownload-" + guidStr }).QueueUrl;
             this.queueArn = this.sqsClient.GetQueueAttributes(new GetQueueAttributesRequest() { QueueUrl = this.queueUrl, AttributeNames = new List<string> { SQSConstants.ATTRIBUTE_QUEUE_ARN } }).Attributes[SQSConstants.ATTRIBUTE_QUEUE_ARN];
 
             this.snsClient.Subscribe(new SubscribeRequest()

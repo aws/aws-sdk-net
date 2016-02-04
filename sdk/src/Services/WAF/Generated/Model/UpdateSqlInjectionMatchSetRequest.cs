@@ -32,11 +32,11 @@ namespace Amazon.WAF.Model
     /// Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>.
     /// For each <code>SqlInjectionMatchTuple</code> object, you specify the following values:
     /// 
-    ///  <ul> <li> <code>Action</code>: Whether to insert the object into or delete the object
+    ///  <ul> <li><code>Action</code>: Whether to insert the object into or delete the object
     /// from the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
-    /// object and add a new one.</li> <li> <code>FieldToMatch</code>: The part of web requests
+    /// object and add a new one.</li> <li><code>FieldToMatch</code>: The part of web requests
     /// that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-    /// name of the header.</li> <li> <code>TextTransformation</code>: Which text transformation,
+    /// name of the header.</li> <li><code>TextTransformation</code>: Which text transformation,
     /// if any, to perform on the web request before inspecting the request for snippets of
     /// malicious SQL code.</li> </ul> 
     /// <para>
@@ -113,10 +113,9 @@ namespace Amazon.WAF.Model
         /// into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable
         /// data types:
         /// </para>
-        ///  <ul> <li> <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>
-        /// </li> <li> <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-        /// </li> <li> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </li>
-        /// </ul>
+        ///  <ul> <li><a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li>
+        /// <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
+        /// <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>
         /// </summary>
         public List<SqlInjectionMatchSetUpdate> Updates
         {

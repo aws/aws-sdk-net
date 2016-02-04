@@ -57,7 +57,7 @@ namespace Amazon.S3.Transfer
     /// 	you should clean up any multipart uploads	that are incomplete.
     /// 	</para>
     /// </remarks>
-    public partial class TransferUtility : IDisposable
+    public partial class TransferUtility : ITransferUtility
     {
 
         #region UploadDirectory

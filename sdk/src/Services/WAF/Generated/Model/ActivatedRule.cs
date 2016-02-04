@@ -53,9 +53,9 @@ namespace Amazon.WAF.Model
         /// conditions in the <code>Rule</code>. Valid values for <code>Action</code> include
         /// the following:
         /// </para>
-        ///  <ul> <li> <code>ALLOW</code>: CloudFront responds with the requested object.</li>
-        /// <li> <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-        /// <li> <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions
+        ///  <ul> <li><code>ALLOW</code>: CloudFront responds with the requested object.</li>
+        /// <li><code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
+        /// <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions
         /// in the rule and then continues to inspect the web request based on the remaining rules
         /// in the web ACL. </li> </ul>
         /// </summary>

@@ -35,8 +35,8 @@ namespace Amazon.WAF.Model
     /// the specifications to be allowed or blocked. For example, suppose you add the following
     /// to a <code>Rule</code>:
     /// 
-    ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
-    /// </li> <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
+    ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></li>
+    /// <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
     /// header</li> </ul> 
     /// <para>
     /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want

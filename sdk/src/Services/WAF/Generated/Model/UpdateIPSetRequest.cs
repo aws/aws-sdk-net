@@ -120,9 +120,9 @@ namespace Amazon.WAF.Model
         /// An array of <code>IPSetUpdate</code> objects that you want to insert into or delete
         /// from an <a>IPSet</a>. For more information, see the applicable data types:
         /// </para>
-        ///  <ul> <li> <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>
-        /// </li> <li> <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
-        /// </li> </ul>
+        ///  <ul> <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li>
+        /// <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li>
+        /// </ul>
         /// </summary>
         public List<IPSetUpdate> Updates
         {

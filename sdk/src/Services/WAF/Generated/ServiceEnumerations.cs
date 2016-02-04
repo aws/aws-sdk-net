@@ -129,6 +129,72 @@ namespace Amazon.WAF
 
 
     /// <summary>
+    /// Constants used for properties of type ComparisonOperator.
+    /// </summary>
+    public class ComparisonOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQ for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator EQ = new ComparisonOperator("EQ");
+        /// <summary>
+        /// Constant GE for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GE = new ComparisonOperator("GE");
+        /// <summary>
+        /// Constant GT for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GT = new ComparisonOperator("GT");
+        /// <summary>
+        /// Constant LE for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LE = new ComparisonOperator("LE");
+        /// <summary>
+        /// Constant LT for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LT = new ComparisonOperator("LT");
+        /// <summary>
+        /// Constant NE for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator NE = new ComparisonOperator("NE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComparisonOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComparisonOperator FindValue(string value)
+        {
+            return FindValue<ComparisonOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IPSetDescriptorType.
     /// </summary>
     public class IPSetDescriptorType : ConstantClass
@@ -180,6 +246,10 @@ namespace Amazon.WAF
     public class MatchFieldType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant BODY for MatchFieldType
+        /// </summary>
+        public static readonly MatchFieldType BODY = new MatchFieldType("BODY");
         /// <summary>
         /// Constant HEADER for MatchFieldType
         /// </summary>
@@ -263,6 +333,10 @@ namespace Amazon.WAF
         /// </summary>
         public static readonly ParameterExceptionField PREDICATE_TYPE = new ParameterExceptionField("PREDICATE_TYPE");
         /// <summary>
+        /// Constant SIZE_CONSTRAINT_COMPARISON_OPERATOR for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField SIZE_CONSTRAINT_COMPARISON_OPERATOR = new ParameterExceptionField("SIZE_CONSTRAINT_COMPARISON_OPERATOR");
+        /// <summary>
         /// Constant SQL_INJECTION_MATCH_FIELD_TYPE for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField SQL_INJECTION_MATCH_FIELD_TYPE = new ParameterExceptionField("SQL_INJECTION_MATCH_FIELD_TYPE");
@@ -300,6 +374,56 @@ namespace Amazon.WAF
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParameterExceptionField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParameterExceptionReason.
+    /// </summary>
+    public class ParameterExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ILLEGAL_COMBINATION for ParameterExceptionReason
+        /// </summary>
+        public static readonly ParameterExceptionReason ILLEGAL_COMBINATION = new ParameterExceptionReason("ILLEGAL_COMBINATION");
+        /// <summary>
+        /// Constant INVALID_OPTION for ParameterExceptionReason
+        /// </summary>
+        public static readonly ParameterExceptionReason INVALID_OPTION = new ParameterExceptionReason("INVALID_OPTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParameterExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterExceptionReason FindValue(string value)
+        {
+            return FindValue<ParameterExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParameterExceptionReason(string value)
         {
             return FindValue(value);
         }
@@ -382,6 +506,10 @@ namespace Amazon.WAF
         /// Constant IPMatch for PredicateType
         /// </summary>
         public static readonly PredicateType IPMatch = new PredicateType("IPMatch");
+        /// <summary>
+        /// Constant SizeConstraint for PredicateType
+        /// </summary>
+        public static readonly PredicateType SizeConstraint = new PredicateType("SizeConstraint");
         /// <summary>
         /// Constant SqlInjectionMatch for PredicateType
         /// </summary>

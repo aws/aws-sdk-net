@@ -32,10 +32,10 @@ namespace Amazon.WAF.Model
     /// Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
     /// <code>ChangeTokenStatus</code> is one of the following values:
     /// 
-    ///  <ul> <li> <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
+    ///  <ul> <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
     /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-    /// <li> <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
-    /// to all AWS WAF servers.</li> <li> <code>IN_SYNC</code>: Propagation is complete.</li>
+    /// <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
+    /// to all AWS WAF servers.</li> <li><code>IN_SYNC</code>: Propagation is complete.</li>
     /// </ul>
     /// </summary>
     public partial class GetChangeTokenStatusRequest : AmazonWAFRequest

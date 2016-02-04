@@ -38,7 +38,7 @@ namespace Amazon.WAF.Model
     /// 
     ///  <ul> <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in
     /// the <code>User-Agent</code> header</li> <li>An <code>IPSet</code> that matches the
-    /// IP address <code>192.0.2.44</code> </li> </ul> 
+    /// IP address <code>192.0.2.44</code></li> </ul> 
     /// <para>
     /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
     /// to block requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -115,10 +115,9 @@ namespace Amazon.WAF.Model
         /// An array of <code>RuleUpdate</code> objects that you want to insert into or delete
         /// from a <a>Rule</a>. For more information, see the applicable data types:
         /// </para>
-        ///  <ul> <li> <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
-        /// </li> <li> <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and
-        /// <code>Type</code> </li> <li> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </li> </ul>
+        ///  <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
+        /// <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
+        /// <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>
         /// </summary>
         public List<RuleUpdate> Updates
         {
