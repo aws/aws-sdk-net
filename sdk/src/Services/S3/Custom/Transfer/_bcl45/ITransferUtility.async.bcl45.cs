@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ namespace Amazon.S3.Transfer
     /// 	you should clean up any multipart uploads that are incomplete.
     /// 	</para>
     /// </remarks>
-    public partial class TransferUtility : ITransferUtility
+    public partial interface ITransferUtility
     {
         #region UploadDirectory
 
@@ -81,11 +81,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadDirectoryAsync(string directory, string bucketName, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = ConstructUploadDirectoryRequest(directory, bucketName);
-            return UploadDirectoryAsync(request, cancellationToken);
-        }
+        Task UploadDirectoryAsync(string directory, string bucketName, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 	Uploads files from a specified directory.  
@@ -121,11 +117,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadDirectoryAsync(string directory, string bucketName, string searchPattern, SearchOption searchOption, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = ConstructUploadDirectoryRequest(directory, bucketName, searchPattern, searchOption);
-            return UploadDirectoryAsync(request, cancellationToken);
-        }
+        Task UploadDirectoryAsync(string directory, string bucketName, string searchPattern, SearchOption searchOption, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 	Uploads files from a specified directory.  
@@ -151,13 +143,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadDirectoryAsync(TransferUtilityUploadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            validate(request);
-            UploadDirectoryCommand command = new UploadDirectoryCommand(this, this._config, request);
-            command.UploadFilesConcurrently = request.UploadFilesConcurrently;
-            return command.ExecuteAsync(cancellationToken);
-        }
+        Task UploadDirectoryAsync(TransferUtilityUploadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
 
@@ -179,11 +165,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task DownloadDirectoryAsync(string bucketName, string s3Directory, string localDirectory, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = ConstructDownloadDirectoryRequest(bucketName, s3Directory, localDirectory);
-            return DownloadDirectoryAsync(request, cancellationToken);
-        }
+        Task DownloadDirectoryAsync(string bucketName, string s3Directory, string localDirectory, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
@@ -198,12 +180,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task DownloadDirectoryAsync(TransferUtilityDownloadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var command = new DownloadDirectoryCommand(this._s3Client, request, this._config);
-            command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
-            return command.ExecuteAsync(cancellationToken);
-        }
+        Task DownloadDirectoryAsync(TransferUtilityDownloadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
         #endregion
 
         #region Download
@@ -223,11 +200,7 @@ namespace Amazon.S3.Transfer
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task DownloadAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = ConstructDownloadRequest(filePath, bucketName, key);
-            return DownloadAsync(request, cancellationToken);
-        }
+        Task DownloadAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken));
         #endregion
     }
 }

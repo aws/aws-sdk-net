@@ -1,3 +1,7 @@
+### 3.1.41.2 (2016-02-03 18:24 UTC)
+* S3 (3.1.3.11)
+	* Adding ITransferUtility interface for the TransferUtility class.
+
 ### 3.1.41.1 (2016-01-29 19:46 UTC)
 * Glacier (3.1.0.6)
 	* Bug fix for ArchiveTransferManager not creating unique topics and queues

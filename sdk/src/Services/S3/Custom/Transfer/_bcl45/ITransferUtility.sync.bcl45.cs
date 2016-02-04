@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ using System.Runtime.ExceptionServices;
 
 namespace Amazon.S3.Transfer
 {
-    public partial class TransferUtility : ITransferUtility
+    public partial interface ITransferUtility
     {
         #region UploadDirectory
         /// <summary>
@@ -54,17 +54,7 @@ namespace Amazon.S3.Transfer
         /// <param name="bucketName">
         /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the files to.
         /// </param>
-        public void UploadDirectory(string directory, string bucketName)
-        {
-            try
-            {
-                UploadDirectoryAsync(directory, bucketName).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void UploadDirectory(string directory, string bucketName);
 
 
         /// <summary>
@@ -97,17 +87,7 @@ namespace Amazon.S3.Transfer
         /// 	A search option that specifies whether to recursively search for files to upload
         /// 	in subdirectories.
         /// </param>
-        public void UploadDirectory(string directory, string bucketName, string searchPattern, SearchOption searchOption)
-        {
-            try
-            {
-                UploadDirectoryAsync(directory, bucketName, searchPattern, searchOption).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void UploadDirectory(string directory, string bucketName, string searchPattern, SearchOption searchOption);
 
         /// <summary>
         /// 	Uploads files from a specified directory.  
@@ -129,17 +109,7 @@ namespace Amazon.S3.Transfer
         /// <param name="request">
         /// 	The request that contains all the parameters required to upload a directory.
         /// </param>
-        public void UploadDirectory(TransferUtilityUploadDirectoryRequest request)
-        {
-            try
-            {
-                UploadDirectoryAsync(request).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void UploadDirectory(TransferUtilityUploadDirectoryRequest request);
         #endregion
 
         #region Upload
@@ -167,17 +137,7 @@ namespace Amazon.S3.Transfer
         /// <param name="bucketName">
         /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the file to.
         /// </param>
-        public void Upload(string filePath, string bucketName)
-        {
-            try
-            {
-                UploadAsync(filePath, bucketName).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void Upload(string filePath, string bucketName);
 
         /// <summary>
         /// 	Uploads the specified file.  
@@ -204,17 +164,7 @@ namespace Amazon.S3.Transfer
         /// <param name="key">
         /// 	The key under which the Amazon S3 object is stored.
         /// </param>
-        public void Upload(string filePath, string bucketName, string key)
-        {
-            try
-            {
-                UploadAsync(filePath, bucketName, key).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void Upload(string filePath, string bucketName, string key);
 
 
         /// <summary>
@@ -241,17 +191,7 @@ namespace Amazon.S3.Transfer
         /// <param name="key">
         /// 	The key under which the Amazon S3 object is stored.
         /// </param>
-        public void Upload(Stream stream, string bucketName, string key)
-        {
-            try
-            {
-                UploadAsync(stream, bucketName, key).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void Upload(Stream stream, string bucketName, string key);
 
         /// <summary>
         /// 	Uploads the file or stream specified by the request.  
@@ -273,17 +213,7 @@ namespace Amazon.S3.Transfer
         /// <param name="request">
         /// 	Contains all the parameters required to upload to Amazon S3.
         /// </param>
-        public void Upload(TransferUtilityUploadRequest request)
-        {
-            try
-            {
-                UploadAsync(request).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void Upload(TransferUtilityUploadRequest request);
 
         #endregion
 
@@ -303,18 +233,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	A stream of the contents from the specified Amazon S3 and key.
         /// </returns>
-        public Stream OpenStream(string bucketName, string key)
-        {
-            try
-            {
-                return OpenStreamAsync(bucketName, key).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
-        }
+        Stream OpenStream(string bucketName, string key);
 
         /// <summary>
         /// 	Returns a stream to read the contents from Amazon S3 as 
@@ -327,18 +246,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	A stream of the contents from Amazon S3.
         /// </returns>
-        public Stream OpenStream(TransferUtilityOpenStreamRequest request)
-        {
-            try
-            {
-                return OpenStreamAsync(request).Result;
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
-        }
+        Stream OpenStream(TransferUtilityOpenStreamRequest request);
 
         #endregion
 
@@ -355,17 +263,7 @@ namespace Amazon.S3.Transfer
         /// <param name="key">
         /// 	The key under which the Amazon S3 object is stored.
         /// </param>
-        public void Download(string filePath, string bucketName, string key)
-        {
-            try
-            {
-                DownloadAsync(filePath, bucketName, key).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void Download(string filePath, string bucketName, string key);
 
         /// <summary>
         /// 	Downloads the content from Amazon S3 and writes it to the specified file.    
@@ -375,17 +273,7 @@ namespace Amazon.S3.Transfer
         /// <param name="request">
         /// 	Contains all the parameters required to download an Amazon S3 object.
         /// </param>
-        public void Download(TransferUtilityDownloadRequest request)
-        {
-            try
-            {
-                DownloadAsync(request).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void Download(TransferUtilityDownloadRequest request);
         #endregion
 
         #region DownloadDirectory
@@ -402,17 +290,7 @@ namespace Amazon.S3.Transfer
         /// <param name="localDirectory">
         /// 	The local directory to download the objects to.
         /// </param>
-        public void DownloadDirectory(string bucketName, string s3Directory, string localDirectory)
-        {
-            try
-            {
-                DownloadDirectoryAsync(bucketName, s3Directory, localDirectory).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void DownloadDirectory(string bucketName, string s3Directory, string localDirectory);
 
         /// <summary>
         /// 	Downloads the objects in Amazon S3 that have a key that starts with the value 
@@ -423,17 +301,7 @@ namespace Amazon.S3.Transfer
         /// 	Contains all the parameters required to download objects from Amazon S3 
         /// 	into a local directory.
         /// </param>
-        public void DownloadDirectory(TransferUtilityDownloadDirectoryRequest request)
-        {
-            try
-            {
-                DownloadDirectoryAsync(request).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void DownloadDirectory(TransferUtilityDownloadDirectoryRequest request);
         #endregion
 
         #region AbortMultipartUploads
@@ -447,17 +315,7 @@ namespace Amazon.S3.Transfer
         /// <param name="initiatedDate">
         /// 	The date before which the multipart uploads were initiated.
         /// </param>
-        public void AbortMultipartUploads(string bucketName, DateTime initiatedDate)
-        {
-            try
-            {
-                AbortMultipartUploadsAsync(bucketName, initiatedDate).Wait();
-            }
-            catch (AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-            }
-        }
+        void AbortMultipartUploads(string bucketName, DateTime initiatedDate);
 
         #endregion
     }
