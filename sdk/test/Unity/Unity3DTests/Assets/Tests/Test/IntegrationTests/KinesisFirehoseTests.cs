@@ -60,7 +60,7 @@ namespace AWSSDK.IntegrationTests.KinesisFirehose
 
             // Create IAM Role
             RoleName = "UnityFirehoseTestRole" + DateTime.Now.Ticks;
-            Utils.AssertFalse(TestRunner.TestAccountId == null, "Kinesis Firehose tests require Account ID (set in 'Resources/settings.txt') in order to create an AssumeRolePolicy.");
+            Utils.AssertFalse(string.IsNullOrEmpty(TestRunner.TestAccountId), "Kinesis Firehose tests require Account ID (set in 'Resources/settings.txt') in order to create an AssumeRolePolicy.");
             string roleArn = UtilityMethods.CreateRoleIfNotExists(iamClient, RoleName, string.Format(UtilityMethods.FirehoseAssumeRolePolicyDocumentFormat, TestRunner.TestAccountId));
             Assert.IsNotNull(roleArn);
 
@@ -174,7 +174,8 @@ namespace AWSSDK.IntegrationTests.KinesisFirehose
             MissingAPILambdaFunctions.DeleteBucket(BucketName, TestRunner.RegionEndpoint);
         }
 
-        [Test]
+        // Tests disabled as Account Id cannot be retrieved for device-farm tests
+        //[Test]
         public void TestListDeliveryStreams()
         {
             List<string> streamNames = null;
@@ -194,7 +195,8 @@ namespace AWSSDK.IntegrationTests.KinesisFirehose
             Utils.AssertExceptionIsNull(responseException);
         }
 
-        [Test]
+        // Tests disabled as Account Id cannot be retrieved for device-farm tests
+        //[Test]
         public void TestPutRecord()
         {
             Exception responseException = new Exception();
@@ -224,7 +226,8 @@ namespace AWSSDK.IntegrationTests.KinesisFirehose
             }
         }
 
-        [Test]
+        // Tests disabled as Account Id cannot be retrieved for device-farm tests
+        //[Test]
         public void TestPutRecordNonExistantStream()
         {
             Exception responseException = new Exception();
@@ -250,7 +253,8 @@ namespace AWSSDK.IntegrationTests.KinesisFirehose
             }
         }
 
-        [Test]
+        // Tests disabled as Account Id cannot be retrieved for device-farm tests
+        //[Test]
         public void TestPutRecordBatch()
         {
             Exception responseException = new Exception();
