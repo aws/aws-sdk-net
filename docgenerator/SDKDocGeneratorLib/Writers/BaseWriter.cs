@@ -487,9 +487,10 @@ namespace SDKDocGenerator.Writers
             var docs35 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net35"), wrapper);
             var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
             var docsPCL = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), wrapper);
+            var docsUnity = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("unity"), wrapper);
 
             // If there is no documentation then assume it is available for all platforms.
-            var boolNoDocs = docs35 == null && docs45 == null && docsPCL == null;
+            var boolNoDocs = docs35 == null && docs45 == null && docsPCL == null && docsUnity == null;
 
             var sb = new StringBuilder();
             if (boolNoDocs || (wrapper != null && docs45 != null))
@@ -516,7 +517,14 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("Supported in: Xamarin.Forms<br/>");
             }
 
-            
+            if (boolNoDocs || docsUnity != null)
+            {
+                writer.WriteLine("<p><strong>Unity: </strong><br/>");
+                writer.WriteLine("Supported Versions: 4.6 and above<br/>");
+                writer.WriteLine("Supported Platforms: Android, iOS, Standalone<br/>");
+            }
+
+
             AddSectionClosing(writer);
         }
 
