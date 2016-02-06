@@ -24,58 +24,34 @@
             </tr>
             <tr>
                 <td valign="top">
-                    left column
+                    <code>Amazon.CognitoSync.SyncManger.SyncSuccessEvent</code> and <code>Amazon.CognitoSync.SyncManger.SyncSuccessEvent</code> are renamed.
                 </td>
                 <td valign="top">
-                    <p>right column</p>
-                </td>
-            </tr>
-            <tr>
-                <th valign="top"> <strong>Change</strong> </th>
-                <th valign="top"> <strong>Description</strong> </th>
-            </tr>
-            <tr>
-                <td valign="top">
-                    left column
-                </td>
-                <td valign="top">
-                    <p>right column</p>
+                    <p>Use <code>Amazon.CognitoSync.SyncManger.SyncSuccessEventArgs</code> and <code>Amazon.CognitoSync.SyncManger.SyncSuccessEventArgs</code> instead, respectively.</p>
                 </td>
             </tr>
             <tr>
-                <th valign="top"> <strong>Change</strong> </th>
-                <th valign="top"> <strong>Description</strong> </th>
-            </tr>
-            <tr>
                 <td valign="top">
-                    left column
+                     <code>Amazon.CognitoSync.SyncManger.Dataset.GetAll</code> is removed.
                 </td>
-                <td valign="top">
-                    <p>right column</p>
+                <td valign="top">         
+                    <p>Use <code>Amazon.CognitoSync.Dataset.ActiveRecords</code> instead.</p>
                 </td>
             </tr>
             <tr>
-                <th valign="top"> <strong>Change</strong> </th>
-                <th valign="top"> <strong>Description</strong> </th>
-            </tr>
-            <tr>
                 <td valign="top">
-                    left column
+                    <code>Amazon.MobileAnalytics.MobileAnalyticsManager.GetOrCreateInstance</code> has parameters <code>appID</code>, <code>credentials</code>, and <code>regionEndpoint</code> reordered. The deprecated overload has been removed.
                 </td>
                 <td valign="top">
-                    <p>right column</p>
+                    <p>Reorder the arguments to match the appropriate method signature. If you were using the deprecated overload, you must now provide the <code>regionEndpoint</code> parameter.</p>
                 </td>
             </tr>
             <tr>
-                <th valign="top"> <strong>Change</strong> </th>
-                <th valign="top"> <strong>Description</strong> </th>
-            </tr>
-            <tr>
                 <td valign="top">
-                    left column
+                    <code>Amazon.UnityInitializer</code> can now be attached to game objects in code.
                 </td>
                 <td valign="top">
-                    <p>right column</p>
+                    <p>It is recommended that you use <code>UnityInitializer.AttachToGameObject(this.gameObject)</code> from the <code>Start</code> or <code>Awake</code> methods of your game component, and remove the AWSPrefab from your scene altogether.</p>
                 </td>
             </tr>
         </tbody>
