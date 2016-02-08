@@ -173,8 +173,8 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
-        [Category("WWW")]
-        // TODO: Get Post object with path working        public void SimplePathPostObjectTest()
+        [Category("WWW")]      
+        public void SimplePathPostObjectTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
             Exception responseException = new Exception();
@@ -198,6 +198,7 @@ namespace AWSSDK.IntegrationTests.S3
 
 
         [Test]
+        [Category("WWW")]
         public void LargeFilePostObjectTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);

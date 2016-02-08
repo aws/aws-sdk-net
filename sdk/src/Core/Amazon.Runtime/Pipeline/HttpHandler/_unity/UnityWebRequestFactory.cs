@@ -118,7 +118,8 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="requestUri">Uri for the request.</param>
         public UnityRequest(Uri requestUri)
-        {            this.RequestUri = requestUri;
+        {
+            this.RequestUri = requestUri;
             this.Headers = new Dictionary<string, string>();
         }
 
@@ -137,7 +138,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="headers">A dictionary of header names and values.</param>
         public void SetRequestHeaders(IDictionary<string, string> headers)
-        { 
+        {
             foreach (var header in headers)
             {
                 //unity web request doesnt allow us to add the Host, User-Agent and Content-Length headers
@@ -287,10 +288,25 @@ namespace Amazon.Runtime.Internal
 
         public void Dispose()
         {
-            UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private bool _disposed;
+
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
             {
-                WwwRequest.Dispose();
-            });
+                UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                {
+                    WwwRequest.Dispose();
+                    _disposed = true;
+                });
+            }
         }
 
         private StreamReadTracker Tracker { get; set; }

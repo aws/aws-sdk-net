@@ -15,7 +15,7 @@ namespace AWSSDK.Tests.Framework
         {
             var facebookDeleteUserUrl = string.Format("https://graph.facebook.com/{0}?method=delete&access_token={1}",
             user.ID, user.AccessToken);
-            var deleteUserRequest = new UnityWebRequest(new Uri(facebookDeleteUserUrl));
+            var deleteUserRequest = new UnityWwwRequest(new Uri(facebookDeleteUserUrl));
             deleteUserRequest.GetResponse();
         }
 
@@ -32,7 +32,7 @@ namespace AWSSDK.Tests.Framework
                 facebookAppId,
                 accessToken);
 
-            var createUserRequest = new UnityWebRequest(new Uri(facebookCreateNewUserUrl));
+            var createUserRequest = new UnityWwwRequest(new Uri(facebookCreateNewUserUrl));
             var createUserResponse = createUserRequest.GetResponse();
             using (var streamReader = new StreamReader(createUserResponse.ResponseBody.OpenResponse()))
             {
@@ -53,7 +53,7 @@ namespace AWSSDK.Tests.Framework
 
             // Get App Access Token
             string accessToken;
-            var accessTokenRequest = new UnityWebRequest(new Uri(facebookAppAccessTokenUri));
+            var accessTokenRequest = new UnityWwwRequest(new Uri(facebookAppAccessTokenUri));
             var accessTokenResponse = accessTokenRequest.GetResponse();
 
             using (var streamReader = new StreamReader(accessTokenResponse.ResponseBody.OpenResponse(), Encoding.GetEncoding("UTF-8")))

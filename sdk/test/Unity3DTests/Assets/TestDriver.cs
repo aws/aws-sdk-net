@@ -21,6 +21,8 @@ namespace AWSSDK.Tests
 
             UnityInitializer.AttachToGameObject(this.gameObject);
 
+            AWSConfigs.HttpClient = AWSConfigs.HttpClientOption.UnityWebRequest;
+            
             //set sleep timeout to infinity
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             //set up logging

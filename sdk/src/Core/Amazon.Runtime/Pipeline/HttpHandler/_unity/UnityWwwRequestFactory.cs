@@ -313,10 +313,28 @@ namespace Amazon.Runtime.Internal
                 this.Tracker.UpdateProgress(progress);
             }
         }
-
+        
         public void Dispose()
         {
-            WwwRequest.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private bool _disposed;
+
+        private void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                {
+                    WwwRequest.Dispose();
+                    _disposed = true;
+                });
+            }
         }
     }
 

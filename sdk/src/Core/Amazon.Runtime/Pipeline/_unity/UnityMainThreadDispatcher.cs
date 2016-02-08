@@ -164,9 +164,10 @@ namespace Amazon.Runtime.Internal
                         unityWebRequest.SetRequestHeader(header.Key, header.Value);
                     }
 
-                    while (!unityWebRequest.isDone)
+                    var operation = unityWebRequest.Send();
+                    while(!operation.isDone)
                     {
-                        var uploadProgress = unityWebRequest.uploadProgress;
+                        var uploadProgress = operation.progress;
                         if (!uploadCompleted)
                         {
                             request.OnUploadProgressChanged(uploadProgress);
