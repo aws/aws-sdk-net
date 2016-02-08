@@ -468,7 +468,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             return new Record(
                 reader.GetString(RecordColumns.KEY_IDX),
-                reader.IsDBNull(RecordColumns.VALUE_IDX) ? string.Empty : reader.GetString(RecordColumns.VALUE_IDX),
+                reader.IsDBNull(RecordColumns.VALUE_IDX) ? null : reader.GetString(RecordColumns.VALUE_IDX),
                 reader.GetInt32(RecordColumns.SYNC_COUNT_IDX),
                 new DateTime(long.Parse(reader.GetString(RecordColumns.LAST_MODIFIED_TIMESTAMP_IDX), CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc),
                 reader.IsDBNull(RecordColumns.LAST_MODIFIED_BY_IDX) ? string.Empty : reader.GetString(RecordColumns.LAST_MODIFIED_BY_IDX),

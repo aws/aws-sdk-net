@@ -161,15 +161,11 @@
 		<Exec LogStandardErrorAsError="true" Command="$(mono) $(pdb2mdb) %(DllFiles.Identity)" /> 
 	</Target>
 	
-	<Target Name="update-unity-tests" DependsOnTargets="build-custom-tasks" Condition="!$(DisableUnitySupport)">
-		
-		<MSBuild Projects="..\sdk\AWSSDK.Unity.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=Release" />
+	<Target Name="update-unity-tests" DependsOnTargets="build-custom-tasks;build-sdk-unity" Condition="!$(DisableUnitySupport)">
 		
 		<!-- delete the sdk folder and its contents -->
-		<RemoveDir Directories="..\sdk\test\Unity3DTests\Assets\SDK" />
-		<MakeDir Directories="..\sdk\test\Unity3DTests\Assets\SDK" />
+		<RemoveDir Directories="..\sdk\test\Unity\Unity3DTests\Assets\SDK" />
+		<MakeDir Directories="..\sdk\test\Unity\Unity3DTests\Assets\SDK" />
 		
 		<!-- copy all new assemblies to the test project -->
 		<ItemGroup>
@@ -182,10 +178,10 @@
 		
 		<Copy
             SourceFiles="@(DllFiles)"
-            DestinationFolder="..\sdk\test\Unity3DTests\Assets\SDK"/>
+            DestinationFolder="..\sdk\test\Unity\Unity3DTests\Assets\SDK"/>
 		<Copy
             SourceFiles="@(PdbFiles)"
-            DestinationFolder="..\sdk\test\Unity3DTests\Assets\SDK"/>
+            DestinationFolder="..\sdk\test\Unity\Unity3DTests\Assets\SDK"/>
 		
 		<!-- need to copy credentials as well -->
 		
@@ -201,21 +197,21 @@
 		<UnityBuild
 			DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))" 
 			UnityExe="$(unity)" 
-			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity3DTests\))"
+			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
 			Platform="android"
 			/>
 		
 		<UnityBuild
 			DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))" 
 			UnityExe="$(unity)" 
-			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity3DTests\))"
+			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
 			Platform="ios64"
 			/>
 		
 		<UnityBuild
 			DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))" 
 			UnityExe="$(unity)" 
-			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity3DTests\))"
+			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
 			Platform="ios32"
 			/>
 	</Target>
@@ -311,8 +307,10 @@
             Condition="Exists('$(InternalBuildTools)\references.targets') And $(RunKeyScan)" 
             DependsOnTargets="build-tools">
         <ItemGroup>
+		    <PrivateKeyException Include="generator\ServiceModels\acm-2015-12-08.normal.json" />
             <PrivateKeyException Include="generator\ServiceModels\ec2-2014-02-01.normal.json" />
             <PrivateKeyException Include="generator\ServiceModels\iam-2010-05-08.normal.json" />
+			<PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\CertificateManager\Generated\PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk\test\UnitTests\Custom\EC2\PasswordTest.cs" />
         </ItemGroup>
         
@@ -340,4 +338,7 @@
             DestinationFolder="$(TestSettingsLocation)" />
     </Target>
     
+	
+	
+	
 </Project>

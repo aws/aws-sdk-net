@@ -1,0 +1,32 @@
+{
+    "noArgOverloads": [
+        "ListDeliveryStreams"
+    ],
+    "simpleMethods": {
+        "operations": {
+            "DeleteDeliveryStream": {
+                "methodForms": [
+                    [
+                        "DeliveryStreamName"
+                    ]
+                ]
+            },
+            "PutRecord": {
+                "methodForms": [
+                    [
+                        "DeliveryStreamName",
+                        "Record"
+                    ]
+                ]
+            },
+            "PutRecordBatch": {
+                "methodForms": [
+                    [
+                        "DeliveryStreamName",
+                        "Records"
+                    ]
+                ]
+            }
+        }
+    }
+}
