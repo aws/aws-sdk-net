@@ -1,3 +1,15 @@
+### 3.1.42.0 (2016-02-09 21:58 UTC)
+* AWSMarketplaceCommerceAnalytics (3.1.1.0)
+	* Updated documentation. Extended the GenerateDateSet operation to include a new CustomerDefinedValues parameter. This parameter allows customers to submit arbitrary key/value pair strings which will be returned, as provided, in the asynchronous response, enabling the user of customer-provided identifiers to correlate responses with their internal systems.
+* CloudFront (3.1.4.1)
+	* Added a new field ACMCertificateARN to ViewerCertificate. This field replaces the CertificateSource and Certificate fields that were recently added.
+* ConfigService (3.1.3.2)
+	* Documentation update.
+* EC2 (3.1.9.1)
+	* Updated ImageUtilities class to enable use when a proxy is required.
+* Gamelift (3.1.0.0)
+	* Added support for Amazon Gamelift, a managed service that allows game developers the ability to deploy and configure their multiplayer games.
+
 ### 3.1.41.3 (2016-02-05 17:57 UTC)
 * Core 3.1.4.4
 	* Updated INI credentials parsing logic to handle '=' character in values.
