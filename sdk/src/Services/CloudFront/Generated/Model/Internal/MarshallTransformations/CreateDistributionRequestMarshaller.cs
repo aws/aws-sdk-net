@@ -622,6 +622,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (publicRequest.DistributionConfig.ViewerCertificate != null) 
                 {
                     xmlWriter.WriteStartElement("ViewerCertificate", "http://cloudfront.amazonaws.com/doc/2016-01-28/");            
+                    if(publicRequest.DistributionConfig.ViewerCertificate.IsSetACMCertificateArn())
+                        xmlWriter.WriteElementString("ACMCertificateArn", "http://cloudfront.amazonaws.com/doc/2016-01-28/", StringUtils.FromString(publicRequest.DistributionConfig.ViewerCertificate.ACMCertificateArn));                 
+    
                     if(publicRequest.DistributionConfig.ViewerCertificate.IsSetCertificate())
                         xmlWriter.WriteElementString("Certificate", "http://cloudfront.amazonaws.com/doc/2016-01-28/", StringUtils.FromString(publicRequest.DistributionConfig.ViewerCertificate.Certificate));                 
     

@@ -55,6 +55,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ACMCertificateArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ACMCertificateArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Certificate", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
