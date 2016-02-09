@@ -37,10 +37,11 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
     /// If a file with the same name already exists (e.g. if the same data set is requested
     /// twice), the original file will be overwritten by the new file. Requires a Role with
     /// an attached permissions policy providing Allow permissions for the following actions:
-    /// s3:PutObject, s3:getBucketLocation, sns:SetRegion, sns:ListTopics, sns:Publish, iam:GetRolePolicy.
+    /// s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
     /// </summary>
     public partial class GenerateDataSetRequest : AmazonAWSMarketplaceCommerceAnalyticsRequest
     {
+        private Dictionary<string, string> _customerDefinedValues = new Dictionary<string, string>();
         private DateTime? _dataSetPublicationDate;
         private DataSetType _dataSetType;
         private string _destinations3BucketName;
@@ -49,7 +50,29 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         private string _snsTopicArn;
 
         /// <summary>
-        /// Gets and sets the property DataSetPublicationDate.
+        /// Gets and sets the property CustomerDefinedValues. (Optional) Key-value pairs which
+        /// will be returned, unmodified, in the Amazon SNS notification message and the data
+        /// set metadata file. These key-value pairs can be used to correlated responses with
+        /// tracking information from other systems.
+        /// </summary>
+        public Dictionary<string, string> CustomerDefinedValues
+        {
+            get { return this._customerDefinedValues; }
+            set { this._customerDefinedValues = value; }
+        }
+
+        // Check to see if CustomerDefinedValues property is set
+        internal bool IsSetCustomerDefinedValues()
+        {
+            return this._customerDefinedValues != null && this._customerDefinedValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSetPublicationDate. The date a data set was published.
+        /// For daily data sets, provide a date with day-level granularity for the desired day.
+        /// For weekly data sets, provide a date with day-level granularity within the desired
+        /// week (the day value will be ignored). For monthly data sets, provide a date with month-level
+        /// granularity for the desired month (the day value will be ignored).
         /// </summary>
         public DateTime DataSetPublicationDate
         {
@@ -64,7 +87,32 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSetType.
+        /// Gets and sets the property DataSetType. 
+        /// <para>
+        /// The desired data set type.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily
+        /// by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i>
+        /// - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li>
+        /// <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day
+        /// of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i>
+        /// - Available every 30 days by 5:00 PM Pacific Time since 2012-04.</li> <li><i>disbursed_amount_by_customer_geo</i>
+        /// - Available every 30 days by 5:00 PM Pacific Time since 2012-04.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i>
+        /// - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i>
+        /// - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i>
+        /// - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> </ul> 
+        /// </para>
         /// </summary>
         public DataSetType DataSetType
         {
@@ -79,7 +127,8 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationS3BucketName.
+        /// Gets and sets the property DestinationS3BucketName. The name (friendly name, not ARN)
+        /// of the destination S3 bucket.
         /// </summary>
         public string DestinationS3BucketName
         {
@@ -94,7 +143,12 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationS3Prefix.
+        /// Gets and sets the property DestinationS3Prefix. (Optional) The desired S3 prefix for
+        /// the published data set, similar to a directory path in standard file systems. For
+        /// example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets",
+        /// the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile".
+        /// If the prefix directory structure does not exist, it will be created. If no prefix
+        /// is provided, the data set will be published to the S3 bucket root.
         /// </summary>
         public string DestinationS3Prefix
         {
@@ -109,7 +163,8 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleNameArn.
+        /// Gets and sets the property RoleNameArn. The Amazon Resource Name (ARN) of the Role
+        /// with an attached permissions policy to interact with the provided AWS services.
         /// </summary>
         public string RoleNameArn
         {
@@ -124,7 +179,8 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnsTopicArn.
+        /// Gets and sets the property SnsTopicArn. Amazon Resource Name (ARN) for the SNS Topic
+        /// that will be notified when the data set has been published or if an error has occurred.
         /// </summary>
         public string SnsTopicArn
         {

@@ -67,6 +67,20 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomerDefinedValues())
+                {
+                    context.Writer.WritePropertyName("customerDefinedValues");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestCustomerDefinedValuesKvp in publicRequest.CustomerDefinedValues)
+                    {
+                        context.Writer.WritePropertyName(publicRequestCustomerDefinedValuesKvp.Key);
+                        var publicRequestCustomerDefinedValuesValue = publicRequestCustomerDefinedValuesKvp.Value;
+
+                            context.Writer.Write(publicRequestCustomerDefinedValuesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDataSetPublicationDate())
                 {
                     context.Writer.WritePropertyName("dataSetPublicationDate");
