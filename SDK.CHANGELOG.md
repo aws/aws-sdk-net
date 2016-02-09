@@ -1,3 +1,7 @@
+### 3.1.41.3 (2016-02-05 17:57 UTC)
+* Core 3.1.4.4
+	* Updated INI credentials parsing logic to handle '=' character in values.
+
 ### 3.1.41.2 (2016-02-03 18:24 UTC)
 * S3 (3.1.3.11)
 	* Adding ITransferUtility interface for the TransferUtility class.
