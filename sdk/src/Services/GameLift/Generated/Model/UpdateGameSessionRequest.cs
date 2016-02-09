@@ -1,0 +1,120 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the gamelift-2015-10-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.GameLift.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdateGameSession operation.
+    /// Updates game session properties. This includes the session name, maximum player count
+    /// and the player session creation policy, which either allows or denies new players
+    /// from joining the session. To update a game session, specify the game session ID and
+    /// the values you want to change. If successful, an updated <a>GameSession</a> object
+    /// is returned.
+    /// </summary>
+    public partial class UpdateGameSessionRequest : AmazonGameLiftRequest
+    {
+        private string _gameSessionId;
+        private int? _maximumPlayerSessionCount;
+        private string _name;
+        private PlayerSessionCreationPolicy _playerSessionCreationPolicy;
+
+        /// <summary>
+        /// Gets and sets the property GameSessionId. 
+        /// <para>
+        /// Unique identifier for a game session. Specify the game session you want to update.
+        /// 
+        /// </para>
+        /// </summary>
+        public string GameSessionId
+        {
+            get { return this._gameSessionId; }
+            set { this._gameSessionId = value; }
+        }
+
+        // Check to see if GameSessionId property is set
+        internal bool IsSetGameSessionId()
+        {
+            return this._gameSessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumPlayerSessionCount. 
+        /// <para>
+        /// Maximum number of players that can be simultaneously connected to the game session.
+        /// </para>
+        /// </summary>
+        public int MaximumPlayerSessionCount
+        {
+            get { return this._maximumPlayerSessionCount.GetValueOrDefault(); }
+            set { this._maximumPlayerSessionCount = value; }
+        }
+
+        // Check to see if MaximumPlayerSessionCount property is set
+        internal bool IsSetMaximumPlayerSessionCount()
+        {
+            return this._maximumPlayerSessionCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Descriptive label associated with this game session. Session names do not need to
+        /// be unique.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerSessionCreationPolicy. 
+        /// <para>
+        /// Policy determining whether or not the game session accepts new players.
+        /// </para>
+        /// </summary>
+        public PlayerSessionCreationPolicy PlayerSessionCreationPolicy
+        {
+            get { return this._playerSessionCreationPolicy; }
+            set { this._playerSessionCreationPolicy = value; }
+        }
+
+        // Check to see if PlayerSessionCreationPolicy property is set
+        internal bool IsSetPlayerSessionCreationPolicy()
+        {
+            return this._playerSessionCreationPolicy != null;
+        }
+
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "shapeSubstitutions": {
+        "AwsCredentials": {
+            "renameShape": "Credentials"
+        }
+    },
+    "simpleMethods": {
+        "operations": {
+            "CreatePlayerSession": {
+                "methodForms": [
+                    [
+                        "GameSessionId",
+                        "PlayerId"
+                    ]
+                ]
+            },
+            "CreatePlayerSessions": {
+                "methodForms": [
+                    [
+                        "GameSessionId",
+                        "PlayerIds"
+                    ]
+                ]
+            },
+
+            "DeleteAlias": {
+                "methodForms": [
+                    [
+                        "AliasId"
+                    ]
+                ]
+            },
+            "DeleteBuild": {
+                "methodForms": [
+                    [
+                        "BuildId"
+                    ]
+                ]
+            },
+            "DeleteFleet": {
+                "methodForms": [
+                    [
+                        "FleetId"
+                    ]
+                ]
+            },
+
+            "DescribeAlias": {
+                "methodForms": [
+                    [
+                        "AliasId"
+                    ]
+                ]
+            },
+            "DescribeBuild": {
+                "methodForms": [
+                    [
+                        "BuildId"
+                    ]
+                ]
+            },
+            "DescribeEC2InstanceLimits": {
+                "methodForms": [
+                    [
+                        "EC2InstanceType"
+                    ]
+                ]
+            },
+            "DescribeFleetPortSettings": {
+                "methodForms": [
+                    [
+                        "FleetId"
+                    ]
+                ]
+            },
+            "GetGameSessionLogUrl": {
+                "methodForms": [
+                    [
+                        "GameSessionId"
+                    ]
+                ]
+            },
+            "RequestUploadCredentials": {
+                "methodForms": [
+                    [
+                        "BuildId"
+                    ]
+                ]
+            },
+            "ResolveAlias": {
+                "methodForms": [
+                    [
+                        "AliasId"
+                    ]
+                ]
+            }
+        }
+    }
+}

@@ -57,6 +57,7 @@
       <Directory>$(ProjectDir)/src/Services/elasticmapreduce/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticsearch/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/gamelift/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/identitymanagement/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net35/</Directory>
@@ -122,6 +123,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Elasticsearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.GameLift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IdentityManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
