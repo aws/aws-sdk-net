@@ -99,6 +99,19 @@ namespace Amazon.ConfigService.Model
         /// Indicates whether the AWS resource complies with the AWS Config rule that it was evaluated
         /// against.
         /// </para>
+        ///  
+        /// <para>
+        /// For the <code>Evaluation</code> data type, AWS Config supports only the <code>COMPLIANT</code>,
+        /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. AWS Config does
+        /// not support the <code>INSUFFICIENT_DATA</code> value for this data type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value
+        /// for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example,
+        /// an AWS Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
+        /// value to AWS Config.
+        /// </para>
         /// </summary>
         public ComplianceType ComplianceType
         {
