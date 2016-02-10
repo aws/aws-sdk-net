@@ -19,6 +19,8 @@ sdk/packages/**
 sdk/test/PCLTests/AndroidTests/packages/**
 sdk/.vs/**
 
+**/fxcop-report-*.xml
+
 docgenerator/.vs/**
 
 Deployment/**
