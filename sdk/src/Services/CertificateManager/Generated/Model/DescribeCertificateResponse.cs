@@ -37,7 +37,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// Contains a <a>CertificateDetail</a> structure that lists the certificate fields.
+        /// Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.
         /// </para>
         /// </summary>
         public CertificateDetail Certificate

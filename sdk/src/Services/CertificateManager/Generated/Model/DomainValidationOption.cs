@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// This structure is used in the request object of the <a>RequestCertificate</a> function.
+    /// This structure is used in the request object of the <a>RequestCertificate</a> action.
     /// </summary>
     public partial class DomainValidationOption
     {
@@ -58,14 +58,13 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         ///  The domain to which validation email is sent. This is the base validation domain
         /// that will act as the suffix of the email addresses. This must be the same as the <code>DomainName</code>
-        /// value or a super domain of the <code>DomainName</code> value. For example, if you
-        /// requested a certificate for <code>site.subdomain.example.com</code> and specify a
-        /// <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to
-        /// the domain registrant, technical contact, and administrative contact in WHOIS for
-        /// the base domain and the and the following five addresses: <ul> <li>admin@subdomain.example.com</li>
-        /// <li>administrator@subdomain.example.com</li> <li>hostmaster@subdomain.example.com</li>
-        /// <li>postmaster@subdomain.example.com</li> <li>webmaster@subdomain.example.com</li>
-        /// </ul> 
+        /// value or a superdomain of the <code>DomainName</code> value. For example, if you requested
+        /// a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b>
+        /// of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical
+        /// contact, and administrative contact in WHOIS for the base domain and the and the following
+        /// five addresses: <ul> <li>admin@subdomain.example.com</li> <li>administrator@subdomain.example.com</li>
+        /// <li>hostmaster@subdomain.example.com</li> <li>postmaster@subdomain.example.com</li>
+        /// <li>webmaster@subdomain.example.com</li> </ul> 
         /// </para>
         /// </summary>
         public string ValidationDomain
