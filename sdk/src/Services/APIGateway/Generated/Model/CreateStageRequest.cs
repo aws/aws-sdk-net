@@ -29,7 +29,8 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStage operation.
-    /// Creates a <a>Stage</a> resource.
+    /// Creates a new <a>Stage</a> resource that references a pre-existing <a>Deployment</a>
+    /// for the API.
     /// </summary>
     public partial class CreateStageRequest : AmazonAPIGatewayRequest
     {
@@ -153,7 +154,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A map that defines the stage variables for the new <a>Stage</a> resource. Variable
-        /// names can have alphabetic characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+        /// names can have alphanumeric characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

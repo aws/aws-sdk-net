@@ -37,8 +37,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The Apache <a target="_blank" href="http://velocity.apache.org/engine/devel/vtl-reference-guide.html">Velocity
-        /// Template Language (VTL)</a> template content used for the template resource.
+        /// The Apache <a href="http://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+        /// target="_blank">Velocity Template Language (VTL)</a> template content used for the
+        /// template resource.
         /// </para>
         /// </summary>
         public string Value

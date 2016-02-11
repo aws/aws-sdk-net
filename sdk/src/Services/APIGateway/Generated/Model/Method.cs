@@ -34,6 +34,7 @@ namespace Amazon.APIGateway.Model
     {
         private bool? _apiKeyRequired;
         private string _authorizationType;
+        private string _authorizerId;
         private string _httpMethod;
         private Integration _methodIntegration;
         private Dictionary<string, MethodResponse> _methodResponses = new Dictionary<string, MethodResponse>();
@@ -74,6 +75,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetAuthorizationType()
         {
             return this._authorizationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthorizerId. 
+        /// <para>
+        /// Specifies the identifier of an <a>Authorizer</a> to use on this Method. The authorizationType
+        /// must be CUSTOM.
+        /// </para>
+        /// </summary>
+        public string AuthorizerId
+        {
+            get { return this._authorizerId; }
+            set { this._authorizerId = value; }
+        }
+
+        // Check to see if AuthorizerId property is set
+        internal bool IsSetAuthorizerId()
+        {
+            return this._authorizerId != null;
         }
 
         /// <summary>
