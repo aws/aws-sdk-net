@@ -36,6 +36,13 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// If you are using the versioning feature, note this API will always update the $LATEST
+    /// version of your Lambda function. For information about the versioning feature, see
+    /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+    /// Lambda Function Versioning and Aliases</a>. 
+    /// </para>
+    ///  
+    /// <para>
     /// This operation requires permission for the <code>lambda:UpdateFunctionConfiguration</code>
     /// action.
     /// </para>
@@ -48,6 +55,7 @@ namespace Amazon.Lambda.Model
         private int? _memorySize;
         private string _role;
         private int? _timeout;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -75,11 +83,11 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        ///  You can specify an unqualified function name (for example, "Thumbnail") or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-        /// AWS Lambda also allows you to specify only the account ID qualifier (for example,
-        /// "account-id:Thumbnail"). Note that the length constraint applies only to the ARN.
-        /// If you specify only the function name, it is limited to 64 character in length. 
+        ///  You can specify a function name (for example, <code>Thumbnail</code>) or you can
+        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+        /// AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+        /// Note that the length constraint applies only to the ARN. If you specify only the function
+        /// name, it is limited to 64 character in length. 
         /// </para>
         /// </summary>
         public string FunctionName
@@ -98,7 +106,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Handler. 
         /// <para>
         /// The function that Lambda calls to begin executing your function. For Node.js, it is
-        /// the <i>module-name.export</i> value in your function. 
+        /// the <code>module-name.export</code> value in your function. 
         /// </para>
         /// </summary>
         public string Handler
@@ -172,6 +180,21 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTimeout()
         {
             return this._timeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig.
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

@@ -30,10 +30,17 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the RemovePermission operation.
     /// You can remove individual permissions from an resource policy associated with a Lambda
-    /// function by providing a statement ID that you provided when you addded the permission.
-    /// The API removes corresponding permission that is associated with the specific ARN
-    /// identified by the <code>Qualifier</code> parameter.
+    /// function by providing a statement ID that you provided when you added the permission.
     /// 
+    /// 
+    ///  
+    /// <para>
+    /// If you are using versioning, the permissions you remove are specific to the Lambda
+    /// function version or alias you specify in the <code>AddPermission</code> request via
+    /// the <code>Qualifier</code> parameter. For more information about versioning, see <a
+    /// href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda
+    /// Function Versioning and Aliases</a>. 
+    /// </para>
     ///  
     /// <para>
     /// Note that removal of a permission will cause an active event source to lose permission
@@ -57,11 +64,11 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        ///  You can specify an unqualified function name (for example, "Thumbnail") or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-        /// AWS Lambda also allows you to specify only the account ID qualifier (for example,
-        /// "account-id:Thumbnail"). Note that the length constraint applies only to the ARN.
-        /// If you specify only the function name, it is limited to 64 character in length. 
+        ///  You can specify a function name (for example, <code>Thumbnail</code>) or you can
+        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+        /// AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+        /// Note that the length constraint applies only to the ARN. If you specify only the function
+        /// name, it is limited to 64 character in length. 
         /// </para>
         /// </summary>
         public string FunctionName
@@ -80,9 +87,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Qualifier. 
         /// <para>
         /// You can specify this optional parameter to remove permission associated with a specific
-        /// function version or function alias. The value of this paramter is the function version
-        /// or alias name. If you don't specify this parameter, the API removes permission associated
-        /// with the unqualified function ARN.
+        /// function version or function alias. If you don't specify this parameter, the API removes
+        /// permission associated with the unqualified function ARN.
         /// </para>
         /// </summary>
         public string Qualifier

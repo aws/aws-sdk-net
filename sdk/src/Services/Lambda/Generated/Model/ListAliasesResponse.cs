@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Aliases. 
         /// <para>
-        /// An list of alises.
+        /// A list of aliases.
         /// </para>
         /// </summary>
         public List<AliasConfiguration> Aliases
