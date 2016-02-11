@@ -47,7 +47,8 @@ namespace Amazon.Runtime.Internal
 
         public void Dispose()
         {
-            _unityWwwRequest.Dispose();
+            if (_unityWwwRequest != null)
+                _unityWwwRequest.Dispose();
         }
     }
 
@@ -177,6 +178,10 @@ namespace Amazon.Runtime.Internal
                 if (this.Exception != null)
                     throw this.Exception;
 
+                //timeout scenario
+                if (this.Exception == null && this.Response == null)
+                    throw new WebException("Request timedout", WebExceptionStatus.Timeout);
+
                 return this.Response;
             }
             finally
@@ -283,7 +288,7 @@ namespace Amazon.Runtime.Internal
 
             return this.Response;
         }
-        
+
         private StreamReadTracker Tracker { get; set; }
 
         /// <summary>
@@ -313,7 +318,7 @@ namespace Amazon.Runtime.Internal
                 this.Tracker.UpdateProgress(progress);
             }
         }
-        
+
         public void Dispose()
         {
             Dispose(true);
@@ -331,7 +336,8 @@ namespace Amazon.Runtime.Internal
             {
                 UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
                 {
-                    WwwRequest.Dispose();
+                    //has issues with ios, commenting it for now
+                    //WwwRequest.Dispose();
                     _disposed = true;
                 });
             }

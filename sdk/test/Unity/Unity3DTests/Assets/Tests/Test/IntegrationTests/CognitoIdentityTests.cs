@@ -14,7 +14,7 @@ namespace AWSSDK.IntegrationTests.CognitoIdentity
         public static int MaxResults = 15;
         private string poolName = null;
         private string poolId = null;
-        private static List<string> allPoolIds = new List<string>();
+        private List<string> allPoolIds = new List<string>();
         private const PoolRoles poolRoles = PoolRoles.Unauthenticated | PoolRoles.Authenticated;
 
         [Flags]

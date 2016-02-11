@@ -84,11 +84,17 @@ namespace Amazon.Runtime.Internal
             + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
 #else
             if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
                 requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
-            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
+            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync")
+            + " UnityWWW";
+            }
             else
+            {
                 requestContext.Request.Headers[HeaderKeys.XAmzUserAgentHeader] = requestContext.ClientConfig.UserAgent
-            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
+            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync")
+            + " UnityWebRequest";
+            }
 #endif
 
             var method = requestContext.Request.HttpMethod.ToUpper(CultureInfo.InvariantCulture);

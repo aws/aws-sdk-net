@@ -20,7 +20,7 @@ namespace AWSSDK.IntegrationTests.SQS
         private const string prefix = "TestQueue";
         private const string defaultTimeout = "30";
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public void SQSCleanup()
         {
             AutoResetEvent ars = new AutoResetEvent(false);

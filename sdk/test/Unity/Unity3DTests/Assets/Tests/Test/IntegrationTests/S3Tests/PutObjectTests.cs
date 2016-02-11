@@ -43,8 +43,7 @@ namespace AWSSDK.IntegrationTests.S3
 
         [Test]
         [Category("S3")]
-        [Category("UnityWebRequest")]
-        public void SimpleTest()
+        public void SimplePutTest()
         {
             GetBucketVersioningResponse versioning = null;
             Exception exception = null;
@@ -150,7 +149,6 @@ namespace AWSSDK.IntegrationTests.S3
 
         [Test]
         [Category("S3")]
-        [Category("UnityWebRequest")]
         public void TestHttpErrorResponseUnmarshalling()
         {
             var exception = new AmazonServiceException();
@@ -168,7 +166,6 @@ namespace AWSSDK.IntegrationTests.S3
             }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
             mre.WaitOne();
             Assert.IsNotNull(exception);
-
             Assert.IsTrue(exception.Message.Contains("The specified bucket does not exist"));
             Assert.AreEqual("NoSuchBucket", exception.ErrorCode);
             Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
@@ -176,7 +173,6 @@ namespace AWSSDK.IntegrationTests.S3
 
         [Test]
         [Category("S3")]
-        [Category("UnityWebRequest")]
         public void SimplePutObjectTest()
         {
             var exception = new AmazonServiceException();
@@ -201,7 +197,6 @@ namespace AWSSDK.IntegrationTests.S3
 
         [Test]
         [Category("S3")]
-        [Category("UnityWebRequest")]
         public void SimplePathPutObjectTest()
         {
             var exception = new AmazonServiceException();

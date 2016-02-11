@@ -18,8 +18,8 @@ namespace AWSSDK.IntegrationTests.Lambda
     [Category("Integration")]
     class LambdaTests : TestBase<AmazonLambdaClient>
     {
-        static IAmazonIdentityManagementService iamClient = TestBase.CreateClient<AmazonIdentityManagementServiceClient>();
-        static List<string> createdFunctionNames = new List<string>();
+        IAmazonIdentityManagementService iamClient = TestBase.CreateClient<AmazonIdentityManagementServiceClient>();
+        List<string> createdFunctionNames = new List<string>();
 
         static readonly string FunctionHandleName = "unitytest-helloworld";
         // The Base64 representation of the Zip file of the Lambda function's code. See the

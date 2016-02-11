@@ -10,31 +10,39 @@ public class BuildTools
 
     public static void Android()
     {
+#if UNITY_5
         var buildpath = ValidateBuildPath(@"Android");
         BuildPipeline.BuildPlayer(
             new string[] { @"Assets\TestDriver.unity" },
             string.Format("{0}{1}UnityTestRunner.apk", buildpath, Path.DirectorySeparatorChar),
             BuildTarget.Android, BuildOptions.Development | BuildOptions.AllowDebugging);
+#endif
     }
 
     public static void Ios64()
     {
+#if UNITY_5
         var buildpath = ValidateBuildPath(@"iOS64");
         PlayerSettings.SetPropertyInt("ScriptingBackend", (int)ScriptingImplementation.IL2CPP, BuildTarget.iOS);
         PlayerSettings.SetPropertyInt("Architecture", 2, BuildTarget.iOS);//corresponds to iphone architecture universal
-        BuildPipeline.BuildPlayer(new string[] { @"Assets\TestDriver.unity" }, buildpath, BuildTarget.iOS, BuildOptions.None);
+        BuildPipeline.BuildPlayer(new string[] { @"Assets\TestDriver.unity" }, buildpath, BuildTarget.iOS, BuildOptions.Development | BuildOptions.AllowDebugging);
+#endif
     }
 
     public static void IosMono()
     {
+#if UNITY_5
         var buildpath = ValidateBuildPath(@"iOSMono");
         PlayerSettings.SetPropertyInt("ScriptingBackend", (int)ScriptingImplementation.Mono2x, BuildTarget.iOS);
         PlayerSettings.SetPropertyInt("Architecture", 0, BuildTarget.iOS);//corresponds to iphone architecture armv7
         BuildPipeline.BuildPlayer(new string[] { @"Assets\TestDriver.unity" }, buildpath, BuildTarget.iOS, BuildOptions.None);
+#endif
     }
 
+#if UNITY_5
     private static string ValidateBuildPath(string Platform)
     {
+
         var buildPath = Environment.GetEnvironmentVariable("UNITYBUILDPATH");
 
         if (string.IsNullOrEmpty(buildPath))
@@ -54,7 +62,9 @@ public class BuildTools
 
 
         return platformPath;
+
     }
+#endif
 
 
 }

@@ -13,7 +13,7 @@ using System.IO;
 
 namespace AWSSDK.Tests.Framework
 {
-    public class TestRunner : ITestListener
+    public class TestRunner
     {
         public static AWSCredentials Credentials { get; private set; }
 
@@ -23,6 +23,8 @@ namespace AWSSDK.Tests.Framework
 
         private static bool Loaded = false;
         private TextWriter LogWriter { get; set; }
+
+        public AWSConfigs.HttpClientOption HttpClient { get; set; }
 
         public TestRunner()
         {
@@ -53,57 +55,156 @@ namespace AWSSDK.Tests.Framework
         {
             RunTests(new FixtureAndCaseFilter(fixtureNames, testCases));
         }
-        
+
+        public void RunTestsWithCategory(string category)
+        {
+            RunTests(new CategoryFilter(category));
+        }
+
+        public void RunTestsWithCategory(string category, HashSet<string> testNames)
+        {
+            RunTests(new CategoryAndNameFilter(category, testNames));
+        }
+
+        public void RunTestsWithCategoryAndFixtureName(string category, HashSet<string> fixtureName)
+        {
+            RunTests(new CategoryAndFixtureFilter(category, fixtureName));
+        }
+
+
         private void RunTests(ITestFilter testFilter)
         {
             MissingAPILambdaFunctions.Initialize();
-            failedTestCases = new HashSet<string>();
             ITestAssemblyRunner runner = null;
-            if (IsIL2CPP)
+            if (Utils.IsIL2CPP)
                 runner = new NUnitTestAssemblyRunner(new UnityTestAssemblyBuilder());
             else
                 runner = new NUnitTestAssemblyRunner(new DefaultTestAssemblyBuilder());
             var currentAssembly = this.GetType().Assembly;
             var options = new Dictionary<string, string>();
             var tests = runner.Load(currentAssembly, options);
-            var result = runner.Run(this, testFilter);
+            var testListener = new TestListener();
+            var result = runner.Run(testListener, testFilter);
+            TestDriver.Instance.OnTestFinished(result.PassCount, result.FailCount, this.HttpClient, testListener.FailedTestsCases);
         }
 
-        /// <summary>
-        /// Determines if Unity scripting backend is IL2CPP.
-        /// </summary>
-        /// <returns><c>true</c>If scripting backend is IL2CPP; otherwise, <c>false</c>.</returns>
-        internal static bool IsIL2CPP
-        {
-            get
-            {
-                Type type = Type.GetType("Mono.Runtime");
-                if (type != null)
-                {
-                    MethodInfo displayName = type.GetMethod("GetDisplayName", BindingFlags.NonPublic | BindingFlags.Static);
-                    if (displayName != null)
-                    {
-                        string name = null;
-                        try
-                        {
-                            name = displayName.Invoke(null, null).ToString();
-                        }
-                        catch (Exception)
-                        {
-                            return false;
-                        }
+        #region testfilters
 
-                        if (name != null && name.ToUpper().Contains("IL2CPP"))
-                        {
-                            return true;
-                        }
-                    }
-                }
+        internal class CategoryAndFixtureFilter : ITestFilter
+        {
+            private string CategoryName;
+            private HashSet<string> FixtureNames;
+            private bool InvertMatch = false;
+
+            private const string CategoryKey = "Category";
+
+            public CategoryAndFixtureFilter(string categoryName, HashSet<string> fixtureNames)
+            {
+                this.CategoryName = categoryName;
+                this.FixtureNames = fixtureNames;
+            }
+
+
+
+            bool ITestFilter.IsExplicitMatch(ITest test)
+            {
                 return false;
+            }
+
+            bool ITestFilter.Pass(ITest test)
+            {
+                if (FixtureNames.Count == 0)
+                {
+                    // match
+                    return !InvertMatch;
+                }
+                if (test.IsSuite)
+                {
+                    // continue to deeper matching level
+                    return true;
+                }
+                if (FixtureNames.Contains(test.TypeInfo.Name))
+                {
+                    var categories = (test.Properties.ContainsKey(CategoryKey)) ?
+                    test.Properties[CategoryKey] : new List<string>();
+
+                    var stringCategories = categories.Cast<string>().ToList();
+
+                    return stringCategories.Contains<string>(CategoryName);
+                }
+                else
+                {
+                    // no match
+                    return InvertMatch;
+                }
+            }
+
+            public TNode ToXml(bool b)
+            {
+                return null;
+            }
+
+            public TNode AddToXml(TNode n, bool b)
+            {
+                return null;
             }
         }
 
-        private class CategoryFilter : ITestFilter
+
+
+        internal class CategoryAndNameFilter : ITestFilter
+        {
+            private string CategoryName;
+            private HashSet<string> TestNames;
+            private const string CategoryKey = "Category";
+
+            public CategoryAndNameFilter(string categoryName, HashSet<string> testNames)
+            {
+                this.CategoryName = categoryName;
+                this.TestNames = testNames;
+            }
+
+            bool ITestFilter.IsExplicitMatch(ITest test)
+            {
+                return false;
+            }
+
+            bool ITestFilter.Pass(ITest test)
+            {
+                if (test.Method == null)
+                    return true;
+
+                if (string.IsNullOrEmpty(CategoryName))
+                    return true;
+
+                var testName = test.Name;
+                var categories = (test.Properties.ContainsKey(CategoryKey)) ?
+                    test.Properties[CategoryKey] : new List<string>();
+
+                var stringCategories = categories.Cast<string>().ToList();
+
+                if (!stringCategories.Contains(CategoryName))
+                {
+                    return false;
+                }
+
+                return this.TestNames.Contains(testName);
+
+            }
+
+            public TNode ToXml(bool b)
+            {
+                return null;
+            }
+
+            public TNode AddToXml(TNode n, bool b)
+            {
+                return null;
+            }
+        }
+
+
+        internal class CategoryFilter : ITestFilter
         {
             private string CategoryName;
             private const string CategoryKey = "Category";
@@ -146,7 +247,7 @@ namespace AWSSDK.Tests.Framework
             }
         }
 
-        private class TestCaseFilter : ITestFilter
+        internal class TestCaseFilter : ITestFilter
         {
             private HashSet<string> TestCaseNames;
 
@@ -185,7 +286,7 @@ namespace AWSSDK.Tests.Framework
             }
         }
 
-        private class FixtureAndCaseFilter : ITestFilter
+        internal class FixtureAndCaseFilter : ITestFilter
         {
             private HashSet<String> FixtureNames;
             private HashSet<String> TestCaseNames;
@@ -266,111 +367,125 @@ namespace AWSSDK.Tests.Framework
                 return null;
             }
         }
+        #endregion
 
         #region ITestListener
 
-        private HashSet<string> failedTestCases;
-
-        public void TestFinished(ITestResult result)
+        private class TestListener : ITestListener
         {
-            var testAssembly = result.Test as TestAssembly;
-            if (testAssembly != null)
+            public TestListener()
             {
-                Debug.Log(string.Format("=== Executed {0} tests in assembly {1} ===",
-                    testAssembly.TestCaseCount,
-                    testAssembly.Assembly.FullName));
-
-                Debug.Log(string.Format("\nPassed : {0}\tFailed : {1}",
-                    result.PassCount, result.FailCount));
-
-                TestDriver.Instance.OnTestFinished(result.PassCount, result.FailCount, failedTestCases);
+                failedTestCases = new HashSet<string>();
             }
 
-            var testFixture = result.Test as TestFixture;
-            if (testFixture != null)
-            {
-                if (result.FailCount > 0)
-                {
-                    Debug.Log(string.Format("Test Fixture {0} ({1}) has {2} failures.",
-                        testFixture.Name, testFixture.FullName, result.FailCount));
+            private HashSet<string> failedTestCases;
 
-                    if (result.HasChildren)
+            public void TestFinished(ITestResult result)
+            {
+                var testAssembly = result.Test as TestAssembly;
+                if (testAssembly != null)
+                {
+                    Debug.Log(string.Format("=== Executed {0} tests in assembly {1} ===",
+                        testAssembly.TestCaseCount,
+                        testAssembly.Assembly.FullName));
+
+                    Debug.Log(string.Format("\nPassed : {0}\tFailed : {1}",
+                        result.PassCount, result.FailCount));
+                }
+
+                var testFixture = result.Test as TestFixture;
+                if (testFixture != null)
+                {
+                    if (result.FailCount > 0)
                     {
-                        foreach (var childResult in result.Children)
+                        Debug.Log(string.Format("Test Fixture {0} ({1}) has {2} failures.",
+                            testFixture.Name, testFixture.FullName, result.FailCount));
+
+                        if (result.HasChildren)
                         {
-                            if (childResult.ResultState.Site != FailureSite.Test)
-                                TestFinished(childResult);
+                            foreach (var childResult in result.Children)
+                            {
+                                if (childResult.ResultState.Site != FailureSite.Test)
+                                    TestFinished(childResult);
+                            }
                         }
+
+                        Debug.Log(string.Format("\tMessage : {0}", result.Message));
+                        Debug.Log(string.Format("\tStack trace : {0}", result.StackTrace));
+
+                    }
+                    Debug.Log(string.Format("  --- Executed tests in class {0}   ---\n", testFixture.FullName));
+                }
+
+                var testMethod = result.Test as TestMethod;
+                if (testMethod != null)
+                {
+                    if (result.FailCount > 0)
+                    {
+                        Debug.Log(string.Format("FAIL {0} ({1})", testMethod.MethodName, testMethod.FullName));
+                        Debug.Log(string.Format("\tMessage : {0}", result.Message));
+                        Debug.Log(string.Format("\tStack trace : {0}", result.StackTrace));
                     }
 
-                    Debug.Log(string.Format("\tMessage : {0}", result.Message));
-                    Debug.Log(string.Format("\tStack trace : {0}", result.StackTrace));
-                    
+                    if (result.InconclusiveCount > 0)
+                    {
+                        Debug.Log(string.Format("INCONCLUSIVE {0}", testMethod.MethodName));
+                    }
+
+                    if (result.PassCount > 0)
+                    {
+                        Debug.Log(string.Format("PASS {0}", testMethod.MethodName));
+                    }
+
+                    var testSucceeded =
+                        result.FailCount == 0 &&
+                        result.InconclusiveCount == 0 &&
+                        result.SkipCount == 0;
+
+                    TestCompleted(testMethod.Name, testSucceeded);
                 }
-                Debug.Log(string.Format("  --- Executed tests in class {0}   ---\n", testFixture.FullName));
             }
 
-            var testMethod = result.Test as TestMethod;
-            if (testMethod != null)
+            public void TestStarted(ITest test)
             {
-                if (result.FailCount > 0)
+                var testAssembly = test as TestAssembly;
+                if (testAssembly != null)
                 {
-                    Debug.Log(string.Format("FAIL {0} ({1})", testMethod.MethodName, testMethod.FullName));
-                    Debug.Log(string.Format("\tMessage : {0}", result.Message));
-                    Debug.Log(string.Format("\tStack trace : {0}", result.StackTrace));
+                    Debug.Log(string.Format("=== Executing tests in assembly {0} ===\n",
+                        testAssembly.Assembly.FullName));
                 }
 
-                if (result.InconclusiveCount > 0)
+                var testFixture = test as TestFixture;
+                if (testFixture != null)
                 {
-                    Debug.Log(string.Format("INCONCLUSIVE {0}", testMethod.MethodName));
+                    Debug.Log(string.Format("  --- Executing tests in class {0} ---",
+                        testFixture.FullName));
                 }
 
-                if (result.PassCount > 0)
+                var testMethod = test as TestMethod;
+                if (testMethod != null)
                 {
-                    Debug.Log(string.Format("PASS {0}", testMethod.MethodName));
+                    Debug.Log(string.Format("\tTest {0}.{1} started", testMethod.ClassName, testMethod.MethodName));
                 }
-
-                var testSucceeded =
-                    result.FailCount == 0 &&
-                    result.InconclusiveCount == 0 &&
-                    result.SkipCount == 0;
-                
-                TestCompleted(testMethod.Name, testSucceeded);
             }
-        }
 
-        public void TestStarted(ITest test)
-        {
-            var testAssembly = test as TestAssembly;
-            if (testAssembly != null)
+            protected virtual void TestCompleted(string testMethodName, bool succeeded)
             {
-                Debug.Log(string.Format("=== Executing tests in assembly {0} ===\n",
-                    testAssembly.Assembly.FullName));
+                var res = string.Format(@"Test '{0}'  {1}", testMethodName, succeeded ? @"PASSED" : @"FAILED");
+                if (!succeeded)
+                    failedTestCases.Add(testMethodName);
+
+                TestDriver.Results.Enqueue(res);
             }
 
-            var testFixture = test as TestFixture;
-            if (testFixture != null)
+            internal HashSet<string> FailedTestsCases
             {
-                Debug.Log(string.Format("  --- Executing tests in class {0} ---",
-                    testFixture.FullName));
+                get
+                {
+                    return failedTestCases;
+                }
             }
 
-            var testMethod = test as TestMethod;
-            if (testMethod != null)
-            {
-                Debug.Log(string.Format("\tTest {0}.{1} started", testMethod.ClassName, testMethod.MethodName));
-            }
-        }
-        #endregion
-
-        #region test reporting
-        protected virtual void TestCompleted(string testMethodName, bool succeeded)
-        {
-            var res = string.Format(@"Test '{0}'  {1}", testMethodName, succeeded ? @"PASSED" : @"FAILED");
-            if(!succeeded)
-                failedTestCases.Add(testMethodName);
-
-            TestDriver.Results.Enqueue(res);
         }
         #endregion
     }

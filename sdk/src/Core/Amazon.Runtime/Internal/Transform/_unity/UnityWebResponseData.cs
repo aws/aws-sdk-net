@@ -44,7 +44,7 @@ namespace Amazon.Runtime.Internal.Transform
             if (!unityWebRequest.isError)
             {
                 _headers = unityWebRequest.GetResponseHeaders();
-                
+
                 _responseBody = unityWebRequest.downloadHandler.data;
 
                 if ((_responseBody != null && _responseBody.Length > 0) || (_responseBody.Length == 0 && unityWebRequest.error == null))
@@ -66,11 +66,10 @@ namespace Amazon.Runtime.Internal.Transform
                 {
                     _responseStream = new MemoryStream(_responseBody);
                 }
-                this.ContentLength = (long)this._responseBody.Length;
+                this.ContentLength = (long)unityWebRequest.downloadedBytes;
                 this.StatusCode = 0;
             }
         }
-
 
         /// <summary>
         /// The constructor for UnityWebResponseData.

@@ -44,7 +44,8 @@ namespace Amazon.Runtime.Internal
 
         public void Dispose()
         {
-            _unityRequest.Dispose();
+            if (_unityRequest != null)
+                _unityRequest.Dispose();
         }
     }
 
@@ -292,6 +293,11 @@ namespace Amazon.Runtime.Internal
             GC.SuppressFinalize(this);
         }
 
+        ~UnityRequest()
+        {
+
+        }
+
         private bool _disposed;
 
         private void Dispose(bool disposing)
@@ -303,7 +309,8 @@ namespace Amazon.Runtime.Internal
             {
                 UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
                 {
-                    WwwRequest.Dispose();
+                    //has issues with ios, commenting it for now
+                    //WwwRequest.Dispose();
                     _disposed = true;
                 });
             }

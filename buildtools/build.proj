@@ -208,12 +208,14 @@
 			Platform="ios64"
 			/>
 		
+        <!-- ios mono requires nunit customization
 		<UnityBuild
 			DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))" 
 			UnityExe="$(unity)" 
 			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
 			Platform="ios32"
 			/>
+		-->
 	</Target>
 	
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;xam-pack">

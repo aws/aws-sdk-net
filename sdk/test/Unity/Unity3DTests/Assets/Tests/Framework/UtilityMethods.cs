@@ -107,6 +107,7 @@ namespace AWSSDK.Tests.Framework
                 ars.Set();
             }, new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
+
             if (responseException == null)
             {
                 Assert.IsNotNull(iamRole);

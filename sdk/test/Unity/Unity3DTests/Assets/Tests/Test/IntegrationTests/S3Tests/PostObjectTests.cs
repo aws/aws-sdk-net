@@ -47,7 +47,7 @@ namespace AWSSDK.IntegrationTests.S3
 
         [Test]
         [Category("WWW")]
-        public void SimpleTest()
+        public void SimplePostTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
             Exception responseException = new Exception();
@@ -87,7 +87,7 @@ namespace AWSSDK.IntegrationTests.S3
 
         [Test]
         [Category("WWW")]
-        public void TestHttpErrorResponseUnmarshalling()
+        public void TestHttpErrorPostResponseUnmarshalling()
         {
             try
             {
@@ -102,7 +102,8 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
-        [Category("WWW")]        public void TestPostObjectVersioning()
+        [Category("WWW")]
+        public void TestPostObjectVersioning()
         {
             var key = "Key";
             var response = S3TestUtils.PostObjectHelper(Client, VersionedBucketName, key);
@@ -120,7 +121,9 @@ namespace AWSSDK.IntegrationTests.S3
 
         }
 
-        [Test]        public void TestCannedACL()
+        [Test]
+        [Category("WWW")]
+        public void TestPostCannedACL()
         {
             var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
 

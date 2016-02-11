@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace AWSSDK.Tests.Framework
@@ -92,6 +93,41 @@ namespace AWSSDK.Tests.Framework
 
                 Console.WriteLine("Success, expected " + expectedExceptionType.FullName + ", thrown " + eType.FullName + ": " + e.Message);
                 return e;
+            }
+        }
+
+
+        /// <summary>
+        /// Determines if Unity scripting backend is IL2CPP.
+        /// </summary>
+        /// <returns><c>true</c>If scripting backend is IL2CPP; otherwise, <c>false</c>.</returns>
+        internal static bool IsIL2CPP
+        {
+            get
+            {
+                Type type = Type.GetType("Mono.Runtime");
+                if (type != null)
+                {
+                    MethodInfo displayName = type.GetMethod("GetDisplayName", BindingFlags.NonPublic | BindingFlags.Static);
+                    if (displayName != null)
+                    {
+                        string name = null;
+                        try
+                        {
+                            name = displayName.Invoke(null, null).ToString();
+                        }
+                        catch (Exception)
+                        {
+                            return false;
+                        }
+
+                        if (name != null && name.ToUpper().Contains("IL2CPP"))
+                        {
+                            return true;
+                        }
+                    }
+                }
+                return false;
             }
         }
     }

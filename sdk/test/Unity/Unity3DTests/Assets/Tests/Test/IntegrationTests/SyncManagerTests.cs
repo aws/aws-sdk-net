@@ -4,7 +4,6 @@ using Amazon.CognitoIdentity.Model;
 using Amazon.CognitoSync.SyncManager;
 using Amazon.Runtime;
 using AWSSDK.Tests.Framework;
-using AWSSDK.Tests.Framework;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -701,7 +700,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
             }
             Utils.AssertStringIsNullOrEmpty(failureMessage);
         }
-        
+
         [Test]
         public void RemoveEntryTest()
         {
@@ -1032,7 +1031,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     ars.WaitOne();
                     if (responseException != null)
                     {
-                        Debug.LogWarningFormat("failed to delete [{0}]", poolId);
+                        Debug.LogWarning(string.Format(@"failed to delete [{0}]", poolId));
                         Debug.LogException(responseException);
                     }
                 }

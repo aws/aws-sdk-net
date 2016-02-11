@@ -17,7 +17,7 @@ namespace AWSSDK.IntegrationTests.KinesisFirehose
     public class KinesisFirehoseTests : TestBase<AmazonKinesisFirehoseClient>
     {
 
-        private static IAmazonIdentityManagementService iamClient = TestBase.CreateClient<AmazonIdentityManagementServiceClient>();
+        IAmazonIdentityManagementService iamClient = TestBase.CreateClient<AmazonIdentityManagementServiceClient>();
 
         private string BucketName = null;
         private string RoleName = null;

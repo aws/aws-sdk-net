@@ -23,6 +23,7 @@ using System.Threading;
 using UnityEngine;
 using Logger = Amazon.Runtime.Internal.Util.Logger;
 using Amazon.Util.Internal.PlatformServices;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal
 {
@@ -128,9 +129,14 @@ namespace Amazon.Runtime.Internal
             var nr = ServiceFactory.Instance.GetService<INetworkReachability>() as Amazon.Util.Internal.PlatformServices.NetworkReachability;
             if (nr.NetworkStatus != NetworkStatus.NotReachable)
             {
-                if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+                bool isWwwRequest = (request as UnityWwwRequest) != null;
+                if (isWwwRequest)
                 {
                     var wwwRequest = new WWW((request as UnityWwwRequest).RequestUri.AbsoluteUri, request.RequestContent, request.Headers);
+                    if (wwwRequest == null)
+                    {
+                        yield return null;
+                    }
                     bool uploadCompleted = false;
                     while (!wwwRequest.isDone)
                     {
@@ -149,9 +155,16 @@ namespace Amazon.Runtime.Internal
                 }
                 else
                 {
+                    var unityRequest = request as UnityRequest;
+                    if (unityRequest == null)
+                    {
+                        yield return null;
+                    }
+                    
                     var unityWebRequest = new UnityEngine.Experimental.Networking.UnityWebRequest(
-                        (request as UnityRequest).RequestUri.AbsoluteUri,
-                        (request as UnityRequest).Method);
+                        unityRequest.RequestUri.AbsoluteUri,
+                        unityRequest.Method);
+
                     unityWebRequest.downloadHandler = new UnityEngine.Experimental.Networking.DownloadHandlerBuffer();
 
                     if (request.RequestContent != null && request.RequestContent.Length > 0)
@@ -165,7 +178,7 @@ namespace Amazon.Runtime.Internal
                     }
 
                     var operation = unityWebRequest.Send();
-                    while(!operation.isDone)
+                    while (!operation.isDone)
                     {
                         var uploadProgress = operation.progress;
                         if (!uploadCompleted)
