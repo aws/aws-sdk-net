@@ -117,13 +117,14 @@ namespace SDKDocGenerator.Writers
             {
                 const string net35PatternNote = " For .NET 3.5 the operation is implemented as a pair of methods using the standard naming convention of "
                                                 + "<b>Begin</b><i>{0}</i> and <b>End</b><i>{0}</i>.";
-                const string unityPatternNote = " The implementation for Unity takes a callback as a parameter.";
+                const string unityPatternNote = " For Unity the operation does not take <i>CancellationToken</i> as a parameter, and instead takes"
+                                              + " <i>AmazonServiceCallback&lt;{0}Request, {0}Response&gt;</i> and <i>AsyncOptions</i> as additional parameters.";
                 const string patternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
                                            + "<p>This is an asynchronous operation using the standard naming convention for .NET 4.5 or higher."
                                            + "{0}{1}</p></div>";
 
                 var name = this._methodInfo.Name.Substring(0, this._methodInfo.Name.Length - 5);
-                writer.WriteLine(patternNote, string.Format(net35PatternNote, name), this._unityVersionOfAsyncExists ? unityPatternNote : string.Empty);
+                writer.WriteLine(patternNote, string.Format(net35PatternNote, name), this._unityVersionOfAsyncExists ? string.Format(unityPatternNote, name) : string.Empty);
             }
 
             if (this._referAsyncAlternativeUnity || this._referAsyncAlternativePCL)
@@ -143,8 +144,7 @@ namespace SDKDocGenerator.Writers
                 }
                 const string syncPatternNote =
                     "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
-                    + "<p>Although this synchronous operation is not available in {0}, the asynchronous version is."
-                    +" The asynchronous alternative is named <i>{1}</i><b>Async</b>.</p></div>";
+                    + "<p> For {0} this operation is only available in asynchronous form. Please refer to <i>{1}</i><b>Async</b>.</p></div>";
 
                 writer.WriteLine(syncPatternNote, platforms, _methodInfo.Name);
             }
