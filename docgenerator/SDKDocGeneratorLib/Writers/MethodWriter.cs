@@ -20,6 +20,15 @@ namespace SDKDocGenerator.Writers
             : base(artifacts, version, methodInfo)
         {
             this._methodInfo = methodInfo;
+            // true when this is an Async method and the unity version is present
+            this._unityVersionOfAsyncExists = NDocUtilities.FindDocumentationUnityAsync(Artifacts.NDocForPlatform("unity"), methodInfo) != null;
+            // refer to asynchronous versions if the synchronous version doesn't exist but the async version does
+            this._referAsyncAlternativeUnity = (NDocUtilities.FindDocumentationUnityAsyncAlternative(Artifacts.NDocForPlatform("unity"), methodInfo) != null) &&
+                (Artifacts.NDocForPlatform("unity") != null) &&
+                (NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("unity"), methodInfo) == null);
+            this._referAsyncAlternativePCL = (NDocUtilities.FindDocumentationPCLAsyncAlternative(Artifacts.NDocForPlatform("pcl"), methodInfo) != null) &&
+                (Artifacts.NDocForPlatform("pcl") != null) &&
+                (NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), methodInfo) == null);
         }
 
         protected override string GenerateFilename()
@@ -102,15 +111,42 @@ namespace SDKDocGenerator.Writers
 
         protected override void AddSummaryNotes(TextWriter writer)
         {
+
+
             if (this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal))
             {
-                const string net35PatternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>" +
-                                                "<p>This is an asynchronous operation using the standard naming convention for .NET 4.5 or higher. "
-                                                + "For .NET 3.5 the operation is implemented as a pair of methods using the standard naming convention of "
-                                                + "<b>Begin</b><i>{0}</i> and <b>End</b><i>{0}</i>.</p></div>";
+                const string net35PatternNote = " For .NET 3.5 the operation is implemented as a pair of methods using the standard naming convention of "
+                                                + "<b>Begin</b><i>{0}</i> and <b>End</b><i>{0}</i>.";
+                const string unityPatternNote = " The implementation for Unity takes a callback as a parameter.";
+                const string patternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
+                                           + "<p>This is an asynchronous operation using the standard naming convention for .NET 4.5 or higher."
+                                           + "{0}{1}</p></div>";
 
                 var name = this._methodInfo.Name.Substring(0, this._methodInfo.Name.Length - 5);
-                writer.WriteLine(net35PatternNote, name);
+                writer.WriteLine(patternNote, string.Format(net35PatternNote, name), this._unityVersionOfAsyncExists ? unityPatternNote : string.Empty);
+            }
+
+            if (this._referAsyncAlternativeUnity || this._referAsyncAlternativePCL)
+            {
+                string platforms = string.Empty;
+                if (this._referAsyncAlternativeUnity && this._referAsyncAlternativePCL)
+                {
+                    platforms = "PCL and Unity";
+                }
+                else if (this._referAsyncAlternativeUnity)
+                {
+                    platforms = "Unity";
+                }
+                else
+                {
+                    platforms = "PCL";
+                }
+                const string syncPatternNote =
+                    "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
+                    + "<p>Although this synchronous operation is not available in {0}, the asynchronous version is."
+                    +" The asynchronous alternative is named <i>{1}</i><b>Async</b>.</p></div>";
+
+                writer.WriteLine(syncPatternNote, platforms, _methodInfo.Name);
             }
         }
     }

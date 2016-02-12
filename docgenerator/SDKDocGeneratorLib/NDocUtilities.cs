@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using SDKDocGenerator.Writers;
 using System.Xml;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace SDKDocGenerator
 {
@@ -108,6 +109,7 @@ namespace SDKDocGenerator
                     parameters.Append(",");
                 if (param.ParameterType.IsGenericType)
                 {
+
                     parameters
                         .Append(param.ParameterType.GenericTypeName)
                         .Append("{")
@@ -125,6 +127,203 @@ namespace SDKDocGenerator
             var signature = parameters.Length > 0 
                 ? string.Format("M:{0}.{1}({2})", type.FullName, info.Name, parameters) 
                 : string.Format("M:{0}.{1}", type.FullName, info.Name);
+
+            XElement element;
+            if (!ndoc.TryGetValue(signature, out element))
+                return null;
+
+            return element;
+        }
+
+        /// <summary>
+        /// For methods that end in "Async", checks for the method with a similar signature, but following the Unity Async pattern.
+        /// </summary>
+        /// <param name="ndoc"></param>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public static XElement FindDocumentationUnityAsync(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        {
+            if (ndoc == null)
+                return null;
+            var type = info.DeclaringType;
+            var parameters = new StringBuilder();
+
+            if (!info.Name.EndsWith("Async", StringComparison.Ordinal))
+                return null;
+
+            foreach (var param in info.GetParameters())
+            {
+                if (parameters.Length > 0)
+                    parameters.Append(",");
+
+                // Unity parameters for Async methods exclude CancellationToken
+                if (param.ParameterType.FullName == "System.Threading.CancellationToken")
+                    break;
+
+                if (param.ParameterType.IsGenericType)
+                {
+                    parameters
+                        .Append(param.ParameterType.GenericTypeName)
+                        .Append("{")
+                        .Append(string.Join(",", param.ParameterType.GenericTypeArguments().Select(a => a.FullName)))
+                        .Append("}");
+                }
+                else
+                {
+                    parameters.Append(param.ParameterType.FullName);
+                    if (param.IsOut)
+                        parameters.Append("@");
+                }
+            }
+
+            Match match = Regex.Match(type.FullName, @"Amazon\.([a-zA-Z0-9]+)\.");
+            string service = match.Success ? match.Groups[1].Value : string.Empty;
+            match = Regex.Match(info.Name, @"(.*)Async");
+            string operationName = match.Success ? match.Groups[1].Value : string.Empty;
+
+            if (service == string.Empty || operationName == string.Empty)
+                return null;
+
+            // Unity Async methods have these additional parameters
+            parameters.Append("Amazon.Runtime.AmazonServiceCallback")
+                .Append("{")
+                .Append("Amazon.")
+                .Append(service)
+                .Append(".Model.")
+                .Append(operationName)
+                .Append("Request,Amazon.")
+                .Append(service)
+                .Append(".Model.")
+                .Append(operationName)
+                .Append("Response},Amazon.Runtime.AsyncOptions");
+
+            var signature = parameters.Length > 0
+                ? string.Format("M:{0}.{1}({2})", type.FullName, info.Name, parameters)
+                : string.Format("M:{0}.{1}", type.FullName, info.Name);
+
+            XElement element;
+            if (!ndoc.TryGetValue(signature, out element))
+                return null;
+
+            return element;
+        }
+
+        /// <summary>
+        /// For methods that DO NOT end in "Async", checks for the Async version of the method with
+        /// a similar signature, following the Unity Async pattern.
+        /// </summary>
+        /// <param name="ndoc"></param>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public static XElement FindDocumentationUnityAsyncAlternative(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        {
+            if (ndoc == null)
+                return null;
+            var type = info.DeclaringType;
+            if (type.FullName == null)
+                return null;
+            var parameters = new StringBuilder();
+
+            foreach (var param in info.GetParameters())
+            {
+                if (parameters.Length > 0)
+                    parameters.Append(",");
+
+                if (param.ParameterType.IsGenericType)
+                {
+                    parameters
+                        .Append(param.ParameterType.GenericTypeName)
+                        .Append("{")
+                        .Append(string.Join(",", param.ParameterType.GenericTypeArguments().Select(a => a.FullName)))
+                        .Append("}");
+                }
+                else
+                {
+                    parameters.Append(param.ParameterType.FullName);
+                    if (param.IsOut)
+                        parameters.Append("@");
+                }
+            }
+
+            if (parameters.Length > 0)
+                parameters.Append(",");
+
+            Match match = Regex.Match(type.FullName, @"Amazon\.([a-zA-Z0-9]+)\.");
+            string service = match.Success ? match.Groups[1].Value : string.Empty;
+
+            if (service == string.Empty)
+                return null;
+
+            // Unity Async methods have these additional parameters
+            parameters.Append("Amazon.Runtime.AmazonServiceCallback")
+                .Append("{")
+                .Append("Amazon.")
+                .Append(service)
+                .Append(".Model.")
+                .Append(info.Name)
+                .Append("Request,Amazon.")
+                .Append(service)
+                .Append(".Model.")
+                .Append(info.Name)
+                .Append("Response},Amazon.Runtime.AsyncOptions");
+
+            var signature = parameters.Length > 0
+                ? string.Format("M:{0}.{1}({2})", type.FullName, info.Name + "Async", parameters)
+                : string.Format("M:{0}.{1}", type.FullName, info.Name + "Async");
+
+            XElement element;
+            if (!ndoc.TryGetValue(signature, out element))
+                return null;
+
+            return element;
+        }
+
+        /// <summary>
+        /// For methods that DO NOT end in "Async", checks for the Async version of the method with
+        /// a similar signature, following the PCL/.Net45 Async pattern.
+        /// </summary>
+        /// <param name="ndoc"></param>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public static XElement FindDocumentationPCLAsyncAlternative(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        {
+            if (ndoc == null)
+                return null;
+            var type = info.DeclaringType;
+            if (type.FullName == null)
+                return null;
+            var parameters = new StringBuilder();
+
+            foreach (var param in info.GetParameters())
+            {
+                if (parameters.Length > 0)
+                    parameters.Append(",");
+
+                if (param.ParameterType.IsGenericType)
+                {
+                    parameters
+                        .Append(param.ParameterType.GenericTypeName)
+                        .Append("{")
+                        .Append(string.Join(",", param.ParameterType.GenericTypeArguments().Select(a => a.FullName)))
+                        .Append("}");
+                }
+                else
+                {
+                    parameters.Append(param.ParameterType.FullName);
+                    if (param.IsOut)
+                        parameters.Append("@");
+                }
+            }
+
+            if (parameters.Length > 0)
+                parameters.Append(",");
+
+            // PCL Async methods have this additional parameter
+            parameters.Append("System.Threading.CancellationToken");
+
+            var signature = parameters.Length > 0
+                ? string.Format("M:{0}.{1}({2})", type.FullName, info.Name + "Async", parameters)
+                : string.Format("M:{0}.{1}", type.FullName, info.Name + "Async");
 
             XElement element;
             if (!ndoc.TryGetValue(signature, out element))

@@ -223,7 +223,6 @@ namespace <#=this.Config.Namespace#>
 <#
 			}
 
-		this.FormatUnityOperationDocumentationSync(operation, false);
 			if(operation.IsDeprecated)
 			{
 #>
