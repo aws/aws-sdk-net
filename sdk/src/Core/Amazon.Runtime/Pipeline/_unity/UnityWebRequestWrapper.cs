@@ -44,9 +44,6 @@ namespace Amazon.Runtime.Internal
         {
             unityWebRequestType = Type.GetType("UnityEngine.Experimental.Networking.UnityWebRequest, UnityEngine");
 
-            if (unityWebRequestType == null)
-                throw new Exception("UnityWebRequest is not supported in the current version of unity");
-
             unityWebRequestMethods = unityWebRequestType.GetMethods();
             unityWebRequestProperties = unityWebRequestType.GetProperties();
 
@@ -80,6 +77,9 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public UnityWebRequestWrapper()
         {
+            if (!AWSConfigs.UnityWebRequestInitialized)
+                throw new InvalidOperationException("UnityWebRequest is not supported in the current version of unity");
+
             unityWebRequestInstance = Activator.CreateInstance(unityWebRequestType);
         }
 
@@ -102,6 +102,12 @@ namespace Amazon.Runtime.Internal
         /// <param name="uploadHandler">Instance of <see cref="UploadHandlerRawWrapper"/></param>
         public UnityWebRequestWrapper(string url, string method, DownloadHandlerBufferWrapper downloadHandler, UploadHandlerRawWrapper uploadHandler)
         {
+            if (downloadHandler == null)
+                throw new ArgumentNullException("downloadHandler");
+
+            if (uploadHandler == null)
+                throw new ArgumentNullException("uploadHandler");
+
             unityWebRequestInstance = Activator.CreateInstance(unityWebRequestType, url, method, downloadHandler.Instance, uploadHandler.Instance);
         }
 
@@ -112,6 +118,9 @@ namespace Amazon.Runtime.Internal
         {
             set
             {
+                if (value == null)
+                    throw new ArgumentNullException("DownloadHandler");
+
                 downloadHandlerSetMethod.Invoke(unityWebRequestInstance, new object[] { value.Instance });
                 this.downloadHandler = value;
             }
@@ -128,6 +137,9 @@ namespace Amazon.Runtime.Internal
         {
             set
             {
+                if (value == null)
+                    throw new ArgumentNullException("UploadHandler");
+
                 uploadHandlerSetMethod.Invoke(unityWebRequestInstance, new object[] { value.Instance });
                 this.uploadHandler = value;
             }
@@ -221,12 +233,11 @@ namespace Amazon.Runtime.Internal
             get
             {
                 object responseCodeObject = responseCodeGetMethod.Invoke(unityWebRequestInstance, null);
-                if (responseCodeObject != null)
-                {
-                    long responseCode = (long)responseCodeObject;
-                    return (HttpStatusCode)responseCode;
-                }
-                return null;
+                long responseCode = (long)responseCodeObject;
+                if (responseCode == -1)
+                    return null;
+
+                return (HttpStatusCode)responseCode;
             }
         }
 

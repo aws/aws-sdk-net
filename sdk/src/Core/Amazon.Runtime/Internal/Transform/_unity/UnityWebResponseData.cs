@@ -24,6 +24,7 @@ using Amazon.Runtime.Internal.Util;
 using Logger = Amazon.Runtime.Internal.Util.Logger;
 using ILogger = Amazon.Runtime.Internal.Util.ILogger;
 using UnityEngine.Experimental.Networking;
+using System.Text;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -45,7 +46,7 @@ namespace Amazon.Runtime.Internal.Transform
             if (!unityWebRequest.IsError)
             {
                 _responseBody = unityWebRequest.DownloadHandler.Data;
-                
+
                 if (_responseBody == null)
                 {
                     _responseBody = new byte[0];
@@ -53,31 +54,25 @@ namespace Amazon.Runtime.Internal.Transform
 
                 _responseStream = new MemoryStream(_responseBody);
 
-                if (unityWebRequest.DownloadHandler.Data == null || unityWebRequest.DownloadHandler.Data.Length == 0)
-                    this.ContentLength = 0;
-                else
-                    this.ContentLength = (long)unityWebRequest.DownloadedBytes;
-                
+                this.ContentLength = _responseBody.LongLength;
+
                 string contentType = null;
 
                 this._headers.TryGetValue(HeaderKeys.ContentTypeHeader, out contentType);
 
                 this.ContentType = contentType;
-                
-                if (unityWebRequest.StatusCode != null && unityWebRequest.StatusCode.HasValue)
+
+                if (unityWebRequest.StatusCode.HasValue)
                     this.StatusCode = unityWebRequest.StatusCode.Value;
-                
+
                 this.IsSuccessStatusCode = this.StatusCode >= HttpStatusCode.OK && this.StatusCode <= (HttpStatusCode)299;
             }
             else
             {
                 this.IsSuccessStatusCode = false;
-                this._responseBody = System.Text.UTF8Encoding.UTF8.GetBytes(unityWebRequest.Error);
-                if ((_responseBody != null && _responseBody.Length > 0) || (_responseBody.Length == 0 && unityWebRequest.Error == null))
-                {
-                    _responseStream = new MemoryStream(_responseBody);
-                }
-
+                this._responseBody = UTF8Encoding.UTF8.GetBytes(unityWebRequest.Error);
+                _responseStream = new MemoryStream(_responseBody);
+                
                 if (unityWebRequest.DownloadedBytes > 0)
                 {
                     this.ContentLength = (long)unityWebRequest.DownloadedBytes;
@@ -87,7 +82,11 @@ namespace Amazon.Runtime.Internal.Transform
                     string contentLength = null;
                     if (this._headers.TryGetValue(HeaderKeys.ContentLengthHeader, out contentLength))
                     {
-                        this.ContentLength = long.Parse(contentLength);
+                        long cl;
+                        if(long.TryParse(contentLength,out cl))
+                            this.ContentLength = cl;
+                        else
+                            this.ContentLength = 0;
                     }
                     else
                     {
@@ -95,7 +94,7 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                 }
 
-                if (unityWebRequest.StatusCode == null && unityWebRequest.StatusCode.HasValue)
+                if (unityWebRequest.StatusCode.HasValue)
                 {
                     this.StatusCode = unityWebRequest.StatusCode.Value;
                 }
@@ -104,7 +103,7 @@ namespace Amazon.Runtime.Internal.Transform
                     string statusCode = null;
                     if (this._headers.TryGetValue(HeaderKeys.StatusHeader, out statusCode))
                     {
-                        this.ContentLength = long.Parse(statusCode);
+                        this.StatusCode = (HttpStatusCode)Enum.Parse(typeof(HttpStatusCode), statusCode);
                     }
                     else
                     {
@@ -151,8 +150,7 @@ namespace Amazon.Runtime.Internal.Transform
                 if (string.IsNullOrEmpty(wwwRequest.error))
                 {
                     string statusHeader = string.Empty;
-                    this._headers.TryGetValue(HeaderKeys.StatusHeader, out statusHeader);
-                    if (!string.IsNullOrEmpty(statusHeader))
+                    if (this._headers.TryGetValue(HeaderKeys.StatusHeader, out statusHeader))
                     {
                         this.StatusCode = (HttpStatusCode)Enum.Parse(
                         typeof(HttpStatusCode),
@@ -223,16 +221,8 @@ namespace Amazon.Runtime.Internal.Transform
 
         private void CopyHeaderValues(Dictionary<string, string> headers)
         {
-            var keys = headers.Keys.ToArray<string>();
-            _headerNames = new string[keys.Length];
-            _headers = new Dictionary<string, string>(keys.Length, StringComparer.OrdinalIgnoreCase);
-            for (int i = 0; i < keys.Length; i++)
-            {
-                var key = keys[i];
-                var headerValue = headers[key];
-                _headerNames[i] = key;
-                _headers.Add(key, headerValue);
-            }
+            _headers = new Dictionary<string, string>(headers, StringComparer.OrdinalIgnoreCase);
+            _headerNames = headers.Keys.ToArray<string>();
             _headerNamesSet = new HashSet<string>(_headerNames, StringComparer.OrdinalIgnoreCase);
         }
 

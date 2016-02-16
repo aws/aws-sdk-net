@@ -67,6 +67,7 @@ namespace Amazon
             return null;
         }
 
+        private static HttpClientOption _httpClient;
         /// <summary>
         /// The Unity Api used for making HTTP calls. Defaults to WWW.
         /// UnityWebRequest API is allows you access to more AWS Services 
@@ -74,10 +75,31 @@ namespace Amazon
         /// </summary>
         public static HttpClientOption HttpClient
         {
-            get;
-            set;
+            get
+            {
+                return _httpClient;
+            }
+            set
+            {
+                if (value == HttpClientOption.UnityWebRequest)
+                {
+                    var unityWebRequestType = Type.GetType("UnityEngine.Experimental.Networking.UnityWebRequest, UnityEngine");
+
+                    if (unityWebRequestType == null)
+                    {
+                        UnityWebRequestInitialized = false;
+                        throw new InvalidOperationException("UnityWebRequest is not supported in the current version of unity");
+                    }
+                    else
+                    {
+                        UnityWebRequestInitialized = true;
+                    }
+                }
+                _httpClient = value;
+            }
         }
 
+        internal static bool UnityWebRequestInitialized;
 
         /// <summary>
         /// The Unity Api used for making HTTP calls
