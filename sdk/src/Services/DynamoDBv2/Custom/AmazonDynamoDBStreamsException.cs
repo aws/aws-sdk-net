@@ -28,6 +28,7 @@ namespace Amazon.DynamoDBv2
     ///<summary>
     /// Common exception for the DynamoDBStreams service.
     /// </summary>
+	[Obsolete("This exception type is never thrown and will be removed in a future version.")]
     public class AmazonDynamoDBStreamsException : AmazonServiceException
     {
         /// <summary>

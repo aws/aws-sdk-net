@@ -104,8 +104,12 @@ namespace ServiceClientGenerator
         private static readonly Dictionary<string, ProjectFileCreator.ProjectConfigurationData> NewlyCreatedProjectFiles
             = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
 
+        public HashSet<string> FilesWrittenToGeneratorFolder {get; private set;}
+
+
         public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
         {
+            FilesWrittenToGeneratorFolder = new HashSet<string>();
             GenerationManifest = generationManifest;
             Configuration = config;
             ProjectFileConfigurations = GenerationManifest.ProjectFileConfigurations;
@@ -133,7 +137,9 @@ namespace ServiceClientGenerator
 
         public void Execute()
         {
-            if (Options.Clean)
+            this.FilesWrittenToGeneratorFolder.Clear();
+
+            if (Options.Clean &&  this.Configuration.ParentConfig == null)
             {
                 Console.WriteLine(@"-clean option set, deleting previously-generated code under .\Generated subfolders");
 
@@ -146,12 +152,12 @@ namespace ServiceClientGenerator
             ExecuteGenerator(new ServiceInterface(), "IAmazon" + Configuration.BaseName + ".cs", Bcl35SubFolder);
 
             // .NET Framework 4.5 version
-            ExecuteGenerator45(new ServiceClients45(), "Amazon" + Configuration.BaseName + "Client.cs", Bcl45SubFolder);
-            ExecuteGenerator45(new ServiceInterface45(), "IAmazon" + Configuration.BaseName + ".cs", Bcl45SubFolder);
+            ExecuteGenerator(new ServiceClients45(), "Amazon" + Configuration.BaseName + "Client.cs", Bcl45SubFolder);
+            ExecuteGenerator(new ServiceInterface45(), "IAmazon" + Configuration.BaseName + ".cs", Bcl45SubFolder);
 
             // Phone/Rt/Portable version
-            ExecuteGeneratorMobile(new ServiceClientsMobile(), "Amazon" + Configuration.BaseName + "Client.cs", MobileSubFolder);
-            ExecuteGeneratorMobile(new ServiceInterfaceMobile(), "IAmazon" + Configuration.BaseName + ".cs", MobileSubFolder);
+            ExecuteGenerator(new ServiceClientsMobile(), "Amazon" + Configuration.BaseName + "Client.cs", MobileSubFolder);
+            ExecuteGenerator(new ServiceInterfaceMobile(), "IAmazon" + Configuration.BaseName + ".cs", MobileSubFolder);
 
             // Do not generate AssemblyInfo.cs and nuspec file for child model.
             // Use the one generated for the parent model.
@@ -1033,33 +1039,10 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            WriteFile(GeneratedFilesRoot, subNamespace, fileName, text);
-        }
 
-        /// <summary>
-        /// Runs the generator and saves the content into _bcl45 directory under the generated files root.
-        /// </summary>
-        /// <param name="generator">The generator to use for outputting the text of the cs file</param>
-        /// <param name="fileName">The name of the cs file</param>
-        /// <param name="subNamespace">Adds an additional directory for the namespace</param>
-        void ExecuteGenerator45(BaseGenerator generator, string fileName, string subNamespace = null)
-        {
-            generator.Config = this.Configuration;
-            var text = generator.TransformText();
-            WriteFile(GeneratedFilesRoot, subNamespace, fileName, text);
-        }
-
-        /// <summary>
-        /// Runs the generator and saves the content into _mobile directory under the generated files root.
-        /// </summary>
-        /// <param name="generator">The generator to use for outputting the text of the cs file</param>
-        /// <param name="fileName">The name of the cs file</param>
-        /// <param name="subNamespace">Adds an additional directory for the namespace</param>
-        void ExecuteGeneratorMobile(BaseGenerator generator, string fileName, string subNamespace = null)
-        {
-            generator.Config = this.Configuration;
-            var text = generator.TransformText();
-            WriteFile(GeneratedFilesRoot, subNamespace, fileName, text);
+            string outputFile;
+            WriteFile(GeneratedFilesRoot, subNamespace, fileName, text, true, true, out outputFile);
+            FilesWrittenToGeneratorFolder.Add(outputFile);
         }
 
         /// <summary>
@@ -1107,6 +1090,17 @@ namespace ServiceClientGenerator
             WriteFile(TestFilesRoot, outputSubFolder, fileName, text);
         }
 
+        internal static bool WriteFile(string baseOutputDir,
+                                       string subNamespace,
+                                       string filename,
+                                       string content,
+                                       bool trimWhitespace = true,
+                                       bool replaceTabs = true)
+        {
+            string outputFilePath;
+            return WriteFile(baseOutputDir, subNamespace, filename, content, trimWhitespace, replaceTabs, out outputFilePath);
+        }
+
         /// <summary>
         /// Writes the contents to disk. The content will by default be trimmed of all white space and 
         /// all tabs are replaced with spaces to make the output consistent.
@@ -1122,8 +1116,9 @@ namespace ServiceClientGenerator
                                        string subNamespace,
                                        string filename,
                                        string content,
-                                       bool trimWhitespace = true,
-                                       bool replaceTabs = true)
+                                       bool trimWhitespace,
+                                       bool replaceTabs,
+                                       out string outputFilePath)
         {
             var outputDir = !string.IsNullOrEmpty(subNamespace)
                 ? Path.Combine(baseOutputDir, subNamespace.Replace('.', '\\'))
@@ -1136,15 +1131,15 @@ namespace ServiceClientGenerator
             if (replaceTabs)
                 cleanContent = cleanContent.Replace("\t", "    ");
 
-            var filePath = Path.Combine(outputDir, filename);
-            if (File.Exists(filePath))
+            outputFilePath = Path.GetFullPath(Path.Combine(outputDir, filename));
+            if (File.Exists(outputFilePath))
             {
-                var existingContent = File.ReadAllText(filePath);
+                var existingContent = File.ReadAllText(outputFilePath);
                 if (string.Equals(existingContent, cleanContent))
                     return false;
             }
 
-            File.WriteAllText(filePath, cleanContent);
+            File.WriteAllText(outputFilePath, cleanContent);
             Console.WriteLine("...created/updated {0}", filename);
             return true;
         }
@@ -1237,6 +1232,23 @@ namespace ServiceClientGenerator
         {
             var command = new CodeAnalysisProjectCreator();
             command.Execute(CodeAnalysisRoot, this.Configuration);
+        }
+
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string rootFolder)
+        {
+            // Remove orphaned shapes. Most likely due to taking in a model that was still under development.
+            foreach (var file in Directory.GetFiles(rootFolder, "*.cs", SearchOption.AllDirectories))
+            {
+                var fullPath = Path.GetFullPath(file);
+                if (fullPath.IndexOf(string.Format(@"\{0}\", GeneratedCodeFoldername), StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+
+                if (!generatedFiles.Contains(fullPath))
+                {
+                    Console.Error.WriteLine("**** Warning: Removing orphaned generated code " + Path.GetFileName(file));
+                    File.Delete(file);
+                }
+            }
         }
     }
 }
