@@ -28,13 +28,30 @@ namespace AWSSDK.IntegrationTests.S3
         public void Initialize()
         {
             relativeFilePath = S3TestUtils.GetFileHelper("PutObjectFile.txt");
-            StreamWriter writer = File.CreateText(relativeFilePath);
-            writer.Write("This is some sample text.!!");
-            writer.Close();
+            
+            using (StreamWriter writer = File.CreateText(relativeFilePath))
+            {
+                writer.Write("This is some sample text.!!");
+                writer.Close();
+            }
+            bucketName = "unity-test-bucket" + DateTime.Now.Ticks;
 
-            bucketName = S3TestUtils.CreateBucket(Client);
+            AutoResetEvent ars = new AutoResetEvent(false);
+            Exception exception = null;
+            Client.PutBucketAsync(bucketName, (result) =>
+            {
+                if (result.Exception != null)
+                    exception = result.Exception;
+
+                ars.Set();
+            });
+
+            ars.WaitOne();
+            if (exception != null)
+                throw exception;
+
         }
-        
+
         [OneTimeTearDown]
         public void ClassCleanup()
         {
@@ -48,6 +65,7 @@ namespace AWSSDK.IntegrationTests.S3
             GetBucketVersioningResponse versioning = null;
             Exception exception = null;
             var mre = new AutoResetEvent(false);
+
             Client.GetBucketVersioningAsync(bucketName, (result) =>
             {
                 versioning = result.Response;
@@ -192,6 +210,7 @@ namespace AWSSDK.IntegrationTests.S3
                 mre.Set();
             }, options);
             mre.WaitOne();
+            
             Assert.IsTrue(response.ETag.Length > 0);
         }
 
@@ -209,7 +228,7 @@ namespace AWSSDK.IntegrationTests.S3
             };
             PutObjectResponse response = null;
             Client.PutObjectAsync(request, (result) =>
-            {
+            {   
                 exception = result.Exception as AmazonServiceException;
                 response = result.Response;
                 mre.Set();

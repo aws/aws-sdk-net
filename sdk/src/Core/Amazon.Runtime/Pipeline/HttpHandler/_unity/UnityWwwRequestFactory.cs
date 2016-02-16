@@ -180,7 +180,7 @@ namespace Amazon.Runtime.Internal
 
                 //timeout scenario
                 if (this.Exception == null && this.Response == null)
-                    throw new WebException("Request timedout", WebExceptionStatus.Timeout);
+                    throw new WebException("Request timed out", WebExceptionStatus.Timeout);
 
                 return this.Response;
             }

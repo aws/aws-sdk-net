@@ -161,14 +161,14 @@ namespace Amazon.Runtime.Internal
                         yield return null;
                     }
                     
-                    var unityWebRequest = new UnityEngine.Experimental.Networking.UnityWebRequest(
+                    var unityWebRequest = new UnityWebRequestWrapper(
                         unityRequest.RequestUri.AbsoluteUri,
                         unityRequest.Method);
 
-                    unityWebRequest.downloadHandler = new UnityEngine.Experimental.Networking.DownloadHandlerBuffer();
+                    unityWebRequest.DownloadHandler = new DownloadHandlerBufferWrapper();
 
                     if (request.RequestContent != null && request.RequestContent.Length > 0)
-                        unityWebRequest.uploadHandler = new UnityEngine.Experimental.Networking.UploadHandlerRaw(request.RequestContent);
+                        unityWebRequest.UploadHandler = new UploadHandlerRawWrapper(request.RequestContent);
 
                     bool uploadCompleted = false;
 

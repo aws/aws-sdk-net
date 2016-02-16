@@ -40,7 +40,7 @@ namespace AWSSDK.IntegrationTests.S3
 
         }
 
-        // [OneTimeTearDown]
+        [OneTimeTearDown]
         public void TearDown()
         {
             S3TestUtils.CleanBucket(Client, BucketName);

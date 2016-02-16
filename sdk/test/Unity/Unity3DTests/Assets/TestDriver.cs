@@ -48,7 +48,6 @@ namespace AWSSDK.Tests
 #if UNITY_EDITOR || UNITY_IOS
                     StartTests();
 #endif
-
                 }
                 else
                 {
@@ -152,15 +151,14 @@ namespace AWSSDK.Tests
 
         public void OnTestFinished(int pass, int fail, AWSConfigs.HttpClientOption hco, HashSet<string> failedTestCases)
         {
-
             if (hco == AWSConfigs.HttpClientOption.UnityWebRequest)
             {
                 failedUWRTests.UnionWith(failedTestCases);
             }
-            else {
+            else
+            {
                 failedWWWTests.UnionWith(failedTestCases);
             }
-
 
             if (!allTestsStarted)
             {
@@ -169,7 +167,7 @@ namespace AWSSDK.Tests
             }
 
             Debug.Log(string.Format(@"the following test cases will be retried for WWW = {0} & UWR= {1}",
-                string.Join(",", failedUWRTests.ToArray<string>()), string.Join(",", failedWWWTests.ToArray<string>())));
+                string.Join(",", failedWWWTests.ToArray<string>()), string.Join(",", failedUWRTests.ToArray<string>())));
 
             if (retryCount < 3 && (failedUWRTests.Count > 0 || failedWWWTests.Count > 0))
             {
@@ -245,14 +243,28 @@ namespace AWSSDK.Tests
         {
             runner = new TestRunner();
 
+            var httpClients = new List<AWSConfigs.HttpClientOption>(){ AWSConfigs.HttpClientOption.UnityWWW };
+
+            if (Type.GetType("UnityEngine.Experimental.Networking.UnityWebRequest, UnityEngine") != null)
+            {
+                httpClients.Add(AWSConfigs.HttpClientOption.UnityWebRequest);
+            }
+
+            Debug.Log(@"Added the following http clients");
+            
+            foreach (var hc in httpClients)
+            {
+                Debug.Log(hc.ToString());
+            }
+
             EnsureBackgroundExecution(() =>
             {
                 int count = 0;
-                foreach (var httpClient in new AWSConfigs.HttpClientOption[]
-                    { AWSConfigs.HttpClientOption.UnityWebRequest,
-                        AWSConfigs.HttpClientOption.UnityWWW })
+                foreach (var httpClient in httpClients)
                 {
-                    if (count == 1)
+                    count++;
+
+                    if (count == httpClients.Count)
                         allTestsStarted = true;
 
                     AWSConfigs.HttpClient = httpClient;
@@ -261,7 +273,6 @@ namespace AWSSDK.Tests
                     {
                         runner.HttpClient = httpClient;
                         runner.RunTestsWithCategory("WWW");
-
                     }
                     else
                     {
@@ -270,8 +281,6 @@ namespace AWSSDK.Tests
                     }
 
                     Thread.Sleep(TimeSpan.FromSeconds(5));
-
-                    count++;
                 }
             });
         }

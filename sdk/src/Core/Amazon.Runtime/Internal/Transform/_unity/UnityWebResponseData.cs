@@ -28,46 +28,89 @@ using UnityEngine.Experimental.Networking;
 namespace Amazon.Runtime.Internal.Transform
 {
     /// <summary>
-    /// Implementation of response interface for WWW API.
+    /// Implementation of response interface for WWW/UnityWebRequest API.
     /// </summary>
     public sealed class UnityWebResponseData : IWebResponseData, IHttpResponseBody
     {
-
         private Dictionary<string, string> _headers;
+        private string[] _headerNames;
+        private HashSet<string> _headerNamesSet;
         private Stream _responseStream;
         private byte[] _responseBody;
-
         private ILogger _logger;
 
-        public UnityWebResponseData(UnityWebRequest unityWebRequest)
+        public UnityWebResponseData(UnityWebRequestWrapper unityWebRequest)
         {
-            if (!unityWebRequest.isError)
+            CopyHeaderValues(unityWebRequest.ResponseHeaders);
+            if (!unityWebRequest.IsError)
             {
-                _headers = unityWebRequest.GetResponseHeaders();
-
-                _responseBody = unityWebRequest.downloadHandler.data;
-
-                if ((_responseBody != null && _responseBody.Length > 0) || (_responseBody.Length == 0 && unityWebRequest.error == null))
+                _responseBody = unityWebRequest.DownloadHandler.Data;
+                
+                if (_responseBody == null)
                 {
-                    _responseStream = new MemoryStream(_responseBody);
+                    _responseBody = new byte[0];
                 }
-                this.ContentLength = (long)unityWebRequest.downloadedBytes;
+
+                _responseStream = new MemoryStream(_responseBody);
+
+                if (unityWebRequest.DownloadHandler.Data == null || unityWebRequest.DownloadHandler.Data.Length == 0)
+                    this.ContentLength = 0;
+                else
+                    this.ContentLength = (long)unityWebRequest.DownloadedBytes;
+                
                 string contentType = null;
+
                 this._headers.TryGetValue(HeaderKeys.ContentTypeHeader, out contentType);
+
                 this.ContentType = contentType;
-                this.StatusCode = (HttpStatusCode)unityWebRequest.responseCode;
+                
+                if (unityWebRequest.StatusCode != null && unityWebRequest.StatusCode.HasValue)
+                    this.StatusCode = unityWebRequest.StatusCode.Value;
+                
                 this.IsSuccessStatusCode = this.StatusCode >= HttpStatusCode.OK && this.StatusCode <= (HttpStatusCode)299;
             }
             else
             {
                 this.IsSuccessStatusCode = false;
-                this._responseBody = System.Text.UTF8Encoding.UTF8.GetBytes(unityWebRequest.error);
-                if ((_responseBody != null && _responseBody.Length > 0) || (_responseBody.Length == 0 && unityWebRequest.error == null))
+                this._responseBody = System.Text.UTF8Encoding.UTF8.GetBytes(unityWebRequest.Error);
+                if ((_responseBody != null && _responseBody.Length > 0) || (_responseBody.Length == 0 && unityWebRequest.Error == null))
                 {
                     _responseStream = new MemoryStream(_responseBody);
                 }
-                this.ContentLength = (long)unityWebRequest.downloadedBytes;
-                this.StatusCode = 0;
+
+                if (unityWebRequest.DownloadedBytes > 0)
+                {
+                    this.ContentLength = (long)unityWebRequest.DownloadedBytes;
+                }
+                else
+                {
+                    string contentLength = null;
+                    if (this._headers.TryGetValue(HeaderKeys.ContentLengthHeader, out contentLength))
+                    {
+                        this.ContentLength = long.Parse(contentLength);
+                    }
+                    else
+                    {
+                        this.ContentLength = this._responseBody.Length;
+                    }
+                }
+
+                if (unityWebRequest.StatusCode == null && unityWebRequest.StatusCode.HasValue)
+                {
+                    this.StatusCode = unityWebRequest.StatusCode.Value;
+                }
+                else
+                {
+                    string statusCode = null;
+                    if (this._headers.TryGetValue(HeaderKeys.StatusHeader, out statusCode))
+                    {
+                        this.ContentLength = long.Parse(statusCode);
+                    }
+                    else
+                    {
+                        this.StatusCode = 0;
+                    }
+                }
             }
         }
 
@@ -81,7 +124,8 @@ namespace Amazon.Runtime.Internal.Transform
         public UnityWebResponseData(WWW wwwRequest)
         {
             _logger = Logger.GetLogger(this.GetType());
-            _headers = wwwRequest.responseHeaders;
+            CopyHeaderValues(wwwRequest.responseHeaders);
+
             try
             {
                 _responseBody = wwwRequest.bytes;
@@ -100,14 +144,14 @@ namespace Amazon.Runtime.Internal.Transform
 
             string contentType = null;
             this._headers.TryGetValue(
-                HeaderKeys.ContentTypeHeader.ToUpperInvariant(), out contentType);
+                HeaderKeys.ContentTypeHeader, out contentType);
             this.ContentType = contentType;
             try
             {
                 if (string.IsNullOrEmpty(wwwRequest.error))
                 {
                     string statusHeader = string.Empty;
-                    this._headers.TryGetValue(HeaderKeys.StatusHeader.ToUpperInvariant(), out statusHeader);
+                    this._headers.TryGetValue(HeaderKeys.StatusHeader, out statusHeader);
                     if (!string.IsNullOrEmpty(statusHeader))
                     {
                         this.StatusCode = (HttpStatusCode)Enum.Parse(
@@ -157,38 +201,39 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public bool IsSuccessStatusCode { get; private set; }
 
-        /// <summary>
-        /// Returns an array of header names.
-        /// </summary>
-        /// <returns>Array of header names.</returns>
-        public string[] GetHeaderNames()
-        {
-            return _headers.Keys.ToArray();
-        }
 
-        /// <summary>
-        /// Returns a boolean value indicating if the
-        /// given header is present in the headers collection.
-        /// </summary>
-        /// <param name="headerName">Header name.</param>
-        /// <returns>True if the header is present, else false.</returns>
         public bool IsHeaderPresent(string headerName)
         {
-            return _headers.ContainsKey(headerName.ToUpperInvariant()) || _headers.ContainsKey(headerName);
+            return _headerNamesSet.Contains(headerName);
         }
 
-        /// <summary>
-        /// Gets the value for the given header.
-        /// </summary>
-        /// <param name="headerName">Header name.</param>
-        /// <returns>Header value.</returns>
-        public string GetHeaderValue(string headerName)
+        public string[] GetHeaderNames()
         {
-            string headerValue = null;
-            if (!_headers.TryGetValue(headerName.ToUpperInvariant(), out headerValue))
-                _headers.TryGetValue(headerName, out headerValue);
+            return _headerNames;
+        }
 
-            return headerValue;
+        public string GetHeaderValue(string name)
+        {
+            string headerValue;
+            if (_headers.TryGetValue(name, out headerValue))
+                return headerValue;
+
+            return string.Empty;
+        }
+
+        private void CopyHeaderValues(Dictionary<string, string> headers)
+        {
+            var keys = headers.Keys.ToArray<string>();
+            _headerNames = new string[keys.Length];
+            _headers = new Dictionary<string, string>(keys.Length, StringComparer.OrdinalIgnoreCase);
+            for (int i = 0; i < keys.Length; i++)
+            {
+                var key = keys[i];
+                var headerValue = headers[key];
+                _headerNames[i] = key;
+                _headers.Add(key, headerValue);
+            }
+            _headerNamesSet = new HashSet<string>(_headerNames, StringComparer.OrdinalIgnoreCase);
         }
 
         /// <summary>

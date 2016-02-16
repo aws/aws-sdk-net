@@ -53,7 +53,7 @@ namespace Amazon
             if (gameObject != null)
             {
                 gameObject.AddComponent<UnityInitializer>();
-                UnityEngine.Debug.LogFormat(@"Attached unity initializer to {0}", gameObject.name);
+                UnityEngine.Debug.Log(string.Format(@"Attached unity initializer to {0}", gameObject.name));
             }
             else
             {

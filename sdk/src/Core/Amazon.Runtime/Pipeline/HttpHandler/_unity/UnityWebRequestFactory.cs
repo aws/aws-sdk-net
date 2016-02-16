@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Net;
 using System.Threading;
 using UnityEngine.Experimental.Networking;
 
@@ -180,6 +181,10 @@ namespace Amazon.Runtime.Internal
                 if (this.Exception != null)
                     throw this.Exception;
 
+                //timeout scenario
+                if (this.Exception == null && this.Response == null)
+                    throw new WebException("Request timed out", WebExceptionStatus.Timeout);
+
                 return this.Response;
             }
             finally
@@ -295,7 +300,7 @@ namespace Amazon.Runtime.Internal
 
         ~UnityRequest()
         {
-
+            Dispose(false);
         }
 
         private bool _disposed;
