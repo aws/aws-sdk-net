@@ -15,6 +15,7 @@
 // limitations under the License.
 //
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 using Amazon.Util.Internal.PlatformServices;
@@ -30,18 +31,21 @@ namespace Amazon.CognitoSync.SyncManager
 
         INetworkReachability _netReachability;
 
+        private AsyncOptions OnConnectivityOptions = null;
+
         /// <summary>
         /// Synchronize <see cref="Dataset"/> between local storage and remote storage.
         /// </summary>
-        public virtual void Synchronize()
+        public virtual void SynchronizeAsync(AsyncOptions options = null)
         {
+            options = options == null ? new AsyncOptions() : options;
             if (_netReachability.NetworkStatus == NetworkStatus.NotReachable)
             {
-                FireSyncFailureEvent(new NetworkException("Network connectivity unavailable."));
+                FireSyncFailureEvent(new NetworkException("Network connectivity unavailable."), options);
                 return;
             }
 
-            SynchronizeHelperAsync();
+            SynchronizeHelperAsync(options);
         }
 
         private void DatasetSetupInternal()
@@ -53,21 +57,22 @@ namespace Amazon.CognitoSync.SyncManager
         /// <summary>
         /// Attempt to synchronize <see cref="Dataset"/> when connectivity is available. If
         /// the connectivity is available right away, it behaves the same as
-        /// <see cref="Dataset.Synchronize()"/>. Otherwise it listens to connectivity
+        /// <see cref="Dataset.SynchronizeAsync(AsyncOptions)"/>. Otherwise it listens to connectivity
         /// changes, and will do a sync once the connectivity is back. Note that if
         /// this method is called multiple times, only the last synchronize request
         /// is kept. If either the dataset or the callback is garbage collected
         /// , this method will not perform a sync and the callback won't fire.
         /// </summary>
-        public virtual void SynchronizeOnConnectivity()
+        public virtual void SynchronizeOnConnectivity(AsyncOptions options = null)
         {
             if (_netReachability.NetworkStatus != NetworkStatus.NotReachable)
             {
-                Synchronize();
+                SynchronizeAsync(options);
             }
             else
             {
                 waitingForConnectivity = true;
+                OnConnectivityOptions = options;
             }
         }
 
@@ -80,7 +85,9 @@ namespace Amazon.CognitoSync.SyncManager
 
             if (e.Status != NetworkStatus.NotReachable)
             {
-                Synchronize();
+                var options = OnConnectivityOptions;
+                OnConnectivityOptions = null;
+                SynchronizeAsync(options);
             }
         }
 
@@ -100,7 +107,7 @@ namespace Amazon.CognitoSync.SyncManager
             }
         }
 
-        private void SynchronizeHelperAsync()
+        private void SynchronizeHelperAsync(AsyncOptions options)
         {
             try
             {
@@ -120,13 +127,58 @@ namespace Amazon.CognitoSync.SyncManager
                 InternalSDKUtils.AsyncExecutor(() =>
                 {
                     //make sure we have the updated credentials;
-                    SynchornizeInternal();
+                    SynchornizeInternal(options);
                 }, new AsyncOptions() { ExecuteCallbackOnMainThread = false });
             }
             catch (Exception e)
             {
-                FireSyncFailureEvent(e);
+                FireSyncFailureEvent(e, options);
                 _logger.Error(e, "");
+            }
+        }
+
+
+        /// <summary>
+        /// Fires a Sync Success Event
+        /// </summary>
+        /// <param name="records">List of records after successful sync</param>
+        /// <param name="options">AsyncOptions object that controls whether</param>
+        protected void FireSyncSuccessEvent(List<Record> records, AsyncOptions options)
+        {
+            if (options.ExecuteCallbackOnMainThread)
+            {
+                // Enqueue the callback so that the Unity main thread dispatcher 
+                // can invoke the callback on the main thread.
+                UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                {
+                    FireSyncSuccessEvent(records);
+                });
+            }
+            else
+            {
+                FireSyncSuccessEvent(records);
+            }
+        }
+
+        /// <summary>
+        /// Fires a Sync Failure event.
+        /// </summary>
+        /// <param name="exception">Exception object which caused the sync Failure</param>
+        /// <param name="options">AsyncOptions object that controls whether</param>
+        protected void FireSyncFailureEvent(Exception exception, AsyncOptions options)
+        {
+            if (options.ExecuteCallbackOnMainThread)
+            {
+                // Enqueue the callback so that the Unity main thread dispatcher 
+                // can invoke the callback on the main thread.
+                UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+                {
+                    FireSyncFailureEvent(exception);
+                });
+            }
+            else
+            {
+                FireSyncFailureEvent(exception);
             }
         }
     }
