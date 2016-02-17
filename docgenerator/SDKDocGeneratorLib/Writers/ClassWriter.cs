@@ -244,7 +244,12 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");
-            writer.WriteLine("<a href=\"./{0}\">{1}({2})</a>", FilenameGenerator.GenerateFilename(info), info.Name, FormatParameters(info.GetParameters()));
+            writer.WriteLine("<a href=\"{0}/items/{1}/{2}\">{3}({4})</a>",
+                RootRelativePath,
+                GenerationManifest.OutputSubFolderFromNamespace(info.DeclaringType.Namespace),
+                FilenameGenerator.GenerateFilename(info),
+                info.Name,
+                FormatParameters(info.GetParameters()));
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");
@@ -323,7 +328,11 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");
-            writer.WriteLine("<a href=\"./{0}\">{1}</a>", FilenameGenerator.GenerateFilename(info), info.Name);
+            writer.WriteLine("<a href=\"{0}/items/{1}/{2}\">{3}</a>",
+                RootRelativePath,
+                GenerationManifest.OutputSubFolderFromNamespace(info.DeclaringType.Namespace), 
+                FilenameGenerator.GenerateFilename(info),
+                info.Name);
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");

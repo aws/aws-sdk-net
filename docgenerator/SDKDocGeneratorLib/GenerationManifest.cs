@@ -57,7 +57,7 @@ namespace SDKDocGenerator
 
             var assemblyName = Path.GetFileNameWithoutExtension(AssemblyPath);
             ServiceName = assemblyName.StartsWith(AWSAssemblyNamePrefix + ".", StringComparison.OrdinalIgnoreCase)
-                ? assemblyName.Substring(AWSAssemblyNamePrefix.Length+1) 
+                ? assemblyName.Substring(AWSAssemblyNamePrefix.Length + 1)
                 : assemblyName;
 
             NDocTables = new Dictionary<string, IDictionary<string, XElement>>();
@@ -262,14 +262,22 @@ namespace SDKDocGenerator
 
             foreach (var item in type.GetMethodsToDocument())
             {
-                var itemWriter = new MethodWriter(this, version, item);
-                itemWriter.Write();
+                // If a method is in another namespace, it is inherited and should not be overwritten
+                if (item.DeclaringType.Namespace == type.Namespace)
+                {
+                    var itemWriter = new MethodWriter(this, version, item);
+                    itemWriter.Write();
+                }
             }
 
             foreach (var item in type.GetEvents())
             {
-                var itemWriter = new EventWriter(this, version, item);
-                itemWriter.Write();
+                // If an event is in another namespace, it is inherited and should not be overwritten
+                if (item.DeclaringType.Namespace == type.Namespace)
+                {
+                    var itemWriter = new EventWriter(this, version, item);
+                    itemWriter.Write();
+                }
             }
         }
     }
