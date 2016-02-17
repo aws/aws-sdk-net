@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
     public partial class CopyDBSnapshotRequest : AmazonRDSRequest
     {
         private bool? _copyTags;
+        private string _kmsKeyId;
         private string _sourceDBSnapshotIdentifier;
         private List<Tag> _tags = new List<Tag>();
         private string _targetDBSnapshotIdentifier;
@@ -62,6 +63,44 @@ namespace Amazon.RDS.Model
         internal bool IsSetCopyTags()
         {
             return this._copyTags.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB snapshot.
+        /// The KMS key identifier is the Amazon Resource Name (ARN) or the KMS key alias for
+        /// the KMS encryption key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you copy an unencrypted DB snapshot and specify a value for the <code>KmsKeyId</code>
+        /// parameter, Amazon RDS encrypts the target DB snapshot using the specified KMS encryption
+        /// key.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you copy an encrypted DB snapshot from your AWS account, you can specify a value
+        /// for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
+        /// don't specify a value for <code>KmsKeyId</code> then the copy of the DB snapshot is
+        /// encrypted with the same KMS key as the source DB snapshot. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you copy an encrypted DB snapshot that is shared from another AWS account, then
+        /// you must specify a value for <code>KmsKeyId</code>.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
