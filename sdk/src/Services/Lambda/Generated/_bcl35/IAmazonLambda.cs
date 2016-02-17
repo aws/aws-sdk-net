@@ -50,9 +50,9 @@ namespace Amazon.Lambda
         /// <summary>
         /// Adds a permission to the resource policy associated with the specified AWS Lambda
         /// function. You use resource policies to grant permissions to event sources that use
-        /// "push" model. In "push" model, event sources (such as Amazon S3 and custom applications)
-        /// invoke your Lambda function. Each permission you add to the resource policy allows
-        /// an event source, permission to invoke the Lambda function. 
+        /// <i>push</i> model. In a <i>push</i> model, event sources (such as Amazon S3 and custom
+        /// applications) invoke your Lambda function. Each permission you add to the resource
+        /// policy allows an event source, permission to invoke the Lambda function. 
         /// 
         ///  
         /// <para>
@@ -61,11 +61,10 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// If you are using versioning feature (see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
-        /// Lambda Function Versioning and Aliases</a>), a Lambda function can have multiple ARNs
-        /// that can be used to invoke the function. Note that, each permission you add to resource
-        /// policy using this API is specific to an ARN, specified using the <code>Qualifier</code>
-        /// parameter
+        /// If you are using versioning, the permissions you add are specific to the Lambda function
+        /// version or alias you specify in the <code>AddPermission</code> request via the <code>Qualifier</code>
+        /// parameter. For more information about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
         /// </para>
         ///  
         /// <para>
@@ -128,11 +127,11 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates an alias to the specified Lambda function version. For more information, see
-        /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
-        /// to AWS Lambda Aliases</a>
+        /// Creates an alias that points to the specified Lambda function version. For more information,
+        /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
+        /// to AWS Lambda Aliases</a>.
         /// 
-        ///  
+        ///  Alias names are unique for a given function. 
         /// <para>
         /// This requires permission for the lambda:CreateAlias action.
         /// </para>
@@ -196,22 +195,31 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// This is the pull model, where AWS Lambda invokes the function. For more information,
-        /// go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-        /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+        /// This association between a stream source and a Lambda function is called the event
+        /// source mapping. 
         /// </para>
-        ///  
+        ///  <important>This event source mapping is relevant only in the AWS Lambda pull model,
+        /// where AWS Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+        /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</important> 
         /// <para>
-        /// This association between an Amazon Kinesis stream and a Lambda function is called
-        /// the event source mapping. You provide the configuration information (for example,
-        /// which stream to read from and which Lambda function to invoke) for the event source
-        /// mapping in the request body.
+        ///  You provide mapping information (for example, which stream to read from and which
+        /// Lambda function to invoke) in the request body. 
         /// </para>
         ///  
         /// <para>
         ///  Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
         /// with multiple AWS Lambda function. A given Lambda function can be associated with
         /// multiple AWS event sources. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  
+        /// <para>
+        /// If you are using versioning, you can specify a specific function version or an alias
+        /// via the function name parameter. For more information about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
+        /// </para>
+        ///  
         /// </para>
         ///  
         /// <para>
@@ -275,6 +283,13 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        ///  If you are using versioning, you can also publish a version of the Lambda function
+        /// you are creating using the <code>Publish</code> parameter. For more information about
+        /// versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:CreateFunction</code> action.
         /// </para>
         /// </summary>
@@ -334,8 +349,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes specified Lambda function alias. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
-        /// to AWS Lambda Aliases</a>
+        /// Deletes the specified Lambda function alias. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
+        /// to AWS Lambda Aliases</a>.
         /// 
         ///  
         /// <para>
@@ -451,8 +466,12 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// If you don't specify a function version, AWS Lambda will delete the function, including
-        /// all its versions, and any aliases pointing to the function versions.
+        /// If you are using the versioning feature and you don't specify a function version in
+        /// your <code>DeleteFunction</code> request, AWS Lambda will delete the function, including
+        /// all its versions, and any aliases pointing to the function versions. To delete a specific
+        /// function version, you must provide the function version via the <code>Qualifier</code>
+        /// parameter. For information about function versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
         /// </para>
         ///  
         /// <para>
@@ -461,15 +480,10 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// For information about function versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
-        /// Lambda Function Versioning and Aliases</a>.
-        /// </para>
-        ///  
-        /// <para>
         /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The Lambda function to delete.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="functionName">The Lambda function to delete.  You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -497,18 +511,17 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// If you don't specify a function version, AWS Lambda will delete the function, including
-        /// all its versions, and any aliases pointing to the function versions.
+        /// If you are using the versioning feature and you don't specify a function version in
+        /// your <code>DeleteFunction</code> request, AWS Lambda will delete the function, including
+        /// all its versions, and any aliases pointing to the function versions. To delete a specific
+        /// function version, you must provide the function version via the <code>Qualifier</code>
+        /// parameter. For information about function versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
         /// </para>
         ///  
         /// <para>
         /// When you delete a function the associated resource policy is also deleted. You will
         /// need to delete the event source mappings explicitly.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about function versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
-        /// Lambda Function Versioning and Aliases</a>.
         /// </para>
         ///  
         /// <para>
@@ -569,12 +582,12 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns the specified alias information such as the alias ARN, description, and function
-        /// version it is pointing to. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
-        /// to AWS Lambda Aliases</a>
+        /// version it is pointing to. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
+        /// to AWS Lambda Aliases</a>.
         /// 
         ///  
         /// <para>
-        /// This requires permission for the lambda:GetAlias action.
+        /// This requires permission for the <code>lambda:GetAlias</code> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAlias service method.</param>
@@ -694,8 +707,8 @@ namespace Amazon.Lambda
         /// <para>
         /// Using the optional <code>Qualifier</code> parameter, you can specify a specific function
         /// version for which you want this information. If you don't specify this parameter,
-        /// the API uses unqualified function ARN which return information about the $LATEST version
-        /// of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// the API uses unqualified function ARN which return information about the <code>$LATEST</code>
+        /// version of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
         /// Lambda Function Versioning and Aliases</a>.
         /// </para>
         ///  
@@ -703,7 +716,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The Lambda function name.   You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="functionName">The Lambda function name.   You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -733,8 +746,8 @@ namespace Amazon.Lambda
         /// <para>
         /// Using the optional <code>Qualifier</code> parameter, you can specify a specific function
         /// version for which you want this information. If you don't specify this parameter,
-        /// the API uses unqualified function ARN which return information about the $LATEST version
-        /// of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// the API uses unqualified function ARN which return information about the <code>$LATEST</code>
+        /// version of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
         /// Lambda Function Versioning and Aliases</a>.
         /// </para>
         ///  
@@ -797,10 +810,11 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// You can use the optional <code>Qualifier</code> parameter to retrieve configuration
-        /// information for a specific Lambda function version. If you don't provide it, the API
+        /// If you are using the versioning feature, you can retrieve this information for a specific
+        /// function version by using the optional <code>Qualifier</code> parameter and specifying
+        /// the function version or alias that points to it. If you don't provide it, the API
         /// returns information about the $LATEST version of the function. For more information
-        /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
         /// Lambda Function Versioning and Aliases</a>.
         /// </para>
         ///  
@@ -809,7 +823,7 @@ namespace Amazon.Lambda
         /// operation.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function for which you want to retrieve the configuration information.  You can specify an unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail"). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="functionName">The name of the Lambda function for which you want to retrieve the configuration information.  You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -835,10 +849,11 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// You can use the optional <code>Qualifier</code> parameter to retrieve configuration
-        /// information for a specific Lambda function version. If you don't provide it, the API
+        /// If you are using the versioning feature, you can retrieve this information for a specific
+        /// function version by using the optional <code>Qualifier</code> parameter and specifying
+        /// the function version or alias that points to it. If you don't provide it, the API
         /// returns information about the $LATEST version of the function. For more information
-        /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+        /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
         /// Lambda Function Versioning and Aliases</a>.
         /// </para>
         ///  
@@ -897,12 +912,19 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Returns the resource policy, containing a list of permissions that apply to a specific
-        /// to an ARN that you specify via the <code>Qualifier</code> paramter. 
+        /// Returns the resource policy associated with the specified Lambda function.
         /// 
         ///  
         /// <para>
-        /// For informration about adding permissions, see <a>AddPermission</a>.
+        ///  If you are using the versioning feature, you can get the resource policy associated
+        /// with the specific Lambda function version or alias by specifying the version or alias
+        /// name using the <code>Qualifier</code> parameter. For more information about versioning,
+        /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about adding permissions, see <a>AddPermission</a>.
         /// </para>
         ///  
         /// <para>
@@ -959,21 +981,16 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Invokes a specific Lambda function version. 
+        /// Invokes a specific Lambda function. 
         /// 
         ///  
         /// <para>
-        /// If you don't provide the <code>Qualifier</code> parameter, it uses the unqualified
-        /// function ARN which results in invocation of the $LATEST version of the Lambda function
-        /// (when you create a Lambda function, the $LATEST is the version). The AWS Lambda versioning
-        /// and aliases feature allows you to publish multiple versions of a Lambda function and
-        /// also create aliases for each function version. So each your Lambda function version
-        /// can be invoked using multiple ARNs. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
-        /// Lambda Function Versioning and Aliases</a>. Using the <code>Qualifier</code> parameter,
-        /// you can specify a function version or alias name to invoke specific function version.
-        /// If you specify function version, the API uses the qualified function ARN to invoke
-        /// a specific function version. If you specify alias name, the API uses the alias ARN
-        /// to invoke the function version to which the alias points.
+        /// If you are using the versioning feature, you can invoke the specific function version
+        /// by providing function version or alias name that is pointing to the function version
+        /// using the <code>Qualifier</code> parameter in the request. If you don't provide the
+        /// <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda function
+        /// is invoked. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
         /// </para>
         ///  
         /// <para>
@@ -983,6 +1000,22 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>
         /// 
         /// <returns>The response from the Invoke service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.EC2AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EC2ThrottledException">
+        /// AWS Lambda was throttled by Amazon EC2 during Lambda function initiatization using
+        /// the execution role provided for the Lambda function.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.EC2UnexpectedException">
+        /// AWS Lambda received an unexpected EC2 client exception while setting up for the Lambda
+        /// function.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ENILimitReachedException">
+        /// AWS Lambda was not able to create an Elastic Network Interface (ENI) in the VPC, specified
+        /// as part of Lambda function configuration, because the limit for network interfaces
+        /// has been reached.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
@@ -991,9 +1024,15 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
         /// The request body could not be parsed as JSON.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidSecurityGroupIDException">
+        /// The Security Group ID provided in the Lambda function VPC configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidSubnetIDException">
+        /// The Subnet ID provided in the Lambda function VPC configuration is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.
-        /// For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1001,6 +1040,10 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SubnetIPAddressLimitReachedException">
+        /// AWS Lambda was not able to set up VPC access for the Lambda function because one or
+        /// more configured subnets has no available IP addresses.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
@@ -1045,7 +1088,7 @@ namespace Amazon.Lambda
         /// <para>
         /// Submits an invocation request to AWS Lambda. Upon receiving the request, Lambda executes
         /// the specified function asynchronously. To see the logs generated by the Lambda function
-        /// execution, see the CloudWatch logs console.
+        /// execution, see the CloudWatch Logs console.
         /// </para>
         ///  
         /// <para>
@@ -1102,8 +1145,8 @@ namespace Amazon.Lambda
         /// <summary>
         /// Returns list of aliases created for a Lambda function. For each alias, the response
         /// includes information such as the alias ARN, description, alias name, and the function
-        /// version to which it points. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
-        /// to AWS Lambda Aliases</a>
+        /// version to which it points. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
+        /// to AWS Lambda Aliases</a>.
         /// 
         ///  
         /// <para>
@@ -1161,13 +1204,19 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns a list of event source mappings you created using the <code>CreateEventSourceMapping</code>
-        /// (see <a>CreateEventSourceMapping</a>), where you identify a stream as an event source.
-        /// This list does not include Amazon S3 event sources. 
+        /// (see <a>CreateEventSourceMapping</a>). 
         /// 
         ///  
         /// <para>
         /// For each mapping, the API returns configuration information. You can optionally specify
         /// filters to retrieve specific event source mappings.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using the versioning feature, you can get list of event source mappings
+        /// for a specific Lambda function version or an alias as described in the <code>FunctionName</code>
+        /// parameter. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
         /// </para>
         ///  
         /// <para>
@@ -1233,6 +1282,12 @@ namespace Amazon.Lambda
         /// <para>
         /// This operation requires permission for the <code>lambda:ListFunctions</code> action.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are using versioning feature, the response returns list of $LATEST versions
+        /// of your functions. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListFunctions service method, as returned by Lambda.</returns>
@@ -1252,6 +1307,12 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// This operation requires permission for the <code>lambda:ListFunctions</code> action.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using versioning feature, the response returns list of $LATEST versions
+        /// of your functions. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
@@ -1295,7 +1356,9 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// List all versions of a function.
+        /// List all versions of a function. For information about the versioning feature, see
+        /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersionsByFunction service method.</param>
         /// 
@@ -1347,11 +1410,11 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Publishes a version of your function from the current snapshot of HEAD. That is, AWS
-        /// Lambda takes a snapshot of the function code and configuration information from HEAD
-        /// and publishes a new version. The code and <code>handler</code> of this specific Lambda
-        /// function version cannot be modified after publication, but you can modify the configuration
-        /// information.
+        /// Publishes a version of your function from the current snapshot of $LATEST. That is,
+        /// AWS Lambda takes a snapshot of the function code and configuration information from
+        /// $LATEST and publishes a new version. The code and configuration cannot be modified
+        /// after publication. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishVersion service method.</param>
         /// 
@@ -1407,10 +1470,17 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// You can remove individual permissions from an resource policy associated with a Lambda
-        /// function by providing a statement ID that you provided when you addded the permission.
-        /// The API removes corresponding permission that is associated with the specific ARN
-        /// identified by the <code>Qualifier</code> parameter.
+        /// function by providing a statement ID that you provided when you added the permission.
         /// 
+        /// 
+        ///  
+        /// <para>
+        /// If you are using versioning, the permissions you remove are specific to the Lambda
+        /// function version or alias you specify in the <code>AddPermission</code> request via
+        /// the <code>Qualifier</code> parameter. For more information about versioning, see <a
+        /// href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda
+        /// Function Versioning and Aliases</a>. 
+        /// </para>
         ///  
         /// <para>
         /// Note that removal of a permission will cause an active event source to lose permission
@@ -1471,9 +1541,9 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Using this API you can update function version to which the alias points to and alias
-        /// description. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
-        /// to AWS Lambda Aliases</a>
+        /// Using this API you can update the function version to which the alias points and the
+        /// alias description. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
+        /// to AWS Lambda Aliases</a>.
         /// 
         ///  
         /// <para>
@@ -1535,6 +1605,20 @@ namespace Amazon.Lambda
         /// which function will receive the stream records, but to change the stream itself, you
         /// must create a new mapping. 
         /// 
+        ///  
+        /// <para>
+        /// If you are using the versioning feature, you can update the event source mapping to
+        /// map to a specific Lambda function version or alias as described in the <code>FunctionName</code>
+        /// parameter. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you disable the event source mapping, AWS Lambda stops polling. If you enable again,
+        /// it will resume polling from the time it had stopped polling, so you don't lose processing
+        /// of any records. However, if you delete event source mapping and create it again, it
+        /// will reset.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the <code>lambda:UpdateEventSourceMapping</code>
@@ -1600,6 +1684,13 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// If you are using the versioning feature, note this API will always update the $LATEST
+        /// version of your Lambda function. For information about the versioning feature, see
+        /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permission for the <code>lambda:UpdateFunctionCode</code>
         /// action.
         /// </para>
@@ -1662,6 +1753,13 @@ namespace Amazon.Lambda
         /// This operation must only be used on an existing Lambda function and cannot be used
         /// to update the function's code. 
         /// 
+        ///  
+        /// <para>
+        /// If you are using the versioning feature, note this API will always update the $LATEST
+        /// version of your Lambda function. For information about the versioning feature, see
+        /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// Lambda Function Versioning and Aliases</a>. 
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permission for the <code>lambda:UpdateFunctionConfiguration</code>

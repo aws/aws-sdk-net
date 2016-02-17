@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// This structure is returned in the response object of <a>ListCertificates</a> function.
+    /// This structure is returned in the response object of <a>ListCertificates</a> action.
     /// </summary>
     public partial class CertificateSummary
     {
@@ -42,7 +42,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        ///  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// 
         /// </para>
         ///  

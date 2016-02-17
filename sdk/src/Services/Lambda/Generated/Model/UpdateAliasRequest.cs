@@ -29,9 +29,9 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAlias operation.
-    /// Using this API you can update function version to which the alias points to and alias
-    /// description. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
-    /// to AWS Lambda Aliases</a>
+    /// Using this API you can update the function version to which the alias points and the
+    /// alias description. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
+    /// to AWS Lambda Aliases</a>.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// You can optionally change the description of the alias using this parameter.
+        /// You can change the description of the alias using this parameter.
         /// </para>
         /// </summary>
         public string Description
@@ -84,8 +84,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// Using this parameter you can optionally change the Lambda function version to which
-        /// the alias to points to.
+        /// Using this parameter you can change the Lambda function version to which the alias
+        /// points.
         /// </para>
         /// </summary>
         public string FunctionVersion

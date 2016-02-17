@@ -117,8 +117,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date and time that the stage was created, in <a target="_blank" href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO
-        /// 8601 format</a>.
+        /// The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+        /// target="_blank">ISO 8601 format</a>.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -172,8 +172,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedDate. 
         /// <para>
-        /// The date and time that information about the stage was last updated, in <a target="_blank"
-        /// href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601 format</a>.
+        /// The date and time that information about the stage was last updated, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+        /// target="_blank">ISO 8601 format</a>.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedDate
@@ -231,7 +231,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A map that defines the stage variables for a <a>Stage</a> resource. Variable names
-        /// can have alphabetic characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+        /// can have alphanumeric characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

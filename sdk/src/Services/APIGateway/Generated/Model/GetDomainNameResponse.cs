@@ -59,8 +59,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificateUploadDate. 
         /// <para>
-        /// The date when the certificate was uploaded, in <a target="_blank" href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO
-        /// 8601 format</a>.
+        /// The date when the certificate was uploaded, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+        /// target="_blank">ISO 8601 format</a>.
         /// </para>
         /// </summary>
         public DateTime CertificateUploadDate
@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property DistributionDomainName. 
         /// <para>
         /// The domain name of the Amazon CloudFront distribution. For more information, see the
-        /// <a target="_blank" href="http://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront
+        /// <a href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
         /// documentation</a>.
         /// </para>
         /// </summary>

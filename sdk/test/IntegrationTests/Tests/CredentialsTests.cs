@@ -79,18 +79,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             for (int i = 0; i < 4; i++)
             {
+                var shouldHaveToken = (i % 2 == 1);
+
                 creds = new StoredProfileAWSCredentials(profileName + i, profilesLocation);
                 Assert.IsNotNull(creds);
+
                 rc = creds.GetCredentials();
                 Assert.IsNotNull(rc.AccessKey);
                 Assert.IsNotNull(rc.SecretKey);
-                var shouldHaveToken = (i % 2 == 1);
                 Assert.AreEqual(shouldHaveToken, rc.UseToken);
+
+                if (rc.UseToken)
+                {
+                    Assert.AreEqual(sessionCreds.AccessKey, rc.AccessKey);
+                    Assert.AreEqual(sessionCreds.SecretKey, rc.SecretKey);
+                    Assert.AreEqual(sessionCreds.Token, rc.Token);
+                }
+                else
+                {
+                    Assert.AreEqual(basicCreds.AccessKey, rc.AccessKey);
+                    Assert.AreEqual(basicCreds.SecretKey, rc.SecretKey);
+                }
             }
         }
 
-        private static ImmutableCredentials basicCreds = new ImmutableCredentials("ac0", "sc1", null);
-        private static ImmutableCredentials sessionCreds = new ImmutableCredentials("ac2", "sc3", "token");
+        private static ImmutableCredentials basicCreds = new ImmutableCredentials("=ac0", "sc=1", null);
+        private static ImmutableCredentials sessionCreds = new ImmutableCredentials("ac2", "sc3=", "token==");
         private static string WriteCreds(string profileName, ImmutableCredentials ic)
         {
             string configPath = Path.GetFullPath("credentials");
@@ -109,20 +123,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private static void AppendCredentialsSet(StreamWriter writer, string profileName, ImmutableCredentials ic)
         {
-            /*
-[aws-dr-tools-test-profile]
-aws_access_key_id = ACCESS_KEY_0
-aws_secret_access_key = SECRET_KEY_0
-aws_session_token = TOKEN_0
-             */
             writer.WriteLine();
             writer.WriteLine("; profile {0} and its credentials", profileName);
             writer.WriteLine("# alternative comment marker");
             writer.WriteLine("[{0}]", profileName);
             writer.WriteLine("aws_access_key_id = {0}", ic.AccessKey);
-            writer.WriteLine("aws_secret_access_key = {0}", ic.SecretKey);
+            writer.WriteLine("aws_secret_access_key={0}", ic.SecretKey);
             if (ic.UseToken)
-                writer.WriteLine("aws_session_token = {0}", ic.Token);
+                writer.WriteLine("aws_session_token= {0}", ic.Token);
             writer.WriteLine();
         }
     }

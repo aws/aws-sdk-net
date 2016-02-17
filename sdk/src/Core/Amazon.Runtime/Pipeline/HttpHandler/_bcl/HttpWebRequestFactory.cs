@@ -356,16 +356,12 @@ namespace Amazon.Runtime.Internal
             }
 
             // Set proxy related properties
-            if (!string.IsNullOrEmpty(requestContext.ClientConfig.ProxyHost) && requestContext.ClientConfig.ProxyPort > 0)
+            WebProxy proxy = requestContext.ClientConfig.GetWebProxy();
+            if (proxy != null)
             {
-                WebProxy proxy = new WebProxy(requestContext.ClientConfig.ProxyHost, requestContext.ClientConfig.ProxyPort);
                 requestContext.Metrics.AddProperty(Metric.ProxyHost, requestContext.ClientConfig.ProxyHost);
                 requestContext.Metrics.AddProperty(Metric.ProxyHost, requestContext.ClientConfig.ProxyPort);
                 _request.Proxy = proxy;
-            }
-            if (_request.Proxy != null && requestContext.ClientConfig.ProxyCredentials != null)
-            {
-                _request.Proxy.Credentials = requestContext.ClientConfig.ProxyCredentials;
             }
 
             // Set service point properties.

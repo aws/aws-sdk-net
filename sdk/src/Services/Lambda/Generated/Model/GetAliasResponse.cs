@@ -40,9 +40,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property AliasArn. 
         /// <para>
-        /// Lambda function ARN that is qualified using alias name as the suffix. For example,
-        /// if you create an alias "BETA" pointing to a helloworld function version, the ARN is
-        /// <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+        /// Lambda function ARN that is qualified using the alias name as the suffix. For example,
+        /// if you create an alias called <code>BETA</code> that points to a helloworld function
+        /// version, the ARN is <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
         /// </para>
         /// </summary>
         public string AliasArn

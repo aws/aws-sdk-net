@@ -318,6 +318,10 @@
       <Project>{94F723C5-14F7-4D54-BB34-412AFE4CB4AB}</Project>
       <Name>AWSSDK.CloudWatchEvents.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net45.csproj">
+      <Project>{D3896B6E-0138-44DA-8748-86D88F9B22D6}</Project>
+      <Name>AWSSDK.GameLift.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

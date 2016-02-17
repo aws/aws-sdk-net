@@ -64,6 +64,13 @@ namespace Amazon.ConfigService.Model
         /// Indicates whether the AWS resource complies with the AWS Config rule that evaluated
         /// it.
         /// </para>
+        ///  
+        /// <para>
+        /// For the <code>EvaluationResult</code> data type, AWS Config supports only the <code>COMPLIANT</code>,
+        /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. AWS Config does
+        /// not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code>
+        /// data type.
+        /// </para>
         /// </summary>
         public ComplianceType ComplianceType
         {

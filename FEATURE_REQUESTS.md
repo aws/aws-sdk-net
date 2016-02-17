@@ -95,3 +95,11 @@ See [GitHub Issue #100](https://github.com/aws/aws-sdk-net/issues/100)
 Similar to the [transaction library in Java](https://aws.amazon.com/blogs/aws/dynamodb-transaction-library/)
 
 See [GitHub Issue #25](https://github.com/aws/aws-sdk-net/issues/25)
+
+#### Add support for Xamarin.Mac
+
+See [Github Issue #307](https://github.com/aws/aws-sdk-net/issues/307)
+
+#### Make exception types defined in the SDK serializable
+
+See [Github Issue #296](https://github.com/aws/aws-sdk-net/issues/296)

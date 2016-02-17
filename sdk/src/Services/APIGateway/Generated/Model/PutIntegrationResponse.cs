@@ -200,14 +200,15 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Uri. 
         /// <para>
         /// Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations,
-        /// the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank"
-        /// href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986 specification</a>. For AWS integrations,
-        /// the URI should be of the form <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>.
-        /// <code>Region</code> and <code>service</code> are used to determine the right endpoint.
-        /// For AWS services that use the <code>Action=</code> query string parameter, <code>service_api</code>
-        /// should be a valid action for the desired service. For RESTful AWS service APIs, <code>path</code>
-        /// is used to indicate that the remaining substring in the URI should be treated as the
-        /// path to the resource, including the initial <code>/</code>.
+        /// the URI must be a fully formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+        /// target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be
+        /// of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
+        /// <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine
+        /// the right endpoint. For AWS services that use the <code>Action=</code> query string
+        /// parameter, <code>service_api</code> should be a valid action for the desired service.
+        /// For RESTful AWS service APIs, <code>path</code> is used to indicate that the remaining
+        /// substring in the URI should be treated as the path to the resource, including the
+        /// initial <code>/</code>.
         /// </para>
         /// </summary>
         public string Uri

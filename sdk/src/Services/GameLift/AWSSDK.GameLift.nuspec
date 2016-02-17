@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.GameLift</id>
+    <title>AWSSDK - Amazon GameLift</title>
+    <version>3.1.0.0</version> 
+    <authors>Amazon Web Services</authors>
+    <description>Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.</description>
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <tags>AWS Amazon cloud GameLift aws-sdk-v3</tags>
+    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <dependencies>
+
+      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+        <dependency id="AWSSDK.Core" version="[3.1.4.4, 3.2)" />
+      </group>
+
+      <group>
+        <dependency id="AWSSDK.Core" version="[3.1.4.4, 3.2)" />
+      </group>
+    </dependencies>
+  </metadata> 
+  <files>
+
+    <file src="..\..\..\code-analysis\ServiceAnalysis\GameLift\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
+    <file src="..\..\..\code-analysis\NuGetInstallScripts\*.ps1" target="tools\" />
+
+    <file src=".\bin\Release\net35\AWSSDK.GameLift.dll" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.GameLift.xml" target="lib\net35" />
+    <file src=".\bin\Release\net35\AWSSDK.GameLift.pdb" target="lib\net35" />
+
+    <file src=".\bin\Release\net45\AWSSDK.GameLift.dll" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.GameLift.xml" target="lib\net45" />
+    <file src=".\bin\Release\net45\AWSSDK.GameLift.pdb" target="lib\net45" />
+
+
+    <file src=".\bin\Release\pcl\AWSSDK.GameLift.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.GameLift.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.GameLift.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+  </files>
+</package>

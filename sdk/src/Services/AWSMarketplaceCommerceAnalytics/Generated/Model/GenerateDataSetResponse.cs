@@ -35,7 +35,9 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         private string _dataSetRequestId;
 
         /// <summary>
-        /// Gets and sets the property DataSetRequestId.
+        /// Gets and sets the property DataSetRequestId. A unique identifier representing a specific
+        /// request to the GenerateDataSet operation. This identifier can be used to correlate
+        /// a request with notifications from the SNS topic.
         /// </summary>
         public string DataSetRequestId
         {

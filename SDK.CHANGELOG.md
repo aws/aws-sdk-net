@@ -1,3 +1,27 @@
+### 3.1.43.0 (2016-02-11 22:26 UTC)
+* APIGateway (3.1.2.0)
+	* Added support for custom request authorizers. With custom request authorizers, developers can authorize their APIs using bearer token authorization strategies, such as OAuth using an AWS Lambda function.
+* AWS Certificate Manager (3.1.1.0)
+	* Breaking change: the exception type AccessDeniedException has been removed as it is not thrown by the service. The exception type was included in previous releases in error.
+* Lambda (3.1.3.0)
+	* Added support for configuring a Lambda function to access resources in your VPC. These resources could be AWS service resources (for example, Amazon Redshift data warehouses, Amazon ElastiCache clusters, or Amazon RDS instances), or they could be your own services running on your own EC2 instances. For more information see http://docs.aws.amazon.com/lambda/latest/dg/vpc.html.
+
+### 3.1.42.0 (2016-02-09 21:58 UTC)
+* AWSMarketplaceCommerceAnalytics (3.1.1.0)
+	* Updated documentation. Extended the GenerateDateSet operation to include a new CustomerDefinedValues parameter. This parameter allows customers to submit arbitrary key/value pair strings which will be returned, as provided, in the asynchronous response, enabling the user of customer-provided identifiers to correlate responses with their internal systems.
+* CloudFront (3.1.4.1)
+	* Added a new field ACMCertificateARN to ViewerCertificate. This field replaces the CertificateSource and Certificate fields that were recently added.
+* ConfigService (3.1.3.2)
+	* Documentation update.
+* EC2 (3.1.9.1)
+	* Updated ImageUtilities class to enable use when a proxy is required.
+* Gamelift (3.1.0.0)
+	* Added support for Amazon Gamelift, a managed service that allows game developers the ability to deploy and configure their multiplayer games.
+
+### 3.1.41.3 (2016-02-05 17:57 UTC)
+* Core 3.1.4.4
+	* Updated INI credentials parsing logic to handle '=' character in values.
+
 ### 3.1.41.2 (2016-02-03 18:24 UTC)
 * S3 (3.1.3.11)
 	* Adding ITransferUtility interface for the TransferUtility class.
