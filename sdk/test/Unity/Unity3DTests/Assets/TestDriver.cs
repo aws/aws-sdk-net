@@ -130,15 +130,6 @@ namespace AWSSDK.Tests
 
             //set sleep timeout to infinity
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
-            //set up logging
-            var loggingConfig = AWSConfigs.LoggingConfig;
-            loggingConfig.LogTo = LoggingOptions.UnityLogger;
-            loggingConfig.LogMetrics = true;
-            loggingConfig.LogResponses = ResponseLoggingOption.Always;
-            loggingConfig.LogResponsesSizeLimit = 4096;
-            loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
-            var context = AWSConfigsDynamoDB.Context;
         }
 
         public void OnTestFinished(int pass, int fail, HashSet<string> failedTestCases)
