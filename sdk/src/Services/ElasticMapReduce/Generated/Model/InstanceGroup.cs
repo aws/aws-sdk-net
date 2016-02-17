@@ -35,6 +35,8 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _bidPrice;
         private List<Configuration> _configurations = new List<Configuration>();
+        private List<EbsBlockDevice> _ebsBlockDevices = new List<EbsBlockDevice>();
+        private bool? _ebsOptimized;
         private string _id;
         private InstanceGroupType _instanceGroupType;
         private string _instanceType;
@@ -84,6 +86,44 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetConfigurations()
         {
             return this._configurations != null && this._configurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsBlockDevices. 
+        /// <para>
+        /// The EBS block devices that are mapped to this instance group.
+        /// </para>
+        /// </summary>
+        public List<EbsBlockDevice> EbsBlockDevices
+        {
+            get { return this._ebsBlockDevices; }
+            set { this._ebsBlockDevices = value; }
+        }
+
+        // Check to see if EbsBlockDevices property is set
+        internal bool IsSetEbsBlockDevices()
+        {
+            return this._ebsBlockDevices != null && this._ebsBlockDevices.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsOptimized. 
+        /// <para>
+        /// If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized
+        /// configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool EbsOptimized
+        {
+            get { return this._ebsOptimized.GetValueOrDefault(); }
+            set { this._ebsOptimized = value; }
+        }
+
+        // Check to see if EbsOptimized property is set
+        internal bool IsSetEbsOptimized()
+        {
+            return this._ebsOptimized.HasValue; 
         }
 
         /// <summary>

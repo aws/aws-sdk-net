@@ -32,13 +32,33 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class Instance
     {
+        private List<EbsVolume> _ebsVolumes = new List<EbsVolume>();
         private string _ec2InstanceId;
         private string _id;
+        private string _instanceGroupId;
         private string _privateDnsName;
         private string _privateIpAddress;
         private string _publicDnsName;
         private string _publicIpAddress;
         private InstanceStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property EbsVolumes. 
+        /// <para>
+        /// The list of EBS volumes that are attached to this instance.
+        /// </para>
+        /// </summary>
+        public List<EbsVolume> EbsVolumes
+        {
+            get { return this._ebsVolumes; }
+            set { this._ebsVolumes = value; }
+        }
+
+        // Check to see if EbsVolumes property is set
+        internal bool IsSetEbsVolumes()
+        {
+            return this._ebsVolumes != null && this._ebsVolumes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 
@@ -74,6 +94,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceGroupId. 
+        /// <para>
+        /// The identifier of the instance group to which this instance belongs.
+        /// </para>
+        /// </summary>
+        public string InstanceGroupId
+        {
+            get { return this._instanceGroupId; }
+            set { this._instanceGroupId = value; }
+        }
+
+        // Check to see if InstanceGroupId property is set
+        internal bool IsSetInstanceGroupId()
+        {
+            return this._instanceGroupId != null;
         }
 
         /// <summary>
