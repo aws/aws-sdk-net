@@ -30,7 +30,7 @@ using System.Threading;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
-
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 
 namespace Amazon.Util.Internal
 {
@@ -80,7 +80,7 @@ namespace Amazon.Util.Internal
             return Type.GetType(string.Format("UnityEngine.{0}, UnityEngine", typeName));
         }
 
-        private static Logger Logger = Logger.GetLogger(typeof(InternalSDKUtils));
+        private static Logger _logger = Logger.GetLogger(typeof(InternalSDKUtils));
 
         public static void AsyncExecutor(Action action, AsyncOptions options)
         {
@@ -121,7 +121,7 @@ namespace Amazon.Util.Internal
             {
                 // Catch any unhandled exceptions from the user callback 
                 // and log it. 
-                Logger.Error(exception,
+                _logger.Error(exception,
                     "An unhandled exception was thrown from the callback method {0}.",
                     action.Method.Name);
             }
