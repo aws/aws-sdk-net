@@ -159,19 +159,12 @@ namespace AWSSDK.Tests
             {
                 failedWWWTests.UnionWith(failedTestCases);
             }
-
-            if (!allTestsStarted)
-            {
-                Debug.Log(@"Tests on both http client have not completed, returning");
-                return;
-            }
-
+            
             Debug.Log(string.Format(@"the following test cases will be retried for WWW = {0} & UWR= {1}",
                 string.Join(",", failedWWWTests.ToArray<string>()), string.Join(",", failedUWRTests.ToArray<string>())));
 
             if (retryCount < 3 && (failedUWRTests.Count > 0 || failedWWWTests.Count > 0))
             {
-                allTestsStarted = false;
                 HashSet<string> testNamesToRetryForWWW = failedWWWTests;
                 HashSet<string> testNamesToRetryForUWR = failedUWRTests;
 
@@ -186,9 +179,6 @@ namespace AWSSDK.Tests
                         { AWSConfigs.HttpClientOption.UnityWWW,
                         AWSConfigs.HttpClientOption.UnityWebRequest })
                     {
-                        if (count == 1)
-                            allTestsStarted = true;
-
                         AWSConfigs.HttpClient = httpClient;
 
                         if (httpClient == AWSConfigs.HttpClientOption.UnityWWW)
@@ -220,7 +210,7 @@ namespace AWSSDK.Tests
             {
                 Debug.Log("OnTestFinished");
 
-                if (fail > 0)
+                if (failedUWRTests.Count > 0 || failedWWWTests.Count > 0)
                     PrintResult("SOME TESTS FAILED");
                 else
                     PrintResult("ALL TESTS PASSED");
@@ -263,10 +253,6 @@ namespace AWSSDK.Tests
                 foreach (var httpClient in httpClients)
                 {
                     count++;
-
-                    if (count == httpClients.Count)
-                        allTestsStarted = true;
-
                     AWSConfigs.HttpClient = httpClient;
 
                     if (httpClient == AWSConfigs.HttpClientOption.UnityWWW)

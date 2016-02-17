@@ -119,7 +119,7 @@ namespace Amazon.Runtime.Internal
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("DownloadHandler");
+                    throw new ArgumentNullException("value");
 
                 downloadHandlerSetMethod.Invoke(unityWebRequestInstance, new object[] { value.Instance });
                 this.downloadHandler = value;
@@ -138,7 +138,7 @@ namespace Amazon.Runtime.Internal
             set
             {
                 if (value == null)
-                    throw new ArgumentNullException("UploadHandler");
+                    throw new ArgumentNullException("value");
 
                 uploadHandlerSetMethod.Invoke(unityWebRequestInstance, new object[] { value.Instance });
                 this.uploadHandler = value;
@@ -281,17 +281,11 @@ namespace Amazon.Runtime.Internal
                 disposedValue = true;
             }
         }
-
-        ~UnityWebRequestWrapper()
-        {
-            Dispose(false);
-        }
-
+        
         // This code added to correctly implement the disposable pattern.
         public void Dispose()
         {
             Dispose(true);
-            GC.SuppressFinalize(this);
         }
         #endregion
     }
@@ -361,16 +355,10 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        ~DownloadHandlerBufferWrapper()
-        {
-            Dispose(false);
-        }
-
         // This code added to correctly implement the disposable pattern.
         public void Dispose()
         {
             Dispose(true);
-            GC.SuppressFinalize(this);
         }
         #endregion
 
@@ -418,16 +406,10 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        ~UploadHandlerRawWrapper()
-        {
-            Dispose(false);
-        }
-
         // This code added to correctly implement the disposable pattern.
         public void Dispose()
         {
             Dispose(true);
-            GC.SuppressFinalize(this);
         }
         #endregion
 

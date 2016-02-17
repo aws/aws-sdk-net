@@ -295,13 +295,8 @@ namespace Amazon.Runtime.Internal
         public void Dispose()
         {
             Dispose(true);
-            GC.SuppressFinalize(this);
         }
-
-        ~UnityRequest()
-        {
-            Dispose(false);
-        }
+        
 
         private bool _disposed;
 
