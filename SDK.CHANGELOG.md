@@ -1,3 +1,13 @@
+### 3.1.45.0 (2016-02-18 22:18 UTC)
+* AWSMarketplaceCommerceAnalytics (3.1.2.0)
+	* Added support for a new data set disbursed_amount_by_product_with_uncollected_funds .
+* CloudWatch (3.1.0.5)
+	* Documentation update.
+* CodeDeploy (3.1.1.0)
+	* Added support for setting up triggers for a deployment group.
+* StorageGateway (3.1.2.0)
+	* Added support for CreateTapeWithBarcode  API.
+
 ### 3.1.44.1 (2016-02-18 00:52 UTC)
 * Core 3.1.4.5
 	* Fix issue with ConstantClass thread-safety
