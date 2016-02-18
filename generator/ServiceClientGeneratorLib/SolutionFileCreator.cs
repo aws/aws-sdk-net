@@ -110,8 +110,8 @@ namespace ServiceClientGenerator
                 });
 
             // Include solutions that Travis CI can build
-            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, "AWSSDK.Net35.Travis.sln");
-            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, "AWSSDK.Net45.Travis.sln");
+            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, true, "AWSSDK.Net35.Travis.sln");
+            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, true, "AWSSDK.Net45.Travis.sln");
         }
 
         // adds any necessary projects to the collection prior to generating the solution file(s)
@@ -385,7 +385,7 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
         }
 
-        private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, string solutionFileName = null)
+        private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, bool travisSolution, string solutionFileName = null)
         {
             // Do not generate solutions for PCL sub profiles.
             if (projectConfig.IsSubProfile)
@@ -422,6 +422,9 @@ namespace ServiceClientGenerator
 
                 foreach (var projectFile in Directory.GetFiles(servicePath, projectTypeWildCard, SearchOption.TopDirectoryOnly))
                 {
+                    if (travisSolution && projectFile.Contains("AWSSDK.MobileAnalytics"))
+                        continue;
+
                     folder.Projects.Add(ServiceProjectFromFile(di.Name, projectFile));
                     SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
                 }

@@ -29,7 +29,7 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// This structure is returned in the response object of the <a>DescribeCertificate</a>
-    /// function.
+    /// action.
     /// </summary>
     public partial class CertificateDetail
     {
@@ -58,7 +58,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        ///  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// 
         /// </para>
         ///  
@@ -138,7 +138,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property InUseBy. 
         /// <para>
-        ///  List that identifies ARNs that are using the certificate. A single ACM certificate
+        ///  List that identifies ARNs that are using the certificate. A single ACM Certificate
         /// can be used by multiple AWS resources. 
         /// </para>
         /// </summary>
@@ -369,8 +369,8 @@ namespace Amazon.CertificateManager.Model
         ///  One or more domain names (subject alternative names) included in the certificate
         /// request. After the certificate is issued, this list includes the domain names bound
         /// to the public key contained in the certificate. The subject alternative names include
-        /// the domain name (CN) of the certificate and additional domain names that can be used
-        /// to connect to the website. 
+        /// the canonical domain name (CN) of the certificate and additional domain names that
+        /// can be used to connect to the website. 
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames

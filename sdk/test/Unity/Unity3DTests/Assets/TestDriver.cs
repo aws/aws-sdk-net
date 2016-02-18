@@ -136,14 +136,6 @@ namespace AWSSDK.Tests
             failedUWRTests = new HashSet<string>();
             //set sleep timeout to infinity
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
-            //set up logging
-            var loggingConfig = AWSConfigs.LoggingConfig;
-            loggingConfig.LogTo = LoggingOptions.UnityLogger;
-            loggingConfig.LogMetrics = true;
-            loggingConfig.LogResponses = ResponseLoggingOption.Always;
-            loggingConfig.LogResponsesSizeLimit = 4096;
-            loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
         }
 
         private HashSet<string> failedWWWTests;

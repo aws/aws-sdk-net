@@ -524,6 +524,16 @@
         {
             "active": true,
 
+            "model": "gamelift",
+            "base-name": "GameLift",
+            "region-lookup-name": "gamelift",
+            "authentication-service-name": "gamelift",
+            "service-url": "https://gamelift.us-east-1.amazonaws.com",
+            "synopsis": "Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games."
+        },
+        {
+            "active": true,
+
             "model": "glacier",
             "base-name": "Glacier",
             "region-lookup-name": "glacier",

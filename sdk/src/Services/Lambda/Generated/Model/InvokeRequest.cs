@@ -29,21 +29,16 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the Invoke operation.
-    /// Invokes a specific Lambda function version. 
+    /// Invokes a specific Lambda function. 
     /// 
     ///  
     /// <para>
-    /// If you don't provide the <code>Qualifier</code> parameter, it uses the unqualified
-    /// function ARN which results in invocation of the $LATEST version of the Lambda function
-    /// (when you create a Lambda function, the $LATEST is the version). The AWS Lambda versioning
-    /// and aliases feature allows you to publish multiple versions of a Lambda function and
-    /// also create aliases for each function version. So each your Lambda function version
-    /// can be invoked using multiple ARNs. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
-    /// Lambda Function Versioning and Aliases</a>. Using the <code>Qualifier</code> parameter,
-    /// you can specify a function version or alias name to invoke specific function version.
-    /// If you specify function version, the API uses the qualified function ARN to invoke
-    /// a specific function version. If you specify alias name, the API uses the alias ARN
-    /// to invoke the function version to which the alias points.
+    /// If you are using the versioning feature, you can invoke the specific function version
+    /// by providing function version or alias name that is pointing to the function version
+    /// using the <code>Qualifier</code> parameter in the request. If you don't provide the
+    /// <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda function
+    /// is invoked. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+    /// Lambda Function Versioning and Aliases</a>. 
     /// </para>
     ///  
     /// <para>
@@ -64,8 +59,8 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// Using the <code>ClientContext</code> you can pass client-specific information to the
         /// Lambda function you are invoking. You can then process the client information in your
-        /// Lambda function as you choose through the context variable. For an example of a ClientContext
-        /// JSON, go to <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
+        /// Lambda function as you choose through the context variable. For an example of a <code>ClientContext</code>
+        /// JSON, see <a href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
         /// in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.
         /// </para>
         ///  
@@ -92,11 +87,11 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        ///  You can specify an unqualified function name (for example, "Thumbnail") or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-        /// AWS Lambda also allows you to specify only the account ID qualifier (for example,
-        /// "account-id:Thumbnail"). Note that the length constraint applies only to the ARN.
-        /// If you specify only the function name, it is limited to 64 character in length. 
+        ///  You can specify a function name (for example, <code>Thumbnail</code>) or you can
+        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+        /// AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+        /// Note that the length constraint applies only to the ARN. If you specify only the function
+        /// name, it is limited to 64 character in length. 
         /// </para>
         /// </summary>
         public string FunctionName
@@ -114,13 +109,14 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property InvocationType. 
         /// <para>
-        /// By default, the <code>Invoke</code> API assumes "RequestResponse" invocation type.
-        /// You can optionally request asynchronous execution by specifying "Event" as the <code>InvocationType</code>.
-        /// You can also use this parameter to request AWS Lambda to not execute the function
-        /// but do some verification, such as if the caller is authorized to invoke the function
-        /// and if the inputs are valid. You request this by specifying "DryRun" as the <code>InvocationType</code>.
-        /// This is useful in a cross-account scenario when you want to verify access to a function
-        /// without running it. 
+        /// By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation
+        /// type. You can optionally request asynchronous execution by specifying <code>Event</code>
+        /// as the <code>InvocationType</code>. You can also use this parameter to request AWS
+        /// Lambda to not execute the function but do some verification, such as if the caller
+        /// is authorized to invoke the function and if the inputs are valid. You request this
+        /// by specifying <code>DryRun</code> as the <code>InvocationType</code>. This is useful
+        /// in a cross-account scenario when you want to verify access to a function without running
+        /// it. 
         /// </para>
         /// </summary>
         public InvocationType InvocationType
@@ -138,10 +134,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LogType. 
         /// <para>
-        /// You can set this optional parameter to "Tail" in the request only if you specify the
-        /// <code>InvocationType</code> parameter with value "RequestResponse". In this case,
-        /// AWS Lambda returns the base64-encoded last 4 KB of log data produced by your Lambda
-        /// function in the <code>x-amz-log-results</code> header. 
+        /// You can set this optional parameter to <code>Tail</code> in the request only if you
+        /// specify the <code>InvocationType</code> parameter with value <code>RequestResponse</code>.
+        /// In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced
+        /// by your Lambda function in the <code>x-amz-log-results</code> header. 
         /// </para>
         /// </summary>
         public LogType LogType
@@ -177,15 +173,15 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// You can use this optional paramter to specify a Lambda function version or alias name.
-        /// If you specify function version, the API uses qualified function ARN to invoke a specific
-        /// Lambda function. If you specify alias name, the API uses the alias ARN to invoke the
-        /// Lambda function version to which the alias points.
+        /// You can use this optional parameter to specify a Lambda function version or alias
+        /// name. If you specify a function version, the API uses the qualified function ARN to
+        /// invoke a specific Lambda function. If you specify an alias name, the API uses the
+        /// alias ARN to invoke the Lambda function version to which the alias points.
         /// </para>
         ///  
         /// <para>
         /// If you don't provide this parameter, then the API uses unqualified function ARN which
-        /// results in invocation of the $LATEST version.
+        /// results in invocation of the <code>$LATEST</code> version.
         /// </para>
         /// </summary>
         public string Qualifier

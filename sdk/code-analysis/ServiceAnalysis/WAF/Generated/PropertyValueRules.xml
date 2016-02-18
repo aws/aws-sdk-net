@@ -16,6 +16,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.CreateSizeConstraintSetRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.CreateSqlInjectionMatchSetRequest.Name</property>
     <min>1</min>
     <max>128</max>
@@ -37,6 +42,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.DeleteRuleRequest.RuleId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteSizeConstraintSetRequest.SizeConstraintSetId</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
@@ -77,6 +87,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.GetSampledRequestsRequest.WebAclId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetSizeConstraintSetRequest.SizeConstraintSetId</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
@@ -130,6 +145,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.ListSizeConstraintSetsRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListSizeConstraintSetsRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListSizeConstraintSetsResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.ListSqlInjectionMatchSetsRequest.Limit</property>
     <min>1</min>
     <max>100</max>
@@ -167,6 +195,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.UpdateRuleRequest.RuleId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateSizeConstraintSetRequest.SizeConstraintSetId</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
@@ -226,6 +259,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.Predicate.DataId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.Rule.Name</property>
     <min>1</min>
     <max>128</max>
@@ -248,6 +286,30 @@
   <property-value-rule>
     <property>Amazon.WAF.Model.SampledHTTPRequest.Weight</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.SizeConstraint.Size</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.SizeConstraintSet.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.SizeConstraintSet.SizeConstraintSetId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.SizeConstraintSetSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.SizeConstraintSetSummary.SizeConstraintSetId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.SqlInjectionMatchSet.Name</property>

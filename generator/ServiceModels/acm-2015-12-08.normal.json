@@ -10,7 +10,7 @@
     "targetPrefix":"CertificateManager",
     "protocol":"json"
   },
-  "documentation":"<fullname>AWS Certificate Manager</fullname> <p>This is the AWS Certificate Manager (ACM) command line reference. It provides descriptions, syntax, and usage examples for each ACM command. You can use AWS Certificate Manager to request SSL/TLS certificates for your AWS-based websites and applications. For general information about using ACM and for more information about using the console, see the <a href=\"url-acm-ug;acm-overview.html\">AWS Certificate Manager User Guide</a>. For more information about using the ACM API, see the <a href=\"http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html\"> AWS Certificate Manager API Reference</a>. </p>",
+  "documentation":"<fullname>AWS Certificate Manager</fullname> <p>Welcome to the AWS Certificate Manager (ACM) Command Reference. This guide provides descriptions, syntax, and usage examples for each ACM command. You can use AWS Certificate Manager to request ACM Certificates for your AWS-based websites and applications. For general information about using ACM and for more information about using the console, see the <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html\">AWS Certificate Manager User Guide</a>. For more information about using the ACM API, see the <a href=\"http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html\"> AWS Certificate Manager API Reference</a>. </p>",
   "operations":{
     "DeleteCertificate":{
       "name":"DeleteCertificate",
@@ -36,7 +36,7 @@
           "documentation":"<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
         }
       ],
-      "documentation":"<p> Deletes a certificate and its associated private key. If this function succeeds, the certificate will no longer appear in the list of certificates that can be displayed by calling the <a>ListCertificates</a> function or be retrieved by calling the <a>GetCertificate</a> function. The certificate will not be available for use by other AWS services. <note>You cannot delete a certificate that is being used by another AWS service. To delete a certificate that is in use, the certificate association must first be removed. </note> </p>"
+      "documentation":"<p> Deletes an ACM Certificate and its associated private key. If this action succeeds, the certificate no longer appears in the list of ACM Certificates that can be displayed by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a> action. The certificate will not be available for use by other AWS services.</p> <note>You cannot delete an ACM Certificate that is being used by another AWS service. To delete a certificate that is in use, the certificate association must first be removed. </note>"
     },
     "DescribeCertificate":{
       "name":"DescribeCertificate",
@@ -58,7 +58,7 @@
           "documentation":"<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
         }
       ],
-      "documentation":"<p> Returns a list of the fields contained in the specified certificate. For example, this function returns the certificate status, a flag that indicates whether the certificate is associated with any other AWS service, and the date at which the certificate request was created. The certificate is specified on input by its Amazon Resource Name (ARN). </p>"
+      "documentation":"<p> Returns a list of the fields contained in the specified ACM Certificate. For example, this action returns the certificate status, a flag that indicates whether the certificate is associated with any other AWS service, and the date at which the certificate request was created. The ACM Certificate is specified on input by its Amazon Resource Name (ARN). </p>"
     },
     "GetCertificate":{
       "name":"GetCertificate",
@@ -85,7 +85,7 @@
           "documentation":"<p> The requested Amazon Resource Name (ARN) does not refer to an existing resource. </p>"
         }
       ],
-      "documentation":"<p> Retrieves an SSL/TLS certificate and certificate chain for the certificate specified by an ARN. The chain is an ordered list of certificates that contains the root certificate, intermediate certificates of subordinate CAs, and the ACM certificate. The certificate and certificate chain are base64 encoded. If you want to decode the certificate chain to see the individual certificate fields, you can use OpenSSL. </p> <note> Currently, ACM certificates can be used only with Elastic Load Balancing and Amazon CloudFront. </note>"
+      "documentation":"<p> Retrieves an ACM Certificate and certificate chain for the certificate specified by an ARN. The chain is an ordered list of certificates that contains the root certificate, intermediate certificates of subordinate CAs, and the ACM Certificate. The certificate and certificate chain are base64 encoded. If you want to decode the certificate chain to see the individual certificate fields, you can use OpenSSL. </p> <note> Currently, ACM Certificates can be used only with Elastic Load Balancing and Amazon CloudFront. </note>"
     },
     "ListCertificates":{
       "name":"ListCertificates",
@@ -95,7 +95,7 @@
       },
       "input":{"shape":"ListCertificatesRequest"},
       "output":{"shape":"ListCertificatesResponse"},
-      "documentation":"<p> Retrieves a list of the certificate ARNs, and the domain name for each ARN, owned by the calling account. You can filter the list based on the <code>CertificateStatuses</code> parameter, and you can display up to <code>MaxItems</code> certificates at one time. If you have more than <code>MaxItems</code> certificates, use the <code>NextToken</code> marker from the response object in your next call to the <code>ListCertificates</code> function to retrieve the next set of certificate ARNs. </p>"
+      "documentation":"<p> Retrieves a list of the ACM Certificate ARNs, and the domain name for each ARN, owned by the calling account. You can filter the list based on the <code>CertificateStatuses</code> parameter, and you can display up to <code>MaxItems</code> certificates at one time. If you have more than <code>MaxItems</code> certificates, use the <code>NextToken</code> marker from the response object in your next call to the <code>ListCertificates</code> action to retrieve the next set of certificate ARNs. </p>"
     },
     "RequestCertificate":{
       "name":"RequestCertificate",
@@ -115,14 +115,9 @@
           "shape":"InvalidDomainValidationOptionsException",
           "exception":true,
           "documentation":"<p> One or more values in the <a>DomainValidationOption</a> structure is incorrect. </p>"
-        },
-        {
-          "shape":"AccessDeniedException",
-          "exception":true,
-          "documentation":"<p> You do not have the IAM permissions necessary to perform the requested operation. </p>"
         }
       ],
-      "documentation":"<p> Requests an ACM certificate for use with other AWS services. To request an ACM certificate, you must specify the fully qualified domain name (FQDN) for your site. You can also specify additional FQDNs if users can reach your site by using other names. For each domain name you specify, email is sent to the domain owner to request approval to issue the certificate. After receiving approval from the domain owner, the ACM certificate is issued. For more information, see the <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/overview.html\"> AWS Certificate Manager User Guide </a>. </p>"
+      "documentation":"<p> Requests an ACM Certificate for use with other AWS services. To request an ACM Certificate, you must specify the fully qualified domain name (FQDN) for your site. You can also specify additional FQDNs if users can reach your site by using other names. For each domain name you specify, email is sent to the domain owner to request approval to issue the certificate. After receiving approval from the domain owner, the ACM Certificate is issued. For more information, see the <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/overview.html\"> AWS Certificate Manager User Guide </a>. </p>"
     },
     "ResendValidationEmail":{
       "name":"ResendValidationEmail",
@@ -140,7 +135,7 @@
         {
           "shape":"InvalidStateException",
           "exception":true,
-          "documentation":"<p> Processing has reached an invalid state. For example, this exception can be thrown if the specified domain is not using email validation, or the current certificate status does not permit the requested operation. See the exception message returned by ACM to determine which state is not valid. </p>"
+          "documentation":"<p> Processing has reached an invalid state. For example, this exception can occur if the specified domain is not using email validation, or the current certificate status does not permit the requested operation. See the exception message returned by ACM to determine which state is not valid. </p>"
         },
         {
           "shape":"InvalidArnException",
@@ -153,18 +148,10 @@
           "documentation":"<p> One or more values in the <a>DomainValidationOption</a> structure is incorrect. </p>"
         }
       ],
-      "documentation":"<p> Resends the email that requests domain ownership validation. The domain owner or an authorized representative must approve the ACM certificate before it can be issued. The certificate can be approved by clicking a link in the mail to navigate to the Amazon certificate approval website and then clicking <b>I Approve</b>. However, the validation email can be blocked by spam filters. Therefore, if you do not receive the original mail, you can request that the mail be resent within 72 hours of requesting the ACM certificate. If more than 72 hours have elapsed since your original request or since your last attempt to resend validation mail, you must request a new certificate. </p>"
+      "documentation":"<p> Resends the email that requests domain ownership validation. The domain owner or an authorized representative must approve the ACM Certificate before it can be issued. The certificate can be approved by clicking a link in the mail to navigate to the Amazon certificate approval website and then clicking <b>I Approve</b>. However, the validation email can be blocked by spam filters. Therefore, if you do not receive the original mail, you can request that the mail be resent within 72 hours of requesting the ACM Certificate. If more than 72 hours have elapsed since your original request or since your last attempt to resend validation mail, you must request a new certificate. </p>"
     }
   },
   "shapes":{
-    "AccessDeniedException":{
-      "type":"structure",
-      "members":{
-        "message":{"shape":"String"}
-      },
-      "exception":true,
-      "documentation":"<p> You do not have the IAM permissions necessary to perform the requested operation. </p>"
-    },
     "Arn":{
       "type":"string",
       "min":20,
@@ -188,7 +175,7 @@
       "members":{
         "CertificateArn":{
           "shape":"Arn",
-          "documentation":"<p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
+          "documentation":"<p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
         },
         "DomainName":{
           "shape":"DomainNameString",
@@ -196,7 +183,7 @@
         },
         "SubjectAlternativeNames":{
           "shape":"DomainList",
-          "documentation":"<p> One or more domain names (subject alternative names) included in the certificate request. After the certificate is issued, this list includes the domain names bound to the public key contained in the certificate. The subject alternative names include the domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>"
+          "documentation":"<p> One or more domain names (subject alternative names) included in the certificate request. After the certificate is issued, this list includes the domain names bound to the public key contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>"
         },
         "DomainValidationOptions":{
           "shape":"DomainValidationList",
@@ -252,10 +239,10 @@
         },
         "InUseBy":{
           "shape":"InUseList",
-          "documentation":"<p> List that identifies ARNs that are using the certificate. A single ACM certificate can be used by multiple AWS resources. </p>"
+          "documentation":"<p> List that identifies ARNs that are using the certificate. A single ACM Certificate can be used by multiple AWS resources. </p>"
         }
       },
-      "documentation":"<p> This structure is returned in the response object of the <a>DescribeCertificate</a> function. </p>"
+      "documentation":"<p> This structure is returned in the response object of the <a>DescribeCertificate</a> action. </p>"
     },
     "CertificateStatus":{
       "type":"string",
@@ -278,14 +265,14 @@
       "members":{
         "CertificateArn":{
           "shape":"Arn",
-          "documentation":"<p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
+          "documentation":"<p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
         },
         "DomainName":{
           "shape":"DomainNameString",
           "documentation":"<p> Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate. </p>"
         }
       },
-      "documentation":"<p> This structure is returned in the response object of <a>ListCertificates</a> function. </p>"
+      "documentation":"<p> This structure is returned in the response object of <a>ListCertificates</a> action. </p>"
     },
     "CertificateSummaryList":{
       "type":"list",
@@ -297,7 +284,7 @@
       "members":{
         "CertificateArn":{
           "shape":"Arn",
-          "documentation":"<p> String that contains the ARN of the certificate to be deleted. This must be of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
+          "documentation":"<p> String that contains the ARN of the ACM Certificate to be deleted. This must be of the form: </p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
         }
       }
     },
@@ -307,7 +294,7 @@
       "members":{
         "CertificateArn":{
           "shape":"Arn",
-          "documentation":"<p> String that contains a certificate ARN. The ARN must be of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
+          "documentation":"<p> String that contains an ACM Certificate ARN. The ARN must be of the form: </p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
         }
       }
     },
@@ -316,7 +303,7 @@
       "members":{
         "Certificate":{
           "shape":"CertificateDetail",
-          "documentation":"<p>Contains a <a>CertificateDetail</a> structure that lists the certificate fields.</p>"
+          "documentation":"<p>Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.</p>"
         }
       }
     },
@@ -370,10 +357,10 @@
         },
         "ValidationDomain":{
           "shape":"DomainNameString",
-          "documentation":"<p> The domain to which validation email is sent. This is the base validation domain that will act as the suffix of the email addresses. This must be the same as the <code>DomainName</code> value or a super domain of the <code>DomainName</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS for the base domain and the and the following five addresses: <ul> <li>admin@subdomain.example.com</li> <li>administrator@subdomain.example.com</li> <li>hostmaster@subdomain.example.com</li> <li>postmaster@subdomain.example.com</li> <li>webmaster@subdomain.example.com</li> </ul> </p>"
+          "documentation":"<p> The domain to which validation email is sent. This is the base validation domain that will act as the suffix of the email addresses. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS for the base domain and the and the following five addresses: <ul> <li>admin@subdomain.example.com</li> <li>administrator@subdomain.example.com</li> <li>hostmaster@subdomain.example.com</li> <li>postmaster@subdomain.example.com</li> <li>webmaster@subdomain.example.com</li> </ul> </p>"
         }
       },
-      "documentation":"<p> This structure is used in the request object of the <a>RequestCertificate</a> function. </p>"
+      "documentation":"<p> This structure is used in the request object of the <a>RequestCertificate</a> action. </p>"
     },
     "DomainValidationOptionList":{
       "type":"list",
@@ -387,7 +374,7 @@
       "members":{
         "CertificateArn":{
           "shape":"Arn",
-          "documentation":"<p> String that contains a certificate ARN. This must be of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
+          "documentation":"<p> String that contains a certificate ARN in the following format: </p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p> For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </p>"
         }
       }
     },
@@ -396,11 +383,11 @@
       "members":{
         "Certificate":{
           "shape":"CertificateBody",
-          "documentation":"<p> String that contains the certificate represented by the ARN specified at input. </p>"
+          "documentation":"<p> String that contains the ACM Certificate represented by the ARN specified at input. </p>"
         },
         "CertificateChain":{
           "shape":"CertificateChain",
-          "documentation":"<p> The certificate chain that contains the root certificate issued by the CA. </p>"
+          "documentation":"<p> The certificate chain that contains the root certificate issued by the certificate authority (CA). </p>"
         }
       }
     },
@@ -436,7 +423,7 @@
         "message":{"shape":"String"}
       },
       "exception":true,
-      "documentation":"<p> Processing has reached an invalid state. For example, this exception can be thrown if the specified domain is not using email validation, or the current certificate status does not permit the requested operation. See the exception message returned by ACM to determine which state is not valid. </p>"
+      "documentation":"<p> Processing has reached an invalid state. For example, this exception can occur if the specified domain is not using email validation, or the current certificate status does not permit the requested operation. See the exception message returned by ACM to determine which state is not valid. </p>"
     },
     "KeyAlgorithm":{
       "type":"string",
@@ -458,15 +445,15 @@
       "members":{
         "CertificateStatuses":{
           "shape":"CertificateStatuses",
-          "documentation":"<p> Identifies the status of the certificates for which you want to retrieve the certificate ARNs. This can be one or more of the following values: <ul> <li><code>PENDING_VALIDATION</code></li> <li><code>ISSUED</code></li> <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li> <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li> <li><code>FAILED</code></li> </ul> </p>"
+          "documentation":"<p> Identifies the statuses of the ACM Certificates for which you want to retrieve the ARNs. This can be one or more of the following values: <ul> <li><code>PENDING_VALIDATION</code></li> <li><code>ISSUED</code></li> <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li> <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li> <li><code>FAILED</code></li> </ul> </p>"
         },
         "NextToken":{
           "shape":"NextToken",
-          "documentation":"<p> String that contains an opaque marker of the next certificate to be displayed. Use this parameter when paginating results, and only in a subsequent request after you've received a response where the results have been truncated. Set it to an empty string the first time you call this function, and set it to the value of the <code>NextToken</code> element you receive in the response object for subsequent calls. </p>"
+          "documentation":"<p> String that contains an opaque marker of the next ACM Certificate ARN to be displayed. Use this parameter when paginating results, and only in a subsequent request after you've received a response where the results have been truncated. Set it to an empty string the first time you call this action, and set it to the value of the <code>NextToken</code> element you receive in the response object for subsequent calls. </p>"
         },
         "MaxItems":{
           "shape":"MaxItems",
-          "documentation":"<p> Specify this parameter when paginating results to indicate the maximum number of certificates that you want to display for each response. If there are additional certificates beyond the maximum you specify, use the <code>NextToken</code> value in your next call to the <code>ListCertificates</code> function. </p>"
+          "documentation":"<p> Specify this parameter when paginating results to indicate the maximum number of ACM Certificates that you want to display for each response. If there are additional certificates beyond the maximum you specify, use the <code>NextToken</code> value in your next call to the <code>ListCertificates</code> action. </p>"
         }
       }
     },
@@ -500,11 +487,11 @@
       "members":{
         "DomainName":{
           "shape":"DomainNameString",
-          "documentation":"<p> Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an SSL/TLS certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>"
+          "documentation":"<p> Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>"
         },
         "SubjectAlternativeNames":{
           "shape":"DomainList",
-          "documentation":"<p> Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. </p>"
+          "documentation":"<p> Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. </p>"
         },
         "IdempotencyToken":{
           "shape":"IdempotencyToken",
@@ -512,7 +499,7 @@
         },
         "DomainValidationOptions":{
           "shape":"DomainValidationOptionList",
-          "documentation":"<p> The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a super domain of the <code>Domain</code> value. For example, if you requested a certificate for <code>www.example.com</code> and specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses: <ul> <li>admin@example.com</li> <li>administrator@example.com</li> <li>hostmaster@example.com</li> <li>postmaster@example.com</li> <li>webmaster@example.com</li> </ul> </p>"
+          "documentation":"<p> The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>test.example.com</code> and specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses: <ul> <li>admin@example.com</li> <li>administrator@example.com</li> <li>hostmaster@example.com</li> <li>postmaster@example.com</li> <li>webmaster@example.com</li> </ul> </p>"
         }
       }
     },
@@ -543,7 +530,7 @@
       "members":{
         "CertificateArn":{
           "shape":"Arn",
-          "documentation":"<p> String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by <a>RequestCertificate</a> as soon as the request is made. By default, using this parameter causes email to be sent to all top level domains you specified in the certificate request. </p> <p> The ARN must be of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>"
+          "documentation":"<p> String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by <a>RequestCertificate</a> as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. </p> <p> The ARN must be of the form: </p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>"
         },
         "Domain":{
           "shape":"DomainNameString",
@@ -551,7 +538,7 @@
         },
         "ValidationDomain":{
           "shape":"DomainNameString",
-          "documentation":"<p> The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a super domain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses: <ul> <li>admin@subdomain.example.com</li> <li>administrator@subdomain.example.com</li> <li>hostmaster@subdomain.example.com</li> <li>postmaster@subdomain.example.com</li> <li>webmaster@subdomain.example.com</li> </ul> </p>"
+          "documentation":"<p> The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses: <ul> <li>admin@subdomain.example.com</li> <li>administrator@subdomain.example.com</li> <li>hostmaster@subdomain.example.com</li> <li>postmaster@subdomain.example.com</li> <li>webmaster@subdomain.example.com</li> </ul> </p>"
         }
       }
     },

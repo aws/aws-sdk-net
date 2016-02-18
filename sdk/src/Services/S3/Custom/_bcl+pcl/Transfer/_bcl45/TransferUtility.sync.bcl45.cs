@@ -28,7 +28,7 @@ using System.Runtime.ExceptionServices;
 
 namespace Amazon.S3.Transfer
 {
-    public partial class TransferUtility
+    public partial class TransferUtility : ITransferUtility
     {
         #region UploadDirectory
         /// <summary>

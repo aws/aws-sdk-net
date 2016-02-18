@@ -268,6 +268,10 @@
       <Project>{FCF20E51-E8E5-46A3-8D7A-BB0E68C8BF4A}</Project>
       <Name>AWSSDK.ElasticTranscoder.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net45.csproj">
+      <Project>{d3896b6e-0138-44da-8748-86d88f9b22d6}</Project>
+      <Name>AWSSDK.GameLift.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net45.csproj">
       <Project>{CC49CFB0-F27C-4D16-AAF8-21097F468129}</Project>
       <Name>AWSSDK.Glacier.Net45</Name>

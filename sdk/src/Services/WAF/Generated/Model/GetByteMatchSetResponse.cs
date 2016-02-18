@@ -40,12 +40,11 @@ namespace Amazon.WAF.Model
         /// Information about the <a>ByteMatchSet</a> that you specified in the <code>GetByteMatchSet</code>
         /// request. For more information, see the following topics:
         /// </para>
-        ///  <ul> <li> <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>,
-        /// and <code>Name</code> </li> <li> <code>ByteMatchTuples</code>: Contains an array of
+        ///  <ul> <li><a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>,
+        /// and <code>Name</code></li> <li><code>ByteMatchTuples</code>: Contains an array of
         /// <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>,
-        /// <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code>
-        /// </li> <li> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </li>
-        /// </ul>
+        /// <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></li>
+        /// <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>
         /// </summary>
         public ByteMatchSet ByteMatchSet
         {

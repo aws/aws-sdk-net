@@ -29,12 +29,12 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCertificates operation.
-    /// Retrieves a list of the certificate ARNs, and the domain name for each ARN, owned
+    /// Retrieves a list of the ACM Certificate ARNs, and the domain name for each ARN, owned
     /// by the calling account. You can filter the list based on the <code>CertificateStatuses</code>
     /// parameter, and you can display up to <code>MaxItems</code> certificates at one time.
     /// If you have more than <code>MaxItems</code> certificates, use the <code>NextToken</code>
     /// marker from the response object in your next call to the <code>ListCertificates</code>
-    /// function to retrieve the next set of certificate ARNs.
+    /// action to retrieve the next set of certificate ARNs.
     /// </summary>
     public partial class ListCertificatesRequest : AmazonCertificateManagerRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateStatuses. 
         /// <para>
-        ///  Identifies the status of the certificates for which you want to retrieve the certificate
+        ///  Identifies the statuses of the ACM Certificates for which you want to retrieve the
         /// ARNs. This can be one or more of the following values: <ul> <li><code>PENDING_VALIDATION</code></li>
         /// <li><code>ISSUED</code></li> <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li>
         /// <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li> <li><code>FAILED</code></li>
@@ -68,9 +68,9 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         ///  Specify this parameter when paginating results to indicate the maximum number of
-        /// certificates that you want to display for each response. If there are additional certificates
-        /// beyond the maximum you specify, use the <code>NextToken</code> value in your next
-        /// call to the <code>ListCertificates</code> function. 
+        /// ACM Certificates that you want to display for each response. If there are additional
+        /// certificates beyond the maximum you specify, use the <code>NextToken</code> value
+        /// in your next call to the <code>ListCertificates</code> action. 
         /// </para>
         /// </summary>
         public int MaxItems
@@ -88,10 +88,10 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  String that contains an opaque marker of the next certificate to be displayed. Use
-        /// this parameter when paginating results, and only in a subsequent request after you've
-        /// received a response where the results have been truncated. Set it to an empty string
-        /// the first time you call this function, and set it to the value of the <code>NextToken</code>
+        ///  String that contains an opaque marker of the next ACM Certificate ARN to be displayed.
+        /// Use this parameter when paginating results, and only in a subsequent request after
+        /// you've received a response where the results have been truncated. Set it to an empty
+        /// string the first time you call this action, and set it to the value of the <code>NextToken</code>
         /// element you receive in the response object for subsequent calls. 
         /// </para>
         /// </summary>

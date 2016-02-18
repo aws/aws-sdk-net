@@ -32,12 +32,13 @@ namespace Amazon.CertificateManager
     ///
     /// AWS Certificate Manager 
     /// <para>
-    /// This is the AWS Certificate Manager (ACM) command line reference. It provides descriptions,
-    /// syntax, and usage examples for each ACM command. You can use AWS Certificate Manager
-    /// to request SSL/TLS certificates for your AWS-based websites and applications. For
-    /// general information about using ACM and for more information about using the console,
-    /// see the <a href="url-acm-ug;acm-overview.html">AWS Certificate Manager User Guide</a>.
-    /// For more information about using the ACM API, see the <a href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">
+    /// Welcome to the AWS Certificate Manager (ACM) Command Reference. This guide provides
+    /// descriptions, syntax, and usage examples for each ACM command. You can use AWS Certificate
+    /// Manager to request ACM Certificates for your AWS-based websites and applications.
+    /// For general information about using ACM and for more information about using the console,
+    /// see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
+    /// Certificate Manager User Guide</a>. For more information about using the ACM API,
+    /// see the <a href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">
     /// AWS Certificate Manager API Reference</a>. 
     /// </para>
     /// </summary>
@@ -48,14 +49,16 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Deletes a certificate and its associated private key. If this function succeeds,
-        /// the certificate will no longer appear in the list of certificates that can be displayed
-        /// by calling the <a>ListCertificates</a> function or be retrieved by calling the <a>GetCertificate</a>
-        /// function. The certificate will not be available for use by other AWS services. <note>You
-        /// cannot delete a certificate that is being used by another AWS service. To delete a
-        /// certificate that is in use, the certificate association must first be removed. </note>
+        /// Deletes an ACM Certificate and its associated private key. If this action succeeds,
+        /// the certificate no longer appears in the list of ACM Certificates that can be displayed
+        /// by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
+        /// action. The certificate will not be available for use by other AWS services.
+        /// 
+        ///  <note>You cannot delete an ACM Certificate that is being used by another AWS service.
+        /// To delete a certificate that is in use, the certificate association must first be
+        /// removed. </note>
         /// </summary>
-        /// <param name="certificateArn"> String that contains the ARN of the certificate to be deleted. This must be of the form:   <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn"> String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -91,12 +94,13 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Returns a list of the fields contained in the specified certificate. For example,
-        /// this function returns the certificate status, a flag that indicates whether the certificate
+        /// Returns a list of the fields contained in the specified ACM Certificate. For example,
+        /// this action returns the certificate status, a flag that indicates whether the certificate
         /// is associated with any other AWS service, and the date at which the certificate request
-        /// was created. The certificate is specified on input by its Amazon Resource Name (ARN).
+        /// was created. The ACM Certificate is specified on input by its Amazon Resource Name
+        /// (ARN).
         /// </summary>
-        /// <param name="certificateArn"> String that contains a certificate ARN. The ARN must be of the form:   <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn"> String that contains an ACM Certificate ARN. The ARN must be of the form:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -128,16 +132,16 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves an SSL/TLS certificate and certificate chain for the certificate specified
+        /// Retrieves an ACM Certificate and certificate chain for the certificate specified
         /// by an ARN. The chain is an ordered list of certificates that contains the root certificate,
-        /// intermediate certificates of subordinate CAs, and the ACM certificate. The certificate
+        /// intermediate certificates of subordinate CAs, and the ACM Certificate. The certificate
         /// and certificate chain are base64 encoded. If you want to decode the certificate chain
         /// to see the individual certificate fields, you can use OpenSSL. 
         /// 
-        ///  <note> Currently, ACM certificates can be used only with Elastic Load Balancing and
+        ///  <note> Currently, ACM Certificates can be used only with Elastic Load Balancing and
         /// Amazon CloudFront. </note>
         /// </summary>
-        /// <param name="certificateArn"> String that contains a certificate ARN. This must be of the form:   <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn"> String that contains a certificate ARN in the following format:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -173,12 +177,12 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of the certificate ARNs, and the domain name for each ARN, owned
+        /// Retrieves a list of the ACM Certificate ARNs, and the domain name for each ARN, owned
         /// by the calling account. You can filter the list based on the <code>CertificateStatuses</code>
         /// parameter, and you can display up to <code>MaxItems</code> certificates at one time.
         /// If you have more than <code>MaxItems</code> certificates, use the <code>NextToken</code>
         /// marker from the response object in your next call to the <code>ListCertificates</code>
-        /// function to retrieve the next set of certificate ARNs.
+        /// action to retrieve the next set of certificate ARNs.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -205,23 +209,20 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Requests an ACM certificate for use with other AWS services. To request an ACM certificate,
+        /// Requests an ACM Certificate for use with other AWS services. To request an ACM Certificate,
         /// you must specify the fully qualified domain name (FQDN) for your site. You can also
         /// specify additional FQDNs if users can reach your site by using other names. For each
         /// domain name you specify, email is sent to the domain owner to request approval to
-        /// issue the certificate. After receiving approval from the domain owner, the ACM certificate
+        /// issue the certificate. After receiving approval from the domain owner, the ACM Certificate
         /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">
         /// AWS Certificate Manager User Guide </a>.
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an SSL/TLS certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </param>
+        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the RequestCertificate service method, as returned by CertificateManager.</returns>
-        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
-        /// You do not have the IAM permissions necessary to perform the requested operation.
-        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidDomainValidationOptionsException">
         /// One or more values in the <a>DomainValidationOption</a> structure is incorrect.
         /// </exception>

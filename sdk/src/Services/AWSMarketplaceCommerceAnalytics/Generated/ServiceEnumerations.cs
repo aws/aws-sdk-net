@@ -31,6 +31,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     {
 
         /// <summary>
+        /// Constant Customer_profile_by_geography for DataSetType
+        /// </summary>
+        public static readonly DataSetType Customer_profile_by_geography = new DataSetType("customer_profile_by_geography");
+        /// <summary>
         /// Constant CustomerProfileByIndustry for DataSetType
         /// </summary>
         public static readonly DataSetType CustomerProfileByIndustry = new DataSetType("customer_profile_by_industry");

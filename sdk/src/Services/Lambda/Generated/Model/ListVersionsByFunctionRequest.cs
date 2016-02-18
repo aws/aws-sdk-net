@@ -29,7 +29,9 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVersionsByFunction operation.
-    /// List all versions of a function.
+    /// List all versions of a function. For information about the versioning feature, see
+    /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+    /// Lambda Function Versioning and Aliases</a>.
     /// </summary>
     public partial class ListVersionsByFunctionRequest : AmazonLambdaRequest
     {
@@ -40,10 +42,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// Function name whose versions to list. You can specify an unqualified function name
-        /// (for example, "Thumbnail") or you can specify Amazon Resource Name (ARN) of the function
-        /// (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda
-        /// also allows you to specify only the account ID qualifier (for example, "account-id:Thumbnail").
+        /// Function name whose versions to list. You can specify a function name (for example,
+        /// <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function
+        /// (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+        /// AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
         /// Note that the length constraint applies only to the ARN. If you specify only the function
         /// name, it is limited to 64 character in length. 
         /// </para>

@@ -29,8 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlias operation.
-    /// Deletes specified Lambda function alias. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html">Introduction
-    /// to AWS Lambda Aliases</a>
+    /// Deletes the specified Lambda function alias. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
+    /// to AWS Lambda Aliases</a>.
     /// 
     ///  
     /// <para>
@@ -45,7 +45,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The Lambda function name for which the alias is created.
+        /// The Lambda function name for which the alias is created. Deleting an alias does not
+        /// delete the function version to which it is pointing. 
         /// </para>
         /// </summary>
         public string FunctionName

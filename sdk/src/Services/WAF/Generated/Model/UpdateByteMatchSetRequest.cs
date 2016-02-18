@@ -112,10 +112,10 @@ namespace Amazon.WAF.Model
         /// An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or
         /// delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types:
         /// </para>
-        ///  <ul> <li> <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
-        /// </li> <li> <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-        /// <code>TargetString</code>, and <code>TextTransformation</code> </li> <li> <a>FieldToMatch</a>:
-        /// Contains <code>Data</code> and <code>Type</code> </li> </ul>
+        ///  <ul> <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li>
+        /// <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
+        /// <code>TargetString</code>, and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>:
+        /// Contains <code>Data</code> and <code>Type</code></li> </ul>
         /// </summary>
         public List<ByteMatchSetUpdate> Updates
         {

@@ -1,73 +1,78 @@
 {
-    "shapeModifiers": {
-        "InvokeAsyncRequest": {
-            "modify": [
-                {
-                    "InvokeArgs": { "emitPropertyName": "InvokeArgsStream" }
-                }
-            ]
+  "shapeModifiers": {
+    "InvokeAsyncRequest": {
+      "modify": [
+        {
+          "InvokeArgs": { "emitPropertyName": "InvokeArgsStream" }
+        }
+      ]
+    },
+    "InvocationRequest": {
+      "modify": [
+        {
+          "Payload": { "emitPropertyName": "PayloadStream" }
         },
-        "InvocationRequest": {
-            "modify": [
-                {
-                    "Payload": { "emitPropertyName": "PayloadStream" }
-                },
-                {
-                    "ClientContext": { "emitPropertyName": "ClientContextBase64" }
-                }
-            ]
+        {
+          "ClientContext": { "emitPropertyName": "ClientContextBase64" }
         }
-    },
-    "simpleMethods": {
-        "operations": {
-            "DeleteFunction": {
-                "methodForms": [
-                    [
-                        "FunctionName"
-                    ]
-                ]
-            },
-            "GetEventSource": {
-                "methodForms": [
-                    [
-                        "UUID"
-                    ]
-                ]
-            },
-            "GetFunction": {
-                "methodForms": [
-                    [
-                        "FunctionName"
-                    ]
-                ]
-            },
-            "GetFunctionConfiguration": {
-                "methodForms": [
-                    [
-                        "FunctionName"
-                    ]
-                ]
-            },
-            "ListFunctions": {
-                "methodForms": [
-                    [
-                    ]
-                ]
-            },
-            "RemoveEventSource": {
-                "methodForms": [
-                    [
-                        "UUID"
-                    ]
-                ]
-            }
-        }
-    },
-    "deprecatedOverrides": {
-        "operation": {
-            "InvokeAsync": {
-                "message": "This API is deprecated. We recommend that you use Invoke API instead."
-            }
-        }
+      ]
     }
+  },
+  "shapeSubstitutions": {
+    "VpcConfigResponse": {
+      "renameShape": "VpcConfigDetail"
+    }
+  },
+  "simpleMethods": {
+    "operations": {
+      "DeleteFunction": {
+        "methodForms": [
+          [
+            "FunctionName"
+          ]
+        ]
+      },
+      "GetEventSource": {
+        "methodForms": [
+          [
+            "UUID"
+          ]
+        ]
+      },
+      "GetFunction": {
+        "methodForms": [
+          [
+            "FunctionName"
+          ]
+        ]
+      },
+      "GetFunctionConfiguration": {
+        "methodForms": [
+          [
+            "FunctionName"
+          ]
+        ]
+      },
+      "ListFunctions": {
+        "methodForms": [
+          [
+          ]
+        ]
+      },
+      "RemoveEventSource": {
+        "methodForms": [
+          [
+            "UUID"
+          ]
+        ]
+      }
+    }
+  },
+  "deprecatedOverrides": {
+    "operation": {
+      "InvokeAsync": {
+        "message": "This API is deprecated. We recommend that you use Invoke API instead."
+      }
+    }
+  }
 }

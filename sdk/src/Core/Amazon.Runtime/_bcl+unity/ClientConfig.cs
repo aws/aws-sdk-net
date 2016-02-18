@@ -82,6 +82,25 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Returns a WebProxy instance configured to match the proxy settings
+        /// in the client configuration.
+        /// </summary>
+        public WebProxy GetWebProxy()
+        {
+            WebProxy proxy = null;
+            if (!string.IsNullOrEmpty(ProxyHost) && ProxyPort > 0)
+            {
+                proxy = new WebProxy(ProxyHost, ProxyPort);
+            }
+            if (proxy != null && ProxyCredentials != null)
+            {
+                proxy.Credentials = ProxyCredentials;
+            }
+
+            return proxy;
+        }
+
+        /// <summary>
         /// Gets and sets the max idle time set on the ServicePoint for the WebRequest.
         /// Default value is 50 seconds (50,000 ms) unless ServicePointManager.MaxServicePointIdleTime is set,
         /// in which case ServicePointManager.MaxServicePointIdleTime will be used as the default.

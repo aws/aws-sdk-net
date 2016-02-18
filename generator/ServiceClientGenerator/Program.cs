@@ -37,6 +37,7 @@ namespace ServiceClientGenerator
 
                 if (string.IsNullOrEmpty(options.SelfServiceModel))
                 {
+                    HashSet<string> generatedFiles = new HashSet<string>();
 					GeneratorDriver.GenerateCoreProjects(generationManifest, options);
 					foreach (var serviceConfig in generationManifest.ServiceConfigurations)
                     {
@@ -49,7 +50,13 @@ namespace ServiceClientGenerator
                         Console.WriteLine("Processing model: {0} ({1})", serviceConfig.ModelName, serviceConfig.ModelPath);
                         var driver = new GeneratorDriver(serviceConfig, generationManifest, options);
                         driver.Execute();
+                        foreach(var file in driver.FilesWrittenToGeneratorFolder)
+                        {
+                            generatedFiles.Add(file);
+                        }
                     }
+
+                    GeneratorDriver.RemoveOrphanedShapes(generatedFiles, Path.Combine(options.SdkRootFolder, @"src\Services"));
 
 					GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
 					GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
@@ -83,6 +90,13 @@ namespace ServiceClientGenerator
                     Console.WriteLine("Processing self service {0} with model {1}.", options.SelfServiceBaseName, options.SelfServiceModel);
                     var driver = new GeneratorDriver(serviceConfig, generationManifest, options);
                     driver.Execute();
+
+                    // Skip orphan clean for DynamoDB because of the complex nature of DynamDB and DynamoDB Streams
+                    if(!serviceConfig.BaseName.StartsWith("DynamoDB"))
+                    {
+                        GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, driver.GeneratedFilesRoot);
+                    }
+                    
                 }
             }
             catch (Exception e)

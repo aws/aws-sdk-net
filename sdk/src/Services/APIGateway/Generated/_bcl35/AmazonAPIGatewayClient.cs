@@ -294,6 +294,71 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateAuthorizer
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the CreateAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
+        {
+            var marshaller = new CreateAuthorizerRequestMarshaller();
+            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAuthorizer
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateAuthorizer(CreateAuthorizerRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateAuthorizerRequestMarshaller();
+            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateAuthorizerRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAuthorizer.</param>
+        /// 
+        /// <returns>Returns a  CreateAuthorizerResult from APIGateway.</returns>
+        public  CreateAuthorizerResponse EndCreateAuthorizer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAuthorizerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateBasePathMapping
 
         /// <summary>
@@ -691,7 +756,8 @@ namespace Amazon.APIGateway
         #region  CreateStage
 
         /// <summary>
-        /// Creates a <a>Stage</a> resource.
+        /// Creates a new <a>Stage</a> resource that references a pre-existing <a>Deployment</a>
+        /// for the API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStage service method.</param>
         /// 
@@ -811,6 +877,71 @@ namespace Amazon.APIGateway
         public  DeleteApiKeyResponse EndDeleteApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApiKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAuthorizer
+
+        /// <summary>
+        /// Deletes an existing <a>Authorizer</a> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
+        {
+            var marshaller = new DeleteAuthorizerRequestMarshaller();
+            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAuthorizer
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteAuthorizer(DeleteAuthorizerRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteAuthorizerRequestMarshaller();
+            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteAuthorizerRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAuthorizer.</param>
+        /// 
+        /// <returns>Returns a  DeleteAuthorizerResult from APIGateway.</returns>
+        public  DeleteAuthorizerResponse EndDeleteAuthorizer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAuthorizerResponse>(asyncResult);
         }
 
         #endregion
@@ -1834,6 +1965,127 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetAuthorizer
+
+        /// <summary>
+        /// Describe an existing <a>Authorizer</a> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the GetAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
+        {
+            var marshaller = new GetAuthorizerRequestMarshaller();
+            var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<GetAuthorizerRequest,GetAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizer
+        ///         operation.</returns>
+        public IAsyncResult BeginGetAuthorizer(GetAuthorizerRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAuthorizerRequestMarshaller();
+            var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAuthorizerRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAuthorizer.</param>
+        /// 
+        /// <returns>Returns a  GetAuthorizerResult from APIGateway.</returns>
+        public  GetAuthorizerResponse EndGetAuthorizer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAuthorizerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAuthorizers
+
+        /// <summary>
+        /// Describe an existing <a>Authorizers</a> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers service method.</param>
+        /// 
+        /// <returns>The response from the GetAuthorizers service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
+        {
+            var marshaller = new GetAuthorizersRequestMarshaller();
+            var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
+
+            return Invoke<GetAuthorizersRequest,GetAuthorizersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAuthorizers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizers
+        ///         operation.</returns>
+        public IAsyncResult BeginGetAuthorizers(GetAuthorizersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAuthorizersRequestMarshaller();
+            var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAuthorizersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAuthorizers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAuthorizers.</param>
+        /// 
+        /// <returns>Returns a  GetAuthorizersResult from APIGateway.</returns>
+        public  GetAuthorizersResponse EndGetAuthorizers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAuthorizersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetBasePathMapping
 
         /// <summary>
@@ -2303,6 +2555,68 @@ namespace Amazon.APIGateway
         public  GetDomainNamesResponse EndGetDomainNames(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainNamesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetExport
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExport service method.</param>
+        /// 
+        /// <returns>The response from the GetExport service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetExportResponse GetExport(GetExportRequest request)
+        {
+            var marshaller = new GetExportRequestMarshaller();
+            var unmarshaller = GetExportResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportRequest,GetExportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExport operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExport
+        ///         operation.</returns>
+        public IAsyncResult BeginGetExport(GetExportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetExportRequestMarshaller();
+            var unmarshaller = GetExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetExportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExport.</param>
+        /// 
+        /// <returns>Returns a  GetExportResult from APIGateway.</returns>
+        public  GetExportResponse EndGetExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetExportResponse>(asyncResult);
         }
 
         #endregion
@@ -3582,6 +3896,68 @@ namespace Amazon.APIGateway
         public  UpdateApiKeyResponse EndUpdateApiKey(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApiKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAuthorizer
+
+        /// <summary>
+        /// Updates an existing <a>Authorizer</a> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
+        {
+            var marshaller = new UpdateAuthorizerRequestMarshaller();
+            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAuthorizer
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateAuthorizer(UpdateAuthorizerRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateAuthorizerRequestMarshaller();
+            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAuthorizerRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAuthorizer.</param>
+        /// 
+        /// <returns>Returns a  UpdateAuthorizerResult from APIGateway.</returns>
+        public  UpdateAuthorizerResponse EndUpdateAuthorizer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAuthorizerResponse>(asyncResult);
         }
 
         #endregion

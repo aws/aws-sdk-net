@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,9 +32,6 @@ namespace Amazon
 {
     public static partial class AWSConfigs
     {
-        private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
-        private static bool configPresent = true;
-
         #region ApplicationName
 
         /// <summary>
@@ -125,7 +123,7 @@ namespace Amazon
         {
             if (!configPresent)
                 return new T();
-
+            
             if (xmlDoc == null)
             {
                 lock (_lock)
@@ -159,11 +157,12 @@ namespace Amazon
         {
             return configPresent && xmlDoc.Element(sectionName) != null;
         }
-        #endregion
 
+        #endregion
+       
         #region tracelistener
 
-        private static Dictionary<string, List<TraceListener>> _traceListeners
+        internal static Dictionary<string, List<TraceListener>> _traceListeners
            = new Dictionary<string, List<TraceListener>>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
@@ -238,10 +237,10 @@ namespace Amazon
         #endregion
 
         #region private methods
+       
         const string CONFIG_FILE = "awsconfig";
-        static XDocument xmlDoc;
-        private static object _lock = new object();
-
+        internal static XDocument xmlDoc;
+        
         private static XDocument LoadConfigFromResource()
         {
             XDocument xDoc = null;
