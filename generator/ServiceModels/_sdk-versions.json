@@ -442,14 +442,14 @@
             },
             "InPreview"    : false
         },
-        "AWS Certificate Manager"         : {
+        "CertificateManager"              : {
             "Version" : "3.1.1.0",
             "Dependencies" : {
                 "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
-        "Gamelift"                        : {
+        "GameLift"                        : {
             "Version" : "3.1.0.0",
             "Dependencies" : {
                 "Core" : "3.1.4.4"
