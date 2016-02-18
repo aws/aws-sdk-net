@@ -123,6 +123,22 @@ namespace Amazon.CodeDeploy
 
         #endregion
                 
+        #region  BatchGetApplicationRevisions
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetApplicationRevisions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetApplicationRevisions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<BatchGetApplicationRevisionsResponse> BatchGetApplicationRevisionsAsync(BatchGetApplicationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  BatchGetApplications
 
 
@@ -136,6 +152,22 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<BatchGetApplicationsResponse> BatchGetApplicationsAsync(BatchGetApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchGetDeploymentInstances
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDeploymentInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<BatchGetDeploymentInstancesResponse> BatchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

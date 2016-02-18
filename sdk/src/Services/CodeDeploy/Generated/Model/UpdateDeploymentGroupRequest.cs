@@ -41,6 +41,7 @@ namespace Amazon.CodeDeploy.Model
         private string _newDeploymentGroupName;
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private string _serviceRoleArn;
+        private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -64,7 +65,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property AutoScalingGroups. 
         /// <para>
         /// The replacement list of Auto Scaling groups to be included in the deployment group,
-        /// if you want to change them.
+        /// if you want to change them. To keep the existing Auto Scaling groups, enter their
+        /// names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.
         /// </para>
         /// </summary>
         public List<string> AutoScalingGroups
@@ -118,7 +120,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagFilters. 
         /// <para>
-        /// The replacement set of Amazon EC2 tags to filter on, if you want to change them.
+        /// The replacement set of Amazon EC2 tags to filter on, if you want to change them. To
+        /// keep the existing tags, enter their names. To remove tags, do not enter any tag names.
         /// </para>
         /// </summary>
         public List<EC2TagFilter> Ec2TagFilters
@@ -155,7 +158,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property OnPremisesInstanceTagFilters. 
         /// <para>
         /// The replacement set of on-premises instance tags for filter on, if you want to change
-        /// them.
+        /// them. To keep the existing tags, enter their names. To remove tags, do not enter any
+        /// tag names.
         /// </para>
         /// </summary>
         public List<TagFilter> OnPremisesInstanceTagFilters
@@ -186,6 +190,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetServiceRoleArn()
         {
             return this._serviceRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggerConfigurations. 
+        /// <para>
+        /// Information about triggers to change when the deployment group is updated.
+        /// </para>
+        /// </summary>
+        public List<TriggerConfig> TriggerConfigurations
+        {
+            get { return this._triggerConfigurations; }
+            set { this._triggerConfigurations = value; }
+        }
+
+        // Check to see if TriggerConfigurations property is set
+        internal bool IsSetTriggerConfigurations()
+        {
+            return this._triggerConfigurations != null && this._triggerConfigurations.Count > 0; 
         }
 
     }

@@ -140,6 +140,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceRoleArn);
                 }
 
+                if(publicRequest.IsSetTriggerConfigurations())
+                {
+                    context.Writer.WritePropertyName("triggerConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTriggerConfigurationsListValue in publicRequest.TriggerConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TriggerConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTriggerConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

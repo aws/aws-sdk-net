@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchGetOnPremisesInstances operation
+    /// Response Unmarshaller for BatchGetApplicationRevisions operation
     /// </summary>  
-    public class BatchGetOnPremisesInstancesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class BatchGetApplicationRevisionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,28 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            BatchGetOnPremisesInstancesResponse response = new BatchGetOnPremisesInstancesResponse();
+            BatchGetApplicationRevisionsResponse response = new BatchGetApplicationRevisionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("instanceInfos", targetDepth))
+                if (context.TestExpression("applicationName", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InstanceInfo, InstanceInfoUnmarshaller>(InstanceInfoUnmarshaller.Instance);
-                    response.InstanceInfos = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApplicationName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("errorMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("revisions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RevisionInfo, RevisionInfoUnmarshaller>(RevisionInfoUnmarshaller.Instance);
+                    response.Revisions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,24 +84,36 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ApplicationDoesNotExistException"))
+            {
+                return new ApplicationDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ApplicationNameRequiredException"))
+            {
+                return new ApplicationNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("BatchLimitExceededException"))
             {
                 return new BatchLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InstanceNameRequiredException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidApplicationNameException"))
             {
-                return new InstanceNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidApplicationNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInstanceNameException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRevisionException"))
             {
-                return new InvalidInstanceNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidRevisionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("RevisionRequiredException"))
+            {
+                return new RevisionRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonCodeDeployException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static BatchGetOnPremisesInstancesResponseUnmarshaller _instance = new BatchGetOnPremisesInstancesResponseUnmarshaller();        
+        private static BatchGetApplicationRevisionsResponseUnmarshaller _instance = new BatchGetApplicationRevisionsResponseUnmarshaller();        
 
-        internal static BatchGetOnPremisesInstancesResponseUnmarshaller GetInstance()
+        internal static BatchGetApplicationRevisionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +121,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchGetOnPremisesInstancesResponseUnmarshaller Instance
+        public static BatchGetApplicationRevisionsResponseUnmarshaller Instance
         {
             get
             {

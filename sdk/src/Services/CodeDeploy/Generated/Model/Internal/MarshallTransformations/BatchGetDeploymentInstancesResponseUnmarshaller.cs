@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchGetOnPremisesInstances operation
+    /// Response Unmarshaller for BatchGetDeploymentInstances operation
     /// </summary>  
-    public class BatchGetOnPremisesInstancesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class BatchGetDeploymentInstancesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            BatchGetOnPremisesInstancesResponse response = new BatchGetOnPremisesInstancesResponse();
+            BatchGetDeploymentInstancesResponse response = new BatchGetDeploymentInstancesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("instanceInfos", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InstanceInfo, InstanceInfoUnmarshaller>(InstanceInfoUnmarshaller.Instance);
-                    response.InstanceInfos = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("instancesSummary", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InstanceSummary, InstanceSummaryUnmarshaller>(InstanceSummaryUnmarshaller.Instance);
+                    response.InstancesSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,9 +82,21 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new BatchLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InstanceNameRequiredException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentDoesNotExistException"))
             {
-                return new InstanceNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DeploymentDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentIdRequiredException"))
+            {
+                return new DeploymentIdRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InstanceIdRequiredException"))
+            {
+                return new InstanceIdRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeploymentIdException"))
+            {
+                return new InvalidDeploymentIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInstanceNameException"))
             {
@@ -87,9 +105,9 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             return new AmazonCodeDeployException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static BatchGetOnPremisesInstancesResponseUnmarshaller _instance = new BatchGetOnPremisesInstancesResponseUnmarshaller();        
+        private static BatchGetDeploymentInstancesResponseUnmarshaller _instance = new BatchGetDeploymentInstancesResponseUnmarshaller();        
 
-        internal static BatchGetOnPremisesInstancesResponseUnmarshaller GetInstance()
+        internal static BatchGetDeploymentInstancesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +115,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchGetOnPremisesInstancesResponseUnmarshaller Instance
+        public static BatchGetDeploymentInstancesResponseUnmarshaller Instance
         {
             get
             {

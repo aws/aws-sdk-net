@@ -41,6 +41,7 @@ namespace Amazon.CodeDeploy.Model
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private string _serviceRoleArn;
         private RevisionLocation _targetRevision;
+        private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -203,6 +204,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetTargetRevision()
         {
             return this._targetRevision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggerConfigurations. 
+        /// <para>
+        /// A list of associated triggers. 
+        /// </para>
+        /// </summary>
+        public List<TriggerConfig> TriggerConfigurations
+        {
+            get { return this._triggerConfigurations; }
+            set { this._triggerConfigurations = value; }
+        }
+
+        // Check to see if TriggerConfigurations property is set
+        internal bool IsSetTriggerConfigurations()
+        {
+            return this._triggerConfigurations != null && this._triggerConfigurations.Count > 0; 
         }
 
     }
