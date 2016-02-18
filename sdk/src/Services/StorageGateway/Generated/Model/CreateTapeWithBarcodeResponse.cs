@@ -28,32 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway.
-    /// It is a string made of information such as your account, gateway name, and region.
-    /// This ARN is used to reference the gateway in other API operations as well as resource-based
-    /// authorization.
-    /// 
-    ///  <note>For Gateways activated prior to September 02, 2015 the gateway ARN contains
-    /// the gateway name rather than the gateway id. Changing the name of the gateway has
-    /// no effect on the gateway ARN.</note>
+    /// CreateTapeOutput
     /// </summary>
-    public partial class ActivateGatewayResponse : AmazonWebServiceResponse
+    public partial class CreateTapeWithBarcodeResponse : AmazonWebServiceResponse
     {
-        private string _gatewayARN;
+        private string _tapeARN;
 
         /// <summary>
-        /// Gets and sets the property GatewayARN.
+        /// Gets and sets the property TapeARN. 
+        /// <para>
+        /// A unique Amazon Resource Name (ARN) that represents the virtual tape that was created.
+        /// </para>
         /// </summary>
-        public string GatewayARN
+        public string TapeARN
         {
-            get { return this._gatewayARN; }
-            set { this._gatewayARN = value; }
+            get { return this._tapeARN; }
+            set { this._tapeARN = value; }
         }
 
-        // Check to see if GatewayARN property is set
-        internal bool IsSetGatewayARN()
+        // Check to see if TapeARN property is set
+        internal bool IsSetTapeARN()
         {
-            return this._gatewayARN != null;
+            return this._tapeARN != null;
         }
 
     }
