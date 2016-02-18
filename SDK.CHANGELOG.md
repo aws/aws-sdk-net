@@ -1,3 +1,7 @@
+### 3.1.44.1 (2016-02-18 00:52 UTC)
+* Core 3.1.4.5
+	* Fix issue with ConstantClass thread-safety
+
 ### 3.1.44.0 (2016-02-17 00:03 UTC)
 * ElasticMapReduce (3.1.3.0)
 	* Added support for adding EBS storage to an EMR instance.
