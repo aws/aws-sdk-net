@@ -114,7 +114,7 @@ namespace SDKDocGenerator.Writers
                 {
                     string url, target;
                     type.GetHelpURL(this._version, out url, out target);
-                    if(url == null)
+                    if (url == null)
                         writer.WriteLine(type.FullName);
                     else
                         writer.WriteLine("<a href=\"{0}\" {1}>{2}.{3}</a>", url, target, type.Namespace, type.GetDisplayName(false));
@@ -204,8 +204,15 @@ namespace SDKDocGenerator.Writers
 
             writer.WriteLine("<td>");
 
-            var docs = NDocUtilities.FindDocumentation(this._currentNDoc, propertyInfo);
-            var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+            string html = string.Empty;
+            if (_versionType.Namespace != propertyInfo.DeclaringType.Namespace)
+            {
+                html = string.Format("Inherited from {0}.{1}.", propertyInfo.DeclaringType.Namespace, propertyInfo.DeclaringType.Name);
+            }
+            else {
+                var docs = NDocUtilities.FindDocumentation(this._currentNDoc, propertyInfo);
+                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+            }
 
             writer.WriteLine(html);
             writer.WriteLine("</td>");
@@ -216,7 +223,7 @@ namespace SDKDocGenerator.Writers
         void AddMethods(TextWriter writer)
         {
             var methods = this._versionType.GetMethodsToDocument();
-            if(!methods.Any())
+            if (!methods.Any())
                 return;
             AddMemberTableSectionHeader(writer, "Methods");
 
@@ -254,9 +261,15 @@ namespace SDKDocGenerator.Writers
 
             writer.WriteLine("<td>");
 
-            var docs = NDocUtilities.FindDocumentation(this._currentNDoc, info);
-            var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
-
+            string html = string.Empty;
+            if (_versionType.Namespace != info.DeclaringType.Namespace)
+            {
+                html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
+            }
+            else {
+                var docs = NDocUtilities.FindDocumentation(this._currentNDoc, info);
+                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+            }
             writer.WriteLine(html);
             writer.WriteLine("</td>");
 
@@ -295,8 +308,15 @@ namespace SDKDocGenerator.Writers
 
             writer.WriteLine("<td>");
 
-            var docs = NDocUtilities.FindDocumentation(this._currentNDoc, info);
-            var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+            string html = string.Empty;
+            if (_versionType.Namespace != info.DeclaringType.Namespace)
+            {
+                html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
+            }
+            else {
+                var docs = NDocUtilities.FindDocumentation(this._currentNDoc, info);
+                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+            }
 
             writer.WriteLine(html);
             writer.WriteLine("</td>");
@@ -330,15 +350,22 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
             writer.WriteLine("<a href=\"{0}/items/{1}/{2}\">{3}</a>",
                 RootRelativePath,
-                GenerationManifest.OutputSubFolderFromNamespace(info.DeclaringType.Namespace), 
+                GenerationManifest.OutputSubFolderFromNamespace(info.DeclaringType.Namespace),
                 FilenameGenerator.GenerateFilename(info),
                 info.Name);
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");
 
-            var docs = NDocUtilities.FindDocumentation(this._currentNDoc, info);
-            var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+            string html = string.Empty;
+            if (_versionType.Namespace != info.DeclaringType.Namespace)
+            {
+                html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
+            }
+            else {
+                var docs = NDocUtilities.FindDocumentation(this._currentNDoc, info);
+                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+            }
 
             writer.WriteLine(html);
             writer.WriteLine("</td>");
