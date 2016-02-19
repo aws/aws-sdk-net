@@ -292,210 +292,231 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
         private void TestHashObjects()
         {
-            // Create and save item
-            Product product = new Product
+            string bucketName = "aws-sdk-net-s3link-" + DateTime.Now.Ticks;
+            var s3Client = new Amazon.S3.AmazonS3Client(Amazon.RegionEndpoint.USEast1);
+            s3Client.PutBucket(bucketName);
+            try
             {
-                Id = 1,
-                Name = "CloudSpotter",
-                CompanyName = "CloudsAreGrate",
-                Price = 1200,
-                TagSet = new HashSet<string> { "Prod", "1.0" },
-                CurrentStatus = Status.Active,
-                FormerStatus = Status.Upcoming,
-                Supports = Support.Windows | Support.Abacus,
-                PreviousSupport = null,
-                InternalId = "T1000",
-                IsPublic = true,
-                AlwaysN = true,
-                Rating = 4,
-                Components = new List<string> { "Code", "Coffee" },
-                KeySizes = new List<byte> { 16, 64, 128 },
-                CompanyInfo = new CompanyInfo
+                // Create and save item
+                Product product = new Product
                 {
-                    Name = "MyCloud",
-                    Founded = new DateTime(1994, 7, 6),
-                    Revenue = 9001,
-                    AllProducts = new List<Product>
+                    Id = 1,
+                    Name = "CloudSpotter",
+                    CompanyName = "CloudsAreGrate",
+                    Price = 1200,
+                    TagSet = new HashSet<string> { "Prod", "1.0" },
+                    CurrentStatus = Status.Active,
+                    FormerStatus = Status.Upcoming,
+                    Supports = Support.Windows | Support.Abacus,
+                    PreviousSupport = null,
+                    InternalId = "T1000",
+                    IsPublic = true,
+                    AlwaysN = true,
+                    Rating = 4,
+                    Components = new List<string> { "Code", "Coffee" },
+                    KeySizes = new List<byte> { 16, 64, 128 },
+                    CompanyInfo = new CompanyInfo
                     {
-                        new Product { Id = 12, Name = "CloudDebugger" },
-                        new Product { Id = 13, Name = "CloudDebuggerTester" }
+                        Name = "MyCloud",
+                        Founded = new DateTime(1994, 7, 6),
+                        Revenue = 9001,
+                        AllProducts = new List<Product>
+                        {
+                            new Product { Id = 12, Name = "CloudDebugger" },
+                            new Product { Id = 13, Name = "CloudDebuggerTester" }
+                        },
+                        CompetitorProducts = new Dictionary<string, List<Product>>
+                        {
+                            {
+                                "CloudsAreOK",
+                                new List<Product>
+                                {
+                                    new Product { Id = 90, Name = "CloudSpotter RipOff" },
+                                    new Product { Id = 100, Name = "CloudDebugger RipOff" },
+                                }
+                            },
+                            {
+                                "CloudsAreBetter",
+                                new List<Product>
+                                {
+                                    new Product { Id = 92, Name = "CloudSpotter RipOff 2" },
+                                    new Product { Id = 102, Name = "CloudDebugger RipOff 3" },
+                                }
+                            },
+                        }
                     },
-                    CompetitorProducts = new Dictionary<string, List<Product>>
+                    Map = new Dictionary<string, string>
                     {
-                        {
-                            "CloudsAreOK",
-                            new List<Product>
-                            {
-                                new Product { Id = 90, Name = "CloudSpotter RipOff" },
-                                new Product { Id = 100, Name = "CloudDebugger RipOff" },
-                            }
-                        },
-                        {
-                            "CloudsAreBetter",
-                            new List<Product>
-                            {
-                                new Product { Id = 92, Name = "CloudSpotter RipOff 2" },
-                                new Product { Id = 102, Name = "CloudDebugger RipOff 3" },
-                            }
-                        },
+                        { "a", "1" },
+                        { "b", "2" }
                     }
-                },
-                Map = new Dictionary<string, string>
+                };
+
+                product.FullProductDescription = S3Link.Create(Context, bucketName, "my-product", Amazon.RegionEndpoint.USEast1);
+                product.FullProductDescription.UploadStream(new MemoryStream(UTF8Encoding.UTF8.GetBytes("Lots of data")));
+
+                Context.Save(product);
+
+                // Test conversion
+                var doc = Context.ToDocument(product);
+                Assert.IsNotNull(doc["Tags"].AsPrimitiveList());
+                //if (DynamoDBEntryConversion.Schema == DynamoDBEntryConversion.ConversionSchema.V1)
+                //    Assert.IsNotNull(doc["Components"].AsPrimitiveList());
+                //else
+                //    Assert.IsNotNull(doc["Components"].AsDynamoDBList());
+                Assert.IsTrue(
+                    doc["Components"].AsPrimitiveList() != null ||
+                    doc["Components"].AsDynamoDBList() != null);
+                Assert.IsNotNull(doc["CompanyInfo"].AsDocument());
+                Assert.IsNotNull(doc["Supports"]);
+
+                // Load item
+                Product retrieved = Context.Load<Product>(1);
+                Assert.AreEqual(product.Id, retrieved.Id);
+                Assert.AreEqual(product.TagSet.Count, retrieved.TagSet.Count);
+                Assert.AreEqual(product.Components.Count, retrieved.Components.Count);
+                Assert.IsNull(retrieved.InternalId);
+                Assert.AreEqual(product.CurrentStatus, retrieved.CurrentStatus);
+                Assert.AreEqual(product.FormerStatus, retrieved.FormerStatus);
+                Assert.AreEqual(product.Supports, retrieved.Supports);
+                Assert.AreEqual(product.PreviousSupport, retrieved.PreviousSupport);
+                Assert.AreEqual(product.IsPublic, retrieved.IsPublic);
+                Assert.AreEqual(product.Rating, retrieved.Rating);
+                Assert.AreEqual(product.KeySizes.Count, retrieved.KeySizes.Count);
+                Assert.IsNotNull(retrieved.CompanyInfo);
+                Assert.AreEqual(product.CompanyInfo.Name, retrieved.CompanyInfo.Name);
+                Assert.AreEqual(product.CompanyInfo.Founded, retrieved.CompanyInfo.Founded);
+                Assert.AreNotEqual(product.CompanyInfo.Revenue, retrieved.CompanyInfo.Revenue);
+                Assert.AreEqual(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);
+                Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, retrieved.CompanyInfo.AllProducts[0].Id);
+                Assert.AreEqual(product.CompanyInfo.AllProducts[1].Id, retrieved.CompanyInfo.AllProducts[1].Id);
+                Assert.AreEqual(product.Map.Count, retrieved.Map.Count);
+                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
+                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Key);
+                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count);
+                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Key);
+                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count);
+
+                Assert.IsNotNull(retrieved.FullProductDescription);
+                using(var stream = retrieved.FullProductDescription.OpenStream())
+                using(var reader = new StreamReader(stream))
                 {
-                    { "a", "1" },
-                    { "b", "2" }
+                    Assert.AreEqual("Lots of data", reader.ReadToEnd());
                 }
-            };
-            Context.Save(product);
-
-            // Test conversion
-            var doc = Context.ToDocument(product);
-            Assert.IsNotNull(doc["Tags"].AsPrimitiveList());
-            //if (DynamoDBEntryConversion.Schema == DynamoDBEntryConversion.ConversionSchema.V1)
-            //    Assert.IsNotNull(doc["Components"].AsPrimitiveList());
-            //else
-            //    Assert.IsNotNull(doc["Components"].AsDynamoDBList());
-            Assert.IsTrue(
-                doc["Components"].AsPrimitiveList() != null ||
-                doc["Components"].AsDynamoDBList() != null);
-            Assert.IsNotNull(doc["CompanyInfo"].AsDocument());
-            Assert.IsNotNull(doc["Supports"]);
-
-            // Load item
-            Product retrieved = Context.Load<Product>(1);
-            Assert.AreEqual(product.Id, retrieved.Id);
-            Assert.AreEqual(product.TagSet.Count, retrieved.TagSet.Count);
-            Assert.AreEqual(product.Components.Count, retrieved.Components.Count);
-            Assert.IsNull(retrieved.InternalId);
-            Assert.AreEqual(product.CurrentStatus, retrieved.CurrentStatus);
-            Assert.AreEqual(product.FormerStatus, retrieved.FormerStatus);
-            Assert.AreEqual(product.Supports, retrieved.Supports);
-            Assert.AreEqual(product.PreviousSupport, retrieved.PreviousSupport);
-            Assert.AreEqual(product.IsPublic, retrieved.IsPublic);
-            Assert.AreEqual(product.Rating, retrieved.Rating);
-            Assert.AreEqual(product.KeySizes.Count, retrieved.KeySizes.Count);
-            Assert.IsNotNull(retrieved.CompanyInfo);
-            Assert.AreEqual(product.CompanyInfo.Name, retrieved.CompanyInfo.Name);
-            Assert.AreEqual(product.CompanyInfo.Founded, retrieved.CompanyInfo.Founded);
-            Assert.AreNotEqual(product.CompanyInfo.Revenue, retrieved.CompanyInfo.Revenue);
-            Assert.AreEqual(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);
-            Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, retrieved.CompanyInfo.AllProducts[0].Id);
-            Assert.AreEqual(product.CompanyInfo.AllProducts[1].Id, retrieved.CompanyInfo.AllProducts[1].Id);
-            Assert.AreEqual(product.Map.Count, retrieved.Map.Count);
-            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
-            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Key);
-            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count);
-            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Key);
-            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count);
 
 
-            // Try saving circularly-referencing object
-            product.CompanyInfo.AllProducts.Add(product);
-            AssertExtensions.ExpectException(() => Context.Save(product));
-            product.CompanyInfo.AllProducts.RemoveAt(2);
+                // Try saving circularly-referencing object
+                product.CompanyInfo.AllProducts.Add(product);
+                AssertExtensions.ExpectException(() => Context.Save(product));
+                product.CompanyInfo.AllProducts.RemoveAt(2);
 
-            // Create and save new item
-            product.Id++;
-            product.Price = 94;
-            product.TagSet = null;
-            product.Components = null;
-            product.CurrentStatus = Status.Upcoming;
-            product.IsPublic = false;
-            product.AlwaysN = false;
-            product.Rating = null;
-            product.KeySizes = null;
-            Context.Save(product);
+                // Create and save new item
+                product.Id++;
+                product.Price = 94;
+                product.TagSet = null;
+                product.Components = null;
+                product.CurrentStatus = Status.Upcoming;
+                product.IsPublic = false;
+                product.AlwaysN = false;
+                product.Rating = null;
+                product.KeySizes = null;
+                Context.Save(product);
 
-            // Load new item
-            retrieved = Context.Load<Product>(product);
-            Assert.AreEqual(product.Id, retrieved.Id);
-            Assert.IsNull(retrieved.TagSet);
-            Assert.IsNull(retrieved.Components);
-            Assert.IsNull(retrieved.InternalId);
-            Assert.AreEqual(product.CurrentStatus, retrieved.CurrentStatus);
-            Assert.AreEqual(product.IsPublic, retrieved.IsPublic);
-            Assert.AreEqual(product.AlwaysN, retrieved.AlwaysN);
-            Assert.AreEqual(product.Rating, retrieved.Rating);
-            Assert.IsNull(retrieved.KeySizes);
+                // Load new item
+                retrieved = Context.Load<Product>(product);
+                Assert.AreEqual(product.Id, retrieved.Id);
+                Assert.IsNull(retrieved.TagSet);
+                Assert.IsNull(retrieved.Components);
+                Assert.IsNull(retrieved.InternalId);
+                Assert.AreEqual(product.CurrentStatus, retrieved.CurrentStatus);
+                Assert.AreEqual(product.IsPublic, retrieved.IsPublic);
+                Assert.AreEqual(product.AlwaysN, retrieved.AlwaysN);
+                Assert.AreEqual(product.Rating, retrieved.Rating);
+                Assert.IsNull(retrieved.KeySizes);
             
-            // Enumerate all products and save their Ids
-            List<int> productIds = new List<int>();
-            IEnumerable<Product> products = Context.Scan<Product>();
-            foreach(var p in products)
-            {
-                productIds.Add(p.Id);
-            }
-            Assert.AreEqual(2, productIds.Count);
-
-            // Load first product
-            var firstId = productIds[0];
-            product = Context.Load<Product>(firstId);
-            Assert.IsNotNull(product);
-            Assert.AreEqual(firstId, product.Id);
-
-            // Query GlobalIndex
-            products = Context.Query<Product>(
-                product.CompanyName,            // Hash-key for the index is Company
-                QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
-                new object[] { 90 },            // condition is against a numerical value
-                new DynamoDBOperationConfig     // Configure the index to use
+                // Enumerate all products and save their Ids
+                List<int> productIds = new List<int>();
+                IEnumerable<Product> products = Context.Scan<Product>();
+                foreach(var p in products)
                 {
-                    IndexName = "GlobalIndex",
-                });
-            Assert.AreEqual(2, products.Count());
+                    productIds.Add(p.Id);
+                }
+                Assert.AreEqual(2, productIds.Count);
 
-            // Query GlobalIndex with an additional non-key condition
-            products = Context.Query<Product>(
-                product.CompanyName,            // Hash-key for the index is Company
-                QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
-                new object[] { 90 },            // condition is against a numerical value
-                new DynamoDBOperationConfig     // Configure the index to use
-                {
-                    IndexName = "GlobalIndex",
-                    QueryFilter = new List<ScanCondition> 
+                // Load first product
+                var firstId = productIds[0];
+                product = Context.Load<Product>(firstId);
+                Assert.IsNotNull(product);
+                Assert.AreEqual(firstId, product.Id);
+
+                // Query GlobalIndex
+                products = Context.Query<Product>(
+                    product.CompanyName,            // Hash-key for the index is Company
+                    QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
+                    new object[] { 90 },            // condition is against a numerical value
+                    new DynamoDBOperationConfig     // Configure the index to use
                     {
-                        new ScanCondition("TagSet", ScanOperator.Contains, "1.0")
-                    }
-                });
-            Assert.AreEqual(1, products.Count());
+                        IndexName = "GlobalIndex",
+                    });
+                Assert.AreEqual(2, products.Count());
 
-            // Delete first product
-            Context.Delete<Product>(firstId);
-            product = Context.Load<Product>(product.Id);
-            Assert.IsNull(product);
+                // Query GlobalIndex with an additional non-key condition
+                products = Context.Query<Product>(
+                    product.CompanyName,            // Hash-key for the index is Company
+                    QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
+                    new object[] { 90 },            // condition is against a numerical value
+                    new DynamoDBOperationConfig     // Configure the index to use
+                    {
+                        IndexName = "GlobalIndex",
+                        QueryFilter = new List<ScanCondition> 
+                        {
+                            new ScanCondition("TagSet", ScanOperator.Contains, "1.0")
+                        }
+                    });
+                Assert.AreEqual(1, products.Count());
 
-            // Scan the table
-            products = Context.Scan<Product>();
-            Assert.AreEqual(1, products.Count());
+                // Delete first product
+                Context.Delete<Product>(firstId);
+                product = Context.Load<Product>(product.Id);
+                Assert.IsNull(product);
 
-            // Scan the table with consistent read
-            products = Context.Scan<Product>(
-                new ScanCondition[] { },
-                new DynamoDBOperationConfig { ConsistentRead = true });
-            Assert.AreEqual(1, products.Count());
+                // Scan the table
+                products = Context.Scan<Product>();
+                Assert.AreEqual(1, products.Count());
 
-            // Test a versioned product
-            VersionedProduct vp = new VersionedProduct
+                // Scan the table with consistent read
+                products = Context.Scan<Product>(
+                    new ScanCondition[] { },
+                    new DynamoDBOperationConfig { ConsistentRead = true });
+                Assert.AreEqual(1, products.Count());
+
+                // Test a versioned product
+                VersionedProduct vp = new VersionedProduct
+                {
+                    Id = 3,
+                    Name = "CloudDebugger",
+                    CompanyName = "CloudsAreGrate",
+                    Price = 9000,
+                    TagSet = new HashSet<string> { "Test" },
+                };
+                Context.Save(vp);
+
+                // Update and save
+                vp.Price++;
+                Context.Save(vp);
+
+                // Alter the version and try to save
+                vp.Version = 0;
+                AssertExtensions.ExpectException(() => Context.Save(vp));
+
+                // Load and save
+                vp = Context.Load(vp);
+                Context.Save(vp);
+            }
+            finally
             {
-                Id = 3,
-                Name = "CloudDebugger",
-                CompanyName = "CloudsAreGrate",
-                Price = 9000,
-                TagSet = new HashSet<string> { "Test" },
-            };
-            Context.Save(vp);
-
-            // Update and save
-            vp.Price++;
-            Context.Save(vp);
-
-            // Alter the version and try to save
-            vp.Version = 0;
-            AssertExtensions.ExpectException(() => Context.Save(vp));
-
-            // Load and save
-            vp = Context.Load(vp);
-            Context.Save(vp);
+                Amazon.S3.Util.AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
+            }
         }
 
         private void TestHashRangeObjects()
@@ -823,6 +844,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public List<byte> KeySizes { get; set; }
 
             public Dictionary<string, string> Map { get; set; }
+
+            public S3Link FullProductDescription { get; set; }
         }
 
         public class CompanyInfo
