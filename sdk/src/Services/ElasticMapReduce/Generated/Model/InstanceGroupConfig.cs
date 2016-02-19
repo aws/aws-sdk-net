@@ -34,6 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _bidPrice;
         private List<Configuration> _configurations = new List<Configuration>();
+        private EbsConfiguration _ebsConfiguration;
         private int? _instanceCount;
         private InstanceRoleType _instanceRole;
         private string _instanceType;
@@ -98,6 +99,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetConfigurations()
         {
             return this._configurations != null && this._configurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsConfiguration. 
+        /// <para>
+        /// EBS configurations that will be attached to each Amazon EC2 instance in the instance
+        /// group. 
+        /// </para>
+        /// </summary>
+        public EbsConfiguration EbsConfiguration
+        {
+            get { return this._ebsConfiguration; }
+            set { this._ebsConfiguration = value; }
+        }
+
+        // Check to see if EbsConfiguration property is set
+        internal bool IsSetEbsConfiguration()
+        {
+            return this._ebsConfiguration != null;
         }
 
         /// <summary>

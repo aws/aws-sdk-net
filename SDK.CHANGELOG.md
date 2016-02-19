@@ -1,3 +1,23 @@
+### 3.1.45.0 (2016-02-18 22:18 UTC)
+* AWSMarketplaceCommerceAnalytics (3.1.2.0)
+	* Added support for a new data set disbursed_amount_by_product_with_uncollected_funds .
+* CloudWatch (3.1.0.5)
+	* Documentation update.
+* CodeDeploy (3.1.1.0)
+	* Added support for setting up triggers for a deployment group.
+* StorageGateway (3.1.2.0)
+	* Added support for CreateTapeWithBarcode  API.
+
+### 3.1.44.1 (2016-02-18 00:52 UTC)
+* Core 3.1.4.5
+	* Fix issue with ConstantClass thread-safety
+
+### 3.1.44.0 (2016-02-17 00:03 UTC)
+* ElasticMapReduce (3.1.3.0)
+	* Added support for adding EBS storage to an EMR instance.
+* RDS (3.1.8.0)
+	* Added support for Cross-account Encrypted (KMS) snapshot sharing and removed unused model classes.
+
 ### 3.1.43.0 (2016-02-11 22:26 UTC)
 * APIGateway (3.1.2.0)
 	* Added support for custom request authorizers. With custom request authorizers, developers can authorize their APIs using bearer token authorization strategies, such as OAuth using an AWS Lambda function.

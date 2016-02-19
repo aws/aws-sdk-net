@@ -66,6 +66,11 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The last portion of the associated diagnostic log.
         /// </para>
+        ///  
+        /// <para>
+        /// If available, AWS CodeDeploy returns up to the last 4 KB of the associated diagnostic
+        /// log.
+        /// </para>
         /// </summary>
         public string LogTail
         {

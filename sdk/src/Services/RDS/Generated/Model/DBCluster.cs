@@ -236,9 +236,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is true, the region-unique, immutable identifier
-        /// for the encrypted DB cluster. This identifier is found in AWS CloudTrail log entries
-        /// whenever the KMS key for the DB cluster is accessed. 
+        /// The region-unique, immutable identifier for the DB cluster. This identifier is found
+        /// in AWS CloudTrail log entries whenever the KMS key for the DB cluster is accessed.
+        /// 
         /// </para>
         /// </summary>
         public string DbClusterResourceId

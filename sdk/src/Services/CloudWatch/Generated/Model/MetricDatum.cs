@@ -100,11 +100,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        ///  The time stamp used for the metric. If not specified, the default value is set to
-        /// the time the metric data was received. Amazon CloudWatch uses Coordinated Universal
-        /// Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments
-        /// such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-        /// stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. 
+        ///  The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format.
+        /// If not specified, the default value is set to the time the metric data was received.
+        /// 
         /// </para>
         /// </summary>
         public DateTime Timestamp
@@ -143,9 +141,10 @@ namespace Amazon.CloudWatch.Model
         ///  The value for the metric. 
         /// </para>
         ///  <important>Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
-        /// Amazon CloudWatch truncates values with very large exponents. Values with base-10
-        /// exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10
-        /// exponents less than -130 (1 x 10^-130) are also truncated. </important>
+        /// Amazon CloudWatch rejects values that are either too small or too large. Values must
+        /// be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
+        /// 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not supported.
+        /// </important>
         /// </summary>
         public double Value
         {

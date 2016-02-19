@@ -239,6 +239,22 @@
     <pattern>^[A-Z]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest.TapeBarcode</property>
+    <min>7</min>
+    <max>16</max>
+    <pattern>^[A-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeResponse.TapeARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteBandwidthRateLimitRequest.BandwidthType</property>
     <min>3</min>
     <max>25</max>

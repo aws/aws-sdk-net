@@ -40,6 +40,7 @@ namespace Amazon.CodeDeploy.Model
         private List<EC2TagFilter> _ec2TagFilters = new List<EC2TagFilter>();
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private string _serviceRoleArn;
+        private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -81,35 +82,75 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentConfigName. 
         /// <para>
-        /// If specified, the deployment configuration name must be one of the predefined values,
-        /// or it can be a custom deployment configuration:
+        /// If specified, the deployment configuration name can be either one of the predefined
+        /// configurations provided with AWS CodeDeploy, or a custom deployment configuration
+        /// that you created by calling the create deployment configuration operation.
         /// </para>
-        ///  <ul> <li>CodeDeployDefault.AllAtOnce deploys an application revision to up to all
-        /// of the instances at once. The overall deployment succeeds if the application revision
-        /// deploys to at least one of the instances. The overall deployment fails after the application
-        /// revision fails to deploy to all of the instances. For example, for 9 instances, deploy
-        /// to up to all 9 instances at once. The overall deployment succeeds if any of the 9
-        /// instances is successfully deployed to, and it fails if all 9 instances fail to be
-        /// deployed to.</li> <li>CodeDeployDefault.HalfAtATime deploys to up to half of the instances
-        /// at a time (with fractions rounded down). The overall deployment succeeds if the application
-        /// revision deploys to at least half of the instances (with fractions rounded up); otherwise,
-        /// the deployment fails. For example, for 9 instances, deploy to up to 4 instances at
-        /// a time. The overall deployment succeeds if 5 or more instances are successfully deployed
-        /// to; otherwise, the deployment fails. Note that the deployment may successfully deploy
-        /// to some instances, even if the overall deployment fails.</li> <li>CodeDeployDefault.OneAtATime
-        /// deploys the application revision to only one of the instances at a time. The overall
-        /// deployment succeeds if the application revision deploys to all of the instances. The
-        /// overall deployment fails after the application revision first fails to deploy to any
-        /// one instances. For example, for 9 instances, deploy to one instance at a time. The
-        /// overall deployment succeeds if all 9 instances are successfully deployed to, and it
-        /// fails if any of one of the 9 instances fail to be deployed to. Note that the deployment
-        /// may successfully deploy to some instances, even if the overall deployment fails. This
-        /// is the default deployment configuration if a configuration isn't specified for either
-        /// the deployment or the deployment group.</li> </ul> 
+        ///  <note> 
         /// <para>
-        /// To create a custom deployment configuration, call the create deployment configuration
-        /// operation.
+        /// CodeDeployDefault.OneAtATime is the default deployment configuration that is used
+        /// if a configuration isn't specified for either the deployment or the deployment group.
         /// </para>
+        ///  </note> 
+        /// <para>
+        /// The predefined deployment configurations including the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application revision to as
+        /// many instances as possible at once. The status of the overall deployment will be displayed
+        /// as <b>Succeeded</b> if the application revision is deployed to one or more of the
+        /// instances. The status of the overall deployment will be displayed as <b>Failed</b>
+        /// if the application revision is not deployed to any of the instances. Using an example
+        /// of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine
+        /// instances at once. The overall deployment will succeed if deployment to even a single
+        /// instance is successful; it will fail only if deployments to all nine instances fail.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the instances at a time
+        /// (with fractions rounded down). The overall deployment succeeds if the application
+        /// revision deploys to at least half of the instances (with fractions rounded up); otherwise,
+        /// the deployment fails. For example, for nine instances, deploy to up to four instances
+        /// at a time. The overall deployment succeeds if deployment to five or more instances
+        /// succeed; otherwise, the deployment fails. Note that the deployment may successfully
+        /// deploy to some instances, even if the overall deployment fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <b>CodeDeployDefault.OneAtATime</b> deploys the application revision to only one instance
+        /// at a time.
+        /// </para>
+        ///  
+        /// <para>
+        /// For deployment groups that contain more than one instance:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The overall deployment succeeds if the application revision deploys to all of the
+        /// instances. The exception to this rule is that if deployment to the last instance fails,
+        /// the overall deployment still succeeds. This is because AWS CodeDeploy allows only
+        /// one instance to be taken offline at a time with the CodeDeployDefault.OneAtATime configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The overall deployment fails as soon as the application revision fails to deploy to
+        /// any but the last instance. Note that the deployment may successfully deploy to some
+        /// instances, even if the overall deployment fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: For nine instances, deploy to one instance at a time. The overall deployment
+        /// succeeds if the first eight instances are successfully deployed to, but it fails if
+        /// deployment to any of the first eight instances fails.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For deployment groups that contain only one instance, the overall deployment is of
+        /// course successful only if deployment to the single instance succeeds.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DeploymentConfigName
         {
@@ -126,7 +167,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentGroupName. 
         /// <para>
-        /// The name of an existing deployment group for the specified application.
+        /// The name of a new deployment group for the specified application.
         /// </para>
         /// </summary>
         public string DeploymentGroupName
@@ -194,6 +235,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetServiceRoleArn()
         {
             return this._serviceRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggerConfigurations. 
+        /// <para>
+        /// Information about triggers to create when the deployment group is created.
+        /// </para>
+        /// </summary>
+        public List<TriggerConfig> TriggerConfigurations
+        {
+            get { return this._triggerConfigurations; }
+            set { this._triggerConfigurations = value; }
+        }
+
+        // Check to see if TriggerConfigurations property is set
+        internal bool IsSetTriggerConfigurations()
+        {
+            return this._triggerConfigurations != null && this._triggerConfigurations.Count > 0; 
         }
 
     }

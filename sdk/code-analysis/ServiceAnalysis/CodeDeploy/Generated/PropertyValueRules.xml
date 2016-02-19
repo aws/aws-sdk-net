@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CodeDeploy.Model.BatchGetApplicationRevisionsRequest.ApplicationName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeDeploy.Model.BatchGetApplicationRevisionsResponse.ApplicationName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeDeploy.Model.CreateApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>100</max>
