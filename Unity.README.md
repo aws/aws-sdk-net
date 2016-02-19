@@ -55,6 +55,24 @@ You can also do this configuration in a script
 
 
 		<linker>
+			<!-- if you are using AWSConfigs.HttpClient.UnityWebRequest option-->
+
+			<assembly fullname="UnityEngine">
+				<type fullname="UnityEngine.Experimental.Networking.UnityWebRequest" preserve="all" />
+				<type fullname="UnityEngine.Experimental.Networking.UploadHandlerRaw" preserve="all" />
+				<type fullname="UnityEngine.Experimental.Networking.UploadHandler" preserve="all" />
+				<type fullname="UnityEngine.Experimental.Networking.DownloadHandler" preserve="all" />
+				<type fullname="UnityEngine.Experimental.Networking.DownloadHandlerBuffer" preserve="all" />
+			</assembly>
+			
+			<assembly fullname="mscorlib">
+        		<namespace fullname="System.Security.Cryptography" preserve="all"/>
+    		</assembly>
+
+    		<assembly fullname="System">
+        		<namespace fullname="System.Security.Cryptography" preserve="all"/>
+    		</assembly>
+
        		<assembly fullname="AWSSDK.Core" preserve="all"/>
 	   		<assembly fullname="AWSSDK.CognitoIdentity" preserve="all"/>
 	   		<assembly fullname="AWSSDK.SecurityToken" preserve="all"/>
