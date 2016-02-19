@@ -164,17 +164,6 @@ namespace Amazon.MobileAnalytics
 
         
         #region  PutEvents
-
-        /// <summary>
-        /// The PutEvents operation records one or more events. You can have up to 1,500 unique
-        /// custom events per app, any combination of up to 40 attributes and metrics per custom
-        /// event, and any number of attribute or metric values.
-        /// </summary>
-        /// 
-        /// <returns>The response from the PutEvents service method, as returned by MobileAnalytics.</returns>
-        /// <exception cref="Amazon.MobileAnalytics.Model.BadRequestException">
-        /// An exception object returned when a request fails.
-        /// </exception>
         internal PutEventsResponse PutEvents(PutEventsRequest request)
         {
             var marshaller = new PutEventsRequestMarshaller();

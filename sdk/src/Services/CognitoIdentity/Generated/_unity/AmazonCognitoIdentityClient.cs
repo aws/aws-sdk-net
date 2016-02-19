@@ -204,36 +204,6 @@ namespace Amazon.CognitoIdentity
 
         
         #region  CreateIdentityPool
-
-        /// <summary>
-        /// Creates a new identity pool. The identity pool is a store of user identity information
-        /// that is specific to your AWS account. The limit on identity pools is 60 per account.
-        /// The keys for <code>SupportedLoginProviders</code> are as follows: <ul> <li>Facebook:
-        /// <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code>
-        /// </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>api.twitter.com</code>
-        /// </li> <li>Digits: <code>www.digits.com</code> </li> </ul> You must use AWS Developer
-        /// credentials to call this API.
-        /// </summary>
-        /// 
-        /// <returns>The response from the CreateIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.LimitExceededException">
-        /// Thrown when the total number of user pools has exceeded a preset limit.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
@@ -268,27 +238,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  DeleteIdentities
-
-        /// <summary>
-        /// Deletes identities from an identity pool. You can specify a list of 1-60 identities
-        /// that you want to delete.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DeleteIdentities service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
         {
             var marshaller = new DeleteIdentitiesRequestMarshaller();
@@ -323,33 +272,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  DeleteIdentityPool
-
-        /// <summary>
-        /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
-        /// with the pool.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DeleteIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
@@ -424,33 +346,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  DescribeIdentity
-
-        /// <summary>
-        /// Returns metadata related to the given identity, including when the identity was created
-        /// and any associated linked logins.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
         {
             var marshaller = new DescribeIdentityRequestMarshaller();
@@ -525,33 +420,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  DescribeIdentityPool
-
-        /// <summary>
-        /// Gets details about a particular identity pool, including the pool name, ID description,
-        /// creation date, and current number of users.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
@@ -626,45 +494,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetCredentialsForIdentity
-
-        /// <summary>
-        /// Returns credentials for the provided identity ID. Any provided logins will be validated
-        /// against supported login providers. If the token is for cognito-identity.amazonaws.com,
-        /// it will be passed through to AWS Security Token Service with the appropriate role
-        /// for the token.
-        /// 
-        ///  
-        /// <para>
-        /// This is a public API. You do not need any credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
-        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
-        /// Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
-        /// or if the AssumeRole fails.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
         {
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
@@ -805,42 +634,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetId
-
-        /// <summary>
-        /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
-        /// linked account.
-        /// 
-        ///  
-        /// <para>
-        /// This is a public API. You do not need any credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetId service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
-        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.LimitExceededException">
-        /// Thrown when the total number of user pools has exceeded a preset limit.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal GetIdResponse GetId(GetIdRequest request)
         {
             var marshaller = new GetIdRequestMarshaller();
@@ -875,35 +668,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetIdentityPoolRoles
-
-        /// <summary>
-        /// Gets the roles for an identity pool.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
         {
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
@@ -980,44 +744,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetOpenIdToken
-
-        /// <summary>
-        /// Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned
-        /// by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying
-        /// multiple logins creates an implicit link.
-        /// 
-        ///  
-        /// <para>
-        /// The OpenId token is valid for 15 minutes.
-        /// </para>
-        ///  
-        /// <para>
-        /// This is a public API. You do not need any credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetOpenIdToken service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
-        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
@@ -1103,52 +829,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  GetOpenIdTokenForDeveloperIdentity
-
-        /// <summary>
-        /// Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token
-        /// for a user authenticated by your backend authentication process. Supplying multiple
-        /// logins will create an implicit linked account. You can only specify one developer
-        /// provider as part of the <code>Logins</code> map, which is linked to the identity pool.
-        /// The developer provider is the "domain" by which Cognito will refer to your users.
-        /// 
-        ///  
-        /// <para>
-        /// You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity
-        /// and to link new logins (that is, user credentials issued by a public provider or developer
-        /// provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code>
-        /// should be null. When you want to associate a new login with an existing authenticated/unauthenticated
-        /// identity, you can do so by providing the existing <code>IdentityId</code>. This API
-        /// will create the identity in the specified <code>IdentityPoolId</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the GetOpenIdTokenForDeveloperIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.DeveloperUserAlreadyRegisteredException">
-        /// The provided developer user identifier is already registered with Cognito under a
-        /// different identity ID.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
         {
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
@@ -1183,32 +863,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  ListIdentities
-
-        /// <summary>
-        /// Lists the identities in a pool.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ListIdentities service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
@@ -1243,29 +897,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  ListIdentityPools
-
-        /// <summary>
-        /// Lists all of the Cognito identity pools registered for your account.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the ListIdentityPools service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
@@ -1300,43 +931,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  LookupDeveloperIdentity
-
-        /// <summary>
-        /// Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code>
-        /// or the list of <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code>
-        /// for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code>
-        /// must not be null. If you supply only one of these values, the other value will be
-        /// searched in the database and returned as a part of the response. If you supply both,
-        /// <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>.
-        /// If the values are verified against the database, the response returns both values
-        /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
-        /// is thrown.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the LookupDeveloperIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
         {
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
@@ -1371,41 +965,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  MergeDeveloperIdentities
-
-        /// <summary>
-        /// Merges two users having different <code>IdentityId</code>s, existing in the same identity
-        /// pool, and identified by the same developer provider. You can use this action to request
-        /// that discrete users be merged and identified as a single user in the Cognito environment.
-        /// Cognito associates the given source user (<code>SourceUserIdentifier</code>) with
-        /// the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated
-        /// users can be merged. If the users to be merged are associated with the same public
-        /// provider, but as two different users, an exception will be thrown.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the MergeDeveloperIdentities service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
         {
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
@@ -1440,39 +999,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  SetIdentityPoolRoles
-
-        /// <summary>
-        /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
-        /// action.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the SetIdentityPoolRoles service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ConcurrentModificationException">
-        /// Thrown if there are parallel requests to modify a resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
         {
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
@@ -1555,38 +1081,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UnlinkDeveloperIdentity
-
-        /// <summary>
-        /// Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked
-        /// developer users will be considered new identities next time they are seen. If, for
-        /// a given Cognito identity, you remove all federated identities as well as the developer
-        /// user identifier, the Cognito identity becomes inaccessible.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the UnlinkDeveloperIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
         {
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
@@ -1621,40 +1115,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UnlinkIdentity
-
-        /// <summary>
-        /// Unlinks a federated identity from an existing account. Unlinked logins will be considered
-        /// new identities next time they are seen. Removing the last linked login will make this
-        /// identity inaccessible.
-        /// 
-        ///  
-        /// <para>
-        /// This is a public API. You do not need any credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the UnlinkIdentity service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
-        /// An exception thrown when a dependent service such as Facebook or Twitter is not responding
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
@@ -1689,38 +1149,6 @@ namespace Amazon.CognitoIdentity
         #endregion
         
         #region  UpdateIdentityPool
-
-        /// <summary>
-        /// Updates a user pool.
-        /// 
-        ///  
-        /// <para>
-        /// You must use AWS Developer credentials to call this API.
-        /// </para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the UpdateIdentityPool service method, as returned by CognitoIdentity.</returns>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ConcurrentModificationException">
-        /// Thrown if there are parallel requests to modify a resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
-        /// Thrown when the service encounters an error during processing the request.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
-        /// Thrown for missing or bad input parameter(s).
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
-        /// Thrown when a user is not authorized to access the requested resource.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceConflictException">
-        /// Thrown when a user tries to use a login which is already linked to another account.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
-        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
-        /// Thrown when a request is throttled.
-        /// </exception>
         internal UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();
