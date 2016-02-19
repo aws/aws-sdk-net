@@ -219,7 +219,6 @@ namespace <#=this.Config.Namespace#>
 <#
 			}
 
-		this.FormatUnityOperationDocumentationSync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
 			if(operation.IsDeprecated)
 			{
 #>
