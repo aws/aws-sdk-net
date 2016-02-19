@@ -513,7 +513,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
             finally
             {
-
+                Amazon.S3.Util.AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
             }
         }
 
