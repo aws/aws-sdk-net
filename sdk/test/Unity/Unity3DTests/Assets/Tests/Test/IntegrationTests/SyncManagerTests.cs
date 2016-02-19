@@ -188,7 +188,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     failureMessage += "sync failed\n";
                     ars.Set();
                 };
-                d.Synchronize();
+                d.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             };
             d.OnSyncFailure += delegate (object sender, SyncFailureEventArgs e)
             {
@@ -210,7 +210,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 failureMessage += "Did not expect DatasetDeleted\n";
                 return false;
             };
-            d.Synchronize();
+            d.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
 
             d.Dispose();
@@ -271,7 +271,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 failureMessage += "Not expecting OnDatasetMerged\n";
                 return false;
             };
-            d.Synchronize();
+            d.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
 
             d.Dispose();
@@ -315,7 +315,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 failureMessage += "Not expecting OnDatasetMerged\n";
                 return false;
             };
-            d2.Synchronize();
+            d2.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
 
             d2.Dispose();
@@ -365,7 +365,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                 mergeTriggered = true;
                 return true;
             };
-            d3.Synchronize();
+            d3.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
 
             ars.WaitOne();
             Utils.AssertStringIsNullOrEmpty(failureMessage);
@@ -454,7 +454,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     failureMessage += e.Exception.ToString() + "\n";
                     ars.Set();
                 };
-                d.Synchronize();
+                d.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
                 ars.WaitOne();
             }
             syncManager.Dispose();
@@ -511,14 +511,14 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     }
                     ars.Set();
                 };
-                d2.Synchronize();
+                d2.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             };
             d.OnSyncFailure += delegate (object sender4, SyncFailureEventArgs e4)
             {
                 failureMessage += "Expecting OnSyncSuccess instead of OnSyncFailure\n";
                 ars.Set();
             };
-            d.Synchronize();
+            d.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
 
             if (d2 != null)
@@ -608,14 +608,14 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
                     ars.Set();
                 };
-                d2.Synchronize();
+                d2.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             };
             d.OnSyncFailure += delegate (object sender4, SyncFailureEventArgs e4)
             {
                 failureMessage += "Expecting SyncConflict instead of SyncFailure\n";
                 ars.Set();
             };
-            d.Synchronize();
+            d.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             d.Dispose();
             if (d2 != null)
@@ -689,9 +689,9 @@ namespace AWSSDK.IntegrationTests.SyncManager
                     }
                     ars.Set();
                 };
-                d2.Synchronize();
+                d2.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             };
-            d.Synchronize();
+            d.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             syncManager.Dispose();
             d.Dispose();
@@ -734,12 +734,12 @@ namespace AWSSDK.IntegrationTests.SyncManager
             {
                 ars.Set();
             };
-            d.Synchronize();
+            d.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
             Utils.AssertStringIsNullOrEmpty(failureMessage);
 
             d.Remove("testKey");
-            d.Synchronize();
+            d.SynchronizeAsync(new AsyncOptions { ExecuteCallbackOnMainThread = false });
             ars.WaitOne();
 
             if (d.Metadata.RecordCount != originalCount)
