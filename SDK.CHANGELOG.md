@@ -1,3 +1,33 @@
+### 3.1.46.0 (2016-02-19 23:28 UTC)
+* CognitoIdentity (3.1.0.7)
+	* Added Support for Unity
+* CognitoSync (3.1.1.0)
+	* Added Support for Unity, Moved SyncManager and CognitoSync service client into a single assembly
+* DynamoDBv2 (3.1.1.5)
+	* Added support for Unity, Add ability to use streams with the S3Link object 
+* IdentityManagement (3.1.3.3)
+	* Add Support for Unity
+* Kinesis (3.1.2.3)
+	* Added Support for Unity
+* KinesisFirehose (3.1.0.3)
+	* Added Support for Unity
+* Lambda (3.1.3.1)
+	* Added Support for Unity
+* MobileAnalytics (3.1.1.6)
+	* Added Support for Unity
+* S3 (3.1.3.12)
+	* Added Support for Unity
+* SecurityToken (3.1.2.2)
+	* Added Support for Unity
+* SimpleEmail (3.1.1.4)
+	* Added Support for Unity
+* SimpleNotificationService (3.1.0.5)
+	* Added Support for Unity
+* SQS (3.1.0.6)
+	* Added Support for Unity
+* Core 3.1.5.0
+	* Added Support for Unity
+
 ### 3.1.45.0 (2016-02-18 22:18 UTC)
 * AWSMarketplaceCommerceAnalytics (3.1.2.0)
 	* Added support for a new data set disbursed_amount_by_product_with_uncollected_funds .
