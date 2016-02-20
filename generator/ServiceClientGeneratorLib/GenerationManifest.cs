@@ -66,6 +66,11 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// URL for Apache License 2.0
+        /// </summary>
+        public const string ApacheLicenseURL = @"http://aws.amazon.com/apache2.0/";
+
+        /// <summary>
         /// The set of services declared in the manifest as supporting generation. 
         /// </summary>
         public IEnumerable<ServiceConfiguration> ServiceConfigurations { get; private set; }
@@ -249,7 +254,7 @@ namespace ServiceClientGenerator
                     config.RequireLicenseAcceptance = true;
                 }
                 else
-                    config.LicenseUrl = @"http://aws.amazon.com/apache2.0/";
+                    config.LicenseUrl = ApacheLicenseURL;
 
                 var serviceName = config.ServiceNameRoot;
                 var versionInfoJson = versions[serviceName];

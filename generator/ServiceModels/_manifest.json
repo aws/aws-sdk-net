@@ -342,7 +342,8 @@
                 "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
                 "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
             },
-          "platforms": [ "Unity" ]
+          "platforms": [ "Unity" ],
+          "enable-xamarin-component": true
         },
         {
             "active": true,

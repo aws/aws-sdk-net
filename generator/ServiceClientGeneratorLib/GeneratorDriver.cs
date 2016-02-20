@@ -883,6 +883,7 @@ namespace ServiceClientGenerator
             var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
             var assemblyTitle = "AWSSDK - " + Configuration.ServiceModel.ServiceFullName;
             var componentTitle = assemblyTitle;
+            bool componentUsesAlternateLicense = !string.IsNullOrEmpty(Configuration.LicenseUrl) && Configuration.LicenseUrl != GenerationManifest.ApacheLicenseURL;
             if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
                 componentTitle += " " + Configuration.NugetPackageTitleSuffix;
 
@@ -901,6 +902,7 @@ namespace ServiceClientGenerator
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "Documentation",string.IsNullOrEmpty(Configuration.ServiceModel.Documentation)?Configuration.Synopsis:Configuration.ServiceModel.Documentation },
                 { "SolutionFilePath", string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath)?"":Path.Combine(SampleFilesRoot,Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath) },
+                { "UsesAlternateLicense", componentUsesAlternateLicense },
                 { "Synopsis", Configuration.Synopsis},
                 { "ExtraTags", Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
             };

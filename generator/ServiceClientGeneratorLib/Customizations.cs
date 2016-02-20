@@ -1380,7 +1380,6 @@ namespace ServiceClientGenerator
         public class SampleInfo
         {
             public const string SolutionPathKey = "solutionPath";
-
         }
         #endregion
 
