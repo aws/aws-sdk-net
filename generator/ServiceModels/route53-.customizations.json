@@ -12,5 +12,18 @@
         "ListGeoLocations",
         "GetHostedZoneCount"
 	],
-	"retainOriginalMemberOrdering" : true
+	"retainOriginalMemberOrdering" : true,
+    "deprecatedOverrides" : {
+        "operation" : {
+            "GetChangeDetails" : {
+                "message" : "This operation is deprecated because it is an experimental feature not intended for use."
+                },
+            "ListChangeBatchesByHostedZone" : {
+                "message" : "This operation is deprecated because it is an experimental feature not intended for use."
+            },
+            "ListChangeBatchesByRRSet" : {
+                "message" : "This operation is deprecated because it is an experimental feature not intended for use."
+            }
+        }
+    }
 }

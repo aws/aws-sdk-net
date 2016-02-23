@@ -38,8 +38,8 @@ namespace Amazon.Route53.Model
     /// element.</note> 
     /// <para>
     /// To get information about the traffic policy instances that are associated with the
-    /// current AWS account, send a <code>GET</code> request to the <code>2013-04-01/trafficpolicyinstance</code>
-    /// resource.
+    /// current AWS account, send a <code>GET</code> request to the <code>/<i>Route 53 API
+    /// version</i>/trafficpolicyinstance</code> resource.
     /// </para>
     ///  
     /// <para>

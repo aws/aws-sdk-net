@@ -50,9 +50,10 @@ namespace Amazon.Route53.Model
     /// of resource record sets that are associated with the root resource record set name.</li>
     /// </ol> 
     /// <para>
-    /// To update a traffic policy instance, send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance/<i>traffic
-    /// policy ID</i></code> resource. The request body must include an XML document with
-    /// an <code>UpdateTrafficPolicyInstanceRequest</code> element.
+    /// To update a traffic policy instance, send a <code>POST</code> request to the <code>/<i>Route
+    /// 53 API version</i>/trafficpolicyinstance/<i>traffic policy ID</i></code> resource.
+    /// The request body must include a document with an <code>UpdateTrafficPolicyInstanceRequest</code>
+    /// element.
     /// </para>
     /// </summary>
     public partial class UpdateTrafficPolicyInstanceRequest : AmazonRoute53Request

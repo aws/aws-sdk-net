@@ -127,6 +127,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.ChildHealthChecks.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+                    if (context.TestExpression("EnableSNI", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnableSNI = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

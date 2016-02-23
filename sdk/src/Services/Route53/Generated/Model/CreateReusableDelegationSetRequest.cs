@@ -33,10 +33,11 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To create a new reusable delegationSet, send a <code>POST</code> request to the <code>2013-04-01/delegationset</code>
-    /// resource. The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
-    /// element. The response returns the <code>CreateReusableDelegationSetResponse</code>
-    /// element that contains metadata about the delegationSet. 
+    /// To create a new reusable delegationSet, send a <code>POST</code> request to the <code>/<i>Route
+    /// 53 API version</i>/delegationset</code> resource. The request body must include a
+    /// document with a <code>CreateReusableDelegationSetRequest</code> element. The response
+    /// returns the <code>CreateReusableDelegationSetResponse</code> element that contains
+    /// metadata about the delegationSet. 
     /// </para>
     ///  
     /// <para>

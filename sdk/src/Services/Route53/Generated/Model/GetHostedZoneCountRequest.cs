@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the GetHostedZoneCount operation.
     /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
-    /// <code>2013-04-01/hostedzonecount</code> resource.
+    /// <code>/<i>Route 53 API version</i>/hostedzonecount</code> resource.
     /// </summary>
     public partial class GetHostedZoneCountRequest : AmazonRoute53Request
     {

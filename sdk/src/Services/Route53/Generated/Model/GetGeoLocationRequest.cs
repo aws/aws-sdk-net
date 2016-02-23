@@ -29,9 +29,9 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGeoLocation operation.
-    /// To retrieve a single geo location, send a <code>GET</code> request to the <code>2013-04-01/geolocation</code>
-    /// resource with one of these options: continentcode | countrycode | countrycode and
-    /// subdivisioncode.
+    /// To retrieve a single geo location, send a <code>GET</code> request to the <code>/<i>Route
+    /// 53 API version</i>/geolocation</code> resource with one of these options: continentcode
+    /// | countrycode | countrycode and subdivisioncode.
     /// </summary>
     public partial class GetGeoLocationRequest : AmazonRoute53Request
     {
