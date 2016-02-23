@@ -191,7 +191,7 @@ uses the service models defined in the **generator\ServiceModels** folder.
 [sdk-source]: https://github.com/aws/aws-sdk-net
 [sdk-issues]: https://github.com/aws/aws-sdk-net/issues
 [sdk-license]: http://aws.amazon.com/apache2.0/
-[docs-api]: http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html
+[docs-api]: http://docs.aws.amazon.com/sdkfornet/v3/apidocs/Index.html
 [docs-signup]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-setup.html
 [aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-roles.html
 [docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/welcome.html
