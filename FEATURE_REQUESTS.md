@@ -123,3 +123,7 @@ See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/68)
 #### Unity - Add support for Unity Editor
 
 See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/37)
+
+#### Cognito Sync - Object mapper support
+
+See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/33)
