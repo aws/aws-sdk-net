@@ -723,26 +723,16 @@ namespace ServiceClientGenerator
 
         public string GetDeprecationMessage(string operationName)
         {
-            bool fail = false;
-            var data = _documentRoot[DeprecatedOverridesKey];
-            if (data == null)
-                fail = true;
-
-            var operations = data[OperationKey];
-            var operation = operations[operationName];
-            if (operation == null)
-                fail = true;
-
-            var message = operation[DeprecationMessageKey];
-            if (!(message.IsString && !string.IsNullOrEmpty((string)message)))
+            try
             {
-                fail = true;
+                var data = _documentRoot[DeprecatedOverridesKey];
+                var operations = data[OperationKey];
+                var operation = operations[operationName];
+                return (string)operation[DeprecationMessageKey];
             }
+            catch (NullReferenceException) { }
 
-            if (fail)
-                throw new Exception(string.Format(@"Obsolete Message not set for operation {0}", operationName));
-            else
-                return (string)message;
+            throw new Exception(string.Format(@"deprecatedOverrides entry not set for deprecated operation {0}", operationName));
         }
 
         public bool GenerateCustomUnmarshaller

@@ -33,10 +33,10 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To create a new hosted zone, send a <code>POST</code> request to the <code>2013-04-01/hostedzone</code>
-    /// resource. The request body must include an XML document with a <code>CreateHostedZoneRequest</code>
-    /// element. The response returns the <code>CreateHostedZoneResponse</code> element that
-    /// contains metadata about the hosted zone.
+    /// To create a new hosted zone, send a <code>POST</code> request to the <code>/<i>Route
+    /// 53 API version</i>/hostedzone</code> resource. The request body must include a document
+    /// with a <code>CreateHostedZoneRequest</code> element. The response returns the <code>CreateHostedZoneResponse</code>
+    /// element that contains metadata about the hosted zone.
     /// </para>
     ///  
     /// <para>

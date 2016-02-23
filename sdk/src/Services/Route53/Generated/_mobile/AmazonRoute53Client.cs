@@ -677,6 +677,7 @@ namespace Amazon.Route53
         
         #region  GetChangeDetails
 
+        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
         internal GetChangeDetailsResponse GetChangeDetails(GetChangeDetailsRequest request)
         {
             var marshaller = new GetChangeDetailsRequestMarshaller();
@@ -695,6 +696,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
         public Task<GetChangeDetailsResponse> GetChangeDetailsAsync(GetChangeDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetChangeDetailsRequestMarshaller();
@@ -940,7 +942,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
-        /// <code>2013-04-01/hostedzonecount</code> resource.
+        /// <code>/<i>Route 53 API version</i>/hostedzonecount</code> resource.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1102,6 +1104,7 @@ namespace Amazon.Route53
         
         #region  ListChangeBatchesByHostedZone
 
+        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
         internal ListChangeBatchesByHostedZoneResponse ListChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request)
         {
             var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
@@ -1120,6 +1123,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
         public Task<ListChangeBatchesByHostedZoneResponse> ListChangeBatchesByHostedZoneAsync(ListChangeBatchesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
@@ -1133,6 +1137,7 @@ namespace Amazon.Route53
         
         #region  ListChangeBatchesByRRSet
 
+        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
         internal ListChangeBatchesByRRSetResponse ListChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request)
         {
             var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
@@ -1151,6 +1156,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
         public Task<ListChangeBatchesByRRSetResponse> ListChangeBatchesByRRSetAsync(ListChangeBatchesByRRSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
@@ -1179,10 +1185,11 @@ namespace Amazon.Route53
 
         /// <summary>
         /// To retrieve a list of supported geo locations, send a <code>GET</code> request to
-        /// the <code>2013-04-01/geolocations</code> resource. The response to this request includes
-        /// a <code>GeoLocationDetailsList</code> element with zero, one, or multiple <code>GeoLocationDetails</code>
-        /// child elements. The list is sorted by country code, and then subdivision code, followed
-        /// by continents at the end of the list. 
+        /// the <code>/<i>Route 53 API version</i>/geolocations</code> resource. The response
+        /// to this request includes a <code>GeoLocationDetailsList</code> element with zero,
+        /// one, or multiple <code>GeoLocationDetails</code> child elements. The list is sorted
+        /// by country code, and then subdivision code, followed by continents at the end of the
+        /// list. 
         /// 
         ///  
         /// <para>
@@ -1245,13 +1252,13 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>2013-04-01/healthcheck</code>
-        /// resource. The response to this request includes a <code>HealthChecks</code> element
-        /// with zero, one, or multiple <code>HealthCheck</code> child elements. By default, the
-        /// list of health checks is displayed on a single page. You can control the length of
-        /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
-        /// the <code>Marker</code> parameter to control the health check that the list begins
-        /// with. 
+        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>/<i>Route
+        /// 53 API version</i>/healthcheck</code> resource. The response to this request includes
+        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
+        /// child elements. By default, the list of health checks is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the health check
+        /// that the list begins with. 
         /// 
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>
@@ -1310,13 +1317,13 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>2013-04-01/hostedzone</code>
-        /// resource. The response to this request includes a <code>HostedZones</code> element
-        /// with zero, one, or multiple <code>HostedZone</code> child elements. By default, the
-        /// list of hosted zones is displayed on a single page. You can control the length of
-        /// the page that is displayed by using the <code>MaxItems</code> parameter. You can use
-        /// the <code>Marker</code> parameter to control the hosted zone that the list begins
-        /// with. 
+        /// To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>/<i>Route
+        /// 53 API version</i>/hostedzone</code> resource. The response to this request includes
+        /// a <code>HostedZones</code> element with zero, one, or multiple <code>HostedZone</code>
+        /// child elements. By default, the list of hosted zones is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the hosted zone
+        /// that the list begins with. 
         /// 
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>
@@ -1440,12 +1447,12 @@ namespace Amazon.Route53
 
         /// <summary>
         /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
-        /// to the <code>2013-04-01/delegationset</code> resource. The response to this request
-        /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
-        /// child elements. By default, the list of delegation sets is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the delegation
-        /// set that the list begins with. 
+        /// to the <code>/<i>Route 53 API version</i>/delegationset</code> resource. The response
+        /// to this request includes a <code>DelegationSets</code> element with zero, one, or
+        /// multiple <code>DelegationSet</code> child elements. By default, the list of delegation
+        /// sets is displayed on a single page. You can control the length of the page that is
+        /// displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+        /// parameter to control the delegation set that the list begins with. 
         /// 
         ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
         /// greater than 100, Amazon Route 53 returns only the first 100.</note>

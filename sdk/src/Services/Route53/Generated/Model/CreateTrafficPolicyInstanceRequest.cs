@@ -38,10 +38,11 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To create a traffic policy instance, send a <code>POST</code> request to the <code>2013-04-01/trafficpolicyinstance</code>
-    /// resource. The request body must include an XML document with a <code>CreateTrafficPolicyRequest</code>
-    /// element. The response returns the <code>CreateTrafficPolicyInstanceResponse</code>
-    /// element, which contains information about the traffic policy instance.
+    /// To create a traffic policy instance, send a <code>POST</code> request to the <code>/<i>Route
+    /// 53 API version</i>/trafficpolicyinstance</code> resource. The request body must include
+    /// a document with a <code>CreateTrafficPolicyRequest</code> element. The response returns
+    /// the <code>CreateTrafficPolicyInstanceResponse</code> element, which contains information
+    /// about the traffic policy instance.
     /// </para>
     /// </summary>
     public partial class CreateTrafficPolicyInstanceRequest : AmazonRoute53Request
