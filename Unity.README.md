@@ -43,11 +43,11 @@ There are only a few fundamentals that are helpful to know when developing again
 You can also do this configuration in a script
 
 		var loggingConfig = AWSConfigs.LoggingConfig;
-	    loggingConfig.LogTo = LoggingOptions.UnityLogger;
-	    loggingConfig.LogMetrics = true;
-	    loggingConfig.LogResponses = ResponseLoggingOption.Always;
-	    loggingConfig.LogResponsesSizeLimit = 4096;
-	    loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
+		loggingConfig.LogTo = LoggingOptions.UnityLogger;
+		loggingConfig.LogMetrics = true;
+		loggingConfig.LogResponses = ResponseLoggingOption.Always;
+		loggingConfig.LogResponsesSizeLimit = 4096;
+		loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
 
 
 * To Build the SDK from the `AWSSDK.Unity.sln` solution file you will need Unity 5 installed in the standard location (we reference the UnityEngine runtime from standard installation location)
@@ -73,13 +73,8 @@ You can also do this configuration in a script
 			<namespace fullname="System.Security.Cryptography" preserve="all"/>
    		</assembly>
 
-       		<assembly fullname="AWSSDK.Core" preserve="all"/>
+		<assembly fullname="AWSSDK.Core" preserve="all"/>
    		<assembly fullname="AWSSDK.CognitoIdentity" preserve="all"/>
    		<assembly fullname="AWSSDK.SecurityToken" preserve="all"/>
 		add more services that you need here... 
 		</linker>
-
-
-## Known Issues
-
-* Crypto Issues - When running on device with .NET 2.0 subset you get an error saying `System.TypeLoadException: Could not load type 'System.Security.Cryptography.SHA256CryptoServiceProvider' from assembly 'AWSSDK.Core'`. We recommend using .NET 2.0 instead.
