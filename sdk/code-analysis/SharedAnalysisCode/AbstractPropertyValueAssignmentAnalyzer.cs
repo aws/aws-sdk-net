@@ -42,8 +42,8 @@ namespace Amazon.CodeAnalysis.Shared
                     var rule = new PropertyValueRule()
                     {
                         PropertyName = element.Element("property").Value,
-                        Min = element.Element("min") != null ? int.Parse(element.Element("min").Value) : (int?)null,
-                        Max = element.Element("max") != null ? int.Parse(element.Element("max").Value) : (int?)null,
+                        Min = element.Element("min") != null ? long.Parse(element.Element("min").Value) : (long?)null,
+                        Max = element.Element("max") != null ? long.Parse(element.Element("max").Value) : (long?)null,
                         Pattern = element.Element("pattern") != null ? element.Element("pattern").Value : null
                     };
 
@@ -284,8 +284,8 @@ namespace Amazon.CodeAnalysis.Shared
         public class PropertyValueRule
         {
             public string PropertyName { get; set; }
-            public int? Min { get; set; }
-            public int? Max { get; set; }
+            public long? Min { get; set; }
+            public long? Max { get; set; }
             public Regex CompiledExpression { get; set; }
             public string Pattern { get; set; }
         }

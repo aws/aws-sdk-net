@@ -446,7 +446,7 @@ namespace ServiceClientGenerator
             }
         }
 
-        public int? Min
+        public long? Min
         {
             get
             {
@@ -454,8 +454,8 @@ namespace ServiceClientGenerator
                 
                 if(value != null)
                 {
-                    int min;
-                    if(!int.TryParse(value.ToString(), out min))
+                    long min;
+                    if (!long.TryParse(value.ToString(), out min))
                     {
                         throw new Exception(string.Format("Failed to parse min value {0} for shape {1}", value, this.Name));
                     }
@@ -466,15 +466,15 @@ namespace ServiceClientGenerator
             }
         }
 
-        public int? Max
+        public long? Max
         {
             get
             {
                 var value = data[MaxKey];
                 if (value != null)
                 {
-                    int max;
-                    if (!int.TryParse(value.ToString(), out max))
+                    long max;
+                    if (!long.TryParse(value.ToString(), out max))
                     {
                         throw new Exception(string.Format("Failed to parse max value {0} for shape {1}", value, this.Name));
                     }
