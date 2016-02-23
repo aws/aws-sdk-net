@@ -120,4 +120,6 @@ See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/51)
 
 See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/68)
 
+#### Unity - Add support for Unity Editor
 
+See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/37)
