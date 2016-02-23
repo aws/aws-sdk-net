@@ -1,3 +1,7 @@
+### 3.1.47.0 (2016-02-23 19:54 UTC)
+* Route53 (3.1.3.0)
+	* Added support for SNI health check.
+
 ### 3.1.46.0 (2016-02-19 23:28 UTC)
 * CognitoIdentity (3.1.0.7)
 	* Added Support for Unity
