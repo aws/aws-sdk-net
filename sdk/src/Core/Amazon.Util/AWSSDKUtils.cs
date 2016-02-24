@@ -430,7 +430,7 @@ namespace Amazon.Util
         /// <param name="data">The data blob to process</param>
         /// <param name="lowercase">If true, returns hex digits in lower case form</param>
         /// <returns>String version of the data</returns>
-        internal static string ToHex(byte[] data, bool lowercase)
+        public static string ToHex(byte[] data, bool lowercase)
         {
             StringBuilder sb = new StringBuilder();
 

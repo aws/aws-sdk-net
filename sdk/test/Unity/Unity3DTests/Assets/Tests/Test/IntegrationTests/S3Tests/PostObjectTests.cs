@@ -49,6 +49,22 @@ namespace AWSSDK.IntegrationTests.S3
         [Category("WWW")]
         public void SimplePostTest()
         {
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                Client.Config.SignatureVersion = "4";
+                SimplePostTestInner();
+                Client.Config.SignatureVersion = "2";
+                SimplePostTestInner();
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+        }
+
+        private void SimplePostTestInner()
+        {
             AutoResetEvent ars = new AutoResetEvent(false);
             Exception responseException = new Exception();
             VersionStatus status = null;
@@ -83,6 +99,50 @@ namespace AWSSDK.IntegrationTests.S3
             s3Objects = S3TestUtils.ListObjectsHelper(Client, BucketName);
             Assert.IsNotNull(s3Objects);
             Assert.AreEqual(count, s3Objects.Count);
+        }
+
+        [Test]
+        [Category("WWW")]
+        public void HeadersPostTest()
+        {
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                Client.Config.SignatureVersion = "4";
+                HeadersPostTestInner();
+                Client.Config.SignatureVersion = "2";
+                HeadersPostTestInner();
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+        }
+
+        private void HeadersPostTestInner()
+        {
+            var contentType = "application/x-gzip";
+            var contentEncoding = "gzip";
+            var cacheControl = "private";
+            var contentDisposition = "attachment; filename=f.gz";
+            var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
+            var expires = DateTime.Now.AddDays(1);
+
+            S3TestUtils.PostObjectHelper(Client, BucketName, key, delegate (PostObjectRequest request)
+            {
+                request.Headers.ContentType = contentType;
+                request.Headers.ContentEncoding = contentEncoding;
+                request.Headers.CacheControl = cacheControl;
+                request.Headers.ContentDisposition = contentDisposition;
+                request.Headers.Expires = expires;
+            });
+            var gotten = S3TestUtils.GetObjectHelper(Client, BucketName, key);
+            Utils.AssertTrue(string.Compare(gotten.Headers.ContentType, contentType, true) == 0);
+            Utils.AssertTrue(string.Compare(gotten.Headers.ContentEncoding, contentEncoding, true) == 0);
+            Utils.AssertTrue(string.Compare(gotten.Headers.CacheControl, cacheControl, true) == 0);
+            Utils.AssertTrue(string.Compare(gotten.Headers.ContentDisposition, contentDisposition, true) == 0);
+            // strip precise units before comparing dates
+            Utils.AssertTrue(gotten.Expires.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat) == expires.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat));
         }
 
         [Test]
@@ -124,6 +184,22 @@ namespace AWSSDK.IntegrationTests.S3
         [Test]
         [Category("WWW")]
         public void TestPostCannedACL()
+        {
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                Client.Config.SignatureVersion = "4";
+                TestPostCannedACLInner();
+                Client.Config.SignatureVersion = "2";
+                TestPostCannedACLInner();
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+        }
+
+        public void TestPostCannedACLInner()
         {
             var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
 
@@ -176,7 +252,7 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
-        [Category("WWW")]      
+        [Category("WWW")]
         public void SimplePathPostObjectTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);

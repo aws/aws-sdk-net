@@ -88,10 +88,10 @@ namespace Amazon.S3.Model
         /// Content type for the uploaded data
         /// </summary>
         /// <remarks>
-        /// If this is not set, an attempt will be made to infer it from the extension on Key or Path (in that order), 
-        /// otherwise 'application/octet-stream' will be assumed.
+        /// This API is deprecated. We recommend that you use Headers.ContentType instead.
         /// </remarks>
-        public string ContentType { get; set; }
+        [Obsolete("This API is deprecated. We recommend that you use Headers.ContentType instead.")]
+        public string ContentType { get { return Headers.ContentType; } set { Headers.ContentType = value; } }
 
         /// <summary>
         /// Specifies an Amazon S3 access control list
@@ -170,7 +170,27 @@ namespace Amazon.S3.Model
         /// If keys do not begin with 'x-amz-meta-' it will be added at POST time.
         /// </remarks>
         public IDictionary<string, string> Metadata { get; set; }
-        
+
+        private HeadersCollectionPost headersCollection = new HeadersCollectionPost();
+
+        /// <summary>
+        /// The collection of headers for the request.
+        /// </summary>
+        public HeadersCollectionPost Headers
+        {
+            get
+            {
+                if (this.headersCollection == null)
+                    this.headersCollection = new HeadersCollectionPost();
+                return this.headersCollection;
+            }
+            internal set
+            {
+                this.headersCollection = value;
+            }
+        }
+
+
         /// <summary>
         /// Attach a callback that will be called as data is being sent to the AWS Service.
         /// </summary>
@@ -206,19 +226,15 @@ namespace Amazon.S3.Model
             if (!String.IsNullOrEmpty(this.SuccessActionRedirect))
                 WriteFormDatum(outputStream, S3Constants.PostFormDataRedirect, this.SuccessActionRedirect, boundary);
 
-            if (String.IsNullOrEmpty(this.ContentType))
-            {
-                if (this.Key.IndexOf('.') > -1)
-                    this.ContentType = AmazonS3Util.MimeTypeFromExtension(this.Key.Substring(this.Key.LastIndexOf('.')));
-                else if (!String.IsNullOrEmpty(this.Path) && this.Path.IndexOf('.') > -1)
-                    this.ContentType = AmazonS3Util.MimeTypeFromExtension(this.Key.Substring(this.Path.LastIndexOf('.')));
-            }
-
-            WriteFormDatum(outputStream, S3Constants.PostFormDataContentType, this.ContentType, boundary);
-
             if (this.SignedPolicy != null && !string.IsNullOrEmpty(this.SignedPolicy.SecurityToken))
             {
                 this.Metadata[S3Constants.PostFormDataSecurityToken] = this.SignedPolicy.SecurityToken;
+            }
+
+            foreach (var key in this.Headers.Keys)
+            {
+                if (!String.IsNullOrEmpty(this.Headers[key]))
+                    WriteFormDatum(outputStream, key, this.Headers[key], boundary);
             }
 
             foreach (var kvp in this.Metadata)
@@ -229,9 +245,20 @@ namespace Amazon.S3.Model
 
             if (this.SignedPolicy != null)
             {
-                WriteFormDatum(outputStream, S3Constants.PostFormDataAccessKeyId, this.SignedPolicy.AccessKeyId, boundary);
-                WriteFormDatum(outputStream, S3Constants.PostFormDataPolicy, this.SignedPolicy.Policy, boundary);
-                WriteFormDatum(outputStream, S3Constants.PostFormDataSignature, this.SignedPolicy.Signature, boundary);
+                if (this.SignedPolicy.SignatureVersion == "2")
+                {
+                    WriteFormDatum(outputStream, S3Constants.PostFormDataPolicy, this.SignedPolicy.Policy, boundary);
+                    WriteFormDatum(outputStream, S3Constants.PostFormDataSignature, this.SignedPolicy.Signature, boundary);
+                    WriteFormDatum(outputStream, S3Constants.PostFormDataAccessKeyId, this.SignedPolicy.AccessKeyId, boundary);
+                }
+                else
+                {
+                    WriteFormDatum(outputStream, S3Constants.PostFormDataPolicy, this.SignedPolicy.Policy, boundary);
+                    WriteFormDatum(outputStream, S3Constants.PostFormDataXAmzSignature, this.SignedPolicy.Signature, boundary);
+                    WriteFormDatum(outputStream, S3Constants.PostFormDataXAmzAlgorithm, this.SignedPolicy.Algorithm, boundary);
+                    WriteFormDatum(outputStream, S3Constants.PostFormDataXAmzCredential, this.SignedPolicy.Credential, boundary);
+                    WriteFormDatum(outputStream, S3Constants.PostFormDataXAmzDate, this.SignedPolicy.Date, boundary);
+                }
             }
         }
 

@@ -64,6 +64,7 @@ namespace Amazon.S3
                 // Provide a default policy if user doesn't set it.
                 try
                 {
+                    InferContentType(request);
                     if (request.SignedPolicy == null)
                     {
                         CreateSignedPolicy(request);
@@ -78,23 +79,21 @@ namespace Amazon.S3
 
         }
 
+        private void InferContentType(PostObjectRequest request)
+        {
+            if (String.IsNullOrEmpty(request.Headers.ContentType))
+            {
+                if (request.Key.IndexOf('.') > -1)
+                    request.Headers.ContentType = AmazonS3Util.MimeTypeFromExtension(request.Key.Substring(request.Key.LastIndexOf('.')));
+                else if (!String.IsNullOrEmpty(request.Path) && request.Path.IndexOf('.') > -1)
+                    request.Headers.ContentType = AmazonS3Util.MimeTypeFromExtension(request.Key.Substring(request.Path.LastIndexOf('.')));
+                else
+                    request.Headers.ContentType = "application/octet-stream";
+            }
+        }
+
         private void CreateSignedPolicy(PostObjectRequest request)
         {
-            if (request.ContentType == null)
-            {
-                int pos = request.Key.LastIndexOf('.');
-                string ext = null;
-                if (pos != -1)
-                {
-                    ext = request.Key.Substring(pos, request.Key.Length - pos);
-                    request.ContentType = AmazonS3Util.MimeTypeFromExtension(ext);
-                }
-                else
-                {
-                    request.ContentType = "application/octet-stream";
-                }
-            }
-
             StringBuilder metadataPolicy = new StringBuilder();
             foreach (var kvp in request.Metadata)
             {
@@ -102,19 +101,34 @@ namespace Amazon.S3
                 metadataPolicy.Append(string.Format(",{{\"{0}\": \"{1}\"}}", metakey, kvp.Value));
             }
 
+            StringBuilder headersPolicy = new StringBuilder();
+            foreach (var key in request.Headers.Keys)
+            {
+                headersPolicy.Append(string.Format(",{{\"{0}\": \"{1}\"}}", key, request.Headers[key]));
+            }
+
             string policyString = null;
             int position = request.Key.LastIndexOf('/');
             if (position == -1)
             {
                 policyString = "{\"expiration\": \"" + DateTime.UtcNow.AddHours(24).ToString("yyyy-MM-ddTHH:mm:ssZ") + "\",\"conditions\": [{\"bucket\": \"" +
-                    request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + "\"],{\"acl\": \"" + request.CannedACL.Value + "\"},[\"eq\", \"$Content-Type\", " + "\"" + request.ContentType + "\"" + "]" + metadataPolicy.ToString() + "]}";
+                    request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + "\"],{\"acl\": \"" + request.CannedACL.Value + "\"},[\"eq\", \"$Content-Type\", " +
+                    "\"" + request.Headers.ContentType + "\"" + "]" + metadataPolicy.ToString() + headersPolicy.ToString() + "]}";
             }
             else
             {
                 policyString = "{\"expiration\": \"" + DateTime.UtcNow.AddHours(24).ToString("yyyy-MM-ddTHH:mm:ssZ") + "\",\"conditions\": [{\"bucket\": \"" +
-                    request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + request.Key.Substring(0, position) + "/\"],{\"acl\": \"" + request.CannedACL.Value + "\"},[\"eq\", \"$Content-Type\", " + "\"" + request.ContentType + "\"" + "]" + metadataPolicy.ToString() + "]}";
+                    request.Bucket + "\"},[\"starts-with\", \"$key\", \"" + request.Key.Substring(0, position) + "/\"],{\"acl\": \"" + request.CannedACL.Value +
+                    "\"},[\"eq\", \"$Content-Type\", " + "\"" + request.Headers.ContentType + "\"" + "]" + metadataPolicy.ToString() + headersPolicy.ToString() + "]}";
             }
-            request.SignedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policyString, base.Credentials);
+            if (Config.SignatureVersion == "2")
+            {
+                request.SignedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policyString, base.Credentials);
+            }
+            else
+            {
+                request.SignedPolicy = S3PostUploadSignedPolicy.GetSignedPolicyV4(policyString, base.Credentials, request.Region);
+            }
         }
 
         private void PostObject(PostObjectRequest request, AsyncOptions options, Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper)

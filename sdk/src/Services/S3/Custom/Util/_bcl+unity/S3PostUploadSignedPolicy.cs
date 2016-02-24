@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Util;
 using ThirdParty.Json.LitJson;
 using System.Globalization;
+using System.Collections.Generic;
 
 namespace Amazon.S3.Util
 {
@@ -63,8 +64,86 @@ namespace Amazon.S3.Util
                 Policy = base64Policy,
                 Signature = signature,
                 AccessKeyId = iCreds.AccessKey,
-                SecurityToken = iCreds.Token
+                SecurityToken = iCreds.Token,
+                SignatureVersion = "2"
             };
+        }
+
+        /// <summary>
+        ///  Given a policy and AWS credentials, produce a S3PostUploadSignedPolicy.
+        /// </summary>
+        /// <param name="policy">JSON string representing the policy to sign</param>
+        /// <param name="credentials">Credentials to sign the policy with</param>
+        /// <param name="region">Service region endpoint.</param>
+        /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
+        public static S3PostUploadSignedPolicy GetSignedPolicyV4(string policy, AWSCredentials credentials, RegionEndpoint region)
+        {
+            var signedAt = AWSSDKUtils.CorrectedUtcNow;
+
+            ImmutableCredentials iCreds = credentials.GetCredentials();
+            var algorithm = "AWS4-HMAC-SHA256";
+            var dateStamp = Runtime.Internal.Auth.AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
+            var dateTimeStamp = Runtime.Internal.Auth.AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat);
+            var credentialString = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}/", iCreds.AccessKey, dateStamp, region.SystemName, "s3", Runtime.Internal.Auth.AWS4Signer.Terminator);
+
+            Dictionary<string, string> extraConditions = new Dictionary<string, string> {
+                { S3Constants.PostFormDataXAmzCredential, credentialString },
+                { S3Constants.PostFormDataXAmzAlgorithm, algorithm },
+                { S3Constants.PostFormDataXAmzDate, dateTimeStamp }
+            };
+            if (iCreds.UseToken) { extraConditions[S3Constants.PostFormDataSecurityToken] = iCreds.Token; }
+
+            var policyBytes = addConditionsToPolicy(policy, extraConditions);
+
+            var base64Policy = Convert.ToBase64String(policyBytes);
+
+            var signingKey = Runtime.Internal.Auth.AWS4Signer.ComposeSigningKey(iCreds.SecretKey, region.SystemName, dateStamp, "s3");
+
+            var signature = AWSSDKUtils.ToHex(Runtime.Internal.Auth.AWS4Signer.ComputeKeyedHash(SigningAlgorithm.HmacSHA256, signingKey, base64Policy), true);
+
+            return new S3PostUploadSignedPolicy
+            {
+                Policy = base64Policy,
+                Signature = signature,
+                AccessKeyId = iCreds.AccessKey,
+                SecurityToken = iCreds.Token,
+                SignatureVersion = "4",
+                Algorithm = algorithm,
+                Date = dateTimeStamp,
+                Credential = credentialString
+            };
+        }
+
+        private static byte[] addConditionsToPolicy(string policy, Dictionary<string, string> newConditions)
+        {
+            var json = JsonMapper.ToObject(new JsonReader(policy));
+
+            var jsonConditions = json["conditions"];
+
+            if (jsonConditions != null && jsonConditions.IsArray)
+            {
+                foreach (var newCond in newConditions)
+                {
+                    bool found = false;
+                    for (int i = 0; i < jsonConditions.Count; i++)
+                    {
+                        JsonData jsonCond = jsonConditions[i];
+                        if (jsonCond.IsObject && jsonCond[newCond.Key] != null)
+                        {
+                            jsonCond[newCond.Key] = newCond.Value;
+                            found = true;
+                        }
+                    }
+                    if (!found)
+                    {
+                        var jsonCond = new JsonData();
+                        jsonCond.SetJsonType(JsonType.Object);
+                        jsonCond[newCond.Key] = newCond.Value;
+                        jsonConditions.Add(jsonCond);
+                    }
+                }
+            }
+            return Encoding.UTF8.GetBytes(JsonMapper.ToJson(json).Trim());
         }
 
         private static byte[] addTokenToPolicy(string policy, string token)
@@ -115,6 +194,29 @@ namespace Amazon.S3.Util
         /// The security token from session or instance credentials.
         /// </summary>
         public string SecurityToken { get; set; }
+
+        /// <summary>
+        /// The signature version usedd. Either "2" or "4".
+        /// </summary>
+        public string SignatureVersion { get; set; }
+
+        /// <summary>
+        /// The signing algorithm used. Required as a field in the post Amazon
+        /// S3 can re-calculate the signature.
+        /// </summary>
+        public string Algorithm { get; set; }
+
+        /// <summary>
+        /// The date value in ISO8601 format. It is the same date used in
+        /// creating the signing key.
+        /// </summary>
+        public string Date { get; set; }
+
+        /// <summary>
+        /// In addition to the access key ID, this provides scope information
+        /// used in calculating the signing key for signature calculation. 
+        /// </summary>
+        public string Credential { get; set; }
 
         /// <summary>
         /// Get the policy document as a human readable string.
