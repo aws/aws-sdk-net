@@ -1,3 +1,7 @@
+### 3.1.47.1 (2016-02-24 21:12 UTC)
+* S3 (3.1.3.13)
+	* Add missing enumerations to S3Region.
+
 ### 3.1.47.0 (2016-02-23 19:54 UTC)
 * Route53 (3.1.3.0)
 	* Added support for SNI health check.
