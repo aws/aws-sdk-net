@@ -175,7 +175,7 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use the SA-EAST-1 locality.
         /// </summary>
         public static readonly S3Region SAE1 = new S3Region("sa-east-1");
-        // <summary>
+        /// <summary>
         /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
         /// </summary>
         public static readonly S3Region CN1 = new S3Region("cn-north-1");
@@ -185,7 +185,7 @@ namespace Amazon.S3
         /// </summary>
         [Obsolete("This constant is obsolete. Usags of this property should be migrated to the USW1 constant")]
         public static readonly S3Region SFO = new S3Region("us-west-1");
-        // <summary>
+        /// <summary>
         /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
         /// </summary>
         [Obsolete("This constant is obsolete. Usags of this property should be migrated to the CN1 constant")]
