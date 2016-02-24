@@ -70,6 +70,14 @@
                     <p>It is recommended that you use <code>UnityInitializer.AttachToGameObject(this.gameObject)</code> from the <code>Start</code> or <code>Awake</code> methods of your game component, and remove the AWSPrefab from your scene altogether.</p>
                 </td>
             </tr>
+            <tr>
+                <td valign="top">
+                    Methods <code>QueryAsync&lt;T&gt;</code>, <code>FromQueryAsync&lt;T&gt;</code>, <code>ScanAsync&lt;T&gt;</code>, and <code>FromScanAsync&lt;T&gt;</code> in <code>Amazon.DynamoDBv2.DataModel.DynamoDBContext</code> now have overloads with parameters <code>AmazonDynamoDBCallback&lt;AsyncSearch&lt;T&gt;&gt;</code> and <code>AsyncOptions</code>.
+                </td>
+                <td valign="top">
+                    <p>Use these versions of the the method instead of the counterparts that directly return an <code>AsyncSearch&lt;T&gt;</code> value.</p>
+                </td>
+            </tr>
         </tbody>
     </table>
 
