@@ -45,7 +45,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// in the batch can be more than 2 hours in the future.</li> <li>None of the log events
     /// in the batch can be older than 14 days or the retention period of the log group.</li>
     /// <li>The log events in the batch must be in chronological ordered by their <code class="code">timestamp</code>.</li>
-    /// <li>The maximum number of log events in a batch is 10,000.</li> </ul> 
+    /// <li>The maximum number of log events in a batch is 10,000.</li> <li>A batch of log
+    /// events in a single PutLogEvents request cannot span more than 24 hours. Otherwise,
+    /// the PutLogEvents operation will fail.</li> </ul> 
     /// </para>
     /// </summary>
     public partial class PutLogEventsRequest : AmazonCloudWatchLogsRequest

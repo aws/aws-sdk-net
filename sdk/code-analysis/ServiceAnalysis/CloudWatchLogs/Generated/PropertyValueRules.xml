@@ -250,7 +250,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.FilterLogEventsRequest.FilterPattern</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.FilterLogEventsRequest.Limit</property>
@@ -365,7 +365,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutMetricFilterRequest.FilterPattern</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutMetricFilterRequest.LogGroupName</property>
@@ -392,7 +392,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutSubscriptionFilterRequest.FilterPattern</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutSubscriptionFilterRequest.LogGroupName</property>
@@ -407,7 +407,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.TestMetricFilterRequest.FilterPattern</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DataAlreadyAcceptedException.ExpectedSequenceToken</property>
@@ -559,7 +559,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.MetricFilter.FilterPattern</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.MetricFilterMatchRecord.EventMessage</property>
@@ -614,7 +614,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.SubscriptionFilter.FilterPattern</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.SubscriptionFilter.LogGroupName</property>
