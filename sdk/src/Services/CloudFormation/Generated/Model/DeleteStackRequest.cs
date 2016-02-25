@@ -35,7 +35,33 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class DeleteStackRequest : AmazonCloudFormationRequest
     {
+        private List<string> _retainResources = new List<string>();
         private string _stackName;
+
+        /// <summary>
+        /// Gets and sets the property RetainResources. 
+        /// <para>
+        /// For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
+        /// that are associated with the resources you want to retain. During deletion, AWS CloudFormation
+        /// deletes the stack but does not delete the retained resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// Retaining resources is useful when you cannot delete a resource, such as a non-empty
+        /// S3 bucket, but you want to delete the stack.
+        /// </para>
+        /// </summary>
+        public List<string> RetainResources
+        {
+            get { return this._retainResources; }
+            set { this._retainResources = value; }
+        }
+
+        // Check to see if RetainResources property is set
+        internal bool IsSetRetainResources()
+        {
+            return this._retainResources != null && this._retainResources.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property StackName. 

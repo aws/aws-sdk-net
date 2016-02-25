@@ -40,11 +40,6 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// Tags that were associated with this stack during creation time will still be associated
-    /// with the stack after an <code>UpdateStack</code> operation.
-    /// </para>
-    ///  
-    /// <para>
     /// For more information about creating an update template, updating a stack, and monitoring
     /// the progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
     /// a Stack</a>.
@@ -61,6 +56,7 @@ namespace Amazon.CloudFormation.Model
         private string _stackPolicyDuringUpdateBody;
         private string _stackPolicyDuringUpdateURL;
         private string _stackPolicyURL;
+        private List<Tag> _tags = new List<Tag>();
         private string _templateBody;
         private string _templateURL;
         private bool? _usePreviousTemplate;
@@ -284,6 +280,30 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackPolicyURL()
         {
             return this._stackPolicyURL != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Key-value pairs to associate with this stack. AWS CloudFormation also propagates these
+        /// tags to supported resources in the stack. You can specify a maximum number of 10 tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify this parameter, AWS CloudFormation doesn't modify the stack's
+        /// tags. If you specify an empty value, AWS CloudFormation removes all associated tags.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
