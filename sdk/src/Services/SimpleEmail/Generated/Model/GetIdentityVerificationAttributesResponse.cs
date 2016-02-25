@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents the verification attributes for a list of identities.
+    /// This is the response object from the GetIdentityVerificationAttributes operation.
     /// </summary>
     public partial class GetIdentityVerificationAttributesResponse : AmazonWebServiceResponse
     {

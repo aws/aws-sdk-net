@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents the user's current activity limits returned from a successful <code>GetSendQuota</code>
-    /// request.
+    /// This is the response object from the GetSendQuota operation.
     /// </summary>
     public partial class GetSendQuotaResponse : AmazonWebServiceResponse
     {

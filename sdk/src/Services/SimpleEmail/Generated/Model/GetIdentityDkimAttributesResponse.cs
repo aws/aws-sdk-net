@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents a list of all the DKIM attributes for the specified identity.
+    /// This is the response object from the GetIdentityDkimAttributes operation.
     /// </summary>
     public partial class GetIdentityDkimAttributesResponse : AmazonWebServiceResponse
     {

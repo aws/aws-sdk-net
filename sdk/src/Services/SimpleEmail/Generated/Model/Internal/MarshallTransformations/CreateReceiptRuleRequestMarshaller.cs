@@ -139,6 +139,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestRulelistValue.IsSetSNSAction())
                             {
+                                if(publicRequestRulelistValue.SNSAction.IsSetEncoding())
+                                {
+                                    request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "SNSAction" + "." + "Encoding", StringUtils.FromString(publicRequestRulelistValue.SNSAction.Encoding));
+                                }
                                 if(publicRequestRulelistValue.SNSAction.IsSetTopicArn())
                                 {
                                     request.Parameters.Add("Rule" + "." + "Actions" + "." + "member" + "." + publicRequestRulelistValueIndex + "." + "SNSAction" + "." + "TopicArn", StringUtils.FromString(publicRequestRulelistValue.SNSAction.TopicArn));

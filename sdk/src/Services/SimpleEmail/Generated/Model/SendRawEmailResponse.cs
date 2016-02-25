@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents a unique message ID returned from a successful <code>SendRawEmail</code>
-    /// request.
+    /// This is the response object from the SendRawEmail operation.
     /// </summary>
     public partial class SendRawEmailResponse : AmazonWebServiceResponse
     {
