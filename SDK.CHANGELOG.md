@@ -1,3 +1,13 @@
+### 3.1.48.0 (2016-02-25 21:46 UTC)
+* AutoScaling (3.1.3.0)
+	* Updates to the CompleteLifecycleAction and RecordLifecycleActionHeartbeat operations
+* CloudFormation (3.1.3.0)
+	* Updated to allow resources not to be deleted and tag support of UpdateStack
+* CloudWatchLogs (3.1.2.4)
+	* Doc update
+* SimpleEmail (3.1.2.0)
+	* Added "Encoding" property to the SNSAction
+
 ### 3.1.47.1 (2016-02-24 21:12 UTC)
 * S3 (3.1.3.13)
 	* Add missing enumerations to S3Region.
