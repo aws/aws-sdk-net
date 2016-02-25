@@ -36,9 +36,8 @@ namespace Amazon.AutoScaling.Model
     /// <li>Pause the instance as it terminates, but before it is fully terminated</li> </ul>
     /// 
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
-    /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
-    /// Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+    /// Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class LifecycleHook
@@ -115,8 +114,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The maximum time, in seconds, that can elapse before the lifecycle hook times out.
         /// The default is 3600 seconds (1 hour). When the lifecycle hook times out, Auto Scaling
-        /// performs the action defined in the <code>DefaultResult</code> parameter. You can prevent
-        /// the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+        /// performs the default action. You can prevent the lifecycle hook from timing out by
+        /// calling <a>RecordLifecycleActionHeartbeat</a>.
         /// </para>
         /// </summary>
         public int HeartbeatTimeout

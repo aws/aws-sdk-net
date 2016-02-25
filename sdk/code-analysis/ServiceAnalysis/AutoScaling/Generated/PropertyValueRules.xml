@@ -16,6 +16,11 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.CompleteLifecycleActionRequest.InstanceId</property>
+    <min>1</min>
+    <max>19</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.CompleteLifecycleActionRequest.LifecycleActionToken</property>
     <min>36</min>
     <max>36</max>
@@ -308,7 +313,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.NotificationTargetARN</property>
-    <min>1</min>
+    <min>0</min>
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
@@ -375,6 +380,11 @@
     <property>Amazon.AutoScaling.Model.RecordLifecycleActionHeartbeatRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RecordLifecycleActionHeartbeatRequest.InstanceId</property>
+    <min>1</min>
+    <max>19</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.RecordLifecycleActionHeartbeatRequest.LifecycleActionToken</property>

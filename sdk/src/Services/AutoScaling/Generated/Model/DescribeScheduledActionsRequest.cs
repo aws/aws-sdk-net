@@ -126,7 +126,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// You can describe up to a maximum of 50 instances with a single call. If there are
         /// more items to return, the call returns a token. To get the next set of items, repeat
-        /// the call with the returned token in the <code>NextToken</code> parameter.
+        /// the call with the returned token.
         /// </para>
         /// </summary>
         public List<string> ScheduledActionNames

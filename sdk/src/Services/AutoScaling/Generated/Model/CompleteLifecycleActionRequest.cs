@@ -29,30 +29,32 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CompleteLifecycleAction operation.
-    /// Completes the lifecycle action for the associated token initiated under the given
-    /// lifecycle hook with the specified result. 
+    /// Completes the lifecycle action for the specified token or instance with the specified
+    /// result.
     /// 
     ///  
     /// <para>
-    /// This operation is a part of the basic sequence for adding a lifecycle hook to an Auto
-    /// Scaling group:
+    /// This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
+    /// group:
     /// </para>
-    ///  <ol> <li>Create a notification target. A target can be either an Amazon SQS queue
-    /// or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling
-    /// to publish lifecycle notifications to the designated SQS queue or SNS topic.</li>
-    /// <li>Create the lifecycle hook. You can create a hook that acts when instances launch
-    /// or when instances terminate.</li> <li>If necessary, record the lifecycle action heartbeat
-    /// to keep the instance in a pending state.</li> <li><b>Complete the lifecycle action</b>.</li>
-    /// </ol> 
+    ///  <ol> <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+    /// to invoke your Lambda function when Auto Scaling launches or terminates instances.</li>
+    /// <li>(Optional) Create a notification target and an IAM role. The target can be either
+    /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
+    /// lifecycle notifications to the target.</li> <li>Create the lifecycle hook. Specify
+    /// whether the hook is used when the instances launch or terminate.</li> <li>If you need
+    /// more time, record the lifecycle action heartbeat to keep the instance in a pending
+    /// state.</li> <li><b>If you finish before the timeout period ends, complete the lifecycle
+    /// action.</b></li> </ol> 
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
-    /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
-    /// Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+    /// Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CompleteLifecycleActionRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
+        private string _instanceId;
         private string _lifecycleActionResult;
         private string _lifecycleActionToken;
         private string _lifecycleHookName;
@@ -73,6 +75,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
         }
 
         /// <summary>

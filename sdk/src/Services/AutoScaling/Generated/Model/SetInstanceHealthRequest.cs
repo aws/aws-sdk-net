@@ -66,7 +66,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the EC2 instance.
+        /// The ID of the instance.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -91,8 +91,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the <code>HealthCheckGracePeriod</code> parameter description
-        /// for <a>CreateAutoScalingGroup</a>.
+        /// For more information, see the description of the health check grace period for <a>CreateAutoScalingGroup</a>.
         /// </para>
         /// </summary>
         public bool ShouldRespectGracePeriod

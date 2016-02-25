@@ -128,8 +128,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-        /// Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+        /// Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -173,7 +173,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-        /// Checks For Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Checks</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -308,9 +308,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
-        /// a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
-        /// Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html">Controlling
+        /// Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies
@@ -338,8 +338,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-        /// Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

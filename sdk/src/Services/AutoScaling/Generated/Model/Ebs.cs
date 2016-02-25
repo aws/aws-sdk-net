@@ -42,7 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// Indicates whether to delete the volume on instance termination.
+        /// Indicates whether the volume is deleted on instance termination.
         /// </para>
         ///  
         /// <para>
@@ -87,12 +87,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// For Provisioned IOPS (SSD) volumes only. The number of I/O operations per second (IOPS)
-        /// to provision for the volume.
+        /// The number of I/O operations per second (IOPS) to provision for the volume.
         /// </para>
         ///  
         /// <para>
-        /// Default: None
+        /// Constraint: Required when the volume type is <code>io1</code>.
         /// </para>
         /// </summary>
         public int Iops
@@ -128,22 +127,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VolumeSize. 
         /// <para>
-        /// The volume size, in gigabytes.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: If the volume type is <code>io1</code>, the minimum size of the volume
-        /// is 10 GiB. If you specify <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
-        /// must be equal to or larger than the size of the snapshot.
+        /// The volume size, in GiB. For <code>standard</code> volumes, specify a value from 1
+        /// to 1,024. For <code>io1</code> volumes, specify a value from 4 to 16,384. For <code>gp2</code>
+        /// volumes, specify a value from 1 to 16,384. If you specify a snapshot, the volume size
+        /// must be equal to or larger than the snapshot size.
         /// </para>
         ///  
         /// <para>
         /// Default: If you create a volume from a snapshot and you don't specify a volume size,
-        /// the default is the size of the snapshot.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Required when the volume type is <code>io1</code>. 
+        /// the default is the snapshot size.
         /// </para>
         /// </summary>
         public int VolumeSize
@@ -161,11 +153,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type.
+        /// The volume type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard | io1 | gp2</code>
+        /// Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
         /// </para>
         ///  
         /// <para>

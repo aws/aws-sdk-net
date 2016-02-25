@@ -340,25 +340,26 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Completes the lifecycle action for the associated token initiated under the given
-        /// lifecycle hook with the specified result. 
+        /// Completes the lifecycle action for the specified token or instance with the specified
+        /// result.
         /// 
         ///  
         /// <para>
-        /// This operation is a part of the basic sequence for adding a lifecycle hook to an Auto
-        /// Scaling group:
+        /// This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
+        /// group:
         /// </para>
-        ///  <ol> <li>Create a notification target. A target can be either an Amazon SQS queue
-        /// or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling
-        /// to publish lifecycle notifications to the designated SQS queue or SNS topic.</li>
-        /// <li>Create the lifecycle hook. You can create a hook that acts when instances launch
-        /// or when instances terminate.</li> <li>If necessary, record the lifecycle action heartbeat
-        /// to keep the instance in a pending state.</li> <li><b>Complete the lifecycle action</b>.</li>
-        /// </ol> 
+        ///  <ol> <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+        /// to invoke your Lambda function when Auto Scaling launches or terminates instances.</li>
+        /// <li>(Optional) Create a notification target and an IAM role. The target can be either
+        /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
+        /// lifecycle notifications to the target.</li> <li>Create the lifecycle hook. Specify
+        /// whether the hook is used when the instances launch or terminate.</li> <li>If you need
+        /// more time, record the lifecycle action heartbeat to keep the instance in a pending
+        /// state.</li> <li><b>If you finish before the timeout period ends, complete the lifecycle
+        /// action.</b></li> </ol> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
-        /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
-        /// Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteLifecycleAction service method.</param>
@@ -522,14 +523,6 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Creates or updates tags for the specified Auto Scaling group.
         /// 
-        ///  
-        /// <para>
-        /// A tag is defined by its resource ID, resource type, key, value, and propagate flag.
-        /// The value and the propagate flag are optional parameters. The only supported resource
-        /// type is <code>auto-scaling-group</code>, and the resource ID must be the name of the
-        /// group. The <code>PropagateAtLaunch</code> flag determines whether the tag is added
-        /// to instances launched in the group. Valid values are <code>true</code> or <code>false</code>.
-        /// </para>
         ///  
         /// <para>
         /// When you specify a tag with a key that already exists, the operation overwrites the
@@ -2434,8 +2427,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto
-        /// Scaling InService State</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnterStandby service method.</param>
@@ -2525,8 +2518,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html">Auto
-        /// Scaling InService State</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExitStandby service method.</param>
@@ -2578,20 +2571,21 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// This operation is a part of the basic sequence for adding a lifecycle hook to an Auto
-        /// Scaling group:
+        /// This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
+        /// group:
         /// </para>
-        ///  <ol> <li>Create a notification target. A target can be either an Amazon SQS queue
-        /// or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling
-        /// to publish lifecycle notifications to the designated SQS queue or SNS topic.</li>
-        /// <li><b>Create the lifecycle hook. You can create a hook that acts when instances launch
-        /// or when instances terminate.</b></li> <li>If necessary, record the lifecycle action
-        /// heartbeat to keep the instance in a pending state.</li> <li>Complete the lifecycle
+        ///  <ol> <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+        /// to invoke your Lambda function when Auto Scaling launches or terminates instances.</li>
+        /// <li>(Optional) Create a notification target and an IAM role. The target can be either
+        /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
+        /// lifecycle notifications to the target.</li> <li><b>Create the lifecycle hook. Specify
+        /// whether the hook is used when the instances launch or terminate.</b></li> <li>If you
+        /// need more time, record the lifecycle action heartbeat to keep the instance in a pending
+        /// state.</li> <li>If you finish before the timeout period ends, complete the lifecycle
         /// action.</li> </ol> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
-        /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
-        /// Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2812,26 +2806,26 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Records a heartbeat for the lifecycle action associated with a specific token. This
-        /// extends the timeout by the length of time defined by the <code>HeartbeatTimeout</code>
-        /// parameter of <a>PutLifecycleHook</a>.
+        /// Records a heartbeat for the lifecycle action associated with the specified token or
+        /// instance. This extends the timeout by the length of time defined using <a>PutLifecycleHook</a>.
         /// 
         ///  
         /// <para>
-        /// This operation is a part of the basic sequence for adding a lifecycle hook to an Auto
-        /// Scaling group:
+        /// This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
+        /// group:
         /// </para>
-        ///  <ol> <li>Create a notification target. A target can be either an Amazon SQS queue
-        /// or an Amazon SNS topic.</li> <li>Create an IAM role. This role allows Auto Scaling
-        /// to publish lifecycle notifications to the designated SQS queue or SNS topic.</li>
-        /// <li>Create the lifecycle hook. You can create a hook that acts when instances launch
-        /// or when instances terminate.</li> <li><b>If necessary, record the lifecycle action
-        /// heartbeat to keep the instance in a pending state.</b></li> <li>Complete the lifecycle
+        ///  <ol> <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+        /// to invoke your Lambda function when Auto Scaling launches or terminates instances.</li>
+        /// <li>(Optional) Create a notification target and an IAM role. The target can be either
+        /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
+        /// lifecycle notifications to the target.</li> <li>Create the lifecycle hook. Specify
+        /// whether the hook is used when the instances launch or terminate.</li> <li><b>If you
+        /// need more time, record the lifecycle action heartbeat to keep the instance in a pending
+        /// state.</b></li> <li>If you finish before the timeout period ends, complete the lifecycle
         /// action.</li> </ol> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
-        /// Scaling Pending State</a> and <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
-        /// Scaling Terminating State</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RecordLifecycleActionHeartbeat service method.</param>
@@ -2873,11 +2867,14 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Resumes the specified suspended Auto Scaling processes for the specified Auto Scaling
-        /// group. To resume specific processes, use the <code>ScalingProcesses</code> parameter.
-        /// To resume all processes, omit the <code>ScalingProcesses</code> parameter. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend
-        /// and Resume Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Resumes the specified suspended Auto Scaling processes, or all suspended process,
+        /// for the specified Auto Scaling group.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+        /// and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeProcesses service method.</param>
         /// 
@@ -3069,9 +3066,8 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Suspends the specified Auto Scaling processes for the specified Auto Scaling group.
-        /// To suspend specific processes, use the <code>ScalingProcesses</code> parameter. To
-        /// suspend all processes, omit the <code>ScalingProcesses</code> parameter.
+        /// Suspends the specified Auto Scaling processes, or all processes, for the specified
+        /// Auto Scaling group.
         /// 
         ///  
         /// <para>
@@ -3084,8 +3080,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend
-        /// and Resume Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+        /// and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendProcesses service method.</param>
