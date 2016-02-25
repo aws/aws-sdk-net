@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the EnableRule operation.
     /// </summary>
     public partial class EnableRuleResponse : AmazonWebServiceResponse
     {

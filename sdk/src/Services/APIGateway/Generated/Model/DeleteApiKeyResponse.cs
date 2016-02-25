@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteApiKey operation.
     /// </summary>
     public partial class DeleteApiKeyResponse : AmazonWebServiceResponse
     {

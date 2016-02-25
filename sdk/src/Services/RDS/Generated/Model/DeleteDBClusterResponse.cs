@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DeleteDBCluster operation.
     /// </summary>
     public partial class DeleteDBClusterResponse : AmazonWebServiceResponse
     {

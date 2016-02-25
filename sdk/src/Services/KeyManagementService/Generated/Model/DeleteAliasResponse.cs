@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteAlias operation.
     /// </summary>
     public partial class DeleteAliasResponse : AmazonWebServiceResponse
     {

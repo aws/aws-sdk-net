@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the PutJobSuccessResult operation.
     /// </summary>
     public partial class PutJobSuccessResultResponse : AmazonWebServiceResponse
     {

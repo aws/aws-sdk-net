@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the SetDesiredCapacity operation.
     /// </summary>
     public partial class SetDesiredCapacityResponse : AmazonWebServiceResponse
     {

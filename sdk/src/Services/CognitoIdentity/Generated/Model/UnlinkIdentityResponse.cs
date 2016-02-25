@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the UnlinkIdentity operation.
     /// </summary>
     public partial class UnlinkIdentityResponse : AmazonWebServiceResponse
     {

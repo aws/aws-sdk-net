@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the AttachRolePolicy operation.
     /// </summary>
     public partial class AttachRolePolicyResponse : AmazonWebServiceResponse
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ScheduleKeyDeletion operation.
     /// </summary>
     public partial class ScheduleKeyDeletionResponse : AmazonWebServiceResponse
     {

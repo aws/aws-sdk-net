@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ModifyDBInstance operation.
     /// </summary>
     public partial class ModifyDBInstanceResponse : AmazonWebServiceResponse
     {

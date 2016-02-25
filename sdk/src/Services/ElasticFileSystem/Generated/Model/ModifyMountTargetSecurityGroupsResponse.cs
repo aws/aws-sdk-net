@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the ModifyMountTargetSecurityGroups operation.
     /// </summary>
     public partial class ModifyMountTargetSecurityGroupsResponse : AmazonWebServiceResponse
     {

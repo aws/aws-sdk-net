@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {

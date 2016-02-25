@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the UpdateSizeConstraintSet operation.
     /// </summary>
     public partial class UpdateSizeConstraintSetResponse : AmazonWebServiceResponse
     {

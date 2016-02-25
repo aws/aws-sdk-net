@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the CreateDocument operation.
     /// </summary>
     public partial class CreateDocumentResponse : AmazonWebServiceResponse
     {

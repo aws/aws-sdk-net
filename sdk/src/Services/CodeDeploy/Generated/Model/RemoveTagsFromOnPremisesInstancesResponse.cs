@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the RemoveTagsFromOnPremisesInstances operation.
     /// </summary>
     public partial class RemoveTagsFromOnPremisesInstancesResponse : AmazonWebServiceResponse
     {

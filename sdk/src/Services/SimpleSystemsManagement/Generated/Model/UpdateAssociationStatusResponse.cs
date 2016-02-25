@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the UpdateAssociationStatus operation.
     /// </summary>
     public partial class UpdateAssociationStatusResponse : AmazonWebServiceResponse
     {

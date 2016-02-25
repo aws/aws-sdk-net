@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteVerifiedEmailAddress operation.
     /// </summary>
     public partial class DeleteVerifiedEmailAddressResponse : AmazonWebServiceResponse
     {

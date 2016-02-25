@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the PutLogEvents operation.
     /// </summary>
     public partial class PutLogEventsResponse : AmazonWebServiceResponse
     {

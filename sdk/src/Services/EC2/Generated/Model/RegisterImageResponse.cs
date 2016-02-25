@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the RegisterImage operation.
     /// </summary>
     public partial class RegisterImageResponse : AmazonWebServiceResponse
     {

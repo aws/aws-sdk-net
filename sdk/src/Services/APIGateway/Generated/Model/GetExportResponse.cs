@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the GetExport operation.
     /// </summary>
     public partial class GetExportResponse : AmazonWebServiceResponse
     {

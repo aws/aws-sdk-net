@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteDistribution operation.
     /// </summary>
     public partial class DeleteDistributionResponse : AmazonWebServiceResponse
     {

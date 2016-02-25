@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleDB.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListDomains operation.
     /// </summary>
     public partial class ListDomainsResponse : AmazonWebServiceResponse
     {

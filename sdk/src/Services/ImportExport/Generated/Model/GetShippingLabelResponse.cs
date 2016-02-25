@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ImportExport.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the GetShippingLabel operation.
     /// </summary>
     public partial class GetShippingLabelResponse : AmazonWebServiceResponse
     {

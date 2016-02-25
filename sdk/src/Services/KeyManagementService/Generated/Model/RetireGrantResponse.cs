@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the RetireGrant operation.
     /// </summary>
     public partial class RetireGrantResponse : AmazonWebServiceResponse
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IotData.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the Publish operation.
     /// </summary>
     public partial class PublishResponse : AmazonWebServiceResponse
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the GenerateRandom operation.
     /// </summary>
     public partial class GenerateRandomResponse : AmazonWebServiceResponse
     {

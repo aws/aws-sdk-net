@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ModifyReservedInstances operation.
     /// </summary>
     public partial class ModifyReservedInstancesResponse : AmazonWebServiceResponse
     {

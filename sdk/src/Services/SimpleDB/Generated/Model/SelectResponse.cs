@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleDB.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the Select operation.
     /// </summary>
     public partial class SelectResponse : AmazonWebServiceResponse
     {

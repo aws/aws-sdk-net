@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the Predict operation.
     /// </summary>
     public partial class PredictResponse : AmazonWebServiceResponse
     {

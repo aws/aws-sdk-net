@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListWebACLs operation.
     /// </summary>
     public partial class ListWebACLsResponse : AmazonWebServiceResponse
     {

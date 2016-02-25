@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the EnableTopicRule operation.
     /// </summary>
     public partial class EnableTopicRuleResponse : AmazonWebServiceResponse
     {

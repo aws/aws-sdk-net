@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteVaultNotifications operation.
     /// </summary>
     public partial class DeleteVaultNotificationsResponse : AmazonWebServiceResponse
     {

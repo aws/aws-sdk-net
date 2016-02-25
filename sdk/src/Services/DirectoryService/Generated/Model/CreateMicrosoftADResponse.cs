@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the CreateMicrosoftAD operation.
     /// </summary>
     public partial class CreateMicrosoftADResponse : AmazonWebServiceResponse
     {

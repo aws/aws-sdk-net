@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteAlarms operation.
     /// </summary>
     public partial class DeleteAlarmsResponse : AmazonWebServiceResponse
     {

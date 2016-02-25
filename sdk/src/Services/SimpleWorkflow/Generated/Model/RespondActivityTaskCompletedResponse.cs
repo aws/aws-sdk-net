@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the RespondActivityTaskCompleted operation.
     /// </summary>
     public partial class RespondActivityTaskCompletedResponse : AmazonWebServiceResponse
     {

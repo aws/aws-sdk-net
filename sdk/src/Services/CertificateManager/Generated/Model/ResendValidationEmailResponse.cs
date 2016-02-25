@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the ResendValidationEmail operation.
     /// </summary>
     public partial class ResendValidationEmailResponse : AmazonWebServiceResponse
     {

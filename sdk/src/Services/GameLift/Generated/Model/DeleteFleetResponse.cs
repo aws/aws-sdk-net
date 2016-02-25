@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteFleet operation.
     /// </summary>
     public partial class DeleteFleetResponse : AmazonWebServiceResponse
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the SetQueueAttributes operation.
     /// </summary>
     public partial class SetQueueAttributesResponse : AmazonWebServiceResponse
     {

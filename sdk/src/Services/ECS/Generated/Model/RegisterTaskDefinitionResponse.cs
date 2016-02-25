@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the RegisterTaskDefinition operation.
     /// </summary>
     public partial class RegisterTaskDefinitionResponse : AmazonWebServiceResponse
     {

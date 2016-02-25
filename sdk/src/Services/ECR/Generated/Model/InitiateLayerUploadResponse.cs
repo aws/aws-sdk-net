@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the InitiateLayerUpload operation.
     /// </summary>
     public partial class InitiateLayerUploadResponse : AmazonWebServiceResponse
     {
