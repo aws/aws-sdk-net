@@ -38,8 +38,10 @@ namespace Amazon.APIGateway.Model
         private bool? _dataTraceEnabled;
         private string _loggingLevel;
         private bool? _metricsEnabled;
+        private bool? _requireAuthorizationForCacheControl;
         private int? _throttlingBurstLimit;
         private double? _throttlingRateLimit;
+        private UnauthorizedCacheControlHeaderStrategy _unauthorizedCacheControlHeaderStrategy;
 
         /// <summary>
         /// Gets and sets the property CacheDataEncrypted. 
@@ -161,6 +163,26 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequireAuthorizationForCacheControl. 
+        /// <para>
+        /// Specifies whether authorization is required for a cache invalidation request. The
+        /// PATCH path for this setting is <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>,
+        /// and the value is a Boolean.
+        /// </para>
+        /// </summary>
+        public bool RequireAuthorizationForCacheControl
+        {
+            get { return this._requireAuthorizationForCacheControl.GetValueOrDefault(); }
+            set { this._requireAuthorizationForCacheControl = value; }
+        }
+
+        // Check to see if RequireAuthorizationForCacheControl property is set
+        internal bool IsSetRequireAuthorizationForCacheControl()
+        {
+            return this._requireAuthorizationForCacheControl.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ThrottlingBurstLimit. 
         /// <para>
         /// Specifies the throttling burst limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/burstLimit</code>,
@@ -196,6 +218,27 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetThrottlingRateLimit()
         {
             return this._throttlingRateLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnauthorizedCacheControlHeaderStrategy. 
+        /// <para>
+        /// Specifies the strategy on how to handle the unauthorized requests for cache invalidation.
+        /// The PATCH path for this setting is <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
+        /// and the available values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+        /// <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
+        /// </para>
+        /// </summary>
+        public UnauthorizedCacheControlHeaderStrategy UnauthorizedCacheControlHeaderStrategy
+        {
+            get { return this._unauthorizedCacheControlHeaderStrategy; }
+            set { this._unauthorizedCacheControlHeaderStrategy = value; }
+        }
+
+        // Check to see if UnauthorizedCacheControlHeaderStrategy property is set
+        internal bool IsSetUnauthorizedCacheControlHeaderStrategy()
+        {
+            return this._unauthorizedCacheControlHeaderStrategy != null;
         }
 
     }

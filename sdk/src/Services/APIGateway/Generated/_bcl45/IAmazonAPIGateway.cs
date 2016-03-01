@@ -908,6 +908,43 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  FlushStageAuthorizersCache
+
+
+        /// <summary>
+        /// Flushes all authorizer cache entries on a stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FlushStageAuthorizersCache service method.</param>
+        /// 
+        /// <returns>The response from the FlushStageAuthorizersCache service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FlushStageAuthorizersCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FlushStageAuthorizersCache operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<FlushStageAuthorizersCacheResponse> FlushStageAuthorizersCacheAsync(FlushStageAuthorizersCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  FlushStageCache
 
 
@@ -1056,6 +1093,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetApiKeys service method.</param>
         /// 
         /// <returns>The response from the GetApiKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// 
         /// </exception>
@@ -1260,6 +1300,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetClientCertificates service method.</param>
         /// 
         /// <returns>The response from the GetClientCertificates service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// 
         /// </exception>
@@ -1328,6 +1371,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetDeployments service method.</param>
         /// 
         /// <returns>The response from the GetDeployments service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
         /// 
         /// </exception>
@@ -1400,6 +1446,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetDomainNames service method.</param>
         /// 
         /// <returns>The response from the GetDomainNames service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// 
         /// </exception>
@@ -1638,6 +1687,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetModels service method.</param>
         /// 
         /// <returns>The response from the GetModels service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1744,6 +1796,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetResources service method.</param>
         /// 
         /// <returns>The response from the GetResources service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1812,6 +1867,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetRestApis service method.</param>
         /// 
         /// <returns>The response from the GetRestApis service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// 
         /// </exception>
@@ -2099,6 +2157,43 @@ namespace Amazon.APIGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutMethodResponseResponse> PutMethodResponseAsync(PutMethodResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TestInvokeAuthorizer
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the TestInvokeAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestInvokeAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

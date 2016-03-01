@@ -325,4 +325,58 @@ namespace Amazon.APIGateway
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type UnauthorizedCacheControlHeaderStrategy.
+    /// </summary>
+    public class UnauthorizedCacheControlHeaderStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL_WITH_403 for UnauthorizedCacheControlHeaderStrategy
+        /// </summary>
+        public static readonly UnauthorizedCacheControlHeaderStrategy FAIL_WITH_403 = new UnauthorizedCacheControlHeaderStrategy("FAIL_WITH_403");
+        /// <summary>
+        /// Constant SUCCEED_WITH_RESPONSE_HEADER for UnauthorizedCacheControlHeaderStrategy
+        /// </summary>
+        public static readonly UnauthorizedCacheControlHeaderStrategy SUCCEED_WITH_RESPONSE_HEADER = new UnauthorizedCacheControlHeaderStrategy("SUCCEED_WITH_RESPONSE_HEADER");
+        /// <summary>
+        /// Constant SUCCEED_WITHOUT_RESPONSE_HEADER for UnauthorizedCacheControlHeaderStrategy
+        /// </summary>
+        public static readonly UnauthorizedCacheControlHeaderStrategy SUCCEED_WITHOUT_RESPONSE_HEADER = new UnauthorizedCacheControlHeaderStrategy("SUCCEED_WITHOUT_RESPONSE_HEADER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnauthorizedCacheControlHeaderStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnauthorizedCacheControlHeaderStrategy FindValue(string value)
+        {
+            return FindValue<UnauthorizedCacheControlHeaderStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnauthorizedCacheControlHeaderStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

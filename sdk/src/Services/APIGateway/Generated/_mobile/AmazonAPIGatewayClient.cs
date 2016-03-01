@@ -889,6 +889,37 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  FlushStageAuthorizersCache
+
+        internal FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
+        {
+            var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
+            var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
+
+            return Invoke<FlushStageAuthorizersCacheRequest,FlushStageAuthorizersCacheResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FlushStageAuthorizersCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FlushStageAuthorizersCache operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<FlushStageAuthorizersCacheResponse> FlushStageAuthorizersCacheAsync(FlushStageAuthorizersCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
+            var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<FlushStageAuthorizersCacheRequest,FlushStageAuthorizersCacheResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  FlushStageCache
 
         internal FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
@@ -1938,6 +1969,37 @@ namespace Amazon.APIGateway
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutMethodResponseRequest,PutMethodResponseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestInvokeAuthorizer
+
+        internal TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
+        {
+            var marshaller = new TestInvokeAuthorizerRequestMarshaller();
+            var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<TestInvokeAuthorizerRequest,TestInvokeAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestInvokeAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TestInvokeAuthorizerRequestMarshaller();
+            var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestInvokeAuthorizerRequest,TestInvokeAuthorizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

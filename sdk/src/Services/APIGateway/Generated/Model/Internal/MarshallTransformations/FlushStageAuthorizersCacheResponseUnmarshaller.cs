@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetRestApis operation
+    /// Response Unmarshaller for FlushStageAuthorizersCache operation
     /// </summary>  
-    public class GetRestApisResponseUnmarshaller : JsonResponseUnmarshaller
+    public class FlushStageAuthorizersCacheResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetRestApisResponse response = new GetRestApisResponse();
+            FlushStageAuthorizersCacheResponse response = new FlushStageAuthorizersCacheResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("item", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RestApi, RestApiUnmarshaller>(RestApiUnmarshaller.Instance);
-                    response.Items = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("position", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Position = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -82,6 +65,10 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+            {
+                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
             {
                 return new TooManyRequestsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -93,9 +80,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             return new AmazonAPIGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetRestApisResponseUnmarshaller _instance = new GetRestApisResponseUnmarshaller();        
+        private static FlushStageAuthorizersCacheResponseUnmarshaller _instance = new FlushStageAuthorizersCacheResponseUnmarshaller();        
 
-        internal static GetRestApisResponseUnmarshaller GetInstance()
+        internal static FlushStageAuthorizersCacheResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +90,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRestApisResponseUnmarshaller Instance
+        public static FlushStageAuthorizersCacheResponseUnmarshaller Instance
         {
             get
             {

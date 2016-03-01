@@ -120,7 +120,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property IntegrationHttpMethod. 
         /// <para>
-        /// Specifies a put integration HTTP method.
+        /// Specifies a put integration HTTP method. When the integration type is HTTP or AWS,
+        /// this field is required.
         /// </para>
         /// </summary>
         public string IntegrationHttpMethod
@@ -236,7 +237,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// Specifies a put integration input's Uniform Resource Identifier (URI).
+        /// Specifies a put integration input's Uniform Resource Identifier (URI). When the integration
+        /// type is HTTP or AWS, this field is required.
         /// </para>
         /// </summary>
         public string Uri

@@ -100,6 +100,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetricsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("requireAuthorizationForCacheControl", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RequireAuthorizationForCacheControl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("throttlingBurstLimit", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.ThrottlingRateLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("unauthorizedCacheControlHeaderStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UnauthorizedCacheControlHeaderStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

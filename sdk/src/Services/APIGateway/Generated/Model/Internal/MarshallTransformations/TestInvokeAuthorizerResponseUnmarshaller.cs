@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetRestApis operation
+    /// Response Unmarshaller for TestInvokeAuthorizer operation
     /// </summary>  
-    public class GetRestApisResponseUnmarshaller : JsonResponseUnmarshaller
+    public class TestInvokeAuthorizerResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,46 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetRestApisResponse response = new GetRestApisResponse();
+            TestInvokeAuthorizerResponse response = new TestInvokeAuthorizerResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("item", targetDepth))
+                if (context.TestExpression("authorization", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RestApi, RestApiUnmarshaller>(RestApiUnmarshaller.Instance);
-                    response.Items = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    response.Authorization = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("position", targetDepth))
+                if (context.TestExpression("clientStatus", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.ClientStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("latency", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.Latency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("log", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Position = unmarshaller.Unmarshall(context);
+                    response.Log = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("policy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Policy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("principalId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PrincipalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,6 +106,10 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+            {
+                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
             {
                 return new TooManyRequestsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -93,9 +121,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             return new AmazonAPIGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetRestApisResponseUnmarshaller _instance = new GetRestApisResponseUnmarshaller();        
+        private static TestInvokeAuthorizerResponseUnmarshaller _instance = new TestInvokeAuthorizerResponseUnmarshaller();        
 
-        internal static GetRestApisResponseUnmarshaller GetInstance()
+        internal static TestInvokeAuthorizerResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +131,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRestApisResponseUnmarshaller Instance
+        public static TestInvokeAuthorizerResponseUnmarshaller Instance
         {
             get
             {
