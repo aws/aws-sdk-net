@@ -19,6 +19,7 @@ namespace AWSSDK.IntegrationTests.S3
     {
         private static readonly string FileNamePrefix = "UnityTestFile";
         private static readonly string FileNameFormat = FileNamePrefix + "{0}.txt";
+        private static readonly string GzipFileNameFormat = FileNamePrefix + "{0}.gz";
         private static string BucketName = null;
         private static string VersionedBucketName = null;
 
@@ -121,9 +122,9 @@ namespace AWSSDK.IntegrationTests.S3
 
         private void HeadersPostTestInner()
         {
-            var contentType = "application/x-gzip";
-            var contentEncoding = "gzip";
+            var contentType = "image/jpeg";
             var cacheControl = "private";
+            var contentEncoding = "deflate";
             var contentDisposition = "attachment; filename=f.gz";
             var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
             var expires = DateTime.Now.AddDays(1);
@@ -131,18 +132,84 @@ namespace AWSSDK.IntegrationTests.S3
             S3TestUtils.PostObjectHelper(Client, BucketName, key, delegate (PostObjectRequest request)
             {
                 request.Headers.ContentType = contentType;
-                request.Headers.ContentEncoding = contentEncoding;
                 request.Headers.CacheControl = cacheControl;
+                request.Headers.ContentEncoding = contentEncoding;
                 request.Headers.ContentDisposition = contentDisposition;
                 request.Headers.Expires = expires;
             });
             var gotten = S3TestUtils.GetObjectHelper(Client, BucketName, key);
             Utils.AssertTrue(string.Compare(gotten.Headers.ContentType, contentType, true) == 0);
-            Utils.AssertTrue(string.Compare(gotten.Headers.ContentEncoding, contentEncoding, true) == 0);
             Utils.AssertTrue(string.Compare(gotten.Headers.CacheControl, cacheControl, true) == 0);
             Utils.AssertTrue(string.Compare(gotten.Headers.ContentDisposition, contentDisposition, true) == 0);
-            // strip precise units before comparing dates
+            Utils.AssertTrue(string.Compare(gotten.Headers.ContentEncoding, contentEncoding, true) == 0);
+            // strip precision before comparing dates
             Utils.AssertTrue(gotten.Expires.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat) == expires.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat));
+        }
+
+        [Test]
+        [Category("WWW")]
+        public void GzipPostTest()
+        {
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                Client.Config.SignatureVersion = "4";
+                GzipPostTestInner();
+                Client.Config.SignatureVersion = "2";
+                GzipPostTestInner();
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+        }
+
+        private void GzipPostTestInner()
+        {
+            var contentType = "application/x-gzip";
+            var contentEncoding = "gzip";
+            var key = string.Format(GzipFileNameFormat, DateTime.Now.Ticks);
+
+            AutoResetEvent ars = new AutoResetEvent(false);
+
+            Exception responseException = new Exception();
+            string fileName = string.Format(GzipFileNameFormat, DateTime.Now.Ticks);
+            TextAsset gzippedFile = null;
+            byte[] buffer = null;
+            UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+            {
+                gzippedFile = Resources.Load("gzipFile") as TextAsset;
+                buffer = gzippedFile.bytes;
+                ars.Set();
+            });
+
+            ars.WaitOne();
+
+            var memoryStream = new MemoryStream(buffer);
+
+            var request = new PostObjectRequest()
+            {
+                Key = fileName,
+                Bucket = BucketName,
+                InputStream = memoryStream,
+                CannedACL = S3CannedACL.Private
+            };
+            request.Headers.ContentEncoding = contentEncoding;
+            request.Headers.ContentType = contentType;
+
+            Client.PostObjectAsync(request, (response) =>
+            {
+                responseException = response.Exception;
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = true });
+
+            ars.WaitOne();
+            Assert.IsNull(responseException);
+
+            var gotten = S3TestUtils.GetObjectHelper(Client, BucketName, fileName);
+            Utils.AssertTrue(string.Compare(gotten.Headers.ContentType, contentType, true) == 0, string.Format("content types: {0} != {1}", gotten.Headers.ContentType, contentType));
+            // Unity removes the Content-Encoding header after unzipping :(.
+            //Utils.AssertTrue(string.Compare(gotten.Headers.ContentEncoding, contentEncoding, true) == 0);
         }
 
         [Test]
