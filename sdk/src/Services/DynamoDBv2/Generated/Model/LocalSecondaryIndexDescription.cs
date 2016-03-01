@@ -116,9 +116,30 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property KeySchema. 
         /// <para>
-        /// The complete index key schema, which consists of one or more pairs of attribute names
-        /// and key types (<code>HASH</code> or <code>RANGE</code>).
+        /// The complete key schema for the local secondary index, consisting of one or more pairs
+        /// of attribute names and key types:
         /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>HASH</code> - partition key
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <code>RANGE</code> - sort key
+        /// </para>
+        /// </li> </ul> <note> 
+        /// <para>
+        /// The partition key of an item is also known as its <i>hash attribute</i>. The term
+        /// "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to
+        /// evenly distribute data items across partitions, based on their partition key values.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sort key of an item is also known as its <i>range attribute</i>. The term "range
+        /// attribute" derives from the way DynamoDB stores items with the same partition key
+        /// physically close together, in sorted order by the sort key value.
+        /// </para>
+        /// </note>
         /// </summary>
         public List<KeySchemaElement> KeySchema
         {

@@ -107,7 +107,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property GlobalSecondaryIndexes. 
         /// <para>
         /// The global secondary indexes, if any, on the table. Each index is scoped to a given
-        /// hash key value. Each element is composed of:
+        /// partition key value. Each element is composed of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -157,7 +157,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>KeySchema</i> - Specifies the complete index key schema. The attribute names in
         /// the key schema must be between 1 and 255 characters (inclusive). The key schema must
-        /// begin with the same hash key attribute as the table.
+        /// begin with the same partition key as the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -245,10 +245,29 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>KeyType</i> - The key type for the attribute. Can be either <code>HASH</code> or
-        /// <code>RANGE</code>.
+        /// <i>KeyType</i> - The role of the attribute:
         /// </para>
-        ///  </li> </ul> 
+        ///  . <ul> <li>
+        /// <para>
+        /// <code>HASH</code> - partition key
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <code>RANGE</code> - sort key
+        /// </para>
+        /// </li> </ul> <note> 
+        /// <para>
+        /// The partition key of an item is also known as its <i>hash attribute</i>. The term
+        /// "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to
+        /// evenly distribute data items across partitions, based on their partition key values.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sort key of an item is also known as its <i>range attribute</i>. The term "range
+        /// attribute" derives from the way DynamoDB stores items with the same partition key
+        /// physically close together, in sorted order by the sort key value.
+        /// </para>
+        /// </note> </li> </ul> 
         /// <para>
         /// For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
         /// Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -326,9 +345,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property LocalSecondaryIndexes. 
         /// <para>
         /// Represents one or more local secondary indexes on the table. Each index is scoped
-        /// to a given hash key value. Tables with one or more local secondary indexes are subject
-        /// to an item collection size limit, where the amount of data within a given item collection
-        /// cannot exceed 10 GB. Each element is composed of:
+        /// to a given partition key value. Tables with one or more local secondary indexes are
+        /// subject to an item collection size limit, where the amount of data within a given
+        /// item collection cannot exceed 10 GB. Each element is composed of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -338,7 +357,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// <i>KeySchema</i> - Specifies the complete index key schema. The attribute names in
         /// the key schema must be between 1 and 255 characters (inclusive). The key schema must
-        /// begin with the same hash key attribute as the table.
+        /// begin with the same partition key as the table.
         /// </para>
         ///  </li> <li> 
         /// <para>

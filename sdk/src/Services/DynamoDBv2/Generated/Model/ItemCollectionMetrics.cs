@@ -40,8 +40,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ItemCollectionKey. 
         /// <para>
-        /// The hash key value of the item collection. This value is the same as the hash key
-        /// of the item.
+        /// The partition key value of the item collection. This value is the same as the partition
+        /// key value of the item.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ItemCollectionKey

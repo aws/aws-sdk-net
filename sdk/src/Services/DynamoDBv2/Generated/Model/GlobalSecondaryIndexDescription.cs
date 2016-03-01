@@ -47,9 +47,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process
         /// of reading items from the table and determining whether they can be added to the index.
-        /// (Not all items will qualify: For example, a hash key attribute cannot have any duplicates.)
-        /// If an item can be added to the index, DynamoDB will do so. After all items have been
-        /// processed, the backfilling operation is complete and <i>Backfilling</i> is false.
+        /// (Not all items will qualify: For example, a partition key cannot have any duplicate
+        /// values.) If an item can be added to the index, DynamoDB will do so. After all items
+        /// have been processed, the backfilling operation is complete and <i>Backfilling</i>
+        /// is false.
         /// </para>
         ///  <note>
         /// <para>
@@ -182,9 +183,30 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property KeySchema. 
         /// <para>
-        /// The complete key schema for the global secondary index, consisting of one or more
-        /// pairs of attribute names and key types (<code>HASH</code> or <code>RANGE</code>).
+        /// The complete key schema for a global secondary index, which consists of one or more
+        /// pairs of attribute names and key types:
         /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>HASH</code> - partition key
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <code>RANGE</code> - sort key
+        /// </para>
+        /// </li> </ul> <note> 
+        /// <para>
+        /// The partition key of an item is also known as its <i>hash attribute</i>. The term
+        /// "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to
+        /// evenly distribute data items across partitions, based on their partition key values.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sort key of an item is also known as its <i>range attribute</i>. The term "range
+        /// attribute" derives from the way DynamoDB stores items with the same partition key
+        /// physically close together, in sorted order by the sort key value.
+        /// </para>
+        /// </note>
         /// </summary>
         public List<KeySchemaElement> KeySchema
         {

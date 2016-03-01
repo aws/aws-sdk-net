@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates GetItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
-        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</param>
+        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         public GetItemRequest(string tableName, Dictionary<string, AttributeValue> key)
         {
             _tableName = tableName;
@@ -70,7 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates GetItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
-        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute.</param>
+        /// <param name="key">A map of attribute names to <i>AttributeValue</i> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="consistentRead">Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</param>
         public GetItemRequest(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead)
         {
@@ -215,9 +215,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For the primary key, you must provide all of the attributes. For example, with a hash
-        /// type primary key, you only need to provide the hash attribute. For a hash-and-range
-        /// type primary key, you must provide both the hash attribute and the range attribute.
+        /// For the primary key, you must provide all of the attributes. For example, with a simple
+        /// primary key, you only need to provide a value for the partition key. For a composite
+        /// primary key, you must provide values for both the partition key and the sort key.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Key

@@ -53,7 +53,7 @@ namespace Amazon.DynamoDBv2.Model
     /// Create a new global secondary index on the table. Once the index begins backfilling,
     /// you can use <i>UpdateTable</i> to perform other operations.
     /// </para>
-    ///  </li> </ul> 
+    /// </li> </ul> 
     /// <para>
     /// <i>UpdateTable</i> is an asynchronous operation; while it is executing, the table
     /// status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>,

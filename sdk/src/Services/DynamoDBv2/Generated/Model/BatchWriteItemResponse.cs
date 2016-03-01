@@ -80,8 +80,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>ItemCollectionKey</i> - The hash key value of the item collection. This is the
-        /// same as the hash key of the item.
+        /// <i>ItemCollectionKey</i> - The partition key value of the item collection. This is
+        /// the same as the partition key value of the item.
         /// </para>
         ///  </li> <li> 
         /// <para>
