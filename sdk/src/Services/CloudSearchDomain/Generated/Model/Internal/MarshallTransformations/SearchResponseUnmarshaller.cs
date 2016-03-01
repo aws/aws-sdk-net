@@ -63,6 +63,12 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
                     response.Hits = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stats", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, FieldStats, StringUnmarshaller, FieldStatsUnmarshaller>(StringUnmarshaller.Instance, FieldStatsUnmarshaller.Instance);
+                    response.Stats = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = SearchStatusUnmarshaller.Instance;
