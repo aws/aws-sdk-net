@@ -1,3 +1,11 @@
+### 3.1.49.0 (2016-03-01 22:20 UTC)
+* APIGateway (3.1.3.0)
+	* Added new suppression
+* CloudSearchDomain (3.1.1.0)
+	* Regenerating from latest service model cloudsearchdomain-2013-01-01.normal.json
+* DynamoDBv2 (3.1.2.0)
+	* Added support for the new DescribeLimits API, enabling users to query provisioning limits for their account.
+
 ### 3.1.48.0 (2016-02-25 21:46 UTC)
 * AutoScaling (3.1.3.0)
 	* Updates to the CompleteLifecycleAction and RecordLifecycleActionHeartbeat operations
