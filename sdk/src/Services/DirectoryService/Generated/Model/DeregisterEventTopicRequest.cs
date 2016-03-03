@@ -28,24 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateSnapshot operation.
-    /// Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// You cannot take snapshots of AD Connector directories.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the DeregisterEventTopic operation.
+    /// Removes the specified directory as a publisher to the specified SNS topic.
     /// </summary>
-    public partial class CreateSnapshotRequest : AmazonDirectoryServiceRequest
+    public partial class DeregisterEventTopicRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
-        private string _name;
+        private string _topicName;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory of which to take a snapshot.
+        /// The Directory ID to remove as a publisher. This directory will no longer send messages
+        /// to the specified SNS topic.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -61,21 +56,21 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property TopicName. 
         /// <para>
-        /// The descriptive name to apply to the snapshot.
+        /// The name of the SNS topic from which to remove the directory as a publisher.
         /// </para>
         /// </summary>
-        public string Name
+        public string TopicName
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._topicName; }
+            set { this._topicName = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if TopicName property is set
+        internal bool IsSetTopicName()
         {
-            return this._name != null;
+            return this._topicName != null;
         }
 
     }

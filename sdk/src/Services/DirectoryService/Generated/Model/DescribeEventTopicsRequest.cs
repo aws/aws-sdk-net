@@ -28,24 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateSnapshot operation.
-    /// Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.
+    /// Container for the parameters to the DescribeEventTopics operation.
+    /// Obtains information about which SNS topics receive status messages from the specified
+    /// directory.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// You cannot take snapshots of AD Connector directories.
+    /// If no input parameters are provided, such as DirectoryId or TopicName, this request
+    /// describes all of the associations in the account.
     /// </para>
-    ///  </note>
     /// </summary>
-    public partial class CreateSnapshotRequest : AmazonDirectoryServiceRequest
+    public partial class DescribeEventTopicsRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
-        private string _name;
+        private List<string> _topicNames = new List<string>();
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory of which to take a snapshot.
+        /// The Directory ID for which to get the list of associated SNS topics. If this member
+        /// is null, associations for all Directory IDs are returned.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -61,21 +63,26 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property TopicNames. 
         /// <para>
-        /// The descriptive name to apply to the snapshot.
+        /// A list of SNS topic names for which to obtain the information. If this member is null,
+        /// all associations for the specified Directory ID are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// An empty list results in an <code>InvalidParameterException</code> being thrown.
         /// </para>
         /// </summary>
-        public string Name
+        public List<string> TopicNames
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._topicNames; }
+            set { this._topicNames = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if TopicNames property is set
+        internal bool IsSetTopicNames()
         {
-            return this._name != null;
+            return this._topicNames != null && this._topicNames.Count > 0; 
         }
 
     }
