@@ -116,12 +116,29 @@ namespace CustomTasks
                 //create unitypackage
                 CreateUnityPackage(unityFiles);
 
-                //delete the temp file
-                DeleteDirectory(UnityTempProjectPath);
+
+                // Delete the temp project. Try three times, waiting in between. It seems
+                // that unity or the operating system continues to clean up files after unity
+                // exits, leaving us trying to delete files that are already deleted.
+                bool successfulDeletion = false;
+                for (int i = 0; i < 3 && !successfulDeletion; i++)
+                {
+                    try
+                    {
+                        DeleteDirectory(UnityTempProjectPath);
+                        successfulDeletion = true;
+                    }
+                    catch (Exception e)
+                    {
+                        Log.LogWarningFromException(e);
+                        Log.LogWarning("Encountered an error of type while deleting temporary unity project path. Trying again.");
+                        System.Threading.Thread.Sleep(TimeSpan.FromSeconds(i * 5));
+                    }
+                }
             }
 
             Log.LogMessage(@"Finished creating all unitypackages\n Copying them to a single zip location");
-            
+
             //copy the notice file
             string noticeFilePath = Path.Combine(DeploymentPath, "..", "Notice.txt");
             string destinationNoticeFilePath = Path.Combine(unityFiles, "Notice.txt");
@@ -131,7 +148,7 @@ namespace CustomTasks
             string zipFileName = string.Format(@"aws-sdk-unity_{0}.zip", ProductVersion);
             string zipFilePath = Path.Combine(DeploymentPath, "unity", zipFileName);
             ZipFile.CreateFromDirectory(unityFiles, zipFilePath);
-            
+
             return true;
         }
 
@@ -147,21 +164,25 @@ namespace CustomTasks
 
         public static void DeleteDirectory(string target_dir)
         {
-            string[] files = Directory.GetFiles(target_dir);
-            string[] dirs = Directory.GetDirectories(target_dir);
 
-            foreach (string file in files)
+            if (Directory.Exists(target_dir))
             {
-                File.SetAttributes(file, FileAttributes.Normal);
-                File.Delete(file);
-            }
+                string[] files = Directory.GetFiles(target_dir);
+                string[] dirs = Directory.GetDirectories(target_dir);
 
-            foreach (string dir in dirs)
-            {
-                DeleteDirectory(dir);
-            }
+                foreach (string file in files)
+                {
+                    File.SetAttributes(file, FileAttributes.Normal);
+                    File.Delete(file);
+                }
 
-            Directory.Delete(target_dir, true);
+                foreach (string dir in dirs)
+                {
+                    DeleteDirectory(dir);
+                }
+
+                Directory.Delete(target_dir, true);
+            }
         }
 
         private void CreateUnityPackage(string path)
