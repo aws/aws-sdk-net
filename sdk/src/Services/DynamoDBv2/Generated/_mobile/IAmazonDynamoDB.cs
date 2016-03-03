@@ -843,10 +843,11 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// If you issue a DescribeTable request immediately after a CreateTable request, DynamoDB
-        /// might return a ResourceNotFoundException. This is because DescribeTable uses an eventually
-        /// consistent query, and the metadata for your table might not be available at that moment.
-        /// Wait for a few seconds, and then try the DescribeTable request again.
+        /// If you issue a <i>DescribeTable</i> request immediately after a <i>CreateTable</i>
+        /// request, DynamoDB might return a <i>ResourceNotFoundException</i>. This is because
+        /// <i>DescribeTable</i> uses an eventually consistent query, and the metadata for your
+        /// table might not be available at that moment. Wait for a few seconds, and then try
+        /// the <i>DescribeTable</i> request again.
         /// </para>
         ///  </note>
         /// </summary>

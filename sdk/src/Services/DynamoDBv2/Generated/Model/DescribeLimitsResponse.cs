@@ -40,8 +40,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AccountMaxReadCapacityUnits. 
         /// <para>
-        /// The maximum total Read-Capacity Units (RCUs) that your account allows you to provision
-        /// across all your tables in this region.
+        /// The maximum total read capacity units that your account allows you to provision across
+        /// all of your tables in this region.
         /// </para>
         /// </summary>
         public long AccountMaxReadCapacityUnits
@@ -59,8 +59,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AccountMaxWriteCapacityUnits. 
         /// <para>
-        /// The maximum total Write-Capacity Units (WCUs) that your account allows you to provision
-        /// across all your tables in this region.
+        /// The maximum total write capacity units that your account allows you to provision across
+        /// all of your tables in this region.
         /// </para>
         /// </summary>
         public long AccountMaxWriteCapacityUnits
@@ -78,9 +78,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableMaxReadCapacityUnits. 
         /// <para>
-        /// The maximum Read-Capacity Units (RCUs) that your account allows you to provision for
-        /// a new table you are creating in this region, including the RCUs provisioned for its
-        /// global secondary indexes (GSIs).
+        /// The maximum read capacity units that your account allows you to provision for a new
+        /// table that you are creating in this region, including the read capacity units provisioned
+        /// for its global secondary indexes (GSIs).
         /// </para>
         /// </summary>
         public long TableMaxReadCapacityUnits
@@ -98,9 +98,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableMaxWriteCapacityUnits. 
         /// <para>
-        /// The maximum Write-Capacity Units (WCUs) that your account allows you to provision
-        /// for a new table you are creating in this region, including the WCUs provisioned for
-        /// its global secondary indexes (GSIs).
+        /// The maximum write capacity units that your account allows you to provision for a new
+        /// table that you are creating in this region, including the write capacity units provisioned
+        /// for its global secondary indexes (GSIs).
         /// </para>
         /// </summary>
         public long TableMaxWriteCapacityUnits
