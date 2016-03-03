@@ -39,6 +39,12 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// To ensure faster instance launches, break up large requests into smaller batches.
+    /// For example, create five separate launch requests for 100 instances each instead of
+    /// one launch request for 500 instances.
+    /// </para>
+    ///  
+    /// <para>
     /// If you don't specify a security group when launching an instance, Amazon EC2 uses
     /// the default security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
     /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -73,8 +79,10 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// T2 instance types can only be launched into a VPC. If you do not have a default VPC,
-    /// or if you do not specify a subnet ID in the request, <code>RunInstances</code> fails.
+    /// Some instance types can only be launched into a VPC. If you do not have a default
+    /// VPC, or if you do not specify a subnet ID in the request, <code>RunInstances</code>
+    /// fails. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
+    /// Types Available Only in a VPC</a>.
     /// </para>
     ///  
     /// <para>
@@ -118,7 +126,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="imageId">The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</param>
         /// <param name="minCount">The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</param>
-        /// <param name="maxCount">The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</param>
+        /// <param name="maxCount">The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above <code>MinCount</code>. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</param>
         public RunInstancesRequest(string imageId, int minCount, int maxCount)
         {
             _imageId = imageId;
@@ -383,7 +391,7 @@ namespace Amazon.EC2.Model
         /// Constraints: Between 1 and the maximum number you're allowed for the specified instance
         /// type. For more information about the default limits, and how to request an increase,
         /// see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-        /// many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.
+        /// many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
         /// </para>
         /// </summary>
         public int MaxCount
@@ -602,8 +610,8 @@ namespace Amazon.EC2.Model
         /// Data to configure the instance, or a script to run during instance launch. For more
         /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
         /// Commands on Your Linux Instance at Launch</a> (Linux) and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-        /// User Data</a> (Windows). For API calls, the text must be base64-encoded. Command line
-        /// tools perform encoding for you.
+        /// User Data</a> (Windows). For API calls, the text must be base64-encoded. For command
+        /// line tools, the encoding is performed for you, and you can load the text from a file.
         /// </para>
         /// </summary>
         public string UserData

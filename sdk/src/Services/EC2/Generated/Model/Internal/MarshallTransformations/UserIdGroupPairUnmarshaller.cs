@@ -66,10 +66,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("peeringStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PeeringStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("userId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcPeeringConnectionId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcPeeringConnectionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

@@ -1839,6 +1839,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Scheduled for InstanceLifecycleType
+        /// </summary>
+        public static readonly InstanceLifecycleType Scheduled = new InstanceLifecycleType("scheduled");
+        /// <summary>
         /// Constant Spot for InstanceLifecycleType
         /// </summary>
         public static readonly InstanceLifecycleType Spot = new InstanceLifecycleType("spot");
@@ -2034,6 +2038,10 @@ namespace Amazon.EC2
         /// Constant G22xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G22xlarge = new InstanceType("g2.2xlarge");
+        /// <summary>
+        /// Constant G28xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G28xlarge = new InstanceType("g2.8xlarge");
         /// <summary>
         /// Constant Hi14xlarge for InstanceType
         /// </summary>

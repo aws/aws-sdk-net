@@ -4448,6 +4448,12 @@ namespace Amazon.EC2
         /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the import manifest referenced by this API action, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+        /// Import Manifest</a>.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
@@ -4461,6 +4467,12 @@ namespace Amazon.EC2
         /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the import manifest referenced by this API action, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+        /// Import Manifest</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConversionTasks service method.</param>
         /// 
@@ -4478,6 +4490,12 @@ namespace Amazon.EC2
         /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the import manifest referenced by this API action, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+        /// Import Manifest</a>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9003,6 +9021,12 @@ namespace Amazon.EC2
         /// command in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the import manifest referenced by this API action, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+        /// Import Manifest</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportInstance service method.</param>
         /// 
@@ -9129,6 +9153,12 @@ namespace Amazon.EC2
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the import manifest referenced by this API action, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+        /// Import Manifest</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportVolume service method.</param>
         /// 
@@ -9216,10 +9246,18 @@ namespace Amazon.EC2
         /// <para>
         /// This setting applies to the IAM user who makes the request; it does not apply to the
         /// entire AWS account. By default, an IAM user defaults to the same settings as the root
-        /// user, unless they explicitly override the settings by running this request. Resources
-        /// created with longer IDs are visible to all IAM users, regardless of these settings
-        /// and provided that they have permission to use the relevant <code>Describe</code> command
-        /// for the resource type.
+        /// user. If you're using this action as the root user or as an IAM role that has permission
+        /// to use this action, then these settings apply to the entire account, unless an IAM
+        /// user explicitly overrides these settings for themselves. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
+        /// Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources created with longer IDs are visible to all IAM users, regardless of these
+        /// settings and provided that they have permission to use the relevant <code>Describe</code>
+        /// command for the resource type.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIdFormat service method.</param>
@@ -10877,6 +10915,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// To ensure faster instance launches, break up large requests into smaller batches.
+        /// For example, create five separate launch requests for 100 instances each instead of
+        /// one launch request for 500 instances.
+        /// </para>
+        ///  
+        /// <para>
         /// If you don't specify a security group when launching an instance, Amazon EC2 uses
         /// the default security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
         /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -10911,8 +10955,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// T2 instance types can only be launched into a VPC. If you do not have a default VPC,
-        /// or if you do not specify a subnet ID in the request, <code>RunInstances</code> fails.
+        /// Some instance types can only be launched into a VPC. If you do not have a default
+        /// VPC, or if you do not specify a subnet ID in the request, <code>RunInstances</code>
+        /// fails. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
+        /// Types Available Only in a VPC</a>.
         /// </para>
         ///  
         /// <para>

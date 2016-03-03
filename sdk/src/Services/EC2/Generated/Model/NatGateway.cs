@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// If the NAT gateway could not be created, specifies the error code for the failure.
         /// (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code>
         /// | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code>
-        /// | <code>InternalError</code>)
+        /// | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)
         /// </para>
         /// </summary>
         public string FailureCode
@@ -112,7 +112,8 @@ namespace Amazon.EC2.Model
         /// <li>For Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
         /// already associated</code></li> <li>For InternalError: <code>Network interface eni-xxxxxxxx,
         /// created and used internally by this NAT gateway is in an invalid state. Please try
-        /// again.</code></li> </ul>
+        /// again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The specified subnet subnet-xxxxxxxx
+        /// does not exist or could not be found.</code></li> </ul>
         /// </summary>
         public string FailureMessage
         {

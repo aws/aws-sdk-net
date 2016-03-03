@@ -39,7 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Deadline. 
         /// <para>
-        /// The date in UTC at which you are permanently switched over to using longer IDs.
+        /// The date in UTC at which you are permanently switched over to using longer IDs. If
+        /// a deadline is not yet available for this resource type, this field is not returned.
         /// </para>
         /// </summary>
         public DateTime Deadline

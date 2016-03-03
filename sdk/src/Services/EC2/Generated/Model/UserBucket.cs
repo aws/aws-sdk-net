@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property S3Key. 
         /// <para>
-        /// The key for the disk image.
+        /// The file name of the disk image.
         /// </para>
         /// </summary>
         public string S3Key
