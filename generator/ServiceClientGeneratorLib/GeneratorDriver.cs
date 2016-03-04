@@ -159,23 +159,30 @@ namespace ServiceClientGenerator
             ExecuteGenerator(new ServiceClientsMobile(), "Amazon" + Configuration.BaseName + "Client.cs", MobileSubFolder);
             ExecuteGenerator(new ServiceInterfaceMobile(), "IAmazon" + Configuration.BaseName + ".cs", MobileSubFolder);
 
-            //unity version
-            if (Configuration.SupportedInUnity)
+            if (string.IsNullOrEmpty(Options.SelfServiceModel))
             {
-                ExecuteGenerator(new ServiceInterfaceUnity(), "IAmazon" + Configuration.BaseName + ".cs", UnitySubFolder);
-                ExecuteGenerator(new ServiceClientUnity(), "Amazon" + Configuration.BaseName + "Client.cs", UnitySubFolder);
+                //unity version
+                if (Configuration.SupportedInUnity)
+                {
+                    ExecuteGenerator(new ServiceInterfaceUnity(), "IAmazon" + Configuration.BaseName + ".cs", UnitySubFolder);
+                    ExecuteGenerator(new ServiceClientUnity(), "Amazon" + Configuration.BaseName + "Client.cs", UnitySubFolder);
+                }
+                // Do not generate AssemblyInfo.cs and nuspec file for child model.
+                // Use the one generated for the parent model.
+                if (!this.Configuration.IsChildConfig)
+                {
+                    ExecuteNugetFileGenerators();
+
+                    if (this.Configuration.EnableXamarinComponent)
+                        GenerateXamarinComponents();
+
+                    GenerateCodeAnalysisProject();
+                }
             }
-            // Do not generate AssemblyInfo.cs and nuspec file for child model.
-            // Use the one generated for the parent model.
+
             if (!this.Configuration.IsChildConfig)
             {
                 ExecuteGeneratorAssemblyInfo();
-                ExecuteNugetFileGenerators();
-
-                if (this.Configuration.EnableXamarinComponent)
-                    GenerateXamarinComponents();
-
-                GenerateCodeAnalysisProject();
             }
 
             // Client config object
