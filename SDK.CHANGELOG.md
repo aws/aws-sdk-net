@@ -1,3 +1,11 @@
+### 3.1.50.0 (2016-03-03 23:11 UTC)
+* DirectoryService (3.1.2.0)
+	* Added support for SNS notifications on directories.
+* DynamoDBv2 (3.1.3.0)
+	* Documentation update for the new DescribeLimits API.
+* EC2 (3.1.10.0)
+	* Added support for referencing security groups in peered Virtual Private Clouds (VPCs). For more information see the service announcement at https://aws.amazon.com/about-aws/whats-new/2016/03/announcing-support-for-security-group-references-in-a-peered-vpc/.
+
 ### 3.1.49.0 (2016-03-01 22:20 UTC)
 * APIGateway (3.1.3.0)
 	* Added new suppression
