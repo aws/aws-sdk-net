@@ -120,10 +120,9 @@ namespace Amazon.SecurityToken.Model
     /// the user's hardware or virtual MFA device. The <code>TokenCode</code> is the time-based
     /// one-time password (TOTP) that the MFA devices produces. 
     /// </para>
-    ///  <member name="RoleArn" target="arnType"></member> <member name="RoleSessionName"
-    /// target="userNameType"></member> <member name="Policy" target="sessionPolicyDocumentType"></member>
-    /// <member name="DurationSeconds" target="roleDurationSecondsType"></member> <member
-    /// name="ExternalId" target="externalIdType"></member>
+    ///  <member name="RoleArn" target="arnType"/> <member name="RoleSessionName" target="userNameType"/>
+    /// <member name="Policy" target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
+    /// target="roleDurationSecondsType"/> <member name="ExternalId" target="externalIdType"/>
     /// </summary>
     public partial class AssumeRoleRequest : AmazonSecurityTokenServiceRequest
     {
@@ -240,7 +239,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the role session name to uniquely identity a session when the same role is assumed
+        /// Use the role session name to uniquely identify a session when the same role is assumed
         /// by different principals or for different reasons. In cross-account scenarios, the
         /// role session name is visible to, and can be logged by the account that owns the role.
         /// The role session name is also used in the ARN of the assumed role principal. This

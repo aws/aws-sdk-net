@@ -44,6 +44,7 @@ namespace Amazon.Lambda.Model
         private Runtime _runtime;
         private int? _timeout;
         private string _version;
+        private VpcConfigDetail _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property CodeSha256. 
@@ -156,7 +157,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// The timestamp of the last time you updated the function.
+        /// The time stamp of the last time you updated the function.
         /// </para>
         /// </summary>
         public string LastModified
@@ -263,6 +264,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetVersion()
         {
             return this._version != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// VPC configuration associated with your Lambda function.
+        /// </para>
+        /// </summary>
+        public VpcConfigDetail VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

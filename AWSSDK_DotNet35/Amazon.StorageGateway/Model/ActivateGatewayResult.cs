@@ -32,6 +32,10 @@ namespace Amazon.StorageGateway.Model
     /// It is a string made of information such as your account, gateway name, and region.
     /// This ARN is used to reference the gateway in other API operations as well as resource-based
     /// authorization.
+    /// 
+    ///  <note>For Gateways activated prior to September 02, 2015 the gateway ARN contains
+    /// the gateway name rather than the gateway id. Changing the name of the gateway has
+    /// no effect on the gateway ARN.</note>
     /// </summary>
     public partial class ActivateGatewayResult : AmazonWebServiceResponse
     {

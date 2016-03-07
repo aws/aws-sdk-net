@@ -361,6 +361,54 @@ namespace Amazon.DirectoryService
 
 
     /// <summary>
+    /// Constants used for properties of type TopicStatus.
+    /// </summary>
+    public class TopicStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deleted for TopicStatus
+        /// </summary>
+        public static readonly TopicStatus Deleted = new TopicStatus("Deleted");
+        /// <summary>
+        /// Constant Failed for TopicStatus
+        /// </summary>
+        public static readonly TopicStatus Failed = new TopicStatus("Failed");
+        /// <summary>
+        /// Constant Registered for TopicStatus
+        /// </summary>
+        public static readonly TopicStatus Registered = new TopicStatus("Registered");
+        /// <summary>
+        /// Constant TopicNotFound for TopicStatus
+        /// </summary>
+        public static readonly TopicStatus TopicNotFound = new TopicStatus("Topic not found");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public TopicStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TopicStatus FindValue(string value)
+        {
+            return FindValue<TopicStatus>(value);
+        }
+
+        public static implicit operator TopicStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TrustDirection.
     /// </summary>
     public class TrustDirection : ConstantClass

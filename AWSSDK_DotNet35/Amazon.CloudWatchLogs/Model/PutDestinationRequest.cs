@@ -71,8 +71,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to do Amazon
-        /// Kinesis PutRecord requests on the desitnation stream.
+        /// The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon Kinesis
+        /// PutRecord requests on the desitnation stream.
         /// </para>
         /// </summary>
         public string RoleArn

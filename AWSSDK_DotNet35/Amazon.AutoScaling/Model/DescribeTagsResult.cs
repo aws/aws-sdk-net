@@ -57,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags.
+        /// One or more tags.
         /// </para>
         /// </summary>
         public List<TagDescription> Tags

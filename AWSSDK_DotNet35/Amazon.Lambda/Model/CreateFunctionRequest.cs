@@ -36,6 +36,13 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    ///  If you are using versioning, you can also publish a version of the Lambda function
+    /// you are creating using the <code>Publish</code> parameter. For more information about
+    /// versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+    /// Lambda Function Versioning and Aliases</a>. 
+    /// </para>
+    ///  
+    /// <para>
     /// This operation requires permission for the <code>lambda:CreateFunction</code> action.
     /// </para>
     /// </summary>
@@ -50,6 +57,7 @@ namespace Amazon.Lambda.Model
         private string _role;
         private Runtime _runtime;
         private int? _timeout;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -91,15 +99,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name you want to assign to the function you are uploading. You can specify an
-        /// unqualified function name (for example, "Thumbnail") or you can specify Amazon Resource
-        /// Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-        /// AWS Lambda also allows you to specify only the account ID qualifier (for example,
-        /// "account-id:Thumbnail"). Note that the length constraint applies only to the ARN.
-        /// If you specify only the function name, it is limited to 64 character in length. The
-        /// function names appear in the console and are returned in the <a>ListFunctions</a>
-        /// API. Function names are used to specify functions to other AWS Lambda APIs, such as
-        /// <a>Invoke</a>. 
+        /// The name you want to assign to the function you are uploading. The function names
+        /// appear in the console and are returned in the <a>ListFunctions</a> API. Function names
+        /// are used to specify functions to other AWS Lambda APIs, such as <a>Invoke</a>. 
         /// </para>
         /// </summary>
         public string FunctionName
@@ -183,7 +185,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes
         /// your function to access any other Amazon Web Services (AWS) resources. For more information,
         /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-        /// Lambda: How it Works</a> 
+        /// Lambda: How it Works</a>. 
         /// </para>
         /// </summary>
         public string Role
@@ -201,8 +203,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The runtime environment for the Lambda function you are uploading. Currently, Lambda
-        /// supports "java" and "nodejs" as the runtime.
+        /// The runtime environment for the Lambda function you are uploading. 
         /// </para>
         /// </summary>
         public Runtime Runtime
@@ -235,6 +236,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTimeout()
         {
             return this._timeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// If your Lambda function accesses resources in a VPC, you provide this parameter identifying
+        /// the list of security group IDs and subnet IDs. These must belong to the same VPC.
+        /// You must provide at least one security group and one subnet ID.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

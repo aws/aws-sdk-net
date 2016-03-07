@@ -31,6 +31,7 @@ using Amazon.SQS.Model;
 
 using ThirdParty.Json.LitJson;
 using Amazon.SQS.Util;
+using Amazon.Runtime.Internal.Util;
 using System.Globalization;
 
 namespace Amazon.Glacier.Transfer.Internal
@@ -71,11 +72,14 @@ namespace Amazon.Glacier.Transfer.Internal
         string topicArn;
         string queueUrl;
         string queueArn;
+        Logger _logger;
+
 
         bool disposed = false;
 
         internal DownloadFileCommand(ArchiveTransferManager manager, string vaultName, string archiveId, string filePath, DownloadOptions options)
         {
+            this._logger = Logger.GetLogger(this.GetType());
             this.manager = manager;
             this.vaultName = vaultName;
             this.archiveId = archiveId;
@@ -216,9 +220,9 @@ namespace Amazon.Glacier.Transfer.Internal
 
         internal void setupTopicAndQueue()
         {
-            long ticks = DateTime.Now.Ticks;
-            this.topicArn = this.snsClient.CreateTopic(new CreateTopicRequest() { Name = "GlacierDownload-" + ticks }).TopicArn;
-            this.queueUrl = this.sqsClient.CreateQueue(new CreateQueueRequest() { QueueName = "GlacierDownload-" + ticks }).QueueUrl;
+            var guidStr = Guid.NewGuid().ToString("N");
+            this.topicArn = this.snsClient.CreateTopic(new CreateTopicRequest() { Name = "GlacierDownload-" + guidStr }).TopicArn;
+            this.queueUrl = this.sqsClient.CreateQueue(new CreateQueueRequest() { QueueName = "GlacierDownload-" + guidStr }).QueueUrl;
             this.queueArn = this.sqsClient.GetQueueAttributes(new GetQueueAttributesRequest() { QueueUrl = this.queueUrl, AttributeNames = new List<string> { SQSConstants.ATTRIBUTE_QUEUE_ARN } }).Attributes[SQSConstants.ATTRIBUTE_QUEUE_ARN];
 
             this.snsClient.Subscribe(new SubscribeRequest()
@@ -240,8 +244,29 @@ namespace Amazon.Glacier.Transfer.Internal
 
         internal void tearDownTopicAndQueue()
         {
-            this.snsClient.DeleteTopic(new DeleteTopicRequest() { TopicArn = this.topicArn });
-            this.sqsClient.DeleteQueue(new DeleteQueueRequest() { QueueUrl = this.queueUrl });
+            try
+            {
+                this.snsClient.DeleteTopic(new DeleteTopicRequest() { TopicArn = this.topicArn });
+            }
+            catch(Amazon.Runtime.AmazonServiceException e)
+            {
+                if (e.StatusCode == HttpStatusCode.NotFound)
+                    this._logger.Error(e, "Error deleting topic {0} during cleanup of Glacier download", this.topicArn);
+                else
+                    throw;
+            }
+
+            try
+            {
+                this.sqsClient.DeleteQueue(new DeleteQueueRequest() { QueueUrl = this.queueUrl });
+            }
+            catch (Amazon.Runtime.AmazonServiceException e)
+            {
+                if (e.StatusCode == HttpStatusCode.NotFound)
+                    this._logger.Error(e, "Error deleting queue {0} during cleanup of Glacier download", this.queueUrl);
+                else
+                    throw;
+            }
         }
 
         #region Dispose Pattern Implementation

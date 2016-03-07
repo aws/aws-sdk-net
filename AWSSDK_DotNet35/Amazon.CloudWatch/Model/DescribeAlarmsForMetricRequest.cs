@@ -44,7 +44,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        ///  The list of dimensions associated with the metric. 
+        ///  The list of dimensions associated with the metric. If the metric has any associated
+        /// dimensions, you must specify them in order for the DescribeAlarmsForMetric to succeed.
+        /// 
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions

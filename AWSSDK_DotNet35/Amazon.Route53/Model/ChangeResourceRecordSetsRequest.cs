@@ -30,14 +30,14 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ChangeResourceRecordSets operation.
     /// Use this action to create or change your authoritative DNS information. To use this
-    /// action, send a <code>POST</code> request to the <code>2013-04-01/hostedzone/<i>hosted
-    /// Zone ID</i>/rrset</code> resource. The request body must include an XML document with
-    /// a <code>ChangeResourceRecordSetsRequest</code> element.
+    /// action, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted
+    /// Zone ID</i>/rrset</code> resource. The request body must include a document with a
+    /// <code>ChangeResourceRecordSetsRequest</code> element.
     /// 
     ///  
     /// <para>
     /// Changes are a list of change items and are considered transactional. For more information
-    /// on transactional changes, also known as change batches, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/">POST
+    /// on transactional changes, also known as change batches, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">POST
     /// ChangeResourceRecordSets</a> in the <i>Amazon Route 53 API Reference</i>.
     /// </para>
     ///  <important>Due to the nature of transactional changes, you cannot delete the same

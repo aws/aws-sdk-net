@@ -83,6 +83,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly ArtifactType APPIUM_JAVA_XML_OUTPUT = new ArtifactType("APPIUM_JAVA_XML_OUTPUT");
         /// <summary>
+        /// Constant APPIUM_PYTHON_OUTPUT for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType APPIUM_PYTHON_OUTPUT = new ArtifactType("APPIUM_PYTHON_OUTPUT");
+        /// <summary>
+        /// Constant APPIUM_PYTHON_XML_OUTPUT for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType APPIUM_PYTHON_XML_OUTPUT = new ArtifactType("APPIUM_PYTHON_XML_OUTPUT");
+        /// <summary>
         /// Constant APPIUM_SERVER_OUTPUT for ArtifactType
         /// </summary>
         public static readonly ArtifactType APPIUM_SERVER_OUTPUT = new ArtifactType("APPIUM_SERVER_OUTPUT");
@@ -667,6 +675,10 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly TestType APPIUM_JAVA_TESTNG = new TestType("APPIUM_JAVA_TESTNG");
         /// <summary>
+        /// Constant APPIUM_PYTHON for TestType
+        /// </summary>
+        public static readonly TestType APPIUM_PYTHON = new TestType("APPIUM_PYTHON");
+        /// <summary>
         /// Constant APPIUM_WEB_JAVA_JUNIT for TestType
         /// </summary>
         public static readonly TestType APPIUM_WEB_JAVA_JUNIT = new TestType("APPIUM_WEB_JAVA_JUNIT");
@@ -674,6 +686,10 @@ namespace Amazon.DeviceFarm
         /// Constant APPIUM_WEB_JAVA_TESTNG for TestType
         /// </summary>
         public static readonly TestType APPIUM_WEB_JAVA_TESTNG = new TestType("APPIUM_WEB_JAVA_TESTNG");
+        /// <summary>
+        /// Constant APPIUM_WEB_PYTHON for TestType
+        /// </summary>
+        public static readonly TestType APPIUM_WEB_PYTHON = new TestType("APPIUM_WEB_PYTHON");
         /// <summary>
         /// Constant BUILTIN_EXPLORER for TestType
         /// </summary>
@@ -795,6 +811,10 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly UploadType APPIUM_JAVA_TESTNG_TEST_PACKAGE = new UploadType("APPIUM_JAVA_TESTNG_TEST_PACKAGE");
         /// <summary>
+        /// Constant APPIUM_PYTHON_TEST_PACKAGE for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_PYTHON_TEST_PACKAGE = new UploadType("APPIUM_PYTHON_TEST_PACKAGE");
+        /// <summary>
         /// Constant APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE = new UploadType("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE");
@@ -802,6 +822,10 @@ namespace Amazon.DeviceFarm
         /// Constant APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = new UploadType("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE");
+        /// <summary>
+        /// Constant APPIUM_WEB_PYTHON_TEST_PACKAGE for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_PYTHON_TEST_PACKAGE = new UploadType("APPIUM_WEB_PYTHON_TEST_PACKAGE");
         /// <summary>
         /// Constant CALABASH_TEST_PACKAGE for UploadType
         /// </summary>

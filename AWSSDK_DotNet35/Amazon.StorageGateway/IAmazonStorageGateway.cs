@@ -41,18 +41,23 @@ namespace Amazon.StorageGateway
     /// Use the following links to get started using the <i>AWS Storage Gateway Service API
     /// Reference</i>:
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
+    ///  <ul> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
     /// Storage Gateway Required Request Headers</a>: Describes the required headers that
-    /// you must send with every POST request to AWS Storage Gateway.</li> <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
+    /// you must send with every POST request to AWS Storage Gateway.</li> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
     /// Requests</a>: AWS Storage Gateway requires that you authenticate every request you
-    /// send; this topic describes how sign such a request.</li> <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
+    /// send; this topic describes how sign such a request.</li> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
     /// Responses</a>: Provides reference information about AWS Storage Gateway errors.</li>
-    /// <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
+    /// <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
-    /// of requests and responses.</li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
+    /// of requests and responses.</li> <li><a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
     /// Storage Gateway Regions and Endpoints</a>: Provides a list of each of the regions
-    /// and endpoints available for use with AWS Storage Gateway. </li> </ul>
+    /// and endpoints available for use with AWS Storage Gateway. </li> </ul> <note>AWS Storage
+    /// Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon
+    /// EC2 API, EC2 expects resource IDs in lowercase. You must change your resource ID to
+    /// lowercase to use it with the EC2 API. For example, in Storage Gateway the ID for a
+    /// volume might be vol-1122AABB. When you use this ID with the EC2 API, you must change
+    /// it to vol-1122aabb. Otherwise, the EC2 API might not behave as expected.</note>
     /// </summary>
     public partial interface IAmazonStorageGateway : IDisposable
     {
@@ -725,6 +730,54 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>Returns a  CreateTapesResult from StorageGateway.</returns>
         CreateTapesResponse EndCreateTapes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTapeWithBarcode
+
+        /// <summary>
+        /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
+        /// and then archive the tape.
+        /// 
+        ///  <note>Cache storage must be allocated to the gateway before you can create a virtual
+        /// tape. Use the <a>AddCache</a> operation to add cache storage to a gateway.</note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTapeWithBarcode service method.</param>
+        /// 
+        /// <returns>The response from the CreateTapeWithBarcode service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        CreateTapeWithBarcodeResponse CreateTapeWithBarcode(CreateTapeWithBarcodeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTapeWithBarcode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTapeWithBarcode operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTapeWithBarcode
+        ///         operation.</returns>
+        IAsyncResult BeginCreateTapeWithBarcode(CreateTapeWithBarcodeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTapeWithBarcode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTapeWithBarcode.</param>
+        /// 
+        /// <returns>Returns a  CreateTapeWithBarcodeResult from StorageGateway.</returns>
+        CreateTapeWithBarcodeResponse EndCreateTapeWithBarcode(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2681,6 +2734,10 @@ namespace Amazon.StorageGateway
         /// This operation updates a gateway's metadata, which includes the gateway's name and
         /// time zone. To specify which gateway to update, use the Amazon Resource Name (ARN)
         /// of the gateway in your request.
+        /// 
+        ///  <note>For Gateways activated after September 02, 2015, the gateway's ARN contains
+        /// the gateway id rather than the gateway name. However changing the name of the gateway
+        /// has no effect on the gateway's ARN.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayInformation service method.</param>
         /// 

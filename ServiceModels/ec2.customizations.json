@@ -148,7 +148,7 @@
                 "CidrIp"
             ]
         },
-        "CopySnapshotRequest": { 
+        "CopySnapshotRequest": {
             "modify": [
                 {
                     "PresignedUrl": { "accessModifier": "internal" }
@@ -203,7 +203,7 @@
                     }
                 }
             ]
-        },		
+        },
 		"ModifyVpcEndpointResult": {
             "exclude": [ "Return" ]
         },

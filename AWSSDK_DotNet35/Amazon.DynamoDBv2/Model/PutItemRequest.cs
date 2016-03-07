@@ -55,9 +55,11 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// To prevent a new item from replacing an existing item, use a conditional put operation
-    /// with <i>ComparisonOperator</i> set to <code>NULL</code> for the primary key attribute,
-    /// or attributes.
+    /// To prevent a new item from replacing an existing item, use a conditional expression
+    /// that contains the <code>attribute_not_exists</code> function with the name of the
+    /// attribute being used as the partition key for the table. Since every record must contain
+    /// that attribute, the <code>attribute_not_exists</code> function will only succeed if
+    /// no matching item exists.
     /// </para>
     ///  </note> 
     /// <para>
@@ -87,7 +89,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates PutItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.</param>
         public PutItemRequest(string tableName, Dictionary<string, AttributeValue> item)
         {
             _tableName = tableName;
@@ -98,8 +100,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates PutItemRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a hash type primary key, you only need to provide the hash attribute. For a hash-and-range type primary key, you must provide both the hash attribute and the range attribute. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.</param>
-        /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were updated with the <i>PutItem</i> request. For <i>PutItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> <note>Other "Valid Values" are not relevant to PutItem.</note></param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.</param>
+        /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were updated with the <i>PutItem</i> request. For <i>PutItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul></param>
         public PutItemRequest(string tableName, Dictionary<string, AttributeValue> item, ReturnValue returnValues)
         {
             _tableName = tableName;
@@ -176,8 +178,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Comparison operators: <code> = | &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;=
-        /// | BETWEEN | IN</code> 
+        /// Comparison operators: <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>
+        /// | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -648,9 +651,10 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must provide all of the attributes for the primary key. For example, with a hash
-        /// type primary key, you only need to provide the hash attribute. For a hash-and-range
-        /// type primary key, you must provide both the hash attribute and the range attribute.
+        /// You must provide all of the attributes for the primary key. For example, with a simple
+        /// primary key, you only need to provide a value for the partition key. For a composite
+        /// primary key, you must provide both values for both the partition key and the sort
+        /// key.
         /// </para>
         ///  
         /// <para>
@@ -732,11 +736,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair, then
         /// the content of the old item is returned.
         /// </para>
-        ///  </li> </ul> <note>
-        /// <para>
-        /// Other "Valid Values" are not relevant to PutItem.
-        /// </para>
-        /// </note>
+        ///  </li> </ul>
         /// </summary>
         public ReturnValue ReturnValues
         {

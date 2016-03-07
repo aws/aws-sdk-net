@@ -297,6 +297,46 @@ namespace Amazon.SimpleEmail
 
 
     /// <summary>
+    /// Constants used for properties of type SNSActionEncoding.
+    /// </summary>
+    public class SNSActionEncoding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Base64 for SNSActionEncoding
+        /// </summary>
+        public static readonly SNSActionEncoding Base64 = new SNSActionEncoding("Base64");
+        /// <summary>
+        /// Constant UTF8 for SNSActionEncoding
+        /// </summary>
+        public static readonly SNSActionEncoding UTF8 = new SNSActionEncoding("UTF-8");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public SNSActionEncoding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNSActionEncoding FindValue(string value)
+        {
+            return FindValue<SNSActionEncoding>(value);
+        }
+
+        public static implicit operator SNSActionEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StopScope.
     /// </summary>
     public class StopScope : ConstantClass

@@ -52,6 +52,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
                 if(publicRequest.IsSetLifecycleActionToken())
                 {
                     request.Parameters.Add("LifecycleActionToken", StringUtils.FromString(publicRequest.LifecycleActionToken));

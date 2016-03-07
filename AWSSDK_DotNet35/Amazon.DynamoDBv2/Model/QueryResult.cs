@@ -62,7 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of
         /// items returned after the filter was applied, and <i>ScannedCount</i> is the number
-        /// of matching items before&gt; the filter was applied.
+        /// of matching items before the filter was applied.
         /// </para>
         ///  
         /// <para>

@@ -685,7 +685,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: To use PIOPS, this value must be an integer greater than 1000.
+        /// Constraints: Must be a multiple between 3 and 10 of the storage amount for the DB
+        /// instance. Must also be an integer multiple of 1000. For example, if the size of your
+        /// DB instance is 500 GB, then your <code>Iops</code> value can be 2000, 3000, 4000,
+        /// or 5000. 
         /// </para>
         /// </summary>
         public int Iops

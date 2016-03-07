@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents the DNS records that must be published in the domain name's DNS to complete
-    /// DKIM setup.
+    /// 
     /// </summary>
     public partial class VerifyDomainDkimResult : AmazonWebServiceResponse
     {

@@ -65,7 +65,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property LogResult. 
         /// <para>
         ///  It is the base64-encoded logs for the Lambda function invocation. This is present
-        /// only if the invocation type is "RequestResponse" and the logs were requested. 
+        /// only if the invocation type is <code>RequestResponse</code> and the logs were requested.
+        /// 
         /// </para>
         /// </summary>
         public string LogResult
@@ -84,7 +85,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Payload. 
         /// <para>
         ///  It is the JSON representation of the object returned by the Lambda function. In This
-        /// is present only if the invocation type is "RequestResponse". 
+        /// is present only if the invocation type is <code>RequestResponse</code>. 
         /// </para>
         ///  
         /// <para>
@@ -108,10 +109,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The HTTP status code will be in the 200 range for successful request. For the "RequestResonse"
-        /// invocation type this status code will be 200. For the "Event" invocation type this
-        /// status code will be 202. For the "DryRun" invocation type the status code will be
-        /// 204. 
+        /// The HTTP status code will be in the 200 range for successful request. For the <code>RequestResonse</code>
+        /// invocation type this status code will be 200. For the <code>Event</code> invocation
+        /// type this status code will be 202. For the <code>DryRun</code> invocation type the
+        /// status code will be 204. 
         /// </para>
         /// </summary>
         public int StatusCode

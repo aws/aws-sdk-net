@@ -38,8 +38,8 @@ namespace Amazon.Lambda.Model
     /// <para>
     /// Using the optional <code>Qualifier</code> parameter, you can specify a specific function
     /// version for which you want this information. If you don't specify this parameter,
-    /// the API uses unqualified function ARN which return information about the $LATEST version
-    /// of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html">AWS
+    /// the API uses unqualified function ARN which return information about the <code>$LATEST</code>
+    /// version of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
     /// Lambda Function Versioning and Aliases</a>.
     /// </para>
     ///  
@@ -59,11 +59,11 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        ///  You can specify an unqualified function name (for example, "Thumbnail") or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, "arn:aws:lambda:us-west-2:account-id:function:ThumbNail").
-        /// AWS Lambda also allows you to specify only the account ID qualifier (for example,
-        /// "account-id:Thumbnail"). Note that the length constraint applies only to the ARN.
-        /// If you specify only the function name, it is limited to 64 character in length. 
+        ///  You can specify a function name (for example, <code>Thumbnail</code>) or you can
+        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+        /// AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+        /// Note that the length constraint applies only to the ARN. If you specify only the function
+        /// name, it is limited to 64 character in length. 
         /// </para>
         /// </summary>
         public string FunctionName
@@ -81,12 +81,13 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// Using this optional parameter to specify a function version or alias name. If you
+        /// Using this optional parameter to specify a function version or an alias name. If you
         /// specify function version, the API uses qualified function ARN for the request and
-        /// returns information about the specific Lambda function version. If you specify alias
-        /// name, the API uses alias ARN and returns information about the function version to
-        /// which the alias points. If you don't provide this parameter, the API uses unqualified
-        /// function ARN and returns information about the $LATEST version of the Lambda function.
+        /// returns information about the specific Lambda function version. If you specify an
+        /// alias name, the API uses the alias ARN and returns information about the function
+        /// version to which the alias points. If you don't provide this parameter, the API uses
+        /// unqualified function ARN and returns information about the <code>$LATEST</code> version
+        /// of the Lambda function.
         /// </para>
         /// </summary>
         public string Qualifier

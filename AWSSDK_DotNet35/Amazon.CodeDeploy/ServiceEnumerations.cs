@@ -791,4 +791,64 @@ namespace Amazon.CodeDeploy
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type TriggerEventType.
+    /// </summary>
+    public class TriggerEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeploymentFailure for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType DeploymentFailure = new TriggerEventType("DeploymentFailure");
+        /// <summary>
+        /// Constant DeploymentStart for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType DeploymentStart = new TriggerEventType("DeploymentStart");
+        /// <summary>
+        /// Constant DeploymentStop for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType DeploymentStop = new TriggerEventType("DeploymentStop");
+        /// <summary>
+        /// Constant DeploymentSuccess for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType DeploymentSuccess = new TriggerEventType("DeploymentSuccess");
+        /// <summary>
+        /// Constant InstanceFailure for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType InstanceFailure = new TriggerEventType("InstanceFailure");
+        /// <summary>
+        /// Constant InstanceStart for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType InstanceStart = new TriggerEventType("InstanceStart");
+        /// <summary>
+        /// Constant InstanceSuccess for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType InstanceSuccess = new TriggerEventType("InstanceSuccess");
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public TriggerEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerEventType FindValue(string value)
+        {
+            return FindValue<TriggerEventType>(value);
+        }
+
+        public static implicit operator TriggerEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

@@ -58,12 +58,12 @@ namespace Amazon.CloudSearchDomain
         /// the search criteria depends on which query parser you use. Amazon CloudSearch supports
         /// four query parsers:
         /// 
-        ///  <ul> <li> <code>simple</code>: search all <code>text</code> and <code>text-array</code>
+        ///  <ul> <li><code>simple</code>: search all <code>text</code> and <code>text-array</code>
         /// fields for the specified string. Search for phrases, individual terms, and prefixes.
-        /// </li> <li> <code>structured</code>: search specific fields, construct compound queries
+        /// </li> <li><code>structured</code>: search specific fields, construct compound queries
         /// using Boolean operators, and use advanced features such as term boosting and proximity
-        /// searching.</li> <li> <code>lucene</code>: specify search criteria using the Apache
-        /// Lucene query parser syntax.</li> <li> <code>dismax</code>: specify search criteria
+        /// searching.</li> <li><code>lucene</code>: specify search criteria using the Apache
+        /// Lucene query parser syntax.</li> <li><code>dismax</code>: specify search criteria
         /// using the simplified subset of the Apache Lucene query parser syntax defined by the
         /// DisMax query parser.</li> </ul> 
         /// <para>

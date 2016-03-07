@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Describes whether an identity has Amazon Simple Notification Service (Amazon SNS)
-    /// topics set for bounce, complaint, and/or delivery notifications, and specifies whether
-    /// feedback forwarding is enabled for bounce and complaint notifications.
+    /// 
     /// </summary>
     public partial class GetIdentityNotificationAttributesResult : AmazonWebServiceResponse
     {

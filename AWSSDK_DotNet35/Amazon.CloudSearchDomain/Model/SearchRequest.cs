@@ -33,12 +33,12 @@ namespace Amazon.CloudSearchDomain.Model
     /// the search criteria depends on which query parser you use. Amazon CloudSearch supports
     /// four query parsers:
     /// 
-    ///  <ul> <li> <code>simple</code>: search all <code>text</code> and <code>text-array</code>
+    ///  <ul> <li><code>simple</code>: search all <code>text</code> and <code>text-array</code>
     /// fields for the specified string. Search for phrases, individual terms, and prefixes.
-    /// </li> <li> <code>structured</code>: search specific fields, construct compound queries
+    /// </li> <li><code>structured</code>: search specific fields, construct compound queries
     /// using Boolean operators, and use advanced features such as term boosting and proximity
-    /// searching.</li> <li> <code>lucene</code>: specify search criteria using the Apache
-    /// Lucene query parser syntax.</li> <li> <code>dismax</code>: specify search criteria
+    /// searching.</li> <li><code>lucene</code>: specify search criteria using the Apache
+    /// Lucene query parser syntax.</li> <li><code>dismax</code>: specify search criteria
     /// using the simplified subset of the Apache Lucene query parser syntax defined by the
     /// DisMax query parser.</li> </ul> 
     /// <para>
@@ -69,6 +69,7 @@ namespace Amazon.CloudSearchDomain.Model
         private long? _size;
         private string _sort;
         private long? _start;
+        private string _stats;
 
         /// <summary>
         /// Gets and sets the property Cursor. 
@@ -366,7 +367,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// <para>
         /// The options you can configure vary according to which parser you use:
         /// </para>
-        ///  <ul> <li> <code>defaultOperator</code>: The default operator used to combine individual
+        ///  <ul> <li><code>defaultOperator</code>: The default operator used to combine individual
         /// terms in the search string. For example: <code>defaultOperator: 'or'</code>. For the
         /// <code>dismax</code> parser, you specify a percentage that represents the percentage
         /// of terms in the search string (rounded down) that must match, rather than a default
@@ -376,7 +377,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// Valid values: <code>and</code>, <code>or</code>, a percentage in the range 0%-100%
         /// (<code>dismax</code>). Default: <code>and</code> (<code>simple</code>, <code>structured</code>,
         /// <code>lucene</code>) or <code>100</code> (<code>dismax</code>). Valid for: <code>simple</code>,
-        /// <code>structured</code>, <code>lucene</code>, and <code>dismax</code>.</li> <li> <code>fields</code>:
+        /// <code>structured</code>, <code>lucene</code>, and <code>dismax</code>.</li> <li><code>fields</code>:
         /// An array of the fields to search when no fields are specified in a search. If no fields
         /// are specified in a search and this option is not specified, all text and text-array
         /// fields are searched. You can specify a weight for each field to control the relative
@@ -387,7 +388,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// Valid values: The name of any configured field and an optional numeric value greater
         /// than zero. Default: All <code>text</code> and <code>text-array</code> fields. Valid
         /// for: <code>simple</code>, <code>structured</code>, <code>lucene</code>, and <code>dismax</code>.</li>
-        /// <li> <code>operators</code>: An array of the operators or special characters you want
+        /// <li><code>operators</code>: An array of the operators or special characters you want
         /// to disable for the simple query parser. If you disable the <code>and</code>, <code>or</code>,
         /// or <code>not</code> operators, the corresponding operators (<code>+</code>, <code>|</code>,
         /// <code>-</code>) have no special meaning and are dropped from the search string. Similarly,
@@ -406,7 +407,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// <code>escape</code>, <code>fuzzy</code>, <code>near</code>, <code>not</code>, <code>or</code>,
         /// <code>phrase</code>, <code>precedence</code>, <code>prefix</code>, <code>whitespace</code>.
         /// Default: All operators and special characters are enabled. Valid for: <code>simple</code>.</li>
-        /// <li> <code>phraseFields</code>: An array of the <code>text</code> or <code>text-array</code>
+        /// <li><code>phraseFields</code>: An array of the <code>text</code> or <code>text-array</code>
         /// fields you want to use for phrase searches. When the terms in the search string appear
         /// in close proximity within a field, the field scores higher. You can specify a weight
         /// for each field to boost that score. The <code>phraseSlop</code> option controls how
@@ -417,17 +418,17 @@ namespace Amazon.CloudSearchDomain.Model
         /// Valid values: The name of any <code>text</code> or <code>text-array</code> field and
         /// an optional numeric value greater than zero. Default: No fields. If you don't specify
         /// any fields with <code>phraseFields</code>, proximity scoring is disabled even if <code>phraseSlop</code>
-        /// is specified. Valid for: <code>dismax</code>.</li> <li> <code>phraseSlop</code>: An
+        /// is specified. Valid for: <code>dismax</code>.</li> <li><code>phraseSlop</code>: An
         /// integer value that specifies how much matches can deviate from the search phrase and
         /// still be boosted according to the weights specified in the <code>phraseFields</code>
         /// option; for example, <code>phraseSlop: 2</code>. You must also specify <code>phraseFields</code>
         /// to enable proximity scoring. Valid values: positive integers. Default: 0. Valid for:
-        /// <code>dismax</code>.</li> <li> <code>explicitPhraseSlop</code>: An integer value that
+        /// <code>dismax</code>.</li> <li><code>explicitPhraseSlop</code>: An integer value that
         /// specifies how much a match can deviate from the search phrase when the phrase is enclosed
         /// in double quotes in the search string. (Phrases that exceed this proximity distance
         /// are not considered a match.) For example, to specify a slop of three for dismax phrase
         /// queries, you would specify <code>"explicitPhraseSlop":3</code>. Valid values: positive
-        /// integers. Default: 0. Valid for: <code>dismax</code>.</li> <li> <code>tieBreaker</code>:
+        /// integers. Default: 0. Valid for: <code>dismax</code>.</li> <li><code>tieBreaker</code>:
         /// When a term in the search string is found in a document's field, a score is calculated
         /// for that field based on how common the word is in that field compared to other documents.
         /// If the term occurs in multiple fields within a document, by default only the highest
@@ -591,6 +592,30 @@ namespace Amazon.CloudSearchDomain.Model
         internal bool IsSetStart()
         {
             return this._start.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Stats. 
+        /// <para>
+        /// Specifies one or more fields for which to get statistics information. Each specified
+        /// field must be facet-enabled in the domain configuration. The fields are specified
+        /// in JSON using the form:
+        /// </para>
+        ///  <code>{"FIELD-A":{},"FIELD-B":{}}</code> 
+        /// <para>
+        /// There are currently no options supported for statistics.
+        /// </para>
+        /// </summary>
+        public string Stats
+        {
+            get { return this._stats; }
+            set { this._stats = value; }
+        }
+
+        // Check to see if Stats property is set
+        internal bool IsSetStats()
+        {
+            return this._stats != null;
         }
 
     }

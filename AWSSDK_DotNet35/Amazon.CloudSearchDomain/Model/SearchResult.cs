@@ -35,6 +35,7 @@ namespace Amazon.CloudSearchDomain.Model
     {
         private Dictionary<string, BucketInfo> _facets = new Dictionary<string, BucketInfo>();
         private Hits _hits;
+        private Dictionary<string, FieldStats> _stats = new Dictionary<string, FieldStats>();
         private SearchStatus _status;
 
         /// <summary>
@@ -71,6 +72,24 @@ namespace Amazon.CloudSearchDomain.Model
         internal bool IsSetHits()
         {
             return this._hits != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Stats. 
+        /// <para>
+        /// The requested field statistics information.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, FieldStats> Stats
+        {
+            get { return this._stats; }
+            set { this._stats = value; }
+        }
+
+        // Check to see if Stats property is set
+        internal bool IsSetStats()
+        {
+            return this._stats != null && this._stats.Count > 0; 
         }
 
         /// <summary>

@@ -31,7 +31,7 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the ListTrafficPolicies operation.
     /// Gets information about the latest version for every traffic policy that is associated
     /// with the current AWS account. To get the information, send a <code>GET</code> request
-    /// to the <code>2013-04-01/trafficpolicy</code> resource.
+    /// to the <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
     /// 
     ///  
     /// <para>

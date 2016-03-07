@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents a map of policy names to policies returned from a successful <code>GetIdentityPolicies</code>
-    /// request.
+    /// 
     /// </summary>
     public partial class GetIdentityPoliciesResult : AmazonWebServiceResponse
     {

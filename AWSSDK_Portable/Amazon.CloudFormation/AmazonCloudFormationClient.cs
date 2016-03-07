@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation
     /// <para>
     /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
     /// information about a specific AWS product, you can find the product's technical documentation
-    /// at <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.
+    /// at <a href="http://docs.aws.amazon.com/documentation/">http://docs.aws.amazon.com/documentation/</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
@@ -218,6 +218,36 @@ namespace Amazon.CloudFormation
             var unmarshaller = CancelUpdateStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelUpdateStackRequest,CancelUpdateStackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ContinueUpdateRollback
+
+        internal ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request)
+        {
+            var marshaller = new ContinueUpdateRollbackRequestMarshaller();
+            var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
+
+            return Invoke<ContinueUpdateRollbackRequest,ContinueUpdateRollbackResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ContinueUpdateRollback operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ContinueUpdateRollbackResponse> ContinueUpdateRollbackAsync(ContinueUpdateRollbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ContinueUpdateRollbackRequestMarshaller();
+            var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ContinueUpdateRollbackRequest,ContinueUpdateRollbackResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

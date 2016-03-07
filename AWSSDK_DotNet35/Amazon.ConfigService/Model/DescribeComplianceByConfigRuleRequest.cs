@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// If AWS Config has no current evaluation results for the rule, it returns <code>InsufficientData</code>.
+    /// If AWS Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>.
     /// This result might indicate one of the following conditions: <ul> <li>AWS Config has
     /// never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
     /// action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
@@ -61,8 +61,11 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceTypes. 
         /// <para>
-        /// Filters the results by compliance. The valid values are <code>Compliant</code> and
-        /// <code>NonCompliant</code>.
+        /// Filters the results by compliance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
         /// </para>
         /// </summary>
         public List<string> ComplianceTypes

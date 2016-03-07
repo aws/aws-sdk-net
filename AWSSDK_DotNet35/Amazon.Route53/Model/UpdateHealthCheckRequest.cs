@@ -33,10 +33,11 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To update a health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck/<i>health
-    /// check ID</i></code> resource. The request body must include an XML document with an
-    /// <code>UpdateHealthCheckRequest</code> element. The response returns an <code>UpdateHealthCheckResponse</code>
-    /// element, which contains metadata about the health check.
+    /// To update a health check, send a <code>POST</code> request to the <code>/<i>Route
+    /// 53 API version</i>/healthcheck/<i>health check ID</i></code> resource. The request
+    /// body must include a document with an <code>UpdateHealthCheckRequest</code> element.
+    /// The response returns an <code>UpdateHealthCheckResponse</code> element, which contains
+    /// metadata about the health check.
     /// </para>
     /// </summary>
     public partial class UpdateHealthCheckRequest : AmazonRoute53Request
@@ -52,6 +53,7 @@ namespace Amazon.Route53.Model
         private bool? _inverted;
         private int? _healthThreshold;
         private List<string> _childHealthChecks = new List<string>();
+        private bool? _enableSNI;
 
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
@@ -190,7 +192,8 @@ namespace Amazon.Route53.Model
         /// If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>,
         /// the string that you want Amazon Route 53 to search for in the response body from the
         /// specified resource. If the string appears in the response body, Amazon Route 53 considers
-        /// the resource healthy. 
+        /// the resource healthy. Amazon Route 53 considers case when searching for <code>SearchString</code>
+        /// in the response body.
         /// </para>
         ///  
         /// <para>
@@ -308,6 +311,32 @@ namespace Amazon.Route53.Model
         internal bool IsSetChildHealthChecks()
         {
             return this._childHealthChecks != null && this._childHealthChecks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableSNI. 
+        /// <para>
+        /// Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code>
+        /// to the endpoint in the <code>client_hello</code> message during TLS negotiation. If
+        /// you don't specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+        /// <code>true</code> when <code>Type</code> is <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code>
+        /// and defaults to <code>false</code> when <code>Type</code> is any other value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this value only if you want to change it.
+        /// </para>
+        /// </summary>
+        public bool EnableSNI
+        {
+            get { return this._enableSNI.GetValueOrDefault(); }
+            set { this._enableSNI = value; }
+        }
+
+        // Check to see if EnableSNI property is set
+        internal bool IsSetEnableSNI()
+        {
+            return this._enableSNI.HasValue; 
         }
 
     }

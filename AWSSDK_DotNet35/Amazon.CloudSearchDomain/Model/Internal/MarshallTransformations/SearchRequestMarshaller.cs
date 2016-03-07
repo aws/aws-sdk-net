@@ -89,6 +89,9 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStart())
                 request.Parameters.Add("start", StringUtils.FromLong(publicRequest.Start));
+            
+            if (publicRequest.IsSetStats())
+                request.Parameters.Add("stats", StringUtils.FromString(publicRequest.Stats));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// A JSON object containing the of the gateway that was updated.
+    /// A JSON object containing the ARN of the gateway that was updated.
     /// </summary>
     public partial class UpdateGatewayInformationResult : AmazonWebServiceResponse
     {

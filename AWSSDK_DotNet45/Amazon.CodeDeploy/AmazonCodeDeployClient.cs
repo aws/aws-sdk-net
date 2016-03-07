@@ -345,6 +345,60 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  BatchGetApplicationRevisions
+
+        /// <summary>
+        /// Gets information about one or more application revisions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetApplicationRevisions service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetApplicationRevisions service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
+        /// The application does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
+        /// The minimum number of required application names was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.BatchLimitExceededException">
+        /// The maximum number of names or IDs allowed for this request (100) was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
+        /// The application name was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidRevisionException">
+        /// The revision was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
+        /// The revision ID was not specified.
+        /// </exception>
+        public BatchGetApplicationRevisionsResponse BatchGetApplicationRevisions(BatchGetApplicationRevisionsRequest request)
+        {
+            var marshaller = new BatchGetApplicationRevisionsRequestMarshaller();
+            var unmarshaller = BatchGetApplicationRevisionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetApplicationRevisionsRequest,BatchGetApplicationRevisionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetApplicationRevisions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetApplicationRevisions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<BatchGetApplicationRevisionsResponse> BatchGetApplicationRevisionsAsync(BatchGetApplicationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchGetApplicationRevisionsRequestMarshaller();
+            var unmarshaller = BatchGetApplicationRevisionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetApplicationRevisionsRequest,BatchGetApplicationRevisionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetApplications
 
         /// <summary>
@@ -358,6 +412,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.BatchLimitExceededException">
+        /// The maximum number of names or IDs allowed for this request (100) was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
@@ -390,6 +447,60 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  BatchGetDeploymentInstances
+
+        /// <summary>
+        /// Gets information about one or more instances that are part of a deployment group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentInstances service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetDeploymentInstances service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.BatchLimitExceededException">
+        /// The maximum number of names or IDs allowed for this request (100) was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
+        /// The deployment does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
+        /// At least one deployment ID must be specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InstanceIdRequiredException">
+        /// The instance ID was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
+        /// At least one of the deployment IDs was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
+        /// The specified on-premises instance name was specified in an invalid format.
+        /// </exception>
+        public BatchGetDeploymentInstancesResponse BatchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request)
+        {
+            var marshaller = new BatchGetDeploymentInstancesRequestMarshaller();
+            var unmarshaller = BatchGetDeploymentInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDeploymentInstancesRequest,BatchGetDeploymentInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDeploymentInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<BatchGetDeploymentInstancesResponse> BatchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchGetDeploymentInstancesRequestMarshaller();
+            var unmarshaller = BatchGetDeploymentInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetDeploymentInstancesRequest,BatchGetDeploymentInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetDeployments
 
         /// <summary>
@@ -398,6 +509,9 @@ namespace Amazon.CodeDeploy
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDeployments service method.</param>
         /// 
         /// <returns>The response from the BatchGetDeployments service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.BatchLimitExceededException">
+        /// The maximum number of names or IDs allowed for this request (100) was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
         /// </exception>
@@ -440,6 +554,9 @@ namespace Amazon.CodeDeploy
         /// <param name="request">Container for the necessary parameters to execute the BatchGetOnPremisesInstances service method.</param>
         /// 
         /// <returns>The response from the BatchGetOnPremisesInstances service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.BatchLimitExceededException">
+        /// The maximum number of names or IDs allowed for this request (100) was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InstanceNameRequiredException">
         /// An on-premises instance name was not specified.
         /// </exception>
@@ -697,8 +814,17 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagException">
         /// The specified tag was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTriggerConfigException">
+        /// The trigger was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.LifecycleHookLimitExceededException">
+        /// The limit for lifecycle hooks was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RoleRequiredException">
         /// The role ID was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.TriggerTargetsLimitExceededException">
+        /// The maximum allowed number of triggers was exceeded.
         /// </exception>
         public CreateDeploymentGroupResponse CreateDeploymentGroup(CreateDeploymentGroupRequest request)
         {
@@ -1181,6 +1307,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
         /// At least one of the deployment IDs was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
+        /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
         public GetDeploymentInstanceResponse GetDeploymentInstance(GetDeploymentInstanceRequest request)
         {
@@ -1953,6 +2082,15 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagException">
         /// The specified tag was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTriggerConfigException">
+        /// The trigger was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.LifecycleHookLimitExceededException">
+        /// The limit for lifecycle hooks was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.TriggerTargetsLimitExceededException">
+        /// The maximum allowed number of triggers was exceeded.
         /// </exception>
         public UpdateDeploymentGroupResponse UpdateDeploymentGroup(UpdateDeploymentGroupRequest request)
         {

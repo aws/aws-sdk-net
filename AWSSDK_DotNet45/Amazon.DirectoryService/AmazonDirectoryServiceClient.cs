@@ -496,7 +496,7 @@ namespace Amazon.DirectoryService
         #region  CreateSnapshot
 
         /// <summary>
-        /// Creates a snapshot of a Simple AD directory.
+        /// Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.
         /// 
         ///  <note> 
         /// <para>
@@ -761,6 +761,54 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DeregisterEventTopic
+
+        /// <summary>
+        /// Removes the specified directory as a publisher to the specified SNS topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterEventTopic service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterEventTopic service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        public DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request)
+        {
+            var marshaller = new DeregisterEventTopicRequestMarshaller();
+            var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterEventTopicRequest,DeregisterEventTopicResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterEventTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterEventTopic operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeregisterEventTopicResponse> DeregisterEventTopicAsync(DeregisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeregisterEventTopicRequestMarshaller();
+            var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterEventTopicRequest,DeregisterEventTopicResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDirectories
 
         /// <summary>
@@ -868,6 +916,61 @@ namespace Amazon.DirectoryService
             var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDirectoriesRequest,DescribeDirectoriesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEventTopics
+
+        /// <summary>
+        /// Obtains information about which SNS topics receive status messages from the specified
+        /// directory.
+        /// 
+        ///  
+        /// <para>
+        /// If no input parameters are provided, such as DirectoryId or TopicName, this request
+        /// describes all of the associations in the account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventTopics service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventTopics service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        public DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
+        {
+            var marshaller = new DescribeEventTopicsRequestMarshaller();
+            var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventTopicsRequest,DescribeEventTopicsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventTopics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventTopics operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEventTopicsResponse> DescribeEventTopicsAsync(DescribeEventTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEventTopicsRequestMarshaller();
+            var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEventTopicsRequest,DescribeEventTopicsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1300,6 +1403,58 @@ namespace Amazon.DirectoryService
             var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSnapshotLimitsRequest,GetSnapshotLimitsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterEventTopic
+
+        /// <summary>
+        /// Associates a directory with an SNS topic. This establishes the directory as a publisher
+        /// to the specified SNS topic. You can then receive email or text (SMS) messages when
+        /// the status of your directory changes. You get notified if your directory goes from
+        /// an Active status to an Impaired or Inoperable status. You also receive a notification
+        /// when the directory returns to an Active status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterEventTopic service method.</param>
+        /// 
+        /// <returns>The response from the RegisterEventTopic service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        public RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request)
+        {
+            var marshaller = new RegisterEventTopicRequestMarshaller();
+            var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterEventTopicRequest,RegisterEventTopicResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterEventTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterEventTopic operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterEventTopicResponse> RegisterEventTopicAsync(RegisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterEventTopicRequestMarshaller();
+            var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterEventTopicRequest,RegisterEventTopicResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

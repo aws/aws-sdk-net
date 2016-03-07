@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// This response contains the object for the Lambda function location (see <a>API_FunctionCodeLocation</a>
+    /// This response contains the object for the Lambda function location (see <a>API_FunctionCodeLocation</a>.
     /// </summary>
     public partial class GetFunctionResult : AmazonWebServiceResponse
     {

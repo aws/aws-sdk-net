@@ -43,8 +43,11 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceTypes. 
         /// <para>
-        /// Specify to filter the results by compliance. The valid values are <code>Compliant</code>,
-        /// <code>NonCompliant</code>, and <code>NotApplicable</code>.
+        /// Filters the results by compliance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
         /// </para>
         /// </summary>
         public List<string> ComplianceTypes

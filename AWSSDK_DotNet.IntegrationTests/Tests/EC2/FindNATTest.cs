@@ -25,13 +25,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
                 if (region == RegionEndpoint.CNNorth1 || region == RegionEndpoint.USGovCloudWest1)
                     continue;
 
-                using(var client = new AmazonEC2Client(region))
+                using (var client = new AmazonEC2Client(region))
                 {
+                    // not all regions support all types
                     var image = VPCUtilities.FindNATImage(client, VirtualizationType.Hvm);
                     Assert.IsNotNull(image, "Failed to find HVM NAT image for region {0}", region.SystemName);
 
-                    image = VPCUtilities.FindNATImage(client, VirtualizationType.Paravirtual);
-                    Assert.IsNotNull(image, "Failed to find Para virtual NAT image for region {0}", region.SystemName);
+                    if (region != RegionEndpoint.APNortheast2)
+                    {
+                        image = VPCUtilities.FindNATImage(client, VirtualizationType.Paravirtual);
+                        Assert.IsNotNull(image, "Failed to find Para virtual NAT image for region {0}", region.SystemName);
+                    }
                 }
             }
         }

@@ -38,23 +38,41 @@ namespace Amazon.DynamoDBv2
     ///
     /// Amazon DynamoDB 
     /// <para>
-    ///  <b>Overview</b>
+    /// This is the Amazon DynamoDB API Reference. This guide provides descriptions of the
+    /// low-level DynamoDB API.
     /// </para>
     ///  
     /// <para>
-    /// This is the Amazon DynamoDB API Reference. This guide provides descriptions and samples
-    /// of the low-level DynamoDB API. For information about DynamoDB application development,
-    /// see the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">Amazon
-    /// DynamoDB Developer Guide</a>.
+    /// This guide is intended for use with the following DynamoDB documentation:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/">Amazon
+    /// DynamoDB Getting Started Guide</a> - provides hands-on exercises that help you learn
+    /// the basics of working with DynamoDB. <i>If you are new to DynamoDB, we recommend that
+    /// you begin with the Getting Started Guide.</i>
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">Amazon
+    /// DynamoDB Developer Guide</a> - contains detailed information about DynamoDB concepts,
+    /// usage, and best practices.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/dynamodbstreams/latest/APIReference/">Amazon
+    /// DynamoDB Streams API Reference</a> - provides descriptions and samples of the DynamoDB
+    /// Streams API. (For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing
+    /// Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.)
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Instead of making the requests to the low-level DynamoDB API directly from your application,
     /// we recommend that you use the AWS Software Development Kits (SDKs). The easy-to-use
     /// libraries in the AWS SDKs make it unnecessary to call the low-level DynamoDB API directly
     /// from your application. The libraries take care of request authentication, serialization,
     /// and connection management. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html">Using
-    /// the AWS SDKs with DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+    /// the AWS SDKs with DynamoDB</a> in the Amazon DynamoDB Developer Guide.
     /// </para>
     ///  
     /// <para>
@@ -74,10 +92,10 @@ namespace Amazon.DynamoDBv2
     ///  <ul> <li> 
     /// <para>
     /// <i>CreateTable</i> - Creates a table with user-specified provisioned throughput settings.
-    /// You must designate one attribute as the hash primary key for the table; you can optionally
-    /// designate a second attribute as the range primary key. DynamoDB creates indexes on
-    /// these key attributes for fast data access. Optionally, you can create one or more
-    /// secondary indexes, which provide fast data access using non-key attributes.
+    /// You must define a primary key for the table - either a simple primary key (partition
+    /// key), or a composite primary key (partition key and sort key). Optionally, you can
+    /// create one or more secondary indexes, which provide fast data access using non-key
+    /// attributes.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -124,9 +142,10 @@ namespace Amazon.DynamoDBv2
     ///  </li> <li> 
     /// <para>
     /// <i>Query</i> - Returns one or more items from a table or a secondary index. You must
-    /// provide a specific hash key value. You can narrow the scope of the query using comparison
-    /// operators against a range key value, or on the index key. <i>Query</i> supports either
-    /// eventual or strong consistency. A single response has a size limit of 1 MB.
+    /// provide a specific value for the partition key. You can narrow the scope of the query
+    /// using comparison operators against a sort key value, or on the index key. <i>Query</i>
+    /// supports either eventual or strong consistency. A single response has a size limit
+    /// of 1 MB.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -456,6 +475,36 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTableRequest,DeleteTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLimits
+
+        internal DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
+        {
+            var marshaller = new DescribeLimitsRequestMarshaller();
+            var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLimitsRequest,DescribeLimitsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLimits operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeLimitsResponse> DescribeLimitsAsync(DescribeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeLimitsRequestMarshaller();
+            var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLimitsRequest,DescribeLimitsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

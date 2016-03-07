@@ -33,10 +33,10 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To create a new health check, send a <code>POST</code> request to the <code>2013-04-01/healthcheck</code>
-    /// resource. The request body must include an XML document with a <code>CreateHealthCheckRequest</code>
-    /// element. The response returns the <code>CreateHealthCheckResponse</code> element that
-    /// contains metadata about the health check.
+    /// To create a new health check, send a <code>POST</code> request to the <code>/<i>Route
+    /// 53 API version</i>/healthcheck</code> resource. The request body must include a document
+    /// with a <code>CreateHealthCheckRequest</code> element. The response returns the <code>CreateHealthCheckResponse</code>
+    /// element that contains metadata about the health check.
     /// </para>
     /// </summary>
     public partial class CreateHealthCheckRequest : AmazonRoute53Request

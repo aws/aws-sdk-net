@@ -22,6 +22,14 @@ namespace <#=this.Config.Namespace#>.Model
 		this.FormatOperationRequestDocumentation(this.Operation);
 	else if (this.Operation != null && GeneratorHelpers.HasSuppressedResult(this.Operation))
 		this.FormatVoidResultDocumentation(this.Operation.Name);
+	else if(this.StructureType == StructureType.Response && (this.Structure == null || string.IsNullOrEmpty(this.Structure.Documentation)))
+	{
+#>
+	/// <summary>
+	/// This is the response object from the <#=this.Operation.Name#> operation.
+	/// </summary>
+<#
+	}
 	else
 	    this.FormatClassDocumentation(this.Structure);  
 #>

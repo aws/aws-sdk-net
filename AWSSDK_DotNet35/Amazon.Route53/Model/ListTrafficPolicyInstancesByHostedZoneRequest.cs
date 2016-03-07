@@ -38,7 +38,7 @@ namespace Amazon.Route53.Model
     /// element.</note> 
     /// <para>
     /// To get information about the traffic policy instances that you created in a specified
-    /// hosted zone, send a <code>GET</code> request to the <code>2013-04-01/trafficpolicyinstance</code>
+    /// hosted zone, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
     /// resource and include the ID of the hosted zone.
     /// </para>
     ///  

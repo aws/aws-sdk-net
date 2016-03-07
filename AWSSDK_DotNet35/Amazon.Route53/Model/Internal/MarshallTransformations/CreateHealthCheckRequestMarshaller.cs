@@ -105,6 +105,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         }            
                         xmlWriter.WriteEndElement();            
                     }
+                    if(publicRequest.HealthCheckConfig.IsSetEnableSNI())
+                        xmlWriter.WriteElementString("EnableSNI", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.EnableSNI));                 
+    
                     xmlWriter.WriteEndElement();
                 }
 

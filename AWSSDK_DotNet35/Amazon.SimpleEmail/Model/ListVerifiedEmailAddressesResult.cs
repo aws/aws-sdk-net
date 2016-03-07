@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents a list of all the email addresses verified for the current user.
+    /// 
     /// </summary>
     public partial class ListVerifiedEmailAddressesResult : AmazonWebServiceResponse
     {

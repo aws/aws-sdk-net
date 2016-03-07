@@ -38,8 +38,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CommitId. 
         /// <para>
-        /// The SHA1 commit ID of the GitHub commit that references the that represents the bundled
-        /// artifacts for the application revision.
+        /// The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for
+        /// the application revision.
         /// </para>
         /// </summary>
         public string CommitId
@@ -58,7 +58,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property Repository. 
         /// <para>
         /// The GitHub account and repository pair that stores a reference to the commit that
-        /// represents the bundled artifacts for the application revision.
+        /// represents the bundled artifacts for the application revision. 
         /// </para>
         ///  
         /// <para>

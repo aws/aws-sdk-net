@@ -73,7 +73,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayName.
+        /// Gets and sets the property GatewayName. 
+        /// <para>
+        /// The name you configured for your gateway.
+        /// </para>
         /// </summary>
         public string GatewayName
         {
@@ -90,8 +93,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayRegion. 
         /// <para>
-        /// One of the values that indicates the region where you want to store the snapshot backups.
-        /// The gateway region specified must be the same region as the region in your <code>Host</code>
+        /// A value that indicates the region where you want to store the snapshot backups. The
+        /// gateway region specified must be the same region as the region in your <code>Host</code>
         /// header in the request. For more information about available regions and endpoints
         /// for AWS Storage Gateway, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
         /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
@@ -117,9 +120,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayTimezone. 
         /// <para>
-        /// One of the values that indicates the time zone you want to set for the gateway. The
-        /// time zone is used, for example, for scheduling snapshots and your gateway's maintenance
-        /// schedule.
+        /// A value that indicates the time zone you want to set for the gateway. The time zone
+        /// is used, for example, for scheduling snapshots and your gateway's maintenance schedule.
         /// </para>
         /// </summary>
         public string GatewayTimezone
@@ -137,9 +139,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayType. 
         /// <para>
-        /// One of the values that defines the type of gateway to activate. The type specified
-        /// is critical to all later functions of the gateway and cannot be changed after activation.
-        /// The default value is <code>STORED</code>. 
+        /// A value that defines the type of gateway to activate. The type specified is critical
+        /// to all later functions of the gateway and cannot be changed after activation. The
+        /// default value is <code>STORED</code>. 
         /// </para>
         /// </summary>
         public string GatewayType

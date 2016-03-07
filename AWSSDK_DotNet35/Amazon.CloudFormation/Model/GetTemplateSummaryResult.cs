@@ -140,11 +140,6 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// A list of all the template resource types that are defined in the template, such as
         /// <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.
-        /// Use the following syntax to describe template resource types: <code>AWS::*</code>
-        /// (for all AWS resources), <code>Custom::*</code> (for all custom resources), <code>Custom::<i>logical_ID</i></code>
-        /// (for a specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for all
-        /// resources of a particular AWS service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
-        /// (for a specific AWS resource).
         /// </para>
         /// </summary>
         public List<string> ResourceTypes

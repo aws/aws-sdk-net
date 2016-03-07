@@ -78,9 +78,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property AlarmActions. 
         /// <para>
         ///  The list of actions to execute when this alarm transitions into an <code>ALARM</code>
-        /// state from any other state. Each action is specified as an Amazon Resource Number
-        /// (ARN). Currently the only actions supported are publishing to an Amazon SNS topic
-        /// and triggering an Auto Scaling policy. 
+        /// state from any other state. Each action is specified as an Amazon Resource Name (ARN).
+        /// 
         /// </para>
         /// </summary>
         public List<string> AlarmActions
@@ -116,10 +115,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmConfigurationUpdatedTimestamp. 
         /// <para>
-        ///  The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses
-        /// Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate
-        /// seasonal adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-        /// stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. 
+        ///  The time stamp of the last update to the alarm configuration. 
         /// </para>
         /// </summary>
         public DateTime AlarmConfigurationUpdatedTimestamp
@@ -230,9 +226,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property InsufficientDataActions. 
         /// <para>
         ///  The list of actions to execute when this alarm transitions into an <code>INSUFFICIENT_DATA</code>
-        /// state from any other state. Each action is specified as an Amazon Resource Number
-        /// (ARN). Currently the only actions supported are publishing to an Amazon SNS topic
-        /// or triggering an Auto Scaling policy. 
+        /// state from any other state. Each action is specified as an Amazon Resource Name (ARN).
+        /// 
         /// </para>
         ///  <important>The current WSDL lists this attribute as <code>UnknownActions</code>.</important>
         /// </summary>
@@ -288,9 +283,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property OKActions. 
         /// <para>
         ///  The list of actions to execute when this alarm transitions into an <code>OK</code>
-        /// state from any other state. Each action is specified as an Amazon Resource Number
-        /// (ARN). Currently the only actions supported are publishing to an Amazon SNS topic
-        /// and triggering an Auto Scaling policy. 
+        /// state from any other state. Each action is specified as an Amazon Resource Name (ARN).
+        /// 
         /// </para>
         /// </summary>
         public List<string> OKActions
@@ -362,10 +356,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateUpdatedTimestamp. 
         /// <para>
-        ///  The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated
-        /// Universal Time (UTC) when returning time stamps, which do not accommodate seasonal
-        /// adjustments such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-        /// stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. 
+        ///  The time stamp of the last update to the alarm's state. 
         /// </para>
         /// </summary>
         public DateTime StateUpdatedTimestamp

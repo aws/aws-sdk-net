@@ -69,13 +69,13 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Used for groups that launch instances into a virtual private cloud (VPC). Specifies
         /// whether to assign a public IP address to each instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-        /// Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value for this parameter, be sure to specify at least one subnet
-        /// using the <i>VPCZoneIdentifier</i> parameter when you create your group. 
+        /// If you specify this parameter, be sure to specify at least one subnet when you create
+        /// your group.
         /// </para>
         ///  
         /// <para>
@@ -141,9 +141,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCSecurityGroups. 
         /// <para>
-        /// The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
-        /// This parameter is required if <code>ClassicLinkVPCId</code> is specified, and is not
-        /// supported otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// The IDs of one or more security groups for the specified ClassicLink-enabled VPC.
+        /// This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported
+        /// otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -232,7 +232,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the EC2 instance to use to create the launch configuration.
+        /// The ID of the instance to use to create the launch configuration.
         /// </para>
         ///  
         /// <para>
@@ -273,8 +273,8 @@ namespace Amazon.AutoScaling.Model
         /// When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute
         /// and your account is charged a fee. When you disable detailed monitoring, by specifying
         /// <code>False</code>, CloudWatch generates metrics every 5 minutes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitor
-        /// Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
+        /// Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public InstanceMonitoring InstanceMonitoring
@@ -380,14 +380,13 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value for this parameter, be sure to specify at least one subnet
-        /// using the <i>VPCZoneIdentifier</i> parameter when you create your group.
+        /// If you specify this parameter, be sure to specify at least one subnet when you create
+        /// your group.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-        /// Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer Guide</i>.
-        /// 
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -460,7 +459,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The maximum hourly price to be paid for any Spot Instance launched to fulfill the
         /// request. Spot Instances are launched when the price you specify exceeds the current
-        /// Spot market price. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launch
+        /// Spot market price. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
         /// Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -482,10 +481,6 @@ namespace Amazon.AutoScaling.Model
         /// The user data to make available to the launched EC2 instances. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
         /// Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// At this time, launch configurations don't support compressed (zipped) user data files.
         /// </para>
         /// </summary>
         public string UserData

@@ -154,7 +154,7 @@ namespace Amazon.S3
         /// <summary>
         /// Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
         /// </summary>
-        public static readonly S3Region GOV = new S3Region("us-gov-west-1");
+        public static readonly S3Region GOVW1 = new S3Region("us-gov-west-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-1 locality.
         /// </summary>
@@ -175,16 +175,26 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use the SA-EAST-1 locality.
         /// </summary>
         public static readonly S3Region SAE1 = new S3Region("sa-east-1");
-        // <summary>
+        /// <summary>
         /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
         /// </summary>
-        public static readonly S3Region CN = new S3Region("cn-north-1");
+        public static readonly S3Region CN1 = new S3Region("cn-north-1");
 
         /// <summary>
         /// Specifies that the S3 Bucket should use US-WEST-1 locality.
         /// </summary>
         [Obsolete("This constant is obsolete. Usags of this property should be migrated to the USW1 constant")]
         public static readonly S3Region SFO = new S3Region("us-west-1");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
+        /// </summary>
+        [Obsolete("This constant is obsolete. Usags of this property should be migrated to the CN1 constant")]
+        public static readonly S3Region CN = new S3Region("cn-north-1");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
+        /// </summary>
+        [Obsolete("This constant is obsolete. Usags of this property should be migrated to the GOVW1 constant")]
+        public static readonly S3Region GOV = new S3Region("us-gov-west-1");
 
         /// <summary>
         /// Construct instance of S3Region. It is not intended for this constructor to be called. Instead users should call the FindValue.
@@ -741,21 +751,6 @@ namespace Amazon.S3
     public sealed class EventType : ConstantClass
     {
         /// <summary>
-        /// This event encapsulates all the object removed events
-        /// </summary>
-        public static readonly EventType ObjectRemovedAll = new EventType("s3:ObjectRemoved:*");
-
-        /// <summary>
-        /// Event for object removed, delete operation.
-        /// </summary>
-        public static readonly EventType ObjectRemovedDelete = new EventType("s3:ObjectRemoved:Delete");
-
-        /// <summary>
-        /// Event for object removed, delete marker created operation.
-        /// </summary>
-        public static readonly EventType ObjectRemovedDeleteMarkerCreated = new EventType("s3:ObjectRemoved:DeleteMarkerCreated");
-
-        /// <summary>
         /// The event encapsulates all the object create events
         /// </summary>
         public static readonly EventType ObjectCreatedAll = new EventType("s3:ObjectCreated:*");
@@ -780,6 +775,21 @@ namespace Amazon.S3
         /// </summary>
         public static readonly EventType ObjectCreatedCompleteMultipartUpload = new EventType("s3:ObjectCreated:CompleteMultipartUpload");
 
+        /// <summary>
+        /// This event encapsulates all the object removed events
+        /// </summary>
+        public static readonly EventType ObjectRemovedAll = new EventType("s3:ObjectRemoved:*");
+
+        /// <summary>
+        /// Event for object removed, delete operation.
+        /// </summary>
+        public static readonly EventType ObjectRemovedDelete = new EventType("s3:ObjectRemoved:Delete");
+
+        /// <summary>
+        /// Event for object removed, delete marker created operation.
+        /// </summary>
+        public static readonly EventType ObjectRemovedDeleteMarkerCreated = new EventType("s3:ObjectRemoved:DeleteMarkerCreated");
+		
         /// <summary>
         /// Event for objects stored in reduced redundancy and S3 detects the object is lost
         /// </summary>

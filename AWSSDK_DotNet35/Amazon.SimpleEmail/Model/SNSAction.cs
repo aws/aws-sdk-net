@@ -53,7 +53,29 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class SNSAction
     {
+        private SNSActionEncoding _encoding;
         private string _topicArn;
+
+        /// <summary>
+        /// Gets and sets the property Encoding. 
+        /// <para>
+        /// The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier
+        /// to use, but may not preserve all special characters when a message was encoded with
+        /// a different encoding format. Base64 preserves all special characters. The default
+        /// value is Base64.
+        /// </para>
+        /// </summary>
+        public SNSActionEncoding Encoding
+        {
+            get { return this._encoding; }
+            set { this._encoding = value; }
+        }
+
+        // Check to see if Encoding property is set
+        internal bool IsSetEncoding()
+        {
+            return this._encoding != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TopicArn. 

@@ -258,10 +258,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LifecycleEventConfiguration. 
-        /// <para>
-        /// 
-        /// </para>
+        /// Gets and sets the property LifecycleEventConfiguration.
         /// </summary>
         public LifecycleEventConfiguration LifecycleEventConfiguration
         {

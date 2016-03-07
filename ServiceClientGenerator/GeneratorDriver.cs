@@ -184,7 +184,8 @@ namespace ServiceClientGenerator
                     {
                         ClassName = operation.Name + "Response",
                         BaseClass = "AmazonWebServiceResponse",
-                        Operation = operation
+                        Operation = operation,
+                        StructureType = StructureType.Response
                     };
                     this.ExecuteGenerator(responseGenerator, responseGenerator.ClassName + ".cs", "Model");
                     if (operation.ResponseStructure != null)
@@ -196,7 +197,9 @@ namespace ServiceClientGenerator
                     {
                         ClassName = operation.Name + "Result",
                         BaseClass = "AmazonWebServiceResponse",
-                        IsWrapped = operation.IsResponseWrapped
+                        IsWrapped = operation.IsResponseWrapped,
+                        Operation = operation,
+                        StructureType = StructureType.Response
                     };
                     if (operation.ResponseStructure != null)
                     {

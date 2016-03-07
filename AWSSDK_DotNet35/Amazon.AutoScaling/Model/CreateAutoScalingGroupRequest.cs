@@ -84,7 +84,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// One or more Availability Zones for the group. This parameter is optional if you specify
-        /// subnets using the <code>VPCZoneIdentifier</code> parameter.
+        /// one or more subnets.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -107,8 +107,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-        /// Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+        /// Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -157,7 +157,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-        /// Checks for Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Checks</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -200,9 +200,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the EC2 instance used to create a launch configuration for the group. Alternatively,
-        /// use the <code>LaunchConfigurationName</code> parameter to specify a launch configuration
-        /// instead of an EC2 instance.
+        /// The ID of the instance used to create a launch configuration for the group. Alternatively,
+        /// specify a launch configuration instead of an EC2 instance.
         /// </para>
         ///  
         /// <para>
@@ -213,7 +212,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create
-        /// an Auto Scaling Group from an EC2 Instance</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -231,8 +230,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the launch configuration. Alternatively, use the <code>InstanceId</code>
-        /// parameter to specify an EC2 instance instead of a launch configuration.
+        /// The name of the launch configuration. Alternatively, specify an EC2 instance instead
+        /// of a launch configuration.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -254,8 +253,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Load
-        /// Balance Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using
+        /// a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerNames
@@ -348,9 +347,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag to be created or updated. Each tag should be defined by its resource type,
-        /// resource ID, key, value, and a propagate flag. Valid values: key=<i>value</i>, value=<i>value</i>,
-        /// propagate=<i>true</i> or <i>false</i>. Value and propagate are optional parameters.
+        /// One or more tags.
         /// </para>
         ///  
         /// <para>
@@ -378,9 +375,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
-        /// a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
-        /// Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html">Controlling
+        /// Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies
@@ -407,8 +404,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-        /// Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer Guide</i>.
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

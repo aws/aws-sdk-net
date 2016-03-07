@@ -49,6 +49,12 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("Encoding", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Encoding = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TopicArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
