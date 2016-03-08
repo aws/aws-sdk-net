@@ -1,3 +1,17 @@
+### 3.1.51.0 (2016-03-08 22:37 UTC)
+* CertificateManager (3.1.2.0)
+	* Doc update
+* CloudWatchEvents (3.1.1.0)
+	* Doc update
+* CodeCommit (3.1.1.0)
+	* Add support for customizing your development workflow with repository triggers.
+* ConfigService (3.1.4.0)
+	* Doc update
+* DeviceFarm (3.1.5.0)
+	* Add support for XCUI - an updated version of Apple's iOS automation suite.
+* DirectConnect (3.1.1.0)
+	* Doc update
+
 ### 3.1.50.0 (2016-03-03 23:11 UTC)
 * DirectoryService (3.1.2.0)
 	* Added support for SNS notifications on directories.
