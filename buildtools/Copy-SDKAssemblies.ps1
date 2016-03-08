@@ -108,7 +108,7 @@ Function Copy-SdkAssemblies
 			Write-Debug "Checking if $sourceDirectory exists"
 			if(!(Test-Path $sourceDirectory))
 			{
-				return
+				continue
 			}
 			
             $files = gci -Path $dir.FullName -Filter $filter -ErrorAction Stop
@@ -208,6 +208,7 @@ Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemb
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
 {
+    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck  -BuildType $BuildType
 	Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity") -ValidatePublicKeyToken $false  -BuildType $BuildType
 }
 
