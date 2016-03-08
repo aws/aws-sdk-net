@@ -400,7 +400,7 @@ namespace Amazon.CertificateManager
         /// An ACM limit has been exceeded. For example, you may have input more domains than
         /// are allowed or you've requested too many certificates for your account. See the exception
         /// message returned by ACM to determine which limit you have violated. For more information
-        /// about ACM limits, see the <a href="http://docs.amazon.com/acm/latest/userguide/limits.html">Limits</a>
+        /// about ACM limits, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>
         /// topic.
         /// </exception>
         RequestCertificateResponse RequestCertificate(string domainName);
@@ -424,7 +424,7 @@ namespace Amazon.CertificateManager
         /// An ACM limit has been exceeded. For example, you may have input more domains than
         /// are allowed or you've requested too many certificates for your account. See the exception
         /// message returned by ACM to determine which limit you have violated. For more information
-        /// about ACM limits, see the <a href="http://docs.amazon.com/acm/latest/userguide/limits.html">Limits</a>
+        /// about ACM limits, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>
         /// topic.
         /// </exception>
         RequestCertificateResponse RequestCertificate(RequestCertificateRequest request);
@@ -452,7 +452,7 @@ namespace Amazon.CertificateManager
         /// An ACM limit has been exceeded. For example, you may have input more domains than
         /// are allowed or you've requested too many certificates for your account. See the exception
         /// message returned by ACM to determine which limit you have violated. For more information
-        /// about ACM limits, see the <a href="http://docs.amazon.com/acm/latest/userguide/limits.html">Limits</a>
+        /// about ACM limits, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>
         /// topic.
         /// </exception>
         Task<RequestCertificateResponse> RequestCertificateAsync(string domainName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
