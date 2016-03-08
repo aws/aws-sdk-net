@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the events-2014-02-03.normal.json service model.
+ * Do not modify this file. This file is generated from the events-2015-10-07.normal.json service model.
  */
 
 
@@ -62,7 +62,7 @@ namespace Amazon.CloudWatchEvents
         {
             get
             {
-                return "2014-02-03";
+                return "2015-10-07";
             }
         }
 

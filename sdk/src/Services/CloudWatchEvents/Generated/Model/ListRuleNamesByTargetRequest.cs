@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the events-2014-02-03.normal.json service model.
+ * Do not modify this file. This file is generated from the events-2015-10-07.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,12 +29,11 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRuleNamesByTarget operation.
-    /// Lists the names of the rules that the given target is put to. Using this action, you
-    /// can find out which of the rules in Amazon CloudWatch Events can invoke a specific
-    /// target in your account. If you have more rules in your account than the given limit,
-    /// the results will be paginated. In that case, use the next token returned in the response
-    /// and repeat the ListRulesByTarget action until the NextToken in the response is returned
-    /// as null.
+    /// Lists the names of the rules that the given target is put to. You can see which of
+    /// the rules in Amazon CloudWatch Events can invoke a specific target in your account.
+    /// If you have more rules in your account than the given limit, the results will be paginated.
+    /// In that case, use the next token returned in the response and repeat ListRulesByTarget
+    /// until the NextToken in the response is returned as null.
     /// </summary>
     public partial class ListRuleNamesByTargetRequest : AmazonCloudWatchEventsRequest
     {
