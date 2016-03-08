@@ -105,6 +105,18 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// CALABASH: The Calabash type.
         /// </para>
         /// </li> <li>
@@ -125,15 +137,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+        /// XCTEST_UI: The XCode UI test type.
         /// </para>
         /// </li> </ul>
         /// </summary>

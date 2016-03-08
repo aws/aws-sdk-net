@@ -172,6 +172,10 @@ namespace Amazon.DeviceFarm
         /// Constant WEBKIT_LOG for ArtifactType
         /// </summary>
         public static readonly ArtifactType WEBKIT_LOG = new ArtifactType("WEBKIT_LOG");
+        /// <summary>
+        /// Constant XCTEST_LOG for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType XCTEST_LOG = new ArtifactType("XCTEST_LOG");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -828,6 +832,10 @@ namespace Amazon.DeviceFarm
         /// Constant XCTEST for TestType
         /// </summary>
         public static readonly TestType XCTEST = new TestType("XCTEST");
+        /// <summary>
+        /// Constant XCTEST_UI for TestType
+        /// </summary>
+        public static readonly TestType XCTEST_UI = new TestType("XCTEST_UI");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -988,6 +996,10 @@ namespace Amazon.DeviceFarm
         /// Constant XCTEST_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType XCTEST_TEST_PACKAGE = new UploadType("XCTEST_TEST_PACKAGE");
+        /// <summary>
+        /// Constant XCTEST_UI_TEST_PACKAGE for UploadType
+        /// </summary>
+        public static readonly UploadType XCTEST_UI_TEST_PACKAGE = new UploadType("XCTEST_UI_TEST_PACKAGE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
