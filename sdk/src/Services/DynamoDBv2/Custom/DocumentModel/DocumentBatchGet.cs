@@ -309,7 +309,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if PCL || DNX
+#if PCL|| UNITY || DNX
         private void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request)
 #else
         private void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request)

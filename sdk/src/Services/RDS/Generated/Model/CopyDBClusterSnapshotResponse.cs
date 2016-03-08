@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the CopyDBClusterSnapshot operation.
     /// </summary>
     public partial class CopyDBClusterSnapshotResponse : AmazonWebServiceResponse
     {

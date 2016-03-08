@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListRulesPackages operation.
     /// </summary>
     public partial class ListRulesPackagesResponse : AmazonWebServiceResponse
     {

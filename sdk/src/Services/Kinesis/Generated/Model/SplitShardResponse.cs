@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the SplitShard operation.
     /// </summary>
     public partial class SplitShardResponse : AmazonWebServiceResponse
     {

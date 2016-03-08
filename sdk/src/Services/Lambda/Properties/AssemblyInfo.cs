@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Lambda. AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- AWS Lambda. AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Lambda. AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Lambda. AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.")]
 #elif DNX
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- AWS Lambda. AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.")]
 #else
@@ -44,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.2")]
 [assembly: AssemblyFileVersion("3.2.2.0")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

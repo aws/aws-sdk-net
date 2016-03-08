@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the PutDestination operation.
     /// </summary>
     public partial class PutDestinationResponse : AmazonWebServiceResponse
     {

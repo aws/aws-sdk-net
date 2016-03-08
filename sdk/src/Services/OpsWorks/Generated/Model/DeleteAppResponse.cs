@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteApp operation.
     /// </summary>
     public partial class DeleteAppResponse : AmazonWebServiceResponse
     {

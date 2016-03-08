@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #elif DNX
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #else
@@ -44,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.2")]
 [assembly: AssemblyFileVersion("3.2.2.0")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListRules operation.
     /// </summary>
     public partial class ListRulesResponse : AmazonWebServiceResponse
     {

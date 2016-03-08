@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS CodeCommit. AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- AWS CodeCommit. AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS CodeCommit. AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS CodeCommit. AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.")]
 #elif DNX
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- AWS CodeCommit. AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.")]
 #else
@@ -44,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.2")]
 [assembly: AssemblyFileVersion("3.2.2.0")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

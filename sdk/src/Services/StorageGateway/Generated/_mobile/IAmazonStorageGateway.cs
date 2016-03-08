@@ -43,18 +43,23 @@ namespace Amazon.StorageGateway
     /// Use the following links to get started using the <i>AWS Storage Gateway Service API
     /// Reference</i>:
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
+    ///  <ul> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
     /// Storage Gateway Required Request Headers</a>: Describes the required headers that
-    /// you must send with every POST request to AWS Storage Gateway.</li> <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
+    /// you must send with every POST request to AWS Storage Gateway.</li> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
     /// Requests</a>: AWS Storage Gateway requires that you authenticate every request you
-    /// send; this topic describes how sign such a request.</li> <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
+    /// send; this topic describes how sign such a request.</li> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
     /// Responses</a>: Provides reference information about AWS Storage Gateway errors.</li>
-    /// <li> <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
+    /// <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
-    /// of requests and responses.</li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
+    /// of requests and responses.</li> <li><a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
     /// Storage Gateway Regions and Endpoints</a>: Provides a list of each of the regions
-    /// and endpoints available for use with AWS Storage Gateway. </li> </ul>
+    /// and endpoints available for use with AWS Storage Gateway. </li> </ul> <note>AWS Storage
+    /// Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon
+    /// EC2 API, EC2 expects resource IDs in lowercase. You must change your resource ID to
+    /// lowercase to use it with the EC2 API. For example, in Storage Gateway the ID for a
+    /// volume might be vol-1122AABB. When you use this ID with the EC2 API, you must change
+    /// it to vol-1122aabb. Otherwise, the EC2 API might not behave as expected.</note>
     /// </summary>
     public partial interface IAmazonStorageGateway : IDisposable
     {
@@ -248,6 +253,22 @@ namespace Amazon.StorageGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateTapesResponse> CreateTapesAsync(CreateTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTapeWithBarcode
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTapeWithBarcode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTapeWithBarcode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateTapeWithBarcodeResponse> CreateTapeWithBarcodeAsync(CreateTapeWithBarcodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -504,7 +525,7 @@ namespace Amazon.StorageGateway
         /// description of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -649,7 +670,7 @@ namespace Amazon.StorageGateway
         /// specify in your next request to fetch the next page of gateways.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DeleteTrust operation.
     /// </summary>
     public partial class DeleteTrustResponse : AmazonWebServiceResponse
     {

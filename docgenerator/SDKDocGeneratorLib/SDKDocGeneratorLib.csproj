@@ -83,6 +83,9 @@
     <Content Include="output-files\Index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="output-files\unity-v3-migration.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="output-files\v3-migration.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

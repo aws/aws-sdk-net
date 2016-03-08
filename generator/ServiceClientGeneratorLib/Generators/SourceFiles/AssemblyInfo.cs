@@ -75,7 +75,7 @@ using System.Runtime.CompilerServices;
             #line default
             #line hidden
             this.Write("\")]\r\n#elif PCL\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for ." +
-                    "NET (PCL)- ");
+                    "NET (PCL) -  ");
             
             #line 21 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
@@ -89,8 +89,8 @@ using System.Runtime.CompilerServices;
             
             #line default
             #line hidden
-            this.Write("\")]\r\n#elif DNX\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for ." +
-                    "NET (DNX)- ");
+            this.Write("\")]\r\n#elif UNITY\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for" +
+                    " .NET (Unity) - ");
             
             #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
@@ -100,6 +100,21 @@ using System.Runtime.CompilerServices;
             this.Write(". ");
             
             #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n#elif DNX\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for ." +
+                    "NET (DNX)- ");
+            
+            #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
+            
+            #line default
+            #line hidden
+            this.Write(". ");
+            
+            #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
             
             #line default
@@ -114,7 +129,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyCompany(""Amazon.com, Inc"")]
 [assembly: AssemblyCopyright(""Copyright 2009-");
             
-            #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DateTime.UtcNow.Year));
             
             #line default
@@ -140,21 +155,21 @@ using System.Runtime.CompilerServices;
 // [assembly: AssemblyVersion(""1.0.*"")]
 [assembly: AssemblyVersion(""");
             
-            #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceVersion));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceFileVersion));
             
             #line default
             #line hidden
-            this.Write("\")]\r\n\r\n#if WINDOWS_PHONE\r\n[assembly: System.CLSCompliant(false)]\r\n# else\r\n[assemb" +
-                    "ly: System.CLSCompliant(true)]\r\n#endif\r\n\r\n#if BCL\r\n[assembly: System.Security.Al" +
-                    "lowPartiallyTrustedCallers]\r\n#endif");
+            this.Write("\")]\r\n\r\n#if WINDOWS_PHONE || UNITY\r\n[assembly: System.CLSCompliant(false)]\r\n# else" +
+                    "\r\n[assembly: System.CLSCompliant(true)]\r\n#endif\r\n\r\n#if BCL\r\n[assembly: System.Se" +
+                    "curity.AllowPartiallyTrustedCallers]\r\n#endif");
             return this.GenerationEnvironment.ToString();
         }
     }

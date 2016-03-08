@@ -1,0 +1,186 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid><#=this.Session["ProjectGuid"]#></ProjectGuid>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+	<FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
+    <RootNamespace><#=this.Session["RootNamespace"]#></RootNamespace>
+	<BaseIntermediateOutputPath>obj\\<#=this.Session["BinSubfolder"]#></BaseIntermediateOutputPath>
+	<SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+	<ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+	<RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\\<#=this.Session["BinSubfolder"]#></OutputPath>
+    <DefineConstants>DEBUG;TRACE;AWS_APM_API;UNITY;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+<#
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+#>
+	<NoWarn>3001,3002,3003,3008,3009,<#=this.Session["SupressWarnings"]#></NoWarn>
+<#
+    }
+#>
+	<CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+	<DocumentationFile>bin\Debug\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\\<#=this.Session["BinSubfolder"]#></OutputPath>
+    <DefineConstants>TRACE;AWS_APM_API;UNITY;<#=this.Session["DefineConstants"]#></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+<#
+    if(this.Session.ContainsKey("SupressWarnings"))
+    {
+#>
+	<NoWarn><#=this.Session["SupressWarnings"]#></NoWarn>
+<#
+    }
+#>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+	<DocumentationFile>bin\Release\\<#=this.Session["BinSubfolder"]#>\\<#=this.Session["AssemblyName"]#>.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <!--
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+<#
+    if(this.Session.ContainsKey("KeyFilePath"))
+    {
+#>
+		<AssemblyOriginatorKeyFile><#=this.Session["KeyFilePath"]#></AssemblyOriginatorKeyFile>
+<#
+    }
+	else
+    {
+#>
+        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+<#
+    }
+#>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath><#=Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "PlaybackEngines", "windowsstandalonesupport", "Managed", "UnityEngine.dll")#></HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+<#
+	if(this.Session.ContainsKey("ReferenceDependencies"))
+    {
+		foreach(var dependency in (List<Dependency>)this.Session["ReferenceDependencies"])
+		{
+#>
+    <Reference Include="<#=dependency.Name#>">
+      <HintPath><#=Path.Combine((string)this.Session["UnityPath"], dependency.HintPath)#></HintPath>
+      <Private>True</Private>
+    </Reference>
+<#   
+		}
+	}
+#>
+  </ItemGroup>
+  <ItemGroup>
+<#
+    foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
+    {
+#>
+    <Compile Include="<#=subDirectory#>\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+<#
+    }
+#>
+  </ItemGroup>
+  <ItemGroup>
+<#
+    if(this.Session.ContainsKey("IndividualFileIncludes"))
+    {
+        foreach(string file in ((IList<string>)this.Session["IndividualFileIncludes"]))
+        {
+            if(file.EndsWith(".cs"))
+            {
+#>
+    <Compile Include="<#=file#>">
+      <SubType>Code</SubType>
+    </Compile>
+<#
+            }
+            else
+            {
+#>
+    <EmbeddedResource Include="<#=file#>">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+<#
+            }
+        }
+    }
+#>
+  </ItemGroup>
+<#
+    if(this.Session.ContainsKey("ProjectReferences"))
+    {
+        foreach(var projectReferences in (List<ProjectFileCreator.ProjectReference>)this.Session["ProjectReferences"])
+        {
+#>
+  <ItemGroup>
+    <ProjectReference Include="<#=projectReferences.IncludePath#>">
+        <Project><#=projectReferences.ProjectGuid#></Project>
+        <Name><#=projectReferences.Name#></Name>
+    </ProjectReference>
+  </ItemGroup>
+<#
+        }
+    }
+#>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+	<None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

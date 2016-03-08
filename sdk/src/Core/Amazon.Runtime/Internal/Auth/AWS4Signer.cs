@@ -29,6 +29,7 @@ namespace Amazon.Runtime.Internal.Auth
     /// </summary>
     public class AWS4Signer : AbstractAWSSigner
     {
+        
         public const string Scheme = "AWS4";
         public const string Algorithm = "HMAC-SHA256";
 
@@ -568,13 +569,14 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="requestHeaders">The set of proposed headers for the request</param>
         /// <returns>List of headers that must be included in the signature</returns>
         /// <remarks>For AWS4 signing, all headers are considered viable for inclusion</remarks>
-        protected static IDictionary<string, string> SortHeaders(IDictionary<string, string> requestHeaders)
+        protected static IDictionary<string, string> SortHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
         {
             var sortedHeaders = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var header in requestHeaders)
             {
                 sortedHeaders.Add(header.Key, header.Value);
             }
+            
             return sortedHeaders;
         }
 
@@ -584,12 +586,30 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="sortedHeaders">All request headers, sorted into canonical order</param>
         /// <returns>Canonicalized string of headers, with the header names in lower case.</returns>
-        protected static string CanonicalizeHeaders(IDictionary<string, string> sortedHeaders)
+        protected static string CanonicalizeHeaders(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
         {
-            if (sortedHeaders == null || sortedHeaders.Count == 0)
+            if (sortedHeaders == null || sortedHeaders.Count() == 0)
                 return string.Empty;
 
             var builder = new StringBuilder();
+            
+            #if UNITY
+            //incase of il2cpp scripting backend the sorted headers is broken.
+            //so we order by the keys again
+            if(AWSSDKUtils.IsIL2CPP)
+            {
+                foreach (var entry in sortedHeaders.OrderBy(kvp=>kvp.Key.ToLowerInvariant()))
+                {
+                    builder.Append(entry.Key.ToLowerInvariant());
+                    builder.Append(":");
+                    builder.Append(CompressSpaces(entry.Value));
+                    builder.Append("\n");
+                }
+                
+                return builder.ToString();
+            }
+            #endif
+            
             foreach (var entry in sortedHeaders)
             {
                 builder.Append(entry.Key.ToLowerInvariant());
@@ -597,7 +617,6 @@ namespace Amazon.Runtime.Internal.Auth
                 builder.Append(CompressSpaces(entry.Value));
                 builder.Append("\n");
             }
-
             return builder.ToString();
         }
 
@@ -606,15 +625,32 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="sortedHeaders">The headers included in the signature</param>
         /// <returns>Formatted string of header names</returns>
-        protected static string CanonicalizeHeaderNames(IDictionary<string, string> sortedHeaders)
+        protected static string CanonicalizeHeaderNames(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
         {
             var builder = new StringBuilder();
+            
+            #if UNITY
+            //incase of il2cpp scripting backend the sorted headers is broken.
+            //so we order by the keys again
+            if(AWSSDKUtils.IsIL2CPP)
+            {
+                foreach (var header in sortedHeaders.OrderBy(kvp =>kvp.Key.ToLowerInvariant()))
+                {
+                    if (builder.Length > 0)
+                        builder.Append(";");
+                    builder.Append(header.Key.ToLowerInvariant());
+                }
+                return builder.ToString();
+            }
+            #endif
+            
             foreach (var header in sortedHeaders)
             {
                 if (builder.Length > 0)
                     builder.Append(";");
                 builder.Append(header.Key.ToLowerInvariant());
             }
+            
             return builder.ToString();
         }
 

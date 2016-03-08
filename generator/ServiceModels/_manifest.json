@@ -7,7 +7,7 @@
             "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net35",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl", "_bcl+_dnx" ],
+            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl", "_bcl+unity", "_bcl+pcl", "_bcl+dnx", "_bcl+dnx+pcl" ],
             "nugetTargetPlatform": "net35"
         },
         {
@@ -17,7 +17,7 @@
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net45",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+_dnx" ],
+            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+unity", "_bcl+pcl", "_bcl45+pcl", "_bcl45+dnx", "_bcl+dnx", "_bcl+dnx+pcl" ],
             "nugetTargetPlatform": "net45"
         },
         {
@@ -27,9 +27,9 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+dnx+pcl"  ],
             "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
-            
+
             "extraTestProjects": [
                 "test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
                 "test\\CrossPlatformTests\\AndroidApp\\AndroidApp.csproj",
@@ -52,7 +52,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+dnx+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "MonoAndroid10"
         },
@@ -63,7 +63,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+dnx+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "xamarinios10"
         },
@@ -74,7 +74,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+dnx+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "netcore45"
         },
@@ -85,7 +85,7 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+dnx+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wpa81"
         },
@@ -96,12 +96,30 @@
             "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;WP_SL;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "wp8",
             "template": "WinPhoneSilverlight8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+dnx+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wp8"
+        },
+        {
+            "name": "Unity",
+            "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
+            "targetFramework": "v3.5",
+            "defineConstants": "",
+            "binSubFolder": "unity",
+            "template": "UnityProjectFile",
+            "platformCodeFolders": [ "_unity", "_bcl+unity" ]
         }
     ],
     "models": [
+        {
+            "active": true,
+
+            "model": "acm",
+            "base-name": "CertificateManager",
+            "region-lookup-name": "acm",
+            "authentication-service-name": "acm",
+            "synopsis": "AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform."
+        },
         {
             "active": true,
 
@@ -226,6 +244,16 @@
         {
             "active": true,
 
+            "model": "events",
+            "base-name": "CloudWatchEvents",
+            "region-lookup-name": "events",
+            "authentication-service-name": "events",
+            "service-url": "https://events.us-east-1.amazonaws.com",
+            "synopsis": "Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule."
+        },
+        {
+            "active": true,
+
             "model": "logs",
             "base-name": "CloudWatchLogs",
             "region-lookup-name": "logs",
@@ -234,14 +262,14 @@
             "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
         },
         {
-            "active" : true,
-            
-            "model" : "codecommit",
-            "base-name" : "CodeCommit",
-            "region-lookup-name" : "codecommit",
-            "authentication-service-name" : "codecommit",
+            "active": true,
+
+            "model": "codecommit",
+            "base-name": "CodeCommit",
+            "region-lookup-name": "codecommit",
+            "authentication-service-name": "codecommit",
             "service-url": "http://codecommit.us-east-1.amazonaws.com",
-            "synopsis" : "AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories."
+            "synopsis": "AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories."
         },
         {
             "active": true,
@@ -273,6 +301,7 @@
             "service-url": "http://cognito-identity.us-east-1.amazonaws.com",
             "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
             "dependencies": [ "SecurityToken" ],
+            "platforms": [ "Unity" ],
             "enable-xamarin-component": true
         },
         {
@@ -280,12 +309,41 @@
 
             "model": "cognito-sync",
             "base-name": "CognitoSync",
-            "nuget-package-title-suffix" : "(Low Level Service Client)",
             "region-lookup-name": "cognito-sync",
             "authentication-service-name": "cognito-sync",
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
-            "synopsis": "This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.",
-            "dependencies": [ "CognitoIdentity" ]
+            "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
+            "dependencies": [ "CognitoIdentity" ],
+            "pcl-variants": [ "iOS" ],
+            "use-pcl-project-dependencies": true,
+            "license-url": "http://aws.amazon.com/asl/",
+            "reference-dependencies": {
+                "Net35": [
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net20\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.Linq", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Linq.1.0.97.0\\lib\\net20\\System.Data.SQLite.Linq.dll" }
+                ],
+                "Net45": [
+                    { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net45\\System.Data.SQLite.dll" },
+                    { "name": "System.Data.SQLite.EF6", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.EF6.1.0.97.0\\lib\\net45\\System.Data.SQLite.EF6.dll" }
+                ],
+                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" } ],
+                "iOS": [
+                    { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" },
+                    { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.Ext.dll" }
+                ],
+                "Unity": [
+                    { "name": "System.Data", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\System.Data.dll" },
+                    { "name": "Mono.Data.SQLite", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll"}
+                ]
+        },
+            "nuget-dependencies": {
+                "Net35": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
+                "Net45": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
+                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
+                "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
+            },
+          "platforms": [ "Unity" ],
+          "enable-xamarin-component": true
         },
         {
             "active": true,
@@ -325,7 +383,7 @@
             "authentication-service-name": "ds",
             "service-url": "https://ds.us-east-1.amazonaws.com",
             "synopsis": "AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud."
-        },        
+        },
         {
             "active": true,
 
@@ -337,8 +395,8 @@
             "service-url": "https://dynamodb.us-east-1.amazonaws.com/",
             "max-retries": 10,
             "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.",
-            "enable-xamarin-component": true
-        
+            "enable-xamarin-component": true,
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -461,7 +519,18 @@
             "region-lookup-name": "firehose",
             "authentication-service-name": "firehose",
             "service-url": "https://firehose.us-east-1.amazonaws.com/",
-            "synopsis": "Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift."
+            "synopsis": "Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.",
+            "platforms": [ "Unity" ]
+        },
+        {
+            "active": true,
+
+            "model": "gamelift",
+            "base-name": "GameLift",
+            "region-lookup-name": "gamelift",
+            "authentication-service-name": "gamelift",
+            "service-url": "https://gamelift.us-east-1.amazonaws.com",
+            "synopsis": "Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games."
         },
         {
             "active": true,
@@ -497,7 +566,9 @@
             "authentication-service-name": "iam",
             "default-region": "USEast1",
             "synopsis": "AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.",
-            "tags":  [ "IAM" ]
+            "tags": [ "IAM" ],
+            "platforms": [ "Unity" ]
+
         },
         {
             "active": true,
@@ -535,7 +606,8 @@
             "region-lookup-name": "kinesis",
             "authentication-service-name": "kinesis",
             "service-url": "https://kinesis.us-east-1.amazonaws.com/",
-            "synopsis": "Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams."
+            "synopsis": "Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.",
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -544,7 +616,8 @@
             "base-name": "Lambda",
             "region-lookup-name": "lambda",
             "authentication-service-name": "lambda",
-            "synopsis": "AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information."
+            "synopsis": "AWS Lambda is a compute service that runs your code in response to events and automatically manages the compute resources for you, making it easy to build applications that respond quickly to new information.",
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -559,9 +632,9 @@
             "active": true,
 
             "model": "machinelearning",
-            "base-name" : "MachineLearning",
-            "region-lookup-name" : "machinelearning",
-            "authentication-service-name" : "machinelearning",
+            "base-name": "MachineLearning",
+            "region-lookup-name": "machinelearning",
+            "authentication-service-name": "machinelearning",
             "synopsis": "Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology."
         },
         {
@@ -588,6 +661,10 @@
                 "iOS": [
                     { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" },
                     { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.Ext.dll" }
+                ],
+                "Unity": [
+                    { "name": "System.Data", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\System.Data.dll" },
+                    { "name": "Mono.Data.SQLite", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll"}
                 ]
             },
             "nuget-dependencies": {
@@ -595,7 +672,8 @@
                 "Net45": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
                 "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
                 "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
-            }
+        },
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -653,7 +731,8 @@
             "region-lookup-name": "s3",
             "service-url": "https://s3.amazonaws.com/",
             "authentication-service-name": "s3",
-            "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage."
+            "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.",
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -665,7 +744,8 @@
             "authentication-service-name": "sts",
             "default-region": "USEast1",
             "synopsis": "The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.",
-            "tags":  [ "STS" ]
+            "tags": [ "STS" ],
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -685,7 +765,8 @@
             "region-lookup-name": "email",
             "service-url": "https://email.us-east-1.amazonaws.com/",
             "synopsis": "Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.",
-            "tags":  [ "SES" ]
+            "tags": [ "SES" ],
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -695,6 +776,7 @@
             "region-lookup-name": "sns",
             "authentication-service-name": "sns",
             "synopsis": "Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services.",
+            "platforms": [ "Unity" ],
             "tags":  [ "SNS" ]
         },
         {
@@ -712,7 +794,8 @@
             "base-name": "SQS",
             "region-lookup-name": "sqs",
             "authentication-service-name": "sqs",
-            "synopsis": "Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application."
+            "synopsis": "Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.",
+            "platforms": [ "Unity" ]
         },
         {
             "active": true,
@@ -744,8 +827,8 @@
             "synopsis": "AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection."
         },
         {
-            "active" : true,
-            
+            "active": true,
+
             "model": "workspaces",
             "base-name": "WorkSpaces",
             "region-lookup-name": "workspaces",

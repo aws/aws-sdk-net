@@ -18,16 +18,15 @@
  *  AWS SDK for .NET
  */
 
+using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Linq;
 using System.Net;
 using System.Text;
-
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Util
 {
@@ -49,7 +48,7 @@ namespace Amazon.Util
         private const int DefaultConnectionLimit = 50;
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
 
-        internal static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        public static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         public const int DefaultBufferSize = 8192;
 
@@ -881,5 +880,6 @@ namespace Amazon.Util
         }
 
         #endregion
+        
     }
 }

@@ -19,6 +19,13 @@ namespace ServiceClientGenerator
         /// </summary>
         public Dictionary<string, ProjectConfigurationData> CreatedProjectFiles { get; set; }
 
+        private GeneratorOptions Options;
+
+        public ProjectFileCreator(GeneratorOptions options)
+        {
+            Options = options;
+        }
+
         public void ExecuteCore(string coreFilesRoot, IEnumerable<ProjectFileConfiguration> projectFileConfigurations)
         {
             CreatedProjectFiles = new Dictionary<string, ProjectConfigurationData>();
@@ -69,9 +76,11 @@ namespace ServiceClientGenerator
 
                 if (newProject)
                     CreatedProjectFiles[projectName] = projectConfigurationData;
-                
+
                 var projectReferences = new List<ProjectReference>();
                 templateSession["ProjectReferences"] = projectReferences.OrderBy(x => x.Name).ToList();
+
+                templateSession["UnityPath"] = Options.UnityPath;
 
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, coreFilesRoot, projectFilename);
             }
@@ -91,13 +100,19 @@ namespace ServiceClientGenerator
             foreach (var projectFileConfiguration in projectFileConfigurations)
             {
                 if (projectFileConfiguration.IsSubProfile &&
-                    !(serviceConfiguration.PclVariants!=null && serviceConfiguration.PclVariants.Any(p=>p.Equals(projectFileConfiguration.Name))))
+                    !(serviceConfiguration.PclVariants != null && serviceConfiguration.PclVariants.Any(p => p.Equals(projectFileConfiguration.Name))))
                 {
                     // Skip sub profiles for service projects.
                     continue;
                 }
 
                 var projectType = projectFileConfiguration.Name;
+                if (projectType.Equals("Unity", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    if (!serviceConfiguration.SupportedInUnity)
+                        continue;
+                }
+
 
                 var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");
                 bool newProject = false;
@@ -131,7 +146,7 @@ namespace ServiceClientGenerator
                 var projectConfigurationData = new ProjectConfigurationData { ProjectGuid = projectGuid };
                 var projectName = Path.GetFileNameWithoutExtension(projectFilename);
 
-                if(newProject)
+                if (newProject)
                     CreatedProjectFiles[projectName] = projectConfigurationData;
 
                 var coreRuntimeProject = string.Concat(@"..\..\Core\AWSSDK.Core.", projectType, ".csproj");
@@ -142,7 +157,11 @@ namespace ServiceClientGenerator
                 {
                     foreach (var dependency in serviceConfiguration.ServiceDependencies)
                     {
-                        var dependencyProjectName = "AWSSDK." + dependency.Key + "." + projectType;
+                        var pt = projectType;
+                        if (!(pt.StartsWith(@"Net") || pt.StartsWith(@"Unity")) && serviceConfiguration.UsePclProjectDependencies)
+                            pt = @"PCL";
+
+                        var dependencyProjectName = "AWSSDK." + dependency.Key + "." + pt;
                         string dependencyProject;
                         if (string.Equals(dependency.Key, "Core", StringComparison.InvariantCultureIgnoreCase))
                         {
@@ -165,6 +184,8 @@ namespace ServiceClientGenerator
 
                 templateSession["ProjectReferences"] = projectReferences.OrderBy(x => x.Name).ToList();
 
+                templateSession["UnityPath"] = Options.UnityPath;
+
                 if (serviceConfiguration.ModelName.Equals("s3", StringComparison.OrdinalIgnoreCase) && projectType == "Net45")
                 {
                     templateSession["SystemReferences"] = new List<string> { "System.Net.Http" };
@@ -176,6 +197,8 @@ namespace ServiceClientGenerator
                     templateSession["ReferenceDependencies"] = serviceConfiguration.ReferenceDependencies[projectFileConfiguration.Name];
                     templateSession["NuGetTargetFramework"] = projectFileConfiguration.NuGetTargetPlatform;
                 }
+
+                
 
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
             }
@@ -193,10 +216,10 @@ namespace ServiceClientGenerator
         /// <param name="session"></param>
         /// <param name="serviceFilesRoot"></param>
         /// <param name="projectFilename"></param>
-        private void GenerateProjectFile(ProjectFileConfiguration projectFileConfiguration, 
+        private void GenerateProjectFile(ProjectFileConfiguration projectFileConfiguration,
                                          ProjectConfigurationData projectConfiguration,
-                                         IDictionary<string, object> session, 
-                                         string serviceFilesRoot, 
+                                         IDictionary<string, object> session,
+                                         string serviceFilesRoot,
                                          string projectFilename)
         {
             var projectName = Path.GetFileNameWithoutExtension(projectFilename);
@@ -212,9 +235,9 @@ namespace ServiceClientGenerator
             }
             catch (Exception)
             {
-                throw new ArgumentException("Project template name " 
+                throw new ArgumentException("Project template name "
                     + projectFileConfiguration.Template + " is not recognized");
-            }            
+            }
 
             GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, projectFilename, generatedContent);
             projectConfiguration.ConfigurationPlatforms = projectFileConfiguration.Configurations;
@@ -324,7 +347,7 @@ namespace ServiceClientGenerator
 
             }
 
-            
+
 
             //var platformSubFolders = projectFileConfiguration.PlatformCodeFolders;
             //sourceCodeFolders.AddRange(platformSubFolders.Select(folder => Path.Combine(@"Generated", folder)));

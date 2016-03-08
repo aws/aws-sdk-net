@@ -40,14 +40,14 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line 14 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
   
-    if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase))
+    if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase)
+        || ((string)this.Session["AssemblyName"]).Equals("AWSSDK.CognitoSync",StringComparison.CurrentCultureIgnoreCase))
     {
 
             
             #line default
             #line hidden
-            this.Write(@"  <package id=""SQLitePCL"" version=""3.8.7.2"" targetFramework=""xamarinios10"" />
-  <package id=""SQLitePCL"" version=""3.8.7.2"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+            this.Write(@"  <package id=""SQLitePCL"" version=""3.8.7.2"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
   <package id=""System.Data.SQLite"" version=""1.0.97.0"" targetFramework=""net35"" />
   <package id=""System.Data.SQLite.Core"" version=""1.0.97.0"" targetFramework=""net35"" />
   <package id=""System.Data.SQLite.Linq"" version=""1.0.97.0"" targetFramework=""net35"" />

@@ -27,6 +27,10 @@ With version 3 of the AWS SDK for .NET the SDK has been modularized. This means 
 
 This release of the AWS SDK for .NET adds support for Portable Class Library projects, which allow you to target multiple platforms including Windows Store, Windows Phone, and Xamarin on iOS and Android. More information on this can be found [here](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/index.html).
 
+## Unity Support
+
+This release of AWS SDK for .NET adds support for generating Assemblies for Unity. More information can be found [here](Unity.README.md)
+
 ### Silverlight support
 
 Due to Silverlight HTTP Caching, AWS SDK for .NET is not fully supported on Silverlight-based platforms such as Windows Phone 8.0. Some HTTP GET calls (such as S3's ListBuckets or ListObjects) will return the same results when called multiple times.
@@ -54,6 +58,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports.
 * [AWSSDK.AWSSupport](https://www.nuget.org/packages/AWSSDK.AWSSupport/)
 	* The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.
+* [AWSSDK.CertificateManager](https://www.nuget.org/packages/AWSSDK.CertificateManager/)
+	* AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform.
 * [AWSSDK.CloudFormation](https://www.nuget.org/packages/AWSSDK.CloudFormation/)
 	* AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
 * [AWSSDK.CloudFront](https://www.nuget.org/packages/AWSSDK.CloudFront/)
@@ -68,6 +74,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service.
 * [AWSSDK.CloudWatch](https://www.nuget.org/packages/AWSSDK.CloudWatch/)
 	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
+* [AWSSDK.CloudWatchEvents](https://www.nuget.org/packages/AWSSDK.CloudWatchEvents/)
+	* Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.
 * [AWSSDK.CloudWatchLogs](https://www.nuget.org/packages/AWSSDK.CloudWatchLogs/)
 	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
 * [AWSSDK.CodeCommit](https://www.nuget.org/packages/AWSSDK.CodeCommit/)
@@ -79,7 +87,7 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 * [AWSSDK.CognitoIdentity](https://www.nuget.org/packages/AWSSDK.CognitoIdentity/)
 	* Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.
 * [AWSSDK.CognitoSync](https://www.nuget.org/packages/AWSSDK.CognitoSync/)
-	* This is the low level service client for Amazon Cognito Sync. Most users of Amazon Cognito Sync should use the high level abstraction AWSSDK.SyncManager to interact with this service.
+	* Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.
 * [AWSSDK.ConfigService](https://www.nuget.org/packages/AWSSDK.ConfigService/)
 	* AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
 * [AWSSDK.DataPipeline](https://www.nuget.org/packages/AWSSDK.DataPipeline/)
@@ -112,6 +120,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.
 * [AWSSDK.ElasticTranscoder](https://www.nuget.org/packages/AWSSDK.ElasticTranscoder/)
 	* Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or 'transcode') media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.
+* [AWSSDK.GameLift](https://www.nuget.org/packages/AWSSDK.GameLift/)
+	* Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.
 * [AWSSDK.Glacier](https://www.nuget.org/packages/AWSSDK.Glacier/)
 	* Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.
 * [AWSSDK.IdentityManagement](https://www.nuget.org/packages/AWSSDK.IdentityManagement/)
@@ -181,7 +191,7 @@ uses the service models defined in the **generator\ServiceModels** folder.
 [sdk-source]: https://github.com/aws/aws-sdk-net
 [sdk-issues]: https://github.com/aws/aws-sdk-net/issues
 [sdk-license]: http://aws.amazon.com/apache2.0/
-[docs-api]: http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html
+[docs-api]: http://docs.aws.amazon.com/sdkfornet/v3/apidocs/Index.html
 [docs-signup]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-setup.html
 [aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-roles.html
 [docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/welcome.html

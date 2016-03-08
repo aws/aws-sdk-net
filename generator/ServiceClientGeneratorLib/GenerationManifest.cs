@@ -36,6 +36,7 @@ namespace ServiceClientGenerator
             public const string SynopsisKey = "synopsis";
             public const string DnxSupportKey = "dnx-support";
             public const string DependenciesKey = "dependencies";
+            public const string PlatformsKey = "platforms";
             public const string ReferenceDependenciesKey = "reference-dependencies";
             public const string NugetDependenciesKey = "nuget-dependencies";
             public const string PclVariantsKey = "pcl-variants";
@@ -45,6 +46,9 @@ namespace ServiceClientGenerator
             public const string ParentBaseNameKey = "parent-base-name";
             public const string EnableXamarinComponent = "enable-xamarin-component";
             public const string TagsKey = "tags";
+            public const string UsePclProjectDependenciesKey = "use-pcl-project-dependencies";
+            public const string LicenseUrlKey = "license-url";
+
         }
 
         abstract class ProjectsSectionKeys
@@ -63,6 +67,11 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// URL for Apache License 2.0
+        /// </summary>
+        public const string ApacheLicenseURL = @"http://aws.amazon.com/apache2.0/";
+
+        /// <summary>
         /// The set of services declared in the manifest as supporting generation. 
         /// </summary>
         public IEnumerable<ServiceConfiguration> ServiceConfigurations { get; private set; }
@@ -74,7 +83,7 @@ namespace ServiceClientGenerator
         /// specific project file for a service.
         /// </summary>
         public IEnumerable<ProjectFileConfiguration> ProjectFileConfigurations { get; private set; }
- 
+
         public string CoreVersion
         {
             get
@@ -142,7 +151,7 @@ namespace ServiceClientGenerator
                 var activeNode = modelNode[ModelsSectionKeys.ActiveKey];
                 if (activeNode != null && activeNode.IsBoolean && !(bool)activeNode) // skip models with active set to false
                     continue;
-                
+
                 // A new config that the api generates from
                 var modelName = modelNode[ModelsSectionKeys.ModelKey].ToString();
                 var config = new ServiceConfiguration
@@ -157,18 +166,20 @@ namespace ServiceClientGenerator
                     ServiceUrl = modelNode[ModelsSectionKeys.ServiceUrlKey] != null ? modelNode[ModelsSectionKeys.ServiceUrlKey].ToString() : null,
                     DefaultRegion = modelNode[ModelsSectionKeys.DefaultRegionKey] != null ? modelNode[ModelsSectionKeys.DefaultRegionKey].ToString() : null,
                     GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
+                    SupportedMobilePlatforms = modelNode[ModelsSectionKeys.PlatformsKey] == null ? new List<string>() : (from object pcf in modelNode[ModelsSectionKeys.PlatformsKey]
+                                                                                                                         select pcf.ToString()).ToList(),
                     EnableXamarinComponent = modelNode.PropertyNames.Contains(ModelsSectionKeys.EnableXamarinComponent) && (bool)modelNode[ModelsSectionKeys.EnableXamarinComponent]
                 };
 
                 if (modelNode[ModelsSectionKeys.PclVariantsKey] != null)
-                {                    
+                {
                     config.PclVariants = (from object pcf in modelNode[ModelsSectionKeys.PclVariantsKey]
                      select pcf.ToString()).ToList();
                 }
 
                 if (modelNode[ModelsSectionKeys.NugetPackageTitleSuffix] != null)
                     config.NugetPackageTitleSuffix = modelNode[ModelsSectionKeys.NugetPackageTitleSuffix].ToString();
-                
+
 
                 if (modelNode[ModelsSectionKeys.ReferenceDependenciesKey] != null)
                 {
@@ -181,7 +192,7 @@ namespace ServiceClientGenerator
                             var platformDependency = new Dependency
                             {
                                 Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
-                                Version = item[ModelsSectionKeys.DependencyVersionKey].ToString(),
+                                Version = item.PropertyNames.Contains(ModelsSectionKeys.DependencyVersionKey) ? item[ModelsSectionKeys.DependencyVersionKey].ToString() : "0.0.0.0",
                                 HintPath = item[ModelsSectionKeys.DependencyHintPathKey].ToString(),
                             };
                             platformDependencies.Add(platformDependency);
@@ -212,7 +223,7 @@ namespace ServiceClientGenerator
                 config.Tags = new List<string>();
                 if (modelNode[ModelsSectionKeys.TagsKey] != null)
                 {
-                    foreach(JsonData tag in modelNode[ModelsSectionKeys.TagsKey])
+                    foreach (JsonData tag in modelNode[ModelsSectionKeys.TagsKey])
                     {
                         config.Tags.Add(tag.ToString());
                     }
@@ -246,9 +257,22 @@ namespace ServiceClientGenerator
                     }
                 }
 
+                if (modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey] != null && modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey].IsBoolean)
+                    config.UsePclProjectDependencies = bool.Parse(modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey].ToString());
+                else
+                    config.UsePclProjectDependencies = false;
+
+                if (modelNode[ModelsSectionKeys.LicenseUrlKey] != null && modelNode[ModelsSectionKeys.LicenseUrlKey].IsString)
+                {
+                    config.LicenseUrl = modelNode[ModelsSectionKeys.LicenseUrlKey].ToString();
+                    config.RequireLicenseAcceptance = true;
+                }
+                else
+                    config.LicenseUrl = ApacheLicenseURL;
+
                 var serviceName = config.ServiceNameRoot;
                 var versionInfoJson = versions[serviceName];
-                if(versionInfoJson != null)
+                if (versionInfoJson != null)
                 {
                     var dependencies = versionInfoJson["Dependencies"];
                     foreach (var name in dependencies.PropertyNames)
@@ -271,6 +295,7 @@ namespace ServiceClientGenerator
                     config.ServiceDependencies["Core"] = coreVersion;
                     var versionTokens = coreVersion.Split('.');
                     config.ServiceFileVersion = string.Format("{0}.{1}.0.0", versionTokens[0], versionTokens[1]);
+                    config.InPreview = this.DefaultToPreview;
                 }
 
                 // The parent model for current model, if set, the client will be generated
@@ -322,10 +347,10 @@ namespace ServiceClientGenerator
                     CompilationConstants = projectNode[ProjectsSectionKeys.DefineConstantsKey].ToString(),
                     BinSubFolder = projectNode[ProjectsSectionKeys.BinSubFolderKey].ToString(),
                     Template = projectNode[ProjectsSectionKeys.TemplateKey].ToString(),
-                    NuGetTargetPlatform = projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey].ToString()
+                    NuGetTargetPlatform = projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey] == null ? string.Empty : projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey].ToString()
                 };
 
-                config.Configurations = (from object bc in projectNode[ProjectsSectionKeys.ConfigurationsKey] 
+                config.Configurations = (from object bc in projectNode[ProjectsSectionKeys.ConfigurationsKey]
                                          select bc.ToString()).ToList();
                 config.PlatformCodeFolders = (from object pcf in projectNode[ProjectsSectionKeys.PlatformCodeFoldersKey]
                                               select pcf.ToString()).ToList();
@@ -360,7 +385,7 @@ namespace ServiceClientGenerator
 
                 projectConfigurations.Add(config);
             }
-            
+
             ProjectFileConfigurations = projectConfigurations;
         }
 
@@ -405,7 +430,7 @@ namespace ServiceClientGenerator
 
         private GenerationManifest()
         {
-            
+
         }
     }
 }

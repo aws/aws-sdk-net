@@ -79,8 +79,23 @@ namespace Amazon.Runtime.Internal
             requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
             requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
 
+#if !UNITY
             requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
             + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync");
+#else
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = requestContext.ClientConfig.UserAgent
+            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync")
+            + " UnityWWW";
+            }
+            else
+            {
+                requestContext.Request.Headers[HeaderKeys.XAmzUserAgentHeader] = requestContext.ClientConfig.UserAgent
+            + " " + (executionContext.RequestContext.IsAsync ? "ClientAsync" : "ClientSync")
+            + " UnityWebRequest";
+            }
+#endif
 
 #if DNX
             var method = requestContext.Request.HttpMethod.ToUpperInvariant();

@@ -215,7 +215,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// This parameter is deprecated; use <code>StartTime</code> instead.
+        /// This parameter is deprecated.
         /// </para>
         /// </summary>
         public DateTime Time

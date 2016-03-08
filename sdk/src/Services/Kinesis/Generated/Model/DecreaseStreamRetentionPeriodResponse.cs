@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DecreaseStreamRetentionPeriod operation.
     /// </summary>
     public partial class DecreaseStreamRetentionPeriodResponse : AmazonWebServiceResponse
     {

@@ -76,6 +76,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.Configurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EbsBlockDevices", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EbsBlockDevice, EbsBlockDeviceUnmarshaller>(EbsBlockDeviceUnmarshaller.Instance);
+                    unmarshalledObject.EbsBlockDevices = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EbsOptimized", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -1,4 +1,5 @@
-﻿namespace ServiceClientGenerator
+﻿using System.IO;
+namespace ServiceClientGenerator
 {
     /// <summary>
     /// Command line options for the AWS SDK code generator.
@@ -65,6 +66,11 @@
         public bool Clean { get; set; }
 
         /// <summary>
+        /// The path to the Unity installation directory. Defaults to 'C:\Program Files\Unity'.
+        /// </summary>
+        public string UnityPath { get; set; }
+
+        /// <summary>
         /// The Root folder beneath which all the samples are present. Samples are used for xamarin components.
         /// </summary>
         public string SamplesRootFolder { get; set; }
@@ -92,11 +98,14 @@
 
             // default paths are relative to executing generator assembly
             // in bin/debug or bin/release
-            Manifest = @"..\..\..\ServiceModels\_manifest.json";
-            Versions = @"..\..\..\ServiceModels\_sdk-versions.json";
-            ModelsFolder = @"..\..\..\ServiceModels";
-            SdkRootFolder = @"..\..\..\..\sdk";
-            SamplesRootFolder = @"..\..\..\..\aws-sdk-net-samples";
+            Manifest = Path.Combine("..", "..", "..", "ServiceModels", "_manifest.json");
+            Versions = Path.Combine("..", "..", "..", "ServiceModels", "_sdk-versions.json");
+            ModelsFolder = Path.Combine("..", "..", "..", "ServiceModels");
+            SdkRootFolder = Path.Combine("..", "..", "..", "..", "sdk");
+            SamplesRootFolder = Path.Combine("..", "..", "..", "..", "aws-sdk-net-samples");
+
+            //TODO: fix for OSX environments
+            UnityPath = Path.Combine("C:\\", "Program Files", "Unity");
 
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;

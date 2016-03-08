@@ -37,35 +37,42 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// </summary>
     public partial class SQLiteEventStore : IEventStore
     {
-        static SQLiteEventStore()
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
         {
-            _dbFileFullPath = InternalSDKUtils.DetermineAppLocalStoragePath(dbFileName);
-            SetupSQLiteEventStore();
+            
         }
 
         /// <summary>
         /// Sets up SQLite database.
         /// </summary>
-        private static void SetupSQLiteEventStore()
+        private void SetupSQLiteEventStore()
         {
+            this.DBfileFullPath = InternalSDKUtils.DetermineAppLocalStoragePath(dbFileName);
+
             string vacuumCommand = "PRAGMA auto_vacuum = 1";
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "CREATE TABLE IF NOT EXISTS {0} ({1} TEXT NOT NULL,{2} TEXT NOT NULL UNIQUE,{3} TEXT NOT NULL, {4}  INTEGER NOT NULL DEFAULT 0 )",
                 TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);
 
             lock (_lock)
             {
-                using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
+                using (var connection = new SQLiteConnection("Data Source=" + this.DBfileFullPath + ";Version=3;"))
                 {
                     try
                     {
-                        if (!File.Exists(_dbFileFullPath))
+                        if (!File.Exists(this.DBfileFullPath))
                         {
-                            string directory = Path.GetDirectoryName(_dbFileFullPath);
+                            string directory = Path.GetDirectoryName(this.DBfileFullPath);
                             if (!Directory.Exists(directory))
                             {
                                 Directory.CreateDirectory(directory);
                             }
-                            SQLiteConnection.CreateFile(_dbFileFullPath);
+                            SQLiteConnection.CreateFile(this.DBfileFullPath);
                         }
 
                         connection.Open();
@@ -112,7 +119,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 string sqlCommand = string.Format(CultureInfo.InvariantCulture, "INSERT INTO {0}  ({1},{2},{3}) values(@event,@id,@appID)", TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME);
                 lock (_lock)
                 {
-                    using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
+                    using (var connection = new SQLiteConnection("Data Source=" + this.DBfileFullPath + ";Version=3;"))
                     {
                         try
                         {
@@ -148,7 +155,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             SQLiteConnection connection = null;
             lock (_lock)
             {
-                using (connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
+                using (connection = new SQLiteConnection("Data Source=" + this.DBfileFullPath + ";Version=3;"))
                 {
                     try
                     {
@@ -181,7 +188,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0} WHERE {1}  = @appID ORDER BY {2},   ROWID LIMIT {3} ", TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);
             lock (_lock)
             {
-                using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
+                using (var connection = new SQLiteConnection("Data Source=" + this.DBfileFullPath + ";Version=3;"))
                 {
                     try
                     {
@@ -224,7 +231,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             long count = 0;
 			
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT COUNT(*) C FROM {0} where {1} = @appID", TABLE_NAME, MA_APP_ID_COLUMN_NAME);
-            using (var connection = new SQLiteConnection("Data Source=" + _dbFileFullPath + ";Version=3;"))
+            using (var connection = new SQLiteConnection("Data Source=" + this.DBfileFullPath + ";Version=3;"))
             {
                 try
                 {
@@ -258,7 +265,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             get
             {
-                FileInfo fileInfo = new FileInfo(_dbFileFullPath);
+                FileInfo fileInfo = new FileInfo(this.DBfileFullPath);
                 return fileInfo.Length;
             }
         }

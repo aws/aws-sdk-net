@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents a list of policy names returned from a successful <code>ListIdentityPolicies</code>
-    /// request.
+    /// This is the response object from the ListIdentityPolicies operation.
     /// </summary>
     public partial class ListIdentityPoliciesResponse : AmazonWebServiceResponse
     {

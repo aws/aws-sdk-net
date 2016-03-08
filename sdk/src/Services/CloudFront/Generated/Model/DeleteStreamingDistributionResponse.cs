@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteStreamingDistribution operation.
     /// </summary>
     public partial class DeleteStreamingDistributionResponse : AmazonWebServiceResponse
     {

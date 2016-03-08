@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteIntegrationResponse operation.
     /// </summary>
     public partial class DeleteIntegrationResponseResponse : AmazonWebServiceResponse
     {

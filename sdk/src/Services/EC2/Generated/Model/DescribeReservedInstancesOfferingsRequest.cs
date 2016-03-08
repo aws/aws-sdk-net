@@ -29,16 +29,16 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstancesOfferings operation.
-    /// Describes Reserved instance offerings that are available for purchase. With Reserved
-    /// instances, you purchase the right to launch instances for a period of time. During
+    /// Describes Reserved Instance offerings that are available for purchase. With Reserved
+    /// Instances, you purchase the right to launch instances for a period of time. During
     /// that time period, you do not receive insufficient capacity errors, and you pay a lower
     /// usage rate than the rate charged for On-Demand instances for the actual time used.
     /// 
     ///  
     /// <para>
-    /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+    /// If you have listed your own Reserved Instances for sale in the Reserved Instance Marketplace,
     /// they will be excluded from these results. This is to ensure that you do not purchase
-    /// your own Reserved instances.
+    /// your own Reserved Instances.
     /// </para>
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in which the Reserved instance can be used.
+        /// The Availability Zone in which the Reserved Instance can be used.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -87,17 +87,17 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone where the Reserved instance
+        /// <code>availability-zone</code> - The Availability Zone where the Reserved Instance
         /// can be used.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>duration</code> - The duration of the Reserved instance (for example, one year
+        /// <code>duration</code> - The duration of the Reserved Instance (for example, one year
         /// or three years), in seconds (<code>31536000</code> | <code>94608000</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>fixed-price</code> - The purchase price of the Reserved instance (for example,
+        /// <code>fixed-price</code> - The purchase price of the Reserved Instance (for example,
         /// 9800.0).
         /// </para>
         ///  </li> <li> 
@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>product-description</code> - The Reserved instance product platform description.
+        /// <code>product-description</code> - The Reserved Instance product platform description.
         /// Instances that include <code>(Amazon VPC)</code> in the product platform description
         /// will only be displayed to EC2-Classic account holders and are for use with Amazon
         /// VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE
@@ -126,11 +126,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>reserved-instances-offering-id</code> - The Reserved instances' offering ID.
+        /// <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>usage-price</code> - The usage price of the Reserved instance, per hour (for
+        /// <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for
         /// example, 0.84).
         /// </para>
         ///  </li> </ul>
@@ -168,9 +168,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTenancy. 
         /// <para>
-        /// The tenancy of the instances covered by the reservation. A Reserved instance with
+        /// The tenancy of the instances covered by the reservation. A Reserved Instance with
         /// a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant
-        /// hardware (i.e., Dedicated instances).
+        /// hardware (i.e., Dedicated Instances).
         /// </para>
         ///  
         /// <para>
@@ -320,9 +320,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
-        /// The Reserved instance offering type. If you are using tools that predate the 2011-11-01
+        /// The Reserved Instance offering type. If you are using tools that predate the 2011-11-01
         /// API version, you only have access to the <code>Medium Utilization</code> Reserved
-        /// instance offering type. 
+        /// Instance offering type. 
         /// </para>
         /// </summary>
         public OfferingTypeValues OfferingType
@@ -340,7 +340,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductDescription. 
         /// <para>
-        /// The Reserved instance product platform description. Instances that include <code>(Amazon
+        /// The Reserved Instance product platform description. Instances that include <code>(Amazon
         /// VPC)</code> in the description are for use with Amazon VPC.
         /// </para>
         /// </summary>
@@ -359,7 +359,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesOfferingIds. 
         /// <para>
-        /// One or more Reserved instances offering IDs.
+        /// One or more Reserved Instances offering IDs.
         /// </para>
         /// </summary>
         public List<string> ReservedInstancesOfferingIds

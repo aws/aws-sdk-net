@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon API Gateway. Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Amazon API Gateway. Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon API Gateway. Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon API Gateway. Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.")]
 #elif DNX
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon API Gateway. Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.")]
 #else
@@ -44,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.2")]
 [assembly: AssemblyFileVersion("3.2.2.0")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteConfigurationTemplate operation.
     /// </summary>
     public partial class DeleteConfigurationTemplateResponse : AmazonWebServiceResponse
     {

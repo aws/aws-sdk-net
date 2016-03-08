@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a Reserved instance listing state.
+    /// Describes a Reserved Instance listing state.
     /// </summary>
     public partial class InstanceCount
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of listed Reserved instances in the state specified by the <code>state</code>.
+        /// The number of listed Reserved Instances in the state specified by the <code>state</code>.
         /// </para>
         /// </summary>
         public int Count
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The states of the listed Reserved instances.
+        /// The states of the listed Reserved Instances.
         /// </para>
         /// </summary>
         public ListingState State

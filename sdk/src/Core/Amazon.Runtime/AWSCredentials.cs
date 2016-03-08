@@ -562,7 +562,7 @@ namespace Amazon.Runtime
             private static List<string> SplitData(string line)
             {
                 var split = line
-                    .Split(new string[] { keyValueSeparator }, StringSplitOptions.None)
+                    .Split(new string[] { keyValueSeparator }, 2, StringSplitOptions.None)
                     .Select(s => s.Trim())
                     .Where(s => !string.IsNullOrEmpty(s))
                     .ToList();

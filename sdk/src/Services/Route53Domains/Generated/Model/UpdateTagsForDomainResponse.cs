@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the UpdateTagsForDomain operation.
     /// </summary>
     public partial class UpdateTagsForDomainResponse : AmazonWebServiceResponse
     {

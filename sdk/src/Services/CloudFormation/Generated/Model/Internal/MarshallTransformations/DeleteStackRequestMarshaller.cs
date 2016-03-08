@@ -58,6 +58,15 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetRetainResources())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.RetainResources)
+                    {
+                        request.Parameters.Add("RetainResources" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));

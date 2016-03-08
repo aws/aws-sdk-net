@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents a token used for domain ownership verification.
+    /// This is the response object from the VerifyDomainIdentity operation.
     /// </summary>
     public partial class VerifyDomainIdentityResponse : AmazonWebServiceResponse
     {

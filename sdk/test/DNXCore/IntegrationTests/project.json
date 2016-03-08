@@ -70,7 +70,10 @@
         "StorageGateway"                  : "1.0.0-*",
         "WAF"                             : "1.0.0-*",
         "WorkSpaces"                      : "1.0.0-*",
-        "ECR"                             : "1.0.0-*"
+        "ECR"                             : "1.0.0-*",
+        "CertificateManager"              : "1.0.0-*",
+        "CloudWatchEvents"                : "1.0.0-*",
+        "GameLift"                        : "1.0.0-*"
     },
     "commands"     : {
         "test" : "xunit.runner.dnx"

@@ -12,7 +12,6 @@
 **/obj/
 **/TestResults/
 **/Temp/
-**/NuGet.exe
 **/buildlogs/
 **/.vs/
 
@@ -22,6 +21,8 @@
 sdk/packages/**
 sdk/test/PCLTests/AndroidTests/packages/**
 sdk/.vs/**
+
+**/fxcop-report-*.xml
 
 docgenerator/.vs/**
 
@@ -33,8 +34,20 @@ Include/**
 **/*.userprefs
 /sdk/test/CrossPlatformTests/CommonTests/Resources/settings.json
 packages
-/sdk/xamarin-components/SimpleNotificationService/*.xam
-/sdk/xamarin-components/CognitoIdentity/*.xam
-/sdk/xamarin-components/DynamoDBv2/*.xam
-/sdk/xamarin-components/MobileAnalytics/*.xam
-/sdk/xamarin-components/S3/*.xam
+/sdk/xamarin-components/**/*.xam
+/sdk/test/Unity/Unity3DTests/Assets/Resources/settings.json
+/sdk/test/Unity/Unity3DTests/Assets/Resources/awsconfig.xml
+/sdk/test/Unity/Unity3DTests/Unity3DTests.CSharp.csproj
+/sdk/test/Unity/Unity3DTests/Unity3DTests.CSharp.Editor.csproj
+/sdk/test/Unity/Unity3DTests/Unity3DTests.sln
+/sdk/test/Unity/Unity3DTests/Library
+/sdk/test/Unity/Unity3DTests/Assets/SDK/*.dll
+/sdk/test/Unity/Unity3DTests/Assets/SDK/*.pdb
+
+*.bak
+generator/.vs/**
+*.mdb
+*.apk
+*.meta
+/sdk/test/Unity/AWSAndroidHelper/.settings
+/sdk/test/Unity3DTests/Assets/SDK/*.mdb

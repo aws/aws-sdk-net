@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CloneFrom. 
         /// <para>
-        /// The name of the <a>RestApi</a> that you want to clone from.
+        /// The Id of the <a>RestApi</a> that you want to clone from.
         /// </para>
         /// </summary>
         public string CloneFrom

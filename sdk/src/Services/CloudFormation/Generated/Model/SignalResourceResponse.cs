@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the SignalResource operation.
     /// </summary>
     public partial class SignalResourceResponse : AmazonWebServiceResponse
     {

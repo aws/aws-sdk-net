@@ -25,6 +25,7 @@ using System.Globalization;
 
 using Amazon.Util;
 using Amazon.Util.Internal;
+using System.Collections.Generic;
 
 namespace Amazon
 {
@@ -81,9 +82,16 @@ namespace Amazon
         internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
+        
+        // for reading from awsconfigs.xml
+        private static object _lock = new object();
+        private static bool configPresent = true;
+        private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
 
         // New config section
         private static RootConfig _rootConfig = new RootConfig();
+
+        
 
         #endregion
 
@@ -426,11 +434,35 @@ namespace Amazon
 
         #region Internal members
 
-        internal static event PropertyChangedEventHandler PropertyChanged;
         internal const string LoggingDestinationProperty = "LogTo";
+
+        internal static PropertyChangedEventHandler mPropertyChanged;
+        /// <summary>
+        /// Lock for SomeEvent delegate access.
+        /// </summary>
+        internal static readonly object propertyChangedLock = new object();
+
+        internal static event PropertyChangedEventHandler PropertyChanged
+        {
+            add
+            {
+                lock (propertyChangedLock)
+                {
+                    mPropertyChanged += value;
+                }
+            }
+            remove
+            {
+                lock (propertyChangedLock)
+                {
+                    mPropertyChanged -= value;
+                }
+            }
+        }
+
         internal static void OnPropertyChanged(string name)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
+            PropertyChangedEventHandler handler = mPropertyChanged;
             if (handler != null)
             {
                 handler(null, new PropertyChangedEventArgs(name));
@@ -506,24 +538,29 @@ namespace Amazon
         /// No logging
         /// </summary>
         None = 0,
-        
+
         /// <summary>
         /// Log using log4net
         /// </summary>
         Log4Net = 1,
-        
+
         /// <summary>
         /// Log using System.Diagnostics
         /// </summary>
         SystemDiagnostics = 2
-            
-#if PCL    
+#if PCL 
         ,
-
         /// <summary>
         /// Log to a file
         /// </summary>
         File = 4
+#endif
+#if UNITY
+        ,
+        /// <summary>
+        /// Log using UnityEngine.Debug.
+        /// </summary>
+        UnityLogger = 8
 #endif
     }
 

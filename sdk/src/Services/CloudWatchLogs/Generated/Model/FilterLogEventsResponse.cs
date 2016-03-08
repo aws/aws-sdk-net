@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the FilterLogEvents operation.
     /// </summary>
     public partial class FilterLogEventsResponse : AmazonWebServiceResponse
     {

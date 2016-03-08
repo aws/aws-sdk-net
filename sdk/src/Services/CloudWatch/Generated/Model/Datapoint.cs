@@ -135,10 +135,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        ///  The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated Universal
-        /// Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments
-        /// such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-        /// stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. 
+        ///  The time stamp used for the datapoint. 
         /// </para>
         /// </summary>
         public DateTime Timestamp

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DeleteEventSubscription operation.
     /// </summary>
     public partial class DeleteEventSubscriptionResponse : AmazonWebServiceResponse
     {

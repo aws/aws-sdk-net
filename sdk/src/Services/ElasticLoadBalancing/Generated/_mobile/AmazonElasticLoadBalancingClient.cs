@@ -751,7 +751,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <code>ELBSample-</code> prefix.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -812,7 +812,7 @@ namespace Amazon.ElasticLoadBalancing
         /// configurations for a load balancer.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -865,7 +865,7 @@ namespace Amazon.ElasticLoadBalancing
         /// Describes the specified the load balancers. If no load balancers are specified, the
         /// call describes all of your load balancers.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -32,6 +33,29 @@ namespace Amazon.DynamoDBv2.DataModel
             this.s3ClientCache.GetClient(this.RegionAsEndpoint).EndUploadObjectFromFilePath(asyncResult);
         }
 
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadStream operation.
+        /// </summary>
+        /// <param name="sourcePath">Path of the file to be uploaded.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property</param>
+        public IAsyncResult BeginUploadStream(Stream stream, AsyncCallback callback, object state)
+        {
+            return this.s3ClientCache.GetClient(this.RegionAsEndpoint).BeginUploadObjectFromStream(
+                this.linker.s3.bucket, this.linker.s3.key, stream, null, callback, state);
+
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UploadStream operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadStream.</param>
+        public void EndUploadStream(IAsyncResult asyncResult)
+        {
+            this.s3ClientCache.GetClient(this.RegionAsEndpoint).EndUploadObjectFromStream(asyncResult);
+        }
+
         #endregion
 
         #region Download/GetObject
@@ -56,6 +80,27 @@ namespace Amazon.DynamoDBv2.DataModel
         public void EndDownloadTo(IAsyncResult asyncResult)
         {
             this.s3ClientCache.GetClient(this.RegionAsEndpoint).EndDownloadToFilePath(asyncResult);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the OpenStream operation.
+        /// </summary>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property</param>
+        public IAsyncResult BeginOpenStream(AsyncCallback callback, object state)
+        {
+            return this.s3ClientCache.GetClient(this.RegionAsEndpoint).BeginGetObjectStream(
+                this.linker.s3.bucket, this.linker.s3.key, null, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the OpenStream operation.
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginOpenStream.</param>
+        public Stream EndOpenStream(IAsyncResult asyncResult)
+        {
+            return this.s3ClientCache.GetClient(this.RegionAsEndpoint).EndGetObjectStream(asyncResult);
         }
 
         #endregion

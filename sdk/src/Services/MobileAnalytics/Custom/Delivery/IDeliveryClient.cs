@@ -21,7 +21,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// <summary>
     /// The interface for delivery client.
     /// </summary>
-    public partial interface IDeliveryClient
+    public partial interface IDeliveryClient : IDisposable
     {
         /// <summary>
         /// Enqueues the events for delivery. The event is stored in an <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.IEventStore"/>.

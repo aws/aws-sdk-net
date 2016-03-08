@@ -1468,7 +1468,7 @@ namespace Amazon.SimpleSystemsManagement
         /// If you specify an instance ID that is not valid or an instance that you do not own,
         /// you receive an error.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1743,7 +1743,7 @@ namespace Amazon.SimpleSystemsManagement
         /// is created for each requested instance ID. ListCommandInvocations provide status about
         /// command execution.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1904,7 +1904,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Lists the commands requested by users of the AWS account.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2026,7 +2026,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Describes one or more of your SSM documents.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

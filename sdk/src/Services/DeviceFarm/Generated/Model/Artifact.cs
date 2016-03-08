@@ -111,6 +111,14 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// APPIUM_PYTHON_OUTPUT: The Appium Python output type.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_PYTHON_XML_OUTPUT: The Appium Python XML output type.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// APPIUM_SERVER_OUTPUT: The Appium server output type.
         /// </para>
         /// </li> <li>

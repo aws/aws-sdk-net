@@ -1,0 +1,17 @@
+{ 	
+	"noArgOverloads": [
+		"ListRules"
+	],
+	"shapeModifiers": {
+		"PutTargetsResponse": {
+            "exclude": [
+                "FailedEntryCount"
+            ]
+        },
+		"RemoveTargetsResponse": {
+            "exclude": [
+                "FailedEntryCount"
+            ]
+        }
+	}
+}

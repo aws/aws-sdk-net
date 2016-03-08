@@ -552,7 +552,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// If AWS Config has no current evaluation results for the rule, it returns <code>InsufficientData</code>.
+        /// If AWS Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>.
         /// This result might indicate one of the following conditions: <ul> <li>AWS Config has
         /// never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
         /// action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
@@ -619,7 +619,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// If AWS Config has no current evaluation results for the resource, it returns <code>InsufficientData</code>.
+        /// If AWS Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
         /// This result might indicate one of the following conditions about the rules that evaluate
         /// the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To
         /// check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action
@@ -818,7 +818,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -900,7 +900,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note>Currently, you can specify only one configuration recorder per account.</note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -994,7 +994,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1076,7 +1076,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note>Currently, you can specify only one delivery channel per account.</note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

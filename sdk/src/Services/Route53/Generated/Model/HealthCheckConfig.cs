@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         private bool? _inverted;
         private int? _healthThreshold;
         private List<string> _childHealthChecks = new List<string>();
+        private bool? _enableSNI;
 
         /// <summary>
         /// Gets and sets the property IPAddress. 
@@ -144,7 +145,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property SearchString. 
         /// <para>
         /// A string to search for in the body of a health check response. Required for HTTP_STR_MATCH
-        /// and HTTPS_STR_MATCH health checks.
+        /// and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case when searching for
+        /// <code>SearchString</code> in the response body. 
         /// </para>
         /// </summary>
         public string SearchString
@@ -286,6 +288,28 @@ namespace Amazon.Route53.Model
         internal bool IsSetChildHealthChecks()
         {
             return this._childHealthChecks != null && this._childHealthChecks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableSNI. 
+        /// <para>
+        /// Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code>
+        /// to the endpoint in the <code>client_hello</code> message during TLS negotiation. If
+        /// you don't specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+        /// <code>true</code> when <code>Type</code> is <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code>
+        /// and defaults to <code>false</code> when <code>Type</code> is any other value.
+        /// </para>
+        /// </summary>
+        public bool EnableSNI
+        {
+            get { return this._enableSNI.GetValueOrDefault(); }
+            set { this._enableSNI = value; }
+        }
+
+        // Check to see if EnableSNI property is set
+        internal bool IsSetEnableSNI()
+        {
+            return this._enableSNI.HasValue; 
         }
 
     }

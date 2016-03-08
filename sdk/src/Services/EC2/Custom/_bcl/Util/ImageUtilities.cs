@@ -28,6 +28,7 @@ using Amazon.EC2.Model;
 using Amazon.Runtime.Internal.Util;
 
 using ThirdParty.Json.LitJson;
+using Amazon.Runtime;
 
 #pragma warning disable 1591
 
@@ -301,6 +302,12 @@ namespace Amazon.EC2.Util
         private const string CLOUDFRONT_LOCATION_OF_AMI_FILE = "http://aws-sdk-configurations.amazonwebservices.com/stockamis.json";
         private const string S3_LOCATION_OF_AMI_FILE = "https://aws-sdk-configurations.s3.amazonaws.com/stockamis.json";
 
+        private static readonly string[] DownloadLocations =
+        {
+            CLOUDFRONT_LOCATION_OF_AMI_FILE,
+            S3_LOCATION_OF_AMI_FILE
+        };
+
         private const string WindowsImagesTag = "WindowsImages";
         private const string LinuxImagesTag = "LinuxImages";
         private const string DefinitionKeyTag = "key";
@@ -310,29 +317,42 @@ namespace Amazon.EC2.Util
 
         private static readonly object LOCK_OBJECT = new object();
 
-        static ImageUtilities()
-        {
-            LoadDefinitionsFromWeb();
-        }
+        private static bool ImageDefinitionsLoaded { get; set; }
 
-        static void LoadDefinitionsFromWeb()
+        private static void LoadDefinitionsFromWeb(AmazonEC2Config ec2Config)
         {
+            lock (LOCK_OBJECT)
+            {
+                if (ImageDefinitionsLoaded)
+                    return;
+            }
+
+            WebProxy webProxy = null;
+            if (ec2Config != null)
+                webProxy = ec2Config.GetWebProxy();
+
             int retries = 0;
             while (retries < MAX_DOWNLOAD_RETRIES)
             {
                 try
                 {
                     HttpWebResponse response = null;
-                    try
+                    foreach (var location in DownloadLocations)
                     {
-                        var request = WebRequest.Create(CLOUDFRONT_LOCATION_OF_AMI_FILE) as HttpWebRequest;
-                        response = request.GetResponse() as HttpWebResponse;
+                        try
+                        {
+                            response = DownloadControlFile(location, webProxy);
+                            if (response != null)
+                                break;
+                        }
+                        catch (Exception e)
+                        {
+                            Logger.InfoFormat("Failed to download stockamis.json from {0}, exception {1}", location, e);
+                        }
                     }
-                    catch (Exception)
-                    {
-                        var request = WebRequest.Create(S3_LOCATION_OF_AMI_FILE) as HttpWebRequest;
-                        response = request.GetResponse() as HttpWebResponse;
-                    }
+
+                    if (response == null)
+                        throw new AmazonClientException("Failed to download ImageUtilities metadata file stockamis.json from known locations.");
 
                     using (response)
                     {
@@ -341,12 +361,14 @@ namespace Amazon.EC2.Util
                             lock (LOCK_OBJECT)
                             {
                                 ParseAMIDefinitions(reader);
+                                ImageDefinitionsLoaded = true;
+
                                 return;
                             }
                         }
                     }
                 }
-                catch (WebException e)
+                catch (AmazonClientException e)
                 {
                     retries++;
                     if (retries == MAX_DOWNLOAD_RETRIES)
@@ -362,6 +384,14 @@ namespace Amazon.EC2.Util
             }
         }
 
+        private static HttpWebResponse DownloadControlFile(string location, WebProxy proxy)
+        {
+            var request = WebRequest.Create(location) as HttpWebRequest;
+            if (proxy != null)
+                request.Proxy = proxy;
+            return request.GetResponse() as HttpWebResponse;
+        }
+
         /// <summary>
         /// Parses the ami definition content into the ImageDescriptor members. 
         /// </summary>
@@ -373,10 +403,10 @@ namespace Amazon.EC2.Util
                 var jdata = JsonMapper.ToObject(reader);
 
                 var platformTags = new string[]
-            {
-                WindowsImagesTag,
-                LinuxImagesTag
-            };
+                {
+                    WindowsImagesTag,
+                    LinuxImagesTag
+                };
 
                 var parsedDefinitionsMap = new Dictionary<string, string>();
                 foreach (var platformTag in platformTags)
@@ -423,6 +453,15 @@ namespace Amazon.EC2.Util
             }
         }
 
+        private static AmazonEC2Config ConfigFromClient(IAmazonEC2 ec2Client)
+        {
+            var client = ec2Client as AmazonEC2Client;
+            if (client != null)
+                return client.Config as AmazonEC2Config;
+
+            return new AmazonEC2Config();
+        }
+
         #endregion
 
         /// <summary>
@@ -432,6 +471,32 @@ namespace Amazon.EC2.Util
         /// <returns>Matching descriptor containing the name filter to search on</returns>
         public static ImageDescriptor DescriptorFromKey(string key)
         {
+            return DescriptorFromKey(key, null);
+        }
+
+        /// <summary>
+        /// Returns the ImageDescriptor instance for a known key.
+        /// </summary>
+        /// <param name="key">
+        /// The version-independent key identifying the descriptor
+        /// </param>
+        /// <param name="ec2Client">
+        /// <para>
+        /// Optional. Configured client object from which proxy settings, if needed, can be
+        /// determined. If no client is supplied the application configuration will be 
+        /// inspected for proxy details. 
+        /// </para>
+        /// <para>
+        /// If a proxy is configured (either on the client or in the configuration file) it
+        /// will be used when downloading the metadata file containing the key to filter 
+        /// mappings.
+        /// </para>
+        /// </param>
+        /// <returns>Matching descriptor containing the name filter to search on</returns>
+        public static ImageDescriptor DescriptorFromKey(string key, IAmazonEC2 ec2Client)
+        {
+            LoadDefinitionsFromWeb(ConfigFromClient(ec2Client));
+
             foreach (var d in WindowsDescriptors)
             {
                 if (d.DefinitionKey.Equals(key, StringComparison.OrdinalIgnoreCase))
@@ -476,6 +541,9 @@ namespace Amazon.EC2.Util
             if (descriptor == null)
                 throw new ArgumentNullException("descriptor");
 
+            var config = ConfigFromClient(ec2Client);
+            LoadDefinitionsFromWeb(config);
+
             int retryCount = 1;
             Image image = null;
             do
@@ -489,7 +557,7 @@ namespace Amazon.EC2.Util
                 }
                 });
 
-                if (result.Images.Count != 0)
+                if (result.Images.Any())
                     image = result.Images.OrderByDescending(x => x.Name).First();
                 else
                 {
@@ -499,7 +567,12 @@ namespace Amazon.EC2.Util
                         Logger.InfoFormat("FindImage - DescribeImages call for image descriptor '{0}' (name prefix '{1}') yielded no results, assuming outdated control file and reloading", 
                                           descriptor.DefinitionKey,
                                           descriptor.NamePrefix);
-                        LoadDefinitionsFromWeb();
+                        lock (LOCK_OBJECT)
+                        {
+                            ImageDefinitionsLoaded = false;
+                        }
+
+                        LoadDefinitionsFromWeb(config);
                     }
                     retryCount++;
                 }

@@ -17,3 +17,7 @@ using System.Diagnostics.CodeAnalysis;
 
 // Initialize reference type static fields inline
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.CognitoSync.Internal.CognitoCredentialsRetriever+CSRequestCache.#.cctor()")]
+
+//generics supression for net45
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage.#PutRecordsAsync(System.String,System.Collections.Generic.List`1<Amazon.CognitoSync.SyncManager.Record>,System.String,System.Threading.CancellationToken)")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.CognitoSync.SyncManager.Internal.CognitoSyncStorage.#ListDatasetMetadataAsync(System.Threading.CancellationToken)")]

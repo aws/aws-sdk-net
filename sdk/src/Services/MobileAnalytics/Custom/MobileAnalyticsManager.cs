@@ -30,7 +30,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
     /// <summary>
     /// MobileAnalyticsManager is the entry point to recording analytic events for your application
     /// </summary>
-    public partial class MobileAnalyticsManager
+    public partial class MobileAnalyticsManager : IDisposable
     {
         private static Object _lock = new Object();
         private static IDictionary<string, MobileAnalyticsManager> _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
@@ -38,11 +38,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         private static BackgroundRunner _backgroundRunner = new BackgroundRunner();
 
         #region constructor
-
-        static MobileAnalyticsManager()
-        {
-            _backgroundRunner.StartWork();
-        }
 
         /// <summary>
         /// Gets or creates Mobile Analytics Manager instance. If the instance already exists, returns the instance; otherwise
@@ -139,12 +134,15 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             {
                 managerInstance.Session.Start();
             }
+
+            _backgroundRunner.StartWork();
+
             return managerInstance;
         }
 
         private MobileAnalyticsManager(string appID, AWSCredentials credentials, RegionEndpoint regionEndpoint, MobileAnalyticsManagerConfig maConfig)
         {
-#if PCL
+#if PCL||UNITY
             this.ClientContext = new ClientContext(appID);
 #elif BCL
             if (null == maConfig)
@@ -360,6 +358,33 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         {
             AWSSDKUtils.InvokeInBackground(MobileAnalyticsErrorEvent, eventArgs, this);
         }
+        #endregion
+
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implement the dispose pattern
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        ///  Implement the dispose pattern
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this.Session.Dispose();
+                this.BackgroundDeliveryClient.Dispose();
+            }
+        }
+
         #endregion
     }
 

@@ -16,15 +16,18 @@
     "**/_bcl35/*",
     "**/_bcl45/*",
     "**/_bcl/*",
+    "**/_bcl+pcl/*",
     "**/_bcl+sl/*",
-    "**/_storagefile/*",
+    "**/_bcl+unity/*",
+    "**/_unity/*",
     "**/_android/*",
     "**/_ios/*",
     "**/_pclReference/*",
     "**/_win8/*",
     "**/_winPhone81/*",
     "**/_winPhoneSilverlight8/*",
-    "**/_winstorage/*"
+    "**/_winstorage/*",
+    "**/Custom/SyncManager/*"
 
   ],
 
@@ -35,7 +38,7 @@
   "frameworks": {
     "dnxcore50": {
       "compilationOptions": {
-        "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY"     ]
+        "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY", "ADD_SUPPORT_ICLONEABLE"     ]
       },
       "dependencies": {
         "System.Collections": "4.0.10",

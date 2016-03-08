@@ -67,7 +67,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// The unique Amazon Resource Name(ARN) that represents the gateway to associate the
+        /// The unique Amazon Resource Name (ARN) that represents the gateway to associate the
         /// virtual tapes with. Use the <a>ListGateways</a> operation to return a list of gateways
         /// for your account and region.
         /// </para>
@@ -87,7 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property NumTapesToCreate. 
         /// <para>
-        /// The number of virtual tapes you want to create.
+        /// The number of virtual tapes that you want to create.
         /// </para>
         /// </summary>
         public int NumTapesToCreate
@@ -105,11 +105,11 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property TapeBarcodePrefix. 
         /// <para>
-        /// A prefix you append to the barcode of the virtual tape you are creating. This makes
-        /// a barcode unique.
+        /// A prefix that you append to the barcode of the virtual tape you are creating. This
+        /// prefix makes the barcode unique.
         /// </para>
-        ///  <note>The prefix must be 1 to 4 characters in length and must be upper-case letters
-        /// A-Z.</note>
+        ///  <note>The prefix must be 1 to 4 characters in length and must be one of the uppercase
+        /// letters from A to Z.</note>
         /// </summary>
         public string TapeBarcodePrefix
         {
@@ -126,9 +126,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property TapeSizeInBytes. 
         /// <para>
-        /// The size, in bytes, of the virtual tapes you want to create.
+        /// The size, in bytes, of the virtual tapes that you want to create.
         /// </para>
-        ///  <note>The size must be gigabyte (1024*1024*1024 byte) aligned.</note>
+        ///  <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
         /// </summary>
         public long TapeSizeInBytes
         {

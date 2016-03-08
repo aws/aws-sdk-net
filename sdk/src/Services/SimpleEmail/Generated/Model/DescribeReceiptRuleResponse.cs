@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DescribeReceiptRule operation.
     /// </summary>
     public partial class DescribeReceiptRuleResponse : AmazonWebServiceResponse
     {

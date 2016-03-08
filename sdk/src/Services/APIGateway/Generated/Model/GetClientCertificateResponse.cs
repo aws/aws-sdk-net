@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the GetClientCertificate operation.
     /// </summary>
     public partial class GetClientCertificateResponse : AmazonWebServiceResponse
     {

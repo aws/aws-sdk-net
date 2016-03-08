@@ -634,7 +634,7 @@ namespace Amazon.ElasticBeanstalk
         ///  This location is used to store user log files. 
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -894,7 +894,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns the descriptions of existing applications.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -958,7 +958,7 @@ namespace Amazon.ElasticBeanstalk
         /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
         /// bucket.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1028,7 +1028,7 @@ namespace Amazon.ElasticBeanstalk
         /// the values the options, their default values, and an indication of the required action
         /// on a running environment if an option value is changed.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1226,7 +1226,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns descriptions for existing environments.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1296,7 +1296,7 @@ namespace Amazon.ElasticBeanstalk
         ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
         /// </note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1403,7 +1403,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns a list of the available solution stack names.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

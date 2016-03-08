@@ -673,7 +673,7 @@ namespace Amazon.DirectConnect
         /// If a connection ID is provided, the call returns only that particular connection.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -766,7 +766,7 @@ namespace Amazon.DirectConnect
         /// If an interconnect ID is provided, it will only return this particular interconnect.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -824,7 +824,7 @@ namespace Amazon.DirectConnect
         /// Returns the list of AWS Direct Connect locations in the current AWS region. These
         /// are the locations that may be selected when calling CreateConnection or CreateInterconnect.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -889,7 +889,7 @@ namespace Amazon.DirectConnect
         /// CreateVpnGateway</a> action.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -962,7 +962,7 @@ namespace Amazon.DirectConnect
         /// virtual interface will be returned.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

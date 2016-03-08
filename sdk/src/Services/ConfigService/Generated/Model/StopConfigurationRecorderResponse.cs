@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the StopConfigurationRecorder operation.
     /// </summary>
     public partial class StopConfigurationRecorderResponse : AmazonWebServiceResponse
     {

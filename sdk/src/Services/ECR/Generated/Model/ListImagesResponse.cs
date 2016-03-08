@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListImages operation.
     /// </summary>
     public partial class ListImagesResponse : AmazonWebServiceResponse
     {

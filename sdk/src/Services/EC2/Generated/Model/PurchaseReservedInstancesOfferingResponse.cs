@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the PurchaseReservedInstancesOffering operation.
     /// </summary>
     public partial class PurchaseReservedInstancesOfferingResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesId. 
         /// <para>
-        /// The IDs of the purchased Reserved instances.
+        /// The IDs of the purchased Reserved Instances.
         /// </para>
         /// </summary>
         public string ReservedInstancesId

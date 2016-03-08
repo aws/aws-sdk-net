@@ -301,7 +301,7 @@ namespace Amazon.EC2
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1225,7 +1225,7 @@ namespace Amazon.EC2
         /// Virtual Private Cloud User Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2359,7 +2359,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Deletes the data feed for Spot instances.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2750,7 +2750,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2806,7 +2806,7 @@ namespace Amazon.EC2
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2864,7 +2864,7 @@ namespace Amazon.EC2
         /// and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2922,7 +2922,7 @@ namespace Amazon.EC2
         /// </para>
         /// </note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3004,7 +3004,7 @@ namespace Amazon.EC2
         /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
         /// Elastic Compute Cloud User Guide</i>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3060,7 +3060,7 @@ namespace Amazon.EC2
         /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3115,7 +3115,7 @@ namespace Amazon.EC2
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3164,7 +3164,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your export tasks.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3346,7 +3346,7 @@ namespace Amazon.EC2
         /// </para>
         /// </note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3502,7 +3502,7 @@ namespace Amazon.EC2
         /// is usually less than one hour.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3578,7 +3578,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3627,7 +3627,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your Internet gateways.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3682,7 +3682,7 @@ namespace Amazon.EC2
         /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3799,7 +3799,7 @@ namespace Amazon.EC2
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3879,7 +3879,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your network interfaces.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3930,7 +3930,7 @@ namespace Amazon.EC2
         /// groups and cluster instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4016,7 +4016,7 @@ namespace Amazon.EC2
         /// and Endpoints</a>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4063,15 +4063,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the Reserved instances that you purchased.
+        /// Describes one or more of the Reserved Instances that you purchased.
         /// 
         ///  
         /// <para>
-        /// For more information about Reserved instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+        /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4118,26 +4118,26 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes your account's Reserved instance listings in the Reserved Instance Marketplace.
+        /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved instances bought and sold through the Reserved Instance Marketplace work
+        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
         /// like any other Reserved Instances. 
         /// </para>
         ///  
         /// <para>
-        /// As a seller, you choose to list some or all of your Reserved instances, and you specify
-        /// the upfront price to receive for them. Your Reserved instances are then listed in
+        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
+        /// the upfront price to receive for them. Your Reserved Instances are then listed in
         /// the Reserved Instance Marketplace and are available for purchase. 
         /// </para>
         ///  
         /// <para>
-        /// As a buyer, you specify the configuration of the Reserved instance to purchase, and
+        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
         /// the Marketplace matches what you're searching for with what's available. The Marketplace
-        /// first sells the lowest priced Reserved instances to you, and continues to sell available
+        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
         /// Reserved Instance listings to you until your demand is met. You are charged based
         /// on the total price of all of the listings that you purchase.
         /// </para>
@@ -4147,7 +4147,7 @@ namespace Amazon.EC2
         /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4194,8 +4194,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved instances modification requests is returned. If
+        /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
+        /// information about all your Reserved Instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -4205,7 +4205,7 @@ namespace Amazon.EC2
         /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4252,16 +4252,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes Reserved instance offerings that are available for purchase. With Reserved
-        /// instances, you purchase the right to launch instances for a period of time. During
+        /// Describes Reserved Instance offerings that are available for purchase. With Reserved
+        /// Instances, you purchase the right to launch instances for a period of time. During
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
         ///  
         /// <para>
-        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// If you have listed your own Reserved Instances for sale in the Reserved Instance Marketplace,
         /// they will be excluded from these results. This is to ensure that you do not purchase
-        /// your own Reserved instances.
+        /// your own Reserved Instances.
         /// </para>
         ///  
         /// <para>
@@ -4269,7 +4269,7 @@ namespace Amazon.EC2
         /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4330,7 +4330,7 @@ namespace Amazon.EC2
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4356,6 +4356,68 @@ namespace Amazon.EC2
             var unmarshaller = DescribeRouteTablesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeRouteTablesRequest,DescribeRouteTablesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeScheduledInstanceAvailability
+
+        internal DescribeScheduledInstanceAvailabilityResponse DescribeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest request)
+        {
+            var marshaller = new DescribeScheduledInstanceAvailabilityRequestMarshaller();
+            var unmarshaller = DescribeScheduledInstanceAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScheduledInstanceAvailabilityRequest,DescribeScheduledInstanceAvailabilityResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScheduledInstanceAvailability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstanceAvailability operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeScheduledInstanceAvailabilityResponse> DescribeScheduledInstanceAvailabilityAsync(DescribeScheduledInstanceAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeScheduledInstanceAvailabilityRequestMarshaller();
+            var unmarshaller = DescribeScheduledInstanceAvailabilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeScheduledInstanceAvailabilityRequest,DescribeScheduledInstanceAvailabilityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeScheduledInstances
+
+        internal DescribeScheduledInstancesResponse DescribeScheduledInstances(DescribeScheduledInstancesRequest request)
+        {
+            var marshaller = new DescribeScheduledInstancesRequestMarshaller();
+            var unmarshaller = DescribeScheduledInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScheduledInstancesRequest,DescribeScheduledInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScheduledInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeScheduledInstancesResponse> DescribeScheduledInstancesAsync(DescribeScheduledInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeScheduledInstancesRequestMarshaller();
+            var unmarshaller = DescribeScheduledInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeScheduledInstancesRequest,DescribeScheduledInstancesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4388,7 +4450,7 @@ namespace Amazon.EC2
         /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4522,7 +4584,7 @@ namespace Amazon.EC2
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4572,7 +4634,7 @@ namespace Amazon.EC2
         /// Describes the data feed for Spot instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
         /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4728,7 +4790,7 @@ namespace Amazon.EC2
         /// where the instance lifecycle is <code>spot</code>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4788,7 +4850,7 @@ namespace Amazon.EC2
         /// indicates the last time that the price changed.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4843,7 +4905,7 @@ namespace Amazon.EC2
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4898,7 +4960,7 @@ namespace Amazon.EC2
         /// Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -4993,7 +5055,7 @@ namespace Amazon.EC2
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -5087,7 +5149,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -5180,6 +5242,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcClassicLinkDnsSupport
+
+        internal DescribeVpcClassicLinkDnsSupportResponse DescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request)
+        {
+            var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcClassicLinkDnsSupportRequest,DescribeVpcClassicLinkDnsSupportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeVpcClassicLinkDnsSupportResponse> DescribeVpcClassicLinkDnsSupportAsync(DescribeVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcClassicLinkDnsSupportRequest,DescribeVpcClassicLinkDnsSupportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVpcEndpoints
 
         internal DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
@@ -5260,7 +5353,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your VPC peering connections.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -5309,7 +5402,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your VPCs.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -5365,7 +5458,7 @@ namespace Amazon.EC2
         /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -5421,7 +5514,7 @@ namespace Amazon.EC2
         /// Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -5669,6 +5762,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableVpcClassicLinkDnsSupport
+
+        internal DisableVpcClassicLinkDnsSupportResponse DisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request)
+        {
+            var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return Invoke<DisableVpcClassicLinkDnsSupportRequest,DisableVpcClassicLinkDnsSupportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisableVpcClassicLinkDnsSupportResponse> DisableVpcClassicLinkDnsSupportAsync(DisableVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableVpcClassicLinkDnsSupportRequest,DisableVpcClassicLinkDnsSupportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateAddress
 
         internal DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
@@ -5819,6 +5943,37 @@ namespace Amazon.EC2
             var unmarshaller = EnableVpcClassicLinkResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableVpcClassicLinkRequest,EnableVpcClassicLinkResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableVpcClassicLinkDnsSupport
+
+        internal EnableVpcClassicLinkDnsSupportResponse EnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request)
+        {
+            var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return Invoke<EnableVpcClassicLinkDnsSupportRequest,EnableVpcClassicLinkDnsSupportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<EnableVpcClassicLinkDnsSupportResponse> EnableVpcClassicLinkDnsSupportAsync(EnableVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
+            var unmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableVpcClassicLinkDnsSupportRequest,EnableVpcClassicLinkDnsSupportResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6537,6 +6692,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  PurchaseScheduledInstances
+
+        internal PurchaseScheduledInstancesResponse PurchaseScheduledInstances(PurchaseScheduledInstancesRequest request)
+        {
+            var marshaller = new PurchaseScheduledInstancesRequestMarshaller();
+            var unmarshaller = PurchaseScheduledInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseScheduledInstancesRequest,PurchaseScheduledInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseScheduledInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseScheduledInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PurchaseScheduledInstancesResponse> PurchaseScheduledInstancesAsync(PurchaseScheduledInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PurchaseScheduledInstancesRequestMarshaller();
+            var unmarshaller = PurchaseScheduledInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PurchaseScheduledInstancesRequest,PurchaseScheduledInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RebootInstances
 
         internal RebootInstancesResponse RebootInstances(RebootInstancesRequest request)
@@ -7152,6 +7338,37 @@ namespace Amazon.EC2
             var unmarshaller = RunInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RunInstancesRequest,RunInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RunScheduledInstances
+
+        internal RunScheduledInstancesResponse RunScheduledInstances(RunScheduledInstancesRequest request)
+        {
+            var marshaller = new RunScheduledInstancesRequestMarshaller();
+            var unmarshaller = RunScheduledInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<RunScheduledInstancesRequest,RunScheduledInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RunScheduledInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RunScheduledInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RunScheduledInstancesResponse> RunScheduledInstancesAsync(RunScheduledInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RunScheduledInstancesRequestMarshaller();
+            var unmarshaller = RunScheduledInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RunScheduledInstancesRequest,RunScheduledInstancesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

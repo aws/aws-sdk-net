@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteTags operation.
     /// </summary>
     public partial class DeleteTagsResponse : AmazonWebServiceResponse
     {

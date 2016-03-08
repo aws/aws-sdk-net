@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
  */
 
 
@@ -183,6 +183,9 @@ namespace Amazon.CloudFront
         /// allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
@@ -374,7 +377,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Delete an origin access identity.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -463,7 +466,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Delete a distribution.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -552,7 +555,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Delete a streaming distribution.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -623,7 +626,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Get the information about an origin access identity.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -685,7 +688,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Get the configuration information about an origin access identity.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -747,7 +750,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Get the information about a distribution.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -809,7 +812,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Get the configuration information about a distribution.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -905,7 +908,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Get the information about a streaming distribution.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -967,7 +970,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Get the configuration information about a streaming distribution.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1023,7 +1026,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// List origin access identities.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1076,7 +1079,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// List distributions.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1194,7 +1197,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// List streaming distributions.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1367,6 +1370,9 @@ namespace Amazon.CloudFront
         /// Your request contains more CNAMEs than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">

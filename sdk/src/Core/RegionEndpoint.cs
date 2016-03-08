@@ -35,6 +35,11 @@ using Amazon.Util.Internal;
 
 using ThirdParty.Json.LitJson;
 
+#if UNITY
+using UnityEngine;
+using Amazon.Runtime.Internal;
+#endif
+
 namespace Amazon
 {
     /// <summary>
@@ -238,10 +243,12 @@ namespace Amazon
 #endif
                     LoadEndpointDefinitionsFromEmbeddedResource();
                 }
+#if !UNITY
                 else if (endpointsPath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
                 {
                     LoadEndpointDefinitionFromWeb(endpointsPath);
                 }
+#endif
 #if BCL
                 else
                 {
@@ -323,7 +330,7 @@ namespace Amazon
             }
         }
 #endif
-
+#if  !UNITY
         static void LoadEndpointDefinitionFromWeb(string url)
         {
             int retries = 0;
@@ -349,7 +356,7 @@ namespace Amazon
                 Util.AWSSDKUtils.Sleep(delay);
             }
         }
-
+#endif
         /// <summary>
         /// This is a testing method and should not be called by production applications.
         /// </summary>

@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #elif DNX
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #else
@@ -44,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.2")]
 [assembly: AssemblyFileVersion("3.2.2.0")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

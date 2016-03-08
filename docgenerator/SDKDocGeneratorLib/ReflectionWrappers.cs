@@ -599,7 +599,17 @@ namespace SDKDocGenerator
 
         public bool IsPublic
         {
-            get { return this._info.GetGetMethod().IsPublic; }
+            get
+            {
+                if (this._info.GetGetMethod() == null)
+                    return false;
+
+                var underlyingType = Nullable.GetUnderlyingType(this._info.GetGetMethod().GetType());
+                if (underlyingType != null)
+                    return underlyingType.IsPublic;
+
+                return this._info.GetGetMethod().IsPublic;
+            }
         }
 
         public bool IsStatic
@@ -634,7 +644,7 @@ namespace SDKDocGenerator
         public MethodInfoWrapper GetGetMethod()
         {
             var method = this._info.GetGetMethod();
-            if(method == null)
+            if (method == null)
                 return null;
 
             return new MethodInfoWrapper(method);

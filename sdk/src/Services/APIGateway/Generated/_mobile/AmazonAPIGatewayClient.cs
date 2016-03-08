@@ -267,6 +267,37 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateAuthorizer
+
+        internal CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
+        {
+            var marshaller = new CreateAuthorizerRequestMarshaller();
+            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateAuthorizerRequestMarshaller();
+            var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateBasePathMapping
 
         internal CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
@@ -510,6 +541,37 @@ namespace Amazon.APIGateway
             var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteApiKeyRequest,DeleteApiKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAuthorizer
+
+        internal DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
+        {
+            var marshaller = new DeleteAuthorizerRequestMarshaller();
+            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteAuthorizerRequestMarshaller();
+            var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1042,6 +1104,68 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetAuthorizer
+
+        internal GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
+        {
+            var marshaller = new GetAuthorizerRequestMarshaller();
+            var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<GetAuthorizerRequest,GetAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAuthorizerRequestMarshaller();
+            var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAuthorizerRequest,GetAuthorizerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAuthorizers
+
+        internal GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
+        {
+            var marshaller = new GetAuthorizersRequestMarshaller();
+            var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
+
+            return Invoke<GetAuthorizersRequest,GetAuthorizersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAuthorizers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAuthorizersRequestMarshaller();
+            var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAuthorizersRequest,GetAuthorizersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetBasePathMapping
 
         internal GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
@@ -1285,6 +1409,37 @@ namespace Amazon.APIGateway
             var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDomainNamesRequest,GetDomainNamesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetExport
+
+        internal GetExportResponse GetExport(GetExportRequest request)
+        {
+            var marshaller = new GetExportRequestMarshaller();
+            var unmarshaller = GetExportResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportRequest,GetExportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetExportRequestMarshaller();
+            var unmarshaller = GetExportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExportRequest,GetExportResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1936,6 +2091,37 @@ namespace Amazon.APIGateway
             var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateApiKeyRequest,UpdateApiKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAuthorizer
+
+        internal UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
+        {
+            var marshaller = new UpdateAuthorizerRequestMarshaller();
+            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAuthorizerRequestMarshaller();
+            var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

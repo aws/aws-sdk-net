@@ -374,7 +374,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return nextItems;
         }
 
-#if PCL || DNX
+#if (PCL|| UNITY || DNX)
         private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, AmazonDynamoDBClient client)
 #else
         private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client)

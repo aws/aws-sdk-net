@@ -42,10 +42,10 @@ namespace ServiceClientGenerator
             {
                 // The name before the .customizations extension
                 // Used to get all files for that service
-                var baseName = file.Substring(file.IndexOf("ServiceModels\\", StringComparison.OrdinalIgnoreCase)
-                                    + "ServiceModels\\".Length, file.IndexOf(".customizations", StringComparison.OrdinalIgnoreCase)
-                                    - Convert.ToInt32(file.IndexOf("ServiceModels\\", StringComparison.OrdinalIgnoreCase) 
-                                    + "ServiceModels\\".Length));
+				var baseName = file.Substring(file.IndexOf("ServiceModels"+Path.DirectorySeparatorChar , StringComparison.OrdinalIgnoreCase)
+					+ ("ServiceModels"+Path.DirectorySeparatorChar).Length, file.IndexOf(".customizations", StringComparison.OrdinalIgnoreCase)
+					- Convert.ToInt32(file.IndexOf("ServiceModels"+Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase) 
+						+ ("ServiceModels"+Path.DirectorySeparatorChar).Length));
 
                 var filePath = Path.Combine("customizations", baseName + ".customizations.json");
                 var fileEntries = Directory.GetFiles(modelsPath, baseName + "*.customizations*.json");

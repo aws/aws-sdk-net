@@ -47,6 +47,8 @@ namespace Amazon.Util
         public const string ExpectHeader = "Expect";
         public const string AcceptHeader = "Accept";
         public const string ConnectionHeader = "Connection";
+		public const string StatusHeader = "Status";
+        public const string XHttpMethodOverrideHeader = "X-HTTP-Method-Override";
 
         public const string RequestIdHeader = "x-amzn-RequestId";
         public const string XAmzId2Header = "x-amz-id-2";
@@ -82,5 +84,5 @@ namespace Amazon.Util
         public const string XAmzCopySourceIfUnmodifiedSinceHeader = "x-amz-copy-source-if-unmodified-since";
         public const string XAmzMetadataDirectiveHeader = "x-amz-metadata-directive";
         public const string XAmzMfaHeader = "x-amz-mfa";
-    }
+        public const string XAmzVersionIdHeader = "x-amz-version-id";        public const string XAmzUserAgentHeader = "x-amz-user-agent";    }
 }

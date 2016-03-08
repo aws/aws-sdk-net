@@ -131,7 +131,7 @@ namespace ServiceClientGenerator
             catch (Exception e)
             {
                 Error = string.Format("Caught exception processing response file {0} - {1}", responseFile, e.Message);
-            }    
+            }
         }
 
         delegate void ParseArgument(CommandArguments arguments, string argValue = null);
@@ -214,10 +214,18 @@ namespace ServiceClientGenerator
             },
             new ArgDeclaration
             {
-                OptionName = "disable.pcl-support", 
-                Parse = (arguments, argValue) => arguments.ParsedOptions.DisablePCLSupport = true, 
+                OptionName = "disable.pcl-support",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.DisablePCLSupport = true,
                 HasValue = false,
                 HelpText = "Disable PCL as part of the nuget package. Useful for creating nupkg on machines that don't have Xamarin installed"
+            },
+            new ArgDeclaration
+            {
+                OptionName = "unitypath", 
+                ShortName = "u", 
+                HasValue = true,
+                Parse = (arguments, argValue) => arguments.ParsedOptions.UnityPath = argValue, 
+                HelpText = "Specifies the path to the Unity installation directory, e.g. 'C:\\Program Files\\Unity'."
             },
             new ArgDeclaration
             {

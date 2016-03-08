@@ -157,6 +157,18 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DisableTopicRuleRequest.RuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.EnableTopicRuleRequest.RuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.GetPolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>

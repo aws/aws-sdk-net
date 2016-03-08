@@ -964,7 +964,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Cancels the specified Reserved instance listing in the Reserved Instance Marketplace.
+        /// Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.
         /// 
         ///  
         /// <para>
@@ -1865,24 +1865,24 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a listing for Amazon EC2 Reserved instances to be sold in the Reserved Instance
-        /// Marketplace. You can submit one Reserved instance listing at a time. To get a list
-        /// of your Reserved instances, you can use the <a>DescribeReservedInstances</a> operation.
+        /// Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance
+        /// Marketplace. You can submit one Reserved Instance listing at a time. To get a list
+        /// of your Reserved Instances, you can use the <a>DescribeReservedInstances</a> operation.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved instances bought and sold through the Reserved Instance Marketplace work
-        /// like any other Reserved instances.
+        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
+        /// like any other Reserved Instances.
         /// </para>
         ///  
         /// <para>
-        /// To sell your Reserved instances, you must first register as a seller in the Reserved
+        /// To sell your Reserved Instances, you must first register as a seller in the Reserved
         /// Instance Marketplace. After completing the registration process, you can create a
-        /// Reserved Instance Marketplace listing of some or all of your Reserved instances, and
-        /// specify the upfront price to receive for them. Your Reserved instance listings then
-        /// become available for purchase. To view the details of your Reserved instance listing,
+        /// Reserved Instance Marketplace listing of some or all of your Reserved Instances, and
+        /// specify the upfront price to receive for them. Your Reserved Instance listings then
+        /// become available for purchase. To view the details of your Reserved Instance listing,
         /// you can use the <a>DescribeReservedInstancesListings</a> operation.
         /// </para>
         ///  
@@ -4343,16 +4343,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <b>Important: This command is reserved for future use, and is currently not available
-        /// for you to use.</b>
-        /// 
-        ///  
-        /// <para>
         /// Describes the ID format settings for your resources on a per-region basis, for example,
         /// to view which resource types are enabled for longer IDs. This request only returns
         /// information about resource types whose ID formats can be modified; it does not return
         /// information about other resource types. 
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
@@ -5247,11 +5242,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the Reserved instances that you purchased.
+        /// Describes one or more of the Reserved Instances that you purchased.
         /// 
         ///  
         /// <para>
-        /// For more information about Reserved instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+        /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5260,11 +5255,11 @@ namespace Amazon.EC2
         DescribeReservedInstancesResponse DescribeReservedInstances();
 
         /// <summary>
-        /// Describes one or more of the Reserved instances that you purchased.
+        /// Describes one or more of the Reserved Instances that you purchased.
         /// 
         ///  
         /// <para>
-        /// For more information about Reserved instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+        /// For more information about Reserved Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5303,26 +5298,26 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes your account's Reserved instance listings in the Reserved Instance Marketplace.
+        /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved instances bought and sold through the Reserved Instance Marketplace work
+        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
         /// like any other Reserved Instances. 
         /// </para>
         ///  
         /// <para>
-        /// As a seller, you choose to list some or all of your Reserved instances, and you specify
-        /// the upfront price to receive for them. Your Reserved instances are then listed in
+        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
+        /// the upfront price to receive for them. Your Reserved Instances are then listed in
         /// the Reserved Instance Marketplace and are available for purchase. 
         /// </para>
         ///  
         /// <para>
-        /// As a buyer, you specify the configuration of the Reserved instance to purchase, and
+        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
         /// the Marketplace matches what you're searching for with what's available. The Marketplace
-        /// first sells the lowest priced Reserved instances to you, and continues to sell available
+        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
         /// Reserved Instance listings to you until your demand is met. You are charged based
         /// on the total price of all of the listings that you purchase.
         /// </para>
@@ -5337,26 +5332,26 @@ namespace Amazon.EC2
         DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings();
 
         /// <summary>
-        /// Describes your account's Reserved instance listings in the Reserved Instance Marketplace.
+        /// Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved instance
+        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved instances bought and sold through the Reserved Instance Marketplace work
+        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
         /// like any other Reserved Instances. 
         /// </para>
         ///  
         /// <para>
-        /// As a seller, you choose to list some or all of your Reserved instances, and you specify
-        /// the upfront price to receive for them. Your Reserved instances are then listed in
+        /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
+        /// the upfront price to receive for them. Your Reserved Instances are then listed in
         /// the Reserved Instance Marketplace and are available for purchase. 
         /// </para>
         ///  
         /// <para>
-        /// As a buyer, you specify the configuration of the Reserved instance to purchase, and
+        /// As a buyer, you specify the configuration of the Reserved Instance to purchase, and
         /// the Marketplace matches what you're searching for with what's available. The Marketplace
-        /// first sells the lowest priced Reserved instances to you, and continues to sell available
+        /// first sells the lowest priced Reserved Instances to you, and continues to sell available
         /// Reserved Instance listings to you until your demand is met. You are charged based
         /// on the total price of all of the listings that you purchase.
         /// </para>
@@ -5401,8 +5396,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved instances modification requests is returned. If
+        /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
+        /// information about all your Reserved Instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -5417,8 +5412,8 @@ namespace Amazon.EC2
         DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications();
 
         /// <summary>
-        /// Describes the modifications made to your Reserved instances. If no parameter is specified,
-        /// information about all your Reserved instances modification requests is returned. If
+        /// Describes the modifications made to your Reserved Instances. If no parameter is specified,
+        /// information about all your Reserved Instances modification requests is returned. If
         /// a modification ID is specified, only information about the specific modification is
         /// returned.
         /// 
@@ -5463,16 +5458,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes Reserved instance offerings that are available for purchase. With Reserved
-        /// instances, you purchase the right to launch instances for a period of time. During
+        /// Describes Reserved Instance offerings that are available for purchase. With Reserved
+        /// Instances, you purchase the right to launch instances for a period of time. During
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
         ///  
         /// <para>
-        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// If you have listed your own Reserved Instances for sale in the Reserved Instance Marketplace,
         /// they will be excluded from these results. This is to ensure that you do not purchase
-        /// your own Reserved instances.
+        /// your own Reserved Instances.
         /// </para>
         ///  
         /// <para>
@@ -5485,16 +5480,16 @@ namespace Amazon.EC2
         DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings();
 
         /// <summary>
-        /// Describes Reserved instance offerings that are available for purchase. With Reserved
-        /// instances, you purchase the right to launch instances for a period of time. During
+        /// Describes Reserved Instance offerings that are available for purchase. With Reserved
+        /// Instances, you purchase the right to launch instances for a period of time. During
         /// that time period, you do not receive insufficient capacity errors, and you pay a lower
         /// usage rate than the rate charged for On-Demand instances for the actual time used.
         /// 
         ///  
         /// <para>
-        /// If you have listed your own Reserved instances for sale in the Reserved Instance Marketplace,
+        /// If you have listed your own Reserved Instances for sale in the Reserved Instance Marketplace,
         /// they will be excluded from these results. This is to ensure that you do not purchase
-        /// your own Reserved instances.
+        /// your own Reserved Instances.
         /// </para>
         ///  
         /// <para>
@@ -5598,6 +5593,93 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DescribeRouteTablesResult from EC2.</returns>
         DescribeRouteTablesResponse EndDescribeRouteTables(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeScheduledInstanceAvailability
+
+
+        /// <summary>
+        /// Finds available schedules that meet the specified criteria.
+        /// 
+        ///  
+        /// <para>
+        /// You can search for an available schedule no more than 3 months in advance. You must
+        /// meet the minimum required duration of 1,200 hours per year. For example, the minimum
+        /// daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum
+        /// monthly schedule is 100 hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you find a schedule that meets your needs, call <a>PurchaseScheduledInstances</a>
+        /// to purchase Scheduled Instances with that schedule.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstanceAvailability service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScheduledInstanceAvailability service method, as returned by EC2.</returns>
+        DescribeScheduledInstanceAvailabilityResponse DescribeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScheduledInstanceAvailability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstanceAvailability operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScheduledInstanceAvailability
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeScheduledInstanceAvailability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScheduledInstanceAvailability.</param>
+        /// 
+        /// <returns>Returns a  DescribeScheduledInstanceAvailabilityResult from EC2.</returns>
+        DescribeScheduledInstanceAvailabilityResponse EndDescribeScheduledInstanceAvailability(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeScheduledInstances
+
+
+        /// <summary>
+        /// Describes one or more of your Scheduled Instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScheduledInstances service method, as returned by EC2.</returns>
+        DescribeScheduledInstancesResponse DescribeScheduledInstances(DescribeScheduledInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScheduledInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScheduledInstances
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeScheduledInstances(DescribeScheduledInstancesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeScheduledInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScheduledInstances.</param>
+        /// 
+        /// <returns>Returns a  DescribeScheduledInstancesResult from EC2.</returns>
+        DescribeScheduledInstancesResponse EndDescribeScheduledInstances(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6599,6 +6681,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcClassicLinkDnsSupport
+
+
+        /// <summary>
+        /// Describes the ClassicLink DNS support status of one or more VPCs. If enabled, the
+        /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
+        /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
+        /// of an instance in a VPC resolves to its private IP address when addressed from a linked
+        /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        DescribeVpcClassicLinkDnsSupportResponse DescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcClassicLinkDnsSupport
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcClassicLinkDnsSupport.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcClassicLinkDnsSupportResult from EC2.</returns>
+        DescribeVpcClassicLinkDnsSupportResponse EndDescribeVpcClassicLinkDnsSupport(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeVpcEndpoints
 
 
@@ -7168,6 +7292,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableVpcClassicLinkDnsSupport
+
+
+        /// <summary>
+        /// Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to
+        /// public IP addresses when addressed between a linked EC2-Classic instance and instances
+        /// in the VPC to which it's linked. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
+        /// 
+        /// <returns>The response from the DisableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        DisableVpcClassicLinkDnsSupportResponse DisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableVpcClassicLinkDnsSupport
+        ///         operation.</returns>
+        IAsyncResult BeginDisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableVpcClassicLinkDnsSupport.</param>
+        /// 
+        /// <returns>Returns a  DisableVpcClassicLinkDnsSupportResult from EC2.</returns>
+        DisableVpcClassicLinkDnsSupportResponse EndDisableVpcClassicLinkDnsSupport(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateAddress
 
 
@@ -7379,6 +7543,48 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  EnableVpcClassicLinkResult from EC2.</returns>
         EnableVpcClassicLinkResponse EndEnableVpcClassicLink(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableVpcClassicLinkDnsSupport
+
+
+        /// <summary>
+        /// Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled, the
+        /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
+        /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
+        /// of an instance in a VPC resolves to its private IP address when addressed from a linked
+        /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
+        /// 
+        /// <returns>The response from the EnableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        EnableVpcClassicLinkDnsSupportResponse EnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableVpcClassicLinkDnsSupport
+        ///         operation.</returns>
+        IAsyncResult BeginEnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableVpcClassicLinkDnsSupport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableVpcClassicLinkDnsSupport.</param>
+        /// 
+        /// <returns>Returns a  EnableVpcClassicLinkDnsSupportResult from EC2.</returns>
+        EnableVpcClassicLinkDnsSupportResponse EndEnableVpcClassicLinkDnsSupport(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7755,15 +7961,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// <b>Important: This command is reserved for future use, and is currently not available
-        /// for you to use.</b>
-        /// 
-        ///  
-        /// <para>
         /// Modifies the ID format for the specified resource on a per-region basis. You can specify
         /// that resources should receive longer IDs (17-character IDs) when they are created.
         /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// This setting applies to the IAM user who makes the request; it does not apply to the
@@ -8000,7 +8201,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the Availability Zone, instance count, instance type, or network platform
-        /// (EC2-Classic or EC2-VPC) of your Reserved instances. The Reserved instances to be
+        /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
         /// modified must be identical, except for Availability Zone, network platform, and instance
         /// type.
         /// 
@@ -8405,16 +8606,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Purchases a Reserved instance for use with your account. With Amazon EC2 Reserved
-        /// instances, you obtain a capacity reservation for a certain instance configuration
-        /// over a specified period of time and pay a lower hourly rate compared to On-Demand
-        /// Instance pricing.
+        /// Purchases a Reserved Instance for use with your account. With Reserved Instances,
+        /// you obtain a capacity reservation for a certain instance configuration over a specified
+        /// period of time and pay a lower hourly rate compared to On-Demand instance pricing.
         /// 
         ///  
         /// <para>
-        /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved instance offerings
-        /// that match your specifications. After you've purchased a Reserved instance, you can
-        /// check for your new Reserved instance with <a>DescribeReservedInstances</a>.
+        /// Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings
+        /// that match your specifications. After you've purchased a Reserved Instance, you can
+        /// check for your new Reserved Instance with <a>DescribeReservedInstances</a>.
         /// </para>
         ///  
         /// <para>
@@ -8451,6 +8651,50 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  PurchaseReservedInstancesOfferingResult from EC2.</returns>
         PurchaseReservedInstancesOfferingResponse EndPurchaseReservedInstancesOffering(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PurchaseScheduledInstances
+
+
+        /// <summary>
+        /// Purchases one or more Scheduled Instances with the specified schedule.
+        /// 
+        ///  
+        /// <para>
+        /// Scheduled Instances enable you to purchase Amazon EC2 compute capacity by the hour
+        /// for a one-year term. Before you can purchase a Scheduled Instance, you must call <a>DescribeScheduledInstanceAvailability</a>
+        /// to check for available schedules and obtain a purchase token.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseScheduledInstances service method.</param>
+        /// 
+        /// <returns>The response from the PurchaseScheduledInstances service method, as returned by EC2.</returns>
+        PurchaseScheduledInstancesResponse PurchaseScheduledInstances(PurchaseScheduledInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseScheduledInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseScheduledInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseScheduledInstances
+        ///         operation.</returns>
+        IAsyncResult BeginPurchaseScheduledInstances(PurchaseScheduledInstancesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PurchaseScheduledInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseScheduledInstances.</param>
+        /// 
+        /// <returns>Returns a  PurchaseScheduledInstancesResult from EC2.</returns>
+        PurchaseScheduledInstancesResponse EndPurchaseScheduledInstances(IAsyncResult asyncResult);
 
         #endregion
         
@@ -9458,6 +9702,56 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  RunInstancesResult from EC2.</returns>
         RunInstancesResponse EndRunInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RunScheduledInstances
+
+
+        /// <summary>
+        /// Launches the specified Scheduled Instances.
+        /// 
+        ///  
+        /// <para>
+        /// Before you can launch a Scheduled Instance, you must purchase it and obtain an identifier
+        /// using <a>PurchaseScheduledInstances</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must launch a Scheduled Instance during its scheduled time period. You can't stop
+        /// or reboot a Scheduled Instance, but you can terminate it as needed. If you terminate
+        /// a Scheduled Instance before the current scheduled time period ends, you can launch
+        /// it again after a few minutes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RunScheduledInstances service method.</param>
+        /// 
+        /// <returns>The response from the RunScheduledInstances service method, as returned by EC2.</returns>
+        RunScheduledInstancesResponse RunScheduledInstances(RunScheduledInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RunScheduledInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RunScheduledInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRunScheduledInstances
+        ///         operation.</returns>
+        IAsyncResult BeginRunScheduledInstances(RunScheduledInstancesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RunScheduledInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRunScheduledInstances.</param>
+        /// 
+        /// <returns>Returns a  RunScheduledInstancesResult from EC2.</returns>
+        RunScheduledInstancesResponse EndRunScheduledInstances(IAsyncResult asyncResult);
 
         #endregion
         

@@ -211,7 +211,14 @@ namespace Amazon.Runtime.Internal
                     // First call, initialize an async result.
                     executionContext.ResponseContext.AsyncResult =
                         new RuntimeAsyncResult(executionContext.RequestContext.Callback, 
-                            executionContext.RequestContext.State);                    
+                            executionContext.RequestContext.State);
+
+#if UNITY
+                    executionContext.ResponseContext.AsyncResult.AsyncOptions = executionContext.RequestContext.AsyncOptions;
+                    executionContext.ResponseContext.AsyncResult.Action = executionContext.RequestContext.Action;
+                    executionContext.ResponseContext.AsyncResult.Request = executionContext.RequestContext.OriginalRequest;
+#endif 
+
                 }
 
                 // Set request headers
@@ -379,13 +386,7 @@ namespace Amazon.Runtime.Internal
 
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
                 if (callback != null)
-                {
-                    var eventStream = new EventStream(originalStream, true);
-                    var tracker = new StreamReadTracker(this.CallbackSender, callback, originalStream.Length,
-                        requestContext.ClientConfig.ProgressUpdateInterval);
-                    eventStream.OnRead += tracker.ReadProgress;
-                    originalStream = eventStream;
-                }
+                    originalStream = httpRequest.SetupProgressListeners(originalStream, requestContext.ClientConfig.ProgressUpdateInterval, this.CallbackSender, callback);
 
                 var inputStream = wrappedRequest.UseChunkEncoding && wrappedRequest.AWS4SignerResult != null
                     ? new ChunkedUploadWrapperStream(originalStream,

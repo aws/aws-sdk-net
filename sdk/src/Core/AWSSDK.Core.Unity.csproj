@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A8B25C1-3D58-4BB6-BF7D-77AD818D9EAD}</ProjectGuid>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <AssemblyName>AWSSDK.Core</AssemblyName>
+    <RootNamespace>Amazon</RootNamespace>
+    <BaseIntermediateOutputPath>obj\unity</BaseIntermediateOutputPath>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\unity</OutputPath>
+    <DefineConstants>DEBUG;TRACE;AWS_APM_API;UNITY;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>3001,3002,3003,3008,3009,419,1570,1591</NoWarn>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <DocumentationFile>bin\Debug\unity\AWSSDK.Core.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\unity</OutputPath>
+    <DefineConstants>TRACE;AWS_APM_API;UNITY;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>419,1570,1591</NoWarn>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <DocumentationFile>bin\Release\unity\AWSSDK.Core.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <!--
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include=".\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Auth\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Auth\AccessControlPolicy\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Auth\AccessControlPolicy\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.MissingTypes\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.MissingTypes\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Auth\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Settings\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Transform\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Transform\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Util\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\Handlers\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\HttpHandler\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\_bcl+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\SharedInterfaces\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\_bcl+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\Internal\PlatformServices\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\Internal\PlatformServices\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\Internal\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\_unity\IO\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\_unity\IO\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\_unity\Storage\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Util\_unity\Storage\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\Ionic.Zlib\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\Json\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\MD5\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\MD5\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_unity\iOS4Unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_unity\iOS4Unity\Foundation\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_unity\iOS4Unity\Marshalers\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThirdParty\_unity\iOS4Unity\UIKit\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="endpoints.json">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="endpoints.customizations.json">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -68,7 +68,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property CpuThreshold. 
         /// <para>
-        /// The CPU utilization threshold, as a percent of the available CPU.
+        /// The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables
+        /// the threshold.
         /// </para>
         /// </summary>
         public double CpuThreshold
@@ -128,7 +129,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property LoadThreshold. 
         /// <para>
-        /// The load threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+        /// The load threshold. A value of -1 disables the threshold. For more information about
+        /// how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
         /// (computing)</a>.
         /// </para>
         /// </summary>
@@ -147,7 +149,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property MemoryThreshold. 
         /// <para>
-        /// The memory utilization threshold, as a percent of the available memory.
+        /// The memory utilization threshold, as a percent of the available memory. A value of
+        /// -1 disables the threshold.
         /// </para>
         /// </summary>
         public double MemoryThreshold

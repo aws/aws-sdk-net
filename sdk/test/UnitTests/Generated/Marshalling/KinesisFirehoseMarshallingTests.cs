@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class KinesisFirehoseMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("firehose-2015-08-04.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("firehose-2015-08-04.normal.json", "firehose.customizations.json");
         
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -29,7 +29,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// The Tag type is used by <code>CreateStack</code> in the <code>Tags</code> parameter.
-    /// It allows you to specify a key/value pair that can be used to store information related
+    /// It allows you to specify a key-value pair that can be used to store information related
     /// to cost allocation for an AWS CloudFormation stack.
     /// </summary>
     public partial class Tag

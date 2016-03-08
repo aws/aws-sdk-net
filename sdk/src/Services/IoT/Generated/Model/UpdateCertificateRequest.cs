@@ -70,6 +70,12 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The new status.
         /// </para>
+        ///  
+        /// <para>
+        /// Note: setting the status to PENDING_TRANSFER will result in an exception being thrown.
+        /// PENDING_TRANSFER is a status used internally by AWS IoT and is not meant to be used
+        /// by developers.
+        /// </para>
         /// </summary>
         public CertificateStatus NewStatus
         {

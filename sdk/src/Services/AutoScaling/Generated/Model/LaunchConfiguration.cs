@@ -113,8 +113,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ClassicLinkVPCSecurityGroups. 
         /// <para>
         /// The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
-        /// This parameter is required if <code>ClassicLinkVPCId</code> is specified, and cannot
-        /// be used otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// This parameter is required if you specify a ClassicLink-enabled VPC, and cannot be
+        /// used otherwise. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

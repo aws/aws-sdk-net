@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the GetWebACL operation.
     /// </summary>
     public partial class GetWebACLResponse : AmazonWebServiceResponse
     {
@@ -40,12 +40,12 @@ namespace Amazon.WAF.Model
         /// Information about the <a>WebACL</a> that you specified in the <code>GetWebACL</code>
         /// request. For more information, see the following topics:
         /// </para>
-        ///  <ul> <li> <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>,
-        /// <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code>
-        /// </li> <li> <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
-        /// </li> <li> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects,
-        /// which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
-        /// </li> <li> <code>Action</code>: Contains <code>Type</code> </li> </ul>
+        ///  <ul> <li><a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>,
+        /// <code>Name</code>, an array of <code>Rule</code> objects, and <code>WebACLId</code></li>
+        /// <li><code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code></li>
+        /// <li><code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which
+        /// contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code></li> <li><code>Action</code>:
+        /// Contains <code>Type</code></li> </ul>
         /// </summary>
         public WebACL WebACL
         {

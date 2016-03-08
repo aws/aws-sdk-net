@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #elif DNX
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #else
@@ -44,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.2")]
 [assembly: AssemblyFileVersion("3.2.2.0")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

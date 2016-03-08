@@ -31,6 +31,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     {
 
         /// <summary>
+        /// Constant Customer_profile_by_geography for DataSetType
+        /// </summary>
+        public static readonly DataSetType Customer_profile_by_geography = new DataSetType("customer_profile_by_geography");
+        /// <summary>
         /// Constant CustomerProfileByIndustry for DataSetType
         /// </summary>
         public static readonly DataSetType CustomerProfileByIndustry = new DataSetType("customer_profile_by_industry");
@@ -70,6 +74,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// Constant DailyBusinessUsageByInstanceType for DataSetType
         /// </summary>
         public static readonly DataSetType DailyBusinessUsageByInstanceType = new DataSetType("daily_business_usage_by_instance_type");
+        /// <summary>
+        /// Constant Disbursed_amount_by_product_with_uncollected_funds for DataSetType
+        /// </summary>
+        public static readonly DataSetType Disbursed_amount_by_product_with_uncollected_funds = new DataSetType("disbursed_amount_by_product_with_uncollected_funds");
         /// <summary>
         /// Constant DisbursedAmountByAgeOfDisbursedFunds for DataSetType
         /// </summary>

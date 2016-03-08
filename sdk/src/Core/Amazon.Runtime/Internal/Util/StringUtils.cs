@@ -27,6 +27,8 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public static class StringUtils
     {
+        private static readonly Encoding UTF_8 = Encoding.UTF8;
+
         public static string FromString(String value) 
         {
             return value;
@@ -73,6 +75,15 @@ namespace Amazon.Runtime.Internal.Util
         public static string FromDouble(double value)
         {
             return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static long Utf8ByteLength(string value)
+        {
+            if (value == null)
+            {
+                return 0;
+            }
+            return UTF_8.GetByteCount(value);
         }
     }
 }

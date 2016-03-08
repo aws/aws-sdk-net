@@ -15,8 +15,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Globalization;
 using Amazon.Util;
 using Amazon.Runtime;
@@ -153,7 +153,7 @@ namespace Amazon.S3.Internal
                 "response-cache-control",
                 "response-content-disposition",
                 "response-content-encoding"
-            }, 
+            },
             StringComparer.OrdinalIgnoreCase
         );
 
@@ -180,26 +180,34 @@ namespace Amazon.S3.Internal
 
             if (request.Parameters.Count > 0)
             {
-                var parameters 
-                    = request.Parameters.Where(kvp => SignableParameters.Contains(kvp.Key) 
-                                                        && kvp.Value != null)
-                                        .ToList();
-
-                foreach (var kvp in parameters)
+                foreach (var parameter in request.Parameters)
                 {
-                    resourcesToSign.Add(kvp.Key, kvp.Value);
+                    if (parameter.Value != null && SignableParameters.Contains(parameter.Key))
+                    {
+                        resourcesToSign.Add(parameter.Key, parameter.Value);
+                    }
                 }
             }
 
             var delim = "?";
-            foreach (var resourceToSign in resourcesToSign.OrderBy(r => r.Key))
+            List<KeyValuePair<string, string>> resources = new List<KeyValuePair<string, string>>();
+            foreach (var kvp in resourcesToSign)
+            {
+                resources.Add(kvp);
+            }
+
+            resources.Sort((firstPair, nextPair) =>
+            {
+                return string.CompareOrdinal(firstPair.Key, nextPair.Key);
+            });
+
+            foreach (var resourceToSign in resources)
             {
                 sb.AppendFormat("{0}{1}", delim, resourceToSign.Key);
                 if (resourceToSign.Value != null)
                     sb.AppendFormat("={0}", resourceToSign.Value);
                 delim = "&";
             }
-
             return sb.ToString();
         }
     }

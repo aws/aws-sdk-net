@@ -26,7 +26,9 @@ namespace Amazon.Runtime.SharedInterfaces
         /// <param name="additionalProperties"></param>
         /// <returns></returns>
         string GeneratePreSignedURL(string bucketName, string objectKey, DateTime expiration, IDictionary<string, object> additionalProperties);
-
+        
+        //below api's are not supported in unity
+#if !UNITY
 #if BCL
         /// <summary>
         /// Get all the object keys for the particular bucket and key prefix.
@@ -263,6 +265,6 @@ namespace Amazon.Runtime.SharedInterfaces
         Task DownloadToFilePathAsync(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken = default(CancellationToken));
 
 #endif
-
+#endif
     }
 }

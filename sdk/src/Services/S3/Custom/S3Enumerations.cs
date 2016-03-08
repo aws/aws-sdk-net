@@ -152,6 +152,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3Region USW2 = new S3Region("us-west-2");
         /// <summary>
+        /// Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
+        /// </summary>
+        public static readonly S3Region GOVW1 = new S3Region("us-gov-west-1");
+        /// <summary>
         /// Specifies that the S3 Bucket should use the AP-SOUTHEAST-1 locality.
         /// </summary>
         public static readonly S3Region APS1 = new S3Region("ap-southeast-1");
@@ -171,12 +175,26 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use the SA-EAST-1 locality.
         /// </summary>
         public static readonly S3Region SAE1 = new S3Region("sa-east-1");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
+        /// </summary>
+        public static readonly S3Region CN1 = new S3Region("cn-north-1");
 
         /// <summary>
         /// Specifies that the S3 Bucket should use US-WEST-1 locality.
         /// </summary>
         [Obsolete("This constant is obsolete. Usags of this property should be migrated to the USW1 constant")]
         public static readonly S3Region SFO = new S3Region("us-west-1");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
+        /// </summary>
+        [Obsolete("This constant is obsolete. Usags of this property should be migrated to the CN1 constant")]
+        public static readonly S3Region CN = new S3Region("cn-north-1");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
+        /// </summary>
+        [Obsolete("This constant is obsolete. Usags of this property should be migrated to the GOVW1 constant")]
+        public static readonly S3Region GOV = new S3Region("us-gov-west-1");
 
         /// <summary>
         /// Construct instance of S3Region. It is not intended for this constructor to be called. Instead users should call the FindValue.

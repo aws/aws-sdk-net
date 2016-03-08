@@ -840,10 +840,16 @@ namespace ThirdParty.Json.LitJson
                 else {
                     PropertyInfo p_info = (PropertyInfo) p_data.Info;
 
-                    if (p_info.CanRead) {
-                        writer.WritePropertyName (p_data.Info.Name);
-                        WriteValue (p_info.GetValue (obj, null),
+                    if (p_info.CanRead)
+                    {
+                        writer.WritePropertyName(p_data.Info.Name);
+#if BCL||UNITY
+                        WriteValue(p_info.GetGetMethod().Invoke(obj, null),
                                     writer, writer_is_private, depth + 1);
+#elif PCL
+                        WriteValue(p_info.GetMethod.Invoke(obj, null),
+                                    writer, writer_is_private, depth + 1);
+#endif
                     }
                 }
             }

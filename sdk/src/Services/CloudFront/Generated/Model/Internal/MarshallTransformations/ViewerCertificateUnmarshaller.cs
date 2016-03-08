@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -55,6 +55,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ACMCertificateArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ACMCertificateArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Certificate", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

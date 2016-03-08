@@ -1,0 +1,23 @@
+<linker>
+  <assembly fullname="UnityEngine">
+    <type fullname="UnityEngine.Experimental.Networking.UnityWebRequest" preserve="all" />
+    <type fullname="UnityEngine.Experimental.Networking.UploadHandlerRaw" preserve="all" />
+    <type fullname="UnityEngine.Experimental.Networking.UploadHandler" preserve="all" />
+    <type fullname="UnityEngine.Experimental.Networking.DownloadHandler" preserve="all" />
+    <type fullname="UnityEngine.Experimental.Networking.DownloadHandlerBuffer" preserve="all" />
+  </assembly>
+  <assembly fullname="AWSSDK.Core" preserve="all"/>
+  <assembly fullname="AWSSDK.CognitoIdentity" preserve="all"/>
+  <assembly fullname="AWSSDK.CognitoSync" preserve="all"/>
+  <assembly fullname="AWSSDK.DynamoDBv2" preserve="all"/>
+  <assembly fullname="AWSSDK.Kinesis" preserve="all"/>
+  <assembly fullname="AWSSDK.KinesisFirehose" preserve="all"/>
+  <assembly fullname="AWSSDK.Lambda" preserve="all"/>
+  <assembly fullname="AWSSDK.MobileAnalytics" preserve="all"/>
+  <assembly fullname="AWSSDK.S3" preserve="all"/>
+  <assembly fullname="AWSSDK.SecurityToken" preserve="all"/>
+  <assembly fullname="AWSSDK.SimpleEmail" preserve="all"/>
+  <assembly fullname="AWSSDK.SimpleNotificationService" preserve="all"/>
+  <assembly fullname="AWSSDK.SQS" preserve="all"/>
+  <assembly fullname="AWSSDK.IdentityManagement" preserve="all"/>
+</linker>

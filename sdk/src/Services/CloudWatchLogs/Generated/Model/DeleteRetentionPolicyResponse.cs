@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteRetentionPolicy operation.
     /// </summary>
     public partial class DeleteRetentionPolicyResponse : AmazonWebServiceResponse
     {

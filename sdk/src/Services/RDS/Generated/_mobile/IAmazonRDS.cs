@@ -542,7 +542,7 @@ namespace Amazon.RDS
         /// This command does not take any parameters.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -649,7 +649,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of the available DB engines.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -676,7 +676,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns information about provisioned RDS instances. This API supports pagination.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -724,7 +724,7 @@ namespace Amazon.RDS
         /// is specified, the list will contain only the description of the specified DB parameter
         /// group.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -772,7 +772,7 @@ namespace Amazon.RDS
         /// is specified, the list will contain only the descriptions of the specified DB security
         /// group.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -818,7 +818,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns information about DB snapshots. This API supports pagination.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -855,7 +855,7 @@ namespace Amazon.RDS
         /// Tutorial</a>. 
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -920,7 +920,7 @@ namespace Amazon.RDS
         /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
         /// Events</a> topic in the <i>Amazon RDS User Guide.</i>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -950,7 +950,7 @@ namespace Amazon.RDS
         /// DB security group, database snapshot, or DB parameter group can be obtained by providing
         /// the name as a parameter. By default, the past hour of events are returned.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -984,7 +984,7 @@ namespace Amazon.RDS
         /// If you specify a SubscriptionName, lists the description for that subscription.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1030,7 +1030,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Describes the available option groups.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1093,7 +1093,7 @@ namespace Amazon.RDS
         /// Returns information about reserved DB instances for this account, or about a specified
         /// reserved DB instance.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1123,7 +1123,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Lists available reserved DB instance offerings.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

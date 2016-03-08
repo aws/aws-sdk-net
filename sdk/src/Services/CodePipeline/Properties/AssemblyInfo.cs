@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 #elif DNX
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 #else
@@ -44,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.2")]
 [assembly: AssemblyFileVersion("3.2.2.0")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DeleteDocument operation.
     /// </summary>
     public partial class DeleteDocumentResponse : AmazonWebServiceResponse
     {

@@ -38,8 +38,10 @@ namespace Amazon.CloudFormation.Model
         private string _stackName;
 
         /// <summary>
-        /// Gets and sets the property NextToken. String that identifies the start of the next
-        /// list of stacks, if there is one.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A string that identifies the next page of stacks that you want to retrieve.
+        /// </para>
         /// </summary>
         public string NextToken
         {

@@ -12,7 +12,9 @@ using System.Runtime.CompilerServices;
 #elif BCL45
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL)- Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
+#elif UNITY
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
 #elif DNX
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
 #else
@@ -44,7 +46,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.2")]
 [assembly: AssemblyFileVersion("3.2.2.0")]
 
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]
 # else
 [assembly: System.CLSCompliant(true)]

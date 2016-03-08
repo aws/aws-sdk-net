@@ -82,6 +82,46 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateAuthorizer
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the CreateAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateBasePathMapping
 
 
@@ -330,7 +370,8 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Creates a <a>Stage</a> resource.
+        /// Creates a new <a>Stage</a> resource that references a pre-existing <a>Deployment</a>
+        /// for the API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStage service method.</param>
         /// 
@@ -400,6 +441,46 @@ namespace Amazon.APIGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAuthorizer
+
+
+        /// <summary>
+        /// Deletes an existing <a>Authorizer</a> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -997,6 +1078,77 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetAuthorizer
+
+
+        /// <summary>
+        /// Describe an existing <a>Authorizer</a> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the GetAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAuthorizers
+
+
+        /// <summary>
+        /// Describe an existing <a>Authorizers</a> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers service method.</param>
+        /// 
+        /// <returns>The response from the GetAuthorizers service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAuthorizers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetBasePathMapping
 
 
@@ -1267,6 +1419,43 @@ namespace Amazon.APIGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetExport
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExport service method.</param>
+        /// 
+        /// <returns>The response from the GetExport service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetExportResponse GetExport(GetExportRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetExportResponse> GetExportAsync(GetExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2021,6 +2210,43 @@ namespace Amazon.APIGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAuthorizer
+
+
+        /// <summary>
+        /// Updates an existing <a>Authorizer</a> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

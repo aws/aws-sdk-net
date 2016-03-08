@@ -1,0 +1,312 @@
+﻿<#@ template language="C#"  inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	AddLicenseHeader();
+#>
+
+
+using System;
+using System.Collections.Generic;
+
+using <#=this.Config.Namespace#>.Model;
+using <#=this.Config.Namespace#>.Model.Internal.MarshallTransformations;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+
+namespace <#=this.Config.Namespace#>
+{
+<#    this.FormatServiceClientDocumentation(this.Config.ServiceModel.Documentation); #>
+	public partial class Amazon<#=this.Config.BaseName#>Client : AmazonServiceClient, IAmazon<#=this.Config.BaseName#>
+	{
+<#
+    // Creates constructors for the service if the model specifies to do so
+	if(this.Config.GenerateConstructors)
+	{
+#>
+        #region Constructors
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public Amazon<#=this.Config.BaseName#>Client(AWSCredentials credentials)
+            : this(credentials, new Amazon<#=this.Config.BaseName#>Config())
+        {
+        }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public Amazon<#=this.Config.BaseName#>Client(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new Amazon<#=this.Config.BaseName#>Config{RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Credentials and an
+        /// Amazon<#=this.Config.BaseName#>Client Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The Amazon<#=this.Config.BaseName#>Client Configuration Object</param>
+        public Amazon<#=this.Config.BaseName#>Client(AWSCredentials credentials, Amazon<#=this.Config.BaseName#>Config clientConfig)
+            : base(credentials, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        public Amazon<#=this.Config.BaseName#>Client(string awsAccessKeyId, string awsSecretAccessKey)
+            : this(awsAccessKeyId, awsSecretAccessKey, new Amazon<#=this.Config.BaseName#>Config())
+        {
+        }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public Amazon<#=this.Config.BaseName#>Client(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new Amazon<#=this.Config.BaseName#>Config() {RegionEndpoint=region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Access Key ID, AWS Secret Key and an
+        /// Amazon<#=this.Config.BaseName#>Client Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="clientConfig">The Amazon<#=this.Config.BaseName#>Client Configuration Object</param>
+        public Amazon<#=this.Config.BaseName#>Client(string awsAccessKeyId, string awsSecretAccessKey, Amazon<#=this.Config.BaseName#>Config clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public Amazon<#=this.Config.BaseName#>Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new Amazon<#=this.Config.BaseName#>Config())
+        {
+        }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public Amazon<#=this.Config.BaseName#>Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new Amazon<#=this.Config.BaseName#>Config{RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Access Key ID, AWS Secret Key and an
+        /// Amazon<#=this.Config.BaseName#>Client Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The Amazon<#=this.Config.BaseName#>Client Configuration Object</param>
+        public Amazon<#=this.Config.BaseName#>Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, Amazon<#=this.Config.BaseName#>Config clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
+        {
+        }
+
+        #endregion
+<#
+	}
+#>
+
+        #region Overrides
+
+		/// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new <#=GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.BaseName)#>();
+        }
+
+<#
+    // Generates overrides for the pipeline if specified in the customizations file
+        if(this.Config.ServiceModel.Customizations.PipelineOverride != null)
+        {
+#>
+		/// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+<#
+			var unityPipelineOverride = this.Config.ServiceModel.Customizations.UnityPipelineOverride;
+			var pipelineOverrides = (unityPipelineOverride != null)?unityPipelineOverride: this.Config.ServiceModel.Customizations.PipelineOverride;
+            foreach(var o in pipelineOverrides.Overrides )
+            {
+                if(o.OverrideMethod == "remove")
+                {
+#>
+            pipeline.<#=o.FormattedOverrideMethod#>();
+<#
+                }
+                else
+                {
+#>
+            pipeline.<#=o.FormattedOverrideMethod#>(new <#=o.NewType#>(<#=o.ConstructorInput#>));
+<#				
+                }
+            }
+#>
+        }	
+<#
+		}
+#>
+        #endregion
+
+        #region Dispose
+
+		/// <summary>
+        /// Disposes the service client.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
+        <#
+		// Generates methods for each operation in the model
+        foreach(var operation in this.Config.ServiceModel.Operations)
+        {
+        #>
+
+        #region  <#=operation.Name#>
+<#
+        if(this.Config.ServiceModel.Customizations.GenerateSyncClientForUnity)
+		{
+			if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
+			{
+		this.FormatUnityOperationDocumentationSync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
+				if(operation.IsDeprecated)
+				{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+				}
+#>
+		internal <#=operation.Name#>Response <#=operation.Name#>()
+        {
+			return <#=operation.Name#>(new <#=operation.Name#>Request());
+		}
+<#
+			}
+
+			if(operation.IsDeprecated)
+			{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+			}
+#>
+		internal <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
+        {
+<#
+			if(!this.Config.ServiceModel.AvailableInWWW(operation))
+			{
+#>
+		    if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+		    {
+				throw new InvalidOperationException("<#=operation.Name#> is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+		    }
+<#
+			}
+#>
+            var marshaller = new <#=operation.Name#>RequestMarshaller();
+            var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
+
+            return Invoke<<#=operation.Name#>Request,<#=operation.Name#>Response>(request, marshaller, unmarshaller);
+        }
+<#
+		}
+        // Creates a version of the operation that takes no arguments and passes a request with no set members if specified in the customizations
+        if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
+        {
+#>
+<#
+        this.FormatUnityOperationDocumentationAsync(operation, false, !this.Config.ServiceModel.AvailableInWWW(operation));
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#		
+		}
+#>
+        public void <#=operation.Name#>Async(AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
+        {
+            <#=operation.Name#>Async(new <#=operation.Name#>Request(), callback, options);
+        }
+
+<#
+		}
+        AddSimpleClientMethodsForUnity(operation,false);
+#>
+
+<#AddUnityAsyncDocumentation(operation.Name, !this.Config.ServiceModel.AvailableInWWW(operation));
+		if(operation.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=operation.DeprecationMessage#>")]
+<#
+		}
+#>
+        <#=operation.IsInternal ? "internal" : "public"#> void <#=operation.Name#>Async(<#=operation.Name#>Request request, AmazonServiceCallback<<#=operation.Name#>Request, <#=operation.Name#>Response> callback, AsyncOptions options = null)
+        {
+<#
+			if(!this.Config.ServiceModel.AvailableInWWW(operation))
+			{
+#>
+		    if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+		    {
+				throw new InvalidOperationException("<#=operation.Name#> is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+		    }
+<#
+			}
+#>
+        	options = options == null?new AsyncOptions():options;
+            var marshaller = new <#=operation.Name#>RequestMarshaller();
+            var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
+			Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+			if(callback !=null )
+				callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+					AmazonServiceResult<<#=operation.Name#>Request,<#=operation.Name#>Response> responseObject 
+							= new AmazonServiceResult<<#=operation.Name#>Request,<#=operation.Name#>Response>((<#=operation.Name#>Request)req, (<#=operation.Name#>Response)res, ex , ao.State);	
+						callback(responseObject); 
+				};
+            BeginInvoke<<#=operation.Name#>Request>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        <#
+        }
+        #>
+
+    }
+}

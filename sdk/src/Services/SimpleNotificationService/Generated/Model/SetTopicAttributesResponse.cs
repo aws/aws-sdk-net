@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the SetTopicAttributes operation.
     /// </summary>
     public partial class SetTopicAttributesResponse : AmazonWebServiceResponse
     {

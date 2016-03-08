@@ -421,7 +421,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunTest.Filter</property>
     <min>0</min>
-    <max>1024</max>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunTest.TestPackageArn</property>
@@ -482,7 +482,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Upload.Metadata</property>
     <min>0</min>
-    <max>1024</max>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Upload.Name</property>

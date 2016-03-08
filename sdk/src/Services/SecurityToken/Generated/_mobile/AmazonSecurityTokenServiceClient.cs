@@ -501,11 +501,17 @@ namespace Amazon.SecurityToken
         /// Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>. 
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// create temporary credentials. The account administrator must activate STS in that
+        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
+        /// </exception>
         public Task<GetSessionTokenResponse> GetSessionTokenAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetSessionTokenAsync(new GetSessionTokenRequest(), cancellationToken);

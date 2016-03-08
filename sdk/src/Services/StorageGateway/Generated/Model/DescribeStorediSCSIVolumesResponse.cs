@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DescribeStorediSCSIVolumes operation.
     /// </summary>
     public partial class DescribeStorediSCSIVolumesResponse : AmazonWebServiceResponse
     {

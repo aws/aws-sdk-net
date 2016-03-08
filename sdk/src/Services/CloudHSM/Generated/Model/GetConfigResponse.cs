@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the GetConfig operation.
     /// </summary>
     public partial class GetConfigResponse : AmazonWebServiceResponse
     {

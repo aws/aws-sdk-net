@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2015-09-17.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,6 +32,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class ViewerCertificate
     {
+        private string _acmCertificateArn;
         private string _certificate;
         private CertificateSource _certificateSource;
         private bool? _cloudFrontDefaultCertificate;
@@ -40,10 +41,27 @@ namespace Amazon.CloudFront.Model
         private SSLSupportMethod _sslSupportMethod;
 
         /// <summary>
-        /// Gets and sets the property Certificate. If you want viewers to use HTTPS to request
-        /// your objects and you're using an alternate domain name in your object URLs (for example,
-        /// https://example.com/logo.jpg), set to the IAM certificate identifier of the custom
-        /// viewer certificate for this distribution.
+        /// Gets and sets the property ACMCertificateArn. If you want viewers to use HTTPS to
+        /// request your objects and you're using an alternate domain name in your object URLs
+        /// (for example, https://example.com/logo.jpg), specify the ACM certificate ARN of the
+        /// custom viewer certificate for this distribution. Specify either this value, IAMCertificateId,
+        /// or CloudFrontDefaultCertificate.
+        /// </summary>
+        public string ACMCertificateArn
+        {
+            get { return this._acmCertificateArn; }
+            set { this._acmCertificateArn = value; }
+        }
+
+        // Check to see if ACMCertificateArn property is set
+        internal bool IsSetACMCertificateArn()
+        {
+            return this._acmCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Certificate. Note: this field is deprecated. Please use
+        /// one of [ACMCertificateArn, IAMCertificateId, CloudFrontDefaultCertificate].
         /// </summary>
         public string Certificate
         {
@@ -58,13 +76,8 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CertificateSource. If you want viewers to use HTTPS to
-        /// request your objects and you're using the CloudFront domain name of your distribution
-        /// in your object URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-        /// set to "cloudfront". If you want viewers to use HTTPS to request your objects and
-        /// you're using an alternate domain name in your object URLs (for example, https://example.com/logo.jpg),
-        /// set to "iam", and update the Certificate field with the IAM certificate identifier
-        /// of the custom viewer certificate for this distribution.
+        /// Gets and sets the property CertificateSource. Note: this field is deprecated. Please
+        /// use one of [ACMCertificateArn, IAMCertificateId, CloudFrontDefaultCertificate].
         /// </summary>
         public CertificateSource CertificateSource
         {
@@ -79,11 +92,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CloudFrontDefaultCertificate. Note: this field is deprecated.
-        /// Please use "cloudfront" as CertificateSource and omit specifying a Certificate. If
-        /// you want viewers to use HTTPS to request your objects and you're using the CloudFront
-        /// domain name of your distribution in your object URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
-        /// set to true. Omit this value if you are setting an IAMCertificateId.
+        /// Gets and sets the property CloudFrontDefaultCertificate. If you want viewers to use
+        /// HTTPS to request your objects and you're using the CloudFront domain name of your
+        /// distribution in your object URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg),
+        /// set to true. Omit this value if you are setting an ACMCertificateArn or IAMCertificateId.
         /// </summary>
         public bool CloudFrontDefaultCertificate
         {
@@ -98,12 +110,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IAMCertificateId. Note: this field is deprecated. Please
-        /// use "iam" as CertificateSource and specify the IAM certificate Id as the Certificate.
-        /// If you want viewers to use HTTPS to request your objects and you're using an alternate
-        /// domain name in your object URLs (for example, https://example.com/logo.jpg), specify
-        /// the IAM certificate identifier of the custom viewer certificate for this distribution.
-        /// Specify either this value or CloudFrontDefaultCertificate.
+        /// Gets and sets the property IAMCertificateId. If you want viewers to use HTTPS to request
+        /// your objects and you're using an alternate domain name in your object URLs (for example,
+        /// https://example.com/logo.jpg), specify the IAM certificate identifier of the custom
+        /// viewer certificate for this distribution. Specify either this value, ACMCertificateArn,
+        /// or CloudFrontDefaultCertificate.
         /// </summary>
         public string IAMCertificateId
         {

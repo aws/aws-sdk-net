@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the GetComplianceSummaryByResourceType operation.
     /// </summary>
     public partial class GetComplianceSummaryByResourceTypeResponse : AmazonWebServiceResponse
     {

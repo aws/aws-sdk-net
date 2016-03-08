@@ -36,7 +36,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     ///  This is an asynchronous call. If all the required information is provided, this API
     /// will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code>
-    /// can be used to get the status of an export task. 
+    /// can be used to get the status of an export task. You can only have one active (<code>RUNNING</code>
+    /// or <code>PENDING</code>) export task at a time, per account. 
     /// </para>
     ///  
     /// <para>
@@ -62,7 +63,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>NOTE: Only buckets in the same AWS region are supported</b>
+        /// <b>Note:</b> Only buckets in the same AWS region are supported.
         /// </para>
         /// </summary>
         public string Destination

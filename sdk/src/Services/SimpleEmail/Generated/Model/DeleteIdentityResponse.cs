@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// An empty element. Receiving this element indicates that the request completed successfully.
+    /// This is the response object from the DeleteIdentity operation.
     /// </summary>
     public partial class DeleteIdentityResponse : AmazonWebServiceResponse
     {

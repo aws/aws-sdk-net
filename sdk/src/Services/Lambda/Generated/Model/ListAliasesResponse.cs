@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListAliases operation.
     /// </summary>
     public partial class ListAliasesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Aliases. 
         /// <para>
-        /// An list of alises.
+        /// A list of aliases.
         /// </para>
         /// </summary>
         public List<AliasConfiguration> Aliases

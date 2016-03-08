@@ -79,6 +79,9 @@ namespace Amazon.Runtime.Internal
         {
             lock(_lock)
             {
+                if (_custom == null)
+                    _custom = new Dictionary<string, string>();
+
                 _custom.Add(key,value);
             }
         }
@@ -95,7 +98,7 @@ namespace Amazon.Runtime.Internal
                 _env = new Dictionary<string, string>();
                 _services = new Dictionary<string, IDictionary>();
 
-#if PCL
+#if PCL || UNITY
                  // client
                 _client.Add(CLIENT_ID_KEY, _clientID);
                 _client.Add(CLIENT_APP_TITLE_KEY, _appInfo.AppTitle);

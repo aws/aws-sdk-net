@@ -93,7 +93,7 @@
     <Compile Include="Amazon.Runtime\Internal\Settings\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Runtime\Internal\Settings\_bcl+_dnx\*.cs">
+    <Compile Include="Amazon.Runtime\Internal\Settings\_bcl+dnx\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Internal\Transform\*.cs">
@@ -135,13 +135,16 @@
     <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Runtime\Pipeline\_bcl\*.cs">
+    <Compile Include="Amazon.Runtime\Pipeline\_bcl+unity\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\SharedInterfaces\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\_bcl+unity\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Util\*.cs">
@@ -162,7 +165,7 @@
     <Compile Include="Amazon.Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Util\_bcl+_dnx\*.cs">
+    <Compile Include="Amazon.Util\_bcl+dnx\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ThirdParty\*.cs">

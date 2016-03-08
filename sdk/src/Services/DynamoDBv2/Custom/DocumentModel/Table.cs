@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal Table.DynamoDBConsumer TableConsumer { get; private set; }
         internal DynamoDBEntryConversion Conversion { get; private set; }
 
-#if PCL || DNX
+#if PCL || UNITY || DNX
         internal AmazonDynamoDBClient DDBClient { get; private set; }
 #else
         internal IAmazonDynamoDB DDBClient { get; private set; }
@@ -208,7 +208,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             string hashKeyName = HashKeys[0];
             KeyDescription hashKeyDescription = Keys[hashKeyName];
             if (hashKeyDescription.Type != hashKey.Type)
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Schema for table {0}, hash key {1}, is inconsistent with specified hash key value.", TableName, hashKeyName));
 
             var hashKeyValue = hashKey.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(Conversion));
@@ -216,7 +216,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             if ((rangeKey == null) != (RangeKeys.Count == 0))
             {
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Schema for table {0}, range key {1}, is inconsistent with specified range key value.", TableName, hashKeyName));
             }
             else if (rangeKey != null)
@@ -224,7 +224,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 string rangeKeyName = RangeKeys[0];
                 KeyDescription rangeKeyDescription = Keys[rangeKeyName];
                 if (rangeKeyDescription.Type != rangeKey.Type)
-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
+                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                         "Schema for table {0}, range key {1}, is inconsistent with specified range key value.", TableName, hashKeyName));
                 var rangeKeyValue = rangeKey.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(Conversion));
                 newKey[rangeKeyName] = rangeKeyValue;
@@ -247,9 +247,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
             WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
             if (wsArgs != null)
             {
-                string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
-                wsArgs.Headers[AWSSDKUtils.UserAgentHeader] =
+                if (wsArgs.Headers.Keys.Contains(HeaderKeys.UserAgentHeader))
+                {
+                    string currentUserAgent = wsArgs.Headers[HeaderKeys.UserAgentHeader];
+                    wsArgs.Headers[HeaderKeys.UserAgentHeader] =
                     currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
+            }
+                else if(wsArgs.Headers.Keys.Contains(HeaderKeys.XAmzUserAgentHeader))
+                {
+                    string currentUserAgent = wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader];
+                    wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader] =
+                        currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
+        }
             }
         }
 
@@ -305,7 +314,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return this.Copy(this.TableConsumer);
         }
-        
+
         internal Table Copy(Table.DynamoDBConsumer newConsumer)
         {
             return new Table(this.DDBClient, this.TableName, newConsumer, this.Conversion)
@@ -331,7 +340,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private Table(IAmazonDynamoDB ddbClient, string tableName, Table.DynamoDBConsumer consumer, DynamoDBEntryConversion conversion)
         {
-#if PCL || DNX
+#if PCL || UNITY || DNX
             DDBClient = ddbClient as AmazonDynamoDBClient;
 #else
             DDBClient = ddbClient;
@@ -374,6 +383,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             SdkCache.Clear(TableInfoCacheIdentifier);
         }
 
+#if !UNITY
         /// <summary>
         /// Creates a Table object with the specified name, using the
         /// passed-in client to load the table definition.
@@ -450,7 +460,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return false;
             }
         }
-
+#endif
         #endregion
 
 

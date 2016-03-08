@@ -14,6 +14,9 @@ namespace SDKDocGenerator.Writers
     {
         protected FrameworkVersion _version;
         protected IDictionary<string, XElement> _currentNDoc;
+        protected bool _unityVersionOfAsyncExists = false;
+        protected bool _referAsyncAlternativeUnity = false;
+        protected bool _referAsyncAlternativePCL = false;
 
         public static readonly List<TableColumnHeader> FieldTableColumnHeaders = new List<TableColumnHeader>
         {
@@ -114,7 +117,7 @@ namespace SDKDocGenerator.Writers
                 // the page title for now
                 writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
                 writer.WriteLine("<title>{0} | AWS SDK for .NET V3</title>", GetTitle());
-                writer.WriteLine("<link rel=\"canonical\" href=\"http://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html?page={0}&tocid={1}\"/>",
+                writer.WriteLine("<link rel=\"canonical\" href=\"http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page={0}&tocid={1}\"/>",
                                 FilenameGenerator.Escape(this.GenerateFilename()),
                                 FilenameGenerator.Escape(this.GetTOCID()));
 
@@ -487,9 +490,10 @@ namespace SDKDocGenerator.Writers
             var docs35 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net35"), wrapper);
             var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
             var docsPCL = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), wrapper);
+            var docsUnity = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("unity"), wrapper);
 
-            // If there is no documentation then assume it is available for all platforms.
-            var boolNoDocs = docs35 == null && docs45 == null && docsPCL == null;
+            // If there is no documentation then assume it is available for all platforms, excluding Unity.
+            var boolNoDocs = docs35 == null && docs45 == null && docsPCL == null && docsUnity == null;
 
             var sb = new StringBuilder();
             if (boolNoDocs || (wrapper != null && docs45 != null))
@@ -506,7 +510,7 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<p><strong>.NET Framework: </strong><br/>Supported in: {0}<br/>", sb.ToString());
             }
 
-            if (boolNoDocs || docsPCL != null)
+            if (boolNoDocs || docsPCL != null || _referAsyncAlternativePCL)
             {
                 writer.WriteLine("<p><strong>Portable Class Library: </strong><br/>");
                 writer.WriteLine("Supported in: Windows Store Apps<br/>");
@@ -516,7 +520,13 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("Supported in: Xamarin.Forms<br/>");
             }
 
-            
+            if (docsUnity != null || _unityVersionOfAsyncExists || _referAsyncAlternativeUnity)
+            {
+                writer.WriteLine("<p><strong>Unity: </strong><br/>");
+                writer.WriteLine("Supported Versions: 4.6 and above<br/>");
+                writer.WriteLine("Supported Platforms: Android, iOS, Standalone<br/>");
+            }
+
             AddSectionClosing(writer);
         }
 

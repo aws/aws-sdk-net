@@ -57,7 +57,7 @@ namespace Amazon.WAF.Model
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
         /// web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS
-        /// WAF performs the transformation on <code>TargetString</code> before inspecting a request
+        /// WAF performs the transformation on <code>FieldToMatch</code> before inspecting a request
         /// for a match.
         /// </para>
         ///  
@@ -97,10 +97,10 @@ namespace Amazon.WAF.Model
         /// Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
         /// performs the following operations:
         /// </para>
-        ///  <ul> <li>Replaces <code>(ampersand)quot;</code> with <code>"</code> </li> <li>Replaces
+        ///  <ul> <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li> <li>Replaces
         /// <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</li> <li>Replaces
         /// <code>(ampersand)lt;</code> with a "less than" symbol</li> <li>Replaces <code>(ampersand)gt;</code>
-        /// with <code>&gt;</code> </li> <li>Replaces characters that are represented in hexadecimal
+        /// with <code>></code></li> <li>Replaces characters that are represented in hexadecimal
         /// format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li> <li>Replaces
         /// characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
         /// with the corresponding characters</li> </ul> 

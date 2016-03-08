@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the AttachGroupPolicy operation.
     /// </summary>
     public partial class AttachGroupPolicyResponse : AmazonWebServiceResponse
     {

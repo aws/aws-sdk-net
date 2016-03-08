@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleDB.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the PutAttributes operation.
     /// </summary>
     public partial class PutAttributesResponse : AmazonWebServiceResponse
     {

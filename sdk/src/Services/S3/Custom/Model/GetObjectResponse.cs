@@ -355,6 +355,22 @@ namespace Amazon.S3.Model
             return ReplicationStatus != null;
         }
 
+        /// <summary>
+        /// The Server-side encryption algorithm to be used with the customer provided key.
+        ///  
+        /// </summary>
+        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
+        {
+            get
+            {
+                if (this.serverSideEncryptionCustomerMethod == null)
+                    return ServerSideEncryptionCustomerMethod.None;
+
+                return this.serverSideEncryptionCustomerMethod;
+            }
+            set { this.serverSideEncryptionCustomerMethod = value; }
+        }
+
 
 #if BCL
 
@@ -421,7 +437,7 @@ namespace Amazon.S3.Model
         }
 
 #endif
-
+#if !UNITY
         #region Progress Event
 
         /// <summary>
@@ -463,21 +479,6 @@ namespace Amazon.S3.Model
             AWSSDKUtils.InvokeInBackground(WriteObjectProgressEvent, new WriteObjectProgressArgs(this.BucketName, this.Key, file, this.VersionId, incrementTransferred, transferred, total), this);
         }
 
-        /// <summary>
-        /// The Server-side encryption algorithm to be used with the customer provided key.
-        ///  
-        /// </summary>
-        public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
-        {
-            get
-            {
-                if (this.serverSideEncryptionCustomerMethod == null)
-                    return ServerSideEncryptionCustomerMethod.None;
-
-                return this.serverSideEncryptionCustomerMethod;
-            }
-            set { this.serverSideEncryptionCustomerMethod = value; }
-        }
 
         private void ValidateWrittenStreamSize(long bytesWritten)
         {
@@ -561,8 +562,10 @@ namespace Amazon.S3.Model
             }
         }
 #endif
+#endif
     }
 
+#if !UNITY
     /// <summary>
     /// Encapsulates the information needed to provide
     /// download progress for the Write Object Event.
@@ -629,5 +632,6 @@ namespace Amazon.S3.Model
         /// </summary>
         public string FilePath { get; private set; }
     }
+#endif    
 }
     

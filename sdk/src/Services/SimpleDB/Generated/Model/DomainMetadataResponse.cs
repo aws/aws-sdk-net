@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleDB.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DomainMetadata operation.
     /// </summary>
     public partial class DomainMetadataResponse : AmazonWebServiceResponse
     {

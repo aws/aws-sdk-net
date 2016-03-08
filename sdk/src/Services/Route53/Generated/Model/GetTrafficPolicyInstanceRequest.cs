@@ -34,7 +34,7 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// To get information about the traffic policy instance, send a <code>GET</code> request
-    /// to the <code>2013-04-01/trafficpolicyinstance</code> resource.
+    /// to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource.
     /// </para>
     ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
     /// request, there's a brief delay while Amazon Route 53 creates the resource record sets

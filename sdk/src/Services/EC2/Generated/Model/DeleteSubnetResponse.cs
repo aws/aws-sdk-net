@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteSubnet operation.
     /// </summary>
     public partial class DeleteSubnetResponse : AmazonWebServiceResponse
     {

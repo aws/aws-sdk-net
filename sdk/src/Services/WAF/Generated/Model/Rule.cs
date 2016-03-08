@@ -33,7 +33,7 @@ namespace Amazon.WAF.Model
     /// example, you might create a <code>Rule</code> that includes the following predicates:
     /// 
     ///  <ul> <li>An <code>IPSet</code> that causes AWS WAF to search for web requests that
-    /// originate from the IP address <code>192.0.2.44</code> </li> <li>A <code>ByteMatchSet</code>
+    /// originate from the IP address <code>192.0.2.44</code></li> <li>A <code>ByteMatchSet</code>
     /// that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code>
     /// header is <code>BadBot</code>.</li> </ul> 
     /// <para>

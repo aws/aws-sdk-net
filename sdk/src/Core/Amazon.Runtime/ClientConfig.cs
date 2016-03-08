@@ -36,7 +36,7 @@ namespace Amazon.Runtime
         // Represents max timeout.
         public static readonly TimeSpan MaxTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
 
-#if !BCL
+#if !BCL && !UNITY
         private RegionEndpoint regionEndpoint = null;
 #else
         private RegionEndpoint regionEndpoint = GetDefaultRegionEndpoint();

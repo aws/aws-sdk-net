@@ -71,6 +71,10 @@ namespace Amazon.Runtime.Internal.Util
             InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
             loggers.Add(sdLogger);
 #endif
+#if UNITY
+            UnityDebugLogger debugLogger = new UnityDebugLogger(type);
+            loggers.Add(debugLogger);
+#endif
 #if __ANDROID__ || __IOS__
             InternalConsoleLogger consoleLogger = new InternalConsoleLogger(type);
             loggers.Add(consoleLogger);
@@ -100,6 +104,10 @@ namespace Amazon.Runtime.Internal.Util
 #if BCL
                 if (il is InternalSystemDiagnosticsLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
+#endif
+#if UNITY
+                if (il is UnityDebugLogger)
+                    il.IsEnabled = (logging & LoggingOptions.UnityLogger) == LoggingOptions.UnityLogger;
 #endif
 #if __ANDROID__ || __IOS__
                 if (il is InternalConsoleLogger)

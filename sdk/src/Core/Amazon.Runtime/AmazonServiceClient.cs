@@ -43,25 +43,99 @@ namespace Amazon.Runtime
 
         #region Events
 
+
+        private PreRequestEventHandler mBeforeMarshallingEvent;
+
         /// <summary>
         /// Occurs before a request is marshalled.
         /// </summary>
-        internal event PreRequestEventHandler BeforeMarshallingEvent;
+        internal event PreRequestEventHandler BeforeMarshallingEvent
+        {
+            add
+            {
+                lock (this)
+                {
+                    mBeforeMarshallingEvent += value;
+                }
+            }
+            remove
+            {
+                lock (this)
+                {
+                    mBeforeMarshallingEvent -= value;
+                }
+            }
+        }
+
+
+        private RequestEventHandler mBeforeRequestEvent;
 
         /// <summary>
         /// Occurs before a request is issued against the service.
         /// </summary>
-        public event RequestEventHandler BeforeRequestEvent;
+        public event RequestEventHandler BeforeRequestEvent
+        {
+            add
+            {
+                lock (this)
+                {
+                    mBeforeRequestEvent += value;
+                }
+            }
+            remove
+            {
+                lock (this)
+                {
+                    mBeforeRequestEvent -= value;
+                }
+            }
+        }
+
+        private ResponseEventHandler mAfterResponseEvent;
 
         /// <summary>
         /// Occurs after a response is received from the service.
         /// </summary>
-        public event ResponseEventHandler AfterResponseEvent;
+        public event ResponseEventHandler AfterResponseEvent
+        {
+            add
+            {
+                lock (this)
+                {
+                    mAfterResponseEvent += value;
+                }
+            }
+            remove
+            {
+                lock (this)
+                {
+                    mAfterResponseEvent -= value;
+                }
+            }
+        }
+
+        private ExceptionEventHandler mExceptionEvent;
 
         /// <summary>
         /// Occurs after an exception is encountered.
         /// </summary>
-        public event ExceptionEventHandler ExceptionEvent;
+        public event ExceptionEventHandler ExceptionEvent
+        {
+            add
+            {
+                lock (this)
+                {
+                    mExceptionEvent += value;
+                }
+            }
+            remove
+            {
+                lock (this)
+                {
+                    mExceptionEvent -= value;
+                }
+            }
+        }
 
         #endregion
 
@@ -109,8 +183,8 @@ namespace Amazon.Runtime
         #region Invoke methods
 
         protected TResponse Invoke<TRequest, TResponse>(TRequest request,
-            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller)            
-            where TRequest: AmazonWebServiceRequest
+            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller)
+            where TRequest : AmazonWebServiceRequest
             where TResponse : AmazonWebServiceResponse
         {
             ThrowIfDisposed();
@@ -131,6 +205,34 @@ namespace Amazon.Runtime
             var response = (TResponse)this.RuntimePipeline.InvokeSync(executionContext).Response;
             return response;
         }
+
+#if UNITY
+        protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
+           IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller, AsyncOptions asyncOptions,
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper)
+           where TRequest : AmazonWebServiceRequest
+        {
+            ThrowIfDisposed();
+
+            asyncOptions = asyncOptions ?? new AsyncOptions();
+            var executionContext = new AsyncExecutionContext(
+                new AsyncRequestContext(this.Config.LogMetrics)
+                {
+                    ClientConfig = this.Config,
+                    Marshaller = marshaller,
+                    OriginalRequest = request,
+                    Signer = Signer,
+                    Unmarshaller = unmarshaller,
+                    Action = callbackHelper,
+                    AsyncOptions = asyncOptions,
+                    IsAsync = true
+                },
+                new AsyncResponseContext()
+            );
+
+            return this.RuntimePipeline.InvokeAsync(executionContext);
+        }
+#endif
 
 #if AWS_ASYNC_API 
 
@@ -163,7 +265,7 @@ namespace Amazon.Runtime
         protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
             AsyncCallback callback, object state)
-            where TRequest : AmazonWebServiceRequest            
+            where TRequest : AmazonWebServiceRequest
         {
             ThrowIfDisposed();
 
@@ -210,7 +312,7 @@ namespace Amazon.Runtime
                     throw asyncResult.Exception;
                 }
 
-                return (TResponse) asyncResult.Response;
+                return (TResponse)asyncResult.Response;
             }
         }
 #endif
@@ -223,11 +325,11 @@ namespace Amazon.Runtime
         {
             //if (request == null)
             //    return;
-            if (BeforeMarshallingEvent == null)
+            if (mBeforeMarshallingEvent == null)
                 return;
 
             PreRequestEventArgs args = PreRequestEventArgs.Create(executionContext.RequestContext.OriginalRequest);
-            BeforeMarshallingEvent(this, args);
+            mBeforeMarshallingEvent(this, args);
         }
 
         protected void ProcessRequestHandlers(IExecutionContext executionContext)
@@ -238,13 +340,13 @@ namespace Amazon.Runtime
             if (request.OriginalRequest != null)
                 request.OriginalRequest.FireBeforeRequestEvent(this, args);
 
-            if (BeforeRequestEvent != null)
-                BeforeRequestEvent(this, args);
+            if (mBeforeRequestEvent != null)
+                mBeforeRequestEvent(this, args);
         }
 
         protected void ProcessResponseHandlers(IExecutionContext executionContext)
         {
-            if (AfterResponseEvent == null)
+            if (mAfterResponseEvent == null)
                 return;
 
             WebServiceResponseEventArgs args = WebServiceResponseEventArgs.Create(
@@ -252,16 +354,16 @@ namespace Amazon.Runtime
                 executionContext.RequestContext.Request,
                 executionContext.ResponseContext.HttpResponse);
 
-            AfterResponseEvent(this, args);
+            mAfterResponseEvent(this, args);
         }
 
         protected virtual void ProcessExceptionHandlers(IExecutionContext executionContext, Exception exception)
         {
-            if (ExceptionEvent == null)
+            if (mExceptionEvent == null)
                 return;
 
             WebServiceExceptionEventArgs args = WebServiceExceptionEventArgs.Create(exception, executionContext.RequestContext.Request);
-            ExceptionEvent(this, args);
+            mExceptionEvent(this, args);
         }
 
         #endregion
@@ -304,6 +406,20 @@ namespace Amazon.Runtime
 #if BCL || BCL45
             var httpRequestFactory = new HttpWebRequestFactory();
             var httpHandler = new HttpHandler<Stream>(httpRequestFactory, this);
+#elif UNITY
+            IHttpRequestFactory<string> httpRequestFactory = null;
+            HttpHandler<string> httpHandler = null;
+
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                httpRequestFactory = new UnityWwwRequestFactory();
+                httpHandler = new HttpHandler<string>(httpRequestFactory, this);
+            }
+            else
+            {
+                httpRequestFactory = new UnityWebRequestFactory();
+                httpHandler = new HttpHandler<string>(httpRequestFactory, this);
+            }
 #else
             var httpRequestFactory = new HttpRequestMessageFactory(this.Config);
             var httpHandler = new HttpHandler<System.Net.Http.HttpContent>(httpRequestFactory, this);
@@ -323,7 +439,7 @@ namespace Amazon.Runtime
             // Build default runtime pipeline.
             this.RuntimePipeline = new RuntimePipeline(new List<IPipelineHandler>
                 {
-                    httpHandler,                    
+                    httpHandler,
                     new Unmarshaller(this.SupportResponseLogging),
                     new ErrorHandler(_logger),
                     postUnmarshallHandler,
@@ -331,11 +447,14 @@ namespace Amazon.Runtime
                     new CredentialsRetriever(this.Credentials),
                     new RetryHandler(new DefaultRetryPolicy(this.Config.MaxErrorRetry)),
                     postMarshallHandler,
-                    new EndpointResolver(),                    
+                    new EndpointResolver(),
                     new Marshaller(),
                     preMarshallHandler,
                     errorCallbackHandler,
                     new MetricsHandler()
+#if UNITY
+                    ,new ThreadPoolExecutionHandler(10)//remove the hardcoded to unity config
+#endif
                 },
                 _logger
             );

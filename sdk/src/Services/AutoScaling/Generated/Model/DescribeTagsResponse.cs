@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DescribeTags operation.
     /// </summary>
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {
@@ -57,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags.
+        /// One or more tags.
         /// </para>
         /// </summary>
         public List<TagDescription> Tags

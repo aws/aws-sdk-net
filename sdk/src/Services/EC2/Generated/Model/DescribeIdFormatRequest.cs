@@ -29,16 +29,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIdFormat operation.
-    /// <b>Important: This command is reserved for future use, and is currently not available
-    /// for you to use.</b>
-    /// 
-    ///  
-    /// <para>
     /// Describes the ID format settings for your resources on a per-region basis, for example,
     /// to view which resource types are enabled for longer IDs. This request only returns
     /// information about resource types whose ID formats can be modified; it does not return
     /// information about other resource types. 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.

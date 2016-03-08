@@ -333,6 +333,37 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  BatchGetApplicationRevisions
+
+        internal BatchGetApplicationRevisionsResponse BatchGetApplicationRevisions(BatchGetApplicationRevisionsRequest request)
+        {
+            var marshaller = new BatchGetApplicationRevisionsRequestMarshaller();
+            var unmarshaller = BatchGetApplicationRevisionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetApplicationRevisionsRequest,BatchGetApplicationRevisionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetApplicationRevisions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetApplicationRevisions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<BatchGetApplicationRevisionsResponse> BatchGetApplicationRevisionsAsync(BatchGetApplicationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchGetApplicationRevisionsRequestMarshaller();
+            var unmarshaller = BatchGetApplicationRevisionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetApplicationRevisionsRequest,BatchGetApplicationRevisionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetApplications
 
         internal BatchGetApplicationsResponse BatchGetApplications(BatchGetApplicationsRequest request)
@@ -359,6 +390,37 @@ namespace Amazon.CodeDeploy
             var unmarshaller = BatchGetApplicationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetApplicationsRequest,BatchGetApplicationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetDeploymentInstances
+
+        internal BatchGetDeploymentInstancesResponse BatchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request)
+        {
+            var marshaller = new BatchGetDeploymentInstancesRequestMarshaller();
+            var unmarshaller = BatchGetDeploymentInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDeploymentInstancesRequest,BatchGetDeploymentInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDeploymentInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<BatchGetDeploymentInstancesResponse> BatchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchGetDeploymentInstancesRequestMarshaller();
+            var unmarshaller = BatchGetDeploymentInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetDeploymentInstancesRequest,BatchGetDeploymentInstancesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -940,7 +1002,7 @@ namespace Amazon.CodeDeploy
         /// <summary>
         /// Lists the applications registered with the applicable IAM user or AWS account.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -992,7 +1054,7 @@ namespace Amazon.CodeDeploy
         /// <summary>
         /// Lists the deployment configurations with the applicable IAM user or AWS account.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

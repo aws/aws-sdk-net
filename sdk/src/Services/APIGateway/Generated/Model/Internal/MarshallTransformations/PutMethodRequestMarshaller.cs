@@ -80,6 +80,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthorizationType);
                 }
 
+                if(publicRequest.IsSetAuthorizerId())
+                {
+                    context.Writer.WritePropertyName("authorizerId");
+                    context.Writer.Write(publicRequest.AuthorizerId);
+                }
+
                 if(publicRequest.IsSetRequestModels())
                 {
                     context.Writer.WritePropertyName("requestModels");

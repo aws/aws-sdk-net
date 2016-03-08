@@ -1744,7 +1744,7 @@ namespace Amazon.Redshift
         /// regardless of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1933,7 +1933,7 @@ namespace Amazon.Redshift
         /// of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2078,7 +2078,7 @@ namespace Amazon.Redshift
         /// regardless of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2211,7 +2211,7 @@ namespace Amazon.Redshift
         /// of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2338,7 +2338,7 @@ namespace Amazon.Redshift
         /// regardless of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2414,7 +2414,7 @@ namespace Amazon.Redshift
         /// versions. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2525,7 +2525,7 @@ namespace Amazon.Redshift
         /// source type. For a list of the event categories and source types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
         /// Redshift Event Notifications</a>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2595,7 +2595,7 @@ namespace Amazon.Redshift
         /// or parameter group can be obtained by providing the name as a parameter. By default,
         /// the past hour of events are returned.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2670,7 +2670,7 @@ namespace Amazon.Redshift
         /// a customer account. If you specify a subscription name, lists the description for
         /// that subscription.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2795,7 +2795,7 @@ namespace Amazon.Redshift
         /// are returned regardless of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2922,7 +2922,7 @@ namespace Amazon.Redshift
         /// regardless of whether they have tag keys or values associated with them.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3051,7 +3051,7 @@ namespace Amazon.Redshift
         /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3157,7 +3157,7 @@ namespace Amazon.Redshift
         /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3230,7 +3230,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns the descriptions of the reserved nodes.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

@@ -49,9 +49,9 @@ namespace Amazon.WAF.Model
         /// CloudFront distribution, this is the value of one of the following fields in CloudFront
         /// access logs:
         /// </para>
-        ///  <ul> <li> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer
-        /// to send the request</li> <li> <code>x-forwarded-for</code>, if the viewer did use
-        /// an HTTP proxy or a load balancer to send the request</li> </ul>
+        ///  <ul> <li><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer
+        /// to send the request</li> <li><code>x-forwarded-for</code>, if the viewer did use an
+        /// HTTP proxy or a load balancer to send the request</li> </ul>
         /// </summary>
         public List<IPSetDescriptor> IPSetDescriptors
         {

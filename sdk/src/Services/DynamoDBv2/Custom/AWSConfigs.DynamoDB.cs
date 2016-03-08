@@ -29,7 +29,7 @@ namespace Amazon
         {
             try
             {
-#if BCL
+#if BCL || UNITY
                 var root = new RootConfig();
                 var section = root.GetServiceSection(dynamoDBKey);
                 if (section == null)
@@ -45,8 +45,12 @@ namespace Amazon
                 // If no configuration exist at least
                 // configure the context config to the default.
                 if (Context == null)
+                {
                     Context = new DynamoDBContextConfig();
+                    ConversionSchema = ConversionSchema.V1;;
+                }
             }
+
         }
 
         #region DynamoDBContext TableNamePrefix
@@ -90,19 +94,21 @@ namespace Amazon
         /// </summary>
         public static DynamoDBContextConfig Context { get; private set; }
 
-#if BCL
+#if BCL || UNITY
         internal static void Configure(DynamoDBSection section)
         {
             Context = new DynamoDBContextConfig();
             ConversionSchema = ConversionSchema.V1;
 
-            if (section.ElementInformation.IsPresent)
+            if (section != null && section.ElementInformation.IsPresent)
             {
                 ConversionSchema = section.ConversionSchema;
-                Context.Configure(section.Context);
+                if(section.Context != null)
+                    Context.Configure(section.Context);
             }
         }
-#endif
+
+#endif  
     }
 }
 
@@ -165,10 +171,10 @@ namespace Amazon.Util
             TypeMappings = new Dictionary<Type, TypeMapping>();
         }
 
-#if BCL
+#if BCL || UNITY
         internal void Configure(DynamoDBContextSection section)
         {
-            if (section.ElementInformation.IsPresent)
+            if (section != null && section.ElementInformation.IsPresent)
             {
                 TableNamePrefix = section.TableNamePrefix;
 
@@ -255,7 +261,7 @@ namespace Amazon.Util
             PropertyConfigs = new Dictionary<string, PropertyConfig>(StringComparer.Ordinal);
         }
 
-#if BCL
+#if BCL || UNITY
         internal TypeMapping(TypeMappingElement mapping)
             : this(mapping.Type, mapping.TargetTable)
         {
@@ -297,13 +303,13 @@ namespace Amazon.Util
         /// <summary>
         /// Initializes a PropertyConfig object for a specific property
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="propertyName"></param>
         public PropertyConfig(string propertyName)
         {
             Name = propertyName;
         }
 
-#if BCL
+#if BCL || UNITY
         internal PropertyConfig(PropertyConfigElement prop)
             : this(prop.Name)
         {

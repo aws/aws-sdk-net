@@ -1457,7 +1457,7 @@ namespace Amazon.SimpleNotificationService
         /// <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
         /// SNS Mobile Push Notifications</a>.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1580,7 +1580,7 @@ namespace Amazon.SimpleNotificationService
         /// is also returned. Use the <code>NextToken</code> parameter in a       new <code>ListSubscriptions</code>
         /// call to get further results.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1910,7 +1910,7 @@ namespace Amazon.SimpleNotificationService
         /// Use the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to
         /// get      further results.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

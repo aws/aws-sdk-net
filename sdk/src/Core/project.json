@@ -16,6 +16,8 @@
     "**/_bcl45/*",
     "**/_bcl/*",
     "**/_bcl+sl/*",
+    "**/_bcl+unity/*",
+    "**/_unity/*",
     "**/_android/*",
     "**/_ios/*",
     "**/_pclReference/*",

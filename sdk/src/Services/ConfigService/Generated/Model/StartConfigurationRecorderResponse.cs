@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the StartConfigurationRecorder operation.
     /// </summary>
     public partial class StartConfigurationRecorderResponse : AmazonWebServiceResponse
     {

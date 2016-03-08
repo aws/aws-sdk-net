@@ -27,10 +27,22 @@
 		<xpkgexe>C:\xpkg\xamarin-component.exe</xpkgexe>
 		<xpkg>&quot;$(xpkgexe)&quot;</xpkg>
 		
+	    <unitypath>C:\Program Files\Unity</unitypath>
+		 
+		<unityexe>$(unitypath)\Editor\Unity.Exe</unityexe>
+		<unity>&quot;$(unityexe)&quot;</unity>
+		
+		<pdb2mdbexe>$(unitypath)\Editor\Data\MonoBleedingEdge\lib\mono\4.5\pdb2mdb.exe</pdb2mdbexe>
+		<pdb2mdb>&quot;$(pdb2mdbexe)&quot;</pdb2mdb>
+		
+		<monoexe>C:\Program Files (x86)\Mono\bin\mono.exe</monoexe>
+		<mono>&quot;$(monoexe)&quot;</mono>
+		
 		<Deployment>..\Deployment</Deployment>
 		<DocDeployment>..\DocDeployment</DocDeployment>
-	</PropertyGroup>
+        </PropertyGroup>
 
+	
 	<!-- COMMON TARGETS -->
 	
 	<Target Name="clean" DependsOnTargets="build-custom-tasks">

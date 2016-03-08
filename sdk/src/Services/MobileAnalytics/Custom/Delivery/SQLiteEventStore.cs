@@ -14,18 +14,7 @@
  */
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-
-using Amazon.MobileAnalytics.Model;
-
-using ThirdParty.Json.LitJson;
-using Amazon.MobileAnalytics.MobileAnalyticsManager;
-using Amazon.Util;
-using Amazon.Runtime.Internal.Util;
-using Amazon.Util.Internal;
-using System.Globalization;
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 {
@@ -48,10 +37,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private const String dbFileName = "mobile_analytic_event.db";
 
         // platform specific db file path
-        private static String _dbFileFullPath;
         private static object _lock = new object();
-        private static Boolean hasSetup = false;
         private MobileAnalyticsManagerConfig _maConfig;
+
+
+        private bool _isDisposed;
 
         /// <summary>
         /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/>
@@ -60,6 +50,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         public SQLiteEventStore(MobileAnalyticsManagerConfig maConfig)
         {
             _maConfig = maConfig;
+            SetupSQLiteEventStore();
         }
 
         /// <summary>
@@ -68,10 +59,18 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <returns> The database file full path. </returns>
         public string DBfileFullPath
         {
-            get
-            {
-                return _dbFileFullPath;
-            }
+            get;
+            internal set;
+        }
+
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
     }

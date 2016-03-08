@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the ID of a Reserved instance.
+    /// Describes the ID of a Reserved Instance.
     /// </summary>
     public partial class ReservedInstancesId
     {
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the Reserved instance.
+        /// The ID of the Reserved Instance.
         /// </para>
         /// </summary>
         public string Id

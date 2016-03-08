@@ -64,6 +64,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EbsVolumes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EbsVolume, EbsVolumeUnmarshaller>(EbsVolumeUnmarshaller.Instance);
+                    unmarshalledObject.EbsVolumes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Ec2InstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceGroupId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PrivateDnsName", targetDepth))

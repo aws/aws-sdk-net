@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System;
 using Amazon.Runtime.Internal.Util;
+using Logger = Amazon.Runtime.Internal.Util.Logger;
 
 #if PCL || BCL45
 using System.Threading.Tasks;

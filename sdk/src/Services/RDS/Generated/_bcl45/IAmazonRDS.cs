@@ -1406,7 +1406,7 @@ namespace Amazon.RDS
         /// This command does not take any parameters.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1618,7 +1618,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of the available DB engines.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1668,7 +1668,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns information about provisioned RDS instances. This API supports pagination.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1755,7 +1755,7 @@ namespace Amazon.RDS
         /// is specified, the list will contain only the description of the specified DB parameter
         /// group.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1842,7 +1842,7 @@ namespace Amazon.RDS
         /// is specified, the list will contain only the descriptions of the specified DB security
         /// group.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1938,7 +1938,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns information about DB snapshots. This API supports pagination.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2012,7 +2012,7 @@ namespace Amazon.RDS
         /// Tutorial</a>. 
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2126,7 +2126,7 @@ namespace Amazon.RDS
         /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
         /// Events</a> topic in the <i>Amazon RDS User Guide.</i>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2179,7 +2179,7 @@ namespace Amazon.RDS
         /// DB security group, database snapshot, or DB parameter group can be obtained by providing
         /// the name as a parameter. By default, the past hour of events are returned.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2250,7 +2250,7 @@ namespace Amazon.RDS
         /// If you specify a SubscriptionName, lists the description for that subscription.
         /// </para>
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2328,7 +2328,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Describes the available option groups.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2438,7 +2438,7 @@ namespace Amazon.RDS
         /// Returns information about reserved DB instances for this account, or about a specified
         /// reserved DB instance.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -2491,7 +2491,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Lists available reserved DB instance offerings.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -3539,12 +3539,11 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB instance from a DB snapshot. The target database is created from
-        /// the source database restore point with the most of original configuration, but in
-        /// a system chosen availability zone with the default security group, the default subnet
-        /// group, and the default DB parameter group. By default, the new DB instance is created
-        /// as a single-AZ deployment except when the instance is a SQL Server instance that has
-        /// an option group that is associated with mirroring; in this case, the instance becomes
-        /// a mirrored AZ deployment and not a single-AZ deployment. 
+        /// the source database restore point with the most of original configuration with the
+        /// default security group and the default DB parameter group. By default, the new DB
+        /// instance is created as a single-AZ deployment except when the instance is a SQL Server
+        /// instance that has an option group that is associated with mirroring; in this case,
+        /// the instance becomes a mirrored AZ deployment and not a single-AZ deployment. 
         /// 
         ///  
         /// <para>
@@ -3646,14 +3645,19 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Restores a DB instance to an arbitrary point-in-time. Users can restore to any point
-        /// in time before the LatestRestorableTime for up to BackupRetentionPeriod days. The
-        /// target database is created with the most of original configuration, but in a system
-        /// chosen availability zone with the default security group, the default subnet group,
-        /// and the default DB parameter group. By default, the new DB instance is created as
-        /// a single-AZ deployment except when the instance is a SQL Server instance that has
+        /// Restores a DB instance to an arbitrary point in time. You can restore to any point
+        /// in time before the time identified by the LatestRestorableTime property. You can restore
+        /// to a point up to the number of days specified by the BackupRetentionPeriod property.
+        /// 
+        ///  
+        /// <para>
+        ///  The target database is created with most of the original configuration, but in a
+        /// system-selected availability zone, with the default security group, the default subnet
+        /// group, and the default DB parameter group. By default, the new DB instance is created
+        /// as a single-AZ deployment except when the instance is a SQL Server instance that has
         /// an option group that is associated with mirroring; in this case, the instance becomes
-        /// a mirrored deployment and not a single-AZ deployment.
+        /// a mirrored deployment and not a single-AZ deployment. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime service method.</param>
         /// 

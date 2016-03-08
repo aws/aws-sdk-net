@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteSubscriptionFilter operation.
     /// </summary>
     public partial class DeleteSubscriptionFilterResponse : AmazonWebServiceResponse
     {

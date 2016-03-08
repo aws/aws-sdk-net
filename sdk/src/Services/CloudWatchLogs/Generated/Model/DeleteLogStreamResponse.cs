@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the DeleteLogStream operation.
     /// </summary>
     public partial class DeleteLogStreamResponse : AmazonWebServiceResponse
     {

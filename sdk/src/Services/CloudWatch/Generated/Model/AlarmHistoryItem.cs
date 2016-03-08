@@ -30,7 +30,7 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// The <code>AlarmHistoryItem</code> data type contains descriptive information about
     /// the history of a specific alarm. If you call <a>DescribeAlarmHistory</a>, Amazon CloudWatch
-    /// returns this data type as part of the <a>DescribeAlarmHistoryResult</a> data type.
+    /// returns this data type as part of the DescribeAlarmHistoryResult data type.
     /// </summary>
     public partial class AlarmHistoryItem
     {
@@ -115,10 +115,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        ///  The time stamp for the alarm history item. Amazon CloudWatch uses Coordinated Universal
-        /// Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments
-        /// such as daylight savings time. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-        /// stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. 
+        ///  The time stamp for the alarm history item. 
         /// </para>
         /// </summary>
         public DateTime Timestamp

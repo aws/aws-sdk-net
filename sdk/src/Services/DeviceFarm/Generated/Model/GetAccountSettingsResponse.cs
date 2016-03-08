@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the GetAccountSettings operation.
     /// </summary>
     public partial class GetAccountSettingsResponse : AmazonWebServiceResponse
     {

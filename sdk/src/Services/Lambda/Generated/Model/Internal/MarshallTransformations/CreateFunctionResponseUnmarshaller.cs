@@ -123,6 +123,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigDetailUnmarshaller.Instance;
+                    response.VpcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

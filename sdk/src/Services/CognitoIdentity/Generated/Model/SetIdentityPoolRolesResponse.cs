@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the SetIdentityPoolRoles operation.
     /// </summary>
     public partial class SetIdentityPoolRolesResponse : AmazonWebServiceResponse
     {

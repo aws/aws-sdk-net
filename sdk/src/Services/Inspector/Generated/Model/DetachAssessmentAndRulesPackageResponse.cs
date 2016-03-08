@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DetachAssessmentAndRulesPackage operation.
     /// </summary>
     public partial class DetachAssessmentAndRulesPackageResponse : AmazonWebServiceResponse
     {

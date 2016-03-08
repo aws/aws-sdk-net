@@ -37,6 +37,12 @@ namespace Amazon.Lambda.Model
     /// <para>
     /// This operation requires permission for the <code>lambda:ListFunctions</code> action.
     /// </para>
+    ///  
+    /// <para>
+    /// If you are using versioning feature, the response returns list of $LATEST versions
+    /// of your functions. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+    /// Lambda Function Versioning and Aliases</a>. 
+    /// </para>
     /// </summary>
     public partial class ListFunctionsRequest : AmazonLambdaRequest
     {

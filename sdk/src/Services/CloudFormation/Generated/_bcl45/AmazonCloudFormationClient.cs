@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation
     /// <para>
     /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
     /// information about a specific AWS product, you can find the product's technical documentation
-    /// at <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.
+    /// at <a href="http://docs.aws.amazon.com/documentation/">http://docs.aws.amazon.com/documentation/</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
@@ -298,6 +298,58 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ContinueUpdateRollback
+
+
+        /// <summary>
+        /// For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues
+        /// rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the
+        /// cause of the failure, you can manually <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+        /// fix the error</a> and continue the rollback. By continuing the rollback, you can return
+        /// your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), and
+        /// then try to update the stack again.
+        /// 
+        ///  
+        /// <para>
+        /// A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS CloudFormation
+        /// cannot roll back all changes after a failed stack update. For example, you might have
+        /// a stack that is rolling back to an old database instance that was deleted outside
+        /// of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was deleted,
+        /// it assumes that the database instance still exists and attempts to roll back to it,
+        /// causing the update rollback to fail.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
+        /// 
+        /// <returns>The response from the ContinueUpdateRollback service method, as returned by CloudFormation.</returns>
+        public ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request)
+        {
+            var marshaller = new ContinueUpdateRollbackRequestMarshaller();
+            var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
+
+            return Invoke<ContinueUpdateRollbackRequest,ContinueUpdateRollbackResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ContinueUpdateRollback operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ContinueUpdateRollbackResponse> ContinueUpdateRollbackAsync(ContinueUpdateRollbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ContinueUpdateRollbackRequestMarshaller();
+            var unmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ContinueUpdateRollbackRequest,ContinueUpdateRollbackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateStack
 
 
@@ -529,7 +581,7 @@ namespace Amazon.CloudFormation
         /// You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>,
         /// but not both. In addition, you can specify <code>LogicalResourceId</code> to filter
         /// the returned result. For more information about resources, the <code>LogicalResourceId</code>
-        /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+        /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
         /// CloudFormation User Guide</a>.
         /// </para>
         ///  <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
@@ -601,7 +653,7 @@ namespace Amazon.CloudFormation
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -888,7 +940,7 @@ namespace Amazon.CloudFormation
         /// stack is deleted. If no StackStatusFilter is specified, summary information for all
         /// stacks is returned (including existing stacks and stacks that have been deleted).
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
@@ -1011,11 +1063,6 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// Tags that were associated with this stack during creation time will still be associated
-        /// with the stack after an <code>UpdateStack</code> operation.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information about creating an update template, updating a stack, and monitoring
         /// the progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
         /// a Stack</a>.
@@ -1088,7 +1135,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Validates a specified template.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

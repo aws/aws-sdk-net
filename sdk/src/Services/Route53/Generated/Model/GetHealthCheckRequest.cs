@@ -29,8 +29,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHealthCheck operation.
-    /// To retrieve the health check, send a <code>GET</code> request to the <code>2013-04-01/healthcheck/<i>health
-    /// check ID</i></code> resource.
+    /// To retrieve the health check, send a <code>GET</code> request to the <code>/<i>Route
+    /// 53 API version</i>/healthcheck/<i>health check ID</i></code> resource.
     /// </summary>
     public partial class GetHealthCheckRequest : AmazonRoute53Request
     {

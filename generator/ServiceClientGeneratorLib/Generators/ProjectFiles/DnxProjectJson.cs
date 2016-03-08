@@ -67,14 +67,18 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     ""**/_bcl35/*"",
     ""**/_bcl45/*"",
     ""**/_bcl/*"",
+	""**/_bcl+pcl/*"",
     ""**/_bcl+sl/*"",
+    ""**/_bcl+unity/*"",
+    ""**/_unity/*"",
     ""**/_android/*"",
     ""**/_ios/*"",
     ""**/_pclReference/*"",
     ""**/_win8/*"",
     ""**/_winPhone81/*"",
     ""**/_winPhoneSilverlight8/*"",
-    ""**/_winstorage/*""
+    ""**/_winstorage/*"",
+    ""**/Custom/SyncManager/*""
 
   ],
 

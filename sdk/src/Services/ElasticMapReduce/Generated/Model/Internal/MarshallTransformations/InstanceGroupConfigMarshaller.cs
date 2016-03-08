@@ -67,6 +67,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEbsConfiguration())
+            {
+                context.Writer.WritePropertyName("EbsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EbsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EbsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");

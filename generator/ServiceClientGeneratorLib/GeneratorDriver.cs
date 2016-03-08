@@ -84,8 +84,9 @@ namespace ServiceClientGenerator
         private const string Bcl35SubFolder = "_bcl35";
         private const string Bcl45SubFolder = "_bcl45";
         private const string MobileSubFolder = "_mobile";
-        private const string MarshallingTestsSubFolder = @"UnitTests\Generated\Marshalling";
-        private const string CustomizationTestsSubFolder = @"UnitTests\Generated\Customizations";
+        private const string UnitySubFolder = "_unity";
+        private string MarshallingTestsSubFolder = string.Format("UnitTests{0}Generated{0}Marshalling", Path.DirectorySeparatorChar);
+        private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.DirectorySeparatorChar);
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
@@ -104,8 +105,12 @@ namespace ServiceClientGenerator
         private static readonly Dictionary<string, ProjectFileCreator.ProjectConfigurationData> NewlyCreatedProjectFiles
             = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
 
+        public HashSet<string> FilesWrittenToGeneratorFolder {get; private set;}
+
+
         public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
         {
+            FilesWrittenToGeneratorFolder = new HashSet<string>();
             GenerationManifest = generationManifest;
             Configuration = config;
             ProjectFileConfigurations = GenerationManifest.ProjectFileConfigurations;
@@ -122,7 +127,7 @@ namespace ServiceClientGenerator
             ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, config.ServiceFolderName);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
 
-            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername,"ServiceAnalysis", serviceNameRoot);
+            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername, "ServiceAnalysis", serviceNameRoot);
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
 
@@ -133,7 +138,8 @@ namespace ServiceClientGenerator
 
         public void Execute()
         {
-            if (Options.Clean)
+            this.FilesWrittenToGeneratorFolder.Clear();
+            if (Options.Clean && !Configuration.IsChildConfig)
             {
                 Console.WriteLine(@"-clean option set, deleting previously-generated code under .\Generated subfolders");
 
@@ -146,13 +152,19 @@ namespace ServiceClientGenerator
             ExecuteGenerator(new ServiceInterface(), "IAmazon" + Configuration.BaseName + ".cs", Bcl35SubFolder);
 
             // .NET Framework 4.5 version
-            ExecuteGenerator45(new ServiceClients45(), "Amazon" + Configuration.BaseName + "Client.cs", Bcl45SubFolder);
-            ExecuteGenerator45(new ServiceInterface45(), "IAmazon" + Configuration.BaseName + ".cs", Bcl45SubFolder);
+            ExecuteGenerator(new ServiceClients45(), "Amazon" + Configuration.BaseName + "Client.cs", Bcl45SubFolder);
+            ExecuteGenerator(new ServiceInterface45(), "IAmazon" + Configuration.BaseName + ".cs", Bcl45SubFolder);
 
             // Phone/Rt/Portable version
-            ExecuteGeneratorMobile(new ServiceClientsMobile(), "Amazon" + Configuration.BaseName + "Client.cs", MobileSubFolder);
-            ExecuteGeneratorMobile(new ServiceInterfaceMobile(), "IAmazon" + Configuration.BaseName + ".cs", MobileSubFolder);
+            ExecuteGenerator(new ServiceClientsMobile(), "Amazon" + Configuration.BaseName + "Client.cs", MobileSubFolder);
+            ExecuteGenerator(new ServiceInterfaceMobile(), "IAmazon" + Configuration.BaseName + ".cs", MobileSubFolder);
 
+            //unity version
+            if (Configuration.SupportedInUnity)
+            {
+                ExecuteGenerator(new ServiceInterfaceUnity(), "IAmazon" + Configuration.BaseName + ".cs", UnitySubFolder);
+                ExecuteGenerator(new ServiceClientUnity(), "Amazon" + Configuration.BaseName + "Client.cs", UnitySubFolder);
+            }
             // Do not generate AssemblyInfo.cs and nuspec file for child model.
             // Use the one generated for the parent model.
             if (!this.Configuration.IsChildConfig)
@@ -170,7 +182,11 @@ namespace ServiceClientGenerator
             ExecuteGenerator(new ServiceConfig(), "Amazon" + Configuration.BaseName + "Config.cs");
 
             if (Configuration.Namespace == "Amazon.S3")
+            {
+                ExecuteProjectFileGenerators();
                 return;
+            }
+
 
             // The top level request that all operation requests are children of
             ExecuteGenerator(new BaseRequest(), "Amazon" + Configuration.BaseName + "Request.cs", "Model");
@@ -196,6 +212,11 @@ namespace ServiceClientGenerator
                 GenerateRequestMarshaller(operation);
                 GenerateResponseUnmarshaller(operation);
                 GenerateExceptions(operation);
+            }
+
+            if (Configuration.ServiceModel.Customizations.GenerateCustomUnmarshaller)
+            {
+                GenerateUnmarshaller(Configuration.ServiceModel.Customizations.CustomUnmarshaller);
             }
 
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation
@@ -335,7 +356,8 @@ namespace ServiceClientGenerator
                     {
                         ClassName = operation.Name + "Response",
                         BaseClass = "AmazonWebServiceResponse",
-                        Operation = operation
+                        Operation = operation,
+                        StructureType = StructureType.Response
                     };
                     this.ExecuteGenerator(responseGenerator, responseGenerator.ClassName + ".cs", "Model");
                 }
@@ -345,7 +367,9 @@ namespace ServiceClientGenerator
                     {
                         ClassName = operation.Name + "Response",
                         BaseClass = "AmazonWebServiceResponse",
-                        IsWrapped = operation.IsResponseWrapped
+                        IsWrapped = operation.IsResponseWrapped,
+                        Operation = operation,
+                        StructureType = StructureType.Response
                     };
                     if (operation.ResponseStructure != null)
                     {
@@ -572,12 +596,41 @@ namespace ServiceClientGenerator
             }
         }
 
+        void GenerateUnmarshaller(List<string> structures)
+        {
+            foreach (var structure in structures)
+            {
+                var shape = this.Configuration.ServiceModel.FindShape(structure);
+                var lookup = new NestedStructureLookup();
+                lookup.SearchForNestedStructures(shape);
+                foreach (var nestedStructure in lookup.NestedStructures)
+                {
+                    // Skip structure unmarshallers that have already been generated for the parent model
+                    if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
+                        continue;
+
+                    if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(nestedStructure.Name))
+                        continue;
+
+                    // Skip already processed unmarshallers. This handles the case of structures being returned in mulitiple requests.
+                    if (!this._processedUnmarshallers.Contains(nestedStructure.Name))
+                    {
+                        var generator = GetStructureUnmarshaller();
+                        generator.Structure = nestedStructure;
+
+                        this.ExecuteGenerator(generator, nestedStructure.Name + "Unmarshaller.cs", "Model.Internal.MarshallTransformations");
+                        this._processedUnmarshallers.Add(nestedStructure.Name);
+                    }
+                }
+            }
+        }
+
         public static void GenerateCoreProjects(GenerationManifest generationManifest,
             GeneratorOptions options)
         {
             Console.WriteLine("Updating Core project files.");
             string coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
-            var creator = new ProjectFileCreator();
+            var creator = new ProjectFileCreator(options);
             creator.ExecuteCore(coreFilesRoot, generationManifest.ProjectFileConfigurations);
             foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
             {
@@ -615,13 +668,13 @@ namespace ServiceClientGenerator
         public static void UpdateNuGetPackagesInReadme(GenerationManifest manifest, GeneratorOptions options)
         {
             var nugetPackages = new Dictionary<string, string>();
-            foreach(var service in manifest.ServiceConfigurations.OrderBy(x => x.BaseName))
+            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.BaseName))
             {
                 // Service like DynamoDB streams are included in a parent service.
                 if (service.ParentConfig != null)
                     continue;
 
-                if(string.IsNullOrEmpty(service.Synopsis))
+                if (string.IsNullOrEmpty(service.Synopsis))
                     throw new Exception(string.Format("{0} is missing a synopsis in the manifest.", service.BaseName));
                 var assemblyName = service.Namespace.Replace("Amazon.", "AWSSDK.");
                 nugetPackages[assemblyName] = service.Synopsis;
@@ -765,7 +818,7 @@ namespace ServiceClientGenerator
         /// </summary>
         void ExecuteProjectFileGenerators()
         {
-            var creator = new ProjectFileCreator();
+            var creator = new ProjectFileCreator(Options);
             creator.Execute(ServiceFilesRoot, this.Configuration, this.ProjectFileConfigurations);
             foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
             {
@@ -833,12 +886,13 @@ namespace ServiceClientGenerator
             var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
             var assemblyTitle = "AWSSDK - " + Configuration.ServiceModel.ServiceFullName;
             var componentTitle = assemblyTitle;
+            bool componentUsesAlternateLicense = !string.IsNullOrEmpty(Configuration.LicenseUrl) && Configuration.LicenseUrl != GenerationManifest.ApacheLicenseURL;
             if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
                 componentTitle += " " + Configuration.NugetPackageTitleSuffix;
 
             if (string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath))
                 throw new Exception("Xamarin component flag enabled but samples are missing");
-            
+
             var session = new Dictionary<string, object>
             {
                 { "AssemblyName", assemblyName },
@@ -851,6 +905,7 @@ namespace ServiceClientGenerator
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "Documentation",string.IsNullOrEmpty(Configuration.ServiceModel.Documentation)?Configuration.Synopsis:Configuration.ServiceModel.Documentation },
                 { "SolutionFilePath", string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath)?"":Path.Combine(SampleFilesRoot,Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath) },
+                { "UsesAlternateLicense", componentUsesAlternateLicense },
                 { "Synopsis", Configuration.Synopsis},
                 { "ExtraTags", Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
             };
@@ -941,6 +996,13 @@ namespace ServiceClientGenerator
             var nugetTitle = assemblyTitle;
             if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
                 nugetTitle += " " + Configuration.NugetPackageTitleSuffix;
+            bool iOSPclVariant = false;
+            bool androidPclVariant = false;
+            if (Configuration.PclVariants != null)
+            {
+                iOSPclVariant = Configuration.PclVariants.Contains("iOS");
+                androidPclVariant = Configuration.PclVariants.Contains("Android");
+            }
 
             var session = new Dictionary<string, object>
             {
@@ -956,6 +1018,8 @@ namespace ServiceClientGenerator
                 { "CodeAnalysisServiceFolder", this.Configuration.Namespace.Replace("Amazon.", "") },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
+                { "licenseUrl", Configuration.LicenseUrl },
+                { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" },
                 {"DisablePCLSupport", this.Options.DisablePCLSupport}
             };
 
@@ -1069,35 +1133,12 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            WriteFile(GeneratedFilesRoot, subNamespace, fileName, text);
-        }
 
-        /// <summary>
-        /// Runs the generator and saves the content into _bcl45 directory under the generated files root.
-        /// </summary>
-        /// <param name="generator">The generator to use for outputting the text of the cs file</param>
-        /// <param name="fileName">The name of the cs file</param>
-        /// <param name="subNamespace">Adds an additional directory for the namespace</param>
-        void ExecuteGenerator45(BaseGenerator generator, string fileName, string subNamespace = null)
-        {
-            generator.Config = this.Configuration;
-            var text = generator.TransformText();
-            WriteFile(GeneratedFilesRoot, subNamespace, fileName, text);
+            string outputFile;
+            WriteFile(GeneratedFilesRoot, subNamespace, fileName, text, true, true, out outputFile);
+            FilesWrittenToGeneratorFolder.Add(outputFile);
         }
-
-        /// <summary>
-        /// Runs the generator and saves the content into _mobile directory under the generated files root.
-        /// </summary>
-        /// <param name="generator">The generator to use for outputting the text of the cs file</param>
-        /// <param name="fileName">The name of the cs file</param>
-        /// <param name="subNamespace">Adds an additional directory for the namespace</param>
-        void ExecuteGeneratorMobile(BaseGenerator generator, string fileName, string subNamespace = null)
-        {
-            generator.Config = this.Configuration;
-            var text = generator.TransformText();
-            WriteFile(GeneratedFilesRoot, subNamespace, fileName, text);
-        }
-
+        
         /// <summary>
         /// Runs the generator and saves the content in the test directory.
         /// </summary>
@@ -1143,6 +1184,17 @@ namespace ServiceClientGenerator
             WriteFile(TestFilesRoot, outputSubFolder, fileName, text);
         }
 
+        internal static bool WriteFile(string baseOutputDir,
+                                       string subNamespace,
+                                       string filename,
+                                       string content,
+                                       bool trimWhitespace = true,
+                                       bool replaceTabs = true)
+        {
+            string outputFilePath;
+            return WriteFile(baseOutputDir, subNamespace, filename, content, trimWhitespace, replaceTabs, out outputFilePath);
+        }
+
         /// <summary>
         /// Writes the contents to disk. The content will by default be trimmed of all white space and 
         /// all tabs are replaced with spaces to make the output consistent.
@@ -1158,11 +1210,12 @@ namespace ServiceClientGenerator
                                        string subNamespace,
                                        string filename,
                                        string content,
-                                       bool trimWhitespace = true,
-                                       bool replaceTabs = true)
+                                       bool trimWhitespace,
+                                       bool replaceTabs,
+                                       out string outputFilePath)
         {
             var outputDir = !string.IsNullOrEmpty(subNamespace)
-                ? Path.Combine(baseOutputDir, subNamespace.Replace('.', '\\'))
+                ? Path.Combine(baseOutputDir, subNamespace.Replace('.', Path.DirectorySeparatorChar))
                 : baseOutputDir;
 
             if (!Directory.Exists(outputDir))
@@ -1172,15 +1225,15 @@ namespace ServiceClientGenerator
             if (replaceTabs)
                 cleanContent = cleanContent.Replace("\t", "    ");
 
-            var filePath = Path.Combine(outputDir, filename);
-            if (File.Exists(filePath))
+            outputFilePath = Path.GetFullPath(Path.Combine(outputDir, filename));
+            if (File.Exists(outputFilePath))
             {
-                var existingContent = File.ReadAllText(filePath);
+                var existingContent = File.ReadAllText(outputFilePath);
                 if (string.Equals(existingContent, cleanContent))
                     return false;
             }
 
-            File.WriteAllText(filePath, cleanContent);
+            File.WriteAllText(outputFilePath, cleanContent);
             Console.WriteLine("...created/updated {0}", filename);
             return true;
         }
@@ -1273,6 +1326,23 @@ namespace ServiceClientGenerator
         {
             var command = new CodeAnalysisProjectCreator();
             command.Execute(CodeAnalysisRoot, this.Configuration);
+        }
+
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string rootFolder)
+        {
+            // Remove orphaned shapes. Most likely due to taking in a model that was still under development.
+            foreach (var file in Directory.GetFiles(rootFolder, "*.cs", SearchOption.AllDirectories))
+            {
+                var fullPath = Path.GetFullPath(file);
+                if (fullPath.IndexOf(string.Format(@"\{0}\", GeneratedCodeFoldername), StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+
+                if (!generatedFiles.Contains(fullPath))
+                {
+                    Console.Error.WriteLine("**** Warning: Removing orphaned generated code " + Path.GetFileName(file));
+                    File.Delete(file);
+    }
+            }
         }
     }
 }

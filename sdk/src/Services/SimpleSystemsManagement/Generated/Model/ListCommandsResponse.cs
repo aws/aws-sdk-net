@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListCommands operation.
     /// </summary>
     public partial class ListCommandsResponse : AmazonWebServiceResponse
     {

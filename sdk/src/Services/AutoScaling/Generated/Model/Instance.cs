@@ -60,7 +60,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        /// The health status of the instance.
+        /// The health status of the instance. "Healthy" means that the instance is healthy and
+        /// should remain in service. "Unhealthy" means that the instance is unhealthy and Auto
+        /// Scaling should terminate and replace it.
         /// </para>
         /// </summary>
         public string HealthStatus

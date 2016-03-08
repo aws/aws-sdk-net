@@ -190,6 +190,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreNotEqual(0, account.ThrottleSettings.BurstLimit);
             Assert.AreNotEqual(0, account.ThrottleSettings.RateLimit);
 
+            var allCerts = GetAllCerts().ToList();
+
             var certDescription = "something";
             var clientCert = Client.GenerateClientCertificate(new GenerateClientCertificateRequest
             {
@@ -202,6 +204,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsTrue(clientCert.ExpirationDate > clientCert.CreatedDate);
             Assert.IsFalse(string.IsNullOrEmpty(clientCert.PemEncodedCertificate));
             Assert.IsFalse(string.IsNullOrEmpty(clientCert.ClientCertificateId));
+
+            var updatedCerts = GetAllCerts().ToList();
+            Assert.AreNotEqual(allCerts.Count, updatedCerts.Count);
+
+            Client.DeleteClientCertificate(new DeleteClientCertificateRequest
+            {
+                ClientCertificateId = clientCert.ClientCertificateId
+            });
+        }
+
+        private static IEnumerable<ClientCertificate> GetAllCerts()
+        {
+            var request = new GetClientCertificatesRequest();
+            do
+            {
+                var response = Client.GetClientCertificates(request);
+                request.Position = response.Position;
+                foreach (var cert in response.Items)
+                    yield return cert;
+            } while (!string.IsNullOrEmpty(request.Position));
         }
     }
 }

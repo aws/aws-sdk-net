@@ -19,7 +19,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// <summary>
     /// Interface for creating delivery policy.
     /// </summary>
-    public interface IDeliveryPolicyFactory
+    public partial interface IDeliveryPolicyFactory
     {
         /// <summary>
         /// Returns a new connectivity policy.

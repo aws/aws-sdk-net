@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the price for a Reserved instance.
+    /// Describes the price for a Reserved Instance.
     /// </summary>
     public partial class PriceSchedule
     {
@@ -40,13 +40,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Active. 
         /// <para>
-        /// The current price schedule, as determined by the term remaining for the Reserved instance
+        /// The current price schedule, as determined by the term remaining for the Reserved Instance
         /// in the listing.
         /// </para>
         ///  
         /// <para>
         /// A specific price schedule is always in effect, but only one price schedule can be
-        /// active at any time. Take, for example, a Reserved instance listing that has five months
+        /// active at any time. Take, for example, a Reserved Instance listing that has five months
         /// remaining in its term. When you specify price schedules for five months and two months,
         /// this means that schedule 1, covering the first three months of the remaining term,
         /// will be active during months 5, 4, and 3. Then schedule 2, covering the last two months
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency for transacting the Reserved instance resale. At this time, the only
+        /// The currency for transacting the Reserved Instance resale. At this time, the only
         /// supported currency is <code>USD</code>.
         /// </para>
         /// </summary>

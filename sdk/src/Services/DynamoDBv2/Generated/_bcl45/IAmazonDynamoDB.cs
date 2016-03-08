@@ -2054,7 +2054,7 @@ namespace Amazon.DynamoDBv2
         /// The output from <i>ListTables</i> is paginated, with each page returning a maximum
         /// of 100 table names.
         /// </summary>
-        /// <param name="cancellationToken"> ttd1
+        /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 

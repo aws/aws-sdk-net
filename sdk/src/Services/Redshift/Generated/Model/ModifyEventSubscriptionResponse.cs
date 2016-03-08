@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ModifyEventSubscription operation.
     /// </summary>
     public partial class ModifyEventSubscriptionResponse : AmazonWebServiceResponse
     {

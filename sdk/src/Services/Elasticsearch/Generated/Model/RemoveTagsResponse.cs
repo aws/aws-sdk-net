@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the RemoveTags operation.
     /// </summary>
     public partial class RemoveTagsResponse : AmazonWebServiceResponse
     {

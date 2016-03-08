@@ -6,7 +6,18 @@
 summary: AWS <#=this.Session["BaseName"]#> SDK for Xamarin
 getting-started: GettingStarted.md
 details: Details.md
+<#
+    if ((bool)this.Session["UsesAlternateLicense"])
+    {
+#>
+license: License.md
+<#
+    } else {
+#>
 license: ..\License.md
+<#
+    }
+#>
 icons: 
   - ..\awsmobile_128.png
   - ..\awsmobile_512.png

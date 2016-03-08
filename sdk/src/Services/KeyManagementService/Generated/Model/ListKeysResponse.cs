@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListKeys operation.
     /// </summary>
     public partial class ListKeysResponse : AmazonWebServiceResponse
     {

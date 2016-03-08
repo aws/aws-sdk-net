@@ -52,7 +52,6 @@ namespace Amazon.Runtime.Internal
                 if (totalIncrementTransferred >= this.progressUpdateInterval ||
                     totalBytesRead == contentLength)
                 {
-
                     AWSSDKUtils.InvokeInBackground(
                                         callback,
                                         new StreamTransferProgressArgs(totalIncrementTransferred, totalBytesRead, contentLength),
@@ -61,5 +60,12 @@ namespace Amazon.Runtime.Internal
                 }
             }
         }
+
+        public void UpdateProgress(float progress)
+        {
+            int bytesRead = (int)((long)(progress * contentLength) - totalBytesRead);
+            ReadProgress(bytesRead);
+        }
+
     }
 }

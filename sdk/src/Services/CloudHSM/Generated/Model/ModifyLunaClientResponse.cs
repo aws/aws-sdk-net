@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ModifyLunaClient operation.
     /// </summary>
     public partial class ModifyLunaClientResponse : AmazonWebServiceResponse
     {

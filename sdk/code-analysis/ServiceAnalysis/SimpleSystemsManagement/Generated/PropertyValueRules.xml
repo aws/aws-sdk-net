@@ -7,9 +7,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.Name</property>
@@ -25,9 +23,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteAssociationRequest.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteAssociationRequest.Name</property>
@@ -39,9 +35,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationRequest.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationRequest.Name</property>
@@ -80,9 +74,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandInvocationsRequest.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandInvocationsRequest.MaxResults</property>
@@ -96,9 +88,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandsRequest.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandsRequest.MaxResults</property>
@@ -134,9 +124,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationStatusRequest.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationStatusRequest.Name</property>
@@ -144,9 +132,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Association.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Association.Name</property>
@@ -154,9 +140,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.Name</property>
@@ -215,9 +199,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CommandInvocation.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CommandInvocation.TraceOutput</property>
@@ -242,9 +224,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.Name</property>
@@ -268,8 +248,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.InstanceId</property>
-    <min>10</min>
-    <max>10</max>
-    <pattern>^(?=.{10}$)(i-(\w){8})</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
   </property-value-rule>
 </property-value-rules>

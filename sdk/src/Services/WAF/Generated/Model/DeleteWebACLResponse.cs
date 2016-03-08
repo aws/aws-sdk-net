@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DeleteWebACL operation.
     /// </summary>
     public partial class DeleteWebACLResponse : AmazonWebServiceResponse
     {

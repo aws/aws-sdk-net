@@ -34,7 +34,9 @@ namespace Amazon.Runtime
     /// </summary>
     public class ConstantClass
     {
-        static readonly Dictionary<Type, Dictionary<string, ConstantClass>> staticFields = new Dictionary<Type, Dictionary<string, ConstantClass>>();
+        static readonly object staticFieldsLock = new object();
+        static Dictionary<Type, Dictionary<string, ConstantClass>> staticFields =
+            new Dictionary<Type, Dictionary<string, ConstantClass>>();
 
         protected ConstantClass(string value)
         {
@@ -110,7 +112,7 @@ namespace Amazon.Runtime
             if (staticFields.ContainsKey(t))
                 return;
 
-            lock (staticFields)
+            lock (staticFieldsLock)
             {
                 if (staticFields.ContainsKey(t)) return;
 
@@ -126,7 +128,12 @@ namespace Amazon.Runtime
                     }
                 }
 
-                staticFields[t] = map;
+                // create copy of dictionary with new value
+                var newDictionary = new Dictionary<Type, Dictionary<string, ConstantClass>>(staticFields);
+                newDictionary[t] = map;
+
+                // swap in the new dictionary
+                staticFields = newDictionary;
             }
         }
 

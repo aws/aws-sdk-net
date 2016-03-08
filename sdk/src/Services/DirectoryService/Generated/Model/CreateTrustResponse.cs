@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the CreateTrust operation.
     /// </summary>
     public partial class CreateTrustResponse : AmazonWebServiceResponse
     {

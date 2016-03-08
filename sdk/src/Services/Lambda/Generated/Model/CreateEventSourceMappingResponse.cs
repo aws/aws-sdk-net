@@ -137,8 +137,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the event source mapping. It can be "Creating", "Enabled", "Disabled",
-        /// "Enabling", "Disabling", "Updating", or "Deleting".
+        /// The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,
+        /// <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>,
+        /// or <code>Deleting</code>.
         /// </para>
         /// </summary>
         public string State

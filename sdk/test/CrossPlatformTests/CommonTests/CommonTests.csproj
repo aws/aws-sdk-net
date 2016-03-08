@@ -42,6 +42,7 @@
     <Compile Include="Framework\BaseExtensions.cs" />
     <Compile Include="Framework\Console.cs" />
     <Compile Include="Framework\DisposableSwitch.cs" />
+    <Compile Include="Framework\FacebookUtilities.cs" />
     <Compile Include="Framework\Settings.cs" />
     <Compile Include="Framework\TestBase.cs" />
     <Compile Include="Framework\TestRunner.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="IntegrationTests\CloudWatch.cs" />
     <Compile Include="IntegrationTests\CloudWatchLogs.cs" />
     <Compile Include="IntegrationTests\CodeDeploy.cs" />
+    <Compile Include="IntegrationTests\SyncManager.cs" />
     <Compile Include="IntegrationTests\CredentialsTests.cs" />
     <Compile Include="IntegrationTests\DataPipeline.cs" />
     <Compile Include="IntegrationTests\DirectConnect.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="IntegrationTests\SNS.cs" />
     <Compile Include="IntegrationTests\SQS.cs" />
     <Compile Include="IntegrationTests\StorageGateway.cs" />
+    <Compile Include="IntegrationTests\KinesisFirehose.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +274,10 @@
     <ProjectReference Include="..\..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.PCL.csproj">
       <Project>{0f98464e-856f-4692-8abb-6d82209b8265}</Project>
       <Name>AWSSDK.KeyManagementService.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.PCL.csproj">
+      <Project>{f5e41890-4039-48d0-8a84-13aa3a51d88b}</Project>
+      <Name>AWSSDK.KinesisFirehose.PCL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\src\Services\Kinesis\AWSSDK.Kinesis.PCL.csproj">
       <Project>{1a175c0b-1e35-4c65-a885-e49fdc236c24}</Project>

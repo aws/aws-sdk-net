@@ -1,4 +1,7 @@
-{ 
+{
+	"unityOverrides":{
+		"generateSyncClient" : true
+	},
     "simpleMethods" : {
         "operations" : {
             "DescribeIdentity" : {

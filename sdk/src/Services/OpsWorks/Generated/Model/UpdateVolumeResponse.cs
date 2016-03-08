@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Empty class reserved for future use.
+    /// This is the response object from the UpdateVolume operation.
     /// </summary>
     public partial class UpdateVolumeResponse : AmazonWebServiceResponse
     {

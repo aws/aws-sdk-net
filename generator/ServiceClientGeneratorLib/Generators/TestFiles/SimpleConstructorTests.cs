@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class SimpleConstructorTests : Generators.BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 6 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
 
 	AddLicenseHeader();
 
@@ -39,14 +39,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("using System.Collections.Generic;\r\nusing System.IO;\r\nusing Microsoft.VisualStudio" +
                     ".TestTools.UnitTesting;\r\nusing ");
             
-            #line 12 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(";\r\nusing ");
             
-            #line 13 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 13 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -54,14 +54,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write(".Model;\r\n\r\nnamespace AWSSDK_DotNet35.UnitTests.TestTools\r\n{\r\n    [TestClass]\r\n   " +
                     " public class ");
             
-            #line 18 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("ConstructorCustomizationsTests\r\n    {\r\n");
             
-            #line 20 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 20 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
 
     foreach (var operation in this.Config.ServiceModel.Operations)
     {
@@ -74,21 +74,21 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("        [TestMethod]\r\n\t\t[TestCategory(\"UnitTest\")]\r\n        [TestCategory(\"Constr" +
                     "uctors\"), TestCategory(\"");
             
-            #line 28 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 28 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 29 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestConstructorTests()\r\n        {\r\n");
             
-            #line 31 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
 
             foreach (var form in  this.Config.ServiceModel.Customizations.SimpleConstructorsModel.SimpleConstructors[operation.Name + "Request"].Forms)
             {
@@ -99,42 +99,42 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line hidden
             this.Write("            EnsureConstructorExists(typeof(");
             
-            #line 36 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 36 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.");
             
-            #line 36 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 36 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name + "Request"));
             
             #line default
             #line hidden
             this.Write("), new System.Type[] { ");
             
-            #line 36 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 36 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
  foreach (var member in docMembers) { 
             
             #line default
             #line hidden
             this.Write("typeof(");
             
-            #line 36 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 36 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write("), ");
             
-            #line 36 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 36 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
 }
             
             #line default
             #line hidden
             this.Write("});\r\n");
             
-            #line 37 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 37 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
 
             }
 
@@ -143,7 +143,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line hidden
             this.Write("        }\r\n\r\n");
             
-            #line 42 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
 
         }
     }

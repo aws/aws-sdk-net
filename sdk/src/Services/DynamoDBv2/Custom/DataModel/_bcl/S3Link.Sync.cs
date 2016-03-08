@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -29,6 +30,16 @@ namespace Amazon.DynamoDBv2.DataModel
             this.s3ClientCache.GetClient(this.RegionAsEndpoint).UploadObjectFromFilePath(this.linker.s3.bucket, this.linker.s3.key, sourcePath, null);
         }
 
+        /// <summary>
+        /// Uploads the stream and stores it in the specified bucket with the provided key from construction.
+        /// </summary>
+        /// <param name="stream">Stream to upload.</param>
+        public void UploadStream(Stream stream)
+        {
+            this.s3ClientCache.GetClient(this.RegionAsEndpoint).UploadObjectFromStream(this.linker.s3.bucket, this.linker.s3.key, stream, null);
+        }
+
+
         #endregion
 
         #region Download/GetObject
@@ -41,6 +52,15 @@ namespace Amazon.DynamoDBv2.DataModel
         public void DownloadTo(string downloadPath)
         {
             this.s3ClientCache.GetClient(this.RegionAsEndpoint).DownloadToFilePath(this.linker.s3.bucket, this.linker.s3.key, downloadPath, null);
+        }
+
+        /// <summary>
+        /// Open stream to the data stored in Amazon S3.
+        /// </summary>
+        /// <returns>Stream to the data stored in Amazon S3.</returns>
+        public Stream OpenStream()
+        {
+            return this.s3ClientCache.GetClient(this.RegionAsEndpoint).GetObjectStream(this.linker.s3.bucket, this.linker.s3.key, null);
         }
 
         #endregion

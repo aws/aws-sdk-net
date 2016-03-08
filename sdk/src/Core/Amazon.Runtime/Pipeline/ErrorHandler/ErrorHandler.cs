@@ -144,9 +144,9 @@ namespace Amazon.Runtime.Internal
 
                     // Suppress exception
                     if (!rethrow)
-                        responseContext.AsyncResult.Exception = null; 
+                        responseContext.AsyncResult.Exception = null;
                 }
-                catch(Exception processedException)
+                catch (Exception processedException)
                 {
                     // Catch any new exception thrown by ProcessException()
                     responseContext.AsyncResult.Exception = processedException;
@@ -157,7 +157,7 @@ namespace Amazon.Runtime.Internal
             base.InvokeAsyncCallback(executionContext);
         }
 #endif
-        
+
         /// <summary>
         /// Disposes the response body.
         /// </summary>
@@ -206,10 +206,10 @@ namespace Amazon.Runtime.Internal
                 exceptionType = exceptionTypeInfo.BaseType;
                 exceptionTypeInfo = TypeFactory.GetTypeInfo(exceptionTypeInfo.BaseType);
 
-            }while(exceptionType != typeof(Exception));
+            } while (exceptionType != typeof(Exception));
 
             // No match found, rethrow the original exception.
             return true;
-        }        
+        }
     }
 }

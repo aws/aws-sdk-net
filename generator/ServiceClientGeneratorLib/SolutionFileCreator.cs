@@ -28,6 +28,7 @@ namespace ServiceClientGenerator
             public const string PCL = "PCL";
             public const string Android = "Android";
             public const string IOS = "iOS";
+            public const string Unity = "Unity";
 
         }
 
@@ -104,11 +105,17 @@ namespace ServiceClientGenerator
                     GetProjectConfig(ProjectTypes.WinPhoneSilverlight8)
             });
 
+
+            GenerateCombinedSolution("AWSSDK.Unity.sln", false,
+                new List<ProjectFileConfiguration>{
+                    GetProjectConfig(ProjectTypes.Unity)
+                });
+
             GenerateDnxSolution();
 
             // Include solutions that Travis CI can build
-            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, "AWSSDK.Net35.Travis.sln");
-            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, "AWSSDK.Net45.Travis.sln");
+            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, true, "AWSSDK.Net35.Travis.sln");
+            GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, true, "AWSSDK.Net45.Travis.sln");
         }
 
         // adds any necessary projects to the collection prior to generating the solution file(s)
@@ -206,6 +213,7 @@ namespace ServiceClientGenerator
                 case ProjectTypes.PCL:
                 case ProjectTypes.Android:
                 case ProjectTypes.IOS:
+                case ProjectTypes.Unity:
                     return StandardPlatformConfigurations;
             }
 
@@ -330,7 +338,8 @@ namespace ServiceClientGenerator
                     }
                 }
 
-                serviceSolutionFolders.Add(folder);
+                if (folder.Projects.Count > 0)
+                    serviceSolutionFolders.Add(folder);
             }
 
             var testProjects = new List<Project>();
@@ -417,7 +426,7 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, "AWSSDK.DnxCore.sln", content, true, false);
         }
 
-        private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, string solutionFileName = null)
+        private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, bool travisSolution, string solutionFileName = null)
         {
             // Do not generate solutions for PCL sub profiles.
             if (projectConfig.IsSubProfile)
@@ -454,6 +463,9 @@ namespace ServiceClientGenerator
 
                 foreach (var projectFile in Directory.GetFiles(servicePath, projectTypeWildCard, SearchOption.TopDirectoryOnly))
                 {
+                    if (travisSolution && projectFile.Contains("AWSSDK.MobileAnalytics"))
+                        continue;
+
                     folder.Projects.Add(ServiceProjectFromFile(di.Name, projectFile));
                     SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
                 }
