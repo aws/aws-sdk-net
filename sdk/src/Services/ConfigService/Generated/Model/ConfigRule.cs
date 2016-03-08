@@ -30,7 +30,8 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// An AWS Lambda function that evaluates configuration items to assess whether your AWS
     /// resources comply with your desired configurations. This function can run when AWS
-    /// Config detects a configuration change or delivers a configuration snapshot.
+    /// Config detects a configuration change to an AWS resource, or when it delivers a configuration
+    /// snapshot of the resources in the account.
     /// 
     ///  
     /// <para>

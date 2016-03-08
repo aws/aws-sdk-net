@@ -40,7 +40,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ComplianceContributorCount. 
         /// <para>
         /// The number of AWS resources or AWS Config rules that cause a result of <code>NON_COMPLIANT</code>,
-        /// up to a maximum of 25.
+        /// up to a maximum number.
         /// </para>
         /// </summary>
         public ComplianceContributorCount ComplianceContributorCount
