@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about a repository name and ID.
+    /// A trigger failed to run.
     /// </summary>
-    public partial class RepositoryNameIdPair
+    public partial class RepositoryTriggerExecutionFailure
     {
-        private string _repositoryId;
-        private string _repositoryName;
+        private string _failureMessage;
+        private string _trigger;
 
         /// <summary>
-        /// Gets and sets the property RepositoryId. 
+        /// Gets and sets the property FailureMessage. 
         /// <para>
-        /// The ID associated with the repository.
+        /// Additional message information about the trigger that did not run.
         /// </para>
         /// </summary>
-        public string RepositoryId
+        public string FailureMessage
         {
-            get { return this._repositoryId; }
-            set { this._repositoryId = value; }
+            get { return this._failureMessage; }
+            set { this._failureMessage = value; }
         }
 
-        // Check to see if RepositoryId property is set
-        internal bool IsSetRepositoryId()
+        // Check to see if FailureMessage property is set
+        internal bool IsSetFailureMessage()
         {
-            return this._repositoryId != null;
+            return this._failureMessage != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RepositoryName. 
+        /// Gets and sets the property Trigger. 
         /// <para>
-        /// The name associated with the repository.
+        /// The name of the trigger that did not run.
         /// </para>
         /// </summary>
-        public string RepositoryName
+        public string Trigger
         {
-            get { return this._repositoryName; }
-            set { this._repositoryName = value; }
+            get { return this._trigger; }
+            set { this._trigger = value; }
         }
 
-        // Check to see if RepositoryName property is set
-        internal bool IsSetRepositoryName()
+        // Check to see if Trigger property is set
+        internal bool IsSetTrigger()
         {
-            return this._repositoryName != null;
+            return this._trigger != null;
         }
 
     }

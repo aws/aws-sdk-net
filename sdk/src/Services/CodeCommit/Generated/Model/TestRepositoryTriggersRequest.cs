@@ -28,27 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRepository operation.
-    /// Returns information about a repository.
-    /// 
-    ///  <note>
-    /// <para>
-    /// The description field for a repository accepts all HTML characters and all valid Unicode
-    /// characters. Applications that do not HTML-encode the description and display it in
-    /// a web page could expose users to potentially malicious code. Make sure that you HTML-encode
-    /// the description field in any application that uses this API to display the repository
-    /// description on a web page.
-    /// </para>
-    /// </note>
+    /// Container for the parameters to the TestRepositoryTriggers operation.
+    /// Tests the functionality of repository triggers by sending information to the trigger
+    /// target. If real data is available in the repository, the test will send data from
+    /// the last commit. If no data is available, sample data will be generated.
     /// </summary>
-    public partial class GetRepositoryRequest : AmazonCodeCommitRequest
+    public partial class TestRepositoryTriggersRequest : AmazonCodeCommitRequest
     {
         private string _repositoryName;
+        private List<RepositoryTrigger> _triggers = new List<RepositoryTrigger>();
 
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository to get information about.
+        /// The name of the repository in which to test the triggers.
         /// </para>
         /// </summary>
         public string RepositoryName
@@ -61,6 +54,24 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetRepositoryName()
         {
             return this._repositoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Triggers. 
+        /// <para>
+        /// The list of triggers to test.
+        /// </para>
+        /// </summary>
+        public List<RepositoryTrigger> Triggers
+        {
+            get { return this._triggers; }
+            set { this._triggers = value; }
+        }
+
+        // Check to see if Triggers property is set
+        internal bool IsSetTriggers()
+        {
+            return this._triggers != null && this._triggers.Count > 0; 
         }
 
     }

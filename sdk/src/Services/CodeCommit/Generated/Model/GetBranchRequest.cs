@@ -29,7 +29,7 @@ namespace Amazon.CodeCommit.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBranch operation.
-    /// Retrieves information about a repository branch, including its name and the last commit
+    /// Returns information about a repository branch, including its name and the last commit
     /// ID.
     /// </summary>
     public partial class GetBranchRequest : AmazonCodeCommitRequest
@@ -56,7 +56,11 @@ namespace Amazon.CodeCommit.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RepositoryName.
+        /// Gets and sets the property RepositoryName. 
+        /// <para>
+        /// The name of the repository that contains the branch for which you want to retrieve
+        /// information.
+        /// </para>
         /// </summary>
         public string RepositoryName
         {

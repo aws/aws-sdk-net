@@ -39,15 +39,37 @@ namespace Amazon.CodeCommit
     /// AWS CodeCommit 
     /// <para>
     /// This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions
-    /// of the AWS CodeCommit API.
+    /// of the operations and data types for AWS CodeCommit API.
     /// </para>
     ///  
     /// <para>
     /// You can use the AWS CodeCommit API to work with the following objects:
     /// </para>
-    ///  <ul> <li>Repositories</li> <li>Branches</li> <li>Commits</li> </ul> 
+    ///  <ul> <li>Repositories, by calling the following: <ul> <li><a>BatchGetRepositories</a>,
+    /// which returns information about one or more repositories associated with your AWS
+    /// account</li> <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li>
+    /// <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li> <li><a>GetRepository</a>,
+    /// which returns information about a specified repository</li> <li><a>ListRepositories</a>,
+    /// which lists all AWS CodeCommit repositories associated with your AWS account</li>
+    /// <li><a>UpdateRepositoryDescription</a>, which sets or updates the description of the
+    /// repository</li> <li><a>UpdateRepositoryName</a>, which changes the name of the repository.
+    /// If you change the name of a repository, no other users of that repository will be
+    /// able to access it until you send them the new HTTPS or SSH URL to use.</li> </ul></li>
+    /// <li>Branches, by calling the following: <ul> <li><a>CreateBranch</a>, which creates
+    /// a new branch in a specified repository</li> <li><a>GetBranch</a>, which returns information
+    /// about a specified branch</li> <li><a>ListBranches</a>, which lists all branches for
+    /// a specified repository</li> <li><a>UpdateDefaultBranch</a>, which changes the default
+    /// branch for a repository</li> </ul></li> <li>Information about committed code in a
+    /// repository, by calling the following: <ul> <li><a>GetCommit</a>, which returns information
+    /// about a commit, including commit messages and committer information.</li> </ul></li>
+    /// <li>Triggers, by calling the following: <ul> <li><a>GetRepositoryTriggers</a>, which
+    /// returns information about triggers configured for a repository</li> <li><a>PutRepositoryTriggers</a>,
+    /// which replaces all triggers for a repository and can be used to create or delete triggers</li>
+    /// <li><a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger
+    /// by sending data to the trigger target</li> </ul> </li> </ul> 
     /// <para>
-    /// For information about how to use AWS CodeCommit, see the <i>AWS CodeCommit User Guide</i>.
+    /// For information about how to use AWS CodeCommit, see the <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+    /// CodeCommit User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCodeCommitClient : AmazonServiceClient, IAmazonCodeCommit
@@ -241,7 +263,7 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Gets information about one or more repositories.
+        /// Returns information about one or more repositories.
         /// 
         ///  <note>
         /// <para>
@@ -274,9 +296,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryNamesExceededException">
         /// The maximum number of allowed repository names was exceeded. Currently, this number
@@ -319,8 +345,12 @@ namespace Amazon.CodeCommit
         /// <summary>
         /// Creates a new branch in a repository and points the branch to a commit.
         /// 
-        ///  <note>Calling the create branch operation does not set a repository's default branch.
-        /// To do this, call the update default branch operation.</note>
+        ///  <note>
+        /// <para>
+        /// Calling the create branch operation does not set a repository's default branch. To
+        /// do this, call the update default branch operation.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBranch service method.</param>
         /// 
@@ -362,9 +392,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
@@ -430,9 +464,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryLimitExceededException">
         /// A repository resource limit was exceeded.
@@ -503,9 +541,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
         /// A repository name is required but was not specified.
@@ -542,7 +584,7 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Retrieves information about a repository branch, including its name and the last commit
+        /// Returns information about a repository branch, including its name and the last commit
         /// ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBranch service method.</param>
@@ -575,9 +617,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
@@ -613,11 +659,89 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  GetCommit
+
+
+        /// <summary>
+        /// Returns information about a commit, including commit message and committer information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCommit service method.</param>
+        /// 
+        /// <returns>The response from the GetCommit service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitIdDoesNotExistException">
+        /// The specified commit ID does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitIdRequiredException">
+        /// A commit ID was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitIdException">
+        /// The specified commit ID is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        public GetCommitResponse GetCommit(GetCommitRequest request)
+        {
+            var marshaller = new GetCommitRequestMarshaller();
+            var unmarshaller = GetCommitResponseUnmarshaller.Instance;
+
+            return Invoke<GetCommitRequest,GetCommitResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCommit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCommit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCommitResponse> GetCommitAsync(GetCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCommitRequestMarshaller();
+            var unmarshaller = GetCommitResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCommitRequest,GetCommitResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRepository
 
 
         /// <summary>
-        /// Gets information about a repository.
+        /// Returns information about a repository.
         /// 
         ///  <note>
         /// <para>
@@ -650,9 +774,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
@@ -688,6 +816,75 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  GetRepositoryTriggers
+
+
+        /// <summary>
+        /// Gets information about triggers configured for a repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRepositoryTriggers service method.</param>
+        /// 
+        /// <returns>The response from the GetRepositoryTriggers service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        public GetRepositoryTriggersResponse GetRepositoryTriggers(GetRepositoryTriggersRequest request)
+        {
+            var marshaller = new GetRepositoryTriggersRequestMarshaller();
+            var unmarshaller = GetRepositoryTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<GetRepositoryTriggersRequest,GetRepositoryTriggersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRepositoryTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRepositoryTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetRepositoryTriggersResponse> GetRepositoryTriggersAsync(GetRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRepositoryTriggersRequestMarshaller();
+            var unmarshaller = GetRepositoryTriggersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRepositoryTriggersRequest,GetRepositoryTriggersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBranches
 
 
@@ -718,9 +915,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
@@ -802,15 +1003,245 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  PutRepositoryTriggers
+
+
+        /// <summary>
+        /// Replaces all triggers for a repository. This can be used to create or delete triggers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRepositoryTriggers service method.</param>
+        /// 
+        /// <returns>The response from the PutRepositoryTriggers service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerBranchNameException">
+        /// One or more branch names specified for the trigger is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerCustomDataException">
+        /// The custom data provided for the trigger is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerDestinationArnException">
+        /// The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination.
+        /// The most common reason for this error is that the ARN does not meet the requirements
+        /// for the service type.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerEventsException">
+        /// One or more events specified for the trigger is not valid. Check to make sure that
+        /// all events specified match the requirements for allowed events.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerNameException">
+        /// The name of the trigger is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerRegionException">
+        /// The region for the trigger target does not match the region for the repository. Triggers
+        /// must be created in the same region as the target for the trigger.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumBranchesExceededException">
+        /// The number of branches for the trigger was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryTriggersExceededException">
+        /// The number of triggers allowed for the repository was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerBranchNameListRequiredException">
+        /// At least one branch name is required but was not specified in the trigger configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerDestinationArnRequiredException">
+        /// A destination ARN for the target service for the trigger is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerEventsListRequiredException">
+        /// At least one event for the trigger is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerNameRequiredException">
+        /// A name for the trigger is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggersListRequiredException">
+        /// The list of triggers for the repository is required but was not specified.
+        /// </exception>
+        public PutRepositoryTriggersResponse PutRepositoryTriggers(PutRepositoryTriggersRequest request)
+        {
+            var marshaller = new PutRepositoryTriggersRequestMarshaller();
+            var unmarshaller = PutRepositoryTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<PutRepositoryTriggersRequest,PutRepositoryTriggersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRepositoryTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRepositoryTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutRepositoryTriggersResponse> PutRepositoryTriggersAsync(PutRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutRepositoryTriggersRequestMarshaller();
+            var unmarshaller = PutRepositoryTriggersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutRepositoryTriggersRequest,PutRepositoryTriggersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestRepositoryTriggers
+
+
+        /// <summary>
+        /// Tests the functionality of repository triggers by sending information to the trigger
+        /// target. If real data is available in the repository, the test will send data from
+        /// the last commit. If no data is available, sample data will be generated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestRepositoryTriggers service method.</param>
+        /// 
+        /// <returns>The response from the TestRepositoryTriggers service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerBranchNameException">
+        /// One or more branch names specified for the trigger is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerCustomDataException">
+        /// The custom data provided for the trigger is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerDestinationArnException">
+        /// The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination.
+        /// The most common reason for this error is that the ARN does not meet the requirements
+        /// for the service type.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerEventsException">
+        /// One or more events specified for the trigger is not valid. Check to make sure that
+        /// all events specified match the requirements for allowed events.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerNameException">
+        /// The name of the trigger is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryTriggerRegionException">
+        /// The region for the trigger target does not match the region for the repository. Triggers
+        /// must be created in the same region as the target for the trigger.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumBranchesExceededException">
+        /// The number of branches for the trigger was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.MaximumRepositoryTriggersExceededException">
+        /// The number of triggers allowed for the repository was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerBranchNameListRequiredException">
+        /// At least one branch name is required but was not specified in the trigger configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerDestinationArnRequiredException">
+        /// A destination ARN for the target service for the trigger is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerEventsListRequiredException">
+        /// At least one event for the trigger is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggerNameRequiredException">
+        /// A name for the trigger is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryTriggersListRequiredException">
+        /// The list of triggers for the repository is required but was not specified.
+        /// </exception>
+        public TestRepositoryTriggersResponse TestRepositoryTriggers(TestRepositoryTriggersRequest request)
+        {
+            var marshaller = new TestRepositoryTriggersRequestMarshaller();
+            var unmarshaller = TestRepositoryTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<TestRepositoryTriggersRequest,TestRepositoryTriggersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestRepositoryTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestRepositoryTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<TestRepositoryTriggersResponse> TestRepositoryTriggersAsync(TestRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TestRepositoryTriggersRequestMarshaller();
+            var unmarshaller = TestRepositoryTriggersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestRepositoryTriggersRequest,TestRepositoryTriggersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateDefaultBranch
 
 
         /// <summary>
         /// Sets or changes the default branch name for the specified repository.
         /// 
-        ///  <note>If you use this operation to change the default branch name to the current
-        /// default branch name, a success message is returned even though the default branch
-        /// did not change.</note>
+        ///  <note>
+        /// <para>
+        /// If you use this operation to change the default branch name to the current default
+        /// branch name, a success message is returned even though the default branch did not
+        /// change.
+        /// </para>
+        /// </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultBranch service method.</param>
         /// 
@@ -842,9 +1273,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
@@ -920,9 +1355,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
@@ -962,7 +1401,11 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Renames a repository.
+        /// Renames a repository. The repository name must be unique across the calling AWS account.
+        /// In addition, repository names are limited to 100 alphanumeric, dash, and underscore
+        /// characters, and cannot include certain characters. The suffix ".git" is prohibited.
+        /// For a full description of the limits on repository names, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
+        /// in the AWS CodeCommit User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryName service method.</param>
         /// 
@@ -970,9 +1413,13 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// At least one specified repository name is not valid.
         /// 
-        ///  <note>This exception only occurs when a specified repository name is not valid. Other
-        /// exceptions occur when a required repository parameter is missing, or when a specified
-        /// repository does not exist.</note>
+        ///  <note>
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        /// </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.

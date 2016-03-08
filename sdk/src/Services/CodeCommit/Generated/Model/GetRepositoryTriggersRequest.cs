@@ -28,44 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateDefaultBranch operation.
-    /// Sets or changes the default branch name for the specified repository.
-    /// 
-    ///  <note>
-    /// <para>
-    /// If you use this operation to change the default branch name to the current default
-    /// branch name, a success message is returned even though the default branch did not
-    /// change.
-    /// </para>
-    /// </note>
+    /// Container for the parameters to the GetRepositoryTriggers operation.
+    /// Gets information about triggers configured for a repository.
     /// </summary>
-    public partial class UpdateDefaultBranchRequest : AmazonCodeCommitRequest
+    public partial class GetRepositoryTriggersRequest : AmazonCodeCommitRequest
     {
-        private string _defaultBranchName;
         private string _repositoryName;
-
-        /// <summary>
-        /// Gets and sets the property DefaultBranchName. 
-        /// <para>
-        /// The name of the branch to set as the default.
-        /// </para>
-        /// </summary>
-        public string DefaultBranchName
-        {
-            get { return this._defaultBranchName; }
-            set { this._defaultBranchName = value; }
-        }
-
-        // Check to see if DefaultBranchName property is set
-        internal bool IsSetDefaultBranchName()
-        {
-            return this._defaultBranchName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository to set or change the default branch for.
+        /// The name of the repository for which the trigger is configured.
         /// </para>
         /// </summary>
         public string RepositoryName

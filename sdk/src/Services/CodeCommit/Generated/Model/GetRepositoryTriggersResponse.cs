@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about a repository name and ID.
+    /// Represents the output of a get repository triggers operation.
     /// </summary>
-    public partial class RepositoryNameIdPair
+    public partial class GetRepositoryTriggersResponse : AmazonWebServiceResponse
     {
-        private string _repositoryId;
-        private string _repositoryName;
+        private string _configurationId;
+        private List<RepositoryTrigger> _triggers = new List<RepositoryTrigger>();
 
         /// <summary>
-        /// Gets and sets the property RepositoryId. 
+        /// Gets and sets the property ConfigurationId. 
         /// <para>
-        /// The ID associated with the repository.
+        /// The system-generated unique ID for the trigger.
         /// </para>
         /// </summary>
-        public string RepositoryId
+        public string ConfigurationId
         {
-            get { return this._repositoryId; }
-            set { this._repositoryId = value; }
+            get { return this._configurationId; }
+            set { this._configurationId = value; }
         }
 
-        // Check to see if RepositoryId property is set
-        internal bool IsSetRepositoryId()
+        // Check to see if ConfigurationId property is set
+        internal bool IsSetConfigurationId()
         {
-            return this._repositoryId != null;
+            return this._configurationId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RepositoryName. 
+        /// Gets and sets the property Triggers. 
         /// <para>
-        /// The name associated with the repository.
+        /// The JSON block of configuration information for each trigger.
         /// </para>
         /// </summary>
-        public string RepositoryName
+        public List<RepositoryTrigger> Triggers
         {
-            get { return this._repositoryName; }
-            set { this._repositoryName = value; }
+            get { return this._triggers; }
+            set { this._triggers = value; }
         }
 
-        // Check to see if RepositoryName property is set
-        internal bool IsSetRepositoryName()
+        // Check to see if Triggers property is set
+        internal bool IsSetTriggers()
         {
-            return this._repositoryName != null;
+            return this._triggers != null && this._triggers.Count > 0; 
         }
 
     }

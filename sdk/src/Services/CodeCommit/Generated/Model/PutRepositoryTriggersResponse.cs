@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about a repository name and ID.
+    /// Represents the output of a put repository triggers operation.
     /// </summary>
-    public partial class RepositoryNameIdPair
+    public partial class PutRepositoryTriggersResponse : AmazonWebServiceResponse
     {
-        private string _repositoryId;
-        private string _repositoryName;
+        private string _configurationId;
 
         /// <summary>
-        /// Gets and sets the property RepositoryId. 
+        /// Gets and sets the property ConfigurationId. 
         /// <para>
-        /// The ID associated with the repository.
+        /// The system-generated unique ID for the create or update operation. 
         /// </para>
         /// </summary>
-        public string RepositoryId
+        public string ConfigurationId
         {
-            get { return this._repositoryId; }
-            set { this._repositoryId = value; }
+            get { return this._configurationId; }
+            set { this._configurationId = value; }
         }
 
-        // Check to see if RepositoryId property is set
-        internal bool IsSetRepositoryId()
+        // Check to see if ConfigurationId property is set
+        internal bool IsSetConfigurationId()
         {
-            return this._repositoryId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RepositoryName. 
-        /// <para>
-        /// The name associated with the repository.
-        /// </para>
-        /// </summary>
-        public string RepositoryName
-        {
-            get { return this._repositoryName; }
-            set { this._repositoryName = value; }
-        }
-
-        // Check to see if RepositoryName property is set
-        internal bool IsSetRepositoryName()
-        {
-            return this._repositoryName != null;
+            return this._configurationId != null;
         }
 
     }

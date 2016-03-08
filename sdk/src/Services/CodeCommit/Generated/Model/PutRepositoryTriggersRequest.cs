@@ -28,35 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about a repository name and ID.
+    /// Container for the parameters to the PutRepositoryTriggers operation.
+    /// Replaces all triggers for a repository. This can be used to create or delete triggers.
     /// </summary>
-    public partial class RepositoryNameIdPair
+    public partial class PutRepositoryTriggersRequest : AmazonCodeCommitRequest
     {
-        private string _repositoryId;
         private string _repositoryName;
-
-        /// <summary>
-        /// Gets and sets the property RepositoryId. 
-        /// <para>
-        /// The ID associated with the repository.
-        /// </para>
-        /// </summary>
-        public string RepositoryId
-        {
-            get { return this._repositoryId; }
-            set { this._repositoryId = value; }
-        }
-
-        // Check to see if RepositoryId property is set
-        internal bool IsSetRepositoryId()
-        {
-            return this._repositoryId != null;
-        }
+        private List<RepositoryTrigger> _triggers = new List<RepositoryTrigger>();
 
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name associated with the repository.
+        /// The name of the repository where you want to create or update the trigger. 
         /// </para>
         /// </summary>
         public string RepositoryName
@@ -69,6 +52,24 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetRepositoryName()
         {
             return this._repositoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Triggers. 
+        /// <para>
+        /// The JSON block of configuration information for each trigger. 
+        /// </para>
+        /// </summary>
+        public List<RepositoryTrigger> Triggers
+        {
+            get { return this._triggers; }
+            set { this._triggers = value; }
+        }
+
+        // Check to see if Triggers property is set
+        internal bool IsSetTriggers()
+        {
+            return this._triggers != null && this._triggers.Count > 0; 
         }
 
     }

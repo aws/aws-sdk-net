@@ -39,13 +39,37 @@
     <pattern>[\\w\\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.GetCommitRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\\w\\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetRepositoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[\\w\\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.GetRepositoryTriggersRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\\w\\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.ListBranchesRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\\w\\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.PutRepositoryTriggersRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\\w\\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.TestRepositoryTriggersRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[\\w\\.-]+</pattern>

@@ -28,44 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateBranch operation.
-    /// Creates a new branch in a repository and points the branch to a commit.
-    /// 
-    ///  <note>
-    /// <para>
-    /// Calling the create branch operation does not set a repository's default branch. To
-    /// do this, call the update default branch operation.
-    /// </para>
-    /// </note>
+    /// Container for the parameters to the GetCommit operation.
+    /// Returns information about a commit, including commit message and committer information.
     /// </summary>
-    public partial class CreateBranchRequest : AmazonCodeCommitRequest
+    public partial class GetCommitRequest : AmazonCodeCommitRequest
     {
-        private string _branchName;
         private string _commitId;
         private string _repositoryName;
 
         /// <summary>
-        /// Gets and sets the property BranchName. 
-        /// <para>
-        /// The name of the new branch to create.
-        /// </para>
-        /// </summary>
-        public string BranchName
-        {
-            get { return this._branchName; }
-            set { this._branchName = value; }
-        }
-
-        // Check to see if BranchName property is set
-        internal bool IsSetBranchName()
-        {
-            return this._branchName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property CommitId. 
         /// <para>
-        /// The ID of the commit to point the new branch to.
+        /// The commit ID.
         /// </para>
         /// </summary>
         public string CommitId
@@ -83,7 +57,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository in which you want to create the new branch.
+        /// The name of the repository to which the commit was made.
         /// </para>
         /// </summary>
         public string RepositoryName
