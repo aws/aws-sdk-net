@@ -56,6 +56,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static void ClassCleanup()
         {
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            if (Directory.Exists(basePath))
+                Directory.Delete(basePath, true);
             BaseClean();
         }
 

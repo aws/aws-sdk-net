@@ -1182,6 +1182,55 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  FlushStageAuthorizersCache
+
+
+        /// <summary>
+        /// Flushes all authorizer cache entries on a stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FlushStageAuthorizersCache service method.</param>
+        /// 
+        /// <returns>The response from the FlushStageAuthorizersCache service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FlushStageAuthorizersCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FlushStageAuthorizersCache operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFlushStageAuthorizersCache
+        ///         operation.</returns>
+        IAsyncResult BeginFlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  FlushStageAuthorizersCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFlushStageAuthorizersCache.</param>
+        /// 
+        /// <returns>Returns a  FlushStageAuthorizersCacheResult from APIGateway.</returns>
+        FlushStageAuthorizersCacheResponse EndFlushStageAuthorizersCache(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  FlushStageCache
 
 
@@ -1378,6 +1427,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetApiKeys service method.</param>
         /// 
         /// <returns>The response from the GetApiKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// 
         /// </exception>
@@ -1654,6 +1706,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetClientCertificates service method.</param>
         /// 
         /// <returns>The response from the GetClientCertificates service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// 
         /// </exception>
@@ -1746,6 +1801,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetDeployments service method.</param>
         /// 
         /// <returns>The response from the GetDeployments service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
         /// 
         /// </exception>
@@ -1842,6 +1900,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetDomainNames service method.</param>
         /// 
         /// <returns>The response from the GetDomainNames service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// 
         /// </exception>
@@ -2164,6 +2225,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetModels service method.</param>
         /// 
         /// <returns>The response from the GetModels service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -2306,6 +2370,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetResources service method.</param>
         /// 
         /// <returns>The response from the GetResources service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -2398,6 +2465,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the GetRestApis service method.</param>
         /// 
         /// <returns>The response from the GetRestApis service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// 
         /// </exception>
@@ -2781,6 +2851,55 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>Returns a  PutMethodResponseResult from APIGateway.</returns>
         PutMethodResponseResponse EndPutMethodResponse(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TestInvokeAuthorizer
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
+        /// 
+        /// <returns>The response from the TestInvokeAuthorizer service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestInvokeAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestInvokeAuthorizer
+        ///         operation.</returns>
+        IAsyncResult BeginTestInvokeAuthorizer(TestInvokeAuthorizerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestInvokeAuthorizer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestInvokeAuthorizer.</param>
+        /// 
+        /// <returns>Returns a  TestInvokeAuthorizerResult from APIGateway.</returns>
+        TestInvokeAuthorizerResponse EndTestInvokeAuthorizer(IAsyncResult asyncResult);
 
         #endregion
         

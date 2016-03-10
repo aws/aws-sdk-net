@@ -106,8 +106,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDurationMinutes. 
         /// <para>
-        /// The required duration for the Spot instances, in minutes. This value must be a multiple
-        /// of 60 (60, 120, 180, 240, 300, or 360).
+        /// The required duration for the Spot instances (also known as Spot blocks), in minutes.
+        /// This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).
         /// </para>
         ///  
         /// <para>

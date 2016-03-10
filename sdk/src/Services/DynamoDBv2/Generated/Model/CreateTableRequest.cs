@@ -71,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates CreateTableRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table to create.</param>
-        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or <code>RANGE</code>. </li> </ul> For a primary key that consists of a hash attribute, you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a primary key that consists of hash and range attributes, you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - The role that the key attribute will assume: <ul> <li><code>HASH</code> - partition key </li> <li><code>RANGE</code> - sort key</li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</note> For a simple primary key (partition key), you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         public CreateTableRequest(string tableName, List<KeySchemaElement> keySchema)
         {
             _tableName = tableName;
@@ -82,7 +82,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates CreateTableRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table to create.</param>
-        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or <code>RANGE</code>. </li> </ul> For a primary key that consists of a hash attribute, you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a primary key that consists of hash and range attributes, you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - The role that the key attribute will assume: <ul> <li><code>HASH</code> - partition key </li> <li><code>RANGE</code> - sort key</li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</note> For a simple primary key (partition key), you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
         /// <param name="provisionedThroughput">Sets the CreateTableRequest ProvisionedThroughput property</param>
         public CreateTableRequest(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput)
@@ -122,11 +122,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <i>IndexName</i> - The name of the global secondary index. Must be unique only for
         /// this table.
         /// </para>
-        ///  
-        /// <para>
-        /// 
-        /// </para>
-        ///  </li> <li> 
+        ///   </li> <li> 
         /// <para>
         /// <i>KeySchema</i> - Specifies the key schema for the global secondary index.
         /// </para>
@@ -199,16 +195,36 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or <code>RANGE</code>.
+        /// <i>KeyType</i> - The role that the key attribute will assume:
         /// </para>
-        ///  </li> </ul> 
+        ///  <ul> <li>
         /// <para>
-        /// For a primary key that consists of a hash attribute, you must provide exactly one
-        /// element with a <i>KeyType</i> of <code>HASH</code>.
+        /// <code>HASH</code> - partition key
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// <code>RANGE</code> - sort key
+        /// </para>
+        /// </li> </ul> </li> </ul> <note> 
+        /// <para>
+        /// The partition key of an item is also known as its <i>hash attribute</i>. The term
+        /// "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to
+        /// evenly distribute data items across partitions, based on their partition key values.
         /// </para>
         ///  
         /// <para>
-        /// For a primary key that consists of hash and range attributes, you must provide exactly
+        /// The sort key of an item is also known as its <i>range attribute</i>. The term "range
+        /// attribute" derives from the way DynamoDB stores items with the same partition key
+        /// physically close together, in sorted order by the sort key value.
+        /// </para>
+        /// </note> 
+        /// <para>
+        /// For a simple primary key (partition key), you must provide exactly one element with
+        /// a <i>KeyType</i> of <code>HASH</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a composite primary key (partition key and sort key), you must provide exactly
         /// two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>,
         /// and the second element must have a <i>KeyType</i> of <code>RANGE</code>.
         /// </para>
@@ -234,8 +250,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property LocalSecondaryIndexes. 
         /// <para>
         /// One or more local secondary indexes (the maximum is five) to be created on the table.
-        /// Each index is scoped to a given hash key value. There is a 10 GB size limit per hash
-        /// key; otherwise, the size of a local secondary index is unconstrained.
+        /// Each index is scoped to a given partition key value. There is a 10 GB size limit per
+        /// partition key value; otherwise, the size of a local secondary index is unconstrained.
         /// </para>
         ///  
         /// <para>
@@ -246,14 +262,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <i>IndexName</i> - The name of the local secondary index. Must be unique only for
         /// this table.
         /// </para>
-        ///  
-        /// <para>
-        /// 
-        /// </para>
-        ///  </li> <li> 
+        ///   </li> <li> 
         /// <para>
         /// <i>KeySchema</i> - Specifies the key schema for the local secondary index. The key
-        /// schema must begin with the same hash key attribute as the table.
+        /// schema must begin with the same partition key as the table.
         /// </para>
         ///  </li> <li> 
         /// <para>

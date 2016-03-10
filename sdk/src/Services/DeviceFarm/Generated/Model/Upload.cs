@@ -210,6 +210,10 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// WEB_APP: A web appliction upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// EXTERNAL_DATA: An external data upload.
         /// </para>
         /// </li> <li>
@@ -226,11 +230,27 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// CALABASH_TEST_PACKAGE: A Calabash test package upload.
         /// </para>
         /// </li> <li>
         /// <para>
         /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -242,15 +262,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+        /// XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
         /// </para>
         /// </li> </ul>
         /// </summary>

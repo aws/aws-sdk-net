@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the events-2014-02-03.normal.json service model.
+ * Do not modify this file. This file is generated from the events-2015-10-07.normal.json service model.
  */
 
 
@@ -248,9 +248,9 @@ namespace Amazon.CloudWatchEvents
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> When you make a change with this action, incoming events might still
-        /// continue to match to the deleted rule. Please allow a short period of time for changes
-        /// to take effect. 
+        ///  <b>Note:</b> When you delete a rule, incoming events might still continue to match
+        /// to the deleted rule. Please allow a short period of time for changes to take effect.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
@@ -342,9 +342,9 @@ namespace Amazon.CloudWatchEvents
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> When you make a change with this action, incoming events might still
-        /// continue to match to the disabled rule. Please allow a short period of time for changes
-        /// to take effect. 
+        ///  <b>Note:</b> When you disable a rule, incoming events might still continue to match
+        /// to the disabled rule. Please allow a short period of time for changes to take effect.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableRule service method.</param>
@@ -395,8 +395,8 @@ namespace Amazon.CloudWatchEvents
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> When you make a change with this action, incoming events might not immediately
-        /// start matching to a newly enabled rule. Please allow a short period of time for changes
+        ///  <b>Note:</b> When you enable a rule, incoming events might not immediately start
+        /// matching to a newly enabled rule. Please allow a short period of time for changes
         /// to take effect. 
         /// </para>
         /// </summary>
@@ -444,12 +444,11 @@ namespace Amazon.CloudWatchEvents
 
 
         /// <summary>
-        /// Lists the names of the rules that the given target is put to. Using this action, you
-        /// can find out which of the rules in Amazon CloudWatch Events can invoke a specific
-        /// target in your account. If you have more rules in your account than the given limit,
-        /// the results will be paginated. In that case, use the next token returned in the response
-        /// and repeat the ListRulesByTarget action until the NextToken in the response is returned
-        /// as null.
+        /// Lists the names of the rules that the given target is put to. You can see which of
+        /// the rules in Amazon CloudWatch Events can invoke a specific target in your account.
+        /// If you have more rules in your account than the given limit, the results will be paginated.
+        /// In that case, use the next token returned in the response and repeat ListRulesByTarget
+        /// until the NextToken in the response is returned as null.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuleNamesByTarget service method.</param>
         /// 
@@ -492,8 +491,8 @@ namespace Amazon.CloudWatchEvents
         /// Lists the Amazon CloudWatch Events rules in your account. You can either list all
         /// the rules or you can provide a prefix to match to the rule names. If you have more
         /// rules in your account than the given limit, the results will be paginated. In that
-        /// case, use the next token returned in the response and repeat the ListRules action
-        /// until the NextToken in the response is returned as null.
+        /// case, use the next token returned in the response and repeat ListRules until the NextToken
+        /// in the response is returned as null.
         /// </summary>
         /// 
         /// <returns>The response from the ListRules service method, as returned by CloudWatchEvents.</returns>
@@ -510,8 +509,8 @@ namespace Amazon.CloudWatchEvents
         /// Lists the Amazon CloudWatch Events rules in your account. You can either list all
         /// the rules or you can provide a prefix to match to the rule names. If you have more
         /// rules in your account than the given limit, the results will be paginated. In that
-        /// case, use the next token returned in the response and repeat the ListRules action
-        /// until the NextToken in the response is returned as null.
+        /// case, use the next token returned in the response and repeat ListRules until the NextToken
+        /// in the response is returned as null.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
         /// 
@@ -532,8 +531,8 @@ namespace Amazon.CloudWatchEvents
         /// Lists the Amazon CloudWatch Events rules in your account. You can either list all
         /// the rules or you can provide a prefix to match to the rule names. If you have more
         /// rules in your account than the given limit, the results will be paginated. In that
-        /// case, use the next token returned in the response and repeat the ListRules action
-        /// until the NextToken in the response is returned as null.
+        /// case, use the next token returned in the response and repeat ListRules until the NextToken
+        /// in the response is returned as null.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -659,7 +658,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> When you make a change with this action, incoming events might not immediately
+        ///  <b>Note:</b> When you create or update a rule, incoming events might not immediately
         /// start matching to new or updated rules. Please allow a short period of time for changes
         /// to take effect.
         /// </para>
@@ -726,15 +725,35 @@ namespace Amazon.CloudWatchEvents
 
 
         /// <summary>
-        /// Adds target(s) to a rule. Updates the target(s) if they are already associated with
-        /// the role. In other words, if there is already a target with the given target ID, then
-        /// the target associated with that ID is updated.
+        /// Adds target(s) to a rule. Targets are the resources that can be invoked when a rule
+        /// is triggered. For example, AWS Lambda functions, Amazon Kinesis streams, and built-in
+        /// targets. Updates the target(s) if they are already associated with the role. In other
+        /// words, if there is already a target with the given target ID, then the target associated
+        /// with that ID is updated.
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> When you make a change with this action, when the associated rule triggers,
-        /// new or updated targets might not be immediately invoked. Please allow a short period
-        /// of time for changes to take effect. 
+        /// In order to be able to make API calls against the resources you own, Amazon CloudWatch
+        /// Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources,
+        /// CloudWatch Events relies on resource-based policies. For Amazon Kinesis streams, CloudWatch
+        /// Events relies on IAM roles. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html">Permissions
+        /// for Sending Events to Targets</a> in the <b><i>Amazon CloudWatch Developer Guide</i></b>.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of
+        /// a target. When a rule is triggered due to a matched event, if for a target:
+        /// </para>
+        ///  <ul> <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire
+        /// event is passed to the target in JSON form.</li> <li> <b>InputPath</b> is specified
+        /// in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event specified
+        /// in the path is passed to the target (e.g. only the detail part of the event is passed).
+        /// </li> <li> <b>Input</b> is specified in the form of a valid JSON, then the matched
+        /// event is overridden with this constant.</li> </ul> 
+        /// <para>
+        ///  <b>Note:</b> When you add targets to a rule, when the associated rule triggers, new
+        /// or updated targets might not be immediately invoked. Please allow a short period of
+        /// time for changes to take effect. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTargets service method.</param>
@@ -790,9 +809,9 @@ namespace Amazon.CloudWatchEvents
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> When you make a change with this action, when the associated rule triggers,
-        /// removed targets might still continue to be invoked. Please allow a short period of
-        /// time for changes to take effect. 
+        ///  <b>Note:</b> When you remove a target, when the associated rule triggers, removed
+        /// targets might still continue to be invoked. Please allow a short period of time for
+        /// changes to take effect. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTargets service method.</param>

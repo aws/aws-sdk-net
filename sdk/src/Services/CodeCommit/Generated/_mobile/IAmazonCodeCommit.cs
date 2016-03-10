@@ -33,15 +33,37 @@ namespace Amazon.CodeCommit
     /// AWS CodeCommit 
     /// <para>
     /// This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions
-    /// of the AWS CodeCommit API.
+    /// of the operations and data types for AWS CodeCommit API.
     /// </para>
     ///  
     /// <para>
     /// You can use the AWS CodeCommit API to work with the following objects:
     /// </para>
-    ///  <ul> <li>Repositories</li> <li>Branches</li> <li>Commits</li> </ul> 
+    ///  <ul> <li>Repositories, by calling the following: <ul> <li><a>BatchGetRepositories</a>,
+    /// which returns information about one or more repositories associated with your AWS
+    /// account</li> <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li>
+    /// <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li> <li><a>GetRepository</a>,
+    /// which returns information about a specified repository</li> <li><a>ListRepositories</a>,
+    /// which lists all AWS CodeCommit repositories associated with your AWS account</li>
+    /// <li><a>UpdateRepositoryDescription</a>, which sets or updates the description of the
+    /// repository</li> <li><a>UpdateRepositoryName</a>, which changes the name of the repository.
+    /// If you change the name of a repository, no other users of that repository will be
+    /// able to access it until you send them the new HTTPS or SSH URL to use.</li> </ul></li>
+    /// <li>Branches, by calling the following: <ul> <li><a>CreateBranch</a>, which creates
+    /// a new branch in a specified repository</li> <li><a>GetBranch</a>, which returns information
+    /// about a specified branch</li> <li><a>ListBranches</a>, which lists all branches for
+    /// a specified repository</li> <li><a>UpdateDefaultBranch</a>, which changes the default
+    /// branch for a repository</li> </ul></li> <li>Information about committed code in a
+    /// repository, by calling the following: <ul> <li><a>GetCommit</a>, which returns information
+    /// about a commit, including commit messages and committer information.</li> </ul></li>
+    /// <li>Triggers, by calling the following: <ul> <li><a>GetRepositoryTriggers</a>, which
+    /// returns information about triggers configured for a repository</li> <li><a>PutRepositoryTriggers</a>,
+    /// which replaces all triggers for a repository and can be used to create or delete triggers</li>
+    /// <li><a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger
+    /// by sending data to the trigger target</li> </ul> </li> </ul> 
     /// <para>
-    /// For information about how to use AWS CodeCommit, see the <i>AWS CodeCommit User Guide</i>.
+    /// For information about how to use AWS CodeCommit, see the <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+    /// CodeCommit User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCodeCommit : IDisposable
@@ -127,6 +149,22 @@ namespace Amazon.CodeCommit
 
         #endregion
                 
+        #region  GetCommit
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCommit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCommit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetCommitResponse> GetCommitAsync(GetCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetRepository
 
 
@@ -140,6 +178,22 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRepositoryTriggers
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRepositoryTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRepositoryTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetRepositoryTriggersResponse> GetRepositoryTriggersAsync(GetRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -172,6 +226,38 @@ namespace Amazon.CodeCommit
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutRepositoryTriggers
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRepositoryTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRepositoryTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutRepositoryTriggersResponse> PutRepositoryTriggersAsync(PutRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TestRepositoryTriggers
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestRepositoryTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestRepositoryTriggers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<TestRepositoryTriggersResponse> TestRepositoryTriggersAsync(TestRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

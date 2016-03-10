@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the events-2014-02-03.normal.json service model.
+ * Do not modify this file. This file is generated from the events-2015-10-07.normal.json service model.
  */
 
 
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CloudWatchEventsMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("events-2014-02-03.normal.json", "events.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("events-2015-10-07.normal.json", "events.customizations.json");
         
         [TestMethod]
         [TestCategory("UnitTest")]

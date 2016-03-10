@@ -51,9 +51,11 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, <i>Scan</i> uses eventually consistent reads when acessing the data in
-    /// the table or local secondary index. However, you can use strongly consistent reads
-    /// instead by setting the <i>ConsistentRead</i> parameter to <i>true</i>.
+    /// By default, <i>Scan</i> uses eventually consistent reads when accessing the data in
+    /// a table; therefore, the result set might not include the changes to data in the table
+    /// immediately before the operation began. If you need a consistent copy of the data,
+    /// as of the time that the Scan begins, you can set the <i>ConsistentRead</i> parameter
+    /// to <i>true</i>.
     /// </para>
     /// </summary>
     public partial class ScanRequest : AmazonDynamoDBRequest
@@ -182,27 +184,25 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use eventually
-        /// consistent reads. The data returned from <i>Scan</i> might not contain the results
-        /// of other recently completed write operations (PutItem, UpdateItem or DeleteItem).
-        /// The <i>Scan</i> response might include some stale data.
+        /// If <i>ConsistentRead</i> is <code>false</code>, then the data returned from <i>Scan</i>
+        /// might not contain the results from other recently completed write operations (PutItem,
+        /// UpdateItem or DeleteItem).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use strongly
-        /// consistent reads. All of the write operations that completed before the <i>Scan</i>
-        /// began are guaranteed to be contained in the <i>Scan</i> response.
+        /// If <i>ConsistentRead</i> is <code>true</code>, then all of the write operations that
+        /// completed before the <i>Scan</i> began are guaranteed to be contained in the <i>Scan</i>
+        /// response.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default setting for <i>ConsistentRead</i> is <code>false</code>, meaning that
-        /// eventually consistent reads will be used.
+        /// The default setting for <i>ConsistentRead</i> is <code>false</code>.
         /// </para>
         ///  
         /// <para>
-        /// Strongly consistent reads are not supported on global secondary indexes. If you scan
-        /// a global secondary index with <i>ConsistentRead</i> set to true, you will receive
-        /// a <i>ValidationException</i>.
+        /// The <i>ConsistentRead</i> parameter is not supported on global secondary indexes.
+        /// If you scan a global secondary index with <i>ConsistentRead</i> set to true, you will
+        /// receive a <i>ValidationException</i>.
         /// </para>
         /// </summary>
         public bool ConsistentRead
@@ -555,7 +555,7 @@ namespace Amazon.DynamoDBv2.Model
         /// For information on specifying data types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
         /// Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> <li>
         /// <para>
         /// <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals,
         /// greater than, less than, etc.

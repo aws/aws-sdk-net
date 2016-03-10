@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the events-2014-02-03.normal.json service model.
+ * Do not modify this file. This file is generated from the events-2015-10-07.normal.json service model.
  */
 
 
@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchEvents
     public partial class AmazonCloudWatchEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.2.2.1");
+            InternalSDKUtils.BuildUserAgentString("3.2.3.0");
 
         private string _userAgent = UserAgentString;
 
@@ -62,7 +62,7 @@ namespace Amazon.CloudWatchEvents
         {
             get
             {
-                return "2014-02-03";
+                return "2015-10-07";
             }
         }
 

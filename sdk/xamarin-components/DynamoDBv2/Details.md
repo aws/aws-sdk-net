@@ -1,15 +1,19 @@
 # Amazon DynamoDB
  
 
-**Overview**
+This is the Amazon DynamoDB API Reference. This guide provides descriptions of the low-level DynamoDB API.
 
  
 
-This is the Amazon DynamoDB API Reference. This guide provides descriptions and samples of the low-level DynamoDB API. For information about DynamoDB application development, see the [Amazon DynamoDB Developer Guide](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/).
+This guide is intended for use with the following DynamoDB documentation:
 
  
+- [Amazon DynamoDB Getting Started Guide](http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/) - provides hands-on exercises that help you learn the basics of working with DynamoDB. *If you are new to DynamoDB, we recommend that you begin with the Getting Started Guide.*
+- [Amazon DynamoDB Developer Guide](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/) - contains detailed information about DynamoDB concepts, usage, and best practices.
+- [Amazon DynamoDB Streams API Reference](http://docs.aws.amazon.com/dynamodbstreams/latest/APIReference/) - provides descriptions and samples of the DynamoDB Streams API. (For more information, see [Capturing Table Activity with DynamoDB Streams](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html) in the Amazon DynamoDB Developer Guide.)
+ 
 
-Instead of making the requests to the low-level DynamoDB API directly from your application, we recommend that you use the AWS Software Development Kits (SDKs). The easy-to-use libraries in the AWS SDKs make it unnecessary to call the low-level DynamoDB API directly from your application. The libraries take care of request authentication, serialization, and connection management. For more information, see [Using the AWS SDKs with DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html) in the *Amazon DynamoDB Developer Guide*.
+Instead of making the requests to the low-level DynamoDB API directly from your application, we recommend that you use the AWS Software Development Kits (SDKs). The easy-to-use libraries in the AWS SDKs make it unnecessary to call the low-level DynamoDB API directly from your application. The libraries take care of request authentication, serialization, and connection management. For more information, see [Using the AWS SDKs with DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html) in the Amazon DynamoDB Developer Guide.
 
  
 
@@ -24,7 +28,7 @@ The following are short descriptions of each low-level API action, organized by 
 **Managing Tables**
 
  
-- *CreateTable* - Creates a table with user-specified provisioned throughput settings. You must designate one attribute as the hash primary key for the table; you can optionally designate a second attribute as the range primary key. DynamoDB creates indexes on these key attributes for fast data access. Optionally, you can create one or more secondary indexes, which provide fast data access using non-key attributes.
+- *CreateTable* - Creates a table with user-specified provisioned throughput settings. You must define a primary key for the table - either a simple primary key (partition key), or a composite primary key (partition key and sort key). Optionally, you can create one or more secondary indexes, which provide fast data access using non-key attributes.
 - *DescribeTable* - Returns metadata for a table, such as table size, status, and index information.
 - *UpdateTable* - Modifies the provisioned throughput settings for a table. Optionally, you can modify the provisioned throughput settings for global secondary indexes on the table.
 - *ListTables* - Returns a list of all tables associated with the current AWS account and endpoint.
@@ -40,7 +44,7 @@ For conceptual information about managing tables, see [Working with Tables](http
  
 - *GetItem* - Returns a set of attributes for the item that has a given primary key. By default, *GetItem* performs an eventually consistent read; however, applications can request a strongly consistent read instead.
 - *BatchGetItem* - Performs multiple *GetItem* requests for data items using their primary keys, from one table or multiple tables. The response from *BatchGetItem* has a size limit of 16 MB and returns a maximum of 100 items. Both eventually consistent and strongly consistent reads can be used.
-- *Query* - Returns one or more items from a table or a secondary index. You must provide a specific hash key value. You can narrow the scope of the query using comparison operators against a range key value, or on the index key. *Query* supports either eventual or strong consistency. A single response has a size limit of 1 MB.
+- *Query* - Returns one or more items from a table or a secondary index. You must provide a specific value for the partition key. You can narrow the scope of the query using comparison operators against a sort key value, or on the index key. *Query* supports either eventual or strong consistency. A single response has a size limit of 1 MB.
 - *Scan* - Reads every item in a table; the result set is eventually consistent. You can limit the number of items returned by filtering the data attributes, using conditional expressions. *Scan* can be used to enable ad-hoc querying of a table against non-key attributes; however, since this is a full table scan without using an index, *Scan* should not be used for any application query use case that requires predictable performance.
  
 

@@ -20,33 +20,10 @@ using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.ComponentModel;
+using Amazon.Runtime;
 
 namespace Amazon.Runtime.Internal.Util
 {
-    /// <summary>
-    /// A single logged message
-    /// </summary>
-    public class LogMessage
-    {
-        public object[] Args { get; private set; }
-        public IFormatProvider Provider { get; private set; }
-        public string Format { get; private set; }
-
-        public LogMessage(string message) : this(CultureInfo.InvariantCulture, message) { }
-        public LogMessage(string format, params object[] args) : this(CultureInfo.InvariantCulture, format, args) { }
-        public LogMessage(IFormatProvider provider, string format, params object[] args)
-        {
-            Args = args;
-            Format = format;
-            Provider = provider;
-        }
-
-        public override string ToString()
-        {
-            return string.Format(Provider, Format, Args);
-        }
-    }
-
     /// <summary>
     /// This is a dynamic wrapper around log4net so we can avoid log4net being required
     /// to be distributed with the SDK.

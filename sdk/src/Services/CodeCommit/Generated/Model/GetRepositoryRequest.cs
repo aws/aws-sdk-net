@@ -29,7 +29,7 @@ namespace Amazon.CodeCommit.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRepository operation.
-    /// Gets information about a repository.
+    /// Returns information about a repository.
     /// 
     ///  <note>
     /// <para>

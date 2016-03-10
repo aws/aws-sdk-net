@@ -544,6 +544,37 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DeregisterEventTopic
+
+        internal DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request)
+        {
+            var marshaller = new DeregisterEventTopicRequestMarshaller();
+            var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterEventTopicRequest,DeregisterEventTopicResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterEventTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterEventTopic operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeregisterEventTopicResponse> DeregisterEventTopicAsync(DeregisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeregisterEventTopicRequestMarshaller();
+            var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterEventTopicRequest,DeregisterEventTopicResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDirectories
 
         internal DescribeDirectoriesResponse DescribeDirectories()
@@ -621,6 +652,37 @@ namespace Amazon.DirectoryService
             var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDirectoriesRequest,DescribeDirectoriesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEventTopics
+
+        internal DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
+        {
+            var marshaller = new DescribeEventTopicsRequestMarshaller();
+            var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventTopicsRequest,DescribeEventTopicsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventTopics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventTopics operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEventTopicsResponse> DescribeEventTopicsAsync(DescribeEventTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEventTopicsRequestMarshaller();
+            var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEventTopicsRequest,DescribeEventTopicsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -896,6 +958,37 @@ namespace Amazon.DirectoryService
             var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSnapshotLimitsRequest,GetSnapshotLimitsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterEventTopic
+
+        internal RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request)
+        {
+            var marshaller = new RegisterEventTopicRequestMarshaller();
+            var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterEventTopicRequest,RegisterEventTopicResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterEventTopic operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterEventTopic operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterEventTopicResponse> RegisterEventTopicAsync(RegisterEventTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterEventTopicRequestMarshaller();
+            var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterEventTopicRequest,RegisterEventTopicResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

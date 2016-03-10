@@ -38,7 +38,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property RepositoryId. 
         /// <para>
-        /// The ID associated with the repository name.
+        /// The ID associated with the repository.
         /// </para>
         /// </summary>
         public string RepositoryId
@@ -54,7 +54,10 @@ namespace Amazon.CodeCommit.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RepositoryName.
+        /// Gets and sets the property RepositoryName. 
+        /// <para>
+        /// The name associated with the repository.
+        /// </para>
         /// </summary>
         public string RepositoryName
         {

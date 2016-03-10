@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the events-2014-02-03.normal.json service model.
+ * Do not modify this file. This file is generated from the events-2015-10-07.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,9 +34,9 @@ namespace Amazon.CloudWatchEvents.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> When you make a change with this action, incoming events might still
-    /// continue to match to the deleted rule. Please allow a short period of time for changes
-    /// to take effect. 
+    ///  <b>Note:</b> When you delete a rule, incoming events might still continue to match
+    /// to the deleted rule. Please allow a short period of time for changes to take effect.
+    /// 
     /// </para>
     /// </summary>
     public partial class DeleteRuleRequest : AmazonCloudWatchEventsRequest

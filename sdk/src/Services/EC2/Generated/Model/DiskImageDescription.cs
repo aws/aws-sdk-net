@@ -81,6 +81,11 @@ namespace Amazon.EC2.Model
         /// Alternative" section of the <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
         /// REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// For information about the import manifest referenced by this API action, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+        /// Import Manifest</a>.
+        /// </para>
         /// </summary>
         public string ImportManifestUrl
         {

@@ -138,7 +138,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance (<code>spot</code>).
+        /// <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled
+        /// Instance (<code>spot</code> | <code>scheduled</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

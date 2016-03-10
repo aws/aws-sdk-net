@@ -75,6 +75,64 @@ namespace Amazon.CodeCommit
 
 
     /// <summary>
+    /// Constants used for properties of type RepositoryTriggerEventEnum.
+    /// </summary>
+    public class RepositoryTriggerEventEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for RepositoryTriggerEventEnum
+        /// </summary>
+        public static readonly RepositoryTriggerEventEnum All = new RepositoryTriggerEventEnum("all");
+        /// <summary>
+        /// Constant CreateReference for RepositoryTriggerEventEnum
+        /// </summary>
+        public static readonly RepositoryTriggerEventEnum CreateReference = new RepositoryTriggerEventEnum("createReference");
+        /// <summary>
+        /// Constant DeleteReference for RepositoryTriggerEventEnum
+        /// </summary>
+        public static readonly RepositoryTriggerEventEnum DeleteReference = new RepositoryTriggerEventEnum("deleteReference");
+        /// <summary>
+        /// Constant UpdateReference for RepositoryTriggerEventEnum
+        /// </summary>
+        public static readonly RepositoryTriggerEventEnum UpdateReference = new RepositoryTriggerEventEnum("updateReference");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RepositoryTriggerEventEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RepositoryTriggerEventEnum FindValue(string value)
+        {
+            return FindValue<RepositoryTriggerEventEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RepositoryTriggerEventEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortByEnum.
     /// </summary>
     public class SortByEnum : ConstantClass

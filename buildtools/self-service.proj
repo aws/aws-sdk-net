@@ -36,55 +36,63 @@
 	
 		
 		<Message Text="Compile the core runtime"/>
-		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\src\Core\AWSSDK.Core.Net35.csproj"/>
-		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\src\Core\AWSSDK.Core.Net45.csproj"/>		
-		
+		<MSBuild Projects="..\sdk\src\Core\AWSSDK.Core.Net35.csproj"
+			Targets="Rebuild"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+		<MSBuild Projects="..\sdk\src\Core\AWSSDK.Core.Net45.csproj"
+			Targets="Rebuild"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+
 		<Message Text="Compile the service $(BaseName)"/>
-		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj"/>
-		<Exec Command="$(devenv2013) /Rebuild Debug ..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj"/>
+		<MSBuild Projects="..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net35.csproj"
+			Targets="Rebuild"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+		<MSBuild Projects="..\sdk\src\Services\$(BaseName)\AWSSDK.$(BaseName).Net45.csproj"
+			Targets="Rebuild"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>	
 	
 	<Target Name="consolidate-build" DependsOnTargets="build-sdk">
 	
 		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Debug\Net35\AWSSDK.Core.dll"
+			SourceFiles="..\sdk\src\Core\bin\Release\Net35\AWSSDK.Core.dll"
 			DestinationFolder="$(Deployment)\Net35" />
 		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Debug\Net35\AWSSDK.Core.pdb"
+			SourceFiles="..\sdk\src\Core\bin\Release\Net35\AWSSDK.Core.pdb"
 			DestinationFolder="$(Deployment)\Net35" />
 		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Debug\Net35\AWSSDK.Core.xml"
-			DestinationFolder="$(Deployment)\Net35" />
-
-		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Debug\Net45\AWSSDK.Core.dll"
-			DestinationFolder="$(Deployment)\Net45" />
-		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Debug\Net45\AWSSDK.Core.pdb"
-			DestinationFolder="$(Deployment)\Net45" />
-		<Copy
-			SourceFiles="..\sdk\src\Core\bin\Debug\Net45\AWSSDK.Core.xml"
-			DestinationFolder="$(Deployment)\Net45" />
-
-
-		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net35\AWSSDK.$(BaseName).dll"
-			DestinationFolder="$(Deployment)\Net35" />
-		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net35\AWSSDK.$(BaseName).pdb"
-			DestinationFolder="$(Deployment)\Net35" />
-		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net35\AWSSDK.$(BaseName).xml"
+			SourceFiles="..\sdk\src\Core\bin\Release\Net35\AWSSDK.Core.xml"
 			DestinationFolder="$(Deployment)\Net35" />
 
 		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net45\AWSSDK.$(BaseName).dll"
+			SourceFiles="..\sdk\src\Core\bin\Release\Net45\AWSSDK.Core.dll"
 			DestinationFolder="$(Deployment)\Net45" />
 		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net45\AWSSDK.$(BaseName).pdb"
+			SourceFiles="..\sdk\src\Core\bin\Release\Net45\AWSSDK.Core.pdb"
 			DestinationFolder="$(Deployment)\Net45" />
 		<Copy
-			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Debug\Net45\AWSSDK.$(BaseName).xml"
+			SourceFiles="..\sdk\src\Core\bin\Release\Net45\AWSSDK.Core.xml"
+			DestinationFolder="$(Deployment)\Net45" />
+
+
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net35\AWSSDK.$(BaseName).dll"
+			DestinationFolder="$(Deployment)\Net35" />
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net35\AWSSDK.$(BaseName).pdb"
+			DestinationFolder="$(Deployment)\Net35" />
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net35\AWSSDK.$(BaseName).xml"
+			DestinationFolder="$(Deployment)\Net35" />
+
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net45\AWSSDK.$(BaseName).dll"
+			DestinationFolder="$(Deployment)\Net45" />
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net45\AWSSDK.$(BaseName).pdb"
+			DestinationFolder="$(Deployment)\Net45" />
+		<Copy
+			SourceFiles="..\sdk\src\Services\$(BaseName)\bin\Release\Net45\AWSSDK.$(BaseName).xml"
 			DestinationFolder="$(Deployment)\Net45" />
 			
 	</Target>

@@ -45,8 +45,8 @@ namespace Amazon.ConfigService.Model
     ///  
     /// <para>
     /// You can also have AWS Config record configuration changes for supported types of global
-    /// resources. Global resources are not tied to an individual region and can be used in
-    /// all regions.
+    /// resources (for example, IAM resources). Global resources are not tied to an individual
+    /// region and can be used in all regions.
     /// </para>
     ///  <important>The configuration details for any global resource are the same in all
     /// regions. If you customize AWS Config in multiple regions to record global resources,
@@ -107,8 +107,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property IncludeGlobalResourceTypes. 
         /// <para>
-        /// Specifies whether AWS Config includes all supported types of global resources with
-        /// the resources that it records.
+        /// Specifies whether AWS Config includes all supported types of global resources (for
+        /// example, IAM resources) with the resources that it records.
         /// </para>
         ///  
         /// <para>
@@ -119,6 +119,12 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// If you set this option to <code>true</code>, when AWS Config adds support for a new
         /// type of global resource, it automatically starts recording resources of that type.
+        /// </para>
+        ///  
+        /// <para>
+        /// The configuration details for any global resource are the same in all regions. To
+        /// prevent duplicate configuration items, you should consider customizing AWS Config
+        /// in only one region to record global resources.
         /// </para>
         /// </summary>
         public bool IncludeGlobalResourceTypes

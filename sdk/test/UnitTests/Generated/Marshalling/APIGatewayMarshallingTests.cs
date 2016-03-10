@@ -569,6 +569,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void FlushStageAuthorizersCacheMarshallTest()
+        {
+            var operation = service_model.FindOperation("FlushStageAuthorizersCache");
+
+            var request = InstantiateClassGenerator.Execute<FlushStageAuthorizersCacheRequest>();
+            var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("FlushStageAuthorizersCache", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void FlushStageCacheMarshallTest()
         {
             var operation = service_model.FindOperation("FlushStageCache");
@@ -1638,6 +1655,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutMethodResponseResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void TestInvokeAuthorizerMarshallTest()
+        {
+            var operation = service_model.FindOperation("TestInvokeAuthorizer");
+
+            var request = InstantiateClassGenerator.Execute<TestInvokeAuthorizerRequest>();
+            var marshaller = new TestInvokeAuthorizerRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("TestInvokeAuthorizer", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as TestInvokeAuthorizerResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

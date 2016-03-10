@@ -34,7 +34,10 @@ namespace Amazon.EC2.Model
     {
         private string _groupId;
         private string _groupName;
+        private string _peeringStatus;
         private string _userId;
+        private string _vpcId;
+        private string _vpcPeeringConnectionId;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -75,9 +78,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PeeringStatus. 
+        /// <para>
+        /// The status of a VPC peering connection, if applicable.
+        /// </para>
+        /// </summary>
+        public string PeeringStatus
+        {
+            get { return this._peeringStatus; }
+            set { this._peeringStatus = value; }
+        }
+
+        // Check to see if PeeringStatus property is set
+        internal bool IsSetPeeringStatus()
+        {
+            return this._peeringStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The ID of an AWS account. EC2-Classic only.
+        /// The ID of an AWS account.
         /// </para>
         /// </summary>
         public string UserId
@@ -90,6 +111,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetUserId()
         {
             return this._userId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC for the referenced security group, if applicable.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcPeeringConnectionId. 
+        /// <para>
+        /// The ID of the VPC peering connection, if applicable. 
+        /// </para>
+        /// </summary>
+        public string VpcPeeringConnectionId
+        {
+            get { return this._vpcPeeringConnectionId; }
+            set { this._vpcPeeringConnectionId = value; }
+        }
+
+        // Check to see if VpcPeeringConnectionId property is set
+        internal bool IsSetVpcPeeringConnectionId()
+        {
+            return this._vpcPeeringConnectionId != null;
         }
 
     }

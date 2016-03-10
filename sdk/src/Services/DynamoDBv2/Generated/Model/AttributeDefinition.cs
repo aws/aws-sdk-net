@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates AttributeDefinition with the parameterized properties
         /// </summary>
         /// <param name="attributeName">A name for the attribute.</param>
-        /// <param name="attributeType">The data type for the attribute.</param>
+        /// <param name="attributeType">The data type for the attribute, where: <ul> <li><code>S</code> - the attribute is of type String</li> <li><code>N</code> - the attribute is of type Number</li> <li><code>B</code> - the attribute is of type Binary</li> </ul></param>
         public AttributeDefinition(string attributeName, ScalarAttributeType attributeType)
         {
             _attributeName = attributeName;
@@ -72,8 +72,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AttributeType. 
         /// <para>
-        /// The data type for the attribute.
+        /// The data type for the attribute, where:
         /// </para>
+        ///  <ul> <li><code>S</code> - the attribute is of type String</li> <li><code>N</code>
+        /// - the attribute is of type Number</li> <li><code>B</code> - the attribute is of type
+        /// Binary</li> </ul>
         /// </summary>
         public ScalarAttributeType AttributeType
         {

@@ -31,9 +31,13 @@ namespace Amazon.CodeCommit.Model
     /// Container for the parameters to the UpdateDefaultBranch operation.
     /// Sets or changes the default branch name for the specified repository.
     /// 
-    ///  <note>If you use this operation to change the default branch name to the current
-    /// default branch name, a success message is returned even though the default branch
-    /// did not change.</note>
+    ///  <note>
+    /// <para>
+    /// If you use this operation to change the default branch name to the current default
+    /// branch name, a success message is returned even though the default branch did not
+    /// change.
+    /// </para>
+    /// </note>
     /// </summary>
     public partial class UpdateDefaultBranchRequest : AmazonCodeCommitRequest
     {

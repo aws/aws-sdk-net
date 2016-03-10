@@ -78,8 +78,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.
+        /// The maximum number of results to return in a single call. This value can be between
+        /// 5 and 300. The default value is 100. To retrieve the remaining results, make another
+        /// call with the returned <code>NextToken</code> value.
         /// </para>
         /// </summary>
         public int MaxResults

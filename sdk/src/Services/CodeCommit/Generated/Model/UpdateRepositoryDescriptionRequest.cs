@@ -49,7 +49,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property RepositoryDescription. 
         /// <para>
-        /// The new comment or description for the specified repository.
+        /// The new comment or description for the specified repository. Repository descriptions
+        /// are limited to 1,000 characters.
         /// </para>
         /// </summary>
         public string RepositoryDescription
