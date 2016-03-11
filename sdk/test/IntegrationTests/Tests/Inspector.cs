@@ -8,7 +8,8 @@ using Amazon.Runtime;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-    [TestClass]
+// Temporay disable test for preview service.
+//    [TestClass]
     public class Inspector : TestBase<AmazonInspectorClient>
     {
         [TestInitialize]
@@ -40,7 +41,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void TestCrudOperations()
         {
             var groupTags = @"[{""key"": ""foo"", ""values"" :[""bar"",""baz""]}]";
-            var groupArn = Client.CreateResourceGroup(new CreateResourceGroupRequest { ResourceGroupTags = groupTags }).ResourceGroupArn;
+            var groupArn = Client.CreateResourceGroup(new CreateResourceGroupRequest 
+            { 
+                ResourceGroupTags = groupTags,
+            }).ResourceGroupArn;
 
             Assert.IsNotNull(groupArn);
 
