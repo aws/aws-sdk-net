@@ -28,20 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a>
-    /// API to obtain the available reserved node offerings.
+    /// This is the response object from the PurchaseReservedNodeOffering operation.
     /// </summary>
     public partial class PurchaseReservedNodeOfferingResponse : AmazonWebServiceResponse
     {
-        private ReservedNode _response;
+        private ReservedNode _reservedNode;
 
         /// <summary>
-        /// Gets and sets the ReservedNode property.
+        /// Gets and sets the property ReservedNode.
         /// </summary>
         public ReservedNode ReservedNode
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._reservedNode; }
+            set { this._reservedNode = value; }
         }
+
+        // Check to see if ReservedNode property is set
+        internal bool IsSetReservedNode()
+        {
+            return this._reservedNode != null;
+        }
+
     }
 }

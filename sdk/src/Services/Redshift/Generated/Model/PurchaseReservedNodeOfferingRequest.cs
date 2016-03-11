@@ -49,7 +49,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeCount. 
         /// <para>
-        /// The number of reserved nodes you want to purchase.
+        /// The number of reserved nodes that you want to purchase.
         /// </para>
         ///  
         /// <para>

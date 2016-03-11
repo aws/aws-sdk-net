@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// 
+    /// Describes event categories.
     /// </summary>
     public partial class EventCategoriesMap
     {
@@ -56,8 +56,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The Amazon Redshift source type, such as cluster or cluster-snapshot, that the returned
-        /// categories belong to.
+        /// The source type, such as cluster or cluster-snapshot, that the returned categories
+        /// belong to.
         /// </para>
         /// </summary>
         public string SourceType

@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("ReservedNode", targetDepth))
+                    if (context.TestExpression("ReservedNode", targetDepth))
                     {
-                        response.ReservedNode = ReservedNodeUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = ReservedNodeUnmarshaller.Instance;
+                        response.ReservedNode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

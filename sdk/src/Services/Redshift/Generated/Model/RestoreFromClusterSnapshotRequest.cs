@@ -50,6 +50,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class RestoreFromClusterSnapshotRequest : AmazonRedshiftRequest
     {
+        private string _additionalInfo;
         private bool? _allowVersionUpgrade;
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
@@ -71,9 +72,27 @@ namespace Amazon.Redshift.Model
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string AdditionalInfo
+        {
+            get { return this._additionalInfo; }
+            set { this._additionalInfo = value; }
+        }
+
+        // Check to see if AdditionalInfo property is set
+        internal bool IsSetAdditionalInfo()
+        {
+            return this._additionalInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
-        ///  If <code>true</code>, major version upgrades can be applied during the maintenance
+        /// If <code>true</code>, major version upgrades can be applied during the maintenance
         /// window to the Amazon Redshift engine that is running on the cluster. 
         /// </para>
         ///  
@@ -96,7 +115,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
         /// <para>
-        ///  The number of days that automated snapshots are retained. If the value is 0, automated
+        /// The number of days that automated snapshots are retained. If the value is 0, automated
         /// snapshots are disabled. Even if automated snapshots are disabled, you can still create
         /// manual snapshots when you want with <a>CreateClusterSnapshot</a>. 
         /// </para>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Contains the output from the <a>DescribeReservedNodeOfferings</a> action.
+    /// 
     /// </summary>
     public partial class DescribeReservedNodeOfferingsResponse : AmazonWebServiceResponse
     {
@@ -60,7 +60,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ReservedNodeOfferings. 
         /// <para>
-        /// A list of reserved node offerings.
+        /// A list of <code>ReservedNodeOffering</code> objects.
         /// </para>
         /// </summary>
         public List<ReservedNodeOffering> ReservedNodeOfferings

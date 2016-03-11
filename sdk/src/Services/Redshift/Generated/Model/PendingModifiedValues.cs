@@ -40,6 +40,7 @@ namespace Amazon.Redshift.Model
         private string _masterUserPassword;
         private string _nodeType;
         private int? _numberOfNodes;
+        private bool? _publiclyAccessible;
 
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
@@ -165,6 +166,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetNumberOfNodes()
         {
             return this._numberOfNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        ///  The pending or in-progress change of the ability to connect to the cluster from the
+        /// public network.
+        /// </para>
+        /// </summary>
+        public bool PubliclyAccessible
+        {
+            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            set { this._publiclyAccessible = value; }
+        }
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this._publiclyAccessible.HasValue; 
         }
 
     }

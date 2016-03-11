@@ -58,6 +58,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAdditionalInfo())
+                {
+                    request.Parameters.Add("AdditionalInfo", StringUtils.FromString(publicRequest.AdditionalInfo));
+                }
                 if(publicRequest.IsSetAllowVersionUpgrade())
                 {
                     request.Parameters.Add("AllowVersionUpgrade", StringUtils.FromBool(publicRequest.AllowVersionUpgrade));

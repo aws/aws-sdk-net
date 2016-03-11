@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Contains the output from the <a>ModifyClusterParameterGroup</a> and <a>ResetClusterParameterGroup</a>
-    /// actions and indicate the parameter group involved and the status of the operation
-    /// on the parameter group.
+    /// 
     /// </summary>
     public partial class ResetClusterParameterGroupResponse : AmazonWebServiceResponse
     {

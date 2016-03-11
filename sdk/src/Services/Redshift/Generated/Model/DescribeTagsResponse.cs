@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Contains the output from the <code>DescribeTags</code> action.
+    /// 
     /// </summary>
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {

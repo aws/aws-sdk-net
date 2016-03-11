@@ -53,6 +53,7 @@ namespace Amazon.Redshift.Model
         private List<string> _clusterSecurityGroups = new List<string>();
         private string _clusterType;
         private string _clusterVersion;
+        private string _elasticIp;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
         private string _masterUserPassword;
@@ -60,6 +61,7 @@ namespace Amazon.Redshift.Model
         private string _nodeType;
         private int? _numberOfNodes;
         private string _preferredMaintenanceWindow;
+        private bool? _publiclyAccessible;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
@@ -261,6 +263,31 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterVersion()
         {
             return this._clusterVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticIp. 
+        /// <para>
+        /// The Elastic IP (EIP) address for the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through
+        /// an Internet gateway. For more information about provisioning clusters in EC2-VPC,
+        /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+        /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
+        /// </para>
+        /// </summary>
+        public string ElasticIp
+        {
+            get { return this._elasticIp; }
+            set { this._elasticIp = value; }
+        }
+
+        // Check to see if ElasticIp property is set
+        internal bool IsSetElasticIp()
+        {
+            return this._elasticIp != null;
         }
 
         /// <summary>
@@ -471,6 +498,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        /// If <code>true</code>, the cluster can be accessed from a public network. Only clusters
+        /// in VPCs can be set to be publicly available.
+        /// </para>
+        /// </summary>
+        public bool PubliclyAccessible
+        {
+            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            set { this._publiclyAccessible = value; }
+        }
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this._publiclyAccessible.HasValue; 
         }
 
         /// <summary>

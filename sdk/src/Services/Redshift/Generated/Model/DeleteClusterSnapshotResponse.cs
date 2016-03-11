@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a snapshot.
+    /// This is the response object from the DeleteClusterSnapshot operation.
     /// </summary>
     public partial class DeleteClusterSnapshotResponse : AmazonWebServiceResponse
     {
-        private Snapshot _response;
+        private Snapshot _snapshot;
 
         /// <summary>
-        /// Gets and sets the Snapshot property.
+        /// Gets and sets the property Snapshot.
         /// </summary>
         public Snapshot Snapshot
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._snapshot; }
+            set { this._snapshot = value; }
         }
+
+        // Check to see if Snapshot property is set
+        internal bool IsSetSnapshot()
+        {
+            return this._snapshot != null;
+        }
+
     }
 }

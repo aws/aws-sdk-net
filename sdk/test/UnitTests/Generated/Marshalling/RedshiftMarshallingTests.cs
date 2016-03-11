@@ -1007,6 +1007,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void DescribeTableRestoreStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTableRestoreStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTableRestoreStatusRequest>();
+            var marshaller = new DescribeTableRestoreStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeTableRestoreStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTableRestoreStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DescribeTagsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeTags");
@@ -1334,6 +1358,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.Unmarshall(context)
                 as RestoreFromClusterSnapshotResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void RestoreTableFromClusterSnapshotMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreTableFromClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreTableFromClusterSnapshotRequest>();
+            var marshaller = new RestoreTableFromClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance.Unmarshall(context)
+                as RestoreTableFromClusterSnapshotResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

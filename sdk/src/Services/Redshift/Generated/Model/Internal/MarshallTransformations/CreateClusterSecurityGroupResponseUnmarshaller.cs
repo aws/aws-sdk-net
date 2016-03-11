@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("ClusterSecurityGroup", targetDepth))
+                    if (context.TestExpression("ClusterSecurityGroup", targetDepth))
                     {
-                        response.ClusterSecurityGroup = ClusterSecurityGroupUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = ClusterSecurityGroupUnmarshaller.Instance;
+                        response.ClusterSecurityGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

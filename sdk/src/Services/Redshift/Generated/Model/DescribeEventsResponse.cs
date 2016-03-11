@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Contains the output from the <a>DescribeEvents</a> action.
+    /// 
     /// </summary>
     public partial class DescribeEventsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        ///  A list of <a>Event</a> instances. 
+        ///  A list of <code>Event</code> instances. 
         /// </para>
         /// </summary>
         public List<Event> Events

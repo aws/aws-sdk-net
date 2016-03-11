@@ -63,7 +63,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ApplyType. 
         /// <para>
-        /// Specifies how to apply the parameter. Supported value: <code>static</code>.
+        /// Specifies how to apply the WLM configuration parameter. Some properties can be applied
+        /// dynamically, while other properties require that any associated clusters be rebooted
+        /// for the configuration changes to be applied. For more information about parameters
+        /// and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+        /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         public ParameterApplyType ApplyType

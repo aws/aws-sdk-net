@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("EventSubscription", targetDepth))
+                    if (context.TestExpression("EventSubscription", targetDepth))
                     {
-                        response.EventSubscription = EventSubscriptionUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = EventSubscriptionUnmarshaller.Instance;
+                        response.EventSubscription = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

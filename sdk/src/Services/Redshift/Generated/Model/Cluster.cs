@@ -276,9 +276,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterStatus. 
         /// <para>
-        ///  The current state of this cluster. Possible values include <code>available</code>,
-        /// <code>creating</code>, <code>deleting</code>, <code>rebooting</code>, <code>renaming</code>,
-        /// and <code>resizing</code>. 
+        ///  The current state of the cluster. Possible values are: <ul> <li><code>available</code></li>
+        /// <li><code>creating</code></li> <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
+        /// <li><code>hardware-failure</code></li> <li><code>incompatible-hsm</code></li> <li><code>incompatible-network</code></li>
+        /// <li><code>incompatible-parameters</code></li> <li><code>incompatible-restore</code></li>
+        /// <li><code>modifying</code></li> <li><code>rebooting</code></li> <li><code>renaming</code></li>
+        /// <li><code>resizing</code></li> <li><code>rotating-keys</code></li> <li><code>storage-full</code></li>
+        /// <li><code>updating-hsm</code></li> </ul> 
         /// </para>
         /// </summary>
         public string ClusterStatus
@@ -353,7 +357,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ElasticIpStatus. 
         /// <para>
-        /// Describes the status of the elastic IP (EIP) address.
+        /// The status of the elastic IP (EIP) address.
         /// </para>
         /// </summary>
         public ElasticIpStatus ElasticIpStatus

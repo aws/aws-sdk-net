@@ -508,9 +508,9 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  The snapshot status. The value of the status depends on the API operation used. <ul>
-        /// <li> <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns status as
-        /// "creating". </li> <li> <a>DescribeClusterSnapshots</a> returns status as "creating",
-        /// "available", "final snapshot", or "failed".</li> <li> <a>DeleteClusterSnapshot</a>
+        /// <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns status as
+        /// "creating". </li> <li><a>DescribeClusterSnapshots</a> returns status as "creating",
+        /// "available", "final snapshot", or "failed".</li> <li><a>DeleteClusterSnapshot</a>
         /// returns status as "deleted".</li> </ul> 
         /// </para>
         /// </summary>

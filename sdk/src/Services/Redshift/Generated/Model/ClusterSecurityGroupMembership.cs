@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a security group.
+    /// Describes a cluster security group.
     /// </summary>
     public partial class ClusterSecurityGroupMembership
     {

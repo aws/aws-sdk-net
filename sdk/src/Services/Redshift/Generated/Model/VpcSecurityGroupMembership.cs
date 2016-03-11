@@ -36,7 +36,10 @@ namespace Amazon.Redshift.Model
         private string _vpcSecurityGroupId;
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the VPC security group.
+        /// </para>
         /// </summary>
         public string Status
         {
@@ -51,7 +54,10 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcSecurityGroupId.
+        /// Gets and sets the property VpcSecurityGroupId. 
+        /// <para>
+        /// The identifier of the VPC security group.
+        /// </para>
         /// </summary>
         public string VpcSecurityGroupId
         {

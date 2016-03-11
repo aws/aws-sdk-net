@@ -38,7 +38,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Clusters. 
         /// <para>
-        ///  A list of <a>Cluster</a> objects, where each object describes one cluster. 
+        ///  A list of <code>Cluster</code> objects, where each object describes one cluster.
+        /// 
         /// </para>
         /// </summary>
         public List<Cluster> Clusters

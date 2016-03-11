@@ -28,27 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots
-    /// with the specified customer master key (CMK) from AWS KMS in the destination region.
-    /// 
-    ///  
-    /// <para>
-    ///  For more information about managing snapshot copy grants, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
-    /// Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// 
-    /// </para>
+    /// This is the response object from the CreateSnapshotCopyGrant operation.
     /// </summary>
     public partial class CreateSnapshotCopyGrantResponse : AmazonWebServiceResponse
     {
-        private SnapshotCopyGrant _response;
+        private SnapshotCopyGrant _snapshotCopyGrant;
 
         /// <summary>
-        /// Gets and sets the SnapshotCopyGrant property.
+        /// Gets and sets the property SnapshotCopyGrant.
         /// </summary>
         public SnapshotCopyGrant SnapshotCopyGrant
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._snapshotCopyGrant; }
+            set { this._snapshotCopyGrant = value; }
         }
+
+        // Check to see if SnapshotCopyGrant property is set
+        internal bool IsSetSnapshotCopyGrant()
+        {
+            return this._snapshotCopyGrant != null;
+        }
+
     }
 }

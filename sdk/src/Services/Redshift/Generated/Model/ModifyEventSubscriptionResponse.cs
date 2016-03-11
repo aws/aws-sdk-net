@@ -32,15 +32,22 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class ModifyEventSubscriptionResponse : AmazonWebServiceResponse
     {
-        private EventSubscription _response;
+        private EventSubscription _eventSubscription;
 
         /// <summary>
-        /// Gets and sets the EventSubscription property.
+        /// Gets and sets the property EventSubscription.
         /// </summary>
         public EventSubscription EventSubscription
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._eventSubscription; }
+            set { this._eventSubscription = value; }
         }
+
+        // Check to see if EventSubscription property is set
+        internal bool IsSetEventSubscription()
+        {
+            return this._eventSubscription != null;
+        }
+
     }
 }

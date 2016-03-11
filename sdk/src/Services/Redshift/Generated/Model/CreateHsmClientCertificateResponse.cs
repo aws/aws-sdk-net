@@ -28,21 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about an HSM client certificate. The certificate is stored in
-    /// a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to
-    /// encrypt data files.
+    /// This is the response object from the CreateHsmClientCertificate operation.
     /// </summary>
     public partial class CreateHsmClientCertificateResponse : AmazonWebServiceResponse
     {
-        private HsmClientCertificate _response;
+        private HsmClientCertificate _hsmClientCertificate;
 
         /// <summary>
-        /// Gets and sets the HsmClientCertificate property.
+        /// Gets and sets the property HsmClientCertificate.
         /// </summary>
         public HsmClientCertificate HsmClientCertificate
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._hsmClientCertificate; }
+            set { this._hsmClientCertificate = value; }
         }
+
+        // Check to see if HsmClientCertificate property is set
+        internal bool IsSetHsmClientCertificate()
+        {
+            return this._hsmClientCertificate != null;
+        }
+
     }
 }

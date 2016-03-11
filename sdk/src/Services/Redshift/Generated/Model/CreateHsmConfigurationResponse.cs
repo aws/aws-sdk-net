@@ -28,21 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Returns information about an HSM configuration, which is an object that describes
-    /// to Amazon Redshift clusters the information they require to connect to an HSM where
-    /// they can store database encryption keys.
+    /// This is the response object from the CreateHsmConfiguration operation.
     /// </summary>
     public partial class CreateHsmConfigurationResponse : AmazonWebServiceResponse
     {
-        private HsmConfiguration _response;
+        private HsmConfiguration _hsmConfiguration;
 
         /// <summary>
-        /// Gets and sets the HsmConfiguration property.
+        /// Gets and sets the property HsmConfiguration.
         /// </summary>
         public HsmConfiguration HsmConfiguration
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._hsmConfiguration; }
+            set { this._hsmConfiguration = value; }
         }
+
+        // Check to see if HsmConfiguration property is set
+        internal bool IsSetHsmConfiguration()
+        {
+            return this._hsmConfiguration != null;
+        }
+
     }
 }

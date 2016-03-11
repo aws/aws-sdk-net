@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("Snapshot", targetDepth))
+                    if (context.TestExpression("Snapshot", targetDepth))
                     {
-                        response.Snapshot = SnapshotUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = SnapshotUnmarshaller.Instance;
+                        response.Snapshot = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a parameter group.
+    /// This is the response object from the CreateClusterParameterGroup operation.
     /// </summary>
     public partial class CreateClusterParameterGroupResponse : AmazonWebServiceResponse
     {
-        private ClusterParameterGroup _response;
+        private ClusterParameterGroup _clusterParameterGroup;
 
         /// <summary>
-        /// Gets and sets the ClusterParameterGroup property.
+        /// Gets and sets the property ClusterParameterGroup.
         /// </summary>
         public ClusterParameterGroup ClusterParameterGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._clusterParameterGroup; }
+            set { this._clusterParameterGroup = value; }
         }
+
+        // Check to see if ClusterParameterGroup property is set
+        internal bool IsSetClusterParameterGroup()
+        {
+            return this._clusterParameterGroup != null;
+        }
+
     }
 }

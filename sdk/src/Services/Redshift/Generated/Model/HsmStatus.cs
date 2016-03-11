@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// 
+    /// Describes the status of changes to HSM settings.
     /// </summary>
     public partial class HsmStatus
     {
