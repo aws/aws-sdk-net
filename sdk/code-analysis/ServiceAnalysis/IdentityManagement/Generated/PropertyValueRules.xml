@@ -1802,16 +1802,34 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PolicyGroup.GroupId</property>
+    <min>16</min>
+    <max>32</max>
+    <pattern>[\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyGroup.GroupName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PolicyRole.RoleId</property>
+    <min>16</min>
+    <max>32</max>
+    <pattern>[\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyRole.RoleName</property>
     <min>1</min>
     <max>64</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PolicyUser.UserId</property>
+    <min>16</min>
+    <max>32</max>
+    <pattern>[\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyUser.UserName</property>

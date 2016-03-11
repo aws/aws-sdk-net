@@ -43,7 +43,28 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class PolicyRole
     {
+        private string _roleId;
         private string _roleName;
+
+        /// <summary>
+        /// Gets and sets the property RoleId. 
+        /// <para>
+        /// The stable and unique string identifying the role. For more information about IDs,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string RoleId
+        {
+            get { return this._roleId; }
+            set { this._roleId = value; }
+        }
+
+        // Check to see if RoleId property is set
+        internal bool IsSetRoleId()
+        {
+            return this._roleId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoleName. 

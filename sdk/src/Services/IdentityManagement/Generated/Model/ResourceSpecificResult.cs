@@ -127,8 +127,13 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MissingContextValues. 
         /// <para>
         /// A list of context keys that are required by the included input policies but that were
-        /// not provided by one of the input parameters. To discover the context keys used by
-        /// a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.
+        /// not provided by one of the input parameters. This list is used when a list of ARNs
+        /// is included in the <code>ResourceArns</code> parameter instead of "*". If you do not
+        /// specify individual resources, by setting <code>ResourceArns</code> to "*" or by not
+        /// including the <code>ResourceArns</code> parameter, then any missing context values
+        /// are instead included under the <code>EvaluationResults</code> section. To discover
+        /// the context keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a>
+        /// or <a>GetContextKeysForPrincipalPolicy</a>.
         /// </para>
         /// </summary>
         public List<string> MissingContextValues
