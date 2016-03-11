@@ -1,3 +1,11 @@
+### 3.1.52.0 (2016-03-11 00:40 UTC)
+* IdentityManagement (3.1.4.0)
+	* Add stable, unique identifying string identifiers to each entity returned from IAM:ListEntitiesForPolicy.
+* Redshift (3.1.1.0)
+	* Updated with the ability to restore a table from a cluster snapshot to a new table in an active cluster. For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html#working-with-snapshot-restore-table-from-snapshot">Restoring a Table from a Snapshot</a>.
+* Core 3.1.5.1
+	* Fix thread safety issue related to KeyedHashAlgorithm creation on Unity iOS with il2cpp.
+
 ### 3.1.51.0 (2016-03-08 22:37 UTC)
 * CertificateManager (3.1.2.0)
 	* Doc update
