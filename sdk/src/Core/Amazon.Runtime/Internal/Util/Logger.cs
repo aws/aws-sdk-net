@@ -53,10 +53,6 @@ namespace Amazon.Runtime.Internal.Util
             UnityDebugLogger debugLogger = new UnityDebugLogger(type);
             loggers.Add(debugLogger);
 #endif
-#if __ANDROID__ || __IOS__
-            InternalConsoleLogger consoleLogger = new InternalConsoleLogger(type);
-            loggers.Add(consoleLogger);
-#endif
 #if PCL
             InternalFileLogger fileLogger = new InternalFileLogger(type);
             loggers.Add(fileLogger);
