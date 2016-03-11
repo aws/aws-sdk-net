@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a cluster.
+    /// This is the response object from the EnableSnapshotCopy operation.
     /// </summary>
     public partial class EnableSnapshotCopyResponse : AmazonWebServiceResponse
     {
-        private Cluster _response;
+        private Cluster _cluster;
 
         /// <summary>
-        /// Gets and sets the Cluster property.
+        /// Gets and sets the property Cluster.
         /// </summary>
         public Cluster Cluster
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._cluster; }
+            set { this._cluster = value; }
         }
+
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
+        {
+            return this._cluster != null;
+        }
+
     }
 }

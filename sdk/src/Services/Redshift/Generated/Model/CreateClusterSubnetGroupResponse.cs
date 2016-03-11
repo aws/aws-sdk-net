@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a subnet group.
+    /// This is the response object from the CreateClusterSubnetGroup operation.
     /// </summary>
     public partial class CreateClusterSubnetGroupResponse : AmazonWebServiceResponse
     {
-        private ClusterSubnetGroup _response;
+        private ClusterSubnetGroup _clusterSubnetGroup;
 
         /// <summary>
-        /// Gets and sets the ClusterSubnetGroup property.
+        /// Gets and sets the property ClusterSubnetGroup.
         /// </summary>
         public ClusterSubnetGroup ClusterSubnetGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._clusterSubnetGroup; }
+            set { this._clusterSubnetGroup = value; }
         }
+
+        // Check to see if ClusterSubnetGroup property is set
+        internal bool IsSetClusterSubnetGroup()
+        {
+            return this._clusterSubnetGroup != null;
+        }
+
     }
 }

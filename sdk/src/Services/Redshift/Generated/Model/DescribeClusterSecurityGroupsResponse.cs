@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Contains the output from the <a>DescribeClusterSecurityGroups</a> action.
+    /// 
     /// </summary>
     public partial class DescribeClusterSecurityGroupsResponse : AmazonWebServiceResponse
     {

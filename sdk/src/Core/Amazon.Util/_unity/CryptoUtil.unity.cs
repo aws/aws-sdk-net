@@ -32,12 +32,46 @@ namespace Amazon.Util
 {
     public static partial class CryptoUtilFactory
     {
+        private static HashSet<string> _initializedAlgorithmNames = new HashSet<string>();
+        private static object _keyedHashAlgorithmCreationLock = new object();
+
         partial class CryptoUtil : ICryptoUtil
         {
             public string HMACSign(string data, string key, SigningAlgorithm algorithmName)
             {
                 var binaryData = Encoding.UTF8.GetBytes(data);
                 return HMACSign(binaryData, key, algorithmName);
+            }
+
+            /// <summary>
+            /// The iOS il2cpp implementation of System.Security.Cryptography.RandomNumberGenerator,
+            /// which is called by the initialization of KeyedHashAlgorithm.Create for a given
+            /// algorithm name, is not threadsafe. We keep track of which algorithms have been
+            /// initialized, and retain a lock if this is the first time we create a particular
+            /// algorithm.
+            /// </summary>
+            /// <param name="algorithmName"></param>
+            /// <returns></returns>
+            private KeyedHashAlgorithm ThreadSafeCreateKeyedHashedAlgorithm(SigningAlgorithm algorithmName)
+            {
+                string algorithmNameUpper = algorithmName.ToString().ToUpper(CultureInfo.InvariantCulture);
+                KeyedHashAlgorithm algorithm = null;
+                bool firstCreation = true;
+                lock (_keyedHashAlgorithmCreationLock)
+                {
+                    firstCreation = !_initializedAlgorithmNames.Contains(algorithmNameUpper);
+
+                    if (firstCreation)
+                    {
+                        algorithm = KeyedHashAlgorithm.Create(algorithmNameUpper);
+                        _initializedAlgorithmNames.Add(algorithmNameUpper);
+                    }
+                }
+                if (!firstCreation)
+                {
+                    algorithm = KeyedHashAlgorithm.Create(algorithmNameUpper);
+                }
+                return algorithm;
             }
 
             public string HMACSign(byte[] data, string key, SigningAlgorithm algorithmName)
@@ -48,7 +82,8 @@ namespace Amazon.Util
                 if (data == null || data.Length == 0)
                     throw new ArgumentNullException("data", "Please specify data to sign.");
 
-                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(algorithmName.ToString().ToUpper(CultureInfo.InvariantCulture));
+                KeyedHashAlgorithm algorithm = ThreadSafeCreateKeyedHashedAlgorithm(algorithmName);
+
                 if (null == algorithm)
                     throw new InvalidOperationException("Please specify a KeyedHashAlgorithm to use.");
 
@@ -63,7 +98,7 @@ namespace Amazon.Util
                     algorithm.Clear();
                 }
             }
-            
+
             public byte[] ComputeSHA256Hash(byte[] data)
             {
                 return SHA256HashAlgorithmInstance.ComputeHash(data);
@@ -81,8 +116,8 @@ namespace Amazon.Util
             }
 
             public byte[] ComputeMD5Hash(Stream steam)
-            {                
-                 var hashed = new MD5Managed().ComputeHash(steam);
+            {
+                var hashed = new MD5Managed().ComputeHash(steam);
                 return hashed;
             }
 
@@ -94,7 +129,7 @@ namespace Amazon.Util
                 if (data == null || data.Length == 0)
                     throw new ArgumentNullException("data", "Please specify data to sign.");
 
-                KeyedHashAlgorithm algorithm = KeyedHashAlgorithm.Create(algorithmName.ToString().ToUpper(CultureInfo.InvariantCulture));
+                KeyedHashAlgorithm algorithm = ThreadSafeCreateKeyedHashedAlgorithm(algorithmName);
                 if (null == algorithm)
                     throw new InvalidOperationException("Please specify a KeyedHashAlgorithm to use.");
 

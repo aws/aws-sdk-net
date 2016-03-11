@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("Snapshot", targetDepth))
+                    if (context.TestExpression("Snapshot", targetDepth))
                     {
-                        response.Snapshot = SnapshotUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = SnapshotUnmarshaller.Instance;
+                        response.Snapshot = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -114,6 +115,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSnapshotNotFound"))
             {
                 return new ClusterSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DependentServiceRequestThrottlingFault"))
+            {
+                return new DependentServiceRequestThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterSnapshotState"))
+            {
+                return new InvalidClusterSnapshotStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededFault"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

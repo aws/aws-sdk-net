@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("SnapshotCopyGrant", targetDepth))
+                    if (context.TestExpression("SnapshotCopyGrant", targetDepth))
                     {
-                        response.SnapshotCopyGrant = SnapshotCopyGrantUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = SnapshotCopyGrantUnmarshaller.Instance;
+                        response.SnapshotCopyGrant = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -103,6 +104,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DependentServiceRequestThrottlingFault"))
+            {
+                return new DependentServiceRequestThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagFault"))
             {
                 return new InvalidTagException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

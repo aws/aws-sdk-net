@@ -60,8 +60,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property OrderableClusterOptions. 
         /// <para>
-        /// An <a>OrderableClusterOption</a> structure containing information about orderable
-        /// options for the Cluster.
+        /// An <code>OrderableClusterOption</code> structure containing information about orderable
+        /// options for the cluster.
         /// </para>
         /// </summary>
         public List<OrderableClusterOption> OrderableClusterOptions

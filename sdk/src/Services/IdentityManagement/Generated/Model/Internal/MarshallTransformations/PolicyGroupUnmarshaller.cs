@@ -54,6 +54,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("GroupId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("GroupName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

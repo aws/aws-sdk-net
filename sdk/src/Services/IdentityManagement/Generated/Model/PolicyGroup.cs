@@ -43,7 +43,28 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class PolicyGroup
     {
+        private string _groupId;
         private string _groupName;
+
+        /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
+        /// The stable and unique string identifying the group. For more information about IDs,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string GroupId
+        {
+            get { return this._groupId; }
+            set { this._groupId = value; }
+        }
+
+        // Check to see if GroupId property is set
+        internal bool IsSetGroupId()
+        {
+            return this._groupId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GroupName. 

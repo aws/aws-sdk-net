@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The result of the snapshot copy grant.
+    /// 
     /// </summary>
     public partial class DescribeSnapshotCopyGrantsResponse : AmazonWebServiceResponse
     {
@@ -66,7 +66,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotCopyGrants. 
         /// <para>
-        /// The list of snapshot copy grants.
+        /// The list of <code>SnapshotCopyGrant</code> objects.
         /// </para>
         /// </summary>
         public List<SnapshotCopyGrant> SnapshotCopyGrants

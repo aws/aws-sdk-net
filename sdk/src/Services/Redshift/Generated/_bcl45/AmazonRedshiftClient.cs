@@ -260,15 +260,21 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on
-        /// whether the application accessing your cluster is running on the Internet or an EC2
-        /// instance, you can authorize inbound access to either a Classless Interdomain Routing
-        /// (CIDR) IP address range or an EC2 security group. You can add as many as 20 ingress
-        /// rules to an Amazon Redshift security group. 
+        /// whether the application accessing your cluster is running on the Internet or an Amazon
+        /// EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing
+        /// (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group. You can add
+        /// as many as 20 ingress rules to an Amazon Redshift security group. 
         /// 
-        ///  <note> The EC2 security group must be defined in the AWS region where the cluster
-        /// resides. </note> 
+        ///  
         /// <para>
-        /// For an overview of CIDR blocks, see the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i>
+        /// and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift
+        /// cluster must be in the same AWS region. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an
+        /// overview of CIDR blocks, see the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>. 
         /// </para>
         ///  
@@ -349,6 +355,17 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
+        /// The request cannot be completed because a dependent service is throttling requests
+        /// made by Amazon Redshift on your behalf. Wait and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
+        /// The specified cluster snapshot is not in the <code>available</code> state, or other
+        /// accounts are authorized to access the snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
+        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// </exception>
         public AuthorizeSnapshotAccessResponse AuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request)
         {
             var marshaller = new AuthorizeSnapshotAccessRequestMarshaller();
@@ -411,8 +428,8 @@ namespace Amazon.Redshift
         /// The request would result in the user exceeding the allowed number of cluster snapshots.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
-        /// The state of the cluster snapshot is not <code>available</code>, or other accounts
-        /// are authorized to access the snapshot.
+        /// The specified cluster snapshot is not in the <code>available</code> state, or other
+        /// accounts are authorized to access the snapshot.
         /// </exception>
         public CopyClusterSnapshotResponse CopyClusterSnapshot(CopyClusterSnapshotRequest request)
         {
@@ -472,6 +489,10 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
+        /// The request cannot be completed because a dependent service is throttling requests
+        /// made by Amazon Redshift on your behalf. Wait and retry the request.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
@@ -685,7 +706,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the CreateClusterSnapshot service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotAlreadyExistsException">
         /// The value specified as a snapshot identifier is already used by an existing snapshot.
@@ -760,6 +781,10 @@ namespace Amazon.Redshift
         /// The request would result in user exceeding the allowed number of subnets in a cluster
         /// subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
+        /// The request cannot be completed because a dependent service is throttling requests
+        /// made by Amazon Redshift on your behalf. Wait and retry the request.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or not all of the subnets are in the same VPC.
@@ -1044,6 +1069,10 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshotCopyGrant service method.</param>
         /// 
         /// <returns>The response from the CreateSnapshotCopyGrant service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
+        /// The request cannot be completed because a dependent service is throttling requests
+        /// made by Amazon Redshift on your behalf. Wait and retry the request.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
@@ -1174,7 +1203,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DeleteCluster service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotAlreadyExistsException">
         /// The value specified as a snapshot identifier is already used by an existing snapshot.
@@ -1333,8 +1362,8 @@ namespace Amazon.Redshift
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
-        /// The state of the cluster snapshot is not <code>available</code>, or other accounts
-        /// are authorized to access the snapshot.
+        /// The specified cluster snapshot is not in the <code>available</code> state, or other
+        /// accounts are authorized to access the snapshot.
         /// </exception>
         public DeleteClusterSnapshotResponse DeleteClusterSnapshot(DeleteClusterSnapshotRequest request)
         {
@@ -1862,7 +1891,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
@@ -1898,7 +1927,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
@@ -1939,7 +1968,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
@@ -2968,7 +2997,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeLoggingStatus service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         public DescribeLoggingStatusResponse DescribeLoggingStatus(DescribeLoggingStatusRequest request)
         {
@@ -3281,7 +3310,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeResize service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ResizeNotFoundException">
         /// A resize operation for the specified cluster is not found.
@@ -3366,6 +3395,53 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeTableRestoreStatus
+
+
+        /// <summary>
+        /// Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a>
+        /// API action. If you don't specify a value for the <code>TableRestoreRequestId</code>
+        /// parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all
+        /// in-progress table restore requests. Otherwise <code>DescribeTableRestoreStatus</code>
+        /// returns the status of the table specified by <code>TableRestoreRequestId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableRestoreStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTableRestoreStatus service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TableRestoreNotFoundException">
+        /// The specified <code>TableRestoreRequestId</code> value was not found.
+        /// </exception>
+        public DescribeTableRestoreStatusResponse DescribeTableRestoreStatus(DescribeTableRestoreStatusRequest request)
+        {
+            var marshaller = new DescribeTableRestoreStatusRequestMarshaller();
+            var unmarshaller = DescribeTableRestoreStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTableRestoreStatusRequest,DescribeTableRestoreStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTableRestoreStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableRestoreStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeTableRestoreStatusResponse> DescribeTableRestoreStatusAsync(DescribeTableRestoreStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTableRestoreStatusRequestMarshaller();
+            var unmarshaller = DescribeTableRestoreStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTableRestoreStatusRequest,DescribeTableRestoreStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTags
 
 
@@ -3444,7 +3520,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DisableLogging service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         public DisableLoggingResponse DisableLogging(DisableLoggingRequest request)
         {
@@ -3492,7 +3568,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DisableSnapshotCopy service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
@@ -3545,7 +3621,7 @@ namespace Amazon.Redshift
         /// Could not find the specified S3 bucket.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InsufficientS3BucketPolicyException">
         /// The cluster does not have read bucket or put object permissions on the S3 bucket
@@ -3599,10 +3675,14 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the EnableSnapshotCopy service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.CopyToRegionDisabledException">
         /// Cross-region snapshot copy was temporarily disabled. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
+        /// The request cannot be completed because a dependent service is throttling requests
+        /// made by Amazon Redshift on your behalf. Wait and retry the request.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.IncompatibleOrderableOptionsException">
         /// The specified options are incompatible.
@@ -3680,13 +3760,17 @@ namespace Amazon.Redshift
         /// The account already has a cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
+        /// The request cannot be completed because a dependent service is throttling requests
+        /// made by Amazon Redshift on your behalf. Wait and retry the request.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
@@ -3702,6 +3786,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidElasticIpException">
+        /// The Elastic IP (EIP) is invalid or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
         /// The encryption key has exceeded its grant limit in AWS KMS.
@@ -3814,6 +3901,10 @@ namespace Amazon.Redshift
         /// The request would result in user exceeding the allowed number of subnets in a cluster
         /// subnet groups. For information about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
+        /// The request cannot be completed because a dependent service is throttling requests
+        /// made by Amazon Redshift on your behalf. Wait and retry the request.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidSubnetException">
         /// The requested subnet is not valid, or not all of the subnets are in the same VPC.
@@ -3933,7 +4024,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the ModifySnapshotCopyRetentionPeriod service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
@@ -4048,7 +4139,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the RebootCluster service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
@@ -4179,6 +4270,10 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException">
         /// The cluster subnet group name does not refer to an existing cluster subnet group.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
+        /// The request cannot be completed because a dependent service is throttling requests
+        /// made by Amazon Redshift on your behalf. Wait and retry the request.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.HsmClientCertificateNotFoundException">
         /// There is no Amazon Redshift HSM client certificate with the specified identifier.
         /// </exception>
@@ -4189,8 +4284,8 @@ namespace Amazon.Redshift
         /// The number of nodes specified exceeds the allotted capacity of the cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
-        /// The state of the cluster snapshot is not <code>available</code>, or other accounts
-        /// are authorized to access the snapshot.
+        /// The specified cluster snapshot is not in the <code>available</code> state, or other
+        /// accounts are authorized to access the snapshot.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException">
         /// The cluster subnet group cannot be deleted because it is in use.
@@ -4244,6 +4339,82 @@ namespace Amazon.Redshift
             var unmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestoreFromClusterSnapshotRequest,RestoreFromClusterSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreTableFromClusterSnapshot
+
+
+        /// <summary>
+        /// Creates a new table from a table in an Amazon Redshift cluster snapshot. You must
+        /// create the new table within the Amazon Redshift cluster that the snapshot was taken
+        /// from.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with
+        /// the same name as an existing table in an Amazon Redshift cluster. That is, you cannot
+        /// overwrite an existing table in a cluster with a restored table. If you want to replace
+        /// your original table with a new, restored table, then rename or drop your original
+        /// table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have
+        /// renamed your original table, then you can pass the original name of the table as the
+        /// <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>.
+        /// This way, you can replace the original table with the table created from the snapshot.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromClusterSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the RestoreTableFromClusterSnapshot service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
+        /// The snapshot identifier does not refer to an existing cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InProgressTableRestoreQuotaExceededException">
+        /// You have exceeded the allowed number of table restore requests. Wait for your current
+        /// table restore requests to complete before making a new request.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
+        /// The specified cluster snapshot is not in the <code>available</code> state, or other
+        /// accounts are authorized to access the snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTableRestoreArgumentException">
+        /// The value specified for the <code>sourceDatabaseName</code>, <code>sourceSchemaName</code>,
+        /// or <code>sourceTableName</code> parameter, or a combination of these, doesn't exist
+        /// in the snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        public RestoreTableFromClusterSnapshotResponse RestoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest request)
+        {
+            var marshaller = new RestoreTableFromClusterSnapshotRequestMarshaller();
+            var unmarshaller = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableFromClusterSnapshotRequest,RestoreTableFromClusterSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableFromClusterSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromClusterSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RestoreTableFromClusterSnapshotResponse> RestoreTableFromClusterSnapshotAsync(RestoreTableFromClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreTableFromClusterSnapshotRequestMarshaller();
+            var unmarshaller = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreTableFromClusterSnapshotRequest,RestoreTableFromClusterSnapshotResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4366,7 +4537,11 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the RotateEncryptionKey service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
+        /// The request cannot be completed because a dependent service is throttling requests
+        /// made by Amazon Redshift on your behalf. Wait and retry the request.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.

@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("Cluster", targetDepth))
+                    if (context.TestExpression("Cluster", targetDepth))
                     {
-                        response.Cluster = ClusterUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = ClusterUnmarshaller.Instance;
+                        response.Cluster = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

@@ -1124,7 +1124,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
-        /// The <i>ClusterIdentifier</i> parameter does not refer to an existing cluster.
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
@@ -2026,6 +2026,37 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeTableRestoreStatus
+
+        internal DescribeTableRestoreStatusResponse DescribeTableRestoreStatus(DescribeTableRestoreStatusRequest request)
+        {
+            var marshaller = new DescribeTableRestoreStatusRequestMarshaller();
+            var unmarshaller = DescribeTableRestoreStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTableRestoreStatusRequest,DescribeTableRestoreStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTableRestoreStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableRestoreStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeTableRestoreStatusResponse> DescribeTableRestoreStatusAsync(DescribeTableRestoreStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTableRestoreStatusRequestMarshaller();
+            var unmarshaller = DescribeTableRestoreStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTableRestoreStatusRequest,DescribeTableRestoreStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTags
 
         internal DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
@@ -2455,6 +2486,37 @@ namespace Amazon.Redshift
             var unmarshaller = RestoreFromClusterSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestoreFromClusterSnapshotRequest,RestoreFromClusterSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreTableFromClusterSnapshot
+
+        internal RestoreTableFromClusterSnapshotResponse RestoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest request)
+        {
+            var marshaller = new RestoreTableFromClusterSnapshotRequestMarshaller();
+            var unmarshaller = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableFromClusterSnapshotRequest,RestoreTableFromClusterSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableFromClusterSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableFromClusterSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RestoreTableFromClusterSnapshotResponse> RestoreTableFromClusterSnapshotAsync(RestoreTableFromClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreTableFromClusterSnapshotRequestMarshaller();
+            var unmarshaller = RestoreTableFromClusterSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreTableFromClusterSnapshotRequest,RestoreTableFromClusterSnapshotResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

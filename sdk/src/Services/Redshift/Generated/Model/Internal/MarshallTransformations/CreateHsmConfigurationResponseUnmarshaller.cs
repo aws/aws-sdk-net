@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("HsmConfiguration", targetDepth))
+                    if (context.TestExpression("HsmConfiguration", targetDepth))
                     {
-                        response.HsmConfiguration = HsmConfigurationUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = HsmConfigurationUnmarshaller.Instance;
+                        response.HsmConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

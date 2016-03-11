@@ -38,7 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property HsmConfigurations. 
         /// <para>
-        /// A list of Amazon Redshift HSM configurations.
+        /// A list of <code>HsmConfiguration</code> objects.
         /// </para>
         /// </summary>
         public List<HsmConfiguration> HsmConfigurations

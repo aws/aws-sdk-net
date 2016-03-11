@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("ClusterSubnetGroup", targetDepth))
+                    if (context.TestExpression("ClusterSubnetGroup", targetDepth))
                     {
-                        response.ClusterSubnetGroup = ClusterSubnetGroupUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = ClusterSubnetGroupUnmarshaller.Instance;
+                        response.ClusterSubnetGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -110,6 +111,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSubnetQuotaExceededFault"))
             {
                 return new ClusterSubnetQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DependentServiceRequestThrottlingFault"))
+            {
+                return new DependentServiceRequestThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnet"))
             {

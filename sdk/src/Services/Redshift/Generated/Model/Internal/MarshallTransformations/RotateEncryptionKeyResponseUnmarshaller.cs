@@ -81,9 +81,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("Cluster", targetDepth))
+                    if (context.TestExpression("Cluster", targetDepth))
                     {
-                        response.Cluster = ClusterUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = ClusterUnmarshaller.Instance;
+                        response.Cluster = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -106,6 +107,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFound"))
             {
                 return new ClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DependentServiceRequestThrottlingFault"))
+            {
+                return new DependentServiceRequestThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
             {

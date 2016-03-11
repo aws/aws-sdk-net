@@ -56,7 +56,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes the status of the elastic IP (EIP) address.
+        /// The status of the elastic IP (EIP) address.
         /// </para>
         /// </summary>
         public string Status

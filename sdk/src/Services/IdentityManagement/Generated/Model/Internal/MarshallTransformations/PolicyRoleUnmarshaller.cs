@@ -54,6 +54,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("RoleId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RoleId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RoleName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

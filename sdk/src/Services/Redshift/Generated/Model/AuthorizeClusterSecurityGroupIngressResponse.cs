@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a security group.
+    /// This is the response object from the AuthorizeClusterSecurityGroupIngress operation.
     /// </summary>
     public partial class AuthorizeClusterSecurityGroupIngressResponse : AmazonWebServiceResponse
     {
-        private ClusterSecurityGroup _response;
+        private ClusterSecurityGroup _clusterSecurityGroup;
 
         /// <summary>
-        /// Gets and sets the ClusterSecurityGroup property.
+        /// Gets and sets the property ClusterSecurityGroup.
         /// </summary>
         public ClusterSecurityGroup ClusterSecurityGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._clusterSecurityGroup; }
+            set { this._clusterSecurityGroup = value; }
         }
+
+        // Check to see if ClusterSecurityGroup property is set
+        internal bool IsSetClusterSecurityGroup()
+        {
+            return this._clusterSecurityGroup != null;
+        }
+
     }
 }

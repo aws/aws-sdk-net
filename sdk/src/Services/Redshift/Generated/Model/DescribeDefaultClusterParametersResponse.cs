@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes the default cluster parameters for a parameter group family.
+    /// This is the response object from the DescribeDefaultClusterParameters operation.
     /// </summary>
     public partial class DescribeDefaultClusterParametersResponse : AmazonWebServiceResponse
     {
-        private DefaultClusterParameters _response;
+        private DefaultClusterParameters _defaultClusterParameters;
 
         /// <summary>
-        /// Gets and sets the DefaultClusterParameters property.
+        /// Gets and sets the property DefaultClusterParameters.
         /// </summary>
         public DefaultClusterParameters DefaultClusterParameters
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._defaultClusterParameters; }
+            set { this._defaultClusterParameters = value; }
         }
+
+        // Check to see if DefaultClusterParameters property is set
+        internal bool IsSetDefaultClusterParameters()
+        {
+            return this._defaultClusterParameters != null;
+        }
+
     }
 }

@@ -96,7 +96,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LastSuccessfulDeliveryTime. 
         /// <para>
-        ///  The last time when logs were delivered. 
+        ///  The last time that logs were delivered. 
         /// </para>
         /// </summary>
         public DateTime LastSuccessfulDeliveryTime

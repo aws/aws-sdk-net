@@ -62,16 +62,16 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// The following are possible statuses and descriptions.<ul> <li> <code>in-sync</code>:
-        /// The parameter value is in sync with the database.</li> <li> <code>pending-reboot</code>:
-        /// The parameter value will be applied after the cluster reboots.</li> <li> <code>applying</code>:
-        /// The parameter value is being applied to the database.</li> <li> <code>invalid-parameter</code>:
-        /// Cannot apply the parameter value because it has an invalid value or syntax.</li> <li>
-        /// <code>apply-deferred</code>: The parameter contains static property changes. The changes
-        /// are deferred until the cluster reboots.</li> <li> <code>apply-error</code>: Cannot
-        /// connect to the cluster. The parameter change will be applied after the cluster reboots.</li>
-        /// <li> <code>unknown-error</code>: Cannot apply the parameter change right now. The
-        /// change will be applied after the cluster reboots.</li> </ul> 
+        /// The following are possible statuses and descriptions.<ul> <li><code>in-sync</code>:
+        /// The parameter value is in sync with the database.</li> <li><code>pending-reboot</code>:
+        /// The parameter value will be applied after the cluster reboots.</li> <li><code>applying</code>:
+        /// The parameter value is being applied to the database.</li> <li><code>invalid-parameter</code>:
+        /// Cannot apply the parameter value because it has an invalid value or syntax.</li> <li><code>apply-deferred</code>:
+        /// The parameter contains static property changes. The changes are deferred until the
+        /// cluster reboots.</li> <li><code>apply-error</code>: Cannot connect to the cluster.
+        /// The parameter change will be applied after the cluster reboots.</li> <li><code>unknown-error</code>:
+        /// Cannot apply the parameter change right now. The change will be applied after the
+        /// cluster reboots.</li> </ul> 
         /// </para>
         /// </summary>
         public string ParameterApplyStatus

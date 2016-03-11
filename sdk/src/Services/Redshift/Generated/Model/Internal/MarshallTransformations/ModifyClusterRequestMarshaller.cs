@@ -91,6 +91,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterVersion", StringUtils.FromString(publicRequest.ClusterVersion));
                 }
+                if(publicRequest.IsSetElasticIp())
+                {
+                    request.Parameters.Add("ElasticIp", StringUtils.FromString(publicRequest.ElasticIp));
+                }
                 if(publicRequest.IsSetHsmClientCertificateIdentifier())
                 {
                     request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(publicRequest.HsmClientCertificateIdentifier));
@@ -118,6 +122,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
                 }
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {

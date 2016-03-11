@@ -39,7 +39,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  The identifier of the cluster to get the logging status from. 
+        ///  The identifier of the cluster from which to get the logging status. 
         /// </para>
         ///  
         /// <para>

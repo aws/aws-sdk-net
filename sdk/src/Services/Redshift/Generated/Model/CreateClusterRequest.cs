@@ -38,6 +38,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class CreateClusterRequest : AmazonRedshiftRequest
     {
+        private string _additionalInfo;
         private bool? _allowVersionUpgrade;
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
@@ -62,6 +63,24 @@ namespace Amazon.Redshift.Model
         private bool? _publiclyAccessible;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string AdditionalInfo
+        {
+            get { return this._additionalInfo; }
+            set { this._additionalInfo = value; }
+        }
+
+        // Check to see if AdditionalInfo property is set
+        internal bool IsSetAdditionalInfo()
+        {
+            return this._additionalInfo != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
@@ -265,8 +284,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterType. 
         /// <para>
-        ///  The type of the cluster. When cluster type is specified as <ul> <li> <code>single-node</code>,
-        /// the <b>NumberOfNodes</b> parameter is not required.</li> <li> <code>multi-node</code>,
+        ///  The type of the cluster. When cluster type is specified as <ul> <li><code>single-node</code>,
+        /// the <b>NumberOfNodes</b> parameter is not required.</li> <li><code>multi-node</code>,
         /// the <b>NumberOfNodes</b> parameter is required.</li> </ul> 
         /// </para>
         ///  

@@ -43,7 +43,28 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class PolicyUser
     {
+        private string _userId;
         private string _userName;
+
+        /// <summary>
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The stable and unique string identifying the user. For more information about IDs,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// Identifiers</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string UserId
+        {
+            get { return this._userId; }
+            set { this._userId = value; }
+        }
+
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
+        {
+            return this._userId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UserName. 
