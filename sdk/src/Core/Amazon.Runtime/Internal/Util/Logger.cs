@@ -44,6 +44,7 @@ namespace Amazon.Runtime.Internal.Util
 
             InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
             loggers.Add(log4netLogger);
+            loggers.Add(new InternalConsoleLogger(type));
 #if BCL
             InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
             loggers.Add(sdLogger);
@@ -78,6 +79,8 @@ namespace Amazon.Runtime.Internal.Util
             {
                 if (il is InternalLog4netLogger)
                     il.IsEnabled = (logging & LoggingOptions.Log4Net) == LoggingOptions.Log4Net;
+                if (il is InternalConsoleLogger)
+                    il.IsEnabled = (logging & LoggingOptions.Console) == LoggingOptions.Console;
 #if BCL
                 if (il is InternalSystemDiagnosticsLogger)
                     il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;

@@ -547,7 +547,12 @@ namespace Amazon
         /// <summary>
         /// Log using System.Diagnostics
         /// </summary>
-        SystemDiagnostics = 2
+        SystemDiagnostics = 2,
+
+        /// <summary>
+        /// Log to the console
+        /// </summary>
+        Console = 9
 #if PCL 
         ,
         /// <summary>
