@@ -1,6 +1,7 @@
 ﻿using Amazon.Util;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -42,7 +43,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="args"></param>
         public override void Error(Exception exception, string messageFormat, params object[] args)
         {
-            this.Log(LogLevel.Error, string.Format(messageFormat, args), exception);
+            this.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, messageFormat, args), exception);
         }
 
 
@@ -54,7 +55,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="args"></param>
         public override void Debug(Exception exception, string messageFormat, params object[] args)
         {
-            this.Log(LogLevel.Debug, string.Format(messageFormat, args), exception);
+            this.Log(LogLevel.Debug, string.Format(CultureInfo.CurrentCulture, messageFormat, args), exception);
         }
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="arguments"></param>
         public override void DebugFormat(string message, params object[] arguments)
         {
-            this.Log(LogLevel.Debug, string.Format(message, arguments), (Exception)null);
+            this.Log(LogLevel.Debug, string.Format(CultureInfo.CurrentCulture, message, arguments), (Exception)null);
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="arguments"></param>
         public override void InfoFormat(string message, params object[] arguments)
         {
-            this.Log(LogLevel.Info, string.Format(message, arguments), (Exception)null);
+            this.Log(LogLevel.Info, string.Format(CultureInfo.CurrentCulture, message, arguments), (Exception)null);
         }
 
         #endregion
@@ -83,13 +84,13 @@ namespace Amazon.Runtime.Internal.Util
         {
             string formatted = null;
             long sequence = Interlocked.Increment(ref _sequanceId);
-            string dt = DateTime.Now.ToString(AWSSDKUtils.ISO8601DateFormat);
-            string asString = logLevel.ToString().ToUpper();
+            string dt = DateTime.Now.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
+            string asString = logLevel.ToString().ToUpper(CultureInfo.InvariantCulture);
 
             if (ex != null)
-                formatted = string.Format("{0}|{1}|{2}|{3} --> {4}", sequence, dt, asString, message, ex.ToString());
+                formatted = string.Format(CultureInfo.CurrentCulture, "{0}|{1}|{2}|{3} --> {4}", sequence, dt, asString, message, ex.ToString());
             else
-                formatted = string.Format("{0}|{1}|{2}|{3}", sequence, dt, asString, message);
+                formatted = string.Format(CultureInfo.CurrentCulture, "{0}|{1}|{2}|{3}", sequence, dt, asString, message);
 
 #if __ANDROID__ 
             switch(logLevel)

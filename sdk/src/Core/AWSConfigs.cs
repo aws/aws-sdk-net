@@ -552,7 +552,7 @@ namespace Amazon
         /// <summary>
         /// Log to the console
         /// </summary>
-        Console = 9
+        Console = 16
 #if PCL 
         ,
         /// <summary>
