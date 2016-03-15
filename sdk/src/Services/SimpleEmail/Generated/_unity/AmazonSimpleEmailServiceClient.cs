@@ -550,6 +550,33 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetIdentityMailFromDomainAttributes
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityMailFromDomainAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityMailFromDomainAttributes operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void GetIdentityMailFromDomainAttributesAsync(GetIdentityMailFromDomainAttributesRequest request, AmazonServiceCallback<GetIdentityMailFromDomainAttributesRequest, GetIdentityMailFromDomainAttributesResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetIdentityMailFromDomainAttributesRequest,GetIdentityMailFromDomainAttributesResponse> responseObject 
+                            = new AmazonServiceResult<GetIdentityMailFromDomainAttributesRequest,GetIdentityMailFromDomainAttributesResponse>((GetIdentityMailFromDomainAttributesRequest)req, (GetIdentityMailFromDomainAttributesResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetIdentityMailFromDomainAttributesRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetIdentityNotificationAttributes
 
         /// <summary>
@@ -1128,6 +1155,33 @@ namespace Amazon.SimpleEmail
                         callback(responseObject); 
                 };
             BeginInvoke<SetIdentityFeedbackForwardingEnabledRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  SetIdentityMailFromDomain
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityMailFromDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityMailFromDomain operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void SetIdentityMailFromDomainAsync(SetIdentityMailFromDomainRequest request, AmazonServiceCallback<SetIdentityMailFromDomainRequest, SetIdentityMailFromDomainResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
+            var unmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<SetIdentityMailFromDomainRequest,SetIdentityMailFromDomainResponse> responseObject 
+                            = new AmazonServiceResult<SetIdentityMailFromDomainRequest,SetIdentityMailFromDomainResponse>((SetIdentityMailFromDomainRequest)req, (SetIdentityMailFromDomainResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<SetIdentityMailFromDomainRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
