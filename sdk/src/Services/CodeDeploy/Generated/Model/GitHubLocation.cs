@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about the location of application artifacts that are stored in GitHub.
+    /// Information about the location of application artifacts stored in GitHub.
     /// </summary>
     public partial class GitHubLocation
     {

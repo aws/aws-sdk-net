@@ -57,8 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        /// Information about the application revision to get, including the revision's type and
-        /// its location.
+        /// Information about the application revision to get, including type and location.
         /// </para>
         /// </summary>
         public RevisionLocation Revision

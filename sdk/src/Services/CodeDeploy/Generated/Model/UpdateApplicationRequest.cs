@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// Changes an existing application's name.
+    /// Changes the name of an application.
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonCodeDeployRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The current name of the application that you want to change.
+        /// The current name of the application you want to change.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -57,7 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property NewApplicationName. 
         /// <para>
-        /// The new name that you want to change the application to.
+        /// The new name to give the application.
         /// </para>
         /// </summary>
         public string NewApplicationName

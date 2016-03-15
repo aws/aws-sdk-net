@@ -28,12 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a batch get deployment instance operation.
+    /// Represents the output of a batch get deployment groups operation.
     /// </summary>
-    public partial class BatchGetDeploymentInstancesResponse : AmazonWebServiceResponse
+    public partial class BatchGetDeploymentGroupsResponse : AmazonWebServiceResponse
     {
+        private List<DeploymentGroupInfo> _deploymentGroupsInfo = new List<DeploymentGroupInfo>();
         private string _errorMessage;
-        private List<InstanceSummary> _instancesSummary = new List<InstanceSummary>();
+
+        /// <summary>
+        /// Gets and sets the property DeploymentGroupsInfo. 
+        /// <para>
+        /// Information about the deployment groups.
+        /// </para>
+        /// </summary>
+        public List<DeploymentGroupInfo> DeploymentGroupsInfo
+        {
+            get { return this._deploymentGroupsInfo; }
+            set { this._deploymentGroupsInfo = value; }
+        }
+
+        // Check to see if DeploymentGroupsInfo property is set
+        internal bool IsSetDeploymentGroupsInfo()
+        {
+            return this._deploymentGroupsInfo != null && this._deploymentGroupsInfo.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
@@ -51,24 +69,6 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstancesSummary. 
-        /// <para>
-        /// Information about the instance.
-        /// </para>
-        /// </summary>
-        public List<InstanceSummary> InstancesSummary
-        {
-            get { return this._instancesSummary; }
-            set { this._instancesSummary = value; }
-        }
-
-        // Check to see if InstancesSummary property is set
-        internal bool IsSetInstancesSummary()
-        {
-            return this._instancesSummary != null && this._instancesSummary.Count > 0; 
         }
 
     }

@@ -40,7 +40,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The time that the deployment configuration was created.
+        /// The time at which the deployment configuration was created.
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -94,7 +94,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property MinimumHealthyHosts. 
         /// <para>
-        /// Information about the number or percentage of minimum healthy instances.
+        /// Information about the number or percentage of minimum healthy instance.
         /// </para>
         /// </summary>
         public MinimumHealthyHosts MinimumHealthyHosts

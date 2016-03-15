@@ -30,19 +30,19 @@ namespace Amazon.CodeDeploy
     ///
     /// AWS CodeDeploy <b>Overview</b> 
     /// <para>
-    /// This is the AWS CodeDeploy API Reference. This guide provides descriptions of the
-    /// AWS CodeDeploy APIs. For additional information, see the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
+    /// This reference guide provides descriptions of the AWS CodeDeploy APIs. For more information
+    /// about AWS CodeDeploy, see the <a href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS
     /// CodeDeploy User Guide</a>.
     /// </para>
     ///  <b>Using the APIs</b> 
     /// <para>
-    /// You can use the AWS CodeDeploy APIs to work with the following items:
+    /// You can use the AWS CodeDeploy APIs to work with the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Applications are unique identifiers that AWS CodeDeploy uses to ensure that the correct
-    /// combinations of revisions, deployment configurations, and deployment groups are being
-    /// referenced during deployments.
+    /// Applications are unique identifiers used by AWS CodeDeploy to ensure the correct combinations
+    /// of revisions, deployment configurations, and deployment groups are being referenced
+    /// during deployments.
     /// </para>
     ///  
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Deployment configurations are sets of deployment rules and deployment success and
-    /// failure conditions that AWS CodeDeploy uses during deployments.
+    /// Deployment configurations are sets of deployment rules and success and failure conditions
+    /// used by AWS CodeDeploy during deployments.
     /// </para>
     ///  
     /// <para>
@@ -74,7 +74,7 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  
     /// <para>
-    /// You can use the AWS CodeDeploy APIs to get and list instances.
+    /// You can use the AWS CodeDeploy APIs to get and list instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,14 +86,14 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Application revisions are archive files that are stored in Amazon S3 buckets or GitHub
-    /// repositories. These revisions contain source content (such as source code, web pages,
-    /// executable files, any deployment scripts, and similar) along with an Application Specification
-    /// file (AppSpec file). (The AppSpec file is unique to AWS CodeDeploy; it defines a series
-    /// of deployment actions that you want AWS CodeDeploy to execute.) An application revision
-    /// is uniquely identified by its Amazon S3 object key and its ETag, version, or both
-    /// (for application revisions that are stored in Amazon S3 buckets) or by its repository
-    /// name and commit ID (for applications revisions that are stored in GitHub repositories).
+    /// Application revisions are archive files stored in Amazon S3 buckets or GitHub repositories.
+    /// These revisions contain source content (such as source code, web pages, executable
+    /// files, and deployment scripts) along with an application specification (AppSpec) file.
+    /// (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment actions you
+    /// want AWS CodeDeploy to execute.) Ffor application revisions stored in Amazon S3 buckets,
+    /// an application revision is uniquely identified by its Amazon S3 object key and its
+    /// ETag, version, or both. For application revisions stored in GitHub repositories, an
+    /// application revision is uniquely identified by its repository name and commit ID.
     /// Application revisions are deployed through deployment groups.
     /// </para>
     ///  
@@ -265,11 +265,66 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  BatchGetDeploymentGroups
+
+
+        /// <summary>
+        /// Get information about one or more deployment groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentGroups service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetDeploymentGroups service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
+        /// The application does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
+        /// The minimum number of required application names was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.BatchLimitExceededException">
+        /// The maximum number of names or IDs allowed for this request (100) was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
+        /// The deployment group name was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
+        /// The application name was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentGroupNameException">
+        /// The deployment group name was specified in an invalid format.
+        /// </exception>
+        BatchGetDeploymentGroupsResponse BatchGetDeploymentGroups(BatchGetDeploymentGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDeploymentGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentGroups operation on AmazonCodeDeployClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetDeploymentGroups
+        ///         operation.</returns>
+        IAsyncResult BeginBatchGetDeploymentGroups(BatchGetDeploymentGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetDeploymentGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetDeploymentGroups.</param>
+        /// 
+        /// <returns>Returns a  BatchGetDeploymentGroupsResult from CodeDeploy.</returns>
+        BatchGetDeploymentGroupsResponse EndBatchGetDeploymentGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchGetDeploymentInstances
 
 
         /// <summary>
-        /// Gets information about one or more instances that are part of a deployment group.
+        /// Gets information about one or more instance that are part of a deployment group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentInstances service method.</param>
         /// 
@@ -416,7 +471,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Creates a new application.
+        /// Creates an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -426,7 +481,7 @@ namespace Amazon.CodeDeploy
         /// or AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationLimitExceededException">
-        /// More applications were attempted to be created than were allowed.
+        /// More applications were attempted to be created than are allowed.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
@@ -490,7 +545,7 @@ namespace Amazon.CodeDeploy
         /// The number of allowed deployments was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DescriptionTooLongException">
-        /// The description that was provided is too long.
+        /// The description is too long.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
@@ -539,7 +594,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Creates a new deployment configuration.
+        /// Creates a deployment configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentConfig service method.</param>
         /// 
@@ -558,7 +613,7 @@ namespace Amazon.CodeDeploy
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidMinimumHealthyHostValueException">
-        /// The minimum healthy instances value was specified in an invalid format.
+        /// The minimum healthy instance value was specified in an invalid format.
         /// </exception>
         CreateDeploymentConfigResponse CreateDeploymentConfig(CreateDeploymentConfigRequest request);
 
@@ -592,7 +647,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Creates a new deployment group for application revisions to be deployed to.
+        /// Creates a deployment group to which application revisions will be deployed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentGroup service method.</param>
         /// 
@@ -728,8 +783,8 @@ namespace Amazon.CodeDeploy
         /// <summary>
         /// Deletes a deployment configuration.
         /// 
-        ///  <note>A deployment configuration cannot be deleted if it is currently in use. Also,
-        /// predefined configurations cannot be deleted.</note>
+        ///  <note>A deployment configuration cannot be deleted if it is currently in use. Predefined
+        /// configurations cannot be deleted.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeploymentConfig service method.</param>
         /// 
@@ -1236,7 +1291,7 @@ namespace Amazon.CodeDeploy
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.BucketNameFilterRequiredException">
-        /// A bucket name is required but was not provided.
+        /// A bucket name is required, but was not provided.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
@@ -1441,7 +1496,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the instances for a deployment associated with the applicable IAM user or AWS
+        /// Lists the instance for a deployment associated with the applicable IAM user or AWS
         /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentInstances service method.</param>
@@ -1497,8 +1552,8 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the deployments within a deployment group for an application registered with
-        /// the applicable IAM user or AWS account.
+        /// Lists the deployments in a deployment group for an application registered with the
+        /// applicable IAM user or AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
         /// 
@@ -1562,7 +1617,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Gets a list of one or more on-premises instance names.
+        /// Gets a list of names for one or more on-premises instances.
         /// 
         ///  
         /// <para>
@@ -1627,7 +1682,7 @@ namespace Amazon.CodeDeploy
         /// The minimum number of required application names was not specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DescriptionTooLongException">
-        /// The description that was provided is too long.
+        /// The description is too long.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
@@ -1786,7 +1841,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>The response from the StopDeployment service method, as returned by CodeDeploy.</returns>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentAlreadyCompletedException">
-        /// The deployment is already completed.
+        /// The deployment is already complete.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
         /// The deployment does not exist with the applicable IAM user or AWS account.
@@ -1829,7 +1884,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Changes an existing application's name.
+        /// Changes the name of an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// 
@@ -1879,7 +1934,7 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Changes information about an existing deployment group.
+        /// Changes information about a deployment group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDeploymentGroup service method.</param>
         /// 

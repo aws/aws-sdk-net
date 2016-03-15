@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDeploymentGroup operation.
-    /// Changes information about an existing deployment group.
+    /// Changes information about a deployment group.
     /// </summary>
     public partial class UpdateDeploymentGroupRequest : AmazonCodeDeployRequest
     {
@@ -65,8 +65,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property AutoScalingGroups. 
         /// <para>
         /// The replacement list of Auto Scaling groups to be included in the deployment group,
-        /// if you want to change them. To keep the existing Auto Scaling groups, enter their
-        /// names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.
+        /// if you want to change them. To keep the Auto Scaling groups, enter their names. To
+        /// remove Auto Scaling groups, do not enter any Auto Scaling group names.
         /// </para>
         /// </summary>
         public List<string> AutoScalingGroups
@@ -84,7 +84,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CurrentDeploymentGroupName. 
         /// <para>
-        /// The current name of the existing deployment group.
+        /// The current name of the deployment group.
         /// </para>
         /// </summary>
         public string CurrentDeploymentGroupName
@@ -120,8 +120,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagFilters. 
         /// <para>
-        /// The replacement set of Amazon EC2 tags to filter on, if you want to change them. To
-        /// keep the existing tags, enter their names. To remove tags, do not enter any tag names.
+        /// The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
+        /// To keep the existing tags, enter their names. To remove tags, do not enter any tag
+        /// names.
         /// </para>
         /// </summary>
         public List<EC2TagFilter> Ec2TagFilters
@@ -157,9 +158,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property OnPremisesInstanceTagFilters. 
         /// <para>
-        /// The replacement set of on-premises instance tags for filter on, if you want to change
-        /// them. To keep the existing tags, enter their names. To remove tags, do not enter any
-        /// tag names.
+        /// The replacement set of on-premises instance tags on which to filter, if you want to
+        /// change them. To keep the existing tags, enter their names. To remove tags, do not
+        /// enter any tag names.
         /// </para>
         /// </summary>
         public List<TagFilter> OnPremisesInstanceTagFilters
@@ -177,7 +178,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// A replacement service role's ARN, if you want to change it.
+        /// A replacement ARN for the service role, if you want to change it.
         /// </para>
         /// </summary>
         public string ServiceRoleArn

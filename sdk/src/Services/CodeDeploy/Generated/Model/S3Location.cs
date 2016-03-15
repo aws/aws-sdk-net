@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about the location of application artifacts that are stored in Amazon
-    /// S3.
+    /// Information about the location of application artifacts stored in Amazon S3.
     /// </summary>
     public partial class S3Location
     {

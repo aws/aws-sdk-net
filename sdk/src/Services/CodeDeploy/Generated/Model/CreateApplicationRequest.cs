@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates a new application.
+    /// Creates an application.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonCodeDeployRequest
     {

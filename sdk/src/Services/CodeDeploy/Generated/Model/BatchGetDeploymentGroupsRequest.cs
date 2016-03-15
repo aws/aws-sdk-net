@@ -28,18 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchGetApplicationRevisions operation.
-    /// Gets information about one or more application revisions.
+    /// Container for the parameters to the BatchGetDeploymentGroups operation.
+    /// Get information about one or more deployment groups.
     /// </summary>
-    public partial class BatchGetApplicationRevisionsRequest : AmazonCodeDeployRequest
+    public partial class BatchGetDeploymentGroupsRequest : AmazonCodeDeployRequest
     {
         private string _applicationName;
-        private List<RevisionLocation> _revisions = new List<RevisionLocation>();
+        private List<string> _deploymentGroupNames = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an AWS CodeDeploy application about which to get revision information.
+        /// The name of an AWS CodeDeploy application associated with the applicable IAM user
+        /// or AWS account.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -55,21 +56,21 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revisions. 
+        /// Gets and sets the property DeploymentGroupNames. 
         /// <para>
-        /// Information to get about the application revisions, including type and location.
+        /// The deployment groups' names.
         /// </para>
         /// </summary>
-        public List<RevisionLocation> Revisions
+        public List<string> DeploymentGroupNames
         {
-            get { return this._revisions; }
-            set { this._revisions = value; }
+            get { return this._deploymentGroupNames; }
+            set { this._deploymentGroupNames = value; }
         }
 
-        // Check to see if Revisions property is set
-        internal bool IsSetRevisions()
+        // Check to see if DeploymentGroupNames property is set
+        internal bool IsSetDeploymentGroupNames()
         {
-            return this._revisions != null && this._revisions.Count > 0; 
+            return this._deploymentGroupNames != null && this._deploymentGroupNames.Count > 0; 
         }
 
     }

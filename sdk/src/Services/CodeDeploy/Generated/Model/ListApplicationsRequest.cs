@@ -38,8 +38,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier that was returned from the previous list applications call, which can
-        /// be used to return the next set of applications in the list.
+        /// An identifier returned from the previous list applications call. It can be used to
+        /// return the next set of applications in the list.
         /// </para>
         /// </summary>
         public string NextToken

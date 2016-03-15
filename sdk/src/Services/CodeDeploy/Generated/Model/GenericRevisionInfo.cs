@@ -41,7 +41,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentGroups. 
         /// <para>
-        /// The deployment groups where this is the current target revision.
+        /// The deployment groups for which this is the current target revision.
         /// </para>
         /// </summary>
         public List<string> DeploymentGroups

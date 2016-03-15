@@ -75,7 +75,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Revisions. 
         /// <para>
-        /// Additional information about the revisions, including the revision type and location.
+        /// Additional information about the revisions, including the type and location.
         /// </para>
         /// </summary>
         public List<RevisionInfo> Revisions
