@@ -132,6 +132,10 @@
       <Project>{2F79A9E2-BE9C-43DB-876A-A7F16A5B64AC}</Project>
       <Name>AWSSDK.ConfigService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DatabaseMigrationService/AWSSDK.DatabaseMigrationService.CodeAnalysis.csproj">
+      <Project>{B0032676-356E-4ABA-A252-890237EAF9C3}</Project>
+      <Name>AWSSDK.DatabaseMigrationService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DataPipeline/AWSSDK.DataPipeline.CodeAnalysis.csproj">
       <Project>{CA4F8900-EA2E-44CD-AFCC-B4BE1F7AF3EA}</Project>
       <Name>AWSSDK.DataPipeline.CodeAnalysis</Name>

@@ -320,6 +320,10 @@
       <Project>{794D8685-00AA-4E6C-9050-10C31CA946AA}</Project>
       <Name>AWSSDK.GameLift.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net35.csproj">
+      <Project>{BA323E0A-7441-4899-BDD0-96ECCE837B48}</Project>
+      <Name>AWSSDK.DatabaseMigrationService.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

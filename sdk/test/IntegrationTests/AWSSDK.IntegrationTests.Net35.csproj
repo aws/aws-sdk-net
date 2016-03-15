@@ -70,6 +70,7 @@
     <Compile Include=".\Tests\*.cs" />
     <Compile Include=".\Tests\*\*.cs" Exclude=".\Tests\45\*.cs" />
     <Compile Include=".\Utils\*.cs" />
+    <Compile Include="Tests\DataMigrationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net35.csproj">
@@ -147,6 +148,10 @@
     <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net35.csproj">
       <Project>{95FFA7BA-A05D-4328-82CE-3362FFA3B85F}</Project>
       <Name>AWSSDK.ConfigService.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net35.csproj">
+      <Project>{ba323e0a-7441-4899-bdd0-96ecce837b48}</Project>
+      <Name>AWSSDK.DatabaseMigrationService.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.Net35.csproj">
       <Project>{DA8B7290-B3D2-4440-AE91-32C946BF86F1}</Project>

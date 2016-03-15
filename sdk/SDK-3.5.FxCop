@@ -42,6 +42,7 @@
       <Directory>$(ProjectDir)/src/Services/cognitoidentity/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/devicefarm/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net35/</Directory>
@@ -108,6 +109,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoIdentity.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DeviceFarm.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />

@@ -322,6 +322,10 @@
       <Project>{D3896B6E-0138-44DA-8748-86D88F9B22D6}</Project>
       <Name>AWSSDK.GameLift.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net45.csproj">
+      <Project>{F96FE0F9-FA8A-4142-9291-441097F7884B}</Project>
+      <Name>AWSSDK.DatabaseMigrationService.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">
