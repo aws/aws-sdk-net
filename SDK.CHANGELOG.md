@@ -1,3 +1,11 @@
+### 3.1.53.0 (2016-03-15 22:23 UTC)
+* AWS Database Migration Service (3.1.0.0)
+	* Add support for the new AWS Database Migration Service.
+* CodeDeploy (3.1.2.0)
+	* Add support for the new BatchGetDeploymentGroups API.
+* SimpleEmail (3.1.3.0)
+	* Add support for custom MAIL FROM domains. For more information see the service release notes at http://aws.amazon.com/releasenotes/Amazon-SES/8381987420423821.
+
 ### 3.1.52.0 (2016-03-11 00:40 UTC)
 * IdentityManagement (3.1.4.0)
 	* Add stable, unique identifying string identifiers to each entity returned from IAM:ListEntitiesForPolicy.
