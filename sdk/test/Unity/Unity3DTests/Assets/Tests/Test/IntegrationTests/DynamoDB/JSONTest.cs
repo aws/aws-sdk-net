@@ -36,12 +36,17 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         [Category("WWW")]
         public void TestJSON()
         {
-            TestJsonConversions();
+            Client.BeforeRequestEvent += ClientBeforeRequestEvent;
+            try {
+                TestJsonConversions();
 
-            TestBinaryDecoding();
+                TestBinaryDecoding();
 
-            TestPutGet();
-
+                TestPutGet();
+            } finally
+            {
+                Client.BeforeRequestEvent -= ClientBeforeRequestEvent;
+            }
         }
 
         private void TestPutGet()

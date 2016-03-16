@@ -21,24 +21,32 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         [Category("WWW")]
         public void TestContext()
         {
-            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            Client.BeforeRequestEvent += ClientBeforeRequestEvent;
+            try
             {
-                TableCache.Clear();
+                foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+                {
+                    TableCache.Clear();
 
-                // Cleanup existing data
-                CleanupTables();
-                // Recreate context
-                CreateContext(conversion);
+                    // Cleanup existing data
+                    CleanupTables();
+                    // Recreate context
+                    CreateContext(conversion);
 
-                TestEmptyCollections(conversion);
+                    TestEmptyCollections(conversion);
 
-                TestContextConversions();
-                TestUnsupportedTypes();
+                    TestContextConversions();
+                    TestUnsupportedTypes();
 
-                TestHashObjects();
-                TestHashRangeObjects();
-                TestOtherContextOperations();
-                TestBatchOperations();
+                    TestHashObjects();
+                    TestHashRangeObjects();
+                    TestOtherContextOperations();
+                    TestBatchOperations();
+                }
+            }
+            finally
+            {
+                Client.BeforeRequestEvent -= ClientBeforeRequestEvent;
             }
         }
 
