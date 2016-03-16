@@ -19,7 +19,7 @@ namespace SDKDocGenerator
             {"ElasticTranscoder", "ETS"},
             {"SimpleNotificationService", "SNS"},
             {"IdentityManagement", "IAM"},
-            {"DatabaseManagementService", "DMS"}
+            {"DatabaseMigrationService", "DMS"}
         };
 
         private static string Fixup(string name)
