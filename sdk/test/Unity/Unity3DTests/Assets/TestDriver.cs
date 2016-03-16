@@ -132,81 +132,65 @@ namespace AWSSDK.Tests
         private void InitializeDriver()
         {
             UnityInitializer.AttachToGameObject(this.gameObject);
-            failedWWWTests = new HashSet<string>();
-            failedUWRTests = new HashSet<string>();
+            finalFailedWWWTests = null;
+            finalFailedUWRTests = null;
             //set sleep timeout to infinity
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
         }
 
-        private HashSet<string> failedWWWTests;
-        private HashSet<string> failedUWRTests;
+        private HashSet<string> finalFailedWWWTests;
+        private HashSet<string> finalFailedUWRTests;
 
-        public void OnTestFinished(int pass, int fail, AWSConfigs.HttpClientOption hco, HashSet<string> failedTestCases)
+        public void OnTestFinished(AWSConfigs.HttpClientOption hco, HashSet<string> failedTestCases)
         {
-            if (hco == AWSConfigs.HttpClientOption.UnityWebRequest)
-            {
-                failedUWRTests.UnionWith(failedTestCases);
-            }
-            else
-            {
-                failedWWWTests.UnionWith(failedTestCases);
-            }
-            
-            Debug.Log(string.Format(@"the following test cases will be retried for WWW = {0} & UWR= {1}",
-                string.Join(",", failedWWWTests.ToArray<string>()), string.Join(",", failedUWRTests.ToArray<string>())));
+            bool retry = retryCount < 3 && failedTestCases.Count > 0;
 
-            if (retryCount < 3 && (failedUWRTests.Count > 0 || failedWWWTests.Count > 0))
+            Debug.LogFormat(@"the following test cases {0} for {1} = {2}",
+                retry ? "will be retried" : "failed",
+                hco,
+                string.Join(",", failedTestCases.ToArray<string>()));
+
+            if (retryCount < 3 && failedTestCases.Count > 0)
             {
-                HashSet<string> testNamesToRetryForWWW = failedWWWTests;
-                HashSet<string> testNamesToRetryForUWR = failedUWRTests;
-
-                failedWWWTests = new HashSet<string>();
-                failedUWRTests = new HashSet<string>();
-
                 retryCount++;
                 EnsureBackgroundExecution(() =>
                 {
-                    int count = 0;
-                    foreach (var httpClient in new AWSConfigs.HttpClientOption[]
-                        { AWSConfigs.HttpClientOption.UnityWWW,
-                        AWSConfigs.HttpClientOption.UnityWebRequest })
+                    if (hco == AWSConfigs.HttpClientOption.UnityWWW)
                     {
-                        AWSConfigs.HttpClient = httpClient;
+                        runner.HttpClient = hco;
+                        runner.RunTestsWithCategory("WWW", failedTestCases);
 
-                        if (httpClient == AWSConfigs.HttpClientOption.UnityWWW)
-                        {
-                            if (testNamesToRetryForWWW.Count > 0)
-                            {
-                                runner.HttpClient = httpClient;
-                                runner.RunTestsWithCategory("WWW", testNamesToRetryForWWW);
-                            }
-                        }
-                        else
-                        {
-                            if (testNamesToRetryForUWR.Count > 0)
-                            {
-                                runner.HttpClient = httpClient;
-                                runner.RunTestsWithName(testNamesToRetryForUWR);
-                            }
-                        }
-
-                        Thread.Sleep(TimeSpan.FromSeconds(5));
-
-                        count++;
+                    }
+                    else
+                    {
+                        runner.HttpClient = hco;
+                        runner.RunTestsWithName(failedTestCases);
                     }
                 });
                 return;
             }
 
-            mainThread.Enqueue(() =>
+            if (hco == AWSConfigs.HttpClientOption.UnityWWW)
             {
-                Debug.Log("OnTestFinished");
+                finalFailedWWWTests = new HashSet<string>(failedTestCases);
+            }
+            else if (hco == AWSConfigs.HttpClientOption.UnityWebRequest)
+            {
+                finalFailedUWRTests = new HashSet<string>(failedTestCases);
+            }
 
-                if (failedUWRTests.Count > 0 || failedWWWTests.Count > 0)
-                    PrintResult("SOME TESTS FAILED");
-                else
-                    PrintResult("ALL TESTS PASSED");
-            });
+            if (finalFailedUWRTests != null && finalFailedWWWTests != null)
+            {
+                mainThread.Enqueue(() =>
+                {
+                    Debug.Log("OnTestFinished");
+
+                    if (finalFailedUWRTests.Count > 0 || finalFailedWWWTests.Count > 0)
+                        PrintResult("SOME TESTS FAILED");
+                    else
+                        PrintResult("ALL TESTS PASSED");
+                });
+            }
         }
 
         /// <summary>
@@ -244,6 +228,8 @@ namespace AWSSDK.Tests
                 int count = 0;
                 foreach (var httpClient in httpClients)
                 {
+                    retryCount = 0;
+
                     count++;
                     AWSConfigs.HttpClient = httpClient;
 

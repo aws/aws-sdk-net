@@ -81,7 +81,7 @@ namespace CustomTasks
                 UnityPackage.ExecuteUnityCommand(UnityExe, command);
                 // Approximation of knowing if the app was created is checking
                 // if the build directory exists and some subdirectories exist.
-                success = Directory.Exists(IOS64BuildLocation) && (Directory.GetDirectories(IOS64BuildLocation).Length == 0);
+                success = Directory.Exists(IOS64BuildLocation) && (Directory.GetDirectories(IOS64BuildLocation).Length > 0);
                 tryCount++;
             }
             while (retry && !success && tryCount <= MaxTries);
