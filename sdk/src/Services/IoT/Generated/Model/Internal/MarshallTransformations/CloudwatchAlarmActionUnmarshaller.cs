@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SnsAction Object
+    /// Response Unmarshaller for CloudwatchAlarmAction Object
     /// </summary>  
-    public class SnsActionUnmarshaller : IUnmarshaller<SnsAction, XmlUnmarshallerContext>, IUnmarshaller<SnsAction, JsonUnmarshallerContext>
+    public class CloudwatchAlarmActionUnmarshaller : IUnmarshaller<CloudwatchAlarmAction, XmlUnmarshallerContext>, IUnmarshaller<CloudwatchAlarmAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SnsAction IUnmarshaller<SnsAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CloudwatchAlarmAction IUnmarshaller<CloudwatchAlarmAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,21 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SnsAction Unmarshall(JsonUnmarshallerContext context)
+        public CloudwatchAlarmAction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SnsAction unmarshalledObject = new SnsAction();
+            CloudwatchAlarmAction unmarshalledObject = new CloudwatchAlarmAction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("messageFormat", targetDepth))
+                if (context.TestExpression("alarmName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))
@@ -76,10 +76,16 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetArn", targetDepth))
+                if (context.TestExpression("stateReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stateValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StateValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static SnsActionUnmarshaller _instance = new SnsActionUnmarshaller();        
+        private static CloudwatchAlarmActionUnmarshaller _instance = new CloudwatchAlarmActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SnsActionUnmarshaller Instance
+        public static CloudwatchAlarmActionUnmarshaller Instance
         {
             get
             {

@@ -32,7 +32,10 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class Action
     {
+        private CloudwatchAlarmAction _cloudwatchAlarm;
+        private CloudwatchMetricAction _cloudwatchMetric;
         private DynamoDBAction _dynamodb;
+        private ElasticsearchAction _elasticsearch;
         private FirehoseAction _firehose;
         private KinesisAction _kinesis;
         private LambdaAction _lambda;
@@ -40,6 +43,42 @@ namespace Amazon.IoT.Model
         private S3Action _s3;
         private SnsAction _sns;
         private SqsAction _sqs;
+
+        /// <summary>
+        /// Gets and sets the property CloudwatchAlarm. 
+        /// <para>
+        /// Change the state of a CloudWatch alarm.
+        /// </para>
+        /// </summary>
+        public CloudwatchAlarmAction CloudwatchAlarm
+        {
+            get { return this._cloudwatchAlarm; }
+            set { this._cloudwatchAlarm = value; }
+        }
+
+        // Check to see if CloudwatchAlarm property is set
+        internal bool IsSetCloudwatchAlarm()
+        {
+            return this._cloudwatchAlarm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudwatchMetric. 
+        /// <para>
+        /// Capture a CloudWatch metric.
+        /// </para>
+        /// </summary>
+        public CloudwatchMetricAction CloudwatchMetric
+        {
+            get { return this._cloudwatchMetric; }
+            set { this._cloudwatchMetric = value; }
+        }
+
+        // Check to see if CloudwatchMetric property is set
+        internal bool IsSetCloudwatchMetric()
+        {
+            return this._cloudwatchMetric != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DynamoDB. 
@@ -60,9 +99,27 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Elasticsearch. 
+        /// <para>
+        /// Write data to an Amazon Elasticsearch Service; domain.
+        /// </para>
+        /// </summary>
+        public ElasticsearchAction Elasticsearch
+        {
+            get { return this._elasticsearch; }
+            set { this._elasticsearch = value; }
+        }
+
+        // Check to see if Elasticsearch property is set
+        internal bool IsSetElasticsearch()
+        {
+            return this._elasticsearch != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Firehose. 
         /// <para>
-        /// Write to a Kinesis Firehose stream.
+        /// Write to an Amazon Kinesis Firehose stream.
         /// </para>
         /// </summary>
         public FirehoseAction Firehose
@@ -80,7 +137,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Kinesis. 
         /// <para>
-        /// Write data to a Kinesis stream.
+        /// Write data to an Amazon Kinesis stream.
         /// </para>
         /// </summary>
         public KinesisAction Kinesis
@@ -134,7 +191,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// Write to an S3 bucket.
+        /// Write to an Amazon S3 bucket.
         /// </para>
         /// </summary>
         public S3Action S3
@@ -152,7 +209,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Sns. 
         /// <para>
-        /// Publish to an SNS topic.
+        /// Publish to an Amazon SNS topic.
         /// </para>
         /// </summary>
         public SnsAction Sns
@@ -170,7 +227,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Sqs. 
         /// <para>
-        /// Publish to an SQS queue.
+        /// Publish to an Amazon SQS queue.
         /// </para>
         /// </summary>
         public SqsAction Sqs

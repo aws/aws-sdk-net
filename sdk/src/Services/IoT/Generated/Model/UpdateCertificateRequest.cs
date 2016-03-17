@@ -33,8 +33,8 @@ namespace Amazon.IoT.Model
     /// 
     ///  
     /// <para>
-    /// Moving a cert from the ACTIVE state (including REVOKED) will NOT disconnect currently-connected
-    /// devices, although these devices will be unable to reconnect.
+    /// Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect
+    /// currently connected devices, but these devices will be unable to reconnect.
     /// </para>
     ///  
     /// <para>
@@ -72,9 +72,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// Note: setting the status to PENDING_TRANSFER will result in an exception being thrown.
-        /// PENDING_TRANSFER is a status used internally by AWS IoT and is not meant to be used
-        /// by developers.
+        /// <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being
+        /// thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended
+        /// for developer use.
         /// </para>
         /// </summary>
         public CertificateStatus NewStatus

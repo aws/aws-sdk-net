@@ -45,6 +45,28 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Action requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCloudwatchAlarm())
+            {
+                context.Writer.WritePropertyName("cloudwatchAlarm");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CloudwatchAlarmActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudwatchAlarm, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCloudwatchMetric())
+            {
+                context.Writer.WritePropertyName("cloudwatchMetric");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CloudwatchMetricActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudwatchMetric, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDynamoDB())
             {
                 context.Writer.WritePropertyName("dynamoDB");
@@ -52,6 +74,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
                 var marshaller = DynamoDBActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamoDB, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetElasticsearch())
+            {
+                context.Writer.WritePropertyName("elasticsearch");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ElasticsearchActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Elasticsearch, context);
 
                 context.Writer.WriteObjectEnd();
             }

@@ -28,40 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes an action to publish to an Amazon SNS topic.
+    /// Describes an action that updates a CloudWatch alarm.
     /// </summary>
-    public partial class SnsAction
+    public partial class CloudwatchAlarmAction
     {
-        private MessageFormat _messageFormat;
+        private string _alarmName;
         private string _roleArn;
-        private string _targetArn;
+        private string _stateReason;
+        private string _stateValue;
 
         /// <summary>
-        /// Gets and sets the property MessageFormat. 
+        /// Gets and sets the property AlarmName. 
         /// <para>
-        /// The message format of the message to publish. Optional. Accepted values are "JSON"
-        /// and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine
-        /// if the payload should be parsed and relevant platform-specific bits of the payload
-        /// should be extracted. To read more about SNS message formats, see <a href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a>
-        /// refer to their official documentation.
+        /// The CloudWatch alarm name.
         /// </para>
         /// </summary>
-        public MessageFormat MessageFormat
+        public string AlarmName
         {
-            get { return this._messageFormat; }
-            set { this._messageFormat = value; }
+            get { return this._alarmName; }
+            set { this._alarmName = value; }
         }
 
-        // Check to see if MessageFormat property is set
-        internal bool IsSetMessageFormat()
+        // Check to see if AlarmName property is set
+        internal bool IsSetAlarmName()
         {
-            return this._messageFormat != null;
+            return this._alarmName != null;
         }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that grants access.
+        /// The IAM role that allows access to the CloudWatch alarm.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -77,21 +74,39 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetArn. 
+        /// Gets and sets the property StateReason. 
         /// <para>
-        /// The ARN of the SNS topic.
+        /// The reason for the alarm change.
         /// </para>
         /// </summary>
-        public string TargetArn
+        public string StateReason
         {
-            get { return this._targetArn; }
-            set { this._targetArn = value; }
+            get { return this._stateReason; }
+            set { this._stateReason = value; }
         }
 
-        // Check to see if TargetArn property is set
-        internal bool IsSetTargetArn()
+        // Check to see if StateReason property is set
+        internal bool IsSetStateReason()
         {
-            return this._targetArn != null;
+            return this._stateReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateValue. 
+        /// <para>
+        /// The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.
+        /// </para>
+        /// </summary>
+        public string StateValue
+        {
+            get { return this._stateValue; }
+            set { this._stateValue = value; }
+        }
+
+        // Check to see if StateValue property is set
+        internal bool IsSetStateValue()
+        {
+            return this._stateValue != null;
         }
 
     }

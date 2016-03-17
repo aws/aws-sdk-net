@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes an action that writes data to a Kinesis Firehose stream.
+    /// Describes an action that writes data to an Amazon Kinesis Firehose stream.
     /// </summary>
     public partial class FirehoseAction
     {
@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role that grants access to the firehose stream.
+        /// The IAM role that grants access to the Amazon Kinesis Firehost stream.
         /// </para>
         /// </summary>
         public string RoleArn

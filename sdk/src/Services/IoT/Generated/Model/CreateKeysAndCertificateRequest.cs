@@ -29,13 +29,13 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKeysAndCertificate operation.
-    /// Creates a 2048 bit RSA key pair and issues an X.509 certificate using the issued public
+    /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
     /// key.
     /// 
     ///  
     /// <para>
-    /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate.
-    /// It is important to keep track of the private key.
+    /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+    /// so it is important to keep it in a secure location.
     /// </para>
     /// </summary>
     public partial class CreateKeysAndCertificateRequest : AmazonIoTRequest

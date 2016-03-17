@@ -39,8 +39,8 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can only be called by the transfer destination. Once called, the certificate
-    /// will be returned to the source's account in the INACTIVE state.
+    /// This operation can only be called by the transfer destination. After it is called,
+    /// the certificate will be returned to the source's account in the INACTIVE state.
     /// </para>
     /// </summary>
     public partial class RejectCertificateTransferRequest : AmazonIoTRequest

@@ -64,10 +64,28 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("cloudwatchAlarm", targetDepth))
+                {
+                    var unmarshaller = CloudwatchAlarmActionUnmarshaller.Instance;
+                    unmarshalledObject.CloudwatchAlarm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cloudwatchMetric", targetDepth))
+                {
+                    var unmarshaller = CloudwatchMetricActionUnmarshaller.Instance;
+                    unmarshalledObject.CloudwatchMetric = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dynamoDB", targetDepth))
                 {
                     var unmarshaller = DynamoDBActionUnmarshaller.Instance;
                     unmarshalledObject.DynamoDB = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("elasticsearch", targetDepth))
+                {
+                    var unmarshaller = ElasticsearchActionUnmarshaller.Instance;
+                    unmarshalledObject.Elasticsearch = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("firehose", targetDepth))

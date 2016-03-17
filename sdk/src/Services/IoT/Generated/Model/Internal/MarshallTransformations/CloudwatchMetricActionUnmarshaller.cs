@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SnsAction Object
+    /// Response Unmarshaller for CloudwatchMetricAction Object
     /// </summary>  
-    public class SnsActionUnmarshaller : IUnmarshaller<SnsAction, XmlUnmarshallerContext>, IUnmarshaller<SnsAction, JsonUnmarshallerContext>
+    public class CloudwatchMetricActionUnmarshaller : IUnmarshaller<CloudwatchMetricAction, XmlUnmarshallerContext>, IUnmarshaller<CloudwatchMetricAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SnsAction IUnmarshaller<SnsAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CloudwatchMetricAction IUnmarshaller<CloudwatchMetricAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,45 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SnsAction Unmarshall(JsonUnmarshallerContext context)
+        public CloudwatchMetricAction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SnsAction unmarshalledObject = new SnsAction();
+            CloudwatchMetricAction unmarshalledObject = new CloudwatchMetricAction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("messageFormat", targetDepth))
+                if (context.TestExpression("metricName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metricNamespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MetricNamespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metricTimestamp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MetricTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metricUnit", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MetricUnit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metricValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MetricValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))
@@ -76,24 +100,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static SnsActionUnmarshaller _instance = new SnsActionUnmarshaller();        
+        private static CloudwatchMetricActionUnmarshaller _instance = new CloudwatchMetricActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SnsActionUnmarshaller Instance
+        public static CloudwatchMetricActionUnmarshaller Instance
         {
             get
             {

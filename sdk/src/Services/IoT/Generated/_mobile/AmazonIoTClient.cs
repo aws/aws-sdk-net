@@ -229,7 +229,7 @@ namespace Amazon.IoT
         /// Attaches the specified policy to the specified principal (certificate or other credential).
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="principal">The principal which can be a certificate ARN (as returned from the CreateCertificate operation) or a Cognito ID.</param>
+        /// <param name="principal">The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -369,10 +369,10 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer
-        /// (transfer destinations can use <a>RejectCertificateTransfer</a> instead). After transfer,
-        /// AWS IoT returns the certificate to the source account in the INACTIVE state. Once
-        /// the destination account has accepted the transfer, the transfer may no longer be cancelled.
+        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+        /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
+        /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
+        /// the destination account has accepted the transfer, the transfer cannot be cancelled.
         /// </para>
         ///  
         /// <para>
@@ -402,7 +402,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferAlreadyCompletedException">
-        /// You can't revert the certificate transfer because it has already completed.
+        /// You can't revert the certificate transfer because the transfer is already complete.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -456,8 +456,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can create multiple certificates in a batch by creating a directory and copying
-        /// multiple .csr files into that directory and specifying that directory on the command
+        /// You can create multiple certificates in a batch by creating a directory, copying multiple
+        /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
         /// of CSRs. 
         /// </para>
@@ -467,7 +467,7 @@ namespace Amazon.IoT
         /// </para>
         /// &gt; 
         /// <para>
-        /// On Linux and OSX, the command is:
+        /// On Linux and OS X, the command is:
         /// </para>
         ///  
         /// <para>
@@ -476,7 +476,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
         /// for the corresponding CSR. 
         /// </para>
@@ -502,7 +502,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
         /// is: 
         /// </para>
         ///  
@@ -550,8 +550,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can create multiple certificates in a batch by creating a directory and copying
-        /// multiple .csr files into that directory and specifying that directory on the command
+        /// You can create multiple certificates in a batch by creating a directory, copying multiple
+        /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
         /// of CSRs. 
         /// </para>
@@ -561,7 +561,7 @@ namespace Amazon.IoT
         /// </para>
         /// &gt; 
         /// <para>
-        /// On Linux and OSX, the command is:
+        /// On Linux and OS X, the command is:
         /// </para>
         ///  
         /// <para>
@@ -570,7 +570,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
         /// for the corresponding CSR. 
         /// </para>
@@ -596,7 +596,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
         /// is: 
         /// </para>
         ///  
@@ -668,13 +668,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a 2048 bit RSA key pair and issues an X.509 certificate using the issued public
+        /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
         /// key.
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate.
-        /// It is important to keep track of the private key.
+        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -705,13 +705,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a 2048 bit RSA key pair and issues an X.509 certificate using the issued public
+        /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
         /// key.
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate.
-        /// It is important to keep track of the private key.
+        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
         /// <param name="setAsActive">Specifies whether the certificate is active.</param>
@@ -785,7 +785,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. The length of the <b>policyDocument</b> must be a minimum length of 1, with a maximum length of 2048, excluding whitespace.</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -855,18 +855,18 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a new version of the specified AWS IoT policy. To update a policy, create
         /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
-        /// before you create a new version.
+        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
+        /// before you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
-        /// version is the operative version; that is, the version that is in effect for the certificates
-        /// that the policy is attached to.
+        /// version is the operative version (that is, the version that is in effect for the certificates
+        /// to which the policy is attached).
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -908,19 +908,19 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a new version of the specified AWS IoT policy. To update a policy, create
         /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
-        /// before you create a new version.
+        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
+        /// before you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
-        /// version is the operative version; that is, the version that is in effect for the certificates
-        /// that the policy is attached to.
+        /// version is the operative version (that is, the version that is in effect for the certificates
+        /// to which the policy is attached).
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</param>
-        /// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
+        /// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1059,9 +1059,9 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a>
-        /// API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
-        /// status.
+        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
+        /// certificate to the INACTIVE status.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -1123,14 +1123,14 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A policy cannot be deleted if it has non-default versions and/or it is attached to
-        /// any certificate.
+        /// A policy cannot be deleted if it has non-default versions or it is attached to any
+        /// certificate.
         /// </para>
         ///  
         /// <para>
-        /// To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion
-        /// API, detach the policy from any certificate using the DetachPrincipalPolicy API, and
-        /// then use the DeletePolicy API to delete the policy.
+        /// To delete a policy, use the DeletePolicyVersion API to delete all non-default versions
+        /// of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate;
+        /// and then use the DeletePolicy API to delete the policy.
         /// </para>
         ///  
         /// <para>
@@ -1595,7 +1595,7 @@ namespace Amazon.IoT
         /// Removes the specified policy from the specified certificate.
         /// </summary>
         /// <param name="policyName">The name of the policy to detach.</param>
-        /// <param name="principal">The principal If the principal is a certificate, specify the certificate ARN. If the principal is a Cognito identity specify the identity ID.</param>
+        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2020,8 +2020,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// The results are paginated with a default page size of 25. You can retrieve additional
-        /// results using the returned marker.
+        /// The results are paginated with a default page size of 25. You can use the returned
+        /// marker to retrieve additional results.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -2210,9 +2210,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the policies attached to the specified principal. If you use an Amazon Cognito
-        /// identity, the ID needs to be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">Amazon
-        /// Cognito Identity format</a>.
+        /// Lists the policies attached to the specified principal. If you use an Cognito identity,
+        /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+        /// Identity format</a>.
         /// </summary>
         /// <param name="principal">The principal.</param>
         /// <param name="cancellationToken">
@@ -2404,8 +2404,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your things. You can pass an AttributeName and/or AttributeValue to filter your
-        /// things. For example: "ListThings where AttributeName=Color and AttributeValue=Red"
+        /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
+        /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2533,8 +2533,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// This operation can only be called by the transfer destination. Once called, the certificate
-        /// will be returned to the source's account in the INACTIVE state.
+        /// This operation can only be called by the transfer destination. After it is called,
+        /// the certificate will be returned to the source's account in the INACTIVE state.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -2559,7 +2559,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferAlreadyCompletedException">
-        /// You can't revert the certificate transfer because it has already completed.
+        /// You can't revert the certificate transfer because the transfer is already complete.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -2636,8 +2636,8 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Sets the specified version of the specified policy as the policy's default (operative)
-        /// version. This action affects all certificates that the policy is attached to. To list
-        /// the principals the policy is attached to, use the ListPrincipalPolicy API.
+        /// version. This action affects all certificates to which the policy is attached. To
+        /// list the principals the policy is attached to, use the ListPrincipalPolicy API.
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -2744,18 +2744,18 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account, it is up to the caller
+        /// No notification is sent to the transfer destination's account. It is up to the caller
         /// to notify the transfer target.
         /// </para>
         ///  
         /// <para>
-        /// The certificate being transferred must not be in the ACTIVE state. It can be deactivated
-        /// using the UpdateCertificate API.
+        /// The certificate being transferred must not be in the ACTIVE state. You can use the
+        /// UpdateCertificate API to deactivate it.
         /// </para>
         ///  
         /// <para>
-        /// The certificate must not have any policies attached to it. These can be detached using
-        /// the DetachPrincipalPolicy API.
+        /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
+        /// API to detach them.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -2784,7 +2784,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferConflictException">
-        /// You can't transfer the the certificate because authorization policies are still attached.
+        /// You can't transfer the certificate because authorization policies are still attached.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -2834,8 +2834,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// Moving a cert from the ACTIVE state (including REVOKED) will NOT disconnect currently-connected
-        /// devices, although these devices will be unable to reconnect.
+        /// Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect
+        /// currently connected devices, but these devices will be unable to reconnect.
         /// </para>
         ///  
         /// <para>
@@ -2844,7 +2844,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status. Note: setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and is not meant to be used by developers.</param>
+        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

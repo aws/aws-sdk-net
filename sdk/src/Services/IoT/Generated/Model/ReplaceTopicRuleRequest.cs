@@ -29,7 +29,9 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ReplaceTopicRule operation.
-    /// Replaces the specified rule. You must specify all parameters for the new rule.
+    /// Replaces the specified rule. You must specify all parameters for the new rule. Creating
+    /// rules is an administrator-level action. Any user who has permission to create rules
+    /// will be able to access data processed by the rule.
     /// </summary>
     public partial class ReplaceTopicRuleRequest : AmazonIoTRequest
     {

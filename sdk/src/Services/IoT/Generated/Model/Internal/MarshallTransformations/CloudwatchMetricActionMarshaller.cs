@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SnsAction Marshaller
+    /// CloudwatchMetricAction Marshaller
     /// </summary>       
-    public class SnsActionMarshaller : IRequestMarshaller<SnsAction, JsonMarshallerContext> 
+    public class CloudwatchMetricActionMarshaller : IRequestMarshaller<CloudwatchMetricAction, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,12 +43,36 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SnsAction requestObject, JsonMarshallerContext context)
+        public void Marshall(CloudwatchMetricAction requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMessageFormat())
+            if(requestObject.IsSetMetricName())
             {
-                context.Writer.WritePropertyName("messageFormat");
-                context.Writer.Write(requestObject.MessageFormat);
+                context.Writer.WritePropertyName("metricName");
+                context.Writer.Write(requestObject.MetricName);
+            }
+
+            if(requestObject.IsSetMetricNamespace())
+            {
+                context.Writer.WritePropertyName("metricNamespace");
+                context.Writer.Write(requestObject.MetricNamespace);
+            }
+
+            if(requestObject.IsSetMetricTimestamp())
+            {
+                context.Writer.WritePropertyName("metricTimestamp");
+                context.Writer.Write(requestObject.MetricTimestamp);
+            }
+
+            if(requestObject.IsSetMetricUnit())
+            {
+                context.Writer.WritePropertyName("metricUnit");
+                context.Writer.Write(requestObject.MetricUnit);
+            }
+
+            if(requestObject.IsSetMetricValue())
+            {
+                context.Writer.WritePropertyName("metricValue");
+                context.Writer.Write(requestObject.MetricValue);
             }
 
             if(requestObject.IsSetRoleArn())
@@ -57,18 +81,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
-            if(requestObject.IsSetTargetArn())
-            {
-                context.Writer.WritePropertyName("targetArn");
-                context.Writer.Write(requestObject.TargetArn);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SnsActionMarshaller Instance = new SnsActionMarshaller();
+        public readonly static CloudwatchMetricActionMarshaller Instance = new CloudwatchMetricActionMarshaller();
 
     }
 }

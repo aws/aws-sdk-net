@@ -133,7 +133,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Sql. 
         /// <para>
         /// The SQL statement used to query the topic. When using a SQL query with multiple lines,
-        /// be sure to escape the newline characters properly.
+        /// be sure to escape the newline characters.
         /// </para>
         /// </summary>
         public string Sql

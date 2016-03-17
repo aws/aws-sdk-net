@@ -57,8 +57,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The principal which can be a certificate ARN (as returned from the CreateCertificate
-        /// operation) or a Cognito ID.
+        /// The principal, which can be a certificate ARN (as returned from the CreateCertificate
+        /// operation) or an Amazon Cognito ID.
         /// </para>
         /// </summary>
         public string Principal

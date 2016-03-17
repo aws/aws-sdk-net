@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SnsAction Object
+    /// Response Unmarshaller for ElasticsearchAction Object
     /// </summary>  
-    public class SnsActionUnmarshaller : IUnmarshaller<SnsAction, XmlUnmarshallerContext>, IUnmarshaller<SnsAction, JsonUnmarshallerContext>
+    public class ElasticsearchActionUnmarshaller : IUnmarshaller<ElasticsearchAction, XmlUnmarshallerContext>, IUnmarshaller<ElasticsearchAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SnsAction IUnmarshaller<SnsAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ElasticsearchAction IUnmarshaller<ElasticsearchAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,33 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SnsAction Unmarshall(JsonUnmarshallerContext context)
+        public ElasticsearchAction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SnsAction unmarshalledObject = new SnsAction();
+            ElasticsearchAction unmarshalledObject = new ElasticsearchAction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("messageFormat", targetDepth))
+                if (context.TestExpression("endpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("index", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Index = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))
@@ -76,10 +88,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetArn", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +100,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static SnsActionUnmarshaller _instance = new SnsActionUnmarshaller();        
+        private static ElasticsearchActionUnmarshaller _instance = new ElasticsearchActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SnsActionUnmarshaller Instance
+        public static ElasticsearchActionUnmarshaller Instance
         {
             get
             {

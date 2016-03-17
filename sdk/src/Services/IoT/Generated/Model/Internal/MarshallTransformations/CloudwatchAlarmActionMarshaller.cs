@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SnsAction Marshaller
+    /// CloudwatchAlarmAction Marshaller
     /// </summary>       
-    public class SnsActionMarshaller : IRequestMarshaller<SnsAction, JsonMarshallerContext> 
+    public class CloudwatchAlarmActionMarshaller : IRequestMarshaller<CloudwatchAlarmAction, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,12 +43,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SnsAction requestObject, JsonMarshallerContext context)
+        public void Marshall(CloudwatchAlarmAction requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMessageFormat())
+            if(requestObject.IsSetAlarmName())
             {
-                context.Writer.WritePropertyName("messageFormat");
-                context.Writer.Write(requestObject.MessageFormat);
+                context.Writer.WritePropertyName("alarmName");
+                context.Writer.Write(requestObject.AlarmName);
             }
 
             if(requestObject.IsSetRoleArn())
@@ -57,10 +57,16 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
-            if(requestObject.IsSetTargetArn())
+            if(requestObject.IsSetStateReason())
             {
-                context.Writer.WritePropertyName("targetArn");
-                context.Writer.Write(requestObject.TargetArn);
+                context.Writer.WritePropertyName("stateReason");
+                context.Writer.Write(requestObject.StateReason);
+            }
+
+            if(requestObject.IsSetStateValue())
+            {
+                context.Writer.WritePropertyName("stateValue");
+                context.Writer.Write(requestObject.StateValue);
             }
 
         }
@@ -68,7 +74,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SnsActionMarshaller Instance = new SnsActionMarshaller();
+        public readonly static CloudwatchAlarmActionMarshaller Instance = new CloudwatchAlarmActionMarshaller();
 
     }
 }

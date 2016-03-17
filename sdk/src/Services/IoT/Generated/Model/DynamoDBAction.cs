@@ -43,9 +43,9 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    /// You can specify any expression that's valid in a WHERE or SELECT clause, including
-    /// JSON properties, comparisons, calculations, and functions. For example, the following
-    /// field uses the third level of the topic:
+    /// You can specify any valid expression in a WHERE or SELECT clause, including JSON properties,
+    /// comparisons, calculations, and functions. For example, the following field uses the
+    /// third level of the topic:
     /// </para>
     ///  
     /// <para>
@@ -109,7 +109,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PayloadField. 
         /// <para>
-        /// The action payload, this name can be customized.
+        /// The action payload. This name can be customized.
         /// </para>
         /// </summary>
         public string PayloadField

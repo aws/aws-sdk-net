@@ -327,6 +327,10 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ElasticsearchAction.Endpoint</property>
+    <pattern>https?://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.KeyPair.PrivateKey</property>
     <min>1</min>
   </property-value-rule>

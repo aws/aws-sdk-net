@@ -29,7 +29,8 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTopicRule operation.
-    /// Creates a rule.
+    /// Creates a rule. Creating rules is an administrator-level action. Any user who has
+    /// permission to create rules will be able to access data processed by the rule.
     /// </summary>
     public partial class CreateTopicRuleRequest : AmazonIoTRequest
     {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SnsAction Marshaller
+    /// ElasticsearchAction Marshaller
     /// </summary>       
-    public class SnsActionMarshaller : IRequestMarshaller<SnsAction, JsonMarshallerContext> 
+    public class ElasticsearchActionMarshaller : IRequestMarshaller<ElasticsearchAction, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,12 +43,24 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SnsAction requestObject, JsonMarshallerContext context)
+        public void Marshall(ElasticsearchAction requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMessageFormat())
+            if(requestObject.IsSetEndpoint())
             {
-                context.Writer.WritePropertyName("messageFormat");
-                context.Writer.Write(requestObject.MessageFormat);
+                context.Writer.WritePropertyName("endpoint");
+                context.Writer.Write(requestObject.Endpoint);
+            }
+
+            if(requestObject.IsSetId())
+            {
+                context.Writer.WritePropertyName("id");
+                context.Writer.Write(requestObject.Id);
+            }
+
+            if(requestObject.IsSetIndex())
+            {
+                context.Writer.WritePropertyName("index");
+                context.Writer.Write(requestObject.Index);
             }
 
             if(requestObject.IsSetRoleArn())
@@ -57,10 +69,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
-            if(requestObject.IsSetTargetArn())
+            if(requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("targetArn");
-                context.Writer.Write(requestObject.TargetArn);
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -68,7 +80,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SnsActionMarshaller Instance = new SnsActionMarshaller();
+        public readonly static ElasticsearchActionMarshaller Instance = new ElasticsearchActionMarshaller();
 
     }
 }
