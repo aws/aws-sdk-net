@@ -348,7 +348,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the replication configuration for the given Amazon S3 bucket.
+        /// Deletes the replication configuration from the bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 

@@ -47,6 +47,17 @@ namespace ServiceClientGenerator
             }
         }
 
+        public override string Documentation
+        {
+            get
+            {
+                var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
+                if (modifiers != null && !string.IsNullOrEmpty(modifiers.Documentation))
+                    return modifiers.Documentation;
+                return base.Documentation;
+            }
+        }
+
         /// <summary>
         /// Determines if the operation is Deprecated.
         /// </summary>

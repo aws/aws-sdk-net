@@ -1309,6 +1309,8 @@ namespace ServiceClientGenerator
                 modifiers.WrappedResultShape = (string)operation[OperationModifiers.WrappedResultShapeKey];
             if (operation[OperationModifiers.WrappedResultMemberKey] != null && operation[OperationModifiers.WrappedResultMemberKey].IsString)
                 modifiers.WrappedResultMember = (string)operation[OperationModifiers.WrappedResultMemberKey];
+            if (operation[OperationModifiers.DocumentationKey] != null && operation[OperationModifiers.DocumentationKey].IsString)
+                modifiers.Documentation = (string)operation[OperationModifiers.DocumentationKey];
 
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
@@ -1389,6 +1391,7 @@ namespace ServiceClientGenerator
             public const string WrappedResultMemberKey = "wrappedResultMember";
             public const string MarshallNameOverrides = "marshallNameOverrides";
             public const string DeprecatedKey = "deprecated";
+            public const string DocumentationKey = "documentation";
 
             // within a marshal override for a shape; one or both may be present
             public const string MarshallLocationName = "marshallLocationName";
@@ -1445,6 +1448,12 @@ namespace ServiceClientGenerator
             }
 
             public string WrappedResultMember
+            {
+                get;
+                set;
+            }
+
+            public string Documentation
             {
                 get;
                 set;

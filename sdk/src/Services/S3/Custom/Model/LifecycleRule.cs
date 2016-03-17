@@ -34,6 +34,7 @@ namespace Amazon.S3.Model
         private LifecycleRuleNoncurrentVersionExpiration noncurrentVersionExpiration;
         private List<LifecycleTransition> transitions;
         private List<LifecycleRuleNoncurrentVersionTransition> noncurrentVersionTransitions;
+        private LifecycleRuleAbortIncompleteMultipartUpload abortIncompleteMultipartUpload;
 
 
         /// <summary>
@@ -222,6 +223,23 @@ namespace Amazon.S3.Model
         internal bool IsSetNoncurrentVersionTransitions()
         {
             return this.noncurrentVersionTransitions != null && this.noncurrentVersionTransitions.Count > 0;
+        }
+
+
+        /// <summary>
+        /// Specifies the days since the initiation of an Incomplete Multipart Upload
+        /// that Lifecycle will wait before permanently removing all parts of the upload.
+        /// </summary>
+        public LifecycleRuleAbortIncompleteMultipartUpload AbortIncompleteMultipartUpload
+        {
+            get { return this.abortIncompleteMultipartUpload; }
+            set { this.abortIncompleteMultipartUpload = value; }
+        }
+
+        // Check to see if AbortIncompleteMultipartUpload property is set
+        internal bool IsSetAbortIncompleteMultipartUpload()
+        {
+            return this.abortIncompleteMultipartUpload != null;
         }
     }
 }

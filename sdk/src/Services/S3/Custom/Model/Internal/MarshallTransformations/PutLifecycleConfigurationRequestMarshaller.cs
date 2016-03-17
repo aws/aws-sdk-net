@@ -76,6 +76,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         {
                                             xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(expiration.Days));
                                         }
+                                        if (expiration.IsSetExpiredObjectDeleteMarker())
+                                        {
+                                            xmlWriter.WriteElementString("ExpiredObjectDeleteMarker", "", expiration.ExpiredObjectDeleteMarker.ToString().ToLowerInvariant());
+                                        }
                                         xmlWriter.WriteEndElement();
                                     }
 
@@ -134,6 +138,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                                 xmlWriter.WriteEndElement();
                                             }
                                         }
+                                    }
+
+                                    var abortIncompleteMultipartUpload = lifecycleConfigurationLifecycleConfigurationrulesListValue.AbortIncompleteMultipartUpload;
+                                    if (abortIncompleteMultipartUpload != null)
+                                    {
+                                        xmlWriter.WriteStartElement("AbortIncompleteMultipartUpload", "");
+                                        if (abortIncompleteMultipartUpload.IsSetDaysAfterInitiation())
+                                        {
+                                            xmlWriter.WriteElementString("DaysAfterInitiation", "", S3Transforms.ToXmlStringValue(abortIncompleteMultipartUpload.DaysAfterInitiation));
+                                        }
+                                        xmlWriter.WriteEndElement();
                                     }
                                 }
                                 if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetId())

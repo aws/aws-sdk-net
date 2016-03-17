@@ -89,6 +89,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ServerSideEncryptionMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
             if (responseData.IsHeaderPresent(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader))
                 response.ServerSideEncryptionKeyManagementServiceKeyId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader));
+            if (responseData.IsHeaderPresent(HeaderKeys.XAmzAbortDateHeader))
+                response.AbortDate = S3Transforms.ToDateTime(responseData.GetHeaderValue(HeaderKeys.XAmzAbortDateHeader));
+            if (responseData.IsHeaderPresent(HeaderKeys.XAmzAbortRuleIdHeader))
+                response.AbortRuleId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzAbortRuleIdHeader));
 
             return;
         }
