@@ -161,6 +161,16 @@
         {
             "active": true,
 
+            "model": "meteringmarketplace",
+            "base-name": "AWSMarketplaceMetering",
+            "region-lookup-name": "metering.marketplace",
+            "authentication-service-name": "aws-marketplace",
+            "service-url": " https://metering.marketplace.us-east-1.amazonaws.com",
+            "synopsis": "The AWS Marketplace Metering Service enables sellers to price their products along new pricing dimensions. After a integrating their product with the AWS Marketplace Metering Service, that product will emit an hourly record capturing the usage of any single pricing dimension. Buyers can easily subscribe to software priced by this new dimension on the AWS Marketplace website and only pay for what they use."
+        },
+        {
+            "active": true,
+
             "model": "support",
             "base-name": "AWSSupport",
             "region-lookup-name": "support",

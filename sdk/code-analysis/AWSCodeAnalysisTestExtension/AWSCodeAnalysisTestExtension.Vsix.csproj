@@ -64,6 +64,10 @@
       <Project>{CE92E696-6109-4623-9C98-F353D3B85527}</Project>
       <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AWSMarketplaceMetering/AWSSDK.AWSMarketplaceMetering.CodeAnalysis.csproj">
+      <Project>{7774BBE9-1843-442C-8BAD-7FA712FC5EA2}</Project>
+      <Name>AWSSDK.AWSMarketplaceMetering.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AWSSupport/AWSSDK.AWSSupport.CodeAnalysis.csproj">
       <Project>{CF64C0A4-25F7-42E9-9B3D-632CB520B666}</Project>
       <Name>AWSSDK.AWSSupport.CodeAnalysis</Name>

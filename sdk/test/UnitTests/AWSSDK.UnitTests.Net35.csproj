@@ -324,6 +324,10 @@
       <Project>{BA323E0A-7441-4899-BDD0-96ECCE837B48}</Project>
       <Name>AWSSDK.DatabaseMigrationService.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AWSMarketplaceMetering\AWSSDK.AWSMarketplaceMetering.Net35.csproj">
+      <Project>{2225BFEB-DA71-4183-A37D-CBBF9D8BE918}</Project>
+      <Name>AWSSDK.AWSMarketplaceMetering.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

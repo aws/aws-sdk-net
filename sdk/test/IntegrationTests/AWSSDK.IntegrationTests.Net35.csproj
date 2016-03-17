@@ -70,7 +70,6 @@
     <Compile Include=".\Tests\*.cs" />
     <Compile Include=".\Tests\*\*.cs" Exclude=".\Tests\45\*.cs" />
     <Compile Include=".\Utils\*.cs" />
-    <Compile Include="Tests\DataMigrationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net35.csproj">
