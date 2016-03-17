@@ -30,6 +30,15 @@ namespace Amazon.CloudHSM.Model
     /// <summary>
     /// Container for the parameters to the ModifyHsm operation.
     /// Modifies an HSM.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This operation can result in the HSM being offline for up to 15 minutes while the
+    /// AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should
+    /// ensure that your AWS CloudHSM service is configured for high availability, and consider
+    /// executing this operation during a maintenance window.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ModifyHsmRequest : AmazonCloudHSMRequest
     {
@@ -43,7 +52,12 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property EniIp. 
         /// <para>
-        /// The new IP address for the elastic network interface attached to the HSM.
+        /// The new IP address for the elastic network interface (ENI) attached to the HSM.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the HSM is moved to a different subnet, and an IP address is not specified, an
+        /// IP address will be randomly chosen from the CIDR range of the new subnet.
         /// </para>
         /// </summary>
         public string EniIp
@@ -115,7 +129,8 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The new identifier of the subnet that the HSM is in.
+        /// The new identifier of the subnet that the HSM is in. The new subnet must be in the
+        /// same Availability Zone as the current subnet.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -133,7 +148,8 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property SyslogIp. 
         /// <para>
-        /// The new IP address for the syslog monitoring server.
+        /// The new IP address for the syslog monitoring server. The AWS CloudHSM service only
+        /// supports one syslog monitoring server.
         /// </para>
         /// </summary>
         public string SyslogIp

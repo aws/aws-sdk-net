@@ -29,8 +29,22 @@ namespace Amazon.CloudHSM.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHsm operation.
-    /// Creates an uninitialized HSM instance. Running this command provisions an HSM appliance
-    /// and will result in charges to your AWS account for the HSM.
+    /// Creates an uninitialized HSM instance.
+    /// 
+    ///  
+    /// <para>
+    /// There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a>
+    /// operation. If you accidentally provision an HSM and want to request a refund, delete
+    /// the instance using the <a>DeleteHsm</a> operation, go to the <a href="https://console.aws.amazon.com/support/home#/">AWS
+    /// Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// It can take up to 20 minutes to create and provision an HSM. You can monitor the status
+    /// of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized
+    /// when the status changes to <code>RUNNING</code>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateHsmRequest : AmazonCloudHSMRequest
     {
@@ -46,8 +60,8 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A user-defined token to ensure idempotence. Subsequent calls to this action with the
-        /// same token will be ignored.
+        /// A user-defined token to ensure idempotence. Subsequent calls to this operation with
+        /// the same token will be ignored.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -66,6 +80,11 @@ namespace Amazon.CloudHSM.Model
         /// Gets and sets the property EniIp. 
         /// <para>
         /// The IP address to assign to the HSM's ENI.
+        /// </para>
+        ///  
+        /// <para>
+        /// If an IP address is not specified, an IP address will be randomly chosen from the
+        /// CIDR range of the subnet.
         /// </para>
         /// </summary>
         public string EniIp
@@ -154,10 +173,7 @@ namespace Amazon.CloudHSM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionType. 
-        /// <para>
-        /// The subscription type.
-        /// </para>
+        /// Gets and sets the property SubscriptionType.
         /// </summary>
         public SubscriptionType SubscriptionType
         {
@@ -174,7 +190,8 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property SyslogIp. 
         /// <para>
-        /// The IP address for the syslog monitoring server.
+        /// The IP address for the syslog monitoring server. The AWS CloudHSM service only supports
+        /// one syslog monitoring server.
         /// </para>
         /// </summary>
         public string SyslogIp

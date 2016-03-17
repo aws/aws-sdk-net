@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// Contains the output of the <a>DeleteHsm</a> operation.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Returns a list of all tags for the specified resource.
     /// </summary>
-    public partial class DeleteHsmResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceRequest : AmazonCloudHSMRequest
     {
-        private string _status;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The status of the operation.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
-        public string Status
+        public string ResourceArn
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._status != null;
+            return this._resourceArn != null;
         }
 
     }

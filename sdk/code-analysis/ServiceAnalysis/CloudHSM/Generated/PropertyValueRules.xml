@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CloudHSM.Model.AddTagsToResourceRequest.ResourceArn</property>
+    <pattern>[\w :+=./\\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSM.Model.AddTagsToResourceResponse.Status</property>
+    <pattern>[\w :+=./\\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSM.Model.CreateHapgRequest.Label</property>
     <pattern>[a-zA-Z0-9_.-]{1,64}</pattern>
   </property-value-rule>
@@ -249,6 +257,10 @@
     <pattern>[a-zA-Z0-9+/]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudHSM.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <pattern>[\w :+=./\\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSM.Model.ModifyHapgRequest.HapgArn</property>
     <pattern>arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\-]*:[0-9]{12}:hapg-[0-9a-f]{8}</pattern>
   </property-value-rule>
@@ -303,7 +315,25 @@
     <pattern>arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\-]*:[0-9]{12}:client-[0-9a-f]{8}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudHSM.Model.RemoveTagsFromResourceRequest.ResourceArn</property>
+    <pattern>[\w :+=./\\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSM.Model.RemoveTagsFromResourceResponse.Status</property>
+    <pattern>[\w :+=./\\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSM.Model.CloudHsmServiceException.Message</property>
     <pattern>[\w :+=./\\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSM.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSM.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

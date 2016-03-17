@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// Contains the output of the <a>DeleteHsm</a> operation.
+    /// A key-value pair that identifies or specifies metadata about a resource.
     /// </summary>
-    public partial class DeleteHsmResponse : AmazonWebServiceResponse
+    public partial class Tag
     {
-        private string _status;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The status of the operation.
+        /// The key of the tag.
         /// </para>
         /// </summary>
-        public string Status
+        public string Key
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._status != null;
+            return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value of the tag.
+        /// </para>
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

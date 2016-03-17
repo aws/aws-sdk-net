@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// Contains the output of the <a>DeleteHsm</a> operation.
+    /// This is the response object from the RemoveTagsFromResource operation.
     /// </summary>
-    public partial class DeleteHsmResponse : AmazonWebServiceResponse
+    public partial class RemoveTagsFromResourceResponse : AmazonWebServiceResponse
     {
         private string _status;
 

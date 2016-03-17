@@ -29,7 +29,7 @@ namespace Amazon.CloudHSM.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHsm operation.
-    /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
+    /// Deletes an HSM. After completion, this operation cannot be undone and your key material
     /// cannot be recovered.
     /// </summary>
     public partial class DeleteHsmRequest : AmazonCloudHSMRequest

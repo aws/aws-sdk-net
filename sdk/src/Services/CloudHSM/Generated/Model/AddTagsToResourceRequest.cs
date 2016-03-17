@@ -28,54 +28,53 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// Container for the parameters to the ModifyLunaClient operation.
-    /// Modifies the certificate used by the client.
+    /// Container for the parameters to the AddTagsToResource operation.
+    /// Adds or overwrites one or more tags for the specified resource.
     /// 
     ///  
     /// <para>
-    /// This action can potentially start a workflow to install the new certificate on the
-    /// client's HSMs.
+    /// Each tag consists of a key and a value. Tag keys must be unique per resource.
     /// </para>
     /// </summary>
-    public partial class ModifyLunaClientRequest : AmazonCloudHSMRequest
+    public partial class AddTagsToResourceRequest : AmazonCloudHSMRequest
     {
-        private string _certificate;
-        private string _clientArn;
+        private string _resourceArn;
+        private List<Tag> _tagList = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property Certificate. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The new certificate for the client.
+        /// The Amazon Resource Name (ARN) of the resource to tag.
         /// </para>
         /// </summary>
-        public string Certificate
+        public string ResourceArn
         {
-            get { return this._certificate; }
-            set { this._certificate = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Certificate property is set
-        internal bool IsSetCertificate()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._certificate != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ClientArn. 
+        /// Gets and sets the property TagList. 
         /// <para>
-        /// The ARN of the client.
+        /// One or more tags.
         /// </para>
         /// </summary>
-        public string ClientArn
+        public List<Tag> TagList
         {
-            get { return this._clientArn; }
-            set { this._clientArn = value; }
+            get { return this._tagList; }
+            set { this._tagList = value; }
         }
 
-        // Check to see if ClientArn property is set
-        internal bool IsSetClientArn()
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
         {
-            return this._clientArn != null;
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
     }

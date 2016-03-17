@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// Contains the output of the <a>DeleteHsm</a> operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class DeleteHsmResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _status;
+        private List<Tag> _tagList = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property TagList. 
         /// <para>
-        /// The status of the operation.
+        /// One or more tags.
         /// </para>
         /// </summary>
-        public string Status
+        public List<Tag> TagList
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._tagList; }
+            set { this._tagList = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
         {
-            return this._status != null;
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
     }
