@@ -16,13 +16,30 @@
         ]
     },
     "unityOverrides": {
+        "runtimePipelineOverride": {
+            "overrides": [
+                { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3PreMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
+                { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3PostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
+                { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3HttpDeleteHandler", "targetType": "Amazon.Runtime.Internal.EndpointResolver" },
+                { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3KmsHandler", "targetType": "Amazon.Runtime.Internal.EndpointResolver" },
+                { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3ResponseHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },
+                { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3ExceptionHandler", "targetType": "Amazon.Runtime.Internal.ErrorCallbackHandler" },
+                { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3RedirectHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },
+                {
+                    "operation": "replace",
+                    "newType": "Amazon.Runtime.Internal.RetryHandler",
+                    "targetType": "Amazon.Runtime.Internal.RetryHandler",
+                    "constructorInput": "new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config.MaxErrorRetry)"
+                }
+            ]
+        },
         "exclusionApi": [
-            "CompleteMultipartUpload",
-            "CreateMultipartUpload",
-            "ListParts",
-            "ListMultipartUploads",
-            "InitiateMultipartUpload",
-            "GetBucketReplication"
+          "CompleteMultipartUpload",
+          "CreateMultipartUpload",
+          "ListParts",
+          "ListMultipartUploads",
+          "InitiateMultipartUpload",
+          "GetBucketReplication"
         ]
     },
     "noArgOverloads": [
