@@ -1,3 +1,13 @@
+### 3.1.54.0 (2016-03-17 23:34 UTC)
+* AWSMarketplaceMetering (3.1.0.0)
+	* Add support for AWS Marketplace Metering Service.
+* CloudHSM (3.1.1.0)
+	* Add tagging support.
+* IoT (3.1.2.0)
+	* Add support for sending IoT data to Amazon Elasticsearch Service.
+* S3 (3.1.4.0)
+	* Add lifecycle configuration options.
+
 ### 3.1.53.0 (2016-03-15 22:23 UTC)
 * AWS Database Migration Service (3.1.0.0)
 	* Add support for the new AWS Database Migration Service.
