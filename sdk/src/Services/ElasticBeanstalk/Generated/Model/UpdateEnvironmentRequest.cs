@@ -109,8 +109,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-        /// error. 
+        /// If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+        /// error.
         /// </para>
         ///  
         /// <para>
@@ -161,7 +161,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The name of the group to which the target environment belongs. Specify a group name
         /// only if the environment's name is specified in an environment manifest and not with
-        /// the environment name or environment ID parameters. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+        /// the environment name or environment ID parameters. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
         /// Manifest (env.yaml)</a> for details.
         /// </para>
         /// </summary>

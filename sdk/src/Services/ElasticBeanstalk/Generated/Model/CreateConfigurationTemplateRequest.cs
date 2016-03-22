@@ -58,7 +58,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates CreateConfigurationTemplateRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName"> The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="applicationName">The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
         /// <param name="templateName">The name of the configuration template. Constraint: This name must be unique per application.  Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
         public CreateConfigurationTemplateRequest(string applicationName, string templateName)
         {
@@ -69,8 +69,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The name of the application to associate with this configuration template. If no
-        /// application is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+        /// The name of the application to associate with this configuration template. If no application
+        /// is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
         /// error. 
         /// </para>
         /// </summary>
@@ -107,7 +107,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        ///  The ID of the environment used with this configuration template. 
+        /// The ID of the environment used with this configuration template.
         /// </para>
         /// </summary>
         public string EnvironmentId

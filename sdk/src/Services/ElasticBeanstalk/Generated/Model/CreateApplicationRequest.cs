@@ -45,7 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates CreateApplicationRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName">The name of the application.  Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="applicationName">The name of the application. Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error.</param>
         public CreateApplicationRequest(string applicationName)
         {
             _applicationName = applicationName;
@@ -58,8 +58,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Constraint: This name must be unique within your account. If the specified name already
-        /// exists, the action returns an <code>InvalidParameterValue</code> error. 
+        /// Constraint: This name must be unique within your account. If the specified name already
+        /// exists, the action returns an <code>InvalidParameterValue</code> error.
         /// </para>
         /// </summary>
         public string ApplicationName

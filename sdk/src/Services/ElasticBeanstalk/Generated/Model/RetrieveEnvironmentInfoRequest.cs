@@ -31,7 +31,6 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the RetrieveEnvironmentInfo operation.
     /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
     /// 
-    /// 
     ///  
     /// <para>
     /// Related Topics
@@ -65,14 +64,13 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If no such environment is found, returns an <code>InvalidParameterValue</code> error.
-        /// 
+        /// If no such environment is found, returns an <code>InvalidParameterValue</code> error.
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
+        /// Condition: You must specify either this or an EnvironmentName, or both. If you do
         /// not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error. 
+        /// error.
         /// </para>
         /// </summary>
         public string EnvironmentId

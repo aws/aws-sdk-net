@@ -493,16 +493,16 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Deletes the draft configuration associated with the running environment. 
+        /// Deletes the draft configuration associated with the running environment.
         /// 
         ///  
         /// <para>
-        ///  Updating a running environment with any configuration changes creates a draft configuration
+        /// Updating a running environment with any configuration changes creates a draft configuration
         /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
         /// while the update is in progress or if the update fails. The <code>DeploymentStatus</code>
         /// for the draft configuration indicates whether the deployment is in process or has
         /// failed. The draft configuration remains in existence until it is deleted with this
-        /// action. 
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration service method.</param>
@@ -819,8 +819,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
-        /// </note>
+        ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
@@ -830,8 +829,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
-        /// </note>
+        ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
@@ -842,8 +840,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
-        /// </note>
+        ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1052,7 +1049,6 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
-        /// 
         /// 
         ///  
         /// <para>

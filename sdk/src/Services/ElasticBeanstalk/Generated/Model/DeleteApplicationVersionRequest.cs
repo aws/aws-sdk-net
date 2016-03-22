@@ -49,7 +49,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Instantiates DeleteApplicationVersionRequest with the parameterized properties
         /// </summary>
         /// <param name="applicationName">The name of the application to delete releases from.</param>
-        /// <param name="versionLabel"> The label of the version to delete. </param>
+        /// <param name="versionLabel">The label of the version to delete.</param>
         public DeleteApplicationVersionRequest(string applicationName, string versionLabel)
         {
             _applicationName = applicationName;
@@ -102,7 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        ///  The label of the version to delete. 
+        /// The label of the version to delete.
         /// </para>
         /// </summary>
         public string VersionLabel

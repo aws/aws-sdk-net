@@ -48,7 +48,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates DeleteConfigurationTemplateRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName"> The name of the application to delete the configuration template from. </param>
+        /// <param name="applicationName"> The name of the application to delete the configuration template from.</param>
         /// <param name="templateName">The name of the configuration template to delete.</param>
         public DeleteConfigurationTemplateRequest(string applicationName, string templateName)
         {
@@ -59,7 +59,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The name of the application to delete the configuration template from. 
+        ///  The name of the application to delete the configuration template from.
         /// </para>
         /// </summary>
         public string ApplicationName

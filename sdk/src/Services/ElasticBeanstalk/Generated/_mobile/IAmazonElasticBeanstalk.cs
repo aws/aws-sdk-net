@@ -447,8 +447,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
-        /// </note>
+        ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

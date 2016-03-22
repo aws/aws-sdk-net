@@ -29,16 +29,16 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironmentConfiguration operation.
-    /// Deletes the draft configuration associated with the running environment. 
+    /// Deletes the draft configuration associated with the running environment.
     /// 
     ///  
     /// <para>
-    ///  Updating a running environment with any configuration changes creates a draft configuration
+    /// Updating a running environment with any configuration changes creates a draft configuration
     /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
     /// while the update is in progress or if the update fails. The <code>DeploymentStatus</code>
     /// for the draft configuration indicates whether the deployment is in process or has
     /// failed. The draft configuration remains in existence until it is deleted with this
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DeleteEnvironmentConfigurationRequest : AmazonElasticBeanstalkRequest
@@ -54,8 +54,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates DeleteEnvironmentConfigurationRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName"> The name of the application the environment is associated with. </param>
-        /// <param name="environmentName"> The name of the environment to delete the draft configuration from. </param>
+        /// <param name="applicationName">The name of the application the environment is associated with.</param>
+        /// <param name="environmentName">The name of the environment to delete the draft configuration from.</param>
         public DeleteEnvironmentConfigurationRequest(string applicationName, string environmentName)
         {
             _applicationName = applicationName;
@@ -65,7 +65,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The name of the application the environment is associated with. 
+        /// The name of the application the environment is associated with.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -83,7 +83,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  The name of the environment to delete the draft configuration from. 
+        /// The name of the environment to delete the draft configuration from.
         /// </para>
         /// </summary>
         public string EnvironmentName
