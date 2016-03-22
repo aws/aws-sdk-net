@@ -56,6 +56,7 @@ namespace Amazon.RDS.Model
         private string _optionGroupName;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private int? _promotionTier;
         private bool? _publiclyAccessible;
         private string _storageType;
         private string _tdeCredentialArn;
@@ -236,7 +237,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  If this parameter is set to <code>false</code>, changes to the DB instance are applied
+        /// If this parameter is set to <code>false</code>, changes to the DB instance are applied
         /// during the next maintenance window. Some parameter changes can cause an outage and
         /// will be applied on the next call to <a>RebootDBInstance</a>, or the next failure reboot.
         /// Review the table of parameters in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
@@ -924,11 +925,41 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PromotionTier. 
+        /// <para>
+        /// A value that specifies the order in which an Aurora Replica is promoted to the primary
+        /// instance after a failure of the existing primary instance. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 1
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 0 - 15
+        /// </para>
+        /// </summary>
+        public int PromotionTier
+        {
+            get { return this._promotionTier.GetValueOrDefault(); }
+            set { this._promotionTier = value; }
+        }
+
+        // Check to see if PromotionTier property is set
+        internal bool IsSetPromotionTier()
+        {
+            return this._promotionTier.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// True to make the DB instance Internet-facing with a publicly resolvable DNS name,
-        /// which resolves to a public IP address. False to make the DB instance internal with
-        /// a DNS name that resolves to a private IP address. 
+        /// Boolean value that indicates if the DB instance has a publicly resolvable DNS name.
+        /// Set to <code>True</code> to make the DB instance Internet-facing with a publicly resolvable
+        /// DNS name, which resolves to a public IP address. Set to <code>False</code> to make
+        /// the DB instance internal with a DNS name that resolves to a private IP address. 
         /// </para>
         ///  
         /// <para>

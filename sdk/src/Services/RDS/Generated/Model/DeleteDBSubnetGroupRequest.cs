@@ -44,11 +44,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note>You cannot delete the default subnet group.</note> 
         /// <para>
-        ///  Constraints: 
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// spaces, or hyphens. Must not be default.
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  
+        /// <para>
+        /// Example: <code>mySubnetgroup</code>
+        /// </para>
         /// </summary>
         public string DBSubnetGroupName
         {

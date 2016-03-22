@@ -42,6 +42,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The pending maintenance action to apply to this resource.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>system-update</code>, <code>db-upgrade</code>
+        /// </para>
         /// </summary>
         public string ApplyAction
         {

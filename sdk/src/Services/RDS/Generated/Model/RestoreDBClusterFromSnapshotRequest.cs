@@ -126,6 +126,15 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The name of the DB subnet group to use for the new DB cluster. 
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// spaces, or hyphens. Must not be default.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mySubnetgroup</code>
+        /// </para>
         /// </summary>
         public string DBSubnetGroupName
         {

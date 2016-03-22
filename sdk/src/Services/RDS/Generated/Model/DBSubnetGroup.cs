@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        ///  Specifies the name of the DB subnet group. 
+        ///  The name of the DB subnet group. 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName

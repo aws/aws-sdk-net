@@ -261,6 +261,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PromotionTier", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.PromotionTier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PubliclyAccessible", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

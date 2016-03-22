@@ -60,6 +60,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private int? _promotionTier;
         private bool? _publiclyAccessible;
         private bool? _storageEncrypted;
         private string _storageType;
@@ -587,7 +588,8 @@ namespace Amazon.RDS.Model
         /// us-west-2):</b> <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available
         /// in all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li> <li><b>Version 5.6
         /// (Available in all regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22
-        /// | 5.6.23</code></li> </ul> 
+        /// | 5.6.23 | 5.6.27</code></li> <li><b>Version 5.7 (Available in all regions):</b> <code>
+        /// 5.7.10</code></li> </ul> 
         /// <para>
         /// <b>MariaDB</b>
         /// </para>
@@ -1182,6 +1184,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromotionTier. 
+        /// <para>
+        /// A value that specifies the order in which an Aurora Replica is promoted to the primary
+        /// instance after a failure of the existing primary instance. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 1
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 0 - 15
+        /// </para>
+        /// </summary>
+        public int PromotionTier
+        {
+            get { return this._promotionTier.GetValueOrDefault(); }
+            set { this._promotionTier = value; }
+        }
+
+        // Check to see if PromotionTier property is set
+        internal bool IsSetPromotionTier()
+        {
+            return this._promotionTier.HasValue; 
         }
 
         /// <summary>

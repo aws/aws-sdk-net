@@ -41,25 +41,63 @@ namespace Amazon.RDS
     ///  
     /// <para>
     ///  Amazon RDS gives you access to the capabilities of a MySQL, MariaDB, PostgreSQL,
-    /// Microsoft SQL Server, Oracle, or Aurora database server. This means the code, applications,
-    /// and tools you already use today with your existing databases work with Amazon RDS
-    /// without modification. Amazon RDS automatically backs up your database and maintains
-    /// the database software that powers your DB instance. Amazon RDS is flexible: you can
-    /// scale your database instance's compute resources and storage capacity to meet your
-    /// application's demand. As with all Amazon Web Services, there are no up-front investments,
-    /// and you pay only for the resources you use. 
+    /// Microsoft SQL Server, Oracle, or Amazon Aurora database server. These capabilities
+    /// mean that the code, applications, and tools you already use today with your existing
+    /// databases work with Amazon RDS without modification. Amazon RDS automatically backs
+    /// up your database and maintains the database software that powers your DB instance.
+    /// Amazon RDS is flexible: you can scale your database instance's compute resources and
+    /// storage capacity to meet your application's demand. As with all Amazon Web Services,
+    /// there are no up-front investments, and you pay only for the resources you use. 
     /// </para>
     ///  
     /// <para>
-    ///  This is an interface reference for Amazon RDS. It contains documentation for a programming
+    ///  This interface reference for Amazon RDS contains documentation for a programming
     /// or command line interface you can use to manage Amazon RDS. Note that Amazon RDS is
     /// asynchronous, which means that some interfaces might require techniques such as polling
     /// or callback functions to determine when a command has been applied. In this reference,
     /// the parameter descriptions indicate whether a command is applied immediately, on the
-    /// next instance reboot, or during the maintenance window. For a summary of the Amazon
-    /// RDS interfaces, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available
-    /// RDS Interfaces</a>. 
+    /// next instance reboot, or during the maintenance window. The reference structure is
+    /// as follows, and we list following some related topics from the user guide. 
     /// </para>
+    ///  
+    /// <para>
+    /// <b>Amazon RDS API Reference</b>
+    /// </para>
+    ///  <ul> <li>
+    /// <para>
+    /// For the alphabetical list of API actions, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html">API
+    /// Actions</a>.
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// For the alphabetical list of data types, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html">Data
+    /// Types</a>.
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// For a list of common query parameters, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html">Common
+    /// Parameters</a>.
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// For descriptions of the error codes, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html">Common
+    /// Errors</a>.
+    /// </para>
+    /// </li> </ul> 
+    /// <para>
+    /// <b>Amazon RDS User Guide</b>
+    /// </para>
+    ///  <ul> <li>
+    /// <para>
+    /// For a summary of the Amazon RDS interfaces, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available
+    /// RDS Interfaces</a>.
+    /// </para>
+    /// </li> <li>
+    /// <para>
+    /// For more information about how to use the Query API, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
+    /// the Query API</a>.
+    /// </para>
+    /// </li> </ul>
     /// </summary>
     public partial interface IAmazonRDS : IDisposable
     {
@@ -174,9 +212,13 @@ namespace Amazon.RDS
         /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
         /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). 
         /// 
-        ///  <note> You cannot authorize ingress from an EC2 security group in one region to an
-        /// Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security
-        /// group in one VPC to an Amazon RDS DB instance in another. </note> 
+        ///  <note> 
+        /// <para>
+        /// You cannot authorize ingress from an EC2 security group in one region to an Amazon
+        /// RDS DB instance in another. You cannot authorize ingress from a VPC security group
+        /// in one VPC to an Amazon RDS DB instance in another. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
         /// Tutorial</a>. 
@@ -288,7 +330,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Copies the specified DBSnapshot. The source DB snapshot must be in the "available"
+        /// Copies the specified DB Snapshot. The source DB snapshot must be in the "available"
         /// state. 
         /// 
         ///  
@@ -2901,7 +2943,7 @@ namespace Amazon.RDS
         /// <para>
         /// To share a manual DB snapshot with other AWS accounts, specify <code>restore</code>
         /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
-        /// add a list of the AWS account ids that are authorized to retore the manual DB snapshot.
+        /// add a list of the AWS account ids that are authorized to restore the manual DB snapshot.
         /// Uses the value <code>all</code> to make the manual DB snapshot public and can by copied
         /// or restored by all AWS accounts. Do not add the <code>all</code> value for any manual
         /// DB snapshots that contain private information that you do not want to be available

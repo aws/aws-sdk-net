@@ -210,6 +210,15 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The DB subnet group name to use for the new instance. 
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// spaces, or hyphens. Must not be default.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mySubnetgroup</code>
+        /// </para>
         /// </summary>
         public string DBSubnetGroupName
         {
@@ -240,7 +249,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code>
         /// | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code>
-        /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>|
+        /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
         /// <code>aurora</code>
         /// </para>
         /// </summary>
