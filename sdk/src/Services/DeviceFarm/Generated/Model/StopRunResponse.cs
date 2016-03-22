@@ -28,26 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the account settings return values from the <code>GetAccountSettings</code>
-    /// request.
+    /// Represents the results of your stop run attempt.
     /// </summary>
-    public partial class GetAccountSettingsResponse : AmazonWebServiceResponse
+    public partial class StopRunResponse : AmazonWebServiceResponse
     {
-        private AccountSettings _accountSettings;
+        private Run _run;
 
         /// <summary>
-        /// Gets and sets the property AccountSettings.
+        /// Gets and sets the property Run.
         /// </summary>
-        public AccountSettings AccountSettings
+        public Run Run
         {
-            get { return this._accountSettings; }
-            set { this._accountSettings = value; }
+            get { return this._run; }
+            set { this._run = value; }
         }
 
-        // Check to see if AccountSettings property is set
-        internal bool IsSetAccountSettings()
+        // Check to see if Run property is set
+        internal bool IsSetRun()
         {
-            return this._accountSettings != null;
+            return this._run != null;
         }
 
     }

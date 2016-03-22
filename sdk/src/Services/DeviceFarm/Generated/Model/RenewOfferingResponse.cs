@@ -28,26 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the account settings return values from the <code>GetAccountSettings</code>
-    /// request.
+    /// The result of a renewal offering.
     /// </summary>
-    public partial class GetAccountSettingsResponse : AmazonWebServiceResponse
+    public partial class RenewOfferingResponse : AmazonWebServiceResponse
     {
-        private AccountSettings _accountSettings;
+        private OfferingTransaction _offeringTransaction;
 
         /// <summary>
-        /// Gets and sets the property AccountSettings.
+        /// Gets and sets the property OfferingTransaction. 
+        /// <para>
+        /// Represents the status of the offering transaction for the renewal.
+        /// </para>
         /// </summary>
-        public AccountSettings AccountSettings
+        public OfferingTransaction OfferingTransaction
         {
-            get { return this._accountSettings; }
-            set { this._accountSettings = value; }
+            get { return this._offeringTransaction; }
+            set { this._offeringTransaction = value; }
         }
 
-        // Check to see if AccountSettings property is set
-        internal bool IsSetAccountSettings()
+        // Check to see if OfferingTransaction property is set
+        internal bool IsSetOfferingTransaction()
         {
-            return this._accountSettings != null;
+            return this._offeringTransaction != null;
         }
 
     }

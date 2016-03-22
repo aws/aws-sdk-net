@@ -39,7 +39,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The rule's attribute.
+        /// The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.
         /// </para>
         ///  
         /// <para>

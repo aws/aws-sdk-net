@@ -28,26 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the account settings return values from the <code>GetAccountSettings</code>
-    /// request.
+    /// Container for the parameters to the StopRun operation.
+    /// Initiates a stop request for the current test run. AWS Device Farm will immediately
+    /// stop the run on devices where tests have not started executing, and you will not be
+    /// billed for these devices. On devices where tests have started executing, Setup Suite
+    /// and Teardown Suite tests will run to completion before stopping execution on those
+    /// devices. You will be billed for Setup, Teardown, and any tests that were in progress
+    /// or already completed.
     /// </summary>
-    public partial class GetAccountSettingsResponse : AmazonWebServiceResponse
+    public partial class StopRunRequest : AmazonDeviceFarmRequest
     {
-        private AccountSettings _accountSettings;
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property AccountSettings.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.
+        /// </para>
         /// </summary>
-        public AccountSettings AccountSettings
+        public string Arn
         {
-            get { return this._accountSettings; }
-            set { this._accountSettings = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if AccountSettings property is set
-        internal bool IsSetAccountSettings()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._accountSettings != null;
+            return this._arn != null;
         }
 
     }

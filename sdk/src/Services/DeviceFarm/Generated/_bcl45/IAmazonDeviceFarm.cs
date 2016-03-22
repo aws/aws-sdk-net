@@ -710,6 +710,50 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  GetOfferingStatus
+
+
+        /// <summary>
+        /// Gets the current status and future status of all offerings purchased by an AWS account.
+        /// The response indicates how many offerings are currently available and the offerings
+        /// that will be available in the next period. The API returns a <code>NotEligible</code>
+        /// error if the user is not permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOfferingStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetOfferingStatus service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        GetOfferingStatusResponse GetOfferingStatus(GetOfferingStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOfferingStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOfferingStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetOfferingStatusResponse> GetOfferingStatusAsync(GetOfferingStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetProject
 
 
@@ -1258,6 +1302,94 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListOfferings
+
+
+        /// <summary>
+        /// Returns a list of products or offerings that the user can manage through the API.
+        /// Each offering record indicates the recurring price per unit and the frequency for
+        /// that offering. The API returns a <code>NotEligible</code> error if the user is not
+        /// permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferings service method.</param>
+        /// 
+        /// <returns>The response from the ListOfferings service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        ListOfferingsResponse ListOfferings(ListOfferingsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListOfferingsResponse> ListOfferingsAsync(ListOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListOfferingTransactions
+
+
+        /// <summary>
+        /// Returns a list of all historical purchases, renewals, and system renewal transactions
+        /// for an AWS account. The list is paginated and ordered by a descending timestamp (most
+        /// recent transactions are first). The API returns a <code>NotEligible</code> error if
+        /// the user is not permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingTransactions service method.</param>
+        /// 
+        /// <returns>The response from the ListOfferingTransactions service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        ListOfferingTransactionsResponse ListOfferingTransactions(ListOfferingTransactionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferingTransactions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingTransactions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListOfferingTransactionsResponse> ListOfferingTransactionsAsync(ListOfferingTransactionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListProjects
 
 
@@ -1517,6 +1649,93 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  PurchaseOffering
+
+
+        /// <summary>
+        /// Immediately purchases offerings for an AWS account. Offerings renew with the latest
+        /// total purchased quantity for an offering, unless the renewal was overridden. The API
+        /// returns a <code>NotEligible</code> error if the user is not permitted to invoke the
+        /// operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseOffering service method.</param>
+        /// 
+        /// <returns>The response from the PurchaseOffering service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseOffering operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RenewOffering
+
+
+        /// <summary>
+        /// Explicitly sets the quantity of devices to renew for an offering, starting from the
+        /// <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code>
+        /// error if the user is not permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RenewOffering service method.</param>
+        /// 
+        /// <returns>The response from the RenewOffering service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        RenewOfferingResponse RenewOffering(RenewOfferingRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenewOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenewOffering operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RenewOfferingResponse> RenewOfferingAsync(RenewOfferingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ScheduleRun
 
 
@@ -1554,6 +1773,48 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ScheduleRunResponse> ScheduleRunAsync(ScheduleRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopRun
+
+
+        /// <summary>
+        /// Initiates a stop request for the current test run. AWS Device Farm will immediately
+        /// stop the run on devices where tests have not started executing, and you will not be
+        /// billed for these devices. On devices where tests have started executing, Setup Suite
+        /// and Teardown Suite tests will run to completion before stopping execution on those
+        /// devices. You will be billed for Setup, Teardown, and any tests that were in progress
+        /// or already completed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRun service method.</param>
+        /// 
+        /// <returns>The response from the StopRun service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        StopRunResponse StopRun(StopRunRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRun operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StopRunResponse> StopRunAsync(StopRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

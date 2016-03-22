@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateDevicePoolRequest.Description</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateDevicePoolRequest.Name</property>
@@ -68,6 +68,16 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetJobRequest.Arn</property>
     <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.GetOfferingStatusRequest.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.GetOfferingStatusResponse.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetProjectRequest.Arn</property>
@@ -142,6 +152,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListJobsResponse.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListOfferingsRequest.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListOfferingsResponse.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListOfferingTransactionsRequest.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListOfferingTransactionsResponse.NextToken</property>
     <min>4</min>
     <max>1024</max>
   </property-value-rule>
@@ -244,6 +274,14 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.PurchaseOfferingRequest.OfferingId</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.RenewOfferingRequest.OfferingId</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunRequest.AppArn</property>
     <min>32</min>
   </property-value-rule>
@@ -261,13 +299,17 @@
     <min>32</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.StopRunRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateDevicePoolRequest.Arn</property>
     <min>32</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateDevicePoolRequest.Description</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateDevicePoolRequest.Name</property>
@@ -291,7 +333,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ArgumentException.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Artifact.Arn</property>
@@ -323,7 +365,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DevicePool.Description</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DevicePool.Name</property>
@@ -333,12 +375,12 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.IdempotencyException.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.IncompatibilityMessage.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Job.Arn</property>
@@ -347,7 +389,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Job.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Job.Name</property>
@@ -357,17 +399,35 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.LimitExceededException.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.NotEligibleException.Message</property>
+    <min>0</min>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.NotFoundException.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.Offering.Description</property>
+    <min>0</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.Offering.Id</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.OfferingTransaction.TransactionId</property>
+    <min>32</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Problem.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ProblemDetail.Arn</property>
@@ -394,7 +454,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Run.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Run.Name</property>
@@ -430,7 +490,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ServiceAccountException.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Suite.Arn</property>
@@ -439,7 +499,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Suite.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Suite.Name</property>
@@ -453,7 +513,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Test.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Test.Name</property>
@@ -463,7 +523,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UniqueProblem.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Upload.Arn</property>
@@ -477,7 +537,7 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Upload.Message</property>
     <min>0</min>
-    <max>8192</max>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Upload.Metadata</property>
