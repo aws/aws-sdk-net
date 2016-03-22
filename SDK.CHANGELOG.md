@@ -1,3 +1,11 @@
+### 3.1.55.0 (2016-03-22 20:12 UTC)
+* DeviceFarm (3.1.6.0)
+	* Added support for purchasing and managing unmetered devices in a self service manner, and to stop runs which are currently executing. 
+* ElasticBeanstalk (3.1.2.3)
+	* Updated documentation.
+* RDS (3.1.9.0)
+	* Added support for customer specifiable fail-over order for read replicas in Amazon Aurora.
+
 ### 3.1.54.0 (2016-03-17 23:34 UTC)
 * AWSMarketplaceMetering (3.1.0.0)
 	* Add support for AWS Marketplace Metering Service.
