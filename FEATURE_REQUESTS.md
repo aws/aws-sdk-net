@@ -99,7 +99,7 @@ See [Github Issue #296](https://github.com/aws/aws-sdk-net/issues/296)
 
 #### Unity - Webgl Support
 
-See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/50)
+See [Github Issues](https://github.com/aws/aws-sdk-net/issues/326)
 
 #### Unity - Windows 8 & Win Store support
 
