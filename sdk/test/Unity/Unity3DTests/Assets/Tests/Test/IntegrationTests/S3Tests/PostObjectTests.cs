@@ -10,6 +10,7 @@ using AWSSDK.Tests.Framework;
 using System.IO;
 using UnityEngine;
 using Amazon.Runtime.Internal;
+using Amazon.Util;
 
 namespace AWSSDK.IntegrationTests.S3
 {
@@ -342,6 +343,52 @@ namespace AWSSDK.IntegrationTests.S3
             Assert.IsNull(responseException);
         }
 
+
+
+
+        [Test]
+        [Category("WWW")]
+        public void PostObjectKMSTest()
+        {
+
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                // KMS only allowed for sigv4
+                Client.Config.SignatureVersion = "4";
+
+                var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
+                S3TestUtils.PostObjectHelper(Client, BucketName, key, (request) =>
+                {
+                    request.Headers[HeaderKeys.XAmzServerSideEncryptionHeader] = ServerSideEncryptionMethod.AWSKMS;
+                });
+
+                AutoResetEvent ars = new AutoResetEvent(false);
+                Exception responseException = new Exception();
+                string objectContent = null;
+                Client.GetObjectAsync(BucketName, key, (response) =>
+                {
+                    responseException = response.Exception;
+                    if (responseException == null)
+                    {
+                        using (var reader = new StreamReader(response.Response.ResponseStream))
+                        {
+                            objectContent = reader.ReadToEnd();
+                        }
+                    }
+                    ars.Set();
+                });
+
+                ars.WaitOne();
+                Assert.IsNull(responseException);
+                Utils.AssertTrue(S3TestUtils.TestContent == objectContent, string.Format("{0} != {1}", S3TestUtils.TestContent, objectContent));
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+
+        }
 
         [Test]
         [Category("WWW")]
