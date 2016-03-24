@@ -1,3 +1,11 @@
+### 3.1.56.0 (2016-03-24 21:00 UTC)
+* ElastiCache (3.1.1.0)
+	* Added support for changes to allow vertically scaling from one instance type to another.
+* RDS (3.1.10.0)
+	* Added support for Windows Authentication for RDS SQL Server.
+* StorageGateway (3.1.3.0)
+	* Added support for the new SetLocalConsolePassword API.
+
 ### 3.1.55.0 (2016-03-22 20:12 UTC)
 * DeviceFarm (3.1.6.0)
 	* Added support for purchasing and managing unmetered devices in a self service manner, and to stop runs which are currently executing. 
