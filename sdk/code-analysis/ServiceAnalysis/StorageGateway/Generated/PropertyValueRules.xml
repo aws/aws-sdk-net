@@ -127,7 +127,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.SnapshotId</property>
-    <pattern>\Asnap-[0-9a-fA-F]{8}\z</pattern>
+    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.TargetName</property>
@@ -157,7 +157,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotResponse.SnapshotId</property>
-    <pattern>\Asnap-[0-9a-fA-F]{8}\z</pattern>
+    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotResponse.VolumeARN</property>
@@ -176,7 +176,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointResponse.SnapshotId</property>
-    <pattern>\Asnap-[0-9a-fA-F]{8}\z</pattern>
+    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointResponse.VolumeARN</property>
@@ -199,7 +199,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.SnapshotId</property>
-    <pattern>\Asnap-[0-9a-fA-F]{8}\z</pattern>
+    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest.TargetName</property>
@@ -728,6 +728,22 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SetLocalConsolePasswordRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SetLocalConsolePasswordRequest.LocalConsolePassword</property>
+    <min>6</min>
+    <max>512</max>
+    <pattern>^[ -~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SetLocalConsolePasswordResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.ShutdownGatewayRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -895,7 +911,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.SourceSnapshotId</property>
-    <pattern>\Asnap-[0-9a-fA-F]{8}\z</pattern>
+    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.VolumeARN</property>
@@ -974,7 +990,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.SourceSnapshotId</property>
-    <pattern>\Asnap-[0-9a-fA-F]{8}\z</pattern>
+    <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.VolumeARN</property>

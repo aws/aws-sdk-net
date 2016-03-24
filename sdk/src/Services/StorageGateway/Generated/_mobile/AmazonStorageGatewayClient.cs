@@ -59,13 +59,13 @@ namespace Amazon.StorageGateway
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
     /// of requests and responses.</li> <li><a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
-    /// Storage Gateway Regions and Endpoints</a>: Provides a list of each of the regions
-    /// and endpoints available for use with AWS Storage Gateway. </li> </ul> <note>AWS Storage
-    /// Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon
-    /// EC2 API, EC2 expects resource IDs in lowercase. You must change your resource ID to
-    /// lowercase to use it with the EC2 API. For example, in Storage Gateway the ID for a
-    /// volume might be vol-1122AABB. When you use this ID with the EC2 API, you must change
-    /// it to vol-1122aabb. Otherwise, the EC2 API might not behave as expected.</note>
+    /// Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s and endpoints
+    /// available for use with AWS Storage Gateway. </li> </ul> <note>AWS Storage Gateway
+    /// resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2
+    /// API, EC2 expects resource IDs in lowercase. You must change your resource ID to lowercase
+    /// to use it with the EC2 API. For example, in Storage Gateway the ID for a volume might
+    /// be vol-1122AABB. When you use this ID with the EC2 API, you must change it to vol-1122aabb.
+    /// Otherwise, the EC2 API might not behave as expected.</note>
     /// </summary>
     public partial class AmazonStorageGatewayClient : AmazonServiceClient, IAmazonStorageGateway
     {
@@ -1333,8 +1333,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation lists gateways owned by an AWS account in a region specified in the
-        /// request. The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an AWS account in a region specified in the request. The returned
+        /// list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -1344,8 +1344,8 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// If you have more gateways than are returned in a response-that is, the response returns
-        /// only a truncated list of your gateways-the response contains a marker that you can
+        /// If you have more gateways than are returned in a response (that is, the response returns
+        /// only a truncated list of your gateways), the response contains a marker that you can
         /// specify in your next request to fetch the next page of gateways.
         /// </para>
         /// </summary>
@@ -1586,12 +1586,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation resets all cache disks that have encountered a error and makes the
-        /// disks available for reconfiguration as cache storage. If your cache disk encounters
-        /// a error, the gateway prevents read and write operations on virtual tapes in the gateway.
-        /// For example, an error can occur when a disk is corrupted or removed from the gateway.
-        /// When a cache is reset, the gateway loses its cache storage. At this point you can
-        /// reconfigure the disks as cache disks. 
+        /// Resets all cache disks that have encountered a error and makes the disks available
+        /// for reconfiguration as cache storage. If your cache disk encounters a error, the gateway
+        /// prevents read and write operations on virtual tapes in the gateway. For example, an
+        /// error can occur when a disk is corrupted or removed from the gateway. When a cache
+        /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
+        /// disks as cache disks. 
         /// 
         ///  <important> 
         /// <para>
@@ -1701,6 +1701,37 @@ namespace Amazon.StorageGateway
             var unmarshaller = RetrieveTapeRecoveryPointResponseUnmarshaller.Instance;
 
             return InvokeAsync<RetrieveTapeRecoveryPointRequest,RetrieveTapeRecoveryPointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetLocalConsolePassword
+
+        internal SetLocalConsolePasswordResponse SetLocalConsolePassword(SetLocalConsolePasswordRequest request)
+        {
+            var marshaller = new SetLocalConsolePasswordRequestMarshaller();
+            var unmarshaller = SetLocalConsolePasswordResponseUnmarshaller.Instance;
+
+            return Invoke<SetLocalConsolePasswordRequest,SetLocalConsolePasswordResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetLocalConsolePassword operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetLocalConsolePassword operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetLocalConsolePasswordResponse> SetLocalConsolePasswordAsync(SetLocalConsolePasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetLocalConsolePasswordRequestMarshaller();
+            var unmarshaller = SetLocalConsolePasswordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetLocalConsolePasswordRequest,SetLocalConsolePasswordResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

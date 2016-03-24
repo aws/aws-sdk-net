@@ -29,9 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUploadBuffer operation.
-    /// This operation returns information about the upload buffer of a gateway. This operation
-    /// is supported for both the gateway-stored and gateway-cached volume architectures.
-    /// 
+    /// Returns information about the upload buffer of a gateway. This operation is supported
+    /// for both the gateway-stored and gateway-cached volume architectures. 
     /// 
     ///  
     /// <para>

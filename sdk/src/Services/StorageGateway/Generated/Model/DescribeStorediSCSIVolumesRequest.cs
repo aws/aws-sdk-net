@@ -29,9 +29,9 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStorediSCSIVolumes operation.
-    /// This operation returns the description of the gateway volumes specified in the request.
-    /// The list of gateway volumes in the request must be from one gateway. In the response
-    /// Amazon Storage Gateway returns volume information sorted by volume ARNs.
+    /// Returns the description of the gateway volumes specified in the request. The list
+    /// of gateway volumes in the request must be from one gateway. In the response Amazon
+    /// Storage Gateway returns volume information sorted by volume ARNs.
     /// </summary>
     public partial class DescribeStorediSCSIVolumesRequest : AmazonStorageGatewayRequest
     {

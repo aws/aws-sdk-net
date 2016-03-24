@@ -29,9 +29,9 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the StartGateway operation.
-    /// This operation starts a gateway that you previously shut down (see <a>ShutdownGateway</a>).
-    /// After the gateway starts, you can then make other API calls, your applications can
-    /// read from or write to the gateway's storage volumes and you will be able to take snapshot
+    /// Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>). After
+    /// the gateway starts, you can then make other API calls, your applications can read
+    /// from or write to the gateway's storage volumes and you will be able to take snapshot
     /// backups.
     /// 
     ///  <note>When you make a request, you will get a 200 OK success response immediately.

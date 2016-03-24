@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteChapCredentials operation.
-    /// This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials
-    /// for a specified iSCSI target and initiator pair.
+    /// Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified
+    /// iSCSI target and initiator pair.
     /// </summary>
     public partial class DeleteChapCredentialsRequest : AmazonStorageGatewayRequest
     {

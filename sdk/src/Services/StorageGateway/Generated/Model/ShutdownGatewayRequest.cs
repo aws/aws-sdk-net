@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ShutdownGateway operation.
-    /// This operation shuts down a gateway. To specify which gateway to shut down, use the
-    /// Amazon Resource Name (ARN) of the gateway in the body of your request.
+    /// Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource
+    /// Name (ARN) of the gateway in the body of your request.
     /// 
     ///  
     /// <para>

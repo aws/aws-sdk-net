@@ -53,13 +53,13 @@ namespace Amazon.StorageGateway
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
     /// of requests and responses.</li> <li><a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
-    /// Storage Gateway Regions and Endpoints</a>: Provides a list of each of the regions
-    /// and endpoints available for use with AWS Storage Gateway. </li> </ul> <note>AWS Storage
-    /// Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon
-    /// EC2 API, EC2 expects resource IDs in lowercase. You must change your resource ID to
-    /// lowercase to use it with the EC2 API. For example, in Storage Gateway the ID for a
-    /// volume might be vol-1122AABB. When you use this ID with the EC2 API, you must change
-    /// it to vol-1122aabb. Otherwise, the EC2 API might not behave as expected.</note>
+    /// Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s and endpoints
+    /// available for use with AWS Storage Gateway. </li> </ul> <note>AWS Storage Gateway
+    /// resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2
+    /// API, EC2 expects resource IDs in lowercase. You must change your resource ID to lowercase
+    /// to use it with the EC2 API. For example, in Storage Gateway the ID for a volume might
+    /// be vol-1122AABB. When you use this ID with the EC2 API, you must change it to vol-1122aabb.
+    /// Otherwise, the EC2 API might not behave as expected.</note>
     /// </summary>
     public partial interface IAmazonStorageGateway : IDisposable
     {
@@ -69,13 +69,13 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation activates the gateway you previously deployed on your host. For more
-        /// information, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
+        /// Activates the gateway you previously deployed on your host. For more information,
+        /// see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
         /// Activate the AWS Storage Gateway</a>. In the activation process, you specify information
-        /// such as the region you want to use for storing snapshots, the time zone for scheduled
-        /// snapshots the gateway snapshot schedule window, an activation key, and a name for
-        /// your gateway. The activation process also associates your gateway with your account;
-        /// for more information, see <a>UpdateGatewayInformation</a>.
+        /// such as the you want to use for storing snapshots, the time zone for scheduled snapshots
+        /// the gateway snapshot schedule window, an activation key, and a name for your gateway.
+        /// The activation process also associates your gateway with your account; for more information,
+        /// see <a>UpdateGatewayInformation</a>.
         /// 
         ///  <note>You must turn on the gateway VM before you can activate your gateway.</note>
         /// </summary>
@@ -110,9 +110,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation configures one or more gateway local disks as cache for a cached-volume
-        /// gateway. This operation is supported only for the gateway-cached volume architecture
-        /// (see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
+        /// Configures one or more gateway local disks as cache for a cached-volume gateway. This
+        /// operation is supported only for the gateway-cached volume architecture (see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
         /// Gateway Concepts</a>).
         /// 
         ///  
@@ -152,11 +151,10 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation adds one or more tags to the specified resource. You use tags to add
-        /// metadata to resources, which you can use to categorize these resources. For example,
-        /// you can categorize resources by purpose, owner, environment, or team. Each tag consists
-        /// of a key and a value, which you define. You can add tags to the following AWS Storage
-        /// Gateway resources:
+        /// Adds one or more tags to the specified resource. You use tags to add metadata to resources,
+        /// which you can use to categorize these resources. For example, you can categorize resources
+        /// by purpose, owner, environment, or team. Each tag consists of a key and a value, which
+        /// you define. You can add tags to the following AWS Storage Gateway resources:
         /// 
         ///  <ul> <li>
         /// <para>
@@ -207,9 +205,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation configures one or more gateway local disks as upload buffer for a specified
-        /// gateway. This operation is supported for both the gateway-stored and gateway-cached
-        /// volume architectures. 
+        /// Configures one or more gateway local disks as upload buffer for a specified gateway.
+        /// This operation is supported for both the gateway-stored and gateway-cached volume
+        /// architectures. 
         /// 
         ///  
         /// <para>
@@ -249,10 +247,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation configures one or more gateway local disks as working storage for a
-        /// gateway. This operation is supported only for the gateway-stored volume architecture.
-        /// This operation is deprecated method in cached-volumes API version (20120630). Use
-        /// AddUploadBuffer instead.
+        /// Configures one or more gateway local disks as working storage for a gateway. This
+        /// operation is supported only for the gateway-stored volume architecture. This operation
+        /// is deprecated in cached-volumes API version 20120630. Use <a>AddUploadBuffer</a> instead.
         /// 
         ///  <note>
         /// <para>
@@ -365,8 +362,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation creates a cached volume on a specified cached gateway. This operation
-        /// is supported only for the gateway-cached volume architecture.
+        /// Creates a cached volume on a specified cached gateway. This operation is supported
+        /// only for the gateway-cached volume architecture.
         /// 
         ///  <note>Cache storage must be allocated to the gateway before you can create a cached
         /// volume. Use the <a>AddCache</a> operation to add cache storage to a gateway. </note>
@@ -410,7 +407,7 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation initiates a snapshot of a volume.
+        /// Initiates a snapshot of a volume.
         /// 
         ///  
         /// <para>
@@ -465,8 +462,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation initiates a snapshot of a gateway from a volume recovery point. This
-        /// operation is supported only for the gateway-cached volume architecture (see ).
+        /// Initiates a snapshot of a gateway from a volume recovery point. This operation is
+        /// supported only for the gateway-cached volume architecture.
         /// 
         ///  
         /// <para>
@@ -521,8 +518,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation creates a volume on a specified gateway. This operation is supported
-        /// only for the gateway-stored volume architecture. 
+        /// Creates a volume on a specified gateway. This operation is supported only for the
+        /// gateway-stored volume architecture. 
         /// 
         ///  
         /// <para>
@@ -644,10 +641,10 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation deletes the bandwidth rate limits of a gateway. You can delete either
-        /// the upload and download bandwidth rate limit, or you can delete both. If you delete
-        /// only one of the limits, the other limit remains unchanged. To specify which gateway
-        /// to work with, use the Amazon Resource Name (ARN) of the gateway in your request.
+        /// Deletes the bandwidth rate limits of a gateway. You can delete either the upload and
+        /// download bandwidth rate limit, or you can delete both. If you delete only one of the
+        /// limits, the other limit remains unchanged. To specify which gateway to work with,
+        /// use the Amazon Resource Name (ARN) of the gateway in your request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBandwidthRateLimit service method.</param>
         /// 
@@ -680,8 +677,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation deletes Challenge-Handshake Authentication Protocol (CHAP) credentials
-        /// for a specified iSCSI target and initiator pair.
+        /// Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified
+        /// iSCSI target and initiator pair.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChapCredentials service method.</param>
         /// 
@@ -714,9 +711,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation deletes a gateway. To specify which gateway to delete, use the Amazon
-        /// Resource Name (ARN) of the gateway in your request. The operation deletes the gateway;
-        /// however, it does not delete the gateway virtual machine (VM) from your host computer.
+        /// Deletes a gateway. To specify which gateway to delete, use the Amazon Resource Name
+        /// (ARN) of the gateway in your request. The operation deletes the gateway; however,
+        /// it does not delete the gateway virtual machine (VM) from your host computer.
         /// 
         ///  
         /// <para>
@@ -767,12 +764,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation deletes a snapshot of a volume. 
+        /// Deletes a snapshot of a volume.
         /// 
         ///  
         /// <para>
-        ///  You can take snapshots of your gateway volumes on a scheduled or ad-hoc basis. This
-        /// API enables you to delete a snapshot schedule for a volume. For more information,
+        /// You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This
+        /// API action enables you to delete a snapshot schedule for a volume. For more information,
         /// see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
         /// with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify
         /// the volume by providing its Amazon Resource Name (ARN). 
@@ -881,10 +878,10 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation deletes the specified gateway volume that you previously created using
-        /// the <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. For gateway-stored
-        /// volumes, the local disk that was configured as the storage volume is not deleted.
-        /// You can reuse the local disk to create another storage volume. 
+        /// Deletes the specified gateway volume that you previously created using the <a>CreateCachediSCSIVolume</a>
+        /// or <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk
+        /// that was configured as the storage volume is not deleted. You can reuse the local
+        /// disk to create another storage volume. 
         /// 
         ///  
         /// <para>
@@ -932,8 +929,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns the bandwidth rate limits of a gateway. By default, these limits
-        /// are not set, which means no bandwidth rate limiting is in effect.
+        /// Returns the bandwidth rate limits of a gateway. By default, these limits are not set,
+        /// which means no bandwidth rate limiting is in effect.
         /// 
         ///  
         /// <para>
@@ -974,8 +971,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns information about the cache of a gateway. This operation is
-        /// supported only for the gateway-cached volume architecture. 
+        /// Returns information about the cache of a gateway. This operation is supported only
+        /// for the gateway-cached volume architecture. 
         /// 
         ///  
         /// <para>
@@ -1014,8 +1011,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns a description of the gateway volumes specified in the request.
-        /// This operation is supported only for the gateway-cached volume architecture.
+        /// Returns a description of the gateway volumes specified in the request. This operation
+        /// is supported only for the gateway-cached volume architecture.
         /// 
         ///  
         /// <para>
@@ -1055,9 +1052,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP)
-        /// credentials information for a specified iSCSI target, one for each target-initiator
-        /// pair.
+        /// Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials
+        /// information for a specified iSCSI target, one for each target-initiator pair.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChapCredentials service method.</param>
         /// 
@@ -1090,10 +1086,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns metadata about a gateway such as its name, network interfaces,
-        /// configured time zone, and the state (whether the gateway is running or not). To specify
-        /// which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your
-        /// request.
+        /// Returns metadata about a gateway such as its name, network interfaces, configured
+        /// time zone, and the state (whether the gateway is running or not). To specify which
+        /// gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGatewayInformation service method.</param>
         /// 
@@ -1126,8 +1121,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns your gateway's weekly maintenance start time including the
-        /// day and time of the week. Note that values are in terms of the gateway's time zone.
+        /// Returns your gateway's weekly maintenance start time including the day and time of
+        /// the week. Note that values are in terms of the gateway's time zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceStartTime service method.</param>
         /// 
@@ -1160,9 +1155,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation describes the snapshot schedule for the specified gateway volume. The
-        /// snapshot schedule information includes intervals at which snapshots are automatically
-        /// initiated on the volume.
+        /// Describes the snapshot schedule for the specified gateway volume. The snapshot schedule
+        /// information includes intervals at which snapshots are automatically initiated on the
+        /// volume.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotSchedule service method.</param>
         /// 
@@ -1195,9 +1190,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns the description of the gateway volumes specified in the request.
-        /// The list of gateway volumes in the request must be from one gateway. In the response
-        /// Amazon Storage Gateway returns volume information sorted by volume ARNs.
+        /// Returns the description of the gateway volumes specified in the request. The list
+        /// of gateway volumes in the request must be from one gateway. In the response Amazon
+        /// Storage Gateway returns volume information sorted by volume ARNs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorediSCSIVolumes service method.</param>
         /// 
@@ -1324,7 +1319,7 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// A recovery point is a point in time view of a virtual tape at which all the data on
+        /// A recovery point is a point-in-time view of a virtual tape at which all the data on
         /// the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery
         /// points can be recovered to a new gateway.
         /// </para>
@@ -1395,9 +1390,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns information about the upload buffer of a gateway. This operation
-        /// is supported for both the gateway-stored and gateway-cached volume architectures.
-        /// 
+        /// Returns information about the upload buffer of a gateway. This operation is supported
+        /// for both the gateway-stored and gateway-cached volume architectures. 
         /// 
         ///  
         /// <para>
@@ -1475,9 +1469,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns information about the working storage of a gateway. This operation
-        /// is supported only for the gateway-stored volume architecture. This operation is deprecated
-        /// in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.
+        /// Returns information about the working storage of a gateway. This operation is supported
+        /// only for the gateway-stored volume architecture. This operation is deprecated in cached-volumes
+        /// API version (20120630). Use DescribeUploadBuffer instead.
         /// 
         ///  <note>
         /// <para>
@@ -1562,8 +1556,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation lists gateways owned by an AWS account in a region specified in the
-        /// request. The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an AWS account in a region specified in the request. The returned
+        /// list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -1573,8 +1567,8 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// If you have more gateways than are returned in a response-that is, the response returns
-        /// only a truncated list of your gateways-the response contains a marker that you can
+        /// If you have more gateways than are returned in a response (that is, the response returns
+        /// only a truncated list of your gateways), the response contains a marker that you can
         /// specify in your next request to fetch the next page of gateways.
         /// </para>
         /// </summary>
@@ -1592,8 +1586,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation lists gateways owned by an AWS account in a region specified in the
-        /// request. The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an AWS account in a region specified in the request. The returned
+        /// list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -1603,8 +1597,8 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// If you have more gateways than are returned in a response-that is, the response returns
-        /// only a truncated list of your gateways-the response contains a marker that you can
+        /// If you have more gateways than are returned in a response (that is, the response returns
+        /// only a truncated list of your gateways), the response contains a marker that you can
         /// specify in your next request to fetch the next page of gateways.
         /// </para>
         /// </summary>
@@ -1623,8 +1617,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation lists gateways owned by an AWS account in a region specified in the
-        /// request. The returned list is ordered by gateway Amazon Resource Name (ARN).
+        /// Lists gateways owned by an AWS account in a region specified in the request. The returned
+        /// list is ordered by gateway Amazon Resource Name (ARN).
         /// 
         ///  
         /// <para>
@@ -1634,8 +1628,8 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// If you have more gateways than are returned in a response-that is, the response returns
-        /// only a truncated list of your gateways-the response contains a marker that you can
+        /// If you have more gateways than are returned in a response (that is, the response returns
+        /// only a truncated list of your gateways), the response contains a marker that you can
         /// specify in your next request to fetch the next page of gateways.
         /// </para>
         /// </summary>
@@ -1672,9 +1666,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation returns a list of the gateway's local disks. To specify which gateway
-        /// to describe, you use the Amazon Resource Name (ARN) of the gateway in the body of
-        /// the request.
+        /// Returns a list of the gateway's local disks. To specify which gateway to describe,
+        /// you use the Amazon Resource Name (ARN) of the gateway in the body of the request.
         /// 
         ///  
         /// <para>
@@ -1717,7 +1710,7 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation lists the tags that have been added to the specified resource.
+        /// Lists the tags that have been added to the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1750,8 +1743,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation lists iSCSI initiators that are connected to a volume. You can use
-        /// this operation to determine whether a volume is being used or not.
+        /// Lists iSCSI initiators that are connected to a volume. You can use this operation
+        /// to determine whether a volume is being used or not.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVolumeInitiators service method.</param>
         /// 
@@ -1784,8 +1777,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation lists the recovery points for a specified gateway. This operation is
-        /// supported only for the gateway-cached volume architecture.
+        /// Lists the recovery points for a specified gateway. This operation is supported only
+        /// for the gateway-cached volume architecture.
         /// 
         ///  
         /// <para>
@@ -1826,9 +1819,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation lists the iSCSI stored volumes of a gateway. Results are sorted by
-        /// volume ARN. The response includes only the volume ARNs. If you want additional volume
-        /// information, use the <a>DescribeStorediSCSIVolumes</a> API.
+        /// Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The
+        /// response includes only the volume ARNs. If you want additional volume information,
+        /// use the <a>DescribeStorediSCSIVolumes</a> API.
         /// 
         ///  
         /// <para>
@@ -1870,7 +1863,7 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation removes one or more tags from the specified resource.
+        /// Removes one or more tags from the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
@@ -1903,12 +1896,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation resets all cache disks that have encountered a error and makes the
-        /// disks available for reconfiguration as cache storage. If your cache disk encounters
-        /// a error, the gateway prevents read and write operations on virtual tapes in the gateway.
-        /// For example, an error can occur when a disk is corrupted or removed from the gateway.
-        /// When a cache is reset, the gateway loses its cache storage. At this point you can
-        /// reconfigure the disks as cache disks. 
+        /// Resets all cache disks that have encountered a error and makes the disks available
+        /// for reconfiguration as cache storage. If your cache disk encounters a error, the gateway
+        /// prevents read and write operations on virtual tapes in the gateway. For example, an
+        /// error can occur when a disk is corrupted or removed from the gateway. When a cache
+        /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
+        /// disks as cache disks. 
         /// 
         ///  <important> 
         /// <para>
@@ -1933,12 +1926,12 @@ namespace Amazon.StorageGateway
         ResetCacheResponse ResetCache(string gatewayARN);
 
         /// <summary>
-        /// This operation resets all cache disks that have encountered a error and makes the
-        /// disks available for reconfiguration as cache storage. If your cache disk encounters
-        /// a error, the gateway prevents read and write operations on virtual tapes in the gateway.
-        /// For example, an error can occur when a disk is corrupted or removed from the gateway.
-        /// When a cache is reset, the gateway loses its cache storage. At this point you can
-        /// reconfigure the disks as cache disks. 
+        /// Resets all cache disks that have encountered a error and makes the disks available
+        /// for reconfiguration as cache storage. If your cache disk encounters a error, the gateway
+        /// prevents read and write operations on virtual tapes in the gateway. For example, an
+        /// error can occur when a disk is corrupted or removed from the gateway. When a cache
+        /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
+        /// disks as cache disks. 
         /// 
         ///  <important> 
         /// <para>
@@ -1964,12 +1957,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation resets all cache disks that have encountered a error and makes the
-        /// disks available for reconfiguration as cache storage. If your cache disk encounters
-        /// a error, the gateway prevents read and write operations on virtual tapes in the gateway.
-        /// For example, an error can occur when a disk is corrupted or removed from the gateway.
-        /// When a cache is reset, the gateway loses its cache storage. At this point you can
-        /// reconfigure the disks as cache disks. 
+        /// Resets all cache disks that have encountered a error and makes the disks available
+        /// for reconfiguration as cache storage. If your cache disk encounters a error, the gateway
+        /// prevents read and write operations on virtual tapes in the gateway. For example, an
+        /// error can occur when a disk is corrupted or removed from the gateway. When a cache
+        /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
+        /// disks as cache disks. 
         /// 
         ///  <important> 
         /// <para>
@@ -2095,12 +2088,48 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  SetLocalConsolePassword
+
+
+        /// <summary>
+        /// Sets the password for your VM local console. When you log in to the local console
+        /// for the first time, you log in to the VM with the default credentials. We recommend
+        /// that you set a new password. You don't need to know the default password to set a
+        /// new password.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetLocalConsolePassword service method.</param>
+        /// 
+        /// <returns>The response from the SetLocalConsolePassword service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. See the error and message
+        /// fields for more information.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// See the error and message fields for more information.
+        /// </exception>
+        SetLocalConsolePasswordResponse SetLocalConsolePassword(SetLocalConsolePasswordRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetLocalConsolePassword operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetLocalConsolePassword operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<SetLocalConsolePasswordResponse> SetLocalConsolePasswordAsync(SetLocalConsolePasswordRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ShutdownGateway
 
 
         /// <summary>
-        /// This operation shuts down a gateway. To specify which gateway to shut down, use the
-        /// Amazon Resource Name (ARN) of the gateway in the body of your request.
+        /// Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource
+        /// Name (ARN) of the gateway in the body of your request.
         /// 
         ///  
         /// <para>
@@ -2155,9 +2184,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation starts a gateway that you previously shut down (see <a>ShutdownGateway</a>).
-        /// After the gateway starts, you can then make other API calls, your applications can
-        /// read from or write to the gateway's storage volumes and you will be able to take snapshot
+        /// Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>). After
+        /// the gateway starts, you can then make other API calls, your applications can read
+        /// from or write to the gateway's storage volumes and you will be able to take snapshot
         /// backups.
         /// 
         ///  <note>When you make a request, you will get a 200 OK success response immediately.
@@ -2200,9 +2229,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation updates the bandwidth rate limits of a gateway. You can update both
-        /// the upload and download bandwidth rate limit or specify only one of the two. If you
-        /// don't set a bandwidth rate limit, the existing rate limit remains.
+        /// Updates the bandwidth rate limits of a gateway. You can update both the upload and
+        /// download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth
+        /// rate limit, the existing rate limit remains.
         /// 
         ///  
         /// <para>
@@ -2247,9 +2276,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials
-        /// for a specified iSCSI target. By default, a gateway does not have CHAP enabled; however,
-        /// for added security, you might use it.
+        /// Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified
+        /// iSCSI target. By default, a gateway does not have CHAP enabled; however, for added
+        /// security, you might use it.
         /// 
         ///  <important> 
         /// <para>
@@ -2289,12 +2318,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation updates a gateway's metadata, which includes the gateway's name and
-        /// time zone. To specify which gateway to update, use the Amazon Resource Name (ARN)
-        /// of the gateway in your request.
+        /// Updates a gateway's metadata, which includes the gateway's name and time zone. To
+        /// specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway
+        /// in your request.
         /// 
-        ///  <note>For Gateways activated after September 02, 2015, the gateway's ARN contains
-        /// the gateway id rather than the gateway name. However changing the name of the gateway
+        ///  <note>For Gateways activated after September 2, 2015, the gateway's ARN contains
+        /// the gateway ID rather than the gateway name. However, changing the name of the gateway
         /// has no effect on the gateway's ARN.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayInformation service method.</param>
@@ -2328,8 +2357,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation updates the gateway virtual machine (VM) software. The request immediately
-        /// triggers the software update. 
+        /// Updates the gateway virtual machine (VM) software. The request immediately triggers
+        /// the software update. 
         /// 
         ///  <note>When you make this request, you get a <code>200 OK</code> success response
         /// immediately. However, it might take some time for the update to complete. You can
@@ -2372,9 +2401,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation updates a gateway's weekly maintenance start time information, including
-        /// day and time of the week. The maintenance time is the time in your gateway's time
-        /// zone.
+        /// Updates a gateway's weekly maintenance start time information, including day and time
+        /// of the week. The maintenance time is the time in your gateway's time zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceStartTime service method.</param>
         /// 
@@ -2407,7 +2435,7 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation updates a snapshot schedule configured for a gateway volume.
+        /// Updates a snapshot schedule configured for a gateway volume.
         /// 
         ///  
         /// <para>
@@ -2453,9 +2481,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// This operation updates the type of medium changer in a gateway-VTL. When you activate
-        /// a gateway-VTL, you select a medium changer type for the gateway-VTL. This operation
-        /// enables you to select a different type of medium changer after a gateway-VTL is activated.
+        /// Updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL,
+        /// you select a medium changer type for the gateway-VTL. This operation enables you to
+        /// select a different type of medium changer after a gateway-VTL is activated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVTLDeviceType service method.</param>
         /// 

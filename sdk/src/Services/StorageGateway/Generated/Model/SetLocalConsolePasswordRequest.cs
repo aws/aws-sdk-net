@@ -28,13 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeMaintenanceStartTime operation.
-    /// Returns your gateway's weekly maintenance start time including the day and time of
-    /// the week. Note that values are in terms of the gateway's time zone.
+    /// Container for the parameters to the SetLocalConsolePassword operation.
+    /// Sets the password for your VM local console. When you log in to the local console
+    /// for the first time, you log in to the VM with the default credentials. We recommend
+    /// that you set a new password. You don't need to know the default password to set a
+    /// new password.
     /// </summary>
-    public partial class DescribeMaintenanceStartTimeRequest : AmazonStorageGatewayRequest
+    public partial class SetLocalConsolePasswordRequest : AmazonStorageGatewayRequest
     {
         private string _gatewayARN;
+        private string _localConsolePassword;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
@@ -49,6 +52,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayARN()
         {
             return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalConsolePassword. 
+        /// <para>
+        /// The password you want to set for your VM local console.
+        /// </para>
+        /// </summary>
+        public string LocalConsolePassword
+        {
+            get { return this._localConsolePassword; }
+            set { this._localConsolePassword = value; }
+        }
+
+        // Check to see if LocalConsolePassword property is set
+        internal bool IsSetLocalConsolePassword()
+        {
+            return this._localConsolePassword != null;
         }
 
     }

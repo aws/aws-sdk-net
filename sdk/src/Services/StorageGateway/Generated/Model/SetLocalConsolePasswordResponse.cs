@@ -28,11 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeMaintenanceStartTime operation.
-    /// Returns your gateway's weekly maintenance start time including the day and time of
-    /// the week. Note that values are in terms of the gateway's time zone.
+    /// This is the response object from the SetLocalConsolePassword operation.
     /// </summary>
-    public partial class DescribeMaintenanceStartTimeRequest : AmazonStorageGatewayRequest
+    public partial class SetLocalConsolePasswordResponse : AmazonWebServiceResponse
     {
         private string _gatewayARN;
 

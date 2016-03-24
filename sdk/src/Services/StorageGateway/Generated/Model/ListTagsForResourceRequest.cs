@@ -29,7 +29,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// This operation lists the tags that have been added to the specified resource.
+    /// Lists the tags that have been added to the specified resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonStorageGatewayRequest
     {

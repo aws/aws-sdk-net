@@ -29,7 +29,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// This operation removes one or more tags from the specified resource.
+    /// Removes one or more tags from the specified resource.
     /// </summary>
     public partial class RemoveTagsFromResourceRequest : AmazonStorageGatewayRequest
     {

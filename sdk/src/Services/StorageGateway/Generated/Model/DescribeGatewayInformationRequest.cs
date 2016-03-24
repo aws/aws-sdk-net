@@ -29,10 +29,9 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGatewayInformation operation.
-    /// This operation returns metadata about a gateway such as its name, network interfaces,
-    /// configured time zone, and the state (whether the gateway is running or not). To specify
-    /// which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your
-    /// request.
+    /// Returns metadata about a gateway such as its name, network interfaces, configured
+    /// time zone, and the state (whether the gateway is running or not). To specify which
+    /// gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
     /// </summary>
     public partial class DescribeGatewayInformationRequest : AmazonStorageGatewayRequest
     {

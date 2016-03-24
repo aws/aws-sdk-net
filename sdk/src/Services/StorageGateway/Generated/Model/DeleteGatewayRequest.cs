@@ -29,9 +29,9 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGateway operation.
-    /// This operation deletes a gateway. To specify which gateway to delete, use the Amazon
-    /// Resource Name (ARN) of the gateway in your request. The operation deletes the gateway;
-    /// however, it does not delete the gateway virtual machine (VM) from your host computer.
+    /// Deletes a gateway. To specify which gateway to delete, use the Amazon Resource Name
+    /// (ARN) of the gateway in your request. The operation deletes the gateway; however,
+    /// it does not delete the gateway virtual machine (VM) from your host computer.
     /// 
     ///  
     /// <para>

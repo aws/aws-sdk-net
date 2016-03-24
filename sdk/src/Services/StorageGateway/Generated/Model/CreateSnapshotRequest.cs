@@ -29,7 +29,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// This operation initiates a snapshot of a volume.
+    /// Initiates a snapshot of a volume.
     /// 
     ///  
     /// <para>
