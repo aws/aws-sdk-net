@@ -132,6 +132,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 return new DBUpgradeDependencyFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DomainNotFoundFault"))
+            {
+                return new DomainNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientDBInstanceCapacity"))
             {
                 return new InsufficientDBInstanceCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -400,7 +400,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Copies the specified DB Snapshot. The source DB snapshot must be in the "available"
+        /// Copies the specified DB snapshot. The source DB snapshot must be in the "available"
         /// state. 
         /// 
         ///  
@@ -420,6 +420,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot does not allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
@@ -511,6 +514,9 @@ namespace Amazon.RDS
         /// <returns>The response from the CreateDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
         /// User already has a DB cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
         /// <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter
@@ -672,6 +678,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotAlreadyExistsException">
         /// User already has a DB cluster snapshot with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The supplied value is not a valid DB cluster state.
         /// </exception>
@@ -742,6 +751,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.
@@ -1278,8 +1290,17 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotAlreadyExistsException">
+        /// User already has a DB cluster snapshot with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The supplied value is not a valid DB cluster state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
         DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request);
 
@@ -1442,6 +1463,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The supplied value is not a valid DB cluster state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
@@ -3338,6 +3362,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBUpgradeDependencyFailureException">
         /// The DB upgrade failed because a resource the DB depends on could not be modified.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// Specified DB instance class is not available in the specified Availability Zone.
         /// </exception>
@@ -4313,6 +4340,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.
         /// </exception>
@@ -4422,6 +4452,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.

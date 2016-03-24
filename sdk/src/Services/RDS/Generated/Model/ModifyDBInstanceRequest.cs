@@ -46,6 +46,8 @@ namespace Amazon.RDS.Model
         private string _dbParameterGroupName;
         private int? _dbPortNumber;
         private List<string> _dbSecurityGroups = new List<string>();
+        private string _domain;
+        private string _domainIAMRoleName;
         private string _engineVersion;
         private int? _iops;
         private string _masterUserPassword;
@@ -237,7 +239,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is set to <code>false</code>, changes to the DB instance are applied
+        ///  If this parameter is set to <code>false</code>, changes to the DB instance are applied
         /// during the next maintenance window. Some parameter changes can cause an outage and
         /// will be applied on the next call to <a>RebootDBInstance</a>, or the next failure reboot.
         /// Review the table of parameters in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
@@ -508,6 +510,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// Type: Integer 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Oracle</b> 
         /// </para>
         ///  
@@ -582,6 +588,48 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSecurityGroups()
         {
             return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        ///  Specify the Active Directory Domain to move the instance to. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The specified Active Directory Domain must be created prior to this operation. Currently
+        /// only a SQL Server instance can be created in a Active Directory Domain.
+        /// </para>
+        /// </summary>
+        public string Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainIAMRoleName. 
+        /// <para>
+        ///  Specify the name of the IAM role to be used when making API calls to the Directory
+        /// Service. 
+        /// </para>
+        /// </summary>
+        public string DomainIAMRoleName
+        {
+            get { return this._domainIAMRoleName; }
+            set { this._domainIAMRoleName = value; }
+        }
+
+        // Check to see if DomainIAMRoleName property is set
+        internal bool IsSetDomainIAMRoleName()
+        {
+            return this._domainIAMRoleName != null;
         }
 
         /// <summary>

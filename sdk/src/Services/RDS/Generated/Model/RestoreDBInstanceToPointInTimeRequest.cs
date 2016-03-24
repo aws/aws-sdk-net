@@ -51,6 +51,8 @@ namespace Amazon.RDS.Model
         private string _dbInstanceClass;
         private string _dbName;
         private string _dbSubnetGroupName;
+        private string _domain;
+        private string _domainIAMRoleName;
         private string _engine;
         private int? _iops;
         private string _licenseModel;
@@ -230,6 +232,43 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        ///  Specify the Active Directory Domain to restore the instance in. 
+        /// </para>
+        /// </summary>
+        public string Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainIAMRoleName. 
+        /// <para>
+        ///  Specify the name of the IAM role to be used when making API calls to the Directory
+        /// Service. 
+        /// </para>
+        /// </summary>
+        public string DomainIAMRoleName
+        {
+            get { return this._domainIAMRoleName; }
+            set { this._domainIAMRoleName = value; }
+        }
+
+        // Check to see if DomainIAMRoleName property is set
+        internal bool IsSetDomainIAMRoleName()
+        {
+            return this._domainIAMRoleName != null;
         }
 
         /// <summary>

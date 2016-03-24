@@ -158,6 +158,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBSubnetGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DomainMemberships/DomainMembership", targetDepth))
+                    {
+                        var unmarshaller = DomainMembershipUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DomainMemberships.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Endpoint", targetDepth))
                     {
                         var unmarshaller = EndpointUnmarshaller.Instance;

@@ -111,6 +111,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetDomain())
+                {
+                    request.Parameters.Add("Domain", StringUtils.FromString(publicRequest.Domain));
+                }
+                if(publicRequest.IsSetDomainIAMRoleName())
+                {
+                    request.Parameters.Add("DomainIAMRoleName", StringUtils.FromString(publicRequest.DomainIAMRoleName));
+                }
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));

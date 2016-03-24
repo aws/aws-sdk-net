@@ -115,6 +115,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
                 }
+                if(publicRequest.IsSetDomain())
+                {
+                    request.Parameters.Add("Domain", StringUtils.FromString(publicRequest.Domain));
+                }
+                if(publicRequest.IsSetDomainIAMRoleName())
+                {
+                    request.Parameters.Add("DomainIAMRoleName", StringUtils.FromString(publicRequest.DomainIAMRoleName));
+                }
                 if(publicRequest.IsSetEngine())
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
