@@ -2310,6 +2310,64 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  ListAllowedNodeTypeModifications
+
+
+        /// <summary>
+        /// The <code>ListAllowedNodeTypeModifications</code> action lists all available node
+        /// types that you can scale your Redis cluster's or replication group's current node
+        /// type up to.
+        /// 
+        ///  
+        /// <para>
+        /// When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
+        /// APIs to scale up your cluster or replication group, the value of the <i>CacheNodeType</i>
+        /// parameter must be one of the node types returned by this action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowedNodeTypeModifications service method.</param>
+        /// 
+        /// <returns>The response from the ListAllowedNodeTypeModifications service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        public ListAllowedNodeTypeModificationsResponse ListAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request)
+        {
+            var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
+            var unmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAllowedNodeTypeModificationsRequest,ListAllowedNodeTypeModificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAllowedNodeTypeModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowedNodeTypeModifications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListAllowedNodeTypeModificationsResponse> ListAllowedNodeTypeModificationsAsync(ListAllowedNodeTypeModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
+            var unmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAllowedNodeTypeModificationsRequest,ListAllowedNodeTypeModificationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 

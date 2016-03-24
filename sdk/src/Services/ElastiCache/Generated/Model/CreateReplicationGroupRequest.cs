@@ -252,6 +252,13 @@ namespace Amazon.ElastiCache.Model
         /// group. To view the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i>
         /// action.
         /// </para>
+        ///  
+        /// <para>
+        /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+        /// a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version, you must delete the existing cache cluster
+        /// or replication group and create it anew with the earlier engine version. 
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -350,8 +357,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: One Redis cache cluster in each of three availability zones. PreferredAvailabilityZones.member.1=us-west-2a
-        /// PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c
+        /// Example: One Redis cache cluster in each of three availability zones. <![CDATA[PreferredAvailabilityZones.member.1=us-west-2a
+        /// PreferredAvailabilityZones.member.2=us-west-2c PreferredAvailabilityZones.member.3=us-west-2c]]>
         /// </para>
         /// </summary>
         public List<string> PreferredCacheClusterAZs

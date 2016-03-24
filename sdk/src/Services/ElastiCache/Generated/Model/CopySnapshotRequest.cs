@@ -34,6 +34,7 @@ namespace Amazon.ElastiCache.Model
     public partial class CopySnapshotRequest : AmazonElastiCacheRequest
     {
         private string _sourceSnapshotName;
+        private string _targetBucket;
         private string _targetSnapshotName;
 
         /// <summary>
@@ -52,6 +53,21 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSourceSnapshotName()
         {
             return this._sourceSnapshotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetBucket.
+        /// </summary>
+        public string TargetBucket
+        {
+            get { return this._targetBucket; }
+            set { this._targetBucket = value; }
+        }
+
+        // Check to see if TargetBucket property is set
+        internal bool IsSetTargetBucket()
+        {
+            return this._targetBucket != null;
         }
 
         /// <summary>

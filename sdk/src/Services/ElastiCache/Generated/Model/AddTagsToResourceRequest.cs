@@ -52,7 +52,14 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the resource to which the tags are to be added, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+        /// The Amazon Resource Name (ARN) of the resource to which the tags are to be added,
+        /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+        /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on ARNs, go to <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string ResourceName

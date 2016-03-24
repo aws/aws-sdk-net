@@ -28,22 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of one of the following actions:
-    /// 
-    ///  <ul> <li> <i>CreateCacheSubnetGroup</i> </li> <li> <i>ModifyCacheSubnetGroup</i>
-    /// </li> </ul>
+    /// This is the response object from the CreateCacheSubnetGroup operation.
     /// </summary>
     public partial class CreateCacheSubnetGroupResponse : AmazonWebServiceResponse
     {
-        private CacheSubnetGroup _response;
+        private CacheSubnetGroup _cacheSubnetGroup;
 
         /// <summary>
-        /// Gets and sets the CacheSubnetGroup property.
+        /// Gets and sets the property CacheSubnetGroup.
         /// </summary>
         public CacheSubnetGroup CacheSubnetGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._cacheSubnetGroup; }
+            set { this._cacheSubnetGroup = value; }
         }
+
+        // Check to see if CacheSubnetGroup property is set
+        internal bool IsSetCacheSubnetGroup()
+        {
+            return this._cacheSubnetGroup != null;
+        }
+
     }
 }

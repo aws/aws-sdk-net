@@ -28,48 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// A cost allocation Tag that can be added to an ElastiCache cluster or replication group.
-    /// Tags are composed of a Key/Value pair. A tag with a null Value is permitted.
+    /// Represents the allowed node types you can use to modify your cache cluster or replication
+    /// group.
     /// </summary>
-    public partial class Tag
+    public partial class ListAllowedNodeTypeModificationsResponse : AmazonWebServiceResponse
     {
-        private string _key;
-        private string _value;
+        private List<string> _scaleUpModifications = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property ScaleUpModifications. 
         /// <para>
-        /// The key for the tag.
+        /// A string list, each element of which specifies a cache node type which you can use
+        /// to scale your cache cluster or replication group.
+        /// </para>
+        ///  
+        /// <para>
+        /// When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code>
+        /// or <code>ModifyReplicationGroup</code>, use a value from this list for the <i>CacheNodeType</i>
+        /// parameter.
         /// </para>
         /// </summary>
-        public string Key
+        public List<string> ScaleUpModifications
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._scaleUpModifications; }
+            set { this._scaleUpModifications = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if ScaleUpModifications property is set
+        internal bool IsSetScaleUpModifications()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The tag&apos;s value. May not be null.
-        /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._scaleUpModifications != null && this._scaleUpModifications.Count > 0; 
         }
 
     }

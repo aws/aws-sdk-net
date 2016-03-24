@@ -61,6 +61,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.CacheNodeIdsToRemove.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("CacheNodeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EngineVersion", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

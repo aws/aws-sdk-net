@@ -298,7 +298,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version of the cache engine version that is used in this cache cluster.
+        /// The version of the cache engine that is used in this cache cluster.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -369,7 +369,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZone. 
         /// <para>
-        /// The name of the Availability Zone in which the cache cluster is located or "Multiple"
+        /// The name of the Availability Zone in which the cache cluster is located or &quot;Multiple&quot;
         /// if the cache nodes are located in different Availability Zones.
         /// </para>
         /// </summary>
@@ -458,7 +458,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Important</b>If the value of SnapshotRetentionLimit is set to zero (0), backups
+        /// <b>Important</b><br/>If the value of SnapshotRetentionLimit is set to zero (0), backups
         /// are turned off.
         /// </para>
         /// </summary>

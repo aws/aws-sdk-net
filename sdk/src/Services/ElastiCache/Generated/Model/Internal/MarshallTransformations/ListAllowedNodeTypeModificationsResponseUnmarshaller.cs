@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AuthorizeCacheSecurityGroupIngress operation
+    /// Response Unmarshaller for ListAllowedNodeTypeModifications operation
     /// </summary>  
-    public class AuthorizeCacheSecurityGroupIngressResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ListAllowedNodeTypeModificationsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            AuthorizeCacheSecurityGroupIngressResponse response = new AuthorizeCacheSecurityGroupIngressResponse();
+            ListAllowedNodeTypeModificationsResponse response = new ListAllowedNodeTypeModificationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("AuthorizeCacheSecurityGroupIngressResult", 2))
+                    if(context.TestExpression("ListAllowedNodeTypeModificationsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, AuthorizeCacheSecurityGroupIngressResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ListAllowedNodeTypeModificationsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,11 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("CacheSecurityGroup", targetDepth))
+                    if (context.TestExpression("ScaleUpModifications/member", targetDepth))
                     {
-                        var unmarshaller = CacheSecurityGroupUnmarshaller.Instance;
-                        response.CacheSecurityGroup = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ScaleUpModifications.Add(item);
                         continue;
                     }
                 } 
@@ -104,17 +105,9 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AuthorizationAlreadyExists"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CacheClusterNotFound"))
             {
-                return new AuthorizationAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("CacheSecurityGroupNotFound"))
-            {
-                return new CacheSecurityGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCacheSecurityGroupState"))
-            {
-                return new InvalidCacheSecurityGroupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new CacheClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombination"))
             {
@@ -124,11 +117,15 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ReplicationGroupNotFoundFault"))
+            {
+                return new ReplicationGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonElastiCacheException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static AuthorizeCacheSecurityGroupIngressResponseUnmarshaller _instance = new AuthorizeCacheSecurityGroupIngressResponseUnmarshaller();        
+        private static ListAllowedNodeTypeModificationsResponseUnmarshaller _instance = new ListAllowedNodeTypeModificationsResponseUnmarshaller();        
 
-        internal static AuthorizeCacheSecurityGroupIngressResponseUnmarshaller GetInstance()
+        internal static ListAllowedNodeTypeModificationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +133,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AuthorizeCacheSecurityGroupIngressResponseUnmarshaller Instance
+        public static ListAllowedNodeTypeModificationsResponseUnmarshaller Instance
         {
             get
             {

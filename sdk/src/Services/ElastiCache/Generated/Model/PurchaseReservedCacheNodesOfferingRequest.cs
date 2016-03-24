@@ -67,6 +67,12 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
+        /// <b>Note:</b><br/>The Reserved Cache Node ID is an unique customer-specified identifier
+        /// to track this reservation. If this parameter is not specified, ElastiCache automatically
+        /// generates an identifier for the reservation.
+        /// </para>
+        ///  
+        /// <para>
         /// Example: myreservationID
         /// </para>
         /// </summary>

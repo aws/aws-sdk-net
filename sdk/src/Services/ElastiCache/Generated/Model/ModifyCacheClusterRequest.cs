@@ -40,6 +40,7 @@ namespace Amazon.ElastiCache.Model
         private AZMode _azMode;
         private string _cacheClusterId;
         private List<string> _cacheNodeIdsToRemove = new List<string>();
+        private string _cacheNodeType;
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
         private string _engineVersion;
@@ -208,6 +209,26 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CacheNodeType. 
+        /// <para>
+        /// A valid cache node type that you want to scale this cache cluster to. The value of
+        /// this parameter must be one of the <i>ScaleUpModifications</i> values returned by the
+        /// <code>ListAllowedCacheNodeTypeModification</code> action.
+        /// </para>
+        /// </summary>
+        public string CacheNodeType
+        {
+            get { return this._cacheNodeType; }
+            set { this._cacheNodeType = value; }
+        }
+
+        // Check to see if CacheNodeType property is set
+        internal bool IsSetCacheNodeType()
+        {
+            return this._cacheNodeType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
         /// The name of the cache parameter group to apply to this cache cluster. This change
@@ -240,7 +261,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
+        /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be &quot;Default".
         /// </para>
         /// </summary>
         public List<string> CacheSecurityGroupNames
@@ -259,6 +280,13 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The upgraded version of the cache engine to be run on the cache nodes.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+        /// a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version, you must delete the existing cache cluster
+        /// and create it anew with the earlier engine version. 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -291,13 +319,13 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Scenarios: <ul> <li> <b>Scenario 1:</b> You have 3 active nodes and wish to add 2
-        /// nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability
-        /// Zones for the two new nodes.</li> <li> <b>Scenario 2:</b> You have 3 active nodes
-        /// and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node.
+        /// Scenarios: <ul> <li><b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.<br/>
+        /// Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability
+        /// Zones for the two new nodes.</li> <li><b>Scenario 2:</b> You have 3 active nodes and
+        /// 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node.<br/>
         /// Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1)</li> and optionally specify an
-        /// Availability Zone for the new node. <li> <b>Scenario 3:</b> You want to cancel all
-        /// pending actions. Specify <code>NumCacheNodes=3</code> to cancel all pending actions.</li>
+        /// Availability Zone for the new node. <li><b>Scenario 3:</b> You want to cancel all
+        /// pending actions.<br/> Specify <code>NumCacheNodes=3</code> to cancel all pending actions.</li>
         /// </ul> 
         /// </para>
         ///  
@@ -318,18 +346,19 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// <b>Impact of new add/remove requests upon pending requests</b>
         /// </para>
-        ///  <table> <tr> <th>Scenarios</th> <th>Pending action</th> <th>New Request</th> <th>Results</th>
-        /// </tr> <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new delete,
-        /// pending or immediate, replaces the pending delete.</td> </tr> <tr> <td>Scenario-2</td>
-        /// <td>Delete</td> <td>Create</td> <td>The new create, pending or immediate, replaces
-        /// the pending delete.</td> </tr> <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td>
-        /// <td>The new delete, pending or immediate, replaces the pending create.</td> </tr>
-        /// <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new create is added
-        /// to the pending create.<br/> <b>Important:</b><br/>If the new create request is <b>Apply
-        /// Immediately - Yes</b>, all creates are performed immediately. If the new create request
-        /// is <b>Apply Immediately - No</b>, all creates are pending.</td> </tr> </table> 
+        ///  <ul> <li>Scenario-1 <ul> <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+        /// <li>Result: The new delete, pending or immediate, replaces the pending delete.</li>
+        /// </ul></li> <li>Scenario-2 <ul> <li>Pending Action: Delete</li> <li>New Request: Create</li>
+        /// <li>Result: The new create, pending or immediate, replaces the pending delete.</li>
+        /// </ul></li> <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request: Delete</li>
+        /// <li>Result: The new delete, pending or immediate, replaces the pending create.</li>
+        /// </ul></li> <li>Scenario-4 <ul> <li>Pending Action: Create</li> <li>New Request: Create</li>
+        /// <li>Result: The new create is added to the pending create. <b>Important:</b><br/>If
+        /// the new create request is <b>Apply Immediately - Yes</b>, all creates are performed
+        /// immediately.<br/> If the new create request is <b>Apply Immediately - No</b>, all
+        /// creates are pending.</li> </ul></li> </ul> 
         /// <para>
-        /// Example: <code>NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c</code>
+        /// Example: <code><![CDATA[NewAvailabilityZones.member.1=us-west-2a&amp;NewAvailabilityZones.member.2=us-west-2b&amp;NewAvailabilityZones.member.3=us-west-2c]]></code>
         /// </para>
         /// </summary>
         public List<string> NewAvailabilityZones
@@ -409,21 +438,22 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b>Adding or removing Memcached cache nodes can be applied immediately or
-        /// as a pending action. See <code>ApplyImmediately</code>. A pending action to modify
-        /// the number of cache nodes in a cluster during its maintenance window, whether by adding
-        /// or removing nodes in accordance with the scale out architecture, is not queued. The
-        /// customer's latest request to add or remove nodes to the cluster overrides any previous
-        /// pending actions to modify the number of cache nodes in the cluster. For example, a
-        /// request to remove 2 nodes would override a previous pending action to remove 3 nodes.
-        /// Similarly, a request to add 2 nodes would override a previous pending action to remove
-        /// 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different
-        /// Availability Zones with flexible cache node placement, a request to add nodes does
-        /// not automatically override a previous pending action to add nodes. The customer can
-        /// modify the previous pending action to add more nodes or explicitly cancel the pending
-        /// request and retry the new request. To cancel pending actions to modify the number
-        /// of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set
-        /// <i>NumCacheNodes</i> equal to the number of cache nodes currently in the cache cluster.
+        /// <b>Note:</b><br/>Adding or removing Memcached cache nodes can be applied immediately
+        /// or as a pending action. See <code>ApplyImmediately</code>.<br/> A pending action to
+        /// modify the number of cache nodes in a cluster during its maintenance window, whether
+        /// by adding or removing nodes in accordance with the scale out architecture, is not
+        /// queued. The customer's latest request to add or remove nodes to the cluster overrides
+        /// any previous pending actions to modify the number of cache nodes in the cluster. For
+        /// example, a request to remove 2 nodes would override a previous pending action to remove
+        /// 3 nodes. Similarly, a request to add 2 nodes would override a previous pending action
+        /// to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned
+        /// in different Availability Zones with flexible cache node placement, a request to add
+        /// nodes does not automatically override a previous pending action to add nodes. The
+        /// customer can modify the previous pending action to add more nodes or explicitly cancel
+        /// the pending request and retry the new request. To cancel pending actions to modify
+        /// the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request
+        /// and set <i>NumCacheNodes</i> equal to the number of cache nodes currently in the cache
+        /// cluster.
         /// </para>
         /// </summary>
         public int NumCacheNodes
@@ -497,7 +527,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Important</b>If the value of SnapshotRetentionLimit is set to zero (0), backups
+        /// <b>Important</b><br/>If the value of SnapshotRetentionLimit is set to zero (0), backups
         /// are turned off.
         /// </para>
         /// </summary>

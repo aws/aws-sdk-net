@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> action.
+    /// This is the response object from the PurchaseReservedCacheNodesOffering operation.
     /// </summary>
     public partial class PurchaseReservedCacheNodesOfferingResponse : AmazonWebServiceResponse
     {
-        private ReservedCacheNode _response;
+        private ReservedCacheNode _reservedCacheNode;
 
         /// <summary>
-        /// Gets and sets the ReservedCacheNode property.
+        /// Gets and sets the property ReservedCacheNode.
         /// </summary>
         public ReservedCacheNode ReservedCacheNode
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._reservedCacheNode; }
+            set { this._reservedCacheNode = value; }
         }
+
+        // Check to see if ReservedCacheNode property is set
+        internal bool IsSetReservedCacheNode()
+        {
+            return this._reservedCacheNode != null;
+        }
+
     }
 }

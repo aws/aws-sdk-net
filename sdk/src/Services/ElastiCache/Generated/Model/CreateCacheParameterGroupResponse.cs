@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <i>CreateCacheParameterGroup</i> action.
+    /// This is the response object from the CreateCacheParameterGroup operation.
     /// </summary>
     public partial class CreateCacheParameterGroupResponse : AmazonWebServiceResponse
     {
-        private CacheParameterGroup _response;
+        private CacheParameterGroup _cacheParameterGroup;
 
         /// <summary>
-        /// Gets and sets the CacheParameterGroup property.
+        /// Gets and sets the property CacheParameterGroup.
         /// </summary>
         public CacheParameterGroup CacheParameterGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._cacheParameterGroup; }
+            set { this._cacheParameterGroup = value; }
         }
+
+        // Check to see if CacheParameterGroup property is set
+        internal bool IsSetCacheParameterGroup()
+        {
+            return this._cacheParameterGroup != null;
+        }
+
     }
 }

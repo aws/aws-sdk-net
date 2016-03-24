@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _applyImmediately;
         private bool? _automaticFailoverEnabled;
         private bool? _autoMinorVersionUpgrade;
+        private string _cacheNodeType;
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
         private string _engineVersion;
@@ -131,6 +132,26 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CacheNodeType. 
+        /// <para>
+        /// A valid cache node type that you want to scale this replication group to. The value
+        /// of this parameter must be one of the <i>ScaleUpModifications</i> values returned by
+        /// the <code>ListAllowedCacheNodeTypeModification</code> action.
+        /// </para>
+        /// </summary>
+        public string CacheNodeType
+        {
+            get { return this._cacheNodeType; }
+            set { this._cacheNodeType = value; }
+        }
+
+        // Check to see if CacheNodeType property is set
+        internal bool IsSetCacheNodeType()
+        {
+            return this._cacheNodeType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
         /// The name of the cache parameter group to apply to all of the clusters in this replication
@@ -163,7 +184,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".
+        /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be &quot;Default".
         /// </para>
         /// </summary>
         public List<string> CacheSecurityGroupNames
@@ -183,6 +204,13 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The upgraded version of the cache engine to be run on the cache clusters in the replication
         /// group.
+        /// </para>
+        ///  
+        /// <para>
+        /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+        /// a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version, you must delete the existing replication
+        /// group and create it anew with the earlier engine version. 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -270,9 +298,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PrimaryClusterId. 
         /// <para>
-        /// If this parameter is specified, ElastiCache will promote each of the cache clusters
-        /// in the specified replication group to the primary role. The nodes of all other cache
-        /// clusters in the replication group will be read replicas.
+        /// If this parameter is specified, ElastiCache will promote the specified cluster in
+        /// the specified replication group to the primary role. The nodes of all other clusters
+        /// in the replication group will be read replicas.
         /// </para>
         /// </summary>
         public string PrimaryClusterId
@@ -356,7 +384,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Important</b>If the value of SnapshotRetentionLimit is set to zero (0), backups
+        /// <b>Important</b><br/>If the value of SnapshotRetentionLimit is set to zero (0), backups
         /// are turned off.
         /// </para>
         /// </summary>

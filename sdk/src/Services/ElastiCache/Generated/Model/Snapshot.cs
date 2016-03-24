@@ -363,7 +363,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Important</b>If the value of SnapshotRetentionLimit is set to zero (0), backups
+        /// <b>Important</b><br/>If the value of SnapshotRetentionLimit is set to zero (0), backups
         /// are turned off.
         /// </para>
         /// </summary>

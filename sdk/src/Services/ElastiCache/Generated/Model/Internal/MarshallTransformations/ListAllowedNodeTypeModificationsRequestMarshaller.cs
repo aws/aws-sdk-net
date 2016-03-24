@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CopySnapshot Request Marshaller
+    /// ListAllowedNodeTypeModifications Request Marshaller
     /// </summary>       
-    public class CopySnapshotRequestMarshaller : IMarshaller<IRequest, CopySnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAllowedNodeTypeModificationsRequestMarshaller : IMarshaller<IRequest, ListAllowedNodeTypeModificationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CopySnapshotRequest)input);
+            return this.Marshall((ListAllowedNodeTypeModificationsRequest)input);
         }
     
         /// <summary>
@@ -50,25 +50,21 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CopySnapshotRequest publicRequest)
+        public IRequest Marshall(ListAllowedNodeTypeModificationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
-            request.Parameters.Add("Action", "CopySnapshot");
+            request.Parameters.Add("Action", "ListAllowedNodeTypeModifications");
             request.Parameters.Add("Version", "2015-02-02");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetSourceSnapshotName())
+                if(publicRequest.IsSetCacheClusterId())
                 {
-                    request.Parameters.Add("SourceSnapshotName", StringUtils.FromString(publicRequest.SourceSnapshotName));
+                    request.Parameters.Add("CacheClusterId", StringUtils.FromString(publicRequest.CacheClusterId));
                 }
-                if(publicRequest.IsSetTargetBucket())
+                if(publicRequest.IsSetReplicationGroupId())
                 {
-                    request.Parameters.Add("TargetBucket", StringUtils.FromString(publicRequest.TargetBucket));
-                }
-                if(publicRequest.IsSetTargetSnapshotName())
-                {
-                    request.Parameters.Add("TargetSnapshotName", StringUtils.FromString(publicRequest.TargetSnapshotName));
+                    request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
             }
             return request;

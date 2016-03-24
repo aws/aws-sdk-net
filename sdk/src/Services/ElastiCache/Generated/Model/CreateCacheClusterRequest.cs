@@ -102,7 +102,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property AZMode. 
         /// <para>
         /// Specifies whether the nodes in this Memcached node group are created in a single Availability
-        /// Zone or created across multiple Availability Zones in the cluster's region.
+        /// Zone or created across multiple Availability Zones in the cluster&apos;s region.
         /// </para>
         ///  
         /// <para>
@@ -292,6 +292,13 @@ namespace Amazon.ElastiCache.Model
         /// The version number of the cache engine to be used for this cache cluster. To view
         /// the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.
         /// </para>
+        ///  
+        /// <para>
+        /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+        /// a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version, you must delete the existing cache cluster
+        /// or replication group and create it anew with the earlier engine version. 
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -429,11 +436,11 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: One Memcached node in each of three different Availability Zones: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
+        /// Example: One Memcached node in each of three different Availability Zones: <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code>
         /// </para>
         ///  
         /// <para>
-        /// Example: All three Memcached nodes in one Availability Zone: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
+        /// Example: All three Memcached nodes in one Availability Zone: <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code>
         /// </para>
         /// </summary>
         public List<string> PreferredAvailabilityZones

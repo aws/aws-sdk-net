@@ -81,9 +81,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("CacheSubnetGroup", targetDepth))
+                    if (context.TestExpression("CacheSubnetGroup", targetDepth))
                     {
-                        response.CacheSubnetGroup = CacheSubnetGroupUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = CacheSubnetGroupUnmarshaller.Instance;
+                        response.CacheSubnetGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
