@@ -77,7 +77,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NewTableName. 
         /// <para>
-        /// The name of the table to create as a result of the current request.
+        /// The name of the table to create as a result of the current request. 
         /// </para>
         /// </summary>
         public string NewTableName
@@ -133,7 +133,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceSchemaName. 
         /// <para>
-        /// The name of the source schema that contains the table to restore from.
+        /// The name of the source schema that contains the table to restore from. If you do not
+        /// specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.
         /// </para>
         /// </summary>
         public string SourceSchemaName

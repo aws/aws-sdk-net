@@ -51,6 +51,7 @@ namespace Amazon.Redshift.Model
         private bool? _encrypted;
         private Endpoint _endpoint;
         private HsmStatus _hsmStatus;
+        private List<ClusterIamRole> _iamRoles = new List<ClusterIamRole>();
         private string _kmsKeyId;
         private string _masterUsername;
         private string _modifyStatus;
@@ -429,6 +430,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetHsmStatus()
         {
             return this._hsmStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoles. 
+        /// <para>
+        /// A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster
+        /// to access other AWS services.
+        /// </para>
+        /// </summary>
+        public List<ClusterIamRole> IamRoles
+        {
+            get { return this._iamRoles; }
+            set { this._iamRoles = value; }
+        }
+
+        // Check to see if IamRoles property is set
+        internal bool IsSetIamRoles()
+        {
+            return this._iamRoles != null && this._iamRoles.Count > 0; 
         }
 
         /// <summary>

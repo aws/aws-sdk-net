@@ -2183,6 +2183,37 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ModifyClusterIamRoles
+
+        internal ModifyClusterIamRolesResponse ModifyClusterIamRoles(ModifyClusterIamRolesRequest request)
+        {
+            var marshaller = new ModifyClusterIamRolesRequestMarshaller();
+            var unmarshaller = ModifyClusterIamRolesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterIamRolesRequest,ModifyClusterIamRolesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClusterIamRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClusterIamRoles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyClusterIamRolesResponse> ModifyClusterIamRolesAsync(ModifyClusterIamRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyClusterIamRolesRequestMarshaller();
+            var unmarshaller = ModifyClusterIamRolesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyClusterIamRolesRequest,ModifyClusterIamRolesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyClusterParameterGroup
 
         internal ModifyClusterParameterGroupResponse ModifyClusterParameterGroup(ModifyClusterParameterGroupRequest request)
