@@ -1,3 +1,19 @@
+### 3.1.57.0 (2016-03-29 22:38 UTC)
+* AWS Database Migration Service (3.1.0.1)
+	* Documentation update.
+* CertificateManager (3.1.2.1)
+	* Documentation update.
+* CloudFormation (3.1.4.0)
+	* Added support for ChangeSets. ChangeSets give users detailed information into what CloudFormation intends to perform when changes are executed to a stack, giving users the ability to preview and change the results before actually applying them. 
+* CodeDeploy (3.1.2.1)
+	* Documentation update.
+* ElastiCache (3.1.2.0)
+	* Regenerated from correct service model
+* Redshift (3.1.2.0)
+	* Added support for Cluster IAM Roles. Clusters can now assume an IAM Role to perform operations like COPY/UNLOAD as well as cryptographic operations involving KMS keys. 
+* WAF (3.1.2.0)
+	* Added support for XSS (Cross-site scripting) protection in WAF. 
+
 ### 3.1.56.0 (2016-03-24 21:00 UTC)
 * ElastiCache (3.1.1.0)
 	* Added support for changes to allow vertically scaling from one instance type to another.
