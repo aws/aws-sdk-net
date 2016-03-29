@@ -674,6 +674,37 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  CreateXssMatchSet
+
+        internal CreateXssMatchSetResponse CreateXssMatchSet(CreateXssMatchSetRequest request)
+        {
+            var marshaller = new CreateXssMatchSetRequestMarshaller();
+            var unmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateXssMatchSetRequest,CreateXssMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateXssMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateXssMatchSetResponse> CreateXssMatchSetAsync(CreateXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateXssMatchSetRequestMarshaller();
+            var unmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateXssMatchSetRequest,CreateXssMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteByteMatchSet
 
         internal DeleteByteMatchSetResponse DeleteByteMatchSet(DeleteByteMatchSetRequest request)
@@ -1184,6 +1215,37 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  DeleteXssMatchSet
+
+        internal DeleteXssMatchSetResponse DeleteXssMatchSet(DeleteXssMatchSetRequest request)
+        {
+            var marshaller = new DeleteXssMatchSetRequestMarshaller();
+            var unmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteXssMatchSetRequest,DeleteXssMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteXssMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteXssMatchSetResponse> DeleteXssMatchSetAsync(DeleteXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteXssMatchSetRequestMarshaller();
+            var unmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteXssMatchSetRequest,DeleteXssMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetByteMatchSet
 
         internal GetByteMatchSetResponse GetByteMatchSet(GetByteMatchSetRequest request)
@@ -1674,6 +1736,37 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  GetXssMatchSet
+
+        internal GetXssMatchSetResponse GetXssMatchSet(GetXssMatchSetRequest request)
+        {
+            var marshaller = new GetXssMatchSetRequestMarshaller();
+            var unmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetXssMatchSetRequest,GetXssMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetXssMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetXssMatchSetResponse> GetXssMatchSetAsync(GetXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetXssMatchSetRequestMarshaller();
+            var unmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetXssMatchSetRequest,GetXssMatchSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListByteMatchSets
 
         internal ListByteMatchSetsResponse ListByteMatchSets(ListByteMatchSetsRequest request)
@@ -1855,6 +1948,37 @@ namespace Amazon.WAF
             var unmarshaller = ListWebACLsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListWebACLsRequest,ListWebACLsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListXssMatchSets
+
+        internal ListXssMatchSetsResponse ListXssMatchSets(ListXssMatchSetsRequest request)
+        {
+            var marshaller = new ListXssMatchSetsRequestMarshaller();
+            var unmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListXssMatchSetsRequest,ListXssMatchSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListXssMatchSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListXssMatchSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListXssMatchSetsResponse> ListXssMatchSetsAsync(ListXssMatchSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListXssMatchSetsRequestMarshaller();
+            var unmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListXssMatchSetsRequest,ListXssMatchSetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2527,6 +2651,37 @@ namespace Amazon.WAF
             var unmarshaller = UpdateWebACLResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateWebACLRequest,UpdateWebACLResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateXssMatchSet
+
+        internal UpdateXssMatchSetResponse UpdateXssMatchSet(UpdateXssMatchSetRequest request)
+        {
+            var marshaller = new UpdateXssMatchSetRequestMarshaller();
+            var unmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateXssMatchSetRequest,UpdateXssMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateXssMatchSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateXssMatchSetResponse> UpdateXssMatchSetAsync(UpdateXssMatchSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateXssMatchSetRequestMarshaller();
+            var unmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateXssMatchSetRequest,UpdateXssMatchSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

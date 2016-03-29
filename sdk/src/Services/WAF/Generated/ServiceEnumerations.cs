@@ -514,6 +514,10 @@ namespace Amazon.WAF
         /// Constant SqlInjectionMatch for PredicateType
         /// </summary>
         public static readonly PredicateType SqlInjectionMatch = new PredicateType("SqlInjectionMatch");
+        /// <summary>
+        /// Constant XssMatch for PredicateType
+        /// </summary>
+        public static readonly PredicateType XssMatch = new PredicateType("XssMatch");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

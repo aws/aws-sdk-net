@@ -28,18 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// Contains the identifier and the name or description of the <a>WebACL</a>.
+    /// The <code>Id</code> and <code>Name</code> of an <code>XssMatchSet</code>.
     /// </summary>
-    public partial class WebACLSummary
+    public partial class XssMatchSetSummary
     {
         private string _name;
-        private string _webACLId;
+        private string _xssMatchSetId;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the <a>WebACL</a>. You can't change the name of
-        /// a <code>WebACL</code> after you create it.
+        /// The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.
         /// </para>
         /// </summary>
         public string Name
@@ -55,27 +54,29 @@ namespace Amazon.WAF.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebACLId. 
+        /// Gets and sets the property XssMatchSetId. 
         /// <para>
-        /// A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get
-        /// information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a <code>WebACL</code>
-        /// (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+        /// A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code>
+        /// to get information about a <code>XssMatchSet</code> (see <a>GetXssMatchSet</a>), update
+        /// an <code>XssMatchSet</code> (see <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code>
+        /// into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>),
+        /// and delete an <code>XssMatchSet</code> from AWS WAF (see <a>DeleteXssMatchSet</a>).
         /// </para>
         ///  
         /// <para>
-        /// <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
+        /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
         /// </para>
         /// </summary>
-        public string WebACLId
+        public string XssMatchSetId
         {
-            get { return this._webACLId; }
-            set { this._webACLId = value; }
+            get { return this._xssMatchSetId; }
+            set { this._xssMatchSetId = value; }
         }
 
-        // Check to see if WebACLId property is set
-        internal bool IsSetWebACLId()
+        // Check to see if XssMatchSetId property is set
+        internal bool IsSetXssMatchSetId()
         {
-            return this._webACLId != null;
+            return this._xssMatchSetId != null;
         }
 
     }
