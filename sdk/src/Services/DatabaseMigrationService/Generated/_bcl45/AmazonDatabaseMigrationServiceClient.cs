@@ -236,7 +236,10 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// For internal use only
+        /// Adds metadata tags to a DMS resource, including replication instance, endpoint, security
+        /// group, and migration task. These tags can also be used with cost allocation reporting
+        /// to track cost associated with DMS resources, or used in a Condition statement in an
+        /// IAM policy for DMS.
         /// 
         ///  <note/>
         /// </summary>
@@ -244,7 +247,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
@@ -286,13 +289,13 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateEndpoint service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// 
+        /// AWS DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
-        /// 
+        /// The resource you are attempting to create already exists.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
-        /// 
+        /// The quota for this resource quota has been exceeded.
         /// </exception>
         public CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
         {
@@ -334,34 +337,35 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateReplicationInstance service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// 
+        /// AWS DMS was denied access to the endpoint.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InsufficientResourceCapacityException">
-        /// 
+        /// There are not enough resources allocated to the database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// 
+        /// The subnet provided is invalid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// 
+        /// AWS DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
-        /// 
+        /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
+        /// the replication subnet group and add more AZs.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
-        /// 
+        /// The resource you are attempting to create already exists.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
-        /// 
+        /// The quota for this resource quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.StorageQuotaExceededException">
-        /// 
+        /// The storage quota has been exceeded.
         /// </exception>
         public CreateReplicationInstanceResponse CreateReplicationInstance(CreateReplicationInstanceRequest request)
         {
@@ -403,22 +407,23 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
-        /// 
+        /// AWS DMS was denied access to the endpoint.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// 
+        /// The subnet provided is invalid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
-        /// 
+        /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
+        /// the replication subnet group and add more AZs.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
-        /// 
+        /// The resource you are attempting to create already exists.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
-        /// 
+        /// The quota for this resource quota has been exceeded.
         /// </exception>
         public CreateReplicationSubnetGroupResponse CreateReplicationSubnetGroup(CreateReplicationSubnetGroupRequest request)
         {
@@ -460,19 +465,19 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the CreateReplicationTask service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// 
+        /// AWS DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
-        /// 
+        /// The resource you are attempting to create already exists.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
-        /// 
+        /// The quota for this resource quota has been exceeded.
         /// </exception>
         public CreateReplicationTaskResponse CreateReplicationTask(CreateReplicationTaskRequest request)
         {
@@ -515,10 +520,10 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DeleteEndpoint service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
@@ -561,10 +566,10 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DeleteReplicationInstance service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DeleteReplicationInstanceResponse DeleteReplicationInstance(DeleteReplicationInstanceRequest request)
         {
@@ -606,10 +611,10 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DeleteReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DeleteReplicationSubnetGroupResponse DeleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest request)
         {
@@ -651,10 +656,10 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DeleteReplicationTask service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DeleteReplicationTaskResponse DeleteReplicationTask(DeleteReplicationTaskRequest request)
         {
@@ -743,7 +748,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DescribeConnections service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
         {
@@ -785,7 +790,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DescribeEndpoints service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
@@ -906,10 +911,10 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DescribeRefreshSchemasStatus service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DescribeRefreshSchemasStatusResponse DescribeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request)
         {
@@ -951,7 +956,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DescribeReplicationInstances service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DescribeReplicationInstancesResponse DescribeReplicationInstances(DescribeReplicationInstancesRequest request)
         {
@@ -993,7 +998,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DescribeReplicationSubnetGroups service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DescribeReplicationSubnetGroupsResponse DescribeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request)
         {
@@ -1035,7 +1040,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DescribeReplicationTasks service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DescribeReplicationTasksResponse DescribeReplicationTasks(DescribeReplicationTasksRequest request)
         {
@@ -1077,10 +1082,10 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DescribeSchemas service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DescribeSchemasResponse DescribeSchemas(DescribeSchemasRequest request)
         {
@@ -1123,10 +1128,10 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the DescribeTableStatistics service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public DescribeTableStatisticsResponse DescribeTableStatistics(DescribeTableStatisticsRequest request)
         {
@@ -1160,7 +1165,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// For internal use only
+        /// Lists all tags for an AWS DMS resource.
         /// 
         ///  <note/>
         /// </summary>
@@ -1168,7 +1173,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
@@ -1210,16 +1215,16 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyEndpoint service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// 
+        /// AWS DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
-        /// 
+        /// The resource you are attempting to create already exists.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public ModifyEndpointResponse ModifyEndpoint(ModifyEndpointRequest request)
         {
@@ -1262,22 +1267,22 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyReplicationInstance service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InsufficientResourceCapacityException">
-        /// 
+        /// There are not enough resources allocated to the database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
-        /// 
+        /// The resource you are attempting to create already exists.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.StorageQuotaExceededException">
-        /// 
+        /// The storage quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.UpgradeDependencyFailureException">
-        /// 
+        /// An upgrade dependency is preventing the database migration.
         /// </exception>
         public ModifyReplicationInstanceResponse ModifyReplicationInstance(ModifyReplicationInstanceRequest request)
         {
@@ -1319,19 +1324,20 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the ModifyReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
-        /// 
+        /// The subnet provided is invalid.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException">
-        /// 
+        /// The replication subnet group does not cover enough Availability Zones (AZs). Edit
+        /// the replication subnet group and add more AZs.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
-        /// 
+        /// The quota for this resource quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.SubnetAlreadyInUseException">
-        /// 
+        /// The specified subnet is already in use.
         /// </exception>
         public ModifyReplicationSubnetGroupResponse ModifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest request)
         {
@@ -1375,16 +1381,16 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the RefreshSchemas service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// 
+        /// AWS DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
-        /// 
+        /// The quota for this resource quota has been exceeded.
         /// </exception>
         public RefreshSchemasResponse RefreshSchemas(RefreshSchemasRequest request)
         {
@@ -1418,7 +1424,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// For internal use only
+        /// Removes metadata tags from a DMS resource.
         /// 
         ///  <note/>
         /// </summary>
@@ -1426,7 +1432,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
@@ -1468,10 +1474,10 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the StartReplicationTask service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public StartReplicationTaskResponse StartReplicationTask(StartReplicationTaskRequest request)
         {
@@ -1513,10 +1519,10 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the StopReplicationTask service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         public StopReplicationTaskResponse StopReplicationTask(StopReplicationTaskRequest request)
         {
@@ -1558,16 +1564,16 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>The response from the TestConnection service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
-        /// 
+        /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
-        /// 
+        /// AWS DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
-        /// 
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
-        /// 
+        /// The quota for this resource quota has been exceeded.
         /// </exception>
         public TestConnectionResponse TestConnection(TestConnectionRequest request)
         {

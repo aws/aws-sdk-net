@@ -29,7 +29,7 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// For internal use only
+    /// Removes metadata tags from a DMS resource.
     /// 
     ///  <note/>
     /// </summary>

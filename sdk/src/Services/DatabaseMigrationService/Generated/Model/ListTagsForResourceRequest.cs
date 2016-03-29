@@ -29,7 +29,7 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// For internal use only
+    /// Lists all tags for an AWS DMS resource.
     /// 
     ///  <note/>
     /// </summary>
