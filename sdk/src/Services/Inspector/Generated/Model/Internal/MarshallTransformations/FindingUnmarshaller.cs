@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -64,10 +64,22 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("agentId", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("assetAttributes", targetDepth))
+                {
+                    var unmarshaller = AssetAttributesUnmarshaller.Instance;
+                    unmarshalledObject.AssetAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("assetType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssetType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("attributes", targetDepth))
@@ -76,46 +88,64 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("autoScalingGroup", targetDepth))
+                if (context.TestExpression("confidence", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingGroup = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
-                    var unmarshaller = LocalizedTextUnmarshaller.Instance;
+                    var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("findingArn", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FindingArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("indicatorOfCompromise", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IndicatorOfCompromise = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("numericSeverity", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.NumericSeverity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("recommendation", targetDepth))
                 {
-                    var unmarshaller = LocalizedTextUnmarshaller.Instance;
+                    var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Recommendation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ruleName", targetDepth))
+                if (context.TestExpression("schemaVersion", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rulesPackageArn", targetDepth))
+                if (context.TestExpression("service", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RulesPackageArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Service = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("runArn", targetDepth))
+                if (context.TestExpression("serviceAttributes", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InspectorServiceAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ServiceAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("severity", targetDepth))
@@ -124,10 +154,16 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                     unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("finding", targetDepth))
+                if (context.TestExpression("title", targetDepth))
                 {
-                    var unmarshaller = LocalizedTextUnmarshaller.Instance;
+                    var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("userAttributes", targetDepth))

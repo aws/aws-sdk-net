@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,13 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// A key and value pair.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used as a request parameter in the <a>SetTagsForResource</a> action
-    /// and a response element in the <a>ListTagsForResource</a> action.
-    /// </para>
+    /// A key and value pair. This data type is used as a request parameter in the <a>SetTagsForResource</a>
+    /// action and a response element in the <a>ListTagsForResource</a> action.
     /// </summary>
     public partial class Tag
     {
@@ -44,7 +39,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The tag key.
+        /// A tag key.
         /// </para>
         /// </summary>
         public string Key
@@ -62,7 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value assigned to a tag key.
+        /// A value assigned to a tag key.
         /// </para>
         /// </summary>
         public string Value

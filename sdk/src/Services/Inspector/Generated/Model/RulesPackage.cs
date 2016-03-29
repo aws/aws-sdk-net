@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,21 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// Contains information about an Inspector rules package.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used as the response element in the <a>DescribeRulesPackage</a>
-    /// action.
-    /// </para>
+    /// Contains information about an Inspector rules package. This data type is used as the
+    /// response element in the <a>DescribeRulesPackages</a> action.
     /// </summary>
     public partial class RulesPackage
     {
-        private LocalizedText _description;
+        private string _arn;
+        private string _description;
+        private string _name;
         private string _provider;
-        private string _rulesPackageArn;
-        private string _rulesPackageName;
         private string _version;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the rules package.
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -50,7 +63,7 @@ namespace Amazon.Inspector.Model
         /// The description of the rules package.
         /// </para>
         /// </summary>
-        public LocalizedText Description
+        public string Description
         {
             get { return this._description; }
             set { this._description = value; }
@@ -60,6 +73,24 @@ namespace Amazon.Inspector.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the rules package.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
@@ -78,42 +109,6 @@ namespace Amazon.Inspector.Model
         internal bool IsSetProvider()
         {
             return this._provider != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RulesPackageArn. 
-        /// <para>
-        ///  The ARN of the rules package.
-        /// </para>
-        /// </summary>
-        public string RulesPackageArn
-        {
-            get { return this._rulesPackageArn; }
-            set { this._rulesPackageArn = value; }
-        }
-
-        // Check to see if RulesPackageArn property is set
-        internal bool IsSetRulesPackageArn()
-        {
-            return this._rulesPackageArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RulesPackageName. 
-        /// <para>
-        /// The name of the rules package.
-        /// </para>
-        /// </summary>
-        public string RulesPackageName
-        {
-            get { return this._rulesPackageName; }
-            set { this._rulesPackageName = value; }
-        }
-
-        // Check to see if RulesPackageName property is set
-        internal bool IsSetRulesPackageName()
-        {
-            return this._rulesPackageName != null;
         }
 
         /// <summary>

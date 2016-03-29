@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 
 
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class InspectorMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("inspector-2015-08-18.normal.json", "inspector.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("inspector-2016-02-16.normal.json", "");
         
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -72,14 +72,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void AttachAssessmentAndRulesPackageMarshallTest()
+        public void CreateAssessmentTargetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<AttachAssessmentAndRulesPackageRequest>();
-            var marshaller = new AttachAssessmentAndRulesPackageRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateAssessmentTargetRequest>();
+            var marshaller = new CreateAssessmentTargetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<AttachAssessmentAndRulesPackageRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<CreateAssessmentTargetRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -88,11 +88,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AttachAssessmentAndRulesPackage").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateAssessmentTarget").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = AttachAssessmentAndRulesPackageResponseUnmarshaller.Instance.Unmarshall(context)
-                as AttachAssessmentAndRulesPackageResponse;
+            var response = CreateAssessmentTargetResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateAssessmentTargetResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -101,14 +101,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void CreateApplicationMarshallTest()
+        public void CreateAssessmentTemplateMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<CreateApplicationRequest>();
-            var marshaller = new CreateApplicationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateAssessmentTemplateRequest>();
+            var marshaller = new CreateAssessmentTemplateRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<CreateApplicationRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<CreateAssessmentTemplateRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -117,40 +117,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateApplication").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateAssessmentTemplate").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreateApplicationResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateApplicationResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Inspector")]
-        public void CreateAssessmentMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<CreateAssessmentRequest>();
-            var marshaller = new CreateAssessmentRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<CreateAssessmentRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateAssessment").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreateAssessmentResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateAssessmentResponse;
+            var response = CreateAssessmentTemplateResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateAssessmentTemplateResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -188,14 +159,62 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void DeleteApplicationMarshallTest()
+        public void DeleteAssessmentRunMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteApplicationRequest>();
-            var marshaller = new DeleteApplicationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteAssessmentRunRequest>();
+            var marshaller = new DeleteAssessmentRunRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DeleteApplicationRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<DeleteAssessmentRunRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Inspector")]
+        public void DeleteAssessmentTargetMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteAssessmentTargetRequest>();
+            var marshaller = new DeleteAssessmentTargetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteAssessmentTargetRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Inspector")]
+        public void DeleteAssessmentTemplateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteAssessmentTemplateRequest>();
+            var marshaller = new DeleteAssessmentTemplateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteAssessmentTemplateRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Inspector")]
+        public void DescribeAssessmentRunsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeAssessmentRunsRequest>();
+            var marshaller = new DescribeAssessmentRunsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeAssessmentRunsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -204,11 +223,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteApplication").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAssessmentRuns").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteApplicationResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteApplicationResponse;
+            var response = DescribeAssessmentRunsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAssessmentRunsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -217,14 +236,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void DeleteAssessmentMarshallTest()
+        public void DescribeAssessmentTargetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteAssessmentRequest>();
-            var marshaller = new DeleteAssessmentRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DescribeAssessmentTargetsRequest>();
+            var marshaller = new DescribeAssessmentTargetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DeleteAssessmentRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<DescribeAssessmentTargetsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -233,11 +252,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteAssessment").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAssessmentTargets").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteAssessmentResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteAssessmentResponse;
+            var response = DescribeAssessmentTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAssessmentTargetsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -246,14 +265,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void DeleteRunMarshallTest()
+        public void DescribeAssessmentTemplatesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DeleteRunRequest>();
-            var marshaller = new DeleteRunRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DescribeAssessmentTemplatesRequest>();
+            var marshaller = new DescribeAssessmentTemplatesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DeleteRunRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<DescribeAssessmentTemplatesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -262,69 +281,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRun").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAssessmentTemplates").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteRunResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteRunResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Inspector")]
-        public void DescribeApplicationMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<DescribeApplicationRequest>();
-            var marshaller = new DescribeApplicationRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DescribeApplicationRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeApplication").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeApplicationResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeApplicationResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Inspector")]
-        public void DescribeAssessmentMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<DescribeAssessmentRequest>();
-            var marshaller = new DescribeAssessmentRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DescribeAssessmentRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAssessment").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeAssessmentResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeAssessmentResponse;
+            var response = DescribeAssessmentTemplatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAssessmentTemplatesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -359,14 +320,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void DescribeFindingMarshallTest()
+        public void DescribeFindingsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeFindingRequest>();
-            var marshaller = new DescribeFindingRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DescribeFindingsRequest>();
+            var marshaller = new DescribeFindingsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DescribeFindingRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<DescribeFindingsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -375,11 +336,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeFinding").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeFindings").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeFindingResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeFindingResponse;
+            var response = DescribeFindingsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeFindingsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -388,14 +349,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void DescribeResourceGroupMarshallTest()
+        public void DescribeResourceGroupsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeResourceGroupRequest>();
-            var marshaller = new DescribeResourceGroupRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DescribeResourceGroupsRequest>();
+            var marshaller = new DescribeResourceGroupsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DescribeResourceGroupRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<DescribeResourceGroupsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -404,11 +365,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeResourceGroup").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeResourceGroups").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeResourceGroupResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeResourceGroupResponse;
+            var response = DescribeResourceGroupsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeResourceGroupsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -417,14 +378,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void DescribeRulesPackageMarshallTest()
+        public void DescribeRulesPackagesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeRulesPackageRequest>();
-            var marshaller = new DescribeRulesPackageRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DescribeRulesPackagesRequest>();
+            var marshaller = new DescribeRulesPackagesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DescribeRulesPackageRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<DescribeRulesPackagesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -433,11 +394,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRulesPackage").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRulesPackages").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeRulesPackageResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeRulesPackageResponse;
+            var response = DescribeRulesPackagesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeRulesPackagesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -446,14 +407,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void DescribeRunMarshallTest()
+        public void GetTelemetryMetadataMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DescribeRunRequest>();
-            var marshaller = new DescribeRunRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetTelemetryMetadataRequest>();
+            var marshaller = new GetTelemetryMetadataRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DescribeRunRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<GetTelemetryMetadataRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -462,11 +423,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRun").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetTelemetryMetadata").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeRunResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeRunResponse;
+            var response = GetTelemetryMetadataResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetTelemetryMetadataResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -475,14 +436,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void DetachAssessmentAndRulesPackageMarshallTest()
+        public void ListAssessmentRunAgentsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<DetachAssessmentAndRulesPackageRequest>();
-            var marshaller = new DetachAssessmentAndRulesPackageRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListAssessmentRunAgentsRequest>();
+            var marshaller = new ListAssessmentRunAgentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<DetachAssessmentAndRulesPackageRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<ListAssessmentRunAgentsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -491,11 +452,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DetachAssessmentAndRulesPackage").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAssessmentRunAgents").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DetachAssessmentAndRulesPackageResponseUnmarshaller.Instance.Unmarshall(context)
-                as DetachAssessmentAndRulesPackageResponse;
+            var response = ListAssessmentRunAgentsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAssessmentRunAgentsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -504,14 +465,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void GetAssessmentTelemetryMarshallTest()
+        public void ListAssessmentRunsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<GetAssessmentTelemetryRequest>();
-            var marshaller = new GetAssessmentTelemetryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListAssessmentRunsRequest>();
+            var marshaller = new ListAssessmentRunsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<GetAssessmentTelemetryRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<ListAssessmentRunsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -520,11 +481,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAssessmentTelemetry").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAssessmentRuns").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetAssessmentTelemetryResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetAssessmentTelemetryResponse;
+            var response = ListAssessmentRunsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAssessmentRunsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -533,14 +494,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void ListApplicationsMarshallTest()
+        public void ListAssessmentTargetsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListApplicationsRequest>();
-            var marshaller = new ListApplicationsRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListAssessmentTargetsRequest>();
+            var marshaller = new ListAssessmentTargetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<ListApplicationsRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<ListAssessmentTargetsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -549,11 +510,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListApplications").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAssessmentTargets").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListApplicationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListApplicationsResponse;
+            var response = ListAssessmentTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAssessmentTargetsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -562,14 +523,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void ListAssessmentAgentsMarshallTest()
+        public void ListAssessmentTemplatesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListAssessmentAgentsRequest>();
-            var marshaller = new ListAssessmentAgentsRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListAssessmentTemplatesRequest>();
+            var marshaller = new ListAssessmentTemplatesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<ListAssessmentAgentsRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<ListAssessmentTemplatesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -578,11 +539,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAssessmentAgents").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAssessmentTemplates").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListAssessmentAgentsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListAssessmentAgentsResponse;
+            var response = ListAssessmentTemplatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAssessmentTemplatesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -591,14 +552,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void ListAssessmentsMarshallTest()
+        public void ListEventSubscriptionsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<ListAssessmentsRequest>();
-            var marshaller = new ListAssessmentsRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListEventSubscriptionsRequest>();
+            var marshaller = new ListEventSubscriptionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<ListAssessmentsRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<ListEventSubscriptionsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -607,69 +568,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAssessments").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListEventSubscriptions").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListAssessmentsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListAssessmentsResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Inspector")]
-        public void ListAttachedAssessmentsMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<ListAttachedAssessmentsRequest>();
-            var marshaller = new ListAttachedAssessmentsRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<ListAttachedAssessmentsRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAttachedAssessments").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListAttachedAssessmentsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListAttachedAssessmentsResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Inspector")]
-        public void ListAttachedRulesPackagesMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<ListAttachedRulesPackagesRequest>();
-            var marshaller = new ListAttachedRulesPackagesRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<ListAttachedRulesPackagesRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAttachedRulesPackages").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListAttachedRulesPackagesResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListAttachedRulesPackagesResponse;
+            var response = ListEventSubscriptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListEventSubscriptionsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -736,35 +639,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void ListRunsMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<ListRunsRequest>();
-            var marshaller = new ListRunsRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<ListRunsRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRuns").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListRunsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListRunsResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Inspector")]
         public void ListTagsForResourceMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
@@ -794,14 +668,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void LocalizeTextMarshallTest()
+        public void PreviewAgentsMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<LocalizeTextRequest>();
-            var marshaller = new LocalizeTextRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<PreviewAgentsRequest>();
+            var marshaller = new PreviewAgentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<LocalizeTextRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<PreviewAgentsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -810,40 +684,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("LocalizeText").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PreviewAgents").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = LocalizeTextResponseUnmarshaller.Instance.Unmarshall(context)
-                as LocalizeTextResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Inspector")]
-        public void PreviewAgentsForResourceGroupMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<PreviewAgentsForResourceGroupRequest>();
-            var marshaller = new PreviewAgentsForResourceGroupRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<PreviewAgentsForResourceGroupRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PreviewAgentsForResourceGroup").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = PreviewAgentsForResourceGroupResponseUnmarshaller.Instance.Unmarshall(context)
-                as PreviewAgentsForResourceGroupResponse;
+            var response = PreviewAgentsResponseUnmarshaller.Instance.Unmarshall(context)
+                as PreviewAgentsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -861,19 +706,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<RegisterCrossAccountAccessRoleRequest>(request,jsonRequest);
 
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RegisterCrossAccountAccessRole").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = RegisterCrossAccountAccessRoleResponseUnmarshaller.Instance.Unmarshall(context)
-                as RegisterCrossAccountAccessRoleResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         
@@ -910,35 +742,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void RunAssessmentMarshallTest()
-        {
-            var request = InstantiateClassGenerator.Execute<RunAssessmentRequest>();
-            var marshaller = new RunAssessmentRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<RunAssessmentRequest>(request,jsonRequest);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RunAssessment").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = RunAssessmentResponseUnmarshaller.Instance.Unmarshall(context)
-                as RunAssessmentResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("Inspector")]
         public void SetTagsForResourceMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<SetTagsForResourceRequest>();
@@ -948,6 +751,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<SetTagsForResourceRequest>(request,jsonRequest);
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Inspector")]
+        public void StartAssessmentRunMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartAssessmentRunRequest>();
+            var marshaller = new StartAssessmentRunRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StartAssessmentRunRequest>(request,jsonRequest);
+
             var webResponse = new WebResponseData
             {
                 Headers = {
@@ -955,11 +774,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SetTagsForResource").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartAssessmentRun").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = SetTagsForResourceResponseUnmarshaller.Instance.Unmarshall(context)
-                as SetTagsForResourceResponse;
+            var response = StartAssessmentRunResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartAssessmentRunResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -968,28 +787,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void StartDataCollectionMarshallTest()
+        public void StopAssessmentRunMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StartDataCollectionRequest>();
-            var marshaller = new StartDataCollectionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<StopAssessmentRunRequest>();
+            var marshaller = new StopAssessmentRunRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<StartDataCollectionRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<StopAssessmentRunRequest>(request,jsonRequest);
 
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartDataCollection").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = StartDataCollectionResponseUnmarshaller.Instance.Unmarshall(context)
-                as StartDataCollectionResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         
@@ -997,28 +803,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void StopDataCollectionMarshallTest()
+        public void SubscribeToEventMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<StopDataCollectionRequest>();
-            var marshaller = new StopDataCollectionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<SubscribeToEventRequest>();
+            var marshaller = new SubscribeToEventRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<StopDataCollectionRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<SubscribeToEventRequest>(request,jsonRequest);
 
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StopDataCollection").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = StopDataCollectionResponseUnmarshaller.Instance.Unmarshall(context)
-                as StopDataCollectionResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         
@@ -1026,28 +819,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void UpdateApplicationMarshallTest()
+        public void UnsubscribeFromEventMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateApplicationRequest>();
-            var marshaller = new UpdateApplicationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UnsubscribeFromEventRequest>();
+            var marshaller = new UnsubscribeFromEventRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<UpdateApplicationRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<UnsubscribeFromEventRequest>(request,jsonRequest);
 
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateApplication").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateApplicationResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateApplicationResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         
@@ -1055,28 +835,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Inspector")]
-        public void UpdateAssessmentMarshallTest()
+        public void UpdateAssessmentTargetMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<UpdateAssessmentRequest>();
-            var marshaller = new UpdateAssessmentRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateAssessmentTargetRequest>();
+            var marshaller = new UpdateAssessmentTargetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<UpdateAssessmentRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<UpdateAssessmentTargetRequest>(request,jsonRequest);
 
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateAssessment").ResponseStructure).Execute();
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateAssessmentResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateAssessmentResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
             }

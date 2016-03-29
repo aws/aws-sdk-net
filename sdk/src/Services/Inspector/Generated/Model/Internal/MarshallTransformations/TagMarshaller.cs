@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -47,13 +47,13 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         {
             if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("Key");
+                context.Writer.WritePropertyName("key");
                 context.Writer.Write(requestObject.Key);
             }
 
             if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("Value");
+                context.Writer.WritePropertyName("value");
                 context.Writer.Write(requestObject.Value);
             }
 

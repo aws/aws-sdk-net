@@ -313,7 +313,7 @@ namespace ServiceClientGenerator
             else
             {
                 // Remove enums already defined in the parent model                
-                return list.Where(e => ParentModel.Enumerations(true).All(en => !e.Name.Equals(en.Name)));
+                return list.Where(e => ParentModel.Enumerations(true).All(en => !e.ModelName.Equals(en.ModelName)));
             }         
         }
 

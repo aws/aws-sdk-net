@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <a>PreviewAgentsForResourceGroup</a>
-    /// action.
+    /// This data type is used as a response element in the <a>PreviewAgents</a> action.
     /// </summary>
     public partial class AgentPreview
     {

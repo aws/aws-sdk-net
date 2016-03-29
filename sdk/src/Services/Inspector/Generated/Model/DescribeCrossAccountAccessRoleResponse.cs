@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,8 +32,27 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class DescribeCrossAccountAccessRoleResponse : AmazonWebServiceResponse
     {
+        private DateTime? _registeredAt;
         private string _roleArn;
         private bool? _valid;
+
+        /// <summary>
+        /// Gets and sets the property RegisteredAt. 
+        /// <para>
+        /// The date when the cross account access role was registered.
+        /// </para>
+        /// </summary>
+        public DateTime RegisteredAt
+        {
+            get { return this._registeredAt.GetValueOrDefault(); }
+            set { this._registeredAt = value; }
+        }
+
+        // Check to see if RegisteredAt property is set
+        internal bool IsSetRegisteredAt()
+        {
+            return this._registeredAt.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 

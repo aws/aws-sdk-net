@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the SetTagsForResource operation.
-    /// Sets tags (key and value pairs) to the assessment specified by the assessment ARN.
+    /// Sets tags (key and value pairs) to the assessment template specified by the assessment
+    /// template ARN.
     /// </summary>
     public partial class SetTagsForResourceRequest : AmazonInspectorRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the assessment that you want to set tags to.
+        /// The ARN of the assessment template that you want to set tags to.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -57,7 +58,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of key and value pairs that you want to set to an assessment.
+        /// A collection of key and value pairs that you want to set to the assessment template.
         /// </para>
         /// </summary>
         public List<Tag> Tags

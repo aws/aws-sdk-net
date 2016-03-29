@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,15 +29,19 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCrossAccountAccessRole operation.
-    /// Register the role that Inspector uses to list your EC2 instances during the assessment.
+    /// Registers the IAM role that Inspector uses to list your EC2 instances at the start
+    /// of the assessment run or when you call the <a>PreviewAgents</a> action.
     /// </summary>
     public partial class RegisterCrossAccountAccessRoleRequest : AmazonInspectorRequest
     {
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property RoleArn. The ARN of the IAM role that Inspector uses to
-        /// list your EC2 instances during the assessment.
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The ARN of the IAM role that Inspector uses to list your EC2 instances during the
+        /// assessment run or when you call the <a>PreviewAgents</a> action. 
+        /// </para>
         /// </summary>
         public string RoleArn
         {

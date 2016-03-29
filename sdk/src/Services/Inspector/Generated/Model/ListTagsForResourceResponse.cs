@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,24 +32,24 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private List<Tag> _tagList = new List<Tag>();
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property TagList. 
+        /// Gets and sets the property Tags. 
         /// <para>
         /// A collection of key and value pairs.
         /// </para>
         /// </summary>
-        public List<Tag> TagList
+        public List<Tag> Tags
         {
-            get { return this._tagList; }
-            set { this._tagList = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if TagList property is set
-        internal bool IsSetTagList()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,24 +32,25 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class AddAttributesToFindingsResponse : AmazonWebServiceResponse
     {
-        private string _message;
+        private Dictionary<string, FailedItemDetails> _failedItems = new Dictionary<string, FailedItemDetails>();
 
         /// <summary>
-        /// Gets and sets the property Message. 
+        /// Gets and sets the property FailedItems. 
         /// <para>
-        /// Confirmation details of the action performed.
+        /// Attributes details that cannot be described. An error code is provided for each failed
+        /// item. 
         /// </para>
         /// </summary>
-        public string Message
+        public Dictionary<string, FailedItemDetails> FailedItems
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._failedItems; }
+            set { this._failedItems = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if FailedItems property is set
+        internal bool IsSetFailedItems()
         {
-            return this._message != null;
+            return this._failedItems != null && this._failedItems.Count > 0; 
         }
 
     }

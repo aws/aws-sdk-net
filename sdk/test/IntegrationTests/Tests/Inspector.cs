@@ -8,8 +8,8 @@ using Amazon.Runtime;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-// Temporay disable test for preview service.
-//    [TestClass]
+    /* Tests disabled pending update to new 2016-02-16 API version
+    [TestClass]
     public class Inspector : TestBase<AmazonInspectorClient>
     {
         [TestInitialize]
@@ -70,5 +70,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Client.DeleteApplication(new DeleteApplicationRequest { ApplicationArn = appArn });
         }
 
-    }
+    }*/
 }
