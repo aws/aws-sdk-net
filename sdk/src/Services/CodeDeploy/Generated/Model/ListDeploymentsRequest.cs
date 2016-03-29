@@ -104,7 +104,7 @@ namespace Amazon.CodeDeploy.Model
         /// Include queued deployments in the resulting list.</li> <li>In Progress: Include in-progress
         /// deployments in the resulting list.</li> <li>Succeeded: Include successful deployments
         /// in the resulting list.</li> <li>Failed: Include failed deployments in the resulting
-        /// list.</li> <li>Aborted: Include aborted deployments in the resulting list.</li> </ul>
+        /// list.</li> <li>Stopped: Include stopped deployments in the resulting list.</li> </ul>
         /// </summary>
         public List<string> IncludeOnlyStatuses
         {
