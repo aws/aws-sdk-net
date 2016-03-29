@@ -28,18 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The output for a <a>ListStackResources</a> action.
+    /// The output for the <a>ListChangeSets</a> action.
     /// </summary>
-    public partial class ListStackResourcesResponse : AmazonWebServiceResponse
+    public partial class ListChangeSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StackResourceSummary> _stackResourceSummaries = new List<StackResourceSummary>();
+        private List<ChangeSetSummary> _summaries = new List<ChangeSetSummary>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the output exceeds 1 MB, a string that identifies the next page of stack resources.
-        /// If no additional page exists, this value is null.
+        /// If the output exceeds 1 MB, a string that identifies the next page of change sets.
+        /// If there is no additional page, this value is null.
         /// </para>
         /// </summary>
         public string NextToken
@@ -55,21 +55,22 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackResourceSummaries. 
+        /// Gets and sets the property Summaries. 
         /// <para>
-        /// A list of <code>StackResourceSummary</code> structures.
+        /// A list of <code>ChangeSetSummary</code> structures that provides the ID and status
+        /// of each change set for the specified stack.
         /// </para>
         /// </summary>
-        public List<StackResourceSummary> StackResourceSummaries
+        public List<ChangeSetSummary> Summaries
         {
-            get { return this._stackResourceSummaries; }
-            set { this._stackResourceSummaries = value; }
+            get { return this._summaries; }
+            set { this._summaries = value; }
         }
 
-        // Check to see if StackResourceSummaries property is set
-        internal bool IsSetStackResourceSummaries()
+        // Check to see if Summaries property is set
+        internal bool IsSetSummaries()
         {
-            return this._stackResourceSummaries != null && this._stackResourceSummaries.Count > 0; 
+            return this._summaries != null && this._summaries.Count > 0; 
         }
 
     }

@@ -28,51 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The Tag type enables you to specify a key-value pair that can be used to store information
-    /// about an AWS CloudFormation stack.
+    /// The <code>Change</code> structure describes the changes AWS CloudFormation will perform
+    /// if you execute the change set.
     /// </summary>
-    public partial class Tag
+    public partial class Change
     {
-        private string _key;
-        private string _value;
+        private ResourceChange _resourceChange;
+        private ChangeType _type;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property ResourceChange. 
         /// <para>
-        /// <i>Required</i>. A string used to identify this tag. You can specify a maximum of
-        /// 128 characters for a tag key. Tags owned by Amazon Web Services (AWS) have the reserved
-        /// prefix: <code>aws:</code>.
+        /// A <code>ResourceChange</code> structure that describes the resource and action that
+        /// AWS CloudFormation will perform.
         /// </para>
         /// </summary>
-        public string Key
+        public ResourceChange ResourceChange
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._resourceChange; }
+            set { this._resourceChange = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if ResourceChange property is set
+        internal bool IsSetResourceChange()
         {
-            return this._key != null;
+            return this._resourceChange != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// <i>Required</i>. A string containing the value for this tag. You can specify a maximum
-        /// of 256 characters for a tag value.
+        /// The type of entity that AWS CloudFormation changes. Currently, the only entity type
+        /// is <code>Resource</code>.
         /// </para>
         /// </summary>
-        public string Value
+        public ChangeType Type
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._value != null;
+            return this._type != null;
         }
 
     }

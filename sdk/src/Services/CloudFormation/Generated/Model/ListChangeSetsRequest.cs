@@ -28,18 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The output for a <a>ListStackResources</a> action.
+    /// Container for the parameters to the ListChangeSets operation.
+    /// Returns the ID and status of each active change set for a stack. For example, AWS
+    /// CloudFormation lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or
+    /// <code>CREATE_PENDING</code> state.
     /// </summary>
-    public partial class ListStackResourcesResponse : AmazonWebServiceResponse
+    public partial class ListChangeSetsRequest : AmazonCloudFormationRequest
     {
         private string _nextToken;
-        private List<StackResourceSummary> _stackResourceSummaries = new List<StackResourceSummary>();
+        private string _stackName;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the output exceeds 1 MB, a string that identifies the next page of stack resources.
-        /// If no additional page exists, this value is null.
+        /// A string (provided by the <a>ListChangeSets</a> response output) that identifies the
+        /// next page of change sets that you want to retrieve.
         /// </para>
         /// </summary>
         public string NextToken
@@ -55,21 +58,22 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackResourceSummaries. 
+        /// Gets and sets the property StackName. 
         /// <para>
-        /// A list of <code>StackResourceSummary</code> structures.
+        /// The name or the Amazon Resource Name (ARN) of the stack for which you want to list
+        /// change sets.
         /// </para>
         /// </summary>
-        public List<StackResourceSummary> StackResourceSummaries
+        public string StackName
         {
-            get { return this._stackResourceSummaries; }
-            set { this._stackResourceSummaries = value; }
+            get { return this._stackName; }
+            set { this._stackName = value; }
         }
 
-        // Check to see if StackResourceSummaries property is set
-        internal bool IsSetStackResourceSummaries()
+        // Check to see if StackName property is set
+        internal bool IsSetStackName()
         {
-            return this._stackResourceSummaries != null && this._stackResourceSummaries.Count > 0; 
+            return this._stackName != null;
         }
 
     }

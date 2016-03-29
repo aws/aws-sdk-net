@@ -53,9 +53,10 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// A list of capabilities that you must specify before AWS CloudFormation can create
-        /// or update certain stacks. Some stack templates might include resources that can affect
-        /// permissions in your AWS account. For those stacks, you must explicitly acknowledge
-        /// their capabilities by specifying this parameter.
+        /// certain stacks. Some stack templates might include resources that can affect permissions
+        /// in your AWS account, for example, by creating new AWS Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge their capabilities
+        /// by specifying this parameter.
         /// </para>
         ///  
         /// <para>
@@ -68,8 +69,10 @@ namespace Amazon.CloudFormation.Model
         /// AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
         /// AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
         /// AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources,
-        /// we recommend that you review any permissions associated with them. If you don't specify
-        /// this parameter, this action returns an <code>InsufficientCapabilities</code> error.
+        /// we recommend that you review all permissions associated with them and edit their permissions
+        /// if necessary. If your template contains any of the listed resources and you don't
+        /// specify this parameter, this action returns an <code>InsufficientCapabilities</code>
+        /// error.
         /// </para>
         /// </summary>
         public List<string> Capabilities

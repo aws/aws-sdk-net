@@ -265,6 +265,37 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  CreateChangeSet
+
+        internal CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request)
+        {
+            var marshaller = new CreateChangeSetRequestMarshaller();
+            var unmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateChangeSetRequest,CreateChangeSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateChangeSetResponse> CreateChangeSetAsync(CreateChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateChangeSetRequestMarshaller();
+            var unmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateChangeSetRequest,CreateChangeSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateStack
 
         internal CreateStackResponse CreateStack(CreateStackRequest request)
@@ -291,6 +322,37 @@ namespace Amazon.CloudFormation
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateStackRequest,CreateStackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteChangeSet
+
+        internal DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request)
+        {
+            var marshaller = new DeleteChangeSetRequestMarshaller();
+            var unmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteChangeSetRequest,DeleteChangeSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteChangeSetResponse> DeleteChangeSetAsync(DeleteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteChangeSetRequestMarshaller();
+            var unmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteChangeSetRequest,DeleteChangeSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -353,6 +415,37 @@ namespace Amazon.CloudFormation
             var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAccountLimitsRequest,DescribeAccountLimitsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeChangeSet
+
+        internal DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request)
+        {
+            var marshaller = new DescribeChangeSetRequestMarshaller();
+            var unmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeChangeSetRequest,DescribeChangeSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeChangeSetResponse> DescribeChangeSetAsync(DescribeChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeChangeSetRequestMarshaller();
+            var unmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeChangeSetRequest,DescribeChangeSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -532,6 +625,37 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ExecuteChangeSet
+
+        internal ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request)
+        {
+            var marshaller = new ExecuteChangeSetRequestMarshaller();
+            var unmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteChangeSetRequest,ExecuteChangeSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteChangeSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ExecuteChangeSetResponse> ExecuteChangeSetAsync(ExecuteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ExecuteChangeSetRequestMarshaller();
+            var unmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExecuteChangeSetRequest,ExecuteChangeSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStackPolicy
 
         internal GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request)
@@ -620,6 +744,37 @@ namespace Amazon.CloudFormation
             var unmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTemplateSummaryRequest,GetTemplateSummaryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListChangeSets
+
+        internal ListChangeSetsResponse ListChangeSets(ListChangeSetsRequest request)
+        {
+            var marshaller = new ListChangeSetsRequestMarshaller();
+            var unmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChangeSetsRequest,ListChangeSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangeSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListChangeSetsResponse> ListChangeSetsAsync(ListChangeSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListChangeSetsRequestMarshaller();
+            var unmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListChangeSetsRequest,ListChangeSetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

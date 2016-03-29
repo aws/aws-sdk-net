@@ -272,7 +272,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of <code>Tag</code>s that specify cost allocation information for the stack.
+        /// A list of <code>Tag</code>s that specify information about the stack.
         /// </para>
         /// </summary>
         public List<Tag> Tags

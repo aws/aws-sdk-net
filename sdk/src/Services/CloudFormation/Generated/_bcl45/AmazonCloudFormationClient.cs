@@ -350,6 +350,69 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  CreateChangeSet
+
+
+        /// <summary>
+        /// Creates a list of changes for a stack. AWS CloudFormation generates the change set
+        /// by comparing the stack's information with the information that you submit. A change
+        /// set can help you understand which resources AWS CloudFormation will change and how
+        /// it will change them before you update your stack. Change sets allow you to check before
+        /// you make a change so that you don't delete or replace critical resources.
+        /// 
+        ///  
+        /// <para>
+        /// AWS CloudFormation doesn't make any changes to the stack when you create a change
+        /// set. To make the specified changes, you must execute the change set by using the <a>ExecuteChangeSet</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the call successfully completes, AWS CloudFormation starts creating the change
+        /// set. To check the status of the change set, use the <a>DescribeChangeSet</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateChangeSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// Resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
+        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// Quota for the resource has already been reached.
+        /// </exception>
+        public CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request)
+        {
+            var marshaller = new CreateChangeSetRequestMarshaller();
+            var unmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateChangeSetRequest,CreateChangeSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateChangeSetResponse> CreateChangeSetAsync(CreateChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateChangeSetRequestMarshaller();
+            var unmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateChangeSetRequest,CreateChangeSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateStack
 
 
@@ -394,6 +457,50 @@ namespace Amazon.CloudFormation
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateStackRequest,CreateStackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteChangeSet
+
+
+        /// <summary>
+        /// Deletes the specified change set. Deleting change sets ensures that no one executes
+        /// the wrong change set.
+        /// 
+        ///  
+        /// <para>
+        /// If the call successfully completes, AWS CloudFormation successfully deleted the change
+        /// set.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChangeSet service method, as returned by CloudFormation.</returns>
+        public DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request)
+        {
+            var marshaller = new DeleteChangeSetRequestMarshaller();
+            var unmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteChangeSetRequest,DeleteChangeSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteChangeSetResponse> DeleteChangeSetAsync(DeleteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteChangeSetRequestMarshaller();
+            var unmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteChangeSetRequest,DeleteChangeSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -471,6 +578,49 @@ namespace Amazon.CloudFormation
             var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAccountLimitsRequest,DescribeAccountLimitsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeChangeSet
+
+
+        /// <summary>
+        /// Returns the inputs for the change set and a list of changes that AWS CloudFormation
+        /// will make if you execute the change set. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
+        /// Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChangeSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
+        /// The specified change set name or ID doesn't exit. To view valid change sets for a
+        /// stack, use the <code>ListChangeSets</code> action.
+        /// </exception>
+        public DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request)
+        {
+            var marshaller = new DescribeChangeSetRequestMarshaller();
+            var unmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeChangeSetRequest,DescribeChangeSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeChangeSetResponse> DescribeChangeSetAsync(DescribeChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeChangeSetRequestMarshaller();
+            var unmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeChangeSetRequest,DescribeChangeSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -721,6 +871,66 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ExecuteChangeSet
+
+
+        /// <summary>
+        /// Updates a stack using the input information that was provided when the specified change
+        /// set was created. After the call successfully completes, AWS CloudFormation starts
+        /// updating the stack. Use the <a>DescribeStacks</a> action to view the status of the
+        /// update.
+        /// 
+        ///  
+        /// <para>
+        /// When you execute a change set, AWS CloudFormation deletes all other change sets associated
+        /// with the stack because they aren't valid for the updated stack.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a stack policy is associated with the stack, AWS CloudFormation enforces the policy
+        /// during the update. You can't specify a temporary stack policy that overrides the current
+        /// policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteChangeSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
+        /// The specified change set name or ID doesn't exit. To view valid change sets for a
+        /// stack, use the <code>ListChangeSets</code> action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
+        /// The specified change set cannot be used to update the stack. For example, the change
+        /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
+        /// </exception>
+        public ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request)
+        {
+            var marshaller = new ExecuteChangeSetRequestMarshaller();
+            var unmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteChangeSetRequest,ExecuteChangeSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteChangeSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ExecuteChangeSetResponse> ExecuteChangeSetAsync(ExecuteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ExecuteChangeSetRequestMarshaller();
+            var unmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExecuteChangeSetRequest,ExecuteChangeSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStackPolicy
 
 
@@ -851,6 +1061,45 @@ namespace Amazon.CloudFormation
             var unmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTemplateSummaryRequest,GetTemplateSummaryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListChangeSets
+
+
+        /// <summary>
+        /// Returns the ID and status of each active change set for a stack. For example, AWS
+        /// CloudFormation lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or
+        /// <code>CREATE_PENDING</code> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeSets service method.</param>
+        /// 
+        /// <returns>The response from the ListChangeSets service method, as returned by CloudFormation.</returns>
+        public ListChangeSetsResponse ListChangeSets(ListChangeSetsRequest request)
+        {
+            var marshaller = new ListChangeSetsRequestMarshaller();
+            var unmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChangeSetsRequest,ListChangeSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangeSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListChangeSetsResponse> ListChangeSetsAsync(ListChangeSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListChangeSetsRequestMarshaller();
+            var unmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListChangeSetsRequest,ListChangeSetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
