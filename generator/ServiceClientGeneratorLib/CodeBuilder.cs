@@ -116,7 +116,7 @@ namespace ServiceClientGenerator
         /// <returns>This CodeBuilder instance for chaining</returns>
         public CodeBuilder AppendQuote(string s, string open = @"""", string close = null)
         {
-            sb.Append(open).Append(s).Append(null == close ? open : close);
+            sb.Append(open).Append(s.Replace("\"", "\\\"")).Append(null == close ? open : close);
             return this;
         }
     }
