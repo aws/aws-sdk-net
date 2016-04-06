@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HealthCheck Object
+    /// Response Unmarshaller for CloudWatchAlarmConfiguration Object
     /// </summary>  
-    public class HealthCheckUnmarshaller : IUnmarshaller<HealthCheck, XmlUnmarshallerContext>
+    public class CloudWatchAlarmConfigurationUnmarshaller : IUnmarshaller<CloudWatchAlarmConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HealthCheck Unmarshall(XmlUnmarshallerContext context)
+        public CloudWatchAlarmConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            HealthCheck unmarshalledObject = new HealthCheck();
+            CloudWatchAlarmConfiguration unmarshalledObject = new CloudWatchAlarmConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,34 +55,52 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Id", targetDepth))
+                    if (context.TestExpression("EvaluationPeriods", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.EvaluationPeriods = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Threshold", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ComparisonOperator", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("CallerReference", targetDepth))
+                    if (context.TestExpression("Period", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Period = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MetricName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CallerReference = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("HealthCheckConfig", targetDepth))
+                    if (context.TestExpression("Namespace", targetDepth))
                     {
-                        var unmarshaller = HealthCheckConfigUnmarshaller.Instance;
-                        unmarshalledObject.HealthCheckConfig = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("HealthCheckVersion", targetDepth))
+                    if (context.TestExpression("Statistic", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.HealthCheckVersion = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Statistic = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("CloudWatchAlarmConfiguration", targetDepth))
+                    if (context.TestExpression("Dimensions/Dimension", targetDepth))
                     {
-                        var unmarshaller = CloudWatchAlarmConfigurationUnmarshaller.Instance;
-                        unmarshalledObject.CloudWatchAlarmConfiguration = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DimensionUnmarshaller.Instance;
+                        unmarshalledObject.Dimensions.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                 }
@@ -94,12 +112,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static HealthCheckUnmarshaller _instance = new HealthCheckUnmarshaller();        
+        private static CloudWatchAlarmConfigurationUnmarshaller _instance = new CloudWatchAlarmConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HealthCheckUnmarshaller Instance
+        public static CloudWatchAlarmConfigurationUnmarshaller Instance
         {
             get
             {

@@ -106,6 +106,33 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableSNI())
                     xmlWriter.WriteElementString("EnableSNI", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.EnableSNI));                    
 
+                var publicRequestRegions = publicRequest.Regions;
+                if (publicRequestRegions != null && publicRequestRegions.Count > 0) 
+                {                        
+                    xmlWriter.WriteStartElement("Regions", "https://route53.amazonaws.com/doc/2013-04-01/");
+                    foreach (var publicRequestRegionsValue in publicRequestRegions) 
+                    {
+                        xmlWriter.WriteStartElement("Region", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        xmlWriter.WriteValue(publicRequestRegionsValue);
+                        xmlWriter.WriteEndElement();
+                    }            
+                    xmlWriter.WriteEndElement();            
+                }
+                
+                if (publicRequest.AlarmIdentifier != null) 
+                {
+                    xmlWriter.WriteStartElement("AlarmIdentifier", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                    if(publicRequest.AlarmIdentifier.IsSetRegion())
+                        xmlWriter.WriteElementString("Region", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.AlarmIdentifier.Region));                 
+    
+                    if(publicRequest.AlarmIdentifier.IsSetName())
+                        xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.AlarmIdentifier.Name));                 
+    
+                    xmlWriter.WriteEndElement();
+                }
+                if(publicRequest.IsSetInsufficientDataHealthStatus())
+                    xmlWriter.WriteElementString("InsufficientDataHealthStatus", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.InsufficientDataHealthStatus));                    
+
 
                 xmlWriter.WriteEndElement();
             }
