@@ -1,3 +1,13 @@
+### 3.1.58.0 (2016-04-06 03:57 UTC)
+* APIGateway (3.1.4.0)
+	* Add support for ImportRestApi and PutRestApi.
+* Inspector (3.1.1.0)
+	* Large service update.
+* Route53 (3.1.4.0)
+	* Add support for CloudWatch metric-based health checks.
+* SecurityToken (3.1.3.0)
+	* Add support for GetCallerIdentity, a new API which returns details about the credentials used to make the API call.
+
 ### 3.1.57.0 (2016-03-29 22:38 UTC)
 * AWS Database Migration Service (3.1.0.1)
 	* Documentation update.
