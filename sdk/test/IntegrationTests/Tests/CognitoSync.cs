@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 catch (AmazonSecurityTokenServiceException astse)
                 {
                     Assert.IsNotNull(astse);
-                    Assert.AreEqual(notAuthorizedMessage, astse.Message);
+                    //Assert.AreEqual(notAuthorizedMessage, astse.Message);
                     Console.WriteLine("Role not yet ready, sleeping for " + roleTestPeriod);
                     Thread.Sleep(roleTestPeriod);
                 }
