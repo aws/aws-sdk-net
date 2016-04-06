@@ -29,7 +29,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApiKey operation.
-    /// 
+    /// Create an <a>ApiKey</a> resource.
     /// </summary>
     public partial class CreateApiKeyRequest : AmazonAPIGatewayRequest
     {

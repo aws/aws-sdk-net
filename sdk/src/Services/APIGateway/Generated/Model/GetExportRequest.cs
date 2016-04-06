@@ -29,7 +29,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetExport operation.
-    /// 
+    /// Exports a deployed version of a <a>RestApi</a> in a specified format.
     /// </summary>
     public partial class GetExportRequest : AmazonAPIGatewayRequest
     {
@@ -40,7 +40,12 @@ namespace Amazon.APIGateway.Model
         private string _stageName;
 
         /// <summary>
-        /// Gets and sets the property Accepts.
+        /// Gets and sets the property Accepts. 
+        /// <para>
+        /// The content-type of the export, for example 'application/json'. Currently 'application/json'
+        /// and 'application/yaml' are supported for exportType 'swagger'. Should be specifed
+        /// in the 'Accept' header for direct API requests.
+        /// </para>
         /// </summary>
         public string Accepts
         {
@@ -55,7 +60,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExportType.
+        /// Gets and sets the property ExportType. 
+        /// <para>
+        /// The type of export. Currently only 'swagger' is supported.
+        /// </para>
         /// </summary>
         public string ExportType
         {
@@ -70,7 +78,14 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Parameters.
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A key-value map of query string parameters that specify properties of the export,
+        /// depending on the requested exportType. For exportType 'swagger', any combination of
+        /// the following parameters are supported: 'integrations' will export x-amazon-apigateway-integration
+        /// extensions 'authorizers' will export x-amazon-apigateway-authorizer extensions 'postman'
+        /// will export with Postman extensions, allowing for import to the Postman tool
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
         {
@@ -85,7 +100,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestApiId.
+        /// Gets and sets the property RestApiId. 
+        /// <para>
+        /// The identifier of the <a>RestApi</a> to be exported.
+        /// </para>
         /// </summary>
         public string RestApiId
         {
@@ -100,7 +118,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StageName.
+        /// Gets and sets the property StageName. 
+        /// <para>
+        /// The name of the <a>Stage</a> that will be exported.
+        /// </para>
         /// </summary>
         public string StageName
         {

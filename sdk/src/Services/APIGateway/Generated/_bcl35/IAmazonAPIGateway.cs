@@ -44,7 +44,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Create an <a>ApiKey</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// 
@@ -96,7 +96,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// 
@@ -664,7 +664,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Deletes the <a>ClientCertificate</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteClientCertificate service method.</param>
         /// 
@@ -1099,6 +1099,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteRestApi service method.</param>
         /// 
         /// <returns>The response from the DeleteRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1145,6 +1148,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteStage service method.</param>
         /// 
         /// <returns>The response from the DeleteStage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1284,7 +1290,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Generates a <a>ClientCertificate</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateClientCertificate service method.</param>
         /// 
@@ -1655,7 +1661,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets information about the current <a>ClientCertificate</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClientCertificate service method.</param>
         /// 
@@ -1701,7 +1707,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets a collection of <a>ClientCertificate</a> resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClientCertificates service method.</param>
         /// 
@@ -1941,7 +1947,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Exports a deployed version of a <a>RestApi</a> in a specified format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetExport service method.</param>
         /// 
@@ -2506,7 +2512,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSdk service method.</param>
         /// 
@@ -2643,6 +2649,56 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  ImportRestApi
+
+
+        /// <summary>
+        /// A feature of the Amazon API Gateway control service for creating a new API from an
+        /// external API definition file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportRestApi service method.</param>
+        /// 
+        /// <returns>The response from the ImportRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        ImportRestApiResponse ImportRestApi(ImportRestApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportRestApi operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportRestApi
+        ///         operation.</returns>
+        IAsyncResult BeginImportRestApi(ImportRestApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportRestApi.</param>
+        /// 
+        /// <returns>Returns a  ImportRestApiResult from APIGateway.</returns>
+        ImportRestApiResponse EndImportRestApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutIntegration
 
 
@@ -2702,6 +2758,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the PutIntegrationResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
@@ -2854,11 +2913,63 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  PutRestApi
+
+
+        /// <summary>
+        /// A feature of the Amazon API Gateway control service for updating an existing API with
+        /// an input of external API definitions. The update can take the form of merging the
+        /// supplied definition into the existing API or overwriting the existing API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRestApi service method.</param>
+        /// 
+        /// <returns>The response from the PutRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        PutRestApiResponse PutRestApi(PutRestApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRestApi operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRestApi
+        ///         operation.</returns>
+        IAsyncResult BeginPutRestApi(PutRestApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRestApi.</param>
+        /// 
+        /// <returns>Returns a  PutRestApiResult from APIGateway.</returns>
+        PutRestApiResponse EndPutRestApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TestInvokeAuthorizer
 
 
         /// <summary>
-        /// 
+        /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
+        /// parameters, and an incoming request body.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// 
@@ -2907,7 +3018,8 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with headers, parameters,
+        /// and an incoming request body.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeMethod service method.</param>
         /// 
@@ -3155,7 +3267,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Changes information about an <a>ClientCertificate</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClientCertificate service method.</param>
         /// 
@@ -3311,6 +3423,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateIntegration service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">

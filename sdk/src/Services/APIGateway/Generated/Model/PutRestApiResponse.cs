@@ -28,39 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a Client Certificate used to configure client-side SSL authentication while
-    /// sending requests to the integration endpoint.
+    /// Represents a REST API.
     /// </summary>
-    public partial class UpdateClientCertificateResponse : AmazonWebServiceResponse
+    public partial class PutRestApiResponse : AmazonWebServiceResponse
     {
-        private string _clientCertificateId;
         private DateTime? _createdDate;
         private string _description;
-        private DateTime? _expirationDate;
-        private string _pemEncodedCertificate;
-
-        /// <summary>
-        /// Gets and sets the property ClientCertificateId. 
-        /// <para>
-        /// The identifier of the Client Certificate.
-        /// </para>
-        /// </summary>
-        public string ClientCertificateId
-        {
-            get { return this._clientCertificateId; }
-            set { this._clientCertificateId = value; }
-        }
-
-        // Check to see if ClientCertificateId property is set
-        internal bool IsSetClientCertificateId()
-        {
-            return this._clientCertificateId != null;
-        }
+        private string _id;
+        private string _name;
+        private List<string> _warnings = new List<string>();
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date when the Client Certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+        /// The date when the API was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
         /// target="_blank">ISO 8601 format</a>.
         /// </para>
         /// </summary>
@@ -79,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the Client Certificate.
+        /// The API's description.
         /// </para>
         /// </summary>
         public string Description
@@ -95,41 +76,55 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpirationDate. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The date when the Client Certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-        /// target="_blank">ISO 8601 format</a>.
+        /// The API's identifier. This identifier is unique across all of your APIs in Amazon
+        /// API Gateway.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public string Id
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
-            set { this._expirationDate = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if ExpirationDate property is set
-        internal bool IsSetExpirationDate()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._expirationDate.HasValue; 
+            return this._id != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PemEncodedCertificate. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The PEM-encoded public key of the Client Certificate, that can be used to configure
-        /// certificate authentication in the integration endpoint .
+        /// The API's name.
         /// </para>
         /// </summary>
-        public string PemEncodedCertificate
+        public string Name
         {
-            get { return this._pemEncodedCertificate; }
-            set { this._pemEncodedCertificate = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if PemEncodedCertificate property is set
-        internal bool IsSetPemEncodedCertificate()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._pemEncodedCertificate != null;
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings.
+        /// </summary>
+        public List<string> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }

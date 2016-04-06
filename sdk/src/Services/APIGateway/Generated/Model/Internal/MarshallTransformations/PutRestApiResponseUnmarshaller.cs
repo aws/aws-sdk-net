@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateIntegration operation
+    /// Response Unmarshaller for PutRestApi operation
     /// </summary>  
-    public class UpdateIntegrationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutRestApiResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,64 +45,40 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateIntegrationResponse response = new UpdateIntegrationResponse();
+            PutRestApiResponse response = new PutRestApiResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cacheKeyParameters", targetDepth))
+                if (context.TestExpression("createdDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CreatedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("warnings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.CacheKeyParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("cacheNamespace", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CacheNamespace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("credentials", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Credentials = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("httpMethod", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.HttpMethod = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("integrationResponses", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, IntegrationResponse, StringUnmarshaller, IntegrationResponseUnmarshaller>(StringUnmarshaller.Instance, IntegrationResponseUnmarshaller.Instance);
-                    response.IntegrationResponses = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requestParameters", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.RequestParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requestTemplates", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.RequestTemplates = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Uri = unmarshaller.Unmarshall(context);
+                    response.Warnings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -124,13 +100,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
             {
-                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
-            {
-                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
             {
@@ -143,9 +115,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             return new AmazonAPIGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateIntegrationResponseUnmarshaller _instance = new UpdateIntegrationResponseUnmarshaller();        
+        private static PutRestApiResponseUnmarshaller _instance = new PutRestApiResponseUnmarshaller();        
 
-        internal static UpdateIntegrationResponseUnmarshaller GetInstance()
+        internal static PutRestApiResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -153,7 +125,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateIntegrationResponseUnmarshaller Instance
+        public static PutRestApiResponseUnmarshaller Instance
         {
             get
             {

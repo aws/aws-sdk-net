@@ -113,8 +113,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceMethods. 
         /// <para>
-        /// Map of methods for this resource, which is included only if requested using the <b>embed</b>
-        /// option.
+        /// Map of methods for this resource, which is included only if the request uses the <b>embed</b>
+        /// query option.
         /// </para>
         /// </summary>
         public Dictionary<string, Method> ResourceMethods

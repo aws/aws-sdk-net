@@ -29,7 +29,8 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the TestInvokeAuthorizer operation.
-    /// 
+    /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
+    /// parameters, and an incoming request body.
     /// </summary>
     public partial class TestInvokeAuthorizerRequest : AmazonAPIGatewayRequest
     {
@@ -42,7 +43,10 @@ namespace Amazon.APIGateway.Model
         private Dictionary<string, string> _stageVariables = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AdditionalContext.
+        /// Gets and sets the property AdditionalContext. 
+        /// <para>
+        /// [Optional] A key-value map of additional context variables.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> AdditionalContext
         {
@@ -57,7 +61,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AuthorizerId.
+        /// Gets and sets the property AuthorizerId. 
+        /// <para>
+        /// Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+        /// </para>
         /// </summary>
         public string AuthorizerId
         {
@@ -72,7 +79,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Body.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// [Optional] The simulated request body of an incoming invocation request.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -87,7 +97,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Headers.
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// [Required] A key-value map of headers to simulate an incoming invocation request.
+        /// This is where the incoming authorization token, or identity source, should be specified.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Headers
         {
@@ -102,7 +116,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PathWithQueryString.
+        /// Gets and sets the property PathWithQueryString. 
+        /// <para>
+        /// [Optional] The URI path, including query string, of the simulated invocation request.
+        /// Use this to specify path parameters and query string parameters.
+        /// </para>
         /// </summary>
         public string PathWithQueryString
         {
@@ -117,7 +135,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestApiId.
+        /// Gets and sets the property RestApiId. 
+        /// <para>
+        /// Specifies a test invoke authorizer request's <a>RestApi</a> identifier.
+        /// </para>
         /// </summary>
         public string RestApiId
         {
@@ -132,7 +153,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StageVariables.
+        /// Gets and sets the property StageVariables. 
+        /// <para>
+        /// A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> StageVariables
         {

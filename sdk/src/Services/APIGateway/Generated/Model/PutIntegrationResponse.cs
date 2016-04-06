@@ -181,7 +181,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the integration's type.
+        /// Specifies the integration's type. The valid value is <code>HTTP</code>, <code>AWS</code>,
+        /// or <code>MOCK</code>.
         /// </para>
         /// </summary>
         public IntegrationType Type
