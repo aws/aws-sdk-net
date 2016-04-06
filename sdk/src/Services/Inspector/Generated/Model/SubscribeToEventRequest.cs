@@ -34,7 +34,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class SubscribeToEventRequest : AmazonInspectorRequest
     {
-        private Event _event;
+        private InspectorEvent _event;
         private string _resourceArn;
         private string _topicArn;
 
@@ -44,7 +44,7 @@ namespace Amazon.Inspector.Model
         /// The event for which you want to receive SNS notifications.
         /// </para>
         /// </summary>
-        public Event Event
+        public InspectorEvent Event
         {
             get { return this._event; }
             set { this._event = value; }

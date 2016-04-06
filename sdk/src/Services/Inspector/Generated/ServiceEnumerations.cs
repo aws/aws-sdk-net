@@ -401,68 +401,6 @@ namespace Amazon.Inspector
 
 
     /// <summary>
-    /// Constants used for properties of type Event.
-    /// </summary>
-    public class Event : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant ASSESSMENT_RUN_COMPLETED for Event
-        /// </summary>
-        public static readonly Event ASSESSMENT_RUN_COMPLETED = new Event("ASSESSMENT_RUN_COMPLETED");
-        /// <summary>
-        /// Constant ASSESSMENT_RUN_STARTED for Event
-        /// </summary>
-        public static readonly Event ASSESSMENT_RUN_STARTED = new Event("ASSESSMENT_RUN_STARTED");
-        /// <summary>
-        /// Constant ASSESSMENT_RUN_STATE_CHANGED for Event
-        /// </summary>
-        public static readonly Event ASSESSMENT_RUN_STATE_CHANGED = new Event("ASSESSMENT_RUN_STATE_CHANGED");
-        /// <summary>
-        /// Constant FINDING_REPORTED for Event
-        /// </summary>
-        public static readonly Event FINDING_REPORTED = new Event("FINDING_REPORTED");
-        /// <summary>
-        /// Constant OTHER for Event
-        /// </summary>
-        public static readonly Event OTHER = new Event("OTHER");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public Event(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static Event FindValue(string value)
-        {
-            return FindValue<Event>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator Event(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
     /// Constants used for properties of type FailedItemErrorCode.
     /// </summary>
     public class FailedItemErrorCode : ConstantClass
@@ -522,6 +460,68 @@ namespace Amazon.Inspector
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FailedItemErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InspectorEvent.
+    /// </summary>
+    public class InspectorEvent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSESSMENT_RUN_COMPLETED for InspectorEvent
+        /// </summary>
+        public static readonly InspectorEvent ASSESSMENT_RUN_COMPLETED = new InspectorEvent("ASSESSMENT_RUN_COMPLETED");
+        /// <summary>
+        /// Constant ASSESSMENT_RUN_STARTED for InspectorEvent
+        /// </summary>
+        public static readonly InspectorEvent ASSESSMENT_RUN_STARTED = new InspectorEvent("ASSESSMENT_RUN_STARTED");
+        /// <summary>
+        /// Constant ASSESSMENT_RUN_STATE_CHANGED for InspectorEvent
+        /// </summary>
+        public static readonly InspectorEvent ASSESSMENT_RUN_STATE_CHANGED = new InspectorEvent("ASSESSMENT_RUN_STATE_CHANGED");
+        /// <summary>
+        /// Constant FINDING_REPORTED for InspectorEvent
+        /// </summary>
+        public static readonly InspectorEvent FINDING_REPORTED = new InspectorEvent("FINDING_REPORTED");
+        /// <summary>
+        /// Constant OTHER for InspectorEvent
+        /// </summary>
+        public static readonly InspectorEvent OTHER = new InspectorEvent("OTHER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InspectorEvent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InspectorEvent FindValue(string value)
+        {
+            return FindValue<InspectorEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InspectorEvent(string value)
         {
             return FindValue(value);
         }

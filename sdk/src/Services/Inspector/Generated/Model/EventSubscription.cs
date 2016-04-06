@@ -32,7 +32,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class EventSubscription
     {
-        private Event _event;
+        private InspectorEvent _event;
         private DateTime? _subscribedAt;
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Amazon.Inspector.Model
         /// The event for which Amazon Simple Notification Service (SNS) notifications are sent.
         /// </para>
         /// </summary>
-        public Event Event
+        public InspectorEvent Event
         {
             get { return this._event; }
             set { this._event = value; }

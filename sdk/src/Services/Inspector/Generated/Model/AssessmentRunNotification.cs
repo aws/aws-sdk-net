@@ -34,7 +34,7 @@ namespace Amazon.Inspector.Model
     {
         private DateTime? _date;
         private bool? _error;
-        private Event _event;
+        private InspectorEvent _event;
         private string _message;
         private AssessmentRunNotificationSnsStatusCode _snsPublishStatusCode;
         private string _snsTopicArn;
@@ -81,7 +81,7 @@ namespace Amazon.Inspector.Model
         /// The event for which a notification is sent.
         /// </para>
         /// </summary>
-        public Event Event
+        public InspectorEvent Event
         {
             get { return this._event; }
             set { this._event = value; }
