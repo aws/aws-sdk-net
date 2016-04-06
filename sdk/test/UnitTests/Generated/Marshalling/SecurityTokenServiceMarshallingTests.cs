@@ -140,6 +140,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SecurityTokenService")]
+        public void GetCallerIdentityMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetCallerIdentity");
+
+            var request = InstantiateClassGenerator.Execute<GetCallerIdentityRequest>();
+            var marshaller = new GetCallerIdentityRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetCallerIdentityResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetCallerIdentityResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SecurityTokenService")]
         public void GetFederationTokenMarshallTest()
         {
             var operation = service_model.FindOperation("GetFederationToken");

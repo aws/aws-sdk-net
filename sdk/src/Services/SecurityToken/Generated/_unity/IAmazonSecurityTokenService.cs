@@ -49,7 +49,7 @@ namespace Amazon.SecurityToken
     /// For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
     /// target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For information about
     /// using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-    /// Services That Work with IAM</a> in the <i>Using IAM</i>. 
+    /// Services That Work with IAM</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  
     /// <para>
@@ -64,10 +64,9 @@ namespace Amazon.SecurityToken
     ///  
     /// <para>
     /// The AWS Security Token Service (STS) has a default endpoint of https://sts.amazonaws.com
-    /// that maps to the US East (N. Virginia) region. Additional regions are available, but
-    /// must first be activated in the AWS Management Console before you can use a different
-    /// region's endpoint. For more information about activating a region for STS see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-    /// STS in a New Region</a> in the <i>Using IAM</i>.
+    /// that maps to the US East (N. Virginia) region. Additional regions are available and
+    /// are activated by default. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -152,6 +151,22 @@ namespace Amazon.SecurityToken
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         void DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest request, AmazonServiceCallback<DecodeAuthorizationMessageRequest, DecodeAuthorizationMessageResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  GetCallerIdentity
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCallerIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCallerIdentity operation on AmazonSecurityTokenServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void GetCallerIdentityAsync(GetCallerIdentityRequest request, AmazonServiceCallback<GetCallerIdentityRequest, GetCallerIdentityResponse> callback, AsyncOptions options = null);
 
 
         #endregion

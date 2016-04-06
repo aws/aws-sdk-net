@@ -56,16 +56,29 @@ namespace Amazon.SecurityToken.Model
     /// devices) that requests temporary security credentials without including long-term
     /// AWS credentials in the application, and without deploying server-based proxy services
     /// that use long-term AWS credentials. Instead, the identity of the caller is validated
-    /// by using a token from the web identity provider. 
+    /// by using a token from the web identity provider. For a comparison of <code>AssumeRoleWithWebIdentity</code>
+    /// with the other APIs that produce temporary credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+    /// Temporary Security Credentials</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+    /// the AWS STS APIs</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// The temporary security credentials returned by this API consist of an access key ID,
     /// a secret access key, and a security token. Applications can use these temporary security
-    /// credentials to sign calls to AWS service APIs. The credentials are valid for the duration
-    /// that you specified when calling <code>AssumeRoleWithWebIdentity</code>, which can
-    /// be from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the temporary
-    /// security credentials are valid for 1 hour. 
+    /// credentials to sign calls to AWS service APIs.
+    /// </para>
+    ///  
+    /// <para>
+    /// The credentials are valid for the duration that you specified when calling <code>AssumeRoleWithWebIdentity</code>,
+    /// which can be from 900 seconds (15 minutes) to a maximum of 3600 seconds (1 hour).
+    /// The default is 1 hour. 
+    /// </para>
+    ///  
+    /// <para>
+    /// The temporary security credentials created by <code>AssumeRoleWithWebIdentity</code>
+    /// can be used to make API calls to any AWS service with the following exception: you
+    /// cannot call the STS service's <code>GetFederationToken</code> or <code>GetSessionToken</code>
+    /// APIs.
     /// </para>
     ///  
     /// <para>
@@ -79,8 +92,8 @@ namespace Amazon.SecurityToken.Model
     /// temporary security credentials. You cannot use the passed policy to grant permissions
     /// that are in excess of those allowed by the access policy of the role that is being
     /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
-    /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>Using
-    /// IAM</i>.
+    /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM
+    /// User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -153,7 +166,7 @@ namespace Amazon.SecurityToken.Model
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
         /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
-        /// for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. 
+        /// for AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  <note>The policy plain text must be 2048 bytes or shorter. However, an internal conversion
         /// compresses it into a packed binary format with a separate limit. The PackedPolicySize

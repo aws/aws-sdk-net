@@ -52,7 +52,7 @@ namespace Amazon.SecurityToken
     /// For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
     /// target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For information about
     /// using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-    /// Services That Work with IAM</a> in the <i>Using IAM</i>. 
+    /// Services That Work with IAM</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  
     /// <para>
@@ -67,10 +67,9 @@ namespace Amazon.SecurityToken
     ///  
     /// <para>
     /// The AWS Security Token Service (STS) has a default endpoint of https://sts.amazonaws.com
-    /// that maps to the US East (N. Virginia) region. Additional regions are available, but
-    /// must first be activated in the AWS Management Console before you can use a different
-    /// region's endpoint. For more information about activating a region for STS see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-    /// STS in a New Region</a> in the <i>Using IAM</i>.
+    /// that maps to the US East (N. Virginia) region. Additional regions are available and
+    /// are activated by default. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -158,6 +157,22 @@ namespace Amazon.SecurityToken
 
         #endregion
                 
+        #region  GetCallerIdentity
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCallerIdentity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCallerIdentity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetCallerIdentityResponse> GetCallerIdentityAsync(GetCallerIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetFederationToken
 
 
@@ -186,17 +201,36 @@ namespace Amazon.SecurityToken
         /// is associated with their MFA device. Using the temporary security credentials that
         /// are returned from the call, IAM users can then make programmatic calls to APIs that
         /// require MFA authentication. If you do not supply a correct MFA code, then the API
-        /// returns an access denied error.
+        /// returns an access denied error. For a comparison of <code>GetSessionToken</code> with
+        /// the other APIs that produce temporary credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+        /// Temporary Security Credentials</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+        /// the AWS STS APIs</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
         /// The <code>GetSessionToken</code> action must be called by using the long-term AWS
         /// security credentials of the AWS account or an IAM user. Credentials that are created
-        /// by IAM users are valid for the duration that you specify, between 900 seconds (15
-        /// minutes) and 129600 seconds (36 hours); credentials that are created by using account
-        /// credentials have a maximum duration of 3600 seconds (1 hour). 
+        /// by IAM users are valid for the duration that you specify, from 900 seconds (15 minutes)
+        /// up to a maximum of 129600 seconds (36 hours), with a default of 43200 seconds (12
+        /// hours); credentials that are created by using account credentials can range from 900
+        /// seconds (15 minutes) up to a maximum of 3600 seconds (1 hour), with a default of 1
+        /// hour. 
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// The temporary security credentials created by <code>GetSessionToken</code> can be
+        /// used to make API calls to any AWS service with the following exceptions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You cannot call any IAM APIs unless MFA authentication information is included in
+        /// the request. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot call any STS API <i>except</i> <code>AssumeRole</code>.
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
         /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
@@ -216,7 +250,8 @@ namespace Amazon.SecurityToken
         /// <para>
         /// For more information about using <code>GetSessionToken</code> to create temporary
         /// credentials, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
-        /// Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>. 
+        /// Credentials for Users in Untrusted Environments</a> in the <i>IAM User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -226,9 +261,9 @@ namespace Amazon.SecurityToken
         /// <returns>The response from the GetSessionToken service method, as returned by SecurityTokenService.</returns>
         /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
         /// STS is not activated in the requested region for the account that is being asked to
-        /// create temporary credentials. The account administrator must activate STS in that
-        /// region using the IAM Console. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating AWS STS in an AWS Region</a> in the <i>Using IAM</i>.
+        /// generate credentials. The account administrator must use the IAM console to activate
+        /// STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         Task<GetSessionTokenResponse> GetSessionTokenAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

@@ -21,6 +21,7 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.RoleSessionName</property>
@@ -59,11 +60,13 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.PrincipalArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.SAMLAssertion</property>
@@ -94,6 +97,7 @@
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.RoleSessionName</property>
@@ -119,6 +123,12 @@
     <property>Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest.EncodedMessage</property>
     <min>1</min>
     <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityToken.Model.GetCallerIdentityResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.GetFederationTokenRequest.DurationSeconds</property>
@@ -162,6 +172,7 @@
     <property>Amazon.SecurityToken.Model.AssumedRoleUser.Arn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumedRoleUser.AssumedRoleId</property>
@@ -179,6 +190,7 @@
     <property>Amazon.SecurityToken.Model.FederatedUser.Arn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.FederatedUser.FederatedUserId</property>
