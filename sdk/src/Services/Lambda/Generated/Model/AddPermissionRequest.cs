@@ -55,6 +55,7 @@ namespace Amazon.Lambda.Model
     public partial class AddPermissionRequest : AmazonLambdaRequest
     {
         private string _action;
+        private string _eventSourceToken;
         private string _functionName;
         private string _principal;
         private string _qualifier;
@@ -81,6 +82,21 @@ namespace Amazon.Lambda.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventSourceToken.
+        /// </summary>
+        public string EventSourceToken
+        {
+            get { return this._eventSourceToken; }
+            set { this._eventSourceToken = value; }
+        }
+
+        // Check to see if EventSourceToken property is set
+        internal bool IsSetEventSourceToken()
+        {
+            return this._eventSourceToken != null;
         }
 
         /// <summary>

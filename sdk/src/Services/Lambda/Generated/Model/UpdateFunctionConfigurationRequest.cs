@@ -54,6 +54,7 @@ namespace Amazon.Lambda.Model
         private string _handler;
         private int? _memorySize;
         private string _role;
+        private Runtime _runtime;
         private int? _timeout;
         private VpcConfig _vpcConfig;
 
@@ -160,6 +161,21 @@ namespace Amazon.Lambda.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Runtime.
+        /// </summary>
+        public Runtime Runtime
+        {
+            get { return this._runtime; }
+            set { this._runtime = value; }
+        }
+
+        // Check to see if Runtime property is set
+        internal bool IsSetRuntime()
+        {
+            return this._runtime != null;
         }
 
         /// <summary>

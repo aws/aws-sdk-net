@@ -5,6 +5,12 @@
     <pattern>(lambda:[*]|lambda:[a-zA-Z]+|[*])</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.AddPermissionRequest.EventSourceToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>

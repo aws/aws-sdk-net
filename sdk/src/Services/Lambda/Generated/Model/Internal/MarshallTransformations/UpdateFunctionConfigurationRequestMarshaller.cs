@@ -90,6 +90,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Role);
                 }
 
+                if(publicRequest.IsSetRuntime())
+                {
+                    context.Writer.WritePropertyName("Runtime");
+                    context.Writer.Write(publicRequest.Runtime);
+                }
+
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");

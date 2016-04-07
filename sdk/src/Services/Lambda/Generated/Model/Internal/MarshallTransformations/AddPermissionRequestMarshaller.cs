@@ -75,6 +75,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Action);
                 }
 
+                if(publicRequest.IsSetEventSourceToken())
+                {
+                    context.Writer.WritePropertyName("EventSourceToken");
+                    context.Writer.Write(publicRequest.EventSourceToken);
+                }
+
                 if(publicRequest.IsSetPrincipal())
                 {
                     context.Writer.WritePropertyName("Principal");
