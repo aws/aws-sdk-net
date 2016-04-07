@@ -1,3 +1,11 @@
+### 3.1.59.0 (2016-04-07 22:40 UTC)
+* DirectoryService (3.1.3.0)
+	* Add support for conditional forwarder
+* ElasticBeanstalk (3.1.3.0)
+	* Updates to health check
+* Lambda (3.1.4.0)
+	* Add ability to set runtime in the UpdateFunctionConfiguration operation
+
 ### 3.1.58.0 (2016-04-06 03:57 UTC)
 * APIGateway (3.1.4.0)
 	* Add support for ImportRestApi and PutRestApi.

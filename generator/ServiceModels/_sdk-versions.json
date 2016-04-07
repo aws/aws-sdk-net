@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.1.58.0",
+    "ProductVersion" : "3.1.59.0",
     "CoreVersion"    : "3.1.5.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -154,7 +154,7 @@
             "InPreview"    : false
         },
         "ElasticBeanstalk"  : {
-            "Version" : "3.1.2.3",
+            "Version" : "3.1.3.0",
             "Dependencies" : {
                 "Core" : "3.1.4.3"
             },
@@ -212,7 +212,7 @@
             "InPreview"    : false
         },
         "Lambda"               : {
-            "Version" : "3.1.3.1",
+            "Version" : "3.1.4.0",
             "Dependencies" : {
                 "Core" : "3.1.4.3"
             },
@@ -345,7 +345,7 @@
             "InPreview"    : false
         },
         "DirectoryService"          : {
-            "Version" : "3.1.2.0",
+            "Version" : "3.1.3.0",
             "Dependencies" : {
                 "Core" : "3.1.4.3"
             },
