@@ -585,6 +585,10 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         public static readonly InstancesHealthAttribute ApplicationMetrics = new InstancesHealthAttribute("ApplicationMetrics");
         /// <summary>
+        /// Constant AvailabilityZone for InstancesHealthAttribute
+        /// </summary>
+        public static readonly InstancesHealthAttribute AvailabilityZone = new InstancesHealthAttribute("AvailabilityZone");
+        /// <summary>
         /// Constant Causes for InstancesHealthAttribute
         /// </summary>
         public static readonly InstancesHealthAttribute Causes = new InstancesHealthAttribute("Causes");
@@ -593,9 +597,17 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         public static readonly InstancesHealthAttribute Color = new InstancesHealthAttribute("Color");
         /// <summary>
+        /// Constant Deployment for InstancesHealthAttribute
+        /// </summary>
+        public static readonly InstancesHealthAttribute Deployment = new InstancesHealthAttribute("Deployment");
+        /// <summary>
         /// Constant HealthStatus for InstancesHealthAttribute
         /// </summary>
         public static readonly InstancesHealthAttribute HealthStatus = new InstancesHealthAttribute("HealthStatus");
+        /// <summary>
+        /// Constant InstanceType for InstancesHealthAttribute
+        /// </summary>
+        public static readonly InstancesHealthAttribute InstanceType = new InstancesHealthAttribute("InstanceType");
         /// <summary>
         /// Constant LaunchedAt for InstancesHealthAttribute
         /// </summary>
