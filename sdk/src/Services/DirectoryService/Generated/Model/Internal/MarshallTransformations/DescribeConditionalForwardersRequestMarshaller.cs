@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteTrust Request Marshaller
+    /// DescribeConditionalForwarders Request Marshaller
     /// </summary>       
-    public class DeleteTrustRequestMarshaller : IMarshaller<IRequest, DeleteTrustRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeConditionalForwardersRequestMarshaller : IMarshaller<IRequest, DescribeConditionalForwardersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteTrustRequest)input);
+            return this.Marshall((DescribeConditionalForwardersRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteTrustRequest publicRequest)
+        public IRequest Marshall(DescribeConditionalForwardersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectoryService");
-            string target = "DirectoryService_20150416.DeleteTrust";
+            string target = "DirectoryService_20150416.DescribeConditionalForwarders";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,16 +67,21 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeleteAssociatedConditionalForwarder())
+                if(publicRequest.IsSetDirectoryId())
                 {
-                    context.Writer.WritePropertyName("DeleteAssociatedConditionalForwarder");
-                    context.Writer.Write(publicRequest.DeleteAssociatedConditionalForwarder);
+                    context.Writer.WritePropertyName("DirectoryId");
+                    context.Writer.Write(publicRequest.DirectoryId);
                 }
 
-                if(publicRequest.IsSetTrustId())
+                if(publicRequest.IsSetRemoteDomainNames())
                 {
-                    context.Writer.WritePropertyName("TrustId");
-                    context.Writer.Write(publicRequest.TrustId);
+                    context.Writer.WritePropertyName("RemoteDomainNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRemoteDomainNamesListValue in publicRequest.RemoteDomainNames)
+                    {
+                            context.Writer.Write(publicRequestRemoteDomainNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         
