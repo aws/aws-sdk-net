@@ -81,7 +81,7 @@ namespace Amazon.ElasticTranscoder.Internal
         /// <summary>
         /// Logic to be executed before request marshalling.
         /// </summary>        
-        protected void PreInvoke(IExecutionContext executionContext)
+        static void PreInvoke(IExecutionContext executionContext)
         {
             var request = executionContext.RequestContext.OriginalRequest;
             var config = executionContext.RequestContext.ClientConfig;
