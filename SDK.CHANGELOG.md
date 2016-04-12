@@ -1,3 +1,7 @@
+### 3.1.60.0 (2016-04-12 00:31 UTC)
+* IoT (3.1.3.0)
+	* Add support to “Bring your own Certificate”.
+
 ### 3.1.59.0 (2016-04-07 22:40 UTC)
 * DirectoryService (3.1.3.0)
 	* Add support for conditional forwarder
