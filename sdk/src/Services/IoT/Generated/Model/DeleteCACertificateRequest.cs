@@ -28,30 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the RejectCertificateTransfer operation.
-    /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-    /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
-    /// 
-    ///  
-    /// <para>
-    /// To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate
-    /// your certificates.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation can only be called by the transfer destination. After it is called,
-    /// the certificate will be returned to the source's account in the INACTIVE state.
-    /// </para>
+    /// Container for the parameters to the DeleteCACertificate operation.
+    /// Deletes a registered CA certificate.
     /// </summary>
-    public partial class RejectCertificateTransferRequest : AmazonIoTRequest
+    public partial class DeleteCACertificateRequest : AmazonIoTRequest
     {
         private string _certificateId;
-        private string _rejectReason;
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
         /// <para>
-        /// The ID of the certificate.
+        /// The ID of the certificate to delete.
         /// </para>
         /// </summary>
         public string CertificateId
@@ -64,24 +51,6 @@ namespace Amazon.IoT.Model
         internal bool IsSetCertificateId()
         {
             return this._certificateId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RejectReason. 
-        /// <para>
-        /// The reason the certificate transfer was rejected.
-        /// </para>
-        /// </summary>
-        public string RejectReason
-        {
-            get { return this._rejectReason; }
-            set { this._rejectReason = value; }
-        }
-
-        // Check to see if RejectReason property is set
-        internal bool IsSetRejectReason()
-        {
-            return this._rejectReason != null;
         }
 
     }

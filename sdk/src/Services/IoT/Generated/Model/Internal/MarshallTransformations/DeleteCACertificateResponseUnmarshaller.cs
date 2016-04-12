@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteCertificate operation
+    /// Response Unmarshaller for DeleteCACertificate operation
     /// </summary>  
-    public class DeleteCertificateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteCACertificateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteCertificateResponse response = new DeleteCertificateResponse();
+            DeleteCACertificateResponse response = new DeleteCACertificateResponse();
 
 
             return response;
@@ -64,10 +64,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("CertificateStateException"))
             {
                 return new CertificateStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DeleteConflictException"))
-            {
-                return new DeleteConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
             {
@@ -96,9 +92,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             return new AmazonIoTException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteCertificateResponseUnmarshaller _instance = new DeleteCertificateResponseUnmarshaller();        
+        private static DeleteCACertificateResponseUnmarshaller _instance = new DeleteCACertificateResponseUnmarshaller();        
 
-        internal static DeleteCertificateResponseUnmarshaller GetInstance()
+        internal static DeleteCACertificateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +102,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteCertificateResponseUnmarshaller Instance
+        public static DeleteCACertificateResponseUnmarshaller Instance
         {
             get
             {

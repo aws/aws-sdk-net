@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteCertificate operation
+    /// Response Unmarshaller for ListCACertificates operation
     /// </summary>  
-    public class DeleteCertificateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListCACertificatesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteCertificateResponse response = new DeleteCertificateResponse();
+            ListCACertificatesResponse response = new ListCACertificatesResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("certificates", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CACertificate, CACertificateUnmarshaller>(CACertificateUnmarshaller.Instance);
+                    response.Certificates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextMarker", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextMarker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,14 +78,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("CertificateStateException"))
-            {
-                return new CertificateStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DeleteConflictException"))
-            {
-                return new DeleteConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
             {
                 return new InternalFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -76,10 +85,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
@@ -96,9 +101,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             return new AmazonIoTException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteCertificateResponseUnmarshaller _instance = new DeleteCertificateResponseUnmarshaller();        
+        private static ListCACertificatesResponseUnmarshaller _instance = new ListCACertificatesResponseUnmarshaller();        
 
-        internal static DeleteCertificateResponseUnmarshaller GetInstance()
+        internal static ListCACertificatesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +111,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteCertificateResponseUnmarshaller Instance
+        public static ListCACertificatesResponseUnmarshaller Instance
         {
             get
             {

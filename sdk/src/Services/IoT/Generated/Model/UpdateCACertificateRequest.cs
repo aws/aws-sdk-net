@@ -28,30 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the RejectCertificateTransfer operation.
-    /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-    /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
-    /// 
-    ///  
-    /// <para>
-    /// To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate
-    /// your certificates.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation can only be called by the transfer destination. After it is called,
-    /// the certificate will be returned to the source's account in the INACTIVE state.
-    /// </para>
+    /// Container for the parameters to the UpdateCACertificate operation.
+    /// Updates a registered CA certificate.
     /// </summary>
-    public partial class RejectCertificateTransferRequest : AmazonIoTRequest
+    public partial class UpdateCACertificateRequest : AmazonIoTRequest
     {
         private string _certificateId;
-        private string _rejectReason;
+        private CACertificateStatus _newStatus;
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
         /// <para>
-        /// The ID of the certificate.
+        /// The CA certificate identifier.
         /// </para>
         /// </summary>
         public string CertificateId
@@ -67,21 +55,21 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RejectReason. 
+        /// Gets and sets the property NewStatus. 
         /// <para>
-        /// The reason the certificate transfer was rejected.
+        /// The updated status of the CA certificate.
         /// </para>
         /// </summary>
-        public string RejectReason
+        public CACertificateStatus NewStatus
         {
-            get { return this._rejectReason; }
-            set { this._rejectReason = value; }
+            get { return this._newStatus; }
+            set { this._newStatus = value; }
         }
 
-        // Check to see if RejectReason property is set
-        internal bool IsSetRejectReason()
+        // Check to see if NewStatus property is set
+        internal bool IsSetNewStatus()
         {
-            return this._rejectReason != null;
+            return this._newStatus != null;
         }
 
     }

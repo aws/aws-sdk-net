@@ -691,6 +691,22 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  DeleteCACertificate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteCACertificateResponse> DeleteCACertificateAsync(DeleteCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCertificate
 
 
@@ -717,8 +733,23 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         Task<DeleteCertificateResponse> DeleteCertificateAsync(string certificateId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -851,6 +882,22 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  DeleteRegistrationCode
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegistrationCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistrationCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteRegistrationCodeResponse> DeleteRegistrationCodeAsync(DeleteRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteThing
 
 
@@ -932,6 +979,22 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteTopicRuleResponse> DeleteTopicRuleAsync(DeleteTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeCACertificate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeCACertificateResponse> DescribeCACertificateAsync(DescribeCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1293,6 +1356,22 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  GetRegistrationCode
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegistrationCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistrationCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetRegistrationCodeResponse> GetRegistrationCodeAsync(GetRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetTopicRule
 
 
@@ -1332,11 +1411,27 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  ListCACertificates
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCACertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCACertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListCACertificatesResponse> ListCACertificatesAsync(ListCACertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListCertificates
 
 
         /// <summary>
-        /// Lists your certificates.
+        /// Lists the certificates registered in your AWS account.
         /// 
         ///  
         /// <para>
@@ -1376,6 +1471,22 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCertificatesByCA
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCertificatesByCA operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificatesByCA operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListCertificatesByCAResponse> ListCertificatesByCAAsync(ListCertificatesByCARequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1674,12 +1785,44 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  RegisterCACertificate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterCACertificateResponse> RegisterCACertificateAsync(RegisterCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RegisterCertificate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterCertificateResponse> RegisterCertificateAsync(RegisterCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RejectCertificateTransfer
 
 
         /// <summary>
         /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-        /// the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+        /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
         /// <para>
@@ -1883,6 +2026,22 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<TransferCertificateResponse> TransferCertificateAsync(TransferCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCACertificate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateCACertificateResponse> UpdateCACertificateAsync(UpdateCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

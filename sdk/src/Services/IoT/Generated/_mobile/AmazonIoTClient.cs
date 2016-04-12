@@ -1042,6 +1042,37 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteCACertificate
+
+        internal DeleteCACertificateResponse DeleteCACertificate(DeleteCACertificateRequest request)
+        {
+            var marshaller = new DeleteCACertificateRequestMarshaller();
+            var unmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCACertificateRequest,DeleteCACertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteCACertificateResponse> DeleteCACertificateAsync(DeleteCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteCACertificateRequestMarshaller();
+            var unmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCACertificateRequest,DeleteCACertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCertificate
 
         internal DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
@@ -1076,8 +1107,23 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         public Task<DeleteCertificateResponse> DeleteCertificateAsync(string certificateId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1266,6 +1312,37 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteRegistrationCode
+
+        internal DeleteRegistrationCodeResponse DeleteRegistrationCode(DeleteRegistrationCodeRequest request)
+        {
+            var marshaller = new DeleteRegistrationCodeRequestMarshaller();
+            var unmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRegistrationCodeRequest,DeleteRegistrationCodeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegistrationCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistrationCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteRegistrationCodeResponse> DeleteRegistrationCodeAsync(DeleteRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRegistrationCodeRequestMarshaller();
+            var unmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRegistrationCodeRequest,DeleteRegistrationCodeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteThing
 
         internal DeleteThingResponse DeleteThing(DeleteThingRequest request)
@@ -1387,6 +1464,37 @@ namespace Amazon.IoT
             var unmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTopicRuleRequest,DeleteTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCACertificate
+
+        internal DescribeCACertificateResponse DescribeCACertificate(DescribeCACertificateRequest request)
+        {
+            var marshaller = new DescribeCACertificateRequestMarshaller();
+            var unmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCACertificateRequest,DescribeCACertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeCACertificateResponse> DescribeCACertificateAsync(DescribeCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeCACertificateRequestMarshaller();
+            var unmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCACertificateRequest,DescribeCACertificateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1944,6 +2052,37 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  GetRegistrationCode
+
+        internal GetRegistrationCodeResponse GetRegistrationCode(GetRegistrationCodeRequest request)
+        {
+            var marshaller = new GetRegistrationCodeRequestMarshaller();
+            var unmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegistrationCodeRequest,GetRegistrationCodeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegistrationCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistrationCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetRegistrationCodeResponse> GetRegistrationCodeAsync(GetRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRegistrationCodeRequestMarshaller();
+            var unmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRegistrationCodeRequest,GetRegistrationCodeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTopicRule
 
         internal GetTopicRuleResponse GetTopicRule(GetTopicRuleRequest request)
@@ -2004,6 +2143,37 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListCACertificates
+
+        internal ListCACertificatesResponse ListCACertificates(ListCACertificatesRequest request)
+        {
+            var marshaller = new ListCACertificatesRequestMarshaller();
+            var unmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCACertificatesRequest,ListCACertificatesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCACertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCACertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListCACertificatesResponse> ListCACertificatesAsync(ListCACertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListCACertificatesRequestMarshaller();
+            var unmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCACertificatesRequest,ListCACertificatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCertificates
 
         internal ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
@@ -2016,7 +2186,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your certificates.
+        /// Lists the certificates registered in your AWS account.
         /// 
         ///  
         /// <para>
@@ -2066,6 +2236,37 @@ namespace Amazon.IoT
             var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCertificatesRequest,ListCertificatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCertificatesByCA
+
+        internal ListCertificatesByCAResponse ListCertificatesByCA(ListCertificatesByCARequest request)
+        {
+            var marshaller = new ListCertificatesByCARequestMarshaller();
+            var unmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
+
+            return Invoke<ListCertificatesByCARequest,ListCertificatesByCAResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCertificatesByCA operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificatesByCA operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListCertificatesByCAResponse> ListCertificatesByCAAsync(ListCertificatesByCARequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListCertificatesByCARequestMarshaller();
+            var unmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCertificatesByCARequest,ListCertificatesByCAResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2511,6 +2712,68 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  RegisterCACertificate
+
+        internal RegisterCACertificateResponse RegisterCACertificate(RegisterCACertificateRequest request)
+        {
+            var marshaller = new RegisterCACertificateRequestMarshaller();
+            var unmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterCACertificateRequest,RegisterCACertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterCACertificateResponse> RegisterCACertificateAsync(RegisterCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterCACertificateRequestMarshaller();
+            var unmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterCACertificateRequest,RegisterCACertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterCertificate
+
+        internal RegisterCertificateResponse RegisterCertificate(RegisterCertificateRequest request)
+        {
+            var marshaller = new RegisterCertificateRequestMarshaller();
+            var unmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterCertificateRequest,RegisterCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterCertificateResponse> RegisterCertificateAsync(RegisterCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterCertificateRequestMarshaller();
+            var unmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterCertificateRequest,RegisterCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectCertificateTransfer
 
         internal RejectCertificateTransferResponse RejectCertificateTransfer(RejectCertificateTransferRequest request)
@@ -2524,7 +2787,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-        /// the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+        /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
         /// <para>
@@ -2813,6 +3076,37 @@ namespace Amazon.IoT
             var unmarshaller = TransferCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<TransferCertificateRequest,TransferCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCACertificate
+
+        internal UpdateCACertificateResponse UpdateCACertificate(UpdateCACertificateRequest request)
+        {
+            var marshaller = new UpdateCACertificateRequestMarshaller();
+            var unmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCACertificateRequest,UpdateCACertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateCACertificateResponse> UpdateCACertificateAsync(UpdateCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateCACertificateRequestMarshaller();
+            var unmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCACertificateRequest,UpdateCACertificateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

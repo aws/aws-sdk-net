@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListCertificates operation.
-    /// Lists the certificates registered in your AWS account.
+    /// Container for the parameters to the ListCACertificates operation.
+    /// Lists the CA certificates registered for your AWS account.
     /// 
     ///  
     /// <para>
@@ -37,7 +37,7 @@ namespace Amazon.IoT.Model
     /// marker to retrieve additional results.
     /// </para>
     /// </summary>
-    public partial class ListCertificatesRequest : AmazonIoTRequest
+    public partial class ListCACertificatesRequest : AmazonIoTRequest
     {
         private bool? _ascendingOrder;
         private string _marker;
@@ -46,8 +46,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AscendingOrder. 
         /// <para>
-        /// Specifies the order for results. If True, the results are returned in ascending order,
-        /// based on the creation date.
+        /// Determines the order of the results.
         /// </para>
         /// </summary>
         public bool AscendingOrder

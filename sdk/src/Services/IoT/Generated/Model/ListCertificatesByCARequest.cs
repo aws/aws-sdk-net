@@ -28,18 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListCertificates operation.
-    /// Lists the certificates registered in your AWS account.
-    /// 
-    ///  
-    /// <para>
-    /// The results are paginated with a default page size of 25. You can use the returned
-    /// marker to retrieve additional results.
-    /// </para>
+    /// Container for the parameters to the ListCertificatesByCA operation.
+    /// List the device certificates signed by the specified CA certificate.
     /// </summary>
-    public partial class ListCertificatesRequest : AmazonIoTRequest
+    public partial class ListCertificatesByCARequest : AmazonIoTRequest
     {
         private bool? _ascendingOrder;
+        private string _caCertificateId;
         private string _marker;
         private int? _pageSize;
 
@@ -60,6 +55,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetAscendingOrder()
         {
             return this._ascendingOrder.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaCertificateId. 
+        /// <para>
+        /// The ID of the CA certificate. This operation will list all registered device certificate
+        /// that were signed by this CA certificate. 
+        /// </para>
+        /// </summary>
+        public string CaCertificateId
+        {
+            get { return this._caCertificateId; }
+            set { this._caCertificateId = value; }
+        }
+
+        // Check to see if CaCertificateId property is set
+        internal bool IsSetCaCertificateId()
+        {
+            return this._caCertificateId != null;
         }
 
         /// <summary>

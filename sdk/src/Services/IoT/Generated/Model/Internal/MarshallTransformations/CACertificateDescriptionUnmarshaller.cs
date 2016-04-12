@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CertificateDescription Object
+    /// Response Unmarshaller for CACertificateDescription Object
     /// </summary>  
-    public class CertificateDescriptionUnmarshaller : IUnmarshaller<CertificateDescription, XmlUnmarshallerContext>, IUnmarshaller<CertificateDescription, JsonUnmarshallerContext>
+    public class CACertificateDescriptionUnmarshaller : IUnmarshaller<CACertificateDescription, XmlUnmarshallerContext>, IUnmarshaller<CACertificateDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CertificateDescription IUnmarshaller<CertificateDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CACertificateDescription IUnmarshaller<CACertificateDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,23 +53,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CertificateDescription Unmarshall(JsonUnmarshallerContext context)
+        public CACertificateDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CertificateDescription unmarshalledObject = new CertificateDescription();
+            CACertificateDescription unmarshalledObject = new CACertificateDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("caCertificateId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CaCertificateId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("certificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,22 +88,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastModifiedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("ownedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("previousOwnedBy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreviousOwnedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -118,24 +100,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("transferData", targetDepth))
-                {
-                    var unmarshaller = TransferDataUnmarshaller.Instance;
-                    unmarshalledObject.TransferData = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static CertificateDescriptionUnmarshaller _instance = new CertificateDescriptionUnmarshaller();        
+        private static CACertificateDescriptionUnmarshaller _instance = new CACertificateDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CertificateDescriptionUnmarshaller Instance
+        public static CACertificateDescriptionUnmarshaller Instance
         {
             get
             {

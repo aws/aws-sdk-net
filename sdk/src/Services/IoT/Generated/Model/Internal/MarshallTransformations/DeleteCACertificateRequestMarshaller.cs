@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TransferCertificate Request Marshaller
+    /// DeleteCACertificate Request Marshaller
     /// </summary>       
-    public class TransferCertificateRequestMarshaller : IMarshaller<IRequest, TransferCertificateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteCACertificateRequestMarshaller : IMarshaller<IRequest, DeleteCACertificateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((TransferCertificateRequest)input);
+            return this.Marshall((DeleteCACertificateRequest)input);
         }
 
         /// <summary>
@@ -52,36 +52,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(TransferCertificateRequest publicRequest)
+        public IRequest Marshall(DeleteCACertificateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
-            request.HttpMethod = "PATCH";
+            request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/transfer-certificate/{certificateId}";
+            string uriResourcePath = "/cacertificate/{certificateId}";
             uriResourcePath = uriResourcePath.Replace("{certificateId}", publicRequest.IsSetCertificateId() ? StringUtils.FromString(publicRequest.CertificateId) : string.Empty);
-            
-            if (publicRequest.IsSetTargetAwsAccount())
-                request.Parameters.Add("targetAwsAccount", StringUtils.FromString(publicRequest.TargetAwsAccount));
             request.ResourcePath = uriResourcePath;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTransferMessage())
-                {
-                    context.Writer.WritePropertyName("transferMessage");
-                    context.Writer.Write(publicRequest.TransferMessage);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
-            request.UseQueryString = true;
 
             return request;
         }

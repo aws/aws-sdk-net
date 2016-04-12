@@ -1530,6 +1530,52 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteCACertificate
+
+
+        /// <summary>
+        /// Deletes a registered CA certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCACertificate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCACertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.CertificateStateException">
+        /// The certificate operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        DeleteCACertificateResponse DeleteCACertificate(DeleteCACertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteCACertificateResponse> DeleteCACertificateAsync(DeleteCACertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteCertificate
 
 
@@ -1553,8 +1599,23 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         DeleteCertificateResponse DeleteCertificate(string certificateId);
 
@@ -1578,8 +1639,23 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request);
 
@@ -1607,8 +1683,23 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         Task<DeleteCertificateResponse> DeleteCertificateAsync(string certificateId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1898,6 +1989,43 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteRegistrationCode
+
+
+        /// <summary>
+        /// Deletes a CA certificate registration code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistrationCode service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegistrationCode service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        DeleteRegistrationCodeResponse DeleteRegistrationCode(DeleteRegistrationCodeRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegistrationCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistrationCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteRegistrationCodeResponse> DeleteRegistrationCodeAsync(DeleteRegistrationCodeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteThing
 
 
@@ -2073,6 +2201,49 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteTopicRuleResponse> DeleteTopicRuleAsync(DeleteTopicRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeCACertificate
+
+
+        /// <summary>
+        /// Describes a registered CA certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCACertificate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCACertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        DescribeCACertificateResponse DescribeCACertificate(DescribeCACertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeCACertificateResponse> DescribeCACertificateAsync(DescribeCACertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2853,6 +3024,43 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  GetRegistrationCode
+
+
+        /// <summary>
+        /// Gets a registration code used to register a CA certificate with AWS IoT.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistrationCode service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistrationCode service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        GetRegistrationCodeResponse GetRegistrationCode(GetRegistrationCodeRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegistrationCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistrationCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetRegistrationCodeResponse> GetRegistrationCodeAsync(GetRegistrationCodeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetTopicRule
 
 
@@ -2933,11 +3141,57 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListCACertificates
+
+
+        /// <summary>
+        /// Lists the CA certificates registered for your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The results are paginated with a default page size of 25. You can use the returned
+        /// marker to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCACertificates service method.</param>
+        /// 
+        /// <returns>The response from the ListCACertificates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        ListCACertificatesResponse ListCACertificates(ListCACertificatesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCACertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCACertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListCACertificatesResponse> ListCACertificatesAsync(ListCACertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListCertificates
 
 
         /// <summary>
-        /// Lists your certificates.
+        /// Lists the certificates registered in your AWS account.
         /// 
         ///  
         /// <para>
@@ -2965,7 +3219,7 @@ namespace Amazon.IoT
         ListCertificatesResponse ListCertificates();
 
         /// <summary>
-        /// Lists your certificates.
+        /// Lists the certificates registered in your AWS account.
         /// 
         ///  
         /// <para>
@@ -2995,7 +3249,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your certificates.
+        /// Lists the certificates registered in your AWS account.
         /// 
         ///  
         /// <para>
@@ -3035,6 +3289,46 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCertificatesByCA
+
+
+        /// <summary>
+        /// List the device certificates signed by the specified CA certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificatesByCA service method.</param>
+        /// 
+        /// <returns>The response from the ListCertificatesByCA service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        ListCertificatesByCAResponse ListCertificatesByCA(ListCertificatesByCARequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCertificatesByCA operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificatesByCA operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListCertificatesByCAResponse> ListCertificatesByCAAsync(ListCertificatesByCARequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3666,12 +3960,125 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  RegisterCACertificate
+
+
+        /// <summary>
+        /// Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign
+        /// device certificates, which can be then registered with AWS IoT. You can register up
+        /// to 10 CA certificates per AWS account that have the same subject field and public
+        /// key. This enables you to have up to 10 certificate authorities sign your device certificates.
+        /// If you have more than one CA certificate registered, make sure you pass the CA certificate
+        /// when you register your device certificates with the RegisterCertificate API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate service method.</param>
+        /// 
+        /// <returns>The response from the RegisterCACertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.RegistrationCodeValidationException">
+        /// The registration code is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        RegisterCACertificateResponse RegisterCACertificate(RegisterCACertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterCACertificateResponse> RegisterCACertificateAsync(RegisterCACertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RegisterCertificate
+
+
+        /// <summary>
+        /// Registers a device certificate with AWS IoT. If you have more than one CA certificate
+        /// that has the same subject field, you must specify the CA certificate that was used
+        /// to sign the device certificate being registered.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate service method.</param>
+        /// 
+        /// <returns>The response from the RegisterCertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.CertificateConflictException">
+        /// Unable to verify the CA certificate used to sign the device certificate you are attempting
+        /// to register. This is happens when you have registered more than one CA certificate
+        /// that has the same subject field and public key.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.CertificateStateException">
+        /// The certificate operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        RegisterCertificateResponse RegisterCertificate(RegisterCertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterCertificateResponse> RegisterCertificateAsync(RegisterCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RejectCertificateTransfer
 
 
         /// <summary>
         /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-        /// the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+        /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
         /// <para>
@@ -3712,7 +4119,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-        /// the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+        /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
         /// <para>
@@ -3754,7 +4161,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-        /// the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+        /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
         /// <para>
@@ -4166,6 +4573,49 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<TransferCertificateResponse> TransferCertificateAsync(TransferCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateCACertificate
+
+
+        /// <summary>
+        /// Updates a registered CA certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCACertificate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCACertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        UpdateCACertificateResponse UpdateCACertificate(UpdateCACertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateCACertificateResponse> UpdateCACertificateAsync(UpdateCACertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TransferCertificate Request Marshaller
+    /// RegisterCertificate Request Marshaller
     /// </summary>       
-    public class TransferCertificateRequestMarshaller : IMarshaller<IRequest, TransferCertificateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RegisterCertificateRequestMarshaller : IMarshaller<IRequest, RegisterCertificateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((TransferCertificateRequest)input);
+            return this.Marshall((RegisterCertificateRequest)input);
         }
 
         /// <summary>
@@ -52,27 +52,32 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(TransferCertificateRequest publicRequest)
+        public IRequest Marshall(RegisterCertificateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers["Content-Type"] = "application/x-amz-json-";
-            request.HttpMethod = "PATCH";
+            request.HttpMethod = "POST";
 
-            string uriResourcePath = "/transfer-certificate/{certificateId}";
-            uriResourcePath = uriResourcePath.Replace("{certificateId}", publicRequest.IsSetCertificateId() ? StringUtils.FromString(publicRequest.CertificateId) : string.Empty);
+            string uriResourcePath = "/certificate/register";
             
-            if (publicRequest.IsSetTargetAwsAccount())
-                request.Parameters.Add("targetAwsAccount", StringUtils.FromString(publicRequest.TargetAwsAccount));
+            if (publicRequest.IsSetSetAsActive())
+                request.Parameters.Add("setAsActive", StringUtils.FromBool(publicRequest.SetAsActive));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetTransferMessage())
+                if(publicRequest.IsSetCaCertificatePem())
                 {
-                    context.Writer.WritePropertyName("transferMessage");
-                    context.Writer.Write(publicRequest.TransferMessage);
+                    context.Writer.WritePropertyName("caCertificatePem");
+                    context.Writer.Write(publicRequest.CaCertificatePem);
+                }
+
+                if(publicRequest.IsSetCertificatePem())
+                {
+                    context.Writer.WritePropertyName("certificatePem");
+                    context.Writer.Write(publicRequest.CertificatePem);
                 }
 
         

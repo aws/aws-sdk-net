@@ -28,43 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes a certificate.
+    /// Describes a CA certificate.
     /// </summary>
-    public partial class CertificateDescription
+    public partial class CACertificateDescription
     {
-        private string _caCertificateId;
         private string _certificateArn;
         private string _certificateId;
         private string _certificatePem;
         private DateTime? _creationDate;
-        private DateTime? _lastModifiedDate;
         private string _ownedBy;
-        private string _previousOwnedBy;
-        private CertificateStatus _status;
-        private TransferData _transferData;
-
-        /// <summary>
-        /// Gets and sets the property CaCertificateId. 
-        /// <para>
-        /// The certificate ID of the CA certificate used to sign this certificate.
-        /// </para>
-        /// </summary>
-        public string CaCertificateId
-        {
-            get { return this._caCertificateId; }
-            set { this._caCertificateId = value; }
-        }
-
-        // Check to see if CaCertificateId property is set
-        internal bool IsSetCaCertificateId()
-        {
-            return this._caCertificateId != null;
-        }
+        private CACertificateStatus _status;
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The ARN of the certificate.
+        /// The CA certificate ARN.
         /// </para>
         /// </summary>
         public string CertificateArn
@@ -82,7 +60,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CertificateId. 
         /// <para>
-        /// The ID of the certificate.
+        /// The CA certificate ID.
         /// </para>
         /// </summary>
         public string CertificateId
@@ -100,7 +78,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CertificatePem. 
         /// <para>
-        /// The certificate data, in PEM format.
+        /// The CA certificate data, in PEM format.
         /// </para>
         /// </summary>
         public string CertificatePem
@@ -118,7 +96,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date and time the certificate was created.
+        /// The date the CA certificate was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -134,27 +112,9 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. 
-        /// <para>
-        /// The date and time the certificate was last modified.
-        /// </para>
-        /// </summary>
-        public DateTime LastModifiedDate
-        {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
-            set { this._lastModifiedDate = value; }
-        }
-
-        // Check to see if LastModifiedDate property is set
-        internal bool IsSetLastModifiedDate()
-        {
-            return this._lastModifiedDate.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property OwnedBy. 
         /// <para>
-        /// The ID of the AWS account that owns the certificate.
+        /// The owner of the CA certificate.
         /// </para>
         /// </summary>
         public string OwnedBy
@@ -170,30 +130,12 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PreviousOwnedBy. 
-        /// <para>
-        /// The ID of the AWS account of the previous owner of the certificate.
-        /// </para>
-        /// </summary>
-        public string PreviousOwnedBy
-        {
-            get { return this._previousOwnedBy; }
-            set { this._previousOwnedBy = value; }
-        }
-
-        // Check to see if PreviousOwnedBy property is set
-        internal bool IsSetPreviousOwnedBy()
-        {
-            return this._previousOwnedBy != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the certificate.
+        /// The status of a CA certificate.
         /// </para>
         /// </summary>
-        public CertificateStatus Status
+        public CACertificateStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -203,24 +145,6 @@ namespace Amazon.IoT.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TransferData. 
-        /// <para>
-        /// The transfer data.
-        /// </para>
-        /// </summary>
-        public TransferData TransferData
-        {
-            get { return this._transferData; }
-            set { this._transferData = value; }
-        }
-
-        // Check to see if TransferData property is set
-        internal bool IsSetTransferData()
-        {
-            return this._transferData != null;
         }
 
     }
