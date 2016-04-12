@@ -1,3 +1,7 @@
+### 3.1.60.1 (2016-04-12 20:29 UTC)
+* ElasticTranscoder (3.1.0.5)
+	* Update CreatePipeline to support null notifications - https://github.com/aws/aws-sdk-net/issues/322
+
 ### 3.1.60.0 (2016-04-12 00:31 UTC)
 * IoT (3.1.3.0)
 	* Add support to “Bring your own Certificate”.
