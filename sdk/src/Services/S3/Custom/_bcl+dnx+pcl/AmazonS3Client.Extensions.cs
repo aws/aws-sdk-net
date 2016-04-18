@@ -231,9 +231,9 @@ namespace Amazon.S3
             return protocol;
         }
 
+#if BCL
         internal void ConfigureProxy(HttpWebRequest httpRequest)
         {
-#if BCL
             if (!string.IsNullOrEmpty(Config.ProxyHost) && Config.ProxyPort != -1)
             {
                 WebProxy proxy = new WebProxy(Config.ProxyHost, Config.ProxyPort);
@@ -244,8 +244,8 @@ namespace Amazon.S3
             {
                 httpRequest.Proxy.Credentials = Config.ProxyCredentials;
             }
+    }
 #endif
-        }
 
         //protected override void ProcessExceptionHandlers(Exception exception, IRequest request)
         //{
