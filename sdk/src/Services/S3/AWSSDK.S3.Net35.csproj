@@ -91,25 +91,25 @@
     <Compile Include="Custom\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\*.cs">
+    <Compile Include="Custom\_bcl+dnx+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\*.cs">
+    <Compile Include="Custom\_bcl+dnx+pcl\Transfer\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\*.cs">
+    <Compile Include="Custom\_bcl+dnx+pcl\Transfer\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\_bcl\*.cs">
+    <Compile Include="Custom\_bcl+dnx+pcl\Transfer\Internal\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\_bcl35\*.cs">
+    <Compile Include="Custom\_bcl+dnx+pcl\Transfer\Internal\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\_bcl\*.cs">
+    <Compile Include="Custom\_bcl+dnx+pcl\Transfer\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\_bcl35\*.cs">
+    <Compile Include="Custom\_bcl+dnx+pcl\Transfer\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl\Encryption\*.cs">

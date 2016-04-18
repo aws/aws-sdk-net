@@ -32,7 +32,7 @@ namespace Amazon.SimpleNotificationService
     public partial class AmazonSimpleNotificationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.2.3.0");
+            InternalSDKUtils.BuildUserAgentString("3.2.3.1");
 
         private string _userAgent = UserAgentString;
 
