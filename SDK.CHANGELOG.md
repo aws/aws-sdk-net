@@ -1,3 +1,10 @@
+### 3.1.60.2 (2016-04-18 18:20 UTC)
+* SecurityToken (3.1.3.1)
+	* Updated to use new Core, version 3.1.5.2
+	* Patch for properly reaching USGovCloudWest1.
+* Core 3.1.5.2
+	* Fix issue with using STS with USGovCloudWest1 RegionEndpoint.
+
 ### 3.1.60.1 (2016-04-12 20:29 UTC)
 * ElasticTranscoder (3.1.0.5)
 	* Update CreatePipeline to support null notifications - https://github.com/aws/aws-sdk-net/issues/322
