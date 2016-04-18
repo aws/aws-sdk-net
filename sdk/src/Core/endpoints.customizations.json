@@ -44,6 +44,9 @@
         "us-gov-west-1/s3": {
             "endpoint": "s3-us-gov-west-1.amazonaws.com",
             "signature-version" :  "2"
+        },
+		"us-gov-west-1/sts": {
+            "endpoint": "sts.us-gov-west-1.amazonaws.com"
         }
     }
 }
