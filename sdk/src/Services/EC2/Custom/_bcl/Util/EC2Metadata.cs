@@ -392,9 +392,12 @@ namespace Amazon.EC2.Util
                 else
                     request = WebRequest.Create(EC2_METADATA_ROOT + path) as HttpWebRequest;
 
-                request.Timeout = (int)TimeSpan.FromSeconds(5).TotalMilliseconds;
+                var responseTask = request.GetResponseAsync();
 
-                using (var response = request.GetResponse())
+                if (!responseTask.Wait((int)TimeSpan.FromSeconds(5).TotalMilliseconds))
+                    throw new WebException("Timedout");
+
+                using (var response = responseTask.Result)
                 {
                     using (var stream = new StreamReader(response.GetResponseStream()))
                     {
