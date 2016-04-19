@@ -45,6 +45,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RedshiftDestinationUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCloudWatchLoggingOptions())
+            {
+                context.Writer.WritePropertyName("CloudWatchLoggingOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CloudWatchLoggingOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudWatchLoggingOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetClusterJDBCURL())
             {
                 context.Writer.WritePropertyName("ClusterJDBCURL");

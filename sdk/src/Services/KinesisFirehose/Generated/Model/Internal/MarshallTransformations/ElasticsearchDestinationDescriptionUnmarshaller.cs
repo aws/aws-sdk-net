@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RedshiftDestinationDescription Object
+    /// Response Unmarshaller for ElasticsearchDestinationDescription Object
     /// </summary>  
-    public class RedshiftDestinationDescriptionUnmarshaller : IUnmarshaller<RedshiftDestinationDescription, XmlUnmarshallerContext>, IUnmarshaller<RedshiftDestinationDescription, JsonUnmarshallerContext>
+    public class ElasticsearchDestinationDescriptionUnmarshaller : IUnmarshaller<ElasticsearchDestinationDescription, XmlUnmarshallerContext>, IUnmarshaller<ElasticsearchDestinationDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RedshiftDestinationDescription IUnmarshaller<RedshiftDestinationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ElasticsearchDestinationDescription IUnmarshaller<ElasticsearchDestinationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,51 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RedshiftDestinationDescription Unmarshall(JsonUnmarshallerContext context)
+        public ElasticsearchDestinationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RedshiftDestinationDescription unmarshalledObject = new RedshiftDestinationDescription();
+            ElasticsearchDestinationDescription unmarshalledObject = new ElasticsearchDestinationDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BufferingHints", targetDepth))
+                {
+                    var unmarshaller = ElasticsearchBufferingHintsUnmarshaller.Instance;
+                    unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
                 {
                     var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ClusterJDBCURL", targetDepth))
+                if (context.TestExpression("DomainARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterJDBCURL = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CopyCommand", targetDepth))
+                if (context.TestExpression("IndexName", targetDepth))
                 {
-                    var unmarshaller = CopyCommandUnmarshaller.Instance;
-                    unmarshalledObject.CopyCommand = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IndexRotationPeriod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexRotationPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetryOptions", targetDepth))
+                {
+                    var unmarshaller = ElasticsearchRetryOptionsUnmarshaller.Instance;
+                    unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RoleARN", targetDepth))
@@ -88,16 +106,22 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3BackupMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3DestinationDescription", targetDepth))
                 {
                     var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Username", targetDepth))
+                if (context.TestExpression("TypeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TypeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +130,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static RedshiftDestinationDescriptionUnmarshaller _instance = new RedshiftDestinationDescriptionUnmarshaller();        
+        private static ElasticsearchDestinationDescriptionUnmarshaller _instance = new ElasticsearchDestinationDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RedshiftDestinationDescriptionUnmarshaller Instance
+        public static ElasticsearchDestinationDescriptionUnmarshaller Instance
         {
             get
             {

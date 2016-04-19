@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3DestinationConfiguration Marshaller
+    /// ElasticsearchDestinationConfiguration Marshaller
     /// </summary>       
-    public class S3DestinationConfigurationMarshaller : IRequestMarshaller<S3DestinationConfiguration, JsonMarshallerContext> 
+    public class ElasticsearchDestinationConfigurationMarshaller : IRequestMarshaller<ElasticsearchDestinationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,20 +43,14 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DestinationConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ElasticsearchDestinationConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBucketARN())
-            {
-                context.Writer.WritePropertyName("BucketARN");
-                context.Writer.Write(requestObject.BucketARN);
-            }
-
             if(requestObject.IsSetBufferingHints())
             {
                 context.Writer.WritePropertyName("BufferingHints");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = BufferingHintsMarshaller.Instance;
+                var marshaller = ElasticsearchBufferingHintsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BufferingHints, context);
 
                 context.Writer.WriteObjectEnd();
@@ -73,27 +67,33 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetCompressionFormat())
+            if(requestObject.IsSetDomainARN())
             {
-                context.Writer.WritePropertyName("CompressionFormat");
-                context.Writer.Write(requestObject.CompressionFormat);
+                context.Writer.WritePropertyName("DomainARN");
+                context.Writer.Write(requestObject.DomainARN);
             }
 
-            if(requestObject.IsSetEncryptionConfiguration())
+            if(requestObject.IsSetIndexName())
             {
-                context.Writer.WritePropertyName("EncryptionConfiguration");
+                context.Writer.WritePropertyName("IndexName");
+                context.Writer.Write(requestObject.IndexName);
+            }
+
+            if(requestObject.IsSetIndexRotationPeriod())
+            {
+                context.Writer.WritePropertyName("IndexRotationPeriod");
+                context.Writer.Write(requestObject.IndexRotationPeriod);
+            }
+
+            if(requestObject.IsSetRetryOptions())
+            {
+                context.Writer.WritePropertyName("RetryOptions");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = EncryptionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.EncryptionConfiguration, context);
+                var marshaller = ElasticsearchRetryOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetryOptions, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPrefix())
-            {
-                context.Writer.WritePropertyName("Prefix");
-                context.Writer.Write(requestObject.Prefix);
             }
 
             if(requestObject.IsSetRoleARN())
@@ -102,12 +102,35 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleARN);
             }
 
+            if(requestObject.IsSetS3BackupMode())
+            {
+                context.Writer.WritePropertyName("S3BackupMode");
+                context.Writer.Write(requestObject.S3BackupMode);
+            }
+
+            if(requestObject.IsSetS3Configuration())
+            {
+                context.Writer.WritePropertyName("S3Configuration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3DestinationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Configuration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTypeName())
+            {
+                context.Writer.WritePropertyName("TypeName");
+                context.Writer.Write(requestObject.TypeName);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static S3DestinationConfigurationMarshaller Instance = new S3DestinationConfigurationMarshaller();
+        public readonly static ElasticsearchDestinationConfigurationMarshaller Instance = new ElasticsearchDestinationConfigurationMarshaller();
 
     }
 }

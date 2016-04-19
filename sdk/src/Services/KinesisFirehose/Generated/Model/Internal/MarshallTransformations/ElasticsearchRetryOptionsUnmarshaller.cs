@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DestinationDescription Object
+    /// Response Unmarshaller for ElasticsearchRetryOptions Object
     /// </summary>  
-    public class DestinationDescriptionUnmarshaller : IUnmarshaller<DestinationDescription, XmlUnmarshallerContext>, IUnmarshaller<DestinationDescription, JsonUnmarshallerContext>
+    public class ElasticsearchRetryOptionsUnmarshaller : IUnmarshaller<ElasticsearchRetryOptions, XmlUnmarshallerContext>, IUnmarshaller<ElasticsearchRetryOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DestinationDescription IUnmarshaller<DestinationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ElasticsearchRetryOptions IUnmarshaller<ElasticsearchRetryOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DestinationDescription Unmarshall(JsonUnmarshallerContext context)
+        public ElasticsearchRetryOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DestinationDescription unmarshalledObject = new DestinationDescription();
+            ElasticsearchRetryOptions unmarshalledObject = new ElasticsearchRetryOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DestinationId", targetDepth))
+                if (context.TestExpression("DurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ElasticsearchDestinationDescription", targetDepth))
-                {
-                    var unmarshaller = ElasticsearchDestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ElasticsearchDestinationDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RedshiftDestinationDescription", targetDepth))
-                {
-                    var unmarshaller = RedshiftDestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftDestinationDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3DestinationDescription", targetDepth))
-                {
-                    var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static DestinationDescriptionUnmarshaller _instance = new DestinationDescriptionUnmarshaller();        
+        private static ElasticsearchRetryOptionsUnmarshaller _instance = new ElasticsearchRetryOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DestinationDescriptionUnmarshaller Instance
+        public static ElasticsearchRetryOptionsUnmarshaller Instance
         {
             get
             {

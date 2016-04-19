@@ -28,11 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes hints for the buffering to perform before delivering data to the destination.
-    /// Please note that these options are treated as hints, and therefore Firehose may choose
-    /// to use different values when it is optimal.
+    /// Describes the buffering to perform before delivering data to the Amazon ES destination.
     /// </summary>
-    public partial class BufferingHints
+    public partial class ElasticsearchBufferingHints
     {
         private int? _intervalInSeconds;
         private int? _sizeInMBs;
@@ -41,7 +39,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property IntervalInSeconds. 
         /// <para>
         /// Buffer incoming data for the specified period of time, in seconds, before delivering
-        /// it to the destination. The default value is 300.
+        /// it to the destination. The default value is 300 (5 minutes).
         /// </para>
         /// </summary>
         public int IntervalInSeconds
@@ -64,9 +62,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  
         /// <para>
-        /// We recommend setting SizeInMBs to a value greater than the amount of data you typically
-        /// ingest into the delivery stream in 10 seconds. For example, if you typically ingest
-        /// data at 1 MB/sec set SizeInMBs to be 10 MB or higher.
+        /// We recommend setting <b>SizeInMBs</b> to a value greater than the amount of data you
+        /// typically ingest into the delivery stream in 10 seconds. For example, if you typically
+        /// ingest data at 1 MB/sec, set <b>SizeInMBs</b> to be 10 MB or higher.
         /// </para>
         /// </summary>
         public int SizeInMBs

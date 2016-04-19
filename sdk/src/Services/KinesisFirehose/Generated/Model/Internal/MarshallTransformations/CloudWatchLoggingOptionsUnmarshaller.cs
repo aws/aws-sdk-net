@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DestinationDescription Object
+    /// Response Unmarshaller for CloudWatchLoggingOptions Object
     /// </summary>  
-    public class DestinationDescriptionUnmarshaller : IUnmarshaller<DestinationDescription, XmlUnmarshallerContext>, IUnmarshaller<DestinationDescription, JsonUnmarshallerContext>
+    public class CloudWatchLoggingOptionsUnmarshaller : IUnmarshaller<CloudWatchLoggingOptions, XmlUnmarshallerContext>, IUnmarshaller<CloudWatchLoggingOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DestinationDescription IUnmarshaller<DestinationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CloudWatchLoggingOptions IUnmarshaller<CloudWatchLoggingOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DestinationDescription Unmarshall(JsonUnmarshallerContext context)
+        public CloudWatchLoggingOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DestinationDescription unmarshalledObject = new DestinationDescription();
+            CloudWatchLoggingOptions unmarshalledObject = new CloudWatchLoggingOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DestinationId", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ElasticsearchDestinationDescription", targetDepth))
+                if (context.TestExpression("LogStreamName", targetDepth))
                 {
-                    var unmarshaller = ElasticsearchDestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ElasticsearchDestinationDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RedshiftDestinationDescription", targetDepth))
-                {
-                    var unmarshaller = RedshiftDestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftDestinationDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3DestinationDescription", targetDepth))
-                {
-                    var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static DestinationDescriptionUnmarshaller _instance = new DestinationDescriptionUnmarshaller();        
+        private static CloudWatchLoggingOptionsUnmarshaller _instance = new CloudWatchLoggingOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DestinationDescriptionUnmarshaller Instance
+        public static CloudWatchLoggingOptionsUnmarshaller Instance
         {
             get
             {

@@ -33,6 +33,7 @@ namespace Amazon.KinesisFirehose.Model
     public partial class DestinationDescription
     {
         private string _destinationId;
+        private ElasticsearchDestinationDescription _elasticsearchDestinationDescription;
         private RedshiftDestinationDescription _redshiftDestinationDescription;
         private S3DestinationDescription _s3DestinationDescription;
 
@@ -52,6 +53,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetDestinationId()
         {
             return this._destinationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticsearchDestinationDescription. 
+        /// <para>
+        /// The destination in Amazon ES.
+        /// </para>
+        /// </summary>
+        public ElasticsearchDestinationDescription ElasticsearchDestinationDescription
+        {
+            get { return this._elasticsearchDestinationDescription; }
+            set { this._elasticsearchDestinationDescription = value; }
+        }
+
+        // Check to see if ElasticsearchDestinationDescription property is set
+        internal bool IsSetElasticsearchDestinationDescription()
+        {
+            return this._elasticsearchDestinationDescription != null;
         }
 
         /// <summary>
