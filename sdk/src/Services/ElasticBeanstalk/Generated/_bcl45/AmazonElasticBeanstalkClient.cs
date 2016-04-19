@@ -38,27 +38,21 @@ namespace Amazon.ElasticBeanstalk
     ///
     /// AWS Elastic Beanstalk 
     /// <para>
-    ///  This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information
-    /// about AWS Elastic Beanstalk actions, data types, parameters, and errors. 
+    /// AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable,
+    /// fault-tolerant applications running on the Amazon Web Services cloud.
     /// </para>
     ///  
     /// <para>
-    /// AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy, and
-    /// manage scalable, fault-tolerant applications running on Amazon Web Services cloud
-    /// resources. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
+    /// For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
     /// Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
     /// WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
     /// To install the Software Development Kits (SDKs), Integrated Development Environment
     /// (IDE) Toolkits, and command line tools that enable you to access the API, go to <a
-    /// href="https://aws.amazon.com/tools/">Tools for Amazon Web Services</a>. 
+    /// href="https://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Endpoints</b> 
+    /// <b>Endpoints</b>
     /// </para>
     ///  
     /// <para>
@@ -289,6 +283,51 @@ namespace Amazon.ElasticBeanstalk
             var unmarshaller = AbortEnvironmentUpdateResponseUnmarshaller.Instance;
 
             return InvokeAsync<AbortEnvironmentUpdateRequest,AbortEnvironmentUpdateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ApplyEnvironmentManagedAction
+
+
+        /// <summary>
+        /// Applies a scheduled managed action immediately. A managed action can be applied only
+        /// if its status is <code>Scheduled</code>. Get the status and action ID of a managed
+        /// action with <a>DescribeEnvironmentManagedActions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction service method.</param>
+        /// 
+        /// <returns>The response from the ApplyEnvironmentManagedAction service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ManagedActionInvalidStateException">
+        /// Cannot modify the managed action in its current state.
+        /// </exception>
+        public ApplyEnvironmentManagedActionResponse ApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request)
+        {
+            var marshaller = new ApplyEnvironmentManagedActionRequestMarshaller();
+            var unmarshaller = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance;
+
+            return Invoke<ApplyEnvironmentManagedActionRequest,ApplyEnvironmentManagedActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplyEnvironmentManagedAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ApplyEnvironmentManagedActionResponse> ApplyEnvironmentManagedActionAsync(ApplyEnvironmentManagedActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ApplyEnvironmentManagedActionRequestMarshaller();
+            var unmarshaller = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ApplyEnvironmentManagedActionRequest,ApplyEnvironmentManagedActionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1149,6 +1188,86 @@ namespace Amazon.ElasticBeanstalk
             var unmarshaller = DescribeEnvironmentHealthResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEnvironmentHealthRequest,DescribeEnvironmentHealthResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEnvironmentManagedActionHistory
+
+
+        /// <summary>
+        /// Lists an environment's completed and failed managed actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActionHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentManagedActionHistory service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        public DescribeEnvironmentManagedActionHistoryResponse DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request)
+        {
+            var marshaller = new DescribeEnvironmentManagedActionHistoryRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentManagedActionHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEnvironmentManagedActionHistoryRequest,DescribeEnvironmentManagedActionHistoryResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentManagedActionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActionHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEnvironmentManagedActionHistoryResponse> DescribeEnvironmentManagedActionHistoryAsync(DescribeEnvironmentManagedActionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEnvironmentManagedActionHistoryRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentManagedActionHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEnvironmentManagedActionHistoryRequest,DescribeEnvironmentManagedActionHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEnvironmentManagedActions
+
+
+        /// <summary>
+        /// Lists an environment's upcoming and in-progress managed actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentManagedActions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        public DescribeEnvironmentManagedActionsResponse DescribeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request)
+        {
+            var marshaller = new DescribeEnvironmentManagedActionsRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentManagedActionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEnvironmentManagedActionsRequest,DescribeEnvironmentManagedActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentManagedActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEnvironmentManagedActionsResponse> DescribeEnvironmentManagedActionsAsync(DescribeEnvironmentManagedActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEnvironmentManagedActionsRequestMarshaller();
+            var unmarshaller = DescribeEnvironmentManagedActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEnvironmentManagedActionsRequest,DescribeEnvironmentManagedActionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

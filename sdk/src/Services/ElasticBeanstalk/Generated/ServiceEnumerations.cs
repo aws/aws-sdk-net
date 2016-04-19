@@ -25,6 +25,172 @@ namespace Amazon.ElasticBeanstalk
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionHistoryStatus.
+    /// </summary>
+    public class ActionHistoryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for ActionHistoryStatus
+        /// </summary>
+        public static readonly ActionHistoryStatus Completed = new ActionHistoryStatus("Completed");
+        /// <summary>
+        /// Constant Failed for ActionHistoryStatus
+        /// </summary>
+        public static readonly ActionHistoryStatus Failed = new ActionHistoryStatus("Failed");
+        /// <summary>
+        /// Constant Unknown for ActionHistoryStatus
+        /// </summary>
+        public static readonly ActionHistoryStatus Unknown = new ActionHistoryStatus("Unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionHistoryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionHistoryStatus FindValue(string value)
+        {
+            return FindValue<ActionHistoryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionHistoryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ActionStatus.
+    /// </summary>
+    public class ActionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Pending for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus Pending = new ActionStatus("Pending");
+        /// <summary>
+        /// Constant Running for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus Running = new ActionStatus("Running");
+        /// <summary>
+        /// Constant Scheduled for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus Scheduled = new ActionStatus("Scheduled");
+        /// <summary>
+        /// Constant Unknown for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus Unknown = new ActionStatus("Unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionStatus FindValue(string value)
+        {
+            return FindValue<ActionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ActionType.
+    /// </summary>
+    public class ActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InstanceRefresh for ActionType
+        /// </summary>
+        public static readonly ActionType InstanceRefresh = new ActionType("InstanceRefresh");
+        /// <summary>
+        /// Constant PlatformUpdate for ActionType
+        /// </summary>
+        public static readonly ActionType PlatformUpdate = new ActionType("PlatformUpdate");
+        /// <summary>
+        /// Constant Unknown for ActionType
+        /// </summary>
+        public static readonly ActionType Unknown = new ActionType("Unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionType FindValue(string value)
+        {
+            return FindValue<ActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplicationVersionStatus.
     /// </summary>
     public class ApplicationVersionStatus : ConstantClass
@@ -564,6 +730,76 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FailureType.
+    /// </summary>
+    public class FailureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CancellationFailed for FailureType
+        /// </summary>
+        public static readonly FailureType CancellationFailed = new FailureType("CancellationFailed");
+        /// <summary>
+        /// Constant InternalFailure for FailureType
+        /// </summary>
+        public static readonly FailureType InternalFailure = new FailureType("InternalFailure");
+        /// <summary>
+        /// Constant InvalidEnvironmentState for FailureType
+        /// </summary>
+        public static readonly FailureType InvalidEnvironmentState = new FailureType("InvalidEnvironmentState");
+        /// <summary>
+        /// Constant PermissionsError for FailureType
+        /// </summary>
+        public static readonly FailureType PermissionsError = new FailureType("PermissionsError");
+        /// <summary>
+        /// Constant RollbackFailed for FailureType
+        /// </summary>
+        public static readonly FailureType RollbackFailed = new FailureType("RollbackFailed");
+        /// <summary>
+        /// Constant RollbackSuccessful for FailureType
+        /// </summary>
+        public static readonly FailureType RollbackSuccessful = new FailureType("RollbackSuccessful");
+        /// <summary>
+        /// Constant UpdateCancelled for FailureType
+        /// </summary>
+        public static readonly FailureType UpdateCancelled = new FailureType("UpdateCancelled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FailureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailureType FindValue(string value)
+        {
+            return FindValue<FailureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailureType(string value)
         {
             return FindValue(value);
         }

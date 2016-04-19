@@ -253,6 +253,11 @@
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.DescribeEnvironmentManagedActionHistoryRequest.EnvironmentName</property>
+    <min>4</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeEnvironmentResourcesRequest.EnvironmentName</property>
     <min>4</min>
     <max>40</max>
