@@ -1,3 +1,18 @@
+### 3.1.61.0 (2016-04-19 06:13 UTC)
+* EC2 (3.1.11.0)
+	* Add two new low-cost, high-throughput HDD volume types: Throughput Optimized HDD (st1) and Cold HDD (sc1).
+* ElasticBeanstalk (3.1.4.0)
+	* Add support for automatic platform version upgrades with managed updates.
+* Kinesis (3.1.3.0)
+	* Added support for enhanced monitoring.
+* KinesisFirehose (3.1.1.0)
+	* Add support for Elastic Search and Cloudwatch Logs.
+* S3 (3.1.5.0)
+	* Updated to use new Core, version 3.1.5.3
+	* Add support for S3 Accelerate.
+* Core 3.1.5.3
+	* Updates to Core to support S3 Accelerate
+
 ### 3.1.60.2 (2016-04-18 18:20 UTC)
 * SecurityToken (3.1.3.1)
 	* Updated to use new Core, version 3.1.5.2
