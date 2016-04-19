@@ -706,6 +706,51 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketAccelerateConfiguration
+
+
+        /// <summary>
+        /// Returns the accelerate configuration of a bucket.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
+        /// 
+        /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(string bucketName);
+
+        /// <summary>
+        /// Returns the accelerate configuration of a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAccelerateConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAccelerateConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBucketAccelerateConfigurationResult from S3.</returns>
+        GetBucketAccelerateConfigurationResponse EndGetBucketAccelerateConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetBucketLocation
 
 
@@ -1748,6 +1793,43 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  PutBucketResult from S3.</returns>
         PutBucketResponse EndPutBucket(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketAccelerateConfiguration
+
+
+        /// <summary>
+        /// Sets the accelerate configuration of an existing bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAccelerateConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAccelerateConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBucketAccelerateConfigurationResult from S3.</returns>
+        PutBucketAccelerateConfigurationResponse EndPutBucketAccelerateConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

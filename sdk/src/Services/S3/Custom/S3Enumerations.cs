@@ -29,6 +29,51 @@ using Amazon.Util;
 namespace Amazon.S3
 {
     /// <summary>
+    /// Represents the accelerate status for a bucket.
+    /// </summary>
+    public sealed class BucketAccelerateStatus : ConstantClass
+    {
+        /// <summary>
+        /// Bucket acceleration is enabled.
+        /// </summary>
+        public static readonly BucketAccelerateStatus Enabled = new BucketAccelerateStatus("Enabled");
+
+        /// <summary>
+        /// Bucket acceleration is suspended.
+        /// </summary>
+        public static readonly BucketAccelerateStatus Suspended = new BucketAccelerateStatus("Suspended");
+
+        /// <summary>
+        /// Construct instance of BucketAccelerateStatus. It is not intended for this constructor to be called. Instead users should call the FindValue.
+        /// </summary>
+        /// <param name="value"></param>
+        public BucketAccelerateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static BucketAccelerateStatus FindValue(string value)
+        {
+            return FindValue<BucketAccelerateStatus>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to an BucketAccelerateStatus
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator BucketAccelerateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// A list of all possible CannedACLs that can be used
     /// for S3 Buckets or S3 Objects. For more information about CannedACLs, refer to
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTAccessPolicy.html#RESTCannedAccessPolicies"/>.

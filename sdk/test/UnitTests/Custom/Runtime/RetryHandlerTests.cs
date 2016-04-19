@@ -135,6 +135,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("InternalError", exception.ErrorCode);
             Assert.AreEqual("656c76696e6727732072657175657374", exception.RequestId);
             Assert.AreEqual("Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==", exception.AmazonId2);
+            Assert.AreEqual("-UUNhfhfx0J622sdKihbDfqEvIa94CkVQvcb4AGlNmRbpbInOTYXSA==", exception.AmazonCloudFrontId);
             Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
         }
 

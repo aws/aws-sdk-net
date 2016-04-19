@@ -16,6 +16,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal;
+using Amazon.Util;
 
 namespace AWSSDK.UnitTests
 {
@@ -52,6 +53,7 @@ namespace AWSSDK.UnitTests
 
             var listBucketsResponse = context.ResponseContext.Response as ListBucketsResponse;
             Assert.AreEqual(4, listBucketsResponse.Buckets.Count);
+            Assert.AreEqual("-UUNhfhfx0J622sdKihbDfqEvIa94CkVQvcb4AGlNmRbpbInOTYXSA==", listBucketsResponse.ResponseMetadata.Metadata[HeaderKeys.XAmzCloudFrontIdHeader]);
         }
 
 #if BCL45

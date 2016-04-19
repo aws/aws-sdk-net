@@ -494,15 +494,31 @@ namespace Amazon.S3.Model
             if (bytesWritten != this.ContentLength)
             {
                 string amzId2;                
-                this.ResponseMetadata.Metadata.TryGetValue(HeaderKeys.XAmzId2Header, out amzId2);
-                amzId2 = amzId2 ?? string.Empty;
- 
-                var message = string.Format(CultureInfo.InvariantCulture,
-                    "The total bytes read {0} from response stream is not equal to the Content-Length {1} for the object {2} in bucket {3}."+
+                if(!this.ResponseMetadata.Metadata.TryGetValue(HeaderKeys.XAmzId2Header, out amzId2))
+                    amzId2 = string.Empty;
+
+                string amzCfId;
+                if(!this.ResponseMetadata.Metadata.TryGetValue(HeaderKeys.XAmzCloudFrontIdHeader, out amzCfId))
+                    amzCfId = string.Empty;
+
+                string message = null;
+                if (string.IsNullOrEmpty(amzCfId))
+                {
+                    message = string.Format(CultureInfo.InvariantCulture,
+                    "The total bytes read {0} from response stream is not equal to the Content-Length {1} for the object {2} in bucket {3}." +
                     " Request ID = {4} , AmzId2 = {5}.",
                     bytesWritten, this.ContentLength, this.Key, this.BucketName, this.ResponseMetadata.RequestId, amzId2);
+                }
+                else
+                {
+                    message = string.Format(CultureInfo.InvariantCulture,
+                    "The total bytes read {0} from response stream is not equal to the Content-Length {1} for the object {2} in bucket {3}." +
+                    " Request ID = {4} , AmzId2 = {5} , AmzCfId = {6}.",
+                    bytesWritten, this.ContentLength, this.Key, this.BucketName, this.ResponseMetadata.RequestId, amzId2, amzCfId);
+                }
+                
 
-                throw new StreamSizeMismatchException(message, this.ContentLength, bytesWritten, this.ResponseMetadata.RequestId, amzId2);                
+                throw new StreamSizeMismatchException(message, this.ContentLength, bytesWritten, this.ResponseMetadata.RequestId, amzId2, amzCfId);
             }
         }
 #endif
