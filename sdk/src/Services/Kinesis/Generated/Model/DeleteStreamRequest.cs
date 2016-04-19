@@ -29,9 +29,10 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStream operation.
-    /// Deletes a stream and all its shards and data. You must shut down any applications
-    /// that are operating on the stream before you delete the stream. If an application attempts
-    /// to operate on a deleted stream, it will receive the exception <code>ResourceNotFoundException</code>.
+    /// Deletes an Amazon Kinesis stream and all its shards and data. You must shut down any
+    /// applications that are operating on the stream before you delete the stream. If an
+    /// application attempts to operate on a deleted stream, it will receive the exception
+    /// <code>ResourceNotFoundException</code>.
     /// 
     ///  
     /// <para>

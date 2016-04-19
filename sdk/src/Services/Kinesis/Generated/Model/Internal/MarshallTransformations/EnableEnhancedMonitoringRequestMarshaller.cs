@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetShardIterator Request Marshaller
+    /// EnableEnhancedMonitoring Request Marshaller
     /// </summary>       
-    public class GetShardIteratorRequestMarshaller : IMarshaller<IRequest, GetShardIteratorRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class EnableEnhancedMonitoringRequestMarshaller : IMarshaller<IRequest, EnableEnhancedMonitoringRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetShardIteratorRequest)input);
+            return this.Marshall((EnableEnhancedMonitoringRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetShardIteratorRequest publicRequest)
+        public IRequest Marshall(EnableEnhancedMonitoringRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
-            string target = "Kinesis_20131202.GetShardIterator";
+            string target = "Kinesis_20131202.EnableEnhancedMonitoring";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,34 +67,21 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetShardId())
+                if(publicRequest.IsSetShardLevelMetrics())
                 {
-                    context.Writer.WritePropertyName("ShardId");
-                    context.Writer.Write(publicRequest.ShardId);
-                }
-
-                if(publicRequest.IsSetShardIteratorType())
-                {
-                    context.Writer.WritePropertyName("ShardIteratorType");
-                    context.Writer.Write(publicRequest.ShardIteratorType);
-                }
-
-                if(publicRequest.IsSetStartingSequenceNumber())
-                {
-                    context.Writer.WritePropertyName("StartingSequenceNumber");
-                    context.Writer.Write(publicRequest.StartingSequenceNumber);
+                    context.Writer.WritePropertyName("ShardLevelMetrics");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestShardLevelMetricsListValue in publicRequest.ShardLevelMetrics)
+                    {
+                            context.Writer.Write(publicRequestShardLevelMetricsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetStreamName())
                 {
                     context.Writer.WritePropertyName("StreamName");
                     context.Writer.Write(publicRequest.StreamName);
-                }
-
-                if(publicRequest.IsSetTimestamp())
-                {
-                    context.Writer.WritePropertyName("Timestamp");
-                    context.Writer.Write(publicRequest.Timestamp);
                 }
 
         
