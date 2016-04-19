@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeMovingAddresses operation.
+    /// Contains the output of DescribeMovingAddresses.
     /// </summary>
     public partial class DescribeMovingAddressesResponse : AmazonWebServiceResponse
     {

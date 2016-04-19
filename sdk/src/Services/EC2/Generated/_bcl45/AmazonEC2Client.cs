@@ -763,11 +763,25 @@ namespace Amazon.EC2
         /// <para>
         /// If a volume has an AWS Marketplace product code:
         /// </para>
-        ///  <ul> <li>The volume can be attached only to a stopped instance.</li> <li>AWS Marketplace
-        /// product codes are copied from the volume to the instance.</li> <li>You must be subscribed
-        /// to the product.</li> <li>The instance type and operating system of the instance must
-        /// support the product. For example, you can't detach a volume from a Windows instance
-        /// and attach it to a Linux instance.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// The volume can be attached only to a stopped instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS Marketplace product codes are copied from the volume to the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must be subscribed to the product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The instance type and operating system of the instance must support the product. For
+        /// example, you can't detach a volume from a Windows instance and attach it to a Linux
+        /// instance.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For an overview of the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace/help/200900000">Introducing
         /// AWS Marketplace</a>.
@@ -1540,24 +1554,41 @@ namespace Amazon.EC2
         /// can specify. For more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
         /// 2132</a>.
         /// 
-        ///  <ul> <li><code>domain-name-servers</code> - The IP addresses of up to four domain
-        /// name servers, or <code>AmazonProvidedDNS</code>. The default DHCP option set specifies
-        /// <code>AmazonProvidedDNS</code>. If specifying more than one domain name server, specify
-        /// the IP addresses in a single parameter, separated by commas.</li> <li><code>domain-name</code>
-        /// - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify <code>ec2.internal</code>.
-        /// If you're using AmazonProvidedDNS in another region, specify <code>region.compute.internal</code>
-        /// (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a
-        /// domain name (for example, <code>MyCompany.com</code>). <b>Important</b>: Some Linux
-        /// operating systems accept multiple domain names separated by spaces. However, Windows
-        /// and other Linux operating systems treat the value as a single domain, which results
-        /// in unexpected behavior. If your DHCP options set is associated with a VPC that has
-        /// instances with multiple operating systems, specify only one domain name.</li> <li><code>ntp-servers</code>
-        /// - The IP addresses of up to four Network Time Protocol (NTP) servers.</li> <li><code>netbios-name-servers</code>
-        /// - The IP addresses of up to four NetBIOS name servers.</li> <li><code>netbios-node-type</code>
-        /// - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast
-        /// and multicast are not currently supported). For more information about these node
-        /// types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>. </li> </ul>
-        /// 
+        ///  <ul> <li>
+        /// <para>
+        /// <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
+        /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
+        /// specifying more than one domain name server, specify the IP addresses in a single
+        /// parameter, separated by commas.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>domain-name</code> - If you're using AmazonProvidedDNS in "us-east-1", specify
+        /// "ec2.internal". If you're using AmazonProvidedDNS in another region, specify "region.compute.internal"
+        /// (for example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
+        /// (for example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems accept
+        /// multiple domain names separated by spaces. However, Windows and other Linux operating
+        /// systems treat the value as a single domain, which results in unexpected behavior.
+        /// If your DHCP options set is associated with a VPC that has instances with multiple
+        /// operating systems, specify only one domain name.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP)
+        /// servers.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name servers.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend
+        /// that you specify 2 (broadcast and multicast are not currently supported). For more
+        /// information about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
+        /// 2132</a>.
+        /// </para>
+        /// </li> </ul> 
         /// <para>
         /// Your VPC automatically starts out with a set of DHCP options that includes only a
         /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
@@ -5250,7 +5281,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -5288,7 +5319,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -5330,7 +5361,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -6697,12 +6728,23 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
-        /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
-        /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// for these snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        /// specific AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        /// it owns.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
@@ -6762,12 +6804,23 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
-        /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
-        /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// for these snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        /// specific AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        /// it owns.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
@@ -6831,12 +6884,23 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
-        /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
-        /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// for these snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        /// specific AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        /// it owns.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
@@ -9852,9 +9916,9 @@ namespace Amazon.EC2
         /// it must not be associated with an instance. After the Elastic IP address is moved,
         /// it is no longer available for use in the EC2-Classic platform, unless you move it
         /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
-        /// IP address that's allocated for use in the EC2-VPC platform to the EC2-Classic platform.
-        /// You cannot migrate an Elastic IP address that's associated with a reverse DNS record.
-        /// Contact AWS account and billing support to remove the reverse DNS record.
+        /// IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic
+        /// platform. You cannot migrate an Elastic IP address that's associated with a reverse
+        /// DNS record. Contact AWS account and billing support to remove the reverse DNS record.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
         /// 

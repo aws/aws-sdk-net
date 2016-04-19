@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeSnapshotAttribute operation.
+    /// Contains the output of DescribeSnapshotAttribute.
     /// </summary>
     public partial class DescribeSnapshotAttributeResponse : AmazonWebServiceResponse
     {

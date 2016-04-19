@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyHosts operation.
+    /// Contains the output of ModifyHosts.
     /// </summary>
     public partial class ModifyHostsResponse : AmazonWebServiceResponse
     {

@@ -121,22 +121,23 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The number of I/O operations per second (IOPS) that the volume supports. For Provisioned
-        /// IOPS (SSD) volumes, this represents the number of IOPS that are provisioned for the
-        /// volume. For General Purpose (SSD) volumes, this represents the baseline performance
+        /// IOPS SSD volumes, this represents the number of IOPS that are provisioned for the
+        /// volume. For General Purpose SSD volumes, this represents the baseline performance
         /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
-        /// For more information on General Purpose (SSD) baseline performance, I/O credits, and
+        /// For more information on General Purpose SSD baseline performance, I/O credits, and
         /// bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and 3 to 10000
-        /// for General Purpose (SSD) volumes.
+        /// Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for <code>gp2</code>
+        /// volumes.
         /// </para>
         ///  
         /// <para>
         /// Condition: This parameter is required for requests to create <code>io1</code> volumes;
-        /// it is not used in requests to create <code>standard</code> or <code>gp2</code> volumes.
+        /// it is not used in requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
+        /// or <code>standard</code> volumes.
         /// </para>
         /// </summary>
         public int Iops
@@ -263,8 +264,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. This can be <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code>
-        /// for Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic volumes.
+        /// The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code>
+        /// for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
+        /// for Cold HDD, or <code>standard</code> for Magnetic volumes.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

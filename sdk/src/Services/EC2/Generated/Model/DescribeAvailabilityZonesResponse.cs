@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAvailabilityZones operation.
+    /// Contains the output of DescribeAvailabiltyZones.
     /// </summary>
     public partial class DescribeAvailabilityZonesResponse : AmazonWebServiceResponse
     {

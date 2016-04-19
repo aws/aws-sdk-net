@@ -105,15 +105,35 @@ namespace Amazon.EC2.Model
         /// If the NAT gateway could not be created, specifies the error message for the failure,
         /// that corresponds to the error code. 
         /// </para>
-        ///  <ul> <li>For InsufficientFreeAddressesInSubnet: <code>Subnet has insufficient free
-        /// addresses to create this NAT gateway</code></li> <li>For Gateway.NotAttached: <code>Network
-        /// vpc-xxxxxxxx has no Internet gateway attached</code></li> <li>For InvalidAllocationID.NotFound:
-        /// <code>Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway</code></li>
-        /// <li>For Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
-        /// already associated</code></li> <li>For InternalError: <code>Network interface eni-xxxxxxxx,
-        /// created and used internally by this NAT gateway is in an invalid state. Please try
-        /// again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The specified subnet subnet-xxxxxxxx
-        /// does not exist or could not be found.</code></li> </ul>
+        ///  <ul> <li>
+        /// <para>
+        /// For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
+        /// create this NAT gateway"
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not
+        /// be associated with this NAT gateway"
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// For InternalError: "Network interface eni-xxxxxxxx, created and used internally by
+        /// this NAT gateway is in an invalid state. Please try again."
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist
+        /// or could not be found."
+        /// </para>
+        /// </li> </ul>
         /// </summary>
         public string FailureMessage
         {

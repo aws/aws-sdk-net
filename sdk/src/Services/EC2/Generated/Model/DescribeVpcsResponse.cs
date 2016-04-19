@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeVpcs operation.
+    /// Contains the output of DescribeVpcs.
     /// </summary>
     public partial class DescribeVpcsResponse : AmazonWebServiceResponse
     {

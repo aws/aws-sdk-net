@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the AllocateAddress operation.
+    /// Contains the output of AllocateAddress.
     /// </summary>
     public partial class AllocateAddressResponse : AmazonWebServiceResponse
     {

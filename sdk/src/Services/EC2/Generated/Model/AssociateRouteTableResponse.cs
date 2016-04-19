@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the AssociateRouteTable operation.
+    /// Contains the output of AssociateRouteTable.
     /// </summary>
     public partial class AssociateRouteTableResponse : AmazonWebServiceResponse
     {

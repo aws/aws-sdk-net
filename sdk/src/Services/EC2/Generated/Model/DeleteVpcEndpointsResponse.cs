@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteVpcEndpoints operation.
+    /// Contains the output of DeleteVpcEndpoints.
     /// </summary>
     public partial class DeleteVpcEndpointsResponse : AmazonWebServiceResponse
     {

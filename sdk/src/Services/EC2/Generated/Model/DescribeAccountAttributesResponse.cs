@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAccountAttributes operation.
+    /// Contains the output of DescribeAccountAttributes.
     /// </summary>
     public partial class DescribeAccountAttributesResponse : AmazonWebServiceResponse
     {

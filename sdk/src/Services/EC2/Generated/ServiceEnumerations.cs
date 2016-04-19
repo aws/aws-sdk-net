@@ -4719,6 +4719,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly VolumeType Io1 = new VolumeType("io1");
         /// <summary>
+        /// Constant Sc1 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Sc1 = new VolumeType("sc1");
+        /// <summary>
+        /// Constant St1 for VolumeType
+        /// </summary>
+        public static readonly VolumeType St1 = new VolumeType("st1");
+        /// <summary>
         /// Constant Standard for VolumeType
         /// </summary>
         public static readonly VolumeType Standard = new VolumeType("standard");

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CreateInstanceExportTask operation.
+    /// Contains the output for CreateInstanceExportTask.
     /// </summary>
     public partial class CreateInstanceExportTaskResponse : AmazonWebServiceResponse
     {

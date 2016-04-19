@@ -38,12 +38,23 @@ namespace Amazon.EC2.Model
     /// <para>
     /// The create volume permissions fall into the following categories:
     /// </para>
-    ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
-    /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-    /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
-    /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
-    /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
-    /// </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+    /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+    /// for these snapshots.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+    /// specific AWS account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+    /// it owns.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
     /// owners, or AWS accounts with create volume permissions. If no options are specified,

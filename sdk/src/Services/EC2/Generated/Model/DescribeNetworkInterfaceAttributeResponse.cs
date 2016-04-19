@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeNetworkInterfaceAttribute operation.
+    /// Contains the output of DescribeNetworkInterfaceAttribute.
     /// </summary>
     public partial class DescribeNetworkInterfaceAttributeResponse : AmazonWebServiceResponse
     {

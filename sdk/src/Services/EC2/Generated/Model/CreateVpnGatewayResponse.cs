@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CreateVpnGateway operation.
+    /// Contains the output of CreateVpnGateway.
     /// </summary>
     public partial class CreateVpnGatewayResponse : AmazonWebServiceResponse
     {
