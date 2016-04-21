@@ -61,6 +61,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAwsIotSqlVersion())
+            {
+                context.Writer.WritePropertyName("awsIotSqlVersion");
+                context.Writer.Write(requestObject.AwsIotSqlVersion);
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
