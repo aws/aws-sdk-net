@@ -1,3 +1,17 @@
+### 3.1.62.0 (2016-04-21 18:09 UTC)
+* CertificateManager (3.1.3.0)
+	* Add tagging support
+* CloudHSM (3.1.2.0)
+	* Documentation update
+* ElasticMapReduce (3.1.4.0)
+	* Add support for Smart Targeted Resize feature
+* Inspector (3.1.2.0)
+	* Documentation update
+* IoT (3.1.4.0)
+	* Added support for specifying the SQL rules engine to be used
+* KeyManagementService (3.1.1.3)
+	* Use correct error codes.
+
 ### 3.1.61.0 (2016-04-19 06:13 UTC)
 * EC2 (3.1.11.0)
 	* Add two new low-cost, high-throughput HDD volume types: Throughput Optimized HDD (st1) and Cold HDD (sc1).

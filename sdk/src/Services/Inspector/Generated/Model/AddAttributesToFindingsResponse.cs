@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the AddAttributesToFindings operation.
     /// </summary>
     public partial class AddAttributesToFindingsResponse : AmazonWebServiceResponse
     {
@@ -37,8 +37,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property FailedItems. 
         /// <para>
-        /// Attribute details that cannot be described. An error code is provided for each failed
-        /// item.
+        /// Attributes details that cannot be described. An error code is provided for each failed
+        /// item. 
         /// </para>
         /// </summary>
         public Dictionary<string, FailedItemDetails> FailedItems

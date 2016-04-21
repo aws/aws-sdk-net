@@ -29,8 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveAttributesFromFindings operation.
-    /// Removes entire attributes (key and value pairs) from the findings that are specified
-    /// by the ARNs of the findings where an attribute with the specified key exists.
+    /// Removes entire attributes (key and value pairs) from the findings specified by the
+    /// finding ARNs where an attribute with the specified key exists.
     /// </summary>
     public partial class RemoveAttributesFromFindingsRequest : AmazonInspectorRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property FindingArns. 
         /// <para>
-        /// The ARNs that specify the findings that you want to remove attributes from.
+        /// The ARNs specifying the findings that you want to remove attributes from.
         /// </para>
         /// </summary>
         public List<string> FindingArns

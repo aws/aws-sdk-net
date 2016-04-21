@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the DescribeRulesPackages operation.
     /// </summary>
     public partial class DescribeRulesPackagesResponse : AmazonWebServiceResponse
     {
@@ -57,7 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RulesPackages. 
         /// <para>
-        /// Information about the rules package.
+        /// Information about the rules package(s).
         /// </para>
         /// </summary>
         public List<RulesPackage> RulesPackages

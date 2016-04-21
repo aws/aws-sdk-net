@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the StopAssessmentRun operation.
-    /// Stops the assessment run that is specified by the ARN of the assessment run.
+    /// Stops the assessment run specified by the assessment run ARN.
     /// </summary>
     public partial class StopAssessmentRunRequest : AmazonInspectorRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRunArn. 
         /// <para>
-        /// The ARN of the assessment run that you want to stop.
+        /// The ARN of the assessment run that you want to stop. 
         /// </para>
         /// </summary>
         public string AssessmentRunArn

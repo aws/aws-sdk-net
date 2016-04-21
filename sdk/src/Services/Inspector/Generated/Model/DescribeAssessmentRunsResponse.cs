@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the DescribeAssessmentRuns operation.
     /// </summary>
     public partial class DescribeAssessmentRunsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRuns. 
         /// <para>
-        /// Information about the assessment run.
+        /// Information about the assessment run(s).
         /// </para>
         /// </summary>
         public List<AssessmentRun> AssessmentRuns

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// Contains information about an Amazon Inspector assessment template. This data type
-    /// is used as the response element in the <a>DescribeAssessmentTemplates</a> action.
+    /// Contains information about an Inspector assessment template. This data type is used
+    /// as the response element in the <a>DescribeAssessmentTemplates</a> action.
     /// </summary>
     public partial class AssessmentTemplate
     {
@@ -135,7 +135,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RulesPackageArns. 
         /// <para>
-        /// The rules packages that are specified for this assessment template.
+        /// Rules packages specified for this assessment template.
         /// </para>
         /// </summary>
         public List<string> RulesPackageArns

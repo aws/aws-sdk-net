@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// Used as a response element in the <a>PreviewAgents</a> action.
+    /// This data type is used as a response element in the <a>PreviewAgents</a> action.
     /// </summary>
     public partial class AgentPreview
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// The ID of the EC2 instance where the agent is installed.
+        /// The id of the EC2 instance where the agent is intalled.
         /// </para>
         /// </summary>
         public string AgentId
@@ -56,7 +56,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroup. 
         /// <para>
-        /// The Auto Scaling group for the EC2 instance where the agent is installed.
+        /// The autoscaling group for the EC2 instance where the agent is installed.
         /// </para>
         /// </summary>
         public string AutoScalingGroup

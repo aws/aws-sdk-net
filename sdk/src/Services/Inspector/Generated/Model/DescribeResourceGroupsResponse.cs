@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the DescribeResourceGroups operation.
     /// </summary>
     public partial class DescribeResourceGroupsResponse : AmazonWebServiceResponse
     {
@@ -57,7 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceGroups. 
         /// <para>
-        /// Information about a resource group.
+        /// Information about the resource group(s).
         /// </para>
         /// </summary>
         public List<ResourceGroup> ResourceGroups

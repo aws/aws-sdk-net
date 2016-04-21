@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the GetTelemetryMetadata operation.
     /// </summary>
     public partial class GetTelemetryMetadataResponse : AmazonWebServiceResponse
     {

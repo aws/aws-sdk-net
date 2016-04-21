@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTelemetryMetadata operation.
-    /// Information about the data that is collected for the specified assessment run.
+    /// Information about the data collected for the specified assessment run.
     /// </summary>
     public partial class GetTelemetryMetadataRequest : AmazonInspectorRequest
     {
@@ -38,8 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRunArn. 
         /// <para>
-        /// The ARN that specifies the assessment run that has the telemetry data that you want
-        /// to obtain.
+        /// The ARN specifying the assessment run the telemetry of which you want to obtain.
         /// </para>
         /// </summary>
         public string AssessmentRunArn

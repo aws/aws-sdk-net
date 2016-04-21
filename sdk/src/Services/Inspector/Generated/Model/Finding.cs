@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// Contains information about an Amazon Inspector finding. This data type is used as
-    /// the response element in the <a>DescribeFindings</a> action.
+    /// Contains information about an Inspector finding. This data type is used as the response
+    /// element in the <a>DescribeFindings</a> action.
     /// </summary>
     public partial class Finding
     {
@@ -55,7 +55,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN that specifies the finding.
+        /// The ARN specifying the finding.
         /// </para>
         /// </summary>
         public string Arn
@@ -109,7 +109,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The system-defined attributes for the finding.
+        /// The system-defined attributes for the finding. 
         /// </para>
         /// </summary>
         public List<Attribute> Attributes
@@ -217,7 +217,11 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property NumericSeverity. 
         /// <para>
+        ///  
+        /// <para>
         /// The numeric value of the finding severity.
+        /// </para>
+        ///  
         /// </para>
         /// </summary>
         public double NumericSeverity
@@ -235,7 +239,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Recommendation. 
         /// <para>
-        /// The recommendation for the finding.
+        /// The recommendation for the finding. 
         /// </para>
         /// </summary>
         public string Recommendation
@@ -287,7 +291,7 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceAttributes. <zonbook/> <xhtml/>
+        /// Gets and sets the property ServiceAttributes.
         /// </summary>
         public InspectorServiceAttributes ServiceAttributes
         {
@@ -340,7 +344,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time when <a>AddAttributesToFindings</a> is called.
+        /// The time when <a>AddAttributesToFindings</a> API is called.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

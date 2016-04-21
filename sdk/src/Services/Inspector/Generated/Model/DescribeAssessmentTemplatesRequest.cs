@@ -29,8 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAssessmentTemplates operation.
-    /// Describes the assessment templates that are specified by the ARNs of the assessment
-    /// templates.
+    /// Describes the assessment template(s) specified by the assessment template(s) ARN(s).
     /// </summary>
     public partial class DescribeAssessmentTemplatesRequest : AmazonInspectorRequest
     {
@@ -39,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTemplateArns. 
         /// <para>
-        /// The ARN that specifiesthe assessment templates that you want to describe.
+        /// The ARN(s) specifying the assessment template(s) that you want to describe.
         /// </para>
         /// </summary>
         public List<string> AssessmentTemplateArns

@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAssessmentTarget operation.
-    /// Deletes the assessment target that is specified by the ARN of the assessment target.
+    /// Deletes the assessment target specified by the assessment target ARN.
     /// </summary>
     public partial class DeleteAssessmentTargetRequest : AmazonInspectorRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTargetArn. 
         /// <para>
-        /// The ARN that specifies the assessment target that you want to delete.
+        /// The ARN specifying the assessment target that you want to delete.
         /// </para>
         /// </summary>
         public string AssessmentTargetArn

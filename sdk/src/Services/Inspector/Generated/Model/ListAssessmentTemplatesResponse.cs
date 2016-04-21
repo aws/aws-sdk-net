@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the ListAssessmentTemplates operation.
     /// </summary>
     public partial class ListAssessmentTemplatesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTemplateArns. 
         /// <para>
-        /// A list of ARNs that specifies the assessment templates returned by the action.
+        /// A list of ARN(s) specifying the assessment template(s) returned by the action.
         /// </para>
         /// </summary>
         public List<string> AssessmentTemplateArns
@@ -59,7 +59,7 @@ namespace Amazon.Inspector.Model
         ///  When a response is generated, if there is more data to be listed, this parameter
         /// is present in the response and contains the value to use for the <b>nextToken</b>
         /// parameter in a subsequent pagination request. If there is no more data to be listed,
-        /// this parameter is set to null.
+        /// this parameter is set to 'null'.
         /// </para>
         /// </summary>
         public string NextToken

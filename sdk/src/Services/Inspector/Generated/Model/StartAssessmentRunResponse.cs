@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the StartAssessmentRun operation.
     /// </summary>
     public partial class StartAssessmentRunResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRunArn. 
         /// <para>
-        /// The ARN of the assessment run that has been started.
+        /// The ARN of the assessment run that has been started. 
         /// </para>
         /// </summary>
         public string AssessmentRunArn

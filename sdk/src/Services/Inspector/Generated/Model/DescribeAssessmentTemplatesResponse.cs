@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the DescribeAssessmentTemplates operation.
     /// </summary>
     public partial class DescribeAssessmentTemplatesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTemplates. 
         /// <para>
-        /// Information about the assessment templates.
+        /// Information about the assessment template(s).
         /// </para>
         /// </summary>
         public List<AssessmentTemplate> AssessmentTemplates

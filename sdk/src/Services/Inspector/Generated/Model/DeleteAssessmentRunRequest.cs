@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAssessmentRun operation.
-    /// Deletes the assessment run that is specified by the ARN of the assessment run.
+    /// Deletes the assessment run specified by the assessment run ARN.
     /// </summary>
     public partial class DeleteAssessmentRunRequest : AmazonInspectorRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRunArn. 
         /// <para>
-        /// The ARN that specifies the assessment run that you want to delete.
+        /// The ARN specifying the assessment run that you want to delete.
         /// </para>
         /// </summary>
         public string AssessmentRunArn

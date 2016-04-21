@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRulesPackages operation.
-    /// Describes the rules packages that are specified by the ARNs of the rules packages.
+    /// Describes the rules package(s) specified by the rules package ARN(s).
     /// </summary>
     public partial class DescribeRulesPackagesRequest : AmazonInspectorRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale that you want to translate a rules package description into.
+        /// The locale that you want to translate a rules package description(s) into.
         /// </para>
         /// </summary>
         public Locale Locale
@@ -57,7 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RulesPackageArns. 
         /// <para>
-        /// The ARN that specifies the rules package that you want to describe.
+        /// The ARN(s) specifying the rules package(s) that you want to describe.
         /// </para>
         /// </summary>
         public List<string> RulesPackageArns

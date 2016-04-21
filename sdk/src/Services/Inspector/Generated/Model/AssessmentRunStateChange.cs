@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// Used as one of the elements of the <a>AssessmentRun</a> data type.
+    /// This data type is used as one of the elements of the <a>AssessmentRun</a> data type.
     /// </summary>
     public partial class AssessmentRunStateChange
     {

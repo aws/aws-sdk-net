@@ -30,9 +30,8 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Container for the parameters to the CreateResourceGroup operation.
     /// Creates a resource group using the specified set of tags (key and value pairs) that
-    /// are used to select the EC2 instances to be included in an Amazon Inspector assessment
-    /// target. The created resource group is then used to create an Amazon Inspector assessment
-    /// target. For more information, see <a>CreateAssessmentTarget</a>.
+    /// are used to select the EC2 instances to be included in an Inspector assessment target.
+    /// The created resource group is then used to create an Inspector assessment target.
     /// </summary>
     public partial class CreateResourceGroupRequest : AmazonInspectorRequest
     {
@@ -45,7 +44,7 @@ namespace Amazon.Inspector.Model
         /// </para>
         ///  
         /// <para>
-        /// For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
+        /// For example,'[{"key":"Name","values":["TestEC2Instance"]}]'. 
         /// </para>
         /// </summary>
         public List<ResourceGroupTag> ResourceGroupTags

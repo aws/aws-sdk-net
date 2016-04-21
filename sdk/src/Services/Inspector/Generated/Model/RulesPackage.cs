@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// Contains information about an Amazon Inspector rules package. This data type is used
-    /// as the response element in the <a>DescribeRulesPackages</a> action.
+    /// Contains information about an Inspector rules package. This data type is used as the
+    /// response element in the <a>DescribeRulesPackages</a> action.
     /// </summary>
     public partial class RulesPackage
     {
@@ -114,7 +114,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version ID of the rules package.
+        /// The version id of the rules package.
         /// </para>
         /// </summary>
         public string Version

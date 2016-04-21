@@ -29,8 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssessmentRunAgents operation.
-    /// Lists the agents of the assessment runs that are specified by the ARNs of the assessment
-    /// runs.
+    /// Lists the agents of the assessment run specified by the assessment run ARN.
     /// </summary>
     public partial class ListAssessmentRunAgentsRequest : AmazonInspectorRequest
     {
@@ -42,7 +41,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRunArn. 
         /// <para>
-        /// The ARN that specifies the assessment run whose agents you want to list.
+        /// The ARN specifying the assessment run whose agents you want to list.
         /// </para>
         /// </summary>
         public string AssessmentRunArn
@@ -84,8 +83,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// You can use this parameter to indicate the maximum number of items that you want in
-        /// the response. The default value is 10. The maximum value is 500.
+        /// You can use this parameter to indicate the maximum number of items you want in the
+        /// response. The default value is 10. The maximum value is 500.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -104,9 +103,9 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent
+        /// to 'null' on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent
         /// calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
-        /// from the previous response to continue listing data.
+        /// from previous response to continue listing data.
         /// </para>
         /// </summary>
         public string NextToken

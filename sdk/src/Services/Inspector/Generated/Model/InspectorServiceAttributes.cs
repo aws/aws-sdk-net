@@ -39,7 +39,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRunArn. 
         /// <para>
-        /// The ARN of the assessment run during which the finding is generated.
+        /// The ARN of the assessment run during which the fidning is generated.
         /// </para>
         /// </summary>
         public string AssessmentRunArn
@@ -57,7 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RulesPackageArn. 
         /// <para>
-        /// The ARN of the rules package that is used to generate the finding.
+        /// The ARN of the rules package used to generate the finding.
         /// </para>
         /// </summary>
         public string RulesPackageArn

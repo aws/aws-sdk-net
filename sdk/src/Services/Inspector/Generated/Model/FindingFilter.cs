@@ -44,9 +44,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AgentIds. 
         /// <para>
-        /// For a record to match a filter, one of the values that is specified for this data
-        /// type property must be the exact match of the value of the <b>agentId</b> property
-        /// of the <a>Finding</a> data type.
+        /// For a record to match a filter, one of the values specified for this data type property
+        /// must be the exact match of the value of the <b>agentId</b> property of the <a>Finding</a>
+        /// data type.
         /// </para>
         /// </summary>
         public List<string> AgentIds
@@ -64,9 +64,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// For a record to match a filter, the list of values that are specified for this data
-        /// type property must be contained in the list of values of the <b>attributes</b> property
-        /// of the <a>Finding</a> data type.
+        /// For a record to match a filter, the list of values specified for this data type property
+        /// must be contained in the list of values of the <b>attributes</b> property of the <a>Finding</a>
+        /// data type.
         /// </para>
         /// </summary>
         public List<Attribute> Attributes
@@ -84,9 +84,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroups. 
         /// <para>
-        /// For a record to match a filter, one of the values that is specified for this data
-        /// type property must be the exact match of the value of the <b>autoScalingGroup</b>
-        /// property of the <a>Finding</a> data type.
+        /// For a record to match a filter, one of the values specified for this data type property
+        /// must be the exact match of the value of the <b>autoScalingGroup</b> property of the
+        /// <a>Finding</a> data type.
         /// </para>
         /// </summary>
         public List<string> AutoScalingGroups
@@ -122,9 +122,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RuleNames. 
         /// <para>
-        /// For a record to match a filter, one of the values that is specified for this data
-        /// type property must be the exact match of the value of the <b>ruleName</b> property
-        /// of the <a>Finding</a> data type.
+        /// For a record to match a filter, one of the values specified for this data type property
+        /// must be the exact match of the value of the <b>ruleName</b> property of the <a>Finding</a>
+        /// data type.
         /// </para>
         /// </summary>
         public List<string> RuleNames
@@ -142,9 +142,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RulesPackageArns. 
         /// <para>
-        /// For a record to match a filter, one of the values that is specified for this data
-        /// type property must be the exact match of the value of the <b>rulesPackageArn</b> property
-        /// of the <a>Finding</a> data type.
+        /// For a record to match a filter, one of the values specified for this data type property
+        /// must be the exact match of the value of the <b>rulesPackageArn</b> property of the
+        /// <a>Finding</a> data type.
         /// </para>
         /// </summary>
         public List<string> RulesPackageArns
@@ -162,9 +162,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Severities. 
         /// <para>
-        /// For a record to match a filter, one of the values that is specified for this data
-        /// type property must be the exact match of the value of the <b>severity</b> property
-        /// of the <a>Finding</a> data type.
+        /// For a record to match a filter, one of the values specified for this data type property
+        /// must be the exact match of the value of the <b>severity</b> property of the <a>Finding</a>
+        /// data type.
         /// </para>
         /// </summary>
         public List<string> Severities
@@ -182,9 +182,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property UserAttributes. 
         /// <para>
-        /// For a record to match a filter, the value that is specified for this data type property
-        /// must be contained in the list of values of the <b>userAttributes</b> property of the
-        /// <a>Finding</a> data type.
+        /// For a record to match a filter, the value specified for this data type property must
+        /// be contained in the list of values of the <b>userAttributes</b> property of the <a>Finding</a>
+        /// data type.
         /// </para>
         /// </summary>
         public List<Attribute> UserAttributes

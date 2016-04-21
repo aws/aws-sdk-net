@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the DescribeCrossAccountAccessRole operation.
     /// </summary>
     public partial class DescribeCrossAccountAccessRoleResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RegisteredAt. 
         /// <para>
-        /// The date when the cross-account access role was registered.
+        /// The date when the cross account access role was registered.
         /// </para>
         /// </summary>
         public DateTime RegisteredAt
@@ -57,8 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS
-        /// account.
+        /// The ARN specifying the IAM role that Inspector uses to access your AWS account.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -77,7 +76,7 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property Valid. 
         /// <para>
         /// A Boolean value that specifies whether the IAM role has the necessary policies attached
-        /// to enable Amazon Inspector to access your AWS account.
+        /// to enable Inspector to access your AWS account.
         /// </para>
         /// </summary>
         public bool Valid

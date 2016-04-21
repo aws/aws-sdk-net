@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAssessmentTemplate operation.
-    /// Deletes the assessment template that is specified by the ARN of the assessment template.
+    /// Deletes the assessment template specified by the assessment template ARN.
     /// </summary>
     public partial class DeleteAssessmentTemplateRequest : AmazonInspectorRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTemplateArn. 
         /// <para>
-        /// The ARN that specifies the assessment template that you want to delete.
+        /// The ARN specifying the assessment template that you want to delete.
         /// </para>
         /// </summary>
         public string AssessmentTemplateArn

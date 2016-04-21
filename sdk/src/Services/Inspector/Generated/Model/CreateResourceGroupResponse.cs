@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// <zonbook/> <xhtml/>
+    /// This is the response object from the CreateResourceGroup operation.
     /// </summary>
     public partial class CreateResourceGroupResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupArn. 
         /// <para>
-        /// The ARN that specifies the resource group that is created.
+        /// The ARN specifying the resource group that is created.
         /// </para>
         /// </summary>
         public string ResourceGroupArn

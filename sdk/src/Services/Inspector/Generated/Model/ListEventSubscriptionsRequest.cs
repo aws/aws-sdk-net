@@ -29,9 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEventSubscriptions operation.
-    /// Lists all the event subscriptions for the assessment template that is specified by
-    /// the ARN of the assessment template. For more information, see <a>SubscribeToEvent</a>
-    /// and <a>UnsubscribeFromEvent</a>.
+    /// Lists all the event subscriptions for the assessment template specified by the assessment
+    /// template ARN. For more information, see <a>SubscribeToEvent</a> and <a>UnsubscribeFromEvent</a>.
     /// </summary>
     public partial class ListEventSubscriptionsRequest : AmazonInspectorRequest
     {
@@ -62,9 +61,9 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent
+        /// to 'null' on your first call to the <b>ListEventSubscriptions</b> action. Subsequent
         /// calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
-        /// from the previous response to continue listing data.
+        /// from previous response to continue listing data.
         /// </para>
         /// </summary>
         public string NextToken
