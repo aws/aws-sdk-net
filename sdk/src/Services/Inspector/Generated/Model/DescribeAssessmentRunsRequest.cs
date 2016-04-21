@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAssessmentRuns operation.
-    /// Describes the assessment run(s) specified by the assessment run ARN(s).
+    /// Describes the assessment runs that are specified by the ARNs of the assessment runs.
     /// </summary>
     public partial class DescribeAssessmentRunsRequest : AmazonInspectorRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRunArns. 
         /// <para>
-        /// The ARN(s) specifying the assessment run(s) that you want to describe.
+        /// The ARN that specifies the assessment run that you want to describe.
         /// </para>
         /// </summary>
         public List<string> AssessmentRunArns

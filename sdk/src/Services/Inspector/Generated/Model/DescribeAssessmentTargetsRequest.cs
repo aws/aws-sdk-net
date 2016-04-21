@@ -29,7 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAssessmentTargets operation.
-    /// Describes the assessment target(s) specified by the assessment target ARN(s).
+    /// Describes the assessment targets that are specified by the ARNs of the assessment
+    /// targets.
     /// </summary>
     public partial class DescribeAssessmentTargetsRequest : AmazonInspectorRequest
     {
@@ -38,7 +39,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTargetArns. 
         /// <para>
-        /// The ARN(s) specifying the assessment target(s) that you want to describe.
+        /// The ARNs that specifies the assessment targets that you want to describe.
         /// </para>
         /// </summary>
         public List<string> AssessmentTargetArns

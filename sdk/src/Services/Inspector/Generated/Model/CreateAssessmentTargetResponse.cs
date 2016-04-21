@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// This is the response object from the CreateAssessmentTarget operation.
+    /// <zonbook/> <xhtml/>
     /// </summary>
     public partial class CreateAssessmentTargetResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTargetArn. 
         /// <para>
-        /// The ARN specifying the assessment target that is created.
+        /// The ARN that specifies the assessment target that is created.
         /// </para>
         /// </summary>
         public string AssessmentTargetArn

@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// A snapshot of an Inspector assessment run that contains the assessment run's findings.
+    /// A snapshot of an Amazon Inspector assessment run that contains the findings of the
+    /// assessment run .
     /// 
     ///  
     /// <para>
-    /// This data type is used as the response element in the <a>DescribeAssessmentRuns</a>
-    /// action.
+    /// Used as the response element in the <a>DescribeAssessmentRuns</a> action.
     /// </para>
     /// </summary>
     public partial class AssessmentRun
@@ -92,8 +92,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property CompletedAt. 
         /// <para>
-        /// Assessment run completion time that corresponds to the rules packages evaluation completion
-        /// time or failure.
+        /// The assessment run completion time that corresponds to the rules packages evaluation
+        /// completion time or failure.
         /// </para>
         /// </summary>
         public DateTime CompletedAt
@@ -111,7 +111,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time when <a>StartAssessmentRun</a> API was called.
+        /// The time when <a>StartAssessmentRun</a> was called.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -129,8 +129,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property DataCollected. 
         /// <para>
-        /// Boolean value (true or false) specifying whether the process of collecting data from
-        /// the agents is completed.
+        /// A Boolean value (true or false) that specifies whether the process of collecting data
+        /// from the agents is completed.
         /// </para>
         /// </summary>
         public bool DataCollected
@@ -166,7 +166,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The auto-generated name for the assessment run. 
+        /// The auto-generated name for the assessment run.
         /// </para>
         /// </summary>
         public string Name
@@ -185,7 +185,7 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property Notifications. 
         /// <para>
         /// A list of notifications for the event subscriptions. A notification about a particular
-        /// generated finding is only added to this list once.
+        /// generated finding is added to this list only once.
         /// </para>
         /// </summary>
         public List<AssessmentRunNotification> Notifications
@@ -203,7 +203,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RulesPackageArns. 
         /// <para>
-        /// Rules packages selected for the assessment run.
+        /// The rules packages selected for the assessment run.
         /// </para>
         /// </summary>
         public List<string> RulesPackageArns
@@ -221,7 +221,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The time when <a>StartAssessmentRun</a> API was called.
+        /// The time when <a>StartAssessmentRun</a> was called.
         /// </para>
         /// </summary>
         public DateTime StartedAt

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// This is the response object from the ListAssessmentRunAgents operation.
+    /// <zonbook/> <xhtml/>
     /// </summary>
     public partial class ListAssessmentRunAgentsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRunAgents. 
         /// <para>
-        /// A list of ARNs specifying the agents returned by the action.
+        /// A list of ARNs that specifies the agents returned by the action.
         /// </para>
         /// </summary>
         public List<AssessmentRunAgent> AssessmentRunAgents
@@ -59,7 +59,7 @@ namespace Amazon.Inspector.Model
         ///  When a response is generated, if there is more data to be listed, this parameter
         /// is present in the response and contains the value to use for the <b>nextToken</b>
         /// parameter in a subsequent pagination request. If there is no more data to be listed,
-        /// this parameter is set to 'null'.
+        /// this parameter is set to null.
         /// </para>
         /// </summary>
         public string NextToken

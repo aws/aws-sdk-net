@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN specifying the assessment template whose tags you want to list.
+        /// The ARN that specifies the assessment template whose tags you want to list.
         /// </para>
         /// </summary>
         public string ResourceArn

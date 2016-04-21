@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// Contains information about an Inspector agent. This data type is used as a response
-    /// element in the <a>ListAssessmentRunAgents</a> action.
+    /// Contains information about an Amazon Inspector agent. This data type is used as a
+    /// response element in the <a>ListAssessmentRunAgents</a> action.
     /// </summary>
     public partial class AssessmentRunAgent
     {
@@ -98,7 +98,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// AWS account of the EC2 instance where the agent is installed.
+        /// The AWS account of the EC2 instance where the agent is installed.
         /// </para>
         /// </summary>
         public string AgentId
@@ -134,7 +134,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroup. 
         /// <para>
-        /// The auto-scaling group of the EC2 instance specified by the agent ID.
+        /// The Auto Scaling group of the EC2 instance that is specified by the agent ID.
         /// </para>
         /// </summary>
         public string AutoScalingGroup
@@ -152,7 +152,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property TelemetryMetadata. 
         /// <para>
-        /// The Inspector application data metrics collected by the agent. 
+        /// The Amazon Inspector application data metrics that are collected by the agent.
         /// </para>
         /// </summary>
         public List<TelemetryMetadata> TelemetryMetadata

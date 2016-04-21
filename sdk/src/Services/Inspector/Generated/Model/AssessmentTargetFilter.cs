@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// This data type is used as the request parameter in the <a>ListAssessmentTargets</a>
-    /// action.
+    /// Used as the request parameter in the <a>ListAssessmentTargets</a> action.
     /// </summary>
     public partial class AssessmentTargetFilter
     {
@@ -38,8 +37,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTargetNamePattern. 
         /// <para>
-        /// For a record to match a filter, an explicit value or a string containing a wildcard
-        /// specified for this data type property must match the value of the <b>assessmentTargetName</b>
+        /// For a record to match a filter, an explicit value or a string that contains a wildcard
+        /// that is specified for this data type property must match the value of the <b>assessmentTargetName</b>
         /// property of the <a>AssessmentTarget</a> data type.
         /// </para>
         /// </summary>

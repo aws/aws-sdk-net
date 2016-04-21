@@ -42,7 +42,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// The id of the agent that is installed on the EC2 instance where the finding is generated.
+        /// The ID of the agent that is installed on the EC2 instance where the finding is generated.
         /// </para>
         /// </summary>
         public string AgentId
@@ -60,7 +60,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
-        /// Amazon Machine Image(AMI) ID installed on the EC2 instance where the finding is generated.
+        /// The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where
+        /// the finding is generated.
         /// </para>
         /// </summary>
         public string AmiId
@@ -78,7 +79,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroup. 
         /// <para>
-        /// The auto-scaling group of the EC2 instance where the finding is generated. 
+        /// The Auto Scaling group of the EC2 instance where the finding is generated.
         /// </para>
         /// </summary>
         public string AutoScalingGroup

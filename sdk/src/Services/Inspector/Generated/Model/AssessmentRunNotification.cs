@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// This data type is used as one of the elements of the <a>AssessmentRun</a> data type.
+    /// Used as one of the elements of the <a>AssessmentRun</a> data type.
     /// </summary>
     public partial class AssessmentRunNotification
     {
@@ -94,7 +94,7 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. <zonbook/> <xhtml/>
         /// </summary>
         public string Message
         {

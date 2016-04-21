@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeFindings operation.
+    /// <zonbook/> <xhtml/>
     /// </summary>
     public partial class DescribeFindingsResponse : AmazonWebServiceResponse
     {
@@ -57,7 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Findings. 
         /// <para>
-        /// Information about the finding(s).
+        /// Information about the finding.
         /// </para>
         /// </summary>
         public List<Finding> Findings

@@ -29,8 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the AddAttributesToFindings operation.
-    /// Assigns attributes (key and value pair) to the findings specified by the findings'
-    /// ARNs.
+    /// Assigns attributes (key and value pairs) to the findings that are specified by the
+    /// ARNs of the findings.
     /// </summary>
     public partial class AddAttributesToFindingsRequest : AmazonInspectorRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property FindingArns. 
         /// <para>
-        /// The ARNs specifying the findings that you want to assign attributes to.
+        /// The ARNs that specify the findings that you want to assign attributes to.
         /// </para>
         /// </summary>
         public List<string> FindingArns
