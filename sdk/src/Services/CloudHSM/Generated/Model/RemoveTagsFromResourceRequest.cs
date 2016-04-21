@@ -29,7 +29,7 @@ namespace Amazon.CloudHSM.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// Removes one or more tags from the specified resource.
+    /// Removes one or more tags from the specified AWS CloudHSM resource.
     /// 
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
         /// </para>
         /// </summary>
         public string ResourceArn

@@ -29,11 +29,11 @@ namespace Amazon.CloudHSM.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTagsToResource operation.
-    /// Adds or overwrites one or more tags for the specified resource.
+    /// Adds or overwrites one or more tags for the specified AWS CloudHSM resource.
     /// 
     ///  
     /// <para>
-    /// Each tag consists of a key and a value. Tag keys must be unique per resource.
+    /// Each tag consists of a key and a value. Tag keys must be unique to each resource.
     /// </para>
     /// </summary>
     public partial class AddTagsToResourceRequest : AmazonCloudHSMRequest
@@ -44,7 +44,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to tag.
+        /// The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.
         /// </para>
         /// </summary>
         public string ResourceArn
