@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InstanceGroupModifyConfig Marshaller
+    /// InstanceResizePolicy Marshaller
     /// </summary>       
-    public class InstanceGroupModifyConfigMarshaller : IRequestMarshaller<InstanceGroupModifyConfig, JsonMarshallerContext> 
+    public class InstanceResizePolicyMarshaller : IRequestMarshaller<InstanceResizePolicy, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,34 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InstanceGroupModifyConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(InstanceResizePolicy requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEC2InstanceIdsToTerminate())
+            if(requestObject.IsSetInstancesToProtect())
             {
-                context.Writer.WritePropertyName("EC2InstanceIdsToTerminate");
+                context.Writer.WritePropertyName("InstancesToProtect");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectEC2InstanceIdsToTerminateListValue in requestObject.EC2InstanceIdsToTerminate)
+                foreach(var requestObjectInstancesToProtectListValue in requestObject.InstancesToProtect)
                 {
-                        context.Writer.Write(requestObjectEC2InstanceIdsToTerminateListValue);
+                        context.Writer.Write(requestObjectInstancesToProtectListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetInstanceCount())
+            if(requestObject.IsSetInstancesToTerminate())
             {
-                context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
+                context.Writer.WritePropertyName("InstancesToTerminate");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstancesToTerminateListValue in requestObject.InstancesToTerminate)
+                {
+                        context.Writer.Write(requestObjectInstancesToTerminateListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetInstanceGroupId())
+            if(requestObject.IsSetInstanceTerminationTimeout())
             {
-                context.Writer.WritePropertyName("InstanceGroupId");
-                context.Writer.Write(requestObject.InstanceGroupId);
-            }
-
-            if(requestObject.IsSetShrinkPolicy())
-            {
-                context.Writer.WritePropertyName("ShrinkPolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ShrinkPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ShrinkPolicy, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("InstanceTerminationTimeout");
+                context.Writer.Write(requestObject.InstanceTerminationTimeout);
             }
 
         }
@@ -84,7 +78,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InstanceGroupModifyConfigMarshaller Instance = new InstanceGroupModifyConfigMarshaller();
+        public readonly static InstanceResizePolicyMarshaller Instance = new InstanceResizePolicyMarshaller();
 
     }
 }
