@@ -45,6 +45,22 @@ namespace Amazon.CertificateManager
     public partial interface IAmazonCertificateManager : IDisposable
     {
                 
+        #region  AddTagsToCertificate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddTagsToCertificateResponse> AddTagsToCertificateAsync(AddTagsToCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCertificate
 
 
@@ -97,7 +113,7 @@ namespace Amazon.CertificateManager
         /// Returns a list of the fields contained in the specified ACM Certificate. For example,
         /// this action returns the certificate status, a flag that indicates whether the certificate
         /// is associated with any other AWS service, and the date at which the certificate request
-        /// was created. The ACM Certificate is specified on input by its Amazon Resource Name
+        /// was created. You specify the ACM Certificate on input by its Amazon Resource Name
         /// (ARN).
         /// </summary>
         /// <param name="certificateArn"> String that contains an ACM Certificate ARN. The ARN must be of the form:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
@@ -202,6 +218,38 @@ namespace Amazon.CertificateManager
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTagsForCertificate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsForCertificateResponse> ListTagsForCertificateAsync(ListTagsForCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveTagsFromCertificate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveTagsFromCertificateResponse> RemoveTagsFromCertificateAsync(RemoveTagsFromCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

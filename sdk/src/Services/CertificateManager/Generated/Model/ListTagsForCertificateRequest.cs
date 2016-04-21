@@ -28,22 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// 
+    /// Container for the parameters to the ListTagsForCertificate operation.
+    /// Lists the tags that have been applied to the ACM Certificate. Use the certificate
+    /// ARN to specify the certificate. To add a tag to an ACM Certificate, use the <a>AddTagsToCertificate</a>
+    /// action. To delete a tag, use the <a>RemoveTagsFromCertificate</a> action.
     /// </summary>
-    public partial class RequestCertificateResponse : AmazonWebServiceResponse
+    public partial class ListTagsForCertificateRequest : AmazonCertificateManagerRequest
     {
         private string _certificateArn;
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        ///  String that contains the ARN of the issued certificate. This must be of the form:
+        ///  String that contains the ARN of the ACM Certificate for which you want to list the
+        /// tags. This must be of the form: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// 
+        ///  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>. 
         /// </para>
         /// </summary>
         public string CertificateArn

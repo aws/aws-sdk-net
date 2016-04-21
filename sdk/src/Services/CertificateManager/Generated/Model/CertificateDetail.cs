@@ -250,10 +250,47 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         ///  A <code>RevocationReason</code> enumeration value that indicates why the certificate
         /// was revoked. This value exists only if the certificate has been revoked. This can
-        /// be one of the following vales: <ul> <li>UNSPECIFIED</li> <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li>
-        /// <li>AFFILIATION_CHANGED</li> <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-        /// <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li> </ul>
-        /// 
+        /// be one of the following vales: <ul> <li>
+        /// <para>
+        /// UNSPECIFIED
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// KEY_COMPROMISE
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// CA_COMPROMISE
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// AFFILIATION_CHANGED
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// SUPERCEDED
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// CESSATION_OF_OPERATION
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// CERTIFICATE_HOLD
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// REMOVE_FROM_CRL
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// PRIVILEGE_WITHDRAWN
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// A_A_COMPROMISE
+        /// </para>
+        /// </li> </ul> 
         /// </para>
         /// </summary>
         public RevocationReason RevocationReason
@@ -328,8 +365,35 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  A <code>CertificateStatus</code> enumeration value that can contain one of the following:
-        /// <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li> <li>INACTIVE</li> <li>EXPIRED</li>
-        /// <li>REVOKED</li> <li>FAILED</li> <li>VALIDATION_TIMED_OUT</li> </ul> 
+        /// <ul> <li>
+        /// <para>
+        /// PENDING_VALIDATION
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// ISSUED
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// INACTIVE
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// EXPIRED
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// REVOKED
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// FAILED
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// VALIDATION_TIMED_OUT
+        /// </para>
+        /// </li> </ul> 
         /// </para>
         /// </summary>
         public CertificateStatus Status

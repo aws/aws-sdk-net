@@ -30,32 +30,26 @@ namespace Amazon.CertificateManager.Model
     /// <summary>
     /// 
     /// </summary>
-    public partial class RequestCertificateResponse : AmazonWebServiceResponse
+    public partial class ListTagsForCertificateResponse : AmazonWebServiceResponse
     {
-        private string _certificateArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property CertificateArn. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        ///  String that contains the ARN of the issued certificate. This must be of the form:
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// 
+        /// The key-value pairs that define the applied tags.
         /// </para>
         /// </summary>
-        public string CertificateArn
+        public List<Tag> Tags
         {
-            get { return this._certificateArn; }
-            set { this._certificateArn = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if CertificateArn property is set
-        internal bool IsSetCertificateArn()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._certificateArn != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

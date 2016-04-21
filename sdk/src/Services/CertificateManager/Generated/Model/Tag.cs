@@ -28,49 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// 
+    /// A key-value pair that identifies or specifies metadata about an ACM resource.
     /// </summary>
-    public partial class GetCertificateResponse : AmazonWebServiceResponse
+    public partial class Tag
     {
-        private string _certificate;
-        private string _certificateChain;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Certificate. 
+        /// Gets and sets the property Key. 
         /// <para>
-        ///  String that contains the ACM Certificate represented by the ARN specified at input.
-        /// 
+        /// The key of the tag.
         /// </para>
         /// </summary>
-        public string Certificate
+        public string Key
         {
-            get { return this._certificate; }
-            set { this._certificate = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if Certificate property is set
-        internal bool IsSetCertificate()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._certificate != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property CertificateChain. 
+        /// Gets and sets the property Value. 
         /// <para>
-        ///  The certificate chain that contains the root certificate issued by the certificate
-        /// authority (CA). 
+        /// The value of the tag.
         /// </para>
         /// </summary>
-        public string CertificateChain
+        public string Value
         {
-            get { return this._certificateChain; }
-            set { this._certificateChain = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if CertificateChain property is set
-        internal bool IsSetCertificateChain()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._certificateChain != null;
+            return this._value != null;
         }
 
     }

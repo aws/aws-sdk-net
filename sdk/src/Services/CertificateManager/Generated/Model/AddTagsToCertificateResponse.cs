@@ -28,35 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the AddTagsToCertificate operation.
     /// </summary>
-    public partial class RequestCertificateResponse : AmazonWebServiceResponse
+    public partial class AddTagsToCertificateResponse : AmazonWebServiceResponse
     {
-        private string _certificateArn;
-
-        /// <summary>
-        /// Gets and sets the property CertificateArn. 
-        /// <para>
-        ///  String that contains the ARN of the issued certificate. This must be of the form:
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// 
-        /// </para>
-        /// </summary>
-        public string CertificateArn
-        {
-            get { return this._certificateArn; }
-            set { this._certificateArn = value; }
-        }
-
-        // Check to see if CertificateArn property is set
-        internal bool IsSetCertificateArn()
-        {
-            return this._certificateArn != null;
-        }
 
     }
 }
