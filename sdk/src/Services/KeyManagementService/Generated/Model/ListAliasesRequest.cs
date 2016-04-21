@@ -65,7 +65,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter only when paginating results and only in a subsequent request after
-        /// you've received a response with truncated results. Set it to the value of <code>NextMarker</code>
+        /// you receive a response with truncated results. Set it to the value of <code>NextMarker</code>
         /// from the response you just received.
         /// </para>
         /// </summary>
