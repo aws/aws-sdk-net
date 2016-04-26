@@ -1,3 +1,11 @@
+### 3.1.63.0 (2016-04-26 21:22 UTC)
+* EC2 (3.1.12.0)
+	* API Update for VPC Peering with Classiclink.
+* ECR (3.1.1.0)
+	* Added the repository URI to the output of DescribeRepositories.
+* SecurityToken (3.1.3.2)
+	* Service documentation update.
+
 ### 3.1.62.0 (2016-04-21 18:09 UTC)
 * CertificateManager (3.1.3.0)
 	* Add tagging support
