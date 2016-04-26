@@ -58,46 +58,46 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The message for the state change.
         /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li>
         /// <para>
         /// <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to
         /// an increase in the market price.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li>
         /// <para>
         /// <code>Server.InternalError</code>: An internal error occurred during instance launch,
         /// resulting in termination.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li>
         /// <para>
         /// <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance
         /// capacity to satisfy the launch request.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li>
         /// <para>
         /// <code>Client.InternalError</code>: A client error caused the instance to terminate
         /// on launch.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li>
         /// <para>
         /// <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using the
         /// <code>shutdown -h</code> command from the instance.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li>
         /// <para>
         /// <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon
         /// EC2 API.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li>
         /// <para>
         /// <code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or
         /// total storage was exceeded. Decrease usage or request an increase in your limits.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li>
         /// <para>
         /// <code>Client.InvalidSnapshot.NotFound</code>: The specified snapshot was not found.
         /// </para>
-        ///  </li> </ul>
+        /// </li> </ul>
         /// </summary>
         public string Message
         {

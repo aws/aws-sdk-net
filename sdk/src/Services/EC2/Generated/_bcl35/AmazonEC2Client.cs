@@ -3253,6 +3253,12 @@ namespace Amazon.EC2
         /// about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify the instance tenancy value for the VPC when you create it. You can't
+        /// change this value for the VPC after you create it. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
+        /// Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
         /// 
@@ -3443,6 +3449,11 @@ namespace Amazon.EC2
         /// If you decide to shut down your VPN connection for any reason and later create a new
         /// VPN connection, you must reconfigure your customer gateway with the new information
         /// returned from this call.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is an idempotent operation. If you perform the operation more than once, Amazon
+        /// EC2 doesn't return an error.
         /// </para>
         ///  
         /// <para>
@@ -5768,8 +5779,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
-        /// 
+        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
+        /// | <code>snapshot</code> | <code>volume</code>. 
         /// </para>
         ///  
         /// <para>
@@ -6202,7 +6213,8 @@ namespace Amazon.EC2
         #region  DescribeInstanceStatus
 
         /// <summary>
-        /// Describes the status of one or more instances.
+        /// Describes the status of one or more instances. By default, only running instances
+        /// are described, unless specified otherwise.
         /// 
         ///  
         /// <para>
@@ -6216,7 +6228,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -6239,7 +6251,8 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes the status of one or more instances.
+        /// Describes the status of one or more instances. By default, only running instances
+        /// are described, unless specified otherwise.
         /// 
         ///  
         /// <para>
@@ -6253,7 +6266,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -10406,7 +10419,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the ID format for the specified resource on a per-region basis. You can specify
         /// that resources should receive longer IDs (17-character IDs) when they are created.
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
+        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
+        /// | <code>snapshot</code> | <code>volume</code>.
         /// 
         ///  
         /// <para>
@@ -11127,6 +11141,77 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcPeeringConnectionOptions
+
+        /// <summary>
+        /// Modifies the VPC peering connection options on one side of a VPC peering connection.
+        /// You can do the following:
+        /// 
+        ///  <ul> <li>
+        /// <para>
+        /// Enable/disable communication over the peering connection between an EC2-Classic instance
+        /// that's linked to your VPC (using ClassicLink) and instances in the peer VPC. 
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// Enable/disable communication over the peering connection between instances in your
+        /// VPC and an EC2-Classic instance that's linked to the peer VPC.
+        /// </para>
+        /// </li> </ul> 
+        /// <para>
+        /// If the peered VPCs are in different accounts, each owner must initiate a separate
+        /// request to enable or disable communication in either direction, depending on whether
+        /// their VPC was the requester or accepter for the VPC peering connection. If the peered
+        /// VPCs are in the same account, you can modify the requester and accepter options in
+        /// the same request. To confirm which VPC is the accepter and requester for a VPC peering
+        /// connection, use the <a>DescribeVpcPeeringConnections</a> command.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcPeeringConnectionOptions service method, as returned by EC2.</returns>
+        public ModifyVpcPeeringConnectionOptionsResponse ModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request)
+        {
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var unmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcPeeringConnectionOptionsRequest,ModifyVpcPeeringConnectionOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcPeeringConnectionOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcPeeringConnectionOptions
+        ///         operation.</returns>
+        public IAsyncResult BeginModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var unmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyVpcPeeringConnectionOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVpcPeeringConnectionOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcPeeringConnectionOptions.</param>
+        /// 
+        /// <returns>Returns a  ModifyVpcPeeringConnectionOptionsResult from EC2.</returns>
+        public  ModifyVpcPeeringConnectionOptionsResponse EndModifyVpcPeeringConnectionOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVpcPeeringConnectionOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  MonitorInstances
 
         /// <summary>
@@ -11310,7 +11395,14 @@ namespace Amazon.EC2
         /// <para>
         /// Scheduled Instances enable you to purchase Amazon EC2 compute capacity by the hour
         /// for a one-year term. Before you can purchase a Scheduled Instance, you must call <a>DescribeScheduledInstanceAvailability</a>
-        /// to check for available schedules and obtain a purchase token.
+        /// to check for available schedules and obtain a purchase token. After you purchase a
+        /// Scheduled Instance, you must call <a>RunScheduledInstances</a> during each scheduled
+        /// time period.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you purchase a Scheduled Instance, you can't cancel, modify, or resell your
+        /// purchase.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseScheduledInstances service method.</param>
@@ -11368,8 +11460,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2
-        /// performs a hard reboot.
+        /// If an instance does not cleanly shut down within four minutes, Amazon EC2 performs
+        /// a hard reboot.
         /// </para>
         ///  
         /// <para>
@@ -12648,7 +12740,8 @@ namespace Amazon.EC2
         /// You must launch a Scheduled Instance during its scheduled time period. You can't stop
         /// or reboot a Scheduled Instance, but you can terminate it as needed. If you terminate
         /// a Scheduled Instance before the current scheduled time period ends, you can launch
-        /// it again after a few minutes.
+        /// it again after a few minutes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunScheduledInstances service method.</param>
@@ -12775,41 +12868,33 @@ namespace Amazon.EC2
         #region  StopInstances
 
         /// <summary>
-        /// Stops an Amazon EBS-backed instance. Each time you transition an instance from stopped
-        /// to started, Amazon EC2 charges a full instance hour, even if transitions happen multiple
-        /// times within a single hour.
+        /// Stops an Amazon EBS-backed instance. 
         /// 
         ///  
         /// <para>
-        /// You can't start or stop Spot instances.
+        /// We don't charge hourly usage for a stopped instance, or data transfer fees; however,
+        /// your root partition Amazon EBS volume remains, continues to persist your data, and
+        /// you are charged for Amazon EBS volume usage. Each time you transition an instance
+        /// from stopped to started, Amazon EC2 charges a full instance hour, even if transitions
+        /// happen multiple times within a single hour.
         /// </para>
         ///  
         /// <para>
-        /// Instances that use Amazon EBS volumes as their root devices can be quickly stopped
-        /// and started. When an instance is stopped, the compute resources are released and you
-        /// are not billed for hourly instance usage. However, your root partition Amazon EBS
-        /// volume remains, continues to persist your data, and you are charged for Amazon EBS
-        /// volume usage. You can restart your instance at any time.
+        /// You can't start or stop Spot instances, and you can't stop instance store-backed instances.
         /// </para>
         ///  
         /// <para>
+        /// When you stop an instance, we shut it down. You can restart your instance at any time.
         /// Before stopping an instance, make sure it is in a state from which it can be restarted.
         /// Stopping an instance does not preserve data stored in RAM.
         /// </para>
         ///  
         /// <para>
-        /// Performing this operation on an instance that uses an instance store as its root device
-        /// returns an error.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can stop, start, and terminate EBS-backed instances. You can only terminate instance
-        /// store-backed instances. What happens to an instance differs if you stop it or terminate
-        /// it. For example, when you stop an instance, the root device and any other devices
-        /// attached to the instance persist. When you terminate an instance, the root device
-        /// and any other devices attached during the instance launch are automatically deleted.
-        /// For more information about the differences between stopping and terminating instances,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// Stopping an instance is different to rebooting or terminating it. For example, when
+        /// you stop an instance, the root device and any other devices attached to the instance
+        /// persist. When you terminate an instance, the root device and any other devices attached
+        /// during the instance launch are automatically deleted. For more information about the
+        /// differences between rebooting, stopping, and terminating instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  

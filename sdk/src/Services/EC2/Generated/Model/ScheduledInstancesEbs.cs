@@ -160,7 +160,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code/>standard
+        /// Default: <code>standard</code>
         /// </para>
         /// </summary>
         public string VolumeType

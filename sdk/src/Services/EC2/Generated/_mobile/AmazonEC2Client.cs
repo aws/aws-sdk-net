@@ -3495,7 +3495,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the status of one or more instances.
+        /// Describes the status of one or more instances. By default, only running instances
+        /// are described, unless specified otherwise.
         /// 
         ///  
         /// <para>
@@ -3509,7 +3510,7 @@ namespace Amazon.EC2
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li> 
         /// <para>
         /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
@@ -6551,6 +6552,37 @@ namespace Amazon.EC2
             var unmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyVpcEndpointRequest,ModifyVpcEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVpcPeeringConnectionOptions
+
+        internal ModifyVpcPeeringConnectionOptionsResponse ModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request)
+        {
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var unmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcPeeringConnectionOptionsRequest,ModifyVpcPeeringConnectionOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcPeeringConnectionOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyVpcPeeringConnectionOptionsResponse> ModifyVpcPeeringConnectionOptionsAsync(ModifyVpcPeeringConnectionOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var unmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcPeeringConnectionOptionsRequest,ModifyVpcPeeringConnectionOptionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

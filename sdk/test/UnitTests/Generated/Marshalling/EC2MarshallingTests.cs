@@ -3885,6 +3885,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyVpcPeeringConnectionOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyVpcPeeringConnectionOptions");
+
+            var request = InstantiateClassGenerator.Execute<ModifyVpcPeeringConnectionOptionsRequest>();
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyVpcPeeringConnectionOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void MonitorInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("MonitorInstances");

@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpcPeeringConnectionVpcInfo Object
+    /// Response Unmarshaller for VpcPeeringConnectionOptionsDescription Object
     /// </summary>  
-    public class VpcPeeringConnectionVpcInfoUnmarshaller : IUnmarshaller<VpcPeeringConnectionVpcInfo, XmlUnmarshallerContext>, IUnmarshaller<VpcPeeringConnectionVpcInfo, JsonUnmarshallerContext>
+    public class VpcPeeringConnectionOptionsDescriptionUnmarshaller : IUnmarshaller<VpcPeeringConnectionOptionsDescription, XmlUnmarshallerContext>, IUnmarshaller<VpcPeeringConnectionOptionsDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcPeeringConnectionVpcInfo Unmarshall(XmlUnmarshallerContext context)
+        public VpcPeeringConnectionOptionsDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            VpcPeeringConnectionVpcInfo unmarshalledObject = new VpcPeeringConnectionVpcInfo();
+            VpcPeeringConnectionOptionsDescription unmarshalledObject = new VpcPeeringConnectionOptionsDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,28 +54,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("cidrBlock", targetDepth))
+                    if (context.TestExpression("allowEgressFromLocalClassicLinkToRemoteVpc", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AllowEgressFromLocalClassicLinkToRemoteVpc = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ownerId", targetDepth))
+                    if (context.TestExpression("allowEgressFromLocalVpcToRemoteClassicLink", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("peeringOptions", targetDepth))
-                    {
-                        var unmarshaller = VpcPeeringConnectionOptionsDescriptionUnmarshaller.Instance;
-                        unmarshalledObject.PeeringOptions = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("vpcId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AllowEgressFromLocalVpcToRemoteClassicLink = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -93,18 +81,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VpcPeeringConnectionVpcInfo Unmarshall(JsonUnmarshallerContext context)
+        public VpcPeeringConnectionOptionsDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static VpcPeeringConnectionVpcInfoUnmarshaller _instance = new VpcPeeringConnectionVpcInfoUnmarshaller();        
+        private static VpcPeeringConnectionOptionsDescriptionUnmarshaller _instance = new VpcPeeringConnectionOptionsDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcPeeringConnectionVpcInfoUnmarshaller Instance
+        public static VpcPeeringConnectionOptionsDescriptionUnmarshaller Instance
         {
             get
             {

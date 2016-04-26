@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume
-        /// (gp2 | io1 | st1 | sc1 | standard).
+        /// (<code>gp2</code> | <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
