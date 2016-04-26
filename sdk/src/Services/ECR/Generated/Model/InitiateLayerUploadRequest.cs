@@ -29,7 +29,7 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the InitiateLayerUpload operation.
-    /// Notify Amazon ECR that you intend to upload an image layer. 
+    /// Notify Amazon ECR that you intend to upload an image layer.
     /// 
     ///  <note> 
     /// <para>

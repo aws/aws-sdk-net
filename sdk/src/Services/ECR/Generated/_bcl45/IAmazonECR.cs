@@ -503,7 +503,7 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Notify Amazon ECR that you intend to upload an image layer. 
+        /// Notify Amazon ECR that you intend to upload an image layer.
         /// 
         ///  <note> 
         /// <para>

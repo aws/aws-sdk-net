@@ -80,7 +80,7 @@ namespace Amazon.ECR.Model
         /// <para>
         /// The registry URL to use for this authorization token in a <code>docker login</code>
         /// command. The Amazon ECR registry URL format is <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>.
-        /// For example, <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.
+        /// For example, <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. 
         /// </para>
         /// </summary>
         public string ProxyEndpoint
