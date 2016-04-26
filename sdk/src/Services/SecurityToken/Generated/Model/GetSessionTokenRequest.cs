@@ -60,7 +60,7 @@ namespace Amazon.SecurityToken.Model
     ///  <ul> <li> 
     /// <para>
     /// You cannot call any IAM APIs unless MFA authentication information is included in
-    /// the request. 
+    /// the request.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -108,7 +108,7 @@ namespace Amazon.SecurityToken.Model
         /// for IAM user sessions range from 900 seconds (15 minutes) to 129600 seconds (36 hours),
         /// with 43200 seconds (12 hours) as the default. Sessions for AWS account owners are
         /// restricted to a maximum of 3600 seconds (one hour). If the duration is longer than
-        /// one hour, the session for AWS account owners defaults to one hour. 
+        /// one hour, the session for AWS account owners defaults to one hour.
         /// </para>
         /// </summary>
         public int DurationSeconds
@@ -134,6 +134,12 @@ namespace Amazon.SecurityToken.Model
         /// You can find the device for an IAM user by going to the AWS Management Console and
         /// viewing the user's security credentials. 
         /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a string of characters
+        /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
+        /// also include any of the following characters: =,.@-
+        /// </para>
         /// </summary>
         public string SerialNumber
         {
@@ -155,6 +161,11 @@ namespace Amazon.SecurityToken.Model
         /// and the user does not provide a code when requesting a set of temporary security credentials,
         /// the user will receive an "access denied" response when requesting resources that require
         /// MFA authentication.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a sequence of
+        /// six numeric digits.
         /// </para>
         /// </summary>
         public string TokenCode

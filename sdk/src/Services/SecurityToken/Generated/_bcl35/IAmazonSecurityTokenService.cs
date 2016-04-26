@@ -36,27 +36,31 @@ namespace Amazon.SecurityToken
     /// of the STS API. For more detailed information about using this service, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
     /// Security Credentials</a>. 
     /// </para>
-    ///  <note> As an alternative to using the API, you can use one of the AWS SDKs, which
-    /// consist of libraries and sample code for various programming languages and platforms
-    /// (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
-    /// programmatic access to STS. For example, the SDKs take care of cryptographically signing
-    /// requests, managing errors, and retrying requests automatically. For information about
-    /// the AWS SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
-    /// for Amazon Web Services page</a>. </note> 
+    ///  <note> 
+    /// <para>
+    ///  As an alternative to using the API, you can use one of the AWS SDKs, which consist
+    /// of libraries and sample code for various programming languages and platforms (Java,
+    /// Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic
+    /// access to STS. For example, the SDKs take care of cryptographically signing requests,
+    /// managing errors, and retrying requests automatically. For information about the AWS
+    /// SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services page</a>. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For information about setting up signatures and authorization through the API, go
-    /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
-    /// target="_blank">Signing AWS API Requests</a> in the <i>AWS General Reference</i>.
-    /// For general information about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
-    /// target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For information about
-    /// using security tokens with other AWS products, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+    /// to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// AWS API Requests</a> in the <i>AWS General Reference</i>. For general information
+    /// about the Query API, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    /// Query Requests</a> in <i>Using IAM</i>. For information about using security tokens
+    /// with other AWS products, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
     /// Services That Work with IAM</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  
     /// <para>
     /// If you're new to AWS and need additional technical information about a specific AWS
-    /// product, you can find the product's technical documentation at <a href="http://aws.amazon.com/documentation/"
-    /// target="_blank">http://aws.amazon.com/documentation/</a>. 
+    /// product, you can find the product's technical documentation at <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -106,7 +110,7 @@ namespace Amazon.SecurityToken
         /// 
         ///  
         /// <para>
-        /// <b>Important:</b> You cannot call <code>AssumeRole</code> by using AWS root account
+        ///  <b>Important:</b> You cannot call <code>AssumeRole</code> by using AWS root account
         /// credentials; access is denied. You must use IAM user credentials or temporary security
         /// credentials to call <code>AssumeRole</code>. 
         /// </para>
@@ -153,7 +157,7 @@ namespace Amazon.SecurityToken
         /// have the permissions that are defined in the access policy of the role that is being
         /// assumed. If you pass a policy to this operation, the temporary security credentials
         /// that are returned by the operation have the permissions that are allowed by both the
-        /// access policy of the role that is being assumed, <i><b>and</b></i> the policy that
+        /// access policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
         /// you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
@@ -207,9 +211,6 @@ namespace Amazon.SecurityToken
         /// the user's hardware or virtual MFA device. The <code>TokenCode</code> is the time-based
         /// one-time password (TOTP) that the MFA devices produces. 
         /// </para>
-        ///  <member name="RoleArn" target="arnType"/> <member name="RoleSessionName" target="userNameType"/>
-        /// <member name="Policy" target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
-        /// target="roleDurationSecondsType"/> <member name="ExternalId" target="externalIdType"/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssumeRole service method.</param>
         /// 
@@ -297,7 +298,7 @@ namespace Amazon.SecurityToken
         /// have the permissions that are defined in the access policy of the role that is being
         /// assumed. If you pass a policy to this operation, the temporary security credentials
         /// that are returned by the operation have the permissions that are allowed by both the
-        /// access policy of the role that is being assumed, <i><b>and</b></i> the policy that
+        /// access policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
         /// you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
@@ -319,18 +320,39 @@ namespace Amazon.SecurityToken
         /// The identity of the caller is validated by using keys in the metadata document that
         /// is uploaded for the SAML provider entity for your identity provider. 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Calling <code>AssumeRoleWithSAML</code> can result in an entry in your AWS CloudTrail
+        /// logs. The entry includes the value in the <code>NameID</code> element of the SAML
+        /// assertion. We recommend that you use a NameIDType that is not associated with any
+        /// personally identifiable information (PII). For example, you could instead use the
+        /// Persistent Identifier (<code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code>).
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For more information, see the following resources:
         /// </para>
-        ///  <ul> <li><a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-        /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
-        /// SAML Identity Providers</a> in the <i>IAM User Guide</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
-        /// a Relying Party and Claims</a> in the <i>IAM User Guide</i>. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
-        /// a Role for SAML 2.0 Federation</a> in the <i>IAM User Guide</i>. </li> </ul> <member
-        /// name="RoleArn" target="arnType"/> <member name="SAMLAssertion" target="SAMLAssertionType"/>
-        /// <member name="Policy" target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
-        /// target="roleDurationSecondsType"/>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+        /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
+        /// SAML Identity Providers</a> in the <i>IAM User Guide</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
+        /// a Relying Party and Claims</a> in the <i>IAM User Guide</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
+        /// a Role for SAML 2.0 Federation</a> in the <i>IAM User Guide</i>. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssumeRoleWithSAML service method.</param>
         /// 
@@ -404,7 +426,6 @@ namespace Amazon.SecurityToken
         /// in a mobile or web application with a web identity provider, such as Amazon Cognito,
         /// Login with Amazon, Facebook, Google, or any OpenID Connect-compatible identity provider.
         /// 
-        /// 
         ///  <note> 
         /// <para>
         /// For mobile applications, we recommend that you use Amazon Cognito. You can use Amazon
@@ -458,7 +479,7 @@ namespace Amazon.SecurityToken
         /// have the permissions that are defined in the access policy of the role that is being
         /// assumed. If you pass a policy to this operation, the temporary security credentials
         /// that are returned by the operation have the permissions that are allowed by both the
-        /// access policy of the role that is being assumed, <i><b>and</b></i> the policy that
+        /// access policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
         /// you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
@@ -474,25 +495,49 @@ namespace Amazon.SecurityToken
         /// provider that is associated with the identity token. In other words, the identity
         /// provider must be specified in the role's trust policy. 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Calling <code>AssumeRoleWithWebIdentity</code> can result in an entry in your AWS
+        /// CloudTrail logs. The entry includes the <a href="http://openid.net/specs/openid-connect-core-1_0.html#Claims">Subject</a>
+        /// of the provided Web Identity Token. We recommend that you avoid using any personally
+        /// identifiable information (PII) in this field. For example, you could instead use a
+        /// GUID or a pairwise identifier, as <a href="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes">suggested
+        /// in the OIDC specification</a>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For more information about how to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>
         /// API, see the following resources: 
         /// </para>
-        ///  <ul> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
         /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
-        /// Through a Web-based Identity Provider</a>. </li> <li><a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+        /// Through a Web-based Identity Provider</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
         /// Web Identity Federation Playground</a>. This interactive website lets you walk through
         /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
         /// temporary security credentials, and then using those credentials to make a request
-        /// to AWS. </li> <li><a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and
-        /// <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These toolkits
-        /// contain sample apps that show how to invoke the identity providers, and then how to
-        /// use the information from these providers to get and use temporary security credentials.
-        /// </li> <li><a href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
+        /// to AWS. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a href="http://aws.amazon.com/sdkforandroid/">AWS
+        /// SDK for Android</a>. These toolkits contain sample apps that show how to invoke the
+        /// identity providers, and then how to use the information from these providers to get
+        /// and use temporary security credentials. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
         /// with Mobile Applications</a>. This article discusses web identity federation and shows
         /// an example of how to use web identity federation to get access to content in Amazon
-        /// S3. </li> </ul>
+        /// S3. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssumeRoleWithWebIdentity service method.</param>
         /// 
@@ -570,7 +615,7 @@ namespace Amazon.SecurityToken
 
         /// <summary>
         /// Decodes additional information about the authorization status of a request from an
-        /// encoded message returned in response to an AWS request. 
+        /// encoded message returned in response to an AWS request.
         /// 
         ///  
         /// <para>
@@ -579,9 +624,13 @@ namespace Amazon.SecurityToken
         /// 403 response). Some AWS actions additionally return an encoded message that can provide
         /// details about this authorization failure. 
         /// </para>
-        ///  <note> Only certain AWS actions return an encoded authorization message. The documentation
+        ///  <note> 
+        /// <para>
+        /// Only certain AWS actions return an encoded authorization message. The documentation
         /// for an individual action indicates whether that action returns an encoded message
-        /// in addition to returning an HTTP code. </note> 
+        /// in addition to returning an HTTP code.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The message is encoded because the details of the authorization status can constitute
         /// privileged information that the user who requested the action should not see. To decode
@@ -591,14 +640,31 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// The decoded message includes the following type of information: 
+        /// The decoded message includes the following type of information:
         /// </para>
-        ///  <ul> <li>Whether the request was denied due to an explicit deny or due to the absence
-        /// of an explicit allow. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow">Determining
-        /// Whether a Request is Allowed or Denied</a> in the <i>IAM User Guide</i>. </li> <li>The
-        /// principal who made the request.</li> <li>The requested action.</li> <li>The requested
-        /// resource.</li> <li>The values of condition keys in the context of the user's request.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether the request was denied due to an explicit deny or due to the absence of an
+        /// explicit allow. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow">Determining
+        /// Whether a Request is Allowed or Denied</a> in the <i>IAM User Guide</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The principal who made the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The values of condition keys in the context of the user's request.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DecodeAuthorizationMessage service method.</param>
         /// 
@@ -736,17 +802,24 @@ namespace Amazon.SecurityToken
         /// The permissions for the temporary security credentials returned by <code>GetFederationToken</code>
         /// are determined by a combination of the following: 
         /// </para>
-        ///  <ul> <li>The policy or policies that are attached to the IAM user whose credentials
-        /// are used to call <code>GetFederationToken</code>.</li> <li>The policy that is passed
-        /// as a parameter in the call.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// The policy or policies that are attached to the IAM user whose credentials are used
+        /// to call <code>GetFederationToken</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy that is passed as a parameter in the call.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The passed policy is attached to the temporary security credentials that result from
         /// the <code>GetFederationToken</code> API call--that is, to the <i>federated user</i>.
         /// When the federated user makes an AWS request, AWS evaluates the policy attached to
         /// the federated user in combination with the policy or policies attached to the IAM
         /// user whose credentials were used to call <code>GetFederationToken</code>. AWS allows
-        /// the federated user's request only when both the federated user <i><b>and</b></i> the
-        /// IAM user are explicitly allowed to perform the requested action. The passed policy
+        /// the federated user's request only when both the federated user <i> <b>and</b> </i>
+        /// the IAM user are explicitly allowed to perform the requested action. The passed policy
         /// cannot grant more permissions than those that are defined in the IAM user policy.
         /// </para>
         ///  
@@ -763,7 +836,7 @@ namespace Amazon.SecurityToken
         /// If you do not pass a policy, the resulting temporary security credentials have no
         /// effective permissions. The only exception is when the temporary security credentials
         /// are used to access a resource that has a resource-based policy that specifically allows
-        /// the federated user to access the resource. 
+        /// the federated user to access the resource.
         /// </para>
         ///  
         /// <para>
@@ -854,7 +927,7 @@ namespace Amazon.SecurityToken
         ///  <ul> <li> 
         /// <para>
         /// You cannot call any IAM APIs unless MFA authentication information is included in
-        /// the request. 
+        /// the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -926,7 +999,7 @@ namespace Amazon.SecurityToken
         ///  <ul> <li> 
         /// <para>
         /// You cannot call any IAM APIs unless MFA authentication information is included in
-        /// the request. 
+        /// the request.
         /// </para>
         ///  </li> <li> 
         /// <para>

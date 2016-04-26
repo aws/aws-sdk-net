@@ -39,7 +39,7 @@ namespace Amazon.SecurityToken.Model
     /// 
     ///  
     /// <para>
-    /// <b>Important:</b> You cannot call <code>AssumeRole</code> by using AWS root account
+    ///  <b>Important:</b> You cannot call <code>AssumeRole</code> by using AWS root account
     /// credentials; access is denied. You must use IAM user credentials or temporary security
     /// credentials to call <code>AssumeRole</code>. 
     /// </para>
@@ -86,7 +86,7 @@ namespace Amazon.SecurityToken.Model
     /// have the permissions that are defined in the access policy of the role that is being
     /// assumed. If you pass a policy to this operation, the temporary security credentials
     /// that are returned by the operation have the permissions that are allowed by both the
-    /// access policy of the role that is being assumed, <i><b>and</b></i> the policy that
+    /// access policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
     /// you pass. This gives you a way to further restrict the permissions for the resulting
     /// temporary security credentials. You cannot use the passed policy to grant permissions
     /// that are in excess of those allowed by the access policy of the role that is being
@@ -140,9 +140,6 @@ namespace Amazon.SecurityToken.Model
     /// the user's hardware or virtual MFA device. The <code>TokenCode</code> is the time-based
     /// one-time password (TOTP) that the MFA devices produces. 
     /// </para>
-    ///  <member name="RoleArn" target="arnType"/> <member name="RoleSessionName" target="userNameType"/>
-    /// <member name="Policy" target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
-    /// target="roleDurationSecondsType"/> <member name="ExternalId" target="externalIdType"/>
     /// </summary>
     public partial class AssumeRoleRequest : AmazonSecurityTokenServiceRequest
     {
@@ -159,7 +156,6 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The duration, in seconds, of the role session. The value can range from 900 seconds
         /// (15 minutes) to 3600 seconds (1 hour). By default, the value is set to 3600 seconds.
-        /// 
         /// </para>
         /// </summary>
         public int DurationSeconds
@@ -186,6 +182,12 @@ namespace Amazon.SecurityToken.Model
         /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
         /// to Use an External ID When Granting Access to Your AWS Resources to a Third Party</a>
         /// in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a string of characters
+        /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
+        /// also include any of the following characters: =,.@:\/-
         /// </para>
         /// </summary>
         public string ExternalId
@@ -217,10 +219,21 @@ namespace Amazon.SecurityToken.Model
         /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM
         /// User Guide</i>.
         /// </para>
-        ///  <note>The policy plain text must be 2048 bytes or shorter. However, an internal conversion
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a string of characters
+        /// up to 2048 characters in length. The characters can be any ASCII character from the
+        /// space character to the end of the valid character list (\u0020-\u00FF). It can also
+        /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The policy plain text must be 2048 bytes or shorter. However, an internal conversion
         /// compresses it into a packed binary format with a separate limit. The PackedPolicySize
         /// response element indicates by percentage how close to the upper size limit the policy
-        /// is, with 100% equaling the maximum allowed size.</note>
+        /// is, with 100% equaling the maximum allowed size.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Policy
         {
@@ -255,7 +268,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property RoleSessionName. 
         /// <para>
-        /// An identifier for the assumed role session. 
+        /// An identifier for the assumed role session.
         /// </para>
         ///  
         /// <para>
@@ -265,6 +278,12 @@ namespace Amazon.SecurityToken.Model
         /// The role session name is also used in the ARN of the assumed role principal. This
         /// means that subsequent cross-account API requests using the temporary security credentials
         /// will expose the role session name to the external account in their CloudTrail logs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a string of characters
+        /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
+        /// also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleSessionName
@@ -288,6 +307,12 @@ namespace Amazon.SecurityToken.Model
         /// value is either the serial number for a hardware device (such as <code>GAHT12345678</code>)
         /// or an Amazon Resource Name (ARN) for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).
         /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a string of characters
+        /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
+        /// also include any of the following characters: =,.@-
+        /// </para>
         /// </summary>
         public string SerialNumber
         {
@@ -308,6 +333,11 @@ namespace Amazon.SecurityToken.Model
         /// requires MFA (that is, if the policy includes a condition that tests for MFA). If
         /// the role being assumed requires MFA and if the <code>TokenCode</code> value is missing
         /// or expired, the <code>AssumeRole</code> call returns an "access denied" error.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a sequence of
+        /// six numeric digits.
         /// </para>
         /// </summary>
         public string TokenCode
