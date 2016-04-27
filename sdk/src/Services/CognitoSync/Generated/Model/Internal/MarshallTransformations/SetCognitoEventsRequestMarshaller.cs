@@ -59,7 +59,9 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/identitypools/{IdentityPoolId}/events";
-            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", publicRequest.IsSetIdentityPoolId() ? StringUtils.FromString(publicRequest.IdentityPoolId) : string.Empty);
+            if (!publicRequest.IsSetIdentityPoolId())
+                throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
+            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

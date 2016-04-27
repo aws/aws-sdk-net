@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Component
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\Details.tt"
+    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\Details.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class Details : DetailsBase
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.Component
         {
             this.Write("\r\n");
             
-            #line 7 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\Details.tt"
+            #line 7 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\Details.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Documentation"]));
             
             #line default

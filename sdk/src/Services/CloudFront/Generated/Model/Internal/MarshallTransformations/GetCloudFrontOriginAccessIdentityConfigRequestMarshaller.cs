@@ -57,7 +57,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
             string uriResourcePath = "/2016-01-28/origin-access-identity/cloudfront/{Id}/config";
-            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
+            if (!publicRequest.IsSetId())
+                throw new AmazonCloudFrontException("Request object does not have required field Id set");
+            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = uriResourcePath;
 
 

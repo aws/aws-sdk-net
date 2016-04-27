@@ -58,8 +58,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/restapis/{restapi_id}/models/{model_name}";
-            uriResourcePath = uriResourcePath.Replace("{model_name}", publicRequest.IsSetModelName() ? StringUtils.FromString(publicRequest.ModelName) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", publicRequest.IsSetRestApiId() ? StringUtils.FromString(publicRequest.RestApiId) : string.Empty);
+            if (!publicRequest.IsSetModelName())
+                throw new AmazonAPIGatewayException("Request object does not have required field ModelName set");
+            uriResourcePath = uriResourcePath.Replace("{model_name}", StringUtils.FromString(publicRequest.ModelName));
+            if (!publicRequest.IsSetRestApiId())
+                throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
+            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             request.ResourcePath = uriResourcePath;
 
             return request;

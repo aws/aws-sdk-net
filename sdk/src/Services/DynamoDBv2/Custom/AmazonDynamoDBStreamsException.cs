@@ -29,6 +29,9 @@ namespace Amazon.DynamoDBv2
     /// Common exception for the DynamoDBStreams service.
     /// </summary>
 	[Obsolete("This exception type is never thrown and will be removed in a future version.")]
+#if !PCL
+    [Serializable]
+#endif
     public class AmazonDynamoDBStreamsException : AmazonServiceException
     {
         /// <summary>
@@ -85,5 +88,19 @@ namespace Amazon.DynamoDBv2
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }
+
+#if !PCL
+        /// <summary>
+        /// Constructs a new instance of the AmazonClientException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected AmazonDynamoDBStreamsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
     }
 }

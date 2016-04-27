@@ -15,10 +15,15 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+[module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.SecurityToken.AmazonSecurityTokenServiceClient.#Amazon.Runtime.SharedInterfaces.ICoreAmazonSTS.CredentialsFromSAMLAuthentication(System.String,System.String,System.String,System.TimeSpan,System.Net.ICredentials)")]
+
 [module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.SecurityToken.SAML.StoredProfileSAMLCredentials+RequestUserCredential")]
 
 [module: SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Scope = "member", Target = "Amazon.SecurityToken.SAML.ImpersonationState.#Impersonate(System.Net.NetworkCredential)")]
-[module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.SecurityToken.SAML.AdfsAuthenticationControllerException")]
 
+[module: SuppressMessage("Microsoft.Usage", "CA2234:PassSystemUriObjectsInsteadOfStrings", Scope = "member", Target = "Amazon.SecurityToken.AmazonSecurityTokenServiceClient.#Amazon.Runtime.SharedInterfaces.ICoreAmazonSTS.CredentialsFromSAMLAuthentication(System.String,System.String,System.String,System.TimeSpan,System.Net.ICredentials)")]
+
+[module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.SecurityToken.SAML.AdfsAuthenticationControllerException")]
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.SecurityToken.SAML.CredentialCallbackRequiredException")]
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.SecurityToken.SAML.AuthenticationFailedException")]
+

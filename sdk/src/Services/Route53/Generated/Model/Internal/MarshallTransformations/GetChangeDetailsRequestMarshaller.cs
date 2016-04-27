@@ -57,7 +57,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
             string uriResourcePath = "/2013-04-01/changedetails/{Id}";
-            uriResourcePath = uriResourcePath.Replace("{Id}", publicRequest.IsSetId() ? StringUtils.FromString(publicRequest.Id) : string.Empty);
+            if (!publicRequest.IsSetId())
+                throw new AmazonRoute53Exception("Request object does not have required field Id set");
+            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = uriResourcePath;
 
 

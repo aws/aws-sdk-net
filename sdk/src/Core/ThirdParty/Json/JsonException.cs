@@ -15,6 +15,9 @@ using System;
 
 namespace ThirdParty.Json.LitJson
 {
+#if !PCL
+    [Serializable]
+#endif
     public class JsonException : Exception
     {
         public JsonException () : base ()

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Component
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\DotNet\xamarin\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\GettingStarted.tt"
+    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Component\GettingStarted.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class GettingStarted : GettingStartedBase
     {

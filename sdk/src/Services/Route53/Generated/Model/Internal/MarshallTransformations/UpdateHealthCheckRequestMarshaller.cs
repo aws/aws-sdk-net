@@ -57,7 +57,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "POST";
             string uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
-            uriResourcePath = uriResourcePath.Replace("{HealthCheckId}", publicRequest.IsSetHealthCheckId() ? StringUtils.FromString(publicRequest.HealthCheckId) : string.Empty);
+            if (!publicRequest.IsSetHealthCheckId())
+                throw new AmazonRoute53Exception("Request object does not have required field HealthCheckId set");
+            uriResourcePath = uriResourcePath.Replace("{HealthCheckId}", StringUtils.FromString(publicRequest.HealthCheckId));
             request.ResourcePath = uriResourcePath;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);

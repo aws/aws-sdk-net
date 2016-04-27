@@ -60,7 +60,9 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/archives";
             uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+            if (!publicRequest.IsSetVaultName())
+                throw new AmazonGlacierException("Request object does not have required field VaultName set");
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
             request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  

@@ -624,6 +624,28 @@ namespace ServiceClientGenerator
             }
         }
 
+        public string GetSerializationInfoMethodName()
+        {
+            var simpleTypeName = DetermineType();
+
+            switch (simpleTypeName)
+            {
+                case "string":
+                case "boolean":
+                case "double":
+                    return "Get" + ServiceModel.CapitalizeFirstChar(simpleTypeName);
+                case "float":
+                    return "GetSingle";
+                case "integer":
+                    return "GetInt32";
+                case "long":
+                    return "GetInt64";
+
+                default:
+                    throw new Exception("Unknown serialization type " + simpleTypeName);
+            }
+        }
+
         public string GetPrimitiveType()
         {
             return this.Shape.GetPrimitiveType();
