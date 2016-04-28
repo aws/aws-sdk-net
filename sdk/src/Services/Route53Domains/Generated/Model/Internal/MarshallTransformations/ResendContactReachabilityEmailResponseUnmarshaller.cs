@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EnableDomainAutoRenew operation
+    /// Response Unmarshaller for ResendContactReachabilityEmail operation
     /// </summary>  
-    public class EnableDomainAutoRenewResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ResendContactReachabilityEmailResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,31 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            EnableDomainAutoRenewResponse response = new EnableDomainAutoRenewResponse();
+            ResendContactReachabilityEmailResponse response = new ResendContactReachabilityEmailResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("domainName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("emailAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EmailAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("isAlreadyVerified", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsAlreadyVerified = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -65,9 +88,9 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TLDRulesViolation"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationLimitExceeded"))
             {
-                return new TLDRulesViolationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new OperationLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedTLD"))
             {
@@ -76,9 +99,9 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             return new AmazonRoute53DomainsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static EnableDomainAutoRenewResponseUnmarshaller _instance = new EnableDomainAutoRenewResponseUnmarshaller();        
+        private static ResendContactReachabilityEmailResponseUnmarshaller _instance = new ResendContactReachabilityEmailResponseUnmarshaller();        
 
-        internal static EnableDomainAutoRenewResponseUnmarshaller GetInstance()
+        internal static ResendContactReachabilityEmailResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +109,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnableDomainAutoRenewResponseUnmarshaller Instance
+        public static ResendContactReachabilityEmailResponseUnmarshaller Instance
         {
             get
             {

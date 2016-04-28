@@ -28,37 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the CheckDomainAvailability operation.
-    /// This operation checks the availability of one domain name. Note that if the availability
-    /// status of a domain is pending, you must submit another request to determine the availability
-    /// of the domain name.
+    /// This is the response object from the ResendContactReachabilityEmail operation.
     /// </summary>
-    public partial class CheckDomainAvailabilityRequest : AmazonRoute53DomainsRequest
+    public partial class ResendContactReachabilityEmailResponse : AmazonWebServiceResponse
     {
         private string _domainName;
-        private string _idnLangCode;
+        private string _emailAddress;
+        private bool? _isAlreadyVerified;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The domain name can contain only the letters a through z, the numbers
-        /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// The domain name for which you requested a confirmation email.
         /// </para>
         /// </summary>
         public string DomainName
@@ -74,21 +55,42 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdnLangCode. 
+        /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// Reserved for future use.
+        /// The email address for the registrant contact at the time that we sent the verification
+        /// email.
         /// </para>
         /// </summary>
-        public string IdnLangCode
+        public string EmailAddress
         {
-            get { return this._idnLangCode; }
-            set { this._idnLangCode = value; }
+            get { return this._emailAddress; }
+            set { this._emailAddress = value; }
         }
 
-        // Check to see if IdnLangCode property is set
-        internal bool IsSetIdnLangCode()
+        // Check to see if EmailAddress property is set
+        internal bool IsSetEmailAddress()
         {
-            return this._idnLangCode != null;
+            return this._emailAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsAlreadyVerified. 
+        /// <para>
+        /// True if the email address for the registrant contact has already been verified, and
+        /// false otherwise. If the email address has already been verified, we don't send another
+        /// confirmation email.
+        /// </para>
+        /// </summary>
+        public bool IsAlreadyVerified
+        {
+            get { return this._isAlreadyVerified.GetValueOrDefault(); }
+            set { this._isAlreadyVerified = value; }
+        }
+
+        // Check to see if IsAlreadyVerified property is set
+        internal bool IsSetIsAlreadyVerified()
+        {
+            return this._isAlreadyVerified.HasValue; 
         }
 
     }

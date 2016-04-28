@@ -1153,6 +1153,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly ExtraParamName BRAND_NUMBER = new ExtraParamName("BRAND_NUMBER");
         /// <summary>
+        /// Constant CA_BUSINESS_ENTITY_TYPE for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName CA_BUSINESS_ENTITY_TYPE = new ExtraParamName("CA_BUSINESS_ENTITY_TYPE");
+        /// <summary>
         /// Constant CA_LEGAL_TYPE for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName CA_LEGAL_TYPE = new ExtraParamName("CA_LEGAL_TYPE");
@@ -1366,6 +1370,60 @@ namespace Amazon.Route53Domains
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReachabilityStatus.
+    /// </summary>
+    public class ReachabilityStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DONE for ReachabilityStatus
+        /// </summary>
+        public static readonly ReachabilityStatus DONE = new ReachabilityStatus("DONE");
+        /// <summary>
+        /// Constant EXPIRED for ReachabilityStatus
+        /// </summary>
+        public static readonly ReachabilityStatus EXPIRED = new ReachabilityStatus("EXPIRED");
+        /// <summary>
+        /// Constant PENDING for ReachabilityStatus
+        /// </summary>
+        public static readonly ReachabilityStatus PENDING = new ReachabilityStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReachabilityStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReachabilityStatus FindValue(string value)
+        {
+            return FindValue<ReachabilityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReachabilityStatus(string value)
         {
             return FindValue(value);
         }

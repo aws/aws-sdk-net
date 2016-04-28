@@ -62,8 +62,8 @@ namespace Amazon.Route53Domains.Model
         ///  
         /// <para>
         /// Constraints: The domain name can contain only the letters a through z, the numbers
-        /// 0 through 9, and hyphen (-). Hyphens are allowed only when theyaposre surrounded by
-        /// letters, numbers, or other hyphens. You canapost specify a hyphen at the beginning
+        /// 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded
+        /// by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning
         /// or end of a label. To specify an Internationalized Domain Name, you must convert the
         /// name to Punycode.
         /// </para>
@@ -102,11 +102,11 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Required: No
         /// </para>
-        /// '&gt; 
+        /// '> 
         /// <para>
         /// Each tag includes the following elements:
         /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li>
         /// <para>
         /// Key
         /// </para>
@@ -134,7 +134,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Required: Yes
         /// </para>
-        ///  </li> <li> 
+        ///  </li> <li>
         /// <para>
         /// Value
         /// </para>

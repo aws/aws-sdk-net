@@ -40,9 +40,9 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation checks the availability of one domain name. You can access this API
-        /// without authenticating. Note that if the availability status of a domain is pending,
-        /// you must submit another request to determine the availability of the domain name.
+        /// This operation checks the availability of one domain name. Note that if the availability
+        /// status of a domain is pending, you must submit another request to determine the availability
+        /// of the domain name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CheckDomainAvailability service method.</param>
         /// 
@@ -83,8 +83,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to delete one or more tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters, numbers, or other hyphens. You canapost specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToDelete">A list of tag keys to delete. Type: A list that contains the keys of the tags that you want to delete. Default: None Required: No'&gt;</param>
+        /// <param name="domainName">The domain for which you want to delete one or more tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
+        /// <param name="tagsToDelete">A list of tag keys to delete. Type: A list that contains the keys of the tags that you want to delete. Default: None Required: No'></param>
         /// 
         /// <returns>The response from the DeleteTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
@@ -135,8 +135,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to delete one or more tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters, numbers, or other hyphens. You canapost specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToDelete">A list of tag keys to delete. Type: A list that contains the keys of the tags that you want to delete. Default: None Required: No'&gt;</param>
+        /// <param name="domainName">The domain for which you want to delete one or more tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
+        /// <param name="tagsToDelete">A list of tag keys to delete. Type: A list that contains the keys of the tags that you want to delete. Default: None Required: No'></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -278,6 +278,9 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
@@ -339,6 +342,50 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<EnableDomainTransferLockResponse> EnableDomainTransferLockAsync(EnableDomainTransferLockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetContactReachabilityStatus
+
+
+        /// <summary>
+        /// For operations that require confirmation that the email address for the registrant
+        /// contact is valid, such as registering a new domain, this operation returns information
+        /// about whether the registrant contact has responded.
+        /// 
+        ///  
+        /// <para>
+        /// If you want us to resend the email, use the <code>ResendContactReachabilityEmail</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactReachabilityStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetContactReachabilityStatus service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
+        GetContactReachabilityStatusResponse GetContactReachabilityStatus(GetContactReachabilityStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContactReachabilityStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContactReachabilityStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetContactReachabilityStatusResponse> GetContactReachabilityStatusAsync(GetContactReachabilityStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -686,6 +733,44 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  ResendContactReachabilityEmail
+
+
+        /// <summary>
+        /// For operations that require confirmation that the email address for the registrant
+        /// contact is valid, such as registering a new domain, this operation resends the confirmation
+        /// email to the current email address for the registrant contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResendContactReachabilityEmail service method.</param>
+        /// 
+        /// <returns>The response from the ResendContactReachabilityEmail service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
+        ResendContactReachabilityEmailResponse ResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResendContactReachabilityEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResendContactReachabilityEmail operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ResendContactReachabilityEmailResponse> ResendContactReachabilityEmailAsync(ResendContactReachabilityEmailRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RetrieveDomainAuthCode
 
 
@@ -962,8 +1047,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to add or update tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters, numbers, or other hyphens. You canapost specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'&gt; Each tag includes the following elements: <ul> <li> Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li> Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
+        /// <param name="domainName">The domain for which you want to add or update tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
+        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'> Each tag includes the following elements: <ul> <li>Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li>Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
         /// 
         /// <returns>The response from the UpdateTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
@@ -1014,8 +1099,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to add or update tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters, numbers, or other hyphens. You canapost specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'&gt; Each tag includes the following elements: <ul> <li> Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li> Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
+        /// <param name="domainName">The domain for which you want to add or update tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
+        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'> Each tag includes the following elements: <ul> <li>Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li>Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

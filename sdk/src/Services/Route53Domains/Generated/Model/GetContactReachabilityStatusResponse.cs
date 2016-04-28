@@ -28,37 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the CheckDomainAvailability operation.
-    /// This operation checks the availability of one domain name. Note that if the availability
-    /// status of a domain is pending, you must submit another request to determine the availability
-    /// of the domain name.
+    /// This is the response object from the GetContactReachabilityStatus operation.
     /// </summary>
-    public partial class CheckDomainAvailabilityRequest : AmazonRoute53DomainsRequest
+    public partial class GetContactReachabilityStatusResponse : AmazonWebServiceResponse
     {
         private string _domainName;
-        private string _idnLangCode;
+        private ReachabilityStatus _status;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The domain name can contain only the letters a through z, the numbers
-        /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// The domain name for which you requested the reachability status.
         /// </para>
         /// </summary>
         public string DomainName
@@ -74,21 +54,33 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdnLangCode. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// Reserved for future use.
+        /// Whether the registrant contact has responded. <code>PENDING</code> indicates that
+        /// we sent the confirmation email and haven't received a response yet, <code>DONE</code>
+        /// indicates that we sent the email and got confirmation from the registrant contact,
+        /// and <code>EXPIRED</code> indicates that the time limit expired before the registrant
+        /// contact responded. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: String
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
         /// </para>
         /// </summary>
-        public string IdnLangCode
+        public ReachabilityStatus Status
         {
-            get { return this._idnLangCode; }
-            set { this._idnLangCode = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if IdnLangCode property is set
-        internal bool IsSetIdnLangCode()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._idnLangCode != null;
+            return this._status != null;
         }
 
     }

@@ -28,61 +28,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// The ListTagsForDomain response includes the following elements.
+    /// Container for the parameters to the ResendContactReachabilityEmail operation.
+    /// For operations that require confirmation that the email address for the registrant
+    /// contact is valid, such as registering a new domain, this operation resends the confirmation
+    /// email to the current email address for the registrant contact.
     /// </summary>
-    public partial class ListTagsForDomainResponse : AmazonWebServiceResponse
+    public partial class ResendContactReachabilityEmailRequest : AmazonRoute53DomainsRequest
     {
-        private List<Tag> _tagList = new List<Tag>();
+        private string _domainName;
 
         /// <summary>
-        /// Gets and sets the property TagList. 
+        /// Gets and sets the property DomainName. 
         /// <para>
-        /// A list of the tags that are associated with the specified domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: A complex type containing a list of tags
-        /// </para>
-        ///  
-        /// <para>
-        /// Each tag includes the following elements.
-        /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// Key
-        /// </para>
-        ///  
-        /// <para>
-        /// The key (name) of a tag.
+        /// The name of the domain for which you want Amazon Route 53 to resend a confirmation
+        /// email to the registrant contact.
         /// </para>
         ///  
         /// <para>
         /// Type: String
         /// </para>
-        ///  </li> <li>
+        ///  
         /// <para>
-        /// Value
+        /// Default: None
         /// </para>
         ///  
         /// <para>
-        /// The value of a tag.
+        /// Required: Yes
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        public List<Tag> TagList
+        public string DomainName
         {
-            get { return this._tagList; }
-            set { this._tagList = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
-        // Check to see if TagList property is set
-        internal bool IsSetTagList()
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._domainName != null;
         }
 
     }
