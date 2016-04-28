@@ -58,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         private string _sshKeyName;
         private string _stackId;
         private string _subnetId;
+        private string _tenancy;
         private VirtualizationType _virtualizationType;
 
         /// <summary>
@@ -404,6 +405,33 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tenancy. 
+        /// <para>
+        /// The instance's tenancy option. The default option is no tenancy, or if the instance
+        /// is running in a VPC, inherit tenancy settings from the VPC. The following are valid
+        /// values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>.
+        /// Because there are costs associated with changes in tenancy options, we recommend that
+        /// you research tenancy options before choosing them for your instances. For more information
+        /// about dedicated hosts, see <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated
+        /// Hosts Overview</a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon
+        /// EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+        /// Instances</a> and <a href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
+        /// EC2 Dedicated Instances</a>.
+        /// </para>
+        /// </summary>
+        public string Tenancy
+        {
+            get { return this._tenancy; }
+            set { this._tenancy = value; }
+        }
+
+        // Check to see if Tenancy property is set
+        internal bool IsSetTenancy()
+        {
+            return this._tenancy != null;
         }
 
         /// <summary>

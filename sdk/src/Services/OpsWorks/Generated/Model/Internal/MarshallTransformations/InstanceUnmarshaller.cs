@@ -292,6 +292,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Tenancy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VirtualizationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

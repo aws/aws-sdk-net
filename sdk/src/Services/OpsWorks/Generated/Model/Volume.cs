@@ -140,7 +140,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property MountPoint. 
         /// <para>
-        /// The volume mount point. For example "/dev/sdh".
+        /// The volume mount point. For example, "/mnt/disk1".
         /// </para>
         /// </summary>
         public string MountPoint

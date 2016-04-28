@@ -107,6 +107,17 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetLayerIds())
+                {
+                    context.Writer.WritePropertyName("LayerIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                    {
+                            context.Writer.Write(publicRequestLayerIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetStackId())
                 {
                     context.Writer.WritePropertyName("StackId");
