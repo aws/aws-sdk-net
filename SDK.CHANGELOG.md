@@ -1,3 +1,9 @@
+### 3.1.64.0 (2016-04-28 17:03 UTC)
+* OpsWorks (3.1.2.0)
+	* Adds support for default tenancy selection.
+* Route53Domains (3.1.1.0)
+	* Add support for new operations ResendContactReachabilityEmail and GetContactReachabilityStatus.
+
 ### 3.1.63.0 (2016-04-26 21:22 UTC)
 * EC2 (3.1.12.0)
 	* API Update for VPC Peering with Classiclink.
