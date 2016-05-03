@@ -273,6 +273,9 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyConfigurationTemplatesException">
         /// The specified account has reached its limit of configuration templates.
         /// </exception>
@@ -653,6 +656,9 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         DescribeConfigurationOptionsResponse DescribeConfigurationOptions();
 
 
@@ -665,6 +671,9 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request);
 
 
@@ -679,6 +688,9 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -719,6 +731,9 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings service method.</param>
         /// 
         /// <returns>The response from the DescribeConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request);
 
 
@@ -1288,6 +1303,9 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request);
 
 
@@ -1331,6 +1349,9 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request);
 
 
@@ -1365,6 +1386,9 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the ValidateConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request);
 
