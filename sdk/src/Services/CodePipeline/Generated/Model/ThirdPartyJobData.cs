@@ -108,8 +108,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the
-        /// artifact store for the pipeline.
+        /// The encryption key used to encrypt and decrypt data in the artifact store for the
+        /// pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and
+        /// might not be present.
         /// </para>
         /// </summary>
         public EncryptionKey EncryptionKey
