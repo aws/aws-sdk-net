@@ -37,7 +37,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupArn. 
         /// <para>
-        /// The ARN specifying the resource group that is created.
+        /// The ARN that specifies the resource group that is created.
         /// </para>
         /// </summary>
         public string ResourceGroupArn

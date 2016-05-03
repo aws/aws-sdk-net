@@ -29,8 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssessmentTargets operation.
-    /// Lists the ARN(s) of the assessment target(s) within this AWS account. For more information
-    /// about assessment targets, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html">Amazon
+    /// Lists the ARNs of the assessment targets within this AWS account. For more information
+    /// about assessment targets, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
     /// Inspector Assessment Targets</a>.
     /// </summary>
     public partial class ListAssessmentTargetsRequest : AmazonInspectorRequest
@@ -86,9 +86,9 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to 'null' on your first call to the <b>ListAssessmentTargets</b> action. Subsequent
+        /// to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent
         /// calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
-        /// from previous response to continue listing data.
+        /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
         public string NextToken

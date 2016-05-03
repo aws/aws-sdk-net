@@ -29,8 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssessmentTemplates operation.
-    /// Lists the assessment template(s) corresponding to the assessment target(s) specified
-    /// by the assessment targets' ARN(s).
+    /// Lists the assessment templates that correspond to the assessment targets that are
+    /// specified by the ARNs of the assessment targets.
     /// </summary>
     public partial class ListAssessmentTemplatesRequest : AmazonInspectorRequest
     {
@@ -42,8 +42,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTargetArns. 
         /// <para>
-        /// A list of ARN(s) specifying the assessment target(s) whose assessment template(s)
-        /// you want to list.
+        /// A list of ARNs that specifies the assessment targets whose assessment templates you
+        /// want to list.
         /// </para>
         /// </summary>
         public List<string> AssessmentTargetArns
@@ -105,9 +105,9 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to 'null' on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent
+        /// to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent
         /// calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
-        /// from previous response to continue listing data.
+        /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
         public string NextToken

@@ -37,8 +37,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property FailedItems. 
         /// <para>
-        /// Attributes details that cannot be described. An error code is provided for each failed
-        /// item. 
+        /// Attribute details that cannot be described. An error code is provided for each failed
+        /// item.
         /// </para>
         /// </summary>
         public Dictionary<string, FailedItemDetails> FailedItems

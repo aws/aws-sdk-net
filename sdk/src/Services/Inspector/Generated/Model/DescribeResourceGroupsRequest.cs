@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeResourceGroups operation.
-    /// Describes resource group(s) specified by the resource group ARN(s).
+    /// Describes the resource groups that are specified by the ARNs of the resource groups.
     /// </summary>
     public partial class DescribeResourceGroupsRequest : AmazonInspectorRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupArns. 
         /// <para>
-        /// The ARN(s) specifying the resource group(s) that you want to describe.
+        /// The ARN that specifies the resource group that you want to describe.
         /// </para>
         /// </summary>
         public List<string> ResourceGroupArns

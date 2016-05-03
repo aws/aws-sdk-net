@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFindings operation.
-    /// Describes the finding(s) specified by the finding ARN(s).
+    /// Describes the findings that are specified by the ARNs of the findings.
     /// </summary>
     public partial class DescribeFindingsRequest : AmazonInspectorRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property FindingArns. 
         /// <para>
-        /// The ARN(s) specifying the finding(s) that you want to describe.
+        /// The ARN that specifies the finding that you want to describe.
         /// </para>
         /// </summary>
         public List<string> FindingArns
@@ -57,8 +57,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale that you want to translate a finding description(s), recommendation(s),
-        /// and the short description(s) that identify the finding(s) into.
+        /// The locale into which you want to translate a finding description, recommendation,
+        /// and the short description that identifies the finding.
         /// </para>
         /// </summary>
         public Locale Locale

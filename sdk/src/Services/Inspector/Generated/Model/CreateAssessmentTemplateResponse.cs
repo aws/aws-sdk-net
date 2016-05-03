@@ -37,7 +37,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTemplateArn. 
         /// <para>
-        /// The ARN specifying the assessment template that is created.
+        /// The ARN that specifies the assessment template that is created.
         /// </para>
         /// </summary>
         public string AssessmentTemplateArn

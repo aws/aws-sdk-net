@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property FindingArns. 
         /// <para>
-        /// A list of ARN(s) specifying the finding(s) returned by the action.
+        /// A list of ARNs that specifies the findings returned by the action.
         /// </para>
         /// </summary>
         public List<string> FindingArns
@@ -59,7 +59,7 @@ namespace Amazon.Inspector.Model
         ///  When a response is generated, if there is more data to be listed, this parameter
         /// is present in the response and contains the value to use for the <b>nextToken</b>
         /// parameter in a subsequent pagination request. If there is no more data to be listed,
-        /// this parameter is set to 'null'.
+        /// this parameter is set to null.
         /// </para>
         /// </summary>
         public string NextToken

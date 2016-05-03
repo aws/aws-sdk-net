@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCrossAccountAccessRole operation.
-    /// Describes the IAM role that enables Inspector to access your AWS account.
+    /// Describes the IAM role that enables Amazon Inspector to access your AWS account.
     /// </summary>
     public partial class DescribeCrossAccountAccessRoleRequest : AmazonInspectorRequest
     {

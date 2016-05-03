@@ -56,7 +56,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property SubscribedAt. 
         /// <para>
-        /// The time at which the <a>SubscribeToEvent</a> API is called.
+        /// The time at which <a>SubscribeToEvent</a> is called.
         /// </para>
         /// </summary>
         public DateTime SubscribedAt

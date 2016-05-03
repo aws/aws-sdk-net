@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTargets. 
         /// <para>
-        /// Information about the assessment target(s).
+        /// Information about the assessment targets.
         /// </para>
         /// </summary>
         public List<AssessmentTarget> AssessmentTargets

@@ -29,8 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssessmentRuns operation.
-    /// Lists the assessments run corresponding to assessment template(s) specified by the
-    /// assessment template(s)' ARN(s).
+    /// Lists the assessment runs that correspond to the assessment templates that are specified
+    /// by the ARNs of the assessment templates.
     /// </summary>
     public partial class ListAssessmentRunsRequest : AmazonInspectorRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTemplateArns. 
         /// <para>
-        /// ARN(s) specifying the assessment template(s) whose assessment run(s) you want to list.
+        /// The ARNs that specify the assessment templates whose assessment runs you want to list.
         /// </para>
         /// </summary>
         public List<string> AssessmentTemplateArns
@@ -84,8 +84,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.
+        /// You can use this parameter to indicate the maximum number of items that you want in
+        /// the response. The default value is 10. The maximum value is 500.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -104,9 +104,9 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to 'null' on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls
+        /// to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls
         /// to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
-        /// from previous response to continue listing data.
+        /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
         public string NextToken
