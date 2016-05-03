@@ -1,3 +1,13 @@
+### 3.1.65.0 (2016-05-03 21:40 UTC)
+* CodePipeline (3.1.1.5)
+	* Documentation and samples update.
+* CognitoIdentityProvider (3.1.0.0)
+	* Added support for the Amazon Cognito Identity Provider service.
+* ElasticBeanstalk (3.1.5.0)
+	* Added support for TooManyBucketsException to several operations.
+* Inspector (3.1.2.1)
+	* Documentation update.
+
 ### 3.1.64.0 (2016-04-28 17:03 UTC)
 * OpsWorks (3.1.2.0)
 	* Adds support for default tenancy selection.
