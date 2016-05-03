@@ -53,6 +53,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodePipeline.CodeAnalysis" Path="|AWSSDK.CodePipeline.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CognitoIdentity.CodeAnalysis" Path="|AWSSDK.CognitoIdentity.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CognitoIdentity.CodeAnalysis" Path="|AWSSDK.CognitoIdentity.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CognitoIdentityProvider.CodeAnalysis" Path="|AWSSDK.CognitoIdentityProvider.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CognitoIdentityProvider.CodeAnalysis" Path="|AWSSDK.CognitoIdentityProvider.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CognitoSync.CodeAnalysis" Path="|AWSSDK.CognitoSync.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CognitoSync.CodeAnalysis" Path="|AWSSDK.CognitoSync.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ConfigService.CodeAnalysis" Path="|AWSSDK.ConfigService.CodeAnalysis|"/>

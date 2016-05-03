@@ -88,6 +88,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS CodePipeline is a continuous delivery service for fast and reliable application updates.
 * [AWSSDK.CognitoIdentity](https://www.nuget.org/packages/AWSSDK.CognitoIdentity/)
 	* Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.
+* [AWSSDK.CognitoIdentityProvider](https://www.nuget.org/packages/AWSSDK.CognitoIdentityProvider/)
+	* You can create a user pool in Amazon Cognito Identity to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies. This API reference provides information about user pools in Amazon Cognito Identity, which is a new capability that is available as a beta.
 * [AWSSDK.CognitoSync](https://www.nuget.org/packages/AWSSDK.CognitoSync/)
 	* Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.
 * [AWSSDK.ConfigService](https://www.nuget.org/packages/AWSSDK.ConfigService/)

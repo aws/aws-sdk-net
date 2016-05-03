@@ -128,6 +128,10 @@
       <Project>{B0147093-B0FF-4BD3-A648-247307EA1230}</Project>
       <Name>AWSSDK.CognitoIdentity.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CognitoIdentityProvider/AWSSDK.CognitoIdentityProvider.CodeAnalysis.csproj">
+      <Project>{F73F43C5-4F14-456C-832C-530CAA752428}</Project>
+      <Name>AWSSDK.CognitoIdentityProvider.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CognitoSync/AWSSDK.CognitoSync.CodeAnalysis.csproj">
       <Project>{EBE2D008-5A2B-4314-B243-BA043BAFF60A}</Project>
       <Name>AWSSDK.CognitoSync.CodeAnalysis</Name>
