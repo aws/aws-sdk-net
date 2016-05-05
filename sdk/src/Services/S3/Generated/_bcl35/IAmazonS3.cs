@@ -1613,6 +1613,46 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  ListObjectsV2
+
+
+        /// <summary>
+        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// parameters as selection criteria to return a subset of the objects in a bucket. Note:
+        /// ListObjectsV2 is the revised List Objects API and we recommend you use this revised
+        /// API for new application development.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
+        ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjectsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectsV2
+        ///         operation.</returns>
+        IAsyncResult BeginListObjectsV2(ListObjectsV2Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListObjectsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjectsV2.</param>
+        /// 
+        /// <returns>Returns a  ListObjectsV2Result from S3.</returns>
+        ListObjectsV2Response EndListObjectsV2(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListParts
 
 

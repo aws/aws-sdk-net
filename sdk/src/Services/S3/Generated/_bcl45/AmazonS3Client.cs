@@ -2774,6 +2774,46 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  ListObjectsV2
+
+
+        /// <summary>
+        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// parameters as selection criteria to return a subset of the objects in a bucket. Note:
+        /// ListObjectsV2 is the revised List Objects API and we recommend you use this revised
+        /// API for new application development.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
+        public ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request)
+        {
+            var marshaller = new ListObjectsV2RequestMarshaller();
+            var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListObjectsV2Request,ListObjectsV2Response>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjectsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListObjectsV2Response> ListObjectsV2Async(ListObjectsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListObjectsV2RequestMarshaller();
+            var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListObjectsV2Request,ListObjectsV2Response>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListParts
 
 
