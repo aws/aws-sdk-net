@@ -1,3 +1,17 @@
+### 3.1.66.0 (2016-05-05 19:42 UTC)
+* APIGateway (3.1.5.0)
+	* Added support to Integration for controlling passthrough behavior.
+* CloudTrail (3.1.3.0)
+	* Updates to return topic ARN in addition to the topic name.
+* ECS (3.1.4.0)
+	* Added support for specifying log drivers available from Docker in task definitions.
+* KeyManagementService (3.1.2.0)
+	* Updated for the latest service API updates.
+* S3 (3.1.6.0)
+	* Added support for ListObjectsV2 operation.
+* SecurityToken (3.1.3.3)
+	* Documenation update for the AssumeRole API.
+
 ### 3.1.65.0 (2016-05-03 21:40 UTC)
 * CodePipeline (3.1.1.5)
 	* Documentation and samples update.
