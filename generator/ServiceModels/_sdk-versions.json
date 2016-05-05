@@ -456,7 +456,7 @@
             },
             "InPreview"    : false
         },
-        "AWS Database Migration Service"  : {
+        "DatabaseMigrationService"  : {
             "Version" : "3.1.0.1",
             "Dependencies" : {
                 "Core" : "3.1.5.1"
