@@ -67,6 +67,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBypassPolicyLockoutSafetyCheck())
+                {
+                    context.Writer.WritePropertyName("BypassPolicyLockoutSafetyCheck");
+                    context.Writer.Write(publicRequest.BypassPolicyLockoutSafetyCheck);
+                }
+
                 if(publicRequest.IsSetKeyId())
                 {
                     context.Writer.WritePropertyName("KeyId");

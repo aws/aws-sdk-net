@@ -30,10 +30,21 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the Decrypt operation.
     /// Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by
-    /// using any of the following functions: <ul> <li><a>GenerateDataKey</a></li> <li><a>GenerateDataKeyWithoutPlaintext</a></li>
-    /// <li><a>Encrypt</a></li> </ul> 
+    /// using any of the following functions:
     /// 
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GenerateDataKey</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GenerateDataKeyWithoutPlaintext</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>Encrypt</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Note that if a caller has been granted access permissions to all keys (through, for
     /// example, IAM user policies that grant <code>Decrypt</code> permission on all resources),
@@ -42,7 +53,7 @@ namespace Amazon.KeyManagementService.Model
     /// <code>Decrypt</code> access in an IAM user policy. Instead grant <code>Decrypt</code>
     /// access only in key policies. If you must grant <code>Decrypt</code> access in an IAM
     /// user policy, you should scope the resource to specific keys or to specific trusted
-    /// accounts. 
+    /// accounts.
     /// </para>
     /// </summary>
     public partial class DecryptRequest : AmazonKeyManagementServiceRequest
@@ -75,7 +86,7 @@ namespace Amazon.KeyManagementService.Model
         /// The encryption context. If this was specified in the <a>Encrypt</a> function, it must
         /// be specified here or the decryption operation will fail. For more information, see
         /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
-        /// Context</a>. 
+        /// Context</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContext
@@ -97,7 +108,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
         /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>

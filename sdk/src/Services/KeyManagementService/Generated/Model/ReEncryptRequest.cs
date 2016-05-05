@@ -33,7 +33,6 @@ namespace Amazon.KeyManagementService.Model
     /// plaintext of the data on the client side. The data is first decrypted and then encrypted.
     /// This operation can also be used to change the encryption context of a ciphertext.
     /// 
-    /// 
     ///  
     /// <para>
     /// Unlike other actions, <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code>
@@ -42,7 +41,6 @@ namespace Amazon.KeyManagementService.Model
     /// in your key policies to permit re-encryption from or to the key. The statement is
     /// included automatically when you authorize use of the key through the console but must
     /// be included manually when you set a policy by using the <a>PutKeyPolicy</a> function.
-    /// 
     /// </para>
     /// </summary>
     public partial class ReEncryptRequest : AmazonKeyManagementServiceRequest
@@ -94,11 +92,25 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// A unique identifier for the customer master key used to re-encrypt the data. This
         /// value can be a globally unique identifier, a fully specified ARN to either an alias
-        /// or a key, or an alias name prefixed by "alias/". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-        /// <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias
-        /// Name Example - alias/MyAliasName</li> </ul> 
+        /// or a key, or an alias name prefixed by "alias/".
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias Name Example - alias/MyAliasName
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DestinationKeyId
         {
@@ -119,7 +131,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+        /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
         /// Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -139,7 +151,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property SourceEncryptionContext. 
         /// <para>
         /// Encryption context used to encrypt and decrypt the data specified in the <code>CiphertextBlob</code>
-        /// parameter. 
+        /// parameter.
         /// </para>
         /// </summary>
         public Dictionary<string, string> SourceEncryptionContext

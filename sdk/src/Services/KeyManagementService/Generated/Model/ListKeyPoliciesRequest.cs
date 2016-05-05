@@ -42,11 +42,25 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// A unique identifier for the customer master key. This value can be a globally unique
         /// identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed
-        /// by "alias/". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-        /// <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias
-        /// Name Example - alias/MyAliasName</li> </ul> 
+        /// by "alias/".
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias Name Example - alias/MyAliasName
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string KeyId
         {
@@ -67,12 +81,12 @@ namespace Amazon.KeyManagementService.Model
         /// If additional items exist beyond the number you specify, the <code>Truncated</code>
         /// element in the response is set to true.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// This value is optional. If you include a value, it must be between 1 and 1000, inclusive.
         /// If you do not include a value, it defaults to 100.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// Currently only 1 policy can be attached to a key.
         /// </para>

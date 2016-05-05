@@ -34,14 +34,14 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped
-    /// from an existing key without changing the properties of the key. 
+    /// from an existing key without changing the properties of the key.
     /// </para>
     ///  
     /// <para>
     /// An alias name can contain only alphanumeric characters, forward slashes (/), underscores
     /// (_), and dashes (-). An alias must start with the word "alias" followed by a forward
     /// slash (alias/). An alias that begins with "aws" after the forward slash (alias/aws...)
-    /// is reserved by Amazon Web Services (AWS). 
+    /// is reserved by Amazon Web Services (AWS).
     /// </para>
     ///  
     /// <para>
@@ -78,12 +78,17 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property TargetKeyId. 
         /// <para>
         /// Unique identifier of the customer master key to be mapped to the alias. This value
-        /// can be a globally unique identifier or the fully specified ARN of a key. <ul> <li>Key
-        /// ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
-        /// 
+        /// can be a globally unique identifier or the fully specified ARN of a key.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You can call <a>ListAliases</a> to verify that the alias is mapped to the correct
         /// <code>TargetKeyId</code>.
