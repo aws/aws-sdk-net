@@ -299,8 +299,8 @@ namespace Amazon.SecurityToken
         ///  
         /// <para>
         ///  <b>Important:</b> You cannot call <code>AssumeRole</code> by using AWS root account
-        /// credentials; access is denied. You must use IAM user credentials or temporary security
-        /// credentials to call <code>AssumeRole</code>. 
+        /// credentials; access is denied. You must use credentials for an IAM user or an IAM
+        /// role to call <code>AssumeRole</code>. 
         /// </para>
         ///  
         /// <para>
