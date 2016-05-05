@@ -135,7 +135,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DeploymentConfiguration. 
         /// <para>
         /// Optional deployment parameters that control how many tasks run during the deployment
-        /// and the ordering of stopping and starting tasks. 
+        /// and the ordering of stopping and starting tasks.
         /// </para>
         /// </summary>
         public DeploymentConfiguration DeploymentConfiguration

@@ -109,7 +109,8 @@ namespace Amazon.ECS.Model
         /// The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
         /// namespace, followed by the region of the container instance, the AWS account ID of
         /// the container instance owner, the <code>container-instance</code> namespace, and then
-        /// the container instance ID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
+        /// the container instance ID. For example, <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+        /// </code>.
         /// </para>
         /// </summary>
         public string ContainerInstanceArn

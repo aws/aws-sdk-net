@@ -33,6 +33,7 @@ namespace Amazon.ECS.Model
     public partial class Service
     {
         private string _clusterArn;
+        private DateTime? _createdAt;
         private DeploymentConfiguration _deploymentConfiguration;
         private List<Deployment> _deployments = new List<Deployment>();
         private int? _desiredCount;
@@ -49,7 +50,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the of the cluster that hosts the service.
+        /// The Amazon Resource Name (ARN) of the cluster that hosts the service.
         /// </para>
         /// </summary>
         public string ClusterArn
@@ -62,6 +63,21 @@ namespace Amazon.ECS.Model
         internal bool IsSetClusterArn()
         {
             return this._clusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt.
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
         }
 
         /// <summary>
@@ -142,9 +158,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
-        /// A list of load balancer objects, containing the load balancer name, the container
-        /// name (as it appears in a container definition), and the container port to access from
-        /// the load balancer.
+        /// A list of Elastic Load Balancing load balancer objects, containing the load balancer
+        /// name, the container name (as it appears in a container definition), and the container
+        /// port to access from the load balancer.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -181,8 +197,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role associated with the service that allows
-        /// the Amazon ECS container agent to register container instances with a load balancer.
-        /// 
+        /// the Amazon ECS container agent to register container instances with an Elastic Load
+        /// Balancing load balancer.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -221,7 +237,7 @@ namespace Amazon.ECS.Model
         /// The Amazon Resource Name (ARN) that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
         /// namespace, followed by the region of the service, the AWS account ID of the service
         /// owner, the <code>service</code> namespace, and then the service name. For example,
-        /// arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>.
+        /// <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
         /// </para>
         /// </summary>
         public string ServiceArn

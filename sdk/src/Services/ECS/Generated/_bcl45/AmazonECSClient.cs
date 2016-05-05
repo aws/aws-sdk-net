@@ -299,6 +299,12 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
+        /// In addition to maintaining the desired count of tasks in your service, you can optionally
+        /// run your service behind a load balancer. The load balancer distributes traffic across
+        /// the tasks that are associated with the service.
+        /// </para>
+        ///  
+        /// <para>
         /// You can optionally specify a deployment configuration for your service. During a deployment
         /// (which is triggered by changing the task definition of a service with an <a>UpdateService</a>
         /// operation), the service scheduler uses the <code>minimumHealthyPercent</code> and
@@ -554,12 +560,14 @@ namespace Amazon.ECS
         /// not terminate the EC2 instance; if you are finished using the instance, be sure to
         /// terminate it in the Amazon EC2 console to stop billing.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
-        /// When you terminate a container instance, it is automatically deregistered from your
-        /// cluster.
+        /// If you terminate a running container instance with a connected Amazon ECS container
+        /// agent, the agent automatically deregisters the instance from your cluster (stopped
+        /// container instances or instances with disconnected agents are not automatically deregistered
+        /// when terminated).
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterContainerInstance service method.</param>
         /// 
@@ -1485,7 +1493,7 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon
+        ///  <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon
         /// Linux with the <code>ecs-init</code> service installed and running. For help updating
         /// the Amazon ECS container agent on other operating systems, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
         /// Updating the Amazon ECS Container Agent</a> in the <i>Amazon EC2 Container Service

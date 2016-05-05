@@ -44,12 +44,14 @@ namespace Amazon.ECS.Model
     /// not terminate the EC2 instance; if you are finished using the instance, be sure to
     /// terminate it in the Amazon EC2 console to stop billing.
     /// </para>
-    ///  <note>
+    ///  <note> 
     /// <para>
-    /// When you terminate a container instance, it is automatically deregistered from your
-    /// cluster.
+    /// If you terminate a running container instance with a connected Amazon ECS container
+    /// agent, the agent automatically deregisters the instance from your cluster (stopped
+    /// container instances or instances with disconnected agents are not automatically deregistered
+    /// when terminated).
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class DeregisterContainerInstanceRequest : AmazonECSRequest
     {
@@ -83,7 +85,8 @@ namespace Amazon.ECS.Model
         /// to deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
         /// the region of the container instance, the AWS account ID of the container instance
         /// owner, the <code>container-instance</code> namespace, and then the container instance
-        /// ID. For example, arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.
+        /// ID. For example, <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+        /// </code>.
         /// </para>
         /// </summary>
         public string ContainerInstance

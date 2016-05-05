@@ -46,7 +46,8 @@ namespace Amazon.ECS.Model
         /// The port number on the container that is bound to the user-specified or automatically
         /// assigned host port. If you specify a container port and not a host port, your container
         /// automatically receives a host port in the ephemeral port range (for more information,
-        /// see <code>hostPort</code>).
+        /// see <code>hostPort</code>). Port mappings that are automatically assigned in this
+        /// way do not count toward the 50 reserved ports limit of a container instance.
         /// </para>
         /// </summary>
         public int ContainerPort
@@ -88,7 +89,7 @@ namespace Amazon.ECS.Model
         /// the host port is released).The current reserved ports are displayed in the <code>remainingResources</code>
         /// of <a>DescribeContainerInstances</a> output, and a container instance may have up
         /// to 50 reserved ports at a time, including the default reserved ports (automatically
-        /// assigned ports do not count toward this limit).
+        /// assigned ports do not count toward the 50 reserved ports limit).
         /// </para>
         /// </summary>
         public int HostPort
