@@ -40,7 +40,11 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// Specifies the ARN of the trail from which tags should be removed. The format of a
-        /// trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// trail ARN is:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </summary>
         public string ResourceId
@@ -58,7 +62,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TagsList. 
         /// <para>
-        /// Specifies a list of tags to be removed. 
+        /// Specifies a list of tags to be removed.
         /// </para>
         /// </summary>
         public List<Tag> TagsList

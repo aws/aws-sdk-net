@@ -93,13 +93,17 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// Specifies whether log file validation is enabled. The default is false.
         /// </para>
-        ///  <note>When you disable log file integrity validation, the chain of digest files is
-        /// broken after one hour. CloudTrail will not create digest files for log files that
-        /// were delivered during a period in which log file integrity validation was disabled.
-        /// For example, if you enable log file integrity validation at noon on January 1, disable
-        /// it at noon on January 2, and re-enable it at noon on January 10, digest files will
-        /// not be created for the log files delivered from noon on January 2 to noon on January
-        /// 10. The same applies whenever you stop CloudTrail logging or delete a trail.</note>
+        ///  <note> 
+        /// <para>
+        /// When you disable log file integrity validation, the chain of digest files is broken
+        /// after one hour. CloudTrail will not create digest files for log files that were delivered
+        /// during a period in which log file integrity validation was disabled. For example,
+        /// if you enable log file integrity validation at noon on January 1, disable it at noon
+        /// on January 2, and re-enable it at noon on January 10, digest files will not be created
+        /// for the log files delivered from noon on January 2 to noon on January 10. The same
+        /// applies whenever you stop CloudTrail logging or delete a trail.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool EnableLogFileValidation
         {
@@ -117,7 +121,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property IncludeGlobalServiceEvents. 
         /// <para>
         /// Specifies whether the trail is publishing events from global services such as IAM
-        /// to the log files. 
+        /// to the log files.
         /// </para>
         /// </summary>
         public bool IncludeGlobalServiceEvents
@@ -166,9 +170,23 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// Examples:
         /// </para>
-        ///  <ul> <li>alias/MyAliasName</li> <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-        /// <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-        /// <li>12345678-1234-1234-1234-123456789012</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// alias/MyAliasName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string KmsKeyId
         {
@@ -188,14 +206,35 @@ namespace Amazon.CloudTrail.Model
         /// Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name,
         /// the string must meet the following requirements:
         /// </para>
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// If <code>Name</code> is a trail ARN, it must be in the format <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If <code>Name</code> is a trail ARN, it must be in the format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </summary>
         public string Name

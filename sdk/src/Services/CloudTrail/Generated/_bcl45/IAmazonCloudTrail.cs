@@ -42,13 +42,17 @@ namespace Amazon.CloudTrail
     /// the user, the start time of the AWS API call, the source IP address, the request parameters,
     /// and the response elements returned by the service.
     /// </para>
-    ///  <note> As an alternative to using the API, you can use one of the AWS SDKs, which
-    /// consist of libraries and sample code for various programming languages and platforms
-    /// (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
-    /// programmatic access to AWSCloudTrail. For example, the SDKs take care of cryptographically
-    /// signing requests, managing errors, and retrying requests automatically. For information
-    /// about the AWS SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
-    /// for Amazon Web Services page</a>. </note> 
+    ///  <note> 
+    /// <para>
+    /// As an alternative to the API, you can use one of the AWS SDKs, which consist of libraries
+    /// and sample code for various programming languages and platforms (Java, Ruby, .NET,
+    /// iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access
+    /// to AWSCloudTrail. For example, the SDKs take care of cryptographically signing requests,
+    /// managing errors, and retrying requests automatically. For information about the AWS
+    /// SDKs, including how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services page</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// See the CloudTrail User Guide for information about the data that is included with
     /// each AWS API call listed in the log files.
@@ -73,7 +77,12 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the AddTags service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
         /// This exception is thrown when an operation is called with an invalid trail ARN. The
-        /// format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// format of a trail ARN is:
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
         /// This exception is thrown when the key or value specified for the tag does not match
@@ -83,12 +92,29 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
         /// 
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -170,15 +196,35 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
         /// 
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyDisabledException">
         /// This exception is thrown when the KMS key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.KmsKeyInvalidStateException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
@@ -237,12 +283,29 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
         /// 
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
@@ -341,12 +404,29 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
         /// 
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
@@ -375,10 +455,14 @@ namespace Amazon.CloudTrail
         /// the specified time range. The public key is needed to validate digest files that were
         /// signed with its corresponding private key.
         /// 
-        ///  <note>CloudTrail uses different private/public key pairs per region. Each digest
-        /// file is signed with a private key unique to its region. Therefore, when you validate
-        /// a digest file from a particular region, you must look in the same region for its corresponding
-        /// public key.</note>
+        ///  <note> 
+        /// <para>
+        /// CloudTrail uses different private/public key pairs per region. Each digest file is
+        /// signed with a private key unique to its region. Therefore, when you validate a digest
+        /// file from a particular region, you must look in the same region for its corresponding
+        /// public key.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys service method.</param>
         /// 
@@ -416,19 +500,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Lists the tags for the specified trail or trails in the current region.
-        /// 
-        ///  
-        /// <para>
         /// Lists the tags for the trail in the current region.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
         /// <returns>The response from the ListTags service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
         /// This exception is thrown when an operation is called with an invalid trail ARN. The
-        /// format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// format of a trail ARN is:
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTokenException">
         /// Reserved for future use.
@@ -437,12 +521,29 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
         /// 
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -484,12 +585,19 @@ namespace Amazon.CloudTrail
         /// maximum number of attributes that can be specified in any one lookup request are time
         /// range and one other attribute. The default number of results returned is 10, with
         /// a maximum of 50 possible. The response includes a token that you can use to get the
-        /// next page of results. 
+        /// next page of results.
         /// 
-        ///  <important>The rate of lookup requests is limited to one per second per account.
-        /// If this limit is exceeded, a throttling error occurs. </important> <important>Events
-        /// that occurred during the selected time range will not be available for lookup if CloudTrail
-        /// logging was not enabled when the events occurred.</important>
+        ///  <important> 
+        /// <para>
+        /// The rate of lookup requests is limited to one per second per account. If this limit
+        /// is exceeded, a throttling error occurs.
+        /// </para>
+        ///  </important> <important> 
+        /// <para>
+        /// Events that occurred during the selected time range will not be available for lookup
+        /// if CloudTrail logging was not enabled when the events occurred.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LookupEvents service method.</param>
         /// 
@@ -535,7 +643,12 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the RemoveTags service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
         /// This exception is thrown when an operation is called with an invalid trail ARN. The
-        /// format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// format of a trail ARN is:
+        /// 
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
         /// This exception is thrown when the key or value specified for the tag does not match
@@ -545,12 +658,29 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
         /// 
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -600,12 +730,29 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
         /// 
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
@@ -649,12 +796,29 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
         /// 
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
@@ -730,15 +894,35 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
         /// 
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or
-        /// number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods,
-        /// underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code>
-        /// are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyDisabledException">
         /// This exception is thrown when the KMS key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.KmsKeyInvalidStateException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and

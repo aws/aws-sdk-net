@@ -105,6 +105,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.S3KeyPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SnsTopicARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SnsTopicARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnsTopicName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -183,6 +189,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyDisabledException"))
             {
                 return new KmsKeyDisabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyInvalidStateException"))
+            {
+                return new KmsKeyInvalidStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyNotFoundException"))
             {
