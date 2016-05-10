@@ -90,6 +90,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetInstanceStates())
+                {
+                    context.Writer.WritePropertyName("InstanceStates");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInstanceStatesListValue in publicRequest.InstanceStates)
+                    {
+                            context.Writer.Write(publicRequestInstanceStatesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMarker())
                 {
                     context.Writer.WritePropertyName("Marker");
