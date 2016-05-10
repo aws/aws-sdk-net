@@ -1,3 +1,17 @@
+### 3.1.67.0 (2016-05-10 21:03 UTC)
+* DirectConnect (3.1.1.1)
+	* Documentation update.
+* ElasticMapReduce (3.1.5.0)
+	* ListInstances can now filter results based on InstanceState(s).
+* IdentityManagement (3.1.4.1)
+	* Documentation update.
+* S3 (3.1.6.1)
+	* Added retry for HTTP 502 and 504. Updated list of requests that should not be directed to S3 accelerate endpoint.
+* SQS (3.1.0.7)
+	* Documentation update.
+* StorageGateway (3.1.4.0)
+	* Updates to the ListGateways and ListVolumes APIs. Added support for the ListTapes API.
+
 ### 3.1.66.0 (2016-05-05 19:42 UTC)
 * APIGateway (3.1.5.0)
 	* Added support to Integration for controlling passthrough behavior.
