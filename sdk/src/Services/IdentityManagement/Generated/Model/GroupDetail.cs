@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains information about an IAM group, including all of the group's policies. 
+    /// Contains information about an IAM group, including all of the group's policies.
     /// 
     ///  
     /// <para>

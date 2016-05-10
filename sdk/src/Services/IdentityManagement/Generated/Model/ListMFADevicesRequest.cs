@@ -29,15 +29,15 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMFADevices operation.
-    /// Lists the MFA devices. If the request includes the user name, then this action lists
-    /// all the MFA devices associated with the specified user name. If you do not specify
-    /// a user name, IAM determines the user name implicitly based on the AWS access key ID
-    /// signing the request. 
+    /// Lists the MFA devices for an IAM user. If the request includes a IAM user name, then
+    /// this action lists all the MFA devices associated with the specified user. If you do
+    /// not specify a user name, IAM determines the user name implicitly based on the AWS
+    /// access key ID signing the request for this API.
     /// 
     ///  
     /// <para>
     /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters. 
+    /// parameters.
     /// </para>
     /// </summary>
     public partial class ListMFADevicesRequest : AmazonIdentityManagementServiceRequest
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates ListMFADevicesRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user whose MFA devices you want to list.</param>
+        /// <param name="userName">The name of the user whose MFA devices you want to list. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public ListMFADevicesRequest(string userName)
         {
             _userName = userName;
@@ -93,7 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -112,6 +112,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user whose MFA devices you want to list.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

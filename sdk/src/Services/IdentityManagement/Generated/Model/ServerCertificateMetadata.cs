@@ -29,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Contains information about a server certificate without its certificate body, certificate
-    /// chain, and private key. 
+    /// chain, and private key.
     /// 
     ///  
     /// <para>

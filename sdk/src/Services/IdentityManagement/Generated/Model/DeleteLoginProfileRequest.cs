@@ -29,14 +29,18 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoginProfile operation.
-    /// Deletes the password for the specified user, which terminates the user's ability
-    /// to access AWS services through the AWS Management Console. 
+    /// Deletes the password for the specified IAM user, which terminates the user's ability
+    /// to access AWS services through the AWS Management Console.
     /// 
-    ///  <important> Deleting a user's password does not prevent a user from accessing IAM
-    /// through the command line interface or the API. To prevent all user access you must
-    /// also either make the access key inactive or delete it. For more information about
-    /// making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
-    /// </important>
+    ///  <important> 
+    /// <para>
+    ///  Deleting a user's password does not prevent a user from accessing AWS through the
+    /// command line interface or the API. To prevent all user access you must also either
+    /// make any access keys inactive or delete them. For more information about making keys
+    /// inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
+    /// 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteLoginProfileRequest : AmazonIdentityManagementServiceRequest
     {
@@ -50,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteLoginProfileRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user whose password you want to delete.</param>
+        /// <param name="userName">The name of the user whose password you want to delete. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public DeleteLoginProfileRequest(string userName)
         {
             _userName = userName;
@@ -60,6 +64,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user whose password you want to delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

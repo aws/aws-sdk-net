@@ -29,16 +29,16 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSigningCertificate operation.
-    /// Changes the status of the specified signing certificate from active to disabled, or
-    /// vice versa. This action can be used to disable a user's signing certificate as part
-    /// of a certificate rotation work flow. 
+    /// Changes the status of the specified user signing certificate from active to disabled,
+    /// or vice versa. This action can be used to disable an IAM user's signing certificate
+    /// as part of a certificate rotation work flow.
     /// 
     ///  
     /// <para>
     /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
     /// based on the AWS access key ID used to sign the request. Because this action works
     /// for access keys under the AWS account, you can use this action to manage root credentials
-    /// even if the AWS account has no associated users. 
+    /// even if the AWS account has no associated users.
     /// </para>
     /// </summary>
     public partial class UpdateSigningCertificateRequest : AmazonIdentityManagementServiceRequest
@@ -55,8 +55,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateSigningCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="certificateId">The ID of the signing certificate you want to update.</param>
-        /// <param name="status"> The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used. </param>
+        /// <param name="certificateId">The ID of the signing certificate you want to update. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that can consist of any upper or lowercased letter or digit.</param>
+        /// <param name="status"> The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.</param>
         public UpdateSigningCertificateRequest(string certificateId, StatusType status)
         {
             _certificateId = certificateId;
@@ -67,6 +67,11 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property CertificateId. 
         /// <para>
         /// The ID of the signing certificate you want to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters that can consist of any upper or lowercased letter or digit.
         /// </para>
         /// </summary>
         public string CertificateId
@@ -86,7 +91,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  The status you want to assign to the certificate. <code>Active</code> means the certificate
         /// can be used for API calls to AWS, while <code>Inactive</code> means the certificate
-        /// cannot be used. 
+        /// cannot be used.
         /// </para>
         /// </summary>
         public StatusType Status
@@ -104,7 +109,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user the signing certificate belongs to.
+        /// The name of the IAM user the signing certificate belongs to.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

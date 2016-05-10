@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceProfile. 
         /// <para>
-        /// Information about the instance profile.
+        /// A structure containing details about the instance profile.
         /// </para>
         /// </summary>
         public InstanceProfile InstanceProfile

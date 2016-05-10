@@ -29,19 +29,19 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePolicy operation.
-    /// Creates a new managed policy for your AWS account. 
+    /// Creates a new managed policy for your AWS account.
     /// 
     ///  
     /// <para>
     /// This operation creates a policy version with a version identifier of <code>v1</code>
     /// and sets v1 as the policy's default version. For more information about policy versions,
     /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-    /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
+    /// for Managed Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about managed policies in general, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// For more information about managed policies in general, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreatePolicyRequest : AmazonIdentityManagementServiceRequest
@@ -54,17 +54,16 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A friendly description of the policy. 
+        /// A friendly description of the policy.
         /// </para>
         ///  
         /// <para>
         /// Typically used to store information about the permissions defined in the policy. For
-        /// example, "Grants access to production DynamoDB tables." 
+        /// example, "Grants access to production DynamoDB tables."
         /// </para>
         ///  
         /// <para>
         /// The policy description is immutable. After a value is assigned, it cannot be changed.
-        /// 
         /// </para>
         /// </summary>
         public string Description
@@ -82,16 +81,24 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The path for the policy. 
+        /// The path for the policy.
         /// </para>
         ///  
         /// <para>
         /// For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>. 
+        /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. If it is not included, it defaults to a slash (/). 
+        /// This parameter is optional. If it is not included, it defaults to a slash (/).
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of either a forward slash (/) by itself or a
+        /// string that must begin and end with forward slashes, containing any ASCII character
+        /// from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
+        /// digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string Path
@@ -109,7 +116,15 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// The policy document.
+        /// The JSON policy document that you want to use as the content for the new policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of any printable ASCII character ranging from
+        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
+        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
+        /// return (\u000D).
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -127,7 +142,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name of the policy document.
+        /// The friendly name of the policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string PolicyName

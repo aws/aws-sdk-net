@@ -29,23 +29,27 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccessKeys operation.
-    /// Returns information about the access key IDs associated with the specified user. If
-    /// there are none, the action returns an empty list. 
+    /// Returns information about the access key IDs associated with the specified IAM user.
+    /// If there are none, the action returns an empty list.
     /// 
     ///  
     /// <para>
     /// Although each user is limited to a small number of keys, you can still paginate the
-    /// results using the <code>MaxItems</code> and <code>Marker</code> parameters. 
+    /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
     /// </para>
     ///  
     /// <para>
     /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
     /// based on the AWS access key ID used to sign the request. Because this action works
     /// for access keys under the AWS account, you can use this action to manage root credentials
-    /// even if the AWS account has no associated users. 
+    /// even if the AWS account has no associated users.
     /// </para>
-    ///  <note>To ensure the security of your AWS account, the secret access key is accessible
-    /// only during key and user creation. </note>
+    ///  <note> 
+    /// <para>
+    /// To ensure the security of your AWS account, the secret access key is accessible only
+    /// during key and user creation.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListAccessKeysRequest : AmazonIdentityManagementServiceRequest
     {
@@ -91,7 +95,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -110,6 +114,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

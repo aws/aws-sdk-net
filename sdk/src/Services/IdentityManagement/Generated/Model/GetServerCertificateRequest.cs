@@ -29,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServerCertificate operation.
-    /// Retrieves information about the specified server certificate.
+    /// Retrieves information about the specified server certificate stored in IAM.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates GetServerCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="serverCertificateName">The name of the server certificate you want to retrieve information about.</param>
+        /// <param name="serverCertificateName">The name of the server certificate you want to retrieve information about. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public GetServerCertificateRequest(string serverCertificateName)
         {
             _serverCertificateName = serverCertificateName;
@@ -60,6 +60,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ServerCertificateName. 
         /// <para>
         /// The name of the server certificate you want to retrieve information about.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string ServerCertificateName

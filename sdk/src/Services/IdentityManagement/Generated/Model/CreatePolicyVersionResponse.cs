@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyVersion. 
         /// <para>
-        /// Information about the policy version.
+        /// A structure containing details about the new policy version.
         /// </para>
         /// </summary>
         public PolicyVersion PolicyVersion

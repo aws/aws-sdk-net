@@ -29,8 +29,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Deletes the specified user. The user must not belong to any groups, have any keys
-    /// or signing certificates, or have any attached policies.
+    /// Deletes the specified IAM user. The user must not belong to any groups or have any
+    /// access keys, signing certificates, or attached policies.
     /// </summary>
     public partial class DeleteUserRequest : AmazonIdentityManagementServiceRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteUserRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user to delete.</param>
+        /// <param name="userName">The name of the user to delete. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public DeleteUserRequest(string userName)
         {
             _userName = userName;
@@ -54,6 +54,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user to delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

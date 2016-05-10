@@ -30,18 +30,18 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the SetDefaultPolicyVersion operation.
     /// Sets the specified version of the specified policy as the policy's default (operative)
-    /// version. 
+    /// version.
     /// 
     ///  
     /// <para>
     /// This action affects all users, groups, and roles that the policy is attached to. To
     /// list the users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a>
-    /// API. 
+    /// API.
     /// </para>
     ///  
     /// <para>
-    /// For information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// For information about managed policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SetDefaultPolicyVersionRequest : AmazonIdentityManagementServiceRequest
@@ -50,7 +50,16 @@ namespace Amazon.IdentityManagement.Model
         private string _versionId;
 
         /// <summary>
-        /// Gets and sets the property PolicyArn.
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM policy whose default version you want to
+        /// set.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// </para>
         /// </summary>
         public string PolicyArn
         {
@@ -72,7 +81,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
+        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public string VersionId

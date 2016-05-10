@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// Information about the group.
+        /// A structure containing details about the new group.
         /// </para>
         /// </summary>
         public Group Group

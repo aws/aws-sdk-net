@@ -29,8 +29,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAssumeRolePolicy operation.
-    /// Updates the policy that grants an entity permission to assume a role. For more information
-    /// about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
+    /// Updates the policy that grants an IAM entity permission to assume a role. This is
+    /// typically referred to as the "role trust policy". For more information about roles,
+    /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
     /// Roles to Delegate Permissions and Federate Identities</a>.
     /// </summary>
     public partial class UpdateAssumeRolePolicyRequest : AmazonIdentityManagementServiceRequest
@@ -42,6 +43,14 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property PolicyDocument. 
         /// <para>
         /// The policy that grants an entity permission to assume the role.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of any printable ASCII character ranging from
+        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
+        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
+        /// return (\u000D).
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -59,7 +68,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the role to update.
+        /// The name of the role to update with the new policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleName

@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServerCertificate. 
         /// <para>
-        /// Information about the server certificate.
+        /// A structure containing details about the server certificate.
         /// </para>
         /// </summary>
         public ServerCertificate ServerCertificate

@@ -35,10 +35,14 @@ namespace Amazon.IdentityManagement.Model
     ///  This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a>
     /// actions. 
     /// </para>
-    ///  <note>The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>.
+    ///  <note> 
+    /// <para>
+    /// The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>.
     /// You can get a secret access key only when you first create an access key; you cannot
     /// recover the secret access key later. If you lose a secret access key, you must create
-    /// a new access key. </note>
+    /// a new access key.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AccessKey
     {

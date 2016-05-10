@@ -87,7 +87,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
+        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public List<PolicyVersion> Versions

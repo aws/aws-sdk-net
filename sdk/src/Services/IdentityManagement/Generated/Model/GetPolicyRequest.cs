@@ -30,22 +30,22 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetPolicy operation.
     /// Retrieves information about the specified managed policy, including the policy's default
-    /// version and the total number of users, groups, and roles that the policy is attached
-    /// to. For a list of the specific users, groups, and roles that the policy is attached
-    /// to, use the <a>ListEntitiesForPolicy</a> API. This API returns metadata about the
-    /// policy. To retrieve the policy document for a specific version of the policy, use
-    /// <a>GetPolicyVersion</a>. 
+    /// version and the total number of IAM users, groups, and roles to which the policy is
+    /// attached. To retrieve the list of the specific users, groups, and roles that the policy
+    /// is attached to, use the <a>ListEntitiesForPolicy</a> API. This API returns metadata
+    /// about the policy. To retrieve the actual policy document for a specific version of
+    /// the policy, use <a>GetPolicyVersion</a>.
     /// 
     ///  
     /// <para>
     /// This API retrieves information about managed policies. To retrieve information about
-    /// an inline policy that is embedded with a user, group, or role, use the <a>GetUserPolicy</a>,
-    /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. 
+    /// an inline policy that is embedded with an IAM user, group, or role, use the <a>GetUserPolicy</a>,
+    /// <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.
     /// </para>
     ///  
     /// <para>
-    /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// For more information about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -53,7 +53,15 @@ namespace Amazon.IdentityManagement.Model
         private string _policyArn;
 
         /// <summary>
-        /// Gets and sets the property PolicyArn.
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the managed policy that you want information about.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// </para>
         /// </summary>
         public string PolicyArn
         {

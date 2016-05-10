@@ -58,7 +58,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property GeneratedTime. 
         /// <para>
         ///  The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO
-        /// 8601 date-time format</a>. 
+        /// 8601 date-time format</a>.
         /// </para>
         /// </summary>
         public DateTime GeneratedTime

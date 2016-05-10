@@ -82,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property SSHPublicKeys. 
         /// <para>
-        /// A list of SSH public keys.
+        /// A list of the SSH public keys assigned to IAM user.
         /// </para>
         /// </summary>
         public List<SSHPublicKeyMetadata> SSHPublicKeys
