@@ -36,6 +36,11 @@ namespace Amazon.DirectConnect.Model
     /// Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection
     /// on the given interconnect.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This is intended for use by AWS Direct Connect partners only.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AllocateConnectionOnInterconnectRequest : AmazonDirectConnectRequest
     {
@@ -57,6 +62,10 @@ namespace Amazon.DirectConnect.Model
         ///  
         /// <para>
         /// Default: None
+        /// </para>
+        ///  
+        /// <para>
+        /// Values: 50M, 100M, 200M, 300M, 400M, or 500M
         /// </para>
         /// </summary>
         public string Bandwidth

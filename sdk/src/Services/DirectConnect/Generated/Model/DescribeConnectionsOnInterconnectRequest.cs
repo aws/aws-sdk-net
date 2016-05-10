@@ -30,6 +30,12 @@ namespace Amazon.DirectConnect.Model
     /// <summary>
     /// Container for the parameters to the DescribeConnectionsOnInterconnect operation.
     /// Return a list of connections that have been provisioned on the given interconnect.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This is intended for use by AWS Direct Connect partners only.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeConnectionsOnInterconnectRequest : AmazonDirectConnectRequest
     {
