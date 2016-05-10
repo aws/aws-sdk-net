@@ -45,7 +45,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates ListQueuesRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</param>
+        /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned. Queue names are case-sensitive.</param>
         public ListQueuesRequest(string queueNamePrefix)
         {
             _queueNamePrefix = queueNamePrefix;
@@ -56,6 +56,10 @@ namespace Amazon.SQS.Model
         /// <para>
         /// A string to use for filtering the list results. Only those queues whose name begins
         /// with the specified string are returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queue names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueNamePrefix

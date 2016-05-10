@@ -43,7 +43,14 @@ namespace Amazon.SQS.Model
         private string _queueUrl;
 
         /// <summary>
-        /// Gets and sets the property QueueUrl. The queue URL of a dead letter queue.
+        /// Gets and sets the property QueueUrl. 
+        /// <para>
+        /// The queue URL of a dead letter queue.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queue URLs are case-sensitive.
+        /// </para>
         /// </summary>
         public string QueueUrl
         {
