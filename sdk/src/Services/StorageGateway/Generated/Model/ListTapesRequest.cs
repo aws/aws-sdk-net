@@ -28,41 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeVTLDevices operation.
-    /// Returns a description of virtual tape library (VTL) devices for the specified gateway.
-    /// In the response, AWS Storage Gateway returns VTL device information.
+    /// Container for the parameters to the ListTapes operation.
+    /// Lists virtual tapes in your virtual tape library (VTL) and your virtual tape shelf
+    /// (VTS). You specify the tapes to list by specifying one or more tape Amazon Resource
+    /// Names (ARNs). If you don't specify a tape ARN, the operation lists all virtual tapes
+    /// in both your VTL and VTS.
     /// 
     ///  
     /// <para>
-    /// The list of VTL devices must be from one gateway.
+    /// This operation supports pagination. By default, the operation returns a maximum of
+    /// up to 100 tapes. You can optionally specify the <code>Limit</code> parameter in the
+    /// body to limit the number of tapes in the response. If the number of tapes returned
+    /// in the response is truncated, the response includes a <code>Marker</code> element
+    /// that you can use in your subsequent request to retrieve the next set of tapes.
     /// </para>
     /// </summary>
-    public partial class DescribeVTLDevicesRequest : AmazonStorageGatewayRequest
+    public partial class ListTapesRequest : AmazonStorageGatewayRequest
     {
-        private string _gatewayARN;
         private int? _limit;
         private string _marker;
-        private List<string> _vtlDeviceARNs = new List<string>();
-
-        /// <summary>
-        /// Gets and sets the property GatewayARN.
-        /// </summary>
-        public string GatewayARN
-        {
-            get { return this._gatewayARN; }
-            set { this._gatewayARN = value; }
-        }
-
-        // Check to see if GatewayARN property is set
-        internal bool IsSetGatewayARN()
-        {
-            return this._gatewayARN != null;
-        }
+        private List<string> _tapeARNs = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specifies that the number of VTL devices described be limited to the specified number.
+        /// An optional number limit for the tapes in the list returned by this call.
         /// </para>
         /// </summary>
         public int Limit
@@ -80,8 +70,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An opaque string that indicates the position at which to begin describing the VTL
-        /// devices.
+        /// A string that indicates the position at which to begin the returned list of tapes.
         /// </para>
         /// </summary>
         public string Marker
@@ -97,28 +86,18 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VTLDeviceARNs. 
-        /// <para>
-        /// An array of strings, where each string represents the Amazon Resource Name (ARN) of
-        /// a VTL device.
-        /// </para>
-        ///  <note>
-        /// <para>
-        /// All of the specified VTL devices must be from the same gateway. If no VTL devices
-        /// are specified, the result will contain all devices on the specified gateway.
-        /// </para>
-        ///  </note>
+        /// Gets and sets the property TapeARNs.
         /// </summary>
-        public List<string> VTLDeviceARNs
+        public List<string> TapeARNs
         {
-            get { return this._vtlDeviceARNs; }
-            set { this._vtlDeviceARNs = value; }
+            get { return this._tapeARNs; }
+            set { this._tapeARNs = value; }
         }
 
-        // Check to see if VTLDeviceARNs property is set
-        internal bool IsSetVTLDeviceARNs()
+        // Check to see if TapeARNs property is set
+        internal bool IsSetTapeARNs()
         {
-            return this._vtlDeviceARNs != null && this._vtlDeviceARNs.Count > 0; 
+            return this._tapeARNs != null && this._tapeARNs.Count > 0; 
         }
 
     }

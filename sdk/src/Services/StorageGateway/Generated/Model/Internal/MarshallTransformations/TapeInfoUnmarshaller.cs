@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GatewayInfo Object
+    /// Response Unmarshaller for TapeInfo Object
     /// </summary>  
-    public class GatewayInfoUnmarshaller : IUnmarshaller<GatewayInfo, XmlUnmarshallerContext>, IUnmarshaller<GatewayInfo, JsonUnmarshallerContext>
+    public class TapeInfoUnmarshaller : IUnmarshaller<TapeInfo, XmlUnmarshallerContext>, IUnmarshaller<TapeInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GatewayInfo IUnmarshaller<GatewayInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TapeInfo IUnmarshaller<TapeInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GatewayInfo Unmarshall(JsonUnmarshallerContext context)
+        public TapeInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GatewayInfo unmarshalledObject = new GatewayInfo();
+            TapeInfo unmarshalledObject = new TapeInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,28 +70,28 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.GatewayARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("GatewayId", targetDepth))
+                if (context.TestExpression("TapeARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TapeARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("GatewayName", targetDepth))
+                if (context.TestExpression("TapeBarcode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TapeBarcode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("GatewayOperationalState", targetDepth))
+                if (context.TestExpression("TapeSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayOperationalState = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TapeSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("GatewayType", targetDepth))
+                if (context.TestExpression("TapeStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TapeStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +100,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         }
 
 
-        private static GatewayInfoUnmarshaller _instance = new GatewayInfoUnmarshaller();        
+        private static TapeInfoUnmarshaller _instance = new TapeInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GatewayInfoUnmarshaller Instance
+        public static TapeInfoUnmarshaller Instance
         {
             get
             {

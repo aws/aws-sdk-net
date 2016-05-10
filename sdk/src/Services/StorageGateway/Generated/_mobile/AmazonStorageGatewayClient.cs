@@ -49,23 +49,72 @@ namespace Amazon.StorageGateway
     /// Use the following links to get started using the <i>AWS Storage Gateway Service API
     /// Reference</i>:
     /// </para>
-    ///  <ul> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
     /// Storage Gateway Required Request Headers</a>: Describes the required headers that
-    /// you must send with every POST request to AWS Storage Gateway.</li> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
+    /// you must send with every POST request to AWS Storage Gateway.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
     /// Requests</a>: AWS Storage Gateway requires that you authenticate every request you
-    /// send; this topic describes how sign such a request.</li> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
-    /// Responses</a>: Provides reference information about AWS Storage Gateway errors.</li>
-    /// <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
+    /// send; this topic describes how sign such a request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
+    /// Responses</a>: Provides reference information about AWS Storage Gateway errors.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
-    /// of requests and responses.</li> <li><a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
+    /// of requests and responses.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
     /// Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s and endpoints
-    /// available for use with AWS Storage Gateway. </li> </ul> <note>AWS Storage Gateway
-    /// resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2
-    /// API, EC2 expects resource IDs in lowercase. You must change your resource ID to lowercase
-    /// to use it with the EC2 API. For example, in Storage Gateway the ID for a volume might
-    /// be vol-1122AABB. When you use this ID with the EC2 API, you must change it to vol-1122aabb.
-    /// Otherwise, the EC2 API might not behave as expected.</note>
+    /// available for use with AWS Storage Gateway.
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs
+    /// with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your
+    /// resource ID to lowercase to use it with the EC2 API. For example, in Storage Gateway
+    /// the ID for a volume might be <code>vol-1122AABB</code>. When you use this ID with
+    /// the EC2 API, you must change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API
+    /// might not behave as expected.
+    /// </para>
+    ///  </note> <important> 
+    /// <para>
+    /// IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway volumes
+    /// are changing to a longer format. Starting in December 2016, all new volumes and snapshots
+    /// will be created with a 17-character string. Starting in April 2016, you will be able
+    /// to use these longer IDs so you can test your systems with the new format. For more
+    /// information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2
+    /// and EBS Resource IDs</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  For example, a volume ARN with the longer volume ID format will look like this:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// A snapshot ID with the longer ID format will look like this: <code>snap-78e226633445566ee</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement:
+    /// Heads-up – Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class AmazonStorageGatewayClient : AmazonServiceClient, IAmazonStorageGateway
     {
@@ -1085,7 +1134,6 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
         /// 
-        /// 
         ///  
         /// <para>
         /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
@@ -1098,12 +1146,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeTapeArchives service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1355,12 +1403,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ListGateways service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public Task<ListGatewaysResponse> ListGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1445,6 +1493,37 @@ namespace Amazon.StorageGateway
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTapes
+
+        internal ListTapesResponse ListTapes(ListTapesRequest request)
+        {
+            var marshaller = new ListTapesRequestMarshaller();
+            var unmarshaller = ListTapesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTapesRequest,ListTapesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTapes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTapes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTapesResponse> ListTapesAsync(ListTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTapesRequestMarshaller();
+            var unmarshaller = ListTapesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTapesRequest,ListTapesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1591,7 +1670,7 @@ namespace Amazon.StorageGateway
         /// prevents read and write operations on virtual tapes in the gateway. For example, an
         /// error can occur when a disk is corrupted or removed from the gateway. When a cache
         /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-        /// disks as cache disks. 
+        /// disks as cache disks.
         /// 
         ///  <important> 
         /// <para>
@@ -1609,12 +1688,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ResetCache service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public Task<ResetCacheResponse> ResetCacheAsync(string gatewayARN, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

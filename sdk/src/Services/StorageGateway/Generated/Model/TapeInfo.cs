@@ -28,44 +28,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Describes a virtual tape object.
+    /// Describes a virtual tape.
     /// </summary>
-    public partial class Tape
+    public partial class TapeInfo
     {
-        private double? _progress;
+        private string _gatewayARN;
         private string _tapeARN;
         private string _tapeBarcode;
         private long? _tapeSizeInBytes;
         private string _tapeStatus;
-        private string _vtlDevice;
 
         /// <summary>
-        /// Gets and sets the property Progress. 
+        /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// For archiving virtual tapes, indicates how much data remains to be uploaded before
-        /// archiving is complete.
-        /// </para>
-        ///  
-        /// <para>
-        /// Range: 0 (not started) to 100 (complete).
+        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation
+        /// to return a list of gateways for your account and region.
         /// </para>
         /// </summary>
-        public double Progress
+        public string GatewayARN
         {
-            get { return this._progress.GetValueOrDefault(); }
-            set { this._progress = value; }
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
         }
 
-        // Check to see if Progress property is set
-        internal bool IsSetProgress()
+        // Check to see if GatewayARN property is set
+        internal bool IsSetGatewayARN()
         {
-            return this._progress.HasValue; 
+            return this._gatewayARN != null;
         }
 
         /// <summary>
         /// Gets and sets the property TapeARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the virtual tape.
+        /// The Amazon Resource Name (ARN) of a virtual tape.
         /// </para>
         /// </summary>
         public string TapeARN
@@ -101,7 +96,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property TapeSizeInBytes. 
         /// <para>
-        /// The size, in bytes, of the virtual tape.
+        /// The size, in bytes, of a virtual tape.
         /// </para>
         /// </summary>
         public long TapeSizeInBytes
@@ -119,7 +114,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property TapeStatus. 
         /// <para>
-        /// The current state of the virtual tape.
+        /// The status of the tape.
         /// </para>
         /// </summary>
         public string TapeStatus
@@ -132,24 +127,6 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetTapeStatus()
         {
             return this._tapeStatus != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VTLDevice. 
-        /// <para>
-        /// The virtual tape library (VTL) device that the virtual tape is associated with.
-        /// </para>
-        /// </summary>
-        public string VTLDevice
-        {
-            get { return this._vtlDevice; }
-            set { this._vtlDevice = value; }
-        }
-
-        // Check to see if VTLDevice property is set
-        internal bool IsSetVTLDevice()
-        {
-            return this._vtlDevice != null;
         }
 
     }

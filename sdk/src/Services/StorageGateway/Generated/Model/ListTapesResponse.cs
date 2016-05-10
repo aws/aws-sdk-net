@@ -28,20 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// DescribeTapeArchivesOutput
+    /// A JSON object containing the following fields:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ListTapesOutput$Marker</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListTapesOutput$VolumeInfos</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    public partial class DescribeTapeArchivesResponse : AmazonWebServiceResponse
+    public partial class ListTapesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<TapeArchive> _tapeArchives = new List<TapeArchive>();
+        private List<TapeInfo> _tapeInfos = new List<TapeInfo>();
 
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An opaque string that indicates the position at which the virtual tapes that were
-        /// fetched for description ended. Use this marker in your next request to fetch the next
-        /// set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual
-        /// tapes to describe, this field does not appear in the response.
+        /// A string that indicates the position at which to begin returning the next list of
+        /// tapes. Use the marker in your next request to continue pagination of tapes. If there
+        /// are no more tapes to list, this element does not appear in the response body.
         /// </para>
         /// </summary>
         public string Marker
@@ -57,24 +66,18 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TapeArchives. 
-        /// <para>
-        /// An array of virtual tape objects in the virtual tape shelf (VTS). The description
-        /// includes of the Amazon Resource Name(ARN) of the virtual tapes. The information returned
-        /// includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status
-        /// of the tapes, progress of the description and tape barcode.
-        /// </para>
+        /// Gets and sets the property TapeInfos.
         /// </summary>
-        public List<TapeArchive> TapeArchives
+        public List<TapeInfo> TapeInfos
         {
-            get { return this._tapeArchives; }
-            set { this._tapeArchives = value; }
+            get { return this._tapeInfos; }
+            set { this._tapeInfos = value; }
         }
 
-        // Check to see if TapeArchives property is set
-        internal bool IsSetTapeArchives()
+        // Check to see if TapeInfos property is set
+        internal bool IsSetTapeInfos()
         {
-            return this._tapeArchives != null && this._tapeArchives.Count > 0; 
+            return this._tapeInfos != null && this._tapeInfos.Count > 0; 
         }
 
     }

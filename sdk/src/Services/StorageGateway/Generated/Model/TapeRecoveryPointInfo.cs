@@ -59,7 +59,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property TapeRecoveryPointTime. 
         /// <para>
         /// The time when the point-in-time view of the virtual tape was replicated for later
-        /// recovery. 
+        /// recovery.
         /// </para>
         ///  
         /// <para>

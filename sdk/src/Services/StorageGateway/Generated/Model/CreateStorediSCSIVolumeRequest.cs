@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the CreateStorediSCSIVolume operation.
     /// Creates a volume on a specified gateway. This operation is supported only for the
-    /// gateway-stored volume architecture. 
+    /// gateway-stored volume architecture.
     /// 
     ///  
     /// <para>
@@ -100,7 +100,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: A valid IP address.
+        ///  Valid Values: A valid IP address.
         /// </para>
         /// </summary>
         public string NetworkInterfaceId
@@ -123,7 +123,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: true, false
+        ///  Valid Values: true, false
         /// </para>
         /// </summary>
         public bool PreserveExistingData
