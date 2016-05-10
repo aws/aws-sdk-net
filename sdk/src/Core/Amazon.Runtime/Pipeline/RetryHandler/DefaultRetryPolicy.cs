@@ -29,6 +29,15 @@ namespace Amazon.Runtime.Internal
     {
         private int _maxBackoffInMilliseconds = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
 
+        // Set of HTTP status codes to retry on.
+        private ICollection<HttpStatusCode> _httpStatusCodesToRetryOn = new HashSet<HttpStatusCode>
+        {
+            HttpStatusCode.InternalServerError,
+            HttpStatusCode.ServiceUnavailable,
+            HttpStatusCode.BadGateway,
+            HttpStatusCode.GatewayTimeout
+        };
+
         // Set of web exception status codes to retry on.
         private ICollection<WebExceptionStatus> _webExceptionStatusesToRetryOn = new HashSet<WebExceptionStatus>
         {
@@ -64,6 +73,15 @@ namespace Amazon.Runtime.Internal
         {
             get { return _maxBackoffInMilliseconds; }
             set { _maxBackoffInMilliseconds = value; }
+        }
+
+        /// <summary>
+        /// List of HTTP Status codes codes which are returned as part of the error response.
+        /// These status codes will be retried.
+        /// </summary>
+        public ICollection<HttpStatusCode> HttpStatusCodesToRetryOn
+        {
+            get { return _httpStatusCodesToRetryOn; }
         }
 
         /// <summary>
@@ -130,26 +148,25 @@ namespace Amazon.Runtime.Internal
             var serviceException = exception as AmazonServiceException;
             if (serviceException != null)
             {
-                /*
-                * For 500 internal server errors and 503 service
-                * unavailable errors, we want to retry, but we need to use
-                * an exponential back-off strategy so that we don't overload
-                * a server with a flood of retries. If we've surpassed our
-                * retry limit we handle the error response as a non-retryable
-                * error and go ahead and throw it back to the user as an exception.
-                */
-                if (serviceException.StatusCode == HttpStatusCode.InternalServerError ||
-                    serviceException.StatusCode == HttpStatusCode.ServiceUnavailable)
+                
+                // For 500 internal server errors and 503 service
+                // unavailable errors, we want to retry, but we need to use
+                // an exponential back-off strategy so that we don't overload
+                // a server with a flood of retries. If we've surpassed our
+                // retry limit we handle the error response as a non-retryable
+                // error and go ahead and throw it back to the user as an exception.
+                //
+                // 502 and 504 are returned by proxies. These can also be returned for 
+                // S3 accelerate requests which are served by CloudFront.
+                if (this.HttpStatusCodesToRetryOn.Contains(serviceException.StatusCode))
                 {
                     return true;
                 }
-
-                /*
-                 * Throttling is reported as a 400 or 503 error from services. To try and
-                 * smooth out an occasional throttling error, we'll pause and retry,
-                 * hoping that the pause is long enough for the request to get through
-                 * the next time.
-                */
+                                
+                // Throttling is reported as a 400 or 503 error from services. To try and
+                // smooth out an occasional throttling error, we'll pause and retry,
+                // hoping that the pause is long enough for the request to get through
+                // the next time.                
                 if ((serviceException.StatusCode == HttpStatusCode.BadRequest ||
                     serviceException.StatusCode == HttpStatusCode.ServiceUnavailable))
                 {

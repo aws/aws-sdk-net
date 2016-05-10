@@ -37,7 +37,9 @@ namespace Amazon.S3.Internal
         {
            typeof(ListBucketsRequest),
            typeof(PutBucketRequest),
-           typeof(DeleteBucketRequest)
+           typeof(DeleteBucketRequest),
+           typeof(CopyObjectRequest),
+           typeof(CopyPartRequest)
         };
 
         /// <summary>

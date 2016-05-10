@@ -263,7 +263,12 @@ namespace AWSSDK.UnitTests
                 // Extract the last segment of the URI, this is the custom URI 
                 // sent by the unit tests.
                 var resourceName = request.RequestUri.Host.Split('.').Last();
-                return MockWebResponse.CreateFromResource(resourceName);
+                var response =  MockWebResponse.CreateFromResource(resourceName);
+
+                if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode <= (HttpStatusCode)299)
+                    return response;
+                else                
+                    throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));                
             }
             
             public void ConfigureRequest(IRequestContext requestContext)
