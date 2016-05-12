@@ -336,6 +336,14 @@
       <Project>{6F6CB15A-ED3A-45AB-B526-B00DBAD46355}</Project>
       <Name>AWSSDK.CognitoIdentityProvider.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DiscoveryService\AWSSDK.DiscoveryService.Net35.csproj">
+      <Project>{895ADCD2-BC9B-4BFC-BE11-49557DE279B1}</Project>
+      <Name>AWSSDK.DiscoveryService.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net35.csproj">
+      <Project>{42CFDE78-4934-4555-BFA6-ECCF1A8271DF}</Project>
+      <Name>AWSSDK.ApplicationDiscoveryService.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">
