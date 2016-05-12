@@ -1,3 +1,13 @@
+### 3.1.68.0 (2016-05-12 22:06 UTC)
+* Application Discovery Service (3.1.0.0)
+	* Added support for the AWS Application Discovery Service. This service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.
+* CloudFormation (3.1.5.0)
+	* Added ExecutionStatus to ChangeSets so that customers can see which ChangeSets are available to be executed; which one was executed in the past, and which can no longer be executed due to being obsolete.
+* EC2 (3.1.13.0)
+	* Added support for identifying stale security groups.
+* SimpleSystemsManagement (3.1.2.0)
+	* EC2 Run Command has been updated to allow customers to create and share documents. Documents can be shared privately with other AWS accounts, or publically to all accounts.
+
 ### 3.1.67.0 (2016-05-10 21:03 UTC)
 * DirectConnect (3.1.1.1)
 	* Documentation update.
