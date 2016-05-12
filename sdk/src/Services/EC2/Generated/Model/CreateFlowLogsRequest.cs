@@ -112,6 +112,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more subnet, network interface, or VPC IDs.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Maximum of 1000 resources
+        /// </para>
         /// </summary>
         public List<string> ResourceIds
         {

@@ -30,12 +30,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ResetInstanceAttribute operation.
     /// Resets an attribute of an instance to its default value. To reset the <code>kernel</code>
-    /// or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>SourceDestCheck</code>,
+    /// or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>sourceDestCheck</code>,
     /// the instance can be either running or stopped.
     /// 
     ///  
     /// <para>
-    /// The <code>SourceDestCheck</code> attribute controls whether source/destination checking
+    /// The <code>sourceDestCheck</code> attribute controls whether source/destination checking
     /// is enabled. The default value is <code>true</code>, which means checking is enabled.
     /// This value must be <code>false</code> for a NAT instance to perform NAT. For more
     /// information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ResetInstanceAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="attribute">The attribute to reset.</param>
+        /// <param name="attribute">The attribute to reset. <important>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an instance attribute, use <a>ModifyInstanceAttribute</a>.</important></param>
         public ResetInstanceAttributeRequest(string instanceId, InstanceAttributeName attribute)
         {
             _instanceId = instanceId;
@@ -68,6 +68,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The attribute to reset.
         /// </para>
+        ///  <important>
+        /// <para>
+        /// You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code>
+        /// | <code>sourceDestCheck</code>. To change an instance attribute, use <a>ModifyInstanceAttribute</a>.
+        /// </para>
+        /// </important>
         /// </summary>
         public InstanceAttributeName Attribute
         {

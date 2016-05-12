@@ -28,16 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a security group and AWS account ID pair.
+    /// Describes a stale security group (a security group that contains stale rules).
     /// </summary>
-    public partial class UserIdGroupPair
+    public partial class StaleSecurityGroup
     {
+        private string _description;
         private string _groupId;
         private string _groupName;
-        private string _peeringStatus;
-        private string _userId;
+        private List<StaleIpPermission> _staleIpPermissions = new List<StaleIpPermission>();
+        private List<StaleIpPermission> _staleIpPermissionsEgress = new List<StaleIpPermission>();
         private string _vpcId;
-        private string _vpcPeeringConnectionId;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the security group.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -60,9 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the security group. In a request, use this parameter for a security group
-        /// in EC2-Classic or a default VPC only. For a security group in a nondefault VPC, use
-        /// the security group ID.
+        /// The name of the security group.
         /// </para>
         /// </summary>
         public string GroupName
@@ -78,51 +94,45 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PeeringStatus. 
+        /// Gets and sets the property StaleIpPermissions. 
         /// <para>
-        /// The status of a VPC peering connection, if applicable.
+        /// Information about the stale inbound rules in the security group.
         /// </para>
         /// </summary>
-        public string PeeringStatus
+        public List<StaleIpPermission> StaleIpPermissions
         {
-            get { return this._peeringStatus; }
-            set { this._peeringStatus = value; }
+            get { return this._staleIpPermissions; }
+            set { this._staleIpPermissions = value; }
         }
 
-        // Check to see if PeeringStatus property is set
-        internal bool IsSetPeeringStatus()
+        // Check to see if StaleIpPermissions property is set
+        internal bool IsSetStaleIpPermissions()
         {
-            return this._peeringStatus != null;
+            return this._staleIpPermissions != null && this._staleIpPermissions.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property UserId. 
+        /// Gets and sets the property StaleIpPermissionsEgress. 
         /// <para>
-        /// The ID of an AWS account. For a referenced security group in another VPC, the account
-        /// ID of the referenced security group is returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// [EC2-Classic] Required when adding or removing rules that reference a security group
-        /// in another AWS account.
+        /// Information about the stale outbound rules in the security group.
         /// </para>
         /// </summary>
-        public string UserId
+        public List<StaleIpPermission> StaleIpPermissionsEgress
         {
-            get { return this._userId; }
-            set { this._userId = value; }
+            get { return this._staleIpPermissionsEgress; }
+            set { this._staleIpPermissionsEgress = value; }
         }
 
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
+        // Check to see if StaleIpPermissionsEgress property is set
+        internal bool IsSetStaleIpPermissionsEgress()
         {
-            return this._userId != null;
+            return this._staleIpPermissionsEgress != null && this._staleIpPermissionsEgress.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC for the referenced security group, if applicable.
+        /// The ID of the VPC for the security group.
         /// </para>
         /// </summary>
         public string VpcId
@@ -135,24 +145,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetVpcId()
         {
             return this._vpcId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VpcPeeringConnectionId. 
-        /// <para>
-        /// The ID of the VPC peering connection, if applicable. 
-        /// </para>
-        /// </summary>
-        public string VpcPeeringConnectionId
-        {
-            get { return this._vpcPeeringConnectionId; }
-            set { this._vpcPeeringConnectionId = value; }
-        }
-
-        // Check to see if VpcPeeringConnectionId property is set
-        internal bool IsSetVpcPeeringConnectionId()
-        {
-            return this._vpcPeeringConnectionId != null;
         }
 
     }
