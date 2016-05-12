@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The output for a <a>UpdateStack</a> action.
+    /// The output for an <a>UpdateStack</a> action.
     /// </summary>
     public partial class UpdateStackResponse : AmazonWebServiceResponse
     {
