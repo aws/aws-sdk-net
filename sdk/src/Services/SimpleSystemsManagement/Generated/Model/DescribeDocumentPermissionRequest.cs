@@ -28,36 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes the association of an SSM document and an instance.
+    /// Container for the parameters to the DescribeDocumentPermission operation.
+    /// Describes the permissions for an SSM document. If you created the document, you are
+    /// the owner. If a document is shared, it can either be shared privately (by specifying
+    /// a user’s AWS account ID) or publicly (<i>All</i>).
     /// </summary>
-    public partial class CreateAssociationBatchRequestEntry
+    public partial class DescribeDocumentPermissionRequest : AmazonSimpleSystemsManagementRequest
     {
-        private string _instanceId;
         private string _name;
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
-
-        /// <summary>
-        /// Gets and sets the property InstanceId. 
-        /// <para>
-        ///  The ID of the instance. 
-        /// </para>
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this._instanceId != null;
-        }
+        private DocumentPermissionType _permissionType;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the configuration document. 
+        /// The name of the document for which you are the owner.
         /// </para>
         /// </summary>
         public string Name
@@ -73,21 +57,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
+        /// Gets and sets the property PermissionType. 
         /// <para>
-        /// A description of the parameters for a document. 
+        /// The permission type for the document. The permission type can be <i>Share</i>.
         /// </para>
         /// </summary>
-        public Dictionary<string, List<string>> Parameters
+        public DocumentPermissionType PermissionType
         {
-            get { return this._parameters; }
-            set { this._parameters = value; }
+            get { return this._permissionType; }
+            set { this._permissionType = value; }
         }
 
-        // Check to see if Parameters property is set
-        internal bool IsSetParameters()
+        // Check to see if PermissionType property is set
+        internal bool IsSetPermissionType()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._permissionType != null;
         }
 
     }

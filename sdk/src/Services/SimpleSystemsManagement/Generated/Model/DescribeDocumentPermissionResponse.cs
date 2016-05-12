@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// This is the response object from the SendCommand operation.
+    /// This is the response object from the DescribeDocumentPermission operation.
     /// </summary>
-    public partial class SendCommandResponse : AmazonWebServiceResponse
+    public partial class DescribeDocumentPermissionResponse : AmazonWebServiceResponse
     {
-        private Command _command;
+        private List<string> _accountIds = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Command. 
+        /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The request as it was received by SSM. Also provides the command ID which can be used
-        /// future references to this request.
+        /// The account IDs that have permission to use this document. The ID can be either an
+        /// AWS account or <i>All</i>.
         /// </para>
         /// </summary>
-        public Command Command
+        public List<string> AccountIds
         {
-            get { return this._command; }
-            set { this._command = value; }
+            get { return this._accountIds; }
+            set { this._accountIds = value; }
         }
 
-        // Check to see if Command property is set
-        internal bool IsSetCommand()
+        // Check to see if AccountIds property is set
+        internal bool IsSetAccountIds()
         {
-            return this._command != null;
+            return this._accountIds != null && this._accountIds.Count > 0; 
         }
 
     }

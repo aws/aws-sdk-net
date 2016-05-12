@@ -42,9 +42,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         private CommandPluginStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the plugin. Must be one of the following:
-        /// aws:updateAgent, aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-        /// aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin,
+        /// aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript,
+        /// or aws:updateSSMAgent. 
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -59,7 +62,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Output. Output of the plugin execution.
+        /// Gets and sets the property Output. 
+        /// <para>
+        /// Output of the plugin execution.
+        /// </para>
         /// </summary>
         public string Output
         {
@@ -74,8 +80,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputS3BucketName. The S3 bucket where the responses to
-        /// the command executions should be stored. This was requested when issuing the command.
+        /// Gets and sets the property OutputS3BucketName. 
+        /// <para>
+        /// The S3 bucket where the responses to the command executions should be stored. This
+        /// was requested when issuing the command.
+        /// </para>
         /// </summary>
         public string OutputS3BucketName
         {
@@ -90,9 +99,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputS3KeyPrefix. The S3 directory path inside the bucket
-        /// where the responses to the command executions should be stored. This was requested
-        /// when issuing the command.
+        /// Gets and sets the property OutputS3KeyPrefix. 
+        /// <para>
+        /// The S3 directory path inside the bucket where the responses to the command executions
+        /// should be stored. This was requested when issuing the command. 
+        /// </para>
         /// </summary>
         public string OutputS3KeyPrefix
         {
@@ -107,8 +118,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResponseCode. A numeric response code generated after executing
-        /// the plugin.
+        /// Gets and sets the property ResponseCode. 
+        /// <para>
+        /// A numeric response code generated after executing the plugin. 
+        /// </para>
         /// </summary>
         public int ResponseCode
         {
@@ -123,8 +136,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResponseFinishDateTime. The time the plugin stopped executing.
-        /// Could stop prematurely if, for example, a cancel command was sent.
+        /// Gets and sets the property ResponseFinishDateTime. 
+        /// <para>
+        /// The time the plugin stopped executing. Could stop prematurely if, for example, a cancel
+        /// command was sent. 
+        /// </para>
         /// </summary>
         public DateTime ResponseFinishDateTime
         {
@@ -139,7 +155,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResponseStartDateTime. The time the plugin started executing.
+        /// Gets and sets the property ResponseStartDateTime. 
+        /// <para>
+        /// The time the plugin started executing. 
+        /// </para>
         /// </summary>
         public DateTime ResponseStartDateTime
         {
@@ -154,8 +173,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. The status of this plugin. You can execute a document
-        /// with multiple plugins.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of this plugin. You can execute a document with multiple plugins.
+        /// </para>
         /// </summary>
         public CommandPluginStatus Status
         {

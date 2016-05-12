@@ -44,7 +44,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private CommandStatus _status;
 
         /// <summary>
-        /// Gets and sets the property CommandId. A unique identifier for this command.
+        /// Gets and sets the property CommandId. 
+        /// <para>
+        /// A unique identifier for this command.
+        /// </para>
         /// </summary>
         public string CommandId
         {
@@ -59,8 +62,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Comment. User-specified information about the command,
-        /// such as a brief description of what the command should do.
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// User-specified information about the command, such as a brief description of what
+        /// the command should do.
+        /// </para>
         /// </summary>
         public string Comment
         {
@@ -75,8 +81,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DocumentName. The name of the SSM document requested for
-        /// execution.
+        /// Gets and sets the property DocumentName. 
+        /// <para>
+        /// The name of the SSM document requested for execution.
+        /// </para>
         /// </summary>
         public string DocumentName
         {
@@ -91,9 +99,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpiresAfter. If this time is reached and the command has
-        /// not already started executing, it will not execute. Calculated based on the ExpiresAfter
-        /// user input provided as part of the SendCommand API.
+        /// Gets and sets the property ExpiresAfter. 
+        /// <para>
+        /// If this time is reached and the command has not already started executing, it will
+        /// not execute. Calculated based on the ExpiresAfter user input provided as part of the
+        /// SendCommand API.
+        /// </para>
         /// </summary>
         public DateTime ExpiresAfter
         {
@@ -108,8 +119,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceIds. The instance IDs against which this command
-        /// was requested.
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
+        /// The instance IDs against which this command was requested.
+        /// </para>
         /// </summary>
         public List<string> InstanceIds
         {
@@ -124,8 +137,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputS3BucketName. The S3 bucket where the responses to
-        /// the command executions should be stored. This was requested when issuing the command.
+        /// Gets and sets the property OutputS3BucketName. 
+        /// <para>
+        /// The S3 bucket where the responses to the command executions should be stored. This
+        /// was requested when issuing the command.
+        /// </para>
         /// </summary>
         public string OutputS3BucketName
         {
@@ -140,9 +156,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputS3KeyPrefix. The S3 directory path inside the bucket
-        /// where the responses to the command executions should be stored. This was requested
-        /// when issuing the command.
+        /// Gets and sets the property OutputS3KeyPrefix. 
+        /// <para>
+        /// The S3 directory path inside the bucket where the responses to the command executions
+        /// should be stored. This was requested when issuing the command.
+        /// </para>
         /// </summary>
         public string OutputS3KeyPrefix
         {
@@ -157,8 +175,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Parameters. The parameter values to be inserted in the
-        /// SSM document when executing the command.
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The parameter values to be inserted in the SSM document when executing the command.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
         {
@@ -173,7 +193,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestedDateTime. The date and time the command was requested.
+        /// Gets and sets the property RequestedDateTime. 
+        /// <para>
+        /// The date and time the command was requested.
+        /// </para>
         /// </summary>
         public DateTime RequestedDateTime
         {
@@ -188,7 +211,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. The status of the command.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the command.
+        /// </para>
         /// </summary>
         public CommandStatus Status
         {

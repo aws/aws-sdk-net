@@ -43,8 +43,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property InstanceInformationFilterList. One or more filters. Use
-        /// a filter to return a more specific list of instances.
+        /// Gets and sets the property InstanceInformationFilterList. 
+        /// <para>
+        /// One or more filters. Use a filter to return a more specific list of instances.
+        /// </para>
         /// </summary>
         public List<InstanceInformationFilter> InstanceInformationFilterList
         {
@@ -59,9 +61,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of items to return for this
-        /// call. The call also returns a token that you can specify in a subsequent call to get
-        /// the next set of results.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items to return for this call. The call also returns a token
+        /// that you can specify in a subsequent call to get the next set of results. 
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -76,8 +80,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token for the next set of items to return.
-        /// (You received this token from a previous call.)
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
+        /// </para>
         /// </summary>
         public string NextToken
         {

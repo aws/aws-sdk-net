@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateAssociationRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceId">The Windows Server instance ID.</param>
+        /// <param name="instanceId">The instance ID.</param>
         /// <param name="name">The name of the SSM document.</param>
         public CreateAssociationRequest(string instanceId, string name)
         {
@@ -67,7 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The Windows Server instance ID.
+        /// The instance ID.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -101,7 +101,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Parameters. The parameters for the documents runtime configuration.
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The parameters for the documents runtime configuration. 
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
         {

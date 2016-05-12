@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteDocument operation
+    /// Response Unmarshaller for DescribeDocumentPermission operation
     /// </summary>  
-    public class DeleteDocumentResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeDocumentPermissionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteDocumentResponse response = new DeleteDocumentResponse();
+            DescribeDocumentPermissionResponse response = new DescribeDocumentPermissionResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("AccountIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.AccountIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,10 +72,6 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AssociatedInstances"))
-            {
-                return new AssociatedInstancesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -73,16 +80,16 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 return new InvalidDocumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDocumentOperation"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPermissionType"))
             {
-                return new InvalidDocumentOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidPermissionTypeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteDocumentResponseUnmarshaller _instance = new DeleteDocumentResponseUnmarshaller();        
+        private static DescribeDocumentPermissionResponseUnmarshaller _instance = new DescribeDocumentPermissionResponseUnmarshaller();        
 
-        internal static DeleteDocumentResponseUnmarshaller GetInstance()
+        internal static DescribeDocumentPermissionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +97,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDocumentResponseUnmarshaller Instance
+        public static DescribeDocumentPermissionResponseUnmarshaller Instance
         {
             get
             {

@@ -36,7 +36,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CommandInvocations. (Optional) A list of all invocations.
+        /// Gets and sets the property CommandInvocations. 
+        /// <para>
+        /// (Optional) A list of all invocations. 
+        /// </para>
         /// </summary>
         public List<CommandInvocation> CommandInvocations
         {
@@ -51,8 +54,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. (Optional) The token for the next set of items
-        /// to return. (You received this token from a previous call.)
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// (Optional) The token for the next set of items to return. (You received this token
+        /// from a previous call.)
+        /// </para>
         /// </summary>
         public string NextToken
         {

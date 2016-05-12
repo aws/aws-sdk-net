@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// This is the response object from the SendCommand operation.
+    /// This is the response object from the ModifyDocumentPermission operation.
     /// </summary>
-    public partial class SendCommandResponse : AmazonWebServiceResponse
+    public partial class ModifyDocumentPermissionResponse : AmazonWebServiceResponse
     {
-        private Command _command;
-
-        /// <summary>
-        /// Gets and sets the property Command. 
-        /// <para>
-        /// The request as it was received by SSM. Also provides the command ID which can be used
-        /// future references to this request.
-        /// </para>
-        /// </summary>
-        public Command Command
-        {
-            get { return this._command; }
-            set { this._command = value; }
-        }
-
-        // Check to see if Command property is set
-        internal bool IsSetCommand()
-        {
-            return this._command != null;
-        }
 
     }
 }

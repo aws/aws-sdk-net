@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteDocument operation
+    /// Response Unmarshaller for ModifyDocumentPermission operation
     /// </summary>  
-    public class DeleteDocumentResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ModifyDocumentPermissionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteDocumentResponse response = new DeleteDocumentResponse();
+            ModifyDocumentPermissionResponse response = new ModifyDocumentPermissionResponse();
 
 
             return response;
@@ -61,9 +61,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AssociatedInstances"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DocumentLimitExceeded"))
             {
-                return new AssociatedInstancesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DocumentLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DocumentPermissionLimit"))
+            {
+                return new DocumentPermissionLimitException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
             {
@@ -73,16 +77,16 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 return new InvalidDocumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDocumentOperation"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPermissionType"))
             {
-                return new InvalidDocumentOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidPermissionTypeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteDocumentResponseUnmarshaller _instance = new DeleteDocumentResponseUnmarshaller();        
+        private static ModifyDocumentPermissionResponseUnmarshaller _instance = new ModifyDocumentPermissionResponseUnmarshaller();        
 
-        internal static DeleteDocumentResponseUnmarshaller GetInstance()
+        internal static ModifyDocumentPermissionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDocumentResponseUnmarshaller Instance
+        public static ModifyDocumentPermissionResponseUnmarshaller Instance
         {
             get
             {

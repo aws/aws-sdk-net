@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DocumentIdentifier
     {
         private string _name;
+        private string _owner;
         private List<string> _platformTypes = new List<string>();
 
         /// <summary>
@@ -68,7 +69,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlatformTypes. The operating system platform.
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The AWS user account of the person who created the document.
+        /// </para>
+        /// </summary>
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformTypes. 
+        /// <para>
+        /// The operating system platform. 
+        /// </para>
         /// </summary>
         public List<string> PlatformTypes
         {

@@ -36,8 +36,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key. The name of the filter. For example, requested date
-        /// and time.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The name of the filter. For example, requested date and time.
+        /// </para>
         /// </summary>
         public CommandFilterKey Key
         {
@@ -52,7 +54,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value. The filter value. For example: June 30, 2015.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The filter value. For example: June 30, 2015.
+        /// </para>
         /// </summary>
         public string Value
         {

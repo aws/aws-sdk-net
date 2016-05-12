@@ -33,8 +33,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  
     /// <para>
-    /// After you create an SSM document, you can use <a>CreateAssociation</a> to associate
-    /// it with one or more running instances.
+    /// After you create an SSM document, you can use CreateAssociation to associate it with
+    /// one or more running instances.
     /// </para>
     /// </summary>
     public partial class CreateDocumentRequest : AmazonSimpleSystemsManagementRequest
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates CreateDocumentRequest with the parameterized properties
         /// </summary>
         /// <param name="name">A name for the SSM document.</param>
-        /// <param name="content">A valid JSON string. For more information about the contents of this string, see <a href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM Document</a>.</param>
+        /// <param name="content">A valid JSON string.</param>
         public CreateDocumentRequest(string name, string content)
         {
             _name = name;
@@ -61,9 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// A valid JSON string. For more information about the contents of this string, see <a
-        /// href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM
-        /// Document</a>.
+        /// A valid JSON string.
         /// </para>
         /// </summary>
         public string Content

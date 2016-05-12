@@ -43,6 +43,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeDocumentRequest.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeDocumentPermissionRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -52,7 +56,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentRequest.Name</property>
-    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+    <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.Content</property>
@@ -60,7 +64,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.Name</property>
-    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+    <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListAssociationsRequest.MaxResults</property>
@@ -98,15 +102,23 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListDocumentsRequest.MaxResults</property>
     <min>1</min>
-    <max>25</max>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ModifyDocumentPermissionRequest.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.Comment</property>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.DocumentHash</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.DocumentName</property>
-    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+    <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.OutputS3BucketName</property>
@@ -231,8 +243,12 @@
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.Hash</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.Name</property>
-    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+    <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentFilter.Value</property>
@@ -240,7 +256,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentIdentifier.Name</property>
-    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+    <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.AgentVersion</property>
