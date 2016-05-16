@@ -56,7 +56,7 @@ namespace Amazon.IoT
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonIoTClient with the credentials loaded from the application's

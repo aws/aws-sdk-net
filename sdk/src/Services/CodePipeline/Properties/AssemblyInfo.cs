@@ -15,8 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
-#elif DNX
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
+#elif CORECLR
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

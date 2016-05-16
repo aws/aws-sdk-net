@@ -79,7 +79,7 @@ namespace Amazon.SQS
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonSQSClient with the credentials loaded from the application's

@@ -15,8 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Glacier. Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Glacier. Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.")]
-#elif DNX
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon Glacier. Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.")]
+#elif CORECLR
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Glacier. Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

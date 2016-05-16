@@ -243,7 +243,7 @@ namespace Amazon.Runtime
                 {
                     if (e.InnerException is IOException)
                         throw e.InnerException;
-#if !DNX
+#if !CORECLR
                     if (e.InnerException is WebException)
                         throw e.InnerException;
 #endif

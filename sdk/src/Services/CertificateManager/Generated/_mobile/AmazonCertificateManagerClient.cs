@@ -53,7 +53,7 @@ namespace Amazon.CertificateManager
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCertificateManagerClient with the credentials loaded from the application's

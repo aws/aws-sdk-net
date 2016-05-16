@@ -56,7 +56,7 @@ namespace Amazon.ECS
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonECSClient with the credentials loaded from the application's

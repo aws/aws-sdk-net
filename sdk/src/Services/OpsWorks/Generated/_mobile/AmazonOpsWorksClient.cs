@@ -96,7 +96,7 @@ namespace Amazon.OpsWorks
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's

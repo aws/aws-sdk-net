@@ -21,8 +21,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  <#=this.Config.ServiceModel.ServiceFullName#>. <#=this.Config.AssemblyDescription#>")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - <#=this.Config.ServiceModel.ServiceFullName#>. <#=this.Config.AssemblyDescription#>")]
-#elif DNX
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- <#=this.Config.ServiceModel.ServiceFullName#>. <#=this.Config.AssemblyDescription#>")]
+#elif CORECLR
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- <#=this.Config.ServiceModel.ServiceFullName#>. <#=this.Config.AssemblyDescription#>")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

@@ -115,7 +115,7 @@ namespace Amazon.CodeDeploy
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCodeDeployClient with the credentials loaded from the application's

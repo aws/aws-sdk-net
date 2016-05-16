@@ -22,7 +22,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util.Internal;
 
-#if PCL || DNX
+#if PCL || CORECLR
 using Amazon.MissingTypes;
 using Amazon.Runtime.Internal.Util;
 #endif
@@ -351,7 +351,7 @@ namespace Amazon.DynamoDBv2
         {
             var typedConverterTypeInfo = TypeFactory.GetTypeInfo(typeof(Converter));
             var assembly = TypeFactory.GetTypeInfo(typeof(DynamoDBEntryConversion)).Assembly;
-#if DNX
+#if CORECLR
             var allTypeInfos = assembly.DefinedTypes;
             var allTypes = new List<Type>();
             foreach (var typeInfo in allTypeInfos)

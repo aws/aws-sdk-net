@@ -47,7 +47,7 @@ namespace Amazon.Kinesis
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonKinesisClient with the credentials loaded from the application's

@@ -138,7 +138,7 @@ namespace Amazon.CodePipeline
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCodePipelineClient with the credentials loaded from the application's

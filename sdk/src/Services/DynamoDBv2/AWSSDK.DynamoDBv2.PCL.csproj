@@ -66,7 +66,7 @@
     <Compile Include="Custom\DataModel\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\DataModel\_bcl+dnx+pcl\*.cs">
+    <Compile Include="Custom\DataModel\_bcl+coreclr+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\DataModel\_mobile\*.cs">

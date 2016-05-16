@@ -48,7 +48,7 @@ namespace Amazon.ECR
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonECRClient with the credentials loaded from the application's

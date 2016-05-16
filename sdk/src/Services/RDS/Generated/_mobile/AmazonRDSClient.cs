@@ -72,7 +72,7 @@ namespace Amazon.RDS
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonRDSClient with the credentials loaded from the application's

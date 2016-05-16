@@ -43,7 +43,7 @@ namespace Amazon.Route53
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonRoute53Client with the credentials loaded from the application's

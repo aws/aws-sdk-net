@@ -72,7 +72,7 @@ namespace Amazon.StorageGateway
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonStorageGatewayClient with the credentials loaded from the application's

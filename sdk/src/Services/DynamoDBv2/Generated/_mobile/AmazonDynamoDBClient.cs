@@ -205,7 +205,7 @@ namespace Amazon.DynamoDBv2
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonDynamoDBClient with the credentials loaded from the application's

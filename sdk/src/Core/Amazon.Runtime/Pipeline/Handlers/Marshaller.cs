@@ -97,7 +97,7 @@ namespace Amazon.Runtime.Internal
             }
 #endif
 
-#if DNX
+#if CORECLR
             var method = requestContext.Request.HttpMethod.ToUpperInvariant();
 #else
             var method = requestContext.Request.HttpMethod.ToUpper(CultureInfo.InvariantCulture);

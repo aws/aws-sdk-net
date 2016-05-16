@@ -43,7 +43,7 @@ namespace Amazon.CloudFront
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's

@@ -50,7 +50,7 @@ namespace Amazon.SimpleEmail
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with the credentials loaded from the application's

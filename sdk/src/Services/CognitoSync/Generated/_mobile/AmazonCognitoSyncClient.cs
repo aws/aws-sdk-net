@@ -67,7 +67,7 @@ namespace Amazon.CognitoSync
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCognitoSyncClient with the credentials loaded from the application's

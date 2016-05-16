@@ -15,8 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
-#elif DNX
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
+#elif CORECLR
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

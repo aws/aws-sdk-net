@@ -43,7 +43,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonAWSMarketplaceCommerceAnalyticsClient with the credentials loaded from the application's

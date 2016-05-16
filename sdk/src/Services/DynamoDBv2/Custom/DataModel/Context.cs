@@ -47,10 +47,10 @@ namespace Amazon.DynamoDBv2.DataModel
         public Dictionary<Type, IPropertyConverter> ConverterCache { get; private set; }
 
         #endregion
-        
+
         #region Constructors
 
-#if !(PCL || UNITY || DNX)
+#if !(PCL || UNITY || CORECLR)
 
         /// <summary>
         /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient

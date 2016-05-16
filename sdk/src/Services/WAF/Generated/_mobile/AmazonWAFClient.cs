@@ -46,7 +46,7 @@ namespace Amazon.WAF
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonWAFClient with the credentials loaded from the application's

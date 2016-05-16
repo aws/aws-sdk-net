@@ -102,7 +102,7 @@ namespace Amazon.IdentityManagement
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with the credentials loaded from the application's

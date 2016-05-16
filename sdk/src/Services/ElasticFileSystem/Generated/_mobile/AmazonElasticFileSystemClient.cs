@@ -43,7 +43,7 @@ namespace Amazon.ElasticFileSystem
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonElasticFileSystemClient with the credentials loaded from the application's

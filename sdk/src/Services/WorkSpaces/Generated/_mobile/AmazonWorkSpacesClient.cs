@@ -47,7 +47,7 @@ namespace Amazon.WorkSpaces
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonWorkSpacesClient with the credentials loaded from the application's

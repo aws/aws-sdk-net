@@ -46,7 +46,7 @@ namespace Amazon.ElasticMapReduce
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's

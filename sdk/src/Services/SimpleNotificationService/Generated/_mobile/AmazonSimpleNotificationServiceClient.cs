@@ -59,7 +59,7 @@ namespace Amazon.SimpleNotificationService
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with the credentials loaded from the application's

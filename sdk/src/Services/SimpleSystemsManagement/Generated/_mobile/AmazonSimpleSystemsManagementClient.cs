@@ -215,7 +215,7 @@ namespace Amazon.SimpleSystemsManagement
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonSimpleSystemsManagementClient with the credentials loaded from the application's

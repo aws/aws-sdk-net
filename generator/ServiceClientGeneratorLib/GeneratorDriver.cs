@@ -1015,8 +1015,8 @@ namespace ServiceClientGenerator
             {
                 { "AssemblyName", assemblyName },
                 { "AssemblyTitle",  assemblyTitle },
-                { "DnxSupport",  Configuration.DnxSupport },
-                { "DNXCoreAssemblyName",  Configuration.ServiceFolderName },
+                { "CoreCLRSupport",  Configuration.CoreCLRSupport },
+                { "CoreCLRCoreAssemblyName",  Configuration.ServiceFolderName },
                 { "NuGetTitle",  nugetTitle },
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },
@@ -1097,9 +1097,9 @@ namespace ServiceClientGenerator
             command.Execute();
         }
 
-        public static void UpdateDNXCoreTestDependencies(GenerationManifest manifest, GeneratorOptions options)
+        public static void UpdateCoreCLRTestDependencies(GenerationManifest manifest, GeneratorOptions options)
         {
-            var projectJsonPath = Path.Combine(options.SdkRootFolder, "test/DNXCore/IntegrationTests/project.json");
+            var projectJsonPath = Path.Combine(options.SdkRootFolder, "test/CoreCLR/IntegrationTests/project.json");
             var originalProjectJson = File.ReadAllText(projectJsonPath);
 
             var rootData = JsonMapper.ToObject(originalProjectJson);
@@ -1112,7 +1112,7 @@ namespace ServiceClientGenerator
                 if (service.ParentConfig != null)
                     continue;
 
-                if(service.DnxSupport && dependency[service.ServiceFolderName] == null)
+                if(service.CoreCLRSupport && dependency[service.ServiceFolderName] == null)
                 {
                     hasChanged = true;
                     dependency[service.ServiceFolderName] = "1.0.0-*";

@@ -43,7 +43,7 @@ namespace Amazon.S3
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonS3Client with the credentials loaded from the application's

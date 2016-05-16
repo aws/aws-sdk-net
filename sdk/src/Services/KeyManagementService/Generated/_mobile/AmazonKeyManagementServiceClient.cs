@@ -127,7 +127,7 @@ namespace Amazon.KeyManagementService
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonKeyManagementServiceClient with the credentials loaded from the application's

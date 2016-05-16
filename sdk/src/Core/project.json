@@ -33,7 +33,7 @@
   ],
 
   "compilationOptions": {
-    "define": [ "DNX", "AWS_ASYNC_API" ]
+    "define": [ "CORECLR", "AWS_ASYNC_API" ]
   },
 
   "frameworks": {

@@ -48,7 +48,7 @@ namespace Amazon.AutoScaling
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's

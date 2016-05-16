@@ -99,7 +99,7 @@ namespace Amazon.Util.Internal
                 environmentInfo.FrameworkUserAgent,
                 environmentInfo.PlatformUserAgent,
                 _customData).Trim();
-#elif DNX
+#elif CORECLR
             return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5}",
                 _userAgentBaseName,
                 serviceSdkVersion,

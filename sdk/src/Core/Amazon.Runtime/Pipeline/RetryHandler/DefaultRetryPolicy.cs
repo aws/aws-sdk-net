@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Internal
     {
         private int _maxBackoffInMilliseconds = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
 
-#if !DNX
+#if !CORECLR
         // Set of web exception status codes to retry on.
         private ICollection<WebExceptionStatus> _webExceptionStatusesToRetryOn = new HashSet<WebExceptionStatus>
         {
@@ -77,7 +77,7 @@ namespace Amazon.Runtime.Internal
             get { return _errorCodesToRetryOn; }
         }
 
-#if !DNX
+#if !CORECLR
         /// <summary>
         /// List of WebExceptionStatus for a WebException which will be retried.
         /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.Runtime.Internal
             if (exception is IOException)
             {
 
-#if !PCL && !DNX  // ThreadAbortException is not PCL and CoreCLR
+#if !PCL && !CORECLR  // ThreadAbortException is not PCL and CoreCLR
 
                 // Don't retry IOExceptions that are caused by a ThreadAbortException
                 if (IsInnerException<ThreadAbortException>(exception))
@@ -163,7 +163,7 @@ namespace Amazon.Runtime.Internal
                     }
                 }
 
-#if !DNX
+#if !CORECLR
                 WebException webException;
                 if (IsInnerException<WebException>(exception, out webException))
                 {

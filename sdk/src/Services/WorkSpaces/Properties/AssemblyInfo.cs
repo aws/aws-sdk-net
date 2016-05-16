@@ -15,8 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon WorkSpaces. Amazon WorkSpaces is a managed desktop computing service in the cloud.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon WorkSpaces. Amazon WorkSpaces is a managed desktop computing service in the cloud.")]
-#elif DNX
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon WorkSpaces. Amazon WorkSpaces is a managed desktop computing service in the cloud.")]
+#elif CORECLR
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon WorkSpaces. Amazon WorkSpaces is a managed desktop computing service in the cloud.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

@@ -66,7 +66,7 @@ namespace Amazon.DataPipeline
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonDataPipelineClient with the credentials loaded from the application's

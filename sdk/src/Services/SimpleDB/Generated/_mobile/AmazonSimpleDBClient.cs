@@ -60,7 +60,7 @@ namespace Amazon.SimpleDB
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonSimpleDBClient with the credentials loaded from the application's

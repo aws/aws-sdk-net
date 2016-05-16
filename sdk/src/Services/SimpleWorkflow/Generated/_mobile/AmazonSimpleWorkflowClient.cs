@@ -62,7 +62,7 @@ namespace Amazon.SimpleWorkflow
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonSimpleWorkflowClient with the credentials loaded from the application's

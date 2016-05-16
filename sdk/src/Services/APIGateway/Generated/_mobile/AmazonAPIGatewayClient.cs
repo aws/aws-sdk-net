@@ -49,7 +49,7 @@ namespace Amazon.APIGateway
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonAPIGatewayClient with the credentials loaded from the application's

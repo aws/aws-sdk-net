@@ -47,7 +47,7 @@ namespace Amazon.DirectoryService
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonDirectoryServiceClient with the credentials loaded from the application's

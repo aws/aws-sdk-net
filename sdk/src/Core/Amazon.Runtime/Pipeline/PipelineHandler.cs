@@ -154,7 +154,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
         /// <returns>A task that represents the asynchronous operation.</returns>
-#if !DNX
+#if !CORECLR
         [System.Diagnostics.DebuggerHidden]
 #endif
         public virtual System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)

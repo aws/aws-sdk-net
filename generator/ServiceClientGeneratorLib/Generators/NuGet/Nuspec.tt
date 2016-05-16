@@ -140,13 +140,13 @@
 		}
 	}
 
-	if(Convert.ToBoolean(this.Session["DnxSupport"]))
+	if(Convert.ToBoolean(this.Session["CoreCLRSupport"]))
 	{
 #>
 
-	<file src="..\..\..\artifacts\bin\\<#=this.Session["AssemblyName"]#>.Dnx\Release\dnxcore50\\<#=this.Session["DNXCoreAssemblyName"]#>.dll" target="lib\dnxcore50"/>
-	<file src="..\..\..\artifacts\bin\\<#=this.Session["AssemblyName"]#>.Dnx\Release\dnxcore50\\<#=this.Session["DNXCoreAssemblyName"]#>.xml" target="lib\dnxcore50"/>
-	<file src="..\..\..\artifacts\bin\\<#=this.Session["AssemblyName"]#>.Dnx\Release\dnxcore50\\<#=this.Session["DNXCoreAssemblyName"]#>.pdb" target="lib\dnxcore50"/>
+	<file src="..\..\..\artifacts\bin\\<#=this.Session["AssemblyName"]#>.Dnx\Release\dnxcore50\\<#=this.Session["CoreCLRCoreAssemblyName"]#>.dll" target="lib\dnxcore50"/>
+	<file src="..\..\..\artifacts\bin\\<#=this.Session["AssemblyName"]#>.Dnx\Release\dnxcore50\\<#=this.Session["CoreCLRCoreAssemblyName"]#>.xml" target="lib\dnxcore50"/>
+	<file src="..\..\..\artifacts\bin\\<#=this.Session["AssemblyName"]#>.Dnx\Release\dnxcore50\\<#=this.Session["CoreCLRCoreAssemblyName"]#>.pdb" target="lib\dnxcore50"/>
 <#
 	}
 #>

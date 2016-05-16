@@ -43,7 +43,7 @@ namespace Amazon.MachineLearning
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonMachineLearningClient with the credentials loaded from the application's

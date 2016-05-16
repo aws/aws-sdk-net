@@ -65,7 +65,7 @@ namespace Amazon.CloudTrail
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCloudTrailClient with the credentials loaded from the application's

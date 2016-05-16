@@ -68,7 +68,7 @@ namespace Amazon.CloudFormation
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCloudFormationClient with the credentials loaded from the application's

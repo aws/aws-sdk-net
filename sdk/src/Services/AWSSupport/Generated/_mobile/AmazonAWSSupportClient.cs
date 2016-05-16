@@ -91,7 +91,7 @@ namespace Amazon.AWSSupport
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonAWSSupportClient with the credentials loaded from the application's

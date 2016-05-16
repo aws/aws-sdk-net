@@ -77,7 +77,7 @@ namespace Amazon.CodeCommit
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCodeCommitClient with the credentials loaded from the application's

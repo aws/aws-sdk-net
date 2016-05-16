@@ -15,8 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
-#elif DNX
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
+#elif CORECLR
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

@@ -48,7 +48,7 @@ namespace Amazon.Inspector
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonInspectorClient with the credentials loaded from the application's

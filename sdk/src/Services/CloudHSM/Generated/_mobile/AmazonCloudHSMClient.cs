@@ -43,7 +43,7 @@ namespace Amazon.CloudHSM
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCloudHSMClient with the credentials loaded from the application's

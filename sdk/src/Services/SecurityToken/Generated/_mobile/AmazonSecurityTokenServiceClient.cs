@@ -102,7 +102,7 @@ namespace Amazon.SecurityToken
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's

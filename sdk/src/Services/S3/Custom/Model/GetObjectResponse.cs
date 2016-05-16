@@ -482,7 +482,7 @@ namespace Amazon.S3.Model
 
         private void ValidateWrittenStreamSize(long bytesWritten)
         {
-#if !PCL && !DNX
+#if !PCL && !CORECLR
             // Check if response stream or it's base stream is a AESDecryptionStream
             var stream = Runtime.Internal.Util.WrapperStream.SearchWrappedStream(this.ResponseStream,
                 (s => s is Runtime.Internal.Util.DecryptStream));
@@ -506,7 +506,7 @@ namespace Amazon.S3.Model
             }
         }
 
-#if BCL45 || DNX
+#if BCL45 || CORECLR
         /// <summary>
         /// Writes the content of the ResponseStream a file indicated by the filePath argument.
         /// </summary>
@@ -528,7 +528,7 @@ namespace Amazon.S3.Model
             try
             {
                 long current = 0;
-#if DNX
+#if CORECLR
                 Stream stream = this.ResponseStream;
 #else
                 Stream stream = new BufferedStream(this.ResponseStream);

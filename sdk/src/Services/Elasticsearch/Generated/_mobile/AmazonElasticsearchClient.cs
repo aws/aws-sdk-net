@@ -54,7 +54,7 @@ namespace Amazon.Elasticsearch
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonElasticsearchClient with the credentials loaded from the application's

@@ -60,7 +60,7 @@ namespace Amazon.ElastiCache
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's

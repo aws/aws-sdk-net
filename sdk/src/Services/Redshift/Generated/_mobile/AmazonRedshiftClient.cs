@@ -73,7 +73,7 @@ namespace Amazon.Redshift
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonRedshiftClient with the credentials loaded from the application's

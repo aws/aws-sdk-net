@@ -250,7 +250,7 @@ namespace Amazon.Runtime
 
     }
 
-#if BCL || DNX
+#if BCL || CORECLR
 
     /// <summary>
     /// Credentials that are retrieved using the stored profile. The SDK Store is searched which is the credentials store shared with the SDK, PowerShell CLI and Toolkit. 
@@ -313,7 +313,7 @@ namespace Amazon.Runtime
 
             // If not overriding the credentials lookup location check the SDK Store for credentials. If an override is being used then
             // assume the intent is to use the credentials file.
-#if BCL || DNX
+#if BCL || CORECLR
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(lookupName) && ProfileManager.IsAvailable)
             {
                 AWSCredentialsProfile.Validate(lookupName);
@@ -1220,7 +1220,7 @@ namespace Amazon.Runtime
 #if BCL
                 () => new EnvironmentAWSCredentials(),
 #endif
-#if BCL || DNX
+#if BCL || CORECLR
                 () => new StoredProfileAWSCredentials(),
                 () => new EnvironmentVariablesAWSCredentials(),
 #endif

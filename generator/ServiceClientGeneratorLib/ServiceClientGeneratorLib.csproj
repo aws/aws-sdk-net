@@ -127,20 +127,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AndroidProjectFile.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generators\ProjectFiles\DnxProjectFile.cs">
+    <Compile Include="Generators\ProjectFiles\CoreCLRProjectFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DnxProjectFile.tt</DependentUpon>
+      <DependentUpon>CoreCLRProjectFile.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generators\ProjectFiles\DnxProjectJson.cs">
+    <Compile Include="Generators\ProjectFiles\CoreCLRProjectJson.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DnxProjectJson.tt</DependentUpon>
+      <DependentUpon>CoreCLRProjectJson.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generators\ProjectFiles\DnxSolutionFile.cs">
+    <Compile Include="Generators\ProjectFiles\CoreCLRSolutionFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DnxSolutionFile.tt</DependentUpon>
+      <DependentUpon>CoreCLRSolutionFile.tt</DependentUpon>
     </Compile>
     <Compile Include="Generators\CodeAnalysis\CodeAnalysisProjectFile.cs">
       <AutoGen>True</AutoGen>
@@ -694,17 +694,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Generators\ProjectFiles\DnxProjectFile.tt">
+    <Content Include="Generators\ProjectFiles\CoreCLRProjectFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>DnxProjectFile.cs</LastGenOutput>
+      <LastGenOutput>CoreCLRProjectFile.cs</LastGenOutput>
     </Content>
-    <Content Include="Generators\ProjectFiles\DnxProjectJson.tt">
+    <Content Include="Generators\ProjectFiles\CoreCLRProjectJson.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>DnxProjectJson.cs</LastGenOutput>
+      <LastGenOutput>CoreCLRProjectJson.cs</LastGenOutput>
     </Content>
-    <Content Include="Generators\ProjectFiles\DnxSolutionFile.tt">
+    <Content Include="Generators\ProjectFiles\CoreCLRSolutionFile.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>DnxSolutionFile.cs</LastGenOutput>
+      <LastGenOutput>CoreCLRSolutionFile.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -846,11 +846,15 @@ namespace Amazon.Util
 
         public static string DownloadStringContent(Uri uri)
         {
-#if DNX
+#if CORECLR
             using (var client = new System.Net.Http.HttpClient())
             {
                 var task = client.GetStringAsync(uri);
-                return task.Result;
+                var content = AsyncHelpers.RunSync<string>(() =>
+                {
+                    return client.GetStringAsync(uri);
+                });
+                return content;
             }
 #else
             HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
@@ -865,7 +869,7 @@ namespace Amazon.Util
 
         public static Stream OpenStream(Uri uri)
         {
-#if DNX
+#if CORECLR
             using (var client = new System.Net.Http.HttpClient())
             {
                 var task = client.GetStreamAsync(uri);

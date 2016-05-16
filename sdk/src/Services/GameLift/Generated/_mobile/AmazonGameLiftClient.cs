@@ -96,7 +96,7 @@ namespace Amazon.GameLift
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonGameLiftClient with the credentials loaded from the application's

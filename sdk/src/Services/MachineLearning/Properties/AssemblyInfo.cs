@@ -15,8 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
-#elif DNX
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (DNX)- Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
+#elif CORECLR
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Machine Learning. Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

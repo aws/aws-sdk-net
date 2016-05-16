@@ -48,7 +48,7 @@ namespace Amazon
     /// </summary>
     public class RegionEndpoint
     {
-#if DNX
+#if CORECLR
         // The shared endpoint rules used by other AWS SDKs.
         const string REGIONS_FILE = "Core.endpoints.json";
         // The .NET SDK specific customization to support legacy decisions made for endpoints.

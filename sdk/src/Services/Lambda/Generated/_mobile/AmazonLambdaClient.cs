@@ -53,7 +53,7 @@ namespace Amazon.Lambda
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonLambdaClient with the credentials loaded from the application's

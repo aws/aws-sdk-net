@@ -46,7 +46,7 @@ namespace Amazon.ElasticTranscoder
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with the credentials loaded from the application's

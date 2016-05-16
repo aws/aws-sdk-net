@@ -53,7 +53,7 @@ namespace Amazon.DirectConnect
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonDirectConnectClient with the credentials loaded from the application's

@@ -82,7 +82,7 @@ namespace Amazon.CloudWatchLogs
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCloudWatchLogsClient with the credentials loaded from the application's

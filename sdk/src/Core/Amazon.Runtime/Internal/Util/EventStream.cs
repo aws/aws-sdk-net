@@ -120,7 +120,7 @@ namespace Amazon.Runtime.Internal.Util
             throw new NotImplementedException();
         }
 
-#if !PCL && !DNX
+#if !PCL && !CORECLR
         public override IAsyncResult BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, Object state)
         {
             var result = new AsyncResult()

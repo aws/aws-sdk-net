@@ -44,7 +44,7 @@ namespace Amazon.DeviceFarm
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonDeviceFarmClient with the credentials loaded from the application's

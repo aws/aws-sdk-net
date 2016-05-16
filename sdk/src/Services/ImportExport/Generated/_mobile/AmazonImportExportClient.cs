@@ -48,7 +48,7 @@ namespace Amazon.ImportExport
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials loaded from the application's

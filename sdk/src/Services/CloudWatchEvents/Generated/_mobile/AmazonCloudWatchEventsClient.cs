@@ -57,7 +57,7 @@ namespace Amazon.CloudWatchEvents
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCloudWatchEventsClient with the credentials loaded from the application's

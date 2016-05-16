@@ -72,7 +72,7 @@ namespace Amazon.ElasticBeanstalk
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with the credentials loaded from the application's

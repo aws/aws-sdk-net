@@ -48,7 +48,7 @@ namespace Amazon.EC2
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonEC2Client with the credentials loaded from the application's

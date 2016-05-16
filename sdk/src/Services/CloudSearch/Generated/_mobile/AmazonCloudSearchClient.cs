@@ -56,7 +56,7 @@ namespace Amazon.CloudSearch
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's

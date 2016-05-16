@@ -203,10 +203,10 @@ namespace ServiceClientGenerator
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
             }
 
-            if (serviceConfiguration.DnxSupport)
-                GenerateDnxProjectFiles(serviceFilesRoot, serviceConfiguration, assemblyName);
+            if (serviceConfiguration.CoreCLRSupport)
+                GenerateCoreCLRProjectFiles(serviceFilesRoot, serviceConfiguration, assemblyName);
             else
-                Console.WriteLine("Skipping DNX support for {0}", serviceConfiguration.BaseName);
+                Console.WriteLine("Skipping CoreCLR support for {0}", serviceConfiguration.BaseName);
         }
 
         /// <summary>
@@ -244,9 +244,9 @@ namespace ServiceClientGenerator
         }
 
 
-        private void GenerateDnxProjectFiles(string serviceFilesRoot, ServiceConfiguration serviceConfiguration, string assemblyName)
+        private void GenerateCoreCLRProjectFiles(string serviceFilesRoot, ServiceConfiguration serviceConfiguration, string assemblyName)
         {
-            var projectFilename = string.Concat(assemblyName, ".Dnx.xproj");
+            var projectFilename = string.Concat(assemblyName, ".CoreCLR.xproj");
             string projectGuid;
             if (File.Exists(Path.Combine(serviceFilesRoot, projectFilename)))
             {
@@ -267,7 +267,7 @@ namespace ServiceClientGenerator
                 templateSession["AssemblyName"] = assemblyName;
                 templateSession["ProjectGuid"] = projectGuid;
 
-                DnxProjectFile projectFileTemplate = new DnxProjectFile();
+                CoreCLRProjectFile projectFileTemplate = new CoreCLRProjectFile();
                 projectFileTemplate.Session = templateSession;
                 var content = projectFileTemplate.TransformText();
 
@@ -288,7 +288,7 @@ namespace ServiceClientGenerator
 
                 templateSession["ServiceDependencies"] = dependencies;
 
-                var projectJsonTemplate = new DnxProjectJson();
+                var projectJsonTemplate = new CoreCLRProjectJson();
                 projectJsonTemplate.Session = templateSession;
 
                 var content = projectJsonTemplate.TransformText();

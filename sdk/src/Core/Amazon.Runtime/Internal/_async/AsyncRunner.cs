@@ -31,7 +31,7 @@ namespace Amazon.Runtime.Internal
 
         public static Task<T> Run<T>(Func<T> action, CancellationToken cancellationToken)
         {
-#if PCL || DNX
+#if PCL || CORECLR
             Task<T> task = Task.Run<T>(action);
             return task;
 #else

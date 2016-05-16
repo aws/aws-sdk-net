@@ -75,7 +75,7 @@ namespace Amazon.ConfigService
         
         #region Constructors
 
-#if DNX
+#if CORECLR
     
         /// <summary>
         /// Constructs AmazonConfigServiceClient with the credentials loaded from the application's
