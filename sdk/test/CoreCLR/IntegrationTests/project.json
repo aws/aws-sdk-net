@@ -78,19 +78,20 @@
     "commands"     : {
         "test" : "xunit.runner.dnx"
     },
-    "frameworks"   : {
-        "dnxcore50" : {
-            "dependencies" : {
-                "Microsoft.CSharp" : "4.0.0",
-                "System.Collections" : "4.0.10",
-                "System.Linq"        : "4.0.0",
-                "System.Threading"   : "4.0.10",
-                "Microsoft.Framework.Runtime.Abstractions" : "1.0.0-beta6",
-                "Microsoft.Framework.TestAdapter"          : "1.0.0-beta6",
-                "Microsoft.Framework.TestHost"             : "1.0.0-beta6",
-                "xunit"                                    : "2.1.0",
-                "xunit.runner.dnx"                         : "2.1.0-rc1-build204"
-            }
-        }
+  "frameworks": {
+    "dnxcore50": {
+      "imports": "portable-net45+win8",
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-rc2-24027",
+        "System.Collections": "4.0.11-rc2-24027",
+        "System.Linq": "4.1.0-rc2-24027",
+        "System.Threading": "4.0.11-rc2-24027",
+        "Microsoft.Framework.Runtime.Abstractions": "1.0.0-beta6",
+        "Microsoft.Framework.TestAdapter": "1.0.0-beta6",
+        "Microsoft.Framework.TestHost": "1.0.0-beta6",
+        "xunit": "2.1.0",
+        "xunit.runner.dnx": "2.1.0-rc1-build204"
+      }
     }
+  }
 }
