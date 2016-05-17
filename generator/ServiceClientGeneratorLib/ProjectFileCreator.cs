@@ -287,6 +287,7 @@ namespace ServiceClientGenerator
                 }
 
                 templateSession["ServiceDependencies"] = dependencies;
+                templateSession["AssemblyName"] = assemblyName;
 
                 var projectJsonTemplate = new CoreCLRProjectJson();
                 projectJsonTemplate.Session = templateSession;

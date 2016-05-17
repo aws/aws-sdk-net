@@ -28,10 +28,10 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("{\r\n  \"version\": \"1.0.0-*\",\r\n  \"description\": \"\",\r\n  \"authors\": [ \"\" ],\r\n  \"tags\":" +
-                    " [ \"\" ],\r\n  \"projectUrl\": \"\",\r\n  \"licenseUrl\": \"\",\r\n\r\n  \"dependencies\": {\r\n");
+            this.Write("{\r\n  \"version\": \"1.0.0-*\",\r\n  \"description\": \"\",\r\n  \"authors\": [ \"\" ],\r\n\r\n  \"depe" +
+                    "ndencies\": {\r\n");
             
-            #line 15 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
+            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
 
     if(this.Session.ContainsKey("ServiceDependencies"))
     {
@@ -43,14 +43,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    \"");
             
-            #line 21 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
+            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency));
             
             #line default
             #line hidden
             this.Write("\": \"1.0.0-*\",\r\n");
             
-            #line 22 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
+            #line 19 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
 
         }
     }
@@ -58,43 +58,45 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line default
             #line hidden
-            this.Write(@"    ""Core"": ""1.0.0-*""
+            this.Write("    \"Core\": \"1.0.0-*\"\r\n  },\r\n\r\n  \"buildOptions\": {\r\n    \"outputName\": \"");
+            
+            #line 27 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
+            
+            #line default
+            #line hidden
+            this.Write(@""",
+    ""define"": [ ""CORECLR"", ""AWS_ASYNC_API"" ],
+    ""compile"": {
+      ""exclude"": [
+        ""**/_pcl/*"",
+        ""**/_pcl-sl/*"",
+        ""**/_bcl35/*"",
+        ""**/_bcl45/*"",
+        ""**/_bcl/*"",
+        ""**/_bcl+sl/*"",
+        ""**/_bcl+unity/*"",
+        ""**/_unity/*"",
+        ""**/_android/*"",
+        ""**/_ios/*"",
+        ""**/_pclReference/*"",
+        ""**/_win8/*"",
+        ""**/_winPhone81/*"",
+        ""**/_winPhoneSilverlight8/*""
+      ]
+    }
   },
 
-  ""exclude"": [
-    ""**/_pcl/*"",
-    ""**/_pcl-sl/*"",
-    ""**/_bcl35/*"",
-    ""**/_bcl45/*"",
-    ""**/_bcl/*"",
-	""**/_bcl+pcl/*"",
-    ""**/_bcl+sl/*"",
-    ""**/_bcl+unity/*"",
-    ""**/_unity/*"",
-    ""**/_android/*"",
-    ""**/_ios/*"",
-    ""**/_pclReference/*"",
-    ""**/_win8/*"",
-    ""**/_winPhone81/*"",
-    ""**/_winPhoneSilverlight8/*"",
-    ""**/_winstorage/*"",
-    ""**/Custom/SyncManager/*""
-
-  ],
-
-  ""compilationOptions"": {
-    ""define"": [ ""CORECLR"", ""AWS_ASYNC_API"" ]
-  },
 
   ""frameworks"": {
-    ""dnxcore50"": {
-      ""compilationOptions"": {
-        ""define"": [ ""ADD_SUPPORT_IORDERED_DICTIONARY"", ""ADD_SUPPORT_ICLONEABLE""	 ]
+    ""netstandard1.5"": {
+      ""buildOptions"": {
+        ""define"": [ ""ADD_SUPPORT_IORDERED_DICTIONARY"", ""ADD_SUPPORT_ICLONEABLE"" ]
       },
       ""dependencies"": {
-        ""System.Collections"": ""4.0.10"",
-        ""System.Linq"": ""4.0.0"",
-        ""Microsoft.CSharp"": ""4.0.0""
+        ""System.Collections"": ""4.0.11-rc2-24027"",
+        ""System.Linq"": ""4.1.0-rc2-24027"",
+        ""Microsoft.CSharp"": ""4.0.1-rc2-24027""
       }
     }
   }

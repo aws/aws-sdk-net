@@ -52,7 +52,7 @@ namespace Amazon.Runtime.Internal.Settings
                 if (!CryptUnprotectData(ref encryptedBlob, "psw", ref dataOption, IntPtr.Zero, ref prompt, flags, ref unencryptedBlob))
                 {
                     int errCode = Marshal.GetLastWin32Error();
-                    throw new AmazonClientException("CryptProtectData failed.", new Win32Exception(errCode));
+                    throw new AmazonClientException("CryptProtectData failed. Error Code: " + errCode);
                 }
 
                 byte[] outData = new byte[unencryptedBlob.cbData];
@@ -83,7 +83,7 @@ namespace Amazon.Runtime.Internal.Settings
                 if (!CryptProtectData(ref unencryptedBlob, "psw", ref dataOption, IntPtr.Zero, ref prompt, flags, ref encryptedBlob))
                 {
                     int errCode = Marshal.GetLastWin32Error();
-                    throw new AmazonClientException("CryptProtectData failed.", new Win32Exception(errCode));
+                    throw new AmazonClientException("CryptProtectData failed. Error Code: " + errCode);
                 }
 
                 byte[] outData = new byte[encryptedBlob.cbData];

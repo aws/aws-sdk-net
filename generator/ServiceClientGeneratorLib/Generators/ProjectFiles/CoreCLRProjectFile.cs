@@ -34,7 +34,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <VisualStudioVersion Condition=""'$(VisualStudioVersion)' == ''"">14.0</VisualStudioVersion>
     <VSToolsPath Condition=""'$(VSToolsPath)' == ''"">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-  <Import Project=""$(VSToolsPath)\DNX\Microsoft.DNX.Props"" Condition=""'$(VSToolsPath)' != ''"" />
+  <Import Project=""$(VSToolsPath)\DotNet\Microsoft.DotNet.Props"" Condition=""'$(VSToolsPath)' != ''"" />
   <PropertyGroup Label=""Globals"">
     <ProjectGuid>");
             
@@ -51,8 +51,8 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             this.Write(@"</RootNamespace>
-    <BaseIntermediateOutputPath Condition=""'$(BaseIntermediateOutputPath)'=='' "">..\..\..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
-    <OutputPath Condition=""'$(OutputPath)'=='' "">..\..\..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
+    <BaseIntermediateOutputPath Condition=""'$(BaseIntermediateOutputPath)'=='' "">.\obj</BaseIntermediateOutputPath>
+    <OutputPath Condition=""'$(OutputPath)'=='' "">.\bin\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Label=""Configuration"" Condition=""'$(Configuration)|$(Platform)'=='Debug|AnyCPU'"">
     <AssemblyName>");
@@ -62,19 +62,9 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line default
             #line hidden
-            this.Write(@"</AssemblyName>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SchemaVersion>2.0</SchemaVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=""'$(Configuration)|$(Platform)'=='Debug|AnyCPU'"">
-    <ProduceOutputsOnBuild>True</ProduceOutputsOnBuild>
-  </PropertyGroup>
-  <PropertyGroup Condition=""'$(Configuration)|$(Platform)'=='Release|AnyCPU'"">
-    <ProduceOutputsOnBuild>True</ProduceOutputsOnBuild>
-  </PropertyGroup>
-  <Import Project=""$(VSToolsPath)\DNX\Microsoft.DNX.targets"" Condition=""'$(VSToolsPath)' != ''"" />
-</Project>");
+            this.Write("</AssemblyName>\r\n  </PropertyGroup>\r\n  <PropertyGroup>\r\n    <SchemaVersion>2.0</S" +
+                    "chemaVersion>\r\n  </PropertyGroup>\r\n  <Import Project=\"$(VSToolsPath)\\DotNet\\Micr" +
+                    "osoft.DotNet.targets\" Condition=\"\'$(VSToolsPath)\' != \'\'\" />\r\n</Project>");
             return this.GenerationEnvironment.ToString();
         }
     }
