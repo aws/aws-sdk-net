@@ -47,11 +47,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>TableName</i> - The table that consumed the provisioned throughput.
+        ///  <i>TableName</i> - The table that consumed the provisioned throughput.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>CapacityUnits</i> - The total number of capacity units consumed.
+        ///  <i>CapacityUnits</i> - The total number of capacity units consumed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -101,18 +101,18 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>Keys</i> - An array of primary key attribute values that define specific items
+        ///  <i>Keys</i> - An array of primary key attribute values that define specific items
         /// in the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>AttributesToGet</i> - One or more attributes to be retrieved from the table or
+        ///  <i>AttributesToGet</i> - One or more attributes to be retrieved from the table or
         /// index. By default, all attributes are returned. If a requested attribute is not found,
         /// it does not appear in the result.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>ConsistentRead</i> - The consistency of a read operation. If set to <code>true</code>,
+        ///  <i>ConsistentRead</i> - The consistency of a read operation. If set to <code>true</code>,
         /// then a strongly consistent read is used; otherwise, an eventually consistent read
         /// is used.
         /// </para>

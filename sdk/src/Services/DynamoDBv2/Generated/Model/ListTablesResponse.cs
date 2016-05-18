@@ -64,7 +64,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property TableNames. 
         /// <para>
         /// The names of the tables associated with the current account at the current endpoint.
-        /// The maximum size of this array is 100. 
+        /// The maximum size of this array is 100.
         /// </para>
         ///  
         /// <para>

@@ -35,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    /// <i>CreateTable</i> is an asynchronous operation. Upon receiving a <i>CreateTable</i>
+    ///  <i>CreateTable</i> is an asynchronous operation. Upon receiving a <i>CreateTable</i>
     /// request, DynamoDB immediately returns a response with a <i>TableStatus</i> of <code>CREATING</code>.
     /// After the table is created, DynamoDB sets the <i>TableStatus</i> to <code>ACTIVE</code>.
     /// You can perform read and write operations only on an <code>ACTIVE</code> table. 
@@ -71,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates CreateTableRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table to create.</param>
-        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - The role that the key attribute will assume: <ul> <li><code>HASH</code> - partition key </li> <li><code>RANGE</code> - sort key</li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</note> For a simple primary key (partition key), you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li>  <i>AttributeName</i> - The name of this key attribute. </li> <li>  <i>KeyType</i> - The role that the key attribute will assume: <ul> <li>  <code>HASH</code> - partition key </li> <li>  <code>RANGE</code> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         public CreateTableRequest(string tableName, List<KeySchemaElement> keySchema)
         {
             _tableName = tableName;
@@ -82,7 +82,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates CreateTableRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table to create.</param>
-        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li> <i>KeyType</i> - The role that the key attribute will assume: <ul> <li><code>HASH</code> - partition key </li> <li><code>RANGE</code> - sort key</li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</note> For a simple primary key (partition key), you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in the <i>AttributeDefinitions</i> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li>  <i>AttributeName</i> - The name of this key attribute. </li> <li>  <i>KeyType</i> - The role that the key attribute will assume: <ul> <li>  <code>HASH</code> - partition key </li> <li>  <code>RANGE</code> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <i>KeyType</i> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <i>KeyType</i> of <code>HASH</code>, and the second element must have a <i>KeyType</i> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
         /// <param name="provisionedThroughput">Sets the CreateTableRequest ProvisionedThroughput property</param>
         public CreateTableRequest(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput)
@@ -119,48 +119,48 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>IndexName</i> - The name of the global secondary index. Must be unique only for
+        ///  <i>IndexName</i> - The name of the global secondary index. Must be unique only for
         /// this table.
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <i>KeySchema</i> - Specifies the key schema for the global secondary index.
+        ///  <i>KeySchema</i> - Specifies the key schema for the global secondary index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>Projection</i> - Specifies attributes that are copied (projected) from the table
+        ///  <i>Projection</i> - Specifies attributes that are copied (projected) from the table
         /// into the index. These are in addition to the primary key attributes and index key
         /// attributes, which are automatically projected. Each attribute specification is composed
         /// of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>ProjectionType</i> - One of the following:
+        ///  <i>ProjectionType</i> - One of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+        ///  <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>INCLUDE</code> - Only the specified table attributes are projected into the
+        ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
         /// index. The list of projected attributes are in <i>NonKeyAttributes</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ALL</code> - All of the table attributes are projected into the index.
+        ///  <code>ALL</code> - All of the table attributes are projected into the index.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected
-        /// into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
+        ///  <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are
+        /// projected into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
         /// summed across all of the secondary indexes, must not exceed 20. If you project the
         /// same attribute into two different indexes, this counts as two distinct attributes
         /// when determining the total.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>ProvisionedThroughput</i> - The provisioned throughput settings for the global
+        ///  <i>ProvisionedThroughput</i> - The provisioned throughput settings for the global
         /// secondary index, consisting of read and write capacity units.
         /// </para>
         ///  </li> </ul>
@@ -191,25 +191,25 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>AttributeName</i> - The name of this key attribute.
+        ///  <i>AttributeName</i> - The name of this key attribute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>KeyType</i> - The role that the key attribute will assume:
+        ///  <i>KeyType</i> - The role that the key attribute will assume:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>HASH</code> - partition key
+        ///  <code>HASH</code> - partition key
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>RANGE</code> - sort key
+        ///  <code>RANGE</code> - sort key
         /// </para>
-        /// </li> </ul> </li> </ul> <note> 
+        ///  </li> </ul> </li> </ul> <note> 
         /// <para>
         /// The partition key of an item is also known as its <i>hash attribute</i>. The term
-        /// "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.
+        /// "hash attribute" derives from DynamoDB' usage of an internal hash function to evenly
+        /// distribute data items across partitions, based on their partition key values.
         /// </para>
         ///  
         /// <para>
@@ -217,7 +217,7 @@ namespace Amazon.DynamoDBv2.Model
         /// attribute" derives from the way DynamoDB stores items with the same partition key
         /// physically close together, in sorted order by the sort key value.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// For a simple primary key (partition key), you must provide exactly one element with
         /// a <i>KeyType</i> of <code>HASH</code>.
@@ -259,42 +259,42 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>IndexName</i> - The name of the local secondary index. Must be unique only for
+        ///  <i>IndexName</i> - The name of the local secondary index. Must be unique only for
         /// this table.
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <i>KeySchema</i> - Specifies the key schema for the local secondary index. The key
+        ///  <i>KeySchema</i> - Specifies the key schema for the local secondary index. The key
         /// schema must begin with the same partition key as the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>Projection</i> - Specifies attributes that are copied (projected) from the table
+        ///  <i>Projection</i> - Specifies attributes that are copied (projected) from the table
         /// into the index. These are in addition to the primary key attributes and index key
         /// attributes, which are automatically projected. Each attribute specification is composed
         /// of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>ProjectionType</i> - One of the following:
+        ///  <i>ProjectionType</i> - One of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+        ///  <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>INCLUDE</code> - Only the specified table attributes are projected into the
+        ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
         /// index. The list of projected attributes are in <i>NonKeyAttributes</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ALL</code> - All of the table attributes are projected into the index.
+        ///  <code>ALL</code> - All of the table attributes are projected into the index.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected
-        /// into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
+        ///  <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are
+        /// projected into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
         /// summed across all of the secondary indexes, must not exceed 20. If you project the
         /// same attribute into two different indexes, this counts as two distinct attributes
         /// when determining the total.
@@ -335,36 +335,36 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>StreamEnabled</i> - Indicates whether Streams is to be enabled (true) or disabled
+        ///  <i>StreamEnabled</i> - Indicates whether Streams is to be enabled (true) or disabled
         /// (false).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>StreamViewType</i> - When an item in the table is modified, <i>StreamViewType</i>
+        ///  <i>StreamViewType</i> - When an item in the table is modified, <i>StreamViewType</i>
         /// determines what information is written to the table's stream. Valid values for <i>StreamViewType</i>
         /// are:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to the
+        ///  <i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to the
         /// stream.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <i>NEW_IMAGE</i> - The entire item, as it appears after it was modified, is written
+        ///  <i>NEW_IMAGE</i> - The entire item, as it appears after it was modified, is written
         /// to the stream.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is written
+        ///  <i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is written
         /// to the stream.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <i>NEW_AND_OLD_IMAGES</i> - Both the new and the old item images of the item are written
-        /// to the stream.
+        ///  <i>NEW_AND_OLD_IMAGES</i> - Both the new and the old item images of the item are
+        /// written to the stream.
         /// </para>
-        /// </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public StreamSpecification StreamSpecification
         {

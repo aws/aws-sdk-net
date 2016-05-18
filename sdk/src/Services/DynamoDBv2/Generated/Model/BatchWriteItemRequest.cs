@@ -36,7 +36,7 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// <i>BatchWriteItem</i> cannot update items. To update items, use the <i>UpdateItem</i>
+    ///  <i>BatchWriteItem</i> cannot update items. To update items, use the <i>UpdateItem</i>
     /// API.
     /// </para>
     ///  </note> 
@@ -118,11 +118,11 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     /// There are more than 25 requests in the batch.
     /// </para>
-    /// </li> <li> 
+    ///  </li> <li> 
     /// <para>
     /// Any individual item in a batch exceeds 400 KB.
     /// </para>
-    ///  </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// The total request size exceeds 16 MB.
     /// </para>
@@ -142,7 +142,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates BatchWriteItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following: <ul> <li> <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is identified by a <i>Key</i> subelement: <ul> <li> <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li> <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by an <i>Item</i> subelement: <ul> <li> <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the map consists of the following: <ul> <li>  <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item. The item to be deleted is identified by a <i>Key</i> subelement: <ul> <li>  <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key. </li> </ul> </li> <li>  <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The item to be put is identified by an <i>Item</i> subelement: <ul> <li>  <i>Item</i> - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i> exception. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. </li> </ul> </li> </ul></param>
         public BatchWriteItemRequest(Dictionary<string, List<WriteRequest>> requestItems)
         {
             _requestItems = requestItems;
@@ -157,12 +157,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item.
+        ///  <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item.
         /// The item to be deleted is identified by a <i>Key</i> subelement:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item.
+        ///  <i>Key</i> - A map of primary key attribute values that uniquely identify the ! item.
         /// Each entry in this map consists of an attribute name and an attribute value. For each
         /// primary key, you must provide <i>all</i> of the key attributes. For example, with
         /// a simple primary key, you only need to provide a value for the partition key. For
@@ -171,12 +171,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The
+        ///  <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The
         /// item to be put is identified by an <i>Item</i> subelement:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>Item</i> - A map of attributes and their values. Each entry in this map consists
+        ///  <i>Item</i> - A map of attributes and their values. Each entry in this map consists
         /// of an attribute name and an attribute value. Attribute values must not be null; string
         /// and binary type attributes must have lengths greater than zero; and set type attributes
         /// must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i>

@@ -47,11 +47,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>TableName</i> - The table that consumed the provisioned throughput.
+        ///  <i>TableName</i> - The table that consumed the provisioned throughput.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>CapacityUnits</i> - The total number of capacity units consumed.
+        ///  <i>CapacityUnits</i> - The total number of capacity units consumed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -80,13 +80,13 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>ItemCollectionKey</i> - The partition key value of the item collection. This is
+        ///  <i>ItemCollectionKey</i> - The partition key value of the item collection. This is
         /// the same as the partition key value of the item.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This
-        /// is a two-element array containing a lower bound and an upper bound for the estimate.
+        ///  <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB.
+        /// This is a two-element array containing a lower bound and an upper bound for the estimate.
         /// The estimate includes the size of all the items in the table, plus the size of all
         /// attributes projected into all of the local secondary indexes on the table. Use this
         /// estimate to measure whether a local secondary index is approaching its size limit.
@@ -125,22 +125,22 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item.
+        ///  <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item.
         /// The item to be deleted is identified by a <i>Key</i> subelement:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>Key</i> - A map of primary key attribute values that uniquely identify the item.
+        ///  <i>Key</i> - A map of primary key attribute values that uniquely identify the item.
         /// Each entry in this map consists of an attribute name and an attribute value.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The
+        ///  <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The
         /// item to be put is identified by an <i>Item</i> subelement:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>Item</i> - A map of attributes and their values. Each entry in this map consists
+        ///  <i>Item</i> - A map of attributes and their values. Each entry in this map consists
         /// of an attribute name and an attribute value. Attribute values must not be null; string
         /// and binary type attributes must have lengths greater than zero; and set type attributes
         /// must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i>

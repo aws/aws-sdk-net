@@ -50,23 +50,47 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    ///  For example, you could use one of the AWS SDKs to do the following:
+    /// For example, you could use one of the AWS SDKs to do the following:
     /// </para>
-    ///  <ol> <li>Call <i>DescribeLimits</i> for a particular region to obtain your current
-    /// account limits on provisioned capacity there.</li> <li>Create a variable to hold the
-    /// aggregate read capacity units provisioned for all your tables in that region, and
-    /// one to hold the aggregate write capacity units. Zero them both.</li> <li>Call <i>ListTables</i>
-    /// to obtain a list of all your DynamoDB tables.</li> <li>
+    ///  <ol> <li>
+    /// <para>
+    /// Call <i>DescribeLimits</i> for a particular region to obtain your current account
+    /// limits on provisioned capacity there.
+    /// </para>
+    ///  </li> <li>
+    /// <para>
+    /// Create a variable to hold the aggregate read capacity units provisioned for all your
+    /// tables in that region, and one to hold the aggregate write capacity units. Zero them
+    /// both.
+    /// </para>
+    ///  </li> <li>
+    /// <para>
+    /// Call <i>ListTables</i> to obtain a list of all your DynamoDB tables.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     /// For each table name listed by <i>ListTables</i>, do the following:
     /// </para>
-    ///  <ul> <li>Call <i>DescribeTable</i> with the table name.</li> <li>Use the data returned
-    /// by <i>DescribeTable</i> to add the read capacity units and write capacity units provisioned
-    /// for the table itself to your variables.</li> <li>If the table has one or more global
-    /// secondary indexes (GSIs), loop over these GSIs and add their provisioned capacity
-    /// values to your variables as well.</li> </ul> </li> <li>Report the account limits for
-    /// that region returned by <i>DescribeLimits</i>, along with the total current provisioned
-    /// capacity levels you have calculated.</li> </ol> 
+    ///  <ul> <li>
+    /// <para>
+    /// Call <i>DescribeTable</i> with the table name.
+    /// </para>
+    ///  </li> <li>
+    /// <para>
+    /// Use the data returned by <i>DescribeTable</i> to add the read capacity units and write
+    /// capacity units provisioned for the table itself to your variables.
+    /// </para>
+    ///  </li> <li>
+    /// <para>
+    /// If the table has one or more global secondary indexes (GSIs), loop over these GSIs
+    /// and add their provisioned capacity values to your variables as well.
+    /// </para>
+    ///  </li> </ul> </li> <li>
+    /// <para>
+    /// Report the account limits for that region returned by <i>DescribeLimits</i>, along
+    /// with the total current provisioned capacity levels you have calculated.
+    /// </para>
+    ///  </li> </ol> 
     /// <para>
     /// This will let you see whether you are getting close to your account-level limits.
     /// </para>
@@ -83,9 +107,9 @@ namespace Amazon.DynamoDBv2.Model
     /// provisioned capacity over all your tables and GSIs cannot exceed either of the per-account
     /// limits.
     /// </para>
-    ///  <note>
+    ///  <note> 
     /// <para>
-    /// <i>DescribeLimits</i> should only be called periodically. You can expect throttling
+    ///  <i>DescribeLimits</i> should only be called periodically. You can expect throttling
     /// errors if you call it more than once in a minute.
     /// </para>
     ///  </note> 
