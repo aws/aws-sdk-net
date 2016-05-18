@@ -1,3 +1,9 @@
+### 3.1.69.0 (2016-05-18 06:08 UTC)
+* DynamoDBv2 (3.1.4.0)
+	* Documentation update.
+* WorkSpaces (3.1.2.0)
+	* Add tagging support.
+
 ### 3.1.68.0 (2016-05-12 22:06 UTC)
 * Application Discovery Service (3.1.0.0)
 	* Added support for the AWS Application Discovery Service. This service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.
