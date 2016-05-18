@@ -30,19 +30,19 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Represents one of the following:
     /// 
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
     /// A new global secondary index to be added to an existing table.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// New provisioned throughput parameters for an existing global secondary index.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// An existing global secondary index to be removed from an existing table.
     /// </para>
-    /// </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class GlobalSecondaryIndexUpdate
     {
@@ -55,27 +55,27 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The parameters required for creating a global secondary index on an existing table:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>IndexName </code>
+        ///  <code>IndexName </code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>KeySchema </code>
+        ///  <code>KeySchema </code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>AttributeDefinitions </code>
+        ///  <code>AttributeDefinitions </code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>Projection </code>
+        ///  <code>Projection </code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>ProvisionedThroughput </code>
+        ///  <code>ProvisionedThroughput </code> 
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public CreateGlobalSecondaryIndexAction Create
         {

@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation
     /// <para>
     /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
     /// information about a specific AWS product, you can find the product's technical documentation
-    /// at <a href="http://docs.aws.amazon.com/documentation/">http://docs.aws.amazon.com/documentation/</a>.
+    /// at <a href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
@@ -265,7 +265,11 @@ namespace Amazon.CloudFormation
         /// Cancels an update on the specified stack. If the call completes successfully, the
         /// stack rolls back the update and reverts to the previous stack configuration.
         /// 
-        ///  <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.</note>
+        ///  <note> 
+        /// <para>
+        /// You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack service method.</param>
         /// 
@@ -478,6 +482,10 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet service method.</param>
         /// 
         /// <returns>The response from the DeleteChangeSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
+        /// The specified change set cannot be used to update the stack. For example, the change
+        /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
+        /// </exception>
         public DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request)
         {
             var marshaller = new DeleteChangeSetRequestMarshaller();
@@ -630,12 +638,16 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns all stack related events for a specified stack. For more information about
-        /// a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
+        /// Returns all stack related events for a specified stack in reverse chronological order.
+        /// For more information about a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
         /// in the AWS CloudFormation User Guide.
         /// 
-        ///  <note>You can list events for stacks that have failed to create or have been deleted
-        /// by specifying the unique stack identifier (stack ID).</note>
+        ///  <note> 
+        /// <para>
+        /// You can list events for stacks that have failed to create or have been deleted by
+        /// specifying the unique stack identifier (stack ID).
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackEvents service method.</param>
         /// 
@@ -720,8 +732,12 @@ namespace Amazon.CloudFormation
         /// If <code>PhysicalResourceId</code> is specified, the associated resources of the stack
         /// that the resource belongs to are returned.
         /// 
-        ///  <note>Only the first 100 resources will be returned. If your stack has more resources
-        /// than this, you should use <code>ListStackResources</code> instead.</note> 
+        ///  <note> 
+        /// <para>
+        /// Only the first 100 resources will be returned. If your stack has more resources than
+        /// this, you should use <code>ListStackResources</code> instead.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For deleted stacks, <code>DescribeStackResources</code> returns resource information
         /// for up to 90 days after the stack has been deleted.
@@ -734,8 +750,12 @@ namespace Amazon.CloudFormation
         /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
         /// CloudFormation User Guide</a>.
         /// </para>
-        ///  <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
-        /// and <code>PhysicalResourceId</code> in the same request.</note>
+        ///  <note> 
+        /// <para>
+        /// A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
+        /// and <code>PhysicalResourceId</code> in the same request.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackResources service method.</param>
         /// 
@@ -981,8 +1001,11 @@ namespace Amazon.CloudFormation
         /// For deleted stacks, GetTemplate returns the template for up to 90 days after the stack
         /// has been deleted.
         /// </para>
-        ///  <note> If the template does not exist, a <code>ValidationError</code> is returned.
-        /// </note>
+        ///  <note> 
+        /// <para>
+        ///  If the template does not exist, a <code>ValidationError</code> is returned. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// 

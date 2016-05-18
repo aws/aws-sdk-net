@@ -32,18 +32,18 @@ namespace Amazon.IdentityManagement.Model
     /// Creates a new version of the specified managed policy. To update a managed policy,
     /// you create a new policy version. A managed policy can have up to five versions. If
     /// the policy has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
-    /// before you create a new version. 
+    /// before you create a new version.
     /// 
     ///  
     /// <para>
     /// Optionally, you can set the new version as the policy's default version. The default
-    /// version is the operative version; that is, the version that is in effect for the IAM
-    /// users, groups, and roles that the policy is attached to. 
+    /// version is the version that is in effect for the IAM users, groups, and roles to which
+    /// the policy is attached.
     /// </para>
     ///  
     /// <para>
     /// For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-    /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
+    /// for Managed Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreatePolicyVersionRequest : AmazonIdentityManagementServiceRequest
@@ -53,7 +53,15 @@ namespace Amazon.IdentityManagement.Model
         private bool? _setAsDefault;
 
         /// <summary>
-        /// Gets and sets the property PolicyArn.
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// </para>
         /// </summary>
         public string PolicyArn
         {
@@ -70,7 +78,16 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// The policy document.
+        /// The JSON policy document that you want to use as the content for this new version
+        /// of the policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of any printable ASCII character ranging from
+        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
+        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
+        /// return (\u000D).
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -99,7 +116,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
+        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public bool SetAsDefault

@@ -38,8 +38,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ContextKeyNames. 
         /// <para>
-        /// The list of context keys that are used in the <code>Condition</code> elements of the
-        /// input policies.
+        /// The list of context keys that are referenced in the input policies.
         /// </para>
         /// </summary>
         public List<string> ContextKeyNames

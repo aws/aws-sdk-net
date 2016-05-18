@@ -38,7 +38,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Reserved for future use. 
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string NextToken

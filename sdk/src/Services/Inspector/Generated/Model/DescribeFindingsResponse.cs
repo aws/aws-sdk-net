@@ -57,7 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Findings. 
         /// <para>
-        /// Information about the finding(s).
+        /// Information about the finding.
         /// </para>
         /// </summary>
         public List<Finding> Findings

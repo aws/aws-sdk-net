@@ -124,6 +124,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SnsTopicARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnsTopicARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnsTopicName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

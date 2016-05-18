@@ -39,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AccessKeyMetadata. 
         /// <para>
-        /// A list of access key metadata.
+        /// A list of objects containing metadata about the access keys.
         /// </para>
         /// </summary>
         public List<AccessKeyMetadata> AccessKeyMetadata

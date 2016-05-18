@@ -57,7 +57,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Blockers. 
         /// <para>
-        /// The gates included in a stage.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public List<BlockerDeclaration> Blockers

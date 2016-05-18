@@ -57,7 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceGroups. 
         /// <para>
-        /// Information about the resource group(s).
+        /// Information about a resource group.
         /// </para>
         /// </summary>
         public List<ResourceGroup> ResourceGroups

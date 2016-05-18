@@ -57,7 +57,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RulesPackages. 
         /// <para>
-        /// Information about the rules package(s).
+        /// Information about the rules package.
         /// </para>
         /// </summary>
         public List<RulesPackage> RulesPackages

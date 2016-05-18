@@ -64,11 +64,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>AttributeName</i> - The name of the attribute.
+        ///  <i>AttributeName</i> - The name of the attribute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>AttributeType</i> - The data type for the attribute.
+        ///  <i>AttributeType</i> - The data type for the attribute.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>Backfilling</i> - If true, then the index is currently in the backfilling phase.
+        ///  <i>Backfilling</i> - If true, then the index is currently in the backfilling phase.
         /// Backfilling occurs only when a new global secondary index is added to the table; it
         /// is the process by which DynamoDB populates the new index with data from the table.
         /// (This attribute does not appear for indexes that were created during a <i>CreateTable</i>
@@ -119,81 +119,81 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>IndexName</i> - The name of the global secondary index.
+        ///  <i>IndexName</i> - The name of the global secondary index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>IndexSizeBytes</i> - The total size of the global secondary index, in bytes. DynamoDB
+        ///  <i>IndexSizeBytes</i> - The total size of the global secondary index, in bytes. DynamoDB
         /// updates this value approximately every six hours. Recent changes might not be reflected
         /// in this value. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>IndexStatus</i> - The current status of the global secondary index:
+        ///  <i>IndexStatus</i> - The current status of the global secondary index:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>CREATING</i> - The index is being created.
+        ///  <i>CREATING</i> - The index is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>UPDATING</i> - The index is being updated.
+        ///  <i>UPDATING</i> - The index is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>DELETING</i> - The index is being deleted.
+        ///  <i>DELETING</i> - The index is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>ACTIVE</i> - The index is ready for use.
+        ///  <i>ACTIVE</i> - The index is ready for use.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>ItemCount</i> - The number of items in the global secondary index. DynamoDB updates
+        ///  <i>ItemCount</i> - The number of items in the global secondary index. DynamoDB updates
         /// this value approximately every six hours. Recent changes might not be reflected in
         /// this value. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>KeySchema</i> - Specifies the complete index key schema. The attribute names in
+        ///  <i>KeySchema</i> - Specifies the complete index key schema. The attribute names in
         /// the key schema must be between 1 and 255 characters (inclusive). The key schema must
         /// begin with the same partition key as the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>Projection</i> - Specifies attributes that are copied (projected) from the table
+        ///  <i>Projection</i> - Specifies attributes that are copied (projected) from the table
         /// into the index. These are in addition to the primary key attributes and index key
         /// attributes, which are automatically projected. Each attribute specification is composed
         /// of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>ProjectionType</i> - One of the following:
+        ///  <i>ProjectionType</i> - One of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+        ///  <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>INCLUDE</code> - Only the specified table attributes are projected into the
+        ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
         /// index. The list of projected attributes are in <i>NonKeyAttributes</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ALL</code> - All of the table attributes are projected into the index.
+        ///  <code>ALL</code> - All of the table attributes are projected into the index.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected
-        /// into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
+        ///  <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are
+        /// projected into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
         /// summed across all of the secondary indexes, must not exceed 20. If you project the
         /// same attribute into two different indexes, this counts as two distinct attributes
         /// when determining the total.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>ProvisionedThroughput</i> - The provisioned throughput settings for the global
+        ///  <i>ProvisionedThroughput</i> - The provisioned throughput settings for the global
         /// secondary index, consisting of read and write capacity units, along with data about
         /// increases and decreases. 
         /// </para>
@@ -219,7 +219,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ItemCount. 
         /// <para>
         /// The number of items in the specified table. DynamoDB updates this value approximately
-        /// every six hours. Recent changes might not be reflected in this value. 
+        /// every six hours. Recent changes might not be reflected in this value.
         /// </para>
         /// </summary>
         public long ItemCount
@@ -241,25 +241,25 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>AttributeName</i> - The name of the attribute.
+        ///  <i>AttributeName</i> - The name of the attribute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>KeyType</i> - The role of the attribute:
+        ///  <i>KeyType</i> - The role of the attribute:
         /// </para>
-        ///  . <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>HASH</code> - partition key
+        ///  <code>HASH</code> - partition key
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>RANGE</code> - sort key
+        ///  <code>RANGE</code> - sort key
         /// </para>
-        /// </li> </ul> <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// The partition key of an item is also known as its <i>hash attribute</i>. The term
-        /// "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.
+        /// "hash attribute" derives from DynamoDB' usage of an internal hash function to evenly
+        /// distribute data items across partitions, based on their partition key values.
         /// </para>
         ///  
         /// <para>
@@ -267,7 +267,7 @@ namespace Amazon.DynamoDBv2.Model
         /// attribute" derives from the way DynamoDB stores items with the same partition key
         /// physically close together, in sorted order by the sort key value.
         /// </para>
-        /// </note> </li> </ul> 
+        ///  </note> </li> </ul> 
         /// <para>
         /// For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
         /// Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -315,19 +315,19 @@ namespace Amazon.DynamoDBv2.Model
         /// it is possible that a stream from another table might have the same timestamp. However,
         /// the combination of the following three elements is guaranteed to be unique:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// the AWS customer ID.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// the table name.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// the <i>StreamLabel</i>.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public string LatestStreamLabel
         {
@@ -351,57 +351,57 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>IndexName</i> - The name of the local secondary index.
+        ///  <i>IndexName</i> - The name of the local secondary index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>KeySchema</i> - Specifies the complete index key schema. The attribute names in
+        ///  <i>KeySchema</i> - Specifies the complete index key schema. The attribute names in
         /// the key schema must be between 1 and 255 characters (inclusive). The key schema must
         /// begin with the same partition key as the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>Projection</i> - Specifies attributes that are copied (projected) from the table
+        ///  <i>Projection</i> - Specifies attributes that are copied (projected) from the table
         /// into the index. These are in addition to the primary key attributes and index key
         /// attributes, which are automatically projected. Each attribute specification is composed
         /// of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>ProjectionType</i> - One of the following:
+        ///  <i>ProjectionType</i> - One of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+        ///  <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>INCLUDE</code> - Only the specified table attributes are projected into the
+        ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
         /// index. The list of projected attributes are in <i>NonKeyAttributes</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ALL</code> - All of the table attributes are projected into the index.
+        ///  <code>ALL</code> - All of the table attributes are projected into the index.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected
-        /// into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
+        ///  <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are
+        /// projected into the secondary index. The total count of attributes provided in <i>NonKeyAttributes</i>,
         /// summed across all of the secondary indexes, must not exceed 20. If you project the
         /// same attribute into two different indexes, this counts as two distinct attributes
         /// when determining the total.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <i>IndexSizeBytes</i> - Represents the total size of the index, in bytes. DynamoDB
+        ///  <i>IndexSizeBytes</i> - Represents the total size of the index, in bytes. DynamoDB
         /// updates this value approximately every six hours. Recent changes might not be reflected
         /// in this value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>ItemCount</i> - Represents the number of items in the index. DynamoDB updates this
-        /// value approximately every six hours. Recent changes might not be reflected in this
-        /// value.
+        ///  <i>ItemCount</i> - Represents the number of items in the index. DynamoDB updates
+        /// this value approximately every six hours. Recent changes might not be reflected in
+        /// this value.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -498,7 +498,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property TableSizeBytes. 
         /// <para>
         /// The total size of the specified table, in bytes. DynamoDB updates this value approximately
-        /// every six hours. Recent changes might not be reflected in this value. 
+        /// every six hours. Recent changes might not be reflected in this value.
         /// </para>
         /// </summary>
         public long TableSizeBytes
@@ -520,19 +520,19 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>CREATING</i> - The table is being created.
+        ///  <i>CREATING</i> - The table is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>UPDATING</i> - The table is being updated.
+        ///  <i>UPDATING</i> - The table is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>DELETING</i> - The table is being deleted.
+        ///  <i>DELETING</i> - The table is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>ACTIVE</i> - The table is ready for use.
+        ///  <i>ACTIVE</i> - The table is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

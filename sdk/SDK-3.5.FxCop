@@ -23,6 +23,7 @@
   <Targets>
     <AssemblyReferenceDirectories>
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/awsmarketplacecommerceanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/awsmarketplacemetering/bin/Release/net35/</Directory>
@@ -41,6 +42,7 @@
       <Directory>$(ProjectDir)/src/Services/codedeploy/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/codepipeline/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitoidentity/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cognitoidentityprovider/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net35/</Directory>
@@ -91,6 +93,7 @@
       <Directory>$(ProjectDir)/src/Core/bin/Release/net35/</Directory>
     </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AWSMarketplaceMetering.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -109,6 +112,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CodeDeploy.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CodePipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoIdentity.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoIdentityProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />

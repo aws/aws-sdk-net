@@ -29,8 +29,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroup operation.
-    /// Deletes the specified group. The group must not contain any users or have any attached
-    /// policies.
+    /// Deletes the specified IAM group. The group must not contain any users or have any
+    /// attached policies.
     /// </summary>
     public partial class DeleteGroupRequest : AmazonIdentityManagementServiceRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">The name of the group to delete.</param>
+        /// <param name="groupName">The name of the IAM group to delete. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public DeleteGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -53,7 +53,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the group to delete.
+        /// The name of the IAM group to delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string GroupName

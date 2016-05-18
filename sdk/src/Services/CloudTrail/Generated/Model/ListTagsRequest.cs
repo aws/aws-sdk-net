@@ -29,12 +29,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
-    /// Lists the tags for the specified trail or trails in the current region.
-    /// 
-    ///  
-    /// <para>
     /// Lists the tags for the trail in the current region.
-    /// </para>
     /// </summary>
     public partial class ListTagsRequest : AmazonCloudTrailRequest
     {
@@ -63,7 +58,11 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property ResourceIdList. 
         /// <para>
         /// Specifies a list of trail ARNs whose tags will be listed. The list has a limit of
-        /// 20 ARNs. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// 20 ARNs. The format of a trail ARN is:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </summary>
         public List<string> ResourceIdList

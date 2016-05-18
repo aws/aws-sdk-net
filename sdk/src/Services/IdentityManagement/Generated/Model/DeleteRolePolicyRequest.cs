@@ -29,14 +29,14 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRolePolicy operation.
-    /// Deletes the specified inline policy that is embedded in the specified role.
+    /// Deletes the specified inline policy that is embedded in the specified IAM role.
     /// 
     ///  
     /// <para>
     /// A role can also have managed policies attached to it. To detach a managed policy from
     /// a role, use <a>DetachRolePolicy</a>. For more information about policies, refer to
     /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteRolePolicyRequest : AmazonIdentityManagementServiceRequest
@@ -47,7 +47,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name identifying the policy document to delete.
+        /// The name of the inline policy to delete from the specified IAM role.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string PolicyName
@@ -67,6 +73,12 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The name (friendly name, not ARN) identifying the role that the policy is embedded
         /// in.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleName

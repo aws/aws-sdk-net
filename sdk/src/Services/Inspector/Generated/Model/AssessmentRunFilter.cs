@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// This data type is used as the request parameter in the <a>ListAssessmentRuns</a> action.
+    /// Used as the request parameter in the <a>ListAssessmentRuns</a> action.
     /// </summary>
     public partial class AssessmentRunFilter
     {
@@ -43,9 +43,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property CompletionTimeRange. 
         /// <para>
-        /// For a record to match a filter, the value specified for this data type property must
-        /// inclusively match any value between the specified minimum and maximum values of the
-        /// <b>completedAt</b> property of the <a>AssessmentRun</a> data type.
+        /// For a record to match a filter, the value that is specified for this data type property
+        /// must inclusively match any value between the specified minimum and maximum values
+        /// of the <b>completedAt</b> property of the <a>AssessmentRun</a> data type.
         /// </para>
         /// </summary>
         public TimestampRange CompletionTimeRange
@@ -63,9 +63,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property DurationRange. 
         /// <para>
-        /// For a record to match a filter, the value specified for this data type property must
-        /// inclusively match any value between the specified minimum and maximum values of the
-        /// <b>durationInSeconds</b> property of the <a>AssessmentRun</a> data type.
+        /// For a record to match a filter, the value that is specified for this data type property
+        /// must inclusively match any value between the specified minimum and maximum values
+        /// of the <b>durationInSeconds</b> property of the <a>AssessmentRun</a> data type.
         /// </para>
         /// </summary>
         public DurationRange DurationRange
@@ -84,7 +84,7 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property NamePattern. 
         /// <para>
         /// For a record to match a filter, an explicit value or a string containing a wildcard
-        /// specified for this data type property must match the value of the <b>assessmentRunName</b>
+        /// that is specified for this data type property must match the value of the <b>assessmentRunName</b>
         /// property of the <a>AssessmentRun</a> data type.
         /// </para>
         /// </summary>
@@ -103,9 +103,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RulesPackageArns. 
         /// <para>
-        /// For a record to match a filter, the value specified for this data type property must
-        /// be contained in the list of values of the <b>rulesPackages</b> property of the <a>AssessmentRun</a>
-        /// data type.
+        /// For a record to match a filter, the value that is specified for this data type property
+        /// must be contained in the list of values of the <b>rulesPackages</b> property of the
+        /// <a>AssessmentRun</a> data type.
         /// </para>
         /// </summary>
         public List<string> RulesPackageArns
@@ -123,9 +123,9 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property StartTimeRange. 
         /// <para>
-        /// For a record to match a filter, the value specified for this data type property must
-        /// inclusively match any value between the specified minimum and maximum values of the
-        /// <b>startTime</b> property of the <a>AssessmentRun</a> data type.
+        /// For a record to match a filter, the value that is specified for this data type property
+        /// must inclusively match any value between the specified minimum and maximum values
+        /// of the <b>startTime</b> property of the <a>AssessmentRun</a> data type.
         /// </para>
         /// </summary>
         public TimestampRange StartTimeRange
@@ -143,8 +143,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property StateChangeTimeRange. 
         /// <para>
-        /// For a record to match a filter, the value specified for this data type property must
-        /// match the <b>stateChangedAt</b> property of the <a>AssessmentRun</a> data type.
+        /// For a record to match a filter, the value that is specified for this data type property
+        /// must match the <b>stateChangedAt</b> property of the <a>AssessmentRun</a> data type.
         /// </para>
         /// </summary>
         public TimestampRange StateChangeTimeRange

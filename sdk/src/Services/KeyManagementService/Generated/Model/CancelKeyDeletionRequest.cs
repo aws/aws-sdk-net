@@ -34,7 +34,7 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// For more information about scheduling and canceling deletion of a CMK, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
+    /// For more information about scheduling and canceling deletion of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
     /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -50,11 +50,17 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of
-        /// the CMK. Examples: <ul> <li>Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab</li>
-        /// <li>Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li>
-        /// </ul> 
+        /// the CMK. Examples:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
         /// </para>

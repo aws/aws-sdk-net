@@ -5739,6 +5739,44 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSecurityGroupReferences
+
+
+        /// <summary>
+        /// [EC2-VPC only] Describes the VPCs on the other side of a VPC peering connection that
+        /// are referencing the security groups you've specified in this request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecurityGroupReferences service method, as returned by EC2.</returns>
+        DescribeSecurityGroupReferencesResponse DescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityGroupReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecurityGroupReferences
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSecurityGroupReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecurityGroupReferences.</param>
+        /// 
+        /// <returns>Returns a  DescribeSecurityGroupReferencesResult from EC2.</returns>
+        DescribeSecurityGroupReferencesResponse EndDescribeSecurityGroupReferences(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeSecurityGroups
 
 
@@ -6317,6 +6355,45 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  DescribeSpotPriceHistoryResult from EC2.</returns>
         DescribeSpotPriceHistoryResponse EndDescribeSpotPriceHistory(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeStaleSecurityGroups
+
+
+        /// <summary>
+        /// [EC2-VPC only] Describes the stale security group rules for security groups in a specified
+        /// VPC. Rules are stale when they reference a deleted security group in a peer VPC, or
+        /// a security group in a peer VPC for which the VPC peering connection has been deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStaleSecurityGroups service method, as returned by EC2.</returns>
+        DescribeStaleSecurityGroupsResponse DescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStaleSecurityGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStaleSecurityGroups
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStaleSecurityGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStaleSecurityGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeStaleSecurityGroupsResult from EC2.</returns>
+        DescribeStaleSecurityGroupsResponse EndDescribeStaleSecurityGroups(IAsyncResult asyncResult);
 
         #endregion
         
@@ -9512,12 +9589,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Resets an attribute of an instance to its default value. To reset the <code>kernel</code>
-        /// or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>SourceDestCheck</code>,
+        /// or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>sourceDestCheck</code>,
         /// the instance can be either running or stopped.
         /// 
         ///  
         /// <para>
-        /// The <code>SourceDestCheck</code> attribute controls whether source/destination checking
+        /// The <code>sourceDestCheck</code> attribute controls whether source/destination checking
         /// is enabled. The default value is <code>true</code>, which means checking is enabled.
         /// This value must be <code>false</code> for a NAT instance to perform NAT. For more
         /// information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
@@ -10026,7 +10103,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
+        /// When you stop an instance, we attempt to shut it down forcibly after a short while.
+        /// If your instance appears stuck in the stopping state after a period of time, there
+        /// may be an issue with the underlying host computer. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
         /// Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

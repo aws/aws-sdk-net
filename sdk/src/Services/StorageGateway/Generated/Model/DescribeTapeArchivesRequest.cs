@@ -31,7 +31,6 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the DescribeTapeArchives operation.
     /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
     /// 
-    /// 
     ///  
     /// <para>
     /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
@@ -85,7 +84,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property TapeARNs. 
         /// <para>
         /// Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual
-        /// tapes you want to describe. 
+        /// tapes you want to describe.
         /// </para>
         /// </summary>
         public List<string> TapeARNs

@@ -109,35 +109,35 @@ namespace Amazon.DynamoDBv2.Model
         /// Use the <b>#</b> character in an expression to dereference an attribute name. For
         /// example, consider the following attribute name:
         /// </para>
-        ///  <ul><li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>Percentile</code>
+        ///  <code>Percentile</code> 
         /// </para>
-        /// </li></ul> 
+        ///  </li> </ul> 
         /// <para>
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
         /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
-        ///  <ul><li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>{"#P":"Percentile"}</code>
+        ///  <code>{"#P":"Percentile"}</code> 
         /// </para>
-        /// </li></ul> 
+        ///  </li> </ul> 
         /// <para>
         /// You could then use this substitution in an expression, as in this example:
         /// </para>
-        ///  <ul><li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>#P = :val</code>
+        ///  <code>#P = :val</code> 
         /// </para>
-        /// </li></ul> <note>
+        ///  </li> </ul> <note> 
         /// <para>
         /// Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>,
         /// which are placeholders for the actual value at runtime.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -191,11 +191,11 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
-        /// <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
+        ///  <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public string ProjectionExpression
         {

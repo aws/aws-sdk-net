@@ -101,8 +101,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and hyphens
-        /// (-).
+        ///  Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
         /// </para>
         /// </summary>
         public string TargetARN

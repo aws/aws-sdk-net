@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAssessmentTarget operation.
-    /// Updates the assessment target specified by the assessment target ARN.
+    /// Updates the assessment target that is specified by the ARN of the assessment target.
     /// </summary>
     public partial class UpdateAssessmentTargetRequest : AmazonInspectorRequest
     {
@@ -76,7 +76,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupArn. 
         /// <para>
-        /// The resource group ARN that is used to specify the new resource group to associate
+        /// The ARN of the resource group that is used to specify the new resource group to associate
         /// with the assessment target.
         /// </para>
         /// </summary>

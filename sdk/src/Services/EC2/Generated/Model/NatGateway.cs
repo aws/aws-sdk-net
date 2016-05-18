@@ -188,6 +188,32 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The state of the NAT gateway.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// <code>pending</code>: The NAT gateway is being created and is not ready to process
+        /// traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code>
+        /// and <code>failureMessage</code> fields for the reason.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>available</code>: The NAT gateway is able to process traffic. This status remains
+        /// until you delete the NAT gateway, and does not indicate the health of the NAT gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>deleting</code>: The NAT gateway is in the process of being terminated and may
+        /// still be processing traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <code>deleted</code>: The NAT gateway has been terminated and is no longer processing
+        /// traffic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public NatGatewayState State
         {

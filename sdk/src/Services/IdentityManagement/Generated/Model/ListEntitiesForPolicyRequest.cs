@@ -29,20 +29,20 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEntitiesForPolicy operation.
-    /// Lists all users, groups, and roles that the specified managed policy is attached to.
-    /// 
+    /// Lists all IAM users, groups, and roles that the specified managed policy is attached
+    /// to.
     /// 
     ///  
     /// <para>
     /// You can use the optional <code>EntityFilter</code> parameter to limit the results
     /// to a particular type of entity (users, groups, or roles). For example, to list only
     /// the roles that are attached to the specified policy, set <code>EntityFilter</code>
-    /// to <code>Role</code>. 
+    /// to <code>Role</code>.
     /// </para>
     ///  
     /// <para>
     /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters. 
+    /// parameters.
     /// </para>
     /// </summary>
     public partial class ListEntitiesForPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -56,14 +56,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property EntityFilter. 
         /// <para>
-        /// The entity type to use for filtering the results. 
+        /// The entity type to use for filtering the results.
         /// </para>
         ///  
         /// <para>
         /// For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that
         /// are attached to the specified policy are returned. This parameter is optional. If
         /// it is not included, all attached entities (users, groups, and roles) are returned.
-        /// 
+        /// The argument for this parameter must be one of the valid values listed below.
         /// </para>
         /// </summary>
         public EntityType EntityFilter
@@ -111,7 +111,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -132,6 +132,14 @@ namespace Amazon.IdentityManagement.Model
         /// The path prefix for filtering the results. This parameter is optional. If it is not
         /// included, it defaults to a slash (/), listing all entities.
         /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of either a forward slash (/) by itself or a
+        /// string that must begin and end with forward slashes, containing any ASCII character
+        /// from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
+        /// digits, and upper and lowercased letters.
+        /// </para>
         /// </summary>
         public string PathPrefix
         {
@@ -146,7 +154,15 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyArn.
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// </para>
         /// </summary>
         public string PolicyArn
         {

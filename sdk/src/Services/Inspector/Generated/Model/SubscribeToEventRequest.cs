@@ -30,7 +30,7 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Container for the parameters to the SubscribeToEvent operation.
     /// Enables the process of sending Amazon Simple Notification Service (SNS) notifications
-    /// about a specified event to a specified topic.
+    /// about a specified event to a specified SNS topic.
     /// </summary>
     public partial class SubscribeToEventRequest : AmazonInspectorRequest
     {
@@ -59,8 +59,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the assessment template used during the event for which you want to recieve
-        /// SNS notifications.
+        /// The ARN of the assessment template that is used during the event for which you want
+        /// to receive SNS notifications.
         /// </para>
         /// </summary>
         public string ResourceArn

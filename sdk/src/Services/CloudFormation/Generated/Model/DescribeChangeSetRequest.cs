@@ -43,7 +43,6 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ChangeSetName. 
         /// <para>
         /// The name or Amazon Resource Name (ARN) of the change set that you want to describe.
-        /// 
         /// </para>
         /// </summary>
         public string ChangeSetName

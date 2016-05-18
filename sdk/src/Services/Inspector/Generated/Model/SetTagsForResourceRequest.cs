@@ -29,8 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the SetTagsForResource operation.
-    /// Sets tags (key and value pairs) to the assessment template specified by the assessment
-    /// template ARN.
+    /// Sets tags (key and value pairs) to the assessment template that is specified by the
+    /// ARN of the assessment template.
     /// </summary>
     public partial class SetTagsForResourceRequest : AmazonInspectorRequest
     {

@@ -73,6 +73,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Comment);
                 }
 
+                if(publicRequest.IsSetDocumentHash())
+                {
+                    context.Writer.WritePropertyName("DocumentHash");
+                    context.Writer.Write(publicRequest.DocumentHash);
+                }
+
+                if(publicRequest.IsSetDocumentHashType())
+                {
+                    context.Writer.WritePropertyName("DocumentHashType");
+                    context.Writer.Write(publicRequest.DocumentHashType);
+                }
+
                 if(publicRequest.IsSetDocumentName())
                 {
                     context.Writer.WritePropertyName("DocumentName");

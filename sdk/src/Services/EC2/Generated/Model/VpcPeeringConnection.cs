@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AccepterVpcInfo. 
         /// <para>
-        /// Information about the peer VPC. CIDR block information is not returned when creating
+        /// Information about the accepter VPC. CIDR block information is not returned when creating
         /// a VPC peering connection, or when describing a VPC peering connection that's in the
         /// <code>initiating-request</code> or <code>pending-acceptance</code> state.
         /// </para>

@@ -103,6 +103,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IntegrationHttpMethod);
                 }
 
+                if(publicRequest.IsSetPassthroughBehavior())
+                {
+                    context.Writer.WritePropertyName("passthroughBehavior");
+                    context.Writer.Write(publicRequest.PassthroughBehavior);
+                }
+
                 if(publicRequest.IsSetRequestParameters())
                 {
                     context.Writer.WritePropertyName("requestParameters");

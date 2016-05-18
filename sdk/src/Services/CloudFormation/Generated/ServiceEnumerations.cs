@@ -345,6 +345,72 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionStatus.
+    /// </summary>
+    public class ExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus AVAILABLE = new ExecutionStatus("AVAILABLE");
+        /// <summary>
+        /// Constant EXECUTE_COMPLETE for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus EXECUTE_COMPLETE = new ExecutionStatus("EXECUTE_COMPLETE");
+        /// <summary>
+        /// Constant EXECUTE_FAILED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus EXECUTE_FAILED = new ExecutionStatus("EXECUTE_FAILED");
+        /// <summary>
+        /// Constant EXECUTE_IN_PROGRESS for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus EXECUTE_IN_PROGRESS = new ExecutionStatus("EXECUTE_IN_PROGRESS");
+        /// <summary>
+        /// Constant OBSOLETE for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus OBSOLETE = new ExecutionStatus("OBSOLETE");
+        /// <summary>
+        /// Constant UNAVAILABLE for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus UNAVAILABLE = new ExecutionStatus("UNAVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionStatus FindValue(string value)
+        {
+            return FindValue<ExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OnFailure.
     /// </summary>
     public class OnFailure : ConstantClass

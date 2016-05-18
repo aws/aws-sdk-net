@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// Information about the policy.
+        /// A structure containing details about the policy.
         /// </para>
         /// </summary>
         public ManagedPolicy Policy

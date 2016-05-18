@@ -43,7 +43,7 @@ namespace Amazon.KeyManagementService.Model
         /// If additional items exist beyond the number you specify, the <code>Truncated</code>
         /// element in the response is set to true.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// This value is optional. If you include a value, it must be between 1 and 100, inclusive.
         /// If you do not include a value, it defaults to 50.

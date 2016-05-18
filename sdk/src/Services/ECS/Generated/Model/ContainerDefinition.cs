@@ -119,11 +119,18 @@ namespace Amazon.ECS.Model
         /// you can use CPU values below 2 in your container definitions. For CPU values below
         /// 2 (including null), the behavior varies based on your Amazon ECS container agent version:
         /// </para>
-        ///  <ul> <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values
-        /// are passed to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values
-        /// of 1 are passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.</li>
-        /// <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
-        /// of 1 are passed to Docker as 2.</li></ul>
+        ///  <ul> <li>
+        /// <para>
+        ///  <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed
+        /// to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are
+        /// passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        ///  <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
+        /// of 1 are passed to Docker as 2.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int Cpu
         {
@@ -241,7 +248,7 @@ namespace Amazon.ECS.Model
         /// The Amazon ECS container agent running on a container instance must register with
         /// the <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code>
         /// environment variables before containers placed on that instance can use these security
-        /// options. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+        /// options. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
         /// ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -319,16 +326,19 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Essential. 
         /// <para>
         /// If the <code>essential</code> parameter of a container is marked as <code>true</code>,
-        /// the failure of that container stops the task. If the <code>essential</code> parameter
-        /// of a container is marked as <code>false</code>, then its failure does not affect the
-        /// rest of the containers in a task. If this parameter is omitted, a container is assumed
-        /// to be essential.
+        /// and that container fails or stops for any reason, all other containers that are part
+        /// of the task are stopped. If the <code>essential</code> parameter of a container is
+        /// marked as <code>false</code>, then its failure does not affect the rest of the containers
+        /// in a task. If this parameter is omitted, a container is assumed to be essential.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// All tasks must have at least one essential container.
+        /// All tasks must have at least one essential container. If you have an application that
+        /// is composed of multiple containers, you should group containers that are used for
+        /// a common purpose into components, and separate the different components into multiple
+        /// task definitions. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+        /// Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         public bool Essential
         {
@@ -391,7 +401,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The image used to start a container. This string is passed directly to the Docker
         /// daemon. Images in the Docker Hub registry are available by default. Other repositories
-        /// are specified with <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up
+        /// are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up
         /// to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
         /// forward slashes, and number signs are allowed. This parameter maps to <code>Image</code>
         /// in the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container">Create
@@ -399,11 +409,22 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/reference/commandline/run/">docker
         /// run</a>.
         /// </para>
-        ///  <ul> <li>Images in official repositories on Docker Hub use a single name (for example,
-        /// <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other repositories
-        /// on Docker Hub are qualified with an organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
-        /// <li>Images in other online repositories are qualified further by a domain name (for
-        /// example, <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
+        ///  <ul> <li>
+        /// <para>
+        /// Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code>
+        /// or <code>mongo</code>).
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// Images in other repositories on Docker Hub are qualified with an organization name
+        /// (for example, <code>amazon/amazon-ecs-agent</code>).
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// Images in other online repositories are qualified further by a domain name (for example,
+        /// <code>quay.io/assemblyline/ubuntu</code>).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Image
         {
@@ -428,8 +449,8 @@ namespace Amazon.ECS.Model
         /// information on linking Docker containers, see <a href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
         /// This parameter maps to <code>Links</code> in the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
-        /// Remote API</a> and the <code>--link</code> option to <a href="https://docs.docker.com/reference/commandline/run/"><code>docker
-        /// run</code></a>.
+        /// Remote API</a> and the <code>--link</code> option to <a href="https://docs.docker.com/reference/commandline/run/">
+        /// <code>docker run</code> </a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -458,18 +479,33 @@ namespace Amazon.ECS.Model
         /// in the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
         /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/reference/commandline/run/">docker
-        /// run</a>. Valid log drivers are displayed in the <a>LogConfiguration</a> data type.
+        /// run</a>. By default, containers use the same logging driver that the Docker daemon
+        /// uses; however the container may use a different logging driver than the Docker daemon
+        /// by specifying a log driver with this parameter in the container definition. To use
+        /// a different logging driver for a container, the log system must be configured properly
+        /// on the container instance (or on a different log server for remote logging options).
+        /// For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+        /// logging drivers</a> in the Docker documentation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon ECS currently supports a subset of the logging drivers available to the Docker
+        /// daemon (shown in the <a>LogConfiguration</a> data type). Currently unsupported log
+        /// drivers may be available in future releases of the Amazon ECS container agent.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
         /// instance. To check the Docker Remote API version on your container instance, log into
         /// your container instance and run the following command: <code>sudo docker version |
-        /// grep "Server API version"</code>
+        /// grep "Server API version"</code> 
         /// </para>
         ///  <note> 
         /// <para>
         /// The Amazon ECS container agent running on a container instance must register the logging
         /// drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
         /// environment variable before containers placed on that instance can use these log configuration
-        /// options. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+        /// options. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
         /// ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -645,7 +681,7 @@ namespace Amazon.ECS.Model
         /// requires version 1.18 of the Docker Remote API or greater on your container instance.
         /// To check the Docker Remote API version on your container instance, log into your container
         /// instance and run the following command: <code>sudo docker version | grep "Server API
-        /// version"</code>
+        /// version"</code> 
         /// </para>
         /// </summary>
         public List<Ulimit> Ulimits

@@ -62,19 +62,19 @@ namespace Amazon.DynamoDBv2.Model
         /// The complete key schema for a global secondary index, which consists of one or more
         /// pairs of attribute names and key types:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>HASH</code> - partition key
+        ///  <code>HASH</code> - partition key
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>RANGE</code> - sort key
+        ///  <code>RANGE</code> - sort key
         /// </para>
-        /// </li> </ul> <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// The partition key of an item is also known as its <i>hash attribute</i>. The term
-        /// "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.
+        /// "hash attribute" derives from DynamoDB' usage of an internal hash function to evenly
+        /// distribute data items across partitions, based on their partition key values.
         /// </para>
         ///  
         /// <para>
@@ -82,7 +82,7 @@ namespace Amazon.DynamoDBv2.Model
         /// attribute" derives from the way DynamoDB stores items with the same partition key
         /// physically close together, in sorted order by the sort key value.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public List<KeySchemaElement> KeySchema
         {

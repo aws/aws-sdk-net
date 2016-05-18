@@ -38,10 +38,12 @@ namespace Amazon.SQS.Model
     ///  
     /// <para>
     /// For example, let's say you have a message and its default message visibility timeout
-    /// is 30 minutes. You could call <code>ChangeMessageVisiblity</code> with a value of
-    /// two hours and the effective timeout would be two hours and 30 minutes. When that time
-    /// comes near you could again extend the time out by calling ChangeMessageVisiblity,
-    /// but this time the maximum allowed timeout would be 9 hours and 30 minutes.
+    /// is 5 minutes. After 3 minutes, you call <code>ChangeMessageVisiblity</code> with a
+    /// timeout of 10 minutes. At that time, the timeout for the message would be extended
+    /// by 10 minutes beyond the time of the ChangeMessageVisibility call. This results in
+    /// a total visibility timeout of 13 minutes. You can continue to call ChangeMessageVisibility
+    /// to extend the visibility timeout to a maximum of 12 hours. If you try to extend beyond
+    /// 12 hours, the request will be rejected.
     /// </para>
     ///  <note>
     /// <para>
@@ -52,14 +54,21 @@ namespace Amazon.SQS.Model
     /// you should delete the messages from the queue after they have been processed. You
     /// can also increase the number of queues you use to process the messages. 
     /// </para>
-    /// </note> <important>If you attempt to set the <code>VisibilityTimeout</code> to an
-    /// amount more than the maximum time left, Amazon SQS returns an error. It will not automatically
-    /// recalculate and increase the timeout to the maximum time remaining.</important> <important>Unlike
-    /// with a queue, when you change the visibility timeout for a specific message, that
-    /// timeout value is applied immediately but is not saved in memory for that message.
+    /// </note> <important>
+    /// <para>
+    /// If you attempt to set the <code>VisibilityTimeout</code> to an amount more than the
+    /// maximum time left, Amazon SQS returns an error. It will not automatically recalculate
+    /// and increase the timeout to the maximum time remaining.
+    /// </para>
+    /// </important> <important>
+    /// <para>
+    /// Unlike with a queue, when you change the visibility timeout for a specific message,
+    /// that timeout value is applied immediately but is not saved in memory for that message.
     /// If you don't delete a message after it is received, the visibility timeout for the
     /// message the next time it is received reverts to the original timeout value, not the
-    /// value you set with the <code>ChangeMessageVisibility</code> action.</important>
+    /// value you set with the <code>ChangeMessageVisibility</code> action.
+    /// </para>
+    /// </important>
     /// </summary>
     public partial class ChangeMessageVisibilityRequest : AmazonSQSRequest
     {
@@ -75,7 +84,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates ChangeMessageVisibilityRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
         /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</param>
         /// <param name="visibilityTimeout">The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the message's visibility timeout.</param>
         public ChangeMessageVisibilityRequest(string queueUrl, string receiptHandle, int visibilityTimeout)
@@ -89,6 +98,10 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property QueueUrl. 
         /// <para>
         /// The URL of the Amazon SQS queue to take action on.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queue URLs are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

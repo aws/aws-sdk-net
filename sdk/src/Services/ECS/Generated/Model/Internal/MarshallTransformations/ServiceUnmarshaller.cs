@@ -70,6 +70,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deploymentConfiguration", targetDepth))
                 {
                     var unmarshaller = DeploymentConfigurationUnmarshaller.Instance;

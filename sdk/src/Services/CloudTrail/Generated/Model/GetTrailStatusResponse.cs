@@ -149,10 +149,14 @@ namespace Amazon.CloudTrail.Model
         /// log files to the designated bucket. For more information see the topic <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
         /// Responses</a> in the Amazon S3 API Reference. 
         /// </para>
-        ///  <note>This error occurs only when there is a problem with the destination S3 bucket
-        /// and will not occur for timeouts. To resolve the issue, create a new bucket and call
-        /// <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects so
-        /// that CloudTrail can again write to the bucket. </note>
+        ///  <note> 
+        /// <para>
+        /// This error occurs only when there is a problem with the destination S3 bucket and
+        /// will not occur for timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code>
+        /// to specify the new bucket, or fix the existing objects so that CloudTrail can again
+        /// write to the bucket.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string LatestDeliveryError
         {
@@ -192,10 +196,14 @@ namespace Amazon.CloudTrail.Model
         /// a digest file to the designated bucket. For more information see the topic <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
         /// Responses</a> in the Amazon S3 API Reference. 
         /// </para>
-        ///  <note>This error occurs only when there is a problem with the destination S3 bucket
-        /// and will not occur for timeouts. To resolve the issue, create a new bucket and call
-        /// <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects so
-        /// that CloudTrail can again write to the bucket. </note>
+        ///  <note> 
+        /// <para>
+        /// This error occurs only when there is a problem with the destination S3 bucket and
+        /// will not occur for timeouts. To resolve the issue, create a new bucket and call <code>UpdateTrail</code>
+        /// to specify the new bucket, or fix the existing objects so that CloudTrail can again
+        /// write to the bucket.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string LatestDigestDeliveryError
         {
@@ -288,7 +296,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property LatestNotificationTime. 
         /// <para>
         /// Specifies the date and time of the most recent Amazon SNS notification that CloudTrail
-        /// has written a new log file to an account's Amazon S3 bucket. 
+        /// has written a new log file to an account's Amazon S3 bucket.
         /// </para>
         /// </summary>
         public DateTime LatestNotificationTime
@@ -307,7 +315,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property StartLoggingTime. 
         /// <para>
         /// Specifies the most recent date and time when CloudTrail started recording API calls
-        /// for an AWS account. 
+        /// for an AWS account.
         /// </para>
         /// </summary>
         public DateTime StartLoggingTime
@@ -326,7 +334,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property StopLoggingTime. 
         /// <para>
         /// Specifies the most recent date and time when CloudTrail stopped recording API calls
-        /// for an AWS account. 
+        /// for an AWS account.
         /// </para>
         /// </summary>
         public DateTime StopLoggingTime

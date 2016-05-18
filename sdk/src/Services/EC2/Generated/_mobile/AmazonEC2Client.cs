@@ -4370,6 +4370,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSecurityGroupReferences
+
+        internal DescribeSecurityGroupReferencesResponse DescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request)
+        {
+            var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
+            var unmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityGroupReferencesRequest,DescribeSecurityGroupReferencesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityGroupReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSecurityGroupReferencesResponse> DescribeSecurityGroupReferencesAsync(DescribeSecurityGroupReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
+            var unmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSecurityGroupReferencesRequest,DescribeSecurityGroupReferencesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSecurityGroups
 
         internal DescribeSecurityGroupsResponse DescribeSecurityGroups()
@@ -4834,6 +4865,37 @@ namespace Amazon.EC2
             var unmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSpotPriceHistoryRequest,DescribeSpotPriceHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeStaleSecurityGroups
+
+        internal DescribeStaleSecurityGroupsResponse DescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request)
+        {
+            var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStaleSecurityGroupsRequest,DescribeStaleSecurityGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStaleSecurityGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeStaleSecurityGroupsResponse> DescribeStaleSecurityGroupsAsync(DescribeStaleSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStaleSecurityGroupsRequest,DescribeStaleSecurityGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

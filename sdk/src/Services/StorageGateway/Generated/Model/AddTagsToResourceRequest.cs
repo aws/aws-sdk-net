@@ -34,19 +34,19 @@ namespace Amazon.StorageGateway.Model
     /// by purpose, owner, environment, or team. Each tag consists of a key and a value, which
     /// you define. You can add tags to the following AWS Storage Gateway resources:
     /// 
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
     /// Storage gateways of all types
     /// </para>
-    /// </li> </ul> <ul> <li>
+    ///  </li> </ul> <ul> <li> 
     /// <para>
     /// Storage Volumes
     /// </para>
-    /// </li> </ul> <ul> <li>
+    ///  </li> </ul> <ul> <li> 
     /// <para>
     /// Virtual Tapes
     /// </para>
-    /// </li> </ul> 
+    ///  </li> </ul> 
     /// <para>
     /// You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes
     /// that are recovered to a new gateway maintain their tags.
@@ -81,12 +81,12 @@ namespace Amazon.StorageGateway.Model
         /// The key-value pair that represents the tag you want to add to the resource. The value
         /// can be an empty string.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Valid characters for key and value are letters, spaces, and numbers representable
         /// in UTF-8 format, and the following special characters: + - = . _ : / @.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public List<Tag> Tags
         {

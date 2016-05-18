@@ -36,26 +36,26 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     /// You can only perform one of the following operations at once:
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
     /// Modify the provisioned throughput settings of the table.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// Enable or disable Streams on the table.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// Remove a global secondary index from the table.
     /// </para>
-    /// </li> <li> 
+    ///  </li> <li> 
     /// <para>
     /// Create a new global secondary index on the table. Once the index begins backfilling,
     /// you can use <i>UpdateTable</i> to perform other operations.
     /// </para>
-    /// </li> </ul> 
+    ///  </li> </ul> 
     /// <para>
-    /// <i>UpdateTable</i> is an asynchronous operation; while it is executing, the table
+    ///  <i>UpdateTable</i> is an asynchronous operation; while it is executing, the table
     /// status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>,
     /// you cannot issue another <i>UpdateTable</i> request. When the table returns to the
     /// <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is complete.
@@ -111,20 +111,20 @@ namespace Amazon.DynamoDBv2.Model
         /// An array of one or more global secondary indexes for the table. For each index in
         /// the array, you can request one action:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <i>Create</i> - add a new global secondary index to the table.
+        ///  <i>Create</i> - add a new global secondary index to the table.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <i>Update</i> - modify the provisioned throughput settings of an existing global secondary
-        /// index.
+        ///  <i>Update</i> - modify the provisioned throughput settings of an existing global
+        /// secondary index.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <i>Delete</i> - remove a global secondary index from the table.
+        ///  <i>Delete</i> - remove a global secondary index from the table.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
         /// Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. 

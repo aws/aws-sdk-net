@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// <i>Required</i>. A string used to identify this tag. You can specify a maximum of
+        ///  <i>Required</i>. A string used to identify this tag. You can specify a maximum of
         /// 128 characters for a tag key. Tags owned by Amazon Web Services (AWS) have the reserved
         /// prefix: <code>aws:</code>.
         /// </para>
@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// <i>Required</i>. A string containing the value for this tag. You can specify a maximum
+        ///  <i>Required</i>. A string containing the value for this tag. You can specify a maximum
         /// of 256 characters for a tag value.
         /// </para>
         /// </summary>

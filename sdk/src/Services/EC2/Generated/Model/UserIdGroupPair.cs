@@ -98,7 +98,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The ID of an AWS account.
+        /// The ID of an AWS account. For a referenced security group in another VPC, the account
+        /// ID of the referenced security group is returned.
         /// </para>
         ///  
         /// <para>

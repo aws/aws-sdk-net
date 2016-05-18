@@ -75,7 +75,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property TapeARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual
-        /// tape shelf (VTS). 
+        /// tape shelf (VTS).
         /// </para>
         /// </summary>
         public string TapeARN

@@ -39,6 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _clusterId;
         private string _instanceGroupId;
         private List<string> _instanceGroupTypes = new List<string>();
+        private List<string> _instanceStates = new List<string>();
         private string _marker;
 
         /// <summary>
@@ -93,6 +94,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetInstanceGroupTypes()
         {
             return this._instanceGroupTypes != null && this._instanceGroupTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceStates. 
+        /// <para>
+        /// A list of instance states that will filter the instances returned with this request.
+        /// </para>
+        /// </summary>
+        public List<string> InstanceStates
+        {
+            get { return this._instanceStates; }
+            set { this._instanceStates = value; }
+        }
+
+        // Check to see if InstanceStates property is set
+        internal bool IsSetInstanceStates()
+        {
+            return this._instanceStates != null && this._instanceStates.Count > 0; 
         }
 
         /// <summary>

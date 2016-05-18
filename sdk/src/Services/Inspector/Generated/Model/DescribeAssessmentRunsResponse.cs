@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRuns. 
         /// <para>
-        /// Information about the assessment run(s).
+        /// Information about the assessment run.
         /// </para>
         /// </summary>
         public List<AssessmentRun> AssessmentRuns

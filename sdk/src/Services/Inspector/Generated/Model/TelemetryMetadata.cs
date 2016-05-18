@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// The metadata about the Inspector application data metrics collected by the agent.
-    /// This data type is used as the response element in the <a>GetTelemetryMetadata</a>
+    /// The metadata about the Amazon Inspector application data metrics collected by the
+    /// agent. This data type is used as the response element in the <a>GetTelemetryMetadata</a>
     /// action.
     /// </summary>
     public partial class TelemetryMetadata
@@ -41,7 +41,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The count of messages that the agent sends to the Inspector service.
+        /// The count of messages that the agent sends to the Amazon Inspector service.
         /// </para>
         /// </summary>
         public long Count
@@ -59,7 +59,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property DataSize. 
         /// <para>
-        /// The data size of messages that the agent sends to the Inspector service.
+        /// The data size of messages that the agent sends to the Amazon Inspector service.
         /// </para>
         /// </summary>
         public long DataSize

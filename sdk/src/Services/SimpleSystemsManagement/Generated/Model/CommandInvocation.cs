@@ -46,8 +46,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _traceOutput;
 
         /// <summary>
-        /// Gets and sets the property CommandId. The command against which this invocation was
-        /// requested.
+        /// Gets and sets the property CommandId. 
+        /// <para>
+        /// The command against which this invocation was requested.
+        /// </para>
         /// </summary>
         public string CommandId
         {
@@ -77,8 +79,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Comment. User-specified information about the command,
-        /// such as a brief description of what the command should do.
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// User-specified information about the command, such as a brief description of what
+        /// the command should do.
+        /// </para>
         /// </summary>
         public string Comment
         {
@@ -93,8 +98,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DocumentName. The document name that was requested for
-        /// execution.
+        /// Gets and sets the property DocumentName. 
+        /// <para>
+        /// The document name that was requested for execution.
+        /// </para>
         /// </summary>
         public string DocumentName
         {
@@ -109,8 +116,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId. The instance ID in which this invocation was
-        /// requested.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID in which this invocation was requested.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
@@ -125,8 +134,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestedDateTime. The time and date the request was sent
-        /// to this instance.
+        /// Gets and sets the property RequestedDateTime. 
+        /// <para>
+        /// The time and date the request was sent to this instance.
+        /// </para>
         /// </summary>
         public DateTime RequestedDateTime
         {
@@ -141,8 +152,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. Whether or not the invocation succeeded, failed,
-        /// or is pending.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Whether or not the invocation succeeded, failed, or is pending.
+        /// </para>
         /// </summary>
         public CommandInvocationStatus Status
         {
@@ -157,7 +170,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceOutput. Gets the trace output sent by the agent.
+        /// Gets and sets the property TraceOutput. 
+        /// <para>
+        ///  Gets the trace output sent by the agent. 
+        /// </para>
         /// </summary>
         public string TraceOutput
         {

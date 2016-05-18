@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentTemplates. 
         /// <para>
-        /// Information about the assessment template(s).
+        /// Information about the assessment templates.
         /// </para>
         /// </summary>
         public List<AssessmentTemplate> AssessmentTemplates

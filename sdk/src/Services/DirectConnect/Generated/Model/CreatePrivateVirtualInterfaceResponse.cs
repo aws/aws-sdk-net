@@ -158,7 +158,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwnerAccount.
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// The AWS account that will own the new virtual interface.
+        /// </para>
         /// </summary>
         public string OwnerAccount
         {

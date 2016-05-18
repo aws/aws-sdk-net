@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property VirtualMFADevice. 
         /// <para>
-        /// A newly created virtual MFA device.
+        /// A structure containing details about the new virtual MFA device.
         /// </para>
         /// </summary>
         public VirtualMFADevice VirtualMFADevice

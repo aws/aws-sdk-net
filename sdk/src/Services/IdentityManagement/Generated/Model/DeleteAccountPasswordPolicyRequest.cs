@@ -29,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccountPasswordPolicy operation.
-    /// Deletes the password policy for the AWS account.
+    /// Deletes the password policy for the AWS account. There are no parameters.
     /// </summary>
     public partial class DeleteAccountPasswordPolicyRequest : AmazonIdentityManagementServiceRequest
     {

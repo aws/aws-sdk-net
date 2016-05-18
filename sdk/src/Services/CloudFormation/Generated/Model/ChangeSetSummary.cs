@@ -37,6 +37,7 @@ namespace Amazon.CloudFormation.Model
         private string _changeSetName;
         private DateTime? _creationTime;
         private string _description;
+        private ExecutionStatus _executionStatus;
         private string _stackId;
         private string _stackName;
         private ChangeSetStatus _status;
@@ -112,6 +113,28 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionStatus. 
+        /// <para>
+        /// If the change set execution status is <code>AVAILABLE</code>, you can execute the
+        /// change set. If you can’t execute the change set, the status indicates why. For example,
+        /// a change set might be in an <code>UNAVAILABLE</code> state because AWS CloudFormation
+        /// is still creating it or in an <code>OBSOLETE</code> state because the stack was already
+        /// updated.
+        /// </para>
+        /// </summary>
+        public ExecutionStatus ExecutionStatus
+        {
+            get { return this._executionStatus; }
+            set { this._executionStatus = value; }
+        }
+
+        // Check to see if ExecutionStatus property is set
+        internal bool IsSetExecutionStatus()
+        {
+            return this._executionStatus != null;
         }
 
         /// <summary>

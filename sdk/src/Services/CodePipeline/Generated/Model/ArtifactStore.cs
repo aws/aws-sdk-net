@@ -30,7 +30,7 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon
     /// S3 bucket is created manually, it must meet the requirements for AWS CodePipeline.
-    /// For more information, see the <ulink url="http://docs.aws.amazon.com/codepipeline/latest/UserGuide/concepts.html">Concepts</ulink>.
+    /// For more information, see the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket">Concepts</a>.
     /// </summary>
     public partial class ArtifactStore
     {
@@ -41,8 +41,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact
-        /// store. If this is undefined, the default key for Amazon S3 is used.
+        /// The encryption key used to encrypt the data in the artifact store, such as an AWS
+        /// Key Management Service (AWS KMS) key. If this is undefined, the default key for Amazon
+        /// S3 is used.
         /// </para>
         /// </summary>
         public EncryptionKey EncryptionKey

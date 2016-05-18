@@ -35,12 +35,12 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// This action does not support partial updates. No parameters are required, but if you
     /// do not specify a parameter, that parameter's value reverts to its default value. See
-    /// the <b>Request Parameters</b> section for each parameter's default value. 
+    /// the <b>Request Parameters</b> section for each parameter's default value.
     /// </para>
     ///  </note> 
     /// <para>
     ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-    /// an IAM Password Policy</a> in the <i>IAM User Guide</i>. 
+    /// an IAM Password Policy</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdateAccountPasswordPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -60,7 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  Allows all IAM users in your account to use the AWS Management Console to change
         /// their own passwords. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-        /// IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>. 
+        /// IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>

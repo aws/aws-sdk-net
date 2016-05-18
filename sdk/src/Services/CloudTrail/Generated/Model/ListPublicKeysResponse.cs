@@ -58,7 +58,11 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// Contains an array of PublicKey objects.
         /// </para>
-        ///  <note>The returned public keys may have validity time ranges that overlap.</note>
+        ///  <note> 
+        /// <para>
+        /// The returned public keys may have validity time ranges that overlap.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<PublicKey> PublicKeyList
         {

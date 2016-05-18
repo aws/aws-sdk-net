@@ -63,7 +63,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CommandId. The ID of the command you want to cancel.
+        /// Gets and sets the property CommandId. 
+        /// <para>
+        /// The ID of the command you want to cancel.
+        /// </para>
         /// </summary>
         public string CommandId
         {

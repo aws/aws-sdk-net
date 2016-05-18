@@ -29,12 +29,12 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroups operation.
-    /// Lists the groups that have the specified path prefix.
+    /// Lists the IAM groups that have the specified path prefix.
     /// 
     ///  
     /// <para>
     ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters. 
+    /// parameters.
     /// </para>
     /// </summary>
     public partial class ListGroupsRequest : AmazonIdentityManagementServiceRequest
@@ -81,7 +81,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -101,12 +101,15 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  The path prefix for filtering the results. For example, the prefix <code>/division_abc/subdivision_xyz/</code>
         /// gets all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>.
-        /// 
         /// </para>
         ///  
         /// <para>
-        ///  This parameter is optional. If it is not included, it defaults to a slash (/), listing
-        /// all groups. 
+        /// This parameter is optional. If it is not included, it defaults to a slash (/), listing
+        /// all groups. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+        /// parameter is a string of characters consisting of either a forward slash (/) by itself
+        /// or a string that must begin and end with forward slashes, containing any ASCII character
+        /// from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
+        /// digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string PathPrefix

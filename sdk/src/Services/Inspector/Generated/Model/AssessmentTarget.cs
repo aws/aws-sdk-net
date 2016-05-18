@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// Contains information about an Inspector application. This data type is used as the
-    /// response element in the <a>DescribeAssessmentTargets</a> action.
+    /// Contains information about an Amazon Inspector application. This data type is used
+    /// as the response element in the <a>DescribeAssessmentTargets</a> action.
     /// </summary>
     public partial class AssessmentTarget
     {
@@ -42,7 +42,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN specifying the Inspector assessment target. 
+        /// The ARN that specifies the Amazon Inspector assessment target.
         /// </para>
         /// </summary>
         public string Arn
@@ -78,7 +78,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Inspector assessment target. 
+        /// The name of the Amazon Inspector assessment target.
         /// </para>
         /// </summary>
         public string Name
@@ -96,8 +96,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupArn. 
         /// <para>
-        /// The ARN specifying the resource group that is associated with the assessment target.
-        /// 
+        /// The ARN that specifies the resource group that is associated with the assessment target.
         /// </para>
         /// </summary>
         public string ResourceGroupArn
@@ -115,7 +114,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time at which <a>UpdateAssessmentTarget</a> API is called.
+        /// The time at which <a>UpdateAssessmentTarget</a> is called.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

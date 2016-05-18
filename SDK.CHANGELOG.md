@@ -1,3 +1,57 @@
+### 3.1.69.0 (2016-05-18 06:08 UTC)
+* DynamoDBv2 (3.1.4.0)
+	* Documentation update.
+* WorkSpaces (3.1.2.0)
+	* Add tagging support.
+
+### 3.1.68.0 (2016-05-12 22:06 UTC)
+* Application Discovery Service (3.1.0.0)
+	* Added support for the AWS Application Discovery Service. This service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.
+* CloudFormation (3.1.5.0)
+	* Added ExecutionStatus to ChangeSets so that customers can see which ChangeSets are available to be executed; which one was executed in the past, and which can no longer be executed due to being obsolete.
+* EC2 (3.1.13.0)
+	* Added support for identifying stale security groups.
+* SimpleSystemsManagement (3.1.2.0)
+	* EC2 Run Command has been updated to allow customers to create and share documents. Documents can be shared privately with other AWS accounts, or publically to all accounts.
+
+### 3.1.67.0 (2016-05-10 21:03 UTC)
+* DirectConnect (3.1.1.1)
+	* Documentation update.
+* ElasticMapReduce (3.1.5.0)
+	* ListInstances can now filter results based on InstanceState(s).
+* IdentityManagement (3.1.4.1)
+	* Documentation update.
+* S3 (3.1.6.1)
+	* Added retry for HTTP 502 and 504. Updated list of requests that should not be directed to S3 accelerate endpoint.
+* SQS (3.1.0.7)
+	* Documentation update.
+* StorageGateway (3.1.4.0)
+	* Updates to the ListGateways and ListVolumes APIs. Added support for the ListTapes API.
+
+### 3.1.66.0 (2016-05-05 19:42 UTC)
+* APIGateway (3.1.5.0)
+	* Added support to Integration for controlling passthrough behavior.
+* CloudTrail (3.1.3.0)
+	* Updates to return topic ARN in addition to the topic name.
+* ECS (3.1.4.0)
+	* Added support for specifying log drivers available from Docker in task definitions.
+* KeyManagementService (3.1.2.0)
+	* Updated for the latest service API updates.
+* S3 (3.1.6.0)
+	* Added support for ListObjectsV2 operation.
+* SecurityToken (3.1.3.3)
+	* Documenation update for the AssumeRole API.
+
+### 3.1.65.0 (2016-05-03 21:40 UTC)
+* CodePipeline (3.1.1.5)
+	* Documentation and samples update.
+* CognitoIdentityProvider (3.1.0.0)
+	* Added support for the Amazon Cognito Identity Provider service.
+* ElasticBeanstalk (3.1.5.0)
+	* Added support for TooManyBucketsException to several operations.
+* Inspector (3.1.2.1)
+	* Documentation update.
+
 ### 3.1.64.0 (2016-04-28 17:03 UTC)
 * OpsWorks (3.1.2.0)
 	* Adds support for default tenancy selection.

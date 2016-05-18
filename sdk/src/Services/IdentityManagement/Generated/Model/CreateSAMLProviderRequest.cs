@@ -29,29 +29,34 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSAMLProvider operation.
-    /// Creates an IAM entity to describe an identity provider (IdP) that supports SAML 2.0.
+    /// Creates an IAM resource that describes an identity provider (IdP) that supports SAML
+    /// 2.0.
     /// 
     ///  
     /// <para>
-    ///  The SAML provider that you create with this operation can be used as a principal
-    /// in a role's trust policy to establish a trust relationship between AWS and a SAML
-    /// identity provider. You can create an IAM role that supports Web-based single sign-on
-    /// (SSO) to the AWS Management Console or one that supports API access to AWS. 
+    /// The SAML provider resource that you create with this operation can be used as a principal
+    /// in an IAM role's trust policy to enable federated users who sign-in using the SAML
+    /// IdP to assume the role. You can create an IAM role that supports Web-based single
+    /// sign-on (SSO) to the AWS Management Console or one that supports API access to AWS.
     /// </para>
     ///  
     /// <para>
-    ///  When you create the SAML provider, you upload an a SAML metadata document that you
-    /// get from your IdP and that includes the issuer's name, expiration information, and
-    /// keys that can be used to validate the SAML authentication response (assertions) that
-    /// are received from the IdP. You must generate the metadata document using the identity
-    /// management software that is used as your organization's IdP. 
+    /// When you create the SAML provider resource, you upload an a SAML metadata document
+    /// that you get from your IdP and that includes the issuer's name, expiration information,
+    /// and keys that can be used to validate the SAML authentication response (assertions)
+    /// that the IdP sends. You must generate the metadata document using the identity management
+    /// software that is used as your organization's IdP.
     /// </para>
-    ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4</a>. </note> 
+    ///  <note> 
+    /// <para>
+    ///  This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
     /// SAML 2.0 Federated Users to Access the AWS Management Console</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-    /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>. 
+    /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateSAMLProviderRequest : AmazonIdentityManagementServiceRequest
@@ -63,6 +68,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the provider to create.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string Name
@@ -84,12 +95,12 @@ namespace Amazon.IdentityManagement.Model
         /// document includes the issuer's name, expiration information, and keys that can be
         /// used to validate the SAML authentication response (assertions) that are received from
         /// the IdP. You must generate the metadata document using the identity management software
-        /// that is used as your organization's IdP. 
+        /// that is used as your organization's IdP.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-        /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
+        /// SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> 
         /// </para>
         /// </summary>
         public string SAMLMetadataDocument

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about the AWS Key Management Service (AWS KMS) key used to
-    /// encrypt data in the artifact store.
+    /// Represents information about the key used to encrypt data in the artifact store, such
+    /// as an AWS Key Management Service (AWS KMS) key.
     /// </summary>
     public partial class EncryptionKey
     {
@@ -39,7 +39,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the AWS KMS key.
+        /// The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.
         /// </para>
         /// </summary>
         public string Id
@@ -57,7 +57,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of AWS KMS key, such as a customer master key.
+        /// The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When
+        /// creating or updating a pipeline, the value must be set to 'KMS'.
         /// </para>
         /// </summary>
         public EncryptionKeyType Type

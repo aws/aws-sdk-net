@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a member of the <code><a>Statement</a></code> type.
+    /// This data type is used as a member of the <code> <a>Statement</a> </code> type.
     /// </para>
     /// </summary>
     public partial class Position
