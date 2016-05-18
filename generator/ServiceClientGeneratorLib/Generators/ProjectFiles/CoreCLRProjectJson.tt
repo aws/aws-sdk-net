@@ -41,7 +41,9 @@
         "**/_pclReference/*",
         "**/_win8/*",
         "**/_winPhone81/*",
-        "**/_winPhoneSilverlight8/*"
+        "**/_winPhoneSilverlight8/*",
+		"**/_winstorage/*",
+		"**/Custom/SyncManager/*"
       ]
     }
   },

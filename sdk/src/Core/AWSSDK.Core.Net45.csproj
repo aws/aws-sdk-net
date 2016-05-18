@@ -66,15 +66,6 @@
     <Compile Include=".\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include=".vs\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include=".vs\AWSSDK.Core.CoreCLR\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include=".vs\AWSSDK.Core.CoreCLR\v14\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.Auth\*.cs">
       <SubType>Code</SubType>
     </Compile>
