@@ -1,3 +1,7 @@
+### 3.1.70.0 (2016-05-18 19:21 UTC)
+* Application Auto Scaling (3.1.0.0)
+	* Added support for Application Auto Scaling. This service is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Auto Scaling.
+
 ### 3.1.69.0 (2016-05-18 06:08 UTC)
 * DynamoDBv2 (3.1.4.0)
 	* Documentation update.
