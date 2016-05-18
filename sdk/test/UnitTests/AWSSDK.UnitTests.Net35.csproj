@@ -344,6 +344,10 @@
       <Project>{42CFDE78-4934-4555-BFA6-ECCF1A8271DF}</Project>
       <Name>AWSSDK.ApplicationDiscoveryService.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net35.csproj">
+      <Project>{E9CEBF4C-B19E-48EC-96FB-88A558D1F52E}</Project>
+      <Name>AWSSDK.ApplicationAutoScaling.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

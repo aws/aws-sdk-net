@@ -483,6 +483,13 @@
                 "Core" : "3.1.5.3"
             },
             "InPreview"    : false
-        }
+        },
+        "Application Auto Scaling"        : {
+            "Version" : "3.1.0.0",
+            "Dependencies" : {
+                "Core" : "3.1.5.3"
+            },
+            "InPreview"    : false
+        },
     }
 }

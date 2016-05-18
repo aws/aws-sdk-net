@@ -23,6 +23,7 @@
   <Targets>
     <AssemblyReferenceDirectories>
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/awsmarketplacecommerceanalytics/bin/Release/net45/</Directory>
@@ -93,6 +94,7 @@
       <Directory>$(ProjectDir)/src/Core/bin/Release/net45/</Directory>
     </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />

@@ -17,6 +17,8 @@
   <Assets>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.APIGateway.CodeAnalysis" Path="|AWSSDK.APIGateway.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.APIGateway.CodeAnalysis" Path="|AWSSDK.APIGateway.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ApplicationAutoScaling.CodeAnalysis" Path="|AWSSDK.ApplicationAutoScaling.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ApplicationAutoScaling.CodeAnalysis" Path="|AWSSDK.ApplicationAutoScaling.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ApplicationDiscoveryService.CodeAnalysis" Path="|AWSSDK.ApplicationDiscoveryService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ApplicationDiscoveryService.CodeAnalysis" Path="|AWSSDK.ApplicationDiscoveryService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AutoScaling.CodeAnalysis" Path="|AWSSDK.AutoScaling.CodeAnalysis|"/>
