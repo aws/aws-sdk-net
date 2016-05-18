@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateWorkspaces operation
+    /// Response Unmarshaller for CreateTags operation
     /// </summary>  
-    public class CreateWorkspacesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateTagsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateWorkspacesResponse response = new CreateWorkspacesResponse();
+            CreateTagsResponse response = new CreateTagsResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("FailedRequests", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FailedCreateWorkspaceRequest, FailedCreateWorkspaceRequestUnmarshaller>(FailedCreateWorkspaceRequestUnmarshaller.Instance);
-                    response.FailedRequests = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PendingRequests", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Workspace, WorkspaceUnmarshaller>(WorkspaceUnmarshaller.Instance);
-                    response.PendingRequests = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -86,12 +69,16 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             {
                 return new ResourceLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonWorkSpacesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateWorkspacesResponseUnmarshaller _instance = new CreateWorkspacesResponseUnmarshaller();        
+        private static CreateTagsResponseUnmarshaller _instance = new CreateTagsResponseUnmarshaller();        
 
-        internal static CreateWorkspacesResponseUnmarshaller GetInstance()
+        internal static CreateTagsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +86,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWorkspacesResponseUnmarshaller Instance
+        public static CreateTagsResponseUnmarshaller Instance
         {
             get
             {

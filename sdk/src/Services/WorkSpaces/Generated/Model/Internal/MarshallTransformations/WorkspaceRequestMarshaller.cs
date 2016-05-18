@@ -63,6 +63,22 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RootVolumeEncryptionEnabled);
             }
 
+            if(requestObject.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTagsListValue in requestObject.Tags)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetUserName())
             {
                 context.Writer.WritePropertyName("UserName");

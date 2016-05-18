@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateWorkspaces operation
+    /// Response Unmarshaller for DescribeTags operation
     /// </summary>  
-    public class CreateWorkspacesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeTagsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateWorkspacesResponse response = new CreateWorkspacesResponse();
+            DescribeTagsResponse response = new DescribeTagsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FailedRequests", targetDepth))
+                if (context.TestExpression("TagList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FailedCreateWorkspaceRequest, FailedCreateWorkspaceRequestUnmarshaller>(FailedCreateWorkspaceRequestUnmarshaller.Instance);
-                    response.FailedRequests = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PendingRequests", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Workspace, WorkspaceUnmarshaller>(WorkspaceUnmarshaller.Instance);
-                    response.PendingRequests = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.TagList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -78,20 +72,16 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValuesException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
-                return new InvalidParameterValuesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceededException"))
-            {
-                return new ResourceLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonWorkSpacesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateWorkspacesResponseUnmarshaller _instance = new CreateWorkspacesResponseUnmarshaller();        
+        private static DescribeTagsResponseUnmarshaller _instance = new DescribeTagsResponseUnmarshaller();        
 
-        internal static CreateWorkspacesResponseUnmarshaller GetInstance()
+        internal static DescribeTagsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +89,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWorkspacesResponseUnmarshaller Instance
+        public static DescribeTagsResponseUnmarshaller Instance
         {
             get
             {

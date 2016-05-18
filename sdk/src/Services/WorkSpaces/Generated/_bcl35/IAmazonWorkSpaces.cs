@@ -38,6 +38,52 @@ namespace Amazon.WorkSpaces
     {
 
         
+        #region  CreateTags
+
+
+        /// <summary>
+        /// Creates tags for a WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
+        /// 
+        /// <returns>The response from the CreateTags service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        CreateTagsResponse CreateTags(CreateTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTags
+        ///         operation.</returns>
+        IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTags.</param>
+        /// 
+        /// <returns>Returns a  CreateTagsResult from WorkSpaces.</returns>
+        CreateTagsResponse EndCreateTags(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateWorkspaces
 
 
@@ -53,6 +99,9 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
         /// 
         /// <returns>The response from the CreateWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
         /// Your resource limits have been exceeded.
         /// </exception>
@@ -81,6 +130,89 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>Returns a  CreateWorkspacesResult from WorkSpaces.</returns>
         CreateWorkspacesResponse EndCreateWorkspaces(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTags
+
+
+        /// <summary>
+        /// Deletes tags from a WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTags service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
+        /// 
+        /// <returns>Returns a  DeleteTagsResult from WorkSpaces.</returns>
+        DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeTags
+
+
+        /// <summary>
+        /// Describes tags for a WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
+        /// 
+        /// <returns>Returns a  DescribeTagsResult from WorkSpaces.</returns>
+        DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult);
 
         #endregion
         
