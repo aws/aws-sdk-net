@@ -34,7 +34,8 @@
         "**/_winPhone81/*",
         "**/_winPhoneSilverlight8/*"
       ]
-    }
+    },
+    "xmlDoc": true
   },
 
   "frameworks": {

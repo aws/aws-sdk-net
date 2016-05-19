@@ -77,28 +77,35 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("      <group targetFramework=\"DNXCore5.0\">\r\n        <dependency id=\"System.Collec" +
-                    "tions\" version=\"4.0.10\" />\r\n        <dependency id=\"System.Collections.NonGeneri" +
-                    "c\" version=\"4.0.0\" />\r\n        <dependency id=\"System.Diagnostics.Tools\" version" +
-                    "=\"4.0.0\" />\r\n        <dependency id=\"System.Linq\" version=\"4.0.0\" />\r\n        <d" +
-                    "ependency id=\"System.Net.Http\" version=\"4.0.0\" />\r\n        <dependency id=\"Syste" +
-                    "m.Runtime.Extensions\" version=\"4.0.10\" />\r\n        <dependency id=\"System.Securi" +
-                    "ty.Cryptography.Algorithms\" version=\"4.0.0-beta-23516\" />\r\n        <dependency i" +
-                    "d=\"System.Text.Encoding.Extensions\" version=\"4.0.10\" />\r\n        <dependency id=" +
-                    "\"System.Text.RegularExpressions\" version=\"4.0.10\" />\r\n        <dependency id=\"Sy" +
-                    "stem.Threading\" version=\"4.0.10\" />\r\n        <dependency id=\"System.Threading.Th" +
-                    "read\" version=\"4.0.0-beta-23123\" />\r\n        <dependency id=\"System.Xml.XDocumen" +
-                    "t\" version=\"4.0.10\" />\r\n        <dependency id=\"Microsoft.CSharp\" version=\"4.0.0" +
-                    "\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n\r\n    <fil" +
-                    "e src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n    <fil" +
-                    "e src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35\" />\r\n    <file src" +
-                    "=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r\n    <file src=\".\\b" +
-                    "in\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\" +
-                    "Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Relea" +
-                    "se\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\ne" +
-                    "t45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n");
+            this.Write("      <group targetFramework=\"netstandard1.5\">\r\n        <dependency id=\"System.Co" +
+                    "llections\" version=\"4.0.11-rc2-24027\" />\r\n        <dependency id=\"System.Collect" +
+                    "ions.NonGeneric\" version=\"4.0.1-rc2-24027\" />\r\n        <dependency id=\"System.Co" +
+                    "nsole\" version=\"4.0.0-rc2-24027\" />\r\n        <dependency id=\"System.Diagnostics." +
+                    "Tools\" version=\"4.0.1-rc2-2402\" />\r\n        <dependency id=\"System.IO.FileSystem" +
+                    "\" version=\"4.0.1-rc2-24027\" />\r\n        <dependency id=\"System.Linq\" version=\"4." +
+                    "1.0-rc2-24027\" />\r\n        <dependency id=\"System.Net.Http\" version=\"4.0.1-rc2-2" +
+                    "4027\" />\r\n        <dependency id=\"System.Reflection.Extensions\" version=\"4.0.1-r" +
+                    "c2-24027\" />\r\n        <dependency id=\"System.Runtime.Extensions\" version=\"4.1.0-" +
+                    "rc2-24027\" />\r\n        <dependency id=\"System.Runtime.InteropServices\" version=\"" +
+                    "4.1.0-rc2-24027\" />\r\n        <dependency id=\"System.Runtime.InteropServices.PInv" +
+                    "oke\" version=\"4.0.0-rc2-24027\" />\r\n        <dependency id=\"System.Security.Crypt" +
+                    "ography.Algorithms\" version=\"4.1.0-rc2-24027\" />\r\n        <dependency id=\"System" +
+                    ".Text.Encoding.Extensions\" version=\"4.0.11-rc2-24027\" />\r\n        <dependency id" +
+                    "=\"System.Text.RegularExpressions\" version=\"4.0.12-rc2-24027\" />\r\n        <depend" +
+                    "ency id=\"System.Threading\" version=\"4.0.11-rc2-24027\" />\r\n        <dependency id" +
+                    "=\"System.Threading.Thread\" version=\"4.0.0-rc2-24027\" />\r\n        <dependency id=" +
+                    "\"System.Xml.XDocument\" version=\"4.0.11-rc2-24027\" />\r\n        <dependency id=\"Mi" +
+                    "crosoft.CSharp\" version=\"4.0.1-rc2-24027\" />\r\n      </group>\r\n    </dependencies" +
+                    ">\r\n  </metadata> \r\n  <files>\r\n\r\n    <file src=\"..\\..\\nuget-content\\account-manag" +
+                    "ement.ps1\" target=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.d" +
+                    "ll\" target=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" t" +
+                    "arget=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target" +
+                    "=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"l" +
+                    "ib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\ne" +
+                    "t45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" " +
+                    "/>\r\n\r\n");
             
-            #line 64 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 69 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -129,18 +136,16 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.xml\" target=\"lib\\wp8\" />\r\n    <fi" +
                     "le src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r\n\r\n");
             
-            #line 94 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 99 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	}
 
             
             #line default
             #line hidden
-            this.Write(@"	<file src=""..\..\artifacts\bin\AWSSDK.Core.Dnx\Release\dnxcore50\Core.dll"" target=""lib\dnxcore50""/>
-	<file src=""..\..\artifacts\bin\AWSSDK.Core.Dnx\Release\dnxcore50\Core.xml"" target=""lib\dnxcore50""/>
-	<file src=""..\..\artifacts\bin\AWSSDK.Core.Dnx\Release\dnxcore50\Core.pdb"" target=""lib\dnxcore50""/>
-  </files>
-</package>");
+            this.Write("\t<file src=\".\\bin\\Release\\netstandard1.5\\AWSSDK.Core.dll\" target=\"lib\\netstandard" +
+                    "1.5\"/>\r\n\t<file src=\".\\bin\\Release\\netstandard1.5\\AWSSDK.Core.pdb\" target=\"lib\\ne" +
+                    "tstandard1.5\"/>\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

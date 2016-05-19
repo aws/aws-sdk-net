@@ -16,8 +16,8 @@
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
     <Import Project="common.targets" />
 	
-	<Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
-	<Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
+	<Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
+	<Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.targets" Condition="'$(VSToolsPath)' != ''" />
 
     <!-- properties used in sdk generation/build -->
     <PropertyGroup>
@@ -56,9 +56,6 @@
 
     <Target Name="full-build-nodocs" DependsOnTargets="test-sdk;keyscan;copy-assemblies;unity-pack;save-build"/>
 	
-	<Target Name="dnxcore-full-build" DependsOnTargets="build-sdk-desktop;build-sdk-dnxcore">
-	</Target>
-
 	<Target Name="restore-nuget">
 		<Message Text="Restore nuget packages"/>
         <Exec Command="..\sdk\.nuget\NuGet.v28.exe restore ..\sdk\AWSSDK.Desktop.sln"/>
@@ -77,7 +74,7 @@
 			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
 	</Target>
 
-    <Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-dnxcore">
+    <Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -103,22 +100,27 @@
 			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
-	<Target Name="build-sdk-dnxcore" DependsOnTargets="GetRuntimeToolingPathTarget">
+	<Target Name="build-sdk-coreclr" DependsOnTargets="GetSDKToolingInfoTarget">
 	
 		<!-- depends: restore-nuget;run-generator -->
-		
-		<Exec Command="$(RuntimeToolingDirectory)\bin\dnu restore" 
-			WorkingDirectory="..\sdk"/>
-	
-		<Message Text="Compile the DNXCore SDK"/>
+		<Exec Command="&quot;$(SDKToolingExe)&quot; restore" 
+			WorkingDirectory="..\sdk"/>		
+			
+			
+		<Message Text="Compile the CoreCLR version of the SDK"/>
 		<ItemGroup>
-			<DNXCoreProjectFiles Include="..\sdk\**\*.xproj" />
+			<CoreCLRProjectFiles Include="..\sdk\**\*.xproj" />
 		</ItemGroup>		
 		
-		<MSBuild Projects="@(DNXCoreProjectFiles)"
+		<MSBuild Projects="@(CoreCLRProjectFiles)"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />
-			
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />	
+	
+<!--		
+		<MSBuild Projects="..\sdk\AWSSDK.CoreCLR.sln"
+			Targets="Rebuild"
+			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+-->			
 	</Target>
 	
 	<Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
@@ -130,7 +132,7 @@
 
 	<Target Name="dnxcore-nuget" DependsOnTargets="">
 	
-		<!-- build-sdk-dnxcore;build-sdk-desktop -->
+		<!-- build-sdk-coreclr;build-sdk-desktop -->
 	
 		<Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />			
