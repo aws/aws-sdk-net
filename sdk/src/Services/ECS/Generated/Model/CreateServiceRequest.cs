@@ -185,23 +185,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
-        /// A load balancer object representing the load balancer to use with your service.
-        /// </para>
-        ///  
-        /// <para>
-        /// For Elastic Load Balancing standard load balancers, this object must contain the load
-        /// balancer name, the container name (as it appears in a container definition), and the
-        /// container port to access from the load balancer. When a task from this service is
-        /// placed on a container instance, the container instance is registered with the load
-        /// balancer specified here.
-        /// </para>
-        ///  
-        /// <para>
-        /// For Elastic Load Balancing application load balancers, this object must contain the
-        /// load balancer target group ARN, the container name (as it appears in a container definition),
-        /// and the container port to access from the load balancer. When a task from this service
-        /// is placed on a container instance, the container instance and port combination is
-        /// registered as a target in the target group specified here.
+        /// A list of load balancer objects, containing the load balancer name, the container
+        /// name (as it appears in a container definition), and the container port to access from
+        /// the load balancer.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -219,9 +205,20 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The name or full Amazon Resource Name (ARN) of the IAM role that allows your Amazon
-        /// ECS container agent to make calls to your load balancer on your behalf. This parameter
-        /// is only required if you are using a load balancer with your service.
+        /// The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS
+        /// to make calls to your load balancer on your behalf. This parameter is required if
+        /// you are using a load balancer with your service. If you specify the <code>role</code>
+        /// parameter, you must also specify a load balancer object with the <code>loadBalancers</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your specified role has a path other than <code>/</code>, then you must either
+        /// specify the full role ARN (this is recommended) or prefix the role name with the path.
+        /// For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
+        /// then you would specify <code>/foo/bar</code> as the role name. For more information,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+        /// Names and Paths</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public string Role
