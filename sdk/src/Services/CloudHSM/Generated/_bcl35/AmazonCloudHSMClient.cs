@@ -226,11 +226,11 @@ namespace Amazon.CloudHSM
         #region  AddTagsToResource
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified resource.
+        /// Adds or overwrites one or more tags for the specified AWS CloudHSM resource.
         /// 
         ///  
         /// <para>
-        /// Each tag consists of a key and a value. Tag keys must be unique per resource.
+        /// Each tag consists of a key and a value. Tag keys must be unique to each resource.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
@@ -1408,7 +1408,7 @@ namespace Amazon.CloudHSM
         #region  ListTagsForResource
 
         /// <summary>
-        /// Returns a list of all tags for the specified resource.
+        /// Returns a list of all tags for the specified AWS CloudHSM resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1653,7 +1653,7 @@ namespace Amazon.CloudHSM
         #region  RemoveTagsFromResource
 
         /// <summary>
-        /// Removes one or more tags from the specified resource.
+        /// Removes one or more tags from the specified AWS CloudHSM resource.
         /// 
         ///  
         /// <para>

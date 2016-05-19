@@ -26,6 +26,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
                 InstanceTenancy = Tenancy.Default
             }).Vpc.VpcId;
 
+            // Wait to make sure VPC exists
+            Thread.Sleep(2000);
             try
             {
                 Client.CreateTags(new CreateTagsRequest

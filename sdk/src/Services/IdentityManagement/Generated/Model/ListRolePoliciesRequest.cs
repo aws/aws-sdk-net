@@ -29,20 +29,20 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRolePolicies operation.
-    /// Lists the names of the inline policies that are embedded in the specified role. 
+    /// Lists the names of the inline policies that are embedded in the specified IAM role.
     /// 
     ///  
     /// <para>
-    /// A role can also have managed policies attached to it. To list the managed policies
+    /// An IAM role can also have managed policies attached to it. To list the managed policies
     /// that are attached to a role, use <a>ListAttachedRolePolicies</a>. For more information
-    /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
     /// parameters. If there are no inline policies embedded with the specified role, the
-    /// action returns an empty list. 
+    /// action returns an empty list.
     /// </para>
     /// </summary>
     public partial class ListRolePoliciesRequest : AmazonIdentityManagementServiceRequest
@@ -84,7 +84,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -103,6 +103,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property RoleName. 
         /// <para>
         /// The name of the role to list policies for.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleName

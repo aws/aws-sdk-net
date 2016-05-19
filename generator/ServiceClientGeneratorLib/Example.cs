@@ -153,6 +153,9 @@ namespace ServiceClientGenerator
         public IList<string> GetRequestAssignments(int currentIndent)
         {
             var result = new List<string>();
+            if (!InputParameters.Any())
+                return result;
+
             var last = InputParameters.Last().Key;
             foreach (var param in InputParameters)
             {
@@ -307,6 +310,10 @@ namespace ServiceClientGenerator
         /// <returns></returns>
         private string ShapeType(Shape shape)
         {
+            if (shape.IsBoolean)
+                return "bool";
+            if (shape.IsDateTime)
+                return "DateTime";
             if (shape.IsPrimitiveType)
                 return shape.Type;
             if (shape.IsMap)
@@ -315,6 +322,8 @@ namespace ServiceClientGenerator
                 return string.Format("List<{0}>", ShapeType(shape.ListShape));
             if (shape.IsStructure)
                 return shape.Name;
+            if (shape.IsMemoryStream)
+                return "MemoryStream";
             throw new InvalidOperationException(string.Format("Unable to resolve type for shape {0}", shape.Name));
         }
     }

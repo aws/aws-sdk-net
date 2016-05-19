@@ -330,6 +330,26 @@
       <Project>{E26ACBDF-31A9-4B10-A7D3-CBA7C5EC3000}</Project>
       <Name>AWSSDK.AWSMarketplaceMetering.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CognitoIdentityProvider\AWSSDK.CognitoIdentityProvider.Net45.csproj">
+      <Project>{2C19A78F-6011-4699-9EAB-0039C289D863}</Project>
+      <Name>AWSSDK.CognitoIdentityProvider.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CognitoIdentityProvider\AWSSDK.CognitoIdentityProvider.Net45.csproj">
+      <Project>{4FBD9D90-29DE-4FB1-A2BC-8CABDC006A44}</Project>
+      <Name>AWSSDK.CognitoIdentityProvider.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DiscoveryService\AWSSDK.DiscoveryService.Net45.csproj">
+      <Project>{1E6ED16C-9D8A-40EA-963B-243290151E1F}</Project>
+      <Name>AWSSDK.DiscoveryService.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net45.csproj">
+      <Project>{DA6397A3-62A6-401D-BCE9-C38224A5450B}</Project>
+      <Name>AWSSDK.ApplicationDiscoveryService.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net45.csproj">
+      <Project>{82FBE13D-13D8-43BF-95E6-56E314E7242B}</Project>
+      <Name>AWSSDK.ApplicationAutoScaling.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

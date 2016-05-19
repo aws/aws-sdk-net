@@ -42,6 +42,11 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The identifier of an access key.
         /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters that can consist of any upper or lowercased letter or digit.
+        /// </para>
         /// </summary>
         public string AccessKeyId
         {

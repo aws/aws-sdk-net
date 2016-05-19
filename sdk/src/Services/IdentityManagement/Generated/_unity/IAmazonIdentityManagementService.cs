@@ -36,13 +36,17 @@ namespace Amazon.IdentityManagement
     /// For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
     /// IAM</a>. 
     /// </para>
-    ///  <note>AWS provides SDKs that consist of libraries and sample code for various programming
+    ///  <note> 
+    /// <para>
+    /// AWS provides SDKs that consist of libraries and sample code for various programming
     /// languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
     /// convenient way to create programmatic access to IAM and AWS. For example, the SDKs
     /// take care of tasks such as cryptographically signing requests (see below), managing
     /// errors, and retrying requests automatically. For information about the AWS SDKs, including
     /// how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
-    /// for Amazon Web Services</a> page. </note> 
+    /// for Amazon Web Services</a> page. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
     /// you can also use the IAM Query API to make direct calls to the IAM web service. To
@@ -62,7 +66,7 @@ namespace Amazon.IdentityManagement
     /// recommend that you do not use your AWS account access key ID and secret access key
     /// for everyday work with IAM. You can use the access key ID and secret access key for
     /// an IAM user or you can use the AWS Security Token Service to generate temporary security
-    /// credentials and use those to sign requests. 
+    /// credentials and use those to sign requests.
     /// </para>
     ///  
     /// <para>
@@ -80,13 +84,25 @@ namespace Amazon.IdentityManagement
     /// <para>
     /// For more information, see the following:
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
     /// Security Credentials</a>. This topic provides general information about the types
-    /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
+    /// of credentials used for accessing AWS. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
     /// Best Practices</a>. This topic presents a list of suggestions for using the IAM service
-    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// to help secure your AWS resources. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walk you through the process of signing a
-    /// request using an access key ID and secret access key. </li> </ul>
+    /// request using an access key ID and secret access key. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonIdentityManagementService : IDisposable
     {
@@ -864,22 +880,21 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
-        /// in the input policies. The policies are supplied as a list of one or more strings.
-        /// To get the context keys from policies associated with an IAM user, group, or role,
-        /// use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// Gets a list of all of the context keys referenced in the input policies. The policies
+        /// are supplied as a list of one or more strings. To get the context keys from policies
+        /// associated with an IAM user, group, or role, use <a>GetContextKeysForPrincipalPolicy</a>.
         /// 
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-        /// element of an IAM policy. Use GetContextKeysForCustomPolicy to understand what key
-        /// names and values you must supply when you call <a>SimulateCustomPolicy</a>. Note that
-        /// all parameters are shown in unencoded form here for clarity, but must be URL encoded
-        /// to be included as a part of a real HTML request.
+        /// about the context of an API query request, and can be evaluated by testing against
+        /// a value specified in an IAM policy. Use GetContextKeysForCustomPolicy to understand
+        /// what key names and values you must supply when you call <a>SimulateCustomPolicy</a>.
+        /// Note that all parameters are shown in unencoded form here for clarity, but must be
+        /// URL encoded to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</param>
+        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -910,32 +925,32 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
-        /// in all of the IAM policies attached to the specified IAM entity. The entity can be
-        /// an IAM user, group, or role. If you specify a user, then the request also includes
-        /// all of the policies attached to groups that the user is a member of.
+        /// Gets a list of all of the context keys referenced in all of the IAM policies attached
+        /// to the specified IAM entity. The entity can be an IAM user, group, or role. If you
+        /// specify a user, then the request also includes all of the policies attached to groups
+        /// that the user is a member of.
         /// 
         ///  
         /// <para>
         /// You can optionally include a list of one or more additional policies, specified as
-        /// strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// strings. If you want to include <i>only</i> a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
         /// instead.
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        ///  <b>Note:</b> This API discloses information about the permissions granted to other
         /// users. If you do not want users to see other user's permissions, then consider allowing
         /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-        /// element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what
-        /// key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// about the context of an API query request, and can be evaluated by testing against
+        /// a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand
+        /// what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
-        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</param>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -954,33 +969,33 @@ namespace Amazon.IdentityManagement
         void GetContextKeysForPrincipalPolicyAsync(string policySourceArn,  AmazonServiceCallback<GetContextKeysForPrincipalPolicyRequest, GetContextKeysForPrincipalPolicyResponse> callback, AsyncOptions options = null);
 
         /// <summary>
-        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
-        /// in all of the IAM policies attached to the specified IAM entity. The entity can be
-        /// an IAM user, group, or role. If you specify a user, then the request also includes
-        /// all of the policies attached to groups that the user is a member of.
+        /// Gets a list of all of the context keys referenced in all of the IAM policies attached
+        /// to the specified IAM entity. The entity can be an IAM user, group, or role. If you
+        /// specify a user, then the request also includes all of the policies attached to groups
+        /// that the user is a member of.
         /// 
         ///  
         /// <para>
         /// You can optionally include a list of one or more additional policies, specified as
-        /// strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// strings. If you want to include <i>only</i> a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
         /// instead.
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        ///  <b>Note:</b> This API discloses information about the permissions granted to other
         /// users. If you do not want users to see other user's permissions, then consider allowing
         /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-        /// element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what
-        /// key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// about the context of an API query request, and can be evaluated by testing against
+        /// a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand
+        /// what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
-        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</param>
-        /// <param name="policyInputList">A optional list of additional policies for which you want list of context keys used in <code>Condition</code> elements.</param>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
+        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback

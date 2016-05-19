@@ -151,6 +151,10 @@ namespace Amazon.ECS
     {
 
         /// <summary>
+        /// Constant Awslogs for LogDriver
+        /// </summary>
+        public static readonly LogDriver Awslogs = new LogDriver("awslogs");
+        /// <summary>
         /// Constant Fluentd for LogDriver
         /// </summary>
         public static readonly LogDriver Fluentd = new LogDriver("fluentd");

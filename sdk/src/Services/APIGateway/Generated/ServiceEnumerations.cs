@@ -327,6 +327,56 @@ namespace Amazon.APIGateway
 
 
     /// <summary>
+    /// Constants used for properties of type PutMode.
+    /// </summary>
+    public class PutMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Merge for PutMode
+        /// </summary>
+        public static readonly PutMode Merge = new PutMode("merge");
+        /// <summary>
+        /// Constant Overwrite for PutMode
+        /// </summary>
+        public static readonly PutMode Overwrite = new PutMode("overwrite");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PutMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PutMode FindValue(string value)
+        {
+            return FindValue<PutMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PutMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UnauthorizedCacheControlHeaderStrategy.
     /// </summary>
     public class UnauthorizedCacheControlHeaderStrategy : ConstantClass

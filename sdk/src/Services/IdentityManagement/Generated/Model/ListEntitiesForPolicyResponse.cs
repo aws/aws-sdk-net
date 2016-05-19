@@ -84,7 +84,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyGroups. 
         /// <para>
-        /// A list of groups that the policy is attached to.
+        /// A list of IAM groups that the policy is attached to.
         /// </para>
         /// </summary>
         public List<PolicyGroup> PolicyGroups
@@ -102,7 +102,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyRoles. 
         /// <para>
-        /// A list of roles that the policy is attached to.
+        /// A list of IAM roles that the policy is attached to.
         /// </para>
         /// </summary>
         public List<PolicyRole> PolicyRoles
@@ -120,7 +120,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyUsers. 
         /// <para>
-        /// A list of users that the policy is attached to.
+        /// A list of IAM users that the policy is attached to.
         /// </para>
         /// </summary>
         public List<PolicyUser> PolicyUsers

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,51 +28,88 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// Contains information about an Inspector finding.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used as the response element in the <a>DescribeFinding</a> action.
-    /// </para>
+    /// Contains information about an Amazon Inspector finding. This data type is used as
+    /// the response element in the <a>DescribeFindings</a> action.
     /// </summary>
     public partial class Finding
     {
-        private string _agentId;
+        private string _arn;
+        private AssetAttributes _assetAttributes;
+        private AssetType _assetType;
         private List<Attribute> _attributes = new List<Attribute>();
-        private string _autoScalingGroup;
-        private LocalizedText _description;
-        private string _findingArn;
-        private LocalizedText _recommendation;
-        private string _ruleName;
-        private string _rulesPackageArn;
-        private string _runArn;
-        private string _severity;
-        private LocalizedText _title;
+        private int? _confidence;
+        private DateTime? _createdAt;
+        private string _description;
+        private string _id;
+        private bool? _indicatorOfCompromise;
+        private double? _numericSeverity;
+        private string _recommendation;
+        private int? _schemaVersion;
+        private string _service;
+        private InspectorServiceAttributes _serviceAttributes;
+        private Severity _severity;
+        private string _title;
+        private DateTime? _updatedAt;
         private List<Attribute> _userAttributes = new List<Attribute>();
 
         /// <summary>
-        /// Gets and sets the property AgentId. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The EC2 instance ID where the agent is installed that is used during the assessment
-        /// that generates the finding. 
+        /// The ARN that specifies the finding.
         /// </para>
         /// </summary>
-        public string AgentId
+        public string Arn
         {
-            get { return this._agentId; }
-            set { this._agentId = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if AgentId property is set
-        internal bool IsSetAgentId()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._agentId != null;
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetAttributes. 
+        /// <para>
+        /// A collection of attributes of the host from which the finding is generated.
+        /// </para>
+        /// </summary>
+        public AssetAttributes AssetAttributes
+        {
+            get { return this._assetAttributes; }
+            set { this._assetAttributes = value; }
+        }
+
+        // Check to see if AssetAttributes property is set
+        internal bool IsSetAssetAttributes()
+        {
+            return this._assetAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetType. 
+        /// <para>
+        /// The type of the host from which the finding is generated.
+        /// </para>
+        /// </summary>
+        public AssetType AssetType
+        {
+            get { return this._assetType; }
+            set { this._assetType = value; }
+        }
+
+        // Check to see if AssetType property is set
+        internal bool IsSetAssetType()
+        {
+            return this._assetType != null;
         }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The system-defined attributes for the finding. 
+        /// The system-defined attributes for the finding.
         /// </para>
         /// </summary>
         public List<Attribute> Attributes
@@ -88,22 +125,39 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AutoScalingGroup. 
+        /// Gets and sets the property Confidence. 
         /// <para>
-        /// The autoscaling group of the EC2 instance where the agent is installed that is used
-        /// during the assessment that generates the finding.
+        /// This data element is currently not used.
         /// </para>
         /// </summary>
-        public string AutoScalingGroup
+        public int Confidence
         {
-            get { return this._autoScalingGroup; }
-            set { this._autoScalingGroup = value; }
+            get { return this._confidence.GetValueOrDefault(); }
+            set { this._confidence = value; }
         }
 
-        // Check to see if AutoScalingGroup property is set
-        internal bool IsSetAutoScalingGroup()
+        // Check to see if Confidence property is set
+        internal bool IsSetConfidence()
         {
-            return this._autoScalingGroup != null;
+            return this._confidence.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The time when the finding was generated.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
         }
 
         /// <summary>
@@ -112,7 +166,7 @@ namespace Amazon.Inspector.Model
         /// The description of the finding.
         /// </para>
         /// </summary>
-        public LocalizedText Description
+        public string Description
         {
             get { return this._description; }
             set { this._description = value; }
@@ -125,30 +179,66 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FindingArn. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The ARN specifying the finding.
+        /// The ID of the finding.
         /// </para>
         /// </summary>
-        public string FindingArn
+        public string Id
         {
-            get { return this._findingArn; }
-            set { this._findingArn = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if FindingArn property is set
-        internal bool IsSetFindingArn()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._findingArn != null;
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndicatorOfCompromise. 
+        /// <para>
+        /// This data element is currently not used.
+        /// </para>
+        /// </summary>
+        public bool IndicatorOfCompromise
+        {
+            get { return this._indicatorOfCompromise.GetValueOrDefault(); }
+            set { this._indicatorOfCompromise = value; }
+        }
+
+        // Check to see if IndicatorOfCompromise property is set
+        internal bool IsSetIndicatorOfCompromise()
+        {
+            return this._indicatorOfCompromise.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumericSeverity. 
+        /// <para>
+        /// The numeric value of the finding severity.
+        /// </para>
+        /// </summary>
+        public double NumericSeverity
+        {
+            get { return this._numericSeverity.GetValueOrDefault(); }
+            set { this._numericSeverity = value; }
+        }
+
+        // Check to see if NumericSeverity property is set
+        internal bool IsSetNumericSeverity()
+        {
+            return this._numericSeverity.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property Recommendation. 
         /// <para>
-        /// The recommendation for the finding. 
+        /// The recommendation for the finding.
         /// </para>
         /// </summary>
-        public LocalizedText Recommendation
+        public string Recommendation
         {
             get { return this._recommendation; }
             set { this._recommendation = value; }
@@ -161,67 +251,63 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RuleName. 
+        /// Gets and sets the property SchemaVersion. 
         /// <para>
-        /// The rule name that is used to generate the finding.
+        /// The schema version of this data type.
         /// </para>
         /// </summary>
-        public string RuleName
+        public int SchemaVersion
         {
-            get { return this._ruleName; }
-            set { this._ruleName = value; }
+            get { return this._schemaVersion.GetValueOrDefault(); }
+            set { this._schemaVersion = value; }
         }
 
-        // Check to see if RuleName property is set
-        internal bool IsSetRuleName()
+        // Check to see if SchemaVersion property is set
+        internal bool IsSetSchemaVersion()
         {
-            return this._ruleName != null;
+            return this._schemaVersion.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property RulesPackageArn. 
+        /// Gets and sets the property Service. 
         /// <para>
-        /// The ARN of the rules package that is used to generate the finding.
+        /// The data element is set to "Inspector".
         /// </para>
         /// </summary>
-        public string RulesPackageArn
+        public string Service
         {
-            get { return this._rulesPackageArn; }
-            set { this._rulesPackageArn = value; }
+            get { return this._service; }
+            set { this._service = value; }
         }
 
-        // Check to see if RulesPackageArn property is set
-        internal bool IsSetRulesPackageArn()
+        // Check to see if Service property is set
+        internal bool IsSetService()
         {
-            return this._rulesPackageArn != null;
+            return this._service != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RunArn. 
-        /// <para>
-        /// The ARN of the assessment run that generated the finding.
-        /// </para>
+        /// Gets and sets the property ServiceAttributes.
         /// </summary>
-        public string RunArn
+        public InspectorServiceAttributes ServiceAttributes
         {
-            get { return this._runArn; }
-            set { this._runArn = value; }
+            get { return this._serviceAttributes; }
+            set { this._serviceAttributes = value; }
         }
 
-        // Check to see if RunArn property is set
-        internal bool IsSetRunArn()
+        // Check to see if ServiceAttributes property is set
+        internal bool IsSetServiceAttributes()
         {
-            return this._runArn != null;
+            return this._serviceAttributes != null;
         }
 
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The finding severity. Values can be set to <i>High</i>, <i>Medium</i>, <i>Low</i>,
-        /// and <i>Informational</i>.
+        /// The finding severity. Values can be set to High, Medium, Low, and Informational.
         /// </para>
         /// </summary>
-        public string Severity
+        public Severity Severity
         {
             get { return this._severity; }
             set { this._severity = value; }
@@ -236,10 +322,10 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// A short description that identifies the finding.
+        /// The name of the finding.
         /// </para>
         /// </summary>
-        public LocalizedText Title
+        public string Title
         {
             get { return this._title; }
             set { this._title = value; }
@@ -249,6 +335,24 @@ namespace Amazon.Inspector.Model
         internal bool IsSetTitle()
         {
             return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time when <a>AddAttributesToFindings</a> is called.
+        /// </para>
+        /// </summary>
+        public DateTime UpdatedAt
+        {
+            get { return this._updatedAt.GetValueOrDefault(); }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
         }
 
         /// <summary>

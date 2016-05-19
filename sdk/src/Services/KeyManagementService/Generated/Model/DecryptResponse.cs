@@ -39,7 +39,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// ARN of the key used to perform the decryption. This value is returned if no errors
-        /// are encountered during the operation. 
+        /// are encountered during the operation.
         /// </para>
         /// </summary>
         public string KeyId

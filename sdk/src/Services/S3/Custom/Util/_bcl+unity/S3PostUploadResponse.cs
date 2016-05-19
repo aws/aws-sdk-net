@@ -45,6 +45,11 @@ namespace Amazon.S3.Util
         /// </summary>
         public string HostId { get; set; }
 
+        /// <summary>
+        /// Gets and sets the CloudFront request ID.
+        /// </summary>
+        public string AmzCfId { get; set; }
+
         internal static S3PostUploadResponse FromWebResponse(HttpWebResponse response)
         {
             var postResponse = new S3PostUploadResponse{ StatusCode = response.StatusCode };
@@ -52,6 +57,8 @@ namespace Amazon.S3.Util
                 postResponse.RequestId = response.Headers[HeaderKeys.XAmzRequestIdHeader];
             if (response.Headers.AllKeys.Contains(HeaderKeys.XAmzId2Header))
                 postResponse.HostId = response.Headers[HeaderKeys.XAmzId2Header];
+            if (response.Headers.AllKeys.Contains(HeaderKeys.XAmzCloudFrontIdHeader))
+                postResponse.AmzCfId = response.Headers[HeaderKeys.XAmzCloudFrontIdHeader];
 
             return postResponse;
         }

@@ -63,6 +63,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticBeanstalk")]
+        public void ApplyEnvironmentManagedActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ApplyEnvironmentManagedAction");
+
+            var request = InstantiateClassGenerator.Execute<ApplyEnvironmentManagedActionRequest>();
+            var marshaller = new ApplyEnvironmentManagedActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance.Unmarshall(context)
+                as ApplyEnvironmentManagedActionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
         public void CheckDNSAvailabilityMarshallTest()
         {
             var operation = service_model.FindOperation("CheckDNSAvailability");
@@ -418,6 +442,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeEnvironmentHealthResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeEnvironmentHealthResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeEnvironmentManagedActionHistoryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEnvironmentManagedActionHistory");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentManagedActionHistoryRequest>();
+            var marshaller = new DescribeEnvironmentManagedActionHistoryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeEnvironmentManagedActionHistoryResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeEnvironmentManagedActionHistoryResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DescribeEnvironmentManagedActionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEnvironmentManagedActions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEnvironmentManagedActionsRequest>();
+            var marshaller = new DescribeEnvironmentManagedActionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeEnvironmentManagedActionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeEnvironmentManagedActionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

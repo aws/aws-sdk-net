@@ -32,13 +32,34 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class CertificateDescription
     {
+        private string _caCertificateId;
         private string _certificateArn;
         private string _certificateId;
         private string _certificatePem;
         private DateTime? _creationDate;
         private DateTime? _lastModifiedDate;
         private string _ownedBy;
+        private string _previousOwnedBy;
         private CertificateStatus _status;
+        private TransferData _transferData;
+
+        /// <summary>
+        /// Gets and sets the property CaCertificateId. 
+        /// <para>
+        /// The certificate ID of the CA certificate used to sign this certificate.
+        /// </para>
+        /// </summary>
+        public string CaCertificateId
+        {
+            get { return this._caCertificateId; }
+            set { this._caCertificateId = value; }
+        }
+
+        // Check to see if CaCertificateId property is set
+        internal bool IsSetCaCertificateId()
+        {
+            return this._caCertificateId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
@@ -149,6 +170,24 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreviousOwnedBy. 
+        /// <para>
+        /// The ID of the AWS account of the previous owner of the certificate.
+        /// </para>
+        /// </summary>
+        public string PreviousOwnedBy
+        {
+            get { return this._previousOwnedBy; }
+            set { this._previousOwnedBy = value; }
+        }
+
+        // Check to see if PreviousOwnedBy property is set
+        internal bool IsSetPreviousOwnedBy()
+        {
+            return this._previousOwnedBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the certificate.
@@ -164,6 +203,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransferData. 
+        /// <para>
+        /// The transfer data.
+        /// </para>
+        /// </summary>
+        public TransferData TransferData
+        {
+            get { return this._transferData; }
+            set { this._transferData = value; }
+        }
+
+        // Check to see if TransferData property is set
+        internal bool IsSetTransferData()
+        {
+            return this._transferData != null;
         }
 
     }

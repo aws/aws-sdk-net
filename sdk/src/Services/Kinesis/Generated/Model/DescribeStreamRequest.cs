@@ -29,7 +29,7 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStream operation.
-    /// Describes the specified stream.
+    /// Describes the specified Amazon Kinesis stream.
     /// 
     ///  
     /// <para>
@@ -37,8 +37,8 @@ namespace Amazon.Kinesis.Model
     /// Name (ARN), and an array of shard objects. For each shard object, there is information
     /// about the hash key and sequence number ranges that the shard spans, and the IDs of
     /// any earlier shards that played in a role in creating the shard. A sequence number
-    /// is the identifier associated with every record ingested in the Amazon Kinesis stream.
-    /// The sequence number is assigned when a record is put into the stream.
+    /// is the identifier associated with every record ingested in the stream. The sequence
+    /// number is assigned when a record is put into the stream.
     /// </para>
     ///  
     /// <para>
@@ -54,6 +54,12 @@ namespace Amazon.Kinesis.Model
     /// you can request them using the shard ID of the last shard returned. Specify this ID
     /// in the <code>ExclusiveStartShardId</code> parameter in a subsequent request to <code>DescribeStream</code>.
     /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// There are no guarantees about the chronological order shards returned in <code>DescribeStream</code>
+    /// results. If you want to process shards in chronological order, use <code>ParentShardId</code>
+    /// to track lineage to the oldest shard.
     /// </para>
     ///  
     /// <para>

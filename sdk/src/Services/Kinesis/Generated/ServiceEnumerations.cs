@@ -25,6 +25,80 @@ namespace Amazon.Kinesis
 {
 
     /// <summary>
+    /// Constants used for properties of type MetricsName.
+    /// </summary>
+    public class MetricsName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for MetricsName
+        /// </summary>
+        public static readonly MetricsName ALL = new MetricsName("ALL");
+        /// <summary>
+        /// Constant IncomingBytes for MetricsName
+        /// </summary>
+        public static readonly MetricsName IncomingBytes = new MetricsName("IncomingBytes");
+        /// <summary>
+        /// Constant IncomingRecords for MetricsName
+        /// </summary>
+        public static readonly MetricsName IncomingRecords = new MetricsName("IncomingRecords");
+        /// <summary>
+        /// Constant IteratorAgeMilliseconds for MetricsName
+        /// </summary>
+        public static readonly MetricsName IteratorAgeMilliseconds = new MetricsName("IteratorAgeMilliseconds");
+        /// <summary>
+        /// Constant OutgoingBytes for MetricsName
+        /// </summary>
+        public static readonly MetricsName OutgoingBytes = new MetricsName("OutgoingBytes");
+        /// <summary>
+        /// Constant OutgoingRecords for MetricsName
+        /// </summary>
+        public static readonly MetricsName OutgoingRecords = new MetricsName("OutgoingRecords");
+        /// <summary>
+        /// Constant ReadProvisionedThroughputExceeded for MetricsName
+        /// </summary>
+        public static readonly MetricsName ReadProvisionedThroughputExceeded = new MetricsName("ReadProvisionedThroughputExceeded");
+        /// <summary>
+        /// Constant WriteProvisionedThroughputExceeded for MetricsName
+        /// </summary>
+        public static readonly MetricsName WriteProvisionedThroughputExceeded = new MetricsName("WriteProvisionedThroughputExceeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricsName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricsName FindValue(string value)
+        {
+            return FindValue<MetricsName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricsName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShardIteratorType.
     /// </summary>
     public class ShardIteratorType : ConstantClass
@@ -38,6 +112,10 @@ namespace Amazon.Kinesis
         /// Constant AT_SEQUENCE_NUMBER for ShardIteratorType
         /// </summary>
         public static readonly ShardIteratorType AT_SEQUENCE_NUMBER = new ShardIteratorType("AT_SEQUENCE_NUMBER");
+        /// <summary>
+        /// Constant AT_TIMESTAMP for ShardIteratorType
+        /// </summary>
+        public static readonly ShardIteratorType AT_TIMESTAMP = new ShardIteratorType("AT_TIMESTAMP");
         /// <summary>
         /// Constant LATEST for ShardIteratorType
         /// </summary>

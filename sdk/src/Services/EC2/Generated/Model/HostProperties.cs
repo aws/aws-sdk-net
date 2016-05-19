@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes properties of a Dedicated host.
     /// </summary>
     public partial class HostProperties
     {
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type size that the Dedicated host supports (e.g., m3.medium).
+        /// The instance type size that the Dedicated host supports (for example, m3.medium).
         /// </para>
         /// </summary>
         public string InstanceType

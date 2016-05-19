@@ -41,8 +41,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ClientIDList. 
         /// <para>
         /// A list of client IDs (also known as audiences) that are associated with the specified
-        /// IAM OpenID Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>.
-        /// 
+        /// IAM OIDC provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>.
         /// </para>
         /// </summary>
         public List<string> ClientIDList
@@ -60,8 +59,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
-        /// The date and time when the IAM OpenID Connect provider entity was created in the AWS
-        /// account. 
+        /// The date and time when the IAM OIDC provider resource object was created in the AWS
+        /// account.
         /// </para>
         /// </summary>
         public DateTime CreateDate
@@ -79,8 +78,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ThumbprintList. 
         /// <para>
-        /// A list of certificate thumbprints that are associated with the specified IAM OpenID
-        /// Connect provider. For more information, see <a>CreateOpenIDConnectProvider</a>. 
+        /// A list of certificate thumbprints that are associated with the specified IAM OIDC
+        /// provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>.
+        /// 
         /// </para>
         /// </summary>
         public List<string> ThumbprintList
@@ -98,8 +98,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL that the IAM OpenID Connect provider is associated with. For more information,
-        /// see <a>CreateOpenIDConnectProvider</a>. 
+        /// The URL that the IAM OIDC provider resource object is associated with. For more information,
+        /// see <a>CreateOpenIDConnectProvider</a>.
         /// </para>
         /// </summary>
         public string Url

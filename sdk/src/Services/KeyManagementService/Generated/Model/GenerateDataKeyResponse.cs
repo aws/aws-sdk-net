@@ -43,7 +43,7 @@ namespace Amazon.KeyManagementService.Model
         /// information to reconstruct the encryption context so that the data encrypted by using
         /// the key can later be decrypted. You must provide both the ciphertext blob and the
         /// encryption context to the <a>Decrypt</a> API to recover the plaintext data key and
-        /// decrypt the object. 
+        /// decrypt the object.
         /// </para>
         ///  
         /// <para>
@@ -85,7 +85,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Plaintext. 
         /// <para>
         /// Plaintext that contains the data key. Use this for encryption and decryption and then
-        /// remove it from memory as soon as possible. 
+        /// remove it from memory as soon as possible.
         /// </para>
         /// </summary>
         public MemoryStream Plaintext

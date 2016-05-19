@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A list of container definitions in JSON format that describe the different containers
         /// that make up your task. For more information about container definition parameters
-        /// and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+        /// and defaults, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskDefinitionArn. 
         /// <para>
-        /// The full Amazon Resource Name (ARN) of the of the task definition.
+        /// The full Amazon Resource Name (ARN) of the task definition.
         /// </para>
         /// </summary>
         public string TaskDefinitionArn
@@ -159,7 +159,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Volumes. 
         /// <para>
         /// The list of volumes in a task. For more information about volume definition parameters
-        /// and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+        /// and defaults, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
         /// </summary>

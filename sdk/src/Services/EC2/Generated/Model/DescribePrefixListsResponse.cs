@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribePrefixLists operation.
+    /// Contains the output of DescribePrefixLists.
     /// </summary>
     public partial class DescribePrefixListsResponse : AmazonWebServiceResponse
     {

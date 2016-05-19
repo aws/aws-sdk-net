@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// Information about the user.
+        /// A structure with details about the new IAM user.
         /// </para>
         /// </summary>
         public User User

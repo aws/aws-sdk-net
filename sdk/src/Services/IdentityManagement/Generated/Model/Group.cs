@@ -32,10 +32,21 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    ///  This data type is used as a response element in the following actions:
+    /// This data type is used as a response element in the following actions:
     /// </para>
-    ///  <ul> <li> <a>CreateGroup</a> </li> <li> <a>GetGroup</a> </li> <li> <a>ListGroups</a>
-    /// </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateGroup</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetGroup</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListGroups</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Group
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes the modification request/s.
     /// </summary>
     public partial class ReservedInstancesModificationResult
     {

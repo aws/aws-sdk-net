@@ -29,7 +29,7 @@ namespace Amazon.CloudHSM.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Returns a list of all tags for the specified resource.
+    /// Returns a list of all tags for the specified AWS CloudHSM resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonCloudHSMRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
         /// </para>
         /// </summary>
         public string ResourceArn

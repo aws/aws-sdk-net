@@ -67,6 +67,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeleteAssociatedConditionalForwarder())
+                {
+                    context.Writer.WritePropertyName("DeleteAssociatedConditionalForwarder");
+                    context.Writer.Write(publicRequest.DeleteAssociatedConditionalForwarder);
+                }
+
                 if(publicRequest.IsSetTrustId())
                 {
                     context.Writer.WritePropertyName("TrustId");

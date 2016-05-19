@@ -76,6 +76,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
+                {
+                    var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompressionFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

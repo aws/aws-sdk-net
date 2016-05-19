@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the RejectCertificateTransfer operation.
     /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-    /// the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+    /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
     /// 
     ///  
     /// <para>
@@ -46,6 +46,7 @@ namespace Amazon.IoT.Model
     public partial class RejectCertificateTransferRequest : AmazonIoTRequest
     {
         private string _certificateId;
+        private string _rejectReason;
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
@@ -63,6 +64,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCertificateId()
         {
             return this._certificateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RejectReason. 
+        /// <para>
+        /// The reason the certificate transfer was rejected.
+        /// </para>
+        /// </summary>
+        public string RejectReason
+        {
+            get { return this._rejectReason; }
+            set { this._rejectReason = value; }
+        }
+
+        // Check to see if RejectReason property is set
+        internal bool IsSetRejectReason()
+        {
+            return this._rejectReason != null;
         }
 
     }

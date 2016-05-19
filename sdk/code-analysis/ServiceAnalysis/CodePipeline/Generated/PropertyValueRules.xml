@@ -194,6 +194,11 @@
     <max>999</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionExecution.ExternalExecutionId</property>
+    <min>1</min>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionExecution.ExternalExecutionUrl</property>
     <min>1</min>
     <max>2048</max>
@@ -202,6 +207,16 @@
     <property>Amazon.CodePipeline.Model.ActionExecution.PercentComplete</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionRevision.RevisionChangeId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ActionRevision.RevisionId</property>
+    <min>1</min>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionState.ActionName</property>
@@ -258,6 +273,11 @@
     <pattern>[a-zA-Z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.Artifact.Revision</property>
+    <min>1</min>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ArtifactDetails.MaximumCount</property>
     <min>0</min>
     <max>5</max>
@@ -279,14 +299,34 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.CurrentRevision.ChangeIdentifier</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.CurrentRevision.Revision</property>
+    <min>1</min>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.EncryptionKey.Id</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ExecutionDetails.ExternalExecutionId</property>
+    <min>1</min>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ExecutionDetails.PercentComplete</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.FailureDetails.ExternalExecutionId</property>
+    <min>1</min>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.InputArtifact.Name</property>

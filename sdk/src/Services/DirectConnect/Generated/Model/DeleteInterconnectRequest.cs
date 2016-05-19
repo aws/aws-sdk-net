@@ -30,6 +30,12 @@ namespace Amazon.DirectConnect.Model
     /// <summary>
     /// Container for the parameters to the DeleteInterconnect operation.
     /// Deletes the specified interconnect.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This is intended for use by AWS Direct Connect partners only.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteInterconnectRequest : AmazonDirectConnectRequest
     {

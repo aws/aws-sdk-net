@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the EnableVpcClassicLink operation.
+    /// Contains the output of EnableVpcClassicLink.
     /// </summary>
     public partial class EnableVpcClassicLinkResponse : AmazonWebServiceResponse
     {

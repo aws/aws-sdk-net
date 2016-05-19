@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists all tags associated with a resource.
+    /// Lists all tags associated with an assessment template.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonInspectorRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN specifying the resource whose tags you want to list.
+        /// The ARN that specifies the assessment template whose tags you want to list.
         /// </para>
         /// </summary>
         public string ResourceArn

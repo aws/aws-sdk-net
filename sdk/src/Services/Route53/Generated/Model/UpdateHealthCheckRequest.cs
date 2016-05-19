@@ -54,6 +54,9 @@ namespace Amazon.Route53.Model
         private int? _healthThreshold;
         private List<string> _childHealthChecks = new List<string>();
         private bool? _enableSNI;
+        private List<string> _regions = new List<string>();
+        private AlarmIdentifier _alarmIdentifier;
+        private InsufficientDataHealthStatus _insufficientDataHealthStatus;
 
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
@@ -337,6 +340,61 @@ namespace Amazon.Route53.Model
         internal bool IsSetEnableSNI()
         {
             return this._enableSNI.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// A list of <code>HealthCheckRegion</code> values that specify the Amazon EC2 regions
+        /// that you want Amazon Route 53 to use to perform health checks. You must specify at
+        /// least three regions.
+        /// </para>
+        ///  <note>When you remove a region from the list, Amazon Route 53 will briefly continue
+        /// to check your endpoint from that region.</note> 
+        /// <para>
+        /// Specify this value only if you want to change it.
+        /// </para>
+        /// </summary>
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && this._regions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlarmIdentifier.
+        /// </summary>
+        public AlarmIdentifier AlarmIdentifier
+        {
+            get { return this._alarmIdentifier; }
+            set { this._alarmIdentifier = value; }
+        }
+
+        // Check to see if AlarmIdentifier property is set
+        internal bool IsSetAlarmIdentifier()
+        {
+            return this._alarmIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsufficientDataHealthStatus.
+        /// </summary>
+        public InsufficientDataHealthStatus InsufficientDataHealthStatus
+        {
+            get { return this._insufficientDataHealthStatus; }
+            set { this._insufficientDataHealthStatus = value; }
+        }
+
+        // Check to see if InsufficientDataHealthStatus property is set
+        internal bool IsSetInsufficientDataHealthStatus()
+        {
+            return this._insufficientDataHealthStatus != null;
         }
 
     }

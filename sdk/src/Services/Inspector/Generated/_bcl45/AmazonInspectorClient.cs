@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 
 
@@ -38,8 +38,8 @@ namespace Amazon.Inspector
     ///
     /// Amazon Inspector 
     /// <para>
-    /// Amazon Inspector enables you to analyze the behavior of the applications you run in
-    /// AWS and to identify potential security issues. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">
+    /// Amazon Inspector enables you to analyze the behavior of your AWS resources and to
+    /// identify potential security issues. For more information, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">
     /// Amazon Inspector User Guide</a>.
     /// </para>
     /// </summary>
@@ -234,23 +234,25 @@ namespace Amazon.Inspector
 
 
         /// <summary>
-        /// Assigns attributes (key and value pair) to the findings specified by the findings'
-        /// ARNs.
+        /// Assigns attributes (key and value pairs) to the findings that are specified by the
+        /// ARNs of the findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddAttributesToFindings service method.</param>
         /// 
         /// <returns>The response from the AddAttributesToFindings service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
         public AddAttributesToFindingsResponse AddAttributesToFindings(AddAttributesToFindingsRequest request)
         {
@@ -280,218 +282,116 @@ namespace Amazon.Inspector
 
         #endregion
         
-        #region  AttachAssessmentAndRulesPackage
+        #region  CreateAssessmentTarget
 
 
         /// <summary>
-        /// Attaches the rules package specified by the rules package ARN to the assessment specified
-        /// by the assessment ARN.
+        /// Creates a new assessment target using the ARN of the resource group that is generated
+        /// by <a>CreateResourceGroup</a>. You can create up to 50 assessment targets per AWS
+        /// account. You can run up to 500 concurrent agents per AWS account. For more information,
+        /// see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
+        /// Amazon Inspector Assessment Targets</a>.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the AttachAssessmentAndRulesPackage service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentTarget service method.</param>
         /// 
-        /// <returns>The response from the AttachAssessmentAndRulesPackage service method, as returned by Inspector.</returns>
+        /// <returns>The response from the CreateAssessmentTarget service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public AttachAssessmentAndRulesPackageResponse AttachAssessmentAndRulesPackage(AttachAssessmentAndRulesPackageRequest request)
+        public CreateAssessmentTargetResponse CreateAssessmentTarget(CreateAssessmentTargetRequest request)
         {
-            var marshaller = new AttachAssessmentAndRulesPackageRequestMarshaller();
-            var unmarshaller = AttachAssessmentAndRulesPackageResponseUnmarshaller.Instance;
+            var marshaller = new CreateAssessmentTargetRequestMarshaller();
+            var unmarshaller = CreateAssessmentTargetResponseUnmarshaller.Instance;
 
-            return Invoke<AttachAssessmentAndRulesPackageRequest,AttachAssessmentAndRulesPackageResponse>(request, marshaller, unmarshaller);
+            return Invoke<CreateAssessmentTargetRequest,CreateAssessmentTargetResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the AttachAssessmentAndRulesPackage operation.
+        /// Initiates the asynchronous execution of the CreateAssessmentTarget operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the AttachAssessmentAndRulesPackage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentTarget operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<AttachAssessmentAndRulesPackageResponse> AttachAssessmentAndRulesPackageAsync(AttachAssessmentAndRulesPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateAssessmentTargetResponse> CreateAssessmentTargetAsync(CreateAssessmentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachAssessmentAndRulesPackageRequestMarshaller();
-            var unmarshaller = AttachAssessmentAndRulesPackageResponseUnmarshaller.Instance;
+            var marshaller = new CreateAssessmentTargetRequestMarshaller();
+            var unmarshaller = CreateAssessmentTargetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<AttachAssessmentAndRulesPackageRequest,AttachAssessmentAndRulesPackageResponse>(request, marshaller, 
+            return InvokeAsync<CreateAssessmentTargetRequest,CreateAssessmentTargetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  CreateApplication
+        #region  CreateAssessmentTemplate
 
 
         /// <summary>
-        /// Creates a new application using the resource group ARN generated by <a>CreateResourceGroup</a>.
-        /// You can create up to 50 applications per AWS account. You can run up to 500 concurrent
-        /// agents per AWS account. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html">
-        /// Inspector Applications.</a>
+        /// Creates an assessment template for the assessment target that is specified by the
+        /// ARN of the assessment target.
         /// </summary>
-        /// <param name="applicationName">The user-defined name identifying the application that you want to create. The name must be unique within the AWS account.</param>
-        /// <param name="resourceGroupArn">The ARN specifying the resource group that is used to create the application.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentTemplate service method.</param>
         /// 
-        /// <returns>The response from the CreateApplication service method, as returned by Inspector.</returns>
+        /// <returns>The response from the CreateAssessmentTemplate service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public CreateApplicationResponse CreateApplication(string applicationName, string resourceGroupArn)
+        public CreateAssessmentTemplateResponse CreateAssessmentTemplate(CreateAssessmentTemplateRequest request)
         {
-            var request = new CreateApplicationRequest();
-            request.ApplicationName = applicationName;
-            request.ResourceGroupArn = resourceGroupArn;
-            return CreateApplication(request);
-        }
+            var marshaller = new CreateAssessmentTemplateRequestMarshaller();
+            var unmarshaller = CreateAssessmentTemplateResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Creates a new application using the resource group ARN generated by <a>CreateResourceGroup</a>.
-        /// You can create up to 50 applications per AWS account. You can run up to 500 concurrent
-        /// agents per AWS account. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html">
-        /// Inspector Applications.</a>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
-        /// 
-        /// <returns>The response from the CreateApplication service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
-        {
-            var marshaller = new CreateApplicationRequestMarshaller();
-            var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
-
-            return Invoke<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Creates a new application using the resource group ARN generated by <a>CreateResourceGroup</a>.
-        /// You can create up to 50 applications per AWS account. You can run up to 500 concurrent
-        /// agents per AWS account. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html">
-        /// Inspector Applications.</a>
-        /// </summary>
-        /// <param name="applicationName">The user-defined name identifying the application that you want to create. The name must be unique within the AWS account.</param>
-        /// <param name="resourceGroupArn">The ARN specifying the resource group that is used to create the application.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the CreateApplication service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<CreateApplicationResponse> CreateApplicationAsync(string applicationName, string resourceGroupArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new CreateApplicationRequest();
-            request.ApplicationName = applicationName;
-            request.ResourceGroupArn = resourceGroupArn;
-            return CreateApplicationAsync(request, cancellationToken);
+            return Invoke<CreateAssessmentTemplateRequest,CreateAssessmentTemplateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateApplication operation.
+        /// Initiates the asynchronous execution of the CreateAssessmentTemplate operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateApplication operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentTemplate operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<CreateAssessmentTemplateResponse> CreateAssessmentTemplateAsync(CreateAssessmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateApplicationRequestMarshaller();
-            var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
+            var marshaller = new CreateAssessmentTemplateRequestMarshaller();
+            var unmarshaller = CreateAssessmentTemplateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  CreateAssessment
-
-
-        /// <summary>
-        /// Creates an assessment for the application specified by the application ARN. You can
-        /// create up to 500 assessments per AWS account.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateAssessment service method.</param>
-        /// 
-        /// <returns>The response from the CreateAssessment service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public CreateAssessmentResponse CreateAssessment(CreateAssessmentRequest request)
-        {
-            var marshaller = new CreateAssessmentRequestMarshaller();
-            var unmarshaller = CreateAssessmentResponseUnmarshaller.Instance;
-
-            return Invoke<CreateAssessmentRequest,CreateAssessmentResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateAssessment operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateAssessment operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<CreateAssessmentResponse> CreateAssessmentAsync(CreateAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new CreateAssessmentRequestMarshaller();
-            var unmarshaller = CreateAssessmentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<CreateAssessmentRequest,CreateAssessmentResponse>(request, marshaller, 
+            return InvokeAsync<CreateAssessmentTemplateRequest,CreateAssessmentTemplateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -502,45 +402,26 @@ namespace Amazon.Inspector
 
         /// <summary>
         /// Creates a resource group using the specified set of tags (key and value pairs) that
-        /// are used to select the EC2 instances to be included in an Inspector application. The
-        /// created resource group is then used to create an Inspector application.
-        /// </summary>
-        /// <param name="resourceGroupTags">A collection of keys and an array of possible values in JSON format. For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]</param>
-        /// 
-        /// <returns>The response from the CreateResourceGroup service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        public CreateResourceGroupResponse CreateResourceGroup(string resourceGroupTags)
-        {
-            var request = new CreateResourceGroupRequest();
-            request.ResourceGroupTags = resourceGroupTags;
-            return CreateResourceGroup(request);
-        }
-
-
-        /// <summary>
-        /// Creates a resource group using the specified set of tags (key and value pairs) that
-        /// are used to select the EC2 instances to be included in an Inspector application. The
-        /// created resource group is then used to create an Inspector application.
+        /// are used to select the EC2 instances to be included in an Amazon Inspector assessment
+        /// target. The created resource group is then used to create an Amazon Inspector assessment
+        /// target. For more information, see <a>CreateAssessmentTarget</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceGroup service method.</param>
         /// 
         /// <returns>The response from the CreateResourceGroup service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
         public CreateResourceGroupResponse CreateResourceGroup(CreateResourceGroupRequest request)
         {
@@ -548,34 +429,6 @@ namespace Amazon.Inspector
             var unmarshaller = CreateResourceGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateResourceGroupRequest,CreateResourceGroupResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Creates a resource group using the specified set of tags (key and value pairs) that
-        /// are used to select the EC2 instances to be included in an Inspector application. The
-        /// created resource group is then used to create an Inspector application.
-        /// </summary>
-        /// <param name="resourceGroupTags">A collection of keys and an array of possible values in JSON format. For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the CreateResourceGroup service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        public Task<CreateResourceGroupResponse> CreateResourceGroupAsync(string resourceGroupTags, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new CreateResourceGroupRequest();
-            request.ResourceGroupTags = resourceGroupTags;
-            return CreateResourceGroupAsync(request, cancellationToken);
         }
 
         /// <summary>
@@ -598,539 +451,297 @@ namespace Amazon.Inspector
 
         #endregion
         
-        #region  DeleteApplication
+        #region  DeleteAssessmentRun
 
 
         /// <summary>
-        /// Deletes the application specified by the application ARN.
+        /// Deletes the assessment run that is specified by the ARN of the assessment run.
         /// </summary>
-        /// <param name="applicationArn">The ARN specifying the application that you want to delete.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentRun service method.</param>
         /// 
-        /// <returns>The response from the DeleteApplication service method, as returned by Inspector.</returns>
+        /// <returns>The response from the DeleteAssessmentRun service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.AssessmentRunInProgressException">
+        /// You cannot perform a specified action if an assessment run is currently in progress.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.OperationInProgressException">
-        /// 
-        /// </exception>
-        public DeleteApplicationResponse DeleteApplication(string applicationArn)
+        public DeleteAssessmentRunResponse DeleteAssessmentRun(DeleteAssessmentRunRequest request)
         {
-            var request = new DeleteApplicationRequest();
-            request.ApplicationArn = applicationArn;
-            return DeleteApplication(request);
-        }
+            var marshaller = new DeleteAssessmentRunRequestMarshaller();
+            var unmarshaller = DeleteAssessmentRunResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Deletes the application specified by the application ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
-        /// 
-        /// <returns>The response from the DeleteApplication service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.OperationInProgressException">
-        /// 
-        /// </exception>
-        public DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
-        {
-            var marshaller = new DeleteApplicationRequestMarshaller();
-            var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Deletes the application specified by the application ARN.
-        /// </summary>
-        /// <param name="applicationArn">The ARN specifying the application that you want to delete.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteApplication service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.OperationInProgressException">
-        /// 
-        /// </exception>
-        public Task<DeleteApplicationResponse> DeleteApplicationAsync(string applicationArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DeleteApplicationRequest();
-            request.ApplicationArn = applicationArn;
-            return DeleteApplicationAsync(request, cancellationToken);
+            return Invoke<DeleteAssessmentRunRequest,DeleteAssessmentRunResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApplication operation.
+        /// Initiates the asynchronous execution of the DeleteAssessmentRun operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentRun operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteAssessmentRunResponse> DeleteAssessmentRunAsync(DeleteAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteApplicationRequestMarshaller();
-            var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+            var marshaller = new DeleteAssessmentRunRequestMarshaller();
+            var unmarshaller = DeleteAssessmentRunResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, 
+            return InvokeAsync<DeleteAssessmentRunRequest,DeleteAssessmentRunResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  DeleteAssessment
+        #region  DeleteAssessmentTarget
 
 
         /// <summary>
-        /// Deletes the assessment specified by the assessment ARN.
+        /// Deletes the assessment target that is specified by the ARN of the assessment target.
         /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment that you want to delete.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentTarget service method.</param>
         /// 
-        /// <returns>The response from the DeleteAssessment service method, as returned by Inspector.</returns>
+        /// <returns>The response from the DeleteAssessmentTarget service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.AssessmentRunInProgressException">
+        /// You cannot perform a specified action if an assessment run is currently in progress.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.OperationInProgressException">
-        /// 
-        /// </exception>
-        public DeleteAssessmentResponse DeleteAssessment(string assessmentArn)
+        public DeleteAssessmentTargetResponse DeleteAssessmentTarget(DeleteAssessmentTargetRequest request)
         {
-            var request = new DeleteAssessmentRequest();
-            request.AssessmentArn = assessmentArn;
-            return DeleteAssessment(request);
-        }
+            var marshaller = new DeleteAssessmentTargetRequestMarshaller();
+            var unmarshaller = DeleteAssessmentTargetResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Deletes the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessment service method.</param>
-        /// 
-        /// <returns>The response from the DeleteAssessment service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.OperationInProgressException">
-        /// 
-        /// </exception>
-        public DeleteAssessmentResponse DeleteAssessment(DeleteAssessmentRequest request)
-        {
-            var marshaller = new DeleteAssessmentRequestMarshaller();
-            var unmarshaller = DeleteAssessmentResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteAssessmentRequest,DeleteAssessmentResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Deletes the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment that you want to delete.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteAssessment service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.OperationInProgressException">
-        /// 
-        /// </exception>
-        public Task<DeleteAssessmentResponse> DeleteAssessmentAsync(string assessmentArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DeleteAssessmentRequest();
-            request.AssessmentArn = assessmentArn;
-            return DeleteAssessmentAsync(request, cancellationToken);
+            return Invoke<DeleteAssessmentTargetRequest,DeleteAssessmentTargetResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteAssessment operation.
+        /// Initiates the asynchronous execution of the DeleteAssessmentTarget operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentTarget operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteAssessmentResponse> DeleteAssessmentAsync(DeleteAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteAssessmentTargetResponse> DeleteAssessmentTargetAsync(DeleteAssessmentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteAssessmentRequestMarshaller();
-            var unmarshaller = DeleteAssessmentResponseUnmarshaller.Instance;
+            var marshaller = new DeleteAssessmentTargetRequestMarshaller();
+            var unmarshaller = DeleteAssessmentTargetResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteAssessmentRequest,DeleteAssessmentResponse>(request, marshaller, 
+            return InvokeAsync<DeleteAssessmentTargetRequest,DeleteAssessmentTargetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  DeleteRun
+        #region  DeleteAssessmentTemplate
 
 
         /// <summary>
-        /// Deletes the assessment run specified by the run ARN.
+        /// Deletes the assessment template that is specified by the ARN of the assessment template.
         /// </summary>
-        /// <param name="runArn">The ARN specifying the assessment run that you want to delete.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentTemplate service method.</param>
         /// 
-        /// <returns>The response from the DeleteRun service method, as returned by Inspector.</returns>
+        /// <returns>The response from the DeleteAssessmentTemplate service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.AssessmentRunInProgressException">
+        /// You cannot perform a specified action if an assessment run is currently in progress.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public DeleteRunResponse DeleteRun(string runArn)
+        public DeleteAssessmentTemplateResponse DeleteAssessmentTemplate(DeleteAssessmentTemplateRequest request)
         {
-            var request = new DeleteRunRequest();
-            request.RunArn = runArn;
-            return DeleteRun(request);
-        }
+            var marshaller = new DeleteAssessmentTemplateRequestMarshaller();
+            var unmarshaller = DeleteAssessmentTemplateResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Deletes the assessment run specified by the run ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteRun service method.</param>
-        /// 
-        /// <returns>The response from the DeleteRun service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DeleteRunResponse DeleteRun(DeleteRunRequest request)
-        {
-            var marshaller = new DeleteRunRequestMarshaller();
-            var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteRunRequest,DeleteRunResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Deletes the assessment run specified by the run ARN.
-        /// </summary>
-        /// <param name="runArn">The ARN specifying the assessment run that you want to delete.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteRun service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<DeleteRunResponse> DeleteRunAsync(string runArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DeleteRunRequest();
-            request.RunArn = runArn;
-            return DeleteRunAsync(request, cancellationToken);
+            return Invoke<DeleteAssessmentTemplateRequest,DeleteAssessmentTemplateResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteRun operation.
+        /// Initiates the asynchronous execution of the DeleteAssessmentTemplate operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteRun operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentTemplate operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DeleteRunResponse> DeleteRunAsync(DeleteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DeleteAssessmentTemplateResponse> DeleteAssessmentTemplateAsync(DeleteAssessmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteRunRequestMarshaller();
-            var unmarshaller = DeleteRunResponseUnmarshaller.Instance;
+            var marshaller = new DeleteAssessmentTemplateRequestMarshaller();
+            var unmarshaller = DeleteAssessmentTemplateResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DeleteRunRequest,DeleteRunResponse>(request, marshaller, 
+            return InvokeAsync<DeleteAssessmentTemplateRequest,DeleteAssessmentTemplateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  DescribeApplication
+        #region  DescribeAssessmentRuns
 
 
         /// <summary>
-        /// Describes the application specified by the application ARN.
+        /// Describes the assessment runs that are specified by the ARNs of the assessment runs.
         /// </summary>
-        /// <param name="applicationArn">The ARN specifying the application that you want to describe.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessmentRuns service method.</param>
         /// 
-        /// <returns>The response from the DescribeApplication service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
+        /// <returns>The response from the DescribeAssessmentRuns service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeApplicationResponse DescribeApplication(string applicationArn)
+        public DescribeAssessmentRunsResponse DescribeAssessmentRuns(DescribeAssessmentRunsRequest request)
         {
-            var request = new DescribeApplicationRequest();
-            request.ApplicationArn = applicationArn;
-            return DescribeApplication(request);
-        }
+            var marshaller = new DescribeAssessmentRunsRequestMarshaller();
+            var unmarshaller = DescribeAssessmentRunsResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Describes the application specified by the application ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeApplication service method.</param>
-        /// 
-        /// <returns>The response from the DescribeApplication service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest request)
-        {
-            var marshaller = new DescribeApplicationRequestMarshaller();
-            var unmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeApplicationRequest,DescribeApplicationResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Describes the application specified by the application ARN.
-        /// </summary>
-        /// <param name="applicationArn">The ARN specifying the application that you want to describe.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeApplication service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<DescribeApplicationResponse> DescribeApplicationAsync(string applicationArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DescribeApplicationRequest();
-            request.ApplicationArn = applicationArn;
-            return DescribeApplicationAsync(request, cancellationToken);
+            return Invoke<DescribeAssessmentRunsRequest,DescribeAssessmentRunsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeApplication operation.
+        /// Initiates the asynchronous execution of the DescribeAssessmentRuns operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeApplication operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessmentRuns operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeApplicationResponse> DescribeApplicationAsync(DescribeApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeAssessmentRunsResponse> DescribeAssessmentRunsAsync(DescribeAssessmentRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeApplicationRequestMarshaller();
-            var unmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
+            var marshaller = new DescribeAssessmentRunsRequestMarshaller();
+            var unmarshaller = DescribeAssessmentRunsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeApplicationRequest,DescribeApplicationResponse>(request, marshaller, 
+            return InvokeAsync<DescribeAssessmentRunsRequest,DescribeAssessmentRunsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  DescribeAssessment
+        #region  DescribeAssessmentTargets
 
 
         /// <summary>
-        /// Describes the assessment specified by the assessment ARN.
+        /// Describes the assessment targets that are specified by the ARNs of the assessment
+        /// targets.
         /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment that you want to describe.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessmentTargets service method.</param>
         /// 
-        /// <returns>The response from the DescribeAssessment service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
+        /// <returns>The response from the DescribeAssessmentTargets service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeAssessmentResponse DescribeAssessment(string assessmentArn)
+        public DescribeAssessmentTargetsResponse DescribeAssessmentTargets(DescribeAssessmentTargetsRequest request)
         {
-            var request = new DescribeAssessmentRequest();
-            request.AssessmentArn = assessmentArn;
-            return DescribeAssessment(request);
-        }
+            var marshaller = new DescribeAssessmentTargetsRequestMarshaller();
+            var unmarshaller = DescribeAssessmentTargetsResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Describes the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessment service method.</param>
-        /// 
-        /// <returns>The response from the DescribeAssessment service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeAssessmentResponse DescribeAssessment(DescribeAssessmentRequest request)
-        {
-            var marshaller = new DescribeAssessmentRequestMarshaller();
-            var unmarshaller = DescribeAssessmentResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeAssessmentRequest,DescribeAssessmentResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Describes the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment that you want to describe.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeAssessment service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<DescribeAssessmentResponse> DescribeAssessmentAsync(string assessmentArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DescribeAssessmentRequest();
-            request.AssessmentArn = assessmentArn;
-            return DescribeAssessmentAsync(request, cancellationToken);
+            return Invoke<DescribeAssessmentTargetsRequest,DescribeAssessmentTargetsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeAssessment operation.
+        /// Initiates the asynchronous execution of the DescribeAssessmentTargets operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessmentTargets operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeAssessmentResponse> DescribeAssessmentAsync(DescribeAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeAssessmentTargetsResponse> DescribeAssessmentTargetsAsync(DescribeAssessmentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeAssessmentRequestMarshaller();
-            var unmarshaller = DescribeAssessmentResponseUnmarshaller.Instance;
+            var marshaller = new DescribeAssessmentTargetsRequestMarshaller();
+            var unmarshaller = DescribeAssessmentTargetsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeAssessmentRequest,DescribeAssessmentResponse>(request, marshaller, 
+            return InvokeAsync<DescribeAssessmentTargetsRequest,DescribeAssessmentTargetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAssessmentTemplates
+
+
+        /// <summary>
+        /// Describes the assessment templates that are specified by the ARNs of the assessment
+        /// templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessmentTemplates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssessmentTemplates service method, as returned by Inspector.</returns>
+        /// <exception cref="Amazon.Inspector.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        public DescribeAssessmentTemplatesResponse DescribeAssessmentTemplates(DescribeAssessmentTemplatesRequest request)
+        {
+            var marshaller = new DescribeAssessmentTemplatesRequestMarshaller();
+            var unmarshaller = DescribeAssessmentTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssessmentTemplatesRequest,DescribeAssessmentTemplatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssessmentTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessmentTemplates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeAssessmentTemplatesResponse> DescribeAssessmentTemplatesAsync(DescribeAssessmentTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAssessmentTemplatesRequestMarshaller();
+            var unmarshaller = DescribeAssessmentTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAssessmentTemplatesRequest,DescribeAssessmentTemplatesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1140,16 +751,13 @@ namespace Amazon.Inspector
 
 
         /// <summary>
-        /// Describes the IAM role that enables Inspector to access your AWS account.
+        /// Describes the IAM role that enables Amazon Inspector to access your AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCrossAccountAccessRole service method.</param>
         /// 
         /// <returns>The response from the DescribeCrossAccountAccessRole service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         public DescribeCrossAccountAccessRoleResponse DescribeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest request)
         {
@@ -1179,1215 +787,442 @@ namespace Amazon.Inspector
 
         #endregion
         
-        #region  DescribeFinding
+        #region  DescribeFindings
 
 
         /// <summary>
-        /// Describes the finding specified by the finding ARN.
+        /// Describes the findings that are specified by the ARNs of the findings.
         /// </summary>
-        /// <param name="findingArn">The ARN specifying the finding that you want to describe.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFindings service method.</param>
         /// 
-        /// <returns>The response from the DescribeFinding service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
+        /// <returns>The response from the DescribeFindings service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeFindingResponse DescribeFinding(string findingArn)
+        public DescribeFindingsResponse DescribeFindings(DescribeFindingsRequest request)
         {
-            var request = new DescribeFindingRequest();
-            request.FindingArn = findingArn;
-            return DescribeFinding(request);
-        }
+            var marshaller = new DescribeFindingsRequestMarshaller();
+            var unmarshaller = DescribeFindingsResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Describes the finding specified by the finding ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeFinding service method.</param>
-        /// 
-        /// <returns>The response from the DescribeFinding service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeFindingResponse DescribeFinding(DescribeFindingRequest request)
-        {
-            var marshaller = new DescribeFindingRequestMarshaller();
-            var unmarshaller = DescribeFindingResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeFindingRequest,DescribeFindingResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Describes the finding specified by the finding ARN.
-        /// </summary>
-        /// <param name="findingArn">The ARN specifying the finding that you want to describe.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeFinding service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<DescribeFindingResponse> DescribeFindingAsync(string findingArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DescribeFindingRequest();
-            request.FindingArn = findingArn;
-            return DescribeFindingAsync(request, cancellationToken);
+            return Invoke<DescribeFindingsRequest,DescribeFindingsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeFinding operation.
+        /// Initiates the asynchronous execution of the DescribeFindings operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeFinding operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFindings operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeFindingResponse> DescribeFindingAsync(DescribeFindingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeFindingsResponse> DescribeFindingsAsync(DescribeFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeFindingRequestMarshaller();
-            var unmarshaller = DescribeFindingResponseUnmarshaller.Instance;
+            var marshaller = new DescribeFindingsRequestMarshaller();
+            var unmarshaller = DescribeFindingsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeFindingRequest,DescribeFindingResponse>(request, marshaller, 
+            return InvokeAsync<DescribeFindingsRequest,DescribeFindingsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  DescribeResourceGroup
+        #region  DescribeResourceGroups
 
 
         /// <summary>
-        /// Describes the resource group specified by the resource group ARN.
+        /// Describes the resource groups that are specified by the ARNs of the resource groups.
         /// </summary>
-        /// <param name="resourceGroupArn">The ARN specifying the resource group that you want to describe.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceGroups service method.</param>
         /// 
-        /// <returns>The response from the DescribeResourceGroup service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
+        /// <returns>The response from the DescribeResourceGroups service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeResourceGroupResponse DescribeResourceGroup(string resourceGroupArn)
+        public DescribeResourceGroupsResponse DescribeResourceGroups(DescribeResourceGroupsRequest request)
         {
-            var request = new DescribeResourceGroupRequest();
-            request.ResourceGroupArn = resourceGroupArn;
-            return DescribeResourceGroup(request);
-        }
+            var marshaller = new DescribeResourceGroupsRequestMarshaller();
+            var unmarshaller = DescribeResourceGroupsResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Describes the resource group specified by the resource group ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceGroup service method.</param>
-        /// 
-        /// <returns>The response from the DescribeResourceGroup service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeResourceGroupResponse DescribeResourceGroup(DescribeResourceGroupRequest request)
-        {
-            var marshaller = new DescribeResourceGroupRequestMarshaller();
-            var unmarshaller = DescribeResourceGroupResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeResourceGroupRequest,DescribeResourceGroupResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Describes the resource group specified by the resource group ARN.
-        /// </summary>
-        /// <param name="resourceGroupArn">The ARN specifying the resource group that you want to describe.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeResourceGroup service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<DescribeResourceGroupResponse> DescribeResourceGroupAsync(string resourceGroupArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DescribeResourceGroupRequest();
-            request.ResourceGroupArn = resourceGroupArn;
-            return DescribeResourceGroupAsync(request, cancellationToken);
+            return Invoke<DescribeResourceGroupsRequest,DescribeResourceGroupsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeResourceGroup operation.
+        /// Initiates the asynchronous execution of the DescribeResourceGroups operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceGroup operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceGroups operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeResourceGroupResponse> DescribeResourceGroupAsync(DescribeResourceGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeResourceGroupsResponse> DescribeResourceGroupsAsync(DescribeResourceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeResourceGroupRequestMarshaller();
-            var unmarshaller = DescribeResourceGroupResponseUnmarshaller.Instance;
+            var marshaller = new DescribeResourceGroupsRequestMarshaller();
+            var unmarshaller = DescribeResourceGroupsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeResourceGroupRequest,DescribeResourceGroupResponse>(request, marshaller, 
+            return InvokeAsync<DescribeResourceGroupsRequest,DescribeResourceGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  DescribeRulesPackage
+        #region  DescribeRulesPackages
 
 
         /// <summary>
-        /// Describes the rules package specified by the rules package ARN.
+        /// Describes the rules packages that are specified by the ARNs of the rules packages.
         /// </summary>
-        /// <param name="rulesPackageArn">The ARN specifying the rules package that you want to describe.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRulesPackages service method.</param>
         /// 
-        /// <returns>The response from the DescribeRulesPackage service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
+        /// <returns>The response from the DescribeRulesPackages service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeRulesPackageResponse DescribeRulesPackage(string rulesPackageArn)
+        public DescribeRulesPackagesResponse DescribeRulesPackages(DescribeRulesPackagesRequest request)
         {
-            var request = new DescribeRulesPackageRequest();
-            request.RulesPackageArn = rulesPackageArn;
-            return DescribeRulesPackage(request);
-        }
+            var marshaller = new DescribeRulesPackagesRequestMarshaller();
+            var unmarshaller = DescribeRulesPackagesResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Describes the rules package specified by the rules package ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeRulesPackage service method.</param>
-        /// 
-        /// <returns>The response from the DescribeRulesPackage service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeRulesPackageResponse DescribeRulesPackage(DescribeRulesPackageRequest request)
-        {
-            var marshaller = new DescribeRulesPackageRequestMarshaller();
-            var unmarshaller = DescribeRulesPackageResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeRulesPackageRequest,DescribeRulesPackageResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Describes the rules package specified by the rules package ARN.
-        /// </summary>
-        /// <param name="rulesPackageArn">The ARN specifying the rules package that you want to describe.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeRulesPackage service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<DescribeRulesPackageResponse> DescribeRulesPackageAsync(string rulesPackageArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DescribeRulesPackageRequest();
-            request.RulesPackageArn = rulesPackageArn;
-            return DescribeRulesPackageAsync(request, cancellationToken);
+            return Invoke<DescribeRulesPackagesRequest,DescribeRulesPackagesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeRulesPackage operation.
+        /// Initiates the asynchronous execution of the DescribeRulesPackages operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeRulesPackage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRulesPackages operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeRulesPackageResponse> DescribeRulesPackageAsync(DescribeRulesPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<DescribeRulesPackagesResponse> DescribeRulesPackagesAsync(DescribeRulesPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeRulesPackageRequestMarshaller();
-            var unmarshaller = DescribeRulesPackageResponseUnmarshaller.Instance;
+            var marshaller = new DescribeRulesPackagesRequestMarshaller();
+            var unmarshaller = DescribeRulesPackagesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeRulesPackageRequest,DescribeRulesPackageResponse>(request, marshaller, 
+            return InvokeAsync<DescribeRulesPackagesRequest,DescribeRulesPackagesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  DescribeRun
+        #region  GetTelemetryMetadata
 
 
         /// <summary>
-        /// Describes the assessment run specified by the run ARN.
+        /// Information about the data that is collected for the specified assessment run.
         /// </summary>
-        /// <param name="runArn">The ARN specifying the assessment run that you want to describe.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryMetadata service method.</param>
         /// 
-        /// <returns>The response from the DescribeRun service method, as returned by Inspector.</returns>
+        /// <returns>The response from the GetTelemetryMetadata service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public DescribeRunResponse DescribeRun(string runArn)
+        public GetTelemetryMetadataResponse GetTelemetryMetadata(GetTelemetryMetadataRequest request)
         {
-            var request = new DescribeRunRequest();
-            request.RunArn = runArn;
-            return DescribeRun(request);
-        }
+            var marshaller = new GetTelemetryMetadataRequestMarshaller();
+            var unmarshaller = GetTelemetryMetadataResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Describes the assessment run specified by the run ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeRun service method.</param>
-        /// 
-        /// <returns>The response from the DescribeRun service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DescribeRunResponse DescribeRun(DescribeRunRequest request)
-        {
-            var marshaller = new DescribeRunRequestMarshaller();
-            var unmarshaller = DescribeRunResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeRunRequest,DescribeRunResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Describes the assessment run specified by the run ARN.
-        /// </summary>
-        /// <param name="runArn">The ARN specifying the assessment run that you want to describe.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeRun service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<DescribeRunResponse> DescribeRunAsync(string runArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DescribeRunRequest();
-            request.RunArn = runArn;
-            return DescribeRunAsync(request, cancellationToken);
+            return Invoke<GetTelemetryMetadataRequest,GetTelemetryMetadataResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeRun operation.
+        /// Initiates the asynchronous execution of the GetTelemetryMetadata operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeRun operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryMetadata operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DescribeRunResponse> DescribeRunAsync(DescribeRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<GetTelemetryMetadataResponse> GetTelemetryMetadataAsync(GetTelemetryMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeRunRequestMarshaller();
-            var unmarshaller = DescribeRunResponseUnmarshaller.Instance;
+            var marshaller = new GetTelemetryMetadataRequestMarshaller();
+            var unmarshaller = GetTelemetryMetadataResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DescribeRunRequest,DescribeRunResponse>(request, marshaller, 
+            return InvokeAsync<GetTelemetryMetadataRequest,GetTelemetryMetadataResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  DetachAssessmentAndRulesPackage
+        #region  ListAssessmentRunAgents
 
 
         /// <summary>
-        /// Detaches the rules package specified by the rules package ARN from the assessment
-        /// specified by the assessment ARN.
+        /// Lists the agents of the assessment runs that are specified by the ARNs of the assessment
+        /// runs.
         /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment from which you want to detach a rules package.</param>
-        /// <param name="rulesPackageArn">The ARN specifying the rules package that you want to detach from the assessment.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentRunAgents service method.</param>
         /// 
-        /// <returns>The response from the DetachAssessmentAndRulesPackage service method, as returned by Inspector.</returns>
+        /// <returns>The response from the ListAssessmentRunAgents service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public DetachAssessmentAndRulesPackageResponse DetachAssessmentAndRulesPackage(string assessmentArn, string rulesPackageArn)
+        public ListAssessmentRunAgentsResponse ListAssessmentRunAgents(ListAssessmentRunAgentsRequest request)
         {
-            var request = new DetachAssessmentAndRulesPackageRequest();
-            request.AssessmentArn = assessmentArn;
-            request.RulesPackageArn = rulesPackageArn;
-            return DetachAssessmentAndRulesPackage(request);
-        }
+            var marshaller = new ListAssessmentRunAgentsRequestMarshaller();
+            var unmarshaller = ListAssessmentRunAgentsResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Detaches the rules package specified by the rules package ARN from the assessment
-        /// specified by the assessment ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DetachAssessmentAndRulesPackage service method.</param>
-        /// 
-        /// <returns>The response from the DetachAssessmentAndRulesPackage service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public DetachAssessmentAndRulesPackageResponse DetachAssessmentAndRulesPackage(DetachAssessmentAndRulesPackageRequest request)
-        {
-            var marshaller = new DetachAssessmentAndRulesPackageRequestMarshaller();
-            var unmarshaller = DetachAssessmentAndRulesPackageResponseUnmarshaller.Instance;
-
-            return Invoke<DetachAssessmentAndRulesPackageRequest,DetachAssessmentAndRulesPackageResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Detaches the rules package specified by the rules package ARN from the assessment
-        /// specified by the assessment ARN.
-        /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment from which you want to detach a rules package.</param>
-        /// <param name="rulesPackageArn">The ARN specifying the rules package that you want to detach from the assessment.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DetachAssessmentAndRulesPackage service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<DetachAssessmentAndRulesPackageResponse> DetachAssessmentAndRulesPackageAsync(string assessmentArn, string rulesPackageArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new DetachAssessmentAndRulesPackageRequest();
-            request.AssessmentArn = assessmentArn;
-            request.RulesPackageArn = rulesPackageArn;
-            return DetachAssessmentAndRulesPackageAsync(request, cancellationToken);
+            return Invoke<ListAssessmentRunAgentsRequest,ListAssessmentRunAgentsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DetachAssessmentAndRulesPackage operation.
+        /// Initiates the asynchronous execution of the ListAssessmentRunAgents operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DetachAssessmentAndRulesPackage operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentRunAgents operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<DetachAssessmentAndRulesPackageResponse> DetachAssessmentAndRulesPackageAsync(DetachAssessmentAndRulesPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListAssessmentRunAgentsResponse> ListAssessmentRunAgentsAsync(ListAssessmentRunAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachAssessmentAndRulesPackageRequestMarshaller();
-            var unmarshaller = DetachAssessmentAndRulesPackageResponseUnmarshaller.Instance;
+            var marshaller = new ListAssessmentRunAgentsRequestMarshaller();
+            var unmarshaller = ListAssessmentRunAgentsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<DetachAssessmentAndRulesPackageRequest,DetachAssessmentAndRulesPackageResponse>(request, marshaller, 
+            return InvokeAsync<ListAssessmentRunAgentsRequest,ListAssessmentRunAgentsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  GetAssessmentTelemetry
+        #region  ListAssessmentRuns
 
 
         /// <summary>
-        /// Returns the metadata about the telemetry (application behavioral data) for the assessment
-        /// specified by the assessment ARN.
+        /// Lists the assessment runs that correspond to the assessment templates that are specified
+        /// by the ARNs of the assessment templates.
         /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment the telemetry of which you want to obtain.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentRuns service method.</param>
         /// 
-        /// <returns>The response from the GetAssessmentTelemetry service method, as returned by Inspector.</returns>
+        /// <returns>The response from the ListAssessmentRuns service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public GetAssessmentTelemetryResponse GetAssessmentTelemetry(string assessmentArn)
+        public ListAssessmentRunsResponse ListAssessmentRuns(ListAssessmentRunsRequest request)
         {
-            var request = new GetAssessmentTelemetryRequest();
-            request.AssessmentArn = assessmentArn;
-            return GetAssessmentTelemetry(request);
-        }
+            var marshaller = new ListAssessmentRunsRequestMarshaller();
+            var unmarshaller = ListAssessmentRunsResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Returns the metadata about the telemetry (application behavioral data) for the assessment
-        /// specified by the assessment ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetAssessmentTelemetry service method.</param>
-        /// 
-        /// <returns>The response from the GetAssessmentTelemetry service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public GetAssessmentTelemetryResponse GetAssessmentTelemetry(GetAssessmentTelemetryRequest request)
-        {
-            var marshaller = new GetAssessmentTelemetryRequestMarshaller();
-            var unmarshaller = GetAssessmentTelemetryResponseUnmarshaller.Instance;
-
-            return Invoke<GetAssessmentTelemetryRequest,GetAssessmentTelemetryResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Returns the metadata about the telemetry (application behavioral data) for the assessment
-        /// specified by the assessment ARN.
-        /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment the telemetry of which you want to obtain.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetAssessmentTelemetry service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<GetAssessmentTelemetryResponse> GetAssessmentTelemetryAsync(string assessmentArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new GetAssessmentTelemetryRequest();
-            request.AssessmentArn = assessmentArn;
-            return GetAssessmentTelemetryAsync(request, cancellationToken);
+            return Invoke<ListAssessmentRunsRequest,ListAssessmentRunsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetAssessmentTelemetry operation.
+        /// Initiates the asynchronous execution of the ListAssessmentRuns operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetAssessmentTelemetry operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentRuns operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetAssessmentTelemetryResponse> GetAssessmentTelemetryAsync(GetAssessmentTelemetryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListAssessmentRunsResponse> ListAssessmentRunsAsync(ListAssessmentRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetAssessmentTelemetryRequestMarshaller();
-            var unmarshaller = GetAssessmentTelemetryResponseUnmarshaller.Instance;
+            var marshaller = new ListAssessmentRunsRequestMarshaller();
+            var unmarshaller = ListAssessmentRunsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<GetAssessmentTelemetryRequest,GetAssessmentTelemetryResponse>(request, marshaller, 
+            return InvokeAsync<ListAssessmentRunsRequest,ListAssessmentRunsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  ListApplications
+        #region  ListAssessmentTargets
 
 
         /// <summary>
-        /// Lists the ARNs of the applications within this AWS account. For more information about
-        /// applications, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html">Inspector
-        /// Applications</a>.
+        /// Lists the ARNs of the assessment targets within this AWS account. For more information
+        /// about assessment targets, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
+        /// Inspector Assessment Targets</a>.
         /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentTargets service method.</param>
         /// 
-        /// <returns>The response from the ListApplications service method, as returned by Inspector.</returns>
+        /// <returns>The response from the ListAssessmentTargets service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
-        public ListApplicationsResponse ListApplications()
+        public ListAssessmentTargetsResponse ListAssessmentTargets(ListAssessmentTargetsRequest request)
         {
-            var request = new ListApplicationsRequest();
-            return ListApplications(request);
-        }
+            var marshaller = new ListAssessmentTargetsRequestMarshaller();
+            var unmarshaller = ListAssessmentTargetsResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Lists the ARNs of the applications within this AWS account. For more information about
-        /// applications, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html">Inspector
-        /// Applications</a>.
-        /// </summary>
-        /// <param name="filter">You can use this parameter to specify a subset of data to be included in the action's response. For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</param>
-        /// 
-        /// <returns>The response from the ListApplications service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        public ListApplicationsResponse ListApplications(ApplicationsFilter filter)
-        {
-            var request = new ListApplicationsRequest();
-            request.Filter = filter;
-            return ListApplications(request);
-        }
-
-
-        /// <summary>
-        /// Lists the ARNs of the applications within this AWS account. For more information about
-        /// applications, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html">Inspector
-        /// Applications</a>.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
-        /// 
-        /// <returns>The response from the ListApplications service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        public ListApplicationsResponse ListApplications(ListApplicationsRequest request)
-        {
-            var marshaller = new ListApplicationsRequestMarshaller();
-            var unmarshaller = ListApplicationsResponseUnmarshaller.Instance;
-
-            return Invoke<ListApplicationsRequest,ListApplicationsResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Lists the ARNs of the applications within this AWS account. For more information about
-        /// applications, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html">Inspector
-        /// Applications</a>.
-        /// </summary>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListApplications service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        public Task<ListApplicationsResponse> ListApplicationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new ListApplicationsRequest();
-            return ListApplicationsAsync(request, cancellationToken);
-        }
-
-
-        /// <summary>
-        /// Lists the ARNs of the applications within this AWS account. For more information about
-        /// applications, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html">Inspector
-        /// Applications</a>.
-        /// </summary>
-        /// <param name="filter">You can use this parameter to specify a subset of data to be included in the action's response. For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListApplications service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        public Task<ListApplicationsResponse> ListApplicationsAsync(ApplicationsFilter filter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new ListApplicationsRequest();
-            request.Filter = filter;
-            return ListApplicationsAsync(request, cancellationToken);
+            return Invoke<ListAssessmentTargetsRequest,ListAssessmentTargetsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListApplications operation.
+        /// Initiates the asynchronous execution of the ListAssessmentTargets operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListApplications operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentTargets operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListAssessmentTargetsResponse> ListAssessmentTargetsAsync(ListAssessmentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListApplicationsRequestMarshaller();
-            var unmarshaller = ListApplicationsResponseUnmarshaller.Instance;
+            var marshaller = new ListAssessmentTargetsRequestMarshaller();
+            var unmarshaller = ListAssessmentTargetsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListApplicationsRequest,ListApplicationsResponse>(request, marshaller, 
+            return InvokeAsync<ListAssessmentTargetsRequest,ListAssessmentTargetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  ListAssessmentAgents
+        #region  ListAssessmentTemplates
 
 
         /// <summary>
-        /// Lists the agents of the assessment specified by the assessment ARN.
+        /// Lists the assessment templates that correspond to the assessment targets that are
+        /// specified by the ARNs of the assessment targets.
         /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment whose agents you want to list.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentTemplates service method.</param>
         /// 
-        /// <returns>The response from the ListAssessmentAgents service method, as returned by Inspector.</returns>
+        /// <returns>The response from the ListAssessmentTemplates service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public ListAssessmentAgentsResponse ListAssessmentAgents(string assessmentArn)
+        public ListAssessmentTemplatesResponse ListAssessmentTemplates(ListAssessmentTemplatesRequest request)
         {
-            var request = new ListAssessmentAgentsRequest();
-            request.AssessmentArn = assessmentArn;
-            return ListAssessmentAgents(request);
-        }
+            var marshaller = new ListAssessmentTemplatesRequestMarshaller();
+            var unmarshaller = ListAssessmentTemplatesResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Lists the agents of the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment whose agents you want to list.</param>
-        /// <param name="filter">You can use this parameter to specify a subset of data to be included in the action's response. For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</param>
-        /// 
-        /// <returns>The response from the ListAssessmentAgents service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListAssessmentAgentsResponse ListAssessmentAgents(string assessmentArn, AgentsFilter filter)
-        {
-            var request = new ListAssessmentAgentsRequest();
-            request.AssessmentArn = assessmentArn;
-            request.Filter = filter;
-            return ListAssessmentAgents(request);
-        }
-
-
-        /// <summary>
-        /// Lists the agents of the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentAgents service method.</param>
-        /// 
-        /// <returns>The response from the ListAssessmentAgents service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListAssessmentAgentsResponse ListAssessmentAgents(ListAssessmentAgentsRequest request)
-        {
-            var marshaller = new ListAssessmentAgentsRequestMarshaller();
-            var unmarshaller = ListAssessmentAgentsResponseUnmarshaller.Instance;
-
-            return Invoke<ListAssessmentAgentsRequest,ListAssessmentAgentsResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Lists the agents of the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment whose agents you want to list.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListAssessmentAgents service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<ListAssessmentAgentsResponse> ListAssessmentAgentsAsync(string assessmentArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new ListAssessmentAgentsRequest();
-            request.AssessmentArn = assessmentArn;
-            return ListAssessmentAgentsAsync(request, cancellationToken);
-        }
-
-
-        /// <summary>
-        /// Lists the agents of the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="assessmentArn">The ARN specifying the assessment whose agents you want to list.</param>
-        /// <param name="filter">You can use this parameter to specify a subset of data to be included in the action's response. For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListAssessmentAgents service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<ListAssessmentAgentsResponse> ListAssessmentAgentsAsync(string assessmentArn, AgentsFilter filter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new ListAssessmentAgentsRequest();
-            request.AssessmentArn = assessmentArn;
-            request.Filter = filter;
-            return ListAssessmentAgentsAsync(request, cancellationToken);
+            return Invoke<ListAssessmentTemplatesRequest,ListAssessmentTemplatesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListAssessmentAgents operation.
+        /// Initiates the asynchronous execution of the ListAssessmentTemplates operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentAgents operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentTemplates operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListAssessmentAgentsResponse> ListAssessmentAgentsAsync(ListAssessmentAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListAssessmentTemplatesResponse> ListAssessmentTemplatesAsync(ListAssessmentTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAssessmentAgentsRequestMarshaller();
-            var unmarshaller = ListAssessmentAgentsResponseUnmarshaller.Instance;
+            var marshaller = new ListAssessmentTemplatesRequestMarshaller();
+            var unmarshaller = ListAssessmentTemplatesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAssessmentAgentsRequest,ListAssessmentAgentsResponse>(request, marshaller, 
+            return InvokeAsync<ListAssessmentTemplatesRequest,ListAssessmentTemplatesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  ListAssessments
+        #region  ListEventSubscriptions
 
 
         /// <summary>
-        /// Lists the assessments corresponding to applications specified by the applications'
-        /// ARNs.
+        /// Lists all the event subscriptions for the assessment template that is specified by
+        /// the ARN of the assessment template. For more information, see <a>SubscribeToEvent</a>
+        /// and <a>UnsubscribeFromEvent</a>.
         /// </summary>
-        /// <param name="applicationArns">A list of ARNs specifying the applications the assessments of which you want to list.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventSubscriptions service method.</param>
         /// 
-        /// <returns>The response from the ListAssessments service method, as returned by Inspector.</returns>
+        /// <returns>The response from the ListEventSubscriptions service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public ListAssessmentsResponse ListAssessments(List<string> applicationArns)
+        public ListEventSubscriptionsResponse ListEventSubscriptions(ListEventSubscriptionsRequest request)
         {
-            var request = new ListAssessmentsRequest();
-            request.ApplicationArns = applicationArns;
-            return ListAssessments(request);
-        }
+            var marshaller = new ListEventSubscriptionsRequestMarshaller();
+            var unmarshaller = ListEventSubscriptionsResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Lists the assessments corresponding to applications specified by the applications'
-        /// ARNs.
-        /// </summary>
-        /// <param name="applicationArns">A list of ARNs specifying the applications the assessments of which you want to list.</param>
-        /// <param name="filter">You can use this parameter to specify a subset of data to be included in the action's response. For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</param>
-        /// 
-        /// <returns>The response from the ListAssessments service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListAssessmentsResponse ListAssessments(List<string> applicationArns, AssessmentsFilter filter)
-        {
-            var request = new ListAssessmentsRequest();
-            request.ApplicationArns = applicationArns;
-            request.Filter = filter;
-            return ListAssessments(request);
-        }
-
-
-        /// <summary>
-        /// Lists the assessments corresponding to applications specified by the applications'
-        /// ARNs.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListAssessments service method.</param>
-        /// 
-        /// <returns>The response from the ListAssessments service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListAssessmentsResponse ListAssessments(ListAssessmentsRequest request)
-        {
-            var marshaller = new ListAssessmentsRequestMarshaller();
-            var unmarshaller = ListAssessmentsResponseUnmarshaller.Instance;
-
-            return Invoke<ListAssessmentsRequest,ListAssessmentsResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Lists the assessments corresponding to applications specified by the applications'
-        /// ARNs.
-        /// </summary>
-        /// <param name="applicationArns">A list of ARNs specifying the applications the assessments of which you want to list.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListAssessments service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<ListAssessmentsResponse> ListAssessmentsAsync(List<string> applicationArns, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new ListAssessmentsRequest();
-            request.ApplicationArns = applicationArns;
-            return ListAssessmentsAsync(request, cancellationToken);
-        }
-
-
-        /// <summary>
-        /// Lists the assessments corresponding to applications specified by the applications'
-        /// ARNs.
-        /// </summary>
-        /// <param name="applicationArns">A list of ARNs specifying the applications the assessments of which you want to list.</param>
-        /// <param name="filter">You can use this parameter to specify a subset of data to be included in the action's response. For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListAssessments service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<ListAssessmentsResponse> ListAssessmentsAsync(List<string> applicationArns, AssessmentsFilter filter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new ListAssessmentsRequest();
-            request.ApplicationArns = applicationArns;
-            request.Filter = filter;
-            return ListAssessmentsAsync(request, cancellationToken);
+            return Invoke<ListEventSubscriptionsRequest,ListEventSubscriptionsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListAssessments operation.
+        /// Initiates the asynchronous execution of the ListEventSubscriptions operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListAssessments operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventSubscriptions operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListAssessmentsResponse> ListAssessmentsAsync(ListAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<ListEventSubscriptionsResponse> ListEventSubscriptionsAsync(ListEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAssessmentsRequestMarshaller();
-            var unmarshaller = ListAssessmentsResponseUnmarshaller.Instance;
+            var marshaller = new ListEventSubscriptionsRequestMarshaller();
+            var unmarshaller = ListEventSubscriptionsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<ListAssessmentsRequest,ListAssessmentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  ListAttachedAssessments
-
-
-        /// <summary>
-        /// Lists the assessments attached to the rules package specified by the rules package
-        /// ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListAttachedAssessments service method.</param>
-        /// 
-        /// <returns>The response from the ListAttachedAssessments service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListAttachedAssessmentsResponse ListAttachedAssessments(ListAttachedAssessmentsRequest request)
-        {
-            var marshaller = new ListAttachedAssessmentsRequestMarshaller();
-            var unmarshaller = ListAttachedAssessmentsResponseUnmarshaller.Instance;
-
-            return Invoke<ListAttachedAssessmentsRequest,ListAttachedAssessmentsResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListAttachedAssessments operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListAttachedAssessments operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListAttachedAssessmentsResponse> ListAttachedAssessmentsAsync(ListAttachedAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new ListAttachedAssessmentsRequestMarshaller();
-            var unmarshaller = ListAttachedAssessmentsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListAttachedAssessmentsRequest,ListAttachedAssessmentsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  ListAttachedRulesPackages
-
-
-        /// <summary>
-        /// Lists the rules packages attached to the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListAttachedRulesPackages service method.</param>
-        /// 
-        /// <returns>The response from the ListAttachedRulesPackages service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListAttachedRulesPackagesResponse ListAttachedRulesPackages(ListAttachedRulesPackagesRequest request)
-        {
-            var marshaller = new ListAttachedRulesPackagesRequestMarshaller();
-            var unmarshaller = ListAttachedRulesPackagesResponseUnmarshaller.Instance;
-
-            return Invoke<ListAttachedRulesPackagesRequest,ListAttachedRulesPackagesResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListAttachedRulesPackages operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListAttachedRulesPackages operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListAttachedRulesPackagesResponse> ListAttachedRulesPackagesAsync(ListAttachedRulesPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new ListAttachedRulesPackagesRequestMarshaller();
-            var unmarshaller = ListAttachedRulesPackagesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListAttachedRulesPackagesRequest,ListAttachedRulesPackagesResponse>(request, marshaller, 
+            return InvokeAsync<ListEventSubscriptionsRequest,ListEventSubscriptionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2397,22 +1232,25 @@ namespace Amazon.Inspector
 
 
         /// <summary>
-        /// Lists findings generated by the assessment run specified by the run ARNs.
+        /// Lists findings that are generated by the assessment runs that are specified by the
+        /// ARNs of the assessment runs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFindings service method.</param>
         /// 
         /// <returns>The response from the ListFindings service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
         public ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
@@ -2446,19 +1284,20 @@ namespace Amazon.Inspector
 
 
         /// <summary>
-        /// Lists all available Inspector rules packages.
+        /// Lists all available Amazon Inspector rules packages.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRulesPackages service method.</param>
         /// 
         /// <returns>The response from the ListRulesPackages service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         public ListRulesPackagesResponse ListRulesPackages(ListRulesPackagesRequest request)
         {
@@ -2488,220 +1327,28 @@ namespace Amazon.Inspector
 
         #endregion
         
-        #region  ListRuns
-
-
-        /// <summary>
-        /// Lists the assessment runs associated with the assessments specified by the assessment
-        /// ARNs.
-        /// </summary>
-        /// <param name="assessmentArns">The ARNs specifying the assessments whose runs you want to list.</param>
-        /// 
-        /// <returns>The response from the ListRuns service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListRunsResponse ListRuns(List<string> assessmentArns)
-        {
-            var request = new ListRunsRequest();
-            request.AssessmentArns = assessmentArns;
-            return ListRuns(request);
-        }
-
-
-        /// <summary>
-        /// Lists the assessment runs associated with the assessments specified by the assessment
-        /// ARNs.
-        /// </summary>
-        /// <param name="assessmentArns">The ARNs specifying the assessments whose runs you want to list.</param>
-        /// <param name="filter">You can use this parameter to specify a subset of data to be included in the action's response. For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</param>
-        /// 
-        /// <returns>The response from the ListRuns service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListRunsResponse ListRuns(List<string> assessmentArns, RunsFilter filter)
-        {
-            var request = new ListRunsRequest();
-            request.AssessmentArns = assessmentArns;
-            request.Filter = filter;
-            return ListRuns(request);
-        }
-
-
-        /// <summary>
-        /// Lists the assessment runs associated with the assessments specified by the assessment
-        /// ARNs.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListRuns service method.</param>
-        /// 
-        /// <returns>The response from the ListRuns service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListRunsResponse ListRuns(ListRunsRequest request)
-        {
-            var marshaller = new ListRunsRequestMarshaller();
-            var unmarshaller = ListRunsResponseUnmarshaller.Instance;
-
-            return Invoke<ListRunsRequest,ListRunsResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Lists the assessment runs associated with the assessments specified by the assessment
-        /// ARNs.
-        /// </summary>
-        /// <param name="assessmentArns">The ARNs specifying the assessments whose runs you want to list.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListRuns service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<ListRunsResponse> ListRunsAsync(List<string> assessmentArns, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new ListRunsRequest();
-            request.AssessmentArns = assessmentArns;
-            return ListRunsAsync(request, cancellationToken);
-        }
-
-
-        /// <summary>
-        /// Lists the assessment runs associated with the assessments specified by the assessment
-        /// ARNs.
-        /// </summary>
-        /// <param name="assessmentArns">The ARNs specifying the assessments whose runs you want to list.</param>
-        /// <param name="filter">You can use this parameter to specify a subset of data to be included in the action's response. For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListRuns service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<ListRunsResponse> ListRunsAsync(List<string> assessmentArns, RunsFilter filter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new ListRunsRequest();
-            request.AssessmentArns = assessmentArns;
-            request.Filter = filter;
-            return ListRunsAsync(request, cancellationToken);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListRuns operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListRuns operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<ListRunsResponse> ListRunsAsync(ListRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new ListRunsRequestMarshaller();
-            var unmarshaller = ListRunsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListRunsRequest,ListRunsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
         #region  ListTagsForResource
 
 
         /// <summary>
-        /// Lists all tags associated with a resource.
-        /// </summary>
-        /// <param name="resourceArn">The ARN specifying the resource whose tags you want to list.</param>
-        /// 
-        /// <returns>The response from the ListTagsForResource service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public ListTagsForResourceResponse ListTagsForResource(string resourceArn)
-        {
-            var request = new ListTagsForResourceRequest();
-            request.ResourceArn = resourceArn;
-            return ListTagsForResource(request);
-        }
-
-
-        /// <summary>
-        /// Lists all tags associated with a resource.
+        /// Lists all tags associated with an assessment template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
@@ -2709,35 +1356,6 @@ namespace Amazon.Inspector
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Lists all tags associated with a resource.
-        /// </summary>
-        /// <param name="resourceArn">The ARN specifying the resource whose tags you want to list.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListTagsForResource service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new ListTagsForResourceRequest();
-            request.ResourceArn = resourceArn;
-            return ListTagsForResourceAsync(request, cancellationToken);
         }
 
         /// <summary>
@@ -2760,162 +1378,57 @@ namespace Amazon.Inspector
 
         #endregion
         
-        #region  LocalizeText
+        #region  PreviewAgents
 
 
         /// <summary>
-        /// Translates a textual identifier into a user-readable text in a specified locale.
+        /// Previews the agents installed on the EC2 instances that are part of the specified
+        /// assessment target.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the LocalizeText service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PreviewAgents service method.</param>
         /// 
-        /// <returns>The response from the LocalizeText service method, as returned by Inspector.</returns>
+        /// <returns>The response from the PreviewAgents service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
+        /// Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
+        /// instances during the assessment run.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public LocalizeTextResponse LocalizeText(LocalizeTextRequest request)
+        public PreviewAgentsResponse PreviewAgents(PreviewAgentsRequest request)
         {
-            var marshaller = new LocalizeTextRequestMarshaller();
-            var unmarshaller = LocalizeTextResponseUnmarshaller.Instance;
+            var marshaller = new PreviewAgentsRequestMarshaller();
+            var unmarshaller = PreviewAgentsResponseUnmarshaller.Instance;
 
-            return Invoke<LocalizeTextRequest,LocalizeTextResponse>(request, marshaller, unmarshaller);
+            return Invoke<PreviewAgentsRequest,PreviewAgentsResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the LocalizeText operation.
+        /// Initiates the asynchronous execution of the PreviewAgents operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the LocalizeText operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the PreviewAgents operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<LocalizeTextResponse> LocalizeTextAsync(LocalizeTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<PreviewAgentsResponse> PreviewAgentsAsync(PreviewAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new LocalizeTextRequestMarshaller();
-            var unmarshaller = LocalizeTextResponseUnmarshaller.Instance;
+            var marshaller = new PreviewAgentsRequestMarshaller();
+            var unmarshaller = PreviewAgentsResponseUnmarshaller.Instance;
 
-            return InvokeAsync<LocalizeTextRequest,LocalizeTextResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  PreviewAgentsForResourceGroup
-
-
-        /// <summary>
-        /// Previews the agents installed on the EC2 instances that are included in the application
-        /// created with the specified resource group.
-        /// </summary>
-        /// 
-        /// <returns>The response from the PreviewAgentsForResourceGroup service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public PreviewAgentsForResourceGroupResponse PreviewAgentsForResourceGroup()
-        {
-            var request = new PreviewAgentsForResourceGroupRequest();
-            return PreviewAgentsForResourceGroup(request);
-        }
-
-
-        /// <summary>
-        /// Previews the agents installed on the EC2 instances that are included in the application
-        /// created with the specified resource group.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PreviewAgentsForResourceGroup service method.</param>
-        /// 
-        /// <returns>The response from the PreviewAgentsForResourceGroup service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public PreviewAgentsForResourceGroupResponse PreviewAgentsForResourceGroup(PreviewAgentsForResourceGroupRequest request)
-        {
-            var marshaller = new PreviewAgentsForResourceGroupRequestMarshaller();
-            var unmarshaller = PreviewAgentsForResourceGroupResponseUnmarshaller.Instance;
-
-            return Invoke<PreviewAgentsForResourceGroupRequest,PreviewAgentsForResourceGroupResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Previews the agents installed on the EC2 instances that are included in the application
-        /// created with the specified resource group.
-        /// </summary>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the PreviewAgentsForResourceGroup service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<PreviewAgentsForResourceGroupResponse> PreviewAgentsForResourceGroupAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new PreviewAgentsForResourceGroupRequest();
-            return PreviewAgentsForResourceGroupAsync(request, cancellationToken);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PreviewAgentsForResourceGroup operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PreviewAgentsForResourceGroup operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<PreviewAgentsForResourceGroupResponse> PreviewAgentsForResourceGroupAsync(PreviewAgentsForResourceGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new PreviewAgentsForResourceGroupRequestMarshaller();
-            var unmarshaller = PreviewAgentsForResourceGroupResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PreviewAgentsForResourceGroupRequest,PreviewAgentsForResourceGroupResponse>(request, marshaller, 
+            return InvokeAsync<PreviewAgentsRequest,PreviewAgentsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2925,48 +1438,25 @@ namespace Amazon.Inspector
 
 
         /// <summary>
-        /// Register the role that Inspector uses to list your EC2 instances during the assessment.
-        /// </summary>
-        /// <param name="roleArn">The ARN of the IAM role that Inspector uses to list your EC2 instances during the assessment.</param>
-        /// 
-        /// <returns>The response from the RegisterCrossAccountAccessRole service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        public RegisterCrossAccountAccessRoleResponse RegisterCrossAccountAccessRole(string roleArn)
-        {
-            var request = new RegisterCrossAccountAccessRoleRequest();
-            request.RoleArn = roleArn;
-            return RegisterCrossAccountAccessRole(request);
-        }
-
-
-        /// <summary>
-        /// Register the role that Inspector uses to list your EC2 instances during the assessment.
+        /// Registers the IAM role that Amazon Inspector uses to list your EC2 instances at the
+        /// start of the assessment run or when you call the <a>PreviewAgents</a> action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCrossAccountAccessRole service method.</param>
         /// 
         /// <returns>The response from the RegisterCrossAccountAccessRole service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
-        /// 
+        /// Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
+        /// instances during the assessment run.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         public RegisterCrossAccountAccessRoleResponse RegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request)
         {
@@ -2974,35 +1464,6 @@ namespace Amazon.Inspector
             var unmarshaller = RegisterCrossAccountAccessRoleResponseUnmarshaller.Instance;
 
             return Invoke<RegisterCrossAccountAccessRoleRequest,RegisterCrossAccountAccessRoleResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Register the role that Inspector uses to list your EC2 instances during the assessment.
-        /// </summary>
-        /// <param name="roleArn">The ARN of the IAM role that Inspector uses to list your EC2 instances during the assessment.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the RegisterCrossAccountAccessRole service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        public Task<RegisterCrossAccountAccessRoleResponse> RegisterCrossAccountAccessRoleAsync(string roleArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new RegisterCrossAccountAccessRoleRequest();
-            request.RoleArn = roleArn;
-            return RegisterCrossAccountAccessRoleAsync(request, cancellationToken);
         }
 
         /// <summary>
@@ -3029,23 +1490,25 @@ namespace Amazon.Inspector
 
 
         /// <summary>
-        /// Removes the entire attribute (key and value pair) from the findings specified by the
-        /// finding ARNs where an attribute with the specified key exists.
+        /// Removes entire attributes (key and value pairs) from the findings that are specified
+        /// by the ARNs of the findings where an attribute with the specified key exists.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveAttributesFromFindings service method.</param>
         /// 
         /// <returns>The response from the RemoveAttributesFromFindings service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
         public RemoveAttributesFromFindingsResponse RemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest request)
         {
@@ -3075,165 +1538,29 @@ namespace Amazon.Inspector
 
         #endregion
         
-        #region  RunAssessment
-
-
-        /// <summary>
-        /// Starts the analysis of the application’s behavior against selected rule packages for
-        /// the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="runName">A name specifying the run of the assessment.</param>
-        /// <param name="assessmentArn">The ARN of the assessment that you want to run.</param>
-        /// 
-        /// <returns>The response from the RunAssessment service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public RunAssessmentResponse RunAssessment(string runName, string assessmentArn)
-        {
-            var request = new RunAssessmentRequest();
-            request.RunName = runName;
-            request.AssessmentArn = assessmentArn;
-            return RunAssessment(request);
-        }
-
-
-        /// <summary>
-        /// Starts the analysis of the application’s behavior against selected rule packages for
-        /// the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the RunAssessment service method.</param>
-        /// 
-        /// <returns>The response from the RunAssessment service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public RunAssessmentResponse RunAssessment(RunAssessmentRequest request)
-        {
-            var marshaller = new RunAssessmentRequestMarshaller();
-            var unmarshaller = RunAssessmentResponseUnmarshaller.Instance;
-
-            return Invoke<RunAssessmentRequest,RunAssessmentResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Starts the analysis of the application’s behavior against selected rule packages for
-        /// the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="runName">A name specifying the run of the assessment.</param>
-        /// <param name="assessmentArn">The ARN of the assessment that you want to run.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the RunAssessment service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<RunAssessmentResponse> RunAssessmentAsync(string runName, string assessmentArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new RunAssessmentRequest();
-            request.RunName = runName;
-            request.AssessmentArn = assessmentArn;
-            return RunAssessmentAsync(request, cancellationToken);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the RunAssessment operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RunAssessment operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RunAssessmentResponse> RunAssessmentAsync(RunAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new RunAssessmentRequestMarshaller();
-            var unmarshaller = RunAssessmentResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RunAssessmentRequest,RunAssessmentResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
         #region  SetTagsForResource
 
 
         /// <summary>
-        /// Sets tags (key and value pairs) to the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="resourceArn">The ARN of the assessment that you want to set tags to.</param>
-        /// <param name="tags">A collection of key and value pairs that you want to set to an assessment.</param>
-        /// 
-        /// <returns>The response from the SetTagsForResource service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public SetTagsForResourceResponse SetTagsForResource(string resourceArn, List<Tag> tags)
-        {
-            var request = new SetTagsForResourceRequest();
-            request.ResourceArn = resourceArn;
-            request.Tags = tags;
-            return SetTagsForResource(request);
-        }
-
-
-        /// <summary>
-        /// Sets tags (key and value pairs) to the assessment specified by the assessment ARN.
+        /// Sets tags (key and value pairs) to the assessment template that is specified by the
+        /// ARN of the assessment template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTagsForResource service method.</param>
         /// 
         /// <returns>The response from the SetTagsForResource service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
         public SetTagsForResourceResponse SetTagsForResource(SetTagsForResourceRequest request)
         {
@@ -3241,37 +1568,6 @@ namespace Amazon.Inspector
             var unmarshaller = SetTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<SetTagsForResourceRequest,SetTagsForResourceResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Sets tags (key and value pairs) to the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="resourceArn">The ARN of the assessment that you want to set tags to.</param>
-        /// <param name="tags">A collection of key and value pairs that you want to set to an assessment.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the SetTagsForResource service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<SetTagsForResourceResponse> SetTagsForResourceAsync(string resourceArn, List<Tag> tags, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new SetTagsForResourceRequest();
-            request.ResourceArn = resourceArn;
-            request.Tags = tags;
-            return SetTagsForResourceAsync(request, cancellationToken);
         }
 
         /// <summary>
@@ -3294,385 +1590,276 @@ namespace Amazon.Inspector
 
         #endregion
         
-        #region  StartDataCollection
+        #region  StartAssessmentRun
 
 
         /// <summary>
-        /// Starts data collection for the assessment specified by the assessment ARN. For this
+        /// Starts the assessment run specified by the ARN of the assessment template. For this
         /// API to function properly, you must not exceed the limit of running up to 500 concurrent
         /// agents per AWS account.
         /// </summary>
-        /// <param name="assessmentArn">The ARN of the assessment for which you want to start the data collection process.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssessmentRun service method.</param>
         /// 
-        /// <returns>The response from the StartDataCollection service method, as returned by Inspector.</returns>
+        /// <returns>The response from the StartAssessmentRun service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.AgentsAlreadyRunningAssessmentException">
+        /// You started an assessment run, but one of the instances is already participating in
+        /// another assessment run.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
-        /// 
+        /// Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
+        /// instances during the assessment run.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public StartDataCollectionResponse StartDataCollection(string assessmentArn)
+        public StartAssessmentRunResponse StartAssessmentRun(StartAssessmentRunRequest request)
         {
-            var request = new StartDataCollectionRequest();
-            request.AssessmentArn = assessmentArn;
-            return StartDataCollection(request);
-        }
+            var marshaller = new StartAssessmentRunRequestMarshaller();
+            var unmarshaller = StartAssessmentRunResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Starts data collection for the assessment specified by the assessment ARN. For this
-        /// API to function properly, you must not exceed the limit of running up to 500 concurrent
-        /// agents per AWS account.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StartDataCollection service method.</param>
-        /// 
-        /// <returns>The response from the StartDataCollection service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public StartDataCollectionResponse StartDataCollection(StartDataCollectionRequest request)
-        {
-            var marshaller = new StartDataCollectionRequestMarshaller();
-            var unmarshaller = StartDataCollectionResponseUnmarshaller.Instance;
-
-            return Invoke<StartDataCollectionRequest,StartDataCollectionResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Starts data collection for the assessment specified by the assessment ARN. For this
-        /// API to function properly, you must not exceed the limit of running up to 500 concurrent
-        /// agents per AWS account.
-        /// </summary>
-        /// <param name="assessmentArn">The ARN of the assessment for which you want to start the data collection process.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StartDataCollection service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<StartDataCollectionResponse> StartDataCollectionAsync(string assessmentArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new StartDataCollectionRequest();
-            request.AssessmentArn = assessmentArn;
-            return StartDataCollectionAsync(request, cancellationToken);
+            return Invoke<StartAssessmentRunRequest,StartAssessmentRunResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the StartDataCollection operation.
+        /// Initiates the asynchronous execution of the StartAssessmentRun operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the StartDataCollection operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssessmentRun operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<StartDataCollectionResponse> StartDataCollectionAsync(StartDataCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<StartAssessmentRunResponse> StartAssessmentRunAsync(StartAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartDataCollectionRequestMarshaller();
-            var unmarshaller = StartDataCollectionResponseUnmarshaller.Instance;
+            var marshaller = new StartAssessmentRunRequestMarshaller();
+            var unmarshaller = StartAssessmentRunResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StartDataCollectionRequest,StartDataCollectionResponse>(request, marshaller, 
+            return InvokeAsync<StartAssessmentRunRequest,StartAssessmentRunResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  StopDataCollection
+        #region  StopAssessmentRun
 
 
         /// <summary>
-        /// Stop data collection for the assessment specified by the assessment ARN.
+        /// Stops the assessment run that is specified by the ARN of the assessment run.
         /// </summary>
-        /// <param name="assessmentArn">The ARN of the assessment for which you want to stop the data collection process.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StopAssessmentRun service method.</param>
         /// 
-        /// <returns>The response from the StopDataCollection service method, as returned by Inspector.</returns>
+        /// <returns>The response from the StopAssessmentRun service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public StopDataCollectionResponse StopDataCollection(string assessmentArn)
+        public StopAssessmentRunResponse StopAssessmentRun(StopAssessmentRunRequest request)
         {
-            var request = new StopDataCollectionRequest();
-            request.AssessmentArn = assessmentArn;
-            return StopDataCollection(request);
-        }
+            var marshaller = new StopAssessmentRunRequestMarshaller();
+            var unmarshaller = StopAssessmentRunResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Stop data collection for the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StopDataCollection service method.</param>
-        /// 
-        /// <returns>The response from the StopDataCollection service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public StopDataCollectionResponse StopDataCollection(StopDataCollectionRequest request)
-        {
-            var marshaller = new StopDataCollectionRequestMarshaller();
-            var unmarshaller = StopDataCollectionResponseUnmarshaller.Instance;
-
-            return Invoke<StopDataCollectionRequest,StopDataCollectionResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Stop data collection for the assessment specified by the assessment ARN.
-        /// </summary>
-        /// <param name="assessmentArn">The ARN of the assessment for which you want to stop the data collection process.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StopDataCollection service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<StopDataCollectionResponse> StopDataCollectionAsync(string assessmentArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new StopDataCollectionRequest();
-            request.AssessmentArn = assessmentArn;
-            return StopDataCollectionAsync(request, cancellationToken);
+            return Invoke<StopAssessmentRunRequest,StopAssessmentRunResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the StopDataCollection operation.
+        /// Initiates the asynchronous execution of the StopAssessmentRun operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the StopDataCollection operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StopAssessmentRun operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<StopDataCollectionResponse> StopDataCollectionAsync(StopDataCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<StopAssessmentRunResponse> StopAssessmentRunAsync(StopAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopDataCollectionRequestMarshaller();
-            var unmarshaller = StopDataCollectionResponseUnmarshaller.Instance;
+            var marshaller = new StopAssessmentRunRequestMarshaller();
+            var unmarshaller = StopAssessmentRunResponseUnmarshaller.Instance;
 
-            return InvokeAsync<StopDataCollectionRequest,StopDataCollectionResponse>(request, marshaller, 
+            return InvokeAsync<StopAssessmentRunRequest,StopAssessmentRunResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  UpdateApplication
+        #region  SubscribeToEvent
 
 
         /// <summary>
-        /// Updates application specified by the application ARN.
+        /// Enables the process of sending Amazon Simple Notification Service (SNS) notifications
+        /// about a specified event to a specified SNS topic.
         /// </summary>
-        /// <param name="applicationArn">Application ARN that you want to update.</param>
-        /// <param name="applicationName">Application name that you want to update.</param>
-        /// <param name="resourceGroupArn">The resource group ARN that you want to update.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SubscribeToEvent service method.</param>
         /// 
-        /// <returns>The response from the UpdateApplication service method, as returned by Inspector.</returns>
+        /// <returns>The response from the SubscribeToEvent service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public UpdateApplicationResponse UpdateApplication(string applicationArn, string applicationName, string resourceGroupArn)
+        public SubscribeToEventResponse SubscribeToEvent(SubscribeToEventRequest request)
         {
-            var request = new UpdateApplicationRequest();
-            request.ApplicationArn = applicationArn;
-            request.ApplicationName = applicationName;
-            request.ResourceGroupArn = resourceGroupArn;
-            return UpdateApplication(request);
-        }
+            var marshaller = new SubscribeToEventRequestMarshaller();
+            var unmarshaller = SubscribeToEventResponseUnmarshaller.Instance;
 
-
-        /// <summary>
-        /// Updates application specified by the application ARN.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
-        /// 
-        /// <returns>The response from the UpdateApplication service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
-        {
-            var marshaller = new UpdateApplicationRequestMarshaller();
-            var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
-
-            return Invoke<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Updates application specified by the application ARN.
-        /// </summary>
-        /// <param name="applicationArn">Application ARN that you want to update.</param>
-        /// <param name="applicationName">Application name that you want to update.</param>
-        /// <param name="resourceGroupArn">The resource group ARN that you want to update.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UpdateApplication service method, as returned by Inspector.</returns>
-        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
-        /// </exception>
-        public Task<UpdateApplicationResponse> UpdateApplicationAsync(string applicationArn, string applicationName, string resourceGroupArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new UpdateApplicationRequest();
-            request.ApplicationArn = applicationArn;
-            request.ApplicationName = applicationName;
-            request.ResourceGroupArn = resourceGroupArn;
-            return UpdateApplicationAsync(request, cancellationToken);
+            return Invoke<SubscribeToEventRequest,SubscribeToEventResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateApplication operation.
+        /// Initiates the asynchronous execution of the SubscribeToEvent operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SubscribeToEvent operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<SubscribeToEventResponse> SubscribeToEventAsync(SubscribeToEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateApplicationRequestMarshaller();
-            var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
+            var marshaller = new SubscribeToEventRequestMarshaller();
+            var unmarshaller = SubscribeToEventResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, 
+            return InvokeAsync<SubscribeToEventRequest,SubscribeToEventResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
         #endregion
         
-        #region  UpdateAssessment
+        #region  UnsubscribeFromEvent
 
 
         /// <summary>
-        /// Updates the assessment specified by the assessment ARN.
+        /// Disables the process of sending Amazon Simple Notification Service (SNS) notifications
+        /// about a specified event to a specified SNS topic.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAssessment service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UnsubscribeFromEvent service method.</param>
         /// 
-        /// <returns>The response from the UpdateAssessment service method, as returned by Inspector.</returns>
+        /// <returns>The response from the UnsubscribeFromEvent service method, as returned by Inspector.</returns>
         /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
-        /// 
+        /// You do not have required permissions to access the requested resource.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InternalException">
-        /// 
+        /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
-        /// 
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
-        /// 
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
         /// </exception>
-        public UpdateAssessmentResponse UpdateAssessment(UpdateAssessmentRequest request)
+        public UnsubscribeFromEventResponse UnsubscribeFromEvent(UnsubscribeFromEventRequest request)
         {
-            var marshaller = new UpdateAssessmentRequestMarshaller();
-            var unmarshaller = UpdateAssessmentResponseUnmarshaller.Instance;
+            var marshaller = new UnsubscribeFromEventRequestMarshaller();
+            var unmarshaller = UnsubscribeFromEventResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateAssessmentRequest,UpdateAssessmentResponse>(request, marshaller, unmarshaller);
+            return Invoke<UnsubscribeFromEventRequest,UnsubscribeFromEventResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateAssessment operation.
+        /// Initiates the asynchronous execution of the UnsubscribeFromEvent operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateAssessment operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UnsubscribeFromEvent operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<UpdateAssessmentResponse> UpdateAssessmentAsync(UpdateAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public Task<UnsubscribeFromEventResponse> UnsubscribeFromEventAsync(UnsubscribeFromEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateAssessmentRequestMarshaller();
-            var unmarshaller = UpdateAssessmentResponseUnmarshaller.Instance;
+            var marshaller = new UnsubscribeFromEventRequestMarshaller();
+            var unmarshaller = UnsubscribeFromEventResponseUnmarshaller.Instance;
 
-            return InvokeAsync<UpdateAssessmentRequest,UpdateAssessmentResponse>(request, marshaller, 
+            return InvokeAsync<UnsubscribeFromEventRequest,UnsubscribeFromEventResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAssessmentTarget
+
+
+        /// <summary>
+        /// Updates the assessment target that is specified by the ARN of the assessment target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentTarget service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAssessmentTarget service method, as returned by Inspector.</returns>
+        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
+        /// </exception>
+        public UpdateAssessmentTargetResponse UpdateAssessmentTarget(UpdateAssessmentTargetRequest request)
+        {
+            var marshaller = new UpdateAssessmentTargetRequestMarshaller();
+            var unmarshaller = UpdateAssessmentTargetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAssessmentTargetRequest,UpdateAssessmentTargetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAssessmentTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentTarget operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateAssessmentTargetResponse> UpdateAssessmentTargetAsync(UpdateAssessmentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAssessmentTargetRequestMarshaller();
+            var unmarshaller = UpdateAssessmentTargetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAssessmentTargetRequest,UpdateAssessmentTargetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

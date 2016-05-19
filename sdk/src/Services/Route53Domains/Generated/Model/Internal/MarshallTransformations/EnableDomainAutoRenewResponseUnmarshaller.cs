@@ -65,6 +65,10 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TLDRulesViolation"))
+            {
+                return new TLDRulesViolationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedTLD"))
             {
                 return new UnsupportedTLDException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

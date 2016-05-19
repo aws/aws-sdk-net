@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeVTLDevices operation.
     /// Returns a description of virtual tape library (VTL) devices for the specified gateway.
-    /// In the response, AWS Storage Gateway returns VTL device information. 
+    /// In the response, AWS Storage Gateway returns VTL device information.
     /// 
     ///  
     /// <para>
@@ -102,8 +102,12 @@ namespace Amazon.StorageGateway.Model
         /// An array of strings, where each string represents the Amazon Resource Name (ARN) of
         /// a VTL device.
         /// </para>
-        ///  <note>All of the specified VTL devices must be from the same gateway. If no VTL devices
-        /// are specified, the result will contain all devices on the specified gateway.</note>
+        ///  <note>
+        /// <para>
+        /// All of the specified VTL devices must be from the same gateway. If no VTL devices
+        /// are specified, the result will contain all devices on the specified gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> VTLDeviceARNs
         {

@@ -48,6 +48,7 @@ namespace Amazon.OpsWorks.Model
         private string _comment;
         private string _customJson;
         private List<string> _instanceIds = new List<string>();
+        private List<string> _layerIds = new List<string>();
         private string _stackId;
 
         /// <summary>
@@ -151,6 +152,24 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstanceIds()
         {
             return this._instanceIds != null && this._instanceIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LayerIds. 
+        /// <para>
+        /// The layer IDs for the deployment targets.
+        /// </para>
+        /// </summary>
+        public List<string> LayerIds
+        {
+            get { return this._layerIds; }
+            set { this._layerIds = value; }
+        }
+
+        // Check to see if LayerIds property is set
+        internal bool IsSetLayerIds()
+        {
+            return this._layerIds != null && this._layerIds.Count > 0; 
         }
 
         /// <summary>

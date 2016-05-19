@@ -30,20 +30,29 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Interface for accessing SimpleSystemsManagement
     ///
-    /// Simple Systems Manager (SSM) enables you to remotely manage the configuration of your
-    /// Amazon EC2 instance. Using SSM, you can run scripts or commands using either EC2 Run
-    /// Command or SSM Config. (SSM Config is currently available only for Windows instances.)
+    /// This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables you to
+    /// remotely manage the configuration of your Amazon EC2 instance using scripts or commands
+    /// with either an on-demand solution called <i>SSM Run Command</i> or a lightweight instance
+    /// configuration solution called <i>SSM Config</i>. 
     /// 
-    /// 
-    ///   <b>Run Command</b> 
+    ///  
+    /// <para>
+    /// This references is intended to be used with the SSM User Guide for <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
+    /// or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html">Windows</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Run Command</b> 
+    /// </para>
+    ///  
     /// <para>
     /// Run Command provides an on-demand experience for executing commands. You can use pre-defined
     /// Amazon SSM documents to perform the actions listed later in this section, or you can
     /// create your own documents. With these documents, you can remotely configure your instances
     /// by sending commands using the <b>Commands</b> page in the <a href="http://console.aws.amazon.com/ec2/">Amazon
     /// EC2 console</a>, <a href="http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html">AWS
-    /// Tools for Windows PowerShell</a>, or the <a href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
-    /// CLI</a>.
+    /// Tools for Windows PowerShell</a>, the <a href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
+    /// CLI</a>, or AWS SDKs.
     /// </para>
     ///  
     /// <para>
@@ -56,7 +65,11 @@ namespace Amazon.SimpleSystemsManagement
     /// or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html">Windows</a>).
     /// 
     /// </para>
-    ///   <b>SSM Config</b> 
+    ///   
+    /// <para>
+    ///  <b>SSM Config</b> 
+    /// </para>
+    ///  
     /// <para>
     /// SSM Config is a lightweight instance configuration solution. SSM Config is currently
     /// only available for Windows instances. With SSM Config, you can specify a setup configuration
@@ -76,133 +89,105 @@ namespace Amazon.SimpleSystemsManagement
     /// </para>
     ///  
     /// <para>
-    /// SSM Config and Run Command include the following pre-defined documents.
+    /// SSM Config and SSM Run Command include the following pre-defined documents.
     /// </para>
-    ///  <table> <title>Amazon Pre-defined SSM Documents</title> <tgroup cols="3"> <colspec
-    /// colname="col1" colnum="1" colwidth="1*"/> <colspec colname="col2" colnum="2" colwidth="1*"/>
-    /// <colspec colname="col3" colnum="3" colwidth="1*"/> <thead> <row> <entry>Name</entry>
-    /// <entry>Description</entry> <entry>Platform</entry> </row> </thead> <tbody> <row> <entry>
-    /// 
+    ///  
     /// <para>
-    /// AWS-RunShellScript
+    ///  <b>Linux</b> 
     /// </para>
-    ///  </entry> <entry> 
+    ///  <ul> <li> 
     /// <para>
-    /// Run shell scripts
+    ///  <b>AWS-RunShellScript</b> to run shell scripts
     /// </para>
-    ///  </entry> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// Linux
+    ///  <b>AWS-UpdateSSMAgent</b> to update the Amazon SSM agent
     /// </para>
-    ///  </entry> </row> <row> <entry> 
+    ///  </li> </ul>  
     /// <para>
-    /// AWS-UpdateSSMAgent
+    ///  <b>Windows</b> 
     /// </para>
-    ///  </entry> <entry> 
+    ///  <ul> <li> 
     /// <para>
-    /// Update the Amazon SSM agent
+    ///  <b>AWS-JoinDirectoryServiceDomain</b> to join an AWS Directory
     /// </para>
-    ///  </entry> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// Linux
+    ///  <b>AWS-RunPowerShellScript</b> to run PowerShell commands or scripts
     /// </para>
-    ///  </entry> </row> <row> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// AWS-JoinDirectoryServiceDomain 
+    ///  <b>AWS-UpdateEC2Config</b> to update the EC2Config service
     /// </para>
-    ///  </entry> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// Join an AWS Directory 
+    ///  <b>AWS-ConfigureWindowsUpdate</b> to configure Windows Update settings
     /// </para>
-    ///  </entry> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// Windows
+    ///  <b>AWS-InstallApplication</b> to install, repair, or uninstall software using an
+    /// MSI package
     /// </para>
-    ///  </entry> </row> <row> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// AWS-RunPowerShellScript
+    ///  <b>AWS-InstallPowerShellModule</b> to install PowerShell modules 
     /// </para>
-    ///  </entry> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// Run PowerShell commands or scripts
+    ///  <b>AWS-ConfigureCloudWatch</b> to configure Amazon CloudWatch Logs to monitor applications
+    /// and systems
     /// </para>
-    ///  </entry> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// Windows
+    ///  <b>AWS-ListWindowsInventory</b> to collect information about an EC2 instance running
+    /// in Windows.
     /// </para>
-    ///  </entry> </row> <row> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// AWS-UpdateEC2Config
+    ///  <b>AWS-FindWindowsUpdates</b> to scan an instance and determines which updates are
+    /// missing.
     /// </para>
-    ///  </entry> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// Update the EC2Config service 
+    ///  <b>AWS-InstallMissingWindowsUpdates</b> to install missing updates on your EC2 instance.
     /// </para>
-    ///  </entry> <entry> 
+    ///  </li> <li> 
     /// <para>
-    /// Windows
+    ///  <b>AWS-InstallSpecificWindowsUpdates</b> to install one or more specific updates.
     /// </para>
-    ///  </entry> </row> <row> <entry> 
+    ///  </li> </ul> <important> 
     /// <para>
-    /// AWS-ConfigureWindowsUpdate
-    /// </para>
-    ///  </entry> <entry> 
-    /// <para>
-    /// Configure Windows Update settings
-    /// </para>
-    ///  </entry> <entry> 
-    /// <para>
-    /// Windows
-    /// </para>
-    ///  </entry> </row> <row> <entry> 
-    /// <para>
-    /// AWS-InstallApplication
-    /// </para>
-    ///  </entry> <entry> 
-    /// <para>
-    /// Install, repair, or uninstall software using an MSI package
-    /// </para>
-    ///  </entry> <entry> 
-    /// <para>
-    /// Windows
-    /// </para>
-    ///  </entry> </row> <row> <entry> 
-    /// <para>
-    /// AWS-InstallPowerShellModule
-    /// </para>
-    ///  </entry> <entry> 
-    /// <para>
-    /// Install PowerShell modules 
-    /// </para>
-    ///  </entry> <entry> 
-    /// <para>
-    /// Windows
-    /// </para>
-    ///  </entry> </row> <row> <entry> 
-    /// <para>
-    /// AWS-ConfigureCloudWatch
-    /// </para>
-    ///  </entry> <entry> 
-    /// <para>
-    /// Configure Amazon CloudWatch Logs to monitor applications and systems
-    /// </para>
-    ///  </entry> <entry> 
-    /// <para>
-    /// Windows
-    /// </para>
-    ///  </entry> </row> </tbody> </tgroup> </table> <important> <simpara>The commands or
-    /// scripts specified in SSM documents run with administrative privilege on your instances
-    /// because the Amazon SSM agent runs as root on Linux and the EC2Config service runs
-    /// in the Local System account on Windows. If a user has permission to execute any of
-    /// the pre-defined SSM documents (any document that begins with AWS-*) then that user
-    /// also has administrator access to the instance. Delegate access to SSM and Run Command
-    /// judiciously. This becomes extremely important if you create your own SSM documents.
+    /// The commands or scripts specified in SSM documents run with administrative privilege
+    /// on your instances because the Amazon SSM agent runs as root on Linux and the EC2Config
+    /// service runs in the Local System account on Windows. If a user has permission to execute
+    /// any of the pre-defined SSM documents (any document that begins with AWS-*) then that
+    /// user also has administrator access to the instance. Delegate access to SSM and Run
+    /// Command judiciously. This becomes extremely important if you create your own SSM documents.
     /// Amazon Web Services does not provide guidance about how to create secure SSM documents.
     /// You create SSM documents and delegate access to Run Command at your own risk. As a
     /// security best practice, we recommend that you assign access to "AWS-*" documents,
     /// especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript
     /// document on Windows, to trusted administrators only. You can create SSM documents
-    /// for specific tasks and delegate access to non-administrators.</simpara> </important>
+    /// for specific tasks and delegate access to non-administrators.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For information about creating and sharing SSM documents, see the following topics
+    /// in the SSM User Guide: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html">Creating
+    /// SSM Documents</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html">Sharing
+    /// SSM Documents</a> (Linux)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating
+    /// SSM Documents</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html">Sharing
+    /// SSM Documents</a> (Windows)
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonSimpleSystemsManagement : IDisposable
     {
@@ -220,6 +205,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
         /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
@@ -241,6 +229,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
         /// You cannot specify an instance ID in more than one association.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -259,6 +250,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
         /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
@@ -283,6 +277,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
         /// You cannot specify an instance ID in more than one association.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -305,6 +302,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the CancelCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
         /// You cannot specify an instance ID in more than one association.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
@@ -345,7 +345,7 @@ namespace Amazon.SimpleSystemsManagement
         /// the system throws the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
-        /// <param name="instanceId">The Windows Server instance ID.</param>
+        /// <param name="instanceId">The instance ID.</param>
         /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the CreateAssociation service method, as returned by SimpleSystemsManagement.</returns>
@@ -370,7 +370,8 @@ namespace Amazon.SimpleSystemsManagement
         /// supply values to parameters defined in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s).
+        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
         CreateAssociationResponse CreateAssociation(string instanceId, string name);
 
@@ -412,7 +413,8 @@ namespace Amazon.SimpleSystemsManagement
         /// supply values to parameters defined in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s).
+        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
         CreateAssociationResponse CreateAssociation(CreateAssociationRequest request);
 
@@ -431,7 +433,7 @@ namespace Amazon.SimpleSystemsManagement
         /// the system throws the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
-        /// <param name="instanceId">The Windows Server instance ID.</param>
+        /// <param name="instanceId">The instance ID.</param>
         /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -459,7 +461,8 @@ namespace Amazon.SimpleSystemsManagement
         /// supply values to parameters defined in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s).
+        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
         Task<CreateAssociationResponse> CreateAssociationAsync(string instanceId, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -517,7 +520,8 @@ namespace Amazon.SimpleSystemsManagement
         /// supply values to parameters defined in the SSM document.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s).
+        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
         CreateAssociationBatchResponse CreateAssociationBatch(CreateAssociationBatchRequest request);
 
@@ -543,11 +547,11 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// After you create an SSM document, you can use <a>CreateAssociation</a> to associate
-        /// it with one or more running instances.
+        /// After you create an SSM document, you can use CreateAssociation to associate it with
+        /// one or more running instances.
         /// </para>
         /// </summary>
-        /// <param name="content">A valid JSON string. For more information about the contents of this string, see <a href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM Document</a>.</param>
+        /// <param name="content">A valid JSON string.</param>
         /// <param name="name">A name for the SSM document.</param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
@@ -573,8 +577,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// After you create an SSM document, you can use <a>CreateAssociation</a> to associate
-        /// it with one or more running instances.
+        /// After you create an SSM document, you can use CreateAssociation to associate it with
+        /// one or more running instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocument service method.</param>
@@ -603,11 +607,11 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// After you create an SSM document, you can use <a>CreateAssociation</a> to associate
-        /// it with one or more running instances.
+        /// After you create an SSM document, you can use CreateAssociation to associate it with
+        /// one or more running instances.
         /// </para>
         /// </summary>
-        /// <param name="content">A valid JSON string. For more information about the contents of this string, see <a href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM Document</a>.</param>
+        /// <param name="content">A valid JSON string.</param>
         /// <param name="name">A name for the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -786,6 +790,10 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
+        /// You attempted to delete a document while it is still shared. You must stop sharing
+        /// the document before you can delete it.
+        /// </exception>
         DeleteDocumentResponse DeleteDocument(string name);
 
         /// <summary>
@@ -808,6 +816,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
+        /// You attempted to delete a document while it is still shared. You must stop sharing
+        /// the document before you can delete it.
         /// </exception>
         DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request);
 
@@ -836,6 +848,10 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentOperationException">
+        /// You attempted to delete a document while it is still shared. You must stop sharing
+        /// the document before you can delete it.
+        /// </exception>
         Task<DeleteDocumentResponse> DeleteDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -857,7 +873,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Describes the associations for the specified SSM document or instance.
         /// </summary>
-        /// <param name="instanceId">The Windows Server instance ID.</param>
+        /// <param name="instanceId">The instance ID.</param>
         /// <param name="name">The name of the SSM document.</param>
         /// 
         /// <returns>The response from the DescribeAssociation service method, as returned by SimpleSystemsManagement.</returns>
@@ -901,7 +917,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Describes the associations for the specified SSM document or instance.
         /// </summary>
-        /// <param name="instanceId">The Windows Server instance ID.</param>
+        /// <param name="instanceId">The instance ID.</param>
         /// <param name="name">The name of the SSM document.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -995,6 +1011,43 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeDocumentResponse> DescribeDocumentAsync(DescribeDocumentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDocumentPermission
+
+
+        /// <summary>
+        /// Describes the permissions for an SSM document. If you created the document, you are
+        /// the owner. If a document is shared, it can either be shared privately (by specifying
+        /// a user’s AWS account ID) or publicly (<i>All</i>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentPermission service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDocumentPermission service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPermissionTypeException">
+        /// The permission type is not supported. <i>Share</i> is the only supported permission
+        /// type.
+        /// </exception>
+        DescribeDocumentPermissionResponse DescribeDocumentPermission(DescribeDocumentPermissionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDocumentPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentPermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeDocumentPermissionResponse> DescribeDocumentPermissionAsync(DescribeDocumentPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1210,6 +1263,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1236,6 +1292,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="commandId">(Optional) The invocations for a specific command ID.</param>
         /// 
         /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1261,6 +1320,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="request">Container for the necessary parameters to execute the ListCommandInvocations service method.</param>
         /// 
         /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1289,6 +1351,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// 
         /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1318,6 +1383,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// 
         /// <returns>The response from the ListCommandInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1354,6 +1422,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1376,6 +1447,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="commandId">(Optional) If provided, lists only the specified command.</param>
         /// 
         /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1397,6 +1471,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="request">Container for the necessary parameters to execute the ListCommands service method.</param>
         /// 
         /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1421,6 +1498,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// 
         /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1446,6 +1526,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// 
         /// <returns>The response from the ListCommands service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
         /// 
         /// </exception>
@@ -1545,6 +1628,51 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ModifyDocumentPermission
+
+
+        /// <summary>
+        /// Share a document publicly or privately. If you share a document privately, you must
+        /// specify the AWS user account IDs for those people who can use the document. If you
+        /// share a document publicly, you must specify <i>All</i> as the account ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDocumentPermission service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDocumentPermission service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
+        /// You can have at most 100 active SSM documents.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentPermissionLimitException">
+        /// The document cannot be shared with more AWS user accounts. You can share a document
+        /// with a maximum of 20 accounts. You can publicly share up to five documents. If you
+        /// need to increase this limit, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPermissionTypeException">
+        /// The permission type is not supported. <i>Share</i> is the only supported permission
+        /// type.
+        /// </exception>
+        ModifyDocumentPermissionResponse ModifyDocumentPermission(ModifyDocumentPermissionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDocumentPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDocumentPermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ModifyDocumentPermissionResponse> ModifyDocumentPermissionAsync(ModifyDocumentPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SendCommand
 
 
@@ -1558,6 +1686,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
         /// You cannot specify an instance ID in more than one association.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
@@ -1572,8 +1703,12 @@ namespace Amazon.SimpleSystemsManagement
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
+        /// The size limit of an SSM document is 64 KB.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s).
+        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
         SendCommandResponse SendCommand(string documentName, List<string> instanceIds);
 
@@ -1586,6 +1721,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
         /// You cannot specify an instance ID in more than one association.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
@@ -1600,8 +1738,12 @@ namespace Amazon.SimpleSystemsManagement
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
+        /// The size limit of an SSM document is 64 KB.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s).
+        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
         SendCommandResponse SendCommand(SendCommandRequest request);
 
@@ -1619,6 +1761,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
         /// You cannot specify an instance ID in more than one association.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
@@ -1633,8 +1778,12 @@ namespace Amazon.SimpleSystemsManagement
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
+        /// The size limit of an SSM document is 64 KB.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
-        /// The document does not support the platform type of the given instance ID(s).
+        /// The document does not support the platform type of the given instance ID(s). For example,
+        /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
         Task<SendCommandResponse> SendCommandAsync(string documentName, List<string> instanceIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

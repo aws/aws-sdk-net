@@ -950,6 +950,52 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketAccelerateConfiguration
+
+        /// <summary>
+        /// Returns the accelerate configuration of a bucket.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">
+        ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///     procedure using the AsyncState property.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        public void GetBucketAccelerateConfigurationAsync(string bucketName,  AmazonServiceCallback<GetBucketAccelerateConfigurationRequest, GetBucketAccelerateConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            var request = new GetBucketAccelerateConfigurationRequest();
+            request.BucketName = bucketName;
+            GetBucketAccelerateConfigurationAsync(request, callback, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void GetBucketAccelerateConfigurationAsync(GetBucketAccelerateConfigurationRequest request, AmazonServiceCallback<GetBucketAccelerateConfigurationRequest, GetBucketAccelerateConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new GetBucketAccelerateConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetBucketAccelerateConfigurationRequest,GetBucketAccelerateConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<GetBucketAccelerateConfigurationRequest,GetBucketAccelerateConfigurationResponse>((GetBucketAccelerateConfigurationRequest)req, (GetBucketAccelerateConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetBucketAccelerateConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetBucketLocation
 
         /// <summary>
@@ -1906,6 +1952,33 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  ListObjectsV2
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjectsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void ListObjectsV2Async(ListObjectsV2Request request, AmazonServiceCallback<ListObjectsV2Request, ListObjectsV2Response> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new ListObjectsV2RequestMarshaller();
+            var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListObjectsV2Request,ListObjectsV2Response> responseObject 
+                            = new AmazonServiceResult<ListObjectsV2Request,ListObjectsV2Response>((ListObjectsV2Request)req, (ListObjectsV2Response)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListObjectsV2Request>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  ListParts
 
         /// <summary>
@@ -2109,6 +2182,38 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<PutBucketRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutBucketAccelerateConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAccelerateConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void PutBucketAccelerateConfigurationAsync(PutBucketAccelerateConfigurationRequest request, AmazonServiceCallback<PutBucketAccelerateConfigurationRequest, PutBucketAccelerateConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutBucketAccelerateConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new PutBucketAccelerateConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutBucketAccelerateConfigurationRequest,PutBucketAccelerateConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<PutBucketAccelerateConfigurationRequest,PutBucketAccelerateConfigurationResponse>((PutBucketAccelerateConfigurationRequest)req, (PutBucketAccelerateConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutBucketAccelerateConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

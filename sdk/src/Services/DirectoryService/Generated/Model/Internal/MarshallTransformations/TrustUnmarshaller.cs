@@ -112,6 +112,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrustState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrustStateReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrustStateReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrustType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

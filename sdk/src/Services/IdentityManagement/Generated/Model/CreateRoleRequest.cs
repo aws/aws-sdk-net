@@ -47,6 +47,14 @@ namespace Amazon.IdentityManagement.Model
         /// The trust relationship policy document that grants an entity permission to assume
         /// the role.
         /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of any printable ASCII character ranging from
+        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
+        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
+        /// return (\u000D).
+        /// </para>
         /// </summary>
         public string AssumeRolePolicyDocument
         {
@@ -64,11 +72,19 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         ///  The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>Using IAM</i> guide. 
+        /// Identifiers</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// This parameter is optional. If it is not included, it defaults to a slash (/).
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of either a forward slash (/) by itself or a
+        /// string that must begin and end with forward slashes, containing any ASCII character
+        /// from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
+        /// digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string Path
@@ -87,6 +103,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property RoleName. 
         /// <para>
         /// The name of the role to create.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleName

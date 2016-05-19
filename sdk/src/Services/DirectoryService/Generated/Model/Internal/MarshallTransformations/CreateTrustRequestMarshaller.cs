@@ -67,6 +67,17 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConditionalForwarderIpAddrs())
+                {
+                    context.Writer.WritePropertyName("ConditionalForwarderIpAddrs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestConditionalForwarderIpAddrsListValue in publicRequest.ConditionalForwarderIpAddrs)
+                    {
+                            context.Writer.Write(publicRequestConditionalForwarderIpAddrsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDirectoryId())
                 {
                     context.Writer.WritePropertyName("DirectoryId");

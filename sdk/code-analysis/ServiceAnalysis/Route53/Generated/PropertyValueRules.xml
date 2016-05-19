@@ -524,6 +524,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.AlarmIdentifier.Region</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.AlarmIdentifier.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.AliasTarget.HostedZoneId</property>
     <max>32</max>
   </property-value-rule>
@@ -552,6 +562,24 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.CloudWatchAlarmConfiguration.EvaluationPeriods</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CloudWatchAlarmConfiguration.Period</property>
+    <min>60</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CloudWatchAlarmConfiguration.MetricName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CloudWatchAlarmConfiguration.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.DelegationSet.Id</property>
     <max>32</max>
   </property-value-rule>
@@ -559,6 +587,16 @@
     <property>Amazon.Route53.Model.DelegationSet.CallerReference</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.Dimension.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.Dimension.Value</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GeoLocation.ContinentCode</property>
@@ -654,6 +692,11 @@
     <property>Amazon.Route53.Model.HealthCheckConfig.HealthThreshold</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.HealthCheckObservation.Region</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.HealthCheckObservation.IPAddress</property>

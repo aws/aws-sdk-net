@@ -42,6 +42,7 @@ namespace Amazon.CloudTrail.Model
         private string _name;
         private string _s3BucketName;
         private string _s3KeyPrefix;
+        private string _snsTopicARN;
         private string _snsTopicName;
         private string _trailARN;
 
@@ -144,7 +145,11 @@ namespace Amazon.CloudTrail.Model
         /// Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value
         /// is a fully specified ARN to a KMS key in the format:
         /// </para>
+        ///  
+        /// <para>
         ///  <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// 
+        /// </para>
         /// </summary>
         public string KmsKeyId
         {
@@ -235,10 +240,33 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SnsTopicARN. 
+        /// <para>
+        /// Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
+        /// when log files are delivered. The format of a topic ARN is:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code> 
+        /// </para>
+        /// </summary>
+        public string SnsTopicARN
+        {
+            get { return this._snsTopicARN; }
+            set { this._snsTopicARN = value; }
+        }
+
+        // Check to see if SnsTopicARN property is set
+        internal bool IsSetSnsTopicARN()
+        {
+            return this._snsTopicARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SnsTopicName. 
         /// <para>
-        /// Name of the existing Amazon SNS topic that CloudTrail uses to notify the account owner
-        /// when new CloudTrail log files have been delivered. The maximum length is 256 characters.
+        /// Specifies the name of the Amazon SNS topic that CloudTrail uses to send notifications
+        /// when log files are delivered.
         /// </para>
         /// </summary>
         public string SnsTopicName
@@ -256,7 +284,11 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TrailARN. 
         /// <para>
-        /// The Amazon Resource Name of the trail. The <code>TrailARN</code> format is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// Specifies the ARN of the trail. The format of a trail ARN is:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </summary>
         public string TrailARN

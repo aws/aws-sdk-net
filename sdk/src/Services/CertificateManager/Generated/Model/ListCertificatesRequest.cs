@@ -46,10 +46,35 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property CertificateStatuses. 
         /// <para>
         ///  Identifies the statuses of the ACM Certificates for which you want to retrieve the
-        /// ARNs. This can be one or more of the following values: <ul> <li><code>PENDING_VALIDATION</code></li>
-        /// <li><code>ISSUED</code></li> <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li>
-        /// <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li> <li><code>FAILED</code></li>
-        /// </ul> 
+        /// ARNs. This can be one or more of the following values: <ul> <li>
+        /// <para>
+        /// <code>PENDING_VALIDATION</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>ISSUED</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>INACTIVE</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>EXPIRED</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>VALIDATION_TIMED_OUT</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>REVOKED</code>
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>FAILED</code>
+        /// </para>
+        /// </li> </ul> 
         /// </para>
         /// </summary>
         public List<string> CertificateStatuses

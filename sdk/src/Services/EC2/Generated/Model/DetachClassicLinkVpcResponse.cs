@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DetachClassicLinkVpc operation.
+    /// Contains the output of DetachClassicLinkVpc.
     /// </summary>
     public partial class DetachClassicLinkVpcResponse : AmazonWebServiceResponse
     {

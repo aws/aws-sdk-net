@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes the buffering to perform before delivering data to the destination.
+    /// Describes hints for the buffering to perform before delivering data to the destination.
+    /// Please note that these options are treated as hints, and therefore Firehose may choose
+    /// to use different values when it is optimal.
     /// </summary>
     public partial class BufferingHints
     {

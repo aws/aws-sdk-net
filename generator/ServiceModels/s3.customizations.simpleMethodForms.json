@@ -109,6 +109,13 @@
                     ]
                 ]
             },
+            "GetBucketAccelerateConfiguration": {
+                "methodForms": [
+                    [
+                        "BucketName"
+                    ]
+                ]
+            },
             "GetBucketLocation": {
                 "methodForms": [
                     [

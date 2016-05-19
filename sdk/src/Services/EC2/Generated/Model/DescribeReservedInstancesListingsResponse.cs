@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeReservedInstancesListings operation.
+    /// Contains the output of DescribeReservedInstancesListings.
     /// </summary>
     public partial class DescribeReservedInstancesListingsResponse : AmazonWebServiceResponse
     {

@@ -47,52 +47,52 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, you can create up to 5 delivery streams per region.
+    /// By default, you can create up to 20 delivery streams per region.
     /// </para>
     ///  
     /// <para>
     /// A delivery stream can only be configured with a single destination, Amazon S3 or Amazon
     /// Redshift. For correct <a>CreateDeliveryStream</a> request syntax, specify only one
-    /// destination configuration parameter: either <code>RedshiftDestinationConfiguration</code>
-    /// or <code>S3DestinationConfiguration</code>
+    /// destination configuration parameter: either <b>ElasticsearchDestinationConfiguration</b>,
+    /// <b>RedshiftDestinationConfiguration</b> or <b>S3DestinationConfiguration</b>
     /// </para>
     ///  
     /// <para>
-    /// As part of <code>S3DestinationConfiguration</code>, optional values <code>BufferingHints</code>,
-    /// <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code> can be provided.
-    /// By default, if no <code>BufferingHints</code> value is provided, Amazon Kinesis Firehose
-    /// buffers data up to 5 MB or for 5 minutes, whichever condition is satisfied first.
-    /// Note that <code>BufferingHints</code> is a hint, so there are some cases where the
-    /// service cannot adhere to these conditions strictly; for example, record boundaries
-    /// are such that the size is a little over or under the configured buffering size. By
-    /// default, no encryption is performed. We strongly recommend that you enable encryption
-    /// to ensure secure data storage in Amazon S3.
+    /// As part of <b>S3DestinationConfiguration</b>, optional values <b>BufferingHints</b>,
+    /// <b>EncryptionConfiguration</b>, and <b>CompressionFormat</b> can be provided. By default,
+    /// if no <b>BufferingHints</b> value is provided, Firehose buffers data up to 5 MB or
+    /// for 5 minutes, whichever condition is satisfied first. Note that <b>BufferingHints</b>
+    /// is a hint, so there are some cases where the service cannot adhere to these conditions
+    /// strictly; for example, record boundaries are such that the size is a little over or
+    /// under the configured buffering size. By default, no encryption is performed. We strongly
+    /// recommend that you enable encryption to ensure secure data storage in Amazon S3.
     /// </para>
     ///  
     /// <para>
-    /// A few notes about <code>RedshiftDestinationConfiguration</code>:
+    /// A few notes about <b>RedshiftDestinationConfiguration</b>:
     /// </para>
     ///  <ul> <li>An Amazon Redshift destination requires an S3 bucket as intermediate location,
-    /// as Amazon Kinesis Firehose first delivers data to S3 and then uses <code>COPY</code>
-    /// syntax to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code>
+    /// as Firehose first delivers data to S3 and then uses <code>COPY</code> syntax to load
+    /// data into an Amazon Redshift table. This is specified in the <b>RedshiftDestinationConfiguration.S3Configuration</b>
     /// parameter element.</li> <li>The compression formats <code>SNAPPY</code> or <code>ZIP</code>
-    /// cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code>
-    /// because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
-    /// doesn't support these compression formats.</li> <li>We strongly recommend that the
-    /// username and password provided is used exclusively for Amazon Kinesis Firehose purposes,
-    /// and that the permissions for the account are restricted for Amazon Redshift <code>INSERT</code>
-    /// permissions.</li> </ul> 
+    /// cannot be specified in <b>RedshiftDestinationConfiguration.S3Configuration</b> because
+    /// the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
+    /// support these compression formats.</li> <li>We strongly recommend that the username
+    /// and password provided is used exclusively for Firehose purposes, and that the permissions
+    /// for the account are restricted for Amazon Redshift <code>INSERT</code> permissions.</li>
+    /// </ul> 
     /// <para>
-    /// Amazon Kinesis Firehose assumes the IAM role that is configured as part of destinations.
-    /// The IAM role should allow the Amazon Kinesis Firehose principal to assume the role,
-    /// and the role should have permissions that allows the service to deliver the data.
-    /// For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
+    /// Firehose assumes the IAM role that is configured as part of destinations. The IAM
+    /// role should allow the Firehose principal to assume the role, and the role should have
+    /// permissions that allows the service to deliver the data. For more information, see
+    /// <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
     /// S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateDeliveryStreamRequest : AmazonKinesisFirehoseRequest
     {
         private string _deliveryStreamName;
+        private ElasticsearchDestinationConfiguration _elasticsearchDestinationConfiguration;
         private RedshiftDestinationConfiguration _redshiftDestinationConfiguration;
         private S3DestinationConfiguration _s3DestinationConfiguration;
 
@@ -115,10 +115,29 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ElasticsearchDestinationConfiguration. 
+        /// <para>
+        /// The destination in Amazon ES. This value cannot be specified if Amazon S3 or Amazon
+        /// Redshift is the desired destination (see restrictions listed above).
+        /// </para>
+        /// </summary>
+        public ElasticsearchDestinationConfiguration ElasticsearchDestinationConfiguration
+        {
+            get { return this._elasticsearchDestinationConfiguration; }
+            set { this._elasticsearchDestinationConfiguration = value; }
+        }
+
+        // Check to see if ElasticsearchDestinationConfiguration property is set
+        internal bool IsSetElasticsearchDestinationConfiguration()
+        {
+            return this._elasticsearchDestinationConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RedshiftDestinationConfiguration. 
         /// <para>
-        /// The destination in Amazon Redshift. This value cannot be specified if Amazon S3 is
-        /// the desired destination (see restrictions listed above).
+        /// The destination in Amazon Redshift. This value cannot be specified if Amazon S3 or
+        /// Amazon Elasticsearch is the desired destination (see restrictions listed above).
         /// </para>
         /// </summary>
         public RedshiftDestinationConfiguration RedshiftDestinationConfiguration
@@ -136,8 +155,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3DestinationConfiguration. 
         /// <para>
-        /// The destination in Amazon S3. This value must be specified if <code>RedshiftDestinationConfiguration</code>
-        /// is specified (see restrictions listed above).
+        /// The destination in Amazon S3. This value must be specified if <b>ElasticsearchDestinationConfiguration</b>
+        /// or <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed above).
         /// </para>
         /// </summary>
         public S3DestinationConfiguration S3DestinationConfiguration

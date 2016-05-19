@@ -36,8 +36,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
-    /// 
+    /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
+    /// | <code>snapshot</code> | <code>volume</code>. 
     /// </para>
     ///  
     /// <para>

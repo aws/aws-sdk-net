@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+        ///  Valid Values: "STK-L700", "AWS-Gateway-VTL"
         /// </para>
         /// </summary>
         public string DeviceType

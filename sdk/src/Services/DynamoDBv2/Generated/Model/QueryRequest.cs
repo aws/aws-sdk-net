@@ -52,8 +52,8 @@ namespace Amazon.DynamoDBv2.Model
     /// limit of 1 MB, the query stops and results are returned to the user with the <i>LastEvaluatedKey</i>
     /// element to continue the query in a subsequent operation. Unlike a <i>Scan</i> operation,
     /// a <i>Query</i> operation never returns both an empty result set and a <i>LastEvaluatedKey</i>
-    /// value. <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB, or if
-    /// you have used the <i>Limit</i> parameter. 
+    /// value. <i>LastEvaluatedKey</i> is only provided if you have used the <i>Limit</i>
+    /// parameter, or if the result set exceeds 1 MB (prior to applying a filter). 
     /// </para>
     ///  
     /// <para>
@@ -92,14 +92,14 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates QueryRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items. </param>
+        /// <param name="tableName">The name of the table containing the requested items.</param>
         public QueryRequest(string tableName)
         {
             _tableName = tableName;
         }
 
         /// <summary>
-        /// Gets and sets the property AttributesToGet. <important>
+        /// Gets and sets the property AttributesToGet. <important> 
         /// <para>
         /// This is a legacy parameter, for backward compatibility. New applications should use
         /// <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression
@@ -111,7 +111,7 @@ namespace Amazon.DynamoDBv2.Model
         /// This parameter allows you to retrieve attributes of type List or Map; however, it
         /// cannot retrieve individual elements within a List or a Map.
         /// </para>
-        /// </important> 
+        ///  </important> 
         /// <para>
         /// The names of one or more attributes to retrieve. If no attribute names are provided,
         /// then all attributes will be returned. If any of the requested attributes are not found,
@@ -169,17 +169,17 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A logical operator to apply to the conditions in a <i>QueryFilter</i> map:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>AND</code> - If all of the conditions evaluate to true, then the entire map
+        ///  <code>AND</code> - If all of the conditions evaluate to true, then the entire map
         /// evaluates to true.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>OR</code> - If at least one of the conditions evaluate to true, then the entire
+        ///  <code>OR</code> - If at least one of the conditions evaluate to true, then the entire
         /// map evaluates to true.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the default.
         /// </para>
@@ -187,11 +187,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The operation will succeed only if the entire map evaluates to true.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// This parameter does not support attributes of type List or Map.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public ConditionalOperator ConditionalOperator
         {
@@ -279,35 +279,35 @@ namespace Amazon.DynamoDBv2.Model
         /// Use the <b>#</b> character in an expression to dereference an attribute name. For
         /// example, consider the following attribute name:
         /// </para>
-        ///  <ul><li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>Percentile</code>
+        ///  <code>Percentile</code> 
         /// </para>
-        /// </li></ul> 
+        ///  </li> </ul> 
         /// <para>
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
         /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
-        ///  <ul><li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>{"#P":"Percentile"}</code>
+        ///  <code>{"#P":"Percentile"}</code> 
         /// </para>
-        /// </li></ul> 
+        ///  </li> </ul> 
         /// <para>
         /// You could then use this substitution in an expression, as in this example:
         /// </para>
-        ///  <ul><li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>#P = :val</code>
+        ///  <code>#P = :val</code> 
         /// </para>
-        /// </li></ul> <note>
+        ///  </li> </ul> <note> 
         /// <para>
         /// Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>,
         /// which are placeholders for the actual value at runtime.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -338,7 +338,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>Available | Backordered | Discontinued</code>
+        ///  <code>Available | Backordered | Discontinued</code> 
         /// </para>
         ///  
         /// <para>
@@ -346,8 +346,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"}
-        /// }</code>
+        ///  <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"}
+        /// }</code> 
         /// </para>
         ///  
         /// <para>
@@ -355,7 +355,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        ///  <code>ProductStatus IN (:avail, :back, :disc)</code> 
         /// </para>
         ///  
         /// <para>
@@ -392,12 +392,12 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
         /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
-        /// <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and <i>ConditionalOperator</i>
+        ///  <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and <i>ConditionalOperator</i>
         /// parameters.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public string FilterExpression
         {
@@ -416,7 +416,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The name of an index to query. This index can be any local secondary index or global
         /// secondary index on the table. Note that if you use the <i>IndexName</i> parameter,
-        /// you must also provide <i>TableName.</i>
+        /// you must also provide <i>TableName.</i> 
         /// </para>
         /// </summary>
         public string IndexName
@@ -471,40 +471,40 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort key
+        ///  <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort key
         /// value is equal to <code>:sortkeyval</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i> <code>:sortkeyval</code> - true
-        /// if the sort key value is less than <code>:sortkeyval</code>.
+        ///  <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if the sort
+        /// key value is less than <code>:sortkeyval</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i> <code>:sortkeyval</code> - true
-        /// if the sort key value is less than or equal to <code>:sortkeyval</code>.
+        ///  <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if the sort
+        /// key value is less than or equal to <code>:sortkeyval</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>sortKeyName</code> <i><![CDATA[&#x3E;]]></i> <code>:sortkeyval</code> - true
-        /// if the sort key value is greater than <code>:sortkeyval</code>.
+        ///  <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if the sort
+        /// key value is greater than <code>:sortkeyval</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i><code>:sortkeyval</code> - true
-        /// if the sort key value is greater than or equal to <code>:sortkeyval</code>.
+        ///  <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if the sort
+        /// key value is greater than or equal to <code>:sortkeyval</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code> <i>AND</i> <code>:sortkeyval2</code>
+        ///  <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code> <i>AND</i> <code>:sortkeyval2</code>
         /// - true if the sort key value is greater than or equal to <code>:sortkeyval1</code>,
         /// and less than or equal to <code>:sortkeyval2</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>begins_with (</i><code>sortKeyName</code>, <code>:sortkeyval</code><i>)</i> - true
-        /// if the sort key value begins with a particular operand. (You cannot use this function
-        /// with a sort key that is of type Number.) Note that the function name <code>begins_with</code>
+        ///  <i>begins_with (</i> <code>sortKeyName</code>, <code>:sortkeyval</code> <i>)</i>
+        /// - true if the sort key value begins with a particular operand. (You cannot use this
+        /// function with a sort key that is of type Number.) Note that the function name <code>begins_with</code>
         /// is case-sensitive.
         /// </para>
         ///  </li> </ul> 
@@ -520,12 +520,20 @@ namespace Amazon.DynamoDBv2.Model
         /// the following <i>KeyConditionExpression</i> parameter causes an error because <i>Size</i>
         /// is a reserved word:
         /// </para>
-        ///  <ul> <li> <code>Size = :myval</code> </li> </ul> 
+        ///  <ul> <li>
+        /// <para>
+        ///  <code>Size = :myval</code> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// To work around this, define a placeholder (such a <code>#S</code>) to represent the
         /// attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as follows:
         /// </para>
-        ///  <ul> <li> <code>#S = :myval</code> </li> </ul> 
+        ///  <ul> <li>
+        /// <para>
+        ///  <code>#S = :myval</code> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For a list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -539,7 +547,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// <i>KeyConditionExpression</i> replaces the legacy <i>KeyConditions</i> parameter.
+        ///  <i>KeyConditionExpression</i> replaces the legacy <i>KeyConditions</i> parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -576,7 +584,7 @@ namespace Amazon.DynamoDBv2.Model
         /// key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is present,
         /// it will be applied after the items are retrieved.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// For a query on an index, you can have conditions only on the index key attributes.
         /// You must provide the index partition key name and value as an <code>EQ</code> condition.
@@ -589,7 +597,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute.
+        ///  <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute.
         /// The number of values in the list depends on the <i>ComparisonOperator</i> being used.
         /// </para>
         ///  
@@ -610,8 +618,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>ComparisonOperator</i> - A comparator for evaluating attributes, for example, equals,
-        /// greater than, less than, and so on.
+        ///  <i>ComparisonOperator</i> - A comparator for evaluating attributes, for example,
+        /// equals, greater than, less than, and so on.
         /// </para>
         ///  
         /// <para>
@@ -627,11 +635,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>EQ</code> : Equal. 
+        ///  <code>EQ</code> : Equal. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i> element
         /// of a different type than the one specified in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
@@ -639,11 +647,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>LE</code> : Less than or equal. 
+        ///  <code>LE</code> : Less than or equal. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
         /// element of a different type than the one provided in the request, the value does not
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
@@ -651,11 +659,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>LT</code> : Less than. 
+        ///  <code>LT</code> : Less than. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i> element
         /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
@@ -663,11 +671,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>GE</code> : Greater than or equal. 
+        ///  <code>GE</code> : Greater than or equal. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
         /// element of a different type than the one provided in the request, the value does not
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
@@ -675,11 +683,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>GT</code> : Greater than. 
+        ///  <code>GT</code> : Greater than. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
         /// element of a different type than the one provided in the request, the value does not
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
@@ -687,28 +695,28 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>BEGINS_WITH</code> : Checks for a prefix. 
+        ///  <code>BEGINS_WITH</code> : Checks for a prefix. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String
         /// or Binary (not a Number or a set type). The target attribute of the comparison must
         /// be of type String or Binary (not a Number or a set type).
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or
+        ///  <code>BETWEEN</code> : Greater than or equal to the first value, and less than or
         /// equal to the second value. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same
-        /// type, either String, Number, or Binary (not a set type). A target attribute matches
+        ///  <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+        /// same type, either String, Number, or Binary (not a set type). A target attribute matches
         /// if the target value is greater than, or equal to, the first element and less than,
         /// or equal to, the second element. If an item contains an <i>AttributeValue</i> element
         /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -739,8 +747,8 @@ namespace Amazon.DynamoDBv2.Model
         /// up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB
         /// reaches this limit, it stops the operation and returns the matching values up to the
         /// limit, and a key in <i>LastEvaluatedKey</i> to apply in a subsequent operation to
-        /// continue the operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
-        /// >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// continue the operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+        /// and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public int Limit
@@ -772,11 +780,11 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
-        /// <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
+        ///  <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public string ProjectionExpression
         {
@@ -807,12 +815,12 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// This parameter does not support attributes of type List or Map.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// A <i>QueryFilter</i> is applied after the items have already been read; the process
         /// of filtering does not consume any additional read capacity units.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// If you provide more than one condition in the <i>QueryFilter</i> map, then by default
         /// all of the conditions must evaluate to true. In other words, the conditions are ANDed
@@ -832,7 +840,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute.
+        ///  <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute.
         /// The number of values in the list depends on the operator specified in <i>ComparisonOperator</i>.
         /// </para>
         ///  
@@ -856,10 +864,10 @@ namespace Amazon.DynamoDBv2.Model
         /// For information on specifying data types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
         /// Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals,
-        /// greater than, less than, etc.
+        ///  <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example,
+        /// equals, greater than, less than, etc.
         /// </para>
         ///  
         /// <para>
@@ -867,8 +875,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-        /// | IN | BETWEEN</code>
+        ///  <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+        /// | IN | BETWEEN</code> 
         /// </para>
         ///  
         /// <para>
@@ -947,7 +955,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified
+        ///  <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified
         /// table or index. If you query a local secondary index, then for each matching item
         /// in the index DynamoDB will fetch the entire item from the parent table. If the index
         /// is configured to project all item attributes, then all of the data can be obtained
@@ -955,13 +963,13 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves
+        ///  <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves
         /// all attributes that have been projected into the index. If the index is configured
         /// to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>COUNT</code> - Returns the number of matching items, rather than the matching
+        ///  <code>COUNT</code> - Returns the number of matching items, rather than the matching
         /// items themselves.
         /// </para>
         ///  </li> <li> 
@@ -993,13 +1001,13 @@ namespace Amazon.DynamoDBv2.Model
         /// (This usage is equivalent to specifying <i>AttributesToGet</i> without any value for
         /// <i>Select</i>.)
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// If you use the <i>ProjectionExpression</i> parameter, then the value for <i>Select</i>
         /// can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i> will
         /// return an error.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public Select Select
         {
@@ -1016,7 +1024,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table containing the requested items. 
+        /// The name of the table containing the requested items.
         /// </para>
         /// </summary>
         public string TableName

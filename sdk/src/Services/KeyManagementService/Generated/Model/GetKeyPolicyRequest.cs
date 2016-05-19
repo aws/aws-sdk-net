@@ -40,10 +40,17 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// A unique identifier for the customer master key. This value can be a globally unique
-        /// identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
-        /// 
+        /// identifier or the fully specified ARN to a key.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string KeyId
         {
@@ -61,7 +68,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property PolicyName. 
         /// <para>
         /// String that contains the name of the policy. Currently, this must be "default". Policy
-        /// names can be discovered by calling <a>ListKeyPolicies</a>. 
+        /// names can be discovered by calling <a>ListKeyPolicies</a>.
         /// </para>
         /// </summary>
         public string PolicyName

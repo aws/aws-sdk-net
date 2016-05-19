@@ -763,11 +763,25 @@ namespace Amazon.EC2
         /// <para>
         /// If a volume has an AWS Marketplace product code:
         /// </para>
-        ///  <ul> <li>The volume can be attached only to a stopped instance.</li> <li>AWS Marketplace
-        /// product codes are copied from the volume to the instance.</li> <li>You must be subscribed
-        /// to the product.</li> <li>The instance type and operating system of the instance must
-        /// support the product. For example, you can't detach a volume from a Windows instance
-        /// and attach it to a Linux instance.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// The volume can be attached only to a stopped instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS Marketplace product codes are copied from the volume to the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must be subscribed to the product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The instance type and operating system of the instance must support the product. For
+        /// example, you can't detach a volume from a Windows instance and attach it to a Linux
+        /// instance.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For an overview of the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace/help/200900000">Introducing
         /// AWS Marketplace</a>.
@@ -1540,24 +1554,41 @@ namespace Amazon.EC2
         /// can specify. For more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
         /// 2132</a>.
         /// 
-        ///  <ul> <li><code>domain-name-servers</code> - The IP addresses of up to four domain
-        /// name servers, or <code>AmazonProvidedDNS</code>. The default DHCP option set specifies
-        /// <code>AmazonProvidedDNS</code>. If specifying more than one domain name server, specify
-        /// the IP addresses in a single parameter, separated by commas.</li> <li><code>domain-name</code>
-        /// - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify <code>ec2.internal</code>.
-        /// If you're using AmazonProvidedDNS in another region, specify <code>region.compute.internal</code>
-        /// (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a
-        /// domain name (for example, <code>MyCompany.com</code>). <b>Important</b>: Some Linux
-        /// operating systems accept multiple domain names separated by spaces. However, Windows
-        /// and other Linux operating systems treat the value as a single domain, which results
-        /// in unexpected behavior. If your DHCP options set is associated with a VPC that has
-        /// instances with multiple operating systems, specify only one domain name.</li> <li><code>ntp-servers</code>
-        /// - The IP addresses of up to four Network Time Protocol (NTP) servers.</li> <li><code>netbios-name-servers</code>
-        /// - The IP addresses of up to four NetBIOS name servers.</li> <li><code>netbios-node-type</code>
-        /// - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast
-        /// and multicast are not currently supported). For more information about these node
-        /// types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>. </li> </ul>
-        /// 
+        ///  <ul> <li>
+        /// <para>
+        /// <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
+        /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
+        /// specifying more than one domain name server, specify the IP addresses in a single
+        /// parameter, separated by commas.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>domain-name</code> - If you're using AmazonProvidedDNS in "us-east-1", specify
+        /// "ec2.internal". If you're using AmazonProvidedDNS in another region, specify "region.compute.internal"
+        /// (for example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
+        /// (for example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems accept
+        /// multiple domain names separated by spaces. However, Windows and other Linux operating
+        /// systems treat the value as a single domain, which results in unexpected behavior.
+        /// If your DHCP options set is associated with a VPC that has instances with multiple
+        /// operating systems, specify only one domain name.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP)
+        /// servers.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name servers.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend
+        /// that you specify 2 (broadcast and multicast are not currently supported). For more
+        /// information about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
+        /// 2132</a>.
+        /// </para>
+        /// </li> </ul> 
         /// <para>
         /// Your VPC automatically starts out with a set of DHCP options that includes only a
         /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
@@ -2669,6 +2700,12 @@ namespace Amazon.EC2
         /// about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify the instance tenancy value for the VPC when you create it. You can't
+        /// change this value for the VPC after you create it. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
+        /// Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
         /// 
@@ -2820,6 +2857,11 @@ namespace Amazon.EC2
         /// If you decide to shut down your VPN connection for any reason and later create a new
         /// VPN connection, you must reconfigure your customer gateway with the new information
         /// returned from this call.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is an idempotent operation. If you perform the operation more than once, Amazon
+        /// EC2 doesn't return an error.
         /// </para>
         ///  
         /// <para>
@@ -4842,8 +4884,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
-        /// 
+        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
+        /// | <code>snapshot</code> | <code>volume</code>. 
         /// </para>
         ///  
         /// <para>
@@ -5236,7 +5278,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the status of one or more instances.
+        /// Describes the status of one or more instances. By default, only running instances
+        /// are described, unless specified otherwise.
         /// 
         ///  
         /// <para>
@@ -5274,7 +5317,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the status of one or more instances.
+        /// Describes the status of one or more instances. By default, only running instances
+        /// are described, unless specified otherwise.
         /// 
         ///  
         /// <para>
@@ -5316,7 +5360,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the status of one or more instances.
+        /// Describes the status of one or more instances. By default, only running instances
+        /// are described, unless specified otherwise.
         /// 
         ///  
         /// <para>
@@ -6552,6 +6597,44 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSecurityGroupReferences
+
+
+        /// <summary>
+        /// [EC2-VPC only] Describes the VPCs on the other side of a VPC peering connection that
+        /// are referencing the security groups you've specified in this request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecurityGroupReferences service method, as returned by EC2.</returns>
+        public DescribeSecurityGroupReferencesResponse DescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request)
+        {
+            var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
+            var unmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityGroupReferencesRequest,DescribeSecurityGroupReferencesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityGroupReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSecurityGroupReferencesResponse> DescribeSecurityGroupReferencesAsync(DescribeSecurityGroupReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
+            var unmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSecurityGroupReferencesRequest,DescribeSecurityGroupReferencesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSecurityGroups
 
 
@@ -6697,12 +6780,23 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
-        /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
-        /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// for these snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        /// specific AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        /// it owns.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
@@ -6762,12 +6856,23 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
-        /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
-        /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// for these snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        /// specific AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        /// it owns.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
@@ -6831,12 +6936,23 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
-        /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
-        /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// for these snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        /// specific AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        /// it owns.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
@@ -7280,6 +7396,45 @@ namespace Amazon.EC2
             var unmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSpotPriceHistoryRequest,DescribeSpotPriceHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeStaleSecurityGroups
+
+
+        /// <summary>
+        /// [EC2-VPC only] Describes the stale security group rules for security groups in a specified
+        /// VPC. Rules are stale when they reference a deleted security group in a peer VPC, or
+        /// a security group in a peer VPC for which the VPC peering connection has been deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStaleSecurityGroups service method, as returned by EC2.</returns>
+        public DescribeStaleSecurityGroupsResponse DescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request)
+        {
+            var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStaleSecurityGroupsRequest,DescribeStaleSecurityGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStaleSecurityGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeStaleSecurityGroupsResponse> DescribeStaleSecurityGroupsAsync(DescribeStaleSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStaleSecurityGroupsRequest,DescribeStaleSecurityGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -9240,7 +9395,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the ID format for the specified resource on a per-region basis. You can specify
         /// that resources should receive longer IDs (17-character IDs) when they are created.
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>.
+        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
+        /// | <code>snapshot</code> | <code>volume</code>.
         /// 
         ///  
         /// <para>
@@ -9804,6 +9960,64 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcPeeringConnectionOptions
+
+
+        /// <summary>
+        /// Modifies the VPC peering connection options on one side of a VPC peering connection.
+        /// You can do the following:
+        /// 
+        ///  <ul> <li>
+        /// <para>
+        /// Enable/disable communication over the peering connection between an EC2-Classic instance
+        /// that's linked to your VPC (using ClassicLink) and instances in the peer VPC. 
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// Enable/disable communication over the peering connection between instances in your
+        /// VPC and an EC2-Classic instance that's linked to the peer VPC.
+        /// </para>
+        /// </li> </ul> 
+        /// <para>
+        /// If the peered VPCs are in different accounts, each owner must initiate a separate
+        /// request to enable or disable communication in either direction, depending on whether
+        /// their VPC was the requester or accepter for the VPC peering connection. If the peered
+        /// VPCs are in the same account, you can modify the requester and accepter options in
+        /// the same request. To confirm which VPC is the accepter and requester for a VPC peering
+        /// connection, use the <a>DescribeVpcPeeringConnections</a> command.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcPeeringConnectionOptions service method, as returned by EC2.</returns>
+        public ModifyVpcPeeringConnectionOptionsResponse ModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request)
+        {
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var unmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcPeeringConnectionOptionsRequest,ModifyVpcPeeringConnectionOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcPeeringConnectionOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyVpcPeeringConnectionOptionsResponse> ModifyVpcPeeringConnectionOptionsAsync(ModifyVpcPeeringConnectionOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var unmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcPeeringConnectionOptionsRequest,ModifyVpcPeeringConnectionOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MonitorInstances
 
 
@@ -9852,9 +10066,9 @@ namespace Amazon.EC2
         /// it must not be associated with an instance. After the Elastic IP address is moved,
         /// it is no longer available for use in the EC2-Classic platform, unless you move it
         /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
-        /// IP address that's allocated for use in the EC2-VPC platform to the EC2-Classic platform.
-        /// You cannot migrate an Elastic IP address that's associated with a reverse DNS record.
-        /// Contact AWS account and billing support to remove the reverse DNS record.
+        /// IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic
+        /// platform. You cannot migrate an Elastic IP address that's associated with a reverse
+        /// DNS record. Contact AWS account and billing support to remove the reverse DNS record.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
         /// 
@@ -9949,7 +10163,14 @@ namespace Amazon.EC2
         /// <para>
         /// Scheduled Instances enable you to purchase Amazon EC2 compute capacity by the hour
         /// for a one-year term. Before you can purchase a Scheduled Instance, you must call <a>DescribeScheduledInstanceAvailability</a>
-        /// to check for available schedules and obtain a purchase token.
+        /// to check for available schedules and obtain a purchase token. After you purchase a
+        /// Scheduled Instance, you must call <a>RunScheduledInstances</a> during each scheduled
+        /// time period.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you purchase a Scheduled Instance, you can't cancel, modify, or resell your
+        /// purchase.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseScheduledInstances service method.</param>
@@ -9994,8 +10215,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2
-        /// performs a hard reboot.
+        /// If an instance does not cleanly shut down within four minutes, Amazon EC2 performs
+        /// a hard reboot.
         /// </para>
         ///  
         /// <para>
@@ -10633,12 +10854,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Resets an attribute of an instance to its default value. To reset the <code>kernel</code>
-        /// or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>SourceDestCheck</code>,
+        /// or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>sourceDestCheck</code>,
         /// the instance can be either running or stopped.
         /// 
         ///  
         /// <para>
-        /// The <code>SourceDestCheck</code> attribute controls whether source/destination checking
+        /// The <code>sourceDestCheck</code> attribute controls whether source/destination checking
         /// is enabled. The default value is <code>true</code>, which means checking is enabled.
         /// This value must be <code>false</code> for a NAT instance to perform NAT. For more
         /// information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
@@ -11014,7 +11235,8 @@ namespace Amazon.EC2
         /// You must launch a Scheduled Instance during its scheduled time period. You can't stop
         /// or reboot a Scheduled Instance, but you can terminate it as needed. If you terminate
         /// a Scheduled Instance before the current scheduled time period ends, you can launch
-        /// it again after a few minutes.
+        /// it again after a few minutes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunScheduledInstances service method.</param>
@@ -11115,46 +11337,40 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Stops an Amazon EBS-backed instance. Each time you transition an instance from stopped
-        /// to started, Amazon EC2 charges a full instance hour, even if transitions happen multiple
-        /// times within a single hour.
+        /// Stops an Amazon EBS-backed instance. 
         /// 
         ///  
         /// <para>
-        /// You can't start or stop Spot instances.
+        /// We don't charge hourly usage for a stopped instance, or data transfer fees; however,
+        /// your root partition Amazon EBS volume remains, continues to persist your data, and
+        /// you are charged for Amazon EBS volume usage. Each time you transition an instance
+        /// from stopped to started, Amazon EC2 charges a full instance hour, even if transitions
+        /// happen multiple times within a single hour.
         /// </para>
         ///  
         /// <para>
-        /// Instances that use Amazon EBS volumes as their root devices can be quickly stopped
-        /// and started. When an instance is stopped, the compute resources are released and you
-        /// are not billed for hourly instance usage. However, your root partition Amazon EBS
-        /// volume remains, continues to persist your data, and you are charged for Amazon EBS
-        /// volume usage. You can restart your instance at any time.
+        /// You can't start or stop Spot instances, and you can't stop instance store-backed instances.
         /// </para>
         ///  
         /// <para>
+        /// When you stop an instance, we shut it down. You can restart your instance at any time.
         /// Before stopping an instance, make sure it is in a state from which it can be restarted.
         /// Stopping an instance does not preserve data stored in RAM.
         /// </para>
         ///  
         /// <para>
-        /// Performing this operation on an instance that uses an instance store as its root device
-        /// returns an error.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can stop, start, and terminate EBS-backed instances. You can only terminate instance
-        /// store-backed instances. What happens to an instance differs if you stop it or terminate
-        /// it. For example, when you stop an instance, the root device and any other devices
-        /// attached to the instance persist. When you terminate an instance, the root device
-        /// and any other devices attached during the instance launch are automatically deleted.
-        /// For more information about the differences between stopping and terminating instances,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// Stopping an instance is different to rebooting or terminating it. For example, when
+        /// you stop an instance, the root device and any other devices attached to the instance
+        /// persist. When you terminate an instance, the root device and any other devices attached
+        /// during the instance launch are automatically deleted. For more information about the
+        /// differences between rebooting, stopping, and terminating instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
+        /// When you stop an instance, we attempt to shut it down forcibly after a short while.
+        /// If your instance appears stuck in the stopping state after a period of time, there
+        /// may be an issue with the underlying host computer. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
         /// Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.AbortEnvironmentUpdate(Amazon.ElasticBeanstalk.Model.AbortEnvironmentUpdateRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.AbortEnvironmentUpdate(Amazon.ElasticBeanstalk.Model.AbortEnvironmentUpdateRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.AbortEnvironmentUpdateRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.AbortEnvironmentUpdateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following code aborts a running application version deployment for an environment named my-env:
+                </para>
+                <code
+                    title="To abort a deployment"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-abort-a-deployment-1456267848227" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.CheckDNSAvailability(Amazon.ElasticBeanstalk.Model.CheckDNSAvailabilityRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.CheckDNSAvailability(Amazon.ElasticBeanstalk.Model.CheckDNSAvailabilityRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CheckDNSAvailabilityRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CheckDNSAvailabilityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation checks the availability of the subdomain my-cname:
+                </para>
+                <code
+                    title="To check the availability of a CNAME"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-check-the-availability-of-a-cname-1456268589537" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.CreateApplication(Amazon.ElasticBeanstalk.Model.CreateApplicationRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.CreateApplication(Amazon.ElasticBeanstalk.Model.CreateApplicationRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateApplicationRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation creates a new application named my-app:
+                </para>
+                <code
+                    title="To create a new application"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-create-a-new-application-1456268895683" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.CreateApplicationVersion(Amazon.ElasticBeanstalk.Model.CreateApplicationVersionRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.CreateApplicationVersion(Amazon.ElasticBeanstalk.Model.CreateApplicationVersionRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateApplicationVersionRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateApplicationVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation creates a new version (v1) of an application named my-app:
+                </para>
+                <code
+                    title="To create a new application"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-create-a-new-application-1456268895683" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.CreateConfigurationTemplate(Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.CreateConfigurationTemplate(Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation creates a configuration template named my-app-v1 from the settings applied to an environment with the id e-rpqsewtp2j:
+                </para>
+                <code
+                    title="To create a configuration template"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-create-a-configuration-template-1456269283586" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.CreateEnvironment(Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.CreateEnvironment(Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation creates a new environment for version v1 of a java application named my-app:
+                </para>
+                <code
+                    title="To create a new environment for an application"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-create-a-new-environment-for-an-application-1456269380396" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.CreateStorageLocation(Amazon.ElasticBeanstalk.Model.CreateStorageLocationRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.CreateStorageLocation(Amazon.ElasticBeanstalk.Model.CreateStorageLocationRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateStorageLocationRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.CreateStorageLocationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation creates a new environment for version v1 of a java application named my-app:
+                </para>
+                <code
+                    title="To create a new environment for an application"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-create-a-new-environment-for-an-application-1456269380396" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DeleteApplication(Amazon.ElasticBeanstalk.Model.DeleteApplicationRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DeleteApplication(Amazon.ElasticBeanstalk.Model.DeleteApplicationRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DeleteApplicationRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DeleteApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation deletes an application named my-app:
+                </para>
+                <code
+                    title="To delete an application"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-delete-an-application-1456269699366" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DeleteApplicationVersion(Amazon.ElasticBeanstalk.Model.DeleteApplicationVersionRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DeleteApplicationVersion(Amazon.ElasticBeanstalk.Model.DeleteApplicationVersionRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DeleteApplicationVersionRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DeleteApplicationVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation deletes an application version named 22a0-stage-150819_182129 for an application named my-app:
+                </para>
+                <code
+                    title="To delete an application version"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-delete-an-application-version-1456269792956" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DeleteConfigurationTemplate(Amazon.ElasticBeanstalk.Model.DeleteConfigurationTemplateRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DeleteConfigurationTemplate(Amazon.ElasticBeanstalk.Model.DeleteConfigurationTemplateRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DeleteConfigurationTemplateRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DeleteConfigurationTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation deletes a configuration template named my-template for an application named my-app:
+                </para>
+                <code
+                    title="To delete a configuration template"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-delete-a-configuration-template-1456269836701" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DeleteEnvironmentConfiguration(Amazon.ElasticBeanstalk.Model.DeleteEnvironmentConfigurationRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DeleteEnvironmentConfiguration(Amazon.ElasticBeanstalk.Model.DeleteEnvironmentConfigurationRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DeleteEnvironmentConfigurationRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DeleteEnvironmentConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation deletes a draft configuration for an environment named my-env:
+                </para>
+                <code
+                    title="To delete a draft configuration"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-delete-a-draft-configuration-1456269886654" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DescribeApplications(Amazon.ElasticBeanstalk.Model.DescribeApplicationsRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DescribeApplications(Amazon.ElasticBeanstalk.Model.DescribeApplicationsRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeApplicationsRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeApplicationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves information about applications in the current region:
+                </para>
+                <code
+                    title="To view a list of applications"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-a-list-of-applications-1456270027373" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DescribeApplicationVersions(Amazon.ElasticBeanstalk.Model.DescribeApplicationVersionsRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DescribeApplicationVersions(Amazon.ElasticBeanstalk.Model.DescribeApplicationVersionsRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeApplicationVersionsRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeApplicationVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves information about an application version labeled v2:
+                </para>
+                <code
+                    title="To view information about an application version"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-information-about-an-application-version-1456269947428" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DescribeConfigurationOptions(Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DescribeConfigurationOptions(Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves descriptions of all available configuration options for an environment named my-env:
+                </para>
+                <code
+                    title="To view configuration options for an environment"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-configuration-options-for-an-environment-1456276763917" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DescribeConfigurationSettings(Amazon.ElasticBeanstalk.Model.DescribeConfigurationSettingsRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DescribeConfigurationSettings(Amazon.ElasticBeanstalk.Model.DescribeConfigurationSettingsRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeConfigurationSettingsRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeConfigurationSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves configuration settings for an environment named my-env:
+                </para>
+                <code
+                    title="To view configurations settings for an environment"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-configurations-settings-for-an-environment-1456276924537" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DescribeEnvironmentHealth(Amazon.ElasticBeanstalk.Model.DescribeEnvironmentHealthRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DescribeEnvironmentHealth(Amazon.ElasticBeanstalk.Model.DescribeEnvironmentHealthRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeEnvironmentHealthRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeEnvironmentHealthResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves overall health information for an environment named my-env:
+                </para>
+                <code
+                    title="To view environment health"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-environment-health-1456277109510" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DescribeEnvironmentResources(Amazon.ElasticBeanstalk.Model.DescribeEnvironmentResourcesRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DescribeEnvironmentResources(Amazon.ElasticBeanstalk.Model.DescribeEnvironmentResourcesRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeEnvironmentResourcesRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeEnvironmentResourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves information about resources in an environment named my-env:
+                </para>
+                <code
+                    title="To view information about the AWS resources in your environment"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-information-about-the-aws-resources-in-your-environment-1456277206232" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DescribeEnvironments(Amazon.ElasticBeanstalk.Model.DescribeEnvironmentsRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DescribeEnvironments(Amazon.ElasticBeanstalk.Model.DescribeEnvironmentsRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeEnvironmentsRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeEnvironmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves information about an environment named my-env:
+                </para>
+                <code
+                    title="To view information about an environment"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-information-about-an-environment-1456277288662" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DescribeEvents(Amazon.ElasticBeanstalk.Model.DescribeEventsRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DescribeEvents(Amazon.ElasticBeanstalk.Model.DescribeEventsRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeEventsRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeEventsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves events for an environment named my-env:
+                </para>
+                <code
+                    title="To view events for an environment"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-events-for-an-environment-1456277367589" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.DescribeInstancesHealth(Amazon.ElasticBeanstalk.Model.DescribeInstancesHealthRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.DescribeInstancesHealth(Amazon.ElasticBeanstalk.Model.DescribeInstancesHealthRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeInstancesHealthRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.DescribeInstancesHealthResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves health information for instances in an environment named my-env:
+                </para>
+                <code
+                    title="To view environment health"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-environment-health-1456277424757" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.ListAvailableSolutionStacks(Amazon.ElasticBeanstalk.Model.ListAvailableSolutionStacksRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.ListAvailableSolutionStacks(Amazon.ElasticBeanstalk.Model.ListAvailableSolutionStacksRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.ListAvailableSolutionStacksRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.ListAvailableSolutionStacksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation lists solution stacks for all currently available platform configurations and any that you have used in the past:
+                </para>
+                <code
+                    title="To view solution stacks"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-view-solution-stacks-1456277504811" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.RebuildEnvironment(Amazon.ElasticBeanstalk.Model.RebuildEnvironmentRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.RebuildEnvironment(Amazon.ElasticBeanstalk.Model.RebuildEnvironmentRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.RebuildEnvironmentRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.RebuildEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation terminates and recreates the resources in an environment named my-env:
+                </para>
+                <code
+                    title="To rebuild an environment"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-rebuild-an-environment-1456277600918" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.RequestEnvironmentInfo(Amazon.ElasticBeanstalk.Model.RequestEnvironmentInfoRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.RequestEnvironmentInfo(Amazon.ElasticBeanstalk.Model.RequestEnvironmentInfoRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.RequestEnvironmentInfoRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.RequestEnvironmentInfoResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation requests logs from an environment named my-env:
+                </para>
+                <code
+                    title="To request tailed logs"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-request-tailed-logs-1456277657045" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.RestartAppServer(Amazon.ElasticBeanstalk.Model.RestartAppServerRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.RestartAppServer(Amazon.ElasticBeanstalk.Model.RestartAppServerRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.RestartAppServerRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.RestartAppServerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation restarts application servers on all instances in an environment named my-env:
+                </para>
+                <code
+                    title="To restart application servers"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-restart-application-servers-1456277739302" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.RetrieveEnvironmentInfo(Amazon.ElasticBeanstalk.Model.RetrieveEnvironmentInfoRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.RetrieveEnvironmentInfo(Amazon.ElasticBeanstalk.Model.RetrieveEnvironmentInfoRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.RetrieveEnvironmentInfoRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.RetrieveEnvironmentInfoResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation retrieves a link to logs from an environment named my-env:
+                </para>
+                <code
+                    title="To retrieve tailed logs"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-retrieve-tailed-logs-1456277792734" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.SwapEnvironmentCNAMEs(Amazon.ElasticBeanstalk.Model.SwapEnvironmentCNAMEsRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.SwapEnvironmentCNAMEs(Amazon.ElasticBeanstalk.Model.SwapEnvironmentCNAMEsRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.SwapEnvironmentCNAMEsRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.SwapEnvironmentCNAMEsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation swaps the assigned subdomains of two environments:
+                </para>
+                <code
+                    title="To swap environment CNAMES"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-swap-environment-cnames-1456277839438" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.TerminateEnvironment(Amazon.ElasticBeanstalk.Model.TerminateEnvironmentRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.TerminateEnvironment(Amazon.ElasticBeanstalk.Model.TerminateEnvironmentRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.TerminateEnvironmentRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation terminates an Elastic Beanstalk environment named my-env:
+                </para>
+                <code
+                    title="To terminate an environment"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-terminate-an-environment-1456277888556" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.UpdateApplication(Amazon.ElasticBeanstalk.Model.UpdateApplicationRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.UpdateApplication(Amazon.ElasticBeanstalk.Model.UpdateApplicationRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateApplicationRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation updates the description of an application named my-app:
+                </para>
+                <code
+                    title="To change an application's description"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-change-an-applications-description-1456277957075" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.UpdateApplicationVersion(Amazon.ElasticBeanstalk.Model.UpdateApplicationVersionRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.UpdateApplicationVersion(Amazon.ElasticBeanstalk.Model.UpdateApplicationVersionRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateApplicationVersionRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateApplicationVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation updates the description of an application version named 22a0-stage-150819_185942:
+                </para>
+                <code
+                    title="To change an application version's description"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-change-an-application-versions-description-1456278019237" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.UpdateConfigurationTemplate(Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.UpdateConfigurationTemplate(Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation removes the configured CloudWatch custom health metrics configuration ConfigDocument from a saved configuration template named my-template:
+                </para>
+                <code
+                    title="To update a configuration template"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-update-a-configuration-template-1456278075300" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.UpdateEnvironment(Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.UpdateEnvironment(Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation updates an environment named "my-env" to version "v2" of the application to which it belongs:
+                </para>
+                <code
+                    title="To update an environment to a new version"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-update-an-environment-to-a-new-version-1456278210718" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.UpdateEnvironment(Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.UpdateEnvironment(Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation configures several options in the aws:elb:loadbalancer namespace:
+                </para>
+                <code
+                    title="To configure option settings"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-configure-option-settings-1456278286349" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk.ValidateConfigurationSettings(Amazon.ElasticBeanstalk.Model.ValidateConfigurationSettingsRequest)" />
+            <member name="M:Amazon.ElasticBeanstalk.AmazonElasticBeanstalkClient.ValidateConfigurationSettings(Amazon.ElasticBeanstalk.Model.ValidateConfigurationSettingsRequest)" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.ValidateConfigurationSettingsRequest" />
+            <member name="T:Amazon.ElasticBeanstalk.Model.ValidateConfigurationSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation validates a CloudWatch custom metrics config document:
+                </para>
+                <code
+                    title="To validate configuration settings"
+                    source=".\AWSSDKDocSamples\ElasticBeanstalk\ElasticBeanstalk.GeneratedSamples.cs"
+                    region="to-validate-configuration-settings-1456278393654" />
+            </example>
+        </value>
+    </doc>
+</docs>

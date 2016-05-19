@@ -106,11 +106,15 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Boolean to enable or disable rollback on stack creation failures:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <ul> <li><code>true</code>: disable rollback</li> <li><code>false</code>: enable
-        /// rollback</li> </ul> 
+        ///  <code>true</code>: disable rollback
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>false</code>: enable rollback
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool DisableRollback
         {

@@ -29,14 +29,17 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateClientCertificate operation.
-    /// 
+    /// Generates a <a>ClientCertificate</a> resource.
     /// </summary>
     public partial class GenerateClientCertificateRequest : AmazonAPIGatewayRequest
     {
         private string _description;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the <a>ClientCertificate</a>.
+        /// </para>
         /// </summary>
         public string Description
         {

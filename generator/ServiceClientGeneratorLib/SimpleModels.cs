@@ -191,7 +191,8 @@ namespace ServiceClientGenerator
         public const string EnumKey = "enum";
 
         ServiceModel model;
-        readonly string _name;
+        readonly string _modelName;
+        readonly string _outputName;
         readonly JsonData _data;
 
         /// <summary>
@@ -203,16 +204,30 @@ namespace ServiceClientGenerator
         public Enumeration(ServiceModel model, string name, JsonData data)
         {
             this.model = model;
-            this._name = ServiceModel.CapitalizeFirstChar(name);
-            this._data = data;
+            _modelName = name;
+            _data = data;
+
+            var overrideName = model.Customizations.GetOverrideShapeName(_modelName);
+            _outputName = !string.IsNullOrEmpty(overrideName) 
+                ? ServiceModel.CapitalizeFirstChar(overrideName)
+                : ServiceModel.CapitalizeFirstChar(_modelName);
         }
 
         /// <summary>
-        /// The name of the enumeration
+        /// The name of the enumeration as encoded in the original model.
+        /// </summary>
+        public string ModelName
+        {
+            get { return this._modelName; }
+        }
+
+        /// <summary>
+        /// The emitted name of the enumeration. If no customization is
+        /// applied to the shape, this is the same as ModelName.
         /// </summary>
         public string Name
         {
-            get { return this._name; }
+            get { return _outputName; }
         }
 
         private string Customize(string typeName, string propertyName)
@@ -238,7 +253,7 @@ namespace ServiceClientGenerator
 
                 foreach(var item in list)
                 {
-                    var custom = this.model.Customizations.GetPropertyModifier(this.Name, item.MarshallName);
+                    var custom = this.model.Customizations.GetPropertyModifier(this.ModelName, item.MarshallName);
                     if (custom != null)
                         item.CustomPropertyName = custom.EmitName;
                 }

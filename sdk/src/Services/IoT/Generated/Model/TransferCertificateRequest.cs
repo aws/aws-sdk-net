@@ -55,6 +55,7 @@ namespace Amazon.IoT.Model
     {
         private string _certificateId;
         private string _targetAwsAccount;
+        private string _transferMessage;
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
@@ -90,6 +91,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetTargetAwsAccount()
         {
             return this._targetAwsAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransferMessage. 
+        /// <para>
+        /// The transfer message.
+        /// </para>
+        /// </summary>
+        public string TransferMessage
+        {
+            get { return this._transferMessage; }
+            set { this._transferMessage = value; }
+        }
+
+        // Check to see if TransferMessage property is set
+        internal bool IsSetTransferMessage()
+        {
+            return this._transferMessage != null;
         }
 
     }

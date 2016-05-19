@@ -100,8 +100,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UploadPolicy. 
         /// <para>
-        /// A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to upload
-        /// items into Amazon S3 on your behalf.
+        /// A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to upload
+        /// items into Amazon S3 on your behalf. For command line tools, base64 encoding is performed
+        /// for you.
         /// </para>
         /// </summary>
         public string UploadPolicy

@@ -66,7 +66,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property RetrievedTo. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved
-        /// to. 
+        /// to.
         /// </para>
         ///  
         /// <para>
@@ -142,7 +142,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property TapeStatus. 
         /// <para>
-        /// The current state of the archived virtual tape. 
+        /// The current state of the archived virtual tape.
         /// </para>
         /// </summary>
         public string TapeStatus

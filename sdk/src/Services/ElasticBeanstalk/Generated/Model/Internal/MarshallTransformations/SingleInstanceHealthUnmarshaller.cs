@@ -60,6 +60,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.ApplicationMetrics = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AvailabilityZone", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Causes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.Color = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Deployment", targetDepth))
+                    {
+                        var unmarshaller = DeploymentUnmarshaller.Instance;
+                        unmarshalledObject.Deployment = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HealthStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -83,6 +95,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InstanceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LaunchedAt", targetDepth))

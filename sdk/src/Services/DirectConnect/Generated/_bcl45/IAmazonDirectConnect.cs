@@ -57,6 +57,11 @@ namespace Amazon.DirectConnect
         /// Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection
         /// on the given interconnect.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is intended for use by AWS Direct Connect partners only.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateConnectionOnInterconnect service method.</param>
         /// 
@@ -364,6 +369,11 @@ namespace Amazon.DirectConnect
         /// connect to AWS resources by creating a virtual interface on their connection, using
         /// the VLAN assigned to them by the AWS Direct Connect partner.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is intended for use by AWS Direct Connect partners only.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInterconnect service method.</param>
         /// 
@@ -508,6 +518,12 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Deletes the specified interconnect.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is intended for use by AWS Direct Connect partners only.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInterconnect service method.</param>
         /// 
@@ -657,6 +673,12 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Return a list of connections that have been provisioned on the given interconnect.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is intended for use by AWS Direct Connect partners only.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionsOnInterconnect service method.</param>
         /// 

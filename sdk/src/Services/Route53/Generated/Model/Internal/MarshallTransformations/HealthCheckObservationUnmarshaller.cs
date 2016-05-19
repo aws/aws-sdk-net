@@ -55,6 +55,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("Region", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IPAddress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

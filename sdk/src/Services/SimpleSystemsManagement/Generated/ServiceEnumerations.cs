@@ -443,6 +443,56 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type DocumentHashType.
+    /// </summary>
+    public class DocumentHashType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Sha1 for DocumentHashType
+        /// </summary>
+        public static readonly DocumentHashType Sha1 = new DocumentHashType("Sha1");
+        /// <summary>
+        /// Constant Sha256 for DocumentHashType
+        /// </summary>
+        public static readonly DocumentHashType Sha256 = new DocumentHashType("Sha256");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentHashType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentHashType FindValue(string value)
+        {
+            return FindValue<DocumentHashType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentHashType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentParameterType.
     /// </summary>
     public class DocumentParameterType : ConstantClass
@@ -486,6 +536,52 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DocumentParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentPermissionType.
+    /// </summary>
+    public class DocumentPermissionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Share for DocumentPermissionType
+        /// </summary>
+        public static readonly DocumentPermissionType Share = new DocumentPermissionType("Share");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentPermissionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentPermissionType FindValue(string value)
+        {
+            return FindValue<DocumentPermissionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentPermissionType(string value)
         {
             return FindValue(value);
         }

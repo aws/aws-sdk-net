@@ -107,7 +107,7 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property RepositoryNames. 
         /// <para>
         /// A list of repositories to describe. If this parameter is omitted, then all repositories
-        /// in a registry are described. 
+        /// in a registry are described.
         /// </para>
         /// </summary>
         public List<string> RepositoryNames

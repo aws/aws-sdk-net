@@ -29,15 +29,15 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVirtualMFADevices operation.
-    /// Lists the virtual MFA devices under the AWS account by assignment status. If you do
-    /// not specify an assignment status, the action returns a list of all virtual MFA devices.
-    /// Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.
-    /// 
+    /// Lists the virtual MFA devices defined in the AWS account by assignment status. If
+    /// you do not specify an assignment status, the action returns a list of all virtual
+    /// MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
+    /// or <code>Any</code>.
     /// 
     ///  
     /// <para>
     /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters. 
+    /// parameters.
     /// </para>
     /// </summary>
     public partial class ListVirtualMFADevicesRequest : AmazonIdentityManagementServiceRequest
@@ -49,9 +49,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AssignmentStatus. 
         /// <para>
-        ///  The status (unassigned or assigned) of the devices to list. If you do not specify
-        /// an <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists
-        /// both assigned and unassigned virtual MFA devices. 
+        ///  The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list.
+        /// If you do not specify an <code>AssignmentStatus</code>, the action defaults to <code>Any</code>
+        /// which lists both assigned and unassigned virtual MFA devices.
         /// </para>
         /// </summary>
         public AssignmentStatusType AssignmentStatus
@@ -99,7 +99,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems

@@ -29,7 +29,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOpenIDConnectProvider operation.
-    /// Returns information about the specified OpenID Connect provider.
+    /// Returns information about the specified OpenID Connect (OIDC) provider resource object
+    /// in IAM.
     /// </summary>
     public partial class GetOpenIDConnectProviderRequest : AmazonIdentityManagementServiceRequest
     {
@@ -38,9 +39,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property OpenIDConnectProviderArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to get information
-        /// for. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
+        /// The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get
+        /// information for. You can get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a>
         /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         public string OpenIDConnectProviderArn

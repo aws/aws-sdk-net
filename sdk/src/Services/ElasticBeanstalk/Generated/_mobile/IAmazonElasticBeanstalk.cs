@@ -32,27 +32,21 @@ namespace Amazon.ElasticBeanstalk
     ///
     /// AWS Elastic Beanstalk 
     /// <para>
-    ///  This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information
-    /// about AWS Elastic Beanstalk actions, data types, parameters, and errors. 
+    /// AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable,
+    /// fault-tolerant applications running on the Amazon Web Services cloud.
     /// </para>
     ///  
     /// <para>
-    /// AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy, and
-    /// manage scalable, fault-tolerant applications running on Amazon Web Services cloud
-    /// resources. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
+    /// For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
     /// Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
     /// WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
     /// To install the Software Development Kits (SDKs), Integrated Development Environment
     /// (IDE) Toolkits, and command line tools that enable you to access the API, go to <a
-    /// href="https://aws.amazon.com/tools/">Tools for Amazon Web Services</a>. 
+    /// href="https://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Endpoints</b> 
+    /// <b>Endpoints</b>
     /// </para>
     ///  
     /// <para>
@@ -77,6 +71,22 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AbortEnvironmentUpdateResponse> AbortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ApplyEnvironmentManagedAction
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplyEnvironmentManagedAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ApplyEnvironmentManagedActionResponse> ApplyEnvironmentManagedActionAsync(ApplyEnvironmentManagedActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -350,6 +360,9 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -395,6 +408,38 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeEnvironmentHealthResponse> DescribeEnvironmentHealthAsync(DescribeEnvironmentHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeEnvironmentManagedActionHistory
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentManagedActionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActionHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEnvironmentManagedActionHistoryResponse> DescribeEnvironmentManagedActionHistoryAsync(DescribeEnvironmentManagedActionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeEnvironmentManagedActions
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentManagedActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEnvironmentManagedActionsResponse> DescribeEnvironmentManagedActionsAsync(DescribeEnvironmentManagedActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

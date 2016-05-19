@@ -130,7 +130,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwnerAccount.
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// The AWS account that will own the new connection.
+        /// </para>
         /// </summary>
         public string OwnerAccount
         {
@@ -145,7 +148,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PartnerName.
+        /// Gets and sets the property PartnerName. 
+        /// <para>
+        /// The name of the AWS Direct Connect service provider associated with the connection.
+        /// </para>
         /// </summary>
         public string PartnerName
         {

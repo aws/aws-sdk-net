@@ -42,7 +42,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// Filter tasks using the <code>task-state</code> filter and one of the following values:
+        /// active, completed, deleting, deleted.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -78,7 +79,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single request.
+        /// The maximum number of results to return in a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>NextToken</code> value.
         /// </para>
         /// </summary>
         public int MaxResults

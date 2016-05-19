@@ -91,6 +91,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StreamName);
                 }
 
+                if(publicRequest.IsSetTimestamp())
+                {
+                    context.Writer.WritePropertyName("Timestamp");
+                    context.Writer.Write(publicRequest.Timestamp);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

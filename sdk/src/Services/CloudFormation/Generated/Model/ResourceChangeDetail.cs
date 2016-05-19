@@ -70,20 +70,39 @@ namespace Amazon.CloudFormation.Model
         /// The group to which the <code>CausingEntity</code> value belongs. There are five entity
         /// groups:
         /// </para>
-        ///  <ul> <li><code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions
         /// that refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource"
-        /// }</code>.</li> <li><code>ParameterReference</code> entities are <code>Ref</code> intrinsic
-        /// functions that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter"
-        /// }</code>.</li> <li><code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code>
-        /// intrinsic functions that get resource attribute values, such as <code>{ "Fn::GetAtt"
-        /// : [ "MyEC2InstanceResource", "PublicDnsName" ] }</code>.</li> <li><code>DirectModification</code>
-        /// entities are changes that are made directly to the template.</li> <li><code>Automatic</code>
-        /// entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also
-        /// known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code>
+        /// }</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions
+        /// that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter"
+        /// }</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions
+        /// that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource",
+        /// "PublicDnsName" ] }</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DirectModification</code> entities are changes that are made directly to the
+        /// template.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource
+        /// types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code>
         /// resource, AWS CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code>
         /// because the nested stack's template might have changed. Changes to a nested stack's
         /// template aren't visible to AWS CloudFormation until you run an update on the parent
-        /// stack.</li> </ul>
+        /// stack.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ChangeSource ChangeSource
         {

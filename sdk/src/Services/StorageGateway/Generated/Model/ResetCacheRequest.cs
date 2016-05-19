@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// prevents read and write operations on virtual tapes in the gateway. For example, an
     /// error can occur when a disk is corrupted or removed from the gateway. When a cache
     /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-    /// disks as cache disks. 
+    /// disks as cache disks.
     /// 
     ///  <important> 
     /// <para>

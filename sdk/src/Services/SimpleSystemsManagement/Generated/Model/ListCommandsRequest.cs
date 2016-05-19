@@ -54,8 +54,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CommandId. (Optional) If provided, lists only the specified
-        /// command.
+        /// Gets and sets the property CommandId. 
+        /// <para>
+        /// (Optional) If provided, lists only the specified command.
+        /// </para>
         /// </summary>
         public string CommandId
         {
@@ -70,8 +72,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Filters. (Optional) One or more filters. Use a filter to
-        /// return a more specific list of results.
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// (Optional) One or more filters. Use a filter to return a more specific list of results.
+        /// 
+        /// </para>
         /// </summary>
         public List<CommandFilter> Filters
         {
@@ -86,8 +91,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId. (Optional) Lists commands issued against this
-        /// instance ID.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// (Optional) Lists commands issued against this instance ID.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
@@ -102,9 +109,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. (Optional) The maximum number of items to return
-        /// for this call. The call also returns a token that you can specify in a subsequent
-        /// call to get the next set of results.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// (Optional) The maximum number of items to return for this call. The call also returns
+        /// a token that you can specify in a subsequent call to get the next set of results.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -119,8 +128,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. (Optional) The token for the next set of items
-        /// to return. (You received this token from a previous call.)
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// (Optional) The token for the next set of items to return. (You received this token
+        /// from a previous call.)
+        /// </para>
         /// </summary>
         public string NextToken
         {

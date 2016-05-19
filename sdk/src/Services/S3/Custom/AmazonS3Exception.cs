@@ -96,11 +96,35 @@ namespace Amazon.S3
         {
             this.AmazonId2 = amazonId2;
         }
+        
+        /// <summary>
+        /// Construct an instance of AmazonS3Exception
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        /// <param name="errorType"></param>
+        /// <param name="errorCode"></param>
+        /// <param name="requestId"></param>
+        /// <param name="statusCode"></param>
+        /// <param name="amazonId2"></param>
+        /// <param name="amazonCfId"></param>
+        public AmazonS3Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, 
+            HttpStatusCode statusCode, string amazonId2, string amazonCfId)
+            : base(message, innerException, errorType, errorCode, requestId, statusCode)
+        {
+            this.AmazonId2 = amazonId2;
+            this.AmazonCloudFrontId = amazonCfId;
+        }
 
         /// <summary>
         /// A special token that helps AWS troubleshoot problems.
         /// </summary>
         public string AmazonId2 { get; protected set; }
+
+        /// <summary>
+        /// A special token that helps AWS troubleshoot S3 accelerate problems.
+        /// </summary>
+        public string AmazonCloudFrontId { get; protected set; }
 
         /// <summary>
         /// The entire response body for this exception, if available.

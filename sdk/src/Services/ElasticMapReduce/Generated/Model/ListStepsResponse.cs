@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// This output contains the list of steps.
+    /// This output contains the list of steps returned in reverse order. This means that
+    /// the last step is the first element in the list.
     /// </summary>
     public partial class ListStepsResponse : AmazonWebServiceResponse
     {

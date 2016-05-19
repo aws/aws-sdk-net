@@ -9,6 +9,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Util;
 
 #pragma warning disable 1591
 
@@ -19,12 +20,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public abstract class S3ReponseUnmarshaller : XmlResponseUnmarshaller
     {
-        private static string AMZ_ID_2 = "x-amz-id-2";
-
         public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, Stream stream, RequestMetrics metrics)
         {
-            if (response.IsHeaderPresent(AMZ_ID_2))
-                metrics.AddProperty(Metric.AmzId2, response.GetHeaderValue(AMZ_ID_2));
+            if (response.IsHeaderPresent(HeaderKeys.XAmzId2Header))
+                metrics.AddProperty(Metric.AmzId2, response.GetHeaderValue(HeaderKeys.XAmzId2Header));
+
+            if (response.IsHeaderPresent(HeaderKeys.XAmzCloudFrontIdHeader))
+                metrics.AddProperty(Metric.AmzCfId, response.GetHeaderValue(HeaderKeys.XAmzCloudFrontIdHeader));
+
             return base.CreateContext(response, readEntireResponse, stream, metrics);
         }
 
@@ -38,7 +41,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ResponseMetadata = new ResponseMetadata();
 
             // Populate AmazonId2
-            response.ResponseMetadata.Metadata.Add(AMZ_ID_2, input.ResponseData.GetHeaderValue(AMZ_ID_2));
+            response.ResponseMetadata.Metadata.Add(
+                HeaderKeys.XAmzId2Header, input.ResponseData.GetHeaderValue(HeaderKeys.XAmzId2Header));
+
+            // Populate X-Amz-Cf-Id for S3 accelerate responses
+            if (input.ResponseData.IsHeaderPresent(HeaderKeys.XAmzCloudFrontIdHeader))
+                response.ResponseMetadata.Metadata.Add(
+                    HeaderKeys.XAmzCloudFrontIdHeader, input.ResponseData.GetHeaderValue(HeaderKeys.XAmzCloudFrontIdHeader));
+
             return response;
         }
 
@@ -50,7 +60,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             var errorResponse = Amazon.S3.Model.Internal.MarshallTransformations.S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
-            var s3Exception = new Amazon.S3.AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2);
+            var s3Exception = new Amazon.S3.AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode, errorResponse.Id2, errorResponse.AmzCfId);
 
             if (errorResponse.ParsingException != null)
             {

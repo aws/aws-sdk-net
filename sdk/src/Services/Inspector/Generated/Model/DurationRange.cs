@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,48 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// This data type is used in the <a>AssessmentsFilter</a> data type.
+    /// This data type is used in the <a>AssessmentTemplateFilter</a> data type.
     /// </summary>
     public partial class DurationRange
     {
-        private int? _maximum;
-        private int? _minimum;
+        private int? _maxSeconds;
+        private int? _minSeconds;
 
         /// <summary>
-        /// Gets and sets the property Maximum. 
+        /// Gets and sets the property MaxSeconds. 
         /// <para>
         /// The maximum value of the duration range. Must be less than or equal to 604800 seconds
         /// (1 week).
         /// </para>
         /// </summary>
-        public int Maximum
+        public int MaxSeconds
         {
-            get { return this._maximum.GetValueOrDefault(); }
-            set { this._maximum = value; }
+            get { return this._maxSeconds.GetValueOrDefault(); }
+            set { this._maxSeconds = value; }
         }
 
-        // Check to see if Maximum property is set
-        internal bool IsSetMaximum()
+        // Check to see if MaxSeconds property is set
+        internal bool IsSetMaxSeconds()
         {
-            return this._maximum.HasValue; 
+            return this._maxSeconds.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Minimum. 
+        /// Gets and sets the property MinSeconds. 
         /// <para>
         /// The minimum value of the duration range. Must be greater than zero.
         /// </para>
         /// </summary>
-        public int Minimum
+        public int MinSeconds
         {
-            get { return this._minimum.GetValueOrDefault(); }
-            set { this._minimum = value; }
+            get { return this._minSeconds.GetValueOrDefault(); }
+            set { this._minSeconds = value; }
         }
 
-        // Check to see if Minimum property is set
-        internal bool IsSetMinimum()
+        // Check to see if MinSeconds property is set
+        internal bool IsSetMinSeconds()
         {
-            return this._minimum.HasValue; 
+            return this._minSeconds.HasValue; 
         }
 
     }

@@ -43,11 +43,27 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class CreateTrustRequest : AmazonDirectoryServiceRequest
     {
+        private List<string> _conditionalForwarderIpAddrs = new List<string>();
         private string _directoryId;
         private string _remoteDomainName;
         private TrustDirection _trustDirection;
         private string _trustPassword;
         private TrustType _trustType;
+
+        /// <summary>
+        /// Gets and sets the property ConditionalForwarderIpAddrs.
+        /// </summary>
+        public List<string> ConditionalForwarderIpAddrs
+        {
+            get { return this._conditionalForwarderIpAddrs; }
+            set { this._conditionalForwarderIpAddrs = value; }
+        }
+
+        // Check to see if ConditionalForwarderIpAddrs property is set
+        internal bool IsSetConditionalForwarderIpAddrs()
+        {
+            return this._conditionalForwarderIpAddrs != null && this._conditionalForwarderIpAddrs.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DirectoryId. The Directory ID of the Microsoft AD in the

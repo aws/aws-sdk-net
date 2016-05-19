@@ -55,7 +55,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         throw new Amazon.S3.AmazonS3Exception(
                             errorResponse.Message, null, errorResponse.Type, errorResponse.Code,
-                            errorResponse.RequestId, this.ResponseData.StatusCode, errorResponse.Id2);
+                            errorResponse.RequestId, this.ResponseData.StatusCode, errorResponse.Id2, errorResponse.AmzCfId);
                     }
                     _checkedForErrorResponse = true;
                 }

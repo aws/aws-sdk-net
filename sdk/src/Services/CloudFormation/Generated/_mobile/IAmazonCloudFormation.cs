@@ -54,7 +54,7 @@ namespace Amazon.CloudFormation
     /// <para>
     /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
     /// information about a specific AWS product, you can find the product's technical documentation
-    /// at <a href="http://docs.aws.amazon.com/documentation/">http://docs.aws.amazon.com/documentation/</a>.
+    /// at <a href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudFormation : IDisposable

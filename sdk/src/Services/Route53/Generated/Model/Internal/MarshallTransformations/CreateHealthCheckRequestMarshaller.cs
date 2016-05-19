@@ -118,6 +118,33 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     if(publicRequest.HealthCheckConfig.IsSetEnableSNI())
                         xmlWriter.WriteElementString("EnableSNI", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.EnableSNI));                 
     
+                    var publicRequestHealthCheckConfigRegions = publicRequest.HealthCheckConfig.Regions;
+                    if (publicRequestHealthCheckConfigRegions != null && publicRequestHealthCheckConfigRegions.Count > 0) 
+                    {                        
+                        xmlWriter.WriteStartElement("Regions", "https://route53.amazonaws.com/doc/2013-04-01/");
+                        foreach (var publicRequestHealthCheckConfigRegionsValue in publicRequestHealthCheckConfigRegions) 
+                        {
+                            xmlWriter.WriteStartElement("Region", "https://route53.amazonaws.com/doc/2013-04-01/");
+                            xmlWriter.WriteValue(publicRequestHealthCheckConfigRegionsValue);
+                            xmlWriter.WriteEndElement();
+                        }            
+                        xmlWriter.WriteEndElement();            
+                    }
+                    
+                    if (publicRequest.HealthCheckConfig.AlarmIdentifier != null) 
+                    {
+                        xmlWriter.WriteStartElement("AlarmIdentifier", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                        if(publicRequest.HealthCheckConfig.AlarmIdentifier.IsSetRegion())
+                            xmlWriter.WriteElementString("Region", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HealthCheckConfig.AlarmIdentifier.Region));                 
+        
+                        if(publicRequest.HealthCheckConfig.AlarmIdentifier.IsSetName())
+                            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HealthCheckConfig.AlarmIdentifier.Name));                 
+        
+                        xmlWriter.WriteEndElement();
+                    }
+                    if(publicRequest.HealthCheckConfig.IsSetInsufficientDataHealthStatus())
+                        xmlWriter.WriteElementString("InsufficientDataHealthStatus", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HealthCheckConfig.InsufficientDataHealthStatus));                 
+    
                     xmlWriter.WriteEndElement();
                 }
 

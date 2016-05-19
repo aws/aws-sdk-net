@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCrossAccountAccessRole operation.
-    /// Describes the IAM role that enables Inspector to access your AWS account.
+    /// Describes the IAM role that enables Amazon Inspector to access your AWS account.
     /// </summary>
     public partial class DescribeCrossAccountAccessRoleRequest : AmazonInspectorRequest
     {

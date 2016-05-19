@@ -36,7 +36,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _valueSet = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Key. The name of the filter.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The name of the filter. 
+        /// </para>
         /// </summary>
         public InstanceInformationFilterKey Key
         {
@@ -51,7 +54,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValueSet. The filter values.
+        /// Gets and sets the property ValueSet. 
+        /// <para>
+        /// The filter values. 
+        /// </para>
         /// </summary>
         public List<string> ValueSet
         {

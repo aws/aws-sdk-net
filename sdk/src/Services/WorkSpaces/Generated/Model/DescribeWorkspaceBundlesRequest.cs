@@ -100,7 +100,7 @@ namespace Amazon.WorkSpaces.Model
         /// This contains one of the following values:
         /// </para>
         ///  <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li>
-        /// <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>
+        /// <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>
         /// </summary>
         public string Owner
         {

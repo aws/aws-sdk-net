@@ -29,7 +29,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetClientCertificates operation.
-    /// 
+    /// Gets a collection of <a>ClientCertificate</a> resources.
     /// </summary>
     public partial class GetClientCertificatesRequest : AmazonAPIGatewayRequest
     {
@@ -37,7 +37,11 @@ namespace Amazon.APIGateway.Model
         private string _position;
 
         /// <summary>
-        /// Gets and sets the property Limit.
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The maximum number of <a>ClientCertificate</a> resources in the collection to get
+        /// information about. The default limit is 25. It should be an integer between 1 - 500.
+        /// </para>
         /// </summary>
         public int Limit
         {
@@ -52,7 +56,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Position.
+        /// Gets and sets the property Position. 
+        /// <para>
+        /// The position of the current <a>ClientCertificate</a> resource in the collection to
+        /// get information about.
+        /// </para>
         /// </summary>
         public string Position
         {

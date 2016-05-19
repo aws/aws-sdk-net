@@ -35,10 +35,13 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class SingleInstanceHealth
     {
         private ApplicationMetrics _applicationMetrics;
+        private string _availabilityZone;
         private List<string> _causes = new List<string>();
         private string _color;
+        private Deployment _deployment;
         private string _healthStatus;
         private string _instanceId;
+        private string _instanceType;
         private DateTime? _launchedAt;
         private SystemStatus _system;
 
@@ -55,6 +58,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetApplicationMetrics()
         {
             return this._applicationMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The availability zone in which the instance runs.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
         }
 
         /// <summary>
@@ -96,6 +117,24 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Deployment. 
+        /// <para>
+        /// Information about the most recent deployment to an instance.
+        /// </para>
+        /// </summary>
+        public Deployment Deployment
+        {
+            get { return this._deployment; }
+            set { this._deployment = value; }
+        }
+
+        // Check to see if Deployment property is set
+        internal bool IsSetDeployment()
+        {
+            return this._deployment != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
         /// Returns the health status of the specified instance. For more information, see <a
@@ -131,6 +170,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance's type.
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>

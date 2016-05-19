@@ -3495,7 +3495,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the status of one or more instances.
+        /// Describes the status of one or more instances. By default, only running instances
+        /// are described, unless specified otherwise.
         /// 
         ///  
         /// <para>
@@ -4369,6 +4370,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSecurityGroupReferences
+
+        internal DescribeSecurityGroupReferencesResponse DescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request)
+        {
+            var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
+            var unmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityGroupReferencesRequest,DescribeSecurityGroupReferencesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityGroupReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSecurityGroupReferencesResponse> DescribeSecurityGroupReferencesAsync(DescribeSecurityGroupReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
+            var unmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSecurityGroupReferencesRequest,DescribeSecurityGroupReferencesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSecurityGroups
 
         internal DescribeSecurityGroupsResponse DescribeSecurityGroups()
@@ -4483,12 +4515,23 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
-        /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
-        /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// for these snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        /// specific AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        /// it owns.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
@@ -4822,6 +4865,37 @@ namespace Amazon.EC2
             var unmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSpotPriceHistoryRequest,DescribeSpotPriceHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeStaleSecurityGroups
+
+        internal DescribeStaleSecurityGroupsResponse DescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request)
+        {
+            var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStaleSecurityGroupsRequest,DescribeStaleSecurityGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStaleSecurityGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeStaleSecurityGroupsResponse> DescribeStaleSecurityGroupsAsync(DescribeStaleSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
+            var unmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStaleSecurityGroupsRequest,DescribeStaleSecurityGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6540,6 +6614,37 @@ namespace Amazon.EC2
             var unmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyVpcEndpointRequest,ModifyVpcEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVpcPeeringConnectionOptions
+
+        internal ModifyVpcPeeringConnectionOptionsResponse ModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request)
+        {
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var unmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcPeeringConnectionOptionsRequest,ModifyVpcPeeringConnectionOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcPeeringConnectionOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyVpcPeeringConnectionOptionsResponse> ModifyVpcPeeringConnectionOptionsAsync(ModifyVpcPeeringConnectionOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var unmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcPeeringConnectionOptionsRequest,ModifyVpcPeeringConnectionOptionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

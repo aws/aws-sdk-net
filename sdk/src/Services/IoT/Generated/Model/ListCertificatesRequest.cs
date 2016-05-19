@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCertificates operation.
-    /// Lists your certificates.
+    /// Lists the certificates registered in your AWS account.
     /// 
     ///  
     /// <para>

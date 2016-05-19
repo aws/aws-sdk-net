@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRulesPackages operation.
-    /// Lists all available Inspector rules packages.
+    /// Lists all available Amazon Inspector rules packages.
     /// </summary>
     public partial class ListRulesPackagesRequest : AmazonInspectorRequest
     {
@@ -59,9 +59,9 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
-        /// to 'null' on your first call to the <b>ListRulesPackages</b> action. Subsequent calls
+        /// to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls
         /// to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
-        /// from previous response to continue listing data.
+        /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
         public string NextToken

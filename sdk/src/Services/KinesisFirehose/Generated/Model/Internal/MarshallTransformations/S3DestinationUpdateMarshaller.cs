@@ -62,6 +62,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCloudWatchLoggingOptions())
+            {
+                context.Writer.WritePropertyName("CloudWatchLoggingOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CloudWatchLoggingOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudWatchLoggingOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCompressionFormat())
             {
                 context.Writer.WritePropertyName("CompressionFormat");

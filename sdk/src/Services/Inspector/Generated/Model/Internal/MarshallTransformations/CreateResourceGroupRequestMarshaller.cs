@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -70,7 +70,17 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetResourceGroupTags())
                 {
                     context.Writer.WritePropertyName("resourceGroupTags");
-                    context.Writer.Write(publicRequest.ResourceGroupTags);
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestResourceGroupTagsListValue in publicRequest.ResourceGroupTags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceGroupTagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestResourceGroupTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

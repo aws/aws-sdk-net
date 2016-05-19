@@ -44,6 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _name;
         private int? _requestedInstanceCount;
         private int? _runningInstanceCount;
+        private ShrinkPolicy _shrinkPolicy;
         private InstanceGroupStatus _status;
 
         /// <summary>
@@ -251,6 +252,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetRunningInstanceCount()
         {
             return this._runningInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShrinkPolicy. 
+        /// <para>
+        /// Policy for customizing shrink operations.
+        /// </para>
+        /// </summary>
+        public ShrinkPolicy ShrinkPolicy
+        {
+            get { return this._shrinkPolicy; }
+            set { this._shrinkPolicy = value; }
+        }
+
+        // Check to see if ShrinkPolicy property is set
+        internal bool IsSetShrinkPolicy()
+        {
+            return this._shrinkPolicy != null;
         }
 
         /// <summary>

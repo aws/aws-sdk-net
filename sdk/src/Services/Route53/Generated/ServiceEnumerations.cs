@@ -129,6 +129,220 @@ namespace Amazon.Route53
 
 
     /// <summary>
+    /// Constants used for properties of type CloudWatchRegion.
+    /// </summary>
+    public class CloudWatchRegion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApNortheast1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion ApNortheast1 = new CloudWatchRegion("ap-northeast-1");
+        /// <summary>
+        /// Constant ApNortheast2 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion ApNortheast2 = new CloudWatchRegion("ap-northeast-2");
+        /// <summary>
+        /// Constant ApSoutheast1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion ApSoutheast1 = new CloudWatchRegion("ap-southeast-1");
+        /// <summary>
+        /// Constant ApSoutheast2 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion ApSoutheast2 = new CloudWatchRegion("ap-southeast-2");
+        /// <summary>
+        /// Constant EuCentral1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion EuCentral1 = new CloudWatchRegion("eu-central-1");
+        /// <summary>
+        /// Constant EuWest1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion EuWest1 = new CloudWatchRegion("eu-west-1");
+        /// <summary>
+        /// Constant SaEast1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion SaEast1 = new CloudWatchRegion("sa-east-1");
+        /// <summary>
+        /// Constant UsEast1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion UsEast1 = new CloudWatchRegion("us-east-1");
+        /// <summary>
+        /// Constant UsWest1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion UsWest1 = new CloudWatchRegion("us-west-1");
+        /// <summary>
+        /// Constant UsWest2 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion UsWest2 = new CloudWatchRegion("us-west-2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudWatchRegion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudWatchRegion FindValue(string value)
+        {
+            return FindValue<CloudWatchRegion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudWatchRegion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComparisonOperator.
+    /// </summary>
+    public class ComparisonOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GreaterThanOrEqualToThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GreaterThanOrEqualToThreshold = new ComparisonOperator("GreaterThanOrEqualToThreshold");
+        /// <summary>
+        /// Constant GreaterThanThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GreaterThanThreshold = new ComparisonOperator("GreaterThanThreshold");
+        /// <summary>
+        /// Constant LessThanOrEqualToThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LessThanOrEqualToThreshold = new ComparisonOperator("LessThanOrEqualToThreshold");
+        /// <summary>
+        /// Constant LessThanThreshold for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LessThanThreshold = new ComparisonOperator("LessThanThreshold");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComparisonOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComparisonOperator FindValue(string value)
+        {
+            return FindValue<ComparisonOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HealthCheckRegion.
+    /// </summary>
+    public class HealthCheckRegion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApNortheast1 for HealthCheckRegion
+        /// </summary>
+        public static readonly HealthCheckRegion ApNortheast1 = new HealthCheckRegion("ap-northeast-1");
+        /// <summary>
+        /// Constant ApSoutheast1 for HealthCheckRegion
+        /// </summary>
+        public static readonly HealthCheckRegion ApSoutheast1 = new HealthCheckRegion("ap-southeast-1");
+        /// <summary>
+        /// Constant ApSoutheast2 for HealthCheckRegion
+        /// </summary>
+        public static readonly HealthCheckRegion ApSoutheast2 = new HealthCheckRegion("ap-southeast-2");
+        /// <summary>
+        /// Constant EuWest1 for HealthCheckRegion
+        /// </summary>
+        public static readonly HealthCheckRegion EuWest1 = new HealthCheckRegion("eu-west-1");
+        /// <summary>
+        /// Constant SaEast1 for HealthCheckRegion
+        /// </summary>
+        public static readonly HealthCheckRegion SaEast1 = new HealthCheckRegion("sa-east-1");
+        /// <summary>
+        /// Constant UsEast1 for HealthCheckRegion
+        /// </summary>
+        public static readonly HealthCheckRegion UsEast1 = new HealthCheckRegion("us-east-1");
+        /// <summary>
+        /// Constant UsWest1 for HealthCheckRegion
+        /// </summary>
+        public static readonly HealthCheckRegion UsWest1 = new HealthCheckRegion("us-west-1");
+        /// <summary>
+        /// Constant UsWest2 for HealthCheckRegion
+        /// </summary>
+        public static readonly HealthCheckRegion UsWest2 = new HealthCheckRegion("us-west-2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HealthCheckRegion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthCheckRegion FindValue(string value)
+        {
+            return FindValue<HealthCheckRegion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthCheckRegion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HealthCheckType.
     /// </summary>
     public class HealthCheckType : ConstantClass
@@ -138,6 +352,10 @@ namespace Amazon.Route53
         /// Constant CALCULATED for HealthCheckType
         /// </summary>
         public static readonly HealthCheckType CALCULATED = new HealthCheckType("CALCULATED");
+        /// <summary>
+        /// Constant CLOUDWATCH_METRIC for HealthCheckType
+        /// </summary>
+        public static readonly HealthCheckType CLOUDWATCH_METRIC = new HealthCheckType("CLOUDWATCH_METRIC");
         /// <summary>
         /// Constant HTTP for HealthCheckType
         /// </summary>
@@ -188,6 +406,60 @@ namespace Amazon.Route53
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HealthCheckType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsufficientDataHealthStatus.
+    /// </summary>
+    public class InsufficientDataHealthStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Healthy for InsufficientDataHealthStatus
+        /// </summary>
+        public static readonly InsufficientDataHealthStatus Healthy = new InsufficientDataHealthStatus("Healthy");
+        /// <summary>
+        /// Constant LastKnownStatus for InsufficientDataHealthStatus
+        /// </summary>
+        public static readonly InsufficientDataHealthStatus LastKnownStatus = new InsufficientDataHealthStatus("LastKnownStatus");
+        /// <summary>
+        /// Constant Unhealthy for InsufficientDataHealthStatus
+        /// </summary>
+        public static readonly InsufficientDataHealthStatus Unhealthy = new InsufficientDataHealthStatus("Unhealthy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsufficientDataHealthStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsufficientDataHealthStatus FindValue(string value)
+        {
+            return FindValue<InsufficientDataHealthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsufficientDataHealthStatus(string value)
         {
             return FindValue(value);
         }
@@ -406,6 +678,68 @@ namespace Amazon.Route53
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RRType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Statistic.
+    /// </summary>
+    public class Statistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Average for Statistic
+        /// </summary>
+        public static readonly Statistic Average = new Statistic("Average");
+        /// <summary>
+        /// Constant Maximum for Statistic
+        /// </summary>
+        public static readonly Statistic Maximum = new Statistic("Maximum");
+        /// <summary>
+        /// Constant Minimum for Statistic
+        /// </summary>
+        public static readonly Statistic Minimum = new Statistic("Minimum");
+        /// <summary>
+        /// Constant SampleCount for Statistic
+        /// </summary>
+        public static readonly Statistic SampleCount = new Statistic("SampleCount");
+        /// <summary>
+        /// Constant Sum for Statistic
+        /// </summary>
+        public static readonly Statistic Sum = new Statistic("Sum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Statistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Statistic FindValue(string value)
+        {
+            return FindValue<Statistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Statistic(string value)
         {
             return FindValue(value);
         }

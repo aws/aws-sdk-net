@@ -117,5 +117,7 @@ namespace Amazon.Runtime
         ServiceEndpoint,
         ServiceName,
         RequestSize,
+        AmzCfId,
+        
     }
 }

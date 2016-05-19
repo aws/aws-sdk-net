@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,24 +30,25 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Container for the parameters to the CreateResourceGroup operation.
     /// Creates a resource group using the specified set of tags (key and value pairs) that
-    /// are used to select the EC2 instances to be included in an Inspector application. The
-    /// created resource group is then used to create an Inspector application.
+    /// are used to select the EC2 instances to be included in an Amazon Inspector assessment
+    /// target. The created resource group is then used to create an Amazon Inspector assessment
+    /// target. For more information, see <a>CreateAssessmentTarget</a>.
     /// </summary>
     public partial class CreateResourceGroupRequest : AmazonInspectorRequest
     {
-        private string _resourceGroupTags;
+        private List<ResourceGroupTag> _resourceGroupTags = new List<ResourceGroupTag>();
 
         /// <summary>
         /// Gets and sets the property ResourceGroupTags. 
         /// <para>
-        /// A collection of keys and an array of possible values in JSON format.
+        /// A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.
         /// </para>
         ///  
         /// <para>
-        /// For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+        /// For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
         /// </para>
         /// </summary>
-        public string ResourceGroupTags
+        public List<ResourceGroupTag> ResourceGroupTags
         {
             get { return this._resourceGroupTags; }
             set { this._resourceGroupTags = value; }
@@ -56,7 +57,7 @@ namespace Amazon.Inspector.Model
         // Check to see if ResourceGroupTags property is set
         internal bool IsSetResourceGroupTags()
         {
-            return this._resourceGroupTags != null;
+            return this._resourceGroupTags != null && this._resourceGroupTags.Count > 0; 
         }
 
     }

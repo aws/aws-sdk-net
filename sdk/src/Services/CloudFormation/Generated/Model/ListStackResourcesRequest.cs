@@ -66,8 +66,15 @@ namespace Amazon.CloudFormation.Model
         /// The name or the unique stack ID that is associated with the stack, which are not always
         /// interchangeable:
         /// </para>
-        ///  <ul> <li>Running stacks: You can specify either the stack's name or its unique stack
-        /// ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Running stacks: You can specify either the stack's name or its unique stack ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleted stacks: You must specify the unique stack ID.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Default: There is no default value.
         /// </para>

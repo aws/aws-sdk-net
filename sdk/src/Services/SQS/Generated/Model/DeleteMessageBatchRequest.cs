@@ -38,15 +38,19 @@ namespace Amazon.SQS.Model
     /// actions, you should check for batch errors even when the call returns an HTTP status
     /// code of 200. 
     /// </para>
-    ///  </important> <note>Some API actions take lists of parameters. These lists are specified
-    /// using the <code>param.n</code> notation. Values of <code>n</code> are integers starting
-    /// from 1. For example, a parameter list with two elements looks like this: </note> 
+    ///  </important> <note>
     /// <para>
-    /// <code>&amp;Attribute.1=this</code>
+    /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
+    /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+    /// list with two elements looks like this:
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// <code><![CDATA[&amp;Attribute.1=this]]></code>
     /// </para>
     ///  
     /// <para>
-    /// <code>&amp;Attribute.2=that</code>
+    /// <code><![CDATA[&amp;Attribute.2=that]]></code>
     /// </para>
     /// </summary>
     public partial class DeleteMessageBatchRequest : AmazonSQSRequest
@@ -62,7 +66,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates DeleteMessageBatchRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
         /// <param name="entries">A list of receipt handles for the messages to be deleted.</param>
         public DeleteMessageBatchRequest(string queueUrl, List<DeleteMessageBatchRequestEntry> entries)
         {
@@ -92,6 +96,10 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property QueueUrl. 
         /// <para>
         /// The URL of the Amazon SQS queue to take action on.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queue URLs are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

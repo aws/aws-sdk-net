@@ -32,11 +32,30 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class RedshiftDestinationDescription
     {
+        private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private string _clusterJDBCURL;
         private CopyCommand _copyCommand;
         private string _roleARN;
         private S3DestinationDescription _s3DestinationDescription;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLoggingOptions. 
+        /// <para>
+        /// Describes CloudWatch logging options for your delivery stream.
+        /// </para>
+        /// </summary>
+        public CloudWatchLoggingOptions CloudWatchLoggingOptions
+        {
+            get { return this._cloudWatchLoggingOptions; }
+            set { this._cloudWatchLoggingOptions = value; }
+        }
+
+        // Check to see if CloudWatchLoggingOptions property is set
+        internal bool IsSetCloudWatchLoggingOptions()
+        {
+            return this._cloudWatchLoggingOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterJDBCURL. 

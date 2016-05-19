@@ -36,6 +36,7 @@ namespace Amazon.APIGateway.Model
         private string _description;
         private string _id;
         private string _name;
+        private List<string> _warnings = new List<string>();
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -109,6 +110,21 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings.
+        /// </summary>
+        public List<string> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }

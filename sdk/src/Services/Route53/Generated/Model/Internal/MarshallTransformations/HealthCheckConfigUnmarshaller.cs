@@ -133,6 +133,24 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.EnableSNI = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Regions/Region", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Regions.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+                    if (context.TestExpression("AlarmIdentifier", targetDepth))
+                    {
+                        var unmarshaller = AlarmIdentifierUnmarshaller.Instance;
+                        unmarshalledObject.AlarmIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("InsufficientDataHealthStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.InsufficientDataHealthStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

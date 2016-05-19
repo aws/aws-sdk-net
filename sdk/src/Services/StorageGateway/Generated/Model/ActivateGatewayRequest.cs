@@ -37,7 +37,11 @@ namespace Amazon.StorageGateway.Model
     /// The activation process also associates your gateway with your account; for more information,
     /// see <a>UpdateGatewayInformation</a>.
     /// 
-    ///  <note>You must turn on the gateway VM before you can activate your gateway.</note>
+    ///  <note>
+    /// <para>
+    /// You must turn on the gateway VM before you can activate your gateway.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ActivateGatewayRequest : AmazonStorageGatewayRequest
     {
@@ -101,8 +105,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
-        /// "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+        ///  Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
+        /// "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
         /// </para>
         /// </summary>
         public string GatewayRegion
@@ -164,7 +168,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+        ///  Valid Values: "STK-L700", "AWS-Gateway-VTL"
         /// </para>
         /// </summary>
         public string MediumChangerType
@@ -183,11 +187,11 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property TapeDriveType. 
         /// <para>
         /// The value that indicates the type of tape drive to use for gateway-VTL. This field
-        /// is optional. 
+        /// is optional.
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: "IBM-ULT3580-TD5" 
+        ///  Valid Values: "IBM-ULT3580-TD5" 
         /// </para>
         /// </summary>
         public string TapeDriveType

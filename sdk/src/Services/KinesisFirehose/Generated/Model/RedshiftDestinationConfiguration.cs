@@ -32,12 +32,31 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class RedshiftDestinationConfiguration
     {
+        private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private string _clusterJDBCURL;
         private CopyCommand _copyCommand;
         private string _password;
         private string _roleARN;
         private S3DestinationConfiguration _s3Configuration;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLoggingOptions. 
+        /// <para>
+        /// Describes CloudWatch logging options for your delivery stream.
+        /// </para>
+        /// </summary>
+        public CloudWatchLoggingOptions CloudWatchLoggingOptions
+        {
+            get { return this._cloudWatchLoggingOptions; }
+            set { this._cloudWatchLoggingOptions = value; }
+        }
+
+        // Check to see if CloudWatchLoggingOptions property is set
+        internal bool IsSetCloudWatchLoggingOptions()
+        {
+            return this._cloudWatchLoggingOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterJDBCURL. 
@@ -120,9 +139,9 @@ namespace Amazon.KinesisFirehose.Model
         ///  
         /// <para>
         /// The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified
-        /// in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
-        /// Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support
-        /// these compression formats.
+        /// in <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon Redshift
+        /// <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression
+        /// formats.
         /// </para>
         /// </summary>
         public S3DestinationConfiguration S3Configuration

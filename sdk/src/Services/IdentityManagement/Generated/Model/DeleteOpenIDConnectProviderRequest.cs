@@ -29,18 +29,18 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteOpenIDConnectProvider operation.
-    /// Deletes an IAM OpenID Connect identity provider.
+    /// Deletes an OpenID Connect identity provider (IdP) resource object in IAM.
     /// 
     ///  
     /// <para>
-    /// Deleting an OIDC provider does not update any roles that reference the provider as
-    /// a principal in their trust policies. Any attempt to assume a role that references
-    /// a provider that has been deleted will fail. 
+    /// Deleting an IAM OIDC provider resource does not update any roles that reference the
+    /// provider as a principal in their trust policies. Any attempt to assume a role that
+    /// references a deleted provider fails.
     /// </para>
     ///  
     /// <para>
     /// This action is idempotent; it does not fail or return an error if you call the action
-    /// for a provider that was already deleted.
+    /// for a provider that does not exist.
     /// </para>
     /// </summary>
     public partial class DeleteOpenIDConnectProviderRequest : AmazonIdentityManagementServiceRequest
@@ -50,9 +50,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property OpenIDConnectProviderArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM OpenID Connect provider to delete. You can
-        /// get a list of OpenID Connect provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-        /// action.
+        /// The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object
+        /// to delete. You can get a list of OpenID Connect provider resource ARNs by using the
+        /// <a>ListOpenIDConnectProviders</a> action.
         /// </para>
         /// </summary>
         public string OpenIDConnectProviderArn

@@ -267,6 +267,37 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CreateConditionalForwarder
+
+        internal CreateConditionalForwarderResponse CreateConditionalForwarder(CreateConditionalForwarderRequest request)
+        {
+            var marshaller = new CreateConditionalForwarderRequestMarshaller();
+            var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConditionalForwarderRequest,CreateConditionalForwarderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConditionalForwarder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConditionalForwarder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateConditionalForwarderResponse> CreateConditionalForwarderAsync(CreateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateConditionalForwarderRequestMarshaller();
+            var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConditionalForwarderRequest,CreateConditionalForwarderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDirectory
 
         internal CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
@@ -391,6 +422,37 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DeleteConditionalForwarder
+
+        internal DeleteConditionalForwarderResponse DeleteConditionalForwarder(DeleteConditionalForwarderRequest request)
+        {
+            var marshaller = new DeleteConditionalForwarderRequestMarshaller();
+            var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConditionalForwarderRequest,DeleteConditionalForwarderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConditionalForwarder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConditionalForwarder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteConditionalForwarderResponse> DeleteConditionalForwarderAsync(DeleteConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteConditionalForwarderRequestMarshaller();
+            var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConditionalForwarderRequest,DeleteConditionalForwarderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDirectory
 
         internal DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
@@ -510,6 +572,37 @@ namespace Amazon.DirectoryService
             var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeregisterEventTopicRequest,DeregisterEventTopicResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConditionalForwarders
+
+        internal DescribeConditionalForwardersResponse DescribeConditionalForwarders(DescribeConditionalForwardersRequest request)
+        {
+            var marshaller = new DescribeConditionalForwardersRequestMarshaller();
+            var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConditionalForwardersRequest,DescribeConditionalForwardersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConditionalForwarders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConditionalForwarders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeConditionalForwardersResponse> DescribeConditionalForwardersAsync(DescribeConditionalForwardersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeConditionalForwardersRequestMarshaller();
+            var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConditionalForwardersRequest,DescribeConditionalForwardersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -960,6 +1053,37 @@ namespace Amazon.DirectoryService
             var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestoreFromSnapshotRequest,RestoreFromSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConditionalForwarder
+
+        internal UpdateConditionalForwarderResponse UpdateConditionalForwarder(UpdateConditionalForwarderRequest request)
+        {
+            var marshaller = new UpdateConditionalForwarderRequestMarshaller();
+            var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConditionalForwarderRequest,UpdateConditionalForwarderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConditionalForwarder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConditionalForwarder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateConditionalForwarderResponse> UpdateConditionalForwarderAsync(UpdateConditionalForwarderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateConditionalForwarderRequestMarshaller();
+            var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConditionalForwarderRequest,UpdateConditionalForwarderResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

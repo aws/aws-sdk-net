@@ -132,6 +132,15 @@
         {
             "active": true,
 
+            "model": "application-autoscaling",
+            "base-name": "ApplicationAutoScaling",
+            "region-lookup-name": "autoscaling",
+            "authentication-service-name": "application-autoscaling",
+            "synopsis": "Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling."
+        },
+        {
+            "active": true,
+
             "model": "cloudhsm",
             "base-name": "CloudHSM",
             "region-lookup-name": "cloudhsm",
@@ -317,6 +326,16 @@
         {
             "active": true,
 
+            "model": "cognito-idp",
+            "base-name": "CognitoIdentityProvider",
+            "region-lookup-name": "cognito-idp",
+            "authentication-service-name": "cognito-idp",
+            "service-url": "http://cognito-idp.us-east-1.amazonaws.com",
+            "synopsis": "You can create a user pool in Amazon Cognito Identity to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies. This API reference provides information about user pools in Amazon Cognito Identity, which is a new capability that is available as a beta."
+        },
+        {
+            "active": true,
+
             "model": "cognito-sync",
             "base-name": "CognitoSync",
             "region-lookup-name": "cognito-sync",
@@ -383,6 +402,16 @@
             "authentication-service-name": "directconnect",
             "service-url": "https://directconnect.us-east-1.amazonaws.com",
             "synopsis": "AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections."
+        },
+        {
+            "active": true,
+
+            "model": "discovery",
+            "base-name": "ApplicationDiscoveryService",
+            "region-lookup-name": "discovery",
+            "authentication-service-name": "discovery",
+            "service-url": "https://directconnect.us-east-1.amazonaws.com",
+            "synopsis": "AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile."
         },
         {
             "active": true,

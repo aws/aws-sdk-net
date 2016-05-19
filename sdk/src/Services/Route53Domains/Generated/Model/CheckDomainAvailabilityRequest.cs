@@ -29,9 +29,9 @@ namespace Amazon.Route53Domains.Model
 {
     /// <summary>
     /// Container for the parameters to the CheckDomainAvailability operation.
-    /// This operation checks the availability of one domain name. You can access this API
-    /// without authenticating. Note that if the availability status of a domain is pending,
-    /// you must submit another request to determine the availability of the domain name.
+    /// This operation checks the availability of one domain name. Note that if the availability
+    /// status of a domain is pending, you must submit another request to determine the availability
+    /// of the domain name.
     /// </summary>
     public partial class CheckDomainAvailabilityRequest : AmazonRoute53DomainsRequest
     {

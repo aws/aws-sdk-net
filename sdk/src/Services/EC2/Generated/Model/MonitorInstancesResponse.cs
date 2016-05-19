@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the MonitorInstances operation.
+    /// Contains the output of MonitorInstances.
     /// </summary>
     public partial class MonitorInstancesResponse : AmazonWebServiceResponse
     {

@@ -29,7 +29,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateClientCertificate operation.
-    /// 
+    /// Changes information about an <a>ClientCertificate</a> resource.
     /// </summary>
     public partial class UpdateClientCertificateRequest : AmazonAPIGatewayRequest
     {
@@ -37,7 +37,10 @@ namespace Amazon.APIGateway.Model
         private List<PatchOperation> _patchOperations = new List<PatchOperation>();
 
         /// <summary>
-        /// Gets and sets the property ClientCertificateId.
+        /// Gets and sets the property ClientCertificateId. 
+        /// <para>
+        /// The identifier of the <a>ClientCertificate</a> resource to be updated.
+        /// </para>
         /// </summary>
         public string ClientCertificateId
         {

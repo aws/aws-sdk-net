@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ImportKeyPairRequest with the parameterized properties
         /// </summary>
         /// <param name="keyName">A unique name for the key pair.</param>
-        /// <param name="publicKeyMaterial">The public key. You must base64 encode the public key material before sending it to AWS.</param>
+        /// <param name="publicKeyMaterial">The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</param>
         public ImportKeyPairRequest(string keyName, string publicKeyMaterial)
         {
             _keyName = keyName;
@@ -83,8 +83,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicKeyMaterial. 
         /// <para>
-        /// The public key. You must base64 encode the public key material before sending it to
-        /// AWS.
+        /// The public key. For API calls, the text must be base64-encoded. For command line tools,
+        /// base64 encoding is performed for you.
         /// </para>
         /// </summary>
         public string PublicKeyMaterial

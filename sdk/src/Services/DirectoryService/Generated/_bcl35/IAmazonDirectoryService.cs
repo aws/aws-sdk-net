@@ -210,6 +210,66 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CreateConditionalForwarder
+
+
+        /// <summary>
+        /// Creates a conditional forwarder associated with your AWS directory. Conditional forwarders
+        /// are required in order to set up a trust relationship with another domain. The conditional
+        /// forwarder points to the trusted domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConditionalForwarder service method.</param>
+        /// 
+        /// <returns>The response from the CreateConditionalForwarder service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        CreateConditionalForwarderResponse CreateConditionalForwarder(CreateConditionalForwarderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConditionalForwarder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConditionalForwarder operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConditionalForwarder
+        ///         operation.</returns>
+        IAsyncResult BeginCreateConditionalForwarder(CreateConditionalForwarderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConditionalForwarder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConditionalForwarder.</param>
+        /// 
+        /// <returns>Returns a  CreateConditionalForwarderResult from DirectoryService.</returns>
+        CreateConditionalForwarderResponse EndCreateConditionalForwarder(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDirectory
 
 
@@ -438,6 +498,61 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DeleteConditionalForwarder
+
+
+        /// <summary>
+        /// Deletes a conditional forwarder that has been set up for your AWS directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConditionalForwarder service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConditionalForwarder service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        DeleteConditionalForwarderResponse DeleteConditionalForwarder(DeleteConditionalForwarderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConditionalForwarder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConditionalForwarder operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConditionalForwarder
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteConditionalForwarder(DeleteConditionalForwarderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConditionalForwarder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConditionalForwarder.</param>
+        /// 
+        /// <returns>Returns a  DeleteConditionalForwarderResult from DirectoryService.</returns>
+        DeleteConditionalForwarderResponse EndDeleteConditionalForwarder(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDirectory
 
 
@@ -632,6 +747,67 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  DeregisterEventTopicResult from DirectoryService.</returns>
         DeregisterEventTopicResponse EndDeregisterEventTopic(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeConditionalForwarders
+
+
+        /// <summary>
+        /// Obtains information about the conditional forwarders for this account.
+        /// 
+        ///  
+        /// <para>
+        /// If no input parameters are provided for RemoteDomainNames, this request describes
+        /// all conditional forwarders for the specified directory ID.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConditionalForwarders service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConditionalForwarders service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        DescribeConditionalForwardersResponse DescribeConditionalForwarders(DescribeConditionalForwardersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConditionalForwarders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConditionalForwarders operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConditionalForwarders
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeConditionalForwarders(DescribeConditionalForwardersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConditionalForwarders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConditionalForwarders.</param>
+        /// 
+        /// <returns>Returns a  DescribeConditionalForwardersResult from DirectoryService.</returns>
+        DescribeConditionalForwardersResponse EndDescribeConditionalForwarders(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1350,6 +1526,61 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  RestoreFromSnapshotResult from DirectoryService.</returns>
         RestoreFromSnapshotResponse EndRestoreFromSnapshot(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateConditionalForwarder
+
+
+        /// <summary>
+        /// Updates a conditional forwarder that has been set up for your AWS directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConditionalForwarder service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConditionalForwarder service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        UpdateConditionalForwarderResponse UpdateConditionalForwarder(UpdateConditionalForwarderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConditionalForwarder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConditionalForwarder operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConditionalForwarder
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateConditionalForwarder(UpdateConditionalForwarderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConditionalForwarder operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConditionalForwarder.</param>
+        /// 
+        /// <returns>Returns a  UpdateConditionalForwarderResult from DirectoryService.</returns>
+        UpdateConditionalForwarderResponse EndUpdateConditionalForwarder(IAsyncResult asyncResult);
 
         #endregion
         

@@ -29,20 +29,20 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUserPolicies operation.
-    /// Lists the names of the inline policies embedded in the specified user. 
+    /// Lists the names of the inline policies embedded in the specified IAM user.
     /// 
     ///  
     /// <para>
-    /// A user can also have managed policies attached to it. To list the managed policies
+    /// An IAM user can also have managed policies attached to it. To list the managed policies
     /// that are attached to a user, use <a>ListAttachedUserPolicies</a>. For more information
-    /// about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
     /// parameters. If there are no inline policies embedded with the specified user, the
-    /// action returns an empty list. 
+    /// action returns an empty list.
     /// </para>
     /// </summary>
     public partial class ListUserPoliciesRequest : AmazonIdentityManagementServiceRequest
@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates ListUserPoliciesRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user to list policies for.</param>
+        /// <param name="userName">The name of the user to list policies for. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public ListUserPoliciesRequest(string userName)
         {
             _userName = userName;
@@ -98,7 +98,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -117,6 +117,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user to list policies for.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

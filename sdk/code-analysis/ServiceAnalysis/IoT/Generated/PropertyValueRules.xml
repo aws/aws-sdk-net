@@ -37,6 +37,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateCertificateFromCsrResponse.CertificatePem</property>
     <min>1</min>
+    <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateKeysAndCertificateResponse.CertificateId</property>
@@ -47,6 +48,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateKeysAndCertificateResponse.CertificatePem</property>
     <min>1</min>
+    <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreatePolicyRequest.PolicyName</property>
@@ -93,6 +95,12 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteCACertificateRequest.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DeleteCertificateRequest.CertificateId</property>
     <min>64</min>
     <max>64</max>
@@ -125,6 +133,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeCACertificateRequest.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeCertificateRequest.CertificateId</property>
@@ -205,13 +219,35 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.GetRegistrationCodeResponse.RegistrationCode</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.GetTopicRuleRequest.RuleName</property>
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListCACertificatesRequest.PageSize</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListCertificatesRequest.PageSize</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListCertificatesByCARequest.CaCertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListCertificatesByCARequest.PageSize</property>
     <min>1</min>
     <max>250</max>
   </property-value-rule>
@@ -263,10 +299,46 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.RegisterCACertificateRequest.CaCertificate</property>
+    <min>1</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RegisterCACertificateRequest.VerificationCertificate</property>
+    <min>1</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RegisterCACertificateResponse.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RegisterCertificateRequest.CaCertificatePem</property>
+    <min>1</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RegisterCertificateRequest.CertificatePem</property>
+    <min>1</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RegisterCertificateResponse.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.RejectCertificateTransferRequest.CertificateId</property>
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RejectCertificateTransferRequest.RejectReason</property>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ReplaceTopicRuleRequest.RuleName</property>
@@ -295,6 +367,16 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.TransferCertificateRequest.TransferMessage</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCACertificateRequest.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateCertificateRequest.CertificateId</property>
     <min>64</min>
     <max>64</max>
@@ -307,7 +389,34 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CACertificate.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CACertificateDescription.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CACertificateDescription.CertificatePem</property>
+    <min>1</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CACertificateDescription.OwnedBy</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.Certificate.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CertificateDescription.CaCertificateId</property>
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
@@ -321,9 +430,14 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.CertificateDescription.CertificatePem</property>
     <min>1</min>
+    <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CertificateDescription.OwnedBy</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CertificateDescription.PreviousOwnedBy</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -365,5 +479,13 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.TransferData.RejectReason</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.TransferData.TransferMessage</property>
+    <max>128</max>
   </property-value-rule>
 </property-value-rules>

@@ -70,7 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates DeleteTableRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName"> The name of the table to delete.</param>
+        /// <param name="tableName">The name of the table to delete.</param>
         public DeleteTableRequest(string tableName)
         {
             _tableName = tableName;
@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        ///  The name of the table to delete.
+        /// The name of the table to delete.
         /// </para>
         /// </summary>
         public string TableName

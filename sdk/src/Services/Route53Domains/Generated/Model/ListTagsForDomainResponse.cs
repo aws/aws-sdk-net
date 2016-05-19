@@ -47,7 +47,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Each tag includes the following elements.
         /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li>
         /// <para>
         /// Key
         /// </para>
@@ -59,7 +59,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Type: String
         /// </para>
-        ///  </li> <li> 
+        ///  </li> <li>
         /// <para>
         /// Value
         /// </para>

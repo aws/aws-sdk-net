@@ -32,12 +32,31 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class StreamDescription
     {
+        private List<EnhancedMetrics> _enhancedMonitoring = new List<EnhancedMetrics>();
         private bool? _hasMoreShards;
         private int? _retentionPeriodHours;
         private List<Shard> _shards = new List<Shard>();
         private string _streamARN;
         private string _streamName;
         private StreamStatus _streamStatus;
+
+        /// <summary>
+        /// Gets and sets the property EnhancedMonitoring. 
+        /// <para>
+        /// Represents the current enhanced monitoring settings of the stream.
+        /// </para>
+        /// </summary>
+        public List<EnhancedMetrics> EnhancedMonitoring
+        {
+            get { return this._enhancedMonitoring; }
+            set { this._enhancedMonitoring = value; }
+        }
+
+        // Check to see if EnhancedMonitoring property is set
+        internal bool IsSetEnhancedMonitoring()
+        {
+            return this._enhancedMonitoring != null && this._enhancedMonitoring.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property HasMoreShards. 
@@ -132,21 +151,17 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property StreamStatus. 
         /// <para>
-        /// The current status of the stream being described.
+        /// The current status of the stream being described. The stream status is one of the
+        /// following states:
         /// </para>
-        ///  
-        /// <para>
-        /// The stream status is one of the following states:
-        /// </para>
-        ///  <ul> <li> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately
-        /// returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li> <code>DELETING</code>
+        ///  <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately
+        /// returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code>
         /// - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-        /// state until Amazon Kinesis completes the deletion.</li> <li> <code>ACTIVE</code> -
+        /// state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> -
         /// The stream exists and is ready for read and write operations or deletion. You should
-        /// perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li>
-        /// <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write
-        /// operations continue to work while the stream is in the <code>UPDATING</code> state.</li>
-        /// </ul>
+        /// perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code>
+        /// - Shards in the stream are being merged or split. Read and write operations continue
+        /// to work while the stream is in the <code>UPDATING</code> state.</li> </ul>
         /// </summary>
         public StreamStatus StreamStatus
         {

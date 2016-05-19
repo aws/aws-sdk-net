@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 
 
@@ -32,7 +32,7 @@ namespace Amazon.Inspector
     public partial class AmazonInspectorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.1.0.3");
+            InternalSDKUtils.BuildUserAgentString("3.1.2.1");
 
         private string _userAgent = UserAgentString;
 
@@ -61,7 +61,7 @@ namespace Amazon.Inspector
         {
             get
             {
-                return "2015-08-18";
+                return "2016-02-16";
             }
         }
 

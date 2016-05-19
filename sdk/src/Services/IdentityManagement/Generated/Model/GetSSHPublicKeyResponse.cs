@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property SSHPublicKey. 
         /// <para>
-        /// Information about the SSH public key.
+        /// A structure containing details about the SSH public key.
         /// </para>
         /// </summary>
         public SSHPublicKey SSHPublicKey

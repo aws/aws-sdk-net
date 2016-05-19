@@ -29,7 +29,7 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRecords operation.
-    /// Gets data records from a shard.
+    /// Gets data records from an Amazon Kinesis stream's shard.
     /// 
     ///  
     /// <para>
@@ -41,16 +41,19 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// You can scale by provisioning multiple shards. Your application should have one thread
-    /// per shard, each reading continuously from its stream. To read from a stream continually,
-    /// call <a>GetRecords</a> in a loop. Use <a>GetShardIterator</a> to get the shard iterator
-    /// to specify in the first <a>GetRecords</a> call. <a>GetRecords</a> returns a new shard
-    /// iterator in <code>NextShardIterator</code>. Specify the shard iterator returned in
-    /// <code>NextShardIterator</code> in subsequent calls to <a>GetRecords</a>. Note that
-    /// if the shard has been closed, the shard iterator can't return more data and <a>GetRecords</a>
-    /// returns <code>null</code> in <code>NextShardIterator</code>. You can terminate the
-    /// loop when the shard is closed, or when the shard iterator reaches the record with
-    /// the sequence number or other attribute that marks it as the last record to process.
+    /// You can scale by provisioning multiple shards per stream while considering service
+    /// limits (for more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+    /// Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>). Your application
+    /// should have one thread per shard, each reading continuously from its stream. To read
+    /// from a stream continually, call <a>GetRecords</a> in a loop. Use <a>GetShardIterator</a>
+    /// to get the shard iterator to specify in the first <a>GetRecords</a> call. <a>GetRecords</a>
+    /// returns a new shard iterator in <code>NextShardIterator</code>. Specify the shard
+    /// iterator returned in <code>NextShardIterator</code> in subsequent calls to <a>GetRecords</a>.
+    /// Note that if the shard has been closed, the shard iterator can't return more data
+    /// and <a>GetRecords</a> returns <code>null</code> in <code>NextShardIterator</code>.
+    /// You can terminate the loop when the shard is closed, or when the shard iterator reaches
+    /// the record with the sequence number or other attribute that marks it as the last record
+    /// to process.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +65,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// The size of the data returned by <a>GetRecords</a> will vary depending on the utilization
+    /// The size of the data returned by <a>GetRecords</a> varies depending on the utilization
     /// of the shard. The maximum size of data that <a>GetRecords</a> can return is 10 MB.
     /// If a call returns this amount of data, subsequent calls made within the next 5 seconds
     /// throw <code>ProvisionedThroughputExceededException</code>. If there is insufficient
@@ -76,19 +79,19 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// To detect whether the application is falling behind in processing, you can use the
     /// <code>MillisBehindLatest</code> response attribute. You can also monitor the stream
-    /// using CloudWatch metrics (see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring
-    /// Amazon Kinesis</a> in the <i>Amazon Kinesis Developer Guide</i>).
+    /// using CloudWatch metrics and other mechanisms (see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
+    /// in the <i>Amazon Kinesis Streams Developer Guide</i>).
     /// </para>
     ///  
     /// <para>
     /// Each Amazon Kinesis record includes a value, <code>ApproximateArrivalTimestamp</code>,
-    /// that is set when an Amazon Kinesis stream successfully receives and stores a record.
-    /// This is commonly referred to as a server-side timestamp, which is different than a
-    /// client-side timestamp, where the timestamp is set when a data producer creates or
-    /// sends the record to a stream. The timestamp has millisecond precision. There are no
-    /// guarantees about the timestamp accuracy, or that the timestamp is always increasing.
-    /// For example, records in a shard or across a stream might have timestamps that are
-    /// out of order.
+    /// that is set when a stream successfully receives and stores a record. This is commonly
+    /// referred to as a server-side timestamp, whereas a client-side timestamp is set when
+    /// a data producer creates or sends the record to a stream (a data producer is any data
+    /// source putting data records into a stream, for example with <a>PutRecords</a>). The
+    /// timestamp has millisecond precision. There are no guarantees about the timestamp accuracy,
+    /// or that the timestamp is always increasing. For example, records in a shard or across
+    /// a stream might have timestamps that are out of order.
     /// </para>
     /// </summary>
     public partial class GetRecordsRequest : AmazonKinesisRequest

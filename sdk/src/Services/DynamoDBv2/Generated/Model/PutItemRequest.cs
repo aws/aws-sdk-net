@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// same primary key as the new item already exists in the specified table, the new item
     /// completely replaces the existing item. You can perform a conditional put operation
     /// (add a new item if one with the specified primary key doesn't exist), or replace an
-    /// existing item if it has certain attribute values. 
+    /// existing item if it has certain attribute values.
     /// 
     ///  
     /// <para>
@@ -101,7 +101,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item.</param>
         /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.</param>
-        /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were updated with the <i>PutItem</i> request. For <i>PutItem</i>, the valid values are: <ul> <li> <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li> <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul></param>
+        /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared before they were updated with the <i>PutItem</i> request. For <i>PutItem</i>, the valid values are: <ul> <li>  <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li>  <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> <note> The <i>ReturnValues</i> parameter is used by several DynamoDB operations; however, <i>PutItem</i> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>. </note></param>
         public PutItemRequest(string tableName, Dictionary<string, AttributeValue> item, ReturnValue returnValues)
         {
             _tableName = tableName;
@@ -121,17 +121,17 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A logical operator to apply to the conditions in the <i>Expected</i> map:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>AND</code> - If all of the conditions evaluate to true, then the entire map
+        ///  <code>AND</code> - If all of the conditions evaluate to true, then the entire map
         /// evaluates to true.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>OR</code> - If at least one of the conditions evaluate to true, then the entire
+        ///  <code>OR</code> - If at least one of the conditions evaluate to true, then the entire
         /// map evaluates to true.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the default.
         /// </para>
@@ -139,11 +139,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The operation will succeed only if the entire map evaluates to true.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// This parameter does not support attributes of type List or Map.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public ConditionalOperator ConditionalOperator
         {
@@ -170,7 +170,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <ul> <li> 
         /// <para>
         /// Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains
-        /// | begins_with | size</code>
+        /// | begins_with | size</code> 
         /// </para>
         ///  
         /// <para>
@@ -178,13 +178,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Comparison operators: <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>
-        /// | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
-        /// 
+        /// Comparison operators: <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; |
+        /// &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Logical operators: <code>AND | OR | NOT</code>
+        ///  Logical operators: <code>AND | OR | NOT</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -193,10 +192,10 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// <i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and <i>Expected</i>
+        ///  <i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and <i>Expected</i>
         /// parameters.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public string ConditionExpression
         {
@@ -223,11 +222,11 @@ namespace Amazon.DynamoDBv2.Model
         /// A map of attribute/condition pairs. <i>Expected</i> provides a conditional block for
         /// the <i>PutItem</i> operation.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// This parameter does not support attributes of type List or Map.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// Each element of <i>Expected</i> consists of an attribute name, a comparison operator,
         /// and one or more values. DynamoDB compares the attribute with the value(s) you supplied,
@@ -249,11 +248,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <i>Expected</i> contains the following:
+        ///  <i>Expected</i> contains the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute.
+        ///  <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute.
         /// The number of values in the list depends on the <i>ComparisonOperator</i> being used.
         /// </para>
         ///  
@@ -265,7 +264,7 @@ namespace Amazon.DynamoDBv2.Model
         /// String value comparisons for greater than, equals, or less than are based on ASCII
         /// character code values. For example, <code>a</code> is greater than <code>A</code>,
         /// and <code>a</code> is greater than <code>B</code>. For a list of code values, see
-        /// <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters" >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+        /// <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -274,7 +273,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>ComparisonOperator</i> - A comparator for evaluating attributes in the <i>AttributeValueList</i>.
+        ///  <i>ComparisonOperator</i> - A comparator for evaluating attributes in the <i>AttributeValueList</i>.
         /// When performing the comparison, DynamoDB uses strongly consistent reads.
         /// </para>
         ///  
@@ -283,8 +282,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-        /// | IN | BETWEEN</code>
+        ///  <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+        /// | IN | BETWEEN</code> 
         /// </para>
         ///  
         /// <para>
@@ -292,12 +291,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including
+        ///  <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including
         /// lists and maps.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains
         /// an <i>AttributeValue</i> element of a different type than the one provided in the
         /// request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
@@ -306,12 +305,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including
+        ///  <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including
         /// lists and maps.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i>
         /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
@@ -319,11 +318,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>LE</code> : Less than or equal. 
+        ///  <code>LE</code> : Less than or equal. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
         /// element of a different type than the one provided in the request, the value does not
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
@@ -331,11 +330,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>LT</code> : Less than. 
+        ///  <code>LT</code> : Less than. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i> element
         /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
@@ -343,11 +342,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>GE</code> : Greater than or equal. 
+        ///  <code>GE</code> : Greater than or equal. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
         /// element of a different type than the one provided in the request, the value does not
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
@@ -355,11 +354,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>GT</code> : Greater than. 
+        ///  <code>GT</code> : Greater than. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
         /// element of a different type than the one provided in the request, the value does not
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
@@ -367,10 +366,10 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for
-        /// all datatypes, including lists and maps.
+        ///  <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+        /// for all datatypes, including lists and maps.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// This operator tests for the existence of an attribute, not its data type. If the data
         /// type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>,
@@ -379,10 +378,10 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for
-        /// all datatypes, including lists and maps.
+        ///  <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+        /// for all datatypes, including lists and maps.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// This operator tests for the nonexistence of an attribute, not its data type. If the
         /// data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
@@ -391,11 +390,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
+        ///  <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If the target attribute of the comparison
         /// is of type String, then the operator checks for a substring match. If the target attribute
         /// of the comparison is of type Binary, then the operator looks for a subsequence of
@@ -410,12 +409,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value
-        /// in a set.
+        ///  <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+        /// value in a set.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If the target attribute of the comparison
         /// is a String, then the operator checks for the absence of a substring match. If the
         /// target attribute of the comparison is Binary, then the operator checks for the absence
@@ -432,39 +431,39 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>BEGINS_WITH</code> : Checks for a prefix. 
+        ///  <code>BEGINS_WITH</code> : Checks for a prefix. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String
         /// or Binary (not a Number or a set type). The target attribute of the comparison must
         /// be of type String or Binary (not a Number or a set type).
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>IN</code> : Checks for matching elements within two sets.
+        ///  <code>IN</code> : Checks for matching elements within two sets.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of
-        /// type String, Number, or Binary (not a set type). These attributes are compared against
-        /// an existing set type attribute of an item. If any elements of the input set are present
-        /// in the item attribute, the expression evaluates to true.
+        ///  <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements
+        /// of type String, Number, or Binary (not a set type). These attributes are compared
+        /// against an existing set type attribute of an item. If any elements of the input set
+        /// are present in the item attribute, the expression evaluates to true.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or
+        ///  <code>BETWEEN</code> : Greater than or equal to the first value, and less than or
         /// equal to the second value. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same
-        /// type, either String, Number, or Binary (not a set type). A target attribute matches
+        ///  <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+        /// same type, either String, Number, or Binary (not a set type). A target attribute matches
         /// if the target value is greater than, or equal to, the first element and less than,
         /// or equal to, the second element. If an item contains an <i>AttributeValue</i> element
         /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -479,11 +478,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>Value</i> - A value for DynamoDB to compare with an attribute.
+        ///  <i>Value</i> - A value for DynamoDB to compare with an attribute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>Exists</i> - A Boolean value that causes DynamoDB to evaluate the value before
+        ///  <i>Exists</i> - A Boolean value that causes DynamoDB to evaluate the value before
         /// attempting the conditional operation:
         /// </para>
         ///  <ul> <li> 
@@ -492,14 +491,14 @@ namespace Amazon.DynamoDBv2.Model
         /// value already exists in the table. If it is found, then the condition evaluates to
         /// true; otherwise the condition evaluate to false.
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value
         /// does <i>not</i> exist in the table. If in fact the value does not exist, then the
         /// assumption is valid and the condition evaluates to true. If the value is found, despite
         /// the assumption that it does not exist, the condition evaluates to false.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// Note that the default value for <i>Exists</i> is <code>true</code>.
         /// </para>
@@ -546,35 +545,35 @@ namespace Amazon.DynamoDBv2.Model
         /// Use the <b>#</b> character in an expression to dereference an attribute name. For
         /// example, consider the following attribute name:
         /// </para>
-        ///  <ul><li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>Percentile</code>
+        ///  <code>Percentile</code> 
         /// </para>
-        /// </li></ul> 
+        ///  </li> </ul> 
         /// <para>
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
         /// could specify the following for <i>ExpressionAttributeNames</i>:
         /// </para>
-        ///  <ul><li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>{"#P":"Percentile"}</code>
+        ///  <code>{"#P":"Percentile"}</code> 
         /// </para>
-        /// </li></ul> 
+        ///  </li> </ul> 
         /// <para>
         /// You could then use this substitution in an expression, as in this example:
         /// </para>
-        ///  <ul><li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>#P = :val</code>
+        ///  <code>#P = :val</code> 
         /// </para>
-        /// </li></ul> <note>
+        ///  </li> </ul> <note> 
         /// <para>
         /// Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>,
         /// which are placeholders for the actual value at runtime.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -605,7 +604,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>Available | Backordered | Discontinued</code>
+        ///  <code>Available | Backordered | Discontinued</code> 
         /// </para>
         ///  
         /// <para>
@@ -613,8 +612,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"}
-        /// }</code>
+        ///  <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"}
+        /// }</code> 
         /// </para>
         ///  
         /// <para>
@@ -622,7 +621,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        ///  <code>ProductStatus IN (:avail, :back, :disc)</code> 
         /// </para>
         ///  
         /// <para>
@@ -728,15 +727,20 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>,
+        ///  <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>,
         /// then nothing is returned. (This setting is the default for <i>ReturnValues</i>.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair, then
-        /// the content of the old item is returned.
+        ///  <code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute name-value pair,
+        /// then the content of the old item is returned.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <i>ReturnValues</i> parameter is used by several DynamoDB operations; however,
+        /// <i>PutItem</i> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ReturnValue ReturnValues
         {

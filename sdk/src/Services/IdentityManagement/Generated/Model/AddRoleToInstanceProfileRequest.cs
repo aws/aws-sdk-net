@@ -29,10 +29,19 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the AddRoleToInstanceProfile operation.
-    /// Adds the specified role to the specified instance profile. For more information about
-    /// roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+    /// Adds the specified IAM role to the specified instance profile.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The caller of this API must be granted the <code>PassRole</code> permission on the
+    /// IAM role by a permission policy.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
     /// with Roles</a>. For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
     /// Instance Profiles</a>.
+    /// </para>
     /// </summary>
     public partial class AddRoleToInstanceProfileRequest : AmazonIdentityManagementServiceRequest
     {
@@ -43,6 +52,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
         /// The name of the instance profile to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string InstanceProfileName
@@ -61,6 +76,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property RoleName. 
         /// <para>
         /// The name of the role to add.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleName

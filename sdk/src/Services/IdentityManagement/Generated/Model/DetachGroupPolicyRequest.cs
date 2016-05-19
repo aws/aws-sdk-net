@@ -29,14 +29,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachGroupPolicy operation.
-    /// Removes the specified managed policy from the specified group. 
+    /// Removes the specified managed policy from the specified IAM group.
     /// 
     ///  
     /// <para>
     /// A group can also have inline policies embedded with it. To delete an inline policy,
-    /// use the <a>DeleteGroupPolicy</a> API. For information about policies, refer to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// use the <a>DeleteGroupPolicy</a> API. For information about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DetachGroupPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -47,7 +46,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name (friendly name, not ARN) of the group to detach the policy from.
+        /// The name (friendly name, not ARN) of the IAM group to detach the policy from.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string GroupName
@@ -63,7 +68,15 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyArn.
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM policy you want to detach.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// </para>
         /// </summary>
         public string PolicyArn
         {

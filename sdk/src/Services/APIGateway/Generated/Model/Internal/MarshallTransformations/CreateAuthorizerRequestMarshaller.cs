@@ -84,6 +84,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthorizerUri);
                 }
 
+                if(publicRequest.IsSetAuthType())
+                {
+                    context.Writer.WritePropertyName("authType");
+                    context.Writer.Write(publicRequest.AuthType);
+                }
+
                 if(publicRequest.IsSetIdentitySource())
                 {
                     context.Writer.WritePropertyName("identitySource");

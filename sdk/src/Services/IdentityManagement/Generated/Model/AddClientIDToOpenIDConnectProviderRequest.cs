@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the AddClientIDToOpenIDConnectProvider operation.
     /// Adds a new client ID (also known as audience) to the list of client IDs already registered
-    /// for the specified IAM OpenID Connect provider.
+    /// for the specified IAM OpenID Connect (OIDC) provider resource.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ClientID. 
         /// <para>
-        /// The client ID (also known as audience) to add to the IAM OpenID Connect provider.
+        /// The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.
         /// </para>
         /// </summary>
         public string ClientID
@@ -64,9 +64,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property OpenIDConnectProviderArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to add the
-        /// client ID to. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-        /// action. 
+        /// The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource
+        /// to add the client ID to. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
+        /// action.
         /// </para>
         /// </summary>
         public string OpenIDConnectProviderArn

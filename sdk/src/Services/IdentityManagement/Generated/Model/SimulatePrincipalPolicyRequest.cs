@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// <b>Note:</b> This API discloses information about the permissions granted to other
+    ///  <b>Note:</b> This API discloses information about the permissions granted to other
     /// users. If you do not want users to see other user's permissions, then consider allowing
     /// them to use <a>SimulateCustomPolicy</a> instead.
     /// </para>
@@ -106,7 +106,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CallerArn. 
         /// <para>
-        /// The ARN of the user that you want to specify as the simulated caller of the APIs.
+        /// The ARN of the IAM user that you want to specify as the simulated caller of the APIs.
         /// If you do not specify a <code>CallerArn</code>, it defaults to the ARN of the user
         /// that you specify in <code>PolicySourceArn</code>, if you specified a user. If you
         /// include both a <code>PolicySourceArn</code> (for example, <code>arn:aws:iam::123456789012:user/David</code>)
@@ -120,10 +120,15 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> and
+        ///  <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> and
         /// the <code>PolicySourceArn</code> is not the ARN for an IAM user. This is required
         /// so that the resource-based policy's <code>Principal</code> element has a value to
         /// use in evaluating the policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         public string CallerArn
@@ -142,8 +147,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ContextEntries. 
         /// <para>
         /// A list of context keys and corresponding values for the simulation to use. Whenever
-        /// a context key is evaluated by a <code>Condition</code> element in one of the simulated
-        /// policies, the corresponding value is supplied.
+        /// a context key is evaluated in one of the simulated IAM permission policies, the corresponding
+        /// value is supplied.
         /// </para>
         /// </summary>
         public List<ContextEntry> ContextEntries
@@ -191,7 +196,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -213,6 +218,14 @@ namespace Amazon.IdentityManagement.Model
         /// document is specified as a string containing the complete, valid JSON text of an IAM
         /// policy.
         /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of any printable ASCII character ranging from
+        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
+        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
+        /// return (\u000D).
+        /// </para>
         /// </summary>
         public List<string> PolicyInputList
         {
@@ -233,6 +246,11 @@ namespace Amazon.IdentityManagement.Model
         /// include in the simulation. If you specify a user, group, or role, the simulation includes
         /// all policies that are associated with that entity. If you specify a user, the simulation
         /// also includes all policies that are attached to any groups the user belongs to.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         public string PolicySourceArn
@@ -261,6 +279,11 @@ namespace Amazon.IdentityManagement.Model
         /// The simulation does not automatically retrieve policies for the specified resources.
         /// If you want to include a resource policy in the simulation, then you must include
         /// the policy as a string in the <code>ResourcePolicy</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         public List<string> ResourceArns
@@ -295,49 +318,49 @@ namespace Amazon.IdentityManagement.Model
         /// For more information on the EC2 scenario options, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a> in the <i>AWS EC2 User Guide</i>.
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <b>EC2-Classic-InstanceStore</b>
+        ///  <b>EC2-Classic-InstanceStore</b> 
         /// </para>
         ///  
         /// <para>
         /// instance, image, security-group
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>EC2-Classic-EBS</b>
+        ///  <b>EC2-Classic-EBS</b> 
         /// </para>
         ///  
         /// <para>
         /// instance, image, security-group, volume
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>EC2-VPC-InstanceStore</b>
+        ///  <b>EC2-VPC-InstanceStore</b> 
         /// </para>
         ///  
         /// <para>
         /// instance, image, security-group, network-interface
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>EC2-VPC-InstanceStore-Subnet</b>
+        ///  <b>EC2-VPC-InstanceStore-Subnet</b> 
         /// </para>
         ///  
         /// <para>
         /// instance, image, security-group, network-interface, subnet
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>EC2-VPC-EBS</b>
+        ///  <b>EC2-VPC-EBS</b> 
         /// </para>
         ///  
         /// <para>
         /// instance, image, security-group, network-interface, volume
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>EC2-VPC-EBS-Subnet</b>
+        ///  <b>EC2-VPC-EBS-Subnet</b> 
         /// </para>
         ///  
         /// <para>
@@ -388,6 +411,14 @@ namespace Amazon.IdentityManagement.Model
         /// A resource-based policy to include in the simulation provided as a string. Each resource
         /// in the simulation is treated as if it had this policy attached. You can include only
         /// one resource-based policy in a simulation.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of any printable ASCII character ranging from
+        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
+        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
+        /// return (\u000D).
         /// </para>
         /// </summary>
         public string ResourcePolicy

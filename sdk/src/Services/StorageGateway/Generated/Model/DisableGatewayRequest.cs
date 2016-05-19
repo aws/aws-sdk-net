@@ -32,12 +32,15 @@ namespace Amazon.StorageGateway.Model
     /// Disables a gateway when the gateway is no longer functioning. For example, if your
     /// gateway VM is damaged, you can disable the gateway so you can recover virtual tapes.
     /// 
-    /// 
     ///  
     /// <para>
     /// Use this operation for a gateway-VTL that is not reachable or not functioning.
     /// </para>
-    ///  <important>Once a gateway is disabled it cannot be enabled.</important>
+    ///  <important>
+    /// <para>
+    /// Once a gateway is disabled it cannot be enabled.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DisableGatewayRequest : AmazonStorageGatewayRequest
     {

@@ -41,31 +41,31 @@ namespace Amazon.EC2.Model
         /// The low byte represents the state. The high byte is an opaque internal value and should
         /// be ignored.
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// <code>0</code> : <code>pending</code>
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// <code>16</code> : <code>running</code>
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// <code>32</code> : <code>shutting-down</code>
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// <code>48</code> : <code>terminated</code>
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// <code>64</code> : <code>stopping</code>
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// <code>80</code> : <code>stopped</code>
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public int Code
         {

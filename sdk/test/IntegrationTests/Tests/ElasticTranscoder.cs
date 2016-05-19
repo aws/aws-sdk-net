@@ -153,10 +153,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         OutputBucket = outputBucket,
                         Notifications = new Notifications
                         {
-                            Completed = string.Empty,
-                            Error = string.Empty,
-                            Progressing = string.Empty,
-                            Warning = string.Empty
                         },
                         Role = role.Arn,
                         AwsKmsKeyArn = kmsKeyArn
@@ -233,5 +229,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        /// <summary>
+        /// This test validates that the Notifications shape contains specific members.
+        /// This test will fail anytime a new member is added, the new member needs to be reviewed 
+        /// w.r.t the customization for CreatePipelineRequest in AmazonElasticTranscoderPreMarshallHandler
+        /// and this test should be updated.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ElasticTranscoder")]        
+        public void ValidateNotificationsShapeMembers()
+        {
+            var members = new HashSet<string> { "Completed", "Error", "Progressing", "Warning" };
+            var properties = typeof(Notifications).GetProperties();
+
+            Assert.AreEqual(members.Count, properties.Length);
+
+            foreach (var item in properties)
+            {
+                Assert.IsTrue(members.Contains(item.Name));
+            }
+        }
     }
 }

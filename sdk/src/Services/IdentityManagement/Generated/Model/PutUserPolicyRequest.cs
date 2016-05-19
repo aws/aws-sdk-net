@@ -29,26 +29,29 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutUserPolicy operation.
-    /// Adds (or updates) an inline policy document that is embedded in the specified user.
-    /// 
+    /// Adds or updates an inline policy document that is embedded in the specified IAM user.
     /// 
     ///  
     /// <para>
-    /// A user can also have a managed policy attached to it. To attach a managed policy to
-    /// a user, use <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
-    /// For information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// An IAM user can also have a managed policy attached to it. To attach a managed policy
+    /// to a user, use <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>.
+    /// For information about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For information about limits on the number of inline policies that you can embed in
     /// a user, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
+    /// on IAM Entities</a> in the <i>IAM User Guide</i>.
     /// </para>
-    ///  <note>Because policy documents can be large, you should use POST rather than GET
-    /// when calling <code>PutUserPolicy</code>. For general information about using the Query
-    /// API with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-    /// Query Requests</a> in the <i>Using IAM</i> guide. </note>
+    ///  <note> 
+    /// <para>
+    /// Because policy documents can be large, you should use POST rather than GET when calling
+    /// <code>PutUserPolicy</code>. For general information about using the Query API with
+    /// IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    /// Query Requests</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutUserPolicyRequest : AmazonIdentityManagementServiceRequest
     {
@@ -64,9 +67,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates PutUserPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user to associate the policy with.</param>
-        /// <param name="policyName">The name of the policy document.</param>
-        /// <param name="policyDocument">The policy document.</param>
+        /// <param name="userName">The name of the user to associate the policy with. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="policyName">The name of the policy document. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="policyDocument">The policy document. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         public PutUserPolicyRequest(string userName, string policyName, string policyDocument)
         {
             _userName = userName;
@@ -78,6 +81,14 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property PolicyDocument. 
         /// <para>
         /// The policy document.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of any printable ASCII character ranging from
+        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
+        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
+        /// return (\u000D).
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -97,6 +108,12 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The name of the policy document.
         /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
+        /// </para>
         /// </summary>
         public string PolicyName
         {
@@ -114,6 +131,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user to associate the policy with.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

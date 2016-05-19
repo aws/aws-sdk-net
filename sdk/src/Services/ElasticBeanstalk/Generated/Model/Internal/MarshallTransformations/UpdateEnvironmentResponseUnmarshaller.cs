@@ -211,6 +211,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 return new InsufficientPrivilegesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyBucketsException"))
+            {
+                return new TooManyBucketsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonElasticBeanstalkException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static UpdateEnvironmentResponseUnmarshaller _instance = new UpdateEnvironmentResponseUnmarshaller();        

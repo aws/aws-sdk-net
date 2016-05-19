@@ -46,7 +46,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Create an <a>ApiKey</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// 
@@ -86,7 +86,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// 
@@ -219,6 +219,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the CreateDomainName service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
@@ -522,7 +525,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Deletes the <a>ClientCertificate</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteClientCertificate service method.</param>
         /// 
@@ -815,6 +818,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -849,6 +855,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteRestApi service method.</param>
         /// 
         /// <returns>The response from the DeleteRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -883,6 +892,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteStage service method.</param>
         /// 
         /// <returns>The response from the DeleteStage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -986,7 +998,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Generates a <a>ClientCertificate</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateClientCertificate service method.</param>
         /// 
@@ -1261,7 +1273,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets information about the current <a>ClientCertificate</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClientCertificate service method.</param>
         /// 
@@ -1295,7 +1307,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets a collection of <a>ClientCertificate</a> resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClientCertificates service method.</param>
         /// 
@@ -1475,7 +1487,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Exports a deployed version of a <a>RestApi</a> in a specified format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetExport service method.</param>
         /// 
@@ -1896,7 +1908,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSdk service method.</param>
         /// 
@@ -1997,6 +2009,44 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  ImportRestApi
+
+
+        /// <summary>
+        /// A feature of the Amazon API Gateway control service for creating a new API from an
+        /// external API definition file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportRestApi service method.</param>
+        /// 
+        /// <returns>The response from the ImportRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        ImportRestApiResponse ImportRestApi(ImportRestApiRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportRestApi operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ImportRestApiResponse> ImportRestApiAsync(ImportRestApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutIntegration
 
 
@@ -2007,6 +2057,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the PutIntegration service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
@@ -2044,6 +2097,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the PutIntegrationResponse service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
@@ -2160,11 +2216,54 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  PutRestApi
+
+
+        /// <summary>
+        /// A feature of the Amazon API Gateway control service for updating an existing API with
+        /// an input of external API definitions. The update can take the form of merging the
+        /// supplied definition into the existing API or overwriting the existing API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRestApi service method.</param>
+        /// 
+        /// <returns>The response from the PutRestApi service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        PutRestApiResponse PutRestApi(PutRestApiRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRestApi operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutRestApiResponse> PutRestApiAsync(PutRestApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TestInvokeAuthorizer
 
 
         /// <summary>
-        /// 
+        /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
+        /// parameters, and an incoming request body.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// 
@@ -2201,7 +2300,8 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with headers, parameters,
+        /// and an incoming request body.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeMethod service method.</param>
         /// 
@@ -2389,7 +2489,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Changes information about an <a>ClientCertificate</a> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClientCertificate service method.</param>
         /// 
@@ -2474,6 +2574,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -2509,6 +2612,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateIntegration service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
@@ -2548,6 +2654,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -2583,6 +2692,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateMethod service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
@@ -2663,6 +2775,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the UpdateModel service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeCustomerGateways operation.
+    /// Contains the output of DescribeCustomerGateways.
     /// </summary>
     public partial class DescribeCustomerGatewaysResponse : AmazonWebServiceResponse
     {

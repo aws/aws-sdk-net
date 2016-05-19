@@ -24,3 +24,5 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.#EndpointURL")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.#EndpointURL")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.#EndpointURL")]
+
+[module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope="type", Target="Amazon.ElasticBeanstalk.Model.Deployment")]

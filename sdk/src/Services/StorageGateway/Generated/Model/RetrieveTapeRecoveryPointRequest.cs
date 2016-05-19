@@ -37,9 +37,13 @@ namespace Amazon.StorageGateway.Model
     /// the tape is consistent. If your gateway crashes, virtual tapes that have recovery
     /// points can be recovered to a new gateway.
     /// </para>
-    ///  <note>The virtual tape can be retrieved to only one gateway. The retrieved tape is
-    /// read-only. The virtual tape can be retrieved to only a gateway-VTL. There is no charge
-    /// for retrieving recovery points.</note>
+    ///  <note>
+    /// <para>
+    /// The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only.
+    /// The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving
+    /// recovery points.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RetrieveTapeRecoveryPointRequest : AmazonStorageGatewayRequest
     {

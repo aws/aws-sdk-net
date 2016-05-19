@@ -51,15 +51,16 @@ namespace ServiceClientGenerator
                 var fileEntries = Directory.GetFiles(modelsPath, baseName + "*.customizations*.json");
 
                 var jsonWriter = new JsonWriter {PrettyPrint = true};
-                jsonWriter.WriteObjectStart();
+
+                JsonData outputJson = new JsonData();
+                outputJson.SetJsonType(JsonType.Object);
 
                 foreach (var entry in fileEntries)
                 {
                     var customJson = JsonMapper.ToObject(new StreamReader(entry));
                     foreach (var property in customJson.PropertyNames)
                     {
-                        jsonWriter.WritePropertyName(property);
-                        jsonWriter.Write(customJson[property].ToJson());
+                        outputJson[property] = customJson[property];
                     }
                 }
 
@@ -71,18 +72,17 @@ namespace ServiceClientGenerator
                     var exampleData = JsonMapper.ToObject(new StreamReader(examples));
                     if (exampleData.IsObject && exampleData.PropertyNames.Contains("examples"))
                     {
-                        jsonWriter.WritePropertyName("examples");
-                        jsonWriter.Write(exampleData["examples"].ToJson());
+                        outputJson["examples"] = exampleData["examples"];
                     }
                 }
 
-                jsonWriter.WriteObjectEnd();
-                
+                outputJson.ToJson(jsonWriter);
+
                 // Fixes json being placed into the json mapper
-                var output = jsonWriter.ToString().Replace("\\\"", "\"").Replace("\"{", "{").Replace("}\"", "}").Replace("\"[", "[").Replace("]\"", "]");
+                var output = jsonWriter.ToString();
                 
                 // Empty json file
-                if (jsonWriter.ToString().Length < 10)
+                if (output.Length < 10)
                     continue;
 
                 File.WriteAllText(filePath, output);

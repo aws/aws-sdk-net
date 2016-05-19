@@ -30,24 +30,28 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateAccessKey operation.
     /// Creates a new AWS secret access key and corresponding AWS access key ID for the specified
-    /// user. The default status for new keys is <code>Active</code>. 
+    /// user. The default status for new keys is <code>Active</code>.
     /// 
     ///  
     /// <para>
-    ///  If you do not specify a user name, IAM determines the user name implicitly based
-    /// on the AWS access key ID signing the request. Because this action works for access
-    /// keys under the AWS account, you can use this action to manage root credentials even
-    /// if the AWS account has no associated users. 
+    /// If you do not specify a user name, IAM determines the user name implicitly based on
+    /// the AWS access key ID signing the request. Because this action works for access keys
+    /// under the AWS account, you can use this action to manage root credentials even if
+    /// the AWS account has no associated users.
     /// </para>
     ///  
     /// <para>
     ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-    /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
+    /// on IAM Entities</a> in the <i>IAM User Guide</i>.
     /// </para>
-    ///  <important> To ensure the security of your AWS account, the secret access key is
-    /// accessible only during key and user creation. You must save the key (for example,
-    /// in a text file) if you want to be able to access it again. If a secret key is lost,
-    /// you can delete the access keys for the associated user and then create new keys. </important>
+    ///  <important> 
+    /// <para>
+    /// To ensure the security of your AWS account, the secret access key is accessible only
+    /// during key and user creation. You must save the key (for example, in a text file)
+    /// if you want to be able to access it again. If a secret key is lost, you can delete
+    /// the access keys for the associated user and then create new keys.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateAccessKeyRequest : AmazonIdentityManagementServiceRequest
     {
@@ -61,7 +65,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The user name that the new key will belong to.
+        /// The name of the IAM user that the new key will belong to.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

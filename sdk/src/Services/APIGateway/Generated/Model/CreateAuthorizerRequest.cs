@@ -29,13 +29,14 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAuthorizer operation.
-    /// 
+    /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
     /// </summary>
     public partial class CreateAuthorizerRequest : AmazonAPIGatewayRequest
     {
         private string _authorizerCredentials;
         private int? _authorizerResultTtlInSeconds;
         private string _authorizerUri;
+        private string _authType;
         private string _identitySource;
         private string _identityValidationExpression;
         private string _name;
@@ -97,6 +98,25 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AuthType. 
+        /// <para>
+        /// Optional customer-defined field, used in Swagger imports/exports. Has no functional
+        /// impact.
+        /// </para>
+        /// </summary>
+        public string AuthType
+        {
+            get { return this._authType; }
+            set { this._authType = value; }
+        }
+
+        // Check to see if AuthType property is set
+        internal bool IsSetAuthType()
+        {
+            return this._authType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdentitySource. 
         /// <para>
         /// [Required] The source of the identity in an incoming request.
@@ -151,7 +171,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestApiId.
+        /// Gets and sets the property RestApiId. 
+        /// <para>
+        /// The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be created.
+        /// </para>
         /// </summary>
         public string RestApiId
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteFlowLogs operation.
+    /// Contains the output of DeleteFlowLogs.
     /// </summary>
     public partial class DeleteFlowLogsResponse : AmazonWebServiceResponse
     {

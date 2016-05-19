@@ -29,18 +29,18 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePolicyVersion operation.
-    /// Deletes the specified version of the specified managed policy.
+    /// Deletes the specified version from the specified managed policy.
     /// 
     ///  
     /// <para>
-    /// You cannot delete the default version of a policy using this API. To delete the default
-    /// version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy
-    /// is marked as the default version, use <a>ListPolicyVersions</a>. 
+    /// You cannot delete the default version from a policy using this API. To delete the
+    /// default version from a policy, use <a>DeletePolicy</a>. To find out which version
+    /// of a policy is marked as the default version, use <a>ListPolicyVersions</a>.
     /// </para>
     ///  
     /// <para>
-    /// For information about versions for managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-    /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
+    /// For information about versions for managed policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+    /// for Managed Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeletePolicyVersionRequest : AmazonIdentityManagementServiceRequest
@@ -49,7 +49,15 @@ namespace Amazon.IdentityManagement.Model
         private string _versionId;
 
         /// <summary>
-        /// Gets and sets the property PolicyArn.
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a version.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// </para>
         /// </summary>
         public string PolicyArn
         {
@@ -70,8 +78,15 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters that consists of the lowercase letter 'v' followed by one
+        /// or two digits, and optionally followed by a period '.' and a string of letters and
+        /// digits.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
+        /// for Managed Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public string VersionId

@@ -46,23 +46,72 @@ namespace Amazon.StorageGateway
     /// Use the following links to get started using the <i>AWS Storage Gateway Service API
     /// Reference</i>:
     /// </para>
-    ///  <ul> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
     /// Storage Gateway Required Request Headers</a>: Describes the required headers that
-    /// you must send with every POST request to AWS Storage Gateway.</li> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
+    /// you must send with every POST request to AWS Storage Gateway.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
     /// Requests</a>: AWS Storage Gateway requires that you authenticate every request you
-    /// send; this topic describes how sign such a request.</li> <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
-    /// Responses</a>: Provides reference information about AWS Storage Gateway errors.</li>
-    /// <li><a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
+    /// send; this topic describes how sign such a request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
+    /// Responses</a>: Provides reference information about AWS Storage Gateway errors.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
-    /// of requests and responses.</li> <li><a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
+    /// of requests and responses.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
     /// Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s and endpoints
-    /// available for use with AWS Storage Gateway. </li> </ul> <note>AWS Storage Gateway
-    /// resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2
-    /// API, EC2 expects resource IDs in lowercase. You must change your resource ID to lowercase
-    /// to use it with the EC2 API. For example, in Storage Gateway the ID for a volume might
-    /// be vol-1122AABB. When you use this ID with the EC2 API, you must change it to vol-1122aabb.
-    /// Otherwise, the EC2 API might not behave as expected.</note>
+    /// available for use with AWS Storage Gateway.
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs
+    /// with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your
+    /// resource ID to lowercase to use it with the EC2 API. For example, in Storage Gateway
+    /// the ID for a volume might be <code>vol-1122AABB</code>. When you use this ID with
+    /// the EC2 API, you must change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API
+    /// might not behave as expected.
+    /// </para>
+    ///  </note> <important> 
+    /// <para>
+    /// IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway volumes
+    /// are changing to a longer format. Starting in December 2016, all new volumes and snapshots
+    /// will be created with a 17-character string. Starting in April 2016, you will be able
+    /// to use these longer IDs so you can test your systems with the new format. For more
+    /// information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2
+    /// and EBS Resource IDs</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  For example, a volume ARN with the longer volume ID format will look like this:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// A snapshot ID with the longer ID format will look like this: <code>snap-78e226633445566ee</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement:
+    /// Heads-up – Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class AmazonStorageGatewayClient : AmazonServiceClient, IAmazonStorageGateway
     {
@@ -263,18 +312,22 @@ namespace Amazon.StorageGateway
         /// The activation process also associates your gateway with your account; for more information,
         /// see <a>UpdateGatewayInformation</a>.
         /// 
-        ///  <note>You must turn on the gateway VM before you can activate your gateway.</note>
+        ///  <note>
+        /// <para>
+        /// You must turn on the gateway VM before you can activate your gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ActivateGateway service method.</param>
         /// 
         /// <returns>The response from the ActivateGateway service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ActivateGatewayResponse ActivateGateway(ActivateGatewayRequest request)
         {
@@ -328,19 +381,19 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
-        /// to add cache, and one or more disk IDs that you want to configure as cache. 
+        /// to add cache, and one or more disk IDs that you want to configure as cache.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddCache service method.</param>
         /// 
         /// <returns>The response from the AddCache service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public AddCacheResponse AddCache(AddCacheRequest request)
         {
@@ -392,19 +445,19 @@ namespace Amazon.StorageGateway
         /// by purpose, owner, environment, or team. Each tag consists of a key and a value, which
         /// you define. You can add tags to the following AWS Storage Gateway resources:
         /// 
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// Storage gateways of all types
         /// </para>
-        /// </li> </ul> <ul> <li>
+        ///  </li> </ul> <ul> <li> 
         /// <para>
         /// Storage Volumes
         /// </para>
-        /// </li> </ul> <ul> <li>
+        ///  </li> </ul> <ul> <li> 
         /// <para>
         /// Virtual Tapes
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes
         /// that are recovered to a new gateway maintain their tags.
@@ -414,12 +467,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
@@ -468,11 +521,11 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Configures one or more gateway local disks as upload buffer for a specified gateway.
         /// This operation is supported for both the gateway-stored and gateway-cached volume
-        /// architectures. 
+        /// architectures.
         /// 
         ///  
         /// <para>
-        ///  In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
+        /// In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
         /// to add upload buffer, and one or more disk IDs that you want to configure as upload
         /// buffer.
         /// </para>
@@ -481,12 +534,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the AddUploadBuffer service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public AddUploadBufferResponse AddUploadBuffer(AddUploadBufferRequest request)
         {
@@ -537,12 +590,12 @@ namespace Amazon.StorageGateway
         /// operation is supported only for the gateway-stored volume architecture. This operation
         /// is deprecated in cached-volumes API version 20120630. Use <a>AddUploadBuffer</a> instead.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Working storage is also referred to as upload buffer. You can also use the <a>AddUploadBuffer</a>
         /// operation to add upload buffer to a stored-volume gateway.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
         /// to add working storage, and one or more disk IDs that you want to configure as working
@@ -553,12 +606,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the AddWorkingStorage service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public AddWorkingStorageResponse AddWorkingStorage(AddWorkingStorageRequest request)
         {
@@ -612,12 +665,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the CancelArchival service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public CancelArchivalResponse CancelArchival(CancelArchivalRequest request)
         {
@@ -671,12 +724,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the CancelRetrieval service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public CancelRetrievalResponse CancelRetrieval(CancelRetrievalRequest request)
         {
@@ -726,9 +779,12 @@ namespace Amazon.StorageGateway
         /// Creates a cached volume on a specified cached gateway. This operation is supported
         /// only for the gateway-cached volume architecture.
         /// 
-        ///  <note>Cache storage must be allocated to the gateway before you can create a cached
-        /// volume. Use the <a>AddCache</a> operation to add cache storage to a gateway. </note>
-        /// 
+        ///  <note>
+        /// <para>
+        /// Cache storage must be allocated to the gateway before you can create a cached volume.
+        /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// In the request, you must specify the gateway, size of the volume in bytes, the iSCSI
         /// target name, an IP address on which to expose the target, and a unique client token.
@@ -741,12 +797,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the CreateCachediSCSIVolume service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public CreateCachediSCSIVolumeResponse CreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest request)
         {
@@ -813,20 +869,30 @@ namespace Amazon.StorageGateway
         /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
         /// you want to create a volume from a snapshot.
         /// </para>
-        ///  <note>To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
+        ///  <note>
+        /// <para>
+        /// To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
         /// see DescribeSnapshots or DeleteSnapshot in the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
-        /// API reference</a>.</note>
+        /// API reference</a>.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// Volume and snapshot IDs are changing to a longer length ID format. For more information,
+        /// see the important note on the <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
+        /// page.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
@@ -902,12 +968,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the CreateSnapshotFromVolumeRecoveryPoint service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public CreateSnapshotFromVolumeRecoveryPointResponse CreateSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request)
         {
@@ -955,7 +1021,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Creates a volume on a specified gateway. This operation is supported only for the
-        /// gateway-stored volume architecture. 
+        /// gateway-stored volume architecture.
         /// 
         ///  
         /// <para>
@@ -976,12 +1042,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the CreateStorediSCSIVolume service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public CreateStorediSCSIVolumeResponse CreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest request)
         {
@@ -1031,19 +1097,23 @@ namespace Amazon.StorageGateway
         /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
         /// the tapes.
         /// 
-        ///  <note>Cache storage must be allocated to the gateway before you can create virtual
-        /// tapes. Use the <a>AddCache</a> operation to add cache storage to a gateway. </note>
+        ///  <note>
+        /// <para>
+        /// Cache storage must be allocated to the gateway before you can create virtual tapes.
+        /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTapes service method.</param>
         /// 
         /// <returns>The response from the CreateTapes service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public CreateTapesResponse CreateTapes(CreateTapesRequest request)
         {
@@ -1093,19 +1163,23 @@ namespace Amazon.StorageGateway
         /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
         /// and then archive the tape.
         /// 
-        ///  <note>Cache storage must be allocated to the gateway before you can create a virtual
-        /// tape. Use the <a>AddCache</a> operation to add cache storage to a gateway.</note>
+        ///  <note>
+        /// <para>
+        /// Cache storage must be allocated to the gateway before you can create a virtual tape.
+        /// Use the <a>AddCache</a> operation to add cache storage to a gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTapeWithBarcode service method.</param>
         /// 
         /// <returns>The response from the CreateTapeWithBarcode service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public CreateTapeWithBarcodeResponse CreateTapeWithBarcode(CreateTapeWithBarcodeRequest request)
         {
@@ -1161,12 +1235,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DeleteBandwidthRateLimit service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DeleteBandwidthRateLimitResponse DeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request)
         {
@@ -1220,12 +1294,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DeleteChapCredentials service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DeleteChapCredentialsResponse DeleteChapCredentials(DeleteChapCredentialsRequest request)
         {
@@ -1298,12 +1372,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DeleteGateway service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
         {
@@ -1371,12 +1445,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DeleteSnapshotSchedule service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DeleteSnapshotScheduleResponse DeleteSnapshotSchedule(DeleteSnapshotScheduleRequest request)
         {
@@ -1429,12 +1503,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DeleteTape service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DeleteTapeResponse DeleteTape(DeleteTapeRequest request)
         {
@@ -1487,12 +1561,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DeleteTapeArchive service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DeleteTapeArchiveResponse DeleteTapeArchive(DeleteTapeArchiveRequest request)
         {
@@ -1563,12 +1637,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DeleteVolume service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
         {
@@ -1630,12 +1704,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeBandwidthRateLimit service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeBandwidthRateLimitResponse DescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request)
         {
@@ -1683,24 +1757,24 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns information about the cache of a gateway. This operation is supported only
-        /// for the gateway-cached volume architecture. 
+        /// for the gateway-cached volume architecture.
         /// 
         ///  
         /// <para>
-        ///  The response includes disk IDs that are configured as cache, and it includes the
-        /// amount of cache allocated and used. 
+        /// The response includes disk IDs that are configured as cache, and it includes the amount
+        /// of cache allocated and used.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCache service method.</param>
         /// 
         /// <returns>The response from the DescribeCache service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeCacheResponse DescribeCache(DescribeCacheRequest request)
         {
@@ -1752,21 +1826,21 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        ///  The list of gateway volumes in the request must be from one gateway. In the response
+        /// The list of gateway volumes in the request must be from one gateway. In the response
         /// Amazon Storage Gateway returns volume information sorted by volume Amazon Resource
-        /// Name (ARN). 
+        /// Name (ARN).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCachediSCSIVolumes service method.</param>
         /// 
         /// <returns>The response from the DescribeCachediSCSIVolumes service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeCachediSCSIVolumesResponse DescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request)
         {
@@ -1820,12 +1894,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeChapCredentials service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeChapCredentialsResponse DescribeChapCredentials(DescribeChapCredentialsRequest request)
         {
@@ -1880,12 +1954,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeGatewayInformation service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeGatewayInformationResponse DescribeGatewayInformation(DescribeGatewayInformationRequest request)
         {
@@ -1939,12 +2013,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeMaintenanceStartTime service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeMaintenanceStartTimeResponse DescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request)
         {
@@ -1999,12 +2073,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeSnapshotSchedule service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeSnapshotScheduleResponse DescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request)
         {
@@ -2059,12 +2133,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeStorediSCSIVolumes service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeStorediSCSIVolumesResponse DescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request)
         {
@@ -2113,7 +2187,6 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
         /// 
-        /// 
         ///  
         /// <para>
         /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
@@ -2123,12 +2196,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeTapeArchives service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeTapeArchivesResponse DescribeTapeArchives()
         {
@@ -2137,7 +2210,6 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
-        /// 
         /// 
         ///  
         /// <para>
@@ -2149,12 +2221,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeTapeArchives service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeTapeArchivesResponse DescribeTapeArchives(DescribeTapeArchivesRequest request)
         {
@@ -2215,12 +2287,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeTapeRecoveryPoints service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeTapeRecoveryPointsResponse DescribeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request)
         {
@@ -2275,12 +2347,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeTapes service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeTapesResponse DescribeTapes(DescribeTapesRequest request)
         {
@@ -2328,11 +2400,11 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns information about the upload buffer of a gateway. This operation is supported
-        /// for both the gateway-stored and gateway-cached volume architectures. 
+        /// for both the gateway-stored and gateway-cached volume architectures.
         /// 
         ///  
         /// <para>
-        ///  The response includes disk IDs that are configured as upload buffer space, and it
+        /// The response includes disk IDs that are configured as upload buffer space, and it
         /// includes the amount of upload buffer space allocated and used.
         /// </para>
         /// </summary>
@@ -2340,12 +2412,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeUploadBuffer service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeUploadBufferResponse DescribeUploadBuffer(DescribeUploadBufferRequest request)
         {
@@ -2393,7 +2465,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a description of virtual tape library (VTL) devices for the specified gateway.
-        /// In the response, AWS Storage Gateway returns VTL device information. 
+        /// In the response, AWS Storage Gateway returns VTL device information.
         /// 
         ///  
         /// <para>
@@ -2404,12 +2476,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeVTLDevices service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeVTLDevicesResponse DescribeVTLDevices(DescribeVTLDevicesRequest request)
         {
@@ -2460,12 +2532,12 @@ namespace Amazon.StorageGateway
         /// only for the gateway-stored volume architecture. This operation is deprecated in cached-volumes
         /// API version (20120630). Use DescribeUploadBuffer instead.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer
         /// operation to add upload buffer to a stored-volume gateway.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// The response includes disk IDs that are configured as working storage, and it includes
         /// the amount of working storage allocated and used.
@@ -2475,12 +2547,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the DescribeWorkingStorage service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DescribeWorkingStorageResponse DescribeWorkingStorage(DescribeWorkingStorageRequest request)
         {
@@ -2530,23 +2602,26 @@ namespace Amazon.StorageGateway
         /// Disables a gateway when the gateway is no longer functioning. For example, if your
         /// gateway VM is damaged, you can disable the gateway so you can recover virtual tapes.
         /// 
-        /// 
         ///  
         /// <para>
         /// Use this operation for a gateway-VTL that is not reachable or not functioning.
         /// </para>
-        ///  <important>Once a gateway is disabled it cannot be enabled.</important>
+        ///  <important>
+        /// <para>
+        /// Once a gateway is disabled it cannot be enabled.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableGateway service method.</param>
         /// 
         /// <returns>The response from the DisableGateway service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public DisableGatewayResponse DisableGateway(DisableGatewayRequest request)
         {
@@ -2612,12 +2687,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ListGateways service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ListGatewaysResponse ListGateways()
         {
@@ -2645,12 +2720,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ListGateways service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ListGatewaysResponse ListGateways(ListGatewaysRequest request)
         {
@@ -2714,12 +2789,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ListLocalDisks service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ListLocalDisksResponse ListLocalDisks(ListLocalDisksRequest request)
         {
@@ -2772,12 +2847,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
@@ -2821,6 +2896,76 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  ListTapes
+
+        /// <summary>
+        /// Lists virtual tapes in your virtual tape library (VTL) and your virtual tape shelf
+        /// (VTS). You specify the tapes to list by specifying one or more tape Amazon Resource
+        /// Names (ARNs). If you don't specify a tape ARN, the operation lists all virtual tapes
+        /// in both your VTL and VTS.
+        /// 
+        ///  
+        /// <para>
+        /// This operation supports pagination. By default, the operation returns a maximum of
+        /// up to 100 tapes. You can optionally specify the <code>Limit</code> parameter in the
+        /// body to limit the number of tapes in the response. If the number of tapes returned
+        /// in the response is truncated, the response includes a <code>Marker</code> element
+        /// that you can use in your subsequent request to retrieve the next set of tapes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTapes service method.</param>
+        /// 
+        /// <returns>The response from the ListTapes service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        public ListTapesResponse ListTapes(ListTapesRequest request)
+        {
+            var marshaller = new ListTapesRequestMarshaller();
+            var unmarshaller = ListTapesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTapesRequest,ListTapesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTapes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTapes operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTapes
+        ///         operation.</returns>
+        public IAsyncResult BeginListTapes(ListTapesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListTapesRequestMarshaller();
+            var unmarshaller = ListTapesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTapesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTapes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTapes.</param>
+        /// 
+        /// <returns>Returns a  ListTapesResult from StorageGateway.</returns>
+        public  ListTapesResponse EndListTapes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTapesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListVolumeInitiators
 
         /// <summary>
@@ -2831,12 +2976,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ListVolumeInitiators service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ListVolumeInitiatorsResponse ListVolumeInitiators(ListVolumeInitiatorsRequest request)
         {
@@ -2898,12 +3043,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ListVolumeRecoveryPoints service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ListVolumeRecoveryPointsResponse ListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request)
         {
@@ -2967,12 +3112,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ListVolumes service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ListVolumesResponse ListVolumes(ListVolumesRequest request)
         {
@@ -3025,12 +3170,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
@@ -3082,7 +3227,7 @@ namespace Amazon.StorageGateway
         /// prevents read and write operations on virtual tapes in the gateway. For example, an
         /// error can occur when a disk is corrupted or removed from the gateway. When a cache
         /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-        /// disks as cache disks. 
+        /// disks as cache disks.
         /// 
         ///  <important> 
         /// <para>
@@ -3097,12 +3242,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ResetCache service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ResetCacheResponse ResetCache(string gatewayARN)
         {
@@ -3118,7 +3263,7 @@ namespace Amazon.StorageGateway
         /// prevents read and write operations on virtual tapes in the gateway. For example, an
         /// error can occur when a disk is corrupted or removed from the gateway. When a cache
         /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-        /// disks as cache disks. 
+        /// disks as cache disks.
         /// 
         ///  <important> 
         /// <para>
@@ -3133,12 +3278,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ResetCache service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ResetCacheResponse ResetCache(ResetCacheRequest request)
         {
@@ -3201,12 +3346,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the RetrieveTapeArchive service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public RetrieveTapeArchiveResponse RetrieveTapeArchive(RetrieveTapeArchiveRequest request)
         {
@@ -3261,20 +3406,24 @@ namespace Amazon.StorageGateway
         /// the tape is consistent. If your gateway crashes, virtual tapes that have recovery
         /// points can be recovered to a new gateway.
         /// </para>
-        ///  <note>The virtual tape can be retrieved to only one gateway. The retrieved tape is
-        /// read-only. The virtual tape can be retrieved to only a gateway-VTL. There is no charge
-        /// for retrieving recovery points.</note>
+        ///  <note>
+        /// <para>
+        /// The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only.
+        /// The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving
+        /// recovery points.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveTapeRecoveryPoint service method.</param>
         /// 
         /// <returns>The response from the RetrieveTapeRecoveryPoint service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public RetrieveTapeRecoveryPointResponse RetrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request)
         {
@@ -3330,12 +3479,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the SetLocalConsolePassword service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public SetLocalConsolePasswordResponse SetLocalConsolePassword(SetLocalConsolePasswordRequest request)
         {
@@ -3390,18 +3539,26 @@ namespace Amazon.StorageGateway
         /// The operation shuts down the gateway service component running in the storage gateway's
         /// virtual machine (VM) and not the VM.
         /// </para>
-        ///  <note>If you want to shut down the VM, it is recommended that you first shut down
-        /// the gateway component in the VM to avoid unpredictable conditions.</note> 
+        ///  <note>
+        /// <para>
+        /// If you want to shut down the VM, it is recommended that you first shut down the gateway
+        /// component in the VM to avoid unpredictable conditions.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>,
         /// <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information,
         /// see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
         /// storage volumes, and there are no snapshots taken.
         /// </para>
-        ///  <note>When you make a shutdown request, you will get a <code>200 OK</code> success
-        /// response immediately. However, it might take some time for the gateway to shut down.
-        /// You can call the <a>DescribeGatewayInformation</a> API to check the status. For more
-        /// information, see <a>ActivateGateway</a>.</note> 
+        ///  <note>
+        /// <para>
+        /// When you make a shutdown request, you will get a <code>200 OK</code> success response
+        /// immediately. However, it might take some time for the gateway to shut down. You can
+        /// call the <a>DescribeGatewayInformation</a> API to check the status. For more information,
+        /// see <a>ActivateGateway</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If do not intend to use the gateway again, you must delete the gateway (using <a>DeleteGateway</a>)
         /// to no longer pay software charges associated with the gateway.
@@ -3411,12 +3568,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the ShutdownGateway service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public ShutdownGatewayResponse ShutdownGateway(ShutdownGatewayRequest request)
         {
@@ -3468,10 +3625,14 @@ namespace Amazon.StorageGateway
         /// from or write to the gateway's storage volumes and you will be able to take snapshot
         /// backups.
         /// 
-        ///  <note>When you make a request, you will get a 200 OK success response immediately.
-        /// However, it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a>
+        ///  <note>
+        /// <para>
+        /// When you make a request, you will get a 200 OK success response immediately. However,
+        /// it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a>
         /// and check the status before making any additional API calls. For more information,
-        /// see <a>ActivateGateway</a>.</note> 
+        /// see <a>ActivateGateway</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway
         /// in your request.
@@ -3481,12 +3642,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the StartGateway service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public StartGatewayResponse StartGateway(StartGatewayRequest request)
         {
@@ -3553,12 +3714,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the UpdateBandwidthRateLimit service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public UpdateBandwidthRateLimitResponse UpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request)
         {
@@ -3620,12 +3781,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the UpdateChapCredentials service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public UpdateChapCredentialsResponse UpdateChapCredentials(UpdateChapCredentialsRequest request)
         {
@@ -3676,20 +3837,24 @@ namespace Amazon.StorageGateway
         /// specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway
         /// in your request.
         /// 
-        ///  <note>For Gateways activated after September 2, 2015, the gateway's ARN contains
-        /// the gateway ID rather than the gateway name. However, changing the name of the gateway
-        /// has no effect on the gateway's ARN.</note>
+        ///  <note>
+        /// <para>
+        /// For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway
+        /// ID rather than the gateway name. However, changing the name of the gateway has no
+        /// effect on the gateway's ARN.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayInformation service method.</param>
         /// 
         /// <returns>The response from the UpdateGatewayInformation service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public UpdateGatewayInformationResponse UpdateGatewayInformation(UpdateGatewayInformationRequest request)
         {
@@ -3737,28 +3902,35 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Updates the gateway virtual machine (VM) software. The request immediately triggers
-        /// the software update. 
+        /// the software update.
         /// 
-        ///  <note>When you make this request, you get a <code>200 OK</code> success response
-        /// immediately. However, it might take some time for the update to complete. You can
-        /// call <a>DescribeGatewayInformation</a> to verify the gateway is in the <code>STATE_RUNNING</code>
-        /// state.</note> <important>A software update forces a system restart of your gateway.
-        /// You can minimize the chance of any disruption to your applications by increasing your
-        /// iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator
-        /// timeouts for Windows and Linux, see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
+        ///  <note>
+        /// <para>
+        /// When you make this request, you get a <code>200 OK</code> success response immediately.
+        /// However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a>
+        /// to verify the gateway is in the <code>STATE_RUNNING</code> state.
+        /// </para>
+        ///  </note> <important>
+        /// <para>
+        /// A software update forces a system restart of your gateway. You can minimize the chance
+        /// of any disruption to your applications by increasing your iSCSI Initiators' timeouts.
+        /// For more information about increasing iSCSI Initiator timeouts for Windows and Linux,
+        /// see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
         /// Your Windows iSCSI Settings</a> and <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
-        /// Your Linux iSCSI Settings</a>, respectively.</important>
+        /// Your Linux iSCSI Settings</a>, respectively.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewaySoftwareNow service method.</param>
         /// 
         /// <returns>The response from the UpdateGatewaySoftwareNow service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request)
         {
@@ -3812,12 +3984,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the UpdateMaintenanceStartTime service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public UpdateMaintenanceStartTimeResponse UpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request)
         {
@@ -3883,12 +4055,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the UpdateSnapshotSchedule service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public UpdateSnapshotScheduleResponse UpdateSnapshotSchedule(UpdateSnapshotScheduleRequest request)
         {
@@ -3943,12 +4115,12 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>The response from the UpdateVTLDeviceType service method, as returned by StorageGateway.</returns>
         /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
-        /// An internal server error has occurred during the request. See the error and message
-        /// fields for more information.
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
         /// </exception>
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
-        /// See the error and message fields for more information.
+        /// For more information, see the error and message fields.
         /// </exception>
         public UpdateVTLDeviceTypeResponse UpdateVTLDeviceType(UpdateVTLDeviceTypeRequest request)
         {

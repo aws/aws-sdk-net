@@ -51,7 +51,7 @@ namespace Amazon.KeyManagementService.Model
         /// If additional items exist beyond the number you specify, the <code>Truncated</code>
         /// element in the response is set to true.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// This value is optional. If you include a value, it must be between 1 and 100, inclusive.
         /// If you do not include a value, it defaults to 50.
@@ -73,7 +73,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter only when paginating results and only in a subsequent request after
-        /// you've received a response with truncated results. Set it to the value of <code>NextMarker</code>
+        /// you receive a response with truncated results. Set it to the value of <code>NextMarker</code>
         /// from the response you just received.
         /// </para>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.KeyManagementService.Model
         /// To specify the retiring principal, use the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts
         /// (root), IAM users, federated users, and assumed role users. For examples of the ARN
-        /// syntax for specifying a principal, go to <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+        /// syntax for specifying a principal, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
         /// Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon
         /// Web Services General Reference</i>.
         /// </para>

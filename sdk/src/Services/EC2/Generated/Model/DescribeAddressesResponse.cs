@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAddresses operation.
+    /// Contains the output of DescribeAddresses.
     /// </summary>
     public partial class DescribeAddressesResponse : AmazonWebServiceResponse
     {

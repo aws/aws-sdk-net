@@ -178,6 +178,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SubnetId);
                 }
 
+                if(publicRequest.IsSetTenancy())
+                {
+                    context.Writer.WritePropertyName("Tenancy");
+                    context.Writer.Write(publicRequest.Tenancy);
+                }
+
                 if(publicRequest.IsSetVirtualizationType())
                 {
                     context.Writer.WritePropertyName("VirtualizationType");

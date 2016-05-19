@@ -32,7 +32,7 @@ namespace Amazon.CertificateManager.Model
     /// Returns a list of the fields contained in the specified ACM Certificate. For example,
     /// this action returns the certificate status, a flag that indicates whether the certificate
     /// is associated with any other AWS service, and the date at which the certificate request
-    /// was created. The ACM Certificate is specified on input by its Amazon Resource Name
+    /// was created. You specify the ACM Certificate on input by its Amazon Resource Name
     /// (ARN).
     /// </summary>
     public partial class DescribeCertificateRequest : AmazonCertificateManagerRequest

@@ -38,6 +38,7 @@ namespace Amazon.APIGateway.Model
         private string _credentials;
         private string _httpMethod;
         private string _integrationHttpMethod;
+        private string _passthroughBehavior;
         private Dictionary<string, string> _requestParameters = new Dictionary<string, string>();
         private Dictionary<string, string> _requestTemplates = new Dictionary<string, string>();
         private string _resourceId;
@@ -137,6 +138,43 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PassthroughBehavior. 
+        /// <para>
+        /// Specifies the pass-through behavior for incoming requests based on the Content-Type
+        /// header in the request, and the available requestTemplates defined on the Integration.
+        /// There are three valid values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>,
+        /// and <code>NEVER</code>.
+        /// </para>
+        ///   
+        /// <para>
+        /// <code>WHEN_NO_MATCH</code> passes the request body for unmapped content types through
+        /// to the Integration backend without transformation.
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media
+        /// Type' response.
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the Integration has NO
+        /// content types mapped to templates. However if there is at least one content type defined,
+        /// unmapped content types will be rejected with the same 415 response.
+        /// </para>
+        /// </summary>
+        public string PassthroughBehavior
+        {
+            get { return this._passthroughBehavior; }
+            set { this._passthroughBehavior = value; }
+        }
+
+        // Check to see if PassthroughBehavior property is set
+        internal bool IsSetPassthroughBehavior()
+        {
+            return this._passthroughBehavior != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RequestParameters. 
         /// <para>
         /// Represents request parameters that are sent with the backend request. Request parameters
@@ -163,9 +201,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RequestTemplates. 
         /// <para>
-        /// Specifies the templates used to transform the method request body. Request templates
-        /// are represented as a key/value map, with a content-type as the key and a template
-        /// as the value.
+        /// Represents a map of Velocity templates that are applied on the request payload based
+        /// on the value of the Content-Type header sent by the client. The content type value
+        /// is the key in this map, and the template (as a String) is the value.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RequestTemplates
@@ -238,7 +276,9 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Uri. 
         /// <para>
         /// Specifies a put integration input's Uniform Resource Identifier (URI). When the integration
-        /// type is HTTP or AWS, this field is required.
+        /// type is HTTP or AWS, this field is required. For integration with Lambda as an AWS
+        /// service proxy, this value is of the 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+        /// format.
         /// </para>
         /// </summary>
         public string Uri

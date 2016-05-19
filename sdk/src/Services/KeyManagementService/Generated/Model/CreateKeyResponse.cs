@@ -37,7 +37,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyMetadata. 
         /// <para>
-        /// Metadata associated with the key.
+        /// Metadata associated with the CMK.
         /// </para>
         /// </summary>
         public KeyMetadata KeyMetadata

@@ -79,6 +79,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.HealthCheckVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CloudWatchAlarmConfiguration", targetDepth))
+                    {
+                        var unmarshaller = CloudWatchAlarmConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.CloudWatchAlarmConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

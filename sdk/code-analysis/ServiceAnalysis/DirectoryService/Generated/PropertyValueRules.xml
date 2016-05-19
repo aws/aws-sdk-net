@@ -64,6 +64,14 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateConditionalForwarderRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateConditionalForwarderRequest.RemoteDomainName</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateDirectoryRequest.Description</property>
     <min>0</min>
     <max>128</max>
@@ -139,6 +147,14 @@
     <pattern>^t-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DeleteConditionalForwarderRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DeleteConditionalForwarderRequest.RemoteDomainName</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DeleteDirectoryRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -171,6 +187,10 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeConditionalForwardersRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeDirectoriesRequest.Limit</property>
@@ -251,6 +271,14 @@
     <pattern>^s-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateConditionalForwarderRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateConditionalForwarderRequest.RemoteDomainName</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateRadiusRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -284,6 +312,10 @@
     <property>Amazon.DirectoryService.Model.Computer.ComputerName</property>
     <min>1</min>
     <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ConditionalForwarder.RemoteDomainName</property>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryConnectSettings.CustomerUserName</property>

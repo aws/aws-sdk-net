@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// A key-value pair that identifies or specifies metadata about a resource.
+    /// A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.
     /// </summary>
     public partial class Tag
     {

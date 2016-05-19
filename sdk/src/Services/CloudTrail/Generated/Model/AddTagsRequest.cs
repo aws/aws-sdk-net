@@ -44,7 +44,11 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// Specifies the ARN of the trail to which one or more tags will be added. The format
-        /// of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// of a trail ARN is:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </summary>
         public string ResourceId

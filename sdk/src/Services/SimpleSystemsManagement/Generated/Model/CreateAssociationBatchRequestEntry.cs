@@ -37,7 +37,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
 
         /// <summary>
-        /// Gets and sets the property InstanceId. The ID of the instance.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        ///  The ID of the instance. 
+        /// </para>
         /// </summary>
         public string InstanceId
         {
@@ -52,7 +55,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the configuration document.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the configuration document. 
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -67,7 +73,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Parameters. A description of the parameters for a document.
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A description of the parameters for a document. 
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
         {

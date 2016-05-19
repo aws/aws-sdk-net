@@ -34,8 +34,12 @@ namespace Amazon.CloudFormation.Model
     /// If <code>PhysicalResourceId</code> is specified, the associated resources of the stack
     /// that the resource belongs to are returned.
     /// 
-    ///  <note>Only the first 100 resources will be returned. If your stack has more resources
-    /// than this, you should use <code>ListStackResources</code> instead.</note> 
+    ///  <note> 
+    /// <para>
+    /// Only the first 100 resources will be returned. If your stack has more resources than
+    /// this, you should use <code>ListStackResources</code> instead.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For deleted stacks, <code>DescribeStackResources</code> returns resource information
     /// for up to 90 days after the stack has been deleted.
@@ -48,8 +52,12 @@ namespace Amazon.CloudFormation.Model
     /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
     /// CloudFormation User Guide</a>.
     /// </para>
-    ///  <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
-    /// and <code>PhysicalResourceId</code> in the same request.</note>
+    ///  <note> 
+    /// <para>
+    /// A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
+    /// and <code>PhysicalResourceId</code> in the same request.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeStackResourcesRequest : AmazonCloudFormationRequest
     {
@@ -120,8 +128,15 @@ namespace Amazon.CloudFormation.Model
         /// The name or the unique stack ID that is associated with the stack, which are not always
         /// interchangeable:
         /// </para>
-        ///  <ul> <li>Running stacks: You can specify either the stack's name or its unique stack
-        /// ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Running stacks: You can specify either the stack's name or its unique stack ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleted stacks: You must specify the unique stack ID.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Default: There is no default value.
         /// </para>

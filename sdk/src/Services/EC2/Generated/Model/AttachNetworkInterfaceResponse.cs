@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the AttachNetworkInterface operation.
+    /// Contains the output of AttachNetworkInterface.
     /// </summary>
     public partial class AttachNetworkInterfaceResponse : AmazonWebServiceResponse
     {

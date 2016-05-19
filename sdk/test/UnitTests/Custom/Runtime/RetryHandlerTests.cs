@@ -135,6 +135,45 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("InternalError", exception.ErrorCode);
             Assert.AreEqual("656c76696e6727732072657175657374", exception.RequestId);
             Assert.AreEqual("Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==", exception.AmazonId2);
+            Assert.AreEqual("-UUNhfhfx0J622sdKihbDfqEvIa94CkVQvcb4AGlNmRbpbInOTYXSA==", exception.AmazonCloudFrontId);
+            Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryForHttpStatus502FromS3Accelerate()
+        {
+            var s3Client = new MockS3Client(new BasicAWSCredentials("access_key", "secret_key"),
+                new Amazon.S3.AmazonS3Config
+                {
+                    ServiceURL = @"http://S3Accelerate502ErrorResponse",
+                    MaxErrorRetry = MAX_RETRIES
+                });
+
+            IExecutionContext executionContext = null;
+            s3Client.Pipeline.AddHandlerAfter<RetryHandler>(new CallbackHandler
+            {
+                OnPreInvoke = (context) =>
+                {
+                    executionContext = context;
+                }
+            });
+
+            var exception = Utils.AssertExceptionExpected<AmazonS3Exception>(() =>
+            {
+                var putObjectResponse = s3Client.PutObject(
+                    new PutObjectRequest
+                    {
+                        BucketName = "bucketName",
+                        Key = "key",
+                        ContentBody = "Test Content"
+                        
+                    });
+            });
+            
+            Assert.AreEqual(HttpStatusCode.BadGateway, exception.StatusCode);            
+            Assert.AreEqual("zKxM2OZ8xQLqXp6UUteraUD5L8V-zNeiRAM9x7GsjPDHwXn7YJv8Jw==", exception.AmazonCloudFrontId);
             Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
         }
 

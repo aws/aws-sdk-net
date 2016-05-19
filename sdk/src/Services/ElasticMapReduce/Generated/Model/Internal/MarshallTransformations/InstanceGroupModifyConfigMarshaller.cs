@@ -68,6 +68,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceGroupId);
             }
 
+            if(requestObject.IsSetShrinkPolicy())
+            {
+                context.Writer.WritePropertyName("ShrinkPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ShrinkPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.ShrinkPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -1535,6 +1535,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void ImportRestApiMarshallTest()
+        {
+            var operation = service_model.FindOperation("ImportRestApi");
+
+            var request = InstantiateClassGenerator.Execute<ImportRestApiRequest>();
+            var marshaller = new ImportRestApiRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("ImportRestApi", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ImportRestApiResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void PutIntegrationMarshallTest()
         {
             var operation = service_model.FindOperation("PutIntegration");
@@ -1655,6 +1687,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutMethodResponseResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void PutRestApiMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutRestApi");
+
+            var request = InstantiateClassGenerator.Execute<PutRestApiRequest>();
+            var marshaller = new PutRestApiRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("PutRestApi", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutRestApiResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutRestApiResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

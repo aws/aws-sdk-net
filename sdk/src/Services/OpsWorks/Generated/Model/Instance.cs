@@ -70,6 +70,7 @@ namespace Amazon.OpsWorks.Model
         private string _stackId;
         private string _status;
         private string _subnetId;
+        private string _tenancy;
         private VirtualizationType _virtualizationType;
 
         /// <summary>
@@ -777,6 +778,24 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tenancy. 
+        /// <para>
+        /// The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.
+        /// </para>
+        /// </summary>
+        public string Tenancy
+        {
+            get { return this._tenancy; }
+            set { this._tenancy = value; }
+        }
+
+        // Check to see if Tenancy property is set
+        internal bool IsSetTenancy()
+        {
+            return this._tenancy != null;
         }
 
         /// <summary>

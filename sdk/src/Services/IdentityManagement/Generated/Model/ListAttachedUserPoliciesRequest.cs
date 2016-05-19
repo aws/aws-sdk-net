@@ -29,14 +29,14 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAttachedUserPolicies operation.
-    /// Lists all managed policies that are attached to the specified user. 
+    /// Lists all managed policies that are attached to the specified IAM user.
     /// 
     ///  
     /// <para>
-    /// A user can also have inline policies embedded with it. To list the inline policies
-    /// for a user, use the <a>ListUserPolicies</a> API. For information about policies, refer
-    /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// An IAM user can also have inline policies embedded with it. To list the inline policies
+    /// for a user, use the <a>ListUserPolicies</a> API. For information about policies, see
+    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
     /// parameters. You can use the <code>PathPrefix</code> parameter to limit the list of
     /// policies to only those matching the specified path prefix. If there are no policies
     /// attached to the specified group (or none that match the specified path prefix), the
-    /// action returns an empty list. 
+    /// action returns an empty list.
     /// </para>
     /// </summary>
     public partial class ListAttachedUserPoliciesRequest : AmazonIdentityManagementServiceRequest
@@ -87,7 +87,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -108,6 +108,14 @@ namespace Amazon.IdentityManagement.Model
         /// The path prefix for filtering the results. This parameter is optional. If it is not
         /// included, it defaults to a slash (/), listing all policies.
         /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of either a forward slash (/) by itself or a
+        /// string that must begin and end with forward slashes, containing any ASCII character
+        /// from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
+        /// digits, and upper and lowercased letters.
+        /// </para>
         /// </summary>
         public string PathPrefix
         {
@@ -125,6 +133,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name (friendly name, not ARN) of the user to list attached policies for.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

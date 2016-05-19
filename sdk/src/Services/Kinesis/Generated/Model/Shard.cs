@@ -41,7 +41,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property AdjacentParentShardId. 
         /// <para>
-        /// The shard Id of the shard adjacent to the shard's parent.
+        /// The shard ID of the shard adjacent to the shard's parent.
         /// </para>
         /// </summary>
         public string AdjacentParentShardId
@@ -78,7 +78,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ParentShardId. 
         /// <para>
-        /// The shard Id of the shard's parent.
+        /// The shard ID of the shard's parent.
         /// </para>
         /// </summary>
         public string ParentShardId
@@ -114,7 +114,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ShardId. 
         /// <para>
-        /// The unique identifier of the shard within the Amazon Kinesis stream.
+        /// The unique identifier of the shard within the stream.
         /// </para>
         /// </summary>
         public string ShardId

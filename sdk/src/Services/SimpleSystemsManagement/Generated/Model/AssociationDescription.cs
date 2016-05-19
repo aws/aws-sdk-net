@@ -93,7 +93,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Parameters. A description of the parameters for a document.
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A description of the parameters for a document. 
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
         {

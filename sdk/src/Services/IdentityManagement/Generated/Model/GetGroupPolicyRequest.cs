@@ -29,20 +29,20 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGroupPolicy operation.
-    /// Retrieves the specified inline policy document that is embedded in the specified group.
-    /// 
+    /// Retrieves the specified inline policy document that is embedded in the specified IAM
+    /// group.
     /// 
     ///  
     /// <para>
-    /// A group can also have managed policies attached to it. To retrieve a managed policy
-    /// document that is attached to a group, use <a>GetPolicy</a> to determine the policy's
-    /// default version, then use <a>GetPolicyVersion</a> to retrieve the policy document.
-    /// 
+    /// An IAM group can also have managed policies attached to it. To retrieve a managed
+    /// policy document that is attached to a group, use <a>GetPolicy</a> to determine the
+    /// policy's default version, then use <a>GetPolicyVersion</a> to retrieve the policy
+    /// document.
     /// </para>
     ///  
     /// <para>
-    /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// For more information about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetGroupPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -58,8 +58,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates GetGroupPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">The name of the group the policy is associated with.</param>
-        /// <param name="policyName">The name of the policy document to get.</param>
+        /// <param name="groupName">The name of the group the policy is associated with. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="policyName">The name of the policy document to get. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public GetGroupPolicyRequest(string groupName, string policyName)
         {
             _groupName = groupName;
@@ -70,6 +70,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         /// The name of the group the policy is associated with.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string GroupName
@@ -88,6 +94,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property PolicyName. 
         /// <para>
         /// The name of the policy document to get.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string PolicyName

@@ -79,6 +79,25 @@ namespace Amazon.S3.Model
         /// Construct an instance of StreamSizeMismatchException.
         /// </summary>
         /// <param name="message"></param>
+        /// <param name="expectedSize"></param>
+        /// <param name="actualSize"></param>
+        /// <param name="requestId"></param>
+        /// <param name="amazonId2"></param>
+        /// <param name="amazonCfId"></param>
+        public StreamSizeMismatchException(string message, long expectedSize, long actualSize, string requestId, string amazonId2, string amazonCfId)
+            : base(message)
+        {
+            this.ExpectedSize = expectedSize;
+            this.ActualSize = actualSize;
+            this.RequestId = requestId;
+            this.AmazonId2 = amazonId2;
+            this.AmazonCloudFrontId = amazonCfId;
+        }
+
+        /// <summary>
+        /// Construct an instance of StreamSizeMismatchException.
+        /// </summary>
+        /// <param name="message"></param>
         /// <param name="innerException"></param>
         /// <param name="expectedSize"></param>
         /// <param name="actualSize"></param>

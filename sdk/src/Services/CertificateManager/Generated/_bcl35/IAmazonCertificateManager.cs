@@ -44,6 +44,78 @@ namespace Amazon.CertificateManager
     {
 
         
+        #region  AddTagsToCertificate
+
+
+        /// <summary>
+        /// Adds one or more tags to an ACM Certificate. Tags are labels that you can use to identify
+        /// and organize your AWS resources. Each tag consists of a <code>key</code> and an optional
+        /// <code>value</code>. You specify the certificate on input by its Amazon Resource Name
+        /// (ARN). You specify the tag by using a key-value pair. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can apply a tag to just one certificate if you want to identify a specific characteristic
+        /// of that certificate, or you can apply the same tag to multiple certificates if you
+        /// want to filter for a common relationship among those certificates. Similarly, you
+        /// can apply the same tag to multiple resources if you want to specify a relationship
+        /// among those resources. For example, you can add the same tag to an ACM Certificate
+        /// and an Elastic Load Balancing load balancer to indicate that they are both used by
+        /// the same website. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
+        /// ACM Certificates</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove one or more tags, use the <a>RemoveTagsFromCertificate</a> action. To view
+        /// all of the tags that have been applied to the certificate, use the <a>ListTagsForCertificate</a>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToCertificate service method.</param>
+        /// 
+        /// <returns>The response from the AddTagsToCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
+        /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
+        /// One or both of the values that make up the key-value pair is not valid. For example,
+        /// you cannot specify a tag value that begins with <code>aws:</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account, or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
+        /// The request contains too many tags. Try the request again with fewer tags.
+        /// </exception>
+        AddTagsToCertificateResponse AddTagsToCertificate(AddTagsToCertificateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToCertificate operation on AmazonCertificateManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToCertificate
+        ///         operation.</returns>
+        IAsyncResult BeginAddTagsToCertificate(AddTagsToCertificateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddTagsToCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToCertificate.</param>
+        /// 
+        /// <returns>Returns a  AddTagsToCertificateResult from CertificateManager.</returns>
+        AddTagsToCertificateResponse EndAddTagsToCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteCertificate
 
 
@@ -132,7 +204,7 @@ namespace Amazon.CertificateManager
         /// Returns a list of the fields contained in the specified ACM Certificate. For example,
         /// this action returns the certificate status, a flag that indicates whether the certificate
         /// is associated with any other AWS service, and the date at which the certificate request
-        /// was created. The ACM Certificate is specified on input by its Amazon Resource Name
+        /// was created. You specify the ACM Certificate on input by its Amazon Resource Name
         /// (ARN).
         /// </summary>
         /// <param name="certificateArn"> String that contains an ACM Certificate ARN. The ARN must be of the form:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
@@ -151,7 +223,7 @@ namespace Amazon.CertificateManager
         /// Returns a list of the fields contained in the specified ACM Certificate. For example,
         /// this action returns the certificate status, a flag that indicates whether the certificate
         /// is associated with any other AWS service, and the date at which the certificate request
-        /// was created. The ACM Certificate is specified on input by its Amazon Resource Name
+        /// was created. You specify the ACM Certificate on input by its Amazon Resource Name
         /// (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
@@ -324,6 +396,110 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>Returns a  ListCertificatesResult from CertificateManager.</returns>
         ListCertificatesResponse EndListCertificates(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTagsForCertificate
+
+
+        /// <summary>
+        /// Lists the tags that have been applied to the ACM Certificate. Use the certificate
+        /// ARN to specify the certificate. To add a tag to an ACM Certificate, use the <a>AddTagsToCertificate</a>
+        /// action. To delete a tag, use the <a>RemoveTagsFromCertificate</a> action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForCertificate service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
+        /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account, or the caller's
+        /// account cannot be found.
+        /// </exception>
+        ListTagsForCertificateResponse ListTagsForCertificate(ListTagsForCertificateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForCertificate operation on AmazonCertificateManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForCertificate
+        ///         operation.</returns>
+        IAsyncResult BeginListTagsForCertificate(ListTagsForCertificateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForCertificate.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForCertificateResult from CertificateManager.</returns>
+        ListTagsForCertificateResponse EndListTagsForCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RemoveTagsFromCertificate
+
+
+        /// <summary>
+        /// Remove one or more tags from an ACM Certificate. A tag consists of a key-value pair.
+        /// If you do not specify the value portion of the tag when calling this function, the
+        /// tag will be removed regardless of value. If you specify a value, the tag is removed
+        /// only if it is associated with the specified value. 
+        /// 
+        ///  
+        /// <para>
+        /// To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To view
+        /// all of the tags that have been applied to a specific ACM Certificate, use the <a>ListTagsForCertificate</a>
+        /// action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromCertificate service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTagsFromCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
+        /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidTagException">
+        /// One or both of the values that make up the key-value pair is not valid. For example,
+        /// you cannot specify a tag value that begins with <code>aws:</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account, or the caller's
+        /// account cannot be found.
+        /// </exception>
+        RemoveTagsFromCertificateResponse RemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromCertificate operation on AmazonCertificateManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromCertificate
+        ///         operation.</returns>
+        IAsyncResult BeginRemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveTagsFromCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromCertificate.</param>
+        /// 
+        /// <returns>Returns a  RemoveTagsFromCertificateResult from CertificateManager.</returns>
+        RemoveTagsFromCertificateResponse EndRemoveTagsFromCertificate(IAsyncResult asyncResult);
 
         #endregion
         

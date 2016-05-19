@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about a gate declaration.
+    /// Reserved for future use.
     /// </summary>
     public partial class BlockerDeclaration
     {
@@ -38,7 +38,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the gate declaration.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string Name
@@ -56,7 +56,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the gate declaration. 
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public BlockerType Type

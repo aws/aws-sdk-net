@@ -35,6 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<string> _ec2InstanceIdsToTerminate = new List<string>();
         private int? _instanceCount;
         private string _instanceGroupId;
+        private ShrinkPolicy _shrinkPolicy;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -55,8 +56,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceIdsToTerminate. 
         /// <para>
-        /// The EC2 InstanceIds to terminate. For advanced users only. Once you terminate the
-        /// instances, the instance group will not return to its original requested size.
+        /// The EC2 InstanceIds to terminate. Once you terminate the instances, the instance group
+        /// will not return to its original requested size.
         /// </para>
         /// </summary>
         public List<string> EC2InstanceIdsToTerminate
@@ -105,6 +106,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetInstanceGroupId()
         {
             return this._instanceGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShrinkPolicy. 
+        /// <para>
+        /// Policy for customizing shrink operations.
+        /// </para>
+        /// </summary>
+        public ShrinkPolicy ShrinkPolicy
+        {
+            get { return this._shrinkPolicy; }
+            set { this._shrinkPolicy = value; }
+        }
+
+        // Check to see if ShrinkPolicy property is set
+        internal bool IsSetShrinkPolicy()
+        {
+            return this._shrinkPolicy != null;
         }
 
     }

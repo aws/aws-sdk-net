@@ -147,8 +147,9 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code>
-        /// for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes,
-        /// or <code>standard</code> for Magnetic volumes.
+        /// for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code>
+        /// for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code>
+        /// for Magnetic volumes.
         /// </para>
         ///  </li> </ul>
         /// </summary>

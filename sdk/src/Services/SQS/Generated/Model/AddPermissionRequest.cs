@@ -46,15 +46,19 @@ namespace Amazon.SQS.Model
     /// about writing your own policy, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
     /// The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
     /// </para>
-    ///  </note> <note>Some API actions take lists of parameters. These lists are specified
-    /// using the <code>param.n</code> notation. Values of <code>n</code> are integers starting
-    /// from 1. For example, a parameter list with two elements looks like this: </note> 
+    ///  </note> <note>
     /// <para>
-    /// <code>&amp;Attribute.1=this</code>
+    /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
+    /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+    /// list with two elements looks like this:
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// <code><![CDATA[&amp;Attribute.1=this]]></code>
     /// </para>
     ///  
     /// <para>
-    /// <code>&amp;Attribute.2=that</code>
+    /// <code><![CDATA[&amp;Attribute.2=that]]></code>
     /// </para>
     /// </summary>
     public partial class AddPermissionRequest : AmazonSQSRequest
@@ -72,7 +76,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates AddPermissionRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
         /// <param name="label">The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>). Constraints: Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.</param>
         /// <param name="awsAccountIds">The AWS account number of the <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about locating the AWS account identification, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</param>
         /// <param name="actions">The action the client wants to allow for the specified principal. The following are valid values: <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>. For more information about these actions, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>. Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for the <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</param>
@@ -159,6 +163,10 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property QueueUrl. 
         /// <para>
         /// The URL of the Amazon SQS queue to take action on.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queue URLs are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl
