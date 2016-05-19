@@ -62,16 +62,19 @@
     <Reference Include="System.XML" />
     <Reference Include="System.Core" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport\Managed\UnityEngine.dll</HintPath>
+      <HintPath Condition="Exists('C:\Program Files\Unity')">C:\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport\Managed\UnityEngine.dll</HintPath>
+      <HintPath Condition="Exists('/Applications/Unity/Unity.app')">/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data">
-      <HintPath>C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\System.Data.dll</HintPath>
+      <HintPath Condition="Exists('C:\Program Files\Unity')">C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\System.Data.dll</HintPath>
+      <HintPath Condition="Exists('/Applications/Unity/Unity.app')">/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/2.0/System.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Data.SQLite">
-      <HintPath>C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\Mono.Data.SQLite.dll</HintPath>
+      <HintPath Condition="Exists('C:\Program Files\Unity')">C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\Mono.Data.SQLite.dll</HintPath>
+      <HintPath Condition="Exists('/Applications/Unity/Unity.app')">/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/2.0/Mono.Data.SQLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
