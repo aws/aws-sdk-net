@@ -2174,6 +2174,22 @@ namespace Amazon.EC2
         /// Constant T2Small for InstanceType
         /// </summary>
         public static readonly InstanceType T2Small = new InstanceType("t2.small");
+        /// <summary>
+        /// Constant X116xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X116xlarge = new InstanceType("x1.16xlarge");
+        /// <summary>
+        /// Constant X132xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X132xlarge = new InstanceType("x1.32xlarge");
+        /// <summary>
+        /// Constant X14xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X14xlarge = new InstanceType("x1.4xlarge");
+        /// <summary>
+        /// Constant X18xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X18xlarge = new InstanceType("x1.8xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
