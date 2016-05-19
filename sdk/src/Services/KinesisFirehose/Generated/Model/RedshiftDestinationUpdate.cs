@@ -36,6 +36,7 @@ namespace Amazon.KinesisFirehose.Model
         private string _clusterJDBCURL;
         private CopyCommand _copyCommand;
         private string _password;
+        private RedshiftRetryOptions _retryOptions;
         private string _roleARN;
         private S3DestinationUpdate _s3Update;
         private string _username;
@@ -110,6 +111,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryOptions. 
+        /// <para>
+        /// Configures retry behavior in the event that Firehose is unable to deliver documents
+        /// to Amazon Redshift. Default value is 3600 (60 minutes).
+        /// </para>
+        /// </summary>
+        public RedshiftRetryOptions RetryOptions
+        {
+            get { return this._retryOptions; }
+            set { this._retryOptions = value; }
+        }
+
+        // Check to see if RetryOptions property is set
+        internal bool IsSetRetryOptions()
+        {
+            return this._retryOptions != null;
         }
 
         /// <summary>

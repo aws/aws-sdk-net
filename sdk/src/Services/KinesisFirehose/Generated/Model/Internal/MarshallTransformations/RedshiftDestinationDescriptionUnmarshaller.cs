@@ -82,6 +82,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.CopyCommand = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RetryOptions", targetDepth))
+                {
+                    var unmarshaller = RedshiftRetryOptionsUnmarshaller.Instance;
+                    unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoleARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

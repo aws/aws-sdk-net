@@ -79,6 +79,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Password);
             }
 
+            if(requestObject.IsSetRetryOptions())
+            {
+                context.Writer.WritePropertyName("RetryOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RedshiftRetryOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetryOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRoleARN())
             {
                 context.Writer.WritePropertyName("RoleARN");

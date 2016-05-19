@@ -257,6 +257,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.RedshiftRetryOptions.DurationInSeconds</property>
+    <min>0</min>
+    <max>7200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.S3DestinationConfiguration.BucketARN</property>
     <min>1</min>
     <max>2048</max>

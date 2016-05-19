@@ -46,20 +46,20 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character)
+        ///  <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character)
         /// and compressed using lzop.
         /// </para>
         ///  
         /// <para>
-        /// <code>delimiter '|</code> - fields are delimited with "|" (this is the default delimiter).
+        ///  <code>delimiter '|</code> - fields are delimited with "|" (this is the default delimiter).
         /// </para>
         ///  
         /// <para>
-        /// <code>delimiter '|' escape</code> - the delimiter should be escaped.
+        ///  <code>delimiter '|' escape</code> - the delimiter should be escaped.
         /// </para>
         ///  
         /// <para>
-        /// <code>fixedwidth 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code>
+        ///  <code>fixedwidth 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code>
         /// - fields are fixed width in the source, with each width specified after every column
         /// in the table.
         /// </para>

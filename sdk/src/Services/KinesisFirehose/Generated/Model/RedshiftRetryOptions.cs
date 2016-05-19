@@ -29,19 +29,19 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Configures retry behavior in the event that Firehose is unable to deliver documents
-    /// to Amazon ES.
+    /// to Amazon Redshift.
     /// </summary>
-    public partial class ElasticsearchRetryOptions
+    public partial class RedshiftRetryOptions
     {
         private int? _durationInSeconds;
 
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// After an initial failure to deliver to Amazon ES, the total amount of time during
-        /// which Firehose re-attempts delivery (including the first attempt). After this time
-        /// has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds
-        /// (5 minutes). A value of 0 (zero) results in no retries.
+        /// The length of time during which Firehose retries delivery after a failure, starting
+        /// from the initial request and including the first attempt. The default value is 3600
+        /// seconds (60 minutes). Firehose does not retry if the value of <code>DurationInSeconds</code>
+        /// is 0 (zero) or if the first delivery attempt takes longer than the current value.
         /// </para>
         /// </summary>
         public int DurationInSeconds

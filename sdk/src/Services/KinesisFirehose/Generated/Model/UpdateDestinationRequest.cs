@@ -41,7 +41,7 @@ namespace Amazon.KinesisFirehose.Model
     /// destination). The update may not occur immediately. The target delivery stream remains
     /// active while the configurations are updated, so data writes to the delivery stream
     /// can continue during this process. The updated configurations are normally effective
-    /// within a few minutes. 
+    /// within a few minutes.
     /// </para>
     ///  
     /// <para>
@@ -155,7 +155,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RedshiftDestinationUpdate.
+        /// Gets and sets the property RedshiftDestinationUpdate. 
+        /// <para>
+        /// Describes an update for a destination in Amazon Redshift.
+        /// </para>
         /// </summary>
         public RedshiftDestinationUpdate RedshiftDestinationUpdate
         {
@@ -170,7 +173,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3DestinationUpdate.
+        /// Gets and sets the property S3DestinationUpdate. 
+        /// <para>
+        /// Describes an update for a destination in Amazon S3.
+        /// </para>
         /// </summary>
         public S3DestinationUpdate S3DestinationUpdate
         {

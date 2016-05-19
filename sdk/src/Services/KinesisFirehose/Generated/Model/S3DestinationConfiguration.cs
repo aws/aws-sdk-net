@@ -144,7 +144,8 @@ namespace Amazon.KinesisFirehose.Model
         /// You can specify an extra prefix to be added in front of the time format prefix. Note
         /// that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For
         /// more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-        /// S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.
+        /// S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon
+        /// Kinesis Firehose Developer Guide</a>.
         /// </para>
         /// </summary>
         public string Prefix
