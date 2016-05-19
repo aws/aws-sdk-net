@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.1.70.0",
+    "ProductVersion" : "3.1.71.0",
     "CoreVersion"    : "3.1.5.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -133,14 +133,14 @@
             "InPreview"    : false
         },
         "EC2"               : {
-            "Version" : "3.1.13.0",
+            "Version" : "3.1.14.0",
             "Dependencies" : {
                 "Core" : "3.1.4.3"
             },
             "InPreview"    : false
         },
         "ECS"               : {
-            "Version" : "3.1.4.0",
+            "Version" : "3.1.5.0",
             "Dependencies" : {
                 "Core" : "3.1.4.3"
             },
@@ -387,7 +387,7 @@
             "InPreview"    : false
         },
         "KinesisFirehose"           : {
-            "Version" : "3.1.1.0",
+            "Version" : "3.1.2.0",
             "Dependencies" : {
                 "Core" : "3.1.4.3"
             },
@@ -478,7 +478,7 @@
             "InPreview"    : false
         },
         "Application Discovery Service"   : {
-            "Version" : "3.1.0.0",
+            "Version" : "3.1.1.0",
             "Dependencies" : {
                 "Core" : "3.1.5.3"
             },

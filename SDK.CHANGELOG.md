@@ -1,3 +1,13 @@
+### 3.1.71.0 (2016-05-19 21:39 UTC)
+* Application Discovery Service (3.1.1.0)
+	* API updates from revised service model. An incorrect model was used in the previous release.
+* EC2 (3.1.14.0)
+	* Added instance type enumeration members for new X1 types.
+* ECS (3.1.5.0)
+	* Add status to ListTaskDefinitionFamilies. Filter option lets customers view active, inactive, or all task definition families.
+* KinesisFirehose (3.1.2.0)
+	* Added support for Configurable Retry Window for Loading Data into Amazon Redshift.
+
 ### 3.1.70.0 (2016-05-18 19:21 UTC)
 * Application Auto Scaling (3.1.0.0)
 	* Added support for Application Auto Scaling. This service is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Auto Scaling.
