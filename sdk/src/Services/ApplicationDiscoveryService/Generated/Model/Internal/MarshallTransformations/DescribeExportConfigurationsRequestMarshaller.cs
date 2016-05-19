@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetConfigurationAttributes Request Marshaller
+    /// DescribeExportConfigurations Request Marshaller
     /// </summary>       
-    public class GetConfigurationAttributesRequestMarshaller : IMarshaller<IRequest, GetConfigurationAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeExportConfigurationsRequestMarshaller : IMarshaller<IRequest, DescribeExportConfigurationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetConfigurationAttributesRequest)input);
+            return this.Marshall((DescribeExportConfigurationsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetConfigurationAttributesRequest publicRequest)
+        public IRequest Marshall(DescribeExportConfigurationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationDiscoveryService");
-            string target = "AWSPoseidonService_V2015_11_01.GetConfigurationAttributes";
+            string target = "AWSPoseidonService_V2015_11_01.DescribeExportConfigurations";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,15 +67,27 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationIds())
+                if(publicRequest.IsSetExportIds())
                 {
-                    context.Writer.WritePropertyName("configurationIds");
+                    context.Writer.WritePropertyName("exportIds");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConfigurationIdsListValue in publicRequest.ConfigurationIds)
+                    foreach(var publicRequestExportIdsListValue in publicRequest.ExportIds)
                     {
-                            context.Writer.Write(publicRequestConfigurationIdsListValue);
+                            context.Writer.Write(publicRequestExportIdsListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         

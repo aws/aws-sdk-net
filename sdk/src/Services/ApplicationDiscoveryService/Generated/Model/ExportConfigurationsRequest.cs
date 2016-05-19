@@ -29,7 +29,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ExportConfigurations operation.
-    /// Exports the selected configurations to an Amazon S3 bucket.
+    /// Exports all discovered configuration data to an Amazon S3 bucket or an application
+    /// that enables you to view and evaluate the data. Data includes tags and tag associations,
+    /// processes, connections, servers, and system performance. This API returns an export
+    /// ID which you can query using the <i>GetExportStatus</i> API. The system imposes a
+    /// limit of two configuration exports in six hours.
     /// </summary>
     public partial class ExportConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {

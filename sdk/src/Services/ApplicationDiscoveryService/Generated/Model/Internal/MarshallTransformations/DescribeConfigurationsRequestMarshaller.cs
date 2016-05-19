@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RemoveConfiguration Request Marshaller
+    /// DescribeConfigurations Request Marshaller
     /// </summary>       
-    public class RemoveConfigurationRequestMarshaller : IMarshaller<IRequest, RemoveConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeConfigurationsRequestMarshaller : IMarshaller<IRequest, DescribeConfigurationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RemoveConfigurationRequest)input);
+            return this.Marshall((DescribeConfigurationsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RemoveConfigurationRequest publicRequest)
+        public IRequest Marshall(DescribeConfigurationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationDiscoveryService");
-            string target = "AWSPoseidonService_V2015_11_01.RemoveConfiguration";
+            string target = "AWSPoseidonService_V2015_11_01.DescribeConfigurations";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,10 +67,15 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationId())
+                if(publicRequest.IsSetConfigurationIds())
                 {
-                    context.Writer.WritePropertyName("configurationId");
-                    context.Writer.Write(publicRequest.ConfigurationId);
+                    context.Writer.WritePropertyName("configurationIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestConfigurationIdsListValue in publicRequest.ConfigurationIds)
+                    {
+                            context.Writer.Write(publicRequestConfigurationIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

@@ -60,7 +60,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The total number of items to return. The maximum value is 100.
+        /// The total number of agents to return. The maximum value is 100.
         /// </para>
         /// </summary>
         public int MaxResults

@@ -28,26 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the RemoveConfiguration operation.
-    /// 
+    /// Container for the parameters to the DescribeConfigurations operation.
+    /// Retrieves a list of attributes for a specific configuration ID. For example, the output
+    /// for a <i>server</i> configuration item includes a list of attributes about the server,
+    /// including host name, operating system, number of network cards, etc.
     /// </summary>
-    public partial class RemoveConfigurationRequest : AmazonApplicationDiscoveryServiceRequest
+    public partial class DescribeConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private string _configurationId;
+        private List<string> _configurationIds = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ConfigurationId.
+        /// Gets and sets the property ConfigurationIds. 
+        /// <para>
+        /// One or more configuration IDs.
+        /// </para>
         /// </summary>
-        public string ConfigurationId
+        public List<string> ConfigurationIds
         {
-            get { return this._configurationId; }
-            set { this._configurationId = value; }
+            get { return this._configurationIds; }
+            set { this._configurationIds = value; }
         }
 
-        // Check to see if ConfigurationId property is set
-        internal bool IsSetConfigurationId()
+        // Check to see if ConfigurationIds property is set
+        internal bool IsSetConfigurationIds()
         {
-            return this._configurationId != null;
+            return this._configurationIds != null && this._configurationIds.Count > 0; 
         }
 
     }

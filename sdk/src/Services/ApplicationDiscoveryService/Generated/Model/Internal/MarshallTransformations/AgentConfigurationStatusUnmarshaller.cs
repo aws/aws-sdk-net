@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Attribute Object
+    /// Response Unmarshaller for AgentConfigurationStatus Object
     /// </summary>  
-    public class AttributeUnmarshaller : IUnmarshaller<Attribute, XmlUnmarshallerContext>, IUnmarshaller<Attribute, JsonUnmarshallerContext>
+    public class AgentConfigurationStatusUnmarshaller : IUnmarshaller<AgentConfigurationStatus, XmlUnmarshallerContext>, IUnmarshaller<AgentConfigurationStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Attribute IUnmarshaller<Attribute, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AgentConfigurationStatus IUnmarshaller<AgentConfigurationStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Attribute Unmarshall(JsonUnmarshallerContext context)
+        public AgentConfigurationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Attribute unmarshalledObject = new Attribute();
+            AgentConfigurationStatus unmarshalledObject = new AgentConfigurationStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("agentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Value", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("operationSucceeded", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.OperationSucceeded = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         }
 
 
-        private static AttributeUnmarshaller _instance = new AttributeUnmarshaller();        
+        private static AgentConfigurationStatusUnmarshaller _instance = new AgentConfigurationStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttributeUnmarshaller Instance
+        public static AgentConfigurationStatusUnmarshaller Instance
         {
             get
             {

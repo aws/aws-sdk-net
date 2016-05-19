@@ -38,7 +38,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Configurations. 
         /// <para>
-        /// Returns a list of configuration item IDs.
+        /// Returns configuration details, including the configuration ID, attribute names, and
+        /// attribute values.
         /// </para>
         /// </summary>
         public List<Dictionary<string, string>> Configurations

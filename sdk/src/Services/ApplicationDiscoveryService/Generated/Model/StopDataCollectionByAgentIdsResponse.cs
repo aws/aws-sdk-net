@@ -32,26 +32,26 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class StopDataCollectionByAgentIdsResponse : AmazonWebServiceResponse
     {
-        private List<AgentConfigStatus> _agentsConfigStatus = new List<AgentConfigStatus>();
+        private List<AgentConfigurationStatus> _agentsConfigurationStatus = new List<AgentConfigurationStatus>();
 
         /// <summary>
-        /// Gets and sets the property AgentsConfigStatus. 
+        /// Gets and sets the property AgentsConfigurationStatus. 
         /// <para>
         /// Information about agents that were instructed to stop collecting data. Information
         /// includes the agent ID, a description of the operation performed, and whether or not
         /// the agent configuration was updated.
         /// </para>
         /// </summary>
-        public List<AgentConfigStatus> AgentsConfigStatus
+        public List<AgentConfigurationStatus> AgentsConfigurationStatus
         {
-            get { return this._agentsConfigStatus; }
-            set { this._agentsConfigStatus = value; }
+            get { return this._agentsConfigurationStatus; }
+            set { this._agentsConfigurationStatus = value; }
         }
 
-        // Check to see if AgentsConfigStatus property is set
-        internal bool IsSetAgentsConfigStatus()
+        // Check to see if AgentsConfigurationStatus property is set
+        internal bool IsSetAgentsConfigurationStatus()
         {
-            return this._agentsConfigStatus != null && this._agentsConfigStatus.Count > 0; 
+            return this._agentsConfigurationStatus != null && this._agentsConfigurationStatus.Count > 0; 
         }
 
     }

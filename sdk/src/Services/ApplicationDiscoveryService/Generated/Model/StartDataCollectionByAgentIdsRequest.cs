@@ -30,7 +30,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// <summary>
     /// Container for the parameters to the StartDataCollectionByAgentIds operation.
     /// Instructs the specified agents to start collecting data. Agents can reside on host
-    /// servers or virtual machines in your data center or on AWS EC2 instances.
+    /// servers or virtual machines in your data center.
     /// </summary>
     public partial class StartDataCollectionByAgentIdsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -39,7 +39,13 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentIds. 
         /// <para>
-        /// The IDs of the agents that you want to start collecting data.
+        /// The IDs of the agents that you want to start collecting data. If you send a request
+        /// to an AWS agent ID that you do not have permission to contact, according to your AWS
+        /// account, the service does not throw an exception. Instead, it returns the error in
+        /// the <i>Description</i> field. If you send a request to multiple agents and you do
+        /// not have permission to contact some of those agents, the system does not throw an
+        /// exception. Instead, the system shows <code>Failed</code> in the <i>Description</i>
+        /// field.
         /// </para>
         /// </summary>
         public List<string> AgentIds

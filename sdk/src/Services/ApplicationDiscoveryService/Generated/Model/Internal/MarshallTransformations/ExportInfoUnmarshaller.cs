@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentConfigStatus Object
+    /// Response Unmarshaller for ExportInfo Object
     /// </summary>  
-    public class AgentConfigStatusUnmarshaller : IUnmarshaller<AgentConfigStatus, XmlUnmarshallerContext>, IUnmarshaller<AgentConfigStatus, JsonUnmarshallerContext>
+    public class ExportInfoUnmarshaller : IUnmarshaller<ExportInfo, XmlUnmarshallerContext>, IUnmarshaller<ExportInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentConfigStatus IUnmarshaller<AgentConfigStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExportInfo IUnmarshaller<ExportInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,45 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AgentConfigStatus Unmarshall(JsonUnmarshallerContext context)
+        public ExportInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AgentConfigStatus unmarshalledObject = new AgentConfigStatus();
+            ExportInfo unmarshalledObject = new ExportInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("agentId", targetDepth))
+                if (context.TestExpression("configurationsDownloadUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationsDownloadUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("configUpdated", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.ConfigUpdated = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("exportId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("exportRequestTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ExportRequestTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("exportStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExportStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +100,12 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         }
 
 
-        private static AgentConfigStatusUnmarshaller _instance = new AgentConfigStatusUnmarshaller();        
+        private static ExportInfoUnmarshaller _instance = new ExportInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentConfigStatusUnmarshaller Instance
+        public static ExportInfoUnmarshaller Instance
         {
             get
             {

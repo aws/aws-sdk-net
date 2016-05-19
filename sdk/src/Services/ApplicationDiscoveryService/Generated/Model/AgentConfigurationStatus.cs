@@ -32,11 +32,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// includes the agent ID, a description of the operation, and whether or not the agent
     /// configuration was updated.
     /// </summary>
-    public partial class AgentConfigStatus
+    public partial class AgentConfigurationStatus
     {
         private string _agentId;
-        private bool? _configUpdated;
         private string _description;
+        private bool? _operationSucceeded;
 
         /// <summary>
         /// Gets and sets the property AgentId. 
@@ -57,24 +57,6 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigUpdated. 
-        /// <para>
-        /// Information about whether or not the agent configuration was updated.
-        /// </para>
-        /// </summary>
-        public bool ConfigUpdated
-        {
-            get { return this._configUpdated.GetValueOrDefault(); }
-            set { this._configUpdated = value; }
-        }
-
-        // Check to see if ConfigUpdated property is set
-        internal bool IsSetConfigUpdated()
-        {
-            return this._configUpdated.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the operation performed.
@@ -90,6 +72,26 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationSucceeded. 
+        /// <para>
+        /// Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
+        /// operations. The system has recorded the data collection operation. The agent receives
+        /// this command the next time it polls for a new command. 
+        /// </para>
+        /// </summary>
+        public bool OperationSucceeded
+        {
+            get { return this._operationSucceeded.GetValueOrDefault(); }
+            set { this._operationSucceeded = value; }
+        }
+
+        // Check to see if OperationSucceeded property is set
+        internal bool IsSetOperationSucceeded()
+        {
+            return this._operationSucceeded.HasValue; 
         }
 
     }

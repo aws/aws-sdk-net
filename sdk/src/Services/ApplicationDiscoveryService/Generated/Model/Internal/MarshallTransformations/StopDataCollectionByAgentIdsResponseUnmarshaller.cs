@@ -51,10 +51,10 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("agentsConfigStatus", targetDepth))
+                if (context.TestExpression("agentsConfigurationStatus", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AgentConfigStatus, AgentConfigStatusUnmarshaller>(AgentConfigStatusUnmarshaller.Instance);
-                    response.AgentsConfigStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AgentConfigurationStatus, AgentConfigurationStatusUnmarshaller>(AgentConfigurationStatusUnmarshaller.Instance);
+                    response.AgentsConfigurationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

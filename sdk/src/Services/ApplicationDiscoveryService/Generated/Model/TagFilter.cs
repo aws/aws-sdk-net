@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// A means of limiting responses when searching for tags.
+    /// The name of a tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>,
+    /// <code>configurationId</code>.
     /// </summary>
     public partial class TagFilter
     {

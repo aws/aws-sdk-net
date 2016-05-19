@@ -35,6 +35,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private string _configurationId;
         private ConfigurationItemType _configurationType;
         private string _key;
+        private DateTime? _timeOfCreation;
         private string _value;
 
         /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationType. 
         /// <para>
-        /// A descriptor. For example, <i>serverType</i>.
+        /// A type of IT asset that you want to tag.
         /// </para>
         /// </summary>
         public ConfigurationItemType ConfigurationType
@@ -77,7 +78,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A type of tag to filter on. For example <i>serverType</i>.
+        /// A type of tag to filter on. For example, <i>serverType</i>.
         /// </para>
         /// </summary>
         public string Key
@@ -90,6 +91,24 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetKey()
         {
             return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeOfCreation. 
+        /// <para>
+        /// The time the configuration tag was created in Coordinated Universal Time (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime TimeOfCreation
+        {
+            get { return this._timeOfCreation.GetValueOrDefault(); }
+            set { this._timeOfCreation = value; }
+        }
+
+        // Check to see if TimeOfCreation property is set
+        internal bool IsSetTimeOfCreation()
+        {
+            return this._timeOfCreation.HasValue; 
         }
 
         /// <summary>

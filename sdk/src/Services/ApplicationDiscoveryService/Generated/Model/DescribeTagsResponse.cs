@@ -56,8 +56,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Depending on the input, a list of configuration items tagged with a specific tag,
-        /// or a list of tags for a specific configuration item.
+        /// Depending on the input, this is a list of configuration items tagged with a specific
+        /// tag, or a list of tags for a specific configuration item.
         /// </para>
         /// </summary>
         public List<ConfigurationTag> Tags

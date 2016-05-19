@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetConfigurationAttributes operation
+    /// Response Unmarshaller for DescribeExportConfigurations operation
     /// </summary>  
-    public class GetConfigurationAttributesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeExportConfigurationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetConfigurationAttributesResponse response = new GetConfigurationAttributesResponse();
+            DescribeExportConfigurationsResponse response = new DescribeExportConfigurationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("configurations", targetDepth))
+                if (context.TestExpression("exportsInfo", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<Attribute>, StringUnmarshaller, ListUnmarshaller<Attribute, AttributeUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<Attribute, AttributeUnmarshaller>(AttributeUnmarshaller.Instance));
-                    response.Configurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ExportInfo, ExportInfoUnmarshaller>(ExportInfoUnmarshaller.Instance);
+                    response.ExportsInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -84,6 +90,10 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             {
                 return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServerInternalErrorException"))
             {
                 return new ServerInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -91,9 +101,9 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             return new AmazonApplicationDiscoveryServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetConfigurationAttributesResponseUnmarshaller _instance = new GetConfigurationAttributesResponseUnmarshaller();        
+        private static DescribeExportConfigurationsResponseUnmarshaller _instance = new DescribeExportConfigurationsResponseUnmarshaller();        
 
-        internal static GetConfigurationAttributesResponseUnmarshaller GetInstance()
+        internal static DescribeExportConfigurationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -101,7 +111,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetConfigurationAttributesResponseUnmarshaller Instance
+        public static DescribeExportConfigurationsResponseUnmarshaller Instance
         {
             get
             {

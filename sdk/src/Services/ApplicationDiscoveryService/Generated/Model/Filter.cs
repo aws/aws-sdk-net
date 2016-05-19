@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// A means of limiting responses.
+    /// A filter that can use conditional operators.
     /// </summary>
     public partial class Filter
     {
@@ -39,7 +39,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// A conditional operator for the filter.
+        /// A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS,
+        /// NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as
+        /// though concatenated by <i>AND</i>. If you specify multiple values for a particular
+        /// filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i>
+        /// or <i>ListConfigurations</i> returns attributes of matching configuration items.
         /// </para>
         /// </summary>
         public string Condition
@@ -57,8 +61,154 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter you want to use.
+        /// The name of the filter. The following filter names are allowed for <code>SERVER</code>
+        /// configuration items.
         /// </para>
+        ///  <p class="title"> <b>Server</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>server.hostName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>server.osName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>server.osVersion</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>server.configurationid</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>server.agentid</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The name of the filter. The following filter names are allowed for <code>PROCESS</code>
+        /// configuration items.
+        /// </para>
+        ///  <p class="title"> <b>Process</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>process.configurationid</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>process.name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>process.commandLine</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>server.configurationid</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>server.hostName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>server.osName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>server.osVersion</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>server.agentId</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The name of the filter. The following filter names are allowed for <code>CONNECTION</code>
+        /// configuration items.
+        /// </para>
+        ///  <p class="title"> <b>Connection</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>connection.sourceIp</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>connection.destinationIp</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>connection.destinationPort</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sourceProcess.configurationId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sourceProcess.name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sourceProcess.commandLine</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>destinationProcess.configurationId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>destinationProcess.name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>destinationProcess.commandLine</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sourceServer.configurationId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sourceServer.hostName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sourceServer.osName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sourceServer.osVersion</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sourceServer.agentId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>destinationServer.configurationId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>destinationServer.hostName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>destinationServer.osName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>destinationServer.osVersion</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>destinationServer.agentId</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Name
         {
@@ -75,7 +225,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The value you want to filter on.
+        /// A string value that you want to filter on. For example, if you choose the <code>destinationServer.osVersion</code>
+        /// filter name, you could specify <code>Ubuntu</code> for the value.
         /// </para>
         /// </summary>
         public List<string> Values

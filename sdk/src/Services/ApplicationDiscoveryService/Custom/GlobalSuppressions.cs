@@ -17,3 +17,4 @@ using System.Diagnostics.CodeAnalysis;
 
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.ApplicationDiscoveryService.Model.ListConfigurationsResponse.#Configurations")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.ApplicationDiscoveryService.Model.GetConfigurationAttributesResponse.#Configurations")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.ApplicationDiscoveryService.Model.DescribeConfigurationsResponse.#Configurations")]

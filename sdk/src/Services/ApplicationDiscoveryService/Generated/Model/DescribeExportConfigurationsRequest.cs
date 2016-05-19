@@ -28,40 +28,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeTags operation.
-    /// Retrieves a list of configuration items that are tagged with a specific tag. Or retrieves
-    /// a list of all tags assigned to a specific configuration item.
+    /// Container for the parameters to the DescribeExportConfigurations operation.
+    /// Retrieves the status of a given export process. You can retrieve status from a maximum
+    /// of 100 processes.
     /// </summary>
-    public partial class DescribeTagsRequest : AmazonApplicationDiscoveryServiceRequest
+    public partial class DescribeExportConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private List<TagFilter> _filters = new List<TagFilter>();
+        private List<string> _exportIds = new List<string>();
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property ExportIds. 
         /// <para>
-        /// You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these
-        /// items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>,
-        /// and <code>configurationId</code>. 
+        /// A unique identifier that you can use to query the export status.
         /// </para>
         /// </summary>
-        public List<TagFilter> Filters
+        public List<string> ExportIds
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._exportIds; }
+            set { this._exportIds = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if ExportIds property is set
+        internal bool IsSetExportIds()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._exportIds != null && this._exportIds.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The total number of items to return. The maximum value is 100.
+        /// The maximum number of results that you want to display as a part of the query.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -79,7 +77,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to start the list. Use this token to get the next set of results.
+        /// A token to get the next set of results. For example, if you specified 100 IDs for
+        /// <code>DescribeConfigurationsRequest$configurationIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code>
+        /// to 10, you will get results in a set of 10. Use the token in the query to get the
+        /// next set of 10.
         /// </para>
         /// </summary>
         public string NextToken

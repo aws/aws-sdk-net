@@ -29,8 +29,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConfigurations operation.
-    /// Retrieve a list of configurations items according to the criteria you specify in a
-    /// filter. The filter criteria identify relationship requirements.
+    /// Retrieves a list of configurations items according to the criteria you specify in
+    /// a filter. The filter criteria identify relationship requirements.
     /// </summary>
     public partial class ListConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -60,11 +60,15 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// You can filter the list using a key, value format. For example:
+        /// You can filter the list using a <i>key</i>-<i>value</i> format. For example: 
         /// </para>
         ///  
         /// <para>
         ///  <code>{"key": "serverType", "value": "webServer"}</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can separate these items by using logical operators. 
         /// </para>
         /// </summary>
         public List<Filter> Filters

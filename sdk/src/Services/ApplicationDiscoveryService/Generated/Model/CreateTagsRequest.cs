@@ -29,8 +29,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTags operation.
-    /// Creates one or more tags for a configuration item. Tags are metadata that help you
-    /// categorize IT assets.
+    /// Creates one or more tags for configuration items. Tags are metadata that help you
+    /// categorize IT assets. This API accepts a list of multiple configuration items.
     /// </summary>
     public partial class CreateTagsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags that you want to associate with one or more configuration items. Specify the
-        /// tags that you want to create in a <i>key</i>,<i>value</i> format. For example:
+        /// tags that you want to create in a <i>key</i>-<i>value</i> format. For example:
         /// </para>
         ///  
         /// <para>

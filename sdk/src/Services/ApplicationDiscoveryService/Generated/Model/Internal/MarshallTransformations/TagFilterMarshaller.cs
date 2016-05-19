@@ -47,13 +47,13 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         {
             if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Name");
+                context.Writer.WritePropertyName("name");
                 context.Writer.Write(requestObject.Name);
             }
 
             if(requestObject.IsSetValues())
             {
-                context.Writer.WritePropertyName("Values");
+                context.Writer.WritePropertyName("values");
                 context.Writer.WriteArrayStart();
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {

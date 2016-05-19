@@ -36,27 +36,48 @@ namespace Amazon.ApplicationDiscoveryService
     /// <summary>
     /// Implementation for accessing ApplicationDiscoveryService
     ///
-    /// This is the AWS Discovery Service API Reference. The AWS Discovery Service streamlines
-    /// the process of migrating to Amazon Web Services by helping you identify assets in
-    /// your data center, including servers, virtual machines, applications, application dependencies,
-    /// and network infrastructure. You can use this information to find the workloads that
-    /// make up an application, analyze dependencies, and build migration strategies. The
-    /// service also collects performance data about your workloads which you can use to assess
-    /// migration outcomes.
+    /// The AWS Application Discovery Service helps Systems Integrators quickly and reliably
+    /// plan application migration projects by automatically identifying applications running
+    /// in on-premises data centers, their associated dependencies, and their performance
+    /// profile.
     /// 
+    ///  
+    /// <para>
+    ///  Planning data center migrations can involve thousands of workloads that are often
+    /// deeply interdependent. Application discovery and dependency mapping are important
+    /// early first steps in the migration process, but difficult to perform at scale due
+    /// to the lack of automated tools.
+    /// </para>
+    ///  
+    /// <para>
+    /// The AWS Application Discovery Service automatically collects configuration and usage
+    /// data from servers to develop a list of applications, how they perform, and how they
+    /// are interdependent. This information is securely retained in an AWS Application Discovery
+    /// Service database which you can export as a CSV file into your preferred visualization
+    /// tool or cloud migration solution to help reduce the complexity and time in planning
+    /// your cloud migration.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Application Discovery Service is currently available for preview. Only customers
+    /// who are engaged with <a href="https://aws.amazon.com/professional-services/">AWS Professional
+    /// Services</a> or a certified AWS partner can use the service. To see the list of certified
+    /// partners and request access to the Application Discovery Service, complete the following
+    /// <a href="http://aws.amazon.com/application-discovery/preview/">preview form</a>.
+    /// </para>
     ///  
     /// <para>
     /// This API reference provides descriptions, syntax, and usage examples for each of the
     /// actions and data types for the Discovery Service. The topic for each action shows
     /// the API request parameters and the response. Alternatively, you can use one of the
-    /// AWS SDKs to access an API that's tailored to the programming language or platform
+    /// AWS SDKs to access an API that is tailored to the programming language or platform
     /// that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
     /// SDKs</a>.
     /// </para>
     ///  
     /// <para>
-    /// This guide is intended for use with the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/remote-commands-prereq.html">AWS
-    /// Discovery Service user guide</a>.
+    /// This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/what-is-appdiscovery.html">
+    /// <i>AWS Discovery Service User Guide</i> </a>.
     /// </para>
     ///  
     /// <para>
@@ -64,21 +85,74 @@ namespace Amazon.ApplicationDiscoveryService
     /// </para>
     ///  
     /// <para>
-    ///  <b>Managing AWS Agents</b> 
+    ///  <b>Managing AWS Agents Using the Application Discovery Service</b> 
     /// </para>
     ///  
     /// <para>
-    /// The AWS agent is an Amazon application that you install on servers and virtual machines
-    /// in your data center or on Amazon EC2 instances. The agent captures server configuration
-    /// and activity information (including hardware profile, network, file system, and process
-    /// activity) and sends this data to the AWS Application Discovery Service. The Discovery
-    /// Service processes this data and maps the application dependencies for your workloads.
+    /// An AWS agent is software that you install on on-premises servers and virtual machines
+    /// that are targeted for discovery and migration. Agents run on Linux and Windows Server
+    /// and collect server configuration and activity information about your applications
+    /// and infrastructure. Specifically, agents collect the following information and send
+    /// it to the Application Discovery Service using Secure Sockets Layer (SSL) encryption:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// User information (user name, home directory)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Group information (name)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// List of installed packages
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// List of kernel modules
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// All create and stop process events
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// DNS queries
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// NIC information
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TCP/UDP process listening ports
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TCPV4/V6 connections
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Operating system information
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// System performance
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Process performance
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The Application Discovery Service API includes the following actions to manage AWS
+    /// agents:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <i>StartDataCollectionByAgentIds</i>: Instructs the specified agents to start collecting
-    /// data. Agents can reside on host servers or virtual machines in your data center or
-    /// on AWS EC2 instances.
+    /// data. The Application Discovery Service takes several minutes to receive and process
+    /// data after you initiate data collection.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -89,8 +163,8 @@ namespace Amazon.ApplicationDiscoveryService
     /// <para>
     ///  <i>DescribeAgents</i>: Lists AWS agents by ID or lists all agents associated with
     /// your user account if you did not specify an agent ID. The output includes agent IDs,
-    /// IP addresses, MAC addresses, agent health, host name where the agent resides, and
-    /// the version number of each agent.
+    /// IP addresses, media access control (MAC) addresses, agent health, host name where
+    /// the agent resides, and the version number of each agent.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -99,30 +173,159 @@ namespace Amazon.ApplicationDiscoveryService
     ///  
     /// <para>
     /// A <i>configuration item</i> is an IT asset that was discovered in your data center
-    /// by an AWS agent. With the Discovery Service, you can specify filters and query specific
-    /// configuration items. For example, using this API, you could create a filter to query
-    /// for a process configuration item named apache and an operating system configuration
-    /// item named Ubuntu.
+    /// by an AWS agent. When you use the Application Discovery Service, you can specify filters
+    /// and query specific configuration items. The service supports Server, Process, and
+    /// Connection configuration items. This means you can specify a value for the following
+    /// keys and query your IT assets:
+    /// </para>
+    ///  <p class="title"> <b>Server</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <i>GetConfigurationAttributes</i>: Retrieves a list of attributes for a specific
-    /// configuration ID. For example, the output for a <i>server</i> configuration item includes
-    /// a list of attributes about the server, including host name, operating system, number
-    /// of network cards, etc.
+    /// server.HostName
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>ListConfigurations</i>: Retrieves a list of configurations items according to
-    /// the criteria you specify in a filter. The filter criteria identify relationship requirements.
-    /// For example, the following filter specifies criteria of process.name and values of
-    /// <i>nginx</i> and <i>apache</i>.
+    /// server.osName
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    ///  <code>ConfigurationType = Process Filters = [WebServerCriteria] WebServerCriteria
-    /// = { ‘key’ : process.name, ‘values’ : [ ‘nginx’, ‘apache’ ], ‘condition’ : ‘contains’
-    /// } </code> 
+    /// server.osVersion
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.agentId
+    /// </para>
+    ///  </li> </ul> <p class="title"> <b>Process</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// process.name
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// process.CommandLine
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// process.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.hostName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.osName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.osVersion
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.agentId
+    /// </para>
+    ///  </li> </ul> <p class="title"> <b>Connection</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// connection.sourceIp
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// connection.sourcePort
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// connection.destinationIp
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// connection.destinationPort
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceProcess.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceProcess.commandLine
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceProcess.name
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationProcessId.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationProcess.commandLine
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationProcess.name
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceServer.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceServer.hostName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceServer.osName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceServer.osVersion
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationServer.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationServer.hostName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationServer.osName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationServer.osVersion
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The Application Discovery Service includes the following actions for querying configuration
+    /// items. 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>DescribeConfigurations</i>: Retrieves a list of attributes for a specific configuration
+    /// ID. For example, the output for a <i>server</i> configuration item includes a list
+    /// of attributes about the server, including host name, operating system, number of network
+    /// cards, etc.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>ListConfigurations</i>: Retrieves a list of configuration items according to the
+    /// criteria you specify in a filter. The filter criteria identify relationship requirements.
+    /// For example, you can specify filter criteria of process.name with values of <i>nginx</i>
+    /// and <i>apache</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -131,22 +334,23 @@ namespace Amazon.ApplicationDiscoveryService
     ///  
     /// <para>
     /// You can tag discovered configuration items. Tags are metadata that help you categorize
-    /// IT assets in your data center. Tags use a <i>key</i>,<i>value</i> format. For example,
+    /// IT assets in your data center. Tags use a <i>key</i>-<i>value</i> format. For example,
     /// <code>{"key": "serverType", "value": "webServer"}</code>. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <i>CreateTags</i>: Creates one or more tags for a configuration item. Tags are metadata
-    /// that help you categorize IT assets.
+    ///  <i>CreateTags</i>: Creates one or more tags for a configuration items.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>DescribeTags</i>: Retrieve a list of configuration items that are tagged with
-    /// a specific tag. Or retrieve a list all tags assigned to a specific configuration item.
+    ///  <i>DescribeTags</i>: Retrieves a list of configuration items that are tagged with
+    /// a specific tag. <i>Or</i>, retrieves a list of all tags assigned to a specific configuration
+    /// item.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>DeleteTags</i>: Deletes one or more tags associated with a configuration item.
+    ///  <i>DeleteTags</i>: Deletes the association between a configuration item and one or
+    /// more tags.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -154,18 +358,22 @@ namespace Amazon.ApplicationDiscoveryService
     /// </para>
     ///  
     /// <para>
-    /// You can export discovered data to an Amazon S3 bucket in the form of CSV files.
+    /// You can export data as a CSV file to an Amazon S3 bucket or into your preferred visualization
+    /// tool or cloud migration solution to help reduce the complexity and time in planning
+    /// your cloud migration.
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <i>ExportConfigurations</i>: Exports all discovered configuration data to an Amazon
-    /// S3 bucket. Data includes processes, connections, servers, and system performance.
+    /// S3 bucket. Data includes tags and tag associations, processes, connections, servers,
+    /// and system performance. This API returns an export ID which you can query using the
+    /// GetExportStatus API.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>GetExportStatus</i>: Gets the status of the data export. When the export is complete,
-    /// the service returns an Amazon S3 URL where you can download CSV files that include
-    /// the data.
+    ///  <i>DescribeExportConfigurations</i>: Gets the status of the data export. When the
+    /// export is complete, the service returns an Amazon S3 URL where you can download CSV
+    /// files that include the data.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -394,6 +602,68 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
         
+        #region  DescribeConfigurations
+
+        internal DescribeConfigurationsResponse DescribeConfigurations(DescribeConfigurationsRequest request)
+        {
+            var marshaller = new DescribeConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigurationsRequest,DescribeConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeConfigurationsResponse> DescribeConfigurationsAsync(DescribeConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConfigurationsRequest,DescribeConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeExportConfigurations
+
+        internal DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request)
+        {
+            var marshaller = new DescribeExportConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExportConfigurationsRequest,DescribeExportConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExportConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeExportConfigurationsResponse> DescribeExportConfigurationsAsync(DescribeExportConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeExportConfigurationsRequestMarshaller();
+            var unmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeExportConfigurationsRequest,DescribeExportConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTags
 
         internal DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
@@ -456,68 +726,6 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
         
-        #region  GetConfigurationAttributes
-
-        internal GetConfigurationAttributesResponse GetConfigurationAttributes(GetConfigurationAttributesRequest request)
-        {
-            var marshaller = new GetConfigurationAttributesRequestMarshaller();
-            var unmarshaller = GetConfigurationAttributesResponseUnmarshaller.Instance;
-
-            return Invoke<GetConfigurationAttributesRequest,GetConfigurationAttributesResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetConfigurationAttributes operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationAttributes operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetConfigurationAttributesResponse> GetConfigurationAttributesAsync(GetConfigurationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new GetConfigurationAttributesRequestMarshaller();
-            var unmarshaller = GetConfigurationAttributesResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetConfigurationAttributesRequest,GetConfigurationAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  GetExportStatus
-
-        internal GetExportStatusResponse GetExportStatus(GetExportStatusRequest request)
-        {
-            var marshaller = new GetExportStatusRequestMarshaller();
-            var unmarshaller = GetExportStatusResponseUnmarshaller.Instance;
-
-            return Invoke<GetExportStatusRequest,GetExportStatusResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetExportStatus operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetExportStatus operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<GetExportStatusResponse> GetExportStatusAsync(GetExportStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new GetExportStatusRequestMarshaller();
-            var unmarshaller = GetExportStatusResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetExportStatusRequest,GetExportStatusResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
         #region  ListConfigurations
 
         internal ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
@@ -544,37 +752,6 @@ namespace Amazon.ApplicationDiscoveryService
             var unmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConfigurationsRequest,ListConfigurationsResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  RemoveConfiguration
-
-        internal RemoveConfigurationResponse RemoveConfiguration(RemoveConfigurationRequest request)
-        {
-            var marshaller = new RemoveConfigurationRequestMarshaller();
-            var unmarshaller = RemoveConfigurationResponseUnmarshaller.Instance;
-
-            return Invoke<RemoveConfigurationRequest,RemoveConfigurationResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the RemoveConfiguration operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RemoveConfiguration operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<RemoveConfigurationResponse> RemoveConfigurationAsync(RemoveConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new RemoveConfigurationRequestMarshaller();
-            var unmarshaller = RemoveConfigurationResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RemoveConfigurationRequest,RemoveConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

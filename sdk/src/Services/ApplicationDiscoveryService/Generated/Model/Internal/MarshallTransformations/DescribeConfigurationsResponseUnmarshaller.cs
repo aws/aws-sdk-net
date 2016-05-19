@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RemoveConfiguration operation
+    /// Response Unmarshaller for DescribeConfigurations operation
     /// </summary>  
-    public class RemoveConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeConfigurationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RemoveConfigurationResponse response = new RemoveConfigurationResponse();
+            DescribeConfigurationsResponse response = new DescribeConfigurationsResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("configurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Dictionary<string, string>, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    response.Configurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -73,10 +84,6 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             {
                 return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServerInternalErrorException"))
             {
                 return new ServerInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -84,9 +91,9 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             return new AmazonApplicationDiscoveryServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static RemoveConfigurationResponseUnmarshaller _instance = new RemoveConfigurationResponseUnmarshaller();        
+        private static DescribeConfigurationsResponseUnmarshaller _instance = new DescribeConfigurationsResponseUnmarshaller();        
 
-        internal static RemoveConfigurationResponseUnmarshaller GetInstance()
+        internal static DescribeConfigurationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -94,7 +101,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RemoveConfigurationResponseUnmarshaller Instance
+        public static DescribeConfigurationsResponseUnmarshaller Instance
         {
             get
             {

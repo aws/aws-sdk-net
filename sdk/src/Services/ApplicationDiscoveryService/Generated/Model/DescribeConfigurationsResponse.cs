@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetExportStatus operation.
-    /// Retrieves the status of a given export process.
+    /// This is the response object from the DescribeConfigurations operation.
     /// </summary>
-    public partial class GetExportStatusRequest : AmazonApplicationDiscoveryServiceRequest
+    public partial class DescribeConfigurationsResponse : AmazonWebServiceResponse
     {
-        private string _exportId;
+        private List<Dictionary<string, string>> _configurations = new List<Dictionary<string, string>>();
 
         /// <summary>
-        /// Gets and sets the property ExportId. 
+        /// Gets and sets the property Configurations. 
         /// <para>
-        /// A unique identifier which you can use to query the export status.
+        /// A key in the response map. The value is an array of data.
         /// </para>
         /// </summary>
-        public string ExportId
+        public List<Dictionary<string, string>> Configurations
         {
-            get { return this._exportId; }
-            set { this._exportId = value; }
+            get { return this._configurations; }
+            set { this._configurations = value; }
         }
 
-        // Check to see if ExportId property is set
-        internal bool IsSetExportId()
+        // Check to see if Configurations property is set
+        internal bool IsSetConfigurations()
         {
-            return this._exportId != null;
+            return this._configurations != null && this._configurations.Count > 0; 
         }
 
     }

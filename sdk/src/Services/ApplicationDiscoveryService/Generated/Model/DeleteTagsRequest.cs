@@ -29,7 +29,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTags operation.
-    /// Deletes one or more tags associated with a configuration item.
+    /// Deletes the association between configuration items and one or more tags. This API
+    /// accepts a list of multiple configuration items.
     /// </summary>
     public partial class DeleteTagsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -58,7 +59,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags that you want to delete from one or more configuration items. Specify the tags
-        /// that you want to delete in a <i>key</i>, <i>value</i> format. For example:
+        /// that you want to delete in a <i>key</i>-<i>value</i> format. For example:
         /// </para>
         ///  
         /// <para>

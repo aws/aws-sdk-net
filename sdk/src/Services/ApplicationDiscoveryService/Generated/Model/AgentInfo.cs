@@ -29,8 +29,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Information about agents associated with the user’s AWS account. Information includes
-    /// agent IDs, IP addresses, MAC addresses, agent health, hostname where the agent resides,
-    /// and agent version for each agent.
+    /// agent IDs, IP addresses, media access control (MAC) addresses, agent health, hostname
+    /// where the agent resides, and agent version for each agent.
     /// </summary>
     public partial class AgentInfo
     {
@@ -80,7 +80,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ConnectorId. 
         /// <para>
-        /// 
+        /// This data type is currently not valid.
         /// </para>
         /// </summary>
         public string ConnectorId
@@ -116,8 +116,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property HostName. 
         /// <para>
-        /// The name of the host where the agent resides. The host can be a server, virtual machine,
-        /// or an AWS EC2 instance.
+        /// The name of the host where the agent resides. The host can be a server or virtual
+        /// machine.
         /// </para>
         /// </summary>
         public string HostName
@@ -135,7 +135,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The agent version
+        /// The agent version.
         /// </para>
         /// </summary>
         public string Version

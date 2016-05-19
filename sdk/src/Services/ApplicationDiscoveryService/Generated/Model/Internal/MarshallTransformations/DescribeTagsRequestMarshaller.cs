@@ -67,16 +67,16 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilter())
+                if(publicRequest.IsSetFilters())
                 {
-                    context.Writer.WritePropertyName("filter");
+                    context.Writer.WritePropertyName("filters");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterListValue in publicRequest.Filter)
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
                     {
                         context.Writer.WriteObjectStart();
 
                         var marshaller = TagFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilterListValue, context);
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
