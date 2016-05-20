@@ -108,10 +108,9 @@
 			
 			
 		<Message Text="Compile the CoreCLR version of the SDK"/>
+		<Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental" 
+			WorkingDirectory="..\sdk\test\CoreCLR\IntegrationTests"/>		
 
-		<MSBuild Projects="..\sdk\AWSSDK.CoreCLR.sln"
-			Targets="Rebuild"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 	
 	<Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
