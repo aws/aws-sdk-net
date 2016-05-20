@@ -108,19 +108,10 @@
 			
 			
 		<Message Text="Compile the CoreCLR version of the SDK"/>
-		<ItemGroup>
-			<CoreCLRProjectFiles Include="..\sdk\**\*.xproj" />
-		</ItemGroup>		
-		
-		<MSBuild Projects="@(CoreCLRProjectFiles)"
-			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation)" />	
-	
-<!--		
+
 		<MSBuild Projects="..\sdk\AWSSDK.CoreCLR.sln"
 			Targets="Rebuild"
 			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
--->			
 	</Target>
 	
 	<Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
