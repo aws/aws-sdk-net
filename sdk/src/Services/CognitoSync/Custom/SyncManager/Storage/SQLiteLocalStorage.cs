@@ -530,7 +530,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             foreach (Record record in records)
             {
                 Record databaseRecord = this.GetRecord(identityId, datasetName, record.Key);
-                Record oldDatabaseRecord = localRecordMap[record.Key];
+                Record oldDatabaseRecord = localRecordMap.ContainsKey(record.Key) ? localRecordMap[record.Key] : null;
                 if (databaseRecord != null && oldDatabaseRecord != null
                         && (!StringUtils.Equals(databaseRecord.Value, oldDatabaseRecord.Value)
                         || databaseRecord.SyncCount != oldDatabaseRecord.SyncCount
