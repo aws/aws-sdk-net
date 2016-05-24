@@ -91,6 +91,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NatGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("provisionedBandwidth", targetDepth))
+                    {
+                        var unmarshaller = ProvisionedBandwidthUnmarshaller.Instance;
+                        unmarshalledObject.ProvisionedBandwidth = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -45,6 +45,12 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// To tag your instance, ensure that it is <code>running</code> as <a>CreateTags</a>
+    /// requires a resource ID. For more information about tagging, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+    /// Your Amazon EC2 Resources</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// If you don't specify a security group when launching an instance, Amazon EC2 uses
     /// the default security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
     /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.

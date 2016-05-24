@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private string _failureMessage;
         private List<NatGatewayAddress> _natGatewayAddresses = new List<NatGatewayAddress>();
         private string _natGatewayId;
+        private ProvisionedBandwidth _provisionedBandwidth;
         private NatGatewayState _state;
         private string _subnetId;
         private string _vpcId;
@@ -181,6 +182,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetNatGatewayId()
         {
             return this._natGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedBandwidth. 
+        /// <para>
+        /// Reserved. If you need to sustain traffic greater than the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+        /// limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support
+        /// Center</a>.
+        /// </para>
+        /// </summary>
+        public ProvisionedBandwidth ProvisionedBandwidth
+        {
+            get { return this._provisionedBandwidth; }
+            set { this._provisionedBandwidth = value; }
+        }
+
+        // Check to see if ProvisionedBandwidth property is set
+        internal bool IsSetProvisionedBandwidth()
+        {
+            return this._provisionedBandwidth != null;
         }
 
         /// <summary>

@@ -6030,6 +6030,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetConsoleScreenshot
+
+        internal GetConsoleScreenshotResponse GetConsoleScreenshot(GetConsoleScreenshotRequest request)
+        {
+            var marshaller = new GetConsoleScreenshotRequestMarshaller();
+            var unmarshaller = GetConsoleScreenshotResponseUnmarshaller.Instance;
+
+            return Invoke<GetConsoleScreenshotRequest,GetConsoleScreenshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConsoleScreenshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetConsoleScreenshotResponse> GetConsoleScreenshotAsync(GetConsoleScreenshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetConsoleScreenshotRequestMarshaller();
+            var unmarshaller = GetConsoleScreenshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConsoleScreenshotRequest,GetConsoleScreenshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPasswordData
 
         internal GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)

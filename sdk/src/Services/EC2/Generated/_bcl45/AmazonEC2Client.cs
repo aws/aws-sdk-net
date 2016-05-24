@@ -9071,6 +9071,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetConsoleScreenshot
+
+
+        /// <summary>
+        /// Retrieve a JPG-format screenshot of an instance to help with troubleshooting.
+        /// 
+        ///  
+        /// <para>
+        /// For API calls, the returned content is base64-encoded. For command line tools, the
+        /// decoding is performed for you.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot service method.</param>
+        /// 
+        /// <returns>The response from the GetConsoleScreenshot service method, as returned by EC2.</returns>
+        public GetConsoleScreenshotResponse GetConsoleScreenshot(GetConsoleScreenshotRequest request)
+        {
+            var marshaller = new GetConsoleScreenshotRequestMarshaller();
+            var unmarshaller = GetConsoleScreenshotResponseUnmarshaller.Instance;
+
+            return Invoke<GetConsoleScreenshotRequest,GetConsoleScreenshotResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConsoleScreenshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetConsoleScreenshotResponse> GetConsoleScreenshotAsync(GetConsoleScreenshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetConsoleScreenshotRequestMarshaller();
+            var unmarshaller = GetConsoleScreenshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConsoleScreenshotRequest,GetConsoleScreenshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPasswordData
 
 
@@ -10067,8 +10110,7 @@ namespace Amazon.EC2
         /// it is no longer available for use in the EC2-Classic platform, unless you move it
         /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
         /// IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic
-        /// platform. You cannot migrate an Elastic IP address that's associated with a reverse
-        /// DNS record. Contact AWS account and billing support to remove the reverse DNS record.
+        /// platform.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
         /// 
@@ -10984,9 +11026,7 @@ namespace Amazon.EC2
         /// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
         /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
         /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
-        /// instance or network interface. You cannot restore an Elastic IP address that's associated
-        /// with a reverse DNS record. Contact AWS account and billing support to remove the reverse
-        /// DNS record.
+        /// instance or network interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic service method.</param>
         /// 
@@ -11139,6 +11179,12 @@ namespace Amazon.EC2
         /// To ensure faster instance launches, break up large requests into smaller batches.
         /// For example, create five separate launch requests for 100 instances each instead of
         /// one launch request for 500 instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag your instance, ensure that it is <code>running</code> as <a>CreateTags</a>
+        /// requires a resource ID. For more information about tagging, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// Your Amazon EC2 Resources</a>.
         /// </para>
         ///  
         /// <para>

@@ -28,32 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the RestoreAddressToClassic operation.
-    /// Restores an Elastic IP address that was previously moved to the EC2-VPC platform back
-    /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
-    /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
-    /// instance or network interface.
+    /// Contains the output of the request.
     /// </summary>
-    public partial class RestoreAddressToClassicRequest : AmazonEC2Request
+    public partial class GetConsoleScreenshotResponse : AmazonWebServiceResponse
     {
-        private string _publicIp;
+        private string _imageData;
+        private string _instanceId;
 
         /// <summary>
-        /// Gets and sets the property PublicIp. 
+        /// Gets and sets the property ImageData. 
         /// <para>
-        /// The Elastic IP address.
+        /// The data that comprises the image.
         /// </para>
         /// </summary>
-        public string PublicIp
+        public string ImageData
         {
-            get { return this._publicIp; }
-            set { this._publicIp = value; }
+            get { return this._imageData; }
+            set { this._imageData = value; }
         }
 
-        // Check to see if PublicIp property is set
-        internal bool IsSetPublicIp()
+        // Check to see if ImageData property is set
+        internal bool IsSetImageData()
         {
-            return this._publicIp != null;
+            return this._imageData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
         }
 
     }
