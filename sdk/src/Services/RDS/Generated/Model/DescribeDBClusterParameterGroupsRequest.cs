@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class DescribeDBClusterParameterGroupsRequest : AmazonRDSRequest
@@ -49,15 +49,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        ///  The name of a specific DB cluster parameter group to return details for. 
+        /// The name of a specific DB cluster parameter group to return details for.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBClusterParameterGroupName
         {

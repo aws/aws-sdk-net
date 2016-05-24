@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroupName. 
         /// <para>
-        ///  The name of the DB security group to return details for. 
+        /// The name of the DB security group to return details for.
         /// </para>
         /// </summary>
         public string DBSecurityGroupName

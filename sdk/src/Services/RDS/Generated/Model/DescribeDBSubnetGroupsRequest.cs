@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeDBSubnetGroups operation.
     /// Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified,
-    /// the list will contain only the descriptions of the specified DBSubnetGroup. 
+    /// the list will contain only the descriptions of the specified DBSubnetGroup.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        ///  The name of the DB subnet group to return details for. 
+        /// The name of the DB subnet group to return details for.
         /// </para>
         /// </summary>
         public string DBSubnetGroupName

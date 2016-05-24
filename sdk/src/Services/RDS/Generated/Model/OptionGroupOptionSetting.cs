@@ -44,7 +44,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
-        ///  Indicates the acceptable values for the option group option. 
+        /// Indicates the acceptable values for the option group option.
         /// </para>
         /// </summary>
         public string AllowedValues
@@ -62,7 +62,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ApplyType. 
         /// <para>
-        ///  The DB engine specific parameter type for the option group option. 
+        /// The DB engine specific parameter type for the option group option.
         /// </para>
         /// </summary>
         public string ApplyType
@@ -80,7 +80,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        ///  The default value for the option group option. 
+        /// The default value for the option group option.
         /// </para>
         /// </summary>
         public string DefaultValue
@@ -98,8 +98,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsModifiable. 
         /// <para>
-        ///  Boolean value where true indicates that this option group option can be changed from
-        /// the default value. 
+        /// Boolean value where true indicates that this option group option can be changed from
+        /// the default value.
         /// </para>
         /// </summary>
         public bool IsModifiable
@@ -117,7 +117,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SettingDescription. 
         /// <para>
-        ///  The description of the option group option. 
+        /// The description of the option group option.
         /// </para>
         /// </summary>
         public string SettingDescription
@@ -135,7 +135,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SettingName. 
         /// <para>
-        ///  The name of the option group option. 
+        /// The name of the option group option.
         /// </para>
         /// </summary>
         public string SettingName

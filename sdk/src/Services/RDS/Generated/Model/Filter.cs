@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// 
+    /// This type is not currently supported.
     /// </summary>
     public partial class Filter
     {

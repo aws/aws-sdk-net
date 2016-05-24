@@ -41,7 +41,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterParameterGroupStatus. 
         /// <para>
         /// Specifies the status of the DB cluster parameter group for this member of the DB cluster.
-        /// 
         /// </para>
         /// </summary>
         public string DBClusterParameterGroupStatus

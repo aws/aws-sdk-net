@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupsList. 
         /// <para>
-        ///  List of option groups. 
+        /// List of option groups.
         /// </para>
         /// </summary>
         public List<OptionGroup> OptionGroupsList

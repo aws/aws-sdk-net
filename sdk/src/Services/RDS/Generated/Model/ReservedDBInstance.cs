@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        ///  The currency code for the reserved DB instance. 
+        /// The currency code for the reserved DB instance.
         /// </para>
         /// </summary>
         public string CurrencyCode
@@ -69,7 +69,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  The DB instance class for the reserved DB instance. 
+        /// The DB instance class for the reserved DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -87,7 +87,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceCount. 
         /// <para>
-        ///  The number of reserved DB instances. 
+        /// The number of reserved DB instances.
         /// </para>
         /// </summary>
         public int DBInstanceCount
@@ -105,7 +105,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        ///  The duration of the reservation in seconds. 
+        /// The duration of the reservation in seconds.
         /// </para>
         /// </summary>
         public int Duration
@@ -123,7 +123,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
-        ///  The fixed price charged for this reserved DB instance. 
+        /// The fixed price charged for this reserved DB instance.
         /// </para>
         /// </summary>
         public double FixedPrice
@@ -141,7 +141,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Indicates if the reservation applies to Multi-AZ deployments. 
+        /// Indicates if the reservation applies to Multi-AZ deployments.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -159,7 +159,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
-        ///  The offering type of this reserved DB instance. 
+        /// The offering type of this reserved DB instance.
         /// </para>
         /// </summary>
         public string OfferingType
@@ -177,7 +177,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ProductDescription. 
         /// <para>
-        ///  The description of the reserved DB instance. 
+        /// The description of the reserved DB instance.
         /// </para>
         /// </summary>
         public string ProductDescription
@@ -195,7 +195,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RecurringCharges. 
         /// <para>
-        ///  The recurring price charged to run this reserved DB instance. 
+        /// The recurring price charged to run this reserved DB instance.
         /// </para>
         /// </summary>
         public List<RecurringCharge> RecurringCharges
@@ -213,7 +213,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReservedDBInstanceId. 
         /// <para>
-        ///  The unique identifier for the reservation. 
+        /// The unique identifier for the reservation.
         /// </para>
         /// </summary>
         public string ReservedDBInstanceId
@@ -231,7 +231,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReservedDBInstancesOfferingId. 
         /// <para>
-        ///  The offering identifier. 
+        /// The offering identifier.
         /// </para>
         /// </summary>
         public string ReservedDBInstancesOfferingId
@@ -249,7 +249,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  The time the reservation started. 
+        /// The time the reservation started.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -267,7 +267,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        ///  The state of the reserved DB instance. 
+        /// The state of the reserved DB instance.
         /// </para>
         /// </summary>
         public string State
@@ -285,7 +285,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UsagePrice. 
         /// <para>
-        ///  The hourly price charged for this reserved DB instance. 
+        /// The hourly price charged for this reserved DB instance.
         /// </para>
         /// </summary>
         public double UsagePrice

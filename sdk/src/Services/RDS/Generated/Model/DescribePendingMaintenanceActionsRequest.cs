@@ -49,9 +49,13 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Supported filters:
         /// </para>
-        ///  <ul> <li> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-        /// Amazon Resource Names (ARNs). The results list will only include pending maintenance
-        /// actions for the DB instances identified by these ARNs.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon
+        /// Resource Names (ARNs). The results list will only include pending maintenance actions
+        /// for the DB instances identified by these ARNs.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

@@ -37,13 +37,13 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     ///  <note> 
     /// <para>
-    ///  Changes to dynamic parameters are applied immediately. Changes to static parameters
+    /// Changes to dynamic parameters are applied immediately. Changes to static parameters
     /// require a reboot without failover to the DB cluster associated with the parameter
-    /// group before the change can take effect. 
+    /// group before the change can take effect.
     /// </para>
     ///  </note> <important> 
     /// <para>

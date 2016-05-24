@@ -71,7 +71,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        ///  Specifies the pending number of days for which automated backups are retained. 
+        /// Specifies the pending number of days for which automated backups are retained.
         /// </para>
         /// </summary>
         public int BackupRetentionPeriod
@@ -145,7 +145,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  Indicates the database engine version. 
+        /// Indicates the database engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -163,8 +163,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        ///  Specifies the new Provisioned IOPS value for the DB instance that will be applied
-        /// or is being applied. 
+        /// Specifies the new Provisioned IOPS value for the DB instance that will be applied
+        /// or is being applied.
         /// </para>
         /// </summary>
         public int Iops
@@ -182,8 +182,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        ///  Contains the pending or in-progress change of the master credentials for the DB instance.
-        /// 
+        /// Contains the pending or in-progress change of the master credentials for the DB instance.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -201,7 +200,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment. 
+        /// Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -219,7 +218,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  Specifies the pending port for the DB instance. 
+        /// Specifies the pending port for the DB instance.
         /// </para>
         /// </summary>
         public int Port
@@ -237,7 +236,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies the storage type to be associated with the DB instance. 
+        /// Specifies the storage type to be associated with the DB instance.
         /// </para>
         /// </summary>
         public string StorageType

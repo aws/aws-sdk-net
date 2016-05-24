@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
-        ///  The allowed values of the option setting. 
+        /// The allowed values of the option setting.
         /// </para>
         /// </summary>
         public string AllowedValues
@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ApplyType. 
         /// <para>
-        ///  The DB engine specific parameter type. 
+        /// The DB engine specific parameter type.
         /// </para>
         /// </summary>
         public string ApplyType
@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        ///  The data type of the option setting. 
+        /// The data type of the option setting.
         /// </para>
         /// </summary>
         public string DataType
@@ -102,7 +102,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        ///  The default value of the option setting. 
+        /// The default value of the option setting.
         /// </para>
         /// </summary>
         public string DefaultValue
@@ -120,7 +120,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the option setting. 
+        /// The description of the option setting.
         /// </para>
         /// </summary>
         public string Description
@@ -138,7 +138,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsCollection. 
         /// <para>
-        ///  Indicates if the option setting is part of a collection. 
+        /// Indicates if the option setting is part of a collection.
         /// </para>
         /// </summary>
         public bool IsCollection
@@ -156,8 +156,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsModifiable. 
         /// <para>
-        ///  A Boolean value that, when true, indicates the option setting can be modified from
-        /// the default. 
+        /// A Boolean value that, when true, indicates the option setting can be modified from
+        /// the default.
         /// </para>
         /// </summary>
         public bool IsModifiable
@@ -175,7 +175,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the option that has settings that you can set. 
+        /// The name of the option that has settings that you can set.
         /// </para>
         /// </summary>
         public string Name
@@ -193,7 +193,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The current value of the option setting. 
+        /// The current value of the option setting.
         /// </para>
         /// </summary>
         public string Value

@@ -30,12 +30,12 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DeleteDBClusterParameterGroup operation.
     /// Deletes a specified DB cluster parameter group. The DB cluster parameter group to
-    /// be deleted cannot be associated with any DB clusters. 
+    /// be deleted cannot be associated with any DB clusters.
     /// 
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class DeleteDBClusterParameterGroupRequest : AmazonRDSRequest
@@ -45,15 +45,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        ///  The name of the DB cluster parameter group. 
+        /// The name of the DB cluster parameter group.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be the name of an existing DB cluster parameter group.</li> <li>You
-        /// cannot delete a default DB cluster parameter group.</li> <li>Cannot be associated
-        /// with any DB clusters.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be the name of an existing DB cluster parameter group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot delete a default DB cluster parameter group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be associated with any DB clusters.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBClusterParameterGroupName
         {

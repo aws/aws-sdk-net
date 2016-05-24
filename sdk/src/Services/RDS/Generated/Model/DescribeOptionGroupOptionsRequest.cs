@@ -42,8 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        ///  A required parameter. Options available for the given engine name will be described.
-        /// 
+        /// A required parameter. Options available for the given engine name will be described.
         /// </para>
         /// </summary>
         public string EngineName
@@ -79,8 +78,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MajorEngineVersion. 
         /// <para>
-        ///  If specified, filters the results to include only options for the specified major
-        /// engine version. 
+        /// If specified, filters the results to include only options for the specified major
+        /// engine version.
         /// </para>
         /// </summary>
         public string MajorEngineVersion

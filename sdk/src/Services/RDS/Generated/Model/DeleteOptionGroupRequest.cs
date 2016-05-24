@@ -38,9 +38,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  The name of the option group to be deleted. 
+        /// The name of the option group to be deleted.
         /// </para>
-        ///  <note>You cannot delete default option groups.</note>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete default option groups.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string OptionGroupName
         {

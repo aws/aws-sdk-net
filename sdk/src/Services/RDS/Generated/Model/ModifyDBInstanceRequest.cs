@@ -73,7 +73,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates ModifyDBInstanceRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier"> The DB instance identifier. This value is stored as a lowercase string.  Constraints: <ul> <li>Must be the identifier for an existing DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbInstanceIdentifier">The DB instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li> Must be the identifier for an existing DB instance </li> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
         public ModifyDBInstanceRequest(string dbInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -180,7 +180,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  If you choose to migrate your DB instance from using standard storage to using Provisioned
+        /// If you choose to migrate your DB instance from using standard storage to using Provisioned
         /// IOPS, or from using Provisioned IOPS to using standard storage, the process can take
         /// time. The duration of the migration depends on several factors such as database load,
         /// storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned
@@ -190,7 +190,7 @@ namespace Amazon.RDS.Model
         /// degradation. While the migration takes place, nightly backups for the instance will
         /// be suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
-        /// Read Replica for the instance, and creating a DB snapshot of the instance. 
+        /// Read Replica for the instance, and creating a DB snapshot of the instance.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -208,9 +208,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllowMajorVersionUpgrade. 
         /// <para>
-        ///  Indicates that major version upgrades are allowed. Changing this parameter does not
+        /// Indicates that major version upgrades are allowed. Changing this parameter does not
         /// result in an outage and the change is asynchronously applied as soon as possible.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -249,7 +248,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -290,8 +289,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        ///  The number of days to retain automated backups. Setting this parameter to a positive
-        /// number enables backups. Setting this parameter to 0 disables automated backups. 
+        /// The number of days to retain automated backups. Setting this parameter to a positive
+        /// number enables backups. Setting this parameter to 0 disables automated backups.
         /// </para>
         ///  
         /// <para>
@@ -309,10 +308,24 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be a value from 0 to 35</li> <li>Can be specified for a MySQL Read
-        /// Replica only if the source is running MySQL 5.6</li> <li>Can be specified for a PostgreSQL
-        /// Read Replica only if the source is running PostgreSQL 9.3.5</li> <li>Cannot be set
-        /// to 0 if the DB instance is a source to Read Replicas</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be a value from 0 to 35
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL
+        /// 9.3.5
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be set to 0 if the DB instance is a source to Read Replicas
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int BackupRetentionPeriod
         {
@@ -329,7 +342,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CACertificateIdentifier. 
         /// <para>
-        ///  Indicates the certificate that needs to be associated with the instance. 
+        /// Indicates the certificate that needs to be associated with the instance.
         /// </para>
         /// </summary>
         public string CACertificateIdentifier
@@ -386,7 +399,7 @@ namespace Amazon.RDS.Model
         /// | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge
         /// | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge
         /// | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro
-        /// | db.t2.small | db.t2.medium | db.t2.large</code>
+        /// | db.t2.small | db.t2.medium | db.t2.large</code> 
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -404,15 +417,29 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  The DB instance identifier. This value is stored as a lowercase string. 
+        /// The DB instance identifier. This value is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be the identifier for an existing DB instance</li> <li>Must contain
-        /// from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a
-        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be the identifier for an existing DB instance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBInstanceIdentifier
         {
@@ -429,11 +456,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        ///  The name of the DB parameter group to apply to the DB instance. Changing this setting
+        /// The name of the DB parameter group to apply to the DB instance. Changing this setting
         /// does not result in an outage. The parameter group name itself is changed immediately,
         /// but the actual parameter changes are not applied until you reboot the instance without
         /// failover. The db instance will NOT be rebooted automatically and the parameter changes
-        /// will NOT be applied during the next maintenance window. 
+        /// will NOT be applied during the next maintenance window.
         /// </para>
         ///  
         /// <para>
@@ -460,7 +487,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBPortNumber. 
         /// <para>
-        ///  The port number on which the database accepts connections. 
+        /// The port number on which the database accepts connections.
         /// </para>
         ///  
         /// <para>
@@ -478,11 +505,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code>
+        ///  Default: <code>3306</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code>
+        ///  Valid Values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -490,11 +517,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code>
+        ///  Default: <code>3306</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code>
+        ///  Valid Values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -502,15 +529,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>5432</code>
+        ///  Default: <code>5432</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code>
+        ///  Valid Values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
-        /// Type: Integer 
+        /// Type: Integer
         /// </para>
         ///  
         /// <para>
@@ -518,11 +545,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>1521</code>
+        ///  Default: <code>1521</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code>
+        ///  Valid Values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -530,7 +557,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>1433</code>
+        ///  Default: <code>1433</code> 
         /// </para>
         ///  
         /// <para>
@@ -544,11 +571,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code>
+        ///  Default: <code>3306</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code>
+        ///  Valid Values: <code>1150-65535</code> 
         /// </para>
         /// </summary>
         public int DBPortNumber
@@ -566,17 +593,26 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroups. 
         /// <para>
-        ///  A list of DB security groups to authorize on this DB instance. Changing this setting
+        /// A list of DB security groups to authorize on this DB instance. Changing this setting
         /// does not result in an outage and the change is asynchronously applied as soon as possible.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> DBSecurityGroups
         {
@@ -593,7 +629,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  Specify the Active Directory Domain to move the instance to. 
+        /// Specify the Active Directory Domain to move the instance to.
         /// </para>
         ///  
         /// <para>
@@ -616,8 +652,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DomainIAMRoleName. 
         /// <para>
-        ///  Specify the name of the IAM role to be used when making API calls to the Directory
-        /// Service. 
+        /// Specify the name of the IAM role to be used when making API calls to the Directory
+        /// Service.
         /// </para>
         /// </summary>
         public string DomainIAMRoleName
@@ -642,10 +678,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  For major version upgrades, if a non-default DB parameter group is currently in use,
+        /// For major version upgrades, if a non-default DB parameter group is currently in use,
         /// a new DB parameter group in the DB parameter group family for the new engine version
         /// must be specified. The new DB parameter group can be the default for that DB parameter
-        /// group family. 
+        /// group family.
         /// </para>
         ///  
         /// <para>
@@ -698,7 +734,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  If you choose to migrate your DB instance from using standard storage to using Provisioned
+        /// If you choose to migrate your DB instance from using standard storage to using Provisioned
         /// IOPS, or from using Provisioned IOPS to using standard storage, the process can take
         /// time. The duration of the migration depends on several factors such as database load,
         /// storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned
@@ -708,7 +744,7 @@ namespace Amazon.RDS.Model
         /// degradation. While the migration takes place, nightly backups for the instance will
         /// be suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
-        /// Read Replica for the instance, and creating a DB snapshot of the instance. 
+        /// Read Replica for the instance, and creating a DB snapshot of the instance.
         /// </para>
         /// </summary>
         public int Iops
@@ -726,7 +762,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        ///  The new password for the DB instance master user. Can be any printable ASCII character
+        /// The new password for the DB instance master user. Can be any printable ASCII character
         /// except "/", """, or "@".
         /// </para>
         ///  
@@ -746,9 +782,13 @@ namespace Amazon.RDS.Model
         /// 8 to 30 alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL
         /// Server).
         /// </para>
-        ///  <note> Amazon RDS API actions never return the password, so this action provides
-        /// a way to regain access to a primary instance user if the password is lost. This includes
-        /// restoring privileges that might have been accidentally revoked. </note>
+        ///  <note> 
+        /// <para>
+        /// Amazon RDS API actions never return the password, so this action provides a way to
+        /// regain access to a primary instance user if the password is lost. This includes restoring
+        /// privileges that might have been accidentally revoked.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string MasterUserPassword
         {
@@ -767,7 +807,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
         /// for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.
-        /// The default is 60.
+        /// The default is 0.
         /// </para>
         ///  
         /// <para>
@@ -776,7 +816,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
+        /// Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> 
         /// </para>
         /// </summary>
         public int MonitoringInterval
@@ -857,9 +897,19 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string NewDBInstanceIdentifier
         {
@@ -886,9 +936,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
+        /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
         /// be removed from an option group, and that option group cannot be removed from a DB
-        /// instance once it is associated with a DB instance 
+        /// instance once it is associated with a DB instance
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -915,9 +965,23 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be in the format hh24:mi-hh24:mi</li> <li>Times should be in Universal
-        /// Time Coordinated (UTC)</li> <li>Must not conflict with the preferred maintenance window</li>
-        /// <li>Must be at least 30 minutes</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be in the format hh24:mi-hh24:mi
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Times should be in Universal Time Coordinated (UTC)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not conflict with the preferred maintenance window
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 30 minutes
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string PreferredBackupWindow
         {
@@ -934,14 +998,14 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  The weekly time range (in UTC) during which system maintenance can occur, which might
+        /// The weekly time range (in UTC) during which system maintenance can occur, which might
         /// result in an outage. Changing this parameter does not result in an outage, except
         /// in the following situation, and the change is asynchronously applied as soon as possible.
         /// If there are pending actions that cause a reboot, and the maintenance window is changed
         /// to include the current time, then changing this parameter will cause a reboot of the
         /// DB instance. If moving this window to the current time, there must be at least 30
         /// minutes between the current time and end of the window to ensure pending changes are
-        /// applied. 
+        /// applied.
         /// </para>
         ///  
         /// <para>
@@ -1011,7 +1075,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance
+        ///  <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance
         /// must be part of a public subnet and <code>PubliclyAccessible</code> must be true in
         /// order for it to be publicly accessible. 
         /// </para>
@@ -1022,7 +1086,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: false 
+        /// Default: false
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -1040,11 +1104,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies the storage type to be associated with the DB instance. 
+        /// Specifies the storage type to be associated with the DB instance.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code>
+        ///  Valid values: <code>standard | gp2 | io1</code> 
         /// </para>
         ///  
         /// <para>
@@ -1054,7 +1118,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
-        /// <code>standard</code>
+        /// <code>standard</code> 
         /// </para>
         /// </summary>
         public string StorageType
@@ -1072,8 +1136,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        ///  The ARN from the Key Store with which to associate the instance for TDE encryption.
-        /// 
+        /// The ARN from the Key Store with which to associate the instance for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -1091,8 +1154,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialPassword. 
         /// <para>
-        ///  The password for the given ARN from the Key Store in order to access the device.
-        /// 
+        /// The password for the given ARN from the Key Store in order to access the device.
         /// </para>
         /// </summary>
         public string TdeCredentialPassword
@@ -1110,16 +1172,26 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        ///  A list of EC2 VPC security groups to authorize on this DB instance. This change is
-        /// asynchronously applied as soon as possible. 
+        /// A list of EC2 VPC security groups to authorize on this DB instance. This change is
+        /// asynchronously applied as soon as possible.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> VpcSecurityGroupIds
         {

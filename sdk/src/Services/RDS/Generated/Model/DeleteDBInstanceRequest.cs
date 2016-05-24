@@ -29,24 +29,22 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBInstance operation.
-    /// The DeleteDBInstance action deletes a previously provisioned DB instance. A successful
-    /// response from the web service indicates the request was received correctly. When you
+    /// The DeleteDBInstance action deletes a previously provisioned DB instance. When you
     /// delete a DB instance, all automated backups for that instance are deleted and cannot
     /// be recovered. Manual DB snapshots of the DB instance to be deleted are not deleted.
     /// 
-    /// 
     ///  
     /// <para>
-    ///  If a final DB snapshot is requested the status of the RDS instance will be "deleting"
+    ///  If a final DB snapshot is requested the status of the RDS instance will be <code>deleting</code>
     /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
     /// used to monitor the status of this operation. The action cannot be canceled or reverted
     /// once submitted. 
     /// </para>
     ///  
     /// <para>
-    /// Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
-    /// or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter
-    /// is set to "true".
+    /// Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
+    /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, it can only
+    /// be deleted when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
     /// </para>
     /// </summary>
     public partial class DeleteDBInstanceRequest : AmazonRDSRequest
@@ -63,7 +61,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DeleteDBInstanceRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier"> The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbInstanceIdentifier">The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
         public DeleteDBInstanceRequest(string dbInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -72,16 +70,26 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  The DB instance identifier for the DB instance to be deleted. This parameter isn't
-        /// case-sensitive. 
+        /// The DB instance identifier for the DB instance to be deleted. This parameter isn't
+        /// case-sensitive.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBInstanceIdentifier
         {
@@ -101,14 +109,32 @@ namespace Amazon.RDS.Model
         ///  The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is
         /// set to <code>false</code>. 
         /// </para>
-        ///  <note> Specifying this parameter and also setting the SkipFinalShapshot parameter
-        /// to true results in an error. </note> 
+        ///  <note> 
+        /// <para>
+        /// Specifying this parameter and also setting the SkipFinalShapshot parameter to true
+        /// results in an error.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// <li>Cannot be specified when deleting a Read Replica.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be specified when deleting a Read Replica.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string FinalDBSnapshotIdentifier
         {
@@ -139,10 +165,14 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specify <code>true</code> when deleting a Read Replica.
         /// </para>
-        ///  <note>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot
-        /// is <code>false</code>.</note> 
+        ///  <note> 
         /// <para>
-        /// Default: <code>false</code>
+        /// The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is
+        /// <code>false</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool SkipFinalSnapshot

@@ -44,8 +44,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroupMemberships. 
         /// <para>
-        ///  If the option requires access to a port, then this DB security group allows access
-        /// to the port. 
+        /// If the option requires access to a port, then this DB security group allows access
+        /// to the port.
         /// </para>
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroupMemberships
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionDescription. 
         /// <para>
-        ///  The description of the option. 
+        /// The description of the option.
         /// </para>
         /// </summary>
         public string OptionDescription
@@ -81,7 +81,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionName. 
         /// <para>
-        ///  The name of the option. 
+        /// The name of the option.
         /// </para>
         /// </summary>
         public string OptionName
@@ -99,7 +99,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///  The option settings for this option. 
+        /// The option settings for this option.
         /// </para>
         /// </summary>
         public List<OptionSetting> OptionSettings
@@ -135,7 +135,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Persistent. 
         /// <para>
-        ///  Indicate if this option is persistent. 
+        /// Indicate if this option is persistent.
         /// </para>
         /// </summary>
         public bool Persistent
@@ -153,7 +153,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  If required, the port configured for this option to use. 
+        /// If required, the port configured for this option to use.
         /// </para>
         /// </summary>
         public int Port
@@ -171,8 +171,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupMemberships. 
         /// <para>
-        ///  If the option requires access to a port, then this VPC security group allows access
-        /// to the port. 
+        /// If the option requires access to a port, then this VPC security group allows access
+        /// to the port.
         /// </para>
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroupMemberships

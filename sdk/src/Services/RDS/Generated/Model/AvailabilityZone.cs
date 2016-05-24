@@ -28,12 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains Availability Zone information. 
+    /// Contains Availability Zone information.
     /// 
     ///  
     /// <para>
-    ///  This data type is used as an element in the following data type: <ul><li><a>OrderableDBInstanceOption</a></li></ul>
+    ///  This data type is used as an element in the following data type:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>OrderableDBInstanceOption</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AvailabilityZone
     {
@@ -42,7 +47,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the availability zone. 
+        /// The name of the availability zone.
         /// </para>
         /// </summary>
         public string Name

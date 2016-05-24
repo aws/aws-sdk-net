@@ -49,7 +49,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBEngineDescription. 
         /// <para>
-        ///  The description of the database engine. 
+        /// The description of the database engine.
         /// </para>
         /// </summary>
         public string DBEngineDescription
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBEngineVersionDescription. 
         /// <para>
-        ///  The description of the database engine version. 
+        /// The description of the database engine version.
         /// </para>
         /// </summary>
         public string DBEngineVersionDescription
@@ -85,7 +85,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        ///  The name of the DB parameter group family for the database engine. 
+        /// The name of the DB parameter group family for the database engine.
         /// </para>
         /// </summary>
         public string DBParameterGroupFamily
@@ -122,7 +122,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  The name of the database engine. 
+        /// The name of the database engine.
         /// </para>
         /// </summary>
         public string Engine
@@ -140,7 +140,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The version number of the database engine. 
+        /// The version number of the database engine.
         /// </para>
         /// </summary>
         public string EngineVersion

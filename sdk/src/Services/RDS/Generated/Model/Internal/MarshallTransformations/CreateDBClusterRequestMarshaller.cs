@@ -127,6 +127,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
                 }
+                if(publicRequest.IsSetReplicationSourceIdentifier())
+                {
+                    request.Parameters.Add("ReplicationSourceIdentifier", StringUtils.FromString(publicRequest.ReplicationSourceIdentifier));
+                }
                 if(publicRequest.IsSetStorageEncrypted())
                 {
                     request.Parameters.Add("StorageEncrypted", StringUtils.FromBool(publicRequest.StorageEncrypted));

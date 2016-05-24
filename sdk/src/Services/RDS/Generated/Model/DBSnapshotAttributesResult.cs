@@ -29,13 +29,13 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Contains the results of a successful call to the <a>DescribeDBSnapshotAttributes</a>
-    /// API.
+    /// API action.
     /// 
     ///  
     /// <para>
     /// Manual DB snapshot attributes are used to authorize other AWS accounts to copy or
     /// restore a manual DB snapshot. For more information, see the <a>ModifyDBSnapshotAttribute</a>
-    /// API.
+    /// API action.
     /// </para>
     /// </summary>
     public partial class DBSnapshotAttributesResult

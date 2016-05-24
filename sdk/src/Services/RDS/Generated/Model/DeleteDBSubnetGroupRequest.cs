@@ -29,9 +29,13 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSubnetGroup operation.
-    /// Deletes a DB subnet group. 
+    /// Deletes a DB subnet group.
     /// 
-    ///  <note>The specified database subnet group must not be associated with any DB instances.</note>
+    ///  <note> 
+    /// <para>
+    /// The specified database subnet group must not be associated with any DB instances.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteDBSubnetGroupRequest : AmazonRDSRequest
     {
@@ -40,11 +44,15 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        ///  The name of the database subnet group to delete. 
+        /// The name of the database subnet group to delete.
         /// </para>
-        ///  <note>You cannot delete the default subnet group.</note> 
+        ///  <note> 
         /// <para>
-        ///  Constraints: 
+        /// You cannot delete the default subnet group.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Constraints:
         /// </para>
         ///  
         /// <para>
@@ -53,7 +61,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code>
+        /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName

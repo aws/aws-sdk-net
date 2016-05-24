@@ -55,7 +55,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SubnetIdentifier. 
         /// <para>
-        ///  Specifies the identifier of the subnet. 
+        /// Specifies the identifier of the subnet.
         /// </para>
         /// </summary>
         public string SubnetIdentifier
@@ -73,7 +73,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SubnetStatus. 
         /// <para>
-        ///  Specifies the status of the subnet. 
+        /// Specifies the status of the subnet.
         /// </para>
         /// </summary>
         public string SubnetStatus

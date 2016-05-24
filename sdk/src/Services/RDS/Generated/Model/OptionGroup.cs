@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        ///  Indicates the name of the engine that this option group can be applied to. 
+        /// Indicates the name of the engine that this option group can be applied to.
         /// </para>
         /// </summary>
         public string EngineName
@@ -81,7 +81,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MajorEngineVersion. 
         /// <para>
-        ///  Indicates the major engine version associated with this option group. 
+        /// Indicates the major engine version associated with this option group.
         /// </para>
         /// </summary>
         public string MajorEngineVersion
@@ -99,7 +99,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupDescription. 
         /// <para>
-        /// Provides a description of the option group. 
+        /// Provides a description of the option group.
         /// </para>
         /// </summary>
         public string OptionGroupDescription
@@ -117,7 +117,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  Specifies the name of the option group. 
+        /// Specifies the name of the option group.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -135,7 +135,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        ///  Indicates what options are available in the option group. 
+        /// Indicates what options are available in the option group.
         /// </para>
         /// </summary>
         public List<Option> Options

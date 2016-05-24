@@ -51,8 +51,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  The DB instance class filter value. Specify this parameter to show only the available
-        /// offerings matching the specified DB instance class. 
+        /// The DB instance class filter value. Specify this parameter to show only the available
+        /// offerings matching the specified DB instance class.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -70,12 +70,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        ///  Duration filter value, specified in years or seconds. Specify this parameter to show
-        /// only reservations for this duration. 
+        /// Duration filter value, specified in years or seconds. Specify this parameter to show
+        /// only reservations for this duration.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+        /// Valid Values: <code>1 | 3 | 31536000 | 94608000</code> 
         /// </para>
         /// </summary>
         public string Duration
@@ -159,8 +159,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  The Multi-AZ filter value. Specify this parameter to show only the available offerings
-        /// matching the specified Multi-AZ parameter. 
+        /// The Multi-AZ filter value. Specify this parameter to show only the available offerings
+        /// matching the specified Multi-AZ parameter.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -178,12 +178,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
-        ///  The offering type filter value. Specify this parameter to show only the available
-        /// offerings matching the specified offering type. 
+        /// The offering type filter value. Specify this parameter to show only the available
+        /// offerings matching the specified offering type.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
+        /// Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> 
         /// </para>
         /// </summary>
         public string OfferingType
@@ -201,8 +201,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ProductDescription. 
         /// <para>
-        ///  Product description filter value. Specify this parameter to show only the available
-        /// offerings matching the specified product description. 
+        /// Product description filter value. Specify this parameter to show only the available
+        /// offerings matching the specified product description.
         /// </para>
         /// </summary>
         public string ProductDescription
@@ -220,12 +220,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReservedDBInstancesOfferingId. 
         /// <para>
-        ///  The offering identifier filter value. Specify this parameter to show only the available
-        /// offering that matches the specified reservation identifier. 
+        /// The offering identifier filter value. Specify this parameter to show only the available
+        /// offering that matches the specified reservation identifier.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
+        /// Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> 
         /// </para>
         /// </summary>
         public string ReservedDBInstancesOfferingId

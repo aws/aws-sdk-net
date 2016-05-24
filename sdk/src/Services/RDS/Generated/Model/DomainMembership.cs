@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The identifier of the Active Directory Domain. 
+        /// The identifier of the Active Directory Domain.
         /// </para>
         /// </summary>
         public string Domain
@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FQDN. 
         /// <para>
-        ///  The fully qualified domain name of the Active Directory Domain. 
+        /// The fully qualified domain name of the Active Directory Domain.
         /// </para>
         /// </summary>
         public string FQDN
@@ -76,8 +76,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IAMRoleName. 
         /// <para>
-        ///  The name of the IAM role to be used when making API calls to the Directory Service.
-        /// 
+        /// The name of the IAM role to be used when making API calls to the Directory Service.
         /// </para>
         /// </summary>
         public string IAMRoleName
@@ -95,8 +94,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the DB instance's Active Directory Domain membership, such as joined,
-        /// pending-join, failed etc). 
+        /// The status of the DB instance's Active Directory Domain membership, such as joined,
+        /// pending-join, failed etc).
         /// </para>
         /// </summary>
         public string Status

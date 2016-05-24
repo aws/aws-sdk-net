@@ -43,8 +43,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        ///  Filters the list of option groups to only include groups associated with a specific
-        /// database engine. 
+        /// Filters the list of option groups to only include groups associated with a specific
+        /// database engine.
         /// </para>
         /// </summary>
         public string EngineName
@@ -80,8 +80,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MajorEngineVersion. 
         /// <para>
-        ///  Filters the list of option groups to only include groups associated with a specific
-        /// database engine version. If specified, then EngineName must also be specified. 
+        /// Filters the list of option groups to only include groups associated with a specific
+        /// database engine version. If specified, then EngineName must also be specified.
         /// </para>
         /// </summary>
         public string MajorEngineVersion
@@ -147,8 +147,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  The name of the option group to describe. Cannot be supplied together with EngineName
-        /// or MajorEngineVersion. 
+        /// The name of the option group to describe. Cannot be supplied together with EngineName
+        /// or MajorEngineVersion.
         /// </para>
         /// </summary>
         public string OptionGroupName

@@ -29,12 +29,11 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBClusterParameterGroup operation.
-    /// Creates a new DB cluster parameter group. 
+    /// Creates a new DB cluster parameter group.
     /// 
     ///  
     /// <para>
-    ///  Parameters in a DB cluster parameter group apply to all of the instances in a DB
-    /// cluster. 
+    /// Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.
     /// </para>
     ///  
     /// <para>
@@ -63,7 +62,7 @@ namespace Amazon.RDS.Model
     ///  </important> 
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class CreateDBClusterParameterGroupRequest : AmazonRDSRequest
@@ -76,15 +75,29 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        ///  The name of the DB cluster parameter group. 
+        /// The name of the DB cluster parameter group.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul> <note>This value is stored as a lowercase string.</note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This value is stored as a lowercase string.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DBClusterParameterGroupName
         {
@@ -101,10 +114,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        ///  The DB cluster parameter group family name. A DB cluster parameter group can be associated
+        /// The DB cluster parameter group family name. A DB cluster parameter group can be associated
         /// with one and only one DB cluster parameter group family, and can be applied only to
         /// a DB cluster running a database engine and engine version compatible with that DB
-        /// cluster parameter group family. 
+        /// cluster parameter group family.
         /// </para>
         /// </summary>
         public string DBParameterGroupFamily
@@ -122,7 +135,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description for the DB cluster parameter group. 
+        /// The description for the DB cluster parameter group.
         /// </para>
         /// </summary>
         public string Description

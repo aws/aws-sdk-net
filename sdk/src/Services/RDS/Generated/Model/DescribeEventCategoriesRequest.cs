@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  The type of source that will be generating the events. 
+        /// The type of source that will be generating the events.
         /// </para>
         ///  
         /// <para>

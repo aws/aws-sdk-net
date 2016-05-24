@@ -39,19 +39,34 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        ///  The identifier of the event source to be added. An identifier must begin with a letter
+        /// The identifier of the event source to be added. An identifier must begin with a letter
         /// and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen
-        /// or contain two consecutive hyphens. 
+        /// or contain two consecutive hyphens.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code>
-        /// must be supplied.</li> <li>If the source type is a DB security group, a <code>DBSecurityGroupName</code>
-        /// must be supplied.</li> <li>If the source type is a DB parameter group, a <code>DBParameterGroupName</code>
-        /// must be supplied.</li> <li>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
-        /// must be supplied.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must
+        /// be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is a DB security group, a <code>DBSecurityGroupName</code> must
+        /// be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must
+        /// be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SourceIdentifier
         {

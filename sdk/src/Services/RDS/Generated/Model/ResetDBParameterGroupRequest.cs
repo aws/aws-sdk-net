@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates ResetDBParameterGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupName"> The name of the DB parameter group.  Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> Must be 1 to 255 alphanumeric characters </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
         public ResetDBParameterGroupRequest(string dbParameterGroupName)
         {
             _dbParameterGroupName = dbParameterGroupName;
@@ -60,15 +60,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        ///  The name of the DB parameter group. 
+        /// The name of the DB parameter group.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBParameterGroupName
         {
@@ -85,10 +95,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        ///  An array of parameter names, values, and the apply method for the parameter update.
+        /// An array of parameter names, values, and the apply method for the parameter update.
         /// At least one parameter name, value, and apply method must be supplied; subsequent
         /// arguments are optional. A maximum of 20 parameters can be modified in a single request.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -97,6 +106,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -111,6 +121,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -124,7 +135,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values (for Apply method): <code>pending-reboot</code>
+        /// Valid Values (for Apply method): <code>pending-reboot</code> 
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -147,7 +158,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code>
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool ResetAllParameters

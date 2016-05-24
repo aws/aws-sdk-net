@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the CopyDBSnapshot operation.
     /// Copies the specified DB snapshot. The source DB snapshot must be in the "available"
-    /// state. 
+    /// state.
     /// 
     ///  
     /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The AWS Key Management Service (AWS KMS) key identifier for an encrypted DB snapshot.
         /// The KMS key identifier is the Amazon Resource Name (ARN) or the KMS key alias for
-        /// the KMS encryption key. 
+        /// the KMS encryption key.
         /// </para>
         ///  
         /// <para>
@@ -106,7 +106,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceDBSnapshotIdentifier. 
         /// <para>
-        ///  The identifier for the source DB snapshot. 
+        /// The identifier for the source DB snapshot.
         /// </para>
         ///  
         /// <para>
@@ -117,17 +117,29 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must specify a valid system snapshot in the "available" state.</li> <li>If
-        /// the source snapshot is in the same region as the copy, specify a valid DB snapshot
-        /// identifier.</li> <li>If the source snapshot is in a different region than the copy,
-        /// specify a valid DB snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-        /// Copying a DB Snapshot</a>.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>rds:mydb-2012-04-02-00-01</code>
+        /// Must specify a valid system snapshot in the "available" state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source snapshot is in the same region as the copy, specify a valid DB snapshot
+        /// identifier.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source snapshot is in a different region than the copy, specify a valid DB
+        /// snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
+        /// Copying a DB Snapshot</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>rds:mydb-2012-04-02-00-01</code> 
         /// </para>
         ///  
         /// <para>
         /// Example: <code>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>
+        /// 
         /// </para>
         /// </summary>
         public string SourceDBSnapshotIdentifier
@@ -160,17 +172,31 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetDBSnapshotIdentifier. 
         /// <para>
-        ///  The identifier for the copied snapshot. 
+        /// The identifier for the copied snapshot.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-        /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-        /// with a hyphen or contain two consecutive hyphens</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-db-snapshot</code>
+        /// Cannot be null, empty, or blank
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain from 1 to 255 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-db-snapshot</code> 
         /// </para>
         /// </summary>
         public string TargetDBSnapshotIdentifier

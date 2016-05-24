@@ -50,15 +50,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        ///  The name of a specific DB parameter group family to return details for. 
+        /// The name of a specific DB parameter group family to return details for.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBParameterGroupFamily
         {
@@ -75,8 +85,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DefaultOnly. 
         /// <para>
-        ///  Indicates that only the default version of the specified engine or engine and major
-        /// version combination is returned. 
+        /// Indicates that only the default version of the specified engine or engine and major
+        /// version combination is returned.
         /// </para>
         /// </summary>
         public bool DefaultOnly
@@ -94,7 +104,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  The database engine to return. 
+        /// The database engine to return.
         /// </para>
         /// </summary>
         public string Engine
@@ -112,11 +122,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The database engine version to return. 
+        /// The database engine version to return.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.1.49</code>
+        /// Example: <code>5.1.49</code> 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -134,7 +144,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  Not currently supported. 
+        /// Not currently supported.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -152,9 +162,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ListSupportedCharacterSets. 
         /// <para>
-        ///  If this parameter is specified, and if the requested engine supports the CharacterSetName
+        /// If this parameter is specified, and if the requested engine supports the CharacterSetName
         /// parameter for CreateDBInstance, the response includes a list of supported character
-        /// sets for each engine version. 
+        /// sets for each engine version.
         /// </para>
         /// </summary>
         public bool ListSupportedCharacterSets

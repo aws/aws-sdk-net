@@ -28,10 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
+    /// Contains the result of a successful invocation of the following actions:
     /// 
-    ///  <ul> <li> <a>CreateDBSnapshot</a> </li> <li> <a>DeleteDBSnapshot</a> </li> </ul>
-    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateDBSnapshot</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteDBSnapshot</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
     /// </para>
@@ -65,7 +72,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  Specifies the allocated storage size in gigabytes (GB). 
+        /// Specifies the allocated storage size in gigabytes (GB).
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -83,8 +90,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  Specifies the name of the Availability Zone the DB instance was located in at the
-        /// time of the DB snapshot. 
+        /// Specifies the name of the Availability Zone the DB instance was located in at the
+        /// time of the DB snapshot.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -102,8 +109,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  Specifies the DB instance identifier of the DB instance this DB snapshot was created
-        /// from. 
+        /// Specifies the DB instance identifier of the DB instance this DB snapshot was created
+        /// from.
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -121,7 +128,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        ///  Specifies the identifier for the DB snapshot. 
+        /// Specifies the identifier for the DB snapshot.
         /// </para>
         /// </summary>
         public string DBSnapshotIdentifier
@@ -139,7 +146,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        ///  Specifies whether the DB snapshot is encrypted. 
+        /// Specifies whether the DB snapshot is encrypted.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -157,7 +164,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  Specifies the name of the database engine. 
+        /// Specifies the name of the database engine.
         /// </para>
         /// </summary>
         public string Engine
@@ -175,7 +182,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  Specifies the version of the database engine. 
+        /// Specifies the version of the database engine.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -193,8 +200,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
-        ///  Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
-        /// 
+        /// Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
         public DateTime InstanceCreateTime
@@ -212,8 +218,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        ///  Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance
-        /// at the time of the snapshot. 
+        /// Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance
+        /// at the time of the snapshot.
         /// </para>
         /// </summary>
         public int Iops
@@ -250,7 +256,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        ///  License model information for the restored DB instance. 
+        /// License model information for the restored DB instance.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -268,7 +274,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        ///  Provides the master username for the DB snapshot. 
+        /// Provides the master username for the DB snapshot.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -286,7 +292,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  Provides the option group name for the DB snapshot. 
+        /// Provides the option group name for the DB snapshot.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -304,7 +310,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PercentProgress. 
         /// <para>
-        ///  The percentage of the estimated data that has been transferred. 
+        /// The percentage of the estimated data that has been transferred.
         /// </para>
         /// </summary>
         public int PercentProgress
@@ -322,8 +328,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  Specifies the port that the database engine was listening on at the time of the snapshot.
-        /// 
+        /// Specifies the port that the database engine was listening on at the time of the snapshot.
         /// </para>
         /// </summary>
         public int Port
@@ -341,8 +346,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 
         /// <para>
-        ///  Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
-        /// 
+        /// Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
         public DateTime SnapshotCreateTime
@@ -360,7 +364,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotType. 
         /// <para>
-        ///  Provides the type of the DB snapshot. 
+        /// Provides the type of the DB snapshot.
         /// </para>
         /// </summary>
         public string SnapshotType
@@ -378,8 +382,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceDBSnapshotIdentifier. 
         /// <para>
-        ///  The DB snapshot Arn that the DB snapshot was copied from. It only has value in case
-        /// of cross customer or cross region copy. 
+        /// The DB snapshot Arn that the DB snapshot was copied from. It only has value in case
+        /// of cross customer or cross region copy.
         /// </para>
         /// </summary>
         public string SourceDBSnapshotIdentifier
@@ -397,7 +401,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        ///  The region that the DB snapshot was created in or copied from. 
+        /// The region that the DB snapshot was created in or copied from.
         /// </para>
         /// </summary>
         public string SourceRegion
@@ -415,7 +419,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Specifies the status of this DB snapshot. 
+        /// Specifies the status of this DB snapshot.
         /// </para>
         /// </summary>
         public string Status
@@ -433,7 +437,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies the storage type associated with DB Snapshot. 
+        /// Specifies the storage type associated with DB Snapshot.
         /// </para>
         /// </summary>
         public string StorageType
@@ -451,8 +455,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        ///  The ARN from the Key Store with which to associate the instance for TDE encryption.
-        /// 
+        /// The ARN from the Key Store with which to associate the instance for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -470,7 +473,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        ///  Provides the VPC ID associated with the DB snapshot. 
+        /// Provides the VPC ID associated with the DB snapshot.
         /// </para>
         /// </summary>
         public string VpcId

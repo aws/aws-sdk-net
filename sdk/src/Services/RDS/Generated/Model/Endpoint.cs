@@ -28,10 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the following actions: 
+    /// This data type is used as a response element in the following actions:
     /// 
-    ///  <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DescribeDBInstances</a> </li> <li>
-    /// <a>DeleteDBInstance</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeDBInstances</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteDBInstance</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Endpoint
     {
@@ -47,7 +58,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        ///  Specifies the DNS address of the DB instance. 
+        /// Specifies the DNS address of the DB instance.
         /// </para>
         /// </summary>
         public string Address
@@ -83,7 +94,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  Specifies the port that the database engine is listening on. 
+        /// Specifies the port that the database engine is listening on.
         /// </para>
         /// </summary>
         public int Port

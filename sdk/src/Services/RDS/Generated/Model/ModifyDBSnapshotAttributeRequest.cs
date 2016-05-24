@@ -29,24 +29,24 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBSnapshotAttribute operation.
-    /// Adds an attribute and values to, or removes an attribute and values from a manual
+    /// Adds an attribute and values to, or removes an attribute and values from, a manual
     /// DB snapshot.
     /// 
     ///  
     /// <para>
     /// To share a manual DB snapshot with other AWS accounts, specify <code>restore</code>
     /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
-    /// add a list of the AWS account ids that are authorized to restore the manual DB snapshot.
-    /// Uses the value <code>all</code> to make the manual DB snapshot public and can by copied
-    /// or restored by all AWS accounts. Do not add the <code>all</code> value for any manual
-    /// DB snapshots that contain private information that you do not want to be available
-    /// to all AWS accounts.
+    /// add a list of IDs of the AWS accounts that are authorized to restore the manual DB
+    /// snapshot. Uses the value <code>all</code> to make the manual DB snapshot public, which
+    /// means it can be copied or restored by all AWS accounts. Do not add the <code>all</code>
+    /// value for any manual DB snapshots that contain private information that you don't
+    /// want available to all AWS accounts.
     /// </para>
     ///  
     /// <para>
     /// To view which AWS accounts have access to copy or restore a manual DB snapshot, or
     /// whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
-    /// API.
+    /// API action.
     /// </para>
     ///  
     /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// To manage authorization for other AWS accounts to copy or restore a manual DB snapshot,
-        /// this value is <code>restore</code>.
+        /// set this value to <code>restore</code>.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -108,10 +108,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To authorize other AWS Accounts to copy or restore a manual snapshot, this is one
-        /// or more AWS account identifiers, or <code>all</code> to make the manual DB snapshot
-        /// restorable by any AWS account. Do not add the <code>all</code> value for any manual
-        /// DB snapshots that contain private information that you do not want to be available
+        /// To authorize other AWS accounts to copy or restore a manual snapshot, set this list
+        /// to include one or more AWS account IDs, or <code>all</code> to make the manual DB
+        /// snapshot restorable by any AWS account. Do not add the <code>all</code> value for
+        /// any manual DB snapshots that contain private information that you don't want available
         /// to all AWS accounts.
         /// </para>
         /// </summary>
@@ -134,11 +134,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To remove authorization for other AWS Accounts to copy or restore a manual snapshot,
-        /// this is one or more AWS account identifiers, or <code>all</code> to remove authorization
-        /// for any AWS account to copy or restore the DB snapshot. If you specify <code>all</code>,
-        /// AWS accounts that have their account identifier explicitly added to the <code>restore</code>
-        /// attribute can still copy or restore the manual DB snapshot.
+        /// To remove authorization for other AWS accounts to copy or restore a manual snapshot,
+        /// set this list to include one or more AWS account identifiers, or <code>all</code>
+        /// to remove authorization for any AWS account to copy or restore the DB snapshot. If
+        /// you specify <code>all</code>, an AWS account whose account ID is explicitly added
+        /// to the <code>restore</code> attribute can still copy or restore the manual DB snapshot.
         /// </para>
         /// </summary>
         public List<string> ValuesToRemove

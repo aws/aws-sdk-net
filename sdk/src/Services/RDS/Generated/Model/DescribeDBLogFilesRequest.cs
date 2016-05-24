@@ -44,16 +44,26 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  The customer-assigned name of the DB instance that contains the log files you want
-        /// to list. 
+        /// The customer-assigned name of the DB instance that contains the log files you want
+        /// to list.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBInstanceIdentifier
         {
@@ -70,8 +80,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FileLastWritten. 
         /// <para>
-        ///  Filters the available log files for files written since the specified date, in POSIX
-        /// timestamp format with milliseconds. 
+        /// Filters the available log files for files written since the specified date, in POSIX
+        /// timestamp format with milliseconds.
         /// </para>
         /// </summary>
         public long FileLastWritten
@@ -89,8 +99,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FilenameContains. 
         /// <para>
-        ///  Filters the available log files for log file names that contain the specified string.
-        /// 
+        /// Filters the available log files for log file names that contain the specified string.
         /// </para>
         /// </summary>
         public string FilenameContains
@@ -108,7 +117,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FileSize. 
         /// <para>
-        ///  Filters the available log files for files larger than the specified size. 
+        /// Filters the available log files for files larger than the specified size.
         /// </para>
         /// </summary>
         public long FileSize
@@ -144,8 +153,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  The pagination token provided in the previous request. If this parameter is specified
-        /// the response includes only records beyond the marker, up to MaxRecords. 
+        /// The pagination token provided in the previous request. If this parameter is specified
+        /// the response includes only records beyond the marker, up to MaxRecords.
         /// </para>
         /// </summary>
         public string Marker
@@ -163,9 +172,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more records exist than
+        /// The maximum number of records to include in the response. If more records exist than
         /// the specified MaxRecords value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved. 
+        /// the response so that the remaining results can be retrieved.
         /// </para>
         /// </summary>
         public int MaxRecords

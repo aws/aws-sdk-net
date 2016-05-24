@@ -29,8 +29,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSubnetGroup operation.
-    /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet
-    /// in at least two AZs in the region.
+    /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet in
+    /// at least two AZs in the region.
     /// </summary>
     public partial class CreateDBSubnetGroupRequest : AmazonRDSRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupDescription. 
         /// <para>
-        ///  The description for the DB subnet group. 
+        /// The description for the DB subnet group.
         /// </para>
         /// </summary>
         public string DBSubnetGroupDescription
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        ///  The name for the DB subnet group. This value is stored as a lowercase string. 
+        /// The name for the DB subnet group. This value is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code>
+        /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -87,7 +87,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        ///  The EC2 Subnet IDs for the DB subnet group. 
+        /// The EC2 Subnet IDs for the DB subnet group.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

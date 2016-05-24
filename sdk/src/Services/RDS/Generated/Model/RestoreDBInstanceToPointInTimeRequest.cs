@@ -35,12 +35,12 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    ///  The target database is created with most of the original configuration, but in a
-    /// system-selected availability zone, with the default security group, the default subnet
-    /// group, and the default DB parameter group. By default, the new DB instance is created
-    /// as a single-AZ deployment except when the instance is a SQL Server instance that has
-    /// an option group that is associated with mirroring; in this case, the instance becomes
-    /// a mirrored deployment and not a single-AZ deployment. 
+    /// The target database is created with most of the original configuration, but in a system-selected
+    /// availability zone, with the default security group, the default subnet group, and
+    /// the default DB parameter group. By default, the new DB instance is created as a single-AZ
+    /// deployment except when the instance is a SQL Server instance that has an option group
+    /// that is associated with mirroring; in this case, the instance becomes a mirrored deployment
+    /// and not a single-AZ deployment.
     /// </para>
     /// </summary>
     public partial class RestoreDBInstanceToPointInTimeRequest : AmazonRDSRequest
@@ -77,8 +77,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RestoreDBInstanceToPointInTimeRequest with the parameterized properties
         /// </summary>
-        /// <param name="sourceDBInstanceIdentifier"> The identifier of the source DB instance from which to restore.  Constraints: <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
-        /// <param name="targetDBInstanceIdentifier"> The name of the new database instance to be created.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="sourceDBInstanceIdentifier">The identifier of the source DB instance from which to restore. Constraints: <ul> <li> Must be the identifier of an existing database instance </li> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
+        /// <param name="targetDBInstanceIdentifier">The name of the new database instance to be created. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
         public RestoreDBInstanceToPointInTimeRequest(string sourceDBInstanceIdentifier, string targetDBInstanceIdentifier)
         {
             _sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
@@ -88,8 +88,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  Indicates that minor version upgrades will be applied automatically to the DB instance
-        /// during the maintenance window. 
+        /// Indicates that minor version upgrades will be applied automatically to the DB instance
+        /// during the maintenance window.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -107,7 +107,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The EC2 Availability Zone that the database instance will be created in. 
+        /// The EC2 Availability Zone that the database instance will be created in.
         /// </para>
         ///  
         /// <para>
@@ -120,7 +120,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>us-east-1a</code>
+        /// Example: <code>us-east-1a</code> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -157,7 +157,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  The compute and memory capacity of the Amazon RDS DB instance. 
+        /// The compute and memory capacity of the Amazon RDS DB instance.
         /// </para>
         ///  
         /// <para>
@@ -165,7 +165,7 @@ namespace Amazon.RDS.Model
         /// | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge
         /// | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large
         /// | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small
-        /// | db.t2.medium | db.t2.large</code>
+        /// | db.t2.medium | db.t2.large</code> 
         /// </para>
         ///  
         /// <para>
@@ -187,7 +187,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        ///  The database name for the restored DB instance. 
+        /// The database name for the restored DB instance.
         /// </para>
         ///  <note> 
         /// <para>
@@ -210,7 +210,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        ///  The DB subnet group name to use for the new instance. 
+        /// The DB subnet group name to use for the new instance.
         /// </para>
         ///  
         /// <para>
@@ -219,7 +219,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code>
+        /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -237,7 +237,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  Specify the Active Directory Domain to restore the instance in. 
+        /// Specify the Active Directory Domain to restore the instance in.
         /// </para>
         /// </summary>
         public string Domain
@@ -255,8 +255,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DomainIAMRoleName. 
         /// <para>
-        ///  Specify the name of the IAM role to be used when making API calls to the Directory
-        /// Service. 
+        /// Specify the name of the IAM role to be used when making API calls to the Directory
+        /// Service.
         /// </para>
         /// </summary>
         public string DomainIAMRoleName
@@ -274,7 +274,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  The database engine to use for the new instance. 
+        /// The database engine to use for the new instance.
         /// </para>
         ///  
         /// <para>
@@ -289,7 +289,7 @@ namespace Amazon.RDS.Model
         ///  Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code>
         /// | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code>
         /// | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-        /// <code>aurora</code>
+        /// <code>aurora</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -307,12 +307,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        ///  The amount of Provisioned IOPS (input/output operations per second) to be initially
-        /// allocated for the DB instance. 
+        /// The amount of Provisioned IOPS (input/output operations per second) to be initially
+        /// allocated for the DB instance.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: Must be an integer greater than 1000.
+        /// Constraints: Must be an integer greater than 1000.
         /// </para>
         ///  
         /// <para>
@@ -338,16 +338,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        ///  License model information for the restored DB instance. 
+        /// License model information for the restored DB instance.
         /// </para>
         ///  
         /// <para>
-        ///  Default: Same as source. 
+        /// Default: Same as source.
         /// </para>
         ///  
         /// <para>
         ///  Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
-        /// | <code>general-public-license</code>
+        /// | <code>general-public-license</code> 
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -365,7 +365,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Specifies if the DB instance is a Multi-AZ deployment. 
+        /// Specifies if the DB instance is a Multi-AZ deployment.
         /// </para>
         ///  
         /// <para>
@@ -394,7 +394,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
         /// be removed from an option group, and that option group cannot be removed from a DB
-        /// instance once it is associated with a DB instance 
+        /// instance once it is associated with a DB instance
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -412,11 +412,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  The port number on which the database accepts connections. 
+        /// The port number on which the database accepts connections.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code>
+        /// Constraints: Value must be <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -438,22 +438,30 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        ///  Specifies the accessibility options for the DB instance. A value of true specifies
+        /// Specifies the accessibility options for the DB instance. A value of true specifies
         /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
         /// a public IP address. A value of false specifies an internal instance with a DNS name
-        /// that resolves to a private IP address. 
+        /// that resolves to a private IP address.
         /// </para>
         ///  
         /// <para>
-        ///  Default: The default behavior varies depending on whether a VPC has been requested
-        /// or not. The following list shows the default behavior in each case. 
+        /// Default: The default behavior varies depending on whether a VPC has been requested
+        /// or not. The following list shows the default behavior in each case.
         /// </para>
-        ///  <ul> <li> <b>Default VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        ///  If no DB subnet group has been specified as part of the request and the PubliclyAccessible
+        ///  <b>Default VPC:</b>true
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>VPC:</b>false
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If no DB subnet group has been specified as part of the request and the PubliclyAccessible
         /// value has not been set, the DB instance will be publicly accessible. If a specific
         /// DB subnet group has been specified as part of the request and the PubliclyAccessible
-        /// value has not been set, the DB instance will be private. 
+        /// value has not been set, the DB instance will be private.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -471,7 +479,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RestoreTime. 
         /// <para>
-        ///  The date and time to restore from. 
+        /// The date and time to restore from.
         /// </para>
         ///  
         /// <para>
@@ -481,10 +489,17 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be before the latest restorable time for the DB instance</li> <li>Cannot
-        /// be specified if UseLatestRestorableTime parameter is true</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>2009-09-07T23:45:00Z</code>
+        /// Must be before the latest restorable time for the DB instance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be specified if UseLatestRestorableTime parameter is true
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>2009-09-07T23:45:00Z</code> 
         /// </para>
         /// </summary>
         public DateTime RestoreTime
@@ -502,15 +517,29 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceDBInstanceIdentifier. 
         /// <para>
-        ///  The identifier of the source DB instance from which to restore. 
+        /// The identifier of the source DB instance from which to restore.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain
-        /// from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a
-        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be the identifier of an existing database instance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SourceDBInstanceIdentifier
         {
@@ -527,11 +556,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies the storage type to be associated with the DB instance. 
+        /// Specifies the storage type to be associated with the DB instance.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code>
+        ///  Valid values: <code>standard | gp2 | io1</code> 
         /// </para>
         ///  
         /// <para>
@@ -541,7 +570,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
-        /// <code>standard</code>
+        /// <code>standard</code> 
         /// </para>
         /// </summary>
         public string StorageType
@@ -574,15 +603,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetDBInstanceIdentifier. 
         /// <para>
-        ///  The name of the new database instance to be created. 
+        /// The name of the new database instance to be created.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string TargetDBInstanceIdentifier
         {
@@ -599,8 +638,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        ///  The ARN from the Key Store with which to associate the instance for TDE encryption.
-        /// 
+        /// The ARN from the Key Store with which to associate the instance for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -618,8 +656,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialPassword. 
         /// <para>
-        ///  The password for the given ARN from the Key Store in order to access the device.
-        /// 
+        /// The password for the given ARN from the Key Store in order to access the device.
         /// </para>
         /// </summary>
         public string TdeCredentialPassword
@@ -642,7 +679,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code>
+        /// Default: <code>false</code> 
         /// </para>
         ///  
         /// <para>

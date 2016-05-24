@@ -29,12 +29,12 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBClusterSnapshots operation.
-    /// Returns information about DB cluster snapshots. This API supports pagination. 
+    /// Returns information about DB cluster snapshots. This API action supports pagination.
     /// 
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class DescribeDBClusterSnapshotsRequest : AmazonRDSRequest
@@ -42,6 +42,8 @@ namespace Amazon.RDS.Model
         private string _dbClusterIdentifier;
         private string _dbClusterSnapshotIdentifier;
         private List<Filter> _filters = new List<Filter>();
+        private bool? _includePublic;
+        private bool? _includeShared;
         private string _marker;
         private int? _maxRecords;
         private string _snapshotType;
@@ -49,7 +51,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// A DB cluster identifier to retrieve the list of DB cluster snapshots for. This parameter
+        /// The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter
         /// cannot be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter.
         /// This parameter is not case-sensitive. 
         /// </para>
@@ -57,9 +59,19 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBClusterIdentifier
         {
@@ -84,10 +96,24 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// <li>If this is the identifier of an automated snapshot, the <code>SnapshotType</code>
-        /// parameter must also be specified.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter
+        /// must also be specified.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBClusterSnapshotIdentifier
         {
@@ -117,6 +143,56 @@ namespace Amazon.RDS.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludePublic. 
+        /// <para>
+        /// Set this value to <code>true</code> to include manual DB cluster snapshots that are
+        /// public and can be copied or restored by any AWS account, otherwise set this value
+        /// to <code>false</code>. The default is <code>false</code>. The default is false.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
+        /// API action.
+        /// </para>
+        /// </summary>
+        public bool IncludePublic
+        {
+            get { return this._includePublic.GetValueOrDefault(); }
+            set { this._includePublic = value; }
+        }
+
+        // Check to see if IncludePublic property is set
+        internal bool IsSetIncludePublic()
+        {
+            return this._includePublic.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeShared. 
+        /// <para>
+        /// Set this value to <code>true</code> to include shared manual DB cluster snapshots
+        /// from other AWS accounts that this AWS account has been given permission to copy or
+        /// restore, otherwise set this value to <code>false</code>. The default is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can give an AWS account permission to restore a manual DB cluster snapshot from
+        /// another AWS account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+        /// </para>
+        /// </summary>
+        public bool IncludeShared
+        {
+            get { return this._includeShared.GetValueOrDefault(); }
+            set { this._includeShared = value; }
+        }
+
+        // Check to see if IncludeShared property is set
+        internal bool IsSetIncludeShared()
+        {
+            return this._includeShared.HasValue; 
         }
 
         /// <summary>
@@ -170,9 +246,43 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotType. 
         /// <para>
-        /// The type of DB cluster snapshots that will be returned. Values can be <code>automated</code>
-        /// or <code>manual</code>. If this parameter is not specified, the returned results will
-        /// include all snapshot types. 
+        /// The type of DB cluster snapshots to be returned. You can specify one of the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>automated</code> - Return all DB cluster snapshots that have been automatically
+        /// taken by Amazon RDS for my AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>manual</code> - Return all DB cluster snapshots that have been taken by my
+        /// AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>shared</code> - Return all manual DB cluster snapshots that have been shared
+        /// to my AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>public</code> - Return all DB cluster snapshots that have been marked as public.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a <code>SnapshotType</code> value, then both automated and manual
+        /// DB cluster snapshots are returned. You can include shared DB cluster snapshots with
+        /// these results by setting the <code>IncludeShared</code> parameter to <code>true</code>.
+        /// You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code>
+        /// parameter to <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+        /// for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>.
+        /// The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code>
+        /// is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply
+        /// when <code>SnapshotType</code> is set to <code>public</code>.
         /// </para>
         /// </summary>
         public string SnapshotType

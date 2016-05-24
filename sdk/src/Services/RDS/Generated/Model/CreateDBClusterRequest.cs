@@ -29,9 +29,18 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBCluster operation.
-    /// Creates a new Amazon Aurora DB cluster. For more information on Amazon Aurora, see
-    /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// Creates a new Amazon Aurora DB cluster.
+    /// 
+    ///  
+    /// <para>
+    /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
+    /// cluster as a Read Replica of another DB cluster.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+    /// </para>
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonRDSRequest
     {
@@ -51,6 +60,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private string _replicationSourceIdentifier;
         private bool? _storageEncrypted;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
@@ -79,17 +89,21 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
         /// The number of days for which automated backups are retained. You must specify a minimum
-        /// value of 1. 
+        /// value of 1.
         /// </para>
         ///  
         /// <para>
-        /// Default: 1 
+        /// Default: 1
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be a value from 1 to 35</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be a value from 1 to 35
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int BackupRetentionPeriod
         {
@@ -107,7 +121,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CharacterSetName. 
         /// <para>
         /// A value that indicates that the DB cluster should be associated with the specified
-        /// CharacterSet. 
+        /// CharacterSet.
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -144,17 +158,27 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The DB cluster identifier. This parameter is stored as a lowercase string. 
+        /// The DB cluster identifier. This parameter is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-        /// character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-cluster1</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-cluster1</code> 
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -178,11 +202,21 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBClusterParameterGroupName
         {
@@ -199,7 +233,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// A DB subnet group to associate with this DB cluster. 
+        /// A DB subnet group to associate with this DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -208,7 +242,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code>
+        /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -226,11 +260,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for this DB cluster. 
+        /// The name of the database engine to be used for this DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code>
+        /// Valid Values: <code>aurora</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -248,7 +282,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to use. 
+        /// The version number of the database engine to use.
         /// </para>
         ///  
         /// <para>
@@ -256,7 +290,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.10a</code>
+        /// Example: <code>5.6.10a</code> 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -306,15 +340,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        ///  The name of the master user for the client DB cluster. 
+        /// The name of the master user for the client DB cluster.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First character must be
-        /// a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 16 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be a reserved word for the chosen database engine.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string MasterUsername
         {
@@ -332,11 +376,11 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
         /// The password for the master database user. This password can contain any printable
-        /// ASCII character except "/", """, or "@". 
+        /// ASCII character except "/", """, or "@".
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain from 8 to 41 characters. 
+        /// Constraints: Must contain from 8 to 41 characters.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -355,12 +399,12 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property OptionGroupName. 
         /// <para>
         /// A value that indicates that the DB cluster should be associated with the specified
-        /// option group. 
+        /// option group.
         /// </para>
         ///  
         /// <para>
         /// Permanent options cannot be removed from an option group. The option group cannot
-        /// be removed from a DB cluster once it is associated with a DB cluster. 
+        /// be removed from a DB cluster once it is associated with a DB cluster.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -378,11 +422,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  The port number on which the instances in the DB cluster accept connections. 
+        /// The port number on which the instances in the DB cluster accept connections.
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code>
+        ///  Default: <code>3306</code> 
         /// </para>
         /// </summary>
         public int Port
@@ -414,9 +458,23 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be in the format <code>hh24:mi-hh24:mi</code>.</li> <li>Times should
-        /// be in Universal Coordinated Time (UTC).</li> <li>Must not conflict with the preferred
-        /// maintenance window.</li> <li>Must be at least 30 minutes.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Times should be in Universal Coordinated Time (UTC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not conflict with the preferred maintenance window.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 30 minutes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string PreferredBackupWindow
         {
@@ -434,11 +492,11 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
         /// The weekly time range during which system maintenance can occur, in Universal Coordinated
-        /// Time (UTC). 
+        /// Time (UTC).
         /// </para>
         ///  
         /// <para>
-        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
         /// </para>
         ///  
         /// <para>
@@ -466,6 +524,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationSourceIdentifier. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created
+        /// as a Read Replica.
+        /// </para>
+        /// </summary>
+        public string ReplicationSourceIdentifier
+        {
+            get { return this._replicationSourceIdentifier; }
+            set { this._replicationSourceIdentifier = value; }
+        }
+
+        // Check to see if ReplicationSourceIdentifier property is set
+        internal bool IsSetReplicationSourceIdentifier()
+        {
+            return this._replicationSourceIdentifier != null;
         }
 
         /// <summary>
@@ -504,7 +581,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of EC2 VPC security groups to associate with this DB cluster. 
+        /// A list of EC2 VPC security groups to associate with this DB cluster.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

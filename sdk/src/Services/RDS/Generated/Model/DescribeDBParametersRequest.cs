@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DescribeDBParametersRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupName"> The name of a specific DB parameter group to return details for.  Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbParameterGroupName">The name of a specific DB parameter group to return details for. Constraints: <ul> <li> Must be 1 to 255 alphanumeric characters </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
         public DescribeDBParametersRequest(string dbParameterGroupName)
         {
             _dbParameterGroupName = dbParameterGroupName;
@@ -56,15 +56,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        ///  The name of a specific DB parameter group to return details for. 
+        /// The name of a specific DB parameter group to return details for.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBParameterGroupName
         {
@@ -147,7 +157,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        ///  The parameter types to return. 
+        /// The parameter types to return.
         /// </para>
         ///  
         /// <para>
@@ -155,7 +165,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>user | system | engine-default</code>
+        /// Valid Values: <code>user | system | engine-default</code> 
         /// </para>
         /// </summary>
         public string Source

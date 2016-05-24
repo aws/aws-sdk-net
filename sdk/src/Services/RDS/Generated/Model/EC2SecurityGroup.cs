@@ -28,10 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the following actions: 
+    /// This data type is used as a response element in the following actions:
     /// 
-    ///  <ul> <li> <a>AuthorizeDBSecurityGroupIngress</a> </li> <li> <a>DescribeDBSecurityGroups</a>
-    /// </li> <li> <a>RevokeDBSecurityGroupIngress</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>AuthorizeDBSecurityGroupIngress</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeDBSecurityGroups</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RevokeDBSecurityGroupIngress</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class EC2SecurityGroup
     {
@@ -48,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupId. 
         /// <para>
-        ///  Specifies the id of the EC2 security group. 
+        /// Specifies the id of the EC2 security group.
         /// </para>
         /// </summary>
         public string EC2SecurityGroupId
@@ -66,7 +77,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupName. 
         /// <para>
-        ///  Specifies the name of the EC2 security group. 
+        /// Specifies the name of the EC2 security group.
         /// </para>
         /// </summary>
         public string EC2SecurityGroupName
@@ -103,8 +114,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Provides the status of the EC2 security group. Status can be "authorizing", "authorized",
-        /// "revoking", and "revoked". 
+        /// Provides the status of the EC2 security group. Status can be "authorizing", "authorized",
+        /// "revoking", and "revoked".
         /// </para>
         /// </summary>
         public string Status

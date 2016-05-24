@@ -46,7 +46,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Date. 
         /// <para>
-        ///  Specifies the date and time of the event. 
+        /// Specifies the date and time of the event.
         /// </para>
         /// </summary>
         public DateTime Date
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///  Specifies the category for the event. 
+        /// Specifies the category for the event.
         /// </para>
         /// </summary>
         public List<string> EventCategories
@@ -82,7 +82,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        ///  Provides the text of this event. 
+        /// Provides the text of this event.
         /// </para>
         /// </summary>
         public string Message
@@ -100,7 +100,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        ///  Provides the identifier for the source of the event. 
+        /// Provides the identifier for the source of the event.
         /// </para>
         /// </summary>
         public string SourceIdentifier
@@ -118,7 +118,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  Specifies the source type for this event. 
+        /// Specifies the source type for this event.
         /// </para>
         /// </summary>
         public SourceType SourceType

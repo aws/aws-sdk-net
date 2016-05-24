@@ -29,10 +29,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// Returns events related to DB instances, DB security groups, DB snapshots, and DB
-    /// parameter groups for the past 14 days. Events specific to a particular DB instance,
-    /// DB security group, database snapshot, or DB parameter group can be obtained by providing
-    /// the name as a parameter. By default, the past hour of events are returned.
+    /// Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter
+    /// groups for the past 14 days. Events specific to a particular DB instance, DB security
+    /// group, database snapshot, or DB parameter group can be obtained by providing the name
+    /// as a parameter. By default, the past hour of events are returned.
     /// </summary>
     public partial class DescribeEventsRequest : AmazonRDSRequest
     {
@@ -54,7 +54,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        ///  The number of minutes to retrieve events for. 
+        /// The number of minutes to retrieve events for.
         /// </para>
         ///  
         /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The end of the time interval for which to retrieve events, specified in ISO 8601
         /// format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-        /// Wikipedia page.</a>
+        /// Wikipedia page.</a> 
         /// </para>
         ///  
         /// <para>
@@ -100,8 +100,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///  A list of event categories that trigger notifications for a event notification subscription.
-        /// 
+        /// A list of event categories that trigger notifications for a event notification subscription.
         /// </para>
         /// </summary>
         public List<string> EventCategories
@@ -185,20 +184,42 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        ///  The identifier of the event source for which events will be returned. If not specified,
-        /// then all sources are included in the response. 
+        /// The identifier of the event source for which events will be returned. If not specified,
+        /// then all sources are included in the response.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>If SourceIdentifier is supplied, SourceType must also be provided.</li>
-        /// <li>If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code>
-        /// must be supplied.</li> <li>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code>
-        /// must be supplied.</li> <li>If the source type is <code>DBParameterGroup</code>, a
-        /// <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type is
-        /// <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
-        /// <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// If SourceIdentifier is supplied, SourceType must also be provided.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code>
+        /// must be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code>
+        /// must be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
+        /// must be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code>
+        /// must be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SourceIdentifier
         {
@@ -215,8 +236,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  The event source to retrieve events for. If no value is specified, all events are
-        /// returned. 
+        /// The event source to retrieve events for. If no value is specified, all events are
+        /// returned.
         /// </para>
         /// </summary>
         public SourceType SourceType
@@ -236,7 +257,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The beginning of the time interval to retrieve events for, specified in ISO 8601
         /// format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-        /// Wikipedia page.</a>
+        /// Wikipedia page.</a> 
         /// </para>
         ///  
         /// <para>

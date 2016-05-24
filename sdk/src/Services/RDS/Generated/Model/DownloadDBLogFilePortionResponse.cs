@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AdditionalDataPending. 
         /// <para>
-        ///  Boolean value that if true, indicates there is more data to be downloaded. 
+        /// Boolean value that if true, indicates there is more data to be downloaded.
         /// </para>
         /// </summary>
         public bool AdditionalDataPending
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LogFileData. 
         /// <para>
-        ///  Entries from the specified log file. 
+        /// Entries from the specified log file.
         /// </para>
         /// </summary>
         public string LogFileData
@@ -75,8 +75,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  A pagination token that can be used in a subsequent DownloadDBLogFilePortion request.
-        /// 
+        /// A pagination token that can be used in a subsequent DownloadDBLogFilePortion request.
         /// </para>
         /// </summary>
         public string Marker

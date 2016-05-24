@@ -43,17 +43,26 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-        /// character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-cluster1</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-cluster1</code> 
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -72,17 +81,27 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
         /// The identifier of the DB cluster snapshot. This parameter is stored as a lowercase
-        /// string. 
+        /// string.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-        /// character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-cluster1-snapshot1</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-cluster1-snapshot1</code> 
         /// </para>
         /// </summary>
         public string DBClusterSnapshotIdentifier

@@ -49,12 +49,22 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must specify a valid DB parameter group.</li> <li>If the source DB parameter
-        /// group is in the same region as the copy, specify a valid DB parameter group identifier,
-        /// for example <code>my-db-param-group</code>, or a valid ARN.</li> <li>If the source
-        /// DB parameter group is in a different region than the copy, specify a valid DB parameter
-        /// group ARN, for example <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must specify a valid DB parameter group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source DB parameter group is in the same region as the copy, specify a valid
+        /// DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid
+        /// ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source DB parameter group is in a different region than the copy, specify a
+        /// valid DB parameter group ARN, for example <code>arn:aws:rds:us-west-2:123456789012:pg:special-parameters</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SourceDBParameterGroupIdentifier
         {
@@ -110,11 +120,25 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-        /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-        /// with a hyphen or contain two consecutive hyphens</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-db-parameter-group</code>
+        /// Cannot be null, empty, or blank
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain from 1 to 255 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-db-parameter-group</code> 
         /// </para>
         /// </summary>
         public string TargetDBParameterGroupIdentifier

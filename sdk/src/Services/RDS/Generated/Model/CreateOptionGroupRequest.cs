@@ -42,8 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        ///  Specifies the name of the engine that this option group should be associated with.
-        /// 
+        /// Specifies the name of the engine that this option group should be associated with.
         /// </para>
         /// </summary>
         public string EngineName
@@ -61,8 +60,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MajorEngineVersion. 
         /// <para>
-        ///  Specifies the major version of the engine that this option group should be associated
-        /// with. 
+        /// Specifies the major version of the engine that this option group should be associated
+        /// with.
         /// </para>
         /// </summary>
         public string MajorEngineVersion
@@ -80,7 +79,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupDescription. 
         /// <para>
-        ///  The description of the option group. 
+        /// The description of the option group.
         /// </para>
         /// </summary>
         public string OptionGroupDescription
@@ -98,17 +97,27 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  Specifies the name of the option group to be created. 
+        /// Specifies the name of the option group to be created.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First character
-        /// must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>myoptiongroup</code>
+        /// Must be 1 to 255 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>myoptiongroup</code> 
         /// </para>
         /// </summary>
         public string OptionGroupName
