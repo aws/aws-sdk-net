@@ -1,3 +1,7 @@
+### 3.1.71.1 (2016-05-24 00:13 UTC)
+* CognitoSync (3.1.1.1)
+	* Fix KeyNotFoundException exception
+
 ### 3.1.71.0 (2016-05-19 21:39 UTC)
 * Application Discovery Service (3.1.1.0)
 	* API updates from revised service model. An incorrect model was used in the previous release.

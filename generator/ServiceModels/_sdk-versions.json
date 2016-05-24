@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.1.71.0",
+    "ProductVersion" : "3.1.71.1",
     "CoreVersion"    : "3.1.5.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -97,7 +97,7 @@
             "InPreview"    : false
         },
         "CognitoSync"       : {
-            "Version" : "3.1.1.0",
+            "Version" : "3.1.1.1",
             "Dependencies" : {
                 "Core" : "3.1.4.3",
                 "CognitoIdentity" : "3.1.0.6"
