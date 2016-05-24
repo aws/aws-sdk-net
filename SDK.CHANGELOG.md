@@ -1,3 +1,9 @@
+### 3.1.72.0 (2016-05-24 17:32 UTC)
+* EC2 (3.1.15.0)
+	* Added support for instance console screenshot
+* RDS (3.1.11.0)
+	* Cross account snapshot sharing
+
 ### 3.1.71.1 (2016-05-24 00:13 UTC)
 * CognitoSync (3.1.1.1)
 	* Fix KeyNotFoundException exception
