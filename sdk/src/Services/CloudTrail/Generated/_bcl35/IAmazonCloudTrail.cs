@@ -233,9 +233,6 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyDisabledException">
         /// This exception is thrown when the KMS key is disabled.
         /// </exception>
-        /// <exception cref="Amazon.CloudTrail.Model.KmsKeyInvalidStateException">
-        /// 
-        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
         /// the KMS key are not in the same region.
@@ -1032,9 +1029,6 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyDisabledException">
         /// This exception is thrown when the KMS key is disabled.
-        /// </exception>
-        /// <exception cref="Amazon.CloudTrail.Model.KmsKeyInvalidStateException">
-        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and

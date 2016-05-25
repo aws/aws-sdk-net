@@ -190,10 +190,6 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 return new KmsKeyDisabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyInvalidStateException"))
-            {
-                return new KmsKeyInvalidStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyNotFoundException"))
             {
                 return new KmsKeyNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
