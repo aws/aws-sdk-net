@@ -99,7 +99,12 @@ namespace SDKDocGenerator
             return element;
         }
 
-        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        public static string DetermineNDocNameLookupSignature(MethodInfo info)
+        {
+            return DetermineNDocNameLookupSignature(new MethodInfoWrapper(info));
+        }
+
+        public static string DetermineNDocNameLookupSignature(MethodInfoWrapper info)
         {
             var type = info.DeclaringType;
             var parameters = new StringBuilder();
@@ -124,9 +129,22 @@ namespace SDKDocGenerator
                 }
             }
 
-            var signature = parameters.Length > 0 
-                ? string.Format("M:{0}.{1}({2})", type.FullName, info.Name, parameters) 
-                : string.Format("M:{0}.{1}", type.FullName, info.Name);
+            var genericTag = "";
+            if (info.IsGenericMethod)
+            {
+                genericTag = "``" + info.GetGenericArguments().Length;
+            }
+
+            var signature = parameters.Length > 0
+                ? string.Format("M:{0}.{1}{2}({3})", type.FullName, info.Name, genericTag, parameters)
+                : string.Format("M:{0}.{1}{2}", type.FullName, info.Name, genericTag);
+
+            return signature;
+        }
+
+        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        {
+            var signature = DetermineNDocNameLookupSignature(info);
 
             XElement element;
             if (!ndoc.TryGetValue(signature, out element))
