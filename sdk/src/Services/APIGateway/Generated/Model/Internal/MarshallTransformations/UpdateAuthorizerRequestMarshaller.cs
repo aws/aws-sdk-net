@@ -59,8 +59,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             string uriResourcePath = "/restapis/{restapi_id}/authorizers/{authorizer_id}";
-            uriResourcePath = uriResourcePath.Replace("{authorizer_id}", publicRequest.IsSetAuthorizerId() ? StringUtils.FromString(publicRequest.AuthorizerId) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", publicRequest.IsSetRestApiId() ? StringUtils.FromString(publicRequest.RestApiId) : string.Empty);
+            if (!publicRequest.IsSetAuthorizerId())
+                throw new AmazonAPIGatewayException("Request object does not have required field AuthorizerId set");
+            uriResourcePath = uriResourcePath.Replace("{authorizer_id}", StringUtils.FromString(publicRequest.AuthorizerId));
+            if (!publicRequest.IsSetRestApiId())
+                throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
+            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

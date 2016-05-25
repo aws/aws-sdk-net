@@ -58,7 +58,9 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/2012-09-25/jobsByPipeline/{PipelineId}";
-            uriResourcePath = uriResourcePath.Replace("{PipelineId}", publicRequest.IsSetPipelineId() ? StringUtils.FromString(publicRequest.PipelineId) : string.Empty);
+            if (!publicRequest.IsSetPipelineId())
+                throw new AmazonElasticTranscoderException("Request object does not have required field PipelineId set");
+            uriResourcePath = uriResourcePath.Replace("{PipelineId}", StringUtils.FromString(publicRequest.PipelineId));
             
             if (publicRequest.IsSetAscending())
                 request.Parameters.Add("Ascending", StringUtils.FromString(publicRequest.Ascending));

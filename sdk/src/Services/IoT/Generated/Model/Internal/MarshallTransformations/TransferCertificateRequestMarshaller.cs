@@ -59,7 +59,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             string uriResourcePath = "/transfer-certificate/{certificateId}";
-            uriResourcePath = uriResourcePath.Replace("{certificateId}", publicRequest.IsSetCertificateId() ? StringUtils.FromString(publicRequest.CertificateId) : string.Empty);
+            if (!publicRequest.IsSetCertificateId())
+                throw new AmazonIoTException("Request object does not have required field CertificateId set");
+            uriResourcePath = uriResourcePath.Replace("{certificateId}", StringUtils.FromString(publicRequest.CertificateId));
             
             if (publicRequest.IsSetTargetAwsAccount())
                 request.Parameters.Add("targetAwsAccount", StringUtils.FromString(publicRequest.TargetAwsAccount));

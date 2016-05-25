@@ -59,8 +59,12 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}";
             uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{jobId}", publicRequest.IsSetJobId() ? StringUtils.FromString(publicRequest.JobId) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+            if (!publicRequest.IsSetJobId())
+                throw new AmazonGlacierException("Request object does not have required field JobId set");
+            uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            if (!publicRequest.IsSetVaultName())
+                throw new AmazonGlacierException("Request object does not have required field VaultName set");
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
             request.ResourcePath = uriResourcePath;
 
             return request;

@@ -36,11 +36,8 @@ namespace Amazon.Runtime
         // Represents max timeout.
         public static readonly TimeSpan MaxTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
 
-#if !BCL && !UNITY
         private RegionEndpoint regionEndpoint = null;
-#else
-        private RegionEndpoint regionEndpoint = GetDefaultRegionEndpoint();
-#endif
+        private bool probeForRegionEndpoint = true;
 
         private bool useHttp = false;
         private string serviceURL = null;
@@ -93,19 +90,29 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Gets and sets the RegionEndpoint property.  The region constant to use that 
-        /// determines the endpoint to use.  If this is not set
-        /// then the client will fallback to the value of ServiceURL.
+        /// determines the endpoint to use.  If this is not set then the client will fallback 
+        /// to the value of ServiceURL.
         /// </summary>
+        /// 
         public RegionEndpoint RegionEndpoint
         {
             get
             {
-                return regionEndpoint;
+#if BCL
+                if (probeForRegionEndpoint)
+                {
+                    RegionEndpoint = GetDefaultRegionEndpoint();
+                }
+#endif
+                return this.regionEndpoint;
             }
             set
             {
                 this.serviceURL = null;
+
                 this.regionEndpoint = value;
+                this.probeForRegionEndpoint = false;
+
                 if (this.regionEndpoint != null)
                 {
                     var endpoint = this.regionEndpoint.GetEndpointForService(RegionEndpointServiceName);
@@ -135,7 +142,9 @@ namespace Amazon.Runtime
             set 
             {
                 this.regionEndpoint = null;
-                this.serviceURL = value; 
+                this.probeForRegionEndpoint = false;
+
+                this.serviceURL = value;
             }
         }
 

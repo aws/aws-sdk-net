@@ -59,7 +59,9 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/things/{thingName}/shadow";
-            uriResourcePath = uriResourcePath.Replace("{thingName}", publicRequest.IsSetThingName() ? StringUtils.FromString(publicRequest.ThingName) : string.Empty);
+            if (!publicRequest.IsSetThingName())
+                throw new AmazonIotDataException("Request object does not have required field ThingName set");
+            uriResourcePath = uriResourcePath.Replace("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.Payload ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  

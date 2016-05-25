@@ -59,7 +59,7 @@ namespace Amazon.SecurityToken.SAML
         /// </param>
         /// <param name="duration">The valid timespan for the credentials.</param>
         /// <returns>Temporary session credentials for the specified or default role for the user.</returns>
-        public ImmutableCredentials GetRoleCredentials(IAmazonSecurityTokenService stsClient, string principalAndRoleArns, TimeSpan duration)
+        public SAMLImmutableCredentials GetRoleCredentials(IAmazonSecurityTokenService stsClient, string principalAndRoleArns, TimeSpan duration)
         {
             string roleArn = null;
             string principalArn = null;
@@ -86,7 +86,9 @@ namespace Amazon.SecurityToken.SAML
                 DurationSeconds = (int)duration.TotalSeconds
             });
 
-            return response.Credentials.GetCredentials();
+            return new SAMLImmutableCredentials(response.Credentials.GetCredentials(), 
+                                                response.Credentials.Expiration.ToUniversalTime(),
+                                                response.Subject);
         }
 
         /// <summary>

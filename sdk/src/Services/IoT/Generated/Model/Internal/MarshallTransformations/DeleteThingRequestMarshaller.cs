@@ -58,7 +58,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/things/{thingName}";
-            uriResourcePath = uriResourcePath.Replace("{thingName}", publicRequest.IsSetThingName() ? StringUtils.FromString(publicRequest.ThingName) : string.Empty);
+            if (!publicRequest.IsSetThingName())
+                throw new AmazonIoTException("Request object does not have required field ThingName set");
+            uriResourcePath = uriResourcePath.Replace("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = uriResourcePath;
 
             return request;

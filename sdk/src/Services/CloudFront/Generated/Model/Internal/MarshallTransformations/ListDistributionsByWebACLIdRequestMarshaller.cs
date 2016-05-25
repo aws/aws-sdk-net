@@ -57,7 +57,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
             string uriResourcePath = "/2016-01-28/distributionsByWebACLId/{WebACLId}";
-            uriResourcePath = uriResourcePath.Replace("{WebACLId}", publicRequest.IsSetWebACLId() ? StringUtils.FromString(publicRequest.WebACLId) : string.Empty);
+            if (!publicRequest.IsSetWebACLId())
+                throw new AmazonCloudFrontException("Request object does not have required field WebACLId set");
+            uriResourcePath = uriResourcePath.Replace("{WebACLId}", StringUtils.FromString(publicRequest.WebACLId));
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));

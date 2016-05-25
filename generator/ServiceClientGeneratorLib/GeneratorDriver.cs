@@ -476,15 +476,13 @@ namespace ServiceClientGenerator
                 // Check to see if the exceptions has already been generated for a previous operation.
                 if (!this._processedStructures.Contains(exception.Name))
                 {
-                    var baseException = string.Format("Amazon{0}Exception",
-                        this.Configuration.IsChildConfig ?
-                        this.Configuration.ParentConfig.BaseName : this.Configuration.BaseName);
+                    
 
                     var generator = new ExceptionClass()
                     {
                         Exception = exception,
                         GenerateComplexException = this.Configuration.ServiceModel.Customizations.GenerateComplexException,
-                        BaseException = baseException
+                        BaseException = this.Configuration.BaseException
                     };
                     this.ExecuteGenerator(generator, exception.Name + ".cs", "Model");
                     this._processedStructures.Add(exception.Name);

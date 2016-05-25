@@ -58,9 +58,15 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records";
-            uriResourcePath = uriResourcePath.Replace("{DatasetName}", publicRequest.IsSetDatasetName() ? StringUtils.FromString(publicRequest.DatasetName) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{IdentityId}", publicRequest.IsSetIdentityId() ? StringUtils.FromString(publicRequest.IdentityId) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", publicRequest.IsSetIdentityPoolId() ? StringUtils.FromString(publicRequest.IdentityPoolId) : string.Empty);
+            if (!publicRequest.IsSetDatasetName())
+                throw new AmazonCognitoSyncException("Request object does not have required field DatasetName set");
+            uriResourcePath = uriResourcePath.Replace("{DatasetName}", StringUtils.FromString(publicRequest.DatasetName));
+            if (!publicRequest.IsSetIdentityId())
+                throw new AmazonCognitoSyncException("Request object does not have required field IdentityId set");
+            uriResourcePath = uriResourcePath.Replace("{IdentityId}", StringUtils.FromString(publicRequest.IdentityId));
+            if (!publicRequest.IsSetIdentityPoolId())
+                throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
+            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             
             if (publicRequest.IsSetLastSyncCount())
                 request.Parameters.Add("lastSyncCount", StringUtils.FromLong(publicRequest.LastSyncCount));

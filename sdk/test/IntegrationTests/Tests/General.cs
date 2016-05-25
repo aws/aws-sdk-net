@@ -15,6 +15,16 @@ using System.Xml;
 using Amazon.Util;
 using Amazon.Runtime.Internal;
 using Amazon.DynamoDBv2.Internal;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.Xml.Serialization;
+using System.Text;
+using System.Net;
+using Amazon.S3.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.S3.Util;
+using Amazon.SecurityToken.SAML;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -22,6 +32,283 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class General
     {
+        [TestMethod]
+        public void TestSerializingExceptions()
+        {
+            using(var client = new Amazon.S3.AmazonS3Client())
+            {
+                try
+                {
+                    var fakeBucketName = "super.duper.fake.bucket.name.123." + Guid.NewGuid().ToString();
+                    client.ListObjects(fakeBucketName);
+                }
+                catch(AmazonS3Exception e)
+                {
+                    TestException(e);
+                }
+
+                var s3pue = CreateS3PostUploadException();
+                TestException(s3pue);
+
+                var doe = CreateDeleteObjectsException();
+                TestException(doe);
+
+                var aace = new AdfsAuthenticationControllerException("Message");
+                TestException(aace);
+
+#pragma warning disable 618
+
+                var ccre = new CredentialCallbackRequiredException("Message");
+                TestException(ccre);
+
+                var afe = new AuthenticationFailedException("Message");
+                TestException(afe);
+
+#pragma warning restore 618
+
+            }
+        }
+
+        private static S3PostUploadException CreateS3PostUploadException()
+        {
+            var s3pue = new S3PostUploadException("ErrorCode", "Message");
+            s3pue.ErrorCode = "ec1";
+            s3pue.RequestId = "rq1";
+            s3pue.HostId = "hi1";
+            s3pue.StatusCode = HttpStatusCode.OK;
+            s3pue.ExtraFields = new Dictionary<string, string>
+            {
+                { "k1", "v1" },
+                { "k2", "v2" },
+            };
+            return s3pue;
+        }
+
+        private static DeleteObjectsException CreateDeleteObjectsException()
+        {
+            var dor = new Amazon.S3.Model.DeleteObjectsResponse
+            {
+                DeletedObjects =
+                    {
+                        new DeletedObject
+                        {
+                            Key = "key1",
+                            VersionId = "v1",
+                            DeleteMarker = true,
+                            DeleteMarkerVersionId = "mv1"
+                        },
+                        new DeletedObject
+                        {
+                            Key = "key2",
+                            VersionId = "v2",
+                            DeleteMarker = false,
+                            DeleteMarkerVersionId = "mv2"
+                        }
+                    },
+                DeleteErrors =
+                    {
+                        new DeleteError
+                        {
+                            Key = "key3",
+                            Code = "code3",
+                            Message = "message3",
+                            VersionId = "v3"
+                        },
+                        new DeleteError
+                        {
+                            Key = "key4",
+                            Code = "code4",
+                            Message = "message4",
+                            VersionId = "v4"
+                        },
+                        new DeleteError
+                        {
+                            Key = "key5",
+                            Code = "code5",
+                            Message = "message5",
+                            VersionId = "v5"
+                        }
+                    },
+                ContentLength = 10,
+                HttpStatusCode = HttpStatusCode.OK,
+                ResponseMetadata = new ResponseMetadata
+                {
+                    Metadata =
+                        {
+                            { "m1", "mv1" },
+                            { "m2", "mv2" }
+                        },
+                    RequestId = "requestId"
+                }
+            };
+            var doe = new DeleteObjectsException(dor)
+            {
+                ErrorType = ErrorType.Sender,
+                ErrorCode = "ec1",
+                RequestId = "requestIdSomething",
+                StatusCode = HttpStatusCode.OK,
+            };
+            doe.GetType().GetProperty("AmazonId2").SetValue(doe, "amzid2", null);
+            doe.GetType().GetProperty("ResponseBody").SetValue(doe, "uhh, stuff", null);
+            return doe;
+        }
+
+        private static void TestException(Exception e)
+        {
+            string[] headers = null;
+            var here = e.InnerException as HttpErrorResponseException;
+            var hasHttpResponse = here != null;
+            if (hasHttpResponse)
+            {
+                Assert.IsNotNull(here.Response);
+                headers = here.Response.GetHeaderNames();
+                Assert.IsNotNull(headers);
+                Assert.AreNotEqual(0, headers.Length);
+            }
+
+            var serializer = new BinaryFormatter();
+            using (var ms = new MemoryStream())
+            {
+                serializer.Serialize(ms, e);
+                ms.Seek(0, SeekOrigin.Begin);
+                var deserialized = serializer.Deserialize(ms) as Exception;
+
+                Assert.IsNotNull(deserialized);
+
+                Assert.AreEqual(e.Message, deserialized.Message);
+                if (e is AmazonS3Exception)
+                {
+                    var as3e = e as AmazonS3Exception;
+                    var dAs3e = deserialized as AmazonS3Exception;
+                    Assert.AreEqual(as3e.ErrorType, dAs3e.ErrorType);
+                    Assert.AreEqual(as3e.ErrorCode, dAs3e.ErrorCode);
+                    Assert.AreEqual(as3e.RequestId, dAs3e.RequestId);
+                    Assert.AreEqual(as3e.StatusCode, dAs3e.StatusCode);
+                    Assert.AreEqual(as3e.AmazonId2, dAs3e.AmazonId2);
+                    Assert.AreEqual(as3e.ResponseBody, dAs3e.ResponseBody);
+                }
+
+                if (hasHttpResponse)
+                {
+                    var hereDeserialized = deserialized.InnerException as HttpErrorResponseException;
+                    Assert.IsNotNull(hereDeserialized);
+                    Assert.IsNotNull(hereDeserialized.Response);
+                    var headersDeserialized = hereDeserialized.Response.GetHeaderNames();
+                    Assert.IsNotNull(headersDeserialized);
+                    Assert.AreNotEqual(0, headersDeserialized.Length);
+                    Assert.AreEqual(headers.Length, headersDeserialized.Length);
+
+                    Assert.AreEqual(here.Response.StatusCode, hereDeserialized.Response.StatusCode);
+                    Assert.AreEqual(here.Response.IsSuccessStatusCode, hereDeserialized.Response.IsSuccessStatusCode);
+                    Assert.AreEqual(here.Response.ContentLength, hereDeserialized.Response.ContentLength);
+                    Assert.AreEqual(here.Response.ContentType, hereDeserialized.Response.ContentType);
+
+                    foreach (var header in headers)
+                    {
+                        Assert.IsTrue(hereDeserialized.Response.IsHeaderPresent(header));
+                        var value = hereDeserialized.Response.GetHeaderValue(header);
+                        Assert.IsNotNull(value);
+                        Assert.AreEqual(here.Response.GetHeaderValue(header), value);
+                    }
+                }
+
+                if (e is DeleteObjectsException)
+                {
+                    var doe = e as DeleteObjectsException;
+                    var dDoe = deserialized as DeleteObjectsException;
+
+                    Assert.AreEqual(doe.Response.DeletedObjects.Count, dDoe.Response.DeletedObjects.Count);
+                    foreach(var deleted in dDoe.Response.DeletedObjects)
+                    {
+                        Assert.IsNotNull(deleted.DeleteMarkerVersionId);
+                        Assert.IsNotNull(deleted.Key);
+                        Assert.IsNotNull(deleted.VersionId);
+                        Assert.IsNotNull(deleted.DeleteMarker);
+                        Assert.AreEqual(deleted.Key.EndsWith("1"), deleted.DeleteMarker);
+                    }
+                    Assert.AreEqual(doe.Response.DeleteErrors.Count, dDoe.Response.DeleteErrors.Count);
+                    foreach (var error in dDoe.Response.DeleteErrors)
+                    {
+                        Assert.IsNotNull(error.Code);
+                        Assert.IsNotNull(error.Key);
+                        Assert.IsNotNull(error.Message);
+                        Assert.IsNotNull(error.VersionId);
+                    }
+                }
+
+                if (e is S3PostUploadException)
+                {
+                    var pue = e as S3PostUploadException;
+                    var dPue = deserialized as S3PostUploadException;
+
+                    Assert.AreEqual(pue.ErrorCode, dPue.ErrorCode);
+                    Assert.AreEqual(pue.RequestId, dPue.RequestId);
+                    Assert.AreEqual(pue.HostId, dPue.HostId);
+                    Assert.AreEqual(pue.StatusCode, dPue.StatusCode);
+                    Assert.AreEqual(pue.ExtraFields.Count, dPue.ExtraFields.Count);
+                    foreach(var kvp in dPue.ExtraFields)
+                    {
+                        Assert.IsFalse(string.IsNullOrEmpty(kvp.Key));
+                        Assert.IsFalse(string.IsNullOrEmpty(kvp.Value));
+                    }
+                }
+            }
+        }
+
+        [TestMethod]
+        public void TestSDKExceptions()
+        {
+            var allTypes = new List<Type>();
+            foreach (Assembly ass in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                allTypes.AddRange(ass.GetExportedTypes());
+            }
+            Assert.AreNotEqual(0, allTypes.Count);
+
+            var exceptionType = typeof(Exception);
+
+            var binding = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
+            var inputTypes = new Type[] { typeof(SerializationInfo), typeof(StreamingContext) };
+
+            var errors = new List<string>();
+
+            foreach (var type in allTypes)
+            {
+                var typeName = type.FullName;
+
+                if (type.FullName.IndexOf("Amazon.", StringComparison.OrdinalIgnoreCase) >= 0 &&
+                    exceptionType.IsAssignableFrom(type))
+                {
+                    var serializableAttributes = type.GetCustomAttributes(typeof(SerializableAttribute), false).ToList();
+
+                    // exceptions must have [Serializable] attribute
+                    if (serializableAttributes.Count == 0)
+                    {
+                        //exceptionsWithoutSerializeable.Add(type);
+                        errors.Add("Exception " + type.FullName + " exception types are not serializeable");
+                    }
+
+                    // exceptions must have serialization constructor
+                    var serializationConstructor = type.GetConstructor(binding, null, inputTypes, null);
+                    if (serializationConstructor == null)
+                        errors.Add("Type " + type.FullName + " missing serialization constructor");
+
+                    // exceptions which have extra fields on them, must overload GetObjectData
+                    var declaredFields = type.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Instance);
+                    if (declaredFields.Length > 0)
+                    {
+                        var getObjectDataMethod = type.GetMethod("GetObjectData", binding, null, inputTypes, null);
+                        if (getObjectDataMethod == null)
+                            errors.Add("Type " + type.FullName + " missing serialization GetObjectData method");
+                    }
+                }
+            }
+
+            // report all errors
+            if (errors.Count > 0)
+                Assert.Fail("Errors found:" + string.Join(Environment.NewLine, errors.ToArray()));
+        }
+
         [TestMethod]
         public void TestLargeRetryCount()
         {

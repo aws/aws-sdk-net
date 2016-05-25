@@ -38,8 +38,9 @@ namespace Amazon.SecurityToken.SAML
         /// The authentication type expected by the endpoint. Valid values are 'NTLM',
         /// 'Digest', 'Kerberos' and 'Negotiate'.
         /// </param>
+        /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
         /// <returns>The raw response data from the authentication request.</returns>
-        string Authenticate(Uri identityProvider, ICredentials credentials, string authenticationType);
+        string Authenticate(Uri identityProvider, ICredentials credentials, string authenticationType, WebProxy proxySettings);
     }
 
     /// <summary>
@@ -81,11 +82,26 @@ namespace Amazon.SecurityToken.SAML
         public IAuthenticationResponseParser ResponseParser { get; private set; }
 
         /// <summary>
+        /// Proxy details if required for communication with the authentication endpoint.
+        /// </summary>
+        public WebProxy ProxySettings { get; private set; }
+
+        /// <summary>
         /// Instantiates a controller instance configured to use the built-in AD FS
         /// classes to authenticate and parse the responses.
         /// </summary>
         public SAMLAuthenticationController()
-            : this(new AdfsAuthenticationController(), new AdfsAuthenticationResponseParser())
+            : this(new AdfsAuthenticationController(), new AdfsAuthenticationResponseParser(), null)
+        {
+        }
+
+        /// <summary>
+        /// Instantiates a controller instance configured to use the built-in AD FS
+        /// classes to authenticate and parse the responses. The supplied proxy settings will
+        /// be used in the HTTPS calls to the authentication endpoint.
+        /// </summary>
+        public SAMLAuthenticationController(WebProxy proxySettings)
+            : this(new AdfsAuthenticationController(), new AdfsAuthenticationResponseParser(), proxySettings)
         {
         }
 
@@ -93,9 +109,18 @@ namespace Amazon.SecurityToken.SAML
         /// Instantiates the controller to use the specified instances to perform authentication
         /// and response parsing.
         /// </summary>
-        /// <param name="authenticationController">Handler that will be called to perform authentication.</param>
-        /// <param name="responseParser">Handler that will be called to parse successful authentication responses</param>
-        public SAMLAuthenticationController(IAuthenticationController authenticationController, IAuthenticationResponseParser responseParser)
+        /// <param name="authenticationController">
+        /// Handler that will be called to perform authentication.
+        /// </param>
+        /// <param name="responseParser">
+        /// Handler that will be called to parse successful authentication responses
+        /// </param>
+        /// <param name="proxySettings">
+        /// Null or proxy settings that should be used when communicating with the authentication endpoint.
+        /// </param>
+        public SAMLAuthenticationController(IAuthenticationController authenticationController, 
+                                            IAuthenticationResponseParser responseParser,
+                                            WebProxy proxySettings)
         {
             if (authenticationController == null)
                 throw new ArgumentNullException("authenticationController");
@@ -104,6 +129,7 @@ namespace Amazon.SecurityToken.SAML
 
             AuthenticationController = authenticationController;
             ResponseParser = responseParser;
+            ProxySettings = proxySettings;
         }
 
         /// <summary>
@@ -119,8 +145,10 @@ namespace Amazon.SecurityToken.SAML
         /// The authentication type expected by the endpoint. The default value if not specified
         /// is 'Kerberos'. Valid values are 'NTLM', 'Digest', 'Kerberos' and 'Negotiate'.
         /// </param>
-        /// <returns></returns>
-        public SAMLAssertion GetSAMLAssertion(string identityProviderUrl, ICredentials credentials, string authenticationType)
+        /// <returns>SAMLAssertion instance wrapping the returned document on successful authentication.</returns>
+        public SAMLAssertion GetSAMLAssertion(string identityProviderUrl, 
+                                              ICredentials credentials, 
+                                              string authenticationType)
         {
             return GetSAMLAssertion(new Uri(identityProviderUrl), credentials, authenticationType);
         }
@@ -138,13 +166,16 @@ namespace Amazon.SecurityToken.SAML
         /// The authentication type expected by the endpoint. The default value if not specified
         /// is 'Kerberos'. Valid values are 'NTLM', 'Digest', 'Kerberos' and 'Negotiate'.
         /// </param>
-        /// <returns>The SAML assertion document on successful authentication.</returns>
-        public SAMLAssertion GetSAMLAssertion(Uri identityProviderUrl, ICredentials credentials, string authenticationType)
+        /// <returns>SAMLAssertion instance wrapping the returned document on successful authentication.</returns>
+        public SAMLAssertion GetSAMLAssertion(Uri identityProviderUrl, 
+                                              ICredentials credentials, 
+                                              string authenticationType)
         {
             var response = AuthenticationController.Authenticate(identityProviderUrl, 
                                                                  credentials,
                                                                  string.IsNullOrEmpty(authenticationType) 
-                                                                    ? SAMLEndpointSettings.DefaultAuthenticationType : authenticationType);
+                                                                    ? SAMLEndpointSettings.DefaultAuthenticationType : authenticationType,
+                                                                 ProxySettings);
             return ResponseParser.Parse(response);
         }
     }

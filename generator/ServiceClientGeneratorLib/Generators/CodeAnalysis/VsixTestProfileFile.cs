@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
+    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class VsixTestProfileFile : VsixTestProfileFileBase
     {
@@ -66,7 +66,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
                     "ixmanifest\">\r\n      <SubType>Designer</SubType>\r\n    </None>\r\n  </ItemGroup>\r\n  " +
                     "<ItemGroup>\r\n");
             
-            #line 60 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
+            #line 60 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
 
     foreach(var project in (List<CodeAnalysisSolutionCreator.Project>)this.Session["CodeAnalysisProjects"])
     {
@@ -76,35 +76,35 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
             #line hidden
             this.Write("    <ProjectReference Include=\"../ServiceAnalysis/");
             
-            #line 64 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
+            #line 64 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ShortName));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 64 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
+            #line 64 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write(".csproj\">\r\n      <Project>");
             
-            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
+            #line 65 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n      <Name>");
             
-            #line 66 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
+            #line 66 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(project.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n");
             
-            #line 68 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
+            #line 68 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\VsixTestProfileFile.tt"
 
     }
 

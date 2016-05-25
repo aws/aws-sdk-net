@@ -427,6 +427,7 @@ namespace ServiceClientGenerator
         public const string DeprecationMessageKey = "message";
         public const string ExamplesKey = "examples";
         public const string GenerateUnmarshallerKey = "generateUnmarshaller";
+        public const string SkipUriPropertyValidationKey = "skipUriPropertyValidation";
         JsonData _documentRoot;
 
         SimpleMethodFormsModel _simpleMethodsModel;
@@ -671,6 +672,25 @@ namespace ServiceClientGenerator
                     return bool.Parse((string)flag);
                 }
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// A list of uri properties for the service where we should not do validation for presence.
+        /// </summary>
+        public List<string> SkipUriPropertyValidations
+        {
+            get
+            {
+                var validations = new List<string>();
+
+                var data = _documentRoot[SkipUriPropertyValidationKey];
+                if (data == null || !data.IsArray) return validations;
+
+                foreach (var item in data)
+                    validations.Add(item.ToString());
+
+                return validations;
             }
         }
 

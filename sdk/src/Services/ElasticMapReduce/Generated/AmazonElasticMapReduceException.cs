@@ -28,6 +28,9 @@ namespace Amazon.ElasticMapReduce
     ///<summary>
     /// Common exception for the ElasticMapReduce service.
     /// </summary>
+#if !PCL
+    [Serializable]
+#endif
     public class AmazonElasticMapReduceException : AmazonServiceException
     {
         /// <summary>
@@ -84,5 +87,19 @@ namespace Amazon.ElasticMapReduce
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }
+
+#if !PCL
+        /// <summary>
+        /// Constructs a new instance of the AmazonElasticMapReduceException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected AmazonElasticMapReduceException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
     }
 }

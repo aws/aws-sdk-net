@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\InternalSDKUtils.tt"
+    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\InternalSDKUtils.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class InternalSDKUtils : BaseGenerator
     {
@@ -62,7 +62,7 @@ namespace Amazon.Util.Internal
     {
         internal const string CoreVersionNumber = """);
             
-            #line 38 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\InternalSDKUtils.tt"
+            #line 38 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\InternalSDKUtils.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default

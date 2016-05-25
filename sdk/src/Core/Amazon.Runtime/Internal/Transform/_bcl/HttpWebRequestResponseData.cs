@@ -21,11 +21,17 @@ using System.Text;
 
 namespace Amazon.Runtime.Internal.Transform
 {
+#if !PCL
+    // This exception is marked Serializable, but its ResponseBody field is not
+    // serialized/deserialized.
+    [Serializable]
+#endif
     public class HttpWebRequestResponseData : IWebResponseData
     {
         string[] _headerNames;
         Dictionary<string, string> _headers;
         HashSet<string> _headerNamesSet;
+        [NonSerialized]
         HttpWebResponseBody _responseBody;
 
         public HttpWebRequestResponseData(HttpWebResponse response)
@@ -85,6 +91,52 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get { return _responseBody; }
         }
+
+
+
+
+        /// <summary>
+        /// Constructs a new instance of the HttpWebRequestResponseData class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected HttpWebRequestResponseData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            if (info != null)
+            {
+                this._headerNames = (string[])info.GetValue("_headerNames", typeof(string[]));
+                this._headerNamesSet = (HashSet<string>)info.GetValue("_headerNamesSet", typeof(HashSet<string>));
+                this._headers = (Dictionary<string, string>)info.GetValue("_headers", typeof(Dictionary<string, string>));
+                this.StatusCode = (HttpStatusCode)info.GetValue("StatusCode", typeof(HttpStatusCode));
+                this.IsSuccessStatusCode = info.GetBoolean("IsSuccessStatusCode");
+                this.ContentType = info.GetString("ContentType");
+                this.ContentLength = info.GetInt64("ContentLength");
+            }
+        }
+
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+        [System.Security.SecurityCritical]
+        public void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            if (info != null)
+            {
+                info.AddValue("_headerNames", this._headerNames);
+                info.AddValue("_headerNamesSet", this._headerNamesSet);
+                info.AddValue("_headers", this._headers);
+                info.AddValue("StatusCode", this.StatusCode);
+                info.AddValue("IsSuccessStatusCode", this.IsSuccessStatusCode);
+                info.AddValue("ContentType", this.ContentType);
+                info.AddValue("ContentLength", this.ContentLength);
+            }
+        }
+
     }
 
     public class HttpWebResponseBody : IHttpResponseBody

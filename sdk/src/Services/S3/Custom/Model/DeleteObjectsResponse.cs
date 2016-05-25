@@ -24,6 +24,9 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Returns information about the  DeleteObjects response and response metadata.
     /// </summary>
+#if !PCL
+    [Serializable]
+#endif
     public class DeleteObjectsResponse : AmazonWebServiceResponse
     {
         private List<DeletedObject> deleted = new List<DeletedObject>();

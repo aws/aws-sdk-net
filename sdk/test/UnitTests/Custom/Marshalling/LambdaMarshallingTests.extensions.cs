@@ -48,6 +48,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
                 var response = client.Invoke(new InvokeRequest
                 {
+                    FunctionName = "TestFunction"
                 });
                 Assert.AreEqual(requestId, response.ResponseMetadata.RequestId);
                 Assert.AreEqual(responseBody, Encoding.UTF8.GetString(response.Payload.ToArray()));

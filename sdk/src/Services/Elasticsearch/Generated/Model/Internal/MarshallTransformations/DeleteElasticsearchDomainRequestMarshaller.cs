@@ -58,7 +58,9 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/2015-01-01/es/domain/{DomainName}";
-            uriResourcePath = uriResourcePath.Replace("{DomainName}", publicRequest.IsSetDomainName() ? StringUtils.FromString(publicRequest.DomainName) : string.Empty);
+            if (!publicRequest.IsSetDomainName())
+                throw new AmazonElasticsearchException("Request object does not have required field DomainName set");
+            uriResourcePath = uriResourcePath.Replace("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = uriResourcePath;
 
             return request;

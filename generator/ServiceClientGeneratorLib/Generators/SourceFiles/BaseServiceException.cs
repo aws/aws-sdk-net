@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+    #line 1 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class BaseServiceException : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 6 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
 
 	AddLicenseHeader();
 
@@ -39,21 +39,22 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Net;\r\nusing System" +
                     ".Text;\r\n\r\nusing Amazon.Runtime;\r\n\r\nnamespace ");
             
-            #line 16 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 16 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    ///<summary>\r\n    /// Common exception for the ");
             
-            #line 19 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 19 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
             #line hidden
-            this.Write(" service.\r\n    /// </summary>\r\n    public class Amazon");
+            this.Write(" service.\r\n    /// </summary>\r\n#if !PCL\r\n    [Serializable]\r\n#endif\r\n    public c" +
+                    "lass Amazon");
             
-            #line 21 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 24 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -61,7 +62,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Exception : AmazonServiceException\r\n    {\r\n        /// <summary>\r\n        /// Con" +
                     "struct instance of Amazon");
             
-            #line 24 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 27 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -69,7 +70,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Exception\r\n        /// </summary>\r\n        /// <param name=\"message\"></param>\r\n  " +
                     "      public Amazon");
             
-            #line 27 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 30 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -77,7 +78,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Exception(string message)\r\n            : base(message)\r\n        {\r\n        }\r\n\r\n " +
                     "       /// <summary>\r\n        /// Construct instance of Amazon");
             
-            #line 33 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 36 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -85,7 +86,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Exception\r\n        /// </summary>\r\n        /// <param name=\"message\"></param>\r\n  " +
                     "      /// <param name=\"innerException\"></param>\r\n        public Amazon");
             
-            #line 37 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 40 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -94,7 +95,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "innerException)\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Cons" +
                     "truct instance of Amazon");
             
-            #line 43 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 46 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -102,7 +103,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Exception\r\n        /// </summary>\r\n        /// <param name=\"innerException\"></par" +
                     "am>\r\n        public Amazon");
             
-            #line 46 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 49 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -111,7 +112,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "nnerException)\r\n        {\r\n        }\r\n\r\n        /// <summary>\r\n        /// Const" +
                     "ruct instance of Amazon");
             
-            #line 52 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 55 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -125,7 +126,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""statusCode""></param>
         public Amazon");
             
-            #line 59 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 62 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -138,7 +139,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <summary>
         /// Construct instance of Amazon");
             
-            #line 65 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 68 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -153,7 +154,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""statusCode""></param>
         public Amazon");
             
-            #line 73 "C:\dev\codecommit\unityv3\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            #line 76 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
             
             #line default
@@ -162,8 +163,32 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }
-    }
-}");
+
+#if !PCL
+        /// <summary>
+        /// Constructs a new instance of the Amazon");
+            
+            #line 83 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            
+            #line default
+            #line hidden
+            this.Write(@"Exception class with serialized data.
+        /// </summary>
+        /// <param name=""info"">The <see cref=""T:System.Runtime.Serialization.SerializationInfo"" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name=""context"">The <see cref=""T:System.Runtime.Serialization.StreamingContext"" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref=""T:System.ArgumentNullException"">The <paramref name=""info"" /> parameter is null. </exception>
+        /// <exception cref=""T:System.Runtime.Serialization.SerializationException"">The class name is null or <see cref=""P:System.Exception.HResult"" /> is zero (0). </exception>
+        protected Amazon");
+            
+            #line 89 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            
+            #line default
+            #line hidden
+            this.Write("Exception(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Ser" +
+                    "ialization.StreamingContext context)\r\n            : base(info, context)\r\n       " +
+                    " {\r\n        }\r\n#endif\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

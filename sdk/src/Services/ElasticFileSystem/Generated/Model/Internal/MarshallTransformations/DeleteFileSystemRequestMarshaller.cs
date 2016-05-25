@@ -58,7 +58,9 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/2015-02-01/file-systems/{FileSystemId}";
-            uriResourcePath = uriResourcePath.Replace("{FileSystemId}", publicRequest.IsSetFileSystemId() ? StringUtils.FromString(publicRequest.FileSystemId) : string.Empty);
+            if (!publicRequest.IsSetFileSystemId())
+                throw new AmazonElasticFileSystemException("Request object does not have required field FileSystemId set");
+            uriResourcePath = uriResourcePath.Replace("{FileSystemId}", StringUtils.FromString(publicRequest.FileSystemId));
             request.ResourcePath = uriResourcePath;
 
             return request;

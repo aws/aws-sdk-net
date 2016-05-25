@@ -58,7 +58,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/certificates-by-ca/{caCertificateId}";
-            uriResourcePath = uriResourcePath.Replace("{caCertificateId}", publicRequest.IsSetCaCertificateId() ? StringUtils.FromString(publicRequest.CaCertificateId) : string.Empty);
+            if (!publicRequest.IsSetCaCertificateId())
+                throw new AmazonIoTException("Request object does not have required field CaCertificateId set");
+            uriResourcePath = uriResourcePath.Replace("{caCertificateId}", StringUtils.FromString(publicRequest.CaCertificateId));
             
             if (publicRequest.IsSetAscendingOrder())
                 request.Parameters.Add("isAscendingOrder", StringUtils.FromBool(publicRequest.AscendingOrder));

@@ -58,7 +58,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/2015-03-31/event-source-mappings/{UUID}";
-            uriResourcePath = uriResourcePath.Replace("{UUID}", publicRequest.IsSetUUID() ? StringUtils.FromString(publicRequest.UUID) : string.Empty);
+            if (!publicRequest.IsSetUUID())
+                throw new AmazonLambdaException("Request object does not have required field UUID set");
+            uriResourcePath = uriResourcePath.Replace("{UUID}", StringUtils.FromString(publicRequest.UUID));
             request.ResourcePath = uriResourcePath;
 
             return request;

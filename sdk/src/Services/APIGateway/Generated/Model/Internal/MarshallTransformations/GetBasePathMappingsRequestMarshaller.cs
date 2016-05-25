@@ -58,7 +58,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/domainnames/{domain_name}/basepathmappings";
-            uriResourcePath = uriResourcePath.Replace("{domain_name}", publicRequest.IsSetDomainName() ? StringUtils.FromString(publicRequest.DomainName) : string.Empty);
+            if (!publicRequest.IsSetDomainName())
+                throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
+            uriResourcePath = uriResourcePath.Replace("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));

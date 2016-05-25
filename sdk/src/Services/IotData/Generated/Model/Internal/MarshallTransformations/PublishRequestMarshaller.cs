@@ -59,7 +59,9 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/topics/{topic}";
-            uriResourcePath = uriResourcePath.Replace("{topic}", publicRequest.IsSetTopic() ? StringUtils.FromString(publicRequest.Topic) : string.Empty);
+            if (!publicRequest.IsSetTopic())
+                throw new AmazonIotDataException("Request object does not have required field Topic set");
+            uriResourcePath = uriResourcePath.Replace("{topic}", StringUtils.FromString(publicRequest.Topic));
             
             if (publicRequest.IsSetQos())
                 request.Parameters.Add("qos", StringUtils.FromInt(publicRequest.Qos));
