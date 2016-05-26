@@ -62,6 +62,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SourceSnapshotName", StringUtils.FromString(publicRequest.SourceSnapshotName));
                 }
+                if(publicRequest.IsSetTargetBucket())
+                {
+                    request.Parameters.Add("TargetBucket", StringUtils.FromString(publicRequest.TargetBucket));
+                }
                 if(publicRequest.IsSetTargetSnapshotName())
                 {
                     request.Parameters.Add("TargetSnapshotName", StringUtils.FromString(publicRequest.TargetSnapshotName));

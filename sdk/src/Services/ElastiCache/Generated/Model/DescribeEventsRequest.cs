@@ -167,7 +167,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code>
-        /// | <code>cache-security-group</code> | <code>cache-subnet-group</code>
+        /// | <code>cache-security-group</code> | <code>cache-subnet-group</code> 
         /// </para>
         /// </summary>
         public SourceType SourceType

@@ -94,7 +94,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of records to include in the response. If more records exist than
+        /// The maximum number of brecords to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a marker is included in the response
         /// so that the remaining results can be retrieved.
         /// </para>
@@ -127,6 +127,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
+        /// 
         /// </para>
         /// </summary>
         public string Source

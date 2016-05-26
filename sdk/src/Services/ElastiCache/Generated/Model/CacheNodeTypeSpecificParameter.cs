@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
     {
         private string _allowedValues;
         private List<CacheNodeTypeSpecificValue> _cacheNodeTypeSpecificValues = new List<CacheNodeTypeSpecificValue>();
+        private ChangeType _changeType;
         private string _dataType;
         private string _description;
         private bool? _isModifiable;
@@ -82,6 +83,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheNodeTypeSpecificValues()
         {
             return this._cacheNodeTypeSpecificValues != null && this._cacheNodeTypeSpecificValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChangeType. 
+        /// <para>
+        /// ChangeType indicates whether a change to the parameter will be applied immediately
+        /// or requires a reboot for the change to be applied. You can force a reboot or wait
+        /// until the next maintenance window's reboot. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
+        /// a Cluster</a>.
+        /// </para>
+        /// </summary>
+        public ChangeType ChangeType
+        {
+            get { return this._changeType; }
+            set { this._changeType = value; }
+        }
+
+        // Check to see if ChangeType property is set
+        internal bool IsSetChangeType()
+        {
+            return this._changeType != null;
         }
 
         /// <summary>

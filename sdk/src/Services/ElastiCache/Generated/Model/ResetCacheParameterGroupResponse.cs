@@ -30,8 +30,15 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Represents the output of one of the following actions:
     /// 
-    ///  <ul> <li> <i>ModifyCacheParameterGroup</i> </li> <li> <i>ResetCacheParameterGroup</i>
-    /// </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>ModifyCacheParameterGroup</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>ResetCacheParameterGroup</i> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ResetCacheParameterGroupResponse : AmazonWebServiceResponse
     {

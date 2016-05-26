@@ -57,7 +57,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The tag&apos;s value. May not be null.
+        /// The tag's value. May not be null.
         /// </para>
         /// </summary>
         public string Value

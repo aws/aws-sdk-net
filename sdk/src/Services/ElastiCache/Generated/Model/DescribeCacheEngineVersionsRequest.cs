@@ -50,9 +50,19 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CacheParameterGroupFamily
         {
@@ -89,6 +99,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Engine. 
         /// <para>
         /// The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
+        /// 
         /// </para>
         /// </summary>
         public string Engine
@@ -110,7 +121,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>1.4.14</code>
+        /// Example: <code>1.4.14</code> 
         /// </para>
         /// </summary>
         public string EngineVersion

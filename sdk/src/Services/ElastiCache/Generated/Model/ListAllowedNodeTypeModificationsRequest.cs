@@ -52,11 +52,11 @@ namespace Amazon.ElastiCache.Model
         /// ElastiCache uses the cluster id to identify the current node type of this cluster
         /// and from that to to create a list of node types you can scale up to.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// <b>Important:</b><br/> You must provide a value for either the <i>CacheClusterId</i>
-        /// or the <i>ReplicationGroupId</i>.
+        /// You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
         /// </para>
+        ///  </important>
         /// </summary>
         public string CacheClusterId
         {
@@ -77,11 +77,11 @@ namespace Amazon.ElastiCache.Model
         /// uses the replication group id to identify the current node type being used by this
         /// replication group, and from that to create a list of node types you can scale up to.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// <b>Important:</b><br/> You must provide a value for either the <i>CacheClusterId</i>
-        /// or the <i>ReplicationGroupId</i>.
+        /// You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
         /// </para>
+        ///  </important>
         /// </summary>
         public string ReplicationGroupId
         {

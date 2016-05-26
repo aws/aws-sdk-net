@@ -41,12 +41,19 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Indicates the status of Multi-AZ for this replication group.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// ElastiCache Multi-AZ replication groups are not supported on:
         /// </para>
-        ///  <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
-        /// </ul> </note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Redis versions earlier than 2.8.6.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// T1 and T2 cache node types.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public PendingAutomaticFailoverStatus AutomaticFailoverStatus
         {

@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code>
+        /// Default: <code>1</code> 
         /// </para>
         /// </summary>
         public int CacheNodeCount
@@ -65,13 +65,13 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// A customer-specified identifier to track this reservation.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// <b>Note:</b><br/>The Reserved Cache Node ID is an unique customer-specified identifier
-        /// to track this reservation. If this parameter is not specified, ElastiCache automatically
-        /// generates an identifier for the reservation.
+        /// The Reserved Cache Node ID is an unique customer-specified identifier to track this
+        /// reservation. If this parameter is not specified, ElastiCache automatically generates
+        /// an identifier for the reservation.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Example: myreservationID
         /// </para>
@@ -95,7 +95,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
+        /// Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> 
         /// </para>
         /// </summary>
         public string ReservedCacheNodesOfferingId

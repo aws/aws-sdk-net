@@ -30,16 +30,40 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the CopySnapshot operation.
     /// The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Users or groups that have permissions to use the <i>CopySnapshot</i> API can create
+    /// their own Amazon S3 buckets and copy snapshots to it. To control access to your snapshots,
+    /// use an IAM policy to control who has the ability to use the <i>CopySnapshot</i> API.
+    /// For more information about using IAM to control the use of ElastiCache APIs, see <a
+    /// href="http://docs.aws.amazon.com/ElastiCache/latest/Snapshots.Exporting.html">Exporting
+    /// Snapshots</a> and <a href="http://docs.aws.amazon.com/ElastiCache/latest/IAM.html">Authentication
+    /// &amp; Access Control</a>.
+    /// </para>
+    ///  </important> <p class="title"> <b>Erorr Message:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Error Message:</b> The authenticated user does not have sufficient permissions
+    /// to perform the desired activity.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Solution:</b> Contact your system administrator to get the needed permissions.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CopySnapshotRequest : AmazonElastiCacheRequest
     {
         private string _sourceSnapshotName;
+        private string _targetBucket;
         private string _targetSnapshotName;
 
         /// <summary>
         /// Gets and sets the property SourceSnapshotName. 
         /// <para>
-        /// The name of an existing snapshot from which to copy.
+        /// The name of an existing snapshot from which to make a copy.
         /// </para>
         /// </summary>
         public string SourceSnapshotName
@@ -55,10 +79,132 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetBucket. 
+        /// <para>
+        /// The Amazon S3 bucket to which the snapshot will be exported. This parameter is used
+        /// only when exporting a snapshot for external access.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this parameter to export a snapshot, be sure Amazon ElastiCache has the
+        /// needed permissions to this S3 bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+        /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Error Messages:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You could receive one of the following error messages.
+        /// </para>
+        ///  <p class="title"> <b>Erorr Messages</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Error Message: </b> ElastiCache has not been granted READ permissions %s on the
+        /// S3 Bucket.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Solution:</b> Add List and Read permissions on the bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Error Message: </b> ElastiCache has not been granted WRITE permissions %s on the
+        /// S3 Bucket.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Solution:</b> Add Upload/Delete permissions on the bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Error Message: </b> ElastiCache has not been granted READ_ACP permissions %s on
+        /// the S3 Bucket.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Solution:</b> Add View Permissions permissions on the bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Error Message:</b> The S3 bucket %s is outside of the region.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Solution:</b> Before exporting your snapshot, create a new Amazon S3 bucket in
+        /// the same region as your snapshot. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+        /// 1: Create an Amazon S3 Bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Error Message:</b> The S3 bucket %s does not exist.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+        /// 1: Create an Amazon S3 Bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Error Message:</b> The S3 bucket %s is not owned by the authenticated user.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+        /// 1: Create an Amazon S3 Bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Error Message:</b> The authenticated user does not have sufficient permissions
+        /// to perform the desired activity.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Solution:</b> Contact your system administrator to get the needed permissions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+        /// a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TargetBucket
+        {
+            get { return this._targetBucket; }
+            set { this._targetBucket = value; }
+        }
+
+        // Check to see if TargetBucket property is set
+        internal bool IsSetTargetBucket()
+        {
+            return this._targetBucket != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetSnapshotName. 
         /// <para>
-        /// A name for the copied snapshot.
+        /// A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot,
+        /// therefore this name must be unique within its context - ElastiCache or an Amazon S3
+        /// bucket if exporting.
         /// </para>
+        ///  <p class="title"> <b>Error Message</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Error Message:</b> The S3 bucket %s already contains an object with key %s.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Solution:</b> Give the <i>TargetSnapshotName</i> a new and unique value. If exporting
+        /// a snapshot, you could alternatively create a new Amazon S3 bucket and use this same
+        /// value for <i>TargetSnapshotName</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string TargetSnapshotName
         {
