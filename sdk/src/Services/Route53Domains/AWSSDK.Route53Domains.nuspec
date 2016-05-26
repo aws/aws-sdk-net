@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Route53Domains</id>
     <title>AWSSDK - Amazon Route 53 Domains</title>
-    <version>3.1.1.0</version> 
+    <version>3.1.1.1</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

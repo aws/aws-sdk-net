@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.DirectConnect</id>
     <title>AWSSDK - AWS Direct Connect</title>
-    <version>3.1.1.1</version> 
+    <version>3.1.1.2</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

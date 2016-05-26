@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.MobileAnalytics</id>
     <title>AWSSDK - Amazon Mobile Analytics</title>
-    <version>3.1.1.6</version> 
+    <version>3.1.1.7</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse.</description>
     <language>en-US</language>
@@ -14,27 +14,27 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
         <dependency id="SQLitePCL" version="3.8.7.2" />
       </group>
 
             
       <group targetFramework="net35">
         <dependency id="System.Data.SQLite" version="1.0.97.0" />
-        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
       </group>
             
       <group targetFramework="net45">
         <dependency id="System.Data.SQLite" version="1.0.97.0" />
-        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
       </group>
             
       <group targetFramework="xamarinios10">
         <dependency id="SQLitePCL" version="3.8.7.2" />
-        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
       </group>
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.4.3, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

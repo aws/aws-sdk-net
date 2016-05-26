@@ -1,3 +1,17 @@
+### 3.1.73.0 (2016-05-26 21:25 UTC)
+* CloudTrail (3.1.4.0)
+	* Regenerated from correct service model. Previous releases contained an exception type, KmsKeyInvalidStateException, which is not currently used and should not have been present (this removal may be a breaking change for some users).
+* ElastiCache (3.1.3.0)
+	* This release of Amazon ElastiCache adds support for exporting a Redis snapshot to an Amazon S3 bucket. After the export is completed, you can access the exported snapshot from your Amazon S3 console or API.
+* SecurityToken (3.1.4.0)
+	* Refactoring changes corresponding to enhancements to enable the use of SAML role credential profiles in the SDK core assembly.
+* Core 3.1.6.0
+	* Updated credential profile support to enable use of SAML role profiles with SDK-based applications.
+Added support for auto-detect of region from instance metadata when running on EC2 instances.
+Added support for reading AWS credentials from environment variables shared with other AWS SDKs.
+Added support for generating serializable exceptions.
+	* all services packages updated to require new core
+
 ### 3.1.72.0 (2016-05-24 17:32 UTC)
 * EC2 (3.1.15.0)
 	* Added support for instance console screenshot
