@@ -19,6 +19,14 @@ namespace SDKDocGenerator.UnitTests
             var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
             Assert.Equal("M:SDKDocGenerator.UnitTests.TestMethods.Query``1(System.String)", signature);
         }
+
+        [Fact]
+        public void CollectionTestMethod()
+        {
+            var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "CollectionTest");
+            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
+            Assert.Equal("M:SDKDocGenerator.UnitTests.TestMethods.CollectionTest(System.Collections.Generic.IList{System.Collections.Generic.IDictionary{System.String,SDKDocGenerator.UnitTests.TestMethods}})", signature);
+        }
     }
 
     public class TestMethods
@@ -32,6 +40,15 @@ namespace SDKDocGenerator.UnitTests
         public T Query<T>(string name)
         {
             return default(T);
+        }
+
+        /// <summary>
+        /// Test Method
+        /// </summary>
+        /// <param name="param"></param>
+        public void CollectionTest(IList<IDictionary<string, TestMethods>> param)
+        {
+
         }
     }
 }
