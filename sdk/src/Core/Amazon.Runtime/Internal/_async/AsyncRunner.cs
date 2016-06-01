@@ -50,25 +50,23 @@ namespace Amazon.Runtime.Internal
                         exception = e;
                     }
                 });
-                if (cancellationToken != null)
+                using (var ctr = cancellationToken.Register(() =>
                 {
-                    cancellationToken.Register(() =>
+                    if (thread.IsAlive)
+                        thread.Abort();
+                }))
+                {
+                    thread.Start();
+                    thread.Join();
+
+                    if (exception != null)
                     {
-                        if (thread.IsAlive)
-                            thread.Abort();
-                    });
+                        cancellationToken.ThrowIfCancellationRequested();
+                        System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(exception).Throw();
+                    }
+
+                    return result;
                 }
-
-                thread.Start();
-                thread.Join();
-
-                if (exception != null)
-                {
-                    cancellationToken.ThrowIfCancellationRequested();
-                    System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(exception).Throw();
-                }
-
-                return result;
             }, cancellationToken);
 #endif
         }
