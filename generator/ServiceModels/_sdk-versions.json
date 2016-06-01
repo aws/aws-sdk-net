@@ -477,14 +477,14 @@
             },
             "InPreview"    : false
         },
-        "Application Discovery Service"   : {
+        "ApplicationDiscoveryService"   : {
             "Version" : "3.1.1.1",
             "Dependencies" : {
                 "Core" : "3.1.6.0"
             },
             "InPreview"    : false
         },
-        "Application Auto Scaling"        : {
+        "ApplicationAutoScaling"        : {
             "Version" : "3.1.0.1",
             "Dependencies" : {
                 "Core" : "3.1.6.0"
