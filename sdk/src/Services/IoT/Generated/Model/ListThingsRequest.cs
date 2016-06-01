@@ -29,8 +29,8 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListThings operation.
-    /// Lists your things. You can pass an AttributeName and/or AttributeValue to filter your
-    /// things. For example: "ListThings where AttributeName=Color and AttributeValue=Red"
+    /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
+    /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
     /// </summary>
     public partial class ListThingsRequest : AmazonIoTRequest
     {

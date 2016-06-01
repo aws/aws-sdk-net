@@ -42,7 +42,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeregisterTime. 
         /// <para>
-        /// If the on-premises instance was deregistered, the time that the on-premises instance
+        /// If the on-premises instance was deregistered, the time at which the on-premises instance
         /// was deregistered.
         /// </para>
         /// </summary>
@@ -115,7 +115,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property RegisterTime. 
         /// <para>
-        /// The time that the on-premises instance was registered.
+        /// The time at which the on-premises instance was registered.
         /// </para>
         /// </summary>
         public DateTime RegisterTime
@@ -133,7 +133,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags that are currently associated with the on-premises instance.
+        /// The tags currently associated with the on-premises instance.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -13,14 +13,9 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Configuration;
 using System.Net;
-using System.Text;
 using Amazon.Util;
-
-using Amazon.Runtime.Internal.Auth;
+using System.Globalization;
 
 namespace Amazon.Runtime
 {
@@ -39,15 +34,7 @@ namespace Amazon.Runtime
         
         private static RegionEndpoint GetDefaultRegionEndpoint()
         {
-            var regionName = AWSConfigs.AWSRegion;
-            if (!string.IsNullOrEmpty(regionName))
-            {
-                RegionEndpoint re = RegionEndpoint.GetBySystemName(regionName);
-                if (re == null)
-                    throw new ArgumentException("Region {0} specified in the app.config is not a valid region name", regionName);
-                return re;
-            }
-            return null;
+            return FallbackRegionFactory.GetRegionEndpoint();
         }
 
         /// <summary>
@@ -98,6 +85,22 @@ namespace Amazon.Runtime
             }
 
             return proxy;
+        }
+
+        /// <summary>
+        /// Unpacks the host, port and any credentials info into the instance's
+        /// proxy-related fields.
+        /// </summary>
+        /// <param name="proxy">The proxy details</param>
+        public void SetWebProxy(WebProxy proxy)
+        {
+            if (proxy == null)
+                throw new ArgumentNullException("proxy");
+
+            var address = proxy.Address;
+            ProxyHost = string.Format(CultureInfo.InvariantCulture, "{0}://{1}", address.Scheme, address.Host);
+            ProxyPort = address.Port;
+            ProxyCredentials = proxy.Credentials;
         }
 
         /// <summary>

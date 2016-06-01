@@ -322,7 +322,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// Changes the instance's user data to the specified value.
+        /// Changes the instance's user data to the specified base64-encoded value. For command
+        /// line tools, base64 encoding is performed for you.
         /// </para>
         /// </summary>
         public string UserData

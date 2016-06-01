@@ -38,8 +38,8 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    /// You can create multiple certificates in a batch by creating a directory and copying
-    /// multiple .csr files into that directory and specifying that directory on the command
+    /// You can create multiple certificates in a batch by creating a directory, copying multiple
+    /// .csr files into that directory, and then specifying that directory on the command
     /// line. The following commands show how to create a batch of certificates given a batch
     /// of CSRs. 
     /// </para>
@@ -49,7 +49,7 @@ namespace Amazon.IoT.Model
     /// </para>
     /// &gt; 
     /// <para>
-    /// On Linux and OSX, the command is:
+    /// On Linux and OS X, the command is:
     /// </para>
     ///  
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+    ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
     /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
     /// for the corresponding CSR. 
     /// </para>
@@ -84,7 +84,7 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+    ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
     /// is: 
     /// </para>
     ///  

@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// Information about the role.
+        /// A structure containing details about the new role.
         /// </para>
         /// </summary>
         public Role Role

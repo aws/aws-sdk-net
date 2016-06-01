@@ -56,6 +56,14 @@
       <Project>{EB2C1C17-AE9B-423E-B67C-23085200E6F5}</Project>
       <Name>AWSSDK.APIGateway.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ApplicationAutoScaling/AWSSDK.ApplicationAutoScaling.CodeAnalysis.csproj">
+      <Project>{1DD966D7-EC7C-49C5-B22C-2526016306DF}</Project>
+      <Name>AWSSDK.ApplicationAutoScaling.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ApplicationDiscoveryService/AWSSDK.ApplicationDiscoveryService.CodeAnalysis.csproj">
+      <Project>{1707A0B9-C421-4504-A887-EF27A459B440}</Project>
+      <Name>AWSSDK.ApplicationDiscoveryService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AutoScaling/AWSSDK.AutoScaling.CodeAnalysis.csproj">
       <Project>{DE877AEA-BBDF-43E5-90C5-765D0B02BFC3}</Project>
       <Name>AWSSDK.AutoScaling.CodeAnalysis</Name>
@@ -63,6 +71,10 @@
     <ProjectReference Include="../ServiceAnalysis/AWSMarketplaceCommerceAnalytics/AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis.csproj">
       <Project>{CE92E696-6109-4623-9C98-F353D3B85527}</Project>
       <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AWSMarketplaceMetering/AWSSDK.AWSMarketplaceMetering.CodeAnalysis.csproj">
+      <Project>{7774BBE9-1843-442C-8BAD-7FA712FC5EA2}</Project>
+      <Name>AWSSDK.AWSMarketplaceMetering.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AWSSupport/AWSSDK.AWSSupport.CodeAnalysis.csproj">
       <Project>{CF64C0A4-25F7-42E9-9B3D-632CB520B666}</Project>
@@ -124,6 +136,10 @@
       <Project>{B0147093-B0FF-4BD3-A648-247307EA1230}</Project>
       <Name>AWSSDK.CognitoIdentity.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CognitoIdentityProvider/AWSSDK.CognitoIdentityProvider.CodeAnalysis.csproj">
+      <Project>{F73F43C5-4F14-456C-832C-530CAA752428}</Project>
+      <Name>AWSSDK.CognitoIdentityProvider.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CognitoSync/AWSSDK.CognitoSync.CodeAnalysis.csproj">
       <Project>{EBE2D008-5A2B-4314-B243-BA043BAFF60A}</Project>
       <Name>AWSSDK.CognitoSync.CodeAnalysis</Name>
@@ -131,6 +147,10 @@
     <ProjectReference Include="../ServiceAnalysis/ConfigService/AWSSDK.ConfigService.CodeAnalysis.csproj">
       <Project>{2F79A9E2-BE9C-43DB-876A-A7F16A5B64AC}</Project>
       <Name>AWSSDK.ConfigService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DatabaseMigrationService/AWSSDK.DatabaseMigrationService.CodeAnalysis.csproj">
+      <Project>{B0032676-356E-4ABA-A252-890237EAF9C3}</Project>
+      <Name>AWSSDK.DatabaseMigrationService.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DataPipeline/AWSSDK.DataPipeline.CodeAnalysis.csproj">
       <Project>{CA4F8900-EA2E-44CD-AFCC-B4BE1F7AF3EA}</Project>
@@ -147,6 +167,10 @@
     <ProjectReference Include="../ServiceAnalysis/DirectoryService/AWSSDK.DirectoryService.CodeAnalysis.csproj">
       <Project>{7108CBE8-E6A9-416C-8D5D-8264A15C2AA5}</Project>
       <Name>AWSSDK.DirectoryService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DiscoveryService/AWSSDK.DiscoveryService.CodeAnalysis.csproj">
+      <Project>{CBD3EFFA-A272-4983-BD2A-61D4B36A2617}</Project>
+      <Name>AWSSDK.DiscoveryService.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DynamoDBv2/AWSSDK.DynamoDBv2.CodeAnalysis.csproj">
       <Project>{B0E4C8D2-B504-4B0E-8789-47F2B9CBDA02}</Project>

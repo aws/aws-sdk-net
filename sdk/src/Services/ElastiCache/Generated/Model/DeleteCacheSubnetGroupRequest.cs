@@ -31,7 +31,11 @@ namespace Amazon.ElastiCache.Model
     /// Container for the parameters to the DeleteCacheSubnetGroup operation.
     /// The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.
     /// 
-    ///  <note>You cannot delete a cache subnet group if it is associated with any cache clusters.</note>
+    ///  <note> 
+    /// <para>
+    /// You cannot delete a cache subnet group if it is associated with any cache clusters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteCacheSubnetGroupRequest : AmazonElastiCacheRequest
     {

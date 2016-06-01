@@ -33,8 +33,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used by the <code>MatchedStatements</code> member of the <code><a>EvaluationResult</a></code>
-    /// type.
+    /// This data type is used by the <code>MatchedStatements</code> member of the <code>
+    /// <a>EvaluationResult</a> </code> type.
     /// </para>
     /// </summary>
     public partial class Statement

@@ -28,13 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Object representing a repository.
+    /// An object representing a repository.
     /// </summary>
     public partial class Repository
     {
         private string _registryId;
         private string _repositoryArn;
         private string _repositoryName;
+        private string _repositoryUri;
 
         /// <summary>
         /// Gets and sets the property RegistryId. 
@@ -91,6 +92,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetRepositoryName()
         {
             return this._repositoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepositoryUri. 
+        /// <para>
+        /// The URI for the repository. You can use this URI for Docker <code>push</code> and
+        /// <code>pull</code> operations.
+        /// </para>
+        /// </summary>
+        public string RepositoryUri
+        {
+            get { return this._repositoryUri; }
+            set { this._repositoryUri = value; }
+        }
+
+        // Check to see if RepositoryUri property is set
+        internal bool IsSetRepositoryUri()
+        {
+            return this._repositoryUri != null;
         }
 
     }

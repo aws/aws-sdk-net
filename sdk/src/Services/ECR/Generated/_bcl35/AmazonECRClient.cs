@@ -964,7 +964,7 @@ namespace Amazon.ECR
         #region  InitiateLayerUpload
 
         /// <summary>
-        /// Notify Amazon ECR that you intend to upload an image layer. 
+        /// Notify Amazon ECR that you intend to upload an image layer.
         /// 
         ///  <note> 
         /// <para>

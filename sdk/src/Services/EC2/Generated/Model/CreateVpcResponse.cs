@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CreateVpc operation.
+    /// Contains the output of CreateVpc.
     /// </summary>
     public partial class CreateVpcResponse : AmazonWebServiceResponse
     {

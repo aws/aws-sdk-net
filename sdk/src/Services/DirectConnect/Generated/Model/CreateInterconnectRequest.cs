@@ -49,6 +49,11 @@ namespace Amazon.DirectConnect.Model
     /// connect to AWS resources by creating a virtual interface on their connection, using
     /// the VLAN assigned to them by the AWS Direct Connect partner.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This is intended for use by AWS Direct Connect partners only.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateInterconnectRequest : AmazonDirectConnectRequest
     {

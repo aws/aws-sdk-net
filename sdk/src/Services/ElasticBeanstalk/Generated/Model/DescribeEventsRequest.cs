@@ -31,8 +31,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the DescribeEvents operation.
     /// Returns list of event descriptions matching criteria up to the last 6 weeks.
     /// 
-    ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
-    /// </note>
+    ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonElasticBeanstalkRequest
     {
@@ -56,8 +55,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
-        /// only those associated with this application. 
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+        /// only those associated with this application.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -94,8 +93,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
-        /// associated with this environment. 
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated
+        /// with this environment.
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -113,8 +112,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
-        /// associated with this environment. 
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated
+        /// with this environment.
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -207,8 +206,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
-        /// that occur on or after this time. 
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+        /// occur on or after this time.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -226,8 +225,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
-        /// that are associated with this environment configuration. 
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+        /// are associated with this environment configuration.
         /// </para>
         /// </summary>
         public string TemplateName
@@ -245,8 +244,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
-        /// associated with this application version. 
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated
+        /// with this application version.
         /// </para>
         /// </summary>
         public string VersionLabel

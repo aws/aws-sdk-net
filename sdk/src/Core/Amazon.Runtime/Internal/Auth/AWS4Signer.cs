@@ -487,6 +487,17 @@ namespace Amazon.Runtime.Internal.Auth
                                                     RegionEndpoint alternateEndpoint,
                                                     IRequest request)
         {
+            // Alternate endpoint (IRequest.AlternateEndopoint) takes precedence over
+            // client config properties.
+            if (alternateEndpoint != null)
+            {
+                var serviceEndpoint = alternateEndpoint.GetEndpointForService(serviceName);
+                if (serviceEndpoint.AuthRegion != null)
+                    return serviceEndpoint.AuthRegion;
+
+                return alternateEndpoint.SystemName;
+            }
+
             string authenticationRegion = clientConfig.AuthenticationRegion;
             if (request != null && request.AuthenticationRegion != null)
                 authenticationRegion = request.AuthenticationRegion;
@@ -501,7 +512,7 @@ namespace Amazon.Runtime.Internal.Auth
                     return parsedRegion.ToLowerInvariant();
             }
 
-            var endpoint = alternateEndpoint ?? clientConfig.RegionEndpoint;
+            var endpoint = clientConfig.RegionEndpoint;
             if (endpoint != null)
             {
                 var serviceEndpoint = endpoint.GetEndpointForService(serviceName);

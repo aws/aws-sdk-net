@@ -62,7 +62,10 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TriggerName. <para>The name of the notification trigger.</para>
+        /// Gets and sets the property TriggerName. 
+        /// <para>
+        /// The name of the notification trigger.
+        /// </para>
         /// </summary>
         public string TriggerName
         {
@@ -79,7 +82,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TriggerTargetArn. 
         /// <para>
-        /// The arn of the Amazon Simple Notification Service topic through which notifications
+        /// The ARN of the Amazon Simple Notification Service topic through which notifications
         /// about deployment or instance events are sent.
         /// </para>
         /// </summary>

@@ -28,20 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents a copy of an entire cache cluster as of the time when the snapshot was
-    /// taken.
+    /// This is the response object from the CopySnapshot operation.
     /// </summary>
     public partial class CopySnapshotResponse : AmazonWebServiceResponse
     {
-        private Snapshot _response;
+        private Snapshot _snapshot;
 
         /// <summary>
-        /// Gets and sets the Snapshot property.
+        /// Gets and sets the property Snapshot.
         /// </summary>
         public Snapshot Snapshot
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._snapshot; }
+            set { this._snapshot = value; }
         }
+
+        // Check to see if Snapshot property is set
+        internal bool IsSetSnapshot()
+        {
+            return this._snapshot != null;
+        }
+
     }
 }

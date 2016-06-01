@@ -57,10 +57,10 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property Records. 
         /// <para>
         /// An array of successfully and unsuccessfully processed record results, correlated with
-        /// the request by natural ordering. A record that is successfully added to your Amazon
-        /// Kinesis stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the
-        /// result. A record that fails to be added to your Amazon Kinesis stream includes <code>ErrorCode</code>
-        /// and <code>ErrorMessage</code> in the result.
+        /// the request by natural ordering. A record that is successfully added to a stream includes
+        /// <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that
+        /// fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code>
+        /// in the result.
         /// </para>
         /// </summary>
         public List<PutRecordsResultEntry> Records

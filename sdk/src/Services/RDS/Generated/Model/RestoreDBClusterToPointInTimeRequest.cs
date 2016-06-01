@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonRDSRequest
@@ -57,15 +57,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        ///  The name of the new DB cluster to be created. 
+        /// The name of the new DB cluster to be created.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBClusterIdentifier
         {
@@ -82,7 +92,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        ///  The DB subnet group name to use for the new DB cluster. 
+        /// The DB subnet group name to use for the new DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// spaces, or hyphens. Must not be default.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -122,10 +141,16 @@ namespace Amazon.RDS.Model
         /// If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following
         /// will occur:
         /// </para>
-        ///  <ul> <li>If the DB cluster is encrypted, then the restored DB cluster is encrypted
-        /// using the KMS key that was used to encrypt the source DB cluster.</li> </ul> <li>If
-        /// the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</li>
-        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the DB cluster is encrypted, then the restored DB cluster is encrypted using the
+        /// KMS key that was used to encrypt the source DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// If <code>DBClusterIdentifier</code> refers to a DB cluster that is note encrypted,
         /// then the restore request is rejected.
@@ -164,11 +189,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  The port number on which the new DB cluster accepts connections. 
+        /// The port number on which the new DB cluster accepts connections.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code>
+        /// Constraints: Value must be <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -190,7 +215,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RestoreToTime. 
         /// <para>
-        ///  The date and time to restore the DB cluster to. 
+        /// The date and time to restore the DB cluster to.
         /// </para>
         ///  
         /// <para>
@@ -200,11 +225,17 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be before the latest restorable time for the DB instance</li> <li>Cannot
-        /// be specified if <code>UseLatestRestorableTime</code> parameter is true</li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>2015-03-07T23:45:00Z</code>
+        /// Must be before the latest restorable time for the DB instance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>2015-03-07T23:45:00Z</code> 
         /// </para>
         /// </summary>
         public DateTime RestoreToTime
@@ -222,15 +253,29 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceDBClusterIdentifier. 
         /// <para>
-        ///  The identifier of the source DB cluster from which to restore. 
+        /// The identifier of the source DB cluster from which to restore.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be the identifier of an existing database instance</li> <li>Must contain
-        /// from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a
-        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be the identifier of an existing database instance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SourceDBClusterIdentifier
         {
@@ -267,7 +312,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code>
+        /// Default: <code>false</code> 
         /// </para>
         ///  
         /// <para>
@@ -289,7 +334,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        ///  A lst of VPC security groups that the new DB cluster belongs to. 
+        /// A lst of VPC security groups that the new DB cluster belongs to.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

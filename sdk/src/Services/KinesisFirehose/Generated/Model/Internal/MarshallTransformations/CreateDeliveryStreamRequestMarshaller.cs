@@ -73,6 +73,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeliveryStreamName);
                 }
 
+                if(publicRequest.IsSetElasticsearchDestinationConfiguration())
+                {
+                    context.Writer.WritePropertyName("ElasticsearchDestinationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ElasticsearchDestinationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ElasticsearchDestinationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRedshiftDestinationConfiguration())
                 {
                     context.Writer.WritePropertyName("RedshiftDestinationConfiguration");

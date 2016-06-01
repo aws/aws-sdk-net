@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the GetPasswordData operation.
+    /// Contains the output of GetPasswordData.
     /// </summary>
     public partial class GetPasswordDataResponse : AmazonWebServiceResponse
     {

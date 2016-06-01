@@ -59,7 +59,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/2015-03-31/functions/{FunctionName}/configuration";
-            uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
+            if (!publicRequest.IsSetFunctionName())
+                throw new AmazonLambdaException("Request object does not have required field FunctionName set");
+            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -88,6 +90,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Role");
                     context.Writer.Write(publicRequest.Role);
+                }
+
+                if(publicRequest.IsSetRuntime())
+                {
+                    context.Writer.WritePropertyName("Runtime");
+                    context.Writer.Write(publicRequest.Runtime);
                 }
 
                 if(publicRequest.IsSetTimeout())

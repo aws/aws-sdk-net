@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector.Model
 {
     /// <summary>
-    /// This data type is used in the <a>AssessmentsFilter</a> and <a>RunsFilter</a> data
-    /// types.
+    /// This data type is used in the <a>AssessmentRunFilter</a> data type.
     /// </summary>
     public partial class TimestampRange
     {
-        private DateTime? _maximum;
-        private DateTime? _minimum;
+        private DateTime? _beginDate;
+        private DateTime? _endDate;
 
         /// <summary>
-        /// Gets and sets the property Maximum. 
-        /// <para>
-        /// The maximum value of the timestamp range.
-        /// </para>
-        /// </summary>
-        public DateTime Maximum
-        {
-            get { return this._maximum.GetValueOrDefault(); }
-            set { this._maximum = value; }
-        }
-
-        // Check to see if Maximum property is set
-        internal bool IsSetMaximum()
-        {
-            return this._maximum.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Minimum. 
+        /// Gets and sets the property BeginDate. 
         /// <para>
         /// The minimum value of the timestamp range.
         /// </para>
         /// </summary>
-        public DateTime Minimum
+        public DateTime BeginDate
         {
-            get { return this._minimum.GetValueOrDefault(); }
-            set { this._minimum = value; }
+            get { return this._beginDate.GetValueOrDefault(); }
+            set { this._beginDate = value; }
         }
 
-        // Check to see if Minimum property is set
-        internal bool IsSetMinimum()
+        // Check to see if BeginDate property is set
+        internal bool IsSetBeginDate()
         {
-            return this._minimum.HasValue; 
+            return this._beginDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndDate. 
+        /// <para>
+        /// The maximum value of the timestamp range.
+        /// </para>
+        /// </summary>
+        public DateTime EndDate
+        {
+            get { return this._endDate.GetValueOrDefault(); }
+            set { this._endDate = value; }
+        }
+
+        // Check to see if EndDate property is set
+        internal bool IsSetEndDate()
+        {
+            return this._endDate.HasValue; 
         }
 
     }

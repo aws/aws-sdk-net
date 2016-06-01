@@ -66,10 +66,10 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates CreateCacheClusterRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheClusterId">The node group identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li> <li>The first character must be a letter.</li> <li>A name cannot end with a hyphen or contain two consecutive hyphens.</li> </ul></param>
+        /// <param name="cacheClusterId">The node group identifier. This parameter is stored as a lowercase string.  <b>Constraints:</b>  <ul> <li> A name must contain from 1 to 20 alphanumeric characters or hyphens. </li> <li> The first character must be a letter. </li> <li> A name cannot end with a hyphen or contain two consecutive hyphens. </li> </ul></param>
         /// <param name="numCacheNodes">The initial number of cache nodes that the cache cluster will have. For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20. If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</param>
-        /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the node group. Valid node types are as follows: <ul> <li>General purpose: <ul> <li>Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li> <li>Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li> </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li> <li>Memory optimized <ul> <li>Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li> <li>Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code></li> </ul></li> </ul> <b>Notes:</b> <ul> <li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li> <li>Redis backup/restore is not supported for t2 instances.</li> <li>Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.</li> </ul> For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>. </param>
-        /// <param name="engine">The name of the cache engine to be used for this cache cluster. Valid values for this parameter are: <code>memcached</code> | <code>redis</code></param>
+        /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the node group. Valid node types are as follows: <ul> <li> General purpose: <ul> <li> Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>  </li> <li> Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>  </li> </ul> </li> <li> Compute optimized: <code>cache.c1.xlarge</code>  </li> <li> Memory optimized: <ul> <li> Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>  </li> <li> Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>  </li> </ul> </li> </ul>  <b>Notes:</b>  <ul> <li> All t2 instances are created in an Amazon Virtual Private Cloud (VPC). </li> <li> Redis backup/restore is not supported for t2 instances. </li> <li> Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances. </li> </ul> For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>.</param>
+        /// <param name="engine">The name of the cache engine to be used for this cache cluster. Valid values for this parameter are:  <code>memcached</code> | <code>redis</code> </param>
         /// <param name="cacheSecurityGroupNames">A list of security group names to associate with this cache cluster. Use this parameter only when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC).</param>
         public CreateCacheClusterRequest(string cacheClusterId, int numCacheNodes, string cacheNodeType, string engine, List<string> cacheSecurityGroupNames)
         {
@@ -133,11 +133,21 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints:
+        ///  <b>Constraints:</b> 
         /// </para>
-        ///  <ul> <li>A name must contain from 1 to 20 alphanumeric characters or hyphens.</li>
-        /// <li>The first character must be a letter.</li> <li>A name cannot end with a hyphen
-        /// or contain two consecutive hyphens.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// A name must contain from 1 to 20 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The first character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A name cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CacheClusterId
         {
@@ -160,27 +170,61 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Valid node types are as follows:
         /// </para>
-        ///  <ul> <li>General purpose: <ul> <li>Current generation: <code>cache.t2.micro</code>,
-        /// <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
-        /// <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code></li>
-        /// <li>Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-        /// <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code></li>
-        /// </ul></li> <li>Compute optimized: <code>cache.c1.xlarge</code></li> <li>Memory optimized
-        /// <ul> <li>Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
-        /// <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code></li>
-        /// <li>Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
-        /// <code>cache.m2.4xlarge</code></li> </ul></li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// <b>Notes:</b>
+        /// General purpose:
         /// </para>
-        ///  <ul> <li>All t2 instances are created in an Amazon Virtual Private Cloud (VPC).</li>
-        /// <li>Redis backup/restore is not supported for t2 instances.</li> <li>Redis Append-only
-        /// files (AOF) functionality is not supported for t1 or t2 instances.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
+        /// <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+        /// <code>cache.m3.2xlarge</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+        /// <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Compute optimized: <code>cache.c1.xlarge</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Memory optimized:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+        /// <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code> 
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        ///  <b>Notes:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Redis backup/restore is not supported for t2 instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
         /// ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
         /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
-        /// Node Type-Specific Parameters for Redis</a>. 
+        /// Node Type-Specific Parameters for Redis</a>.
         /// </para>
         /// </summary>
         public string CacheNodeType
@@ -271,7 +315,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>memcached</code> | <code>redis</code>
+        ///  <code>memcached</code> | <code>redis</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -292,6 +336,13 @@ namespace Amazon.ElastiCache.Model
         /// The version number of the cache engine to be used for this cache cluster. To view
         /// the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+        /// a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version, you must delete the existing cache cluster
+        /// or replication group and create it anew with the earlier engine version. 
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -311,7 +362,11 @@ namespace Amazon.ElastiCache.Model
         /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
         /// to which notifications will be sent.
         /// </para>
-        ///  <note>The Amazon SNS topic owner must be the same as the cache cluster owner.</note>
+        ///  <note> 
+        /// <para>
+        /// The Amazon SNS topic owner must be the same as the cache cluster owner.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NotificationTopicArn
         {
@@ -429,11 +484,13 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: One Memcached node in each of three different Availability Zones: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
+        /// Example: One Memcached node in each of three different Availability Zones: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Example: All three Memcached nodes in one Availability Zone: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
+        /// Example: All three Memcached nodes in one Availability Zone: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
+        /// 
         /// </para>
         /// </summary>
         public List<string> PreferredAvailabilityZones
@@ -456,11 +513,37 @@ namespace Amazon.ElastiCache.Model
         /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
         /// are:
         /// </para>
-        ///  <ul> <li><code>sun</code></li> <li><code>mon</code></li> <li><code>tue</code></li>
-        /// <li><code>wed</code></li> <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
-        /// </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>sun:05:00-sun:09:00</code>
+        ///  <code>sun</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mon</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tue</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>wed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>thu</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>fri</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sat</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>sun:05:00-sun:09:00</code> 
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -489,11 +572,11 @@ namespace Amazon.ElastiCache.Model
         /// not specified, the cache cluster will be created in availability zones that provide
         /// the best spread of read replicas across availability zones.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is
-        /// <code>redis</code>.
+        /// This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
         /// </para>
+        ///  </note>
         /// </summary>
         public string ReplicationGroupId
         {
@@ -538,14 +621,13 @@ namespace Amazon.ElastiCache.Model
         /// used to populate the node group. The Amazon S3 object name in the ARN cannot contain
         /// any commas.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is
-        /// <code>redis</code>.
+        /// This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
-        /// Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
+        /// Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> 
         /// </para>
         /// </summary>
         public List<string> SnapshotArns
@@ -566,11 +648,11 @@ namespace Amazon.ElastiCache.Model
         /// The name of a snapshot from which to restore data into the new node group. The snapshot
         /// status changes to <code>restoring</code> while the new node group is being created.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is
-        /// <code>redis</code>.
+        /// This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
         /// </para>
+        ///  </note>
         /// </summary>
         public string SnapshotName
         {
@@ -591,12 +673,11 @@ namespace Amazon.ElastiCache.Model
         /// them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, then a snapshot
         /// that was taken today will be retained for 5 days before being deleted.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is
-        /// <code>redis</code>.
+        /// This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Default: 0 (i.e., automatic backups are disabled for this cache cluster).
         /// </para>
@@ -621,7 +702,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>05:00-09:00</code>
+        /// Example: <code>05:00-09:00</code> 
         /// </para>
         ///  
         /// <para>
@@ -630,7 +711,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is
+        ///  <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is
         /// <code>redis</code>.
         /// </para>
         /// </summary>

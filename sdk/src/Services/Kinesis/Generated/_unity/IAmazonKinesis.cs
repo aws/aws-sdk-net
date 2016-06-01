@@ -27,10 +27,10 @@ namespace Amazon.Kinesis
     /// <summary>
     /// Interface for accessing Kinesis
     ///
-    /// Amazon Kinesis Service API Reference 
+    /// Amazon Kinesis Streams Service API Reference 
     /// <para>
-    /// Amazon Kinesis is a managed service that scales elastically for real time processing
-    /// of streaming big data.
+    /// Amazon Kinesis Streams is a managed service that scales elastically for real time
+    /// processing of streaming big data.
     /// </para>
     /// </summary>
     public partial interface IAmazonKinesis : IDisposable
@@ -73,9 +73,9 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Decreases the stream's retention period, which is the length of time data records
-        /// are accessible after they are added to the stream. The minimum value of a stream’s
-        /// retention period is 24 hours. 
+        /// Decreases the Amazon Kinesis stream's retention period, which is the length of time
+        /// data records are accessible after they are added to the stream. The minimum value
+        /// of a stream's retention period is 24 hours.
         /// 
         ///  
         /// <para>
@@ -156,6 +156,38 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  DisableEnhancedMonitoring
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableEnhancedMonitoring operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableEnhancedMonitoring operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void DisableEnhancedMonitoringAsync(DisableEnhancedMonitoringRequest request, AmazonServiceCallback<DisableEnhancedMonitoringRequest, DisableEnhancedMonitoringResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  EnableEnhancedMonitoring
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableEnhancedMonitoring operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableEnhancedMonitoring operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void EnableEnhancedMonitoringAsync(EnableEnhancedMonitoringRequest request, AmazonServiceCallback<EnableEnhancedMonitoringRequest, EnableEnhancedMonitoringResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  GetRecords
 
 
@@ -192,16 +224,16 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Increases the stream's retention period, which is the length of time data records
-        /// are accessible after they are added to the stream. The maximum value of a stream’s
-        /// retention period is 168 hours (7 days).
+        /// Increases the Amazon Kinesis stream's retention period, which is the length of time
+        /// data records are accessible after they are added to the stream. The maximum value
+        /// of a stream's retention period is 168 hours (7 days).
         /// 
         ///  
         /// <para>
         /// Upon choosing a longer stream retention period, this operation will increase the time
         /// period records are accessible that have not yet expired. However, it will not make
-        /// previous data that has expired (older than the stream’s previous retention period)
-        /// accessible after the operation has been called. For example, if a stream’s retention
+        /// previous data that has expired (older than the stream's previous retention period)
+        /// accessible after the operation has been called. For example, if a stream's retention
         /// period is set to 24 hours and is increased to 168 hours, any data that is older than
         /// 24 hours will remain inaccessible to consumer applications.
         /// </para>

@@ -60,6 +60,8 @@ namespace Amazon.Util
             { 1738,  ValidUrlCharactersRFC1738 }
         };
 
+        internal const string S3Accelerate = "s3-accelerate";
+
         #endregion
 
         #region Public Constants
@@ -349,7 +351,13 @@ namespace Amazon.Util
                 return serviceAndRegion.Substring(0, queueIndex - 1);
 
             if (serviceAndRegion.StartsWith("s3-", StringComparison.Ordinal))
+            {
+                // Accelerate endpoint is global and does not contain region information
+                if (serviceAndRegion.Equals(AWSSDKUtils.S3Accelerate, StringComparison.Ordinal))
+                    return null;
+
                 serviceAndRegion = "s3." + serviceAndRegion.Substring(3);
+            }
 
             int separatorIndex = serviceAndRegion.LastIndexOf('.');
             if (separatorIndex == -1)
@@ -431,7 +439,7 @@ namespace Amazon.Util
         /// <param name="data">The data blob to process</param>
         /// <param name="lowercase">If true, returns hex digits in lower case form</param>
         /// <returns>String version of the data</returns>
-        internal static string ToHex(byte[] data, bool lowercase)
+        public static string ToHex(byte[] data, bool lowercase)
         {
             StringBuilder sb = new StringBuilder();
 

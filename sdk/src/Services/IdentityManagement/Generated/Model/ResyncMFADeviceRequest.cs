@@ -29,13 +29,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ResyncMFADevice operation.
-    /// Synchronizes the specified MFA device with AWS servers.
+    /// Synchronizes the specified MFA device with its IAM resource object on the AWS servers.
     /// 
     ///  
     /// <para>
     /// For more information about creating and working with virtual MFA devices, go to <a
     /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-    /// a Virtual MFA Device</a> in the <i>Using IAM</i> guide. 
+    /// a Virtual MFA Device</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ResyncMFADeviceRequest : AmazonIdentityManagementServiceRequest
@@ -49,6 +49,10 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property AuthenticationCode1. 
         /// <para>
         /// An authentication code emitted by the device.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter is a sequence of six digits.
         /// </para>
         /// </summary>
         public string AuthenticationCode1
@@ -68,6 +72,10 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A subsequent authentication code emitted by the device.
         /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter is a sequence of six digits.
+        /// </para>
         /// </summary>
         public string AuthenticationCode2
         {
@@ -86,6 +94,12 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// Serial number that uniquely identifies the MFA device.
         /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
+        /// </para>
         /// </summary>
         public string SerialNumber
         {
@@ -103,6 +117,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user whose MFA device you want to resynchronize.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

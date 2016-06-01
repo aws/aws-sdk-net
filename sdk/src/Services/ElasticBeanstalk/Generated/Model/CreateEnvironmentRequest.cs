@@ -55,7 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Instantiates CreateEnvironmentRequest with the parameterized properties
         /// </summary>
         /// <param name="applicationName"> The name of the application that contains the version to be deployed.   If no application is found with this name, <code>CreateEnvironment</code> returns an <code>InvalidParameterValue</code> error. </param>
-        /// <param name="environmentName"> A unique name for the deployment environment. Used in the application URL.  Constraint: Must be from 4 to 23 characters in length. The name can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.  Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
+        /// <param name="environmentName"> A unique name for the deployment environment. Used in the application URL.  Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.  Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
         public CreateEnvironmentRequest(string applicationName, string environmentName)
         {
             _applicationName = applicationName;
@@ -130,7 +130,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: Must be from 4 to 23 characters in length. The name can contain only letters,
+        /// Constraint: Must be from 4 to 40 characters in length. The name can contain only letters,
         /// numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique
         /// in your account. If the specified name already exists, AWS Elastic Beanstalk returns
         /// an <code>InvalidParameterValue</code> error. 
@@ -158,7 +158,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The name of the group to which the target environment belongs. Specify a group name
         /// only if the environment's name is specified in an environment manifest and not with
-        /// the environment name parameter. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+        /// the environment name parameter. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
         /// Manifest (env.yaml)</a> for details.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSdk operation.
-    /// 
+    /// Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.
     /// </summary>
     public partial class GetSdkRequest : AmazonAPIGatewayRequest
     {
@@ -39,7 +39,13 @@ namespace Amazon.APIGateway.Model
         private string _stageName;
 
         /// <summary>
-        /// Gets and sets the property Parameters.
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A key-value map of query string parameters that specify properties of the SDK, depending
+        /// on the requested sdkType. For sdkType 'objectivec', a parameter named "classPrefix"
+        /// is required. For sdkType 'android', parameters named "groupId", "artifactId", "artifactVersion",
+        /// and "invokerPackage" are required.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
         {
@@ -54,7 +60,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestApiId.
+        /// Gets and sets the property RestApiId. 
+        /// <para>
+        /// The identifier of the <a>RestApi</a> that the SDK will use.
+        /// </para>
         /// </summary>
         public string RestApiId
         {
@@ -69,7 +78,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SdkType.
+        /// Gets and sets the property SdkType. 
+        /// <para>
+        /// The language for the generated SDK. Currently javascript, android, and objectivec
+        /// (for iOS) are supported.
+        /// </para>
         /// </summary>
         public string SdkType
         {
@@ -84,7 +97,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StageName.
+        /// Gets and sets the property StageName. 
+        /// <para>
+        /// The name of the <a>Stage</a> that the SDK will use.
+        /// </para>
         /// </summary>
         public string StageName
         {

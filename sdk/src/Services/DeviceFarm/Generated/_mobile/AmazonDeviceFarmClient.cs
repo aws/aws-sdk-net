@@ -750,6 +750,37 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  GetOfferingStatus
+
+        internal GetOfferingStatusResponse GetOfferingStatus(GetOfferingStatusRequest request)
+        {
+            var marshaller = new GetOfferingStatusRequestMarshaller();
+            var unmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetOfferingStatusRequest,GetOfferingStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOfferingStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOfferingStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetOfferingStatusResponse> GetOfferingStatusAsync(GetOfferingStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetOfferingStatusRequestMarshaller();
+            var unmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOfferingStatusRequest,GetOfferingStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetProject
 
         internal GetProjectResponse GetProject(GetProjectRequest request)
@@ -1174,6 +1205,68 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListOfferings
+
+        internal ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
+        {
+            var marshaller = new ListOfferingsRequestMarshaller();
+            var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOfferingsRequest,ListOfferingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListOfferingsResponse> ListOfferingsAsync(ListOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListOfferingsRequestMarshaller();
+            var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOfferingsRequest,ListOfferingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListOfferingTransactions
+
+        internal ListOfferingTransactionsResponse ListOfferingTransactions(ListOfferingTransactionsRequest request)
+        {
+            var marshaller = new ListOfferingTransactionsRequestMarshaller();
+            var unmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOfferingTransactionsRequest,ListOfferingTransactionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferingTransactions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingTransactions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListOfferingTransactionsResponse> ListOfferingTransactionsAsync(ListOfferingTransactionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListOfferingTransactionsRequestMarshaller();
+            var unmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOfferingTransactionsRequest,ListOfferingTransactionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListProjects
 
         internal ListProjectsResponse ListProjects(ListProjectsRequest request)
@@ -1391,6 +1484,68 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  PurchaseOffering
+
+        internal PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
+        {
+            var marshaller = new PurchaseOfferingRequestMarshaller();
+            var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseOfferingRequest,PurchaseOfferingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseOffering operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PurchaseOfferingRequestMarshaller();
+            var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PurchaseOfferingRequest,PurchaseOfferingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RenewOffering
+
+        internal RenewOfferingResponse RenewOffering(RenewOfferingRequest request)
+        {
+            var marshaller = new RenewOfferingRequestMarshaller();
+            var unmarshaller = RenewOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<RenewOfferingRequest,RenewOfferingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenewOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenewOffering operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RenewOfferingResponse> RenewOfferingAsync(RenewOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RenewOfferingRequestMarshaller();
+            var unmarshaller = RenewOfferingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RenewOfferingRequest,RenewOfferingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ScheduleRun
 
         internal ScheduleRunResponse ScheduleRun(ScheduleRunRequest request)
@@ -1417,6 +1572,37 @@ namespace Amazon.DeviceFarm
             var unmarshaller = ScheduleRunResponseUnmarshaller.Instance;
 
             return InvokeAsync<ScheduleRunRequest,ScheduleRunResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopRun
+
+        internal StopRunResponse StopRun(StopRunRequest request)
+        {
+            var marshaller = new StopRunRequestMarshaller();
+            var unmarshaller = StopRunResponseUnmarshaller.Instance;
+
+            return Invoke<StopRunRequest,StopRunResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRun operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StopRunResponse> StopRunAsync(StopRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopRunRequestMarshaller();
+            var unmarshaller = StopRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopRunRequest,StopRunResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

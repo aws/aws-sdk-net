@@ -49,11 +49,21 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must specify a valid option group.</li> <li>If the source option group is
-        /// in the same region as the copy, specify a valid option group identifier, for example
-        /// <code>my-option-group</code>, or a valid ARN.</li> <li>If the source option group
-        /// is in a different region than the copy, specify a valid option group ARN, for example
-        /// <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must specify a valid option group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source option group is in the same region as the copy, specify a valid option
+        /// group identifier, for example <code>my-option-group</code>, or a valid ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source option group is in a different region than the copy, specify a valid
+        /// option group ARN, for example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SourceOptionGroupIdentifier
         {
@@ -85,7 +95,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetOptionGroupDescription. 
         /// <para>
-        /// The description for the copied option group. 
+        /// The description for the copied option group.
         /// </para>
         /// </summary>
         public string TargetOptionGroupDescription
@@ -103,17 +113,31 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetOptionGroupIdentifier. 
         /// <para>
-        /// The identifier for the copied option group. 
+        /// The identifier for the copied option group.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-        /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-        /// with a hyphen or contain two consecutive hyphens</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-option-group</code>
+        /// Cannot be null, empty, or blank
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain from 1 to 255 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-option-group</code> 
         /// </para>
         /// </summary>
         public string TargetOptionGroupIdentifier

@@ -28,12 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The attribute payload, a JSON string containing up to three key-value pairs.
-    /// 
-    ///  
-    /// <para>
-    /// For example: {\"attributes\":{\"string1\":\"string2\"}}
-    /// </para>
+    /// The attribute payload, a JSON string containing up to three key-value pairs (for example,
+    /// {\"attributes\":{\"string1\":\"string2\"}}).
     /// </summary>
     public partial class AttributePayload
     {
@@ -42,11 +38,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A JSON string containing up to three key-value pair in JSON format.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example: {\"attributes\":{\"string1\":\"string2\"}}
+        /// A JSON string containing up to three key-value pair in JSON format (for example, {\"attributes\":{\"string1\":\"string2\"}}).
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

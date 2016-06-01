@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CharacterSetDescription. 
         /// <para>
-        ///  The description of the character set. 
+        /// The description of the character set.
         /// </para>
         /// </summary>
         public string CharacterSetDescription
@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        ///  The name of the character set. 
+        /// The name of the character set.
         /// </para>
         /// </summary>
         public string CharacterSetName

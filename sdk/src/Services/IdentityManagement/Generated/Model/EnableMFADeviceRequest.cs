@@ -29,9 +29,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableMFADevice operation.
-    /// Enables the specified MFA device and associates it with the specified user name.
-    /// When enabled, the MFA device is required for every subsequent login by the user name
-    /// associated with the device.
+    /// Enables the specified MFA device and associates it with the specified IAM user. When
+    /// enabled, the MFA device is required for every subsequent login by the IAM user associated
+    /// with the device.
     /// </summary>
     public partial class EnableMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
@@ -44,6 +44,10 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property AuthenticationCode1. 
         /// <para>
         /// An authentication code emitted by the device.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter is a string of 6 digits.
         /// </para>
         /// </summary>
         public string AuthenticationCode1
@@ -63,6 +67,10 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A subsequent authentication code emitted by the device.
         /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter is a string of 6 digits.
+        /// </para>
         /// </summary>
         public string AuthenticationCode2
         {
@@ -79,8 +87,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property SerialNumber. 
         /// <para>
-        ///  The serial number that uniquely identifies the MFA device. For virtual MFA devices,
-        /// the serial number is the device ARN. 
+        /// The serial number that uniquely identifies the MFA device. For virtual MFA devices,
+        /// the serial number is the device ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =/:,.@-
         /// </para>
         /// </summary>
         public string SerialNumber
@@ -98,7 +112,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user for whom you want to enable the MFA device.
+        /// The name of the IAM user for whom you want to enable the MFA device.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

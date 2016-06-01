@@ -59,7 +59,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property CertificateId. 
         /// <para>
         /// The ID of the certificate. AWS IoT issues a default subject name for the certificate
-        /// (e.g., AWS IoT Certificate).
+        /// (for example, AWS IoT Certificate).
         /// </para>
         /// </summary>
         public string CertificateId

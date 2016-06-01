@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -67,12 +67,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssessmentRunArns())
+                {
+                    context.Writer.WritePropertyName("assessmentRunArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAssessmentRunArnsListValue in publicRequest.AssessmentRunArns)
+                    {
+                            context.Writer.Write(publicRequestAssessmentRunArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFilter())
                 {
                     context.Writer.WritePropertyName("filter");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = FindingsFilterMarshaller.Instance;
+                    var marshaller = FindingFilterMarshaller.Instance;
                     marshaller.Marshall(publicRequest.Filter, context);
 
                     context.Writer.WriteObjectEnd();
@@ -88,17 +99,6 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("nextToken");
                     context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRunArns())
-                {
-                    context.Writer.WritePropertyName("runArns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRunArnsListValue in publicRequest.RunArns)
-                    {
-                            context.Writer.Write(publicRequestRunArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
         

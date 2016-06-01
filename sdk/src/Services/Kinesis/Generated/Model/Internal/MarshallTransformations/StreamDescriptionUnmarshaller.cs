@@ -64,6 +64,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EnhancedMonitoring", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EnhancedMetrics, EnhancedMetricsUnmarshaller>(EnhancedMetricsUnmarshaller.Instance);
+                    unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HasMoreShards", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

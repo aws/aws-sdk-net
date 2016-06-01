@@ -2597,6 +2597,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeSecurityGroupReferencesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeSecurityGroupReferences");
+
+            var request = InstantiateClassGenerator.Execute<DescribeSecurityGroupReferencesRequest>();
+            var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeSecurityGroupReferencesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeSecurityGroupsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeSecurityGroups");
@@ -2804,6 +2828,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeSpotPriceHistoryResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeSpotPriceHistoryResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeStaleSecurityGroupsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeStaleSecurityGroups");
+
+            var request = InstantiateClassGenerator.Execute<DescribeStaleSecurityGroupsRequest>();
+            var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeStaleSecurityGroupsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -3469,6 +3517,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetConsoleScreenshotMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetConsoleScreenshot");
+
+            var request = InstantiateClassGenerator.Execute<GetConsoleScreenshotRequest>();
+            var marshaller = new GetConsoleScreenshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetConsoleScreenshotResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetConsoleScreenshotResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void GetPasswordDataMarshallTest()
         {
             var operation = service_model.FindOperation("GetPasswordData");
@@ -3876,6 +3948,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ModifyVpcEndpointResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyVpcEndpointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyVpcPeeringConnectionOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyVpcPeeringConnectionOptions");
+
+            var request = InstantiateClassGenerator.Execute<ModifyVpcPeeringConnectionOptionsRequest>();
+            var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyVpcPeeringConnectionOptionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

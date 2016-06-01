@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("peeringOptions", targetDepth))
+                    {
+                        var unmarshaller = VpcPeeringConnectionOptionsDescriptionUnmarshaller.Instance;
+                        unmarshalledObject.PeeringOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("vpcId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -28,17 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// 
+    /// Describes a gateway object.
     /// </summary>
     public partial class GatewayInfo
     {
         private string _gatewayARN;
+        private string _gatewayId;
         private string _gatewayName;
         private string _gatewayOperationalState;
         private string _gatewayType;
 
         /// <summary>
-        /// Gets and sets the property GatewayARN.
+        /// Gets and sets the property GatewayARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation
+        /// to return a list of gateways for your account and region.
+        /// </para>
         /// </summary>
         public string GatewayARN
         {
@@ -53,7 +58,29 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayName.
+        /// Gets and sets the property GatewayId. 
+        /// <para>
+        /// The unique identifier assigned to your gateway during activation. This ID becomes
+        /// part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.
+        /// </para>
+        /// </summary>
+        public string GatewayId
+        {
+            get { return this._gatewayId; }
+            set { this._gatewayId = value; }
+        }
+
+        // Check to see if GatewayId property is set
+        internal bool IsSetGatewayId()
+        {
+            return this._gatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayName. 
+        /// <para>
+        /// The name of the gateway.
+        /// </para>
         /// </summary>
         public string GatewayName
         {
@@ -68,7 +95,14 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayOperationalState.
+        /// Gets and sets the property GatewayOperationalState. 
+        /// <para>
+        /// The state of the gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: DISABLED or ACTIVE
+        /// </para>
         /// </summary>
         public string GatewayOperationalState
         {
@@ -83,7 +117,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayType.
+        /// Gets and sets the property GatewayType. 
+        /// <para>
+        /// The type of the gateway.
+        /// </para>
         /// </summary>
         public string GatewayType
         {

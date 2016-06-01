@@ -58,8 +58,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy/{StatementId}";
-            uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{StatementId}", publicRequest.IsSetStatementId() ? StringUtils.FromString(publicRequest.StatementId) : string.Empty);
+            if (!publicRequest.IsSetFunctionName())
+                throw new AmazonLambdaException("Request object does not have required field FunctionName set");
+            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
+            if (!publicRequest.IsSetStatementId())
+                throw new AmazonLambdaException("Request object does not have required field StatementId set");
+            uriResourcePath = uriResourcePath.Replace("{StatementId}", StringUtils.FromString(publicRequest.StatementId));
             
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));

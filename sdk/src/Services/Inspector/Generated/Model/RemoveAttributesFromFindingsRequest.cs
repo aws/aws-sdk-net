@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,8 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveAttributesFromFindings operation.
-    /// Removes the entire attribute (key and value pair) from the findings specified by the
-    /// finding ARNs where an attribute with the specified key exists.
+    /// Removes entire attributes (key and value pairs) from the findings that are specified
+    /// by the ARNs of the findings where an attribute with the specified key exists.
     /// </summary>
     public partial class RemoveAttributesFromFindingsRequest : AmazonInspectorRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property FindingArns. 
         /// <para>
-        /// The ARNs specifying the findings that you want to remove attributes from.
+        /// The ARNs that specify the findings that you want to remove attributes from.
         /// </para>
         /// </summary>
         public List<string> FindingArns

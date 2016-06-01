@@ -83,6 +83,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetCacheNodeType())
+                {
+                    request.Parameters.Add("CacheNodeType", StringUtils.FromString(publicRequest.CacheNodeType));
+                }
                 if(publicRequest.IsSetCacheParameterGroupName())
                 {
                     request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));

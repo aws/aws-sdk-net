@@ -50,7 +50,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property AddressLine1. 
         /// <para>
-        /// First line of the contact's address.
+        /// First line of the contact&apos;s address.
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property AddressLine2. 
         /// <para>
-        /// Second line of contact's address, if any.
+        /// Second line of contact&apos;s address, if any.
         /// </para>
         ///  
         /// <para>
@@ -126,7 +126,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property City. 
         /// <para>
-        /// The city of the contact's address.
+        /// The city of the contact&apos;s address.
         /// </para>
         ///  
         /// <para>
@@ -166,7 +166,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Indicates whether the contact is a person, company, association, or public organization.
         /// If you choose an option other than <code>PERSON</code>, you must enter an organization
-        /// name, and you can't enable privacy protection for the contact.
+        /// name, and you can&apos;t enable privacy protection for the contact.
         /// </para>
         ///  
         /// <para>
@@ -210,7 +210,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property CountryCode. 
         /// <para>
-        /// Code for the country of the contact's address.
+        /// Code for the country of the contact&apos;s address.
         /// </para>
         ///  
         /// <para>
@@ -492,7 +492,7 @@ namespace Amazon.Route53Domains.Model
         ///  
         /// <para>
         /// Constraints: Phone number must be specified in the format "+[country dialing code].[number
-        /// including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.
+        /// including any area code>]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.
         /// </para>
         ///  
         /// <para>
@@ -518,7 +518,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state or province of the contact's city.
+        /// The state or province of the contact&apos;s city.
         /// </para>
         ///  
         /// <para>
@@ -556,7 +556,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property ZipCode. 
         /// <para>
-        /// The zip or postal code of the contact's address.
+        /// The zip or postal code of the contact&apos;s address.
         /// </para>
         ///  
         /// <para>

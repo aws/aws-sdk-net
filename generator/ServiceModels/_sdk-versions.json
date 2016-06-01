@@ -392,6 +392,36 @@
             "Dependencies" : {
                 "Core" : "3.2.4.0"
             }
+        },
+        "DatabaseMigrationService"        : {
+            "Version" : "3.2.4.0",
+            "Dependencies" : {
+                "Core" : "3.2.4.0"
+            }
+        },
+        "AWSMarketplaceMetering"          : {
+            "Version" : "3.2.4.0",
+            "Dependencies" : {
+                "Core" : "3.2.4.0"
+            }
+        },
+        "CognitoIdentityProvider"         : {
+            "Version" : "3.2.4.0",
+            "Dependencies" : {
+                "Core" : "3.2.4.0"
+            }
+        },
+        "Application Discovery Service"   : {
+            "Version" : "3.2.4.0",
+            "Dependencies" : {
+                "Core" : "3.2.4.0"
+            }
+        },
+        "Application Auto Scaling"        : {
+            "Version" : "3.2.4.0",
+            "Dependencies" : {
+                "Core" : "3.2.4.0"
+            }
         }
     }
 }

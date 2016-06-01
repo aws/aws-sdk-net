@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeSubnets operation.
+    /// Contains the output of DescribeSubnets.
     /// </summary>
     public partial class DescribeSubnetsResponse : AmazonWebServiceResponse
     {

@@ -55,7 +55,8 @@ namespace Amazon.Runtime.Internal.Settings
                 SettingsConstants.EC2InstancePassword,
                 SettingsConstants.ProxyUsernameEncrypted,
                 SettingsConstants.ProxyPasswordEncrypted,
-                SettingsConstants.UserIdentityField
+                SettingsConstants.UserIdentityField,
+                SettingsConstants.RoleSession
             };
         }
 

@@ -59,7 +59,9 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/2015-01-01/es/domain/{DomainName}/config";
-            uriResourcePath = uriResourcePath.Replace("{DomainName}", publicRequest.IsSetDomainName() ? StringUtils.FromString(publicRequest.DomainName) : string.Empty);
+            if (!publicRequest.IsSetDomainName())
+                throw new AmazonElasticsearchException("Request object does not have required field DomainName set");
+            uriResourcePath = uriResourcePath.Replace("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

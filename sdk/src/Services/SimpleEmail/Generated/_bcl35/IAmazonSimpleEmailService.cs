@@ -786,6 +786,50 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetIdentityMailFromDomainAttributes
+
+
+        /// <summary>
+        /// Returns the custom MAIL FROM attributes for a list of identities (email addresses
+        /// and/or domains).
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second and can only get custom MAIL FROM
+        /// attributes for up to 100 identities at a time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityMailFromDomainAttributes service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityMailFromDomainAttributes service method, as returned by SimpleEmailService.</returns>
+        GetIdentityMailFromDomainAttributesResponse GetIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityMailFromDomainAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityMailFromDomainAttributes operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityMailFromDomainAttributes
+        ///         operation.</returns>
+        IAsyncResult BeginGetIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdentityMailFromDomainAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityMailFromDomainAttributes.</param>
+        /// 
+        /// <returns>Returns a  GetIdentityMailFromDomainAttributesResult from SimpleEmailService.</returns>
+        GetIdentityMailFromDomainAttributesResponse EndGetIdentityMailFromDomainAttributes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetIdentityNotificationAttributes
 
 
@@ -1506,6 +1550,12 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendEmail service method.</param>
         /// 
         /// <returns>The response from the SendEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
+        /// Indicates that the message could not be sent because Amazon SES could not read the
+        /// MX record required to use the specified MAIL FROM domain. For information about editing
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
         /// Indicates that the action failed, and the message could not be sent. Check the error
         /// stack for more information about what caused the error.
@@ -1586,6 +1636,12 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendRawEmail service method.</param>
         /// 
         /// <returns>The response from the SendRawEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
+        /// Indicates that the message could not be sent because Amazon SES could not read the
+        /// MX record required to use the specified MAIL FROM domain. For information about editing
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
         /// Indicates that the action failed, and the message could not be sent. Check the error
         /// stack for more information about what caused the error.
@@ -1774,6 +1830,53 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>Returns a  SetIdentityFeedbackForwardingEnabledResult from SimpleEmailService.</returns>
         SetIdentityFeedbackForwardingEnabledResponse EndSetIdentityFeedbackForwardingEnabled(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SetIdentityMailFromDomain
+
+
+        /// <summary>
+        /// Enables or disables the custom MAIL FROM domain setup for a verified identity (email
+        /// address or domain). 
+        /// 
+        ///  <important>To send emails using the specified MAIL FROM domain, you must add an MX
+        /// record to your MAIL FROM domain's DNS settings. If you want your emails to pass Sender
+        /// Policy Framework (SPF) checks, you must also add or update an SPF record. For more
+        /// information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+        /// SES Developer Guide</a>.</important> 
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityMailFromDomain service method.</param>
+        /// 
+        /// <returns>The response from the SetIdentityMailFromDomain service method, as returned by SimpleEmailService.</returns>
+        SetIdentityMailFromDomainResponse SetIdentityMailFromDomain(SetIdentityMailFromDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityMailFromDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityMailFromDomain operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityMailFromDomain
+        ///         operation.</returns>
+        IAsyncResult BeginSetIdentityMailFromDomain(SetIdentityMailFromDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetIdentityMailFromDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityMailFromDomain.</param>
+        /// 
+        /// <returns>Returns a  SetIdentityMailFromDomainResult from SimpleEmailService.</returns>
+        SetIdentityMailFromDomainResponse EndSetIdentityMailFromDomain(IAsyncResult asyncResult);
 
         #endregion
         

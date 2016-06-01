@@ -30,9 +30,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetRole operation.
     /// Retrieves information about the specified role, including the role's path, GUID, ARN,
-    /// and the policy granting permission to assume the role. For more information about
-    /// ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
-    /// For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+    /// and the role's trust policy that grants permission to assume the role. For more information
+    /// about roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
     /// with Roles</a>.
     /// </summary>
     public partial class GetRoleRequest : AmazonIdentityManagementServiceRequest
@@ -42,7 +41,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the role to get information about.
+        /// The name of the IAM role to get information about.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleName

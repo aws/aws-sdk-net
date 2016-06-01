@@ -30,34 +30,72 @@ namespace Amazon.RDS
     ///
     /// Amazon Relational Database Service 
     /// <para>
-    ///  Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier
+    /// Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier
     /// to set up, operate, and scale a relational database in the cloud. It provides cost-efficient,
     /// resizeable capacity for an industry-standard relational database and manages common
     /// database administration tasks, freeing up developers to focus on what makes their
-    /// applications and businesses unique. 
+    /// applications and businesses unique.
     /// </para>
     ///  
     /// <para>
-    ///  Amazon RDS gives you access to the capabilities of a MySQL, MariaDB, PostgreSQL,
-    /// Microsoft SQL Server, Oracle, or Aurora database server. This means the code, applications,
-    /// and tools you already use today with your existing databases work with Amazon RDS
-    /// without modification. Amazon RDS automatically backs up your database and maintains
-    /// the database software that powers your DB instance. Amazon RDS is flexible: you can
-    /// scale your database instance's compute resources and storage capacity to meet your
-    /// application's demand. As with all Amazon Web Services, there are no up-front investments,
-    /// and you pay only for the resources you use. 
+    /// Amazon RDS gives you access to the capabilities of a MySQL, MariaDB, PostgreSQL, Microsoft
+    /// SQL Server, Oracle, or Amazon Aurora database server. These capabilities mean that
+    /// the code, applications, and tools you already use today with your existing databases
+    /// work with Amazon RDS without modification. Amazon RDS automatically backs up your
+    /// database and maintains the database software that powers your DB instance. Amazon
+    /// RDS is flexible: you can scale your database instance's compute resources and storage
+    /// capacity to meet your application's demand. As with all Amazon Web Services, there
+    /// are no up-front investments, and you pay only for the resources you use.
     /// </para>
     ///  
     /// <para>
-    ///  This is an interface reference for Amazon RDS. It contains documentation for a programming
-    /// or command line interface you can use to manage Amazon RDS. Note that Amazon RDS is
-    /// asynchronous, which means that some interfaces might require techniques such as polling
-    /// or callback functions to determine when a command has been applied. In this reference,
-    /// the parameter descriptions indicate whether a command is applied immediately, on the
-    /// next instance reboot, or during the maintenance window. For a summary of the Amazon
-    /// RDS interfaces, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available
-    /// RDS Interfaces</a>. 
+    /// This interface reference for Amazon RDS contains documentation for a programming or
+    /// command line interface you can use to manage Amazon RDS. Note that Amazon RDS is asynchronous,
+    /// which means that some interfaces might require techniques such as polling or callback
+    /// functions to determine when a command has been applied. In this reference, the parameter
+    /// descriptions indicate whether a command is applied immediately, on the next instance
+    /// reboot, or during the maintenance window. The reference structure is as follows, and
+    /// we list following some related topics from the user guide.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Amazon RDS API Reference</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For the alphabetical list of API actions, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html">API
+    /// Actions</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For the alphabetical list of data types, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html">Data
+    /// Types</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a list of common query parameters, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html">Common
+    /// Parameters</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For descriptions of the error codes, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html">Common
+    /// Errors</a>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Amazon RDS User Guide</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For a summary of the Amazon RDS interfaces, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available
+    /// RDS Interfaces</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For more information about how to use the Query API, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
+    /// the Query API</a>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonRDS : IDisposable
     {
@@ -206,11 +244,15 @@ namespace Amazon.RDS
         /// using the database is running on EC2 or VPC instances. Second, IP ranges are available
         /// if the application accessing your database is running on the Internet. Required parameters
         /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
-        /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). 
+        /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).
         /// 
-        ///  <note> You cannot authorize ingress from an EC2 security group in one region to an
-        /// Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security
-        /// group in one VPC to an Amazon RDS DB instance in another. </note> 
+        ///  <note> 
+        /// <para>
+        /// You cannot authorize ingress from an EC2 security group in one region to an Amazon
+        /// RDS DB instance in another. You cannot authorize ingress from a VPC security group
+        /// in one VPC to an Amazon RDS DB instance in another.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
         /// Tutorial</a>. 
@@ -278,7 +320,7 @@ namespace Amazon.RDS
         /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
-        /// The supplied value is not a valid DB cluster state.
+        /// The DB cluster is not in a valid state.
         /// </exception>
         CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request);
 
@@ -358,8 +400,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Copies the specified DBSnapshot. The source DB snapshot must be in the "available"
-        /// state. 
+        /// Copies the specified DB snapshot. The source DB snapshot must be in the "available"
+        /// state.
         /// 
         ///  
         /// <para>
@@ -378,6 +420,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot does not allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
@@ -460,15 +505,27 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new Amazon Aurora DB cluster. For more information on Amazon Aurora, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// Creates a new Amazon Aurora DB cluster.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
+        /// cluster as a Read Replica of another DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
         /// 
         /// <returns>The response from the CreateDBCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
         /// User already has a DB cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
         /// <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter
@@ -487,14 +544,14 @@ namespace Amazon.RDS
         /// that have more storage available.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
-        /// The supplied value is not a valid DB cluster state.
+        /// The DB cluster is not in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it is in use.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
@@ -539,12 +596,11 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB cluster parameter group. 
+        /// Creates a new DB cluster parameter group.
         /// 
         ///  
         /// <para>
-        ///  Parameters in a DB cluster parameter group apply to all of the instances in a DB
-        /// cluster. 
+        /// Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -573,7 +629,7 @@ namespace Amazon.RDS
         ///  </important> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
@@ -630,8 +686,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotAlreadyExistsException">
         /// User already has a DB cluster snapshot with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
-        /// The supplied value is not a valid DB cluster state.
+        /// The DB cluster is not in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
@@ -675,7 +734,7 @@ namespace Amazon.RDS
         /// <returns>The response from the CreateDBInstance service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
-        /// group. 
+        /// group.
         /// 
         ///  
         /// <para>
@@ -701,6 +760,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> does not refer to an existing Active Directory Domain.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.
         /// </exception>
@@ -708,11 +770,11 @@ namespace Amazon.RDS
         /// Specified DB instance class is not available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
-        /// The supplied value is not a valid DB cluster state.
+        /// The DB cluster is not in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
@@ -767,17 +829,17 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that
-        /// acts as a Read Replica of a source DB instance. 
+        /// acts as a Read Replica of a source DB instance.
         /// 
         ///  
         /// <para>
-        ///  All Read Replica DB instances are created as Single-AZ deployments with backups disabled.
+        /// All Read Replica DB instances are created as Single-AZ deployments with backups disabled.
         /// All other DB instance attributes (including DB security groups and DB parameter groups)
-        /// are inherited from the source DB instance, except as specified below. 
+        /// are inherited from the source DB instance, except as specified below.
         /// </para>
         ///  <important> 
         /// <para>
-        ///  The source DB instance must have backup retention enabled. 
+        /// The source DB instance must have backup retention enabled.
         /// </para>
         ///  </important>
         /// </summary>
@@ -821,8 +883,8 @@ namespace Amazon.RDS
         /// cross region read replica of the same source instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
@@ -876,7 +938,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB parameter group. 
+        /// Creates a new DB parameter group.
         /// 
         ///  
         /// <para>
@@ -1039,8 +1101,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet
-        /// in at least two AZs in the region.
+        /// Creates a new DB subnet group. DB subnet groups must contain at least one subnet in
+        /// at least two AZs in the region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSubnetGroup service method.</param>
         /// 
@@ -1060,8 +1122,8 @@ namespace Amazon.RDS
         /// groups.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest request);
 
@@ -1218,16 +1280,14 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// The DeleteDBCluster action deletes a previously provisioned DB cluster. A successful
-        /// response from the web service indicates the request was received correctly. When you
-        /// delete a DB cluster, all automated backups for that DB cluster are deleted and cannot
-        /// be recovered. Manual DB cluster snapshots of the DB cluster to be deleted are not
-        /// deleted. 
+        /// The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete
+        /// a DB cluster, all automated backups for that DB cluster are deleted and cannot be
+        /// recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.
         /// 
-        ///  
+        ///   
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
@@ -1236,8 +1296,17 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotAlreadyExistsException">
+        /// User already has a DB cluster snapshot with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
-        /// The supplied value is not a valid DB cluster state.
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
         DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request);
 
@@ -1272,12 +1341,12 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Deletes a specified DB cluster parameter group. The DB cluster parameter group to
-        /// be deleted cannot be associated with any DB clusters. 
+        /// be deleted cannot be associated with any DB clusters.
         /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
@@ -1322,13 +1391,16 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation
-        /// is terminated. 
+        /// is terminated.
         /// 
-        ///  <note>The DB cluster snapshot must be in the <code>available</code> state to be deleted.</note>
-        /// 
+        ///  <note> 
+        /// <para>
+        /// The DB cluster snapshot must be in the <code>available</code> state to be deleted.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot service method.</param>
@@ -1372,24 +1444,22 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// The DeleteDBInstance action deletes a previously provisioned DB instance. A successful
-        /// response from the web service indicates the request was received correctly. When you
+        /// The DeleteDBInstance action deletes a previously provisioned DB instance. When you
         /// delete a DB instance, all automated backups for that instance are deleted and cannot
         /// be recovered. Manual DB snapshots of the DB instance to be deleted are not deleted.
         /// 
-        /// 
         ///  
         /// <para>
-        ///  If a final DB snapshot is requested the status of the RDS instance will be "deleting"
+        ///  If a final DB snapshot is requested the status of the RDS instance will be <code>deleting</code>
         /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
         /// used to monitor the status of this operation. The action cannot be canceled or reverted
         /// once submitted. 
         /// </para>
         ///  
         /// <para>
-        /// Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
-        /// or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter
-        /// is set to "true".
+        /// Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
+        /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, it can only
+        /// be deleted when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
@@ -1400,6 +1470,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
@@ -1483,9 +1556,13 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Deletes a DB security group. 
+        /// Deletes a DB security group.
         /// 
-        ///  <note>The specified DB security group must not be associated with any DB instances.</note>
+        ///  <note> 
+        /// <para>
+        /// The specified DB security group must not be associated with any DB instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSecurityGroup service method.</param>
         /// 
@@ -1530,8 +1607,11 @@ namespace Amazon.RDS
         /// <summary>
         /// Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
         /// 
-        /// 
-        ///  <note>The DBSnapshot must be in the <code>available</code> state to be deleted.</note>
+        ///  <note> 
+        /// <para>
+        /// The DBSnapshot must be in the <code>available</code> state to be deleted.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSnapshot service method.</param>
         /// 
@@ -1574,9 +1654,13 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Deletes a DB subnet group. 
+        /// Deletes a DB subnet group.
         /// 
-        ///  <note>The specified database subnet group must not be associated with any DB instances.</note>
+        ///  <note> 
+        /// <para>
+        /// The specified database subnet group must not be associated with any DB instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBSubnetGroup service method.</param>
         /// 
@@ -1712,7 +1796,7 @@ namespace Amazon.RDS
         /// Lists all of the attributes for a customer account. The attributes include Amazon
         /// RDS quotas for the account, such as the number of DB instances allowed. The description
         /// for a quota includes the quota name, current usage toward that quota, and the quota's
-        /// maximum value. 
+        /// maximum value.
         /// 
         ///  
         /// <para>
@@ -1727,7 +1811,7 @@ namespace Amazon.RDS
         /// Lists all of the attributes for a customer account. The attributes include Amazon
         /// RDS quotas for the account, such as the number of DB instances allowed. The description
         /// for a quota includes the quota name, current usage toward that quota, and the quota's
-        /// maximum value. 
+        /// maximum value.
         /// 
         ///  
         /// <para>
@@ -1816,7 +1900,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
@@ -1859,11 +1943,10 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns the detailed parameter list for a particular DB cluster parameter group.
         /// 
-        /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
@@ -1906,11 +1989,10 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns information about provisioned Aurora DB clusters. This API supports pagination.
         /// 
-        /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusters service method.</param>
@@ -1947,16 +2029,72 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBClusterSnapshotAttributes
+
+
+        /// <summary>
+        /// Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster
+        /// snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// When sharing snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code>
+        /// returns the <code>restore</code> attribute and a list of IDs for the AWS accounts
+        /// that are authorized to copy or restore the manual DB cluster snapshot. If <code>all</code>
+        /// is included in the list of values for the <code>restore</code> attribute, then the
+        /// manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add or remove access for an AWS account to copy or restore a manual DB cluster
+        /// snapshot, or to make the manual DB cluster snapshot public or private, use the <a>ModifyDBClusterSnapshotAttribute</a>
+        /// API action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshotAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBClusterSnapshotAttributes service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
+        /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+        /// </exception>
+        DescribeDBClusterSnapshotAttributesResponse DescribeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBClusterSnapshotAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshotAttributes operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBClusterSnapshotAttributes
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBClusterSnapshotAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBClusterSnapshotAttributes.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBClusterSnapshotAttributesResult from RDS.</returns>
+        DescribeDBClusterSnapshotAttributesResponse EndDescribeDBClusterSnapshotAttributes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDBClusterSnapshots
 
 
         /// <summary>
-        /// Returns information about DB cluster snapshots. This API supports pagination. 
+        /// Returns information about DB cluster snapshots. This API action supports pagination.
         /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
@@ -2284,16 +2422,16 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// When sharing snapshots with other AWS accounts, <code>DescribeDBSnapshotAttributes</code>
-        /// returns the <code>restore</code> attribute and a list of the AWS account ids that
-        /// are authorized to copy or restore the manual DB snapshot. If <code>all</code> is included
-        /// in the list of values for the <code>restore</code> attribute, then the manual DB snapshot
-        /// is public and can be copied or restored by all AWS accounts.
+        /// returns the <code>restore</code> attribute and a list of IDs for the AWS accounts
+        /// that are authorized to copy or restore the manual DB snapshot. If <code>all</code>
+        /// is included in the list of values for the <code>restore</code> attribute, then the
+        /// manual DB snapshot is public and can be copied or restored by all AWS accounts.
         /// </para>
         ///  
         /// <para>
         /// To add or remove access for an AWS account to copy or restore a manual DB snapshot,
         /// or to make the manual DB snapshot public or private, use the <a>ModifyDBSnapshotAttribute</a>
-        /// API.
+        /// API action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshotAttributes service method.</param>
@@ -2334,7 +2472,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns information about DB snapshots. This API supports pagination.
+        /// Returns information about DB snapshots. This API action supports pagination.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBSnapshots service method, as returned by RDS.</returns>
@@ -2344,7 +2482,7 @@ namespace Amazon.RDS
         DescribeDBSnapshotsResponse DescribeDBSnapshots();
 
         /// <summary>
-        /// Returns information about DB snapshots. This API supports pagination.
+        /// Returns information about DB snapshots. This API action supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSnapshots service method.</param>
         /// 
@@ -2385,7 +2523,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified,
-        /// the list will contain only the descriptions of the specified DBSubnetGroup. 
+        /// the list will contain only the descriptions of the specified DBSubnetGroup.
         /// 
         ///  
         /// <para>
@@ -2402,7 +2540,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified,
-        /// the list will contain only the descriptions of the specified DBSubnetGroup. 
+        /// the list will contain only the descriptions of the specified DBSubnetGroup.
         /// 
         ///  
         /// <para>
@@ -2449,12 +2587,12 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns the default engine and system parameter information for the cluster database
-        /// engine. 
+        /// engine.
         /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultClusterParameters service method.</param>
@@ -2580,20 +2718,20 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB
-        /// parameter groups for the past 14 days. Events specific to a particular DB instance,
-        /// DB security group, database snapshot, or DB parameter group can be obtained by providing
-        /// the name as a parameter. By default, the past hour of events are returned.
+        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter
+        /// groups for the past 14 days. Events specific to a particular DB instance, DB security
+        /// group, database snapshot, or DB parameter group can be obtained by providing the name
+        /// as a parameter. By default, the past hour of events are returned.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by RDS.</returns>
         DescribeEventsResponse DescribeEvents();
 
         /// <summary>
-        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB
-        /// parameter groups for the past 14 days. Events specific to a particular DB instance,
-        /// DB security group, database snapshot, or DB parameter group can be obtained by providing
-        /// the name as a parameter. By default, the past hour of events are returned.
+        /// Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter
+        /// groups for the past 14 days. Events specific to a particular DB instance, DB security
+        /// group, database snapshot, or DB parameter group can be obtained by providing the name
+        /// as a parameter. By default, the past hour of events are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
@@ -2632,7 +2770,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Lists all the subscription descriptions for a customer account. The description for
         /// a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID,
-        /// CreationTime, and Status. 
+        /// CreationTime, and Status.
         /// 
         ///  
         /// <para>
@@ -2649,7 +2787,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Lists all the subscription descriptions for a customer account. The description for
         /// a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID,
-        /// CreationTime, and Status. 
+        /// CreationTime, and Status.
         /// 
         ///  
         /// <para>
@@ -3022,7 +3160,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster service method.</param>
@@ -3032,7 +3170,7 @@ namespace Amazon.RDS
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
-        /// The supplied value is not a valid DB cluster state.
+        /// The DB cluster is not in a valid state.
         /// </exception>
         FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request);
 
@@ -3137,7 +3275,7 @@ namespace Amazon.RDS
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
-        /// The supplied value is not a valid DB cluster state.
+        /// The DB cluster is not in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
@@ -3149,8 +3287,8 @@ namespace Amazon.RDS
         /// The DB subnet group cannot be deleted because it is in use.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
@@ -3200,13 +3338,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Changes to dynamic parameters are applied immediately. Changes to static parameters
+        /// Changes to dynamic parameters are applied immediately. Changes to static parameters
         /// require a reboot without failover to the DB cluster associated with the parameter
-        /// group before the change can take effect. 
+        /// group before the change can take effect.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -3259,6 +3397,75 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyDBClusterSnapshotAttribute
+
+
+        /// <summary>
+        /// Adds an attribute and values to, or removes an attribute and values from, a manual
+        /// DB cluster snapshot.
+        /// 
+        ///  
+        /// <para>
+        /// To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code>
+        /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
+        /// add a list of IDs of the AWS accounts that are authorized to restore the manual DB
+        /// cluster snapshot. Use the value <code>all</code> to make the manual DB cluster snapshot
+        /// public, which means that it can be copied or restored by all AWS accounts. Do not
+        /// add the <code>all</code> value for any manual DB cluster snapshots that contain private
+        /// information that you don't want available to all AWS accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view which AWS accounts have access to copy or restore a manual DB cluster snapshot,
+        /// or whether a manual DB cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a>
+        /// API action.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a manual DB cluster snapshot is encrypted, it cannot be shared.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterSnapshotAttribute service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBClusterSnapshotAttribute service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
+        /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SharedSnapshotQuotaExceededException">
+        /// You have exceeded the maximum number of accounts that you can share a manual DB snapshot
+        /// with.
+        /// </exception>
+        ModifyDBClusterSnapshotAttributeResponse ModifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBClusterSnapshotAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterSnapshotAttribute operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBClusterSnapshotAttribute
+        ///         operation.</returns>
+        IAsyncResult BeginModifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDBClusterSnapshotAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBClusterSnapshotAttribute.</param>
+        /// 
+        /// <returns>Returns a  ModifyDBClusterSnapshotAttributeResult from RDS.</returns>
+        ModifyDBClusterSnapshotAttributeResponse EndModifyDBClusterSnapshotAttribute(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyDBInstance
 
 
@@ -3271,7 +3478,7 @@ namespace Amazon.RDS
         /// <returns>The response from the ModifyDBInstance service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
-        /// group. 
+        /// group.
         /// 
         ///  
         /// <para>
@@ -3295,6 +3502,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBUpgradeDependencyFailureException">
         /// The DB upgrade failed because a resource the DB depends on could not be modified.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> does not refer to an existing Active Directory Domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
         /// Specified DB instance class is not available in the specified Availability Zone.
@@ -3361,9 +3571,9 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        ///  Changes to dynamic parameters are applied immediately. Changes to static parameters
+        /// Changes to dynamic parameters are applied immediately. Changes to static parameters
         /// require a reboot without failover to the DB instance associated with the parameter
-        /// group before the change can take effect. 
+        /// group before the change can take effect.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -3420,24 +3630,24 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Adds an attribute and values to, or removes an attribute and values from a manual
+        /// Adds an attribute and values to, or removes an attribute and values from, a manual
         /// DB snapshot.
         /// 
         ///  
         /// <para>
         /// To share a manual DB snapshot with other AWS accounts, specify <code>restore</code>
         /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
-        /// add a list of the AWS account ids that are authorized to retore the manual DB snapshot.
-        /// Uses the value <code>all</code> to make the manual DB snapshot public and can by copied
-        /// or restored by all AWS accounts. Do not add the <code>all</code> value for any manual
-        /// DB snapshots that contain private information that you do not want to be available
-        /// to all AWS accounts.
+        /// add a list of IDs of the AWS accounts that are authorized to restore the manual DB
+        /// snapshot. Uses the value <code>all</code> to make the manual DB snapshot public, which
+        /// means it can be copied or restored by all AWS accounts. Do not add the <code>all</code>
+        /// value for any manual DB snapshots that contain private information that you don't
+        /// want available to all AWS accounts.
         /// </para>
         ///  
         /// <para>
         /// To view which AWS accounts have access to copy or restore a manual DB snapshot, or
         /// whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
-        /// API.
+        /// API action.
         /// </para>
         ///  
         /// <para>
@@ -3454,8 +3664,8 @@ namespace Amazon.RDS
         /// The state of the DB snapshot does not allow deletion.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SharedSnapshotQuotaExceededException">
-        /// You have exceeded the maximum number of account ids that you can share a manual DB
-        /// snapshot with.
+        /// You have exceeded the maximum number of accounts that you can share a manual DB snapshot
+        /// with.
         /// </exception>
         ModifyDBSnapshotAttributeResponse ModifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request);
 
@@ -3489,8 +3699,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modifies an existing DB subnet group. DB subnet groups must contain at least one
-        /// subnet in at least two AZs in the region.
+        /// Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet
+        /// in at least two AZs in the region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSubnetGroup service method.</param>
         /// 
@@ -3507,8 +3717,8 @@ namespace Amazon.RDS
         /// groups.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SubnetAlreadyInUseException">
         /// The DB subnet is already in use in the Availability Zone.
@@ -3653,7 +3863,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Promotes a Read Replica DB instance to a standalone DB instance. 
+        /// Promotes a Read Replica DB instance to a standalone DB instance.
         /// 
         ///  <note> 
         /// <para>
@@ -3756,21 +3966,21 @@ namespace Amazon.RDS
         /// pending. Rebooting a DB instance results in a momentary outage of the instance, during
         /// which the DB instance status is set to rebooting. If the RDS instance is configured
         /// for MultiAZ, it is possible that the reboot will be conducted through a failover.
-        /// An Amazon RDS event is created when the reboot is completed. 
+        /// An Amazon RDS event is created when the reboot is completed.
         /// 
         ///  
         /// <para>
-        ///  If your DB instance is deployed in multiple Availability Zones, you can force a failover
+        /// If your DB instance is deployed in multiple Availability Zones, you can force a failover
         /// from one AZ to the other during the reboot. You might force a failover to test the
         /// availability of your DB instance deployment or to restore operations to the original
-        /// AZ after a failover occurs. 
+        /// AZ after a failover occurs.
         /// </para>
         ///  
         /// <para>
-        ///  The time required to reboot is a function of the specific database engine's crash
+        /// The time required to reboot is a function of the specific database engine's crash
         /// recovery process. To improve the reboot time, we recommend that you reduce database
         /// activities as much as possible during the reboot process to reduce rollback activity
-        /// for in-transit transactions. 
+        /// for in-transit transactions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance service method.</param>
@@ -3923,7 +4133,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetDBClusterParameterGroup service method.</param>
@@ -4019,12 +4229,12 @@ namespace Amazon.RDS
         /// Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is created
         /// from the source DB cluster restore point with the same configuration as the original
         /// source DB cluster, except that the new DB cluster is created with the default security
-        /// group. 
+        /// group.
         /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot service method.</param>
@@ -4067,8 +4277,8 @@ namespace Amazon.RDS
         /// Cannot restore from vpc backup to non-vpc DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
@@ -4129,7 +4339,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterToPointInTime service method.</param>
@@ -4167,8 +4377,8 @@ namespace Amazon.RDS
         /// Cannot restore from vpc backup to non-vpc DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
@@ -4225,7 +4435,7 @@ namespace Amazon.RDS
         /// default security group and the default DB parameter group. By default, the new DB
         /// instance is created as a single-AZ deployment except when the instance is a SQL Server
         /// instance that has an option group that is associated with mirroring; in this case,
-        /// the instance becomes a mirrored AZ deployment and not a single-AZ deployment. 
+        /// the instance becomes a mirrored AZ deployment and not a single-AZ deployment.
         /// 
         ///  
         /// <para>
@@ -4248,7 +4458,7 @@ namespace Amazon.RDS
         /// <returns>The response from the RestoreDBInstanceFromDBSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
-        /// group. 
+        /// group.
         /// 
         ///  
         /// <para>
@@ -4271,6 +4481,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> does not refer to an existing Active Directory Domain.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.
         /// </exception>
@@ -4284,8 +4497,8 @@ namespace Amazon.RDS
         /// Cannot restore from vpc backup to non-vpc DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
@@ -4345,12 +4558,12 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        ///  The target database is created with most of the original configuration, but in a
-        /// system-selected availability zone, with the default security group, the default subnet
-        /// group, and the default DB parameter group. By default, the new DB instance is created
-        /// as a single-AZ deployment except when the instance is a SQL Server instance that has
-        /// an option group that is associated with mirroring; in this case, the instance becomes
-        /// a mirrored deployment and not a single-AZ deployment. 
+        /// The target database is created with most of the original configuration, but in a system-selected
+        /// availability zone, with the default security group, the default subnet group, and
+        /// the default DB parameter group. By default, the new DB instance is created as a single-AZ
+        /// deployment except when the instance is a SQL Server instance that has an option group
+        /// that is associated with mirroring; in this case, the instance becomes a mirrored deployment
+        /// and not a single-AZ deployment.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceToPointInTime service method.</param>
@@ -4358,7 +4571,7 @@ namespace Amazon.RDS
         /// <returns>The response from the RestoreDBInstanceToPointInTime service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
-        /// group. 
+        /// group.
         /// 
         ///  
         /// <para>
@@ -4381,6 +4594,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DomainNotFoundException">
+        /// <i>Domain</i> does not refer to an existing Active Directory Domain.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InstanceQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB instances.
         /// </exception>
@@ -4394,8 +4610,8 @@ namespace Amazon.RDS
         /// Cannot restore from vpc backup to non-vpc DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not
-        /// all in a common VPC.
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// DB subnet group does not cover all Availability Zones after it is created because
@@ -4462,7 +4678,7 @@ namespace Amazon.RDS
         /// <returns>The response from the RevokeDBSecurityGroupIngress service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.AuthorizationNotFoundException">
         /// Specified CIDRIP or EC2 security group is not authorized for the specified DB security
-        /// group. 
+        /// group.
         /// 
         ///  
         /// <para>

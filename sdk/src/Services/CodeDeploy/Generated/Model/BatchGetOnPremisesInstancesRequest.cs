@@ -38,7 +38,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceNames. 
         /// <para>
-        /// The names of the on-premises instances to get information about.
+        /// The names of the on-premises instances about which to get information.
         /// </para>
         /// </summary>
         public List<string> InstanceNames

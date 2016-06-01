@@ -28,10 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
+    /// Contains the result of a successful invocation of the following actions:
     /// 
-    ///  <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a>
-    /// </li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ModifyDBInstance</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBInstances</a> action.
     /// </para>
@@ -55,6 +66,7 @@ namespace Amazon.RDS.Model
         private List<DBParameterGroupStatus> _dbParameterGroups = new List<DBParameterGroupStatus>();
         private List<DBSecurityGroupMembership> _dbSecurityGroups = new List<DBSecurityGroupMembership>();
         private DBSubnetGroup _dbSubnetGroup;
+        private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
         private Endpoint _endpoint;
         private string _engine;
         private string _engineVersion;
@@ -72,6 +84,7 @@ namespace Amazon.RDS.Model
         private PendingModifiedValues _pendingModifiedValues;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private int? _promotionTier;
         private bool? _publiclyAccessible;
         private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
         private string _readReplicaSourceDBInstanceIdentifier;
@@ -85,7 +98,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  Specifies the allocated storage size specified in gigabytes. 
+        /// Specifies the allocated storage size specified in gigabytes.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -103,7 +116,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  Indicates that minor version patches are applied automatically. 
+        /// Indicates that minor version patches are applied automatically.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -121,7 +134,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  Specifies the name of the Availability Zone the DB instance is located in. 
+        /// Specifies the name of the Availability Zone the DB instance is located in.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -139,7 +152,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        ///  Specifies the number of days for which automatic DB snapshots are retained. 
+        /// Specifies the number of days for which automatic DB snapshots are retained.
         /// </para>
         /// </summary>
         public int BackupRetentionPeriod
@@ -175,8 +188,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        ///  If present, specifies the name of the character set that this instance is associated
-        /// with. 
+        /// If present, specifies the name of the character set that this instance is associated
+        /// with.
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -231,7 +244,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  Contains the name of the compute and memory capacity class of the DB instance. 
+        /// Contains the name of the compute and memory capacity class of the DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -249,8 +262,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  Contains a user-supplied database identifier. This identifier is the unique key that
-        /// identifies a DB instance. 
+        /// Contains a user-supplied database identifier. This identifier is the unique key that
+        /// identifies a DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -268,8 +281,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DbInstancePort. 
         /// <para>
-        ///  Specifies the port that the DB instance listens on. If the DB instance is part of
-        /// a DB cluster, this can be a different port than the DB cluster port. 
+        /// Specifies the port that the DB instance listens on. If the DB instance is part of
+        /// a DB cluster, this can be a different port than the DB cluster port.
         /// </para>
         /// </summary>
         public int DbInstancePort
@@ -287,7 +300,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceStatus. 
         /// <para>
-        ///  Specifies the current state of this database. 
+        /// Specifies the current state of this database.
         /// </para>
         /// </summary>
         public string DBInstanceStatus
@@ -307,7 +320,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The region-unique, immutable identifier for the DB instance. This identifier is found
         /// in AWS CloudTrail log entries whenever the KMS key for the DB instance is accessed.
-        /// 
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -336,9 +348,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Contains the name of the initial database of this instance that was provided at create
+        /// Contains the name of the initial database of this instance that was provided at create
         /// time, if one was specified when the DB instance was created. This same name is returned
-        /// for the life of the DB instance. 
+        /// for the life of the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -350,8 +362,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Contains the Oracle System ID (SID) of the created DB instance. Not shown when the
-        /// returned parameters do not apply to an Oracle DB instance. 
+        /// Contains the Oracle System ID (SID) of the created DB instance. Not shown when the
+        /// returned parameters do not apply to an Oracle DB instance.
         /// </para>
         /// </summary>
         public string DBName
@@ -369,7 +381,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroups. 
         /// <para>
-        ///  Provides the list of DB parameter groups applied to this DB instance. 
+        /// Provides the list of DB parameter groups applied to this DB instance.
         /// </para>
         /// </summary>
         public List<DBParameterGroupStatus> DBParameterGroups
@@ -406,8 +418,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroup. 
         /// <para>
-        ///  Specifies information on the subnet group associated with the DB instance, including
-        /// the name, description, and subnets in the subnet group. 
+        /// Specifies information on the subnet group associated with the DB instance, including
+        /// the name, description, and subnets in the subnet group.
         /// </para>
         /// </summary>
         public DBSubnetGroup DBSubnetGroup
@@ -423,9 +435,27 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainMemberships. 
+        /// <para>
+        /// The Active Directory Domain membership records associated with the DB instance.
+        /// </para>
+        /// </summary>
+        public List<DomainMembership> DomainMemberships
+        {
+            get { return this._domainMemberships; }
+            set { this._domainMemberships = value; }
+        }
+
+        // Check to see if DomainMemberships property is set
+        internal bool IsSetDomainMemberships()
+        {
+            return this._domainMemberships != null && this._domainMemberships.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        ///  Specifies the connection endpoint. 
+        /// Specifies the connection endpoint.
         /// </para>
         /// </summary>
         public Endpoint Endpoint
@@ -443,7 +473,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  Provides the name of the database engine to be used for this DB instance. 
+        /// Provides the name of the database engine to be used for this DB instance.
         /// </para>
         /// </summary>
         public string Engine
@@ -461,7 +491,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  Indicates the database engine version. 
+        /// Indicates the database engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -498,7 +528,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
-        ///  Provides the date and time the DB instance was created. 
+        /// Provides the date and time the DB instance was created.
         /// </para>
         /// </summary>
         public DateTime InstanceCreateTime
@@ -516,7 +546,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        ///  Specifies the Provisioned IOPS (I/O operations per second) value. 
+        /// Specifies the Provisioned IOPS (I/O operations per second) value.
         /// </para>
         /// </summary>
         public int Iops
@@ -553,8 +583,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LatestRestorableTime. 
         /// <para>
-        ///  Specifies the latest time to which a database can be restored with point-in-time
-        /// restore. 
+        /// Specifies the latest time to which a database can be restored with point-in-time restore.
         /// </para>
         /// </summary>
         public DateTime LatestRestorableTime
@@ -572,7 +601,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        ///  License model information for this DB instance. 
+        /// License model information for this DB instance.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -590,7 +619,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        ///  Contains the master username for the DB instance. 
+        /// Contains the master username for the DB instance.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -646,7 +675,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Specifies if the DB instance is a Multi-AZ deployment. 
+        /// Specifies if the DB instance is a Multi-AZ deployment.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -664,7 +693,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupMemberships. 
         /// <para>
-        ///  Provides the list of option group memberships for this DB instance. 
+        /// Provides the list of option group memberships for this DB instance.
         /// </para>
         /// </summary>
         public List<OptionGroupMembership> OptionGroupMemberships
@@ -682,8 +711,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PendingModifiedValues. 
         /// <para>
-        ///  Specifies that changes to the DB instance are pending. This element is only included
-        /// when changes are pending. Specific changes are identified by subelements. 
+        /// Specifies that changes to the DB instance are pending. This element is only included
+        /// when changes are pending. Specific changes are identified by subelements.
         /// </para>
         /// </summary>
         public PendingModifiedValues PendingModifiedValues
@@ -720,8 +749,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  Specifies the weekly time range during which system maintenance can occur, in Universal
-        /// Coordinated Time (UTC). 
+        /// Specifies the weekly time range during which system maintenance can occur, in Universal
+        /// Coordinated Time (UTC).
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -737,24 +766,53 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PromotionTier. 
+        /// <para>
+        /// A value that specifies the order in which an Aurora Replica is promoted to the primary
+        /// instance after a failure of the existing primary instance. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// </para>
+        /// </summary>
+        public int PromotionTier
+        {
+            get { return this._promotionTier.GetValueOrDefault(); }
+            set { this._promotionTier = value; }
+        }
+
+        // Check to see if PromotionTier property is set
+        internal bool IsSetPromotionTier()
+        {
+            return this._promotionTier.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        ///  Specifies the accessibility options for the DB instance. A value of true specifies
+        /// Specifies the accessibility options for the DB instance. A value of true specifies
         /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
         /// a public IP address. A value of false specifies an internal instance with a DNS name
-        /// that resolves to a private IP address. 
+        /// that resolves to a private IP address.
         /// </para>
         ///  
         /// <para>
-        ///  Default: The default behavior varies depending on whether a VPC has been requested
-        /// or not. The following list shows the default behavior in each case. 
+        /// Default: The default behavior varies depending on whether a VPC has been requested
+        /// or not. The following list shows the default behavior in each case.
         /// </para>
-        ///  <ul> <li> <b>Default VPC:</b>true</li> <li> <b>VPC:</b>false</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        ///  If no DB subnet group has been specified as part of the request and the PubliclyAccessible
+        ///  <b>Default VPC:</b>true
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>VPC:</b>false
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If no DB subnet group has been specified as part of the request and the PubliclyAccessible
         /// value has not been set, the DB instance will be publicly accessible. If a specific
         /// DB subnet group has been specified as part of the request and the PubliclyAccessible
-        /// value has not been set, the DB instance will be private. 
+        /// value has not been set, the DB instance will be private.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -772,8 +830,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaDBInstanceIdentifiers. 
         /// <para>
-        ///  Contains one or more identifiers of the Read Replicas associated with this DB instance.
-        /// 
+        /// Contains one or more identifiers of the Read Replicas associated with this DB instance.
         /// </para>
         /// </summary>
         public List<string> ReadReplicaDBInstanceIdentifiers
@@ -791,8 +848,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaSourceDBInstanceIdentifier. 
         /// <para>
-        ///  Contains the identifier of the source DB instance if this DB instance is a Read Replica.
-        /// 
+        /// Contains the identifier of the source DB instance if this DB instance is a Read Replica.
         /// </para>
         /// </summary>
         public string ReadReplicaSourceDBInstanceIdentifier
@@ -810,8 +866,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SecondaryAvailabilityZone. 
         /// <para>
-        ///  If present, specifies the name of the secondary Availability Zone for a DB instance
-        /// with multi-AZ support. 
+        /// If present, specifies the name of the secondary Availability Zone for a DB instance
+        /// with multi-AZ support.
         /// </para>
         /// </summary>
         public string SecondaryAvailabilityZone
@@ -829,8 +885,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StatusInfos. 
         /// <para>
-        ///  The status of a Read Replica. If the instance is not a Read Replica, this will be
-        /// blank. 
+        /// The status of a Read Replica. If the instance is not a Read Replica, this will be
+        /// blank.
         /// </para>
         /// </summary>
         public List<DBInstanceStatusInfo> StatusInfos
@@ -848,7 +904,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        ///  Specifies whether the DB instance is encrypted. 
+        /// Specifies whether the DB instance is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -866,7 +922,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Specifies the storage type associated with DB instance. 
+        /// Specifies the storage type associated with DB instance.
         /// </para>
         /// </summary>
         public string StorageType
@@ -884,8 +940,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        ///  The ARN from the Key Store with which the instance is associated for TDE encryption.
-        /// 
+        /// The ARN from the Key Store with which the instance is associated for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -903,7 +958,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroups. 
         /// <para>
-        ///  Provides List of VPC security group elements that the DB instance belongs to. 
+        /// Provides List of VPC security group elements that the DB instance belongs to.
         /// </para>
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups

@@ -55,9 +55,20 @@ using Amazon.Runtime.Internal.Util;
 	{
 		foreach(var member in operation.RequestUriMembers)
 		{
+            if (member.model.Customizations.SkipUriPropertyValidations.Contains(member.PropertyName))
+            {
 #>
 			uriResourcePath = uriResourcePath.Replace("{<#=member.MarshallLocationName#>}", <#=variableName#>.IsSet<#=member.PropertyName#>() ? StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
+<#+
+            }
+            else
+            {
+#>
+            if (!<#=variableName#>.IsSet<#=member.PropertyName#>())
+                throw new <#=this.Config.BaseException#>("Request object does not have required field <#=member.PropertyName#> set");
+			uriResourcePath = uriResourcePath.Replace("{<#=member.MarshallLocationName#>}", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+			
+            }
 		}
 	}
 

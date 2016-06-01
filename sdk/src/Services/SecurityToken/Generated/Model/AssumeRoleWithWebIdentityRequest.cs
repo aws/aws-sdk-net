@@ -33,7 +33,6 @@ namespace Amazon.SecurityToken.Model
     /// in a mobile or web application with a web identity provider, such as Amazon Cognito,
     /// Login with Amazon, Facebook, Google, or any OpenID Connect-compatible identity provider.
     /// 
-    /// 
     ///  <note> 
     /// <para>
     /// For mobile applications, we recommend that you use Amazon Cognito. You can use Amazon
@@ -56,16 +55,29 @@ namespace Amazon.SecurityToken.Model
     /// devices) that requests temporary security credentials without including long-term
     /// AWS credentials in the application, and without deploying server-based proxy services
     /// that use long-term AWS credentials. Instead, the identity of the caller is validated
-    /// by using a token from the web identity provider. 
+    /// by using a token from the web identity provider. For a comparison of <code>AssumeRoleWithWebIdentity</code>
+    /// with the other APIs that produce temporary credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+    /// Temporary Security Credentials</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+    /// the AWS STS APIs</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// The temporary security credentials returned by this API consist of an access key ID,
     /// a secret access key, and a security token. Applications can use these temporary security
-    /// credentials to sign calls to AWS service APIs. The credentials are valid for the duration
-    /// that you specified when calling <code>AssumeRoleWithWebIdentity</code>, which can
-    /// be from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the temporary
-    /// security credentials are valid for 1 hour. 
+    /// credentials to sign calls to AWS service APIs.
+    /// </para>
+    ///  
+    /// <para>
+    /// The credentials are valid for the duration that you specified when calling <code>AssumeRoleWithWebIdentity</code>,
+    /// which can be from 900 seconds (15 minutes) to a maximum of 3600 seconds (1 hour).
+    /// The default is 1 hour. 
+    /// </para>
+    ///  
+    /// <para>
+    /// The temporary security credentials created by <code>AssumeRoleWithWebIdentity</code>
+    /// can be used to make API calls to any AWS service with the following exception: you
+    /// cannot call the STS service's <code>GetFederationToken</code> or <code>GetSessionToken</code>
+    /// APIs.
     /// </para>
     ///  
     /// <para>
@@ -74,13 +86,13 @@ namespace Amazon.SecurityToken.Model
     /// have the permissions that are defined in the access policy of the role that is being
     /// assumed. If you pass a policy to this operation, the temporary security credentials
     /// that are returned by the operation have the permissions that are allowed by both the
-    /// access policy of the role that is being assumed, <i><b>and</b></i> the policy that
+    /// access policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
     /// you pass. This gives you a way to further restrict the permissions for the resulting
     /// temporary security credentials. You cannot use the passed policy to grant permissions
     /// that are in excess of those allowed by the access policy of the role that is being
     /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
-    /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>Using
-    /// IAM</i>.
+    /// for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM
+    /// User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -90,25 +102,49 @@ namespace Amazon.SecurityToken.Model
     /// provider that is associated with the identity token. In other words, the identity
     /// provider must be specified in the role's trust policy. 
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// Calling <code>AssumeRoleWithWebIdentity</code> can result in an entry in your AWS
+    /// CloudTrail logs. The entry includes the <a href="http://openid.net/specs/openid-connect-core-1_0.html#Claims">Subject</a>
+    /// of the provided Web Identity Token. We recommend that you avoid using any personally
+    /// identifiable information (PII) in this field. For example, you could instead use a
+    /// GUID or a pairwise identifier, as <a href="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes">suggested
+    /// in the OIDC specification</a>.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// For more information about how to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>
     /// API, see the following resources: 
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
     /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
-    /// Through a Web-based Identity Provider</a>. </li> <li><a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+    /// Through a Web-based Identity Provider</a>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
     /// Web Identity Federation Playground</a>. This interactive website lets you walk through
     /// the process of authenticating via Login with Amazon, Facebook, or Google, getting
     /// temporary security credentials, and then using those credentials to make a request
-    /// to AWS. </li> <li><a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and
-    /// <a href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These toolkits
-    /// contain sample apps that show how to invoke the identity providers, and then how to
-    /// use the information from these providers to get and use temporary security credentials.
-    /// </li> <li><a href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
+    /// to AWS. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a href="http://aws.amazon.com/sdkforandroid/">AWS
+    /// SDK for Android</a>. These toolkits contain sample apps that show how to invoke the
+    /// identity providers, and then how to use the information from these providers to get
+    /// and use temporary security credentials. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
     /// with Mobile Applications</a>. This article discusses web identity federation and shows
     /// an example of how to use web identity federation to get access to content in Amazon
-    /// S3. </li> </ul>
+    /// S3. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AssumeRoleWithWebIdentityRequest : AmazonSecurityTokenServiceRequest
     {
@@ -124,7 +160,6 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The duration, in seconds, of the role session. The value can range from 900 seconds
         /// (15 minutes) to 3600 seconds (1 hour). By default, the value is set to 3600 seconds.
-        /// 
         /// </para>
         /// </summary>
         public int DurationSeconds
@@ -148,17 +183,28 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The policy parameter is optional. If you pass a policy, the temporary security credentials
         /// that are returned by the operation have the permissions that are allowed by both the
-        /// access policy of the role that is being assumed, <i><b>and</b></i> the policy that
+        /// access policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
         /// you pass. This gives you a way to further restrict the permissions for the resulting
         /// temporary security credentials. You cannot use the passed policy to grant permissions
         /// that are in excess of those allowed by the access policy of the role that is being
         /// assumed. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
-        /// for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. 
+        /// for AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>. 
         /// </para>
-        ///  <note>The policy plain text must be 2048 bytes or shorter. However, an internal conversion
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a string of characters
+        /// up to 2048 characters in length. The characters can be any ASCII character from the
+        /// space character to the end of the valid character list (\u0020-\u00FF). It can also
+        /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The policy plain text must be 2048 bytes or shorter. However, an internal conversion
         /// compresses it into a packed binary format with a separate limit. The PackedPolicySize
         /// response element indicates by percentage how close to the upper size limit the policy
-        /// is, with 100% equaling the maximum allowed size. </note>
+        /// is, with 100% equaling the maximum allowed size.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Policy
         {
@@ -185,7 +231,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// Do not specify this value for OpenID Connect ID tokens. 
+        /// Do not specify this value for OpenID Connect ID tokens.
         /// </para>
         /// </summary>
         public string ProviderId
@@ -225,7 +271,13 @@ namespace Amazon.SecurityToken.Model
         /// that is associated with the user who is using your application. That way, the temporary
         /// security credentials that your application will use are associated with that user.
         /// This session name is included as part of the ARN and assumed role ID in the <code>AssumedRoleUser</code>
-        /// response element. 
+        /// response element.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a string of characters
+        /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
+        /// also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleSessionName

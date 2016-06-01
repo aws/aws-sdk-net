@@ -34,11 +34,15 @@ namespace Amazon.RDS.Model
     /// using the database is running on EC2 or VPC instances. Second, IP ranges are available
     /// if the application accessing your database is running on the Internet. Required parameters
     /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
-    /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). 
+    /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).
     /// 
-    ///  <note> You cannot authorize ingress from an EC2 security group in one region to an
-    /// Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security
-    /// group in one VPC to an Amazon RDS DB instance in another. </note> 
+    ///  <note> 
+    /// <para>
+    /// You cannot authorize ingress from an EC2 security group in one region to an Amazon
+    /// RDS DB instance in another. You cannot authorize ingress from a VPC security group
+    /// in one VPC to an Amazon RDS DB instance in another.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
     /// Tutorial</a>. 
@@ -60,7 +64,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates AuthorizeDBSecurityGroupIngressRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbSecurityGroupName"> The name of the DB security group to add authorization to. </param>
+        /// <param name="dbSecurityGroupName">The name of the DB security group to add authorization to.</param>
         public AuthorizeDBSecurityGroupIngressRequest(string dbSecurityGroupName)
         {
             _dbSecurityGroupName = dbSecurityGroupName;
@@ -69,7 +73,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CIDRIP. 
         /// <para>
-        ///  The IP range to authorize. 
+        /// The IP range to authorize.
         /// </para>
         /// </summary>
         public string CIDRIP
@@ -87,7 +91,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroupName. 
         /// <para>
-        ///  The name of the DB security group to add authorization to. 
+        /// The name of the DB security group to add authorization to.
         /// </para>
         /// </summary>
         public string DBSecurityGroupName

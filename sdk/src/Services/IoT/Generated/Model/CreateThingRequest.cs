@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateThing operation.
-    /// Creates a thing in the thing registry.
+    /// Creates a thing in the Thing Registry.
     /// </summary>
     public partial class CreateThingRequest : AmazonIoTRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AttributePayload. 
         /// <para>
-        /// The attribute payload. Which consists of up to 3 name/value pairs in a JSON document.
-        /// For example: {\"attributes\":{\"string1\":\"string2\"}}
+        /// The attribute payload, which consists of up to 3 name/value pairs in a JSON document
+        /// (for example, {\"attributes\":{\"string1\":\"string2\"}}).
         /// </para>
         /// </summary>
         public AttributePayload AttributePayload

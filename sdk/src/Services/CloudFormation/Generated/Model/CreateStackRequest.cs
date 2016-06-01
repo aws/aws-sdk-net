@@ -53,9 +53,10 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// A list of capabilities that you must specify before AWS CloudFormation can create
-        /// or update certain stacks. Some stack templates might include resources that can affect
-        /// permissions in your AWS account. For those stacks, you must explicitly acknowledge
-        /// their capabilities by specifying this parameter.
+        /// certain stacks. Some stack templates might include resources that can affect permissions
+        /// in your AWS account, for example, by creating new AWS Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge their capabilities
+        /// by specifying this parameter.
         /// </para>
         ///  
         /// <para>
@@ -68,8 +69,10 @@ namespace Amazon.CloudFormation.Model
         /// AWS::IAM::Role</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
         /// AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
         /// AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources,
-        /// we recommend that you review any permissions associated with them. If you don't specify
-        /// this parameter, this action returns an <code>InsufficientCapabilities</code> error.
+        /// we recommend that you review all permissions associated with them and edit their permissions
+        /// if necessary. If your template contains any of the listed resources and you don't
+        /// specify this parameter, this action returns an <code>InsufficientCapabilities</code>
+        /// error.
         /// </para>
         /// </summary>
         public List<string> Capabilities
@@ -112,7 +115,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NotificationARNs. 
         /// <para>
         /// The Simple Notification Service (SNS) topic ARNs to publish stack related events.
-        /// You can find your SNS topic ARNs using the <a href="http://console.aws.amazon.com/sns">SNS
+        /// You can find your SNS topic ARNs using the <a href="https://console.aws.amazon.com/sns">SNS
         /// console</a> or your Command Line Interface (CLI).
         /// </para>
         /// </summary>
@@ -137,7 +140,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>ROLLBACK</code>
+        /// Default: <code>ROLLBACK</code> 
         /// </para>
         /// </summary>
         public OnFailure OnFailure
@@ -179,10 +182,10 @@ namespace Amazon.CloudFormation.Model
         /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
         /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
         /// resource types: <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code>
-        /// (for all custom resources), <code>Custom::<i>logical_ID</i></code> (for a specific
+        /// (for all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a specific
         /// custom resource), <code>AWS::<i>service_name</i>::*</code> (for all resources of a
-        /// particular AWS service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
-        /// (for a specific AWS resource).
+        /// particular AWS service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
+        /// </code> (for a specific AWS resource).
         /// </para>
         ///  
         /// <para>
@@ -211,9 +214,12 @@ namespace Amazon.CloudFormation.Model
         /// The name that is associated with the stack. The name must be unique in the region
         /// in which you are creating the stack.
         /// </para>
-        ///  <note>A stack name can contain only alphanumeric characters (case sensitive) and
-        /// hyphens. It must start with an alphabetic character and cannot be longer than 128
-        /// characters.</note>
+        ///  <note> 
+        /// <para>
+        /// A stack name can contain only alphanumeric characters (case sensitive) and hyphens.
+        /// It must start with an alphabetic character and cannot be longer than 128 characters.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string StackName
         {

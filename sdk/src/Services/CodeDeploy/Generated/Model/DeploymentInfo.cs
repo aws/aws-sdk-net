@@ -68,7 +68,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CompleteTime. 
         /// <para>
-        /// A timestamp indicating when the deployment was completed.
+        /// A timestamp indicating when the deployment was complete.
         /// </para>
         /// </summary>
         public DateTime CompleteTime
@@ -104,7 +104,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Creator. 
         /// <para>
-        /// How the deployment was created:
+        /// The means by which the deployment was created:
         /// </para>
         ///  <ul> <li>user: A user created the deployment.</li> <li>autoscaling: Auto Scaling
         /// created the deployment.</li> </ul>
@@ -233,14 +233,14 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property IgnoreApplicationStopFailures. 
         /// <para>
         /// If true, then if the deployment causes the ApplicationStop deployment lifecycle event
-        /// to fail to a specific instance, the deployment will not be considered to have failed
-        /// to that instance at that point and will continue on to the BeforeInstall deployment
-        /// lifecycle event.
+        /// to an instance to fail, the deployment to that instance will not be considered to
+        /// have failed at that point and will continue on to the BeforeInstall deployment lifecycle
+        /// event.
         /// </para>
         ///  
         /// <para>
         /// If false or not specified, then if the deployment causes the ApplicationStop deployment
-        /// lifecycle event to fail to a specific instance, the deployment will stop to that instance,
+        /// lifecycle event to an instance to fail, the deployment to that instance will stop,
         /// and the deployment to that instance will be considered to have failed.
         /// </para>
         /// </summary>
@@ -259,8 +259,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        /// Information about the location of application artifacts that are stored and the service
-        /// to retrieve them from.
+        /// Information about the location of stored application artifacts and the service from
+        /// which to retrieve them.
         /// </para>
         /// </summary>
         public RevisionLocation Revision
@@ -278,13 +278,13 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp indicating when the deployment began deploying to the deployment group.
+        /// A timestamp indicating when the deployment was deployed to the deployment group.
         /// </para>
         ///  
         /// <para>
-        /// Note that in some cases, the reported value of the start time may be later than the
-        /// complete time. This is due to differences in the clock settings of various back-end
-        /// servers that participate in the overall deployment process.
+        /// In some cases, the reported value of the start time may be later than the complete
+        /// time. This is due to differences in the clock settings of back-end servers that participate
+        /// in the deployment process.
         /// </para>
         /// </summary>
         public DateTime StartTime

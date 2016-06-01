@@ -255,7 +255,7 @@ namespace Amazon.ElastiCache
         /// by your tags. You can apply tags that represent business categories (such as cost
         /// centers, application names, or owners) to organize your costs across multiple services.
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
-        /// Cost Allocation Tags in Amazon ElastiCache</a>.
+        /// Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
@@ -324,8 +324,12 @@ namespace Amazon.ElastiCache
         /// security group. Applications using ElastiCache must be running on Amazon EC2, and
         /// Amazon EC2 security groups are used as the authorization mechanism.
         /// 
-        ///  <note>You cannot authorize ingress from an Amazon EC2 security group in one region
-        /// to an ElastiCache cluster in another region. </note>
+        ///  <note> 
+        /// <para>
+        /// You cannot authorize ingress from an Amazon EC2 security group in one region to an
+        /// ElastiCache cluster in another region.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeCacheSecurityGroupIngress service method.</param>
         /// 
@@ -393,6 +397,29 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Users or groups that have permissions to use the <i>CopySnapshot</i> API can create
+        /// their own Amazon S3 buckets and copy snapshots to it. To control access to your snapshots,
+        /// use an IAM policy to control who has the ability to use the <i>CopySnapshot</i> API.
+        /// For more information about using IAM to control the use of ElastiCache APIs, see <a
+        /// href="http://docs.aws.amazon.com/ElastiCache/latest/Snapshots.Exporting.html">Exporting
+        /// Snapshots</a> and <a href="http://docs.aws.amazon.com/ElastiCache/latest/IAM.html">Authentication
+        /// &amp; Access Control</a>.
+        /// </para>
+        ///  </important> <p class="title"> <b>Erorr Message:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Error Message:</b> The authenticated user does not have sufficient permissions
+        /// to perform the desired activity.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Solution:</b> Contact your system administrator to get the needed permissions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method.</param>
         /// 
@@ -783,10 +810,11 @@ namespace Amazon.ElastiCache
         /// is in the primary role. When the replication group has been successfully created,
         /// you can add one or more read replica replicas to it, up to a total of five read replicas.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// <b>Note:</b> This action is valid only for Redis.
+        /// This action is valid only for Redis.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationGroup service method.</param>
         /// 
@@ -1132,8 +1160,11 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.
         /// 
-        ///  <note>You cannot delete a cache security group if it is associated with any cache
-        /// clusters.</note>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete a cache security group if it is associated with any cache clusters.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSecurityGroup service method.</param>
         /// 
@@ -1198,7 +1229,11 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.
         /// 
-        ///  <note>You cannot delete a cache subnet group if it is associated with any cache clusters.</note>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete a cache subnet group if it is associated with any cache clusters.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheSubnetGroup service method.</param>
         /// 
@@ -2384,6 +2419,77 @@ namespace Amazon.ElastiCache
         public  DescribeSnapshotsResponse EndDescribeSnapshots(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSnapshotsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAllowedNodeTypeModifications
+
+        /// <summary>
+        /// The <code>ListAllowedNodeTypeModifications</code> action lists all available node
+        /// types that you can scale your Redis cluster's or replication group's current node
+        /// type up to.
+        /// 
+        ///  
+        /// <para>
+        /// When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
+        /// APIs to scale up your cluster or replication group, the value of the <i>CacheNodeType</i>
+        /// parameter must be one of the node types returned by this action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowedNodeTypeModifications service method.</param>
+        /// 
+        /// <returns>The response from the ListAllowedNodeTypeModifications service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.CacheClusterNotFoundException">
+        /// The requested cache cluster ID does not refer to an existing cache cluster.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        public ListAllowedNodeTypeModificationsResponse ListAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request)
+        {
+            var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
+            var unmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAllowedNodeTypeModificationsRequest,ListAllowedNodeTypeModificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAllowedNodeTypeModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowedNodeTypeModifications operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAllowedNodeTypeModifications
+        ///         operation.</returns>
+        public IAsyncResult BeginListAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
+            var unmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListAllowedNodeTypeModificationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAllowedNodeTypeModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAllowedNodeTypeModifications.</param>
+        /// 
+        /// <returns>Returns a  ListAllowedNodeTypeModificationsResult from ElastiCache.</returns>
+        public  ListAllowedNodeTypeModificationsResponse EndListAllowedNodeTypeModifications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAllowedNodeTypeModificationsResponse>(asyncResult);
         }
 
         #endregion

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,16 +45,16 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DurationRange requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMaximum())
+            if(requestObject.IsSetMaxSeconds())
             {
-                context.Writer.WritePropertyName("maximum");
-                context.Writer.Write(requestObject.Maximum);
+                context.Writer.WritePropertyName("maxSeconds");
+                context.Writer.Write(requestObject.MaxSeconds);
             }
 
-            if(requestObject.IsSetMinimum())
+            if(requestObject.IsSetMinSeconds())
             {
-                context.Writer.WritePropertyName("minimum");
-                context.Writer.Write(requestObject.Minimum);
+                context.Writer.WritePropertyName("minSeconds");
+                context.Writer.Write(requestObject.MinSeconds);
             }
 
         }

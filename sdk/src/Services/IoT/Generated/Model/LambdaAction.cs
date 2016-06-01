@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes an action to invoke a Lamdba function.
+    /// Describes an action to invoke a Lambda function.
     /// </summary>
     public partial class LambdaAction
     {

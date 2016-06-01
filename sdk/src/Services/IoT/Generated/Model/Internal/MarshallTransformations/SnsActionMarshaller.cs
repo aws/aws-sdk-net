@@ -45,6 +45,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SnsAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetMessageFormat())
+            {
+                context.Writer.WritePropertyName("messageFormat");
+                context.Writer.Write(requestObject.MessageFormat);
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

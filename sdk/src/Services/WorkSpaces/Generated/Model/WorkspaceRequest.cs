@@ -35,6 +35,7 @@ namespace Amazon.WorkSpaces.Model
         private string _bundleId;
         private string _directoryId;
         private bool? _rootVolumeEncryptionEnabled;
+        private List<Tag> _tags = new List<Tag>();
         private string _userName;
         private bool? _userVolumeEncryptionEnabled;
         private string _volumeEncryptionKey;
@@ -94,6 +95,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetRootVolumeEncryptionEnabled()
         {
             return this._rootVolumeEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags of the WorkSpace request.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CopyImage operation.
+    /// Contains the output of CopyImage.
     /// </summary>
     public partial class CopyImageResponse : AmazonWebServiceResponse
     {

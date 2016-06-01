@@ -34,6 +34,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class SendCommandRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _comment;
+        private string _documentHash;
+        private DocumentHashType _documentHashType;
         private string _documentName;
         private List<string> _instanceIds = new List<string>();
         private string _outputS3BucketName;
@@ -58,8 +60,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Comment. User-specified information about the command,
-        /// such as a brief description of what the command should do.
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// User-specified information about the command, such as a brief description of what
+        /// the command should do.
+        /// </para>
         /// </summary>
         public string Comment
         {
@@ -74,8 +79,57 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DocumentName. Required. The name of the SSM document to
-        /// execute. This can be an SSM public document or a custom document.
+        /// Gets and sets the property DocumentHash. 
+        /// <para>
+        /// The Sha256 or Sha1 hash created by the system when the document was created. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Sha1 hashes have been deprecated.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string DocumentHash
+        {
+            get { return this._documentHash; }
+            set { this._documentHash = value; }
+        }
+
+        // Check to see if DocumentHash property is set
+        internal bool IsSetDocumentHash()
+        {
+            return this._documentHash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentHashType. 
+        /// <para>
+        /// Sha256 or Sha1.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Sha1 hashes have been deprecated.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DocumentHashType DocumentHashType
+        {
+            get { return this._documentHashType; }
+            set { this._documentHashType = value; }
+        }
+
+        // Check to see if DocumentHashType property is set
+        internal bool IsSetDocumentHashType()
+        {
+            return this._documentHashType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentName. 
+        /// <para>
+        /// Required. The name of the SSM document to execute. This can be an SSM public document
+        /// or a custom document.
+        /// </para>
         /// </summary>
         public string DocumentName
         {
@@ -90,8 +144,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceIds. Required. The instance IDs where the command
-        /// should execute.
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
+        /// Required. The instance IDs where the command should execute.
+        /// </para>
         /// </summary>
         public List<string> InstanceIds
         {
@@ -106,8 +162,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputS3BucketName. The name of the S3 bucket where command
-        /// execution responses should be stored.
+        /// Gets and sets the property OutputS3BucketName. 
+        /// <para>
+        /// The name of the S3 bucket where command execution responses should be stored.
+        /// </para>
         /// </summary>
         public string OutputS3BucketName
         {
@@ -122,8 +180,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputS3KeyPrefix. The directory structure within the S3
-        /// bucket where the responses should be stored.
+        /// Gets and sets the property OutputS3KeyPrefix. 
+        /// <para>
+        /// The directory structure within the S3 bucket where the responses should be stored.
+        /// </para>
         /// </summary>
         public string OutputS3KeyPrefix
         {
@@ -138,8 +198,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Parameters. The required and optional parameters specified
-        /// in the SSM document being executed.
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The required and optional parameters specified in the SSM document being executed.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
         {
@@ -154,8 +216,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeoutSeconds. If this time is reached and the command
-        /// has not already started executing, it will not execute.
+        /// Gets and sets the property TimeoutSeconds. 
+        /// <para>
+        /// If this time is reached and the command has not already started executing, it will
+        /// not execute.
+        /// </para>
         /// </summary>
         public int TimeoutSeconds
         {

@@ -1,6 +1,6 @@
 ## Download the Unity Package
 
-You can directly download the Unity Packages build [here](https://s3.amazonaws.com/aws-unity-sdk/latest/aws-unity-sdk-v3-preview.zip)
+You can directly download the Unity Packages build [here](http://sdk-for-net.amazonwebservices.com/latest/aws-sdk-unity.zip)
 
 ## Supported Services
 
@@ -31,6 +31,7 @@ There are only a few fundamentals that are helpful to know when developing again
 
 * To enable logging you need to create a config file called awsconfig.xml in a `Resources` directory add add the following
 
+		<?xml version="1.0" encoding="utf-8"?>
 		<aws 
 			<logging
 	    		logTo="UnityLogger"

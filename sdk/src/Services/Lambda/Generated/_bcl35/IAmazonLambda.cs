@@ -238,6 +238,10 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>

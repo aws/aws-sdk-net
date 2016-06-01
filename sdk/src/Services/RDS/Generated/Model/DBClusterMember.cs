@@ -35,12 +35,12 @@ namespace Amazon.RDS.Model
         private string _dbClusterParameterGroupStatus;
         private string _dbInstanceIdentifier;
         private bool? _isClusterWriter;
+        private int? _promotionTier;
 
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupStatus. 
         /// <para>
         /// Specifies the status of the DB cluster parameter group for this member of the DB cluster.
-        /// 
         /// </para>
         /// </summary>
         public string DBClusterParameterGroupStatus
@@ -90,6 +90,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetIsClusterWriter()
         {
             return this._isClusterWriter.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromotionTier. 
+        /// <para>
+        /// A value that specifies the order in which an Aurora Replica is promoted to the primary
+        /// instance after a failure of the existing primary instance. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// </para>
+        /// </summary>
+        public int PromotionTier
+        {
+            get { return this._promotionTier.GetValueOrDefault(); }
+            set { this._promotionTier = value; }
+        }
+
+        // Check to see if PromotionTier property is set
+        internal bool IsSetPromotionTier()
+        {
+            return this._promotionTier.HasValue; 
         }
 
     }

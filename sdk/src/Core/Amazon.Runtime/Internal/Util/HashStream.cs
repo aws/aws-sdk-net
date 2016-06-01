@@ -65,7 +65,7 @@ namespace Amazon.Runtime.Internal.Util
         /// Calculated hash for the stream.
         /// This value is set only after the stream is closed.
         /// </summary>
-        public byte[] CalculatedHash { get; private set; }
+        public byte[] CalculatedHash { get; protected set; }
 
         /// <summary>
         /// Expected hash value. Compared against CalculatedHash upon Close().
@@ -247,7 +247,7 @@ namespace Amazon.Runtime.Internal.Util
         /// Calculates the hash for the stream so far and disables any further
         /// hashing.
         /// </summary>
-        public void CalculateHash()
+        public virtual void CalculateHash()
         {
             if (!FinishedHashing)
             {
@@ -306,7 +306,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>
         /// True if the hashes are identical; otherwise false.
         /// </returns>
-        private static bool CompareHashes(byte[] expected, byte[] actual)
+        protected static bool CompareHashes(byte[] expected, byte[] actual)
         {
             if (ReferenceEquals(expected, actual))
                 return true;
@@ -392,6 +392,8 @@ namespace Amazon.Runtime.Internal.Util
     /// </exception>
     public class MD5Stream : HashStream<HashingWrapperMD5>
     {
+        private Logger _logger;
+
         #region Constructors
 
         /// <summary>
@@ -407,9 +409,47 @@ namespace Amazon.Runtime.Internal.Util
         /// position, CalculatedHash will be set to empty array.
         /// </param>
         public MD5Stream(Stream baseStream, byte[] expectedHash, long expectedLength)
-            : base(baseStream, expectedHash, expectedLength) { }
+            : base(baseStream, expectedHash, expectedLength)
+        {
+            _logger = Logger.GetLogger(this.GetType());
+        }
 
-        #endregion
+#if UNITY 
+        /// <summary>
+        /// Calculates the hash for the stream so far and disables any further
+        /// hashing.
+        /// </summary>
+        public override void CalculateHash()
+        {
+            if (!FinishedHashing)
+            {
+                if (ExpectedLength < 0 || CurrentPosition == ExpectedLength)
+                {
+                    CalculatedHash = Algorithm.AppendLastBlock(new byte[0]);
+                }
+                else
+                    CalculatedHash = new byte[0];
+
+                if (CalculatedHash.Length > 0 && ExpectedHash != null && ExpectedHash.Length > 0)
+                {
+                    // In Unity, the http client (either WWW or UnityWebRequest) unzips responses
+                    // that have Content-Encoding "gzip". After unzipping, it replaces the response
+                    // data with the unzipped content, removes the Content-Encoding header, and
+                    // makes no indication that the transformation has occured. Therefore, we can
+                    // not throw an exception when the hash or the decompreesed data does not match
+                    // the expected hash of the compressed data.
+                    if (!CompareHashes(ExpectedHash, CalculatedHash))
+                        _logger.InfoFormat(
+                            "The expected hash is not equal to the calculated hash. This can " + 
+                            "occur when the Http client decompresses a response body from " + 
+                            "gzip format before the hash is calculated, in which case this" +
+                            "is not an error.");
+                }
+            }
+        }
+#endif
+
+#endregion
 
     }
 }

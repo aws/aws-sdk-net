@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RecurringChargeAmount. 
         /// <para>
-        ///  The amount of the recurring charge. 
+        /// The amount of the recurring charge.
         /// </para>
         /// </summary>
         public double RecurringChargeAmount
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RecurringChargeFrequency. 
         /// <para>
-        ///  The frequency of the recurring charge. 
+        /// The frequency of the recurring charge.
         /// </para>
         /// </summary>
         public string RecurringChargeFrequency

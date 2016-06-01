@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  The name of the option group that the instance belongs to. 
+        /// The name of the option group that the instance belongs to.
         /// </para>
         /// </summary>
         public string OptionGroupName

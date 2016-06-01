@@ -64,6 +64,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
+                {
+                    var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ClusterJDBCURL", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = CopyCommandUnmarshaller.Instance;
                     unmarshalledObject.CopyCommand = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetryOptions", targetDepth))
+                {
+                    var unmarshaller = RedshiftRetryOptionsUnmarshaller.Instance;
+                    unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RoleARN", targetDepth))

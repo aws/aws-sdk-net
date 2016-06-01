@@ -38,10 +38,25 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LogDriver. 
         /// <para>
-        /// The log driver to use for the container. This parameter requires version 1.18 of the
-        /// Docker Remote API or greater on your container instance. To check the Docker Remote
-        /// API version on your container instance, log into your container instance and run the
-        /// following command: <code>sudo docker version | grep "Server API version"</code>
+        /// The log driver to use for the container. The valid values listed for this parameter
+        /// are log drivers that the Amazon ECS container agent can communicate with by default.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you have a custom driver that is not listed above that you would like to work with
+        /// the Amazon ECS container agent, you can fork the Amazon ECS container agent project
+        /// that is <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a>
+        /// and customize it to work with that driver. We encourage you to submit pull requests
+        /// for changes that you would like to have included. However, Amazon Web Services does
+        /// not currently provide support for running modified copies of this software.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
+        /// instance. To check the Docker Remote API version on your container instance, log into
+        /// your container instance and run the following command: <code>sudo docker version |
+        /// grep "Server API version"</code> 
         /// </para>
         /// </summary>
         public LogDriver LogDriver
@@ -63,6 +78,7 @@ namespace Amazon.ECS.Model
         /// 1.19 of the Docker Remote API or greater on your container instance. To check the
         /// Docker Remote API version on your container instance, log into your container instance
         /// and run the following command: <code>sudo docker version | grep "Server API version"</code>
+        /// 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Options

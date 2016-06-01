@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace Amazon.Inspector.Model
     public partial class ListRulesPackagesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _rulesPackageArnList = new List<string>();
+        private List<string> _rulesPackageArns = new List<string>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -41,7 +41,7 @@ namespace Amazon.Inspector.Model
         ///  When a response is generated, if there is more data to be listed, this parameter
         /// is present in the response and contains the value to use for the <b>nextToken</b>
         /// parameter in a subsequent pagination request. If there is no more data to be listed,
-        /// this parameter is set to 'null'.
+        /// this parameter is set to null.
         /// </para>
         /// </summary>
         public string NextToken
@@ -57,21 +57,21 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RulesPackageArnList. 
+        /// Gets and sets the property RulesPackageArns. 
         /// <para>
-        /// The list of ARNs specifying the rules packages returned by the action.
+        /// The list of ARNs that specifies the rules packages returned by the action.
         /// </para>
         /// </summary>
-        public List<string> RulesPackageArnList
+        public List<string> RulesPackageArns
         {
-            get { return this._rulesPackageArnList; }
-            set { this._rulesPackageArnList = value; }
+            get { return this._rulesPackageArns; }
+            set { this._rulesPackageArns = value; }
         }
 
-        // Check to see if RulesPackageArnList property is set
-        internal bool IsSetRulesPackageArnList()
+        // Check to see if RulesPackageArns property is set
+        internal bool IsSetRulesPackageArns()
         {
-            return this._rulesPackageArnList != null && this._rulesPackageArnList.Count > 0; 
+            return this._rulesPackageArns != null && this._rulesPackageArns.Count > 0; 
         }
 
     }

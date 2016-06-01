@@ -82,6 +82,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("repositoryUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RepositoryUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

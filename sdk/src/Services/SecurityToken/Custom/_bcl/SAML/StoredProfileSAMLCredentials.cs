@@ -31,6 +31,7 @@ namespace Amazon.SecurityToken.SAML
     /// Currently only the SDK store supports profiles that contain the necessary data to support 
     /// authentication and role-based credential generation.
     /// </remarks>
+    [Obsolete("This class is obsolete and will be removed in a future release. Please update your code to use the Amazon.Runtime.StoredProfileFederatedCredentials class instead.")]
     public class StoredProfileSAMLCredentials : RefreshingAWSCredentials
     {
         private const int MaxAuthenticationRetries = 3;
@@ -112,7 +113,7 @@ namespace Amazon.SecurityToken.SAML
             this.CustomCallbackState = null;
 
             var lookupName = string.IsNullOrEmpty(profileName)
-                ? StoredProfileAWSCredentials.DEFAULT_PROFILE_NAME
+                ? StoredProfileCredentials.DEFAULT_PROFILE_NAME
                 : profileName;
 
             ProfileName = lookupName;
@@ -268,6 +269,7 @@ namespace Amazon.SecurityToken.SAML
     /// State class passed on callback to demand user credentials when authentication 
     /// is performed using a non-default identity.
     /// </summary>
+    [Obsolete("This class is obsolete and will be removed in a future release. Please update your code to use the Amazon.Runtime.CredentialRequestCallbackArgs class instead.")]
     public class CredentialCallbackArgs
     {
         /// <summary>
@@ -293,6 +295,10 @@ namespace Amazon.SecurityToken.SAML
     /// is configured to use a non-default user identity and the QueryUserCredentialCallback on the
     /// instance has not been set.
     /// </summary>
+    [Obsolete("This class is obsolete and will be removed in a future release. Please update your code to use the Amazon.Runtime.CredentialRequestCallbackRequiredException class instead.")]
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
     public class CredentialCallbackRequiredException : Exception
     {
         /// <summary>
@@ -322,6 +328,20 @@ namespace Amazon.SecurityToken.SAML
             : base(innerException.Message, innerException)
         {
         }
+
+#if !PCL && !CORECLR
+        /// <summary>
+        /// Constructs a new instance of the AdfsAuthenticationControllerException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected CredentialCallbackRequiredException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
     }
 
     /// <summary>
@@ -329,6 +349,10 @@ namespace Amazon.SecurityToken.SAML
     /// configured endpoint fails and a valid SAML assertion document could not be
     /// obtained.
     /// </summary>
+    [Obsolete("This class is obsolete and will be removed in a future release. Please update your code to use the Amazon.Runtime.FederatedAuthenticationFailureException class instead.")]
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
     public class AuthenticationFailedException : Exception
     {
         /// <summary>
@@ -349,5 +373,19 @@ namespace Amazon.SecurityToken.SAML
             : base(msg, inner)
         {
         }
+
+#if !PCL && !CORECLR
+        /// <summary>
+        /// Constructs a new instance of the AuthenticationFailedException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected AuthenticationFailedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
     }
 }

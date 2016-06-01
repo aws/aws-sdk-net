@@ -31,13 +31,21 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the ListTaskDefinitionFamilies operation.
     /// Returns a list of task definition families that are registered to your account (which
     /// may include task definition families that no longer have any <code>ACTIVE</code> task
-    /// definitions). You can filter the results with the <code>familyPrefix</code> parameter.
+    /// definition revisions).
+    /// 
+    ///  
+    /// <para>
+    /// You can filter out task definition families that do not contain any <code>ACTIVE</code>
+    /// task definition revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>.
+    /// You can also filter the results with the <code>familyPrefix</code> parameter.
+    /// </para>
     /// </summary>
     public partial class ListTaskDefinitionFamiliesRequest : AmazonECSRequest
     {
         private string _familyPrefix;
         private int? _maxResults;
         private string _nextToken;
+        private TaskDefinitionFamilyStatus _status;
 
         /// <summary>
         /// Gets and sets the property FamilyPrefix. 
@@ -92,6 +100,12 @@ namespace Amazon.ECS.Model
         /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
         /// are no more results to return.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NextToken
         {
@@ -103,6 +117,31 @@ namespace Amazon.ECS.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The task definition family status with which to filter the <code>ListTaskDefinitionFamilies</code>
+        /// results. By default, both <code>ACTIVE</code> and <code>INACTIVE</code> task definition
+        /// families are listed. If this parameter is set to <code>ACTIVE</code>, only task definition
+        /// families that have an <code>ACTIVE</code> task definition revision are returned. If
+        /// this parameter is set to <code>INACTIVE</code>, only task definition families that
+        /// do not have any <code>ACTIVE</code> task definition revisions are returned. If you
+        /// paginate the resulting output, be sure to keep the <code>status</code> value constant
+        /// in each subsequent request.
+        /// </para>
+        /// </summary>
+        public TaskDefinitionFamilyStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

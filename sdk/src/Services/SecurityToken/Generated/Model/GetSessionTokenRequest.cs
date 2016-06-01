@@ -37,17 +37,36 @@ namespace Amazon.SecurityToken.Model
     /// is associated with their MFA device. Using the temporary security credentials that
     /// are returned from the call, IAM users can then make programmatic calls to APIs that
     /// require MFA authentication. If you do not supply a correct MFA code, then the API
-    /// returns an access denied error.
+    /// returns an access denied error. For a comparison of <code>GetSessionToken</code> with
+    /// the other APIs that produce temporary credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
+    /// Temporary Security Credentials</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
+    /// the AWS STS APIs</a> in the <i>IAM User Guide</i>.
     /// 
     ///  
     /// <para>
     /// The <code>GetSessionToken</code> action must be called by using the long-term AWS
     /// security credentials of the AWS account or an IAM user. Credentials that are created
-    /// by IAM users are valid for the duration that you specify, between 900 seconds (15
-    /// minutes) and 129600 seconds (36 hours); credentials that are created by using account
-    /// credentials have a maximum duration of 3600 seconds (1 hour). 
+    /// by IAM users are valid for the duration that you specify, from 900 seconds (15 minutes)
+    /// up to a maximum of 129600 seconds (36 hours), with a default of 43200 seconds (12
+    /// hours); credentials that are created by using account credentials can range from 900
+    /// seconds (15 minutes) up to a maximum of 3600 seconds (1 hour), with a default of 1
+    /// hour. 
     /// </para>
-    ///  <note> 
+    ///  
+    /// <para>
+    /// The temporary security credentials created by <code>GetSessionToken</code> can be
+    /// used to make API calls to any AWS service with the following exceptions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You cannot call any IAM APIs unless MFA authentication information is included in
+    /// the request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You cannot call any STS API <i>except</i> <code>AssumeRole</code>.
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     /// We recommend that you do not call <code>GetSessionToken</code> with root account credentials.
     /// Instead, follow our <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
@@ -67,7 +86,8 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// For more information about using <code>GetSessionToken</code> to create temporary
     /// credentials, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
-    /// Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>. 
+    /// Credentials for Users in Untrusted Environments</a> in the <i>IAM User Guide</i>.
+    /// 
     /// </para>
     /// </summary>
     public partial class GetSessionTokenRequest : AmazonSecurityTokenServiceRequest
@@ -88,7 +108,7 @@ namespace Amazon.SecurityToken.Model
         /// for IAM user sessions range from 900 seconds (15 minutes) to 129600 seconds (36 hours),
         /// with 43200 seconds (12 hours) as the default. Sessions for AWS account owners are
         /// restricted to a maximum of 3600 seconds (one hour). If the duration is longer than
-        /// one hour, the session for AWS account owners defaults to one hour. 
+        /// one hour, the session for AWS account owners defaults to one hour.
         /// </para>
         /// </summary>
         public int DurationSeconds
@@ -114,6 +134,12 @@ namespace Amazon.SecurityToken.Model
         /// You can find the device for an IAM user by going to the AWS Management Console and
         /// viewing the user's security credentials. 
         /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a string of characters
+        /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
+        /// also include any of the following characters: =,.@-
+        /// </para>
         /// </summary>
         public string SerialNumber
         {
@@ -135,6 +161,11 @@ namespace Amazon.SecurityToken.Model
         /// and the user does not provide a code when requesting a set of temporary security credentials,
         /// the user will receive an "access denied" response when requesting resources that require
         /// MFA authentication.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter, as described by its regex pattern, is a sequence of
+        /// six numeric digits.
         /// </para>
         /// </summary>
         public string TokenCode

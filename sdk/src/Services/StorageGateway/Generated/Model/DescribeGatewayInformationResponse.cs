@@ -60,8 +60,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The unique identifier assigned to your gateway during activation. This id becomes
-        /// part of the gateway Amazon Resources Name (ARN) which you use as input for other operations.
+        /// The unique identifier assigned to your gateway during activation. This ID becomes
+        /// part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.
         /// </para>
         /// </summary>
         public string GatewayId

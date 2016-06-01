@@ -343,11 +343,17 @@
 			<PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\CertificateManager\Generated\PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk\test\UnitTests\Custom\EC2\PasswordTest.cs" />
         </ItemGroup>
+		
+		<ItemGroup>
+			<FileException Include="generator\ServiceModels\elasticbeanstalk.examples.json" />
+			<FileException Include="generator\ServiceClientGenerator\bin\Release\customizations\elasticbeanstalk.customizations.json" />
+		</ItemGroup>
 
         <KeyScannerTask
             Folder="$(MSBuildProjectDirectory)\.."
             FilePattern="**"
             PrivateKeyExceptions="@(PrivateKeyException)"
+			FileExceptions="@(FileException)"
             ParallelScan="true"
             />
 

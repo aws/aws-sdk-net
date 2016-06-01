@@ -30,12 +30,12 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeEngineDefaultClusterParameters operation.
     /// Returns the default engine and system parameter information for the cluster database
-    /// engine. 
+    /// engine.
     /// 
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class DescribeEngineDefaultClusterParametersRequest : AmazonRDSRequest
@@ -48,8 +48,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        ///  The name of the DB cluster parameter group family to return engine parameter information
-        /// for. 
+        /// The name of the DB cluster parameter group family to return engine parameter information
+        /// for.
         /// </para>
         /// </summary>
         public string DBParameterGroupFamily

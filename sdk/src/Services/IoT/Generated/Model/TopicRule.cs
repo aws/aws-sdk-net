@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class TopicRule
     {
         private List<Action> _actions = new List<Action>();
+        private string _awsIotSqlVersion;
         private DateTime? _createdAt;
         private string _description;
         private bool? _ruleDisabled;
@@ -55,6 +56,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetActions()
         {
             return this._actions != null && this._actions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsIotSqlVersion. 
+        /// <para>
+        /// The version of the SQL rules engine to use when evaluating the rule.
+        /// </para>
+        /// </summary>
+        public string AwsIotSqlVersion
+        {
+            get { return this._awsIotSqlVersion; }
+            set { this._awsIotSqlVersion = value; }
+        }
+
+        // Check to see if AwsIotSqlVersion property is set
+        internal bool IsSetAwsIotSqlVersion()
+        {
+            return this._awsIotSqlVersion != null;
         }
 
         /// <summary>
@@ -133,7 +152,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Sql. 
         /// <para>
         /// The SQL statement used to query the topic. When using a SQL query with multiple lines,
-        /// be sure to escape the newline characters properly.
+        /// be sure to escape the newline characters.
         /// </para>
         /// </summary>
         public string Sql

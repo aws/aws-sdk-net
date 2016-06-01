@@ -67,7 +67,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> The size of the security token that STS APIs return is not fixed. We
+        ///  <b>Note:</b> The size of the security token that STS APIs return is not fixed. We
         /// strongly recommend that you make no assumptions about the maximum size. As of this
         /// writing, the typical size is less than 4096 bytes, but that can vary. Also, future
         /// updates to AWS might require larger sizes.
@@ -90,7 +90,7 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// A percentage value that indicates the size of the policy in packed form. The service
         /// rejects any policy with a packed size greater than 100 percent, which means the policy
-        /// exceeded the allowed space. 
+        /// exceeded the allowed space.
         /// </para>
         /// </summary>
         public int PackedPolicySize

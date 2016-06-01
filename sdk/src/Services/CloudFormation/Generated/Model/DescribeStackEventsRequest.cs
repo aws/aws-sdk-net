@@ -29,12 +29,16 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackEvents operation.
-    /// Returns all stack related events for a specified stack. For more information about
-    /// a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
+    /// Returns all stack related events for a specified stack in reverse chronological order.
+    /// For more information about a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
     /// in the AWS CloudFormation User Guide.
     /// 
-    ///  <note>You can list events for stacks that have failed to create or have been deleted
-    /// by specifying the unique stack identifier (stack ID).</note>
+    ///  <note> 
+    /// <para>
+    /// You can list events for stacks that have failed to create or have been deleted by
+    /// specifying the unique stack identifier (stack ID).
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeStackEventsRequest : AmazonCloudFormationRequest
     {
@@ -65,8 +69,15 @@ namespace Amazon.CloudFormation.Model
         /// The name or the unique stack ID that is associated with the stack, which are not always
         /// interchangeable:
         /// </para>
-        ///  <ul> <li>Running stacks: You can specify either the stack's name or its unique stack
-        /// ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Running stacks: You can specify either the stack's name or its unique stack ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleted stacks: You must specify the unique stack ID.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Default: There is no default value.
         /// </para>

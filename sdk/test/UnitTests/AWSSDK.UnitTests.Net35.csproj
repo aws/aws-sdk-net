@@ -320,6 +320,34 @@
       <Project>{794D8685-00AA-4E6C-9050-10C31CA946AA}</Project>
       <Name>AWSSDK.GameLift.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net35.csproj">
+      <Project>{BA323E0A-7441-4899-BDD0-96ECCE837B48}</Project>
+      <Name>AWSSDK.DatabaseMigrationService.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AWSMarketplaceMetering\AWSSDK.AWSMarketplaceMetering.Net35.csproj">
+      <Project>{2225BFEB-DA71-4183-A37D-CBBF9D8BE918}</Project>
+      <Name>AWSSDK.AWSMarketplaceMetering.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CognitoIdentityProvider\AWSSDK.CognitoIdentityProvider.Net35.csproj">
+      <Project>{9693DFCA-4751-4765-8B6D-D92D44C3A2F7}</Project>
+      <Name>AWSSDK.CognitoIdentityProvider.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CognitoIdentityProvider\AWSSDK.CognitoIdentityProvider.Net35.csproj">
+      <Project>{6F6CB15A-ED3A-45AB-B526-B00DBAD46355}</Project>
+      <Name>AWSSDK.CognitoIdentityProvider.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\DiscoveryService\AWSSDK.DiscoveryService.Net35.csproj">
+      <Project>{895ADCD2-BC9B-4BFC-BE11-49557DE279B1}</Project>
+      <Name>AWSSDK.DiscoveryService.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net35.csproj">
+      <Project>{42CFDE78-4934-4555-BFA6-ECCF1A8271DF}</Project>
+      <Name>AWSSDK.ApplicationDiscoveryService.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net35.csproj">
+      <Project>{E9CEBF4C-B19E-48EC-96FB-88A558D1F52E}</Project>
+      <Name>AWSSDK.ApplicationAutoScaling.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

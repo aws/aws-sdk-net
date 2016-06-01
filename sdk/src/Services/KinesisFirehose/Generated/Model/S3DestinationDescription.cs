@@ -34,6 +34,7 @@ namespace Amazon.KinesisFirehose.Model
     {
         private string _bucketARN;
         private BufferingHints _bufferingHints;
+        private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private CompressionFormat _compressionFormat;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _prefix;
@@ -60,8 +61,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property BufferingHints. 
         /// <para>
-        /// The buffering option. If no value is specified, <code>BufferingHints</code> object
-        /// default values are used.
+        /// The buffering option. If no value is specified, <b>BufferingHints</b> object default
+        /// values are used.
         /// </para>
         /// </summary>
         public BufferingHints BufferingHints
@@ -74,6 +75,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetBufferingHints()
         {
             return this._bufferingHints != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLoggingOptions. 
+        /// <para>
+        /// Describes CloudWatch logging options for your delivery stream.
+        /// </para>
+        /// </summary>
+        public CloudWatchLoggingOptions CloudWatchLoggingOptions
+        {
+            get { return this._cloudWatchLoggingOptions; }
+            set { this._cloudWatchLoggingOptions = value; }
+        }
+
+        // Check to see if CloudWatchLoggingOptions property is set
+        internal bool IsSetCloudWatchLoggingOptions()
+        {
+            return this._cloudWatchLoggingOptions != null;
         }
 
         /// <summary>
@@ -119,7 +138,8 @@ namespace Amazon.KinesisFirehose.Model
         /// You can specify an extra prefix to be added in front of the time format prefix. Note
         /// that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For
         /// more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-        /// S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.
+        /// S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon
+        /// Kinesis Firehose Developer Guide</a>.
         /// </para>
         /// </summary>
         public string Prefix

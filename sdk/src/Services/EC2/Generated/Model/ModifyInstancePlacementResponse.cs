@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyInstancePlacement operation.
+    /// Contains the output of ModifyInstancePlacement.
     /// </summary>
     public partial class ModifyInstancePlacementResponse : AmazonWebServiceResponse
     {

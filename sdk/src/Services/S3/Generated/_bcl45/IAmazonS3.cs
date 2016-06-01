@@ -380,7 +380,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the replication configuration for the given Amazon S3 bucket.
+        /// Deletes the replication configuration from the bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
@@ -723,6 +723,50 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetACLResponse> GetACLAsync(GetACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketAccelerateConfiguration
+
+
+        /// <summary>
+        /// Returns the accelerate configuration of a bucket.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
+        /// 
+        /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(string bucketName);
+
+        /// <summary>
+        /// Returns the accelerate configuration of a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request);
+
+
+        /// <summary>
+        /// Returns the accelerate configuration of a bucket.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        Task<GetBucketAccelerateConfigurationResponse> GetBucketAccelerateConfigurationAsync(string bucketName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBucketAccelerateConfigurationResponse> GetBucketAccelerateConfigurationAsync(GetBucketAccelerateConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1618,6 +1662,34 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  ListObjectsV2
+
+
+        /// <summary>
+        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// parameters as selection criteria to return a subset of the objects in a bucket. Note:
+        /// ListObjectsV2 is the revised List Objects API and we recommend you use this revised
+        /// API for new application development.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
+        ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjectsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListObjectsV2Response> ListObjectsV2Async(ListObjectsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListParts
 
 
@@ -1797,6 +1869,31 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketAccelerateConfiguration
+
+
+        /// <summary>
+        /// Sets the accelerate configuration of an existing bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutBucketAccelerateConfigurationResponse> PutBucketAccelerateConfigurationAsync(PutBucketAccelerateConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

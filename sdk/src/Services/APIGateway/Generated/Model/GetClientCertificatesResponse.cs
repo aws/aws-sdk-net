@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// This is the response object from the GetClientCertificates operation.
+    /// Represents a collection of <a>ClientCertificate</a> resources.
     /// </summary>
     public partial class GetClientCertificatesResponse : AmazonWebServiceResponse
     {
@@ -36,7 +36,11 @@ namespace Amazon.APIGateway.Model
         private string _position;
 
         /// <summary>
-        /// Gets and sets the property Items.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
+        /// resources.
+        /// </para>
         /// </summary>
         public List<ClientCertificate> Items
         {

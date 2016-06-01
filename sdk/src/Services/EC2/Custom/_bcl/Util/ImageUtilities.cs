@@ -327,7 +327,7 @@ namespace Amazon.EC2.Util
                     return;
             }
 
-            WebProxy webProxy = null;
+            IWebProxy webProxy = null;
             if (ec2Config != null)
                 webProxy = ec2Config.GetWebProxy();
 
@@ -384,7 +384,7 @@ namespace Amazon.EC2.Util
             }
         }
 
-        private static HttpWebResponse DownloadControlFile(string location, WebProxy proxy)
+        private static HttpWebResponse DownloadControlFile(string location, IWebProxy proxy)
         {
             var request = WebRequest.Create(location) as HttpWebRequest;
             if (proxy != null)

@@ -29,9 +29,9 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableKey operation.
-    /// Sets the state of a master key to disabled, thereby preventing its use for cryptographic
-    /// operations. For more information about how key state affects the use of a master key,
-    /// go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// Sets the state of a customer master key (CMK) to disabled, thereby preventing its
+    /// use for cryptographic operations. For more information about how key state affects
+    /// the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
     /// Service Developer Guide</i>.
     /// </summary>
@@ -42,11 +42,21 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the customer master key. This value can be a globally unique
-        /// identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-        /// <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>
-        /// 
+        /// A unique identifier for the CMK.
         /// </para>
+        ///  
+        /// <para>
+        /// Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string KeyId
         {

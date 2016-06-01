@@ -36,6 +36,7 @@ namespace Amazon.Route53.Model
         private string _callerReference;
         private HealthCheckConfig _healthCheckConfig;
         private long? _healthCheckVersion;
+        private CloudWatchAlarmConfiguration _cloudWatchAlarmConfiguration;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -108,6 +109,25 @@ namespace Amazon.Route53.Model
         internal bool IsSetHealthCheckVersion()
         {
             return this._healthCheckVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchAlarmConfiguration. 
+        /// <para>
+        /// For CLOUDWATCH_METRIC health checks, a complex type that contains information about
+        /// the CloudWatch alarm that you're associating with the health check.
+        /// </para>
+        /// </summary>
+        public CloudWatchAlarmConfiguration CloudWatchAlarmConfiguration
+        {
+            get { return this._cloudWatchAlarmConfiguration; }
+            set { this._cloudWatchAlarmConfiguration = value; }
+        }
+
+        // Check to see if CloudWatchAlarmConfiguration property is set
+        internal bool IsSetCloudWatchAlarmConfiguration()
+        {
+            return this._cloudWatchAlarmConfiguration != null;
         }
 
     }

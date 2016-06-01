@@ -30,8 +30,19 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Represents the output of one of the following actions:
     /// 
-    ///  <ul> <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li> <li> <i>CreateCacheSecurityGroup</i>
-    /// </li> <li> <i>RevokeCacheSecurityGroupIngress</i> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>AuthorizeCacheSecurityGroupIngress</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>CreateCacheSecurityGroup</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>RevokeCacheSecurityGroupIngress</i> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CacheSecurityGroup
     {

@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
         /// Provides the name of the DB parameter group family that this DB parameter group is
-        /// compatible with. 
+        /// compatible with.
         /// </para>
         /// </summary>
         public string DBParameterGroupFamily
@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        /// Provides the name of the DB parameter group. 
+        /// Provides the name of the DB parameter group.
         /// </para>
         /// </summary>
         public string DBParameterGroupName
@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Provides the customer-specified description for this DB parameter group. 
+        /// Provides the customer-specified description for this DB parameter group.
         /// </para>
         /// </summary>
         public string Description

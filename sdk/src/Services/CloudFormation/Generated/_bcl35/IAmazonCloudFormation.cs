@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation
     /// <para>
     /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
     /// information about a specific AWS product, you can find the product's technical documentation
-    /// at <a href="http://docs.aws.amazon.com/documentation/">http://docs.aws.amazon.com/documentation/</a>.
+    /// at <a href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudFormation : IDisposable
@@ -66,7 +66,11 @@ namespace Amazon.CloudFormation
         /// Cancels an update on the specified stack. If the call completes successfully, the
         /// stack rolls back the update and reverts to the previous stack configuration.
         /// 
-        ///  <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.</note>
+        ///  <note> 
+        /// <para>
+        /// You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack service method.</param>
         /// 
@@ -151,6 +155,69 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  CreateChangeSet
+
+
+        /// <summary>
+        /// Creates a list of changes for a stack. AWS CloudFormation generates the change set
+        /// by comparing the stack's information with the information that you submit. A change
+        /// set can help you understand which resources AWS CloudFormation will change and how
+        /// it will change them before you update your stack. Change sets allow you to check before
+        /// you make a change so that you don't delete or replace critical resources.
+        /// 
+        ///  
+        /// <para>
+        /// AWS CloudFormation doesn't make any changes to the stack when you create a change
+        /// set. To make the specified changes, you must execute the change set by using the <a>ExecuteChangeSet</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the call successfully completes, AWS CloudFormation starts creating the change
+        /// set. To check the status of the change set, use the <a>DescribeChangeSet</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateChangeSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// Resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
+        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// Quota for the resource has already been reached.
+        /// </exception>
+        CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChangeSet
+        ///         operation.</returns>
+        IAsyncResult BeginCreateChangeSet(CreateChangeSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateChangeSet.</param>
+        /// 
+        /// <returns>Returns a  CreateChangeSetResult from CloudFormation.</returns>
+        CreateChangeSetResponse EndCreateChangeSet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateStack
 
 
@@ -197,6 +264,54 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  CreateStackResult from CloudFormation.</returns>
         CreateStackResponse EndCreateStack(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteChangeSet
+
+
+        /// <summary>
+        /// Deletes the specified change set. Deleting change sets ensures that no one executes
+        /// the wrong change set.
+        /// 
+        ///  
+        /// <para>
+        /// If the call successfully completes, AWS CloudFormation successfully deleted the change
+        /// set.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChangeSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
+        /// The specified change set cannot be used to update the stack. For example, the change
+        /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
+        /// </exception>
+        DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChangeSet
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteChangeSet(DeleteChangeSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChangeSet.</param>
+        /// 
+        /// <returns>Returns a  DeleteChangeSetResult from CloudFormation.</returns>
+        DeleteChangeSetResponse EndDeleteChangeSet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -277,16 +392,63 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeChangeSet
+
+
+        /// <summary>
+        /// Returns the inputs for the change set and a list of changes that AWS CloudFormation
+        /// will make if you execute the change set. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
+        /// Stacks Using Change Sets</a> in the AWS CloudFormation User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChangeSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
+        /// The specified change set name or ID doesn't exit. To view valid change sets for a
+        /// stack, use the <code>ListChangeSets</code> action.
+        /// </exception>
+        DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSet operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChangeSet
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeChangeSet(DescribeChangeSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeChangeSet.</param>
+        /// 
+        /// <returns>Returns a  DescribeChangeSetResult from CloudFormation.</returns>
+        DescribeChangeSetResponse EndDescribeChangeSet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeStackEvents
 
 
         /// <summary>
-        /// Returns all stack related events for a specified stack. For more information about
-        /// a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
+        /// Returns all stack related events for a specified stack in reverse chronological order.
+        /// For more information about a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
         /// in the AWS CloudFormation User Guide.
         /// 
-        ///  <note>You can list events for stacks that have failed to create or have been deleted
-        /// by specifying the unique stack identifier (stack ID).</note>
+        ///  <note> 
+        /// <para>
+        /// You can list events for stacks that have failed to create or have been deleted by
+        /// specifying the unique stack identifier (stack ID).
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackEvents service method.</param>
         /// 
@@ -371,8 +533,12 @@ namespace Amazon.CloudFormation
         /// If <code>PhysicalResourceId</code> is specified, the associated resources of the stack
         /// that the resource belongs to are returned.
         /// 
-        ///  <note>Only the first 100 resources will be returned. If your stack has more resources
-        /// than this, you should use <code>ListStackResources</code> instead.</note> 
+        ///  <note> 
+        /// <para>
+        /// Only the first 100 resources will be returned. If your stack has more resources than
+        /// this, you should use <code>ListStackResources</code> instead.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For deleted stacks, <code>DescribeStackResources</code> returns resource information
         /// for up to 90 days after the stack has been deleted.
@@ -385,8 +551,12 @@ namespace Amazon.CloudFormation
         /// and <code>PhysicalResourceId</code>, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
         /// CloudFormation User Guide</a>.
         /// </para>
-        ///  <note>A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
-        /// and <code>PhysicalResourceId</code> in the same request.</note>
+        ///  <note> 
+        /// <para>
+        /// A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
+        /// and <code>PhysicalResourceId</code> in the same request.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackResources service method.</param>
         /// 
@@ -504,6 +674,66 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ExecuteChangeSet
+
+
+        /// <summary>
+        /// Updates a stack using the input information that was provided when the specified change
+        /// set was created. After the call successfully completes, AWS CloudFormation starts
+        /// updating the stack. Use the <a>DescribeStacks</a> action to view the status of the
+        /// update.
+        /// 
+        ///  
+        /// <para>
+        /// When you execute a change set, AWS CloudFormation deletes all other change sets associated
+        /// with the stack because they aren't valid for the updated stack.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a stack policy is associated with the stack, AWS CloudFormation enforces the policy
+        /// during the update. You can't specify a temporary stack policy that overrides the current
+        /// policy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteChangeSet service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
+        /// The specified change set name or ID doesn't exit. To view valid change sets for a
+        /// stack, use the <code>ListChangeSets</code> action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
+        /// The specified change set cannot be used to update the stack. For example, the change
+        /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
+        /// </exception>
+        ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteChangeSet operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteChangeSet
+        ///         operation.</returns>
+        IAsyncResult BeginExecuteChangeSet(ExecuteChangeSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteChangeSet.</param>
+        /// 
+        /// <returns>Returns a  ExecuteChangeSetResult from CloudFormation.</returns>
+        ExecuteChangeSetResponse EndExecuteChangeSet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetStackPolicy
 
 
@@ -554,8 +784,11 @@ namespace Amazon.CloudFormation
         /// For deleted stacks, GetTemplate returns the template for up to 90 days after the stack
         /// has been deleted.
         /// </para>
-        ///  <note> If the template does not exist, a <code>ValidationError</code> is returned.
-        /// </note>
+        ///  <note> 
+        /// <para>
+        ///  If the template does not exist, a <code>ValidationError</code> is returned. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// 
@@ -636,6 +869,45 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  GetTemplateSummaryResult from CloudFormation.</returns>
         GetTemplateSummaryResponse EndGetTemplateSummary(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChangeSets
+
+
+        /// <summary>
+        /// Returns the ID and status of each active change set for a stack. For example, AWS
+        /// CloudFormation lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or
+        /// <code>CREATE_PENDING</code> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeSets service method.</param>
+        /// 
+        /// <returns>The response from the ListChangeSets service method, as returned by CloudFormation.</returns>
+        ListChangeSetsResponse ListChangeSets(ListChangeSetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangeSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangeSets operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChangeSets
+        ///         operation.</returns>
+        IAsyncResult BeginListChangeSets(ListChangeSetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChangeSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChangeSets.</param>
+        /// 
+        /// <returns>Returns a  ListChangeSetsResult from CloudFormation.</returns>
+        ListChangeSetsResponse EndListChangeSets(IAsyncResult asyncResult);
 
         #endregion
         

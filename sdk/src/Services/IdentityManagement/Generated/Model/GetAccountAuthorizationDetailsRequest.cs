@@ -29,16 +29,15 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountAuthorizationDetails operation.
-    /// Retrieves information about all IAM users, groups, roles, and policies in your account,
-    /// including their relationships to one another. Use this API to obtain a snapshot of
-    /// the configuration of IAM permissions (users, groups, roles, and policies) in your
+    /// Retrieves information about all IAM users, groups, roles, and policies in your AWS
+    /// account, including their relationships to one another. Use this API to obtain a snapshot
+    /// of the configuration of IAM permissions (users, groups, roles, and policies) in your
     /// account.
     /// 
     ///  
     /// <para>
     /// You can optionally filter the results using the <code>Filter</code> parameter. You
     /// can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
-    /// 
     /// </para>
     /// </summary>
     public partial class GetAccountAuthorizationDetailsRequest : AmazonIdentityManagementServiceRequest
@@ -52,6 +51,11 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A list of entity types (user, group, role, local managed policy, or AWS managed policy)
         /// for filtering the results.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for this parameter is a comma-separated (if more than one) list of strings.
+        /// Each string value in the list must be one of the valid values listed below.
         /// </para>
         /// </summary>
         public List<string> Filter
@@ -99,7 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems

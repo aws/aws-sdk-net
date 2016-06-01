@@ -89,7 +89,11 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property DataType. 
         /// <para>
         /// Amazon SQS supports the following logical data types: String, Number, and Binary.
-        /// In addition, you can append your own custom labels. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
+        /// For the Number data type, you must use StringValue.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also append custom labels. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
         /// Attribute Data Types</a>.
         /// </para>
         /// </summary>

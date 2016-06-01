@@ -671,6 +671,37 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetIdentityMailFromDomainAttributes
+
+        internal GetIdentityMailFromDomainAttributesResponse GetIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request)
+        {
+            var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityMailFromDomainAttributesRequest,GetIdentityMailFromDomainAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityMailFromDomainAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityMailFromDomainAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetIdentityMailFromDomainAttributesResponse> GetIdentityMailFromDomainAttributesAsync(GetIdentityMailFromDomainAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdentityMailFromDomainAttributesRequest,GetIdentityMailFromDomainAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIdentityNotificationAttributes
 
         internal GetIdentityNotificationAttributesResponse GetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request)
@@ -1324,6 +1355,37 @@ namespace Amazon.SimpleEmail
             var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetIdentityFeedbackForwardingEnabledRequest,SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetIdentityMailFromDomain
+
+        internal SetIdentityMailFromDomainResponse SetIdentityMailFromDomain(SetIdentityMailFromDomainRequest request)
+        {
+            var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
+            var unmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
+
+            return Invoke<SetIdentityMailFromDomainRequest,SetIdentityMailFromDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityMailFromDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityMailFromDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetIdentityMailFromDomainResponse> SetIdentityMailFromDomainAsync(SetIdentityMailFromDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
+            var unmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetIdentityMailFromDomainRequest,SetIdentityMailFromDomainResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

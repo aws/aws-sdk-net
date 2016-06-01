@@ -81,9 +81,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("ReplicationGroup", targetDepth))
+                    if (context.TestExpression("ReplicationGroup", targetDepth))
                     {
-                        response.ReplicationGroup = ReplicationGroupUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = ReplicationGroupUnmarshaller.Instance;
+                        response.ReplicationGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

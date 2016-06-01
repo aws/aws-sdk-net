@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// Contains the output of the <a>DescribeHsm</a> action.
+    /// Contains the output of the <a>DescribeHsm</a> operation.
     /// </summary>
     public partial class DescribeHsmResponse : AmazonWebServiceResponse
     {
@@ -201,7 +201,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property ServerCertLastUpdated. 
         /// <para>
-        /// The date and time the server certificate was last updated.
+        /// The date and time that the server certificate was last updated.
         /// </para>
         /// </summary>
         public string ServerCertLastUpdated
@@ -255,7 +255,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property SshKeyLastUpdated. 
         /// <para>
-        /// The date and time the SSH key was last updated.
+        /// The date and time that the SSH key was last updated.
         /// </para>
         /// </summary>
         public string SshKeyLastUpdated
@@ -327,7 +327,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The identifier of the subnet the HSM is in.
+        /// The identifier of the subnet that the HSM is in.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -379,10 +379,7 @@ namespace Amazon.CloudHSM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionType. 
-        /// <para>
-        /// The subscription type.
-        /// </para>
+        /// Gets and sets the property SubscriptionType.
         /// </summary>
         public SubscriptionType SubscriptionType
         {

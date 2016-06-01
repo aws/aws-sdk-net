@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CertificateIdentifier. 
         /// <para>
-        /// The unique key that identifies a certificate. 
+        /// The unique key that identifies a certificate.
         /// </para>
         /// </summary>
         public string CertificateIdentifier
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CertificateType. 
         /// <para>
-        /// The type of the certificate. 
+        /// The type of the certificate.
         /// </para>
         /// </summary>
         public string CertificateType
@@ -77,7 +77,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Thumbprint. 
         /// <para>
-        /// The thumbprint of the certificate. 
+        /// The thumbprint of the certificate.
         /// </para>
         /// </summary>
         public string Thumbprint
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ValidFrom. 
         /// <para>
-        /// The starting date from which the certificate is valid. 
+        /// The starting date from which the certificate is valid.
         /// </para>
         /// </summary>
         public DateTime ValidFrom
@@ -113,7 +113,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ValidTill. 
         /// <para>
-        /// The final date that the certificate continues to be valid. 
+        /// The final date that the certificate continues to be valid.
         /// </para>
         /// </summary>
         public DateTime ValidTill

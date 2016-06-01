@@ -36,6 +36,12 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
+    /// In addition to maintaining the desired count of tasks in your service, you can optionally
+    /// run your service behind a load balancer. The load balancer distributes traffic across
+    /// the tasks that are associated with the service.
+    /// </para>
+    ///  
+    /// <para>
     /// You can optionally specify a deployment configuration for your service. During a deployment
     /// (which is triggered by changing the task definition of a service with an <a>UpdateService</a>
     /// operation), the service scheduler uses the <code>minimumHealthyPercent</code> and
@@ -142,7 +148,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DeploymentConfiguration. 
         /// <para>
         /// Optional deployment parameters that control how many tasks run during the deployment
-        /// and the ordering of stopping and starting tasks. 
+        /// and the ordering of stopping and starting tasks.
         /// </para>
         /// </summary>
         public DeploymentConfiguration DeploymentConfiguration
@@ -199,9 +205,20 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The name or full Amazon Resource Name (ARN) of the IAM role that allows your Amazon
-        /// ECS container agent to make calls to your load balancer on your behalf. This parameter
-        /// is only required if you are using a load balancer with your service.
+        /// The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS
+        /// to make calls to your load balancer on your behalf. This parameter is required if
+        /// you are using a load balancer with your service. If you specify the <code>role</code>
+        /// parameter, you must also specify a load balancer object with the <code>loadBalancers</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your specified role has a path other than <code>/</code>, then you must either
+        /// specify the full role ARN (this is recommended) or prefix the role name with the path.
+        /// For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
+        /// then you would specify <code>/foo/bar</code> as the role name. For more information,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+        /// Names and Paths</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         public string Role

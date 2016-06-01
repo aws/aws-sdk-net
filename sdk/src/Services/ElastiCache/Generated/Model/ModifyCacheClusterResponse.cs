@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Contains all of the attributes of a specific cache cluster.
+    /// This is the response object from the ModifyCacheCluster operation.
     /// </summary>
     public partial class ModifyCacheClusterResponse : AmazonWebServiceResponse
     {
-        private CacheCluster _response;
+        private CacheCluster _cacheCluster;
 
         /// <summary>
-        /// Gets and sets the CacheCluster property.
+        /// Gets and sets the property CacheCluster.
         /// </summary>
         public CacheCluster CacheCluster
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._cacheCluster; }
+            set { this._cacheCluster = value; }
         }
+
+        // Check to see if CacheCluster property is set
+        internal bool IsSetCacheCluster()
+        {
+            return this._cacheCluster != null;
+        }
+
     }
 }

@@ -29,16 +29,16 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkingStorage operation.
-    /// This operation returns information about the working storage of a gateway. This operation
-    /// is supported only for the gateway-stored volume architecture. This operation is deprecated
-    /// in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.
+    /// Returns information about the working storage of a gateway. This operation is supported
+    /// only for the gateway-stored volume architecture. This operation is deprecated in cached-volumes
+    /// API version (20120630). Use DescribeUploadBuffer instead.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer
     /// operation to add upload buffer to a stored-volume gateway.
     /// </para>
-    /// </note> 
+    ///  </note> 
     /// <para>
     /// The response includes disk IDs that are configured as working storage, and it includes
     /// the amount of working storage allocated and used.

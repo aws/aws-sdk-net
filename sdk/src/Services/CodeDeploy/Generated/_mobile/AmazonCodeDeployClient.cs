@@ -38,19 +38,19 @@ namespace Amazon.CodeDeploy
     ///
     /// AWS CodeDeploy <b>Overview</b> 
     /// <para>
-    /// This is the AWS CodeDeploy API Reference. This guide provides descriptions of the
-    /// AWS CodeDeploy APIs. For additional information, see the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
+    /// This reference guide provides descriptions of the AWS CodeDeploy APIs. For more information
+    /// about AWS CodeDeploy, see the <a href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS
     /// CodeDeploy User Guide</a>.
     /// </para>
     ///  <b>Using the APIs</b> 
     /// <para>
-    /// You can use the AWS CodeDeploy APIs to work with the following items:
+    /// You can use the AWS CodeDeploy APIs to work with the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Applications are unique identifiers that AWS CodeDeploy uses to ensure that the correct
-    /// combinations of revisions, deployment configurations, and deployment groups are being
-    /// referenced during deployments.
+    /// Applications are unique identifiers used by AWS CodeDeploy to ensure the correct combinations
+    /// of revisions, deployment configurations, and deployment groups are being referenced
+    /// during deployments.
     /// </para>
     ///  
     /// <para>
@@ -58,8 +58,8 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Deployment configurations are sets of deployment rules and deployment success and
-    /// failure conditions that AWS CodeDeploy uses during deployments.
+    /// Deployment configurations are sets of deployment rules and success and failure conditions
+    /// used by AWS CodeDeploy during deployments.
     /// </para>
     ///  
     /// <para>
@@ -82,7 +82,7 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  
     /// <para>
-    /// You can use the AWS CodeDeploy APIs to get and list instances.
+    /// You can use the AWS CodeDeploy APIs to get and list instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -94,14 +94,14 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Application revisions are archive files that are stored in Amazon S3 buckets or GitHub
-    /// repositories. These revisions contain source content (such as source code, web pages,
-    /// executable files, any deployment scripts, and similar) along with an Application Specification
-    /// file (AppSpec file). (The AppSpec file is unique to AWS CodeDeploy; it defines a series
-    /// of deployment actions that you want AWS CodeDeploy to execute.) An application revision
-    /// is uniquely identified by its Amazon S3 object key and its ETag, version, or both
-    /// (for application revisions that are stored in Amazon S3 buckets) or by its repository
-    /// name and commit ID (for applications revisions that are stored in GitHub repositories).
+    /// Application revisions are archive files stored in Amazon S3 buckets or GitHub repositories.
+    /// These revisions contain source content (such as source code, web pages, executable
+    /// files, and deployment scripts) along with an application specification (AppSpec) file.
+    /// (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment actions you
+    /// want AWS CodeDeploy to execute.) Ffor application revisions stored in Amazon S3 buckets,
+    /// an application revision is uniquely identified by its Amazon S3 object key and its
+    /// ETag, version, or both. For application revisions stored in GitHub repositories, an
+    /// application revision is uniquely identified by its repository name and commit ID.
     /// Application revisions are deployed through deployment groups.
     /// </para>
     ///  
@@ -390,6 +390,37 @@ namespace Amazon.CodeDeploy
             var unmarshaller = BatchGetApplicationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetApplicationsRequest,BatchGetApplicationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetDeploymentGroups
+
+        internal BatchGetDeploymentGroupsResponse BatchGetDeploymentGroups(BatchGetDeploymentGroupsRequest request)
+        {
+            var marshaller = new BatchGetDeploymentGroupsRequestMarshaller();
+            var unmarshaller = BatchGetDeploymentGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDeploymentGroupsRequest,BatchGetDeploymentGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDeploymentGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<BatchGetDeploymentGroupsResponse> BatchGetDeploymentGroupsAsync(BatchGetDeploymentGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchGetDeploymentGroupsRequestMarshaller();
+            var unmarshaller = BatchGetDeploymentGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetDeploymentGroupsRequest,BatchGetDeploymentGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

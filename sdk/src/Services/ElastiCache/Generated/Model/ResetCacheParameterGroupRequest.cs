@@ -49,7 +49,7 @@ namespace Amazon.ElastiCache.Model
         /// Instantiates ResetCacheParameterGroupRequest with the parameterized properties
         /// </summary>
         /// <param name="cacheParameterGroupName">The name of the cache parameter group to reset.</param>
-        /// <param name="parameterNameValues">An array of parameter names to be reset. If you are not resetting the entire cache parameter group, you must specify at least one parameter name.</param>
+        /// <param name="parameterNameValues">An array of parameter names to reset to their default values. If <i>ResetAllParameters</i> is <i>false</i>, you must specify the name of at least one parameter to reset.</param>
         public ResetCacheParameterGroupRequest(string cacheParameterGroupName, List<ParameterNameValue> parameterNameValues)
         {
             _cacheParameterGroupName = cacheParameterGroupName;
@@ -77,8 +77,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ParameterNameValues. 
         /// <para>
-        /// An array of parameter names to be reset. If you are not resetting the entire cache
-        /// parameter group, you must specify at least one parameter name.
+        /// An array of parameter names to reset to their default values. If <i>ResetAllParameters</i>
+        /// is <i>false</i>, you must specify the name of at least one parameter to reset.
         /// </para>
         /// </summary>
         public List<ParameterNameValue> ParameterNameValues
@@ -96,12 +96,13 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ResetAllParameters. 
         /// <para>
-        /// If <i>true</i>, all parameters in the cache parameter group will be reset to default
-        /// values. If <i>false</i>, no such action occurs.
+        /// If <i>true</i>, all parameters in the cache parameter group will be reset to their
+        /// default values. If <i>false</i>, only the parameters listed by <i>ParameterNameValues</i>
+        /// are reset to their default values.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
+        /// Valid values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool ResetAllParameters

@@ -34,7 +34,23 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class DeleteTrustRequest : AmazonDirectoryServiceRequest
     {
+        private bool? _deleteAssociatedConditionalForwarder;
         private string _trustId;
+
+        /// <summary>
+        /// Gets and sets the property DeleteAssociatedConditionalForwarder.
+        /// </summary>
+        public bool DeleteAssociatedConditionalForwarder
+        {
+            get { return this._deleteAssociatedConditionalForwarder.GetValueOrDefault(); }
+            set { this._deleteAssociatedConditionalForwarder = value; }
+        }
+
+        // Check to see if DeleteAssociatedConditionalForwarder property is set
+        internal bool IsSetDeleteAssociatedConditionalForwarder()
+        {
+            return this._deleteAssociatedConditionalForwarder.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property TrustId. The Trust ID of the trust relationship to be deleted.

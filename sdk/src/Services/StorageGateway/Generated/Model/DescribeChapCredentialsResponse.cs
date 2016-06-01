@@ -44,21 +44,21 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <b>InitiatorName</b>: The iSCSI initiator that connects to the target.
+        ///  <b>InitiatorName</b>: The iSCSI initiator that connects to the target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example,
+        ///  <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example,
         /// the Windows client) must provide to participate in mutual CHAP with the target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to
+        ///  <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to
         /// participate in mutual CHAP with the initiator (e.g. Windows client).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.
+        ///  <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.
         /// </para>
         ///  </li> </ul>
         /// </summary>

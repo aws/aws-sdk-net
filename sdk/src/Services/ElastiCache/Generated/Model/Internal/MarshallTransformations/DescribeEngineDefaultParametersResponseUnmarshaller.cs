@@ -81,9 +81,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("EngineDefaults", targetDepth))
+                    if (context.TestExpression("EngineDefaults", targetDepth))
                     {
-                        response.EngineDefaults = EngineDefaultsUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = EngineDefaultsUnmarshaller.Instance;
+                        response.EngineDefaults = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

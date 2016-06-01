@@ -34,6 +34,57 @@ namespace Amazon.CloudHSM
     {
 
         
+        #region  AddTagsToResource
+
+
+        /// <summary>
+        /// Adds or overwrites one or more tags for the specified AWS CloudHSM resource.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a key and a value. Tag keys must be unique to each resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
+        /// 
+        /// <returns>The response from the AddTagsToResource service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation on AmazonCloudHSMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
+        ///         operation.</returns>
+        IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddTagsToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToResource.</param>
+        /// 
+        /// <returns>Returns a  AddTagsToResourceResult from CloudHSM.</returns>
+        AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateHapg
 
 
@@ -103,8 +154,22 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Creates an uninitialized HSM instance. Running this command provisions an HSM appliance
-        /// and will result in charges to your AWS account for the HSM.
+        /// Creates an uninitialized HSM instance.
+        /// 
+        ///  
+        /// <para>
+        /// There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a>
+        /// operation. If you accidentally provision an HSM and want to request a refund, delete
+        /// the instance using the <a>DeleteHsm</a> operation, go to the <a href="https://console.aws.amazon.com/support/home#/">AWS
+        /// Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// It can take up to 20 minutes to create and provision an HSM. You can monitor the status
+        /// of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized
+        /// when the status changes to <code>RUNNING</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHsm service method.</param>
         /// 
@@ -259,7 +324,7 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
+        /// Deletes an HSM. After completion, this operation cannot be undone and your key material
         /// cannot be recovered.
         /// </summary>
         /// <param name="hsmArn">The ARN of the HSM to delete.</param>
@@ -277,7 +342,7 @@ namespace Amazon.CloudHSM
         DeleteHsmResponse DeleteHsm(string hsmArn);
 
         /// <summary>
-        /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
+        /// Deletes an HSM. After completion, this operation cannot be undone and your key material
         /// cannot be recovered.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHsm service method.</param>
@@ -900,6 +965,52 @@ namespace Amazon.CloudHSM
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of all tags for the specified AWS CloudHSM resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonCloudHSMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from CloudHSM.</returns>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyHapg
 
 
@@ -951,6 +1062,15 @@ namespace Amazon.CloudHSM
 
         /// <summary>
         /// Modifies an HSM.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation can result in the HSM being offline for up to 15 minutes while the
+        /// AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should
+        /// ensure that your AWS CloudHSM service is configured for high availability, and consider
+        /// executing this operation during a maintenance window.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyHsm service method.</param>
         /// 
@@ -1035,6 +1155,58 @@ namespace Amazon.CloudHSM
         /// 
         /// <returns>Returns a  ModifyLunaClientResult from CloudHSM.</returns>
         ModifyLunaClientResponse EndModifyLunaClient(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RemoveTagsFromResource
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified AWS CloudHSM resource.
+        /// 
+        ///  
+        /// <para>
+        /// To remove a tag, specify only the tag key to remove (not the value). To overwrite
+        /// the value for an existing tag, use <a>AddTagsToResource</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTagsFromResource service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation on AmazonCloudHSMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
+        ///         operation.</returns>
+        IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveTagsFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromResource.</param>
+        /// 
+        /// <returns>Returns a  RemoveTagsFromResourceResult from CloudHSM.</returns>
+        RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult);
 
         #endregion
         

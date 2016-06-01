@@ -32,11 +32,31 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class RedshiftDestinationDescription
     {
+        private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private string _clusterJDBCURL;
         private CopyCommand _copyCommand;
+        private RedshiftRetryOptions _retryOptions;
         private string _roleARN;
         private S3DestinationDescription _s3DestinationDescription;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLoggingOptions. 
+        /// <para>
+        /// Describes CloudWatch logging options for your delivery stream.
+        /// </para>
+        /// </summary>
+        public CloudWatchLoggingOptions CloudWatchLoggingOptions
+        {
+            get { return this._cloudWatchLoggingOptions; }
+            set { this._cloudWatchLoggingOptions = value; }
+        }
+
+        // Check to see if CloudWatchLoggingOptions property is set
+        internal bool IsSetCloudWatchLoggingOptions()
+        {
+            return this._cloudWatchLoggingOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterJDBCURL. 
@@ -72,6 +92,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetCopyCommand()
         {
             return this._copyCommand != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryOptions. 
+        /// <para>
+        /// Configures retry behavior in the event that Firehose is unable to deliver documents
+        /// to Amazon Redshift. Default value is 3600 (60 minutes).
+        /// </para>
+        /// </summary>
+        public RedshiftRetryOptions RetryOptions
+        {
+            get { return this._retryOptions; }
+            set { this._retryOptions = value; }
+        }
+
+        // Check to see if RetryOptions property is set
+        internal bool IsSetRetryOptions()
+        {
+            return this._retryOptions != null;
         }
 
         /// <summary>

@@ -21,6 +21,9 @@ namespace Amazon.Runtime
     /// <summary>
     /// Information about the request.
     /// </summary>
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
     public class ResponseMetadata
     {
         private string requestIdField;

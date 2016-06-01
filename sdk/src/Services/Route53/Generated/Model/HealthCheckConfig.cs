@@ -45,6 +45,9 @@ namespace Amazon.Route53.Model
         private int? _healthThreshold;
         private List<string> _childHealthChecks = new List<string>();
         private bool? _enableSNI;
+        private List<string> _regions = new List<string>();
+        private AlarmIdentifier _alarmIdentifier;
+        private InsufficientDataHealthStatus _insufficientDataHealthStatus;
 
         /// <summary>
         /// Gets and sets the property IPAddress. 
@@ -88,7 +91,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of health check to be performed. Currently supported types are TCP, HTTP,
-        /// HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+        /// HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and CLOUDWATCH_METRIC.
         /// </para>
         /// </summary>
         public HealthCheckType Type
@@ -310,6 +313,65 @@ namespace Amazon.Route53.Model
         internal bool IsSetEnableSNI()
         {
             return this._enableSNI.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// A list of <code>HealthCheckRegion</code> values that you want Amazon Route 53 to use
+        /// to perform health checks for the specified endpoint. You must specify at least three
+        /// regions.
+        /// </para>
+        /// </summary>
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && this._regions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlarmIdentifier. 
+        /// <para>
+        /// A complex type that contains information to uniquely identify the CloudWatch alarm
+        /// that you're associating with a Route 53 health check.
+        /// </para>
+        /// </summary>
+        public AlarmIdentifier AlarmIdentifier
+        {
+            get { return this._alarmIdentifier; }
+            set { this._alarmIdentifier = value; }
+        }
+
+        // Check to see if AlarmIdentifier property is set
+        internal bool IsSetAlarmIdentifier()
+        {
+            return this._alarmIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsufficientDataHealthStatus. 
+        /// <para>
+        /// The status of the health check when CloudWatch has insufficient data about the state
+        /// of associated alarm. Valid values are <code>Healthy</code>, <code>Unhealthy</code>
+        /// and <code>LastKnownStatus</code>.
+        /// </para>
+        /// </summary>
+        public InsufficientDataHealthStatus InsufficientDataHealthStatus
+        {
+            get { return this._insufficientDataHealthStatus; }
+            set { this._insufficientDataHealthStatus = value; }
+        }
+
+        // Check to see if InsufficientDataHealthStatus property is set
+        internal bool IsSetInsufficientDataHealthStatus()
+        {
+            return this._insufficientDataHealthStatus != null;
         }
 
     }

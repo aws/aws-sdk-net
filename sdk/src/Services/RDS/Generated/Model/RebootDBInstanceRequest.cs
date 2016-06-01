@@ -34,21 +34,21 @@ namespace Amazon.RDS.Model
     /// pending. Rebooting a DB instance results in a momentary outage of the instance, during
     /// which the DB instance status is set to rebooting. If the RDS instance is configured
     /// for MultiAZ, it is possible that the reboot will be conducted through a failover.
-    /// An Amazon RDS event is created when the reboot is completed. 
+    /// An Amazon RDS event is created when the reboot is completed.
     /// 
     ///  
     /// <para>
-    ///  If your DB instance is deployed in multiple Availability Zones, you can force a failover
+    /// If your DB instance is deployed in multiple Availability Zones, you can force a failover
     /// from one AZ to the other during the reboot. You might force a failover to test the
     /// availability of your DB instance deployment or to restore operations to the original
-    /// AZ after a failover occurs. 
+    /// AZ after a failover occurs.
     /// </para>
     ///  
     /// <para>
-    ///  The time required to reboot is a function of the specific database engine's crash
+    /// The time required to reboot is a function of the specific database engine's crash
     /// recovery process. To improve the reboot time, we recommend that you reduce database
     /// activities as much as possible during the reboot process to reduce rollback activity
-    /// for in-transit transactions. 
+    /// for in-transit transactions.
     /// </para>
     /// </summary>
     public partial class RebootDBInstanceRequest : AmazonRDSRequest
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RebootDBInstanceRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbInstanceIdentifier"> The DB instance identifier. This parameter is stored as a lowercase string.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
         public RebootDBInstanceRequest(string dbInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -73,15 +73,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  The DB instance identifier. This parameter is stored as a lowercase string. 
+        /// The DB instance identifier. This parameter is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBInstanceIdentifier
         {

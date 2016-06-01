@@ -58,7 +58,7 @@ namespace Amazon.WAF.Model
         /// <para>
         /// A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code>
         /// to get information about a <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>),
-        /// update a <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>,
+        /// update a <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
         /// insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one
         /// from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a <code>SqlInjectionMatchSet</code>
         /// from AWS WAF (see <a>DeleteSqlInjectionMatchSet</a>).

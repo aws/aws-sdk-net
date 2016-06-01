@@ -67,6 +67,10 @@ namespace Amazon.S3.Util
             PostFormDataAccessKeyId = "AWSAccessKeyId",
             PostFormDataPolicy = "Policy",
             PostFormDataSignature = "Signature",
+            PostFormDataXAmzSignature = "x-amz-signature",
+            PostFormDataXAmzAlgorithm = "x-amz-algorithm",
+            PostFormDataXAmzCredential = "x-amz-credential",
+            PostFormDataXAmzDate = "x-amz-date",
             PostFormDataSecurityToken = "x-amz-security-token";
 
         // Commonly used static strings

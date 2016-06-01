@@ -130,6 +130,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.RunningInstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ShrinkPolicy", targetDepth))
+                {
+                    var unmarshaller = ShrinkPolicyUnmarshaller.Instance;
+                    unmarshalledObject.ShrinkPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = InstanceGroupStatusUnmarshaller.Instance;

@@ -83,7 +83,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property VirtualMFADevices. 
         /// <para>
         ///  The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code>
-        /// value that was passed in the request. 
+        /// value that was passed in the request.
         /// </para>
         /// </summary>
         public List<VirtualMFADevice> VirtualMFADevices

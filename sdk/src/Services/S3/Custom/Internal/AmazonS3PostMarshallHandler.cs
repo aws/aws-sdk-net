@@ -33,6 +33,15 @@ namespace Amazon.S3.Internal
 {
     public class AmazonS3PostMarshallHandler : PipelineHandler
     {
+        private static HashSet<Type> UnsupportedAccelerateRequestTypes = new HashSet<Type>
+        {
+           typeof(ListBucketsRequest),
+           typeof(PutBucketRequest),
+           typeof(DeleteBucketRequest),
+           typeof(CopyObjectRequest),
+           typeof(CopyPartRequest)
+        };
+
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -132,12 +141,49 @@ namespace Amazon.S3.Internal
                     request.CanonicalResourcePrefix = canonicalBucketName;
                 }
             }
+                        
+            if (s3Config.UseAccelerateEndpoint)
+            {
+                // Validate if bucket name is accelerate compatible and enable acceleration by using
+                // Accelerate endpoint for this request
+
+                if (!bucketIsDnsCompatible || BucketNameContainsPeriod(bucketName))
+                {
+                    throw new AmazonClientException(
+                        @"S3 accelerate is enabled for this request but the bucket name is not accelerate compatible." +
+                          " The bucket name must be DNS compatible (http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)" +
+                          " and must not contain any period (.) characters to be accelerate compatible.");
+                }
+
+                var originalRequest = request.OriginalRequest;
+                bool accelerateSupportedApi = !UnsupportedAccelerateRequestTypes.Contains(originalRequest.GetType());
+
+                // Skip requests which are not supported                 
+                if (accelerateSupportedApi)
+                {
+                    request.Endpoint = GetAccelerateEndpoint(bucketName, config.UseHttp);
+
+                    if (request.UseSigV4 && s3Config.RegionEndpoint != null)
+                    {
+                        request.AlternateEndpoint = s3Config.RegionEndpoint;
+                    }                    
+                }
+            }
 
             // Some parameters should not be sent over HTTP, just HTTPS
             if (isHttp)
             {
                 ValidateHttpsOnlyHeaders(request);
             }
+        }
+
+        private static Uri GetAccelerateEndpoint(string bucketName, bool useHttp)
+        {
+            var url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}.{2}", 
+                useHttp ? "http://" : "https://", 
+                bucketName,
+                AmazonS3Config.AccelerateEndpoint));
+            return url;
         }
 
         private static void ValidateHttpsOnlyHeaders(IRequest request)
@@ -251,6 +297,12 @@ namespace Amazon.S3.Internal
                 return false;
 
             return true;
+        }
+
+        
+        public static bool BucketNameContainsPeriod(string bucketName)
+        {
+            return bucketName.IndexOf(".", StringComparison.Ordinal) >= 0;
         }
 
         // Returns true if string toCheck contains any of strings in values

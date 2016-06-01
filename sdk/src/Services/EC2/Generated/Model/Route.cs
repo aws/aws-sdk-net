@@ -174,10 +174,20 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Describes how the route was created.
         /// </para>
-        ///  <ul> <li><code>CreateRouteTable</code> indicates that route was automatically created
-        /// when the route table was created.</li> <li><code>CreateRoute</code> indicates that
-        /// the route was manually added to the route table.</li> <li><code>EnableVgwRoutePropagation</code>
-        /// indicates that the route was propagated by route propagation.</li> </ul>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>CreateRouteTable</code> - The route was automatically created when the route
+        /// table was created.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>CreateRoute</code> - The route was manually added to the route table.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
+        /// </para>
+        /// </li> </ul>
         /// </summary>
         public RouteOrigin Origin
         {

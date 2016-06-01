@@ -29,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServerCertificate operation.
-    /// Updates the name and/or the path of the specified server certificate.
+    /// Updates the name and/or the path of the specified server certificate stored in IAM.
     /// 
     ///  
     /// <para>
@@ -37,15 +37,22 @@ namespace Amazon.IdentityManagement.Model
     /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
     /// with Server Certificates</a> in the <i>IAM User Guide</i>.
     /// </para>
-    ///  <important>You should understand the implications of changing a server certificate's
-    /// path or name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts">Renaming
-    /// a Server Certificate</a> in the <i>IAM User Guide</i>.</important> <note>To change
-    /// a server certificate name the requester must have appropriate permissions on both
-    /// the source object and the target object. For example, to change the name from ProductionCert
-    /// to ProdCert, the entity making the request must have permission on ProductionCert
-    /// and ProdCert, or must have permission on all (*). For more information about permissions,
-    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a>
-    /// in the <i>IAM User Guide</i>. </note>
+    ///  <important> 
+    /// <para>
+    /// You should understand the implications of changing a server certificate's path or
+    /// name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts">Renaming
+    /// a Server Certificate</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  </important> <note> 
+    /// <para>
+    /// To change a server certificate name the requester must have appropriate permissions
+    /// on both the source object and the target object. For example, to change the name from
+    /// "ProductionCert" to "ProdCert", the entity making the request must have permission
+    /// on "ProductionCert" and "ProdCert", or must have permission on all (*). For more information
+    /// about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+    /// Management</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateServerCertificateRequest : AmazonIdentityManagementServiceRequest
     {
@@ -61,7 +68,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateServerCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="serverCertificateName">The name of the server certificate that you want to update.</param>
+        /// <param name="serverCertificateName">The name of the server certificate that you want to update. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public UpdateServerCertificateRequest(string serverCertificateName)
         {
             _serverCertificateName = serverCertificateName;
@@ -70,8 +77,16 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property NewPath. 
         /// <para>
-        ///  The new path for the server certificate. Include this only if you are updating the
-        /// server certificate's path. 
+        /// The new path for the server certificate. Include this only if you are updating the
+        /// server certificate's path.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of either a forward slash (/) by itself or a
+        /// string that must begin and end with forward slashes, containing any ASCII character
+        /// from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
+        /// digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string NewPath
@@ -89,8 +104,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property NewServerCertificateName. 
         /// <para>
-        ///  The new name for the server certificate. Include this only if you are updating the
+        /// The new name for the server certificate. Include this only if you are updating the
         /// server certificate's name. The name of the certificate cannot contain any spaces.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string NewServerCertificateName
@@ -109,6 +130,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ServerCertificateName. 
         /// <para>
         /// The name of the server certificate that you want to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string ServerCertificateName

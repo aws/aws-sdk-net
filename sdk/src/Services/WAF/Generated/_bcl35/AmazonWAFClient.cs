@@ -1191,6 +1191,111 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  CreateXssMatchSet
+
+        /// <summary>
+        /// Creates an <a>XssMatchSet</a>, which you use to allow, block, or count requests that
+        /// contain cross-site scripting attacks in the specified part of web requests. AWS WAF
+        /// searches for character sequences that are likely to be malicious strings.
+        /// 
+        ///  
+        /// <para>
+        /// To create and configure an <code>XssMatchSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
+        /// <code>ChangeToken</code> parameter of a <code>CreateXssMatchSet</code> request.</li>
+        /// <li>Submit a <code>CreateXssMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
+        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
+        /// of an <a>UpdateXssMatchSet</a> request.</li> <li>Submit an <a>UpdateXssMatchSet</a>
+        /// request to specify the parts of web requests in which you want to allow, block, or
+        /// count cross-site scripting attacks.</li> </ol> 
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateXssMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateXssMatchSet service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFDisallowedNameException">
+        /// The name specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
+        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
+        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
+        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
+        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
+        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
+        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
+        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
+        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+        /// value for <code>Data</code>.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        public CreateXssMatchSetResponse CreateXssMatchSet(CreateXssMatchSetRequest request)
+        {
+            var marshaller = new CreateXssMatchSetRequestMarshaller();
+            var unmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateXssMatchSetRequest,CreateXssMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateXssMatchSet operation on AmazonWAFClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateXssMatchSet
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateXssMatchSet(CreateXssMatchSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateXssMatchSetRequestMarshaller();
+            var unmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateXssMatchSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateXssMatchSet.</param>
+        /// 
+        /// <returns>Returns a  CreateXssMatchSetResult from WAF.</returns>
+        public  CreateXssMatchSetResponse EndCreateXssMatchSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateXssMatchSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteByteMatchSet
 
         /// <summary>
@@ -2077,6 +2182,104 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  DeleteXssMatchSet
+
+        /// <summary>
+        /// Permanently deletes an <a>XssMatchSet</a>. You can't delete an <code>XssMatchSet</code>
+        /// if it's still used in any <code>Rules</code> or if it still contains any <a>XssMatchTuple</a>
+        /// objects.
+        /// 
+        ///  
+        /// <para>
+        /// If you just want to remove an <code>XssMatchSet</code> from a <code>Rule</code>, use
+        /// <a>UpdateRule</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform the following
+        /// steps:
+        /// </para>
+        ///  <ol> <li>Update the <code>XssMatchSet</code> to remove filters, if any. For more
+        /// information, see <a>UpdateXssMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to get
+        /// the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteXssMatchSet</code>
+        /// request.</li> <li>Submit a <code>DeleteXssMatchSet</code> request.</li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteXssMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteXssMatchSet service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
+        /// The operation failed because you tried to delete an object that isn't empty. For example:
+        /// 
+        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
+        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
+        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
+        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
+        /// more IP addresses.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
+        /// The operation failed because you tried to delete an object that is still in use. For
+        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
+        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
+        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        public DeleteXssMatchSetResponse DeleteXssMatchSet(DeleteXssMatchSetRequest request)
+        {
+            var marshaller = new DeleteXssMatchSetRequestMarshaller();
+            var unmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteXssMatchSetRequest,DeleteXssMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteXssMatchSet operation on AmazonWAFClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteXssMatchSet
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteXssMatchSet(DeleteXssMatchSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteXssMatchSetRequestMarshaller();
+            var unmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteXssMatchSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteXssMatchSet.</param>
+        /// 
+        /// <returns>Returns a  DeleteXssMatchSetResult from WAF.</returns>
+        public  DeleteXssMatchSetResponse EndDeleteXssMatchSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteXssMatchSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetByteMatchSet
 
         /// <summary>
@@ -2833,6 +3036,67 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  GetXssMatchSet
+
+        /// <summary>
+        /// Returns the <a>XssMatchSet</a> that is specified by <code>XssMatchSetId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetXssMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the GetXssMatchSet service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        public GetXssMatchSetResponse GetXssMatchSet(GetXssMatchSetRequest request)
+        {
+            var marshaller = new GetXssMatchSetRequestMarshaller();
+            var unmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetXssMatchSetRequest,GetXssMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetXssMatchSet operation on AmazonWAFClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetXssMatchSet
+        ///         operation.</returns>
+        public IAsyncResult BeginGetXssMatchSet(GetXssMatchSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetXssMatchSetRequestMarshaller();
+            var unmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetXssMatchSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetXssMatchSet.</param>
+        /// 
+        /// <returns>Returns a  GetXssMatchSetResult from WAF.</returns>
+        public  GetXssMatchSetResponse EndGetXssMatchSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetXssMatchSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListByteMatchSets
 
         /// <summary>
@@ -3177,6 +3441,64 @@ namespace Amazon.WAF
         public  ListWebACLsResponse EndListWebACLs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWebACLsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListXssMatchSets
+
+        /// <summary>
+        /// Returns an array of <a>XssMatchSet</a> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListXssMatchSets service method.</param>
+        /// 
+        /// <returns>The response from the ListXssMatchSets service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        public ListXssMatchSetsResponse ListXssMatchSets(ListXssMatchSetsRequest request)
+        {
+            var marshaller = new ListXssMatchSetsRequestMarshaller();
+            var unmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListXssMatchSetsRequest,ListXssMatchSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListXssMatchSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListXssMatchSets operation on AmazonWAFClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListXssMatchSets
+        ///         operation.</returns>
+        public IAsyncResult BeginListXssMatchSets(ListXssMatchSetsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListXssMatchSetsRequestMarshaller();
+            var unmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListXssMatchSetsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListXssMatchSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListXssMatchSets.</param>
+        /// 
+        /// <returns>Returns a  ListXssMatchSetsResult from WAF.</returns>
+        public  ListXssMatchSetsResponse EndListXssMatchSets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListXssMatchSetsResponse>(asyncResult);
         }
 
         #endregion
@@ -4563,6 +4885,149 @@ namespace Amazon.WAF
         public  UpdateWebACLResponse EndUpdateWebACL(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateWebACLResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateXssMatchSet
+
+        /// <summary>
+        /// Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an <a>XssMatchSet</a>.
+        /// For each <code>XssMatchTuple</code> object, you specify the following values:
+        /// 
+        ///  <ul> <li><code>Action</code>: Whether to insert the object into or delete the object
+        /// from the array. To change a <code>XssMatchTuple</code>, you delete the existing object
+        /// and add a new one.</li> <li><code>FieldToMatch</code>: The part of web requests that
+        /// you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the name
+        /// of the header.</li> <li><code>TextTransformation</code>: Which text transformation,
+        /// if any, to perform on the web request before inspecting the request for cross-site
+        /// scripting attacks.</li> </ul> 
+        /// <para>
+        /// You use <code>XssMatchSet</code> objects to specify which CloudFront requests you
+        /// want to allow, block, or count. For example, if you're receiving requests that contain
+        /// cross-site scripting attacks in the request body and you want to block the requests,
+        /// you can create an <code>XssMatchSet</code> with the applicable settings, and then
+        /// configure AWS WAF to block the requests. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create and configure an <code>XssMatchSet</code>, perform the following steps:
+        /// </para>
+        ///  <ol> <li>Submit a <a>CreateXssMatchSet</a> request.</li> <li>Use <a>GetChangeToken</a>
+        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
+        /// of an <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateXssMatchSet</code>
+        /// request to specify the parts of web requests that you want AWS WAF to inspect for
+        /// cross-site scripting attacks.</li> </ol> 
+        /// <para>
+        /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
+        /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateXssMatchSet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateXssMatchSet service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidAccountException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// an invalid account identifier.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
+        /// The operation failed because there was nothing to do. For example:
+        /// 
+        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
+        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
+        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
+        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
+        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
+        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
+        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
+        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
+        /// in the specified <code>WebACL</code>.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
+        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
+        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
+        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
+        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
+        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
+        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
+        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
+        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+        /// value for <code>Data</code>.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
+        /// in the <i>AWS WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentContainerException">
+        /// The operation failed because you tried to add an object to or delete an object from
+        /// another object that doesn't exist. For example:
+        /// 
+        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
+        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
+        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
+        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
+        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
+        /// exist.</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        public UpdateXssMatchSetResponse UpdateXssMatchSet(UpdateXssMatchSetRequest request)
+        {
+            var marshaller = new UpdateXssMatchSetRequestMarshaller();
+            var unmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateXssMatchSetRequest,UpdateXssMatchSetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateXssMatchSet operation on AmazonWAFClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateXssMatchSet
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateXssMatchSet(UpdateXssMatchSetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateXssMatchSetRequestMarshaller();
+            var unmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateXssMatchSetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateXssMatchSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateXssMatchSet.</param>
+        /// 
+        /// <returns>Returns a  UpdateXssMatchSetResult from WAF.</returns>
+        public  UpdateXssMatchSetResponse EndUpdateXssMatchSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateXssMatchSetResponse>(asyncResult);
         }
 
         #endregion

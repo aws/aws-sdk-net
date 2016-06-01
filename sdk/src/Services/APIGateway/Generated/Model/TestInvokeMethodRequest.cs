@@ -29,7 +29,8 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the TestInvokeMethod operation.
-    /// 
+    /// Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with headers, parameters,
+    /// and an incoming request body.
     /// </summary>
     public partial class TestInvokeMethodRequest : AmazonAPIGatewayRequest
     {
@@ -43,7 +44,10 @@ namespace Amazon.APIGateway.Model
         private Dictionary<string, string> _stageVariables = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Body.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The simulated request body of an incoming invocation request.
+        /// </para>
         /// </summary>
         public string Body
         {
@@ -58,7 +62,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientCertificateId.
+        /// Gets and sets the property ClientCertificateId. 
+        /// <para>
+        /// A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will
+        /// use use the certificate when making the HTTPS request to the defined backend endpoint.
+        /// </para>
         /// </summary>
         public string ClientCertificateId
         {
@@ -73,7 +81,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Headers.
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// A key-value map of headers to simulate an incoming invocation request.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Headers
         {
@@ -88,7 +99,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HttpMethod.
+        /// Gets and sets the property HttpMethod. 
+        /// <para>
+        /// Specifies a test invoke method request's HTTP method.
+        /// </para>
         /// </summary>
         public string HttpMethod
         {
@@ -103,7 +117,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PathWithQueryString.
+        /// Gets and sets the property PathWithQueryString. 
+        /// <para>
+        /// The URI path, including query string, of the simulated invocation request. Use this
+        /// to specify path parameters and query string parameters.
+        /// </para>
         /// </summary>
         public string PathWithQueryString
         {
@@ -118,7 +136,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceId.
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// Specifies a test invoke method request's resource ID.
+        /// </para>
         /// </summary>
         public string ResourceId
         {
@@ -133,7 +154,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestApiId.
+        /// Gets and sets the property RestApiId. 
+        /// <para>
+        /// Specifies a test invoke method request's API identifier.
+        /// </para>
         /// </summary>
         public string RestApiId
         {
@@ -148,7 +172,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StageVariables.
+        /// Gets and sets the property StageVariables. 
+        /// <para>
+        /// A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> StageVariables
         {

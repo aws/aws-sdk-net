@@ -111,6 +111,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetDomain())
+                {
+                    request.Parameters.Add("Domain", StringUtils.FromString(publicRequest.Domain));
+                }
+                if(publicRequest.IsSetDomainIAMRoleName())
+                {
+                    request.Parameters.Add("DomainIAMRoleName", StringUtils.FromString(publicRequest.DomainIAMRoleName));
+                }
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
@@ -150,6 +158,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
+                }
+                if(publicRequest.IsSetPromotionTier())
+                {
+                    request.Parameters.Add("PromotionTier", StringUtils.FromInt(publicRequest.PromotionTier));
                 }
                 if(publicRequest.IsSetPubliclyAccessible())
                 {

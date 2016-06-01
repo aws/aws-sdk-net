@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshots. 
         /// <para>
-        ///  Provides a list of DB cluster snapshots for the user. 
+        /// Provides a list of DB cluster snapshots for the user.
         /// </para>
         /// </summary>
         public List<DBClusterSnapshot> DBClusterSnapshots

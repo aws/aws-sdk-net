@@ -49,8 +49,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// An attribute name of <code>restore</code> applies to the list of AWS accounts that
-        /// have permission to copy or restore the manual DB snapshot.
+        /// The attribute named <code>restore</code> refers to the list of AWS accounts that have
+        /// permission to copy or restore the manual DB cluster snapshot. For more information,
+        /// see the <a>ModifyDBSnapshotAttribute</a> API action.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -68,14 +69,14 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AttributeValues. 
         /// <para>
-        /// The value(s) for the manual DB snapshot attribute.
+        /// The value or values for the manual DB snapshot attribute.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>AttributeName</code> field is <code>restore</code>, then this field returns
-        /// a list of AWS account ids that are authorized to copy or restore the manual DB snapshot.
-        /// If a value of <code>all</code> is in the list, then the manual DB snapshot is public
-        /// and available for any AWS account to copy or restore.
+        /// If the <code>AttributeName</code> field is set to <code>restore</code>, then this
+        /// element returns a list of IDs of the AWS accounts that are authorized to copy or restore
+        /// the manual DB snapshot. If a value of <code>all</code> is in the list, then the manual
+        /// DB snapshot is public and available for any AWS account to copy or restore.
         /// </para>
         /// </summary>
         public List<string> AttributeValues

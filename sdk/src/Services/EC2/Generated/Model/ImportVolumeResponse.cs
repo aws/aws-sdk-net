@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ImportVolume operation.
+    /// Contains the output for ImportVolume.
     /// </summary>
     public partial class ImportVolumeResponse : AmazonWebServiceResponse
     {

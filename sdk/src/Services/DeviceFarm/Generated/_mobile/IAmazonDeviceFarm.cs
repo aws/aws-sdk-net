@@ -344,6 +344,22 @@ namespace Amazon.DeviceFarm
 
         #endregion
                 
+        #region  GetOfferingStatus
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOfferingStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOfferingStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetOfferingStatusResponse> GetOfferingStatusAsync(GetOfferingStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetProject
 
 
@@ -603,6 +619,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
                 
+        #region  ListOfferings
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListOfferingsResponse> ListOfferingsAsync(ListOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListOfferingTransactions
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferingTransactions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingTransactions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListOfferingTransactionsResponse> ListOfferingTransactionsAsync(ListOfferingTransactionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListProjects
 
 
@@ -715,6 +763,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
                 
+        #region  PurchaseOffering
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseOffering operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RenewOffering
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenewOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenewOffering operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RenewOfferingResponse> RenewOfferingAsync(RenewOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ScheduleRun
 
 
@@ -728,6 +808,22 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ScheduleRunResponse> ScheduleRunAsync(ScheduleRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopRun
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRun operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StopRunResponse> StopRunAsync(StopRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

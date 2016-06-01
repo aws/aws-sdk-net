@@ -108,6 +108,87 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchBufferingHints.IntervalInSeconds</property>
+    <min>60</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchBufferingHints.SizeInMBs</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.DomainARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.IndexName</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationConfiguration.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.DomainARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.IndexName</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationDescription.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.DomainARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.IndexName</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchDestinationUpdate.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ElasticsearchRetryOptions.DurationInSeconds</property>
+    <min>0</min>
+    <max>7200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.KMSEncryptionConfig.AWSKMSKeyARN</property>
     <min>1</min>
     <max>512</max>
@@ -174,6 +255,11 @@
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.RedshiftDestinationUpdate.Username</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.RedshiftRetryOptions.DurationInSeconds</property>
+    <min>0</min>
+    <max>7200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.S3DestinationConfiguration.BucketARN</property>

@@ -123,6 +123,17 @@ namespace ServiceClientGenerator
             }
         }
 
+        public string BaseException
+        {
+            get
+            {
+                var baseException = string.Format("Amazon{0}Exception",
+                                        this.IsChildConfig ?
+                                        this.ParentConfig.BaseName : this.BaseName);
+                return baseException;
+            }
+        }
+
         /// <summary>
         /// An option suffix added on to the end of the Nuget package title.
         /// </summary>

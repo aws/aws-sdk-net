@@ -106,11 +106,15 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Boolean to enable or disable rollback on stack creation failures:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <ul> <li><code>true</code>: disable rollback</li> <li><code>false</code>: enable
-        /// rollback</li> </ul> 
+        ///  <code>true</code>: disable rollback
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>false</code>: enable rollback
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool DisableRollback
         {
@@ -272,7 +276,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of <code>Tag</code>s that specify cost allocation information for the stack.
+        /// A list of <code>Tag</code>s that specify information about the stack.
         /// </para>
         /// </summary>
         public List<Tag> Tags

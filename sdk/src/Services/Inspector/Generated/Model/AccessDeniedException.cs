@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Net;
@@ -25,6 +25,9 @@ namespace Amazon.Inspector.Model
     ///<summary>
     /// Inspector exception
     /// </summary>
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
     public class AccessDeniedException : AmazonInspectorException 
     {
         /// <summary>
@@ -75,5 +78,20 @@ namespace Amazon.Inspector.Model
         public AccessDeniedException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
+
+#if !PCL && !CORECLR
+        /// <summary>
+        /// Constructs a new instance of the AccessDeniedException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected AccessDeniedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+
+#endif
     }
 }

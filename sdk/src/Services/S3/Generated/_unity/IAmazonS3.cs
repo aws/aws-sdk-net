@@ -496,6 +496,35 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketAccelerateConfiguration
+
+
+        /// <summary>
+        /// Returns the accelerate configuration of a bucket.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">
+        ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///     procedure using the AsyncState property.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        void GetBucketAccelerateConfigurationAsync(string bucketName,  AmazonServiceCallback<GetBucketAccelerateConfigurationRequest, GetBucketAccelerateConfigurationResponse> callback, AsyncOptions options = null);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void GetBucketAccelerateConfigurationAsync(GetBucketAccelerateConfigurationRequest request, AmazonServiceCallback<GetBucketAccelerateConfigurationRequest, GetBucketAccelerateConfigurationResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  GetBucketLocation
 
 
@@ -1065,6 +1094,22 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  ListObjectsV2
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjectsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void ListObjectsV2Async(ListObjectsV2Request request, AmazonServiceCallback<ListObjectsV2Request, ListObjectsV2Response> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  ListParts
 
 
@@ -1185,6 +1230,23 @@ namespace Amazon.S3
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         void PutBucketAsync(PutBucketRequest request, AmazonServiceCallback<PutBucketRequest, PutBucketResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  PutBucketAccelerateConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAccelerateConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void PutBucketAccelerateConfigurationAsync(PutBucketAccelerateConfigurationRequest request, AmazonServiceCallback<PutBucketAccelerateConfigurationRequest, PutBucketAccelerateConfigurationResponse> callback, AsyncOptions options = null);
 
 
         #endregion

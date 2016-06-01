@@ -29,10 +29,10 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVolume operation.
-    /// This operation deletes the specified gateway volume that you previously created using
-    /// the <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. For gateway-stored
-    /// volumes, the local disk that was configured as the storage volume is not deleted.
-    /// You can reuse the local disk to create another storage volume. 
+    /// Deletes the specified gateway volume that you previously created using the <a>CreateCachediSCSIVolume</a>
+    /// or <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk
+    /// that was configured as the storage volume is not deleted. You can reuse the local
+    /// disk to create another storage volume. 
     /// 
     ///  
     /// <para>

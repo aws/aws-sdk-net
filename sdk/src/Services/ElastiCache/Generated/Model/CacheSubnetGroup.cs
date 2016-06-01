@@ -30,8 +30,15 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Represents the output of one of the following actions:
     /// 
-    ///  <ul> <li> <i>CreateCacheSubnetGroup</i> </li> <li> <i>ModifyCacheSubnetGroup</i>
-    /// </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>CreateCacheSubnetGroup</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>ModifyCacheSubnetGroup</i> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CacheSubnetGroup
     {

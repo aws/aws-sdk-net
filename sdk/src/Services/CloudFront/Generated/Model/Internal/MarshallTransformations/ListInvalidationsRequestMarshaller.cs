@@ -57,7 +57,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
             string uriResourcePath = "/2016-01-28/distribution/{DistributionId}/invalidation";
-            uriResourcePath = uriResourcePath.Replace("{DistributionId}", publicRequest.IsSetDistributionId() ? StringUtils.FromString(publicRequest.DistributionId) : string.Empty);
+            if (!publicRequest.IsSetDistributionId())
+                throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
+            uriResourcePath = uriResourcePath.Replace("{DistributionId}", StringUtils.FromString(publicRequest.DistributionId));
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));

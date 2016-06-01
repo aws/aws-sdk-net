@@ -64,6 +64,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("caCertificateId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CaCertificateId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("certificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,10 +106,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("previousOwnedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreviousOwnedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("transferData", targetDepth))
+                {
+                    var unmarshaller = TransferDataUnmarshaller.Instance;
+                    unmarshalledObject.TransferData = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

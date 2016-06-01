@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// Contains the output of the <a>ModifyHsm</a> action.
+    /// Contains the output of the <a>ModifyHsm</a> operation.
     /// </summary>
     public partial class ModifyHsmResponse : AmazonWebServiceResponse
     {

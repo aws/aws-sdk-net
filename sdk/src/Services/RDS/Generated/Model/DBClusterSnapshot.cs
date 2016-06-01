@@ -28,10 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
+    /// Contains the result of a successful invocation of the following actions:
     /// 
-    ///  <ul> <li> <a>CreateDBClusterSnapshot</a> </li> <li> <a>DeleteDBClusterSnapshot</a>
-    /// </li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateDBClusterSnapshot</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteDBClusterSnapshot</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a>
     /// action.
@@ -60,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// Specifies the allocated storage size in gigabytes (GB). 
+        /// Specifies the allocated storage size in gigabytes (GB).
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -98,7 +105,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ClusterCreateTime. 
         /// <para>
         /// Specifies the time when the DB cluster was created, in Universal Coordinated Time
-        /// (UTC). 
+        /// (UTC).
         /// </para>
         /// </summary>
         public DateTime ClusterCreateTime
@@ -117,7 +124,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot
-        /// was created from. 
+        /// was created from.
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -135,7 +142,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
-        /// Specifies the identifier for the DB cluster snapshot. 
+        /// Specifies the identifier for the DB cluster snapshot.
         /// </para>
         /// </summary>
         public string DBClusterSnapshotIdentifier
@@ -153,7 +160,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Specifies the name of the database engine. 
+        /// Specifies the name of the database engine.
         /// </para>
         /// </summary>
         public string Engine
@@ -171,7 +178,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// Provides the version of the database engine for this DB cluster snapshot. 
+        /// Provides the version of the database engine for this DB cluster snapshot.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -208,7 +215,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// Provides the license model information for this DB cluster snapshot. 
+        /// Provides the license model information for this DB cluster snapshot.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -226,7 +233,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// Provides the master username for the DB cluster snapshot. 
+        /// Provides the master username for the DB cluster snapshot.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -244,7 +251,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PercentProgress. 
         /// <para>
-        /// Specifies the percentage of the estimated data that has been transferred. 
+        /// Specifies the percentage of the estimated data that has been transferred.
         /// </para>
         /// </summary>
         public int PercentProgress
@@ -263,7 +270,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Port. 
         /// <para>
         /// Specifies the port that the DB cluster was listening on at the time of the snapshot.
-        /// 
         /// </para>
         /// </summary>
         public int Port
@@ -282,7 +288,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SnapshotCreateTime. 
         /// <para>
         /// Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
-        /// 
         /// </para>
         /// </summary>
         public DateTime SnapshotCreateTime
@@ -300,7 +305,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotType. 
         /// <para>
-        /// Provides the type of the DB cluster snapshot. 
+        /// Provides the type of the DB cluster snapshot.
         /// </para>
         /// </summary>
         public string SnapshotType
@@ -318,7 +323,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the status of this DB cluster snapshot. 
+        /// Specifies the status of this DB cluster snapshot.
         /// </para>
         /// </summary>
         public string Status
@@ -354,7 +359,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// Provides the VPC ID associated with the DB cluster snapshot. 
+        /// Provides the VPC ID associated with the DB cluster snapshot.
         /// </para>
         /// </summary>
         public string VpcId

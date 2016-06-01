@@ -677,6 +677,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElastiCache")]
+        public void ListAllowedNodeTypeModificationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAllowedNodeTypeModifications");
+
+            var request = InstantiateClassGenerator.Execute<ListAllowedNodeTypeModificationsRequest>();
+            var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAllowedNodeTypeModificationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
         public void ListTagsForResourceMarshallTest()
         {
             var operation = service_model.FindOperation("ListTagsForResource");

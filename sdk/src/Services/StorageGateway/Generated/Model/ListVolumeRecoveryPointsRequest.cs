@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVolumeRecoveryPoints operation.
-    /// This operation lists the recovery points for a specified gateway. This operation is
-    /// supported only for the gateway-cached volume architecture.
+    /// Lists the recovery points for a specified gateway. This operation is supported only
+    /// for the gateway-cached volume architecture.
     /// 
     ///  
     /// <para>

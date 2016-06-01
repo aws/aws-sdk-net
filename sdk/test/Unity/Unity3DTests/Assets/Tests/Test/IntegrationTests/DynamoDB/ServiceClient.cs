@@ -194,8 +194,9 @@ namespace AWSSDK.IntegrationTests.DynamoDB
 
             CreatedTables.Add(table4Name);
 
-            tables = GetTableNames();
-            Assert.AreEqual(tableCount + 4, tables.Count);
+            // Disabling this check because new tables may be created by test runs executing in parallel on other devices.
+            //tables = GetTableNames();
+            //Assert.AreEqual(tableCount + 4, tables.Count);
 
             // Wait for tables to be ready
             WaitForTableStatus(Client, CreatedTables, TableStatus.ACTIVE);
@@ -260,9 +261,10 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             // Wait for tables to be deleted
             WaitForTableStatus(Client, new string[] { table1Name, table2Name, table3Name, table4Name }, null);
 
-            // Count tables again
-            tables = GetTableNames();
-            Assert.AreEqual(tableCount, tables.Count);
+            // Disabling this check because new tables may be created by test runs executing in parallel on other devices.
+            //// Count tables again
+            //tables = GetTableNames();
+            //Assert.AreEqual(tableCount, tables.Count);
 
             CreatedTables.Remove(table1Name);
             CreatedTables.Remove(table2Name);

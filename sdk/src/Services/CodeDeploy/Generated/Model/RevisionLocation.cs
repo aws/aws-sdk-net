@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about an application revision's location.
+    /// Information about the location of an application revision.
     /// </summary>
     public partial class RevisionLocation
     {
@@ -54,7 +54,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property RevisionType. 
         /// <para>
-        /// The application revision's type:
+        /// The type of application revision:
         /// </para>
         ///  <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application
         /// revision stored in GitHub.</li> </ul>

@@ -27,6 +27,9 @@ using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
 using System.Globalization;
 using Amazon.Util;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.SharedInterfaces;
+using System.Text;
 
 namespace Amazon.Runtime
 {
@@ -124,6 +127,154 @@ namespace Amazon.Runtime
             return AWSSDKUtils.AreEqual(
                 new object[] { AccessKey, SecretKey, Token },
                 new object[] { ic.AccessKey, ic.SecretKey, ic.Token });
+        }
+
+        #endregion
+    }
+
+    /// <summary>
+    /// Immutable representation of AWS credentials obtained as a result of
+    /// authenticating against a SAML-supporting federated identity provider.
+    /// </summary>
+    public class SAMLImmutableCredentials : ImmutableCredentials
+    {
+        #region Properties
+
+        /// <summary>
+        /// The expiry time of the credentials, obtained from the AssumeRoleWithSAML response.
+        /// </summary>
+        public DateTime Expires { get; private set; }
+
+        /// <summary>
+        /// The value of the NameID element in the Subject element of the SAML assertion, as returned in the
+        /// AssumeRoleWithSAML response from the Security Token Service.
+        /// </summary>
+        public string Subject { get; private set; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Constructs an instance with supplied keys and SAML assertion data.
+        /// </summary>
+        /// <param name="awsAccessKeyId"></param>
+        /// <param name="awsSecretAccessKey"></param>
+        /// <param name="token"></param>
+        /// <param name="expires"></param>
+        /// <param name="subject"></param>
+        public SAMLImmutableCredentials(string awsAccessKeyId,
+                                        string awsSecretAccessKey,
+                                        string token,
+                                        DateTime expires,
+                                        string subject)
+            : base(awsAccessKeyId, awsSecretAccessKey, token)
+        {
+            Expires = expires;
+            Subject = subject;
+        }
+
+        /// <summary>
+        /// Constructs an instance with supplied keys and SAML assertion data.
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="subject"></param>
+        /// <param name="expires"></param>
+        public SAMLImmutableCredentials(ImmutableCredentials credentials,
+                                        DateTime expires,
+                                        string subject)
+            : base(credentials.AccessKey, credentials.SecretKey, credentials.Token)
+        {
+            Expires = expires;
+            Subject = subject;
+        }
+
+        #endregion
+
+        #region Overrides
+
+        public override int GetHashCode()
+        {
+            return Hashing.Hash(AccessKey, SecretKey, Token, Subject);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (object.ReferenceEquals(this, obj))
+                return true;
+
+            var ic = obj as SAMLImmutableCredentials;
+            if (ic == null)
+                return false;
+
+            if (base.Equals(obj))
+                return string.Equals(Subject, ic.Subject, StringComparison.Ordinal);
+
+            return false;
+        }
+
+        #endregion
+
+        #region Serialization
+
+        const string AccessKeyProperty = "AccessKey";
+        const string SecretKeyProperty = "SecretKey";
+        const string TokenProperty = "Token";
+        const string ExpiresProperty = "Expires";
+        const string SubjectProperty = "Subject";
+
+        /// <summary>
+        /// Serializes the instance to a json-format string for external storage
+        /// </summary>
+        /// <returns>The serialized object in json</returns>
+        internal string ToJson()
+        {
+            // don't need all data, and we want to be explicit on the datetime format
+            var props = new Dictionary<string, string>();
+            props.Add(AccessKeyProperty, AccessKey);
+            props.Add(SecretKeyProperty, SecretKey);
+            props.Add(TokenProperty, Token);
+
+            props.Add(ExpiresProperty, Expires.ToString("u", CultureInfo.InvariantCulture));
+
+            props.Add(SubjectProperty, Subject);
+
+            return JsonMapper.ToJson(props);
+        }
+
+        /// <summary>
+        /// Instantiates an instance from persisted json data
+        /// </summary>
+        /// <param name="json">The serialized data</param>
+        /// <returns>Deserialized instance corresponding to the json data</returns>
+        internal static SAMLImmutableCredentials FromJson(string json)
+        {
+            try
+            {
+                var o = JsonMapper.ToObject(json);
+
+                // get the expiry first - if the credentials have expired we can then
+                // ignore the data
+                var expires = DateTime.Parse((string)o[ExpiresProperty], CultureInfo.InvariantCulture).ToUniversalTime();
+                if (expires <= DateTime.UtcNow)
+                {
+                    Logger.GetLogger(typeof(SAMLImmutableCredentials)).InfoFormat("Skipping serialized credentials due to expiry.");
+                    return null;
+                }
+
+                var accessKey = (string)o[AccessKeyProperty];
+                var secretKey = (string)o[SecretKeyProperty];
+                var token = (string)o[TokenProperty];
+                var subject = (string)o[SubjectProperty];
+
+                return new SAMLImmutableCredentials(accessKey, secretKey, token, expires, subject);
+            }
+            catch (Exception e)
+            {
+                Logger.GetLogger(typeof(SAMLImmutableCredentials)).Error(e, "Error during deserialization");
+            }
+
+            return null;
         }
 
         #endregion
@@ -251,33 +402,190 @@ namespace Amazon.Runtime
     }
 
 #if BCL || CORECLR
+    /// <summary>
+    /// Helper routiners for AWS and Federated credential profiles. Probes the
+    /// profile type for the supplied profile name and returns the appropriate profile 
+    /// instance.
+    /// </summary>
+    public abstract class StoredProfileCredentials
+    {
+        public const string DEFAULT_PROFILE_NAME = "default";
+        public const string SHARED_CREDENTIALS_FILE_ENVVAR = "AWS_SHARED_CREDENTIALS_FILE";
+        public const string HOME_ENVVAR = "HOME";
+
+        public const string DefaultSharedCredentialFilename = "credentials";
+        public const string DefaultSharedCredentialLocation = ".aws/" + DefaultSharedCredentialFilename;
 
     /// <summary>
-    /// Credentials that are retrieved using the stored profile. The SDK Store is searched which is the credentials store shared with the SDK, PowerShell CLI and Toolkit. 
-    /// To manage the SDK Store with the SDK use Amazon.Util.ProfileManager. If the profile is not found in the SDK Store then credentials file shared with other AWS SDKs 
-    /// is searched. The credentials file is stored in the .aws directory in the current user's home directory.
+        /// Determines the type of the requested profile and returns the
+        /// appropriate profile instance.
+        /// </summary>
+        /// <param name="profileName">The name of the profile (AWS or federated) to be loaded.</param>
+        /// <returns>Instantiated profile type.</returns>
+        public static AWSCredentials GetProfile(string profileName)
+        {
+            return GetProfile(profileName, AWSConfigs.AWSProfilesLocation);
+        }
+
+        /// <summary>
+        /// Determines the type of the requested profile and returns the
+        /// appropriate profile instance.
+        /// </summary>
+        /// <param name="profileName">The name of the profile (AWS or federated) to be loaded.</param>
+        /// <param name="profileLocation">
+        /// The location of the shared credentials (.ini) file, for profiles that are not stored in the
+        /// SDK credential store.
+        /// </param>
+        /// <returns>Instantiated profile type.</returns>
+        public static AWSCredentials GetProfile(string profileName, string profileLocation)
+        {
+            if (StoredProfileAWSCredentials.CanCreateFrom(profileName, profileLocation))
+                return new StoredProfileAWSCredentials(profileName, profileLocation);
+
+#if !CORECLR
+            if (StoredProfileFederatedCredentials.CanCreateFrom(profileName, profileLocation))
+                return new StoredProfileFederatedCredentials(profileName, profileLocation);
+#endif
+            var sb = new StringBuilder();
+            sb.AppendFormat(CultureInfo.InvariantCulture, "Profile {0} was not found in the SDK credential store", profileName);
+            if (!string.IsNullOrEmpty(profileLocation))
+                sb.AppendFormat(CultureInfo.InvariantCulture, " or at location '{0}'.", profileLocation);
+
+            throw new ArgumentException(sb.ToString());
+        }
+
+        /// <summary>
+        /// Probes for and returns the fully qualified name of the shared ini-format credentials
+        /// file. 
+        /// </summary>
+        /// <param name="profileLocation">
+        /// Contains the file or folder name of the credential file. If not specified, the 
+        /// routine will first check the application configuration file for a setting indicating
+        /// the file location or filename. If the configuration file does not yield a credential
+        /// file location then an environment variable is examined. Finally the routine will 
+        /// inspect the fallback default location beneath the user's home folder location.
+        /// </param>
+        /// <returns>
+        /// The fully qualified name to the credential file that was located, or null
+        /// if no credential file could be found.
+        /// </returns>
+        public static string ResolveSharedCredentialFileLocation(string profileLocation)
+        {
+            var logger = Logger.GetLogger(typeof(StoredProfileCredentials));
+
+            string credentialFile = TestSharedCredentialFileExists(profileLocation);
+            if (!string.IsNullOrEmpty(credentialFile))
+            {
+                logger.InfoFormat("Credentials file found at supplied location: {0}", credentialFile);
+                return credentialFile;
+            }
+
+            credentialFile = TestSharedCredentialFileExists(AWSConfigs.AWSProfilesLocation);
+            if (!string.IsNullOrEmpty(credentialFile))
+            {
+                logger.InfoFormat("Credentials file found using application configuration setting: {0}", credentialFile);
+                return credentialFile;
+            }
+
+            credentialFile = TestSharedCredentialFileExists(Environment.GetEnvironmentVariable(SHARED_CREDENTIALS_FILE_ENVVAR));
+            if (!string.IsNullOrEmpty(credentialFile))
+            {
+                logger.InfoFormat("Credentials file found using environment variable '{0}': {1}", SHARED_CREDENTIALS_FILE_ENVVAR, credentialFile);
+                return credentialFile;
+            }
+
+            var homePath = Environment.GetEnvironmentVariable(HOME_ENVVAR);
+            if (!string.IsNullOrEmpty(homePath))
+            {
+                credentialFile = TestSharedCredentialFileExists(Path.Combine(homePath, DefaultSharedCredentialLocation));
+                if (!string.IsNullOrEmpty(credentialFile))
+                {
+                    logger.InfoFormat("Credentials file found using environment variable '{0}': {1}", HOME_ENVVAR, credentialFile);
+                    return credentialFile;
+                }
+            }
+
+#if BCL45
+            var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            if (!string.IsNullOrEmpty(profileFolder))
+            {
+                credentialFile = TestSharedCredentialFileExists(Path.Combine(profileFolder, DefaultSharedCredentialLocation));
+                if (!string.IsNullOrEmpty(credentialFile))
+                {
+                    logger.InfoFormat("Credentials file found in user profile location: {0}", credentialFile);
+                    return credentialFile;
+                }
+            }
+#elif BCL35
+
+            var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            if (!string.IsNullOrEmpty(profileFolder))
+            {
+                var parent = Directory.GetParent(profileFolder);
+                if (parent != null)
+                {
+                    credentialFile = TestSharedCredentialFileExists(Path.Combine(parent.FullName, DefaultSharedCredentialLocation));
+                    if (!string.IsNullOrEmpty(credentialFile))
+                    {
+                        logger.InfoFormat("Credentials file found in user profile location: {0}", credentialFile);
+                        return credentialFile;
+                    }
+                }
+            }
+#endif
+
+            logger.InfoFormat("No credentials file found using location probing.");
+            return null;
+        }
+
+        private static string TestSharedCredentialFileExists(string pathOrFilename)
+        {
+            if (!string.IsNullOrEmpty(pathOrFilename))
+            {
+                string testLocation = Directory.Exists(pathOrFilename)
+                        ? Path.Combine(pathOrFilename, DefaultSharedCredentialFilename)
+                        : pathOrFilename;
+
+                if (File.Exists(testLocation))
+                    return testLocation;
+            }
+
+            return null;
+        }
+    }
+
+    /// <summary>
     /// <para>
-    /// The profile name can be specified in the App.config using the AWSProfileName setting.
+    /// Credentials that are retrieved using a stored profile. 
     /// </para>
     /// <para>
-    /// The location to search for credentials can be overridden in the App.config using the AWSProfilesLocation setting.
+    /// Unless otherwise specified priority is given to loading credentials from the SDK credential store 
+    /// file which is shared between the SDK, PowerShell CLI and Toolkit. Credentials in profiles in this 
+    /// file are encrypted and can only be used by the user account on the current machine that stored the 
+    /// profile. Credentials can also be loaded from the plain-text ini-format credential file which is 
+    /// shared with other AWS SDKs. This file is expected to exist in a '.aws' folder in the user's home 
+    /// directory but alternate locations can be specified using either the AWSProfilesLocation setting in 
+    /// the application configuration file, or by using the AWS_SHARED_CREDENTIALS_FILE environment variable.
+    /// </para>
+    /// <para>
+    /// The profile name can be specified in the App.config using the AWSProfileName setting.
     /// </para>
     /// </summary>
     public class StoredProfileAWSCredentials : AWSCredentials
     {
-        public const string DEFAULT_PROFILE_NAME = "default";
-
-        #region Private members
+            #region Private members
 
         private ImmutableCredentials _wrappedCredentials;
 
-        #endregion
+            #endregion
 
-        #region Public constructors
+            #region Public constructors
 
         /// <summary>
-        /// Constructs an instance of StoredProfileAWSCredentials. This constructor searches for credentials using the 
-        /// account name specified in the App.config. If no account is specified then the default credentials are used.
+        /// Constructs an instance for credentials stored in a profile. This constructor searches for credentials 
+        /// using the account name specified using the AWSProfileName setting, if set, in the application configuration 
+        /// file. If the configuration file setting is not set the SDK will attempt to locate a profile with the name 
+        /// 'default'.
         /// </summary>
         public StoredProfileAWSCredentials()
             : this(AWSConfigs.AWSProfileName)
@@ -286,9 +594,13 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Constructs an instance of StoredProfileAWSCredentials. Credentials will be searched for using the profileName parameter.
+        /// Constructs an instance for credentials stored in a profile with the specified name. The SDK will
+        /// check the SDK credential store file first before looking for the shared ini-format credentials
+        /// file unless the application configuration file contains a setting for the 'AWSProfilesLocation' 
+        /// indicating the search should be constrained to the shared credentials file at the specified
+        /// location.
         /// </summary>
-        /// <param name="profileName">The profile name to search for credentials for</param>
+        /// <param name="profileName">The name of the profile in which the credentials were stored.</param>
         public StoredProfileAWSCredentials(string profileName)
             : this(profileName, AWSConfigs.AWSProfilesLocation)
         {
@@ -296,18 +608,27 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Constructs an instance of StoredProfileAWSCredentials. Credentials will be searched for using the profileName parameter.
+        /// Constructs an instance for credentials stored in a profile with the specified name.
         /// </summary>
         /// <param name="profileName">The profile name to search for credentials for</param>
-        /// <param name="profilesLocation">Overrides the location to search for credentials</param>
+        /// <param name="profilesLocation">
+        /// Optional; instructs the SDK to check for the profile in the shared credentials file at the 
+        /// specified location. If not set, the SDK will inspect its own credential store file first before
+        /// attempting to locate a shared credential file using either the default location beneath the user's
+        /// home profile folder or the location specified in the AWS_SHARED_CREDENTIALS_FILE environment 
+        /// variable.
+        /// </param>
         /// <remarks>
-        /// If credential materials cannot be read or are invalid due to missing data 
-        /// an InvalidDataException is thrown. If no credentials can be located, an ArgumentException
+        /// If credential materials cannot be read or are invalid due to missing data an InvalidDataException 
+        /// is thrown. If no credentials can be located with the specified profile name, an ArgumentException 
         /// is thrown.
         /// </remarks>
         public StoredProfileAWSCredentials(string profileName, string profilesLocation)
         {
-            var lookupName = string.IsNullOrEmpty(profileName) ? DEFAULT_PROFILE_NAME : profileName;
+            var lookupName = string.IsNullOrEmpty(profileName) 
+                    ? StoredProfileCredentials.DEFAULT_PROFILE_NAME 
+                    : profileName;
+
             ProfileName = lookupName;
             ProfilesLocation = null;
 
@@ -316,10 +637,9 @@ namespace Amazon.Runtime
 #if BCL || CORECLR
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(lookupName) && ProfileManager.IsAvailable)
             {
-                AWSCredentialsProfile.Validate(lookupName);
-                AWSCredentials credentials;
-                if (ProfileManager.TryGetAWSCredentials(lookupName, out credentials))
+                if (ProfileManager.IsProfileKnown(lookupName) && AWSCredentialsProfile.CanCreateFrom(lookupName))
                 {
+                    var credentials = ProfileManager.GetAWSCredentials(lookupName);
                     this._wrappedCredentials = credentials.GetCredentials();
                     var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                     logger.InfoFormat("Credentials found using account name {0} and looking in SDK account store.", lookupName);
@@ -329,8 +649,8 @@ namespace Amazon.Runtime
             // If credentials weren't found in the SDK store then search the shared credentials file.
             if (this._wrappedCredentials == null)
             {
-                var credentialsFilePath = DetermineCredentialsFilePath(profilesLocation);
-                if (!string.IsNullOrEmpty(credentialsFilePath) && File.Exists(credentialsFilePath))
+                var credentialsFilePath = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
+                if (!string.IsNullOrEmpty(credentialsFilePath))
                 {
                     var parser = new CredentialsFileParser(credentialsFilePath);
                     var section = parser.FindSection(lookupName);
@@ -353,7 +673,7 @@ namespace Amazon.Runtime
             }
         }
 
-#endregion
+            #endregion
 
             #region Public properties
 
@@ -370,15 +690,16 @@ namespace Amazon.Runtime
             #endregion
 
         /// <summary>
-        /// Tests if a profile has been registered in either the SDK store or the
-        /// specified credential file. If profilesLocation is null/empty, the SDK 
-        /// store is searched for the profile data first before testing the default 
-        /// location of the ini-format credential file.
+        /// Tests if a profile has been registered in either the SDK store or the specified credential 
+        /// file.
         /// </summary>
         /// <param name="profileName">The name of the profile to test</param>
         /// <param name="profilesLocation">
-        /// If null/empty, the SDK store is searched for the named profile otherwise
-        /// the ini-format credential file at the specified location is inspected.
+        /// Optional; instructs the SDK to check for the profile in the shared credentials file at the 
+        /// specified location. If not set, the SDK will inspect its own credential store file first before
+        /// attempting to locate a shared credential file using either the default location beneath the user's
+        /// home profile folder or the location specified in the AWS_SHARED_CREDENTIALS_FILE environment 
+        /// variable.
         /// </param>
         /// <returns>True if a profile with the specified name has been registered.</returns>
         public static bool IsProfileKnown(string profileName, string profilesLocation)
@@ -386,13 +707,10 @@ namespace Amazon.Runtime
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(profileName))
                 return true;
 
-            var profileFile = string.IsNullOrEmpty(profilesLocation) 
-                ? AWSConfigs.AWSProfilesLocation 
-                : profilesLocation;
-            var credentialsFilePath = DetermineCredentialsFilePath(profileFile);
-            if (!string.IsNullOrEmpty(credentialsFilePath) && File.Exists(credentialsFilePath))
+            string sharedCredentialsFile = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
+            if (!string.IsNullOrEmpty(sharedCredentialsFile))
             {
-                var parser = new CredentialsFileParser(credentialsFilePath);
+                var parser = new CredentialsFileParser(sharedCredentialsFile);
                 var section = parser.FindSection(profileName);
                 return section != null;
             }
@@ -403,7 +721,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Tests if an instance can be created from the persisted profile data.
         /// If profilesLocation is null/empty, the SDK store is searched for the
-        /// profile data first before testing the default location of the ini-format
+        /// profile data before probing for the profile in the shared the ini-format
         /// credential file.
         /// </summary>
         /// <param name="profileName">The name of the profile to test</param>
@@ -417,11 +735,8 @@ namespace Amazon.Runtime
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(profileName))
                 return AWSCredentialsProfile.CanCreateFrom(profileName);
 
-            var profileFile = string.IsNullOrEmpty(profilesLocation)
-                ? AWSConfigs.AWSProfilesLocation
-                : profilesLocation;
-            var credentialsFilePath = DetermineCredentialsFilePath(profileFile);
-            if (!string.IsNullOrEmpty(credentialsFilePath) && File.Exists(credentialsFilePath))
+            var credentialsFilePath = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
+            if (!string.IsNullOrEmpty(credentialsFilePath))
             {
                 var parser = new CredentialsFileParser(credentialsFilePath);
                 var section = parser.FindSection(profileName);
@@ -449,60 +764,6 @@ namespace Amazon.Runtime
             }
 
             return false;
-        }
-
-        /// <summary>
-        /// Determine the location of the shared credentials file.
-        /// </summary>
-        /// <param name="profilesLocation">If accountsLocation is null then the shared credentials file stored .aws directory under the home directory.</param>
-        /// <returns>The file path to the credentials file to be used.</returns>
-        private static string DetermineCredentialsFilePath(string profilesLocation)
-        {
-            const string credentialFile = "credentials";
-            const string credentialPathFile = ".aws/" + credentialFile;
-            const string homeEnvVar = "HOME";
-            const string userProfileVar = "USERPROFILE";
-
-            if (!string.IsNullOrEmpty(profilesLocation))
-            {
-                if (Directory.Exists(profilesLocation))
-                    return Path.Combine(profilesLocation, credentialFile);
-                else
-                    return profilesLocation;
-            }
-            else
-            {
-                var env = System.Environment.GetEnvironmentVariable(homeEnvVar);
-                if(string.IsNullOrEmpty(env))
-                {
-                    env = System.Environment.GetEnvironmentVariable(userProfileVar);
-                }
-                
-                if (!string.IsNullOrEmpty(env))
-                {
-                    var envPath = Path.Combine(env, credentialPathFile);
-                    if (File.Exists(envPath))
-                        return envPath;
-                }
-
-                string path = null;
-#if BCL45
-                var profileFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
-                if (!string.IsNullOrEmpty(profileFolder))
-                    path = Path.Combine(profileFolder, credentialPathFile);
-#elif BCL35
-
-                var profileFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-                if (!string.IsNullOrEmpty(profileFolder))
-                {
-                    var parent = Directory.GetParent(profileFolder);
-                    if (parent != null)
-                        path = Path.Combine(parent.FullName, credentialPathFile);
-                }
-#endif
-
-                return path;
-            }
         }
 
         private class CredentialsFileParser
@@ -647,41 +908,63 @@ namespace Amazon.Runtime
 
     /// <summary>
     /// Uses aws credentials stored in environment variables to construct the credentials object.
-    /// AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are used for the access key id and secret key. If the variable AWS_SESSION_TOKEN exists
-    /// then it will be used to create temporary session credentials.
+    /// AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are used for the access key id and secret key. 
+    /// If the variable AWS_SESSION_TOKEN exists then it will be used to create temporary session 
+    /// credentials.
     /// </summary>
+    /// <remarks>
+    /// For backwards compatibility the class will also attempt to discover the secret key from
+    /// the AWS_SECRET_KEY variable, if a value cannot be obtained using the standard 
+    /// AWS_SECRET_ACCESS_KEY variable.
+    /// </remarks>
     public class EnvironmentVariablesAWSCredentials : AWSCredentials
     {
-        private const string ENVIRONMENT_VARIABLE_ACCESSKEY = "AWS_ACCESS_KEY_ID";
-        private const string ENVIRONMENT_VARIABLE_SECRETKEY = "AWS_SECRET_ACCESS_KEY";
-        private const string ENVIRONMENT_VARIABLE_SESSION_TOKEN = "AWS_SESSION_TOKEN";
+        // these variable names are standard across all AWS SDKs that support reading keys from
+        // environment variables
+        public const string ENVIRONMENT_VARIABLE_ACCESSKEY = "AWS_ACCESS_KEY_ID";
+        public const string ENVIRONMENT_VARIABLE_SECRETKEY = "AWS_SECRET_ACCESS_KEY";
+        public const string ENVIRONMENT_VARIABLE_SESSION_TOKEN = "AWS_SESSION_TOKEN";
+
+        // this legacy key was used by previous versions of the AWS SDK for .NET and is
+        // used if no value exists for the standard key for backwards compatibility.
+        public const string LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY = "AWS_SECRET_KEY";
 
         private ImmutableCredentials _wrappedCredentials;
 
-    #region Public constructors
+            #region Public constructors
 
         /// <summary>
-        /// Constructs an instance of EnvironmentVariablesAWSCredentials. If no credentials are found in the environment variables 
-        /// then an InvalidOperationException.
+        /// Constructs an instance of EnvironmentVariablesAWSCredentials. If no credentials are found in 
+        /// the environment variables then an InvalidOperationException is thrown.
         /// </summary>
         public EnvironmentVariablesAWSCredentials()
         {
+            var logger = Logger.GetLogger(typeof(EnvironmentVariablesAWSCredentials));
+
             string accessKeyId = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_ACCESSKEY);
             string secretKey = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SECRETKEY);
+            if (string.IsNullOrEmpty(secretKey))
+            {
+                secretKey = Environment.GetEnvironmentVariable(LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY);
+                if (!string.IsNullOrEmpty(secretKey))
+                    logger.InfoFormat("AWS secret key found using legacy and non-standard environment variable '{0}', consider updating to the cross-SDK standard variable '{1}'.",
+                                      LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY, ENVIRONMENT_VARIABLE_SECRETKEY);
+            }
+
             if (string.IsNullOrEmpty(accessKeyId) || string.IsNullOrEmpty(secretKey))
             {
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "The environment variables {0} and {1} were not set with AWS credentials.", ENVIRONMENT_VARIABLE_ACCESSKEY, ENVIRONMENT_VARIABLE_SECRETKEY));
+                    "The environment variables {0}/{1}/{2} were not set with AWS credentials.", 
+                    ENVIRONMENT_VARIABLE_ACCESSKEY, ENVIRONMENT_VARIABLE_SECRETKEY, ENVIRONMENT_VARIABLE_SESSION_TOKEN));
             }
 
             string sessionToken = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SESSION_TOKEN);
 
             this._wrappedCredentials = new ImmutableCredentials(accessKeyId, secretKey, sessionToken);
-            var logger = Logger.GetLogger(typeof(EnvironmentVariablesAWSCredentials));
             logger.InfoFormat("Credentials found using environment variables.");
         }
 
-    #endregion
+            #endregion
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -698,6 +981,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// Credentials that are retrieved from ConfigurationManager.AppSettings
     /// </summary>
+    [Obsolete("This class is obsolete and will be removed in a future release. Please update your code to use ApplicationConfigAWSCredentials instead.")]
     public class EnvironmentAWSCredentials : AWSCredentials
     {
         private const string ACCESSKEY = "AWSAccessKey";
@@ -705,7 +989,7 @@ namespace Amazon.Runtime
 
         private ImmutableCredentials _wrappedCredentials;
 
-    #region Public constructors
+            #region Public constructors
 
         /// <summary>
         /// Constructs an instance of EnvironmentAWSCredentials and attempts
@@ -731,10 +1015,9 @@ namespace Amazon.Runtime
             }
         }
 
-    #endregion
+            #endregion
 
-
-    #region Abstract class overrides
+            #region Abstract class overrides
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -745,7 +1028,68 @@ namespace Amazon.Runtime
             return this._wrappedCredentials.Copy();
         }
 
-    #endregion
+            #endregion
+    }
+
+    /// <summary>
+    /// Obtains credentials from access key/secret key or AWSProfileName settings
+    /// in the application's app.config or web.config file.
+    /// </summary>
+    public class AppConfigAWSCredentials : AWSCredentials
+    {
+        private const string ACCESSKEY = "AWSAccessKey";
+        private const string SECRETKEY = "AWSSecretKey";
+
+        private ImmutableCredentials _wrappedCredentials;
+
+            #region Public constructors 
+
+        public AppConfigAWSCredentials()
+        {
+            NameValueCollection appConfig = ConfigurationManager.AppSettings;
+            var logger = Logger.GetLogger(typeof(AppConfigAWSCredentials));
+
+            // Attempt hardcoded key credentials first, then look for an explicit profile name
+            // in either the SDK credential store or the shared credentials file. When using a profile
+            // name, if a location is not given the search will use the default locations and name for
+            // the credential file (assuming the profile is not found in the SDK store first)
+            if (!string.IsNullOrEmpty(appConfig[ACCESSKEY]) && !string.IsNullOrEmpty(appConfig[SECRETKEY]))
+            {
+                var accessKey = appConfig[ACCESSKEY];
+                var secretKey = appConfig[SECRETKEY];
+                this._wrappedCredentials = new ImmutableCredentials(accessKey, secretKey, null);
+                logger.InfoFormat("Credentials found with {0} and {1} app settings", ACCESSKEY, SECRETKEY);
+            }
+            else
+            {
+                var profileName = AWSConfigs.AWSProfileName;
+                var profilesLocation = AWSConfigs.AWSProfilesLocation;
+                if (!string.IsNullOrEmpty(profileName) && StoredProfileAWSCredentials.CanCreateFrom(profileName, profilesLocation))
+                {
+                    this._wrappedCredentials = new StoredProfileAWSCredentials(profileName, profilesLocation).GetCredentials();
+                    logger.InfoFormat("Credentials found with {0} app setting", AWSConfigs.AWSProfileNameKey);
+                }
+            }
+
+            if (this._wrappedCredentials == null)
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                                                    "The app.config/web.config files for the application did not contain credential information"));
+        }
+
+            #endregion
+
+            #region Abstract class overrides
+
+        /// <summary>
+        /// Returns an instance of ImmutableCredentials for this instance
+        /// </summary>
+        /// <returns></returns>
+        public override ImmutableCredentials GetCredentials()
+        {
+            return this._wrappedCredentials.Copy();
+        }
+
+            #endregion
     }
 
 #endif
@@ -1182,6 +1526,575 @@ namespace Amazon.Runtime
 #endregion
     }
 
+#if BCL
+
+    /// <summary>
+    /// Temporary credentials that are created following successful authentication with
+    /// a federated endpoint supporting SAML.
+    /// </summary>
+    /// <remarks>
+    /// 1. Currently only the SDK store supports profiles that contain the necessary data to support
+    /// authentication and role-based credential generation. The ini-format files used by the AWS CLI
+    /// and some other SDKs are not supported at this time.
+    /// <br/>
+    /// 2. In order to use the StoredProfileFederatedCredentials class the AWSSDK.SecurityToken assembly
+    /// must be available to your application at runtime.
+    /// </remarks>
+    public class StoredProfileFederatedCredentials : RefreshingAWSCredentials
+    {
+    #region Private data
+
+        private object _synclock = new object();
+
+        private RegionEndpoint DefaultSTSClientRegion = RegionEndpoint.USEast1;
+
+        private const int MaxAuthenticationRetries = 3;
+
+        private static readonly TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(5);
+        private TimeSpan _credentialDuration = MaximumCredentialTimespan;
+
+        private RequestUserCredential _credentialRequestCallback = null;
+        private object _customCallbackState = null;
+
+        private WebProxy _proxySettings = null;
+
+    #endregion
+
+    #region Public properties
+
+        /// <summary>
+        /// Custom state to return to the registered callback to handle credential requests.
+        /// The data will be contained in the CredentialRequestCallbackArgs instance supplied 
+        /// to the callback.
+        /// </summary>
+        public object CustomCallbackState
+        {
+            get
+            {
+                lock (_synclock)
+                {
+                    return _customCallbackState;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The minimum allowed timespan for generated credentials, per STS documentation.
+        /// </summary>
+        public static readonly TimeSpan MinimumCredentialTimespan = TimeSpan.FromMinutes(15);
+
+        /// <summary>
+        /// The maximum allowed timespan for generated credentials, per STS documentation.
+        /// </summary>
+        public static readonly TimeSpan MaximumCredentialTimespan = TimeSpan.FromHours(1);
+
+        /// <summary>
+        /// Name of the profile being used.
+        /// </summary>
+        public string ProfileName { get; private set; }
+
+        /// <summary>
+        /// Location of the profiles, if used.
+        /// </summary>
+        public string ProfilesLocation { get; private set; }
+
+        /// <summary>
+        /// The data about the SAML endpoint and any required user credentials parsed from the
+        /// profile.
+        /// </summary>
+        public SAMLRoleProfile ProfileData { get; private set; }
+
+        /// <summary>
+        /// Callback signature for obtaining user credentials that may be needed for authentication.
+        /// </summary>
+        /// <param name="args">
+        /// Data about the credential demand including any custom state data that was supplied
+        /// when the callback was registered.
+        /// </param>
+        /// <returns>
+        /// The network credential to use in user authentication. Return null to signal the user
+        /// declined to provide credentials and authentication should not proceed.
+        /// </returns>
+        public delegate NetworkCredential RequestUserCredential(CredentialRequestCallbackArgs args);
+
+    #endregion
+
+    #region Public constructors
+
+        /// <summary>
+        /// Constructs an instance of StoredProfileFederatedCredentials using the profile name specified
+        /// in the App.config. If no profile name is specified then the default credentials are used.
+        /// </summary>
+        public StoredProfileFederatedCredentials()
+            : this(AWSConfigs.AWSProfileName)
+        {
+
+        }
+
+        /// <summary>
+        /// Constructs an instance of StoredProfileFederatedCredentials. Credentials will be searched
+        /// for using the profileName parameter.
+        /// </summary>
+        /// <param name="profileName">The profile name to search for credentials for</param>
+        public StoredProfileFederatedCredentials(string profileName)
+            : this(profileName, AWSConfigs.AWSProfilesLocation)
+        {
+
+        }
+
+        /// <summary>
+        /// <para>
+        /// Constructs an instance of StoredProfileFederatedCredentials. After construction call one of the Authenticate
+        /// methods to authenticate the user/process and obtain temporary AWS credentials.
+        /// </para>
+        /// <para>
+        /// For users who are domain joined (the role profile does not contain user identity information) the temporary
+        /// credentials will be refreshed automatically as needed. Non domain-joined users (those with user identity
+        /// data in the profile) are required to re-authenticate when credential refresh is required. An exception is
+        /// thrown when attempt is made to refresh credentials in this scenario. The consuming code of this class
+        /// should catch the exception and prompt the user for credentials, then call Authenticate to re-initialize
+        /// with a new set of temporary AWS credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="profileName">
+        /// The name of the profile holding the necessary role data to enable authentication and credential generation.
+        /// </param>
+        /// <param name="profilesLocation">Reserved for future use.</param>
+        /// <remarks>
+        /// The ini-format credentials file is not currently supported for SAML role profiles.
+        /// </remarks>
+        public StoredProfileFederatedCredentials(string profileName, string profilesLocation)
+            : this(profileName, profilesLocation, null)
+        {
+
+        }
+
+        /// <summary>
+        /// <para>
+        /// Constructs an instance of StoredProfileFederatedCredentials. After construction call one of the Authenticate
+        /// methods to authenticate the user/process and obtain temporary AWS credentials.
+        /// </para>
+        /// <para>
+        /// For users who are domain joined (the role profile does not contain user identity information) the temporary
+        /// credentials will be refreshed automatically as needed. Non domain-joined users (those with user identity
+        /// data in the profile) are required to re-authenticate when credential refresh is required. An exception is
+        /// thrown when attempt is made to refresh credentials in this scenario. The consuming code of this class
+        /// should catch the exception and prompt the user for credentials, then call Authenticate to re-initialize
+        /// with a new set of temporary AWS credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="profileName">
+        /// The name of the profile holding the necessary role data to enable authentication and credential generation.
+        /// </param>
+        /// <param name="profilesLocation">Reserved for future use.</param>
+        /// <param name="proxySettings">
+        /// Null or proxy settings to be used during the HHTPS authentication calls when generating credentials.
+        /// /// </param>
+        /// <remarks>The ini-format credentials file is not currently supported for SAML role profiles.</remarks>
+        public StoredProfileFederatedCredentials(string profileName, string profilesLocation, WebProxy proxySettings)
+        {
+            this._proxySettings = proxySettings;
+            this.PreemptExpiryTime = _preemptExpiryTime;
+
+            var lookupName = string.IsNullOrEmpty(profileName)
+                ? StoredProfileCredentials.DEFAULT_PROFILE_NAME
+                : profileName;
+
+            ProfileName = lookupName;
+            ProfilesLocation = null;
+
+            // If not overriding the credentials lookup location check the SDK Store for credentials. If
+            // an override location is specified, assume we should only use the shared credential file.
+            if (string.IsNullOrEmpty(profilesLocation))
+            {
+                if (ProfileManager.IsProfileKnown(lookupName) && SAMLRoleProfile.CanCreateFrom(lookupName))
+                {
+                    var profileData = ProfileManager.GetProfile<SAMLRoleProfile>(lookupName);
+                    ProfileData = profileData;
+                    var logger = Logger.GetLogger(typeof(StoredProfileFederatedCredentials));
+                    logger.InfoFormat("SAML role profile found using account name {0} and looking in SDK account store.", lookupName);
+                }
+            }
+            
+            // we currently do not support the shared ini-format credential file for SAML role profile data
+            // so end the search now if not found
+            if (ProfileData == null)
+            {
+                var msg = string.Format(CultureInfo.InvariantCulture,
+                                        "Profile '{0}' was not found or could not be loaded from the SDK credential store. Verify that the profile name and data are correct.",
+                                        profileName);
+                throw new ArgumentException(msg);
+            }
+        }
+
+    #endregion
+
+        /// <summary>
+        /// <para>
+        /// Registers a callback handler for scenarios where credentials need to be supplied
+        /// during user authentication (primarily the non-domain-joined use case). Custom data,
+        /// which will be supplied in the CredentialRequestCallbackArgs instance passed to the
+        /// callback, can also be supplied.
+        /// </para>
+        /// <para>
+        /// The callback will only be invoked if the underlying SAML role profile indicates it
+        /// was set up for use with a specific identity. For profiles that do not contain any user
+        /// identity the SDK will default to using the identity of the current process during
+        /// authentication. Additionally, if the profile contain user identity information but no
+        /// callback has been registered, the SDK will also attempt to use the current process
+        /// identity during authentication.
+        /// </para>
+        /// </summary>
+        /// <param name="callback">The handler to be called</param>
+        /// <param name="customData">
+        /// Custom state data to be supplied in the arguments to the callback.
+        /// </param>
+        /// <remarks>
+        /// Only one callback handler can be registered. The call to the handler will be made on
+        /// whatever thread is executing at the time a demand to provide AWS credentials is made.
+        /// If the handler code requires that UI need to be displayed, the handler should 
+        /// transition to the UI thread as appropriate.
+        /// </remarks>
+        public void SetCredentialCallbackData(RequestUserCredential callback, object customData)
+        {
+            lock (_synclock)
+            {
+                _credentialRequestCallback = callback;
+                _customCallbackState = customData;
+            }
+        }
+
+        /// <summary>
+        /// Tests if an instance can be created from the persisted profile data.
+        /// </summary>
+        /// <param name="profileName">The name of the profile to test.</param>
+        /// <param name="profilesLocation">The location of the shared ini-format credential file.</param>
+        /// <returns>True if the persisted data would yield a valid credentials instance.</returns>
+        /// <remarks>
+        /// This profile type is currently only supported in the SDK credential store file.
+        /// The shared ini-format file is not currently supported; any value supplied
+        /// for the profilesLocation value is ignored.
+        /// </remarks>
+        public static bool CanCreateFrom(string profileName, string profilesLocation)
+        {
+            if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(profileName))
+                return SAMLRoleProfile.CanCreateFrom(profileName);
+
+            return false;
+        }
+
+
+        /// <summary>
+        /// Performs any additional validation we may require on the profile content.
+        /// </summary>
+        protected override void Validate()
+        {
+        }
+
+        /// <summary>
+        /// Refresh credentials after expiry. If the role profile is configured with user identity
+        /// information and a callback has been registered to obtain the user credential the callback
+        /// will be invoked ahead of authentication. For role profiles configured with user identity
+        /// but no callback registration, the SDK will fall back to attempting to use the default
+        /// user identity of the current process.
+        /// </summary>
+        /// <returns></returns>
+        protected override CredentialsRefreshState GenerateNewCredentials()
+        {
+            Validate();
+
+            // lock across the entire process for generating credentials so multiple
+            // threads don't attempt to invoke any registered callback at the same time
+            // and if we do callback, we only do it once to get the user authentication
+            // data
+            lock(_synclock)
+            {
+                // If the profile indicates the user has already authenticated and received
+                // credentials which are still valid, adopt them instead of requiring a fresh
+                // authentication
+                var currentSession = ProfileData.GetCurrentSession();
+                if (currentSession != null)
+                    return new CredentialsRefreshState(currentSession, currentSession.Expires);
+
+                CredentialsRefreshState newState = null;
+                var attempts = 0;
+                do
+                {
+                    try
+                    {
+                        NetworkCredential userCredential = null;
+                        if (!ProfileData.UseDefaultUserIdentity)
+                        {
+                            if (_credentialRequestCallback != null)
+                            {
+                                var callbackArgs = new CredentialRequestCallbackArgs
+                                {
+                                    ProfileName = ProfileData.Name,
+                                    UserIdentity = ProfileData.UserIdentity,
+                                    CustomState = CustomCallbackState,
+                                    PreviousAuthenticationFailed = attempts > 0
+                                };
+
+                                userCredential = _credentialRequestCallback(callbackArgs);
+
+                                if (userCredential == null) // user declined to authenticate
+                                    throw new FederatedAuthenticationCancelledException("User cancelled credential request.");
+                            }
+                            else
+                            {
+                                var logger = Logger.GetLogger(typeof(StoredProfileFederatedCredentials));
+                                logger.InfoFormat("Role profile {0} is configured for a specific user but no credential request callback registered; falling back to default identity.", ProfileName);
+                            }
+                        }
+
+                        newState = Authenticate(userCredential, _credentialDuration);
+                    }
+                    catch (FederatedAuthenticationFailureException)
+                    {
+                        if (attempts < MaxAuthenticationRetries)
+                            attempts++;
+                        else
+                            throw;
+                    }
+                } while (newState == null && attempts < MaxAuthenticationRetries);
+
+                return newState;
+            }
+        }
+
+        private CredentialsRefreshState Authenticate(ICredentials userCredential, TimeSpan credentialDuration)
+        {
+            CredentialsRefreshState state;
+
+            var configuredRegion = AWSConfigs.AWSRegion;
+            var region = string.IsNullOrEmpty(configuredRegion)
+                                ? DefaultSTSClientRegion
+                                : RegionEndpoint.GetBySystemName(configuredRegion);
+
+            ICoreAmazonSTS coreSTSClient = null;
+
+            try
+            {
+                var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME,
+                                                                         ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
+                stsConfig.RegionEndpoint = region;
+                if (_proxySettings != null)
+                    stsConfig.SetWebProxy(_proxySettings);
+
+                coreSTSClient
+                    = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME,
+                                                                                     ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
+                                                                                     new AnonymousAWSCredentials(),
+                                                                                     stsConfig);
+            }
+            catch (Exception e)
+            {
+                var msg = string.Format(CultureInfo.CurrentCulture,
+                                        "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use this profile class.",
+                                        ServiceClientHelpers.STS_ASSEMBLY_NAME);
+                throw new InvalidOperationException(msg, e);
+            }
+
+            try
+            {
+                var credentials
+                    = coreSTSClient.CredentialsFromSAMLAuthentication(ProfileData.EndpointSettings.Endpoint.ToString(),
+                                                                      ProfileData.EndpointSettings.AuthenticationType,
+                                                                      ProfileData.RoleArn,
+                                                                      credentialDuration,
+                                                                      userCredential);
+
+                ProfileData.PersistSession(credentials);
+
+                state = new CredentialsRefreshState(credentials, credentials.Expires);
+            }
+            catch (Exception e)
+            {
+                var wrappedException = new AmazonClientException("Credential generation from SAML authentication failed.", e);
+
+                var logger = Logger.GetLogger(typeof(StoredProfileFederatedCredentials));
+                logger.Error(wrappedException, wrappedException.Message);
+
+                throw wrappedException;
+            }
+
+            return state;
+        }
+    }
+
+    /// <summary>
+    /// State class passed on callback to demand user credentials when authentication
+    /// needs to be performed using a non-default identity.
+    /// </summary>
+    public class CredentialRequestCallbackArgs
+    {
+        /// <summary>
+        /// Contains the name of the credential profile we are authenticating
+        /// for. Use in display prompts to give the user some context as to
+        /// why their credentials are being requested.
+        /// </summary>
+        public string ProfileName { get; internal set; }
+        /// <summary>
+        /// Contains the user identity that the user should supply a password
+        /// for. The user can ignore if they choose and return credentials for
+        /// an alternate account.
+        /// </summary>
+        public string UserIdentity { get; internal set; }
+
+        /// <summary>
+        /// Any custom state that was registered with the callback.
+        /// </summary>
+        public object CustomState { get; internal set; }
+
+        /// <summary>
+        /// Set if the callback was due to a failed authentication attempt.
+        /// If false we are beginning to obtain or refresh credentials.
+        /// </summary>
+        public bool PreviousAuthenticationFailed { get; internal set; }
+    }
+
+    /// <summary>
+    /// Exception thrown on validation of a StoredProfileFederatedCredentials instance if the role profile
+    /// is configured to use a non-default user identity and the QueryUserCredentialCallback on the
+    /// instance has not been set.
+    /// </summary>
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
+    public class CredentialRequestCallbackRequiredException : Exception
+    {
+        /// <summary>
+        /// Initializes a new exception instance.
+        /// </summary>
+        /// <param name="msg"></param>
+        public CredentialRequestCallbackRequiredException(string msg)
+            : base(msg)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new exception instance.
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="innerException"></param>
+        public CredentialRequestCallbackRequiredException(string msg, Exception innerException)
+            : base(msg, innerException)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new exception instance.
+        /// </summary>
+        /// <param name="innerException"></param>
+        public CredentialRequestCallbackRequiredException(Exception innerException)
+            : base(innerException.Message, innerException)
+        {
+        }
+
+#if !PCL && !CORECLR
+        /// <summary>
+        /// Constructs a new instance of the CredentialRequestCallbackRequiredException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected CredentialRequestCallbackRequiredException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
+    }
+
+    /// <summary>
+    /// Custom exception type thrown when authentication for a user fails due to
+    /// invalid credentials.
+    /// </summary>
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
+    public class FederatedAuthenticationFailureException : Exception
+    {
+        /// <summary>
+        /// Initializes a new exception instance.
+        /// </summary>
+        /// <param name="msg"></param>
+        public FederatedAuthenticationFailureException(string msg)
+            : base(msg)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new exception instance.
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="inner"></param>
+        public FederatedAuthenticationFailureException(string msg, Exception inner)
+            : base(msg, inner)
+        {
+        }
+
+#if !PCL && !CORECLR
+        /// <summary>
+        /// Constructs a new instance of the FederatedAuthenticationFailureException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected FederatedAuthenticationFailureException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
+    }
+
+    /// <summary>
+    /// Custom exception type thrown when a role profile with user identity is used
+    /// in conjunction with a credential request callback. This exception is thrown
+    /// if the callback returns null, indicating the user declined to supply credentials.
+    /// </summary>
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
+    public class FederatedAuthenticationCancelledException : Exception
+    {
+        /// <summary>
+        /// Initializes a new exception instance.
+        /// </summary>
+        /// <param name="msg"></param>
+        public FederatedAuthenticationCancelledException(string msg)
+            : base(msg)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new exception instance.
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="inner"></param>
+        public FederatedAuthenticationCancelledException(string msg, Exception inner)
+            : base(msg, inner)
+        {
+        }
+
+#if !PCL && !CORECLR
+        /// <summary>
+        /// Constructs a new instance of the FederatedAuthenticationCancelledException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected FederatedAuthenticationCancelledException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
+    }
+
+#endif
+
     /// <summary>
     /// Anonymous credentials.
     /// Using these credentials, the client does not sign the request.
@@ -1218,13 +2131,19 @@ namespace Amazon.Runtime
             CredentialsGenerators = new List<CredentialsGenerator>
             {
 #if BCL
-                () => new EnvironmentAWSCredentials(),
+                
+                () => new AppConfigAWSCredentials(),            // test explicit keys/profile name first
+                () => new StoredProfileAWSCredentials(),        // then attempt to load default profile        
+
+                () => new StoredProfileFederatedCredentials(),  // if default/named profile didn't contain AWS credentials,
+                () => new EnvironmentVariablesAWSCredentials(), // credentials set in environment vars?
+                                                                // was it a named or default federated role profile?
+#elif CORECLR           
+                () => new StoredProfileAWSCredentials(),        // then attempt to load default profile        
+                () => new EnvironmentVariablesAWSCredentials(), // credentials set in environment vars?
 #endif
-#if BCL || CORECLR
-                () => new StoredProfileAWSCredentials(),
-                () => new EnvironmentVariablesAWSCredentials(),
-#endif
-                () => new InstanceProfileAWSCredentials()
+                () => new InstanceProfileAWSCredentials()       // if we're running on an EC2 instance try and get credentials 
+                                                                // from instance profile
             };
         }
 

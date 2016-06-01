@@ -38,7 +38,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationNames. 
         /// <para>
-        /// A list of application names, with multiple application names separated by spaces.
+        /// A list of application names separated by spaces.
         /// </para>
         /// </summary>
         public List<string> ApplicationNames

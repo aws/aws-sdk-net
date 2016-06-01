@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     {
         private string _cidrBlock;
         private string _ownerId;
+        private VpcPeeringConnectionOptionsDescription _peeringOptions;
         private string _vpcId;
 
         /// <summary>
@@ -70,6 +71,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetOwnerId()
         {
             return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeeringOptions. 
+        /// <para>
+        /// Information about the VPC peering connection options for the accepter or requester
+        /// VPC.
+        /// </para>
+        /// </summary>
+        public VpcPeeringConnectionOptionsDescription PeeringOptions
+        {
+            get { return this._peeringOptions; }
+            set { this._peeringOptions = value; }
+        }
+
+        // Check to see if PeeringOptions property is set
+        internal bool IsSetPeeringOptions()
+        {
+            return this._peeringOptions != null;
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     /// Each attribute in an item is a name-value pair. An attribute can be single-valued
     /// or multi-valued set. For example, a book item can have title and authors attributes.
     /// Each book has one title but can have many authors. The multi-valued attribute is a
-    /// set; duplicate values are not allowed. 
+    /// set; duplicate values are not allowed.
     /// </para>
     /// </summary>
     public partial class AttributeValue

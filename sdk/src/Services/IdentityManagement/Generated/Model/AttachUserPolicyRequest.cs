@@ -33,13 +33,13 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// You use this API to attach a managed policy to a user. To embed an inline policy in
-    /// a user, use <a>PutUserPolicy</a>. 
+    /// You use this API to attach a <i>managed</i> policy to a user. To embed an inline policy
+    /// in a user, use <a>PutUserPolicy</a>.
     /// </para>
     ///  
     /// <para>
-    /// For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+    /// For more information about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachUserPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -48,7 +48,15 @@ namespace Amazon.IdentityManagement.Model
         private string _userName;
 
         /// <summary>
-        /// Gets and sets the property PolicyArn.
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM policy you want to attach.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// </para>
         /// </summary>
         public string PolicyArn
         {
@@ -65,7 +73,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name (friendly name, not ARN) of the user to attach the policy to.
+        /// The name (friendly name, not ARN) of the IAM user to attach the policy to.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

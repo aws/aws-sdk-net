@@ -34,14 +34,20 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private DateTime? _createdDate;
         private string _description;
+        private string _hash;
+        private DocumentHashType _hashType;
         private string _name;
+        private string _owner;
         private List<DocumentParameter> _parameters = new List<DocumentParameter>();
         private List<string> _platformTypes = new List<string>();
         private string _sha1;
         private DocumentStatus _status;
 
         /// <summary>
-        /// Gets and sets the property CreatedDate. The date when the SSM document was created.
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        ///  The date when the SSM document was created. 
+        /// </para>
         /// </summary>
         public DateTime CreatedDate
         {
@@ -56,7 +62,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. A description of the document.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description of the document. 
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -68,6 +77,52 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hash. 
+        /// <para>
+        /// The Sha256 or Sha1 hash created by the system when the document was created. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Sha1 hashes have been deprecated.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string Hash
+        {
+            get { return this._hash; }
+            set { this._hash = value; }
+        }
+
+        // Check to see if Hash property is set
+        internal bool IsSetHash()
+        {
+            return this._hash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HashType. 
+        /// <para>
+        /// Sha256 or Sha1.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Sha1 hashes have been deprecated.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DocumentHashType HashType
+        {
+            get { return this._hashType; }
+            set { this._hashType = value; }
+        }
+
+        // Check to see if HashType property is set
+        internal bool IsSetHashType()
+        {
+            return this._hashType != null;
         }
 
         /// <summary>
@@ -89,6 +144,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The AWS user account of the person who created the document.
+        /// </para>
+        /// </summary>
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A description of the parameters for a document.
@@ -107,8 +180,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlatformTypes. The list of OS platforms compatible with
-        /// this SSM document.
+        /// Gets and sets the property PlatformTypes. 
+        /// <para>
+        /// The list of OS platforms compatible with this SSM document. 
+        /// </para>
         /// </summary>
         public List<string> PlatformTypes
         {

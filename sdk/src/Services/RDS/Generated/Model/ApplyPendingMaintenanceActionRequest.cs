@@ -42,6 +42,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The pending maintenance action to apply to this resource.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>system-update</code>, <code>db-upgrade</code> 
+        /// </para>
         /// </summary>
         public string ApplyAction
         {
@@ -65,10 +69,21 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Valid values:
         /// </para>
-        ///  <ul> <li> <code>immediate</code> - Apply the maintenance action immediately.</li>
-        /// <li> <code>next-maintenance</code> - Apply the maintenance action during the next
-        /// maintenance window for the resource.</li> <li> <code>undo-opt-in</code> - Cancel any
-        /// existing <code>next-maintenance</code> opt-in requests.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>immediate</code> - Apply the maintenance action immediately.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>next-maintenance</code> - Apply the maintenance action during the next maintenance
+        /// window for the resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in
+        /// requests.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string OptInType
         {

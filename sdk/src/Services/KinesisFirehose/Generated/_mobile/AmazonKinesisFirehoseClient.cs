@@ -39,7 +39,8 @@ namespace Amazon.KinesisFirehose
     /// Amazon Kinesis Firehose API Reference 
     /// <para>
     /// Amazon Kinesis Firehose is a fully-managed service that delivers real-time streaming
-    /// data to destinations such as Amazon S3 and Amazon Redshift.
+    /// data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch
+    /// Service (Amazon ES), and Amazon Redshift.
     /// </para>
     /// </summary>
     public partial class AmazonKinesisFirehoseClient : AmazonServiceClient, IAmazonKinesisFirehose
@@ -390,10 +391,10 @@ namespace Amazon.KinesisFirehose
         /// <para>
         /// The number of delivery streams might be too large to return using a single call to
         /// <a>ListDeliveryStreams</a>. You can limit the number of delivery streams returned,
-        /// using the <code>Limit</code> parameter. To determine whether there are more delivery
-        /// streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output.
-        /// If there are more delivery streams to list, you can request them by specifying the
-        /// name of the last delivery stream returned in the call in the <code>ExclusiveStartDeliveryStreamName</code>
+        /// using the <b>Limit</b> parameter. To determine whether there are more delivery streams
+        /// to list, check the value of <b>HasMoreDeliveryStreams</b> in the output. If there
+        /// are more delivery streams to list, you can request them by specifying the name of
+        /// the last delivery stream returned in the call in the <b>ExclusiveStartDeliveryStreamName</b>
         /// parameter of a subsequent call.
         /// </para>
         /// </summary>
@@ -462,35 +463,29 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Amazon Kinesis Firehose buffers records before delivering them to the destination.
-        /// To disambiguate the data blobs at the destination, a common solution is to use delimiters
-        /// in the data, such as a newline (<code>\n</code>) or some other character unique within
-        /// the data. This allows the consumer application(s) to parse individual data items when
-        /// reading the data from the destination.
+        /// Firehose buffers records before delivering them to the destination. To disambiguate
+        /// the data blobs at the destination, a common solution is to use delimiters in the data,
+        /// such as a newline (<code>\n</code>) or some other character unique within the data.
+        /// This allows the consumer application(s) to parse individual data items when reading
+        /// the data from the destination.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Kinesis Firehose does not maintain data record ordering. If the destination
-        /// data needs to be re-ordered by the consumer application, the producer should include
-        /// some form of sequence number in each data record. 
+        /// The <a>PutRecord</a> operation returns a <b>RecordId</b>, which is a unique string
+        /// assigned to each record. Producer applications can use this ID for purposes such as
+        /// auditability and investigation.
         /// </para>
         ///  
         /// <para>
-        /// The <a>PutRecord</a> operation returns a <code>RecordId</code>, which is a unique
-        /// string assigned to each record. Producer applications can use this ID for purposes
-        /// such as auditability and investigation.
+        /// If the <a>PutRecord</a> operation throws a <b>ServiceUnavailableException</b>, back
+        /// off and retry. If the exception persists, it is possible that the throughput limits
+        /// have been exceeded for the delivery stream. 
         /// </para>
         ///  
         /// <para>
-        /// If the <a>PutRecord</a> operation throws a <code>ServiceUnavailableException</code>,
-        /// back off and retry. If the exception persists, it is possible that the throughput
-        /// limits have been exceeded for the delivery stream. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time
-        /// they are added to a delivery stream as it attempts to send the records to the destination.
-        /// If the destination is unreachable for more than 24 hours, the data is no longer available.
+        /// Data records sent to Firehose are stored for 24 hours from the time they are added
+        /// to a delivery stream as it attempts to send the records to the destination. If the
+        /// destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
@@ -578,53 +573,51 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Amazon Kinesis Firehose buffers records before delivering them to the destination.
-        /// To disambiguate the data blobs at the destination, a common solution is to use delimiters
-        /// in the data, such as a newline (<code>\n</code>) or some other character unique within
-        /// the data. This allows the consumer application(s) to parse individual data items when
-        /// reading the data from the destination.
+        /// Firehose buffers records before delivering them to the destination. To disambiguate
+        /// the data blobs at the destination, a common solution is to use delimiters in the data,
+        /// such as a newline (<code>\n</code>) or some other character unique within the data.
+        /// This allows the consumer application(s) to parse individual data items when reading
+        /// the data from the destination.
         /// </para>
         ///  
         /// <para>
-        /// The <a>PutRecordBatch</a> response includes a count of any failed records, <code>FailedPutCount</code>,
-        /// and an array of responses, <code>RequestResponses</code>. The <code>FailedPutCount</code>
-        /// value is a count of records that failed. Each entry in the <code>RequestResponses</code>
-        /// array gives additional information of the processed record. Each entry in <code>RequestResponses</code>
+        /// The <a>PutRecordBatch</a> response includes a count of any failed records, <b>FailedPutCount</b>,
+        /// and an array of responses, <b>RequestResponses</b>. The <b>FailedPutCount</b> value
+        /// is a count of records that failed. Each entry in the <b>RequestResponses</b> array
+        /// gives additional information of the processed record. Each entry in <b>RequestResponses</b>
         /// directly correlates with a record in the request array using the same ordering, from
-        /// the top to the bottom of the request and response. <code>RequestResponses</code> always
-        /// includes the same number of records as the request array. <code>RequestResponses</code>
-        /// both successfully and unsuccessfully processed records. Amazon Kinesis Firehose attempts
-        /// to process all records in each <a>PutRecordBatch</a> request. A single record failure
-        /// does not stop the processing of subsequent records.
+        /// the top to the bottom of the request and response. <b>RequestResponses</b> always
+        /// includes the same number of records as the request array. <b>RequestResponses</b>
+        /// both successfully and unsuccessfully processed records. Firehose attempts to process
+        /// all records in each <a>PutRecordBatch</a> request. A single record failure does not
+        /// stop the processing of subsequent records.
         /// </para>
         ///  
         /// <para>
-        /// A successfully processed record includes a <code>RecordId</code> value, which is a
-        /// unique value identified for the record. An unsuccessfully processed record includes
-        /// <code>ErrorCode</code> and <code>ErrorMessage</code> values. <code>ErrorCode</code>
-        /// reflects the type of error and is one of the following values: <code>ServiceUnavailable</code>
-        /// or <code>InternalFailure</code>. <code>ErrorMessage</code> provides more detailed
-        /// information about the error.
+        /// A successfully processed record includes a <b>RecordId</b> value, which is a unique
+        /// value identified for the record. An unsuccessfully processed record includes <b>ErrorCode</b>
+        /// and <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error and is
+        /// one of the following values: <code>ServiceUnavailable</code> or <code>InternalFailure</code>.
+        /// <code>ErrorMessage</code> provides more detailed information about the error.
         /// </para>
         ///  
         /// <para>
-        /// If <code>FailedPutCount</code> is greater than 0 (zero), retry the request. A retry
-        /// of the entire batch of records is possible; however, we strongly recommend that you
-        /// inspect the entire response and resend only those records that failed processing.
-        /// This minimizes duplicate records and also reduces the total bytes sent (and corresponding
-        /// charges).
+        /// If <b>FailedPutCount</b> is greater than 0 (zero), retry the request. A retry of the
+        /// entire batch of records is possible; however, we strongly recommend that you inspect
+        /// the entire response and resend only those records that failed processing. This minimizes
+        /// duplicate records and also reduces the total bytes sent (and corresponding charges).
         /// </para>
         ///  
         /// <para>
-        /// If the <a>PutRecordBatch</a> operation throws a <code>ServiceUnavailableException</code>,
+        /// If the <a>PutRecordBatch</a> operation throws a <b>ServiceUnavailableException</b>,
         /// back off and retry. If the exception persists, it is possible that the throughput
         /// limits have been exceeded for the delivery stream.
         /// </para>
         ///  
         /// <para>
-        /// Data records sent to Amazon Kinesis Firehose are stored for 24 hours from the time
-        /// they are added to a delivery stream as it attempts to send the records to the destination.
-        /// If the destination is unreachable for more than 24 hours, the data is no longer available.
+        /// Data records sent to Firehose are stored for 24 hours from the time they are added
+        /// to a delivery stream as it attempts to send the records to the destination. If the
+        /// destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>

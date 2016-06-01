@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroupMemberships. 
         /// <para>
-        ///  A list of DBSecurityGroupMemebrship name strings used for this option. 
+        /// A list of DBSecurityGroupMemebrship name strings used for this option.
         /// </para>
         /// </summary>
         public List<string> DBSecurityGroupMemberships
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionName. 
         /// <para>
-        ///  The configuration of options to include in a group. 
+        /// The configuration of options to include in a group.
         /// </para>
         /// </summary>
         public string OptionName
@@ -77,7 +77,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///  The option settings to include in an option group. 
+        /// The option settings to include in an option group.
         /// </para>
         /// </summary>
         public List<OptionSetting> OptionSettings
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  The optional port for the option. 
+        /// The optional port for the option.
         /// </para>
         /// </summary>
         public int Port
@@ -113,7 +113,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupMemberships. 
         /// <para>
-        ///  A list of VpcSecurityGroupMemebrship name strings used for this option. 
+        /// A list of VpcSecurityGroupMemebrship name strings used for this option.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupMemberships

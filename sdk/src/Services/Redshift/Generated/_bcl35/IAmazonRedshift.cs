@@ -2761,8 +2761,9 @@ namespace Amazon.Redshift
         /// Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a>
         /// API action. If you don't specify a value for the <code>TableRestoreRequestId</code>
         /// parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all
-        /// in-progress table restore requests. Otherwise <code>DescribeTableRestoreStatus</code>
-        /// returns the status of the table specified by <code>TableRestoreRequestId</code>.
+        /// table restore requests ordered by the date and time of the request in ascending order.
+        /// Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table
+        /// specified by <code>TableRestoreRequestId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTableRestoreStatus service method.</param>
         /// 
@@ -3188,6 +3189,55 @@ namespace Amazon.Redshift
         /// 
         /// <returns>Returns a  ModifyClusterResult from Redshift.</returns>
         ModifyClusterResponse EndModifyCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyClusterIamRoles
+
+
+        /// <summary>
+        /// Modifies the list of AWS Identity and Access Management (IAM) roles that can be used
+        /// by the cluster to access other AWS services. 
+        /// 
+        ///  
+        /// <para>
+        /// A cluster can have up to 10 IAM roles associated at any time. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClusterIamRoles service method.</param>
+        /// 
+        /// <returns>The response from the ModifyClusterIamRoles service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        ModifyClusterIamRolesResponse ModifyClusterIamRoles(ModifyClusterIamRolesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClusterIamRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClusterIamRoles operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyClusterIamRoles
+        ///         operation.</returns>
+        IAsyncResult BeginModifyClusterIamRoles(ModifyClusterIamRolesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyClusterIamRoles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyClusterIamRoles.</param>
+        /// 
+        /// <returns>Returns a  ModifyClusterIamRolesResult from Redshift.</returns>
+        ModifyClusterIamRolesResponse EndModifyClusterIamRoles(IAsyncResult asyncResult);
 
         #endregion
         

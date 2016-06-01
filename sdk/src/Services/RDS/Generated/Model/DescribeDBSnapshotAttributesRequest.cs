@@ -34,16 +34,16 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// When sharing snapshots with other AWS accounts, <code>DescribeDBSnapshotAttributes</code>
-    /// returns the <code>restore</code> attribute and a list of the AWS account ids that
-    /// are authorized to copy or restore the manual DB snapshot. If <code>all</code> is included
-    /// in the list of values for the <code>restore</code> attribute, then the manual DB snapshot
-    /// is public and can be copied or restored by all AWS accounts.
+    /// returns the <code>restore</code> attribute and a list of IDs for the AWS accounts
+    /// that are authorized to copy or restore the manual DB snapshot. If <code>all</code>
+    /// is included in the list of values for the <code>restore</code> attribute, then the
+    /// manual DB snapshot is public and can be copied or restored by all AWS accounts.
     /// </para>
     ///  
     /// <para>
     /// To add or remove access for an AWS account to copy or restore a manual DB snapshot,
     /// or to make the manual DB snapshot public or private, use the <a>ModifyDBSnapshotAttribute</a>
-    /// API.
+    /// API action.
     /// </para>
     /// </summary>
     public partial class DescribeDBSnapshotAttributesRequest : AmazonRDSRequest
@@ -53,7 +53,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        /// The identifier for the DB snapshot to modify the attributes for.
+        /// The identifier for the DB snapshot to describe the attributes for.
         /// </para>
         /// </summary>
         public string DBSnapshotIdentifier

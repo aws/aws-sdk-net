@@ -29,10 +29,10 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStream operation.
-    /// Creates a Amazon Kinesis stream. A stream captures and transports data records that
+    /// Creates an Amazon Kinesis stream. A stream captures and transports data records that
     /// are continuously emitted from different data sources or <i>producers</i>. Scale-out
-    /// within an Amazon Kinesis stream is explicitly supported by means of shards, which
-    /// are uniquely identified groups of data records in an Amazon Kinesis stream.
+    /// within a stream is explicitly supported by means of shards, which are uniquely identified
+    /// groups of data records in a stream.
     /// 
     ///  
     /// <para>
@@ -67,8 +67,9 @@ namespace Amazon.Kinesis.Model
     /// in time.</li> <li>Create more shards than are authorized for your account.</li> </ul>
     /// 
     /// <para>
-    /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
-    /// Kinesis Limits</a>. If you need to increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+    /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+    /// Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. If you need to increase
+    /// this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
     /// AWS Support</a>.
     /// </para>
     ///  
@@ -115,7 +116,7 @@ namespace Amazon.Kinesis.Model
         /// A name to identify the stream. The stream name is scoped to the AWS account used by
         /// the application that creates the stream. It is also scoped by region. That is, two
         /// streams in two different AWS accounts can have the same name, and two streams in the
-        /// same AWS account, but in two different regions, can have the same name.
+        /// same AWS account but in two different regions can have the same name.
         /// </para>
         /// </summary>
         public string StreamName

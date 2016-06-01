@@ -39,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an existing AWS CodeDeploy application to get revision information about.
+        /// The name of an AWS CodeDeploy application about which to get revision information.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -57,7 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Revisions. 
         /// <para>
-        /// Information to get about the application revisions, including revision type and location.
+        /// Information to get about the application revisions, including type and location.
         /// </para>
         /// </summary>
         public List<RevisionLocation> Revisions

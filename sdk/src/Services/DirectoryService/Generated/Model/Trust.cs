@@ -41,6 +41,7 @@ namespace Amazon.DirectoryService.Model
         private TrustDirection _trustDirection;
         private string _trustId;
         private TrustState _trustState;
+        private string _trustStateReason;
         private TrustType _trustType;
 
         /// <summary>
@@ -166,6 +167,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetTrustState()
         {
             return this._trustState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrustStateReason. 
+        /// <para>
+        /// The reason for the TrustState.
+        /// </para>
+        /// </summary>
+        public string TrustStateReason
+        {
+            get { return this._trustStateReason; }
+            set { this._trustStateReason = value; }
+        }
+
+        // Check to see if TrustStateReason property is set
+        internal bool IsSetTrustStateReason()
+        {
+            return this._trustStateReason != null;
         }
 
         /// <summary>

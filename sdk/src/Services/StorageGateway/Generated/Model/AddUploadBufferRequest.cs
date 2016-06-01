@@ -29,13 +29,13 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the AddUploadBuffer operation.
-    /// This operation configures one or more gateway local disks as upload buffer for a specified
-    /// gateway. This operation is supported for both the gateway-stored and gateway-cached
-    /// volume architectures. 
+    /// Configures one or more gateway local disks as upload buffer for a specified gateway.
+    /// This operation is supported for both the gateway-stored and gateway-cached volume
+    /// architectures.
     /// 
     ///  
     /// <para>
-    ///  In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
+    /// In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
     /// to add upload buffer, and one or more disk IDs that you want to configure as upload
     /// buffer.
     /// </para>

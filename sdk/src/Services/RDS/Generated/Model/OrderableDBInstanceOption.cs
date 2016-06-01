@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains a list of available options for a DB instance 
+    /// Contains a list of available options for a DB instance
     /// 
     ///  
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        ///  A list of Availability Zones for the orderable DB instance. 
+        /// A list of Availability Zones for the orderable DB instance.
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
@@ -72,7 +72,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  The DB instance class for the orderable DB instance. 
+        /// The DB instance class for the orderable DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -90,7 +90,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  The engine type of the orderable DB instance. 
+        /// The engine type of the orderable DB instance.
         /// </para>
         /// </summary>
         public string Engine
@@ -108,7 +108,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The engine version of the orderable DB instance. 
+        /// The engine version of the orderable DB instance.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -126,7 +126,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        ///  The license model for the orderable DB instance. 
+        /// The license model for the orderable DB instance.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -144,7 +144,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZCapable. 
         /// <para>
-        ///  Indicates whether this orderable DB instance is multi-AZ capable. 
+        /// Indicates whether this orderable DB instance is multi-AZ capable.
         /// </para>
         /// </summary>
         public bool MultiAZCapable
@@ -162,7 +162,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaCapable. 
         /// <para>
-        ///  Indicates whether this orderable DB instance can have a Read Replica. 
+        /// Indicates whether this orderable DB instance can have a Read Replica.
         /// </para>
         /// </summary>
         public bool ReadReplicaCapable
@@ -180,7 +180,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        ///  Indicates the storage type for this orderable DB instance. 
+        /// Indicates the storage type for this orderable DB instance.
         /// </para>
         /// </summary>
         public string StorageType
@@ -217,7 +217,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsIops. 
         /// <para>
-        ///  Indicates whether this orderable DB instance supports provisioned IOPS. 
+        /// Indicates whether this orderable DB instance supports provisioned IOPS.
         /// </para>
         /// </summary>
         public bool SupportsIops
@@ -235,7 +235,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportsStorageEncryption. 
         /// <para>
-        ///  Indicates whether this orderable DB instance supports encrypted storage. 
+        /// Indicates whether this orderable DB instance supports encrypted storage.
         /// </para>
         /// </summary>
         public bool SupportsStorageEncryption
@@ -253,7 +253,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Vpc. 
         /// <para>
-        ///  Indicates whether this is a VPC orderable DB instance. 
+        /// Indicates whether this is a VPC orderable DB instance.
         /// </para>
         /// </summary>
         public bool Vpc

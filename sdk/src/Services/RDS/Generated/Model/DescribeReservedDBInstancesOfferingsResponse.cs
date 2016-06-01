@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReservedDBInstancesOfferings. 
         /// <para>
-        ///  A list of reserved DB instance offerings. 
+        /// A list of reserved DB instance offerings.
         /// </para>
         /// </summary>
         public List<ReservedDBInstancesOffering> ReservedDBInstancesOfferings

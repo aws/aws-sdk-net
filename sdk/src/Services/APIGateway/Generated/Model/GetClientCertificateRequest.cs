@@ -29,14 +29,17 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetClientCertificate operation.
-    /// 
+    /// Gets information about the current <a>ClientCertificate</a> resource.
     /// </summary>
     public partial class GetClientCertificateRequest : AmazonAPIGatewayRequest
     {
         private string _clientCertificateId;
 
         /// <summary>
-        /// Gets and sets the property ClientCertificateId.
+        /// Gets and sets the property ClientCertificateId. 
+        /// <para>
+        /// The identifier of the <a>ClientCertificate</a> resource to be described.
+        /// </para>
         /// </summary>
         public string ClientCertificateId
         {

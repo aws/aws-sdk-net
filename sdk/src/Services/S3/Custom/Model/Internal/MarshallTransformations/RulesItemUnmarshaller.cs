@@ -79,6 +79,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
+                    if (context.TestExpression("AbortIncompleteMultipartUpload", targetDepth))
+                    {
+                        rulesItem.AbortIncompleteMultipartUpload = AbortIncompleteMultipartUploadUnmarshaller.Instance.Unmarshall(context);
+
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

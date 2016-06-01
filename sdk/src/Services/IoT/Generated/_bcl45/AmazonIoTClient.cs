@@ -269,7 +269,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferAlreadyCompletedException">
-        /// You can't revert the certificate transfer because it has already completed.
+        /// You can't revert the certificate transfer because the transfer is already complete.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -309,7 +309,7 @@ namespace Amazon.IoT
         /// Attaches the specified policy to the specified principal (certificate or other credential).
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="principal">The principal which can be a certificate ARN (as returned from the CreateCertificate operation) or a Cognito ID.</param>
+        /// <param name="principal">The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</param>
         /// 
         /// <returns>The response from the AttachPrincipalPolicy service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -382,7 +382,7 @@ namespace Amazon.IoT
         /// Attaches the specified policy to the specified principal (certificate or other credential).
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="principal">The principal which can be a certificate ARN (as returned from the CreateCertificate operation) or a Cognito ID.</param>
+        /// <param name="principal">The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -571,10 +571,10 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer
-        /// (transfer destinations can use <a>RejectCertificateTransfer</a> instead). After transfer,
-        /// AWS IoT returns the certificate to the source account in the INACTIVE state. Once
-        /// the destination account has accepted the transfer, the transfer may no longer be cancelled.
+        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+        /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
+        /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
+        /// the destination account has accepted the transfer, the transfer cannot be cancelled.
         /// </para>
         ///  
         /// <para>
@@ -601,7 +601,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferAlreadyCompletedException">
-        /// You can't revert the certificate transfer because it has already completed.
+        /// You can't revert the certificate transfer because the transfer is already complete.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -619,10 +619,10 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer
-        /// (transfer destinations can use <a>RejectCertificateTransfer</a> instead). After transfer,
-        /// AWS IoT returns the certificate to the source account in the INACTIVE state. Once
-        /// the destination account has accepted the transfer, the transfer may no longer be cancelled.
+        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+        /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
+        /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
+        /// the destination account has accepted the transfer, the transfer cannot be cancelled.
         /// </para>
         ///  
         /// <para>
@@ -649,7 +649,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferAlreadyCompletedException">
-        /// You can't revert the certificate transfer because it has already completed.
+        /// You can't revert the certificate transfer because the transfer is already complete.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -668,10 +668,10 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer
-        /// (transfer destinations can use <a>RejectCertificateTransfer</a> instead). After transfer,
-        /// AWS IoT returns the certificate to the source account in the INACTIVE state. Once
-        /// the destination account has accepted the transfer, the transfer may no longer be cancelled.
+        /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+        /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
+        /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
+        /// the destination account has accepted the transfer, the transfer cannot be cancelled.
         /// </para>
         ///  
         /// <para>
@@ -701,7 +701,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferAlreadyCompletedException">
-        /// You can't revert the certificate transfer because it has already completed.
+        /// You can't revert the certificate transfer because the transfer is already complete.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -746,8 +746,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can create multiple certificates in a batch by creating a directory and copying
-        /// multiple .csr files into that directory and specifying that directory on the command
+        /// You can create multiple certificates in a batch by creating a directory, copying multiple
+        /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
         /// of CSRs. 
         /// </para>
@@ -757,7 +757,7 @@ namespace Amazon.IoT
         /// </para>
         /// &gt; 
         /// <para>
-        /// On Linux and OSX, the command is:
+        /// On Linux and OS X, the command is:
         /// </para>
         ///  
         /// <para>
@@ -766,7 +766,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
         /// for the corresponding CSR. 
         /// </para>
@@ -792,7 +792,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
         /// is: 
         /// </para>
         ///  
@@ -837,8 +837,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can create multiple certificates in a batch by creating a directory and copying
-        /// multiple .csr files into that directory and specifying that directory on the command
+        /// You can create multiple certificates in a batch by creating a directory, copying multiple
+        /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
         /// of CSRs. 
         /// </para>
@@ -848,7 +848,7 @@ namespace Amazon.IoT
         /// </para>
         /// &gt; 
         /// <para>
-        /// On Linux and OSX, the command is:
+        /// On Linux and OS X, the command is:
         /// </para>
         ///  
         /// <para>
@@ -857,7 +857,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
         /// for the corresponding CSR. 
         /// </para>
@@ -883,7 +883,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
         /// is: 
         /// </para>
         ///  
@@ -930,8 +930,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can create multiple certificates in a batch by creating a directory and copying
-        /// multiple .csr files into that directory and specifying that directory on the command
+        /// You can create multiple certificates in a batch by creating a directory, copying multiple
+        /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
         /// of CSRs. 
         /// </para>
@@ -941,7 +941,7 @@ namespace Amazon.IoT
         /// </para>
         /// &gt; 
         /// <para>
-        /// On Linux and OSX, the command is:
+        /// On Linux and OS X, the command is:
         /// </para>
         ///  
         /// <para>
@@ -950,7 +950,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
         /// for the corresponding CSR. 
         /// </para>
@@ -976,7 +976,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
         /// is: 
         /// </para>
         ///  
@@ -1022,8 +1022,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can create multiple certificates in a batch by creating a directory and copying
-        /// multiple .csr files into that directory and specifying that directory on the command
+        /// You can create multiple certificates in a batch by creating a directory, copying multiple
+        /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
         /// of CSRs. 
         /// </para>
@@ -1033,7 +1033,7 @@ namespace Amazon.IoT
         /// </para>
         /// &gt; 
         /// <para>
-        /// On Linux and OSX, the command is:
+        /// On Linux and OS X, the command is:
         /// </para>
         ///  
         /// <para>
@@ -1042,7 +1042,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
         /// for the corresponding CSR. 
         /// </para>
@@ -1068,7 +1068,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
         /// is: 
         /// </para>
         ///  
@@ -1116,8 +1116,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// You can create multiple certificates in a batch by creating a directory and copying
-        /// multiple .csr files into that directory and specifying that directory on the command
+        /// You can create multiple certificates in a batch by creating a directory, copying multiple
+        /// .csr files into that directory, and then specifying that directory on the command
         /// line. The following commands show how to create a batch of certificates given a batch
         /// of CSRs. 
         /// </para>
@@ -1127,7 +1127,7 @@ namespace Amazon.IoT
         /// </para>
         /// &gt; 
         /// <para>
-        /// On Linux and OSX, the command is:
+        /// On Linux and OS X, the command is:
         /// </para>
         ///  
         /// <para>
@@ -1136,7 +1136,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR filename
+        ///  This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
         /// to the aws iot create-certificate-from-csr AWS CLI command to create a certificate
         /// for the corresponding CSR. 
         /// </para>
@@ -1162,7 +1162,7 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        ///  On Windows Command Prompt, the command to create certificates for all CSRs in my-csr-directory
+        ///  On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory
         /// is: 
         /// </para>
         ///  
@@ -1225,13 +1225,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a 2048 bit RSA key pair and issues an X.509 certificate using the issued public
+        /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
         /// key.
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate.
-        /// It is important to keep track of the private key.
+        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
         /// 
@@ -1259,13 +1259,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a 2048 bit RSA key pair and issues an X.509 certificate using the issued public
+        /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
         /// key.
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate.
-        /// It is important to keep track of the private key.
+        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
         /// <param name="setAsActive">Specifies whether the certificate is active.</param>
@@ -1295,13 +1295,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a 2048 bit RSA key pair and issues an X.509 certificate using the issued public
+        /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
         /// key.
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate.
-        /// It is important to keep track of the private key.
+        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeysAndCertificate service method.</param>
@@ -1332,13 +1332,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a 2048 bit RSA key pair and issues an X.509 certificate using the issued public
+        /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
         /// key.
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate.
-        /// It is important to keep track of the private key.
+        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1369,13 +1369,13 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a 2048 bit RSA key pair and issues an X.509 certificate using the issued public
+        /// Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public
         /// key.
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate.
-        /// It is important to keep track of the private key.
+        /// <b>Note</b> This is the only time AWS IoT issues the private key for this certificate,
+        /// so it is important to keep it in a secure location.
         /// </para>
         /// </summary>
         /// <param name="setAsActive">Specifies whether the certificate is active.</param>
@@ -1440,7 +1440,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. The length of the <b>policyDocument</b> must be a minimum length of 1, with a maximum length of 2048, excluding whitespace.</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</param>
         /// 
         /// <returns>The response from the CreatePolicy service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -1527,7 +1527,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. The length of the <b>policyDocument</b> must be a minimum length of 1, with a maximum length of 2048, excluding whitespace.</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1588,18 +1588,18 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a new version of the specified AWS IoT policy. To update a policy, create
         /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
-        /// before you create a new version.
+        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
+        /// before you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
-        /// version is the operative version; that is, the version that is in effect for the certificates
-        /// that the policy is attached to.
+        /// version is the operative version (that is, the version that is in effect for the certificates
+        /// to which the policy is attached).
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
         /// 
         /// <returns>The response from the CreatePolicyVersion service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -1638,19 +1638,19 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a new version of the specified AWS IoT policy. To update a policy, create
         /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
-        /// before you create a new version.
+        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
+        /// before you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
-        /// version is the operative version; that is, the version that is in effect for the certificates
-        /// that the policy is attached to.
+        /// version is the operative version (that is, the version that is in effect for the certificates
+        /// to which the policy is attached).
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</param>
-        /// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
+        /// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</param>
         /// 
         /// <returns>The response from the CreatePolicyVersion service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -1690,14 +1690,14 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a new version of the specified AWS IoT policy. To update a policy, create
         /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
-        /// before you create a new version.
+        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
+        /// before you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
-        /// version is the operative version; that is, the version that is in effect for the certificates
-        /// that the policy is attached to.
+        /// version is the operative version (that is, the version that is in effect for the certificates
+        /// to which the policy is attached).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicyVersion service method.</param>
@@ -1739,18 +1739,18 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a new version of the specified AWS IoT policy. To update a policy, create
         /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
-        /// before you create a new version.
+        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
+        /// before you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
-        /// version is the operative version; that is, the version that is in effect for the certificates
-        /// that the policy is attached to.
+        /// version is the operative version (that is, the version that is in effect for the certificates
+        /// to which the policy is attached).
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1792,19 +1792,19 @@ namespace Amazon.IoT
         /// <summary>
         /// Creates a new version of the specified AWS IoT policy. To update a policy, create
         /// a new policy version. A managed policy can have up to five versions. If the policy
-        /// has five versions, you must delete an existing version using <a>DeletePolicyVersion</a>
-        /// before you create a new version.
+        /// has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version
+        /// before you create a new one.
         /// 
         ///  
         /// <para>
         /// Optionally, you can set the new version as the policy's default version. The default
-        /// version is the operative version; that is, the version that is in effect for the certificates
-        /// that the policy is attached to.
+        /// version is the operative version (that is, the version that is in effect for the certificates
+        /// to which the policy is attached).
         /// </para>
         /// </summary>
         /// <param name="policyName">The policy name.</param>
-        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048 excluding whitespaces</param>
-        /// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version; that is, the version that is in effect for the certificates that the policy is attached to.</param>
+        /// <param name="policyDocument">The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces</param>
+        /// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1867,7 +1867,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a thing in the thing registry.
+        /// Creates a thing in the Thing Registry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThing service method.</param>
         /// 
@@ -1922,7 +1922,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a rule.
+        /// Creates a rule. Creating rules is an administrator-level action. Any user who has
+        /// permission to create rules will be able to access data processed by the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTopicRule service method.</param>
         /// 
@@ -1970,6 +1971,64 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteCACertificate
+
+
+        /// <summary>
+        /// Deletes a registered CA certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCACertificate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCACertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.CertificateStateException">
+        /// The certificate operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public DeleteCACertificateResponse DeleteCACertificate(DeleteCACertificateRequest request)
+        {
+            var marshaller = new DeleteCACertificateRequestMarshaller();
+            var unmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCACertificateRequest,DeleteCACertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteCACertificateResponse> DeleteCACertificateAsync(DeleteCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteCACertificateRequestMarshaller();
+            var unmarshaller = DeleteCACertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCACertificateRequest,DeleteCACertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCertificate
 
 
@@ -1979,9 +2038,9 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a>
-        /// API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
-        /// status.
+        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
+        /// certificate to the INACTIVE status.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -1993,8 +2052,23 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         public DeleteCertificateResponse DeleteCertificate(string certificateId)
         {
@@ -2010,9 +2084,9 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a>
-        /// API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
-        /// status.
+        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
+        /// certificate to the INACTIVE status.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
@@ -2024,8 +2098,23 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         public DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
@@ -2042,9 +2131,9 @@ namespace Amazon.IoT
         ///  
         /// <para>
         /// A certificate cannot be deleted if it has a policy attached to it or if its status
-        /// is set to ACTIVE. To delete a certificate, first detach all policies using the <a>DetachPrincipalPolicy</a>
-        /// API. Next use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
-        /// status.
+        /// is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a>
+        /// API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the
+        /// certificate to the INACTIVE status.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -2059,8 +2148,23 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
         /// </exception>
         public Task<DeleteCertificateResponse> DeleteCertificateAsync(string certificateId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2097,14 +2201,14 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A policy cannot be deleted if it has non-default versions and/or it is attached to
-        /// any certificate.
+        /// A policy cannot be deleted if it has non-default versions or it is attached to any
+        /// certificate.
         /// </para>
         ///  
         /// <para>
-        /// To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion
-        /// API, detach the policy from any certificate using the DetachPrincipalPolicy API, and
-        /// then use the DeletePolicy API to delete the policy.
+        /// To delete a policy, use the DeletePolicyVersion API to delete all non-default versions
+        /// of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate;
+        /// and then use the DeletePolicy API to delete the policy.
         /// </para>
         ///  
         /// <para>
@@ -2148,14 +2252,14 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A policy cannot be deleted if it has non-default versions and/or it is attached to
-        /// any certificate.
+        /// A policy cannot be deleted if it has non-default versions or it is attached to any
+        /// certificate.
         /// </para>
         ///  
         /// <para>
-        /// To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion
-        /// API, detach the policy from any certificate using the DetachPrincipalPolicy API, and
-        /// then use the DeletePolicy API to delete the policy.
+        /// To delete a policy, use the DeletePolicyVersion API to delete all non-default versions
+        /// of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate;
+        /// and then use the DeletePolicy API to delete the policy.
         /// </para>
         ///  
         /// <para>
@@ -2200,14 +2304,14 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// A policy cannot be deleted if it has non-default versions and/or it is attached to
-        /// any certificate.
+        /// A policy cannot be deleted if it has non-default versions or it is attached to any
+        /// certificate.
         /// </para>
         ///  
         /// <para>
-        /// To delete a policy, delete all non-default versions of the policy using the DeletePolicyVersion
-        /// API, detach the policy from any certificate using the DetachPrincipalPolicy API, and
-        /// then use the DeletePolicy API to delete the policy.
+        /// To delete a policy, use the DeletePolicyVersion API to delete all non-default versions
+        /// of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate;
+        /// and then use the DeletePolicy API to delete the policy.
         /// </para>
         ///  
         /// <para>
@@ -2407,6 +2511,58 @@ namespace Amazon.IoT
             var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePolicyVersionRequest,DeletePolicyVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRegistrationCode
+
+
+        /// <summary>
+        /// Deletes a CA certificate registration code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistrationCode service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegistrationCode service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public DeleteRegistrationCodeResponse DeleteRegistrationCode(DeleteRegistrationCodeRequest request)
+        {
+            var marshaller = new DeleteRegistrationCodeRequestMarshaller();
+            var unmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRegistrationCodeRequest,DeleteRegistrationCodeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegistrationCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistrationCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteRegistrationCodeResponse> DeleteRegistrationCodeAsync(DeleteRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRegistrationCodeRequestMarshaller();
+            var unmarshaller = DeleteRegistrationCodeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRegistrationCodeRequest,DeleteRegistrationCodeResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2633,6 +2789,61 @@ namespace Amazon.IoT
             var unmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTopicRuleRequest,DeleteTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCACertificate
+
+
+        /// <summary>
+        /// Describes a registered CA certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCACertificate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCACertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public DescribeCACertificateResponse DescribeCACertificate(DescribeCACertificateRequest request)
+        {
+            var marshaller = new DescribeCACertificateRequestMarshaller();
+            var unmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCACertificateRequest,DescribeCACertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeCACertificateResponse> DescribeCACertificateAsync(DescribeCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeCACertificateRequestMarshaller();
+            var unmarshaller = DescribeCACertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCACertificateRequest,DescribeCACertificateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2983,7 +3194,7 @@ namespace Amazon.IoT
         /// Removes the specified policy from the specified certificate.
         /// </summary>
         /// <param name="policyName">The name of the policy to detach.</param>
-        /// <param name="principal">The principal If the principal is a certificate, specify the certificate ARN. If the principal is a Cognito identity specify the identity ID.</param>
+        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
         /// 
         /// <returns>The response from the DetachPrincipalPolicy service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -3050,7 +3261,7 @@ namespace Amazon.IoT
         /// Removes the specified policy from the specified certificate.
         /// </summary>
         /// <param name="policyName">The name of the policy to detach.</param>
-        /// <param name="principal">The principal If the principal is a certificate, specify the certificate ARN. If the principal is a Cognito identity specify the identity ID.</param>
+        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3232,7 +3443,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Disables the specified rule
+        /// Disables the specified rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableTopicRule service method.</param>
         /// 
@@ -3623,6 +3834,55 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  GetRegistrationCode
+
+
+        /// <summary>
+        /// Gets a registration code used to register a CA certificate with AWS IoT.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistrationCode service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistrationCode service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public GetRegistrationCodeResponse GetRegistrationCode(GetRegistrationCodeRequest request)
+        {
+            var marshaller = new GetRegistrationCodeRequestMarshaller();
+            var unmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegistrationCodeRequest,GetRegistrationCodeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegistrationCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistrationCode operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetRegistrationCodeResponse> GetRegistrationCodeAsync(GetRegistrationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRegistrationCodeRequestMarshaller();
+            var unmarshaller = GetRegistrationCodeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRegistrationCodeRequest,GetRegistrationCodeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTopicRule
 
 
@@ -3727,16 +3987,74 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListCACertificates
+
+
+        /// <summary>
+        /// Lists the CA certificates registered for your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The results are paginated with a default page size of 25. You can use the returned
+        /// marker to retrieve additional results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCACertificates service method.</param>
+        /// 
+        /// <returns>The response from the ListCACertificates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public ListCACertificatesResponse ListCACertificates(ListCACertificatesRequest request)
+        {
+            var marshaller = new ListCACertificatesRequestMarshaller();
+            var unmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCACertificatesRequest,ListCACertificatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCACertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCACertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListCACertificatesResponse> ListCACertificatesAsync(ListCACertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListCACertificatesRequestMarshaller();
+            var unmarshaller = ListCACertificatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCACertificatesRequest,ListCACertificatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCertificates
 
 
         /// <summary>
-        /// Lists your certificates.
+        /// Lists the certificates registered in your AWS account.
         /// 
         ///  
         /// <para>
-        /// The results are paginated with a default page size of 25. You can retrieve additional
-        /// results using the returned marker.
+        /// The results are paginated with a default page size of 25. You can use the returned
+        /// marker to retrieve additional results.
         /// </para>
         /// </summary>
         /// 
@@ -3764,12 +4082,12 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your certificates.
+        /// Lists the certificates registered in your AWS account.
         /// 
         ///  
         /// <para>
-        /// The results are paginated with a default page size of 25. You can retrieve additional
-        /// results using the returned marker.
+        /// The results are paginated with a default page size of 25. You can use the returned
+        /// marker to retrieve additional results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
@@ -3800,12 +4118,12 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your certificates.
+        /// Lists the certificates registered in your AWS account.
         /// 
         ///  
         /// <para>
-        /// The results are paginated with a default page size of 25. You can retrieve additional
-        /// results using the returned marker.
+        /// The results are paginated with a default page size of 25. You can use the returned
+        /// marker to retrieve additional results.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -3849,6 +4167,58 @@ namespace Amazon.IoT
             var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCertificatesRequest,ListCertificatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCertificatesByCA
+
+
+        /// <summary>
+        /// List the device certificates signed by the specified CA certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificatesByCA service method.</param>
+        /// 
+        /// <returns>The response from the ListCertificatesByCA service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public ListCertificatesByCAResponse ListCertificatesByCA(ListCertificatesByCARequest request)
+        {
+            var marshaller = new ListCertificatesByCARequestMarshaller();
+            var unmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
+
+            return Invoke<ListCertificatesByCARequest,ListCertificatesByCAResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCertificatesByCA operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificatesByCA operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListCertificatesByCAResponse> ListCertificatesByCAAsync(ListCertificatesByCARequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListCertificatesByCARequestMarshaller();
+            var unmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCertificatesByCARequest,ListCertificatesByCAResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4089,9 +4459,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the policies attached to the specified principal. If you use an Amazon Cognito
-        /// identity, the ID needs to be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">Amazon
-        /// Cognito Identity format</a>.
+        /// Lists the policies attached to the specified principal. If you use an Cognito identity,
+        /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+        /// Identity format</a>.
         /// </summary>
         /// <param name="principal">The principal.</param>
         /// 
@@ -4123,9 +4493,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the policies attached to the specified principal. If you use an Amazon Cognito
-        /// identity, the ID needs to be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">Amazon
-        /// Cognito Identity format</a>.
+        /// Lists the policies attached to the specified principal. If you use an Cognito identity,
+        /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+        /// Identity format</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalPolicies service method.</param>
         /// 
@@ -4158,9 +4528,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the policies attached to the specified principal. If you use an Amazon Cognito
-        /// identity, the ID needs to be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">Amazon
-        /// Cognito Identity format</a>.
+        /// Lists the policies attached to the specified principal. If you use an Cognito identity,
+        /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+        /// Identity format</a>.
         /// </summary>
         /// <param name="principal">The principal.</param>
         /// <param name="cancellationToken">
@@ -4443,8 +4813,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your things. You can pass an AttributeName and/or AttributeValue to filter your
-        /// things. For example: "ListThings where AttributeName=Color and AttributeValue=Red"
+        /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
+        /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
         /// </summary>
         /// 
         /// <returns>The response from the ListThings service method, as returned by IoT.</returns>
@@ -4471,8 +4841,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your things. You can pass an AttributeName and/or AttributeValue to filter your
-        /// things. For example: "ListThings where AttributeName=Color and AttributeValue=Red"
+        /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
+        /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThings service method.</param>
         /// 
@@ -4502,8 +4872,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your things. You can pass an AttributeName and/or AttributeValue to filter your
-        /// things. For example: "ListThings where AttributeName=Color and AttributeValue=Red"
+        /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
+        /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4646,12 +5016,149 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  RegisterCACertificate
+
+
+        /// <summary>
+        /// Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign
+        /// device certificates, which can be then registered with AWS IoT. You can register up
+        /// to 10 CA certificates per AWS account that have the same subject field and public
+        /// key. This enables you to have up to 10 certificate authorities sign your device certificates.
+        /// If you have more than one CA certificate registered, make sure you pass the CA certificate
+        /// when you register your device certificates with the RegisterCertificate API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate service method.</param>
+        /// 
+        /// <returns>The response from the RegisterCACertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// The number of attached entities exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.RegistrationCodeValidationException">
+        /// The registration code is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public RegisterCACertificateResponse RegisterCACertificate(RegisterCACertificateRequest request)
+        {
+            var marshaller = new RegisterCACertificateRequestMarshaller();
+            var unmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterCACertificateRequest,RegisterCACertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterCACertificateResponse> RegisterCACertificateAsync(RegisterCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterCACertificateRequestMarshaller();
+            var unmarshaller = RegisterCACertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterCACertificateRequest,RegisterCACertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterCertificate
+
+
+        /// <summary>
+        /// Registers a device certificate with AWS IoT. If you have more than one CA certificate
+        /// that has the same subject field, you must specify the CA certificate that was used
+        /// to sign the device certificate being registered.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate service method.</param>
+        /// 
+        /// <returns>The response from the RegisterCertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.CertificateConflictException">
+        /// Unable to verify the CA certificate used to sign the device certificate you are attempting
+        /// to register. This is happens when you have registered more than one CA certificate
+        /// that has the same subject field and public key.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.CertificateStateException">
+        /// The certificate operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.CertificateValidationException">
+        /// The certificate is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public RegisterCertificateResponse RegisterCertificate(RegisterCertificateRequest request)
+        {
+            var marshaller = new RegisterCertificateRequestMarshaller();
+            var unmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterCertificateRequest,RegisterCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterCertificateResponse> RegisterCertificateAsync(RegisterCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterCertificateRequestMarshaller();
+            var unmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterCertificateRequest,RegisterCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectCertificateTransfer
 
 
         /// <summary>
         /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-        /// the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+        /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
         /// <para>
@@ -4660,8 +5167,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// This operation can only be called by the transfer destination. Once called, the certificate
-        /// will be returned to the source's account in the INACTIVE state.
+        /// This operation can only be called by the transfer destination. After it is called,
+        /// the certificate will be returned to the source's account in the INACTIVE state.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -4683,7 +5190,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferAlreadyCompletedException">
-        /// You can't revert the certificate transfer because it has already completed.
+        /// You can't revert the certificate transfer because the transfer is already complete.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -4698,7 +5205,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-        /// the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+        /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
         /// <para>
@@ -4707,8 +5214,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// This operation can only be called by the transfer destination. Once called, the certificate
-        /// will be returned to the source's account in the INACTIVE state.
+        /// This operation can only be called by the transfer destination. After it is called,
+        /// the certificate will be returned to the source's account in the INACTIVE state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectCertificateTransfer service method.</param>
@@ -4730,7 +5237,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferAlreadyCompletedException">
-        /// You can't revert the certificate transfer because it has already completed.
+        /// You can't revert the certificate transfer because the transfer is already complete.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -4746,7 +5253,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer,
-        /// the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+        /// the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
         /// 
         ///  
         /// <para>
@@ -4755,8 +5262,8 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// This operation can only be called by the transfer destination. Once called, the certificate
-        /// will be returned to the source's account in the INACTIVE state.
+        /// This operation can only be called by the transfer destination. After it is called,
+        /// the certificate will be returned to the source's account in the INACTIVE state.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -4781,7 +5288,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferAlreadyCompletedException">
-        /// You can't revert the certificate transfer because it has already completed.
+        /// You can't revert the certificate transfer because the transfer is already complete.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -4817,7 +5324,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Replaces the specified rule. You must specify all parameters for the new rule.
+        /// Replaces the specified rule. You must specify all parameters for the new rule. Creating
+        /// rules is an administrator-level action. Any user who has permission to create rules
+        /// will be able to access data processed by the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceTopicRule service method.</param>
         /// 
@@ -4870,8 +5379,8 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Sets the specified version of the specified policy as the policy's default (operative)
-        /// version. This action affects all certificates that the policy is attached to. To list
-        /// the principals the policy is attached to, use the ListPrincipalPolicy API.
+        /// version. This action affects all certificates to which the policy is attached. To
+        /// list the principals the policy is attached to, use the ListPrincipalPolicy API.
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -4906,8 +5415,8 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Sets the specified version of the specified policy as the policy's default (operative)
-        /// version. This action affects all certificates that the policy is attached to. To list
-        /// the principals the policy is attached to, use the ListPrincipalPolicy API.
+        /// version. This action affects all certificates to which the policy is attached. To
+        /// list the principals the policy is attached to, use the ListPrincipalPolicy API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDefaultPolicyVersion service method.</param>
         /// 
@@ -4941,8 +5450,8 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Sets the specified version of the specified policy as the policy's default (operative)
-        /// version. This action affects all certificates that the policy is attached to. To list
-        /// the principals the policy is attached to, use the ListPrincipalPolicy API.
+        /// version. This action affects all certificates to which the policy is attached. To
+        /// list the principals the policy is attached to, use the ListPrincipalPolicy API.
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="policyVersionId">The policy version ID.</param>
@@ -5055,18 +5564,18 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account, it is up to the caller
+        /// No notification is sent to the transfer destination's account. It is up to the caller
         /// to notify the transfer target.
         /// </para>
         ///  
         /// <para>
-        /// The certificate being transferred must not be in the ACTIVE state. It can be deactivated
-        /// using the UpdateCertificate API.
+        /// The certificate being transferred must not be in the ACTIVE state. You can use the
+        /// UpdateCertificate API to deactivate it.
         /// </para>
         ///  
         /// <para>
-        /// The certificate must not have any policies attached to it. These can be detached using
-        /// the DetachPrincipalPolicy API.
+        /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
+        /// API to detach them.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -5092,7 +5601,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferConflictException">
-        /// You can't transfer the the certificate because authorization policies are still attached.
+        /// You can't transfer the certificate because authorization policies are still attached.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -5115,18 +5624,18 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account, it is up to the caller
+        /// No notification is sent to the transfer destination's account. It is up to the caller
         /// to notify the transfer target.
         /// </para>
         ///  
         /// <para>
-        /// The certificate being transferred must not be in the ACTIVE state. It can be deactivated
-        /// using the UpdateCertificate API.
+        /// The certificate being transferred must not be in the ACTIVE state. You can use the
+        /// UpdateCertificate API to deactivate it.
         /// </para>
         ///  
         /// <para>
-        /// The certificate must not have any policies attached to it. These can be detached using
-        /// the DetachPrincipalPolicy API.
+        /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
+        /// API to detach them.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TransferCertificate service method.</param>
@@ -5151,7 +5660,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferConflictException">
-        /// You can't transfer the the certificate because authorization policies are still attached.
+        /// You can't transfer the certificate because authorization policies are still attached.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -5174,18 +5683,18 @@ namespace Amazon.IoT
         /// </para>
         ///  
         /// <para>
-        /// No notification is sent to the transfer destination's account, it is up to the caller
+        /// No notification is sent to the transfer destination's account. It is up to the caller
         /// to notify the transfer target.
         /// </para>
         ///  
         /// <para>
-        /// The certificate being transferred must not be in the ACTIVE state. It can be deactivated
-        /// using the UpdateCertificate API.
+        /// The certificate being transferred must not be in the ACTIVE state. You can use the
+        /// UpdateCertificate API to deactivate it.
         /// </para>
         ///  
         /// <para>
-        /// The certificate must not have any policies attached to it. These can be detached using
-        /// the DetachPrincipalPolicy API.
+        /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
+        /// API to detach them.
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
@@ -5214,7 +5723,7 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TransferConflictException">
-        /// You can't transfer the the certificate because authorization policies are still attached.
+        /// You can't transfer the certificate because authorization policies are still attached.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -5247,6 +5756,61 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateCACertificate
+
+
+        /// <summary>
+        /// Updates a registered CA certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCACertificate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCACertificate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public UpdateCACertificateResponse UpdateCACertificate(UpdateCACertificateRequest request)
+        {
+            var marshaller = new UpdateCACertificateRequestMarshaller();
+            var unmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCACertificateRequest,UpdateCACertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCACertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCACertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateCACertificateResponse> UpdateCACertificateAsync(UpdateCACertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateCACertificateRequestMarshaller();
+            var unmarshaller = UpdateCACertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCACertificateRequest,UpdateCACertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateCertificate
 
 
@@ -5255,8 +5819,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// Moving a cert from the ACTIVE state (including REVOKED) will NOT disconnect currently-connected
-        /// devices, although these devices will be unable to reconnect.
+        /// Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect
+        /// currently connected devices, but these devices will be unable to reconnect.
         /// </para>
         ///  
         /// <para>
@@ -5265,7 +5829,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status. Note: setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and is not meant to be used by developers.</param>
+        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</param>
         /// 
         /// <returns>The response from the UpdateCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.CertificateStateException">
@@ -5303,8 +5867,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// Moving a cert from the ACTIVE state (including REVOKED) will NOT disconnect currently-connected
-        /// devices, although these devices will be unable to reconnect.
+        /// Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect
+        /// currently connected devices, but these devices will be unable to reconnect.
         /// </para>
         ///  
         /// <para>
@@ -5350,8 +5914,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        /// Moving a cert from the ACTIVE state (including REVOKED) will NOT disconnect currently-connected
-        /// devices, although these devices will be unable to reconnect.
+        /// Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect
+        /// currently connected devices, but these devices will be unable to reconnect.
         /// </para>
         ///  
         /// <para>
@@ -5360,7 +5924,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status. Note: setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and is not meant to be used by developers.</param>
+        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

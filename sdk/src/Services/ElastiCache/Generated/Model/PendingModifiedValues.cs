@@ -34,6 +34,7 @@ namespace Amazon.ElastiCache.Model
     public partial class PendingModifiedValues
     {
         private List<string> _cacheNodeIdsToRemove = new List<string>();
+        private string _cacheNodeType;
         private string _engineVersion;
         private int? _numCacheNodes;
 
@@ -59,6 +60,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheNodeIdsToRemove()
         {
             return this._cacheNodeIdsToRemove != null && this._cacheNodeIdsToRemove.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheNodeType. 
+        /// <para>
+        /// The cache node type that this cache cluster or replication group will be scaled to.
+        /// </para>
+        /// </summary>
+        public string CacheNodeType
+        {
+            get { return this._cacheNodeType; }
+            set { this._cacheNodeType = value; }
+        }
+
+        // Check to see if CacheNodeType property is set
+        internal bool IsSetCacheNodeType()
+        {
+            return this._cacheNodeType != null;
         }
 
         /// <summary>

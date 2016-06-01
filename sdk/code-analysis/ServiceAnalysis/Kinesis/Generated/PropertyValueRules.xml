@@ -52,6 +52,30 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.DisableEnhancedMonitoringRequest.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.DisableEnhancedMonitoringResponse.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.EnableEnhancedMonitoringRequest.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.EnableEnhancedMonitoringResponse.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.GetRecordsRequest.Limit</property>
     <min>1</min>
     <max>10000</max>

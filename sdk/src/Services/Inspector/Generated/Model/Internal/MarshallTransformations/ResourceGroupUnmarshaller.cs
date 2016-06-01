@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -64,16 +64,22 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("resourceGroupArn", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceGroupTags", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroupTags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourceGroupTag, ResourceGroupTagUnmarshaller>(ResourceGroupTagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

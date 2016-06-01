@@ -52,10 +52,16 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 
 * [AWSSDK.APIGateway](https://www.nuget.org/packages/AWSSDK.APIGateway/)
 	* Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.
+* [AWSSDK.ApplicationAutoScaling](https://www.nuget.org/packages/AWSSDK.ApplicationAutoScaling/)
+	* Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling.
+* [AWSSDK.ApplicationDiscoveryService](https://www.nuget.org/packages/AWSSDK.ApplicationDiscoveryService/)
+	* AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.
 * [AWSSDK.AutoScaling](https://www.nuget.org/packages/AWSSDK.AutoScaling/)
 	* Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.
 * [AWSSDK.AWSMarketplaceCommerceAnalytics](https://www.nuget.org/packages/AWSSDK.AWSMarketplaceCommerceAnalytics/)
 	* The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports.
+* [AWSSDK.AWSMarketplaceMetering](https://www.nuget.org/packages/AWSSDK.AWSMarketplaceMetering/)
+	* The AWS Marketplace Metering Service enables sellers to price their products along new pricing dimensions. After a integrating their product with the AWS Marketplace Metering Service, that product will emit an hourly record capturing the usage of any single pricing dimension. Buyers can easily subscribe to software priced by this new dimension on the AWS Marketplace website and only pay for what they use.
 * [AWSSDK.AWSSupport](https://www.nuget.org/packages/AWSSDK.AWSSupport/)
 	* The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.
 * [AWSSDK.CertificateManager](https://www.nuget.org/packages/AWSSDK.CertificateManager/)
@@ -86,10 +92,14 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS CodePipeline is a continuous delivery service for fast and reliable application updates.
 * [AWSSDK.CognitoIdentity](https://www.nuget.org/packages/AWSSDK.CognitoIdentity/)
 	* Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.
+* [AWSSDK.CognitoIdentityProvider](https://www.nuget.org/packages/AWSSDK.CognitoIdentityProvider/)
+	* You can create a user pool in Amazon Cognito Identity to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies. This API reference provides information about user pools in Amazon Cognito Identity, which is a new capability that is available as a beta.
 * [AWSSDK.CognitoSync](https://www.nuget.org/packages/AWSSDK.CognitoSync/)
 	* Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.
 * [AWSSDK.ConfigService](https://www.nuget.org/packages/AWSSDK.ConfigService/)
 	* AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
+* [AWSSDK.DatabaseMigrationService](https://www.nuget.org/packages/AWSSDK.DatabaseMigrationService/)
+	* AWS Database Migration Service (AWS DMS) can migrate your data to and from most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Aurora, MariaDB, and MySQL. The service supports homogeneous migrations such as Oracle to Oracle, and also heterogeneous migrations between different database platforms, such as Oracle to MySQL or MySQL to Amazon Aurora.
 * [AWSSDK.DataPipeline](https://www.nuget.org/packages/AWSSDK.DataPipeline/)
 	* AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.
 * [AWSSDK.DeviceFarm](https://www.nuget.org/packages/AWSSDK.DeviceFarm/)

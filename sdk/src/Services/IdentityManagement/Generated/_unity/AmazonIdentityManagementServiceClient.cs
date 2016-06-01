@@ -42,13 +42,17 @@ namespace Amazon.IdentityManagement
     /// For the user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using
     /// IAM</a>. 
     /// </para>
-    ///  <note>AWS provides SDKs that consist of libraries and sample code for various programming
+    ///  <note> 
+    /// <para>
+    /// AWS provides SDKs that consist of libraries and sample code for various programming
     /// languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
     /// convenient way to create programmatic access to IAM and AWS. For example, the SDKs
     /// take care of tasks such as cryptographically signing requests (see below), managing
     /// errors, and retrying requests automatically. For information about the AWS SDKs, including
     /// how to download and install them, see the <a href="http://aws.amazon.com/tools/">Tools
-    /// for Amazon Web Services</a> page. </note> 
+    /// for Amazon Web Services</a> page. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However,
     /// you can also use the IAM Query API to make direct calls to the IAM web service. To
@@ -68,7 +72,7 @@ namespace Amazon.IdentityManagement
     /// recommend that you do not use your AWS account access key ID and secret access key
     /// for everyday work with IAM. You can use the access key ID and secret access key for
     /// an IAM user or you can use the AWS Security Token Service to generate temporary security
-    /// credentials and use those to sign requests. 
+    /// credentials and use those to sign requests.
     /// </para>
     ///  
     /// <para>
@@ -86,13 +90,25 @@ namespace Amazon.IdentityManagement
     /// <para>
     /// For more information, see the following:
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
     /// Security Credentials</a>. This topic provides general information about the types
-    /// of credentials used for accessing AWS. </li> <li> <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
+    /// of credentials used for accessing AWS. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
     /// Best Practices</a>. This topic presents a list of suggestions for using the IAM service
-    /// to help secure your AWS resources. </li> <li> <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// to help secure your AWS resources. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// AWS API Requests</a>. This set of topics walk you through the process of signing a
-    /// request using an access key ID and secret access key. </li> </ul>
+    /// request using an access key ID and secret access key. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonIdentityManagementServiceClient : AmazonServiceClient, IAmazonIdentityManagementService
     {
@@ -417,24 +433,28 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Creates a new AWS secret access key and corresponding AWS access key ID for the specified
-        /// user. The default status for new keys is <code>Active</code>. 
+        /// user. The default status for new keys is <code>Active</code>.
         /// 
         ///  
         /// <para>
-        ///  If you do not specify a user name, IAM determines the user name implicitly based
-        /// on the AWS access key ID signing the request. Because this action works for access
-        /// keys under the AWS account, you can use this action to manage root credentials even
-        /// if the AWS account has no associated users. 
+        /// If you do not specify a user name, IAM determines the user name implicitly based on
+        /// the AWS access key ID signing the request. Because this action works for access keys
+        /// under the AWS account, you can use this action to manage root credentials even if
+        /// the AWS account has no associated users.
         /// </para>
         ///  
         /// <para>
         ///  For information about limits on the number of keys you can create, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
         /// </para>
-        ///  <important> To ensure the security of your AWS account, the secret access key is
-        /// accessible only during key and user creation. You must save the key (for example,
-        /// in a text file) if you want to be able to access it again. If a secret key is lost,
-        /// you can delete the access keys for the associated user and then create new keys. </important>
+        ///  <important> 
+        /// <para>
+        /// To ensure the security of your AWS account, the secret access key is accessible only
+        /// during key and user creation. You must save the key (for example, in a text file)
+        /// if you want to be able to access it again. If a secret key is lost, you can delete
+        /// the access keys for the associated user and then create new keys.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
          
@@ -867,7 +887,7 @@ namespace Amazon.IdentityManagement
         #region  DeleteAccountPasswordPolicy
 
         /// <summary>
-        /// Deletes the password policy for the AWS account.
+        /// Deletes the password policy for the AWS account. There are no parameters.
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
          
@@ -1627,7 +1647,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         ///  For information about limitations on IAM entities, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-        /// on IAM Entities</a> in the <i>IAM User Guide</i>. 
+        /// on IAM Entities</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -1675,22 +1695,21 @@ namespace Amazon.IdentityManagement
         #region  GetContextKeysForCustomPolicy
 
         /// <summary>
-        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
-        /// in the input policies. The policies are supplied as a list of one or more strings.
-        /// To get the context keys from policies associated with an IAM user, group, or role,
-        /// use <a>GetContextKeysForPrincipalPolicy</a>.
+        /// Gets a list of all of the context keys referenced in the input policies. The policies
+        /// are supplied as a list of one or more strings. To get the context keys from policies
+        /// associated with an IAM user, group, or role, use <a>GetContextKeysForPrincipalPolicy</a>.
         /// 
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-        /// element of an IAM policy. Use GetContextKeysForCustomPolicy to understand what key
-        /// names and values you must supply when you call <a>SimulateCustomPolicy</a>. Note that
-        /// all parameters are shown in unencoded form here for clarity, but must be URL encoded
-        /// to be included as a part of a real HTML request.
+        /// about the context of an API query request, and can be evaluated by testing against
+        /// a value specified in an IAM policy. Use GetContextKeysForCustomPolicy to understand
+        /// what key names and values you must supply when you call <a>SimulateCustomPolicy</a>.
+        /// Note that all parameters are shown in unencoded form here for clarity, but must be
+        /// URL encoded to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want list of context keys used in <code>Condition</code> elements. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</param>
+        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -1738,32 +1757,32 @@ namespace Amazon.IdentityManagement
         #region  GetContextKeysForPrincipalPolicy
 
         /// <summary>
-        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
-        /// in all of the IAM policies attached to the specified IAM entity. The entity can be
-        /// an IAM user, group, or role. If you specify a user, then the request also includes
-        /// all of the policies attached to groups that the user is a member of.
+        /// Gets a list of all of the context keys referenced in all of the IAM policies attached
+        /// to the specified IAM entity. The entity can be an IAM user, group, or role. If you
+        /// specify a user, then the request also includes all of the policies attached to groups
+        /// that the user is a member of.
         /// 
         ///  
         /// <para>
         /// You can optionally include a list of one or more additional policies, specified as
-        /// strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// strings. If you want to include <i>only</i> a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
         /// instead.
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        ///  <b>Note:</b> This API discloses information about the permissions granted to other
         /// users. If you do not want users to see other user's permissions, then consider allowing
         /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-        /// element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what
-        /// key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// about the context of an API query request, and can be evaluated by testing against
+        /// a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand
+        /// what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
-        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</param>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -1788,33 +1807,33 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Gets a list of all of the context keys referenced in <code>Condition</code> elements
-        /// in all of the IAM policies attached to the specified IAM entity. The entity can be
-        /// an IAM user, group, or role. If you specify a user, then the request also includes
-        /// all of the policies attached to groups that the user is a member of.
+        /// Gets a list of all of the context keys referenced in all of the IAM policies attached
+        /// to the specified IAM entity. The entity can be an IAM user, group, or role. If you
+        /// specify a user, then the request also includes all of the policies attached to groups
+        /// that the user is a member of.
         /// 
         ///  
         /// <para>
         /// You can optionally include a list of one or more additional policies, specified as
-        /// strings. If you want to include only a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
+        /// strings. If you want to include <i>only</i> a list of policies by string, use <a>GetContextKeysForCustomPolicy</a>
         /// instead.
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> This API discloses information about the permissions granted to other
+        ///  <b>Note:</b> This API discloses information about the permissions granted to other
         /// users. If you do not want users to see other user's permissions, then consider allowing
         /// them to use <a>GetContextKeysForCustomPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by using the <code>Condition</code>
-        /// element of an IAM policy. Use GetContextKeysForPrincipalPolicy to understand what
-        /// key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
+        /// about the context of an API query request, and can be evaluated by testing against
+        /// a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand
+        /// what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
-        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</param>
-        /// <param name="policyInputList">A optional list of additional policies for which you want list of context keys used in <code>Condition</code> elements.</param>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
+        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -2253,13 +2272,13 @@ namespace Amazon.IdentityManagement
         #region  GetUser
 
         /// <summary>
-        /// Retrieves information about the specified user, including the user's creation date,
-        /// path, unique ID, and ARN. 
+        /// Retrieves information about the specified IAM user, including the user's creation
+        /// date, path, unique ID, and ARN.
         /// 
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID used to sign the request. 
+        /// the AWS access key ID used to sign the request to this API.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -2338,23 +2357,27 @@ namespace Amazon.IdentityManagement
         #region  ListAccessKeys
 
         /// <summary>
-        /// Returns information about the access key IDs associated with the specified user. If
-        /// there are none, the action returns an empty list. 
+        /// Returns information about the access key IDs associated with the specified IAM user.
+        /// If there are none, the action returns an empty list.
         /// 
         ///  
         /// <para>
         /// Although each user is limited to a small number of keys, you can still paginate the
-        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters. 
+        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
         /// </para>
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
         /// based on the AWS access key ID used to sign the request. Because this action works
         /// for access keys under the AWS account, you can use this action to manage root credentials
-        /// even if the AWS account has no associated users. 
+        /// even if the AWS account has no associated users.
         /// </para>
-        ///  <note>To ensure the security of your AWS account, the secret access key is accessible
-        /// only during key and user creation. </note>
+        ///  <note> 
+        /// <para>
+        /// To ensure the security of your AWS account, the secret access key is accessible only
+        /// during key and user creation.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
          
@@ -2405,7 +2428,7 @@ namespace Amazon.IdentityManagement
         #region  ListAccountAliases
 
         /// <summary>
-        /// Lists the account alias associated with the account (Note: you can have only one).
+        /// Lists the account alias associated with the AWS account (Note: you can have only one).
         /// For information about using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
         /// an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
@@ -2589,12 +2612,12 @@ namespace Amazon.IdentityManagement
         #region  ListGroups
 
         /// <summary>
-        /// Lists the groups that have the specified path prefix.
+        /// Lists the IAM groups that have the specified path prefix.
         /// 
         ///  
         /// <para>
         ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// parameters.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -2672,12 +2695,12 @@ namespace Amazon.IdentityManagement
         /// Lists the instance profiles that have the specified path prefix. If there are none,
         /// the action returns an empty list. For more information about instance profiles, go
         /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-        /// Instance Profiles</a>. 
+        /// Instance Profiles</a>.
         /// 
         ///  
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// parameters.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -2752,15 +2775,15 @@ namespace Amazon.IdentityManagement
         #region  ListMFADevices
 
         /// <summary>
-        /// Lists the MFA devices. If the request includes the user name, then this action lists
-        /// all the MFA devices associated with the specified user name. If you do not specify
-        /// a user name, IAM determines the user name implicitly based on the AWS access key ID
-        /// signing the request. 
+        /// Lists the MFA devices for an IAM user. If the request includes a IAM user name, then
+        /// this action lists all the MFA devices associated with the specified user. If you do
+        /// not specify a user name, IAM determines the user name implicitly based on the AWS
+        /// access key ID signing the request for this API.
         /// 
         ///  
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// parameters.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -2839,25 +2862,25 @@ namespace Amazon.IdentityManagement
         #region  ListPolicies
 
         /// <summary>
-        /// Lists all the managed policies that are available to your account, including your
-        /// own customer managed policies and all AWS managed policies. 
+        /// Lists all the managed policies that are available in your AWS account, including your
+        /// own customer-defined managed policies and all AWS managed policies.
         /// 
         ///  
         /// <para>
         /// You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>,
         /// <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only
         /// the customer managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
-        /// To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. 
+        /// To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>.
         /// </para>
         ///  
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// parameters.
         /// </para>
         ///  
         /// <para>
-        /// For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>. 
+        /// For more information about managed policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -2959,14 +2982,14 @@ namespace Amazon.IdentityManagement
         #region  ListRoles
 
         /// <summary>
-        /// Lists the roles that have the specified path prefix. If there are none, the action
+        /// Lists the IAM roles that have the specified path prefix. If there are none, the action
         /// returns an empty list. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-        /// with Roles</a>. 
+        /// with Roles</a>.
         /// 
         ///  
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// parameters.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -3014,10 +3037,14 @@ namespace Amazon.IdentityManagement
         #region  ListSAMLProviders
 
         /// <summary>
-        /// Lists the SAML providers in the account.
+        /// Lists the SAML provider resource objects defined in IAM in the account.
         /// 
-        ///  <note> This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-        /// Version 4</a>. </note>
+        ///  <note> 
+        /// <para>
+        ///  This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
          
@@ -3064,13 +3091,13 @@ namespace Amazon.IdentityManagement
         #region  ListServerCertificates
 
         /// <summary>
-        /// Lists the server certificates that have the specified path prefix. If none exist,
-        /// the action returns an empty list. 
+        /// Lists the server certificates stored in IAM that have the specified path prefix. If
+        /// none exist, the action returns an empty list.
         /// 
         ///  
         /// <para>
         ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// parameters.
         /// </para>
         ///  
         /// <para>
@@ -3124,21 +3151,20 @@ namespace Amazon.IdentityManagement
         #region  ListSigningCertificates
 
         /// <summary>
-        /// Returns information about the signing certificates associated with the specified user.
-        /// If there are none, the action returns an empty list. 
+        /// Returns information about the signing certificates associated with the specified IAM
+        /// user. If there are none, the action returns an empty list.
         /// 
         ///  
         /// <para>
         /// Although each user is limited to a small number of signing certificates, you can still
         /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this action works
-        /// for access keys under the AWS account, you can use this action to manage root credentials
-        /// even if the AWS account has no associated users. 
+        /// based on the AWS access key ID used to sign the request for this API. Because this
+        /// action works for access keys under the AWS account, you can use this action to manage
+        /// root credentials even if the AWS account has no associated users.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -3246,12 +3272,12 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
         /// the action returns all users in the AWS account. If there are none, the action returns
-        /// an empty list. 
+        /// an empty list.
         /// 
         ///  
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// parameters.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -3299,15 +3325,15 @@ namespace Amazon.IdentityManagement
         #region  ListVirtualMFADevices
 
         /// <summary>
-        /// Lists the virtual MFA devices under the AWS account by assignment status. If you do
-        /// not specify an assignment status, the action returns a list of all virtual MFA devices.
-        /// Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.
-        /// 
+        /// Lists the virtual MFA devices defined in the AWS account by assignment status. If
+        /// you do not specify an assignment status, the action returns a list of all virtual
+        /// MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
+        /// or <code>Any</code>.
         /// 
         ///  
         /// <para>
         /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. 
+        /// parameters.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -3655,12 +3681,12 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// This action does not support partial updates. No parameters are required, but if you
         /// do not specify a parameter, that parameter's value reverts to its default value. See
-        /// the <b>Request Parameters</b> section for each parameter's default value. 
+        /// the <b>Request Parameters</b> section for each parameter's default value.
         /// </para>
         ///  </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-        /// an IAM Password Policy</a> in the <i>IAM User Guide</i>. 
+        /// an IAM Password Policy</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>

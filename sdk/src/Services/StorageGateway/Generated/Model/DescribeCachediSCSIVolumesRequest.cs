@@ -29,14 +29,14 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCachediSCSIVolumes operation.
-    /// This operation returns a description of the gateway volumes specified in the request.
-    /// This operation is supported only for the gateway-cached volume architecture.
+    /// Returns a description of the gateway volumes specified in the request. This operation
+    /// is supported only for the gateway-cached volume architecture.
     /// 
     ///  
     /// <para>
-    ///  The list of gateway volumes in the request must be from one gateway. In the response
+    /// The list of gateway volumes in the request must be from one gateway. In the response
     /// Amazon Storage Gateway returns volume information sorted by volume Amazon Resource
-    /// Name (ARN). 
+    /// Name (ARN).
     /// </para>
     /// </summary>
     public partial class DescribeCachediSCSIVolumesRequest : AmazonStorageGatewayRequest

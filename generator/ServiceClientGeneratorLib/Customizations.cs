@@ -427,6 +427,7 @@ namespace ServiceClientGenerator
         public const string DeprecationMessageKey = "message";
         public const string ExamplesKey = "examples";
         public const string GenerateUnmarshallerKey = "generateUnmarshaller";
+        public const string SkipUriPropertyValidationKey = "skipUriPropertyValidation";
         JsonData _documentRoot;
 
         SimpleMethodFormsModel _simpleMethodsModel;
@@ -671,6 +672,25 @@ namespace ServiceClientGenerator
                     return bool.Parse((string)flag);
                 }
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// A list of uri properties for the service where we should not do validation for presence.
+        /// </summary>
+        public List<string> SkipUriPropertyValidations
+        {
+            get
+            {
+                var validations = new List<string>();
+
+                var data = _documentRoot[SkipUriPropertyValidationKey];
+                if (data == null || !data.IsArray) return validations;
+
+                foreach (var item in data)
+                    validations.Add(item.ToString());
+
+                return validations;
             }
         }
 
@@ -1309,6 +1329,8 @@ namespace ServiceClientGenerator
                 modifiers.WrappedResultShape = (string)operation[OperationModifiers.WrappedResultShapeKey];
             if (operation[OperationModifiers.WrappedResultMemberKey] != null && operation[OperationModifiers.WrappedResultMemberKey].IsString)
                 modifiers.WrappedResultMember = (string)operation[OperationModifiers.WrappedResultMemberKey];
+            if (operation[OperationModifiers.DocumentationKey] != null && operation[OperationModifiers.DocumentationKey].IsString)
+                modifiers.Documentation = (string)operation[OperationModifiers.DocumentationKey];
 
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
@@ -1389,6 +1411,7 @@ namespace ServiceClientGenerator
             public const string WrappedResultMemberKey = "wrappedResultMember";
             public const string MarshallNameOverrides = "marshallNameOverrides";
             public const string DeprecatedKey = "deprecated";
+            public const string DocumentationKey = "documentation";
 
             // within a marshal override for a shape; one or both may be present
             public const string MarshallLocationName = "marshallLocationName";
@@ -1445,6 +1468,12 @@ namespace ServiceClientGenerator
             }
 
             public string WrappedResultMember
+            {
+                get;
+                set;
+            }
+
+            public string Documentation
             {
                 get;
                 set;

@@ -37,24 +37,25 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    /// No notification is sent to the transfer destination's account, it is up to the caller
+    /// No notification is sent to the transfer destination's account. It is up to the caller
     /// to notify the transfer target.
     /// </para>
     ///  
     /// <para>
-    /// The certificate being transferred must not be in the ACTIVE state. It can be deactivated
-    /// using the UpdateCertificate API.
+    /// The certificate being transferred must not be in the ACTIVE state. You can use the
+    /// UpdateCertificate API to deactivate it.
     /// </para>
     ///  
     /// <para>
-    /// The certificate must not have any policies attached to it. These can be detached using
-    /// the DetachPrincipalPolicy API.
+    /// The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy
+    /// API to detach them.
     /// </para>
     /// </summary>
     public partial class TransferCertificateRequest : AmazonIoTRequest
     {
         private string _certificateId;
         private string _targetAwsAccount;
+        private string _transferMessage;
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
@@ -90,6 +91,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetTargetAwsAccount()
         {
             return this._targetAwsAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransferMessage. 
+        /// <para>
+        /// The transfer message.
+        /// </para>
+        /// </summary>
+        public string TransferMessage
+        {
+            get { return this._transferMessage; }
+            set { this._transferMessage = value; }
+        }
+
+        // Check to see if TransferMessage property is set
+        internal bool IsSetTransferMessage()
+        {
+            return this._transferMessage != null;
         }
 
     }

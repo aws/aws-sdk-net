@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DescribeEngineDefaultParametersRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupFamily"> The name of the DB parameter group family. </param>
+        /// <param name="dbParameterGroupFamily">The name of the DB parameter group family.</param>
         public DescribeEngineDefaultParametersRequest(string dbParameterGroupFamily)
         {
             _dbParameterGroupFamily = dbParameterGroupFamily;
@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        ///  The name of the DB parameter group family. 
+        /// The name of the DB parameter group family.
         /// </para>
         /// </summary>
         public string DBParameterGroupFamily
@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  Not currently supported. 
+        /// Not currently supported.
         /// </para>
         /// </summary>
         public List<Filter> Filters

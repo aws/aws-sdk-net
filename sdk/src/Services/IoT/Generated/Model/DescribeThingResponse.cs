@@ -39,12 +39,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attributes which are name/value pairs in JSON format. For example: 
-        /// </para>
-        ///  
-        /// <para>
-        /// {\"attributes\":{\"some-name1\":\"some-value1\"}, {\"some-name2\":\"some-value2\"},
-        /// {\"some-name3\":\"some-value3\"}}
+        /// The attributes, which are name/value pairs in JSON format (for example: {\"attributes\":{\"some-name1\":\"some-value1\"},
+        /// {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

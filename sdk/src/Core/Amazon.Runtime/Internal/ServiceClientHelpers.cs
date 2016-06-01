@@ -14,6 +14,10 @@ namespace Amazon.Runtime.Internal
         public const string S3_ASSEMBLY_NAME = "AWSSDK.S3";
         public const string S3_SERVICE_CLASS_NAME = "Amazon.S3.AmazonS3Client";
 
+        public const string STS_ASSEMBLY_NAME = "AWSSDK.SecurityToken";
+        public const string STS_SERVICE_CLASS_NAME = "Amazon.SecurityToken.AmazonSecurityTokenServiceClient";
+        public const string STS_SERVICE_CONFIG_NAME = "Amazon.SecurityToken.AmazonSecurityTokenServiceConfig";
+
         public static TClient CreateServiceFromAnother<TClient, TConfig>(AmazonServiceClient originalServiceClient)
             where TConfig : ClientConfig, new ()
             where TClient : AmazonServiceClient
@@ -21,9 +25,9 @@ namespace Amazon.Runtime.Internal
             var credentials = originalServiceClient.Credentials;
             var newConfig = originalServiceClient.CloneConfig<TConfig>();
 
-            var newServiceClientType = TypeFactory.GetTypeInfo(typeof(TClient));
+            var newServiceClientTypeInfo = TypeFactory.GetTypeInfo(typeof(TClient));
 
-            var constructor = newServiceClientType.GetConstructor(new ITypeInfo[]
+            var constructor = newServiceClientTypeInfo.GetConstructor(new ITypeInfo[]
                 {
                     TypeFactory.GetTypeInfo(typeof(AWSCredentials)),
                     TypeFactory.GetTypeInfo(newConfig.GetType())
@@ -38,9 +42,9 @@ namespace Amazon.Runtime.Internal
             RegionEndpoint region)
             where TClient : class
         {
-            var serviceClientType = LoadServiceClientType(assemblyName, serviceClientClassName);
+            var serviceClientTypeInfo = LoadServiceClientType(assemblyName, serviceClientClassName);
 
-            var constructor = serviceClientType.GetConstructor(new ITypeInfo[]
+            var constructor = serviceClientTypeInfo.GetConstructor(new ITypeInfo[]
                 {
                     TypeFactory.GetTypeInfo(typeof(RegionEndpoint))
                 });
@@ -54,9 +58,9 @@ namespace Amazon.Runtime.Internal
             AWSCredentials credentials, RegionEndpoint region)
             where TClient : class
         {
-            var serviceClientType = LoadServiceClientType(assemblyName, serviceClientClassName);
+            var serviceClientTypeInfo = LoadServiceClientType(assemblyName, serviceClientClassName);
 
-            var constructor = serviceClientType.GetConstructor(new ITypeInfo[]
+            var constructor = serviceClientTypeInfo.GetConstructor(new ITypeInfo[]
                 {
                     TypeFactory.GetTypeInfo(typeof(AWSCredentials)),
                     TypeFactory.GetTypeInfo(typeof(RegionEndpoint))
@@ -67,16 +71,32 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
+        public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName,
+            AWSCredentials credentials, ClientConfig config)
+            where TClient : class
+        {
+            var serviceClientTypeInfo = LoadServiceClientType(assemblyName, serviceClientClassName);
+        
+            var constructor = serviceClientTypeInfo.GetConstructor(new ITypeInfo[]
+                {
+                    TypeFactory.GetTypeInfo(typeof(AWSCredentials)),
+                    TypeFactory.GetTypeInfo(config.GetType())
+                });
+
+            var newServiceClient = constructor.Invoke(new object[] { credentials, config }) as TClient;
+
+            return newServiceClient;
+        }
+
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName, AmazonServiceClient originalServiceClient)
             where TClient : class
         {
-            var serviceClientType = LoadServiceClientType(assemblyName, serviceClientClassName);
+            var serviceClientTypeInfo = LoadServiceClientType(assemblyName, serviceClientClassName);
 
-            var config = CreateServiceConfig(assemblyName, serviceClientClassName);
+            var config = CreateServiceConfig(assemblyName, serviceClientClassName.Replace("Client", "Config"));
             originalServiceClient.CloneConfig(config);
 
-
-            var constructor = serviceClientType.GetConstructor(new ITypeInfo[]
+            var constructor = serviceClientTypeInfo.GetConstructor(new ITypeInfo[]
                 {
                     TypeFactory.GetTypeInfo(typeof(AWSCredentials)),
                     TypeFactory.GetTypeInfo(config.GetType())
@@ -87,31 +107,38 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
+        public static ClientConfig CreateServiceConfig(string assemblyName, string serviceConfigClassName)
+        {
+            var typeInfo = LoadServiceConfigType(assemblyName, serviceConfigClassName);
+
+            var ci = typeInfo.GetConstructor(new ITypeInfo[0]);
+            var config = ci.Invoke(new object[0]);
+
+            return config as ClientConfig;
+        }
+
         private static ITypeInfo LoadServiceClientType(string assemblyName, string serviceClientClassName)
         {
             var assembly = Assembly.Load(new AssemblyName(assemblyName));
             if (assembly == null)
                 throw new AmazonClientException(
-                    string.Format(CultureInfo.InvariantCulture, "Failed to find service client {0}. Be sure to include a reference to {1}.", serviceClientClassName, assemblyName)
+                    string.Format(CultureInfo.InvariantCulture, "Failed to load assembly containing service client {0}. Be sure to include a reference to {1}.", serviceClientClassName, assemblyName)
                     );
             var type = assembly.GetType(serviceClientClassName);
 
             return TypeFactory.GetTypeInfo(type);
         }
 
-        private static ClientConfig CreateServiceConfig(string assemblyName, string serviceClientClassName)
+        private static ITypeInfo LoadServiceConfigType(string assemblyName, string serviceConfigClassName)
         {
             var assembly = Assembly.Load(new AssemblyName(assemblyName));
             if (assembly == null)
                 throw new AmazonClientException(
-                    string.Format(CultureInfo.InvariantCulture, "Failed to find service client {0}. Be sure to include a reference to {1}.", serviceClientClassName, assemblyName)
+                    string.Format(CultureInfo.InvariantCulture, "Failed to load assembly containing service config {0}. Be sure to include a reference to {1}.", serviceConfigClassName, assemblyName)
                     );
-            var type = assembly.GetType(serviceClientClassName.Replace("Client", "Config"));
+            var type = assembly.GetType(serviceConfigClassName);
 
-            var ci = TypeFactory.GetTypeInfo(type).GetConstructor(new ITypeInfo[0]);
-            var config = ci.Invoke(new object[0]);
-
-            return config as ClientConfig;
+            return TypeFactory.GetTypeInfo(type);
         }
     }
 }

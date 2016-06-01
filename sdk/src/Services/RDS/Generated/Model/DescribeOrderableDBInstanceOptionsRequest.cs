@@ -45,8 +45,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  The DB instance class filter value. Specify this parameter to show only the available
-        /// offerings matching the specified DB instance class. 
+        /// The DB instance class filter value. Specify this parameter to show only the available
+        /// offerings matching the specified DB instance class.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  The name of the engine to retrieve DB instance options for. 
+        /// The name of the engine to retrieve DB instance options for.
         /// </para>
         /// </summary>
         public string Engine
@@ -82,8 +82,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The engine version filter value. Specify this parameter to show only the available
-        /// offerings matching the specified engine version. 
+        /// The engine version filter value. Specify this parameter to show only the available
+        /// offerings matching the specified engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -119,8 +119,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        ///  The license model filter value. Specify this parameter to show only the available
-        /// offerings matching the specified license model. 
+        /// The license model filter value. Specify this parameter to show only the available
+        /// offerings matching the specified license model.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -186,8 +186,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Vpc. 
         /// <para>
-        ///  The VPC filter value. Specify this parameter to show only the available VPC or non-VPC
-        /// offerings. 
+        /// The VPC filter value. Specify this parameter to show only the available VPC or non-VPC
+        /// offerings.
         /// </para>
         /// </summary>
         public bool Vpc

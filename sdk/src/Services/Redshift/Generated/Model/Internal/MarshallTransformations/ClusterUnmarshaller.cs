@@ -171,6 +171,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.HsmStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IamRoles/ClusterIamRole", targetDepth))
+                    {
+                        var unmarshaller = ClusterIamRoleUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IamRoles.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("KmsKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

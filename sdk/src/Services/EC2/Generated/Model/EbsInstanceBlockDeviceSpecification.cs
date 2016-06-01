@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes information used to set up an EBS volume specified in a block device mapping.
     /// </summary>
     public partial class EbsInstanceBlockDeviceSpecification
     {

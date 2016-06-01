@@ -977,6 +977,50 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetIdentityMailFromDomainAttributes
+
+
+        /// <summary>
+        /// Returns the custom MAIL FROM attributes for a list of identities (email addresses
+        /// and/or domains).
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second and can only get custom MAIL FROM
+        /// attributes for up to 100 identities at a time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityMailFromDomainAttributes service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityMailFromDomainAttributes service method, as returned by SimpleEmailService.</returns>
+        public GetIdentityMailFromDomainAttributesResponse GetIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request)
+        {
+            var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityMailFromDomainAttributesRequest,GetIdentityMailFromDomainAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityMailFromDomainAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityMailFromDomainAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetIdentityMailFromDomainAttributesResponse> GetIdentityMailFromDomainAttributesAsync(GetIdentityMailFromDomainAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
+            var unmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdentityMailFromDomainAttributesRequest,GetIdentityMailFromDomainAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIdentityNotificationAttributes
 
 
@@ -1793,6 +1837,12 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendEmail service method.</param>
         /// 
         /// <returns>The response from the SendEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
+        /// Indicates that the message could not be sent because Amazon SES could not read the
+        /// MX record required to use the specified MAIL FROM domain. For information about editing
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
         /// Indicates that the action failed, and the message could not be sent. Check the error
         /// stack for more information about what caused the error.
@@ -1873,6 +1923,12 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendRawEmail service method.</param>
         /// 
         /// <returns>The response from the SendRawEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
+        /// Indicates that the message could not be sent because Amazon SES could not read the
+        /// MX record required to use the specified MAIL FROM domain. For information about editing
+        /// the custom MAIL FROM domain settings for an identity, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
         /// Indicates that the action failed, and the message could not be sent. Check the error
         /// stack for more information about what caused the error.
@@ -2059,6 +2115,53 @@ namespace Amazon.SimpleEmail
             var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetIdentityFeedbackForwardingEnabledRequest,SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetIdentityMailFromDomain
+
+
+        /// <summary>
+        /// Enables or disables the custom MAIL FROM domain setup for a verified identity (email
+        /// address or domain). 
+        /// 
+        ///  <important>To send emails using the specified MAIL FROM domain, you must add an MX
+        /// record to your MAIL FROM domain's DNS settings. If you want your emails to pass Sender
+        /// Policy Framework (SPF) checks, you must also add or update an SPF record. For more
+        /// information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+        /// SES Developer Guide</a>.</important> 
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityMailFromDomain service method.</param>
+        /// 
+        /// <returns>The response from the SetIdentityMailFromDomain service method, as returned by SimpleEmailService.</returns>
+        public SetIdentityMailFromDomainResponse SetIdentityMailFromDomain(SetIdentityMailFromDomainRequest request)
+        {
+            var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
+            var unmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
+
+            return Invoke<SetIdentityMailFromDomainRequest,SetIdentityMailFromDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityMailFromDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityMailFromDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetIdentityMailFromDomainResponse> SetIdentityMailFromDomainAsync(SetIdentityMailFromDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
+            var unmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetIdentityMailFromDomainRequest,SetIdentityMailFromDomainResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

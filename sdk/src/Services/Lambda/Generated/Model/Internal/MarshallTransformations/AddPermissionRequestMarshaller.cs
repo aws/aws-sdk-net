@@ -59,7 +59,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
-            uriResourcePath = uriResourcePath.Replace("{FunctionName}", publicRequest.IsSetFunctionName() ? StringUtils.FromString(publicRequest.FunctionName) : string.Empty);
+            if (!publicRequest.IsSetFunctionName())
+                throw new AmazonLambdaException("Request object does not have required field FunctionName set");
+            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
             
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
@@ -73,6 +75,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Action");
                     context.Writer.Write(publicRequest.Action);
+                }
+
+                if(publicRequest.IsSetEventSourceToken())
+                {
+                    context.Writer.WritePropertyName("EventSourceToken");
+                    context.Writer.Write(publicRequest.EventSourceToken);
                 }
 
                 if(publicRequest.IsSetPrincipal())

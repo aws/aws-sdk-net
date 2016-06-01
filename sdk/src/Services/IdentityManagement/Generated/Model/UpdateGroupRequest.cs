@@ -29,16 +29,24 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGroup operation.
-    /// Updates the name and/or the path of the specified group.
+    /// Updates the name and/or the path of the specified IAM group.
     /// 
-    ///  <important> You should understand the implications of changing a group's path or
-    /// name. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-    /// Users and Groups</a> in the <i>IAM User Guide</i>. </important> <note>To change a
-    /// group name the requester must have appropriate permissions on both the source object
-    /// and the target object. For example, to change Managers to MGRs, the entity making
-    /// the request must have permission on Managers and MGRs, or must have permission on
-    /// all (*). For more information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-    /// target="blank">Permissions and Policies</a>. </note>
+    ///  <important> 
+    /// <para>
+    ///  You should understand the implications of changing a group's path or name. For more
+    /// information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
+    /// Users and Groups</a> in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  </important> <note> 
+    /// <para>
+    /// To change an IAM group name the requester must have appropriate permissions on both
+    /// the source object and the target object. For example, to change "Managers" to "MGRs",
+    /// the entity making the request must have permission on both "Managers" and "MGRs",
+    /// or must have permission on all (*). For more information about permissions, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
+    /// and Policies</a>. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateGroupRequest : AmazonIdentityManagementServiceRequest
     {
@@ -54,7 +62,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName"> Name of the group to update. If you're changing the name of the group, this is the original name. </param>
+        /// <param name="groupName">Name of the IAM group to update. If you're changing the name of the group, this is the original name. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public UpdateGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -63,8 +71,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        ///  Name of the group to update. If you're changing the name of the group, this is the
-        /// original name. 
+        /// Name of the IAM group to update. If you're changing the name of the group, this is
+        /// the original name.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string GroupName
@@ -82,7 +96,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property NewGroupName. 
         /// <para>
-        /// New name for the group. Only include this if changing the group's name.
+        /// New name for the IAM group. Only include this if changing the group's name.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string NewGroupName
@@ -100,7 +120,15 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property NewPath. 
         /// <para>
-        /// New path for the group. Only include this if changing the group's path.
+        /// New path for the IAM group. Only include this if changing the group's path.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of either a forward slash (/) by itself or a
+        /// string that must begin and end with forward slashes, containing any ASCII character
+        /// from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
+        /// digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string NewPath

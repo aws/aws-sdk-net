@@ -32,8 +32,31 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class SnsAction
     {
+        private MessageFormat _messageFormat;
         private string _roleArn;
         private string _targetArn;
+
+        /// <summary>
+        /// Gets and sets the property MessageFormat. 
+        /// <para>
+        /// The message format of the message to publish. Optional. Accepted values are "JSON"
+        /// and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine
+        /// if the payload should be parsed and relevant platform-specific bits of the payload
+        /// should be extracted. To read more about SNS message formats, see <a href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a>
+        /// refer to their official documentation.
+        /// </para>
+        /// </summary>
+        public MessageFormat MessageFormat
+        {
+            get { return this._messageFormat; }
+            set { this._messageFormat = value; }
+        }
+
+        // Check to see if MessageFormat property is set
+        internal bool IsSetMessageFormat()
+        {
+            return this._messageFormat != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 

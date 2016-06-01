@@ -52,6 +52,7 @@ namespace Amazon.Util
 
         public const string RequestIdHeader = "x-amzn-RequestId";
         public const string XAmzId2Header = "x-amz-id-2";
+        public const string XAmzCloudFrontIdHeader = "X-Amz-Cf-Id";
         public const string XAmzRequestIdHeader = "x-amz-request-id";
         public const string XAmzDateHeader = "X-Amz-Date";
         public const string XAmzErrorType = "x-amzn-ErrorType";
@@ -84,5 +85,9 @@ namespace Amazon.Util
         public const string XAmzCopySourceIfUnmodifiedSinceHeader = "x-amz-copy-source-if-unmodified-since";
         public const string XAmzMetadataDirectiveHeader = "x-amz-metadata-directive";
         public const string XAmzMfaHeader = "x-amz-mfa";
-        public const string XAmzVersionIdHeader = "x-amz-version-id";        public const string XAmzUserAgentHeader = "x-amz-user-agent";    }
+        public const string XAmzVersionIdHeader = "x-amz-version-id";
+        public const string XAmzUserAgentHeader = "x-amz-user-agent";
+        public const string XAmzAbortDateHeader = "x-amz-abort-date";
+        public const string XAmzAbortRuleIdHeader = "x-amz-abort-rule-id";
+    }
 }

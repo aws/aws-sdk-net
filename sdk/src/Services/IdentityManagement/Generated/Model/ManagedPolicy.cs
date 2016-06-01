@@ -109,7 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property DefaultVersionId. 
         /// <para>
-        /// The identifier for the version of the policy that is set as the default version. 
+        /// The identifier for the version of the policy that is set as the default version.
         /// </para>
         /// </summary>
         public string DefaultVersionId
@@ -150,7 +150,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property IsAttachable. 
         /// <para>
-        /// Specifies whether the policy can be attached to an IAM user, group, or role. 
+        /// Specifies whether the policy can be attached to an IAM user, group, or role.
         /// </para>
         /// </summary>
         public bool IsAttachable
@@ -191,7 +191,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The stable and unique string identifying the policy. 
+        /// The stable and unique string identifying the policy.
         /// </para>
         ///  
         /// <para>
@@ -239,7 +239,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// When a policy has only one version, this field contains the date and time when the
         /// policy was created. When a policy has more than one version, this field contains the
-        /// date and time when the most recent policy version was created. 
+        /// date and time when the most recent policy version was created.
         /// </para>
         /// </summary>
         public DateTime UpdateDate

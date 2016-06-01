@@ -62,7 +62,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates SendMessageRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
         /// <param name="messageBody">The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding important note.</param>
         public SendMessageRequest(string queueUrl, string messageBody)
         {
@@ -134,6 +134,10 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property QueueUrl. 
         /// <para>
         /// The URL of the Amazon SQS queue to take action on.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queue URLs are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

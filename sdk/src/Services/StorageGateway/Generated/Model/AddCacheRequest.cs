@@ -29,15 +29,14 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the AddCache operation.
-    /// This operation configures one or more gateway local disks as cache for a cached-volume
-    /// gateway. This operation is supported only for the gateway-cached volume architecture
-    /// (see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
+    /// Configures one or more gateway local disks as cache for a cached-volume gateway. This
+    /// operation is supported only for the gateway-cached volume architecture (see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
     /// Gateway Concepts</a>).
     /// 
     ///  
     /// <para>
     /// In the request, you specify the gateway Amazon Resource Name (ARN) to which you want
-    /// to add cache, and one or more disk IDs that you want to configure as cache. 
+    /// to add cache, and one or more disk IDs that you want to configure as cache.
     /// </para>
     /// </summary>
     public partial class AddCacheRequest : AmazonStorageGatewayRequest

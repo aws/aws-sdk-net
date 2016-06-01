@@ -688,7 +688,7 @@ namespace Amazon.S3
         #region  DeleteBucketReplication
 
         /// <summary>
-        /// Deletes the replication configuration for the given Amazon S3 bucket.
+        /// Deletes the replication configuration from the bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
@@ -1192,6 +1192,70 @@ namespace Amazon.S3
         public  GetACLResponse EndGetACL(IAsyncResult asyncResult)
         {
             return EndInvoke<GetACLResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBucketAccelerateConfiguration
+
+        /// <summary>
+        /// Returns the accelerate configuration of a bucket.
+        /// </summary>
+        /// <param name="bucketName">Name of the bucket for which the accelerate configuration is retrieved.</param>
+        /// 
+        /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        public GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(string bucketName)
+        {
+            var request = new GetBucketAccelerateConfigurationRequest();
+            request.BucketName = bucketName;
+            return GetBucketAccelerateConfiguration(request);
+        }
+
+
+        /// <summary>
+        /// Returns the accelerate configuration of a bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        public GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
+        {
+            var marshaller = new GetBucketAccelerateConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketAccelerateConfigurationRequest,GetBucketAccelerateConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAccelerateConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAccelerateConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginGetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetBucketAccelerateConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetBucketAccelerateConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAccelerateConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBucketAccelerateConfigurationResult from S3.</returns>
+        public  GetBucketAccelerateConfigurationResponse EndGetBucketAccelerateConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBucketAccelerateConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -2470,6 +2534,59 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  ListObjectsV2
+
+        /// <summary>
+        /// Returns some or all (up to 1000) of the objects in a bucket. You can use the request
+        /// parameters as selection criteria to return a subset of the objects in a bucket. Note:
+        /// ListObjectsV2 is the revised List Objects API and we recommend you use this revised
+        /// API for new application development.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
+        public ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request)
+        {
+            var marshaller = new ListObjectsV2RequestMarshaller();
+            var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListObjectsV2Request,ListObjectsV2Response>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjectsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectsV2 operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectsV2
+        ///         operation.</returns>
+        public IAsyncResult BeginListObjectsV2(ListObjectsV2Request request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListObjectsV2RequestMarshaller();
+            var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListObjectsV2Request>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListObjectsV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjectsV2.</param>
+        /// 
+        /// <returns>Returns a  ListObjectsV2Result from S3.</returns>
+        public  ListObjectsV2Response EndListObjectsV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListObjectsV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListParts
 
         /// <summary>
@@ -2728,6 +2845,56 @@ namespace Amazon.S3
         public  PutBucketResponse EndPutBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutBucketAccelerateConfiguration
+
+        /// <summary>
+        /// Sets the accelerate configuration of an existing bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
+        public PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request)
+        {
+            var marshaller = new PutBucketAccelerateConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketAccelerateConfigurationRequest,PutBucketAccelerateConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAccelerateConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAccelerateConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginPutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutBucketAccelerateConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutBucketAccelerateConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketAccelerateConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAccelerateConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBucketAccelerateConfigurationResult from S3.</returns>
+        public  PutBucketAccelerateConfigurationResponse EndPutBucketAccelerateConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutBucketAccelerateConfigurationResponse>(asyncResult);
         }
 
         #endregion

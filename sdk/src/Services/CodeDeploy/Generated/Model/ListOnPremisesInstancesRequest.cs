@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOnPremisesInstances operation.
-    /// Gets a list of one or more on-premises instance names.
+    /// Gets a list of names for one or more on-premises instances.
     /// 
     ///  
     /// <para>
@@ -47,8 +47,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier that was returned from the previous list on-premises instances call,
-        /// which can be used to return the next set of on-premises instances in the list.
+        /// An identifier returned from the previous list on-premises instances call. It can be
+        /// used to return the next set of on-premises instances in the list.
         /// </para>
         /// </summary>
         public string NextToken
@@ -66,11 +66,11 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property RegistrationStatus. 
         /// <para>
-        /// The on-premises instances registration status:
+        /// The registration status of the on-premises instances:
         /// </para>
-        ///  <ul> <li>Deregistered: Include in the resulting list deregistered on-premises instances.</li>
-        /// <li>Registered: Include in the resulting list registered on-premises instances.</li>
-        /// </ul>
+        ///  <ul> <li>Deregistered: Include deregistered on-premises instances in the resulting
+        /// list.</li> <li>Registered: Include registered on-premises instances in the resulting
+        /// list.</li> </ul>
         /// </summary>
         public RegistrationStatus RegistrationStatus
         {
@@ -88,7 +88,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property TagFilters. 
         /// <para>
         /// The on-premises instance tags that will be used to restrict the corresponding on-premises
-        /// instance names that are returned.
+        /// instance names returned.
         /// </para>
         /// </summary>
         public List<TagFilter> TagFilters

@@ -57,7 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The unique ID of an instance in the deployment's deployment group.
+        /// The unique ID of an instance in the deployment group.
         /// </para>
         /// </summary>
         public string InstanceId

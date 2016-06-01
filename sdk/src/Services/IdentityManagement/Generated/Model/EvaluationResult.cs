@@ -32,7 +32,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used by the return parameter of <code><a>SimulatePolicy</a></code>.
+    /// This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a>
+    /// </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.
     /// </para>
     /// </summary>
     public partial class EvaluationResult
@@ -89,7 +90,7 @@ namespace Amazon.IdentityManagement.Model
         /// contributes to the final evaluation decision. When simulating cross-account access
         /// to a resource, both the resource-based policy and the caller's IAM policy must grant
         /// access. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-        /// IAM Roles Differ from Resource-based Policies</a>
+        /// IAM Roles Differ from Resource-based Policies</a> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> EvalDecisionDetails
@@ -154,13 +155,6 @@ namespace Amazon.IdentityManagement.Model
         /// keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a>
         /// or <a>GetContextKeysForPrincipalPolicy</a>.
         /// </para>
-        ///  <caution> 
-        /// <para>
-        /// If the response includes any keys in this list, then the reported results might be
-        /// untrustworthy because the simulation could not completely evaluate all of the conditions
-        /// specified in the policies that would occur in a real world request.
-        /// </para>
-        ///  </caution>
         /// </summary>
         public List<string> MissingContextValues
         {

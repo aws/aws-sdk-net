@@ -31,8 +31,8 @@ namespace Amazon.CodeDeploy.Model
     /// Container for the parameters to the DeleteDeploymentConfig operation.
     /// Deletes a deployment configuration.
     /// 
-    ///  <note>A deployment configuration cannot be deleted if it is currently in use. Also,
-    /// predefined configurations cannot be deleted.</note>
+    ///  <note>A deployment configuration cannot be deleted if it is currently in use. Predefined
+    /// configurations cannot be deleted.</note>
     /// </summary>
     public partial class DeleteDeploymentConfigRequest : AmazonCodeDeployRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentConfigName. 
         /// <para>
-        /// The name of an existing deployment configuration associated with the applicable IAM
-        /// user or AWS account.
+        /// The name of a deployment configuration associated with the applicable IAM user or
+        /// AWS account.
         /// </para>
         /// </summary>
         public string DeploymentConfigName

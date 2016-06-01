@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property SAMLProviderArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SAML provider.
+        /// The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.
         /// </para>
         /// </summary>
         public string SAMLProviderArn

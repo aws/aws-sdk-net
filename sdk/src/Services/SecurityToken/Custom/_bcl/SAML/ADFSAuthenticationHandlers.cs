@@ -48,8 +48,9 @@ namespace Amazon.SecurityToken.SAML
         /// The authentication type to be used with the endpoint. Valid values are 'NTLM',
         /// 'Digest', 'Kerberos' and 'Negotiate'.
         /// </param>
+        /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
         /// <returns>The response data from a successful authentication request.</returns>
-        public string Authenticate(Uri identityProvider, ICredentials credentials, string authenticationType)
+        public string Authenticate(Uri identityProvider, ICredentials credentials, string authenticationType, WebProxy proxySettings)
         {
             string responseStreamData = null;
             ImpersonationState impersonationState = null;
@@ -62,7 +63,7 @@ namespace Amazon.SecurityToken.SAML
                     impersonationState = ImpersonationState.Impersonate(networkCredentials);
                 }
 
-                using (var response = QueryProvider(identityProvider, authenticationType))
+                using (var response = QueryProvider(identityProvider, authenticationType, proxySettings))
                 {
                     using (var reader = new StreamReader(response.GetResponseStream()))
                     {
@@ -72,10 +73,7 @@ namespace Amazon.SecurityToken.SAML
             }
             catch (Exception e)
             {
-                var sb = new StringBuilder(e.Message);
-                if (e.InnerException != null)
-                    sb.AppendFormat("(Inner exception '{0}')", e.InnerException.Message);
-                throw new AdfsAuthenticationControllerException(sb.ToString(), e);
+                throw new AdfsAuthenticationControllerException(e.ToString(), e);
             }
             finally
             {
@@ -87,7 +85,7 @@ namespace Amazon.SecurityToken.SAML
         }
 
 
-        private static HttpWebResponse QueryProvider(Uri identityProvider, string authenticationType)
+        private static HttpWebResponse QueryProvider(Uri identityProvider, string authenticationType, WebProxy proxySettings)
         {
             var request = (HttpWebRequest)WebRequest.Create(identityProvider);
             request.UserAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
@@ -95,6 +93,8 @@ namespace Amazon.SecurityToken.SAML
             request.PreAuthenticate = true;
             request.AllowAutoRedirect = true;
             request.CookieContainer = new CookieContainer();
+            if (proxySettings != null)
+                request.Proxy = proxySettings;
 
             CredentialCache credCache = new CredentialCache();
             credCache.Add(identityProvider, authenticationType, CredentialCache.DefaultNetworkCredentials);
@@ -109,6 +109,9 @@ namespace Amazon.SecurityToken.SAML
     /// Custom exception thrown when authentication failure is detected against
     /// a configured AD FS endpoint.
     /// </summary>
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
     public class AdfsAuthenticationControllerException : Exception
     {
         /// <summary>
@@ -138,6 +141,22 @@ namespace Amazon.SecurityToken.SAML
             : base(innerException.Message, innerException)
         {
         }
+
+
+
+#if !PCL && !CORECLR
+        /// <summary>
+        /// Constructs a new instance of the AdfsAuthenticationControllerException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected AdfsAuthenticationControllerException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
     }
 
     /// <summary>

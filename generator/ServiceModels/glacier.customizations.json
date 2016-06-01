@@ -1,12 +1,15 @@
-{ 
-	"runtimePipelineOverride":{
-		"overrides":[
-			{"operation":"addAfter", "newType":"Amazon.Glacier.Internal.ProcessRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller"}
-		]
-	},
-	"noArgOverloads": [
-		"ListVaults"
-	],
+{
+    "runtimePipelineOverride": {
+        "overrides": [
+            { "operation": "addAfter", "newType": "Amazon.Glacier.Internal.ProcessRequestHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" }
+        ]
+    },
+    "noArgOverloads": [
+        "ListVaults"
+    ],
+    "skipUriPropertyValidation": [ 
+        "AccountId"
+    ],
 	"shapeModifiers": {
         "ListMultipartUploadsInput": {
             "modify": [

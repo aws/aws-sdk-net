@@ -15,7 +15,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Configuration;
 using System.Net;
 using System.Text;
 using Amazon.Util;

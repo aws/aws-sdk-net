@@ -43,17 +43,26 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBClusterSnapshotIdentifier. 
         /// <para>
         /// The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-        /// character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-cluster-snapshot1</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-cluster-snapshot1</code> 
         /// </para>
         /// </summary>
         public string SourceDBClusterSnapshotIdentifier
@@ -87,17 +96,27 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property TargetDBClusterSnapshotIdentifier. 
         /// <para>
         /// The identifier of the new DB cluster snapshot to create from the source DB cluster
-        /// snapshot. This parameter is not case-sensitive. 
+        /// snapshot. This parameter is not case-sensitive.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-        /// character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-cluster-snapshot2</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-cluster-snapshot2</code> 
         /// </para>
         /// </summary>
         public string TargetDBClusterSnapshotIdentifier

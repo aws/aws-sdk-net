@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.AbortEnvironmentUpdateRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CheckDNSAvailabilityRequest.CNAMEPrefix</property>
@@ -78,7 +78,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateResponse.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateResponse.SolutionStackName</property>
@@ -106,7 +106,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.GroupName</property>
@@ -144,7 +144,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.SolutionStackName</property>
@@ -197,7 +197,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DeleteEnvironmentConfigurationRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeApplicationVersionsRequest.ApplicationName</property>
@@ -212,7 +212,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsRequest.SolutionStackName</property>
@@ -235,7 +235,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeConfigurationSettingsRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeConfigurationSettingsRequest.TemplateName</property>
@@ -245,17 +245,22 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeEnvironmentHealthRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeEnvironmentHealthResponse.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.DescribeEnvironmentManagedActionHistoryRequest.EnvironmentName</property>
+    <min>4</min>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeEnvironmentResourcesRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeEnvironmentsRequest.ApplicationName</property>
@@ -275,7 +280,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeEventsRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeEventsRequest.MaxRecords</property>
@@ -295,7 +300,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeInstancesHealthRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeInstancesHealthRequest.NextToken</property>
@@ -310,37 +315,37 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.RebuildEnvironmentRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.RequestEnvironmentInfoRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.RestartAppServerRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.RetrieveEnvironmentInfoRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.SwapEnvironmentCNAMEsRequest.DestinationEnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.SwapEnvironmentCNAMEsRequest.SourceEnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.ApplicationName</property>
@@ -359,7 +364,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.SolutionStackName</property>
@@ -424,7 +429,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateResponse.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateResponse.SolutionStackName</property>
@@ -447,7 +452,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.GroupName</property>
@@ -485,7 +490,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.SolutionStackName</property>
@@ -509,7 +514,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.ValidateConfigurationSettingsRequest.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.ValidateConfigurationSettingsRequest.TemplateName</property>
@@ -547,7 +552,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.EnvironmentResourceDescription.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.EventDescription.ApplicationName</property>
@@ -557,7 +562,7 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.EventDescription.EnvironmentName</property>
     <min>4</min>
-    <max>23</max>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.EventDescription.TemplateName</property>

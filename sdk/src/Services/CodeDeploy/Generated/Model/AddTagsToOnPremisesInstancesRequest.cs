@@ -39,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceNames. 
         /// <para>
-        /// The names of the on-premises instances to add tags to.
+        /// The names of the on-premises instances to which to add tags.
         /// </para>
         /// </summary>
         public List<string> InstanceNames
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        /// Keys and values are both required. Keys cannot be nulls or empty strings. Value-only
+        /// Keys and values are both required. Keys cannot be null or empty strings. Value-only
         /// tags are not allowed.
         /// </para>
         /// </summary>

@@ -132,6 +132,15 @@
         {
             "active": true,
 
+            "model": "application-autoscaling",
+            "base-name": "ApplicationAutoScaling",
+            "region-lookup-name": "autoscaling",
+            "authentication-service-name": "application-autoscaling",
+            "synopsis": "Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling."
+        },
+        {
+            "active": true,
+
             "model": "cloudhsm",
             "base-name": "CloudHSM",
             "region-lookup-name": "cloudhsm",
@@ -157,6 +166,16 @@
             "authentication-service-name": "marketplacecommerceanalytics",
             "service-url": " https://marketplacecommerceanalytics.us-east-1.amazonaws.com",
             "synopsis": "The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports."
+        },
+        {
+            "active": true,
+
+            "model": "meteringmarketplace",
+            "base-name": "AWSMarketplaceMetering",
+            "region-lookup-name": "metering.marketplace",
+            "authentication-service-name": "aws-marketplace",
+            "service-url": " https://metering.marketplace.us-east-1.amazonaws.com",
+            "synopsis": "The AWS Marketplace Metering Service enables sellers to price their products along new pricing dimensions. After a integrating their product with the AWS Marketplace Metering Service, that product will emit an hourly record capturing the usage of any single pricing dimension. Buyers can easily subscribe to software priced by this new dimension on the AWS Marketplace website and only pay for what they use."
         },
         {
             "active": true,
@@ -307,6 +326,16 @@
         {
             "active": true,
 
+            "model": "cognito-idp",
+            "base-name": "CognitoIdentityProvider",
+            "region-lookup-name": "cognito-idp",
+            "authentication-service-name": "cognito-idp",
+            "service-url": "http://cognito-idp.us-east-1.amazonaws.com",
+            "synopsis": "You can create a user pool in Amazon Cognito Identity to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies. This API reference provides information about user pools in Amazon Cognito Identity, which is a new capability that is available as a beta."
+        },
+        {
+            "active": true,
+
             "model": "cognito-sync",
             "base-name": "CognitoSync",
             "region-lookup-name": "cognito-sync",
@@ -373,6 +402,26 @@
             "authentication-service-name": "directconnect",
             "service-url": "https://directconnect.us-east-1.amazonaws.com",
             "synopsis": "AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections."
+        },
+        {
+            "active": true,
+
+            "model": "discovery",
+            "base-name": "ApplicationDiscoveryService",
+            "region-lookup-name": "discovery",
+            "authentication-service-name": "discovery",
+            "service-url": "https://directconnect.us-east-1.amazonaws.com",
+            "synopsis": "AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile."
+        },
+        {
+            "active": true,
+
+            "model": "dms",
+            "base-name": "DatabaseMigrationService",
+            "region-lookup-name": "dms",
+            "authentication-service-name": "dms",
+            "service-url": "https://dms.us-east-1.amazonaws.com",
+            "synopsis": "AWS Database Migration Service (AWS DMS) can migrate your data to and from most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Aurora, MariaDB, and MySQL. The service supports homogeneous migrations such as Oracle to Oracle, and also heterogeneous migrations between different database platforms, such as Oracle to MySQL or MySQL to Amazon Aurora."
         },
         {
             "active": true,

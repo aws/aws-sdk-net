@@ -46,7 +46,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates PurchaseReservedDBInstancesOfferingRequest with the parameterized properties
         /// </summary>
-        /// <param name="reservedDBInstancesOfferingId"> The ID of the Reserved DB instance offering to purchase.  Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</param>
+        /// <param name="reservedDBInstancesOfferingId">The ID of the Reserved DB instance offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</param>
         public PurchaseReservedDBInstancesOfferingRequest(string reservedDBInstancesOfferingId)
         {
             _reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -55,11 +55,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceCount. 
         /// <para>
-        ///  The number of instances to reserve. 
+        /// The number of instances to reserve.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code>
+        /// Default: <code>1</code> 
         /// </para>
         /// </summary>
         public int DBInstanceCount
@@ -77,7 +77,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReservedDBInstanceId. 
         /// <para>
-        ///  Customer-specified identifier to track this reservation. 
+        /// Customer-specified identifier to track this reservation.
         /// </para>
         ///  
         /// <para>
@@ -99,7 +99,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReservedDBInstancesOfferingId. 
         /// <para>
-        ///  The ID of the Reserved DB instance offering to purchase. 
+        /// The ID of the Reserved DB instance offering to purchase.
         /// </para>
         ///  
         /// <para>

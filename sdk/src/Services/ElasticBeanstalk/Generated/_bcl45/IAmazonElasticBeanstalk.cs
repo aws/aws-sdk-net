@@ -32,27 +32,21 @@ namespace Amazon.ElasticBeanstalk
     ///
     /// AWS Elastic Beanstalk 
     /// <para>
-    ///  This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information
-    /// about AWS Elastic Beanstalk actions, data types, parameters, and errors. 
+    /// AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable,
+    /// fault-tolerant applications running on the Amazon Web Services cloud.
     /// </para>
     ///  
     /// <para>
-    /// AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy, and
-    /// manage scalable, fault-tolerant applications running on Amazon Web Services cloud
-    /// resources. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
+    /// For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
     /// Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
     /// WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
     /// To install the Software Development Kits (SDKs), Integrated Development Environment
     /// (IDE) Toolkits, and command line tools that enable you to access the API, go to <a
-    /// href="https://aws.amazon.com/tools/">Tools for Amazon Web Services</a>. 
+    /// href="https://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Endpoints</b> 
+    /// <b>Endpoints</b>
     /// </para>
     ///  
     /// <para>
@@ -90,6 +84,39 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AbortEnvironmentUpdateResponse> AbortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ApplyEnvironmentManagedAction
+
+
+        /// <summary>
+        /// Applies a scheduled managed action immediately. A managed action can be applied only
+        /// if its status is <code>Scheduled</code>. Get the status and action ID of a managed
+        /// action with <a>DescribeEnvironmentManagedActions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction service method.</param>
+        /// 
+        /// <returns>The response from the ApplyEnvironmentManagedAction service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ManagedActionInvalidStateException">
+        /// Cannot modify the managed action in its current state.
+        /// </exception>
+        ApplyEnvironmentManagedActionResponse ApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplyEnvironmentManagedAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ApplyEnvironmentManagedActionResponse> ApplyEnvironmentManagedActionAsync(ApplyEnvironmentManagedActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -245,6 +272,9 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the CreateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyConfigurationTemplatesException">
         /// The specified account has reached its limit of configuration templates.
@@ -493,16 +523,16 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Deletes the draft configuration associated with the running environment. 
+        /// Deletes the draft configuration associated with the running environment.
         /// 
         ///  
         /// <para>
-        ///  Updating a running environment with any configuration changes creates a draft configuration
+        /// Updating a running environment with any configuration changes creates a draft configuration
         /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
         /// while the update is in progress or if the update fails. The <code>DeploymentStatus</code>
         /// for the draft configuration indicates whether the deployment is in process or has
         /// failed. The draft configuration remains in existence until it is deleted with this
-        /// action. 
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration service method.</param>
@@ -626,6 +656,9 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         DescribeConfigurationOptionsResponse DescribeConfigurationOptions();
 
 
@@ -638,6 +671,9 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request);
 
 
@@ -652,6 +688,9 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -692,6 +731,9 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings service method.</param>
         /// 
         /// <returns>The response from the DescribeConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request);
 
 
@@ -738,6 +780,62 @@ namespace Amazon.ElasticBeanstalk
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeEnvironmentHealthResponse> DescribeEnvironmentHealthAsync(DescribeEnvironmentHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEnvironmentManagedActionHistory
+
+
+        /// <summary>
+        /// Lists an environment's completed and failed managed actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActionHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentManagedActionHistory service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        DescribeEnvironmentManagedActionHistoryResponse DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentManagedActionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActionHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEnvironmentManagedActionHistoryResponse> DescribeEnvironmentManagedActionHistoryAsync(DescribeEnvironmentManagedActionHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEnvironmentManagedActions
+
+
+        /// <summary>
+        /// Lists an environment's upcoming and in-progress managed actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEnvironmentManagedActions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        DescribeEnvironmentManagedActionsResponse DescribeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEnvironmentManagedActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEnvironmentManagedActionsResponse> DescribeEnvironmentManagedActionsAsync(DescribeEnvironmentManagedActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -819,8 +917,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
-        /// </note>
+        ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by ElasticBeanstalk.</returns>
@@ -830,8 +927,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
-        /// </note>
+        ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
@@ -842,8 +938,7 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
-        /// </note>
+        ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1053,7 +1148,6 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
         /// 
-        /// 
         ///  
         /// <para>
         /// Related Topics
@@ -1209,6 +1303,9 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request);
 
 
@@ -1252,6 +1349,9 @@ namespace Amazon.ElasticBeanstalk
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
+        /// </exception>
         UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request);
 
 
@@ -1286,6 +1386,9 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the ValidateConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
+        /// The specified account has reached its limit of Amazon S3 buckets.
         /// </exception>
         ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request);
 

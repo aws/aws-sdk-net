@@ -59,7 +59,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             string uriResourcePath = "/domainnames/{domain_name}";
-            uriResourcePath = uriResourcePath.Replace("{domain_name}", publicRequest.IsSetDomainName() ? StringUtils.FromString(publicRequest.DomainName) : string.Empty);
+            if (!publicRequest.IsSetDomainName())
+                throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
+            uriResourcePath = uriResourcePath.Replace("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

@@ -28,15 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The status of the DB parameter group. 
+    /// The status of the DB parameter group.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the following actions:
     /// </para>
-    ///  <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>CreateDBInstanceReadReplica</a> </li>
-    /// <li> <a>DeleteDBInstance</a> </li> <li> <a>ModifyDBInstance</a> </li> <li> <a>RebootDBInstance</a>
-    /// </li> <li> <a>RestoreDBInstanceFromDBSnapshot</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateDBInstanceReadReplica</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ModifyDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RebootDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RestoreDBInstanceFromDBSnapshot</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DBParameterGroupStatus
     {
@@ -51,7 +73,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        ///  The name of the DP parameter group. 
+        /// The name of the DP parameter group.
         /// </para>
         /// </summary>
         public string DBParameterGroupName
@@ -69,7 +91,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ParameterApplyStatus. 
         /// <para>
-        ///  The status of parameter updates. 
+        /// The status of parameter updates.
         /// </para>
         /// </summary>
         public string ParameterApplyStatus

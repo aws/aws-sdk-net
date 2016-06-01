@@ -29,8 +29,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBSubnetGroup operation.
-    /// Modifies an existing DB subnet group. DB subnet groups must contain at least one
-    /// subnet in at least two AZs in the region.
+    /// Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet
+    /// in at least two AZs in the region.
     /// </summary>
     public partial class ModifyDBSubnetGroupRequest : AmazonRDSRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupDescription. 
         /// <para>
-        ///  The description for the DB subnet group. 
+        /// The description for the DB subnet group.
         /// </para>
         /// </summary>
         public string DBSubnetGroupDescription
@@ -59,16 +59,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        ///  The name for the DB subnet group. This value is stored as a lowercase string. 
+        /// The name for the DB subnet group. This value is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must
-        /// not be "Default".
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// spaces, or hyphens. Must not be default.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code>
+        /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -86,7 +86,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        ///  The EC2 subnet IDs for the DB subnet group. 
+        /// The EC2 subnet IDs for the DB subnet group.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

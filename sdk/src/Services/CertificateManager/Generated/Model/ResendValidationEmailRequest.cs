@@ -48,9 +48,9 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property CertificateArn. 
         /// <para>
         ///  String that contains the ARN of the requested certificate. The certificate ARN is
-        /// generated and returned by <a>RequestCertificate</a> as soon as the request is made.
-        /// By default, using this parameter causes email to be sent to all top-level domains
-        /// you specified in the certificate request. 
+        /// generated and returned by the <a>RequestCertificate</a> action as soon as the request
+        /// is made. By default, using this parameter causes email to be sent to all top-level
+        /// domains you specified in the certificate request. 
         /// </para>
         ///  
         /// <para>
@@ -102,9 +102,27 @@ namespace Amazon.CertificateManager.Model
         /// certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b>
         /// of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical
         /// contact, and administrative contact in WHOIS and the following five addresses: <ul>
-        /// <li>admin@subdomain.example.com</li> <li>administrator@subdomain.example.com</li>
-        /// <li>hostmaster@subdomain.example.com</li> <li>postmaster@subdomain.example.com</li>
-        /// <li>webmaster@subdomain.example.com</li> </ul> 
+        /// <li>
+        /// <para>
+        /// admin@subdomain.example.com
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// administrator@subdomain.example.com
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// hostmaster@subdomain.example.com
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// postmaster@subdomain.example.com
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// webmaster@subdomain.example.com
+        /// </para>
+        /// </li> </ul> 
         /// </para>
         /// </summary>
         public string ValidationDomain

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupArn. 
         /// <para>
-        /// The ARN specifying the resource group that is created.
+        /// The ARN that specifies the resource group that is created.
         /// </para>
         /// </summary>
         public string ResourceGroupArn

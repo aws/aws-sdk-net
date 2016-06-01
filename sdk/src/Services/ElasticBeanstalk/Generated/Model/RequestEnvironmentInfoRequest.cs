@@ -68,7 +68,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates RequestEnvironmentInfoRequest with the parameterized properties
         /// </summary>
-        /// <param name="infoType"> The type of information to request. </param>
+        /// <param name="infoType">The type of information to request.</param>
         public RequestEnvironmentInfoRequest(EnvironmentInfoType infoType)
         {
             _infoType = infoType;
@@ -81,12 +81,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code>
+        /// If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code>
         /// error. 
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
+        /// Condition: You must specify either this or an EnvironmentName, or both. If you do
         /// not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
         /// error. 
         /// </para>
@@ -110,12 +110,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code>
+        /// If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code>
         /// error. 
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
+        /// Condition: You must specify either this or an EnvironmentId, or both. If you do not
         /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
         /// error. 
         /// </para>
@@ -135,7 +135,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property InfoType. 
         /// <para>
-        ///  The type of information to request. 
+        /// The type of information to request.
         /// </para>
         /// </summary>
         public EnvironmentInfoType InfoType

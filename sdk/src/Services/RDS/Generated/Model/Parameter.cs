@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
-        ///  Specifies the valid range of values for the parameter. 
+        /// Specifies the valid range of values for the parameter.
         /// </para>
         /// </summary>
         public string AllowedValues
@@ -76,7 +76,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ApplyMethod. 
         /// <para>
-        ///  Indicates when to apply parameter updates. 
+        /// Indicates when to apply parameter updates.
         /// </para>
         /// </summary>
         public ApplyMethod ApplyMethod
@@ -94,7 +94,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ApplyType. 
         /// <para>
-        ///  Specifies the engine specific parameters type. 
+        /// Specifies the engine specific parameters type.
         /// </para>
         /// </summary>
         public string ApplyType
@@ -112,7 +112,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        ///  Specifies the valid data type for the parameter. 
+        /// Specifies the valid data type for the parameter.
         /// </para>
         /// </summary>
         public string DataType
@@ -130,7 +130,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  Provides a description of the parameter. 
+        /// Provides a description of the parameter.
         /// </para>
         /// </summary>
         public string Description
@@ -168,7 +168,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MinimumEngineVersion. 
         /// <para>
-        ///  The earliest engine version to which the parameter can apply. 
+        /// The earliest engine version to which the parameter can apply.
         /// </para>
         /// </summary>
         public string MinimumEngineVersion
@@ -186,7 +186,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ParameterName. 
         /// <para>
-        ///  Specifies the name of the parameter. 
+        /// Specifies the name of the parameter.
         /// </para>
         /// </summary>
         public string ParameterName
@@ -204,7 +204,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ParameterValue. 
         /// <para>
-        ///  Specifies the value of the parameter. 
+        /// Specifies the value of the parameter.
         /// </para>
         /// </summary>
         public string ParameterValue
@@ -222,7 +222,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        ///  Indicates the source of the parameter value. 
+        /// Indicates the source of the parameter value.
         /// </para>
         /// </summary>
         public string Source

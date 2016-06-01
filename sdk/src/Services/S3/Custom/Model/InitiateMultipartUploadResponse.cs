@@ -31,6 +31,8 @@ namespace Amazon.S3.Model
         private string uploadId;
         private ServerSideEncryptionMethod serverSideEncryption;
         private string serverSideEncryptionKeyManagementServiceKeyId;
+        private DateTime? abortDate;
+        private string abortRuleId;
 
         /// <summary>
         /// Name of the bucketName to which the multipart upload was initiated.
@@ -105,6 +107,36 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+        }
+
+        /// <summary>
+        /// Date when multipart upload will become eligible for abort operation by lifecycle.
+        /// </summary>
+        public DateTime AbortDate
+        {
+            get { return this.abortDate.GetValueOrDefault(); }
+            set { this.abortDate = value; }
+        }
+
+        // Check to see if AbortDate property is set
+        internal bool IsSetAbortDate()
+        {
+            return this.abortDate.HasValue;
+        }
+
+        /// <summary>
+        /// Id of the lifecycle rule that makes a multipart upload eligible for abort operation.
+        /// </summary>
+        public string AbortRuleId
+        {
+            get { return this.abortRuleId; }
+            set { this.abortRuleId = value; }
+        }
+
+        // Check to see if AbortRuleId property is set
+        internal bool IsSetAbortRuleId()
+        {
+            return this.abortRuleId != null;
         }
     }
 }

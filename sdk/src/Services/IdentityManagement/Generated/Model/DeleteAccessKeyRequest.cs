@@ -29,14 +29,14 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccessKey operation.
-    /// Deletes the access key associated with the specified user.
+    /// Deletes the access key pair associated with the specified IAM user.
     /// 
     ///  
     /// <para>
-    ///  If you do not specify a user name, IAM determines the user name implicitly based
-    /// on the AWS access key ID signing the request. Because this action works for access
-    /// keys under the AWS account, you can use this action to manage root credentials even
-    /// if the AWS account has no associated users. 
+    /// If you do not specify a user name, IAM determines the user name implicitly based on
+    /// the AWS access key ID signing the request. Because this action works for access keys
+    /// under the AWS account, you can use this action to manage root credentials even if
+    /// the AWS account has no associated users.
     /// </para>
     /// </summary>
     public partial class DeleteAccessKeyRequest : AmazonIdentityManagementServiceRequest
@@ -52,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteAccessKeyRequest with the parameterized properties
         /// </summary>
-        /// <param name="accessKeyId">The access key ID for the access key ID and secret access key you want to delete.</param>
+        /// <param name="accessKeyId">The access key ID for the access key ID and secret access key you want to delete. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that can consist of any upper or lowercased letter or digit.</param>
         public DeleteAccessKeyRequest(string accessKeyId)
         {
             _accessKeyId = accessKeyId;
@@ -62,6 +62,11 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property AccessKeyId. 
         /// <para>
         /// The access key ID for the access key ID and secret access key you want to delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters that can consist of any upper or lowercased letter or digit.
         /// </para>
         /// </summary>
         public string AccessKeyId
@@ -79,7 +84,13 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user whose key you want to delete.
+        /// The name of the user whose access key pair you want to delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

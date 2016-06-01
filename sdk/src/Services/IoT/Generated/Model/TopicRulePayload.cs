@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class TopicRulePayload
     {
         private List<Action> _actions = new List<Action>();
+        private string _awsIotSqlVersion;
         private string _description;
         private bool? _ruleDisabled;
         private string _sql;
@@ -53,6 +54,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetActions()
         {
             return this._actions != null && this._actions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsIotSqlVersion. 
+        /// <para>
+        /// The version of the SQL rules engine to use when evaluating the rule.
+        /// </para>
+        /// </summary>
+        public string AwsIotSqlVersion
+        {
+            get { return this._awsIotSqlVersion; }
+            set { this._awsIotSqlVersion = value; }
+        }
+
+        // Check to see if AwsIotSqlVersion property is set
+        internal bool IsSetAwsIotSqlVersion()
+        {
+            return this._awsIotSqlVersion != null;
         }
 
         /// <summary>

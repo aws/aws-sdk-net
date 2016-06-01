@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyVpcEndpoint operation.
+    /// Contains the output of ModifyVpcEndpoint.
     /// </summary>
     public partial class ModifyVpcEndpointResponse : AmazonWebServiceResponse
     {

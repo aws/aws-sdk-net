@@ -35,6 +35,22 @@ namespace Amazon.CloudHSM
     public partial interface IAmazonCloudHSM : IDisposable
     {
                 
+        #region  AddTagsToResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateHapg
 
 
@@ -144,7 +160,7 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
+        /// Deletes an HSM. After completion, this operation cannot be undone and your key material
         /// cannot be recovered.
         /// </summary>
         /// <param name="hsmArn">The ARN of the HSM to delete.</param>
@@ -482,6 +498,22 @@ namespace Amazon.CloudHSM
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyHapg
 
 
@@ -527,6 +559,22 @@ namespace Amazon.CloudHSM
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ModifyLunaClientResponse> ModifyLunaClientAsync(ModifyLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveTagsFromResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeConversionTasks operation.
+    /// Contains the output for DescribeConversionTasks.
     /// </summary>
     public partial class DescribeConversionTasksResponse : AmazonWebServiceResponse
     {

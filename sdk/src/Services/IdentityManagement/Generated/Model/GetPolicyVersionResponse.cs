@@ -37,12 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyVersion. 
         /// <para>
-        /// Information about the policy version.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about managed policy versions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-        /// for Managed Policies</a> in the <i>IAM User Guide</i>. 
+        /// A structure containing details about the policy version.
         /// </para>
         /// </summary>
         public PolicyVersion PolicyVersion

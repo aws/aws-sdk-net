@@ -375,6 +375,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmailService")]
+        public void GetIdentityMailFromDomainAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIdentityMailFromDomainAttributes");
+
+            var request = InstantiateClassGenerator.Execute<GetIdentityMailFromDomainAttributesRequest>();
+            var marshaller = new GetIdentityMailFromDomainAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetIdentityMailFromDomainAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
         public void GetIdentityNotificationAttributesMarshallTest()
         {
             var operation = service_model.FindOperation("GetIdentityNotificationAttributes");
@@ -798,6 +822,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance.Unmarshall(context)
                 as SetIdentityFeedbackForwardingEnabledResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void SetIdentityMailFromDomainMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetIdentityMailFromDomain");
+
+            var request = InstantiateClassGenerator.Execute<SetIdentityMailFromDomainRequest>();
+            var marshaller = new SetIdentityMailFromDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SetIdentityMailFromDomainResponseUnmarshaller.Instance.Unmarshall(context)
+                as SetIdentityMailFromDomainResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

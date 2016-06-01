@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,65 +29,69 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Contains information about a resource group. The resource group defines a set of tags
-    /// that, when queried, identify the AWS resources that comprise the application.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used as the response element in the <a>DescribeResourceGroup</a>
+    /// that, when queried, identify the AWS resources that make up the assessment target.
+    /// This data type is used as the response element in the <a>DescribeResourceGroups</a>
     /// action.
-    /// </para>
     /// </summary>
     public partial class ResourceGroup
     {
-        private string _resourceGroupArn;
-        private string _resourceGroupTags;
+        private string _arn;
+        private DateTime? _createdAt;
+        private List<ResourceGroupTag> _tags = new List<ResourceGroupTag>();
 
         /// <summary>
-        /// Gets and sets the property ResourceGroupArn. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource group. 
+        /// The ARN of the resource group.
         /// </para>
         /// </summary>
-        public string ResourceGroupArn
+        public string Arn
         {
-            get { return this._resourceGroupArn; }
-            set { this._resourceGroupArn = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if ResourceGroupArn property is set
-        internal bool IsSetResourceGroupArn()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._resourceGroupArn != null;
+            return this._arn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceGroupTags. 
+        /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The tags (key and value pairs) of the resource group.
-        /// </para>
-        ///  
-        /// <para>
-        /// This data type property is used in the <a>CreateResourceGroup</a> action.
-        /// </para>
-        ///  
-        /// <para>
-        /// A collection of keys and an array of possible values in JSON format.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+        /// The time at which resource group is created.
         /// </para>
         /// </summary>
-        public string ResourceGroupTags
+        public DateTime CreatedAt
         {
-            get { return this._resourceGroupTags; }
-            set { this._resourceGroupTags = value; }
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
         }
 
-        // Check to see if ResourceGroupTags property is set
-        internal bool IsSetResourceGroupTags()
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
         {
-            return this._resourceGroupTags != null;
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags (key and value pairs) of the resource group. This data type property is used
+        /// in the <a>CreateResourceGroup</a> action.
+        /// </para>
+        /// </summary>
+        public List<ResourceGroupTag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

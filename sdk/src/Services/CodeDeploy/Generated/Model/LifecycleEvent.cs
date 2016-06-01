@@ -118,9 +118,9 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li>Pending: The deployment lifecycle event is pending.</li> <li>InProgress:
         /// The deployment lifecycle event is in progress.</li> <li>Succeeded: The deployment
-        /// lifecycle event has succeeded.</li> <li>Failed: The deployment lifecycle event has
-        /// failed.</li> <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
-        /// The deployment lifecycle event is unknown.</li> </ul>
+        /// lifecycle event ran successfully.</li> <li>Failed: The deployment lifecycle event
+        /// has failed.</li> <li>Skipped: The deployment lifecycle event has been skipped.</li>
+        /// <li>Unknown: The deployment lifecycle event is unknown.</li> </ul>
         /// </summary>
         public LifecycleEventStatus Status
         {

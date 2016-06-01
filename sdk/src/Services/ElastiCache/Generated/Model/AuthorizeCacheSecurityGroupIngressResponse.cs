@@ -28,22 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of one of the following actions:
-    /// 
-    ///  <ul> <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li> <li> <i>CreateCacheSecurityGroup</i>
-    /// </li> <li> <i>RevokeCacheSecurityGroupIngress</i> </li> </ul>
+    /// This is the response object from the AuthorizeCacheSecurityGroupIngress operation.
     /// </summary>
     public partial class AuthorizeCacheSecurityGroupIngressResponse : AmazonWebServiceResponse
     {
-        private CacheSecurityGroup _response;
+        private CacheSecurityGroup _cacheSecurityGroup;
 
         /// <summary>
-        /// Gets and sets the CacheSecurityGroup property.
+        /// Gets and sets the property CacheSecurityGroup.
         /// </summary>
         public CacheSecurityGroup CacheSecurityGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._cacheSecurityGroup; }
+            set { this._cacheSecurityGroup = value; }
         }
+
+        // Check to see if CacheSecurityGroup property is set
+        internal bool IsSetCacheSecurityGroup()
+        {
+            return this._cacheSecurityGroup != null;
+        }
+
     }
 }

@@ -32,8 +32,12 @@ namespace Amazon.StorageGateway.Model
     /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
     /// the tapes.
     /// 
-    ///  <note>Cache storage must be allocated to the gateway before you can create virtual
-    /// tapes. Use the <a>AddCache</a> operation to add cache storage to a gateway. </note>
+    ///  <note>
+    /// <para>
+    /// Cache storage must be allocated to the gateway before you can create virtual tapes.
+    /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateTapesRequest : AmazonStorageGatewayRequest
     {
@@ -49,8 +53,11 @@ namespace Amazon.StorageGateway.Model
         /// A unique identifier that you use to retry a request. If you retry a request, use the
         /// same <code>ClientToken</code> you specified in the initial request.
         /// </para>
-        ///  <note>Using the same <code>ClientToken</code> prevents creating the tape multiple
-        /// times.</note>
+        ///  <note>
+        /// <para>
+        /// Using the same <code>ClientToken</code> prevents creating the tape multiple times.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ClientToken
         {
@@ -108,8 +115,12 @@ namespace Amazon.StorageGateway.Model
         /// A prefix that you append to the barcode of the virtual tape you are creating. This
         /// prefix makes the barcode unique.
         /// </para>
-        ///  <note>The prefix must be 1 to 4 characters in length and must be one of the uppercase
-        /// letters from A to Z.</note>
+        ///  <note>
+        /// <para>
+        /// The prefix must be 1 to 4 characters in length and must be one of the uppercase letters
+        /// from A to Z.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string TapeBarcodePrefix
         {
@@ -128,7 +139,11 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The size, in bytes, of the virtual tapes that you want to create.
         /// </para>
-        ///  <note>The size must be aligned by gigabyte (1024*1024*1024 byte).</note>
+        ///  <note>
+        /// <para>
+        /// The size must be aligned by gigabyte (1024*1024*1024 byte).
+        /// </para>
+        ///  </note>
         /// </summary>
         public long TapeSizeInBytes
         {

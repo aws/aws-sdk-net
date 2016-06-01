@@ -25,6 +25,9 @@ namespace Amazon.Elasticsearch.Model
     ///<summary>
     /// Elasticsearch exception
     /// </summary>
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
     public class InvalidTypeException : AmazonElasticsearchException 
     {
         /// <summary>
@@ -75,5 +78,20 @@ namespace Amazon.Elasticsearch.Model
         public InvalidTypeException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
+
+#if !PCL && !CORECLR
+        /// <summary>
+        /// Constructs a new instance of the InvalidTypeException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected InvalidTypeException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+        }
+
+#endif
     }
 }

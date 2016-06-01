@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CancelReservedInstancesListing operation.
+    /// Contains the output of CancelReservedInstancesListing.
     /// </summary>
     public partial class CancelReservedInstancesListingResponse : AmazonWebServiceResponse
     {

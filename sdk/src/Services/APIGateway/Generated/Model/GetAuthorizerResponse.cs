@@ -36,6 +36,7 @@ namespace Amazon.APIGateway.Model
         private string _authorizerCredentials;
         private int? _authorizerResultTtlInSeconds;
         private string _authorizerUri;
+        private string _authType;
         private string _id;
         private string _identitySource;
         private string _identityValidationExpression;
@@ -104,6 +105,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetAuthorizerUri()
         {
             return this._authorizerUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthType. 
+        /// <para>
+        /// Optional customer-defined field, used in Swagger imports/exports. Has no functional
+        /// impact.
+        /// </para>
+        /// </summary>
+        public string AuthType
+        {
+            get { return this._authType; }
+            set { this._authType = value; }
+        }
+
+        // Check to see if AuthType property is set
+        internal bool IsSetAuthType()
+        {
+            return this._authType != null;
         }
 
         /// <summary>

@@ -60,6 +60,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ChangeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChangeType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DataType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

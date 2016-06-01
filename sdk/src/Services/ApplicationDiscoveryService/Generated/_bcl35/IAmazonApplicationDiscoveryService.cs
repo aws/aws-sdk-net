@@ -1,0 +1,923 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the discovery-2015-11-01.normal.json service model.
+ */
+
+
+using System;
+using System.Collections.Generic;
+
+using Amazon.ApplicationDiscoveryService.Model;
+
+namespace Amazon.ApplicationDiscoveryService
+{
+    /// <summary>
+    /// Interface for accessing ApplicationDiscoveryService
+    ///
+    /// The AWS Application Discovery Service helps Systems Integrators quickly and reliably
+    /// plan application migration projects by automatically identifying applications running
+    /// in on-premises data centers, their associated dependencies, and their performance
+    /// profile.
+    /// 
+    ///  
+    /// <para>
+    ///  Planning data center migrations can involve thousands of workloads that are often
+    /// deeply interdependent. Application discovery and dependency mapping are important
+    /// early first steps in the migration process, but difficult to perform at scale due
+    /// to the lack of automated tools.
+    /// </para>
+    ///  
+    /// <para>
+    /// The AWS Application Discovery Service automatically collects configuration and usage
+    /// data from servers to develop a list of applications, how they perform, and how they
+    /// are interdependent. This information is securely retained in an AWS Application Discovery
+    /// Service database which you can export as a CSV file into your preferred visualization
+    /// tool or cloud migration solution to help reduce the complexity and time in planning
+    /// your cloud migration.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Application Discovery Service is currently available for preview. Only customers
+    /// who are engaged with <a href="https://aws.amazon.com/professional-services/">AWS Professional
+    /// Services</a> or a certified AWS partner can use the service. To see the list of certified
+    /// partners and request access to the Application Discovery Service, complete the following
+    /// <a href="http://aws.amazon.com/application-discovery/preview/">preview form</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This API reference provides descriptions, syntax, and usage examples for each of the
+    /// actions and data types for the Discovery Service. The topic for each action shows
+    /// the API request parameters and the response. Alternatively, you can use one of the
+    /// AWS SDKs to access an API that is tailored to the programming language or platform
+    /// that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
+    /// SDKs</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/what-is-appdiscovery.html">
+    /// <i>AWS Discovery Service User Guide</i> </a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following are short descriptions of each API action, organized by function.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Managing AWS Agents Using the Application Discovery Service</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// An AWS agent is software that you install on on-premises servers and virtual machines
+    /// that are targeted for discovery and migration. Agents run on Linux and Windows Server
+    /// and collect server configuration and activity information about your applications
+    /// and infrastructure. Specifically, agents collect the following information and send
+    /// it to the Application Discovery Service using Secure Sockets Layer (SSL) encryption:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// User information (user name, home directory)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Group information (name)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// List of installed packages
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// List of kernel modules
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// All create and stop process events
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// DNS queries
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// NIC information
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TCP/UDP process listening ports
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TCPV4/V6 connections
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Operating system information
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// System performance
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Process performance
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The Application Discovery Service API includes the following actions to manage AWS
+    /// agents:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>StartDataCollectionByAgentIds</i>: Instructs the specified agents to start collecting
+    /// data. The Application Discovery Service takes several minutes to receive and process
+    /// data after you initiate data collection.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>StopDataCollectionByAgentIds</i>: Instructs the specified agents to stop collecting
+    /// data.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>DescribeAgents</i>: Lists AWS agents by ID or lists all agents associated with
+    /// your user account if you did not specify an agent ID. The output includes agent IDs,
+    /// IP addresses, media access control (MAC) addresses, agent health, host name where
+    /// the agent resides, and the version number of each agent.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Querying Configuration Items</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// A <i>configuration item</i> is an IT asset that was discovered in your data center
+    /// by an AWS agent. When you use the Application Discovery Service, you can specify filters
+    /// and query specific configuration items. The service supports Server, Process, and
+    /// Connection configuration items. This means you can specify a value for the following
+    /// keys and query your IT assets:
+    /// </para>
+    ///  <p class="title"> <b>Server</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// server.HostName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.osName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.osVersion
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.agentId
+    /// </para>
+    ///  </li> </ul> <p class="title"> <b>Process</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// process.name
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// process.CommandLine
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// process.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.hostName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.osName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.osVersion
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// server.agentId
+    /// </para>
+    ///  </li> </ul> <p class="title"> <b>Connection</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// connection.sourceIp
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// connection.sourcePort
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// connection.destinationIp
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// connection.destinationPort
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceProcess.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceProcess.commandLine
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceProcess.name
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationProcessId.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationProcess.commandLine
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationProcess.name
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceServer.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceServer.hostName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceServer.osName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// sourceServer.osVersion
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationServer.configurationId
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationServer.hostName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationServer.osName
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// destinationServer.osVersion
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The Application Discovery Service includes the following actions for querying configuration
+    /// items. 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>DescribeConfigurations</i>: Retrieves a list of attributes for a specific configuration
+    /// ID. For example, the output for a <i>server</i> configuration item includes a list
+    /// of attributes about the server, including host name, operating system, number of network
+    /// cards, etc.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>ListConfigurations</i>: Retrieves a list of configuration items according to the
+    /// criteria you specify in a filter. The filter criteria identify relationship requirements.
+    /// For example, you can specify filter criteria of process.name with values of <i>nginx</i>
+    /// and <i>apache</i>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Tagging Discovered Configuration Items</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can tag discovered configuration items. Tags are metadata that help you categorize
+    /// IT assets in your data center. Tags use a <i>key</i>-<i>value</i> format. For example,
+    /// <code>{"key": "serverType", "value": "webServer"}</code>. 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>CreateTags</i>: Creates one or more tags for a configuration items.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>DescribeTags</i>: Retrieves a list of configuration items that are tagged with
+    /// a specific tag. <i>Or</i>, retrieves a list of all tags assigned to a specific configuration
+    /// item.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>DeleteTags</i>: Deletes the association between a configuration item and one or
+    /// more tags.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Exporting Data</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can export data as a CSV file to an Amazon S3 bucket or into your preferred visualization
+    /// tool or cloud migration solution to help reduce the complexity and time in planning
+    /// your cloud migration.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>ExportConfigurations</i>: Exports all discovered configuration data to an Amazon
+    /// S3 bucket. Data includes tags and tag associations, processes, connections, servers,
+    /// and system performance. This API returns an export ID which you can query using the
+    /// GetExportStatus API.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>DescribeExportConfigurations</i>: Gets the status of the data export. When the
+    /// export is complete, the service returns an Amazon S3 URL where you can download CSV
+    /// files that include the data.
+    /// </para>
+    ///  </li> </ul>
+    /// </summary>
+    public partial interface IAmazonApplicationDiscoveryService : IDisposable
+    {
+
+        
+        #region  CreateTags
+
+
+        /// <summary>
+        /// Creates one or more tags for configuration items. Tags are metadata that help you
+        /// categorize IT assets. This API accepts a list of multiple configuration items.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
+        /// 
+        /// <returns>The response from the CreateTags service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceNotFoundException">
+        /// The specified configuration ID was not located. Verify the configuration ID and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        CreateTagsResponse CreateTags(CreateTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTags
+        ///         operation.</returns>
+        IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTags.</param>
+        /// 
+        /// <returns>Returns a  CreateTagsResult from ApplicationDiscoveryService.</returns>
+        CreateTagsResponse EndCreateTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTags
+
+
+        /// <summary>
+        /// Deletes the association between configuration items and one or more tags. This API
+        /// accepts a list of multiple configuration items.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTags service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceNotFoundException">
+        /// The specified configuration ID was not located. Verify the configuration ID and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
+        /// 
+        /// <returns>Returns a  DeleteTagsResult from ApplicationDiscoveryService.</returns>
+        DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAgents
+
+
+        /// <summary>
+        /// Lists AWS agents by ID or lists all agents associated with your user account if you
+        /// did not specify an agent ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgents service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAgents service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        DescribeAgentsResponse DescribeAgents(DescribeAgentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAgents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgents operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAgents
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeAgents(DescribeAgentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAgents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAgents.</param>
+        /// 
+        /// <returns>Returns a  DescribeAgentsResult from ApplicationDiscoveryService.</returns>
+        DescribeAgentsResponse EndDescribeAgents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeConfigurations
+
+
+        /// <summary>
+        /// Retrieves a list of attributes for a specific configuration ID. For example, the output
+        /// for a <i>server</i> configuration item includes a list of attributes about the server,
+        /// including host name, operating system, number of network cards, etc.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConfigurations service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        DescribeConfigurationsResponse DescribeConfigurations(DescribeConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurations operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurations
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeConfigurations(DescribeConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurations.</param>
+        /// 
+        /// <returns>Returns a  DescribeConfigurationsResult from ApplicationDiscoveryService.</returns>
+        DescribeConfigurationsResponse EndDescribeConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeExportConfigurations
+
+
+        /// <summary>
+        /// Retrieves the status of a given export process. You can retrieve status from a maximum
+        /// of 100 processes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExportConfigurations service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceNotFoundException">
+        /// The specified configuration ID was not located. Verify the configuration ID and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExportConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportConfigurations operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportConfigurations
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeExportConfigurations(DescribeExportConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExportConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExportConfigurations.</param>
+        /// 
+        /// <returns>Returns a  DescribeExportConfigurationsResult from ApplicationDiscoveryService.</returns>
+        DescribeExportConfigurationsResponse EndDescribeExportConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeTags
+
+
+        /// <summary>
+        /// Retrieves a list of configuration items that are tagged with a specific tag. Or retrieves
+        /// a list of all tags assigned to a specific configuration item.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceNotFoundException">
+        /// The specified configuration ID was not located. Verify the configuration ID and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
+        /// 
+        /// <returns>Returns a  DescribeTagsResult from ApplicationDiscoveryService.</returns>
+        DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ExportConfigurations
+
+
+        /// <summary>
+        /// Exports all discovered configuration data to an Amazon S3 bucket or an application
+        /// that enables you to view and evaluate the data. Data includes tags and tag associations,
+        /// processes, connections, servers, and system performance. This API returns an export
+        /// ID which you can query using the <i>GetExportStatus</i> API. The system imposes a
+        /// limit of two configuration exports in six hours.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ExportConfigurations service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.OperationNotPermittedException">
+        /// This operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportConfigurations operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportConfigurations
+        ///         operation.</returns>
+        IAsyncResult BeginExportConfigurations(ExportConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ExportConfigurationsResult from ApplicationDiscoveryService.</returns>
+        ExportConfigurationsResponse EndExportConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConfigurations
+
+
+        /// <summary>
+        /// Retrieves a list of configurations items according to the criteria you specify in
+        /// a filter. The filter criteria identify relationship requirements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurations service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceNotFoundException">
+        /// The specified configuration ID was not located. Verify the configuration ID and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurations
+        ///         operation.</returns>
+        IAsyncResult BeginListConfigurations(ListConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListConfigurationsResult from ApplicationDiscoveryService.</returns>
+        ListConfigurationsResponse EndListConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartDataCollectionByAgentIds
+
+
+        /// <summary>
+        /// Instructs the specified agents to start collecting data. Agents can reside on host
+        /// servers or virtual machines in your data center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDataCollectionByAgentIds service method.</param>
+        /// 
+        /// <returns>The response from the StartDataCollectionByAgentIds service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        StartDataCollectionByAgentIdsResponse StartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDataCollectionByAgentIds operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDataCollectionByAgentIds operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDataCollectionByAgentIds
+        ///         operation.</returns>
+        IAsyncResult BeginStartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDataCollectionByAgentIds operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDataCollectionByAgentIds.</param>
+        /// 
+        /// <returns>Returns a  StartDataCollectionByAgentIdsResult from ApplicationDiscoveryService.</returns>
+        StartDataCollectionByAgentIdsResponse EndStartDataCollectionByAgentIds(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopDataCollectionByAgentIds
+
+
+        /// <summary>
+        /// Instructs the specified agents to stop collecting data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDataCollectionByAgentIds service method.</param>
+        /// 
+        /// <returns>The response from the StopDataCollectionByAgentIds service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        StopDataCollectionByAgentIdsResponse StopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDataCollectionByAgentIds operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDataCollectionByAgentIds operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDataCollectionByAgentIds
+        ///         operation.</returns>
+        IAsyncResult BeginStopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopDataCollectionByAgentIds operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDataCollectionByAgentIds.</param>
+        /// 
+        /// <returns>Returns a  StopDataCollectionByAgentIdsResult from ApplicationDiscoveryService.</returns>
+        StopDataCollectionByAgentIdsResponse EndStopDataCollectionByAgentIds(IAsyncResult asyncResult);
+
+        #endregion
+        
+    }
+}

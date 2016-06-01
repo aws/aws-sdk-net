@@ -23,44 +23,51 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         [Category("WWW")]
         public void TestTableOperations()
         {
-
-            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            Client.BeforeRequestEvent += ClientBeforeRequestEvent;
+            try
             {
-                // Clear tables
-                CleanupTables();
+                foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+                {
+                    // Clear tables
+                    CleanupTables();
 
-                Table hashTable;
-                Table hashRangeTable;
+                    Table hashTable;
+                    Table hashRangeTable;
 
-                // Load tables using provided conversion schema
-                LoadTables(conversion, out hashTable, out hashRangeTable);
+                    // Load tables using provided conversion schema
+                    LoadTables(conversion, out hashTable, out hashRangeTable);
 
-                // Test saving and loading empty lists and maps
-                TestEmptyCollections(hashTable);
+                    // Test saving and loading empty lists and maps
+                    TestEmptyCollections(hashTable);
 
-                // Test operations on hash-key table
-                TestHashTable(hashTable, conversion);
+                    // Test operations on hash-key table
+                    TestHashTable(hashTable, conversion);
 
-                // Test operations on hash-and-range-key table
-                TestHashRangeTable(hashRangeTable, conversion);
+                    // Test operations on hash-and-range-key table
+                    TestHashRangeTable(hashRangeTable, conversion);
 
-                // Test large batch writes and gets
-                TestLargeBatchOperations(hashTable);
+                    // Test large batch writes and gets
+                    TestLargeBatchOperations(hashTable);
 
-                // Test expressions for update
-                TestExpressionUpdate(hashTable);
+                    // Test expressions for update
+                    TestExpressionUpdate(hashTable);
 
-                // Test expressions for put
-                TestExpressionPut(hashTable);
+                    // Test expressions for put
+                    TestExpressionPut(hashTable);
 
-                // Test expressions for delete
-                TestExpressionsOnDelete(hashTable);
+                    // Test expressions for delete
+                    TestExpressionsOnDelete(hashTable);
 
-                // Test expressions for query
-                TestExpressionsOnQuery(hashRangeTable);
+                    // Test expressions for query
+                    TestExpressionsOnQuery(hashRangeTable);
 
-                // Test expressions for scan
-                TestExpressionsOnScan(hashRangeTable);
+                    // Test expressions for scan
+                    TestExpressionsOnScan(hashRangeTable);
+                }
+            }
+            finally
+            {
+                Client.BeforeRequestEvent -= ClientBeforeRequestEvent;
             }
         }
 
@@ -779,15 +786,15 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             queryFilter.AddCondition("Score", QueryOperator.GreaterThan, 100);
             ex = new Exception();
             hashRangeTable.Query(new QueryOperationConfig
-             {
-                 IndexName = "GlobalIndex",
-                 Filter = queryFilter
-             }).GetRemainingAsync((result) =>
-             {
-                 ex = result.Exception;
-                 items = result.Result;
-                 ars.Set();
-             }, options);
+            {
+                IndexName = "GlobalIndex",
+                Filter = queryFilter
+            }).GetRemainingAsync((result) =>
+            {
+                ex = result.Exception;
+                items = result.Result;
+                ars.Set();
+            }, options);
             ars.WaitOne();
             Assert.IsNull(ex);
             Assert.AreEqual(1, items.Count);

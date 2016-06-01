@@ -1503,6 +1503,9 @@ namespace Amazon.EC2.Import
     /// <summary>
     /// Wraps errors returned from the importer
     /// </summary>
+#if !PCL
+    [Serializable]
+#endif
     public class DiskImageImporterException : Exception
     {
         /// <summary>
@@ -1525,6 +1528,49 @@ namespace Amazon.EC2.Import
             : this(stage, string.Empty, innerException)
         {
         }
+
+#if !PCL
+        /// <summary>
+        /// Constructs a new instance of the DiskImageImporterException class with serialized data.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+        protected DiskImageImporterException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context)
+        {
+            if (info != null)
+            {
+                this.Stage = (DiskImportErrorStage)info.GetValue("Stage", typeof(DiskImportErrorStage));
+            }
+        }
+
+        /// <summary>
+        /// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+        /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
+#if BCL35
+        [System.Security.Permissions.SecurityPermission(
+            System.Security.Permissions.SecurityAction.LinkDemand,
+            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
+#endif
+        [System.Security.SecurityCritical]
+        //// These FxCop rules are giving false-positives for this method
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+
+            if (info != null)
+            {
+                info.AddValue("Stage", this.Stage);
+            }
+        }
+#endif
     }
 
     /// <summary>

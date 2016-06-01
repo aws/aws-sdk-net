@@ -29,12 +29,12 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCertificates operation.
-    /// Lists your certificates.
+    /// Lists the certificates registered in your AWS account.
     /// 
     ///  
     /// <para>
-    /// The results are paginated with a default page size of 25. You can retrieve additional
-    /// results using the returned marker.
+    /// The results are paginated with a default page size of 25. You can use the returned
+    /// marker to retrieve additional results.
     /// </para>
     /// </summary>
     public partial class ListCertificatesRequest : AmazonIoTRequest

@@ -61,7 +61,8 @@
       "input":{"shape":"CreateBucketRequest"},
       "output":{"shape":"CreateBucketOutput"},
       "errors":[
-        {"shape":"BucketAlreadyExists"}
+        {"shape":"BucketAlreadyExists"},
+        {"shape":"BucketAlreadyOwnedByYou"}
       ],
       "documentationUrl":"http://docs.amazonwebservices.com/AmazonS3/latest/API/RESTBucketPUT.html",
       "documentation":"Creates a new bucket.",
@@ -126,7 +127,7 @@
         "requestUri":"/{Bucket}?replication"
       },
       "input":{"shape":"DeleteBucketReplicationRequest"},
-      "documentation":"Deletes the replication configuration for the given Amazon S3 bucket."
+      "documentation":"Deletes the replication configuration from the bucket."
     },
     "DeleteBucketTagging":{
       "name":"DeleteBucketTagging",
@@ -170,6 +171,16 @@
       "documentationUrl":"http://docs.amazonwebservices.com/AmazonS3/latest/API/multiobjectdeleteapi.html",
       "documentation":"This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000 keys.",
       "alias":"DeleteMultipleObjects"
+    },
+    "GetBucketAccelerateConfiguration":{
+      "name":"GetBucketAccelerateConfiguration",
+      "http":{
+        "method":"GET",
+        "requestUri":"/{Bucket}?accelerate"
+      },
+      "input":{"shape":"GetBucketAccelerateConfigurationRequest"},
+      "output":{"shape":"GetBucketAccelerateConfigurationOutput"},
+      "documentation":"Returns the accelerate configuration of a bucket."
     },
     "GetBucketAcl":{
       "name":"GetBucketAcl",
@@ -278,7 +289,7 @@
       },
       "input":{"shape":"GetBucketReplicationRequest"},
       "output":{"shape":"GetBucketReplicationOutput"},
-      "documentation":"Retrieves the replication configuration for the given Amazon S3 bucket."
+      "documentation":"Deprecated, see the GetBucketReplicationConfiguration operation."
     },
     "GetBucketRequestPayment":{
       "name":"GetBucketRequestPayment",
@@ -439,6 +450,19 @@
       "documentation":"Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket.",
       "alias":"GetBucket"
     },
+    "ListObjectsV2":{
+      "name":"ListObjectsV2",
+      "http":{
+        "method":"GET",
+        "requestUri":"/{Bucket}?list-type=2"
+      },
+      "input":{"shape":"ListObjectsV2Request"},
+      "output":{"shape":"ListObjectsV2Output"},
+      "errors":[
+        {"shape":"NoSuchBucket"}
+      ],
+      "documentation":"Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket. Note: ListObjectsV2 is the revised List Objects API and we recommend you use this revised API for new application development."
+    },
     "ListParts":{
       "name":"ListParts",
       "http":{
@@ -449,6 +473,15 @@
       "output":{"shape":"ListPartsOutput"},
       "documentationUrl":"http://docs.amazonwebservices.com/AmazonS3/latest/API/mpUploadListParts.html",
       "documentation":"Lists the parts that have been uploaded for a specific multipart upload."
+    },
+    "PutBucketAccelerateConfiguration":{
+      "name":"PutBucketAccelerateConfiguration",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/{Bucket}?accelerate"
+      },
+      "input":{"shape":"PutBucketAccelerateConfigurationRequest"},
+      "documentation":"Sets the accelerate configuration of an existing bucket."
     },
     "PutBucketAcl":{
       "name":"PutBucketAcl",
@@ -643,6 +676,17 @@
     }
   },
   "shapes":{
+    "AbortDate":{"type":"timestamp"},
+    "AbortIncompleteMultipartUpload":{
+      "type":"structure",
+      "members":{
+        "DaysAfterInitiation":{
+          "shape":"DaysAfterInitiation",
+          "documentation":"Indicates the number of days that must pass since initiation for Lifecycle to abort an Incomplete Multipart Upload."
+        }
+      },
+      "documentation":"Specifies the days since the initiation of an Incomplete Multipart Upload that Lifecycle will wait before permanently removing all parts of the upload."
+    },
     "AbortMultipartUploadOutput":{
       "type":"structure",
       "members":{
@@ -680,6 +724,16 @@
           "shape":"RequestPayer",
           "location":"header",
           "locationName":"x-amz-request-payer"
+        }
+      }
+    },
+    "AbortRuleId":{"type":"string"},
+    "AccelerateConfiguration":{
+      "type":"structure",
+      "members":{
+        "Status":{
+          "shape":"BucketAccelerateStatus",
+          "documentation":"The accelerate configuration of the bucket."
         }
       }
     },
@@ -727,11 +781,24 @@
         }
       }
     },
+    "BucketAccelerateStatus":{
+      "type":"string",
+      "enum":[
+        "Enabled",
+        "Suspended"
+      ]
+    },
     "BucketAlreadyExists":{
       "type":"structure",
       "members":{
       },
       "documentation":"The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.",
+      "exception":true
+    },
+    "BucketAlreadyOwnedByYou":{
+      "type":"structure",
+      "members":{
+      },
       "exception":true
     },
     "BucketCannedACL":{
@@ -1357,6 +1424,18 @@
     "CreateMultipartUploadOutput":{
       "type":"structure",
       "members":{
+        "AbortDate":{
+          "shape":"AbortDate",
+          "documentation":"Date when multipart upload will become eligible for abort operation by lifecycle.",
+          "location":"header",
+          "locationName":"x-amz-abort-date"
+        },
+        "AbortRuleId":{
+          "shape":"AbortRuleId",
+          "documentation":"Id of the lifecycle rule that makes a multipart upload eligible for abort operation.",
+          "location":"header",
+          "locationName":"x-amz-abort-rule-id"
+        },
         "Bucket":{
           "shape":"BucketName",
           "documentation":"Name of the bucket to which the multipart upload was initiated.",
@@ -1545,6 +1624,7 @@
       "timestampFormat":"iso8601"
     },
     "Days":{"type":"integer"},
+    "DaysAfterInitiation":{"type":"integer"},
     "Delete":{
       "type":"structure",
       "required":["Objects"],
@@ -1858,6 +1938,7 @@
         "Disabled"
       ]
     },
+    "ExpiredObjectDeleteMarker":{"type":"boolean"},
     "Expires":{"type":"timestamp"},
     "ExposeHeader":{"type":"string"},
     "ExposeHeaders":{
@@ -1865,6 +1946,7 @@
       "member":{"shape":"ExposeHeader"},
       "flattened":true
     },
+    "FetchOwner":{"type":"boolean"},
     "FilterRule":{
       "type":"structure",
       "members":{
@@ -1890,6 +1972,27 @@
       ]
     },
     "FilterRuleValue":{"type":"string"},
+    "GetBucketAccelerateConfigurationOutput":{
+      "type":"structure",
+      "members":{
+        "Status":{
+          "shape":"BucketAccelerateStatus",
+          "documentation":"The accelerate configuration of the bucket."
+        }
+      }
+    },
+    "GetBucketAccelerateConfigurationRequest":{
+      "type":"structure",
+      "required":["Bucket"],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "documentation":"Name of the bucket for which the accelerate configuration is retrieved.",
+          "location":"uri",
+          "locationName":"Bucket"
+        }
+      }
+    },
     "GetBucketAclOutput":{
       "type":"structure",
       "members":{
@@ -2818,6 +2921,7 @@
     },
     "IsLatest":{"type":"boolean"},
     "IsTruncated":{"type":"boolean"},
+    "KeyCount":{"type":"integer"},
     "KeyMarker":{"type":"string"},
     "KeyPrefixEquals":{"type":"string"},
     "LambdaFunctionArn":{"type":"string"},
@@ -2868,6 +2972,10 @@
         "Days":{
           "shape":"Days",
           "documentation":"Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer."
+        },
+        "ExpiredObjectDeleteMarker":{
+          "shape":"ExpiredObjectDeleteMarker",
+          "documentation":"Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy."
         }
       }
     },
@@ -2899,7 +3007,8 @@
           "shape":"NoncurrentVersionTransitionList",
           "locationName":"NoncurrentVersionTransition"
         },
-        "NoncurrentVersionExpiration":{"shape":"NoncurrentVersionExpiration"}
+        "NoncurrentVersionExpiration":{"shape":"NoncurrentVersionExpiration"},
+        "AbortIncompleteMultipartUpload":{"shape":"AbortIncompleteMultipartUpload"}
       }
     },
     "LifecycleRules":{
@@ -3156,9 +3265,118 @@
         }
       }
     },
+    "ListObjectsV2Output":{
+      "type":"structure",
+      "members":{
+        "IsTruncated":{
+          "shape":"IsTruncated",
+          "documentation":"A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria."
+        },
+        "Contents":{"shape":"ObjectList"},
+        "Name":{"shape":"BucketName"},
+        "Prefix":{
+          "shape":"Prefix",
+          "documentation":"Limits the response to keys that begin with the specified prefix."
+        },
+        "Delimiter":{
+          "shape":"Delimiter",
+          "documentation":"A delimiter is a character you use to group keys."
+        },
+        "MaxKeys":{
+          "shape":"MaxKeys",
+          "documentation":"Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more."
+        },
+        "CommonPrefixes":{"shape":"CommonPrefixList"},
+        "EncodingType":{
+          "shape":"EncodingType",
+          "documentation":"Encoding type used by Amazon S3 to encode object keys in the response."
+        },
+        "KeyCount":{
+          "shape":"KeyCount",
+          "documentation":"KeyCount is the number of keys returned with this request. KeyCount will always be less than equals to MaxKeys field. Say you ask for 50 keys, your result will include less than equals 50 keys"
+        },
+        "ContinuationToken":{
+          "shape":"Token",
+          "documentation":"ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a token. ContinuationToken is obfuscated and is not a real key"
+        },
+        "NextContinuationToken":{
+          "shape":"NextToken",
+          "documentation":"NextContinuationToken is sent when isTruncated is true which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this NextContinuationToken. NextContinuationToken is obfuscated and is not a real key"
+        },
+        "StartAfter":{
+          "shape":"StartAfter",
+          "documentation":"StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket"
+        }
+      }
+    },
+    "ListObjectsV2Request":{
+      "type":"structure",
+      "required":["Bucket"],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "location":"uri",
+          "locationName":"Bucket"
+        },
+        "Delimiter":{
+          "shape":"Delimiter",
+          "documentation":"A delimiter is a character you use to group keys.",
+          "location":"querystring",
+          "locationName":"delimiter"
+        },
+        "EncodingType":{
+          "shape":"EncodingType",
+          "documentation":"Encoding type used by Amazon S3 to encode object keys in the response.",
+          "location":"querystring",
+          "locationName":"encoding-type"
+        },
+        "MaxKeys":{
+          "shape":"MaxKeys",
+          "documentation":"Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.",
+          "location":"querystring",
+          "locationName":"max-keys"
+        },
+        "Prefix":{
+          "shape":"Prefix",
+          "documentation":"Limits the response to keys that begin with the specified prefix.",
+          "location":"querystring",
+          "locationName":"prefix"
+        },
+        "ContinuationToken":{
+          "shape":"Token",
+          "documentation":"ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a token. ContinuationToken is obfuscated and is not a real key",
+          "location":"querystring",
+          "locationName":"continuation-token"
+        },
+        "FetchOwner":{
+          "shape":"FetchOwner",
+          "documentation":"The owner field is not present in listV2 by default, if you want to return owner field with each key in the result then set the fetch owner field to true",
+          "location":"querystring",
+          "locationName":"fetch-owner"
+        },
+        "StartAfter":{
+          "shape":"StartAfter",
+          "documentation":"StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket",
+          "location":"querystring",
+          "locationName":"start-key"
+        }
+      }
+    },
     "ListPartsOutput":{
       "type":"structure",
       "members":{
+        "AbortDate":{
+          "shape":"AbortDate",
+          "documentation":"Date when multipart upload will become eligible for abort operation by lifecycle.",
+          "location":"header",
+          "locationName":"x-amz-abort-date"
+        },
+        "AbortRuleId":{
+          "shape":"AbortRuleId",
+          "documentation":"Id of the lifecycle rule that makes a multipart upload eligible for abort operation.",
+          "location":"header",
+          "locationName":"x-amz-abort-rule-id"
+        },
         "Bucket":{
           "shape":"BucketName",
           "documentation":"Name of the bucket to which the multipart upload was initiated."
@@ -3336,6 +3554,7 @@
     "NextKeyMarker":{"type":"string"},
     "NextMarker":{"type":"string"},
     "NextPartNumberMarker":{"type":"integer"},
+    "NextToken":{"type":"string"},
     "NextUploadIdMarker":{"type":"string"},
     "NextVersionIdMarker":{"type":"string"},
     "NoSuchBucket":{
@@ -3605,6 +3824,28 @@
         "http",
         "https"
       ]
+    },
+    "PutBucketAccelerateConfigurationRequest":{
+      "type":"structure",
+      "required":[
+        "Bucket",
+        "AccelerateConfiguration"
+      ],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "documentation":"Name of the bucket for which the accelerate configuration is set.",
+          "location":"uri",
+          "locationName":"Bucket"
+        },
+        "AccelerateConfiguration":{
+          "shape":"AccelerateConfiguration",
+          "documentation":"Specifies the Accelerate Configuration you want to set for the bucket.",
+          "locationName":"AccelerateConfiguration",
+          "xmlNamespace":{"uri":"http://s3.amazonaws.com/doc/2006-03-01/"}
+        }
+      },
+      "payload":"AccelerateConfiguration"
     },
     "PutBucketAclRequest":{
       "type":"structure",
@@ -4030,6 +4271,12 @@
           "shape":"RequestPayer",
           "location":"header",
           "locationName":"x-amz-request-payer"
+        },
+        "VersionId":{
+          "shape":"ObjectVersionId",
+          "documentation":"VersionId used to reference a specific version of the object.",
+          "location":"querystring",
+          "locationName":"versionId"
         }
       },
       "payload":"AccessControlPolicy"
@@ -4106,6 +4353,7 @@
         },
         "Bucket":{
           "shape":"BucketName",
+          "documentation":"Name of the bucket to which the PUT operation was initiated.",
           "location":"uri",
           "locationName":"Bucket"
         },
@@ -4141,6 +4389,7 @@
         },
         "ContentMD5":{
           "shape":"ContentMD5",
+          "documentation":"The base64-encoded 128-bit MD5 digest of the part data.",
           "location":"header",
           "locationName":"Content-MD5"
         },
@@ -4182,6 +4431,7 @@
         },
         "Key":{
           "shape":"ObjectKey",
+          "documentation":"Object key for which the PUT operation was initiated.",
           "location":"uri",
           "locationName":"Key"
         },
@@ -4515,7 +4765,8 @@
         },
         "Transition":{"shape":"Transition"},
         "NoncurrentVersionTransition":{"shape":"NoncurrentVersionTransition"},
-        "NoncurrentVersionExpiration":{"shape":"NoncurrentVersionExpiration"}
+        "NoncurrentVersionExpiration":{"shape":"NoncurrentVersionExpiration"},
+        "AbortIncompleteMultipartUpload":{"shape":"AbortIncompleteMultipartUpload"}
       }
     },
     "Rules":{
@@ -4551,6 +4802,7 @@
       ]
     },
     "Size":{"type":"integer"},
+    "StartAfter":{"type":"string"},
     "StorageClass":{
       "type":"string",
       "enum":[
@@ -4610,6 +4862,7 @@
       }
     },
     "TargetPrefix":{"type":"string"},
+    "Token":{"type":"string"},
     "TopicArn":{"type":"string"},
     "TopicConfiguration":{
       "type":"structure",
@@ -4899,10 +5152,12 @@
       "members":{
         "Body":{
           "shape":"Body",
+          "documentation":"Object data.",
           "streaming":true
         },
         "Bucket":{
           "shape":"BucketName",
+          "documentation":"Name of the bucket to which the multipart upload was initiated.",
           "location":"uri",
           "locationName":"Bucket"
         },
@@ -4914,11 +5169,13 @@
         },
         "ContentMD5":{
           "shape":"ContentMD5",
+          "documentation":"The base64-encoded 128-bit MD5 digest of the part data.",
           "location":"header",
           "locationName":"Content-MD5"
         },
         "Key":{
           "shape":"ObjectKey",
+          "documentation":"Object key for which the multipart upload was initiated.",
           "location":"uri",
           "locationName":"Key"
         },

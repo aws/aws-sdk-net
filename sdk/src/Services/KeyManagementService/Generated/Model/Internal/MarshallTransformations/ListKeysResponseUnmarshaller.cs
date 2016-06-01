@@ -84,11 +84,11 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DependencyTimeout"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DependencyTimeoutException"))
             {
                 return new DependencyTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInternal"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInternalException"))
             {
                 return new KMSInternalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }

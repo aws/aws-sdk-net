@@ -29,8 +29,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGroup operation.
-    /// Returns a list of users that are in the specified group. You can paginate the results
-    /// using the <code>MaxItems</code> and <code>Marker</code> parameters.
+    /// Returns a list of IAM users that are in the specified IAM group. You can paginate
+    /// the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
     /// </summary>
     public partial class GetGroupRequest : AmazonIdentityManagementServiceRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates GetGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">The name of the group.</param>
+        /// <param name="groupName">The name of the group. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public GetGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -56,6 +56,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         /// The name of the group.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string GroupName
@@ -103,7 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems

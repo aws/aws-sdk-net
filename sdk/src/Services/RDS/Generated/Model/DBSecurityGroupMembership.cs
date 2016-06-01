@@ -28,10 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the following actions: 
+    /// This data type is used as a response element in the following actions:
     /// 
-    ///  <ul> <li> <a>ModifyDBInstance</a> </li> <li> <a>RebootDBInstance</a> </li> <li> <a>RestoreDBInstanceFromDBSnapshot</a>
-    /// </li> <li> <a>RestoreDBInstanceToPointInTime</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ModifyDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RebootDBInstance</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RestoreDBInstanceFromDBSnapshot</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RestoreDBInstanceToPointInTime</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DBSecurityGroupMembership
     {
@@ -46,7 +61,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroupName. 
         /// <para>
-        ///  The name of the DB security group. 
+        /// The name of the DB security group.
         /// </para>
         /// </summary>
         public string DBSecurityGroupName
@@ -64,7 +79,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the DB security group. 
+        /// The status of the DB security group.
         /// </para>
         /// </summary>
         public string Status

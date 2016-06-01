@@ -70,6 +70,11 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The unique identifier for the SSH public key.
         /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters that can consist of any upper or lowercased letter or digit.
+        /// </para>
         /// </summary>
         public string SSHPublicKeyId
         {
@@ -87,6 +92,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the IAM user associated with the SSH public key.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

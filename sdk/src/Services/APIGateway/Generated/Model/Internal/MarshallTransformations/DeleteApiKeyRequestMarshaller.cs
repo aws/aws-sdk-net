@@ -58,7 +58,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/apikeys/{api_Key}";
-            uriResourcePath = uriResourcePath.Replace("{api_Key}", publicRequest.IsSetApiKey() ? StringUtils.FromString(publicRequest.ApiKey) : string.Empty);
+            if (!publicRequest.IsSetApiKey())
+                throw new AmazonAPIGatewayException("Request object does not have required field ApiKey set");
+            uriResourcePath = uriResourcePath.Replace("{api_Key}", StringUtils.FromString(publicRequest.ApiKey));
             request.ResourcePath = uriResourcePath;
 
             return request;

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -51,10 +51,10 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("findingArnList", targetDepth))
+                if (context.TestExpression("findingArns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.FindingArnList = unmarshaller.Unmarshall(context);
+                    response.FindingArns = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("nextToken", targetDepth))

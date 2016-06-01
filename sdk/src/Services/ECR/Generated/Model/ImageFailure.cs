@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// 
+    /// An object representing an Amazon ECR image failure.
     /// </summary>
     public partial class ImageFailure
     {

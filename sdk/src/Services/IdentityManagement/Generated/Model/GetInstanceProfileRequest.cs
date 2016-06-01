@@ -31,8 +31,8 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the GetInstanceProfile operation.
     /// Retrieves information about the specified instance profile, including the instance
     /// profile's path, GUID, ARN, and role. For more information about instance profiles,
-    /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// Instance Profiles</a>. For more information about ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
+    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+    /// Instance Profiles</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class GetInstanceProfileRequest : AmazonIdentityManagementServiceRequest
     {
@@ -42,6 +42,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
         /// The name of the instance profile to get information about.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string InstanceProfileName

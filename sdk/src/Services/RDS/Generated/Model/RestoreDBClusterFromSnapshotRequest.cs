@@ -32,12 +32,12 @@ namespace Amazon.RDS.Model
     /// Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is created
     /// from the source DB cluster restore point with the same configuration as the original
     /// source DB cluster, except that the new DB cluster is created with the default security
-    /// group. 
+    /// group.
     /// 
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonRDSRequest
@@ -77,7 +77,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The database name for the restored DB cluster. 
+        /// The database name for the restored DB cluster.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -96,17 +96,27 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The name of the DB cluster to create from the DB cluster snapshot. This parameter
-        /// isn't case-sensitive. 
+        /// isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-snapshot-id</code>
+        /// Must contain from 1 to 255 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-snapshot-id</code> 
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -124,7 +134,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The name of the DB subnet group to use for the new DB cluster. 
+        /// The name of the DB subnet group to use for the new DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// spaces, or hyphens. Must not be default.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -142,7 +161,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database engine to use for the new DB cluster. 
+        /// The database engine to use for the new DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -201,10 +220,16 @@ namespace Amazon.RDS.Model
         /// If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following
         /// will occur:
         /// </para>
-        ///  <ul> <li>If the DB cluster snapshot is encrypted, then the restored DB cluster is
-        /// encrypted using the KMS key that was used to encrypt the DB cluster snapshot.</li>
-        /// <li>If the DB cluster snapshot is not encrypted, then the restored DB cluster is not
-        /// encrypted.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the DB cluster snapshot is encrypted, then the restored DB cluster is encrypted
+        /// using the KMS key that was used to encrypt the DB cluster snapshot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the DB cluster snapshot is not encrypted, then the restored DB cluster is not encrypted.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that is not encrypted,
         /// and you specify a value for the <code>KmsKeyId</code> parameter, then the restore
@@ -226,7 +251,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// The name of the option group to use for the restored DB cluster. 
+        /// The name of the option group to use for the restored DB cluster.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -244,11 +269,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  The port number on which the new DB cluster accepts connections. 
+        /// The port number on which the new DB cluster accepts connections.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code>
+        /// Constraints: Value must be <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -270,15 +295,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
-        /// The identifier for the DB cluster snapshot to restore from. 
+        /// The identifier for the DB cluster snapshot to restore from.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SnapshotIdentifier
         {
@@ -295,7 +330,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the restored DB cluster. 
+        /// The tags to be assigned to the restored DB cluster.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -313,7 +348,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        ///  A list of VPC security groups that the new DB cluster will belong to. 
+        /// A list of VPC security groups that the new DB cluster will belong to.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

@@ -29,9 +29,9 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPrincipalPolicies operation.
-    /// Lists the policies attached to the specified principal. If you use an Amazon Cognito
-    /// identity, the ID needs to be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">Amazon
-    /// Cognito Identity format</a>.
+    /// Lists the policies attached to the specified principal. If you use an Cognito identity,
+    /// the ID must be in <a href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+    /// Identity format</a>.
     /// </summary>
     public partial class ListPrincipalPoliciesRequest : AmazonIoTRequest
     {

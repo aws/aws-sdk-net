@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <i>DescribeEngineDefaultParameters</i> action.
+    /// This is the response object from the DescribeEngineDefaultParameters operation.
     /// </summary>
     public partial class DescribeEngineDefaultParametersResponse : AmazonWebServiceResponse
     {
-        private EngineDefaults _response;
+        private EngineDefaults _engineDefaults;
 
         /// <summary>
-        /// Gets and sets the EngineDefaults property.
+        /// Gets and sets the property EngineDefaults.
         /// </summary>
         public EngineDefaults EngineDefaults
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._engineDefaults; }
+            set { this._engineDefaults = value; }
         }
+
+        // Check to see if EngineDefaults property is set
+        internal bool IsSetEngineDefaults()
+        {
+            return this._engineDefaults != null;
+        }
+
     }
 }

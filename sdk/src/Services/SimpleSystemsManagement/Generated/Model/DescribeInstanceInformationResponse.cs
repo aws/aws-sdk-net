@@ -36,7 +36,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property InstanceInformationList. The instance information list.
+        /// Gets and sets the property InstanceInformationList. 
+        /// <para>
+        /// The instance information list.
+        /// </para>
         /// </summary>
         public List<InstanceInformation> InstanceInformationList
         {
@@ -51,8 +54,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token to use when requesting the next set
-        /// of items. If there are no additional items to return, the string is empty.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use when requesting the next set of items. If there are no additional
+        /// items to return, the string is empty. 
+        /// </para>
         /// </summary>
         public string NextToken
         {

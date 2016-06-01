@@ -50,7 +50,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// <i>Value</i> and <i>Exists</i> are incompatible with <i>AttributeValueList</i> and
+    ///  <i>Value</i> and <i>Exists</i> are incompatible with <i>AttributeValueList</i> and
     /// <i>ComparisonOperator</i>. Note that if you use both sets of parameters at once, DynamoDB
     /// will return a <i>ValidationException</i> exception.
     /// </para>
@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates ExpectedAttributeValue with the parameterized properties
         /// </summary>
-        /// <param name="exists">Causes DynamoDB to evaluate the value before attempting a conditional operation: <ul> <li> If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> <li> If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is found, despite the assumption that it does not exist, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> </ul> The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself, DynamoDB assumes the attribute exists: You don&#39;t have to set <i>Exists</i> to <code>true</code>, because it is implied. DynamoDB returns a <i>ValidationException</i> if: <ul> <li> <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist, but don&#39;t specify what that value is.) </li> <li> <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute to have a value, while also expecting it not to exist.) </li> </ul></param>
+        /// <param name="exists">Causes DynamoDB to evaluate the value before attempting a conditional operation: <ul> <li> If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> <li> If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is found, despite the assumption that it does not exist, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> </ul> The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by itself, DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i> to <code>true</code>, because it is implied. DynamoDB returns a <i>ValidationException</i> if: <ul> <li>  <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect a value to exist, but don't specify what that value is.) </li> <li>  <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an attribute to have a value, while also expecting it not to exist.) </li> </ul></param>
         public ExpectedAttributeValue(bool exists)
         {
             _exists = exists;
@@ -137,8 +137,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-        /// | IN | BETWEEN</code>
+        ///  <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+        /// | IN | BETWEEN</code> 
         /// </para>
         ///  
         /// <para>
@@ -146,12 +146,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including
+        ///  <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including
         /// lists and maps.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains
         /// an <i>AttributeValue</i> element of a different type than the one provided in the
         /// request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
@@ -160,12 +160,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including
+        ///  <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including
         /// lists and maps.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i>
         /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
@@ -173,11 +173,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>LE</code> : Less than or equal. 
+        ///  <code>LE</code> : Less than or equal. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
         /// element of a different type than the one provided in the request, the value does not
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
@@ -185,11 +185,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>LT</code> : Less than. 
+        ///  <code>LT</code> : Less than. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
         /// Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i> element
         /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
@@ -197,11 +197,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>GE</code> : Greater than or equal. 
+        ///  <code>GE</code> : Greater than or equal. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
         /// element of a different type than the one provided in the request, the value does not
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
@@ -209,11 +209,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>GT</code> : Greater than. 
+        ///  <code>GT</code> : Greater than. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
         /// element of a different type than the one provided in the request, the value does not
         /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
@@ -221,10 +221,10 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported for
-        /// all datatypes, including lists and maps.
+        ///  <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
+        /// for all datatypes, including lists and maps.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// This operator tests for the existence of an attribute, not its data type. If the data
         /// type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>,
@@ -233,10 +233,10 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported for
-        /// all datatypes, including lists and maps.
+        ///  <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
+        /// for all datatypes, including lists and maps.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// This operator tests for the nonexistence of an attribute, not its data type. If the
         /// data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
@@ -245,11 +245,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
+        ///  <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If the target attribute of the comparison
         /// is of type String, then the operator checks for a substring match. If the target attribute
         /// of the comparison is of type Binary, then the operator looks for a subsequence of
@@ -264,12 +264,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a value
-        /// in a set.
+        ///  <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
+        /// value in a set.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
         /// String, Number, or Binary (not a set type). If the target attribute of the comparison
         /// is a String, then the operator checks for the absence of a substring match. If the
         /// target attribute of the comparison is Binary, then the operator checks for the absence
@@ -286,39 +286,39 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>BEGINS_WITH</code> : Checks for a prefix. 
+        ///  <code>BEGINS_WITH</code> : Checks for a prefix. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String
+        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String
         /// or Binary (not a Number or a set type). The target attribute of the comparison must
         /// be of type String or Binary (not a Number or a set type).
         /// </para>
         ///   </li> <li> 
         /// <para>
-        /// <code>IN</code> : Checks for matching elements within two sets.
+        ///  <code>IN</code> : Checks for matching elements within two sets.
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements of
-        /// type String, Number, or Binary (not a set type). These attributes are compared against
-        /// an existing set type attribute of an item. If any elements of the input set are present
-        /// in the item attribute, the expression evaluates to true.
+        ///  <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements
+        /// of type String, Number, or Binary (not a set type). These attributes are compared
+        /// against an existing set type attribute of an item. If any elements of the input set
+        /// are present in the item attribute, the expression evaluates to true.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>BETWEEN</code> : Greater than or equal to the first value, and less than or
+        ///  <code>BETWEEN</code> : Greater than or equal to the first value, and less than or
         /// equal to the second value. 
         /// </para>
         ///  
         /// <para>
-        /// <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the same
-        /// type, either String, Number, or Binary (not a set type). A target attribute matches
+        ///  <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+        /// same type, either String, Number, or Binary (not a set type). A target attribute matches
         /// if the target value is greater than, or equal to, the first element and less than,
         /// or equal to, the second element. If an item contains an <i>AttributeValue</i> element
         /// of a different type than the one provided in the request, the value does not match.
         /// For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
+        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -355,7 +355,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> </ul> 
         /// <para>
         /// The default setting for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i>
-        /// all by itself, DynamoDB assumes the attribute exists: You don&#39;t have to set <i>Exists</i>
+        /// all by itself, DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i>
         /// to <code>true</code>, because it is implied.
         /// </para>
         ///  
@@ -364,12 +364,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect
-        /// a value to exist, but don&#39;t specify what that value is.)
+        ///  <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check. (You expect
+        /// a value to exist, but don't specify what that value is.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot
+        ///  <i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You cannot
         /// expect an attribute to have a value, while also expecting it not to exist.)
         /// </para>
         ///  </li> </ul>

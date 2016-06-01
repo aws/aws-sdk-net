@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the inspector-2015-08-18.normal.json service model.
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,25 +32,25 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class ListFindingsResponse : AmazonWebServiceResponse
     {
-        private List<string> _findingArnList = new List<string>();
+        private List<string> _findingArns = new List<string>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property FindingArnList. 
+        /// Gets and sets the property FindingArns. 
         /// <para>
-        /// A list of ARNs specifying the findings returned by the action.
+        /// A list of ARNs that specifies the findings returned by the action.
         /// </para>
         /// </summary>
-        public List<string> FindingArnList
+        public List<string> FindingArns
         {
-            get { return this._findingArnList; }
-            set { this._findingArnList = value; }
+            get { return this._findingArns; }
+            set { this._findingArns = value; }
         }
 
-        // Check to see if FindingArnList property is set
-        internal bool IsSetFindingArnList()
+        // Check to see if FindingArns property is set
+        internal bool IsSetFindingArns()
         {
-            return this._findingArnList != null && this._findingArnList.Count > 0; 
+            return this._findingArns != null && this._findingArns.Count > 0; 
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Amazon.Inspector.Model
         ///  When a response is generated, if there is more data to be listed, this parameter
         /// is present in the response and contains the value to use for the <b>nextToken</b>
         /// parameter in a subsequent pagination request. If there is no more data to be listed,
-        /// this parameter is set to 'null'.
+        /// this parameter is set to null.
         /// </para>
         /// </summary>
         public string NextToken

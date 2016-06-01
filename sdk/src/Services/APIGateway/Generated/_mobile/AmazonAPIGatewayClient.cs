@@ -1910,6 +1910,37 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  ImportRestApi
+
+        internal ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
+        {
+            var marshaller = new ImportRestApiRequestMarshaller();
+            var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
+
+            return Invoke<ImportRestApiRequest,ImportRestApiResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportRestApi operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportRestApiResponse> ImportRestApiAsync(ImportRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportRestApiRequestMarshaller();
+            var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportRestApiRequest,ImportRestApiResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutIntegration
 
         internal PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
@@ -2029,6 +2060,37 @@ namespace Amazon.APIGateway
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutMethodResponseRequest,PutMethodResponseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutRestApi
+
+        internal PutRestApiResponse PutRestApi(PutRestApiRequest request)
+        {
+            var marshaller = new PutRestApiRequestMarshaller();
+            var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
+
+            return Invoke<PutRestApiRequest,PutRestApiResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRestApi operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutRestApiResponse> PutRestApiAsync(PutRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutRestApiRequestMarshaller();
+            var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutRestApiRequest,PutRestApiResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

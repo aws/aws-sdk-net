@@ -41,8 +41,6 @@ namespace AWSSDK.IntegrationTests.DynamoDB
 
             CreateTestTables();
 
-            Client.BeforeRequestEvent += ClientBeforeRequestEvent;
-
             // Since tables have a variable prefix, configure the prefix for the process
             AWSConfigsDynamoDB.Context.TableNamePrefix = TableNamePrefix;
 
@@ -62,8 +60,6 @@ namespace AWSSDK.IntegrationTests.DynamoDB
             //BaseClean();
             if (Context != null)
                 Context.Dispose();
-
-            Client.BeforeRequestEvent -= ClientBeforeRequestEvent;
         }
 
         private void ClientBeforeRequestEvent(object sender, Amazon.Runtime.RequestEventArgs e)
@@ -116,16 +112,16 @@ namespace AWSSDK.IntegrationTests.DynamoDB
         /// Setting this value to true will configure the tests to not
         /// delete the tables after the test has finished.
         /// </summary>
-        public const bool ReuseTables = true;
+        public const bool ReuseTables = false;
         public const int DefaultReadCapacity = 50;
         public const int DefaultWriteCapacity = 50;
 
         public const int ScanLimit = 1;
         public static readonly string BaseTableNamePrefix = "DotNetTests";
 #pragma warning disable 429
-        public static readonly string TableNamePrefix =
+        protected readonly string TableNamePrefix =
             BaseTableNamePrefix + "-" +
-                (ReuseTables ? string.Empty : +DateTime.Now.ToFileTime() + "-");
+                (ReuseTables ? string.Empty : DateTime.Now.ToFileTime() + "-");
 #pragma warning restore 429
         public static List<string> CreatedTables = new List<string>();
 
@@ -383,7 +379,7 @@ namespace AWSSDK.IntegrationTests.DynamoDB
                 return allReady;
             };
 
-            WaitUntil(testFunction);
+            WaitUntil(testFunction, 5, 600);
 
             Console.WriteLine("All tables ready");
         }

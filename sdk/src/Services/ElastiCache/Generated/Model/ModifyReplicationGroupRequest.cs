@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _applyImmediately;
         private bool? _automaticFailoverEnabled;
         private bool? _autoMinorVersionUpgrade;
+        private string _cacheNodeType;
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
         private string _engineVersion;
@@ -64,11 +65,11 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
+        /// Valid values: <code>true</code> | <code>false</code> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -91,14 +92,21 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
+        /// Valid values: <code>true</code> | <code>false</code> 
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// ElastiCache Multi-AZ replication groups are not supported on:
         /// </para>
-        ///  <ul> <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
-        /// </ul> </note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Redis versions earlier than 2.8.6.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// T1 and T2 cache node types.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public bool AutomaticFailoverEnabled
         {
@@ -128,6 +136,26 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this._autoMinorVersionUpgrade.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheNodeType. 
+        /// <para>
+        /// A valid cache node type that you want to scale this replication group to. The value
+        /// of this parameter must be one of the <i>ScaleUpModifications</i> values returned by
+        /// the <code>ListAllowedCacheNodeTypeModification</code> action.
+        /// </para>
+        /// </summary>
+        public string CacheNodeType
+        {
+            get { return this._cacheNodeType; }
+            set { this._cacheNodeType = value; }
+        }
+
+        // Check to see if CacheNodeType property is set
+        internal bool IsSetCacheNodeType()
+        {
+            return this._cacheNodeType != null;
         }
 
         /// <summary>
@@ -184,6 +212,13 @@ namespace Amazon.ElastiCache.Model
         /// The upgraded version of the cache engine to be run on the cache clusters in the replication
         /// group.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+        /// a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version, you must delete the existing replication
+        /// group and create it anew with the earlier engine version. 
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -203,7 +238,11 @@ namespace Amazon.ElastiCache.Model
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
         /// be sent.
         /// </para>
-        ///  <note>The Amazon SNS topic owner must be same as the replication group owner. </note>
+        ///  <note> 
+        /// <para>
+        /// The Amazon SNS topic owner must be same as the replication group owner. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NotificationTopicArn
         {
@@ -225,7 +264,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>active</code> | <code>inactive</code>
+        /// Valid values: <code>active</code> | <code>inactive</code> 
         /// </para>
         /// </summary>
         public string NotificationTopicStatus
@@ -248,11 +287,37 @@ namespace Amazon.ElastiCache.Model
         /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
         /// are:
         /// </para>
-        ///  <ul> <li><code>sun</code></li> <li><code>mon</code></li> <li><code>tue</code></li>
-        /// <li><code>wed</code></li> <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
-        /// </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>sun:05:00-sun:09:00</code>
+        ///  <code>sun</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mon</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tue</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>wed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>thu</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>fri</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sat</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>sun:05:00-sun:09:00</code> 
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -270,9 +335,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PrimaryClusterId. 
         /// <para>
-        /// If this parameter is specified, ElastiCache will promote each of the cache clusters
-        /// in the specified replication group to the primary role. The nodes of all other cache
-        /// clusters in the replication group will be read replicas.
+        /// If this parameter is specified, ElastiCache will promote the specified cluster in
+        /// the specified replication group to the primary role. The nodes of all other clusters
+        /// in the replication group will be read replicas.
         /// </para>
         /// </summary>
         public string PrimaryClusterId
@@ -356,7 +421,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Important</b>If the value of SnapshotRetentionLimit is set to zero (0), backups
+        ///  <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups
         /// are turned off.
         /// </para>
         /// </summary>
@@ -399,7 +464,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>05:00-09:00</code>
+        /// Example: <code>05:00-09:00</code> 
         /// </para>
         ///  
         /// <para>

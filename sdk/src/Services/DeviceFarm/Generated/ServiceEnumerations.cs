@@ -263,6 +263,52 @@ namespace Amazon.DeviceFarm
 
 
     /// <summary>
+    /// Constants used for properties of type CurrencyCode.
+    /// </summary>
+    public class CurrencyCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USD for CurrencyCode
+        /// </summary>
+        public static readonly CurrencyCode USD = new CurrencyCode("USD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CurrencyCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CurrencyCode FindValue(string value)
+        {
+            return FindValue<CurrencyCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CurrencyCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeviceAttribute.
     /// </summary>
     public class DeviceAttribute : ConstantClass
@@ -566,6 +612,10 @@ namespace Amazon.DeviceFarm
         /// Constant SCHEDULING for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus SCHEDULING = new ExecutionStatus("SCHEDULING");
+        /// <summary>
+        /// Constant STOPPING for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus STOPPING = new ExecutionStatus("STOPPING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -596,6 +646,152 @@ namespace Amazon.DeviceFarm
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OfferingTransactionType.
+    /// </summary>
+    public class OfferingTransactionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PURCHASE for OfferingTransactionType
+        /// </summary>
+        public static readonly OfferingTransactionType PURCHASE = new OfferingTransactionType("PURCHASE");
+        /// <summary>
+        /// Constant RENEW for OfferingTransactionType
+        /// </summary>
+        public static readonly OfferingTransactionType RENEW = new OfferingTransactionType("RENEW");
+        /// <summary>
+        /// Constant SYSTEM for OfferingTransactionType
+        /// </summary>
+        public static readonly OfferingTransactionType SYSTEM = new OfferingTransactionType("SYSTEM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferingTransactionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferingTransactionType FindValue(string value)
+        {
+            return FindValue<OfferingTransactionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferingTransactionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OfferingType.
+    /// </summary>
+    public class OfferingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RECURRING for OfferingType
+        /// </summary>
+        public static readonly OfferingType RECURRING = new OfferingType("RECURRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferingType FindValue(string value)
+        {
+            return FindValue<OfferingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecurringChargeFrequency.
+    /// </summary>
+    public class RecurringChargeFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MONTHLY for RecurringChargeFrequency
+        /// </summary>
+        public static readonly RecurringChargeFrequency MONTHLY = new RecurringChargeFrequency("MONTHLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecurringChargeFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecurringChargeFrequency FindValue(string value)
+        {
+            return FindValue<RecurringChargeFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecurringChargeFrequency(string value)
         {
             return FindValue(value);
         }

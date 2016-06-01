@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The S3 bucket.
+        /// The Amazon S3 bucket.
         /// </para>
         /// </summary>
         public string BucketName

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.AcknowledgeJob(Amazon.CodePipeline.Model.AcknowledgeJobRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.AcknowledgeJob(Amazon.CodePipeline.Model.AcknowledgeJobRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.AcknowledgeJobRequest" />
+            <member name="T:Amazon.CodePipeline.Model.AcknowledgeJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns information about a specified job, including the status of that job if it exists. This is only used for job workers and custom actions in AWS CodePipeline. To determine the value of nonce and the job ID, use PollForJobs.
+                </para>
+                <code
+                    title="Acknowledge a job for a custom action"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="acknowledge-a-job-for-a-custom-action-1449100979484" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.CreateCustomActionType(Amazon.CodePipeline.Model.CreateCustomActionTypeRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.CreateCustomActionType(Amazon.CodePipeline.Model.CreateCustomActionTypeRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.CreateCustomActionTypeRequest" />
+            <member name="T:Amazon.CodePipeline.Model.CreateCustomActionTypeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a build custom action for AWS CodePipeline for a Jenkins build project. For more information about the requirements for creating a custom action, including the structure of the JSON file commonly used to help create custom actions, see Create a Custom Action in the AWS CodePipeline User Guide. For a walkthrough of creating a custom action in a pipeline, follow the Four-Stage Pipeline Tutorial.
+                </para>
+                <code
+                    title="Create a custom action"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="create-a-custom-action-1449103500903" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.CreatePipeline(Amazon.CodePipeline.Model.CreatePipelineRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.CreatePipeline(Amazon.CodePipeline.Model.CreatePipelineRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.CreatePipelineRequest" />
+            <member name="T:Amazon.CodePipeline.Model.CreatePipelineResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a simple two-stage pipeline in AWS CodePipeline that uses an Amazon S3 bucket for its source stage and deploys code using AWS CodeDeploy. For more information about the requirements for creating a pipeline, including the structure of the JSON file commonly used to create a pipeline, see "Create a Pipeline" in the AWS CodePipeline User Guide.
+                </para>
+                <code
+                    title="Create a pipeline"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="create-a-pipeline-1449162214392" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.DeleteCustomActionType(Amazon.CodePipeline.Model.DeleteCustomActionTypeRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.DeleteCustomActionType(Amazon.CodePipeline.Model.DeleteCustomActionTypeRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.DeleteCustomActionTypeRequest" />
+            <member name="T:Amazon.CodePipeline.Model.DeleteCustomActionTypeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a custom action in AWS CodePipeline by specifiying the action type, provider name, and version number of the action to be deleted. Only used for custom actions. Use the list-action-types command to view the correct values for category, version, and provider. After a custom action is deleted, PollForJobs for the custom action will fail. Warning: You cannot recreate a custom action after it has been deleted unless you increase the version number of the action.
+                </para>
+                <code
+                    title="Delete a custom action"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="delete-a-custom-action-1449163239567" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.DeletePipeline(Amazon.CodePipeline.Model.DeletePipelineRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.DeletePipeline(Amazon.CodePipeline.Model.DeletePipelineRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.DeletePipelineRequest" />
+            <member name="T:Amazon.CodePipeline.Model.DeletePipelineResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a pipeline named MySecondPipeline from AWS CodePipeline. Use ListPipelines to view a list of pipelines associated with your AWS account.
+                </para>
+                <code
+                    title="Delete a pipeline"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="delete-a-pipeline-1449163893541" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.DisableStageTransition(Amazon.CodePipeline.Model.DisableStageTransitionRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.DisableStageTransition(Amazon.CodePipeline.Model.DisableStageTransitionRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.DisableStageTransitionRequest" />
+            <member name="T:Amazon.CodePipeline.Model.DisableStageTransitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disables transitions into the Beta stage of the MyFirstPipeline pipeline in AWS CodePipeline.
+                </para>
+                <code
+                    title="Disable transitions into or out of a stage"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="disable-transitions-into-or-out-of-a-stage-1449164517291" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.EnableStageTransition(Amazon.CodePipeline.Model.EnableStageTransitionRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.EnableStageTransition(Amazon.CodePipeline.Model.EnableStageTransitionRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.EnableStageTransitionRequest" />
+            <member name="T:Amazon.CodePipeline.Model.EnableStageTransitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables transitions into the Beta stage of the MyFirstPipeline pipeline in AWS CodePipeline.
+                </para>
+                <code
+                    title="Enable transitions into or out of a stage"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="enable-transitions-into-or-out-of-a-stage-1449164924423" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.GetJobDetails(Amazon.CodePipeline.Model.GetJobDetailsRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.GetJobDetails(Amazon.CodePipeline.Model.GetJobDetailsRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.GetJobDetailsRequest" />
+            <member name="T:Amazon.CodePipeline.Model.GetJobDetailsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns details about a job whose ID is represented by f4f4ff82-2d11-EXAMPLE. This command is only used for custom actions. When this command is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if required for the custom action. This command will also return any secret values defined for the action, if any are defined.
+                </para>
+                <code
+                    title="Get the details of a job"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="get-the-details-of-a-job-1449183680273" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.GetPipeline(Amazon.CodePipeline.Model.GetPipelineRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.GetPipeline(Amazon.CodePipeline.Model.GetPipelineRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.GetPipelineRequest" />
+            <member name="T:Amazon.CodePipeline.Model.GetPipelineResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns the structure of a pipeline named MyFirstPipeline.
+                </para>
+                <code
+                    title="View the structure of a pipeline"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="view-the-structure-of-a-pipeline-1449184156329" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.GetPipelineState(Amazon.CodePipeline.Model.GetPipelineStateRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.GetPipelineState(Amazon.CodePipeline.Model.GetPipelineStateRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.GetPipelineStateRequest" />
+            <member name="T:Amazon.CodePipeline.Model.GetPipelineStateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns the most recent state of a pipeline named MyFirstPipeline.
+                </para>
+                <code
+                    title="View information about the state of a pipeline"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="view-information-about-the-state-of-a-pipeline-1449184486550" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.ListActionTypes(Amazon.CodePipeline.Model.ListActionTypesRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.ListActionTypes(Amazon.CodePipeline.Model.ListActionTypesRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.ListActionTypesRequest" />
+            <member name="T:Amazon.CodePipeline.Model.ListActionTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Used by itself, ListActionTypes returns the structure of all AWS CodePipeline actions available to your AWS account. This example uses the actionOwnerFilter option to limit the response to include only the structure of all custom actions defined for the account.
+                </para>
+                <code
+                    title="View a summary of all action types associated with your account"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="view-a-summary-of-all-action-types-associated-with-your-account-1455218918202" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.ListPipelines(Amazon.CodePipeline.Model.ListPipelinesRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.ListPipelines(Amazon.CodePipeline.Model.ListPipelinesRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.ListPipelinesRequest" />
+            <member name="T:Amazon.CodePipeline.Model.ListPipelinesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all AWS CodePipeline pipelines associated with the user's AWS account.
+                </para>
+                <code
+                    title="View a summary of all pipelines associated with your account"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="view-a-summary-of-all-pipelines-associated-with-your-account-1449185747807" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.PollForJobs(Amazon.CodePipeline.Model.PollForJobsRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.PollForJobs(Amazon.CodePipeline.Model.PollForJobsRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.PollForJobsRequest" />
+            <member name="T:Amazon.CodePipeline.Model.PollForJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns information about any jobs for a job worker to act upon. This command is only used for custom actions. When this command is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline. This command will also return any secret values defined for the action, if any are defined.
+                </para>
+                <code
+                    title="View any available jobs"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="view-any-available-jobs-1449186054484" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.StartPipelineExecution(Amazon.CodePipeline.Model.StartPipelineExecutionRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.StartPipelineExecution(Amazon.CodePipeline.Model.StartPipelineExecutionRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.StartPipelineExecutionRequest" />
+            <member name="T:Amazon.CodePipeline.Model.StartPipelineExecutionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example runs the latest revision present in the source stage of a pipeline through the pipeline named "MyFirstPipeline".
+                </para>
+                <code
+                    title="Run the latest revision through a pipeline"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="run-the-latest-revision-through-a-pipeline-1449186732433" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CodePipeline.IAmazonCodePipeline.UpdatePipeline(Amazon.CodePipeline.Model.UpdatePipelineRequest)" />
+            <member name="M:Amazon.CodePipeline.AmazonCodePipelineClient.UpdatePipeline(Amazon.CodePipeline.Model.UpdatePipelineRequest)" />
+            <member name="T:Amazon.CodePipeline.Model.UpdatePipelineRequest" />
+            <member name="T:Amazon.CodePipeline.Model.UpdatePipelineResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the structure of a pipeline. The entire structure of the pipeline must be supplied, either by passing all of the parameters, or by using a pre-defined JSON file.
+                </para>
+                <code
+                    title="Update the structure of a pipeline"
+                    source=".\AWSSDKDocSamples\CodePipeline\CodePipeline.GeneratedSamples.cs"
+                    region="update-the-structure-of-a-pipeline-1449186881322" />
+            </example>
+        </value>
+    </doc>
+</docs>

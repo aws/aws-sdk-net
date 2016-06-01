@@ -28,19 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Contains all of the attributes of a specific replication group.
+    /// This is the response object from the ModifyReplicationGroup operation.
     /// </summary>
     public partial class ModifyReplicationGroupResponse : AmazonWebServiceResponse
     {
-        private ReplicationGroup _response;
+        private ReplicationGroup _replicationGroup;
 
         /// <summary>
-        /// Gets and sets the ReplicationGroup property.
+        /// Gets and sets the property ReplicationGroup.
         /// </summary>
         public ReplicationGroup ReplicationGroup
         {
-            get { return this._response; }
-            set { this._response = value; }
+            get { return this._replicationGroup; }
+            set { this._replicationGroup = value; }
         }
+
+        // Check to see if ReplicationGroup property is set
+        internal bool IsSetReplicationGroup()
+        {
+            return this._replicationGroup != null;
+        }
+
     }
 }

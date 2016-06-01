@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDeploymentInstances operation.
-    /// Lists the instances for a deployment associated with the applicable IAM user or AWS
+    /// Lists the instance for a deployment associated with the applicable IAM user or AWS
     /// account.
     /// </summary>
     public partial class ListDeploymentInstancesRequest : AmazonCodeDeployRequest
@@ -59,15 +59,14 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceStatusFilter. 
         /// <para>
-        /// A subset of instances to list, by status:
+        /// A subset of instances to list by status:
         /// </para>
-        ///  <ul> <li>Pending: Include in the resulting list those instances with pending deployments.</li>
-        /// <li>InProgress: Include in the resulting list those instances with in-progress deployments.</li>
-        /// <li>Succeeded: Include in the resulting list those instances with succeeded deployments.</li>
-        /// <li>Failed: Include in the resulting list those instances with failed deployments.</li>
-        /// <li>Skipped: Include in the resulting list those instances with skipped deployments.</li>
-        /// <li>Unknown: Include in the resulting list those instances with deployments in an
-        /// unknown state.</li> </ul>
+        ///  <ul> <li>Pending: Include those instance with pending deployments.</li> <li>InProgress:
+        /// Include those instance where deployments are still in progress.</li> <li>Succeeded:
+        /// Include those instances with successful deployments.</li> <li>Failed: Include those
+        /// instance with failed deployments.</li> <li>Skipped: Include those instance with skipped
+        /// deployments.</li> <li>Unknown: Include those instance with deployments in an unknown
+        /// state.</li> </ul>
         /// </summary>
         public List<string> InstanceStatusFilter
         {
@@ -84,8 +83,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier that was returned from the previous list deployment instances call,
-        /// which can be used to return the next set of deployment instances in the list.
+        /// An identifier returned from the previous list deployment instances call. It can be
+        /// used to return the next set of deployment instances in the list.
         /// </para>
         /// </summary>
         public string NextToken

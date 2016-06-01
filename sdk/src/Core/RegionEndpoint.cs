@@ -214,6 +214,10 @@ namespace Amazon
             RegionEndpoint region = null;
             if (!hashBySystemName.TryGetValue(systemName, out region))
             {
+                // explicit namespace to avoid collision with UnityEngine.Logger
+                var logger = Amazon.Runtime.Internal.Util.Logger.GetLogger(typeof(RegionEndpoint));
+                logger.InfoFormat("Region system name {0} was not found in region data bundled with SDK; assuming new region.", systemName);
+
                 if (systemName.StartsWith("cn-", StringComparison.Ordinal))
                     return NewEndpoint(systemName, "China (Unknown)");
                 return NewEndpoint(systemName, "Unknown");

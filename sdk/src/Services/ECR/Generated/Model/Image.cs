@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Object representing an image.
+    /// An object representing an Amazon ECR image.
     /// </summary>
     public partial class Image
     {

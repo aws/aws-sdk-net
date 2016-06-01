@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LastWritten. 
         /// <para>
-        ///  A POSIX timestamp when the last log entry was written. 
+        /// A POSIX timestamp when the last log entry was written.
         /// </para>
         /// </summary>
         public long LastWritten
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LogFileName. 
         /// <para>
-        ///  The name of the log file for the specified DB instance. 
+        /// The name of the log file for the specified DB instance.
         /// </para>
         /// </summary>
         public string LogFileName
@@ -75,7 +75,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        ///  The size, in bytes, of the log file for the specified DB instance. 
+        /// The size, in bytes, of the log file for the specified DB instance.
         /// </para>
         /// </summary>
         public long Size

@@ -38,9 +38,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property End. 
         /// <para>
-        /// The time range's end time.
+        /// The end time of the time range.
         /// </para>
-        ///  <note>Specify null to leave the time range's end time open-ended.</note>
+        ///  <note>Specify null to leave the end time open-ended.</note>
         /// </summary>
         public DateTime End
         {
@@ -57,9 +57,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Start. 
         /// <para>
-        /// The time range's start time.
+        /// The start time of the time range.
         /// </para>
-        ///  <note>Specify null to leave the time range's start time open-ended.</note>
+        ///  <note>Specify null to leave the start time open-ended.</note>
         /// </summary>
         public DateTime Start
         {

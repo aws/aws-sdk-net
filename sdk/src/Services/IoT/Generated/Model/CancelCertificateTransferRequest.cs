@@ -33,10 +33,10 @@ namespace Amazon.IoT.Model
     /// 
     ///  
     /// <para>
-    /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer
-    /// (transfer destinations can use <a>RejectCertificateTransfer</a> instead). After transfer,
-    /// AWS IoT returns the certificate to the source account in the INACTIVE state. Once
-    /// the destination account has accepted the transfer, the transfer may no longer be cancelled.
+    /// <b>Note</b> Only the transfer source account can use this operation to cancel a transfer.
+    /// (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer,
+    /// AWS IoT returns the certificate to the source account in the INACTIVE state. After
+    /// the destination account has accepted the transfer, the transfer cannot be cancelled.
     /// </para>
     ///  
     /// <para>

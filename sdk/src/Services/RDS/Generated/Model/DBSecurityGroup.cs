@@ -28,11 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
+    /// Contains the result of a successful invocation of the following actions:
     /// 
-    ///  <ul> <li> <a>DescribeDBSecurityGroups</a> </li> <li> <a>AuthorizeDBSecurityGroupIngress</a>
-    /// </li> <li> <a>CreateDBSecurityGroup</a> </li> <li> <a>RevokeDBSecurityGroupIngress</a>
-    /// </li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeDBSecurityGroups</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>AuthorizeDBSecurityGroupIngress</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateDBSecurityGroup</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RevokeDBSecurityGroupIngress</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBSecurityGroups</a>
     /// action.
@@ -50,7 +64,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroupDescription. 
         /// <para>
-        ///  Provides the description of the DB security group. 
+        /// Provides the description of the DB security group.
         /// </para>
         /// </summary>
         public string DBSecurityGroupDescription
@@ -68,7 +82,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroupName. 
         /// <para>
-        ///  Specifies the name of the DB security group. 
+        /// Specifies the name of the DB security group.
         /// </para>
         /// </summary>
         public string DBSecurityGroupName
@@ -122,7 +136,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        ///  Provides the AWS ID of the owner of a specific DB security group. 
+        /// Provides the AWS ID of the owner of a specific DB security group.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -140,7 +154,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        ///  Provides the VpcId of the DB security group. 
+        /// Provides the VpcId of the DB security group.
         /// </para>
         /// </summary>
         public string VpcId

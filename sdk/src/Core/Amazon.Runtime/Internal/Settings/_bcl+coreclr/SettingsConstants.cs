@@ -31,6 +31,7 @@ namespace Amazon.Runtime.Internal.Settings
 
         public const string RegisteredProfiles = "RegisteredAccounts";
         public const string RegisteredSAMLEndpoints = "SAMLEndpoints";
+        public const string RegisteredRoleSessions = "RoleSessions";
 
         public const string RecentUsages = "RecentUsages";
 
@@ -51,6 +52,9 @@ namespace Amazon.Runtime.Internal.Settings
 
         // present in endpoint definitions in SAMLEndpoints.json file
         public const string EndpointField = "Endpoint";
+
+        // session data for a role profile, persisted in RoleSessions.json file.
+        public const string RoleSession = "RoleSession";
 
         public const string SecretKeyRepository = "SecretKeyRepository";
 

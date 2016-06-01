@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateClientCertificate operation.
+    /// Represents a Client Certificate used to configure client-side SSL authentication while
+    /// sending requests to the integration endpoint.
     /// </summary>
     public partial class UpdateClientCertificateResponse : AmazonWebServiceResponse
     {
@@ -39,7 +40,10 @@ namespace Amazon.APIGateway.Model
         private string _pemEncodedCertificate;
 
         /// <summary>
-        /// Gets and sets the property ClientCertificateId.
+        /// Gets and sets the property ClientCertificateId. 
+        /// <para>
+        /// The identifier of the Client Certificate.
+        /// </para>
         /// </summary>
         public string ClientCertificateId
         {
@@ -54,7 +58,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedDate.
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// The date when the Client Certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+        /// target="_blank">ISO 8601 format</a>.
+        /// </para>
         /// </summary>
         public DateTime CreatedDate
         {
@@ -69,7 +77,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the Client Certificate.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -84,7 +95,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpirationDate.
+        /// Gets and sets the property ExpirationDate. 
+        /// <para>
+        /// The date when the Client Certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+        /// target="_blank">ISO 8601 format</a>.
+        /// </para>
         /// </summary>
         public DateTime ExpirationDate
         {
@@ -99,7 +114,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PemEncodedCertificate.
+        /// Gets and sets the property PemEncodedCertificate. 
+        /// <para>
+        /// The PEM-encoded public key of the Client Certificate, that can be used to configure
+        /// certificate authentication in the integration endpoint .
+        /// </para>
         /// </summary>
         public string PemEncodedCertificate
         {

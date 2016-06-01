@@ -61,7 +61,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property ExclusiveStartDestinationId. 
         /// <para>
         /// Specifies the destination ID to start returning the destination information. Currently
-        /// Amazon Kinesis Firehose supports one destination per delivery stream.
+        /// Firehose supports one destination per delivery stream.
         /// </para>
         /// </summary>
         public string ExclusiveStartDestinationId

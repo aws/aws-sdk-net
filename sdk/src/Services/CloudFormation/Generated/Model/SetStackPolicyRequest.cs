@@ -79,8 +79,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackPolicyURL. 
         /// <para>
-        /// Location of a file containing the stack policy. The URL must point to a policy (max
-        /// size: 16KB) located in an S3 bucket in the same region as the stack. You can specify
+        /// Location of a file containing the stack policy. The URL must point to a policy (maximum
+        /// size: 16 KB) located in an S3 bucket in the same region as the stack. You can specify
         /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter,
         /// but not both.
         /// </para>

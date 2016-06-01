@@ -45,6 +45,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RedshiftDestinationUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCloudWatchLoggingOptions())
+            {
+                context.Writer.WritePropertyName("CloudWatchLoggingOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CloudWatchLoggingOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudWatchLoggingOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetClusterJDBCURL())
             {
                 context.Writer.WritePropertyName("ClusterJDBCURL");
@@ -66,6 +77,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Password");
                 context.Writer.Write(requestObject.Password);
+            }
+
+            if(requestObject.IsSetRetryOptions())
+            {
+                context.Writer.WritePropertyName("RetryOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RedshiftRetryOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetryOptions, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetRoleARN())

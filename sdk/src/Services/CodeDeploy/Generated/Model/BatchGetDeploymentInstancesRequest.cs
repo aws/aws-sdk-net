@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetDeploymentInstances operation.
-    /// Gets information about one or more instances that are part of a deployment group.
+    /// Gets information about one or more instance that are part of a deployment group.
     /// </summary>
     public partial class BatchGetDeploymentInstancesRequest : AmazonCodeDeployRequest
     {
@@ -57,7 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The unique IDs of instances in the deployment's deployment group.
+        /// The unique IDs of instances in the deployment group.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

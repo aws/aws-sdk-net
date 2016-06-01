@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ReplaceRouteTableAssociation operation.
+    /// Contains the output of ReplaceRouteTableAssociation.
     /// </summary>
     public partial class ReplaceRouteTableAssociationResponse : AmazonWebServiceResponse
     {

@@ -29,7 +29,8 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromStream operation.
-    /// Deletes tags from the specified Amazon Kinesis stream.
+    /// Removes tags from the specified Amazon Kinesis stream. Removed tags are deleted and
+    /// cannot be recovered after this operation successfully completes.
     /// 
     ///  
     /// <para>

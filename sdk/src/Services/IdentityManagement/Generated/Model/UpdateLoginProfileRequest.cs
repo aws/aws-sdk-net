@@ -29,13 +29,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLoginProfile operation.
-    /// Changes the password for the specified user.
+    /// Changes the password for the specified IAM user.
     /// 
     ///  
     /// <para>
-    /// Users can change their own passwords by calling <a>ChangePassword</a>. For more information
-    /// about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-    /// Passwords</a> in the <i>IAM User Guide</i>. 
+    /// IAM users can change their own passwords by calling <a>ChangePassword</a>. For more
+    /// information about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+    /// Passwords</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdateLoginProfileRequest : AmazonIdentityManagementServiceRequest
@@ -52,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateLoginProfileRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user whose password you want to update.</param>
+        /// <param name="userName">The name of the user whose password you want to update. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public UpdateLoginProfileRequest(string userName)
         {
             _userName = userName;
@@ -61,7 +61,16 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The new password for the specified user.
+        /// The new password for the specified IAM user.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of any printable ASCII character ranging from
+        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
+        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
+        /// return (\u000D). However, the format can be further restricted by the account administrator
+        /// by setting a password policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
         /// </para>
         /// </summary>
         public string Password
@@ -79,7 +88,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PasswordResetRequired. 
         /// <para>
-        /// Require the specified user to set a new password on next sign-in.
+        /// Allows this new password to be used only once by requiring the specified IAM user
+        /// to set a new password on next sign-in.
         /// </para>
         /// </summary>
         public bool PasswordResetRequired
@@ -98,6 +108,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user whose password you want to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

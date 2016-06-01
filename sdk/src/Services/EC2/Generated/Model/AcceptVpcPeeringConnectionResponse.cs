@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the AcceptVpcPeeringConnection operation.
+    /// Contains the output of AcceptVpcPeeringConnection.
     /// </summary>
     public partial class AcceptVpcPeeringConnectionResponse : AmazonWebServiceResponse
     {

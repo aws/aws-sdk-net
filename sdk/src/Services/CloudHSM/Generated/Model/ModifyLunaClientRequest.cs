@@ -45,7 +45,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The new certificate for the client. 
+        /// The new certificate for the client.
         /// </para>
         /// </summary>
         public string Certificate

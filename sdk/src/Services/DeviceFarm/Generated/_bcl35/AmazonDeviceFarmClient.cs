@@ -1107,6 +1107,75 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  GetOfferingStatus
+
+        /// <summary>
+        /// Gets the current status and future status of all offerings purchased by an AWS account.
+        /// The response indicates how many offerings are currently available and the offerings
+        /// that will be available in the next period. The API returns a <code>NotEligible</code>
+        /// error if the user is not permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOfferingStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetOfferingStatus service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public GetOfferingStatusResponse GetOfferingStatus(GetOfferingStatusRequest request)
+        {
+            var marshaller = new GetOfferingStatusRequestMarshaller();
+            var unmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetOfferingStatusRequest,GetOfferingStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOfferingStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOfferingStatus operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOfferingStatus
+        ///         operation.</returns>
+        public IAsyncResult BeginGetOfferingStatus(GetOfferingStatusRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetOfferingStatusRequestMarshaller();
+            var unmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetOfferingStatusRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOfferingStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOfferingStatus.</param>
+        /// 
+        /// <returns>Returns a  GetOfferingStatusResult from DeviceFarm.</returns>
+        public  GetOfferingStatusResponse EndGetOfferingStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetOfferingStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetProject
 
         /// <summary>
@@ -1795,6 +1864,144 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListOfferings
+
+        /// <summary>
+        /// Returns a list of products or offerings that the user can manage through the API.
+        /// Each offering record indicates the recurring price per unit and the frequency for
+        /// that offering. The API returns a <code>NotEligible</code> error if the user is not
+        /// permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferings service method.</param>
+        /// 
+        /// <returns>The response from the ListOfferings service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
+        {
+            var marshaller = new ListOfferingsRequestMarshaller();
+            var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOfferingsRequest,ListOfferingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferings operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOfferings
+        ///         operation.</returns>
+        public IAsyncResult BeginListOfferings(ListOfferingsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListOfferingsRequestMarshaller();
+            var unmarshaller = ListOfferingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListOfferingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOfferings.</param>
+        /// 
+        /// <returns>Returns a  ListOfferingsResult from DeviceFarm.</returns>
+        public  ListOfferingsResponse EndListOfferings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOfferingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListOfferingTransactions
+
+        /// <summary>
+        /// Returns a list of all historical purchases, renewals, and system renewal transactions
+        /// for an AWS account. The list is paginated and ordered by a descending timestamp (most
+        /// recent transactions are first). The API returns a <code>NotEligible</code> error if
+        /// the user is not permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingTransactions service method.</param>
+        /// 
+        /// <returns>The response from the ListOfferingTransactions service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public ListOfferingTransactionsResponse ListOfferingTransactions(ListOfferingTransactionsRequest request)
+        {
+            var marshaller = new ListOfferingTransactionsRequestMarshaller();
+            var unmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOfferingTransactionsRequest,ListOfferingTransactionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferingTransactions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingTransactions operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOfferingTransactions
+        ///         operation.</returns>
+        public IAsyncResult BeginListOfferingTransactions(ListOfferingTransactionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListOfferingTransactionsRequestMarshaller();
+            var unmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListOfferingTransactionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOfferingTransactions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOfferingTransactions.</param>
+        /// 
+        /// <returns>Returns a  ListOfferingTransactionsResult from DeviceFarm.</returns>
+        public  ListOfferingTransactionsResponse EndListOfferingTransactions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOfferingTransactionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListProjects
 
         /// <summary>
@@ -2229,6 +2436,143 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  PurchaseOffering
+
+        /// <summary>
+        /// Immediately purchases offerings for an AWS account. Offerings renew with the latest
+        /// total purchased quantity for an offering, unless the renewal was overridden. The API
+        /// returns a <code>NotEligible</code> error if the user is not permitted to invoke the
+        /// operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseOffering service method.</param>
+        /// 
+        /// <returns>The response from the PurchaseOffering service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
+        {
+            var marshaller = new PurchaseOfferingRequestMarshaller();
+            var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseOfferingRequest,PurchaseOfferingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseOffering operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseOffering
+        ///         operation.</returns>
+        public IAsyncResult BeginPurchaseOffering(PurchaseOfferingRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PurchaseOfferingRequestMarshaller();
+            var unmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PurchaseOfferingRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PurchaseOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseOffering.</param>
+        /// 
+        /// <returns>Returns a  PurchaseOfferingResult from DeviceFarm.</returns>
+        public  PurchaseOfferingResponse EndPurchaseOffering(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PurchaseOfferingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RenewOffering
+
+        /// <summary>
+        /// Explicitly sets the quantity of devices to renew for an offering, starting from the
+        /// <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code>
+        /// error if the user is not permitted to invoke the operation. Please contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RenewOffering service method.</param>
+        /// 
+        /// <returns>The response from the RenewOffering service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public RenewOfferingResponse RenewOffering(RenewOfferingRequest request)
+        {
+            var marshaller = new RenewOfferingRequestMarshaller();
+            var unmarshaller = RenewOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<RenewOfferingRequest,RenewOfferingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenewOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenewOffering operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRenewOffering
+        ///         operation.</returns>
+        public IAsyncResult BeginRenewOffering(RenewOfferingRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RenewOfferingRequestMarshaller();
+            var unmarshaller = RenewOfferingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RenewOfferingRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RenewOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRenewOffering.</param>
+        /// 
+        /// <returns>Returns a  RenewOfferingResult from DeviceFarm.</returns>
+        public  RenewOfferingResponse EndRenewOffering(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RenewOfferingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ScheduleRun
 
         /// <summary>
@@ -2290,6 +2634,73 @@ namespace Amazon.DeviceFarm
         public  ScheduleRunResponse EndScheduleRun(IAsyncResult asyncResult)
         {
             return EndInvoke<ScheduleRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopRun
+
+        /// <summary>
+        /// Initiates a stop request for the current test run. AWS Device Farm will immediately
+        /// stop the run on devices where tests have not started executing, and you will not be
+        /// billed for these devices. On devices where tests have started executing, Setup Suite
+        /// and Teardown Suite tests will run to completion before stopping execution on those
+        /// devices. You will be billed for Setup, Teardown, and any tests that were in progress
+        /// or already completed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRun service method.</param>
+        /// 
+        /// <returns>The response from the StopRun service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        public StopRunResponse StopRun(StopRunRequest request)
+        {
+            var marshaller = new StopRunRequestMarshaller();
+            var unmarshaller = StopRunResponseUnmarshaller.Instance;
+
+            return Invoke<StopRunRequest,StopRunResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRun operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopRun
+        ///         operation.</returns>
+        public IAsyncResult BeginStopRun(StopRunRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new StopRunRequestMarshaller();
+            var unmarshaller = StopRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StopRunRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopRun.</param>
+        /// 
+        /// <returns>Returns a  StopRunResult from DeviceFarm.</returns>
+        public  StopRunResponse EndStopRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopRunResponse>(asyncResult);
         }
 
         #endregion

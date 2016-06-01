@@ -123,7 +123,7 @@ namespace Amazon.WAF.Model
         /// <para>
         /// A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get
         /// information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a <code>WebACL</code>
-        /// (see <a>UpdateWebACL</a>, and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+        /// (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
         /// </para>
         ///  
         /// <para>

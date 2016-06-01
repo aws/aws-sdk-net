@@ -24,9 +24,9 @@ namespace Amazon.S3.Model
     /// </summary>
     public class LifecycleRuleExpiration
     {
-        
         private DateTime? date;
         private int? days;
+        private bool? expiredObjectDeleteMarker;
 
         /// <summary>
         /// Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
@@ -59,5 +59,23 @@ namespace Amazon.S3.Model
         {
             return this.days.HasValue;
         }
+
+
+        /// <summary>
+        /// Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.
+        ///  
+        /// </summary>
+        public bool ExpiredObjectDeleteMarker
+        {
+            get { return this.expiredObjectDeleteMarker.GetValueOrDefault(); }
+            set { this.expiredObjectDeleteMarker = value; }
+        }
+
+        // Check to see if ExpiredObjectDeleteMarker property is set
+        internal bool IsSetExpiredObjectDeleteMarker()
+        {
+            return this.expiredObjectDeleteMarker.HasValue;
+        }
+
     }
 }

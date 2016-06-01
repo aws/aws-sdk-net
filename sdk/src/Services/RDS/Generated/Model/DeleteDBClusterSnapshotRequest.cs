@@ -30,13 +30,16 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DeleteDBClusterSnapshot operation.
     /// Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation
-    /// is terminated. 
+    /// is terminated.
     /// 
-    ///  <note>The DB cluster snapshot must be in the <code>available</code> state to be deleted.</note>
-    /// 
+    ///  <note> 
+    /// <para>
+    /// The DB cluster snapshot must be in the <code>available</code> state to be deleted.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class DeleteDBClusterSnapshotRequest : AmazonRDSRequest
@@ -46,7 +49,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
-        /// The identifier of the DB cluster snapshot to delete. 
+        /// The identifier of the DB cluster snapshot to delete.
         /// </para>
         ///  
         /// <para>

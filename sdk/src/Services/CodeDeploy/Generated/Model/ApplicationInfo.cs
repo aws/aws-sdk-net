@@ -76,7 +76,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The time that the application was created.
+        /// The time at which the application was created.
         /// </para>
         /// </summary>
         public DateTime CreateTime

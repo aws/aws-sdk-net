@@ -37,15 +37,29 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        ///  The name of the DB cluster parameter group. 
+        /// The name of the DB cluster parameter group.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul> <note>This value is stored as a lowercase string.</note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This value is stored as a lowercase string.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DBClusterParameterGroupName
         {

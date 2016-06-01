@@ -29,9 +29,9 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVTLDeviceType operation.
-    /// This operation updates the type of medium changer in a gateway-VTL. When you activate
-    /// a gateway-VTL, you select a medium changer type for the gateway-VTL. This operation
-    /// enables you to select a different type of medium changer after a gateway-VTL is activated.
+    /// Updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL,
+    /// you select a medium changer type for the gateway-VTL. This operation enables you to
+    /// select a different type of medium changer after a gateway-VTL is activated.
     /// </summary>
     public partial class UpdateVTLDeviceTypeRequest : AmazonStorageGatewayRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+        ///  Valid Values: "STK-L700", "AWS-Gateway-VTL"
         /// </para>
         /// </summary>
         public string DeviceType

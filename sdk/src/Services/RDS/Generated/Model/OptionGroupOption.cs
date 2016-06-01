@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DefaultPort. 
         /// <para>
-        ///  If the option requires a port, specifies the default port for the option. 
+        /// If the option requires a port, specifies the default port for the option.
         /// </para>
         /// </summary>
         public int DefaultPort
@@ -65,7 +65,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the option. 
+        /// The description of the option.
         /// </para>
         /// </summary>
         public string Description
@@ -83,7 +83,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The name of the engine that this option can be applied to. 
+        /// The name of the engine that this option can be applied to.
         /// </para>
         /// </summary>
         public string EngineName
@@ -101,7 +101,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MajorEngineVersion. 
         /// <para>
-        ///  Indicates the major engine version that the option is available for. 
+        /// Indicates the major engine version that the option is available for.
         /// </para>
         /// </summary>
         public string MajorEngineVersion
@@ -119,7 +119,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MinimumRequiredMinorEngineVersion. 
         /// <para>
-        ///  The minimum required engine version for the option to be applied. 
+        /// The minimum required engine version for the option to be applied.
         /// </para>
         /// </summary>
         public string MinimumRequiredMinorEngineVersion
@@ -137,7 +137,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the option. 
+        /// The name of the option.
         /// </para>
         /// </summary>
         public string Name
@@ -155,8 +155,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupOptionSettings. 
         /// <para>
-        ///  Specifies the option settings that are available (and the default value) for each
-        /// option in an option group. 
+        /// Specifies the option settings that are available (and the default value) for each
+        /// option in an option group.
         /// </para>
         /// </summary>
         public List<OptionGroupOptionSetting> OptionGroupOptionSettings
@@ -174,7 +174,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionsDependedOn. 
         /// <para>
-        ///  List of all options that are prerequisites for this option. 
+        /// List of all options that are prerequisites for this option.
         /// </para>
         /// </summary>
         public List<string> OptionsDependedOn
@@ -192,9 +192,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Permanent. 
         /// <para>
-        ///  A permanent option cannot be removed from the option group once the option group
-        /// is used, and it cannot be removed from the db instance after assigning an option group
-        /// with this permanent option. 
+        /// A permanent option cannot be removed from the option group once the option group is
+        /// used, and it cannot be removed from the db instance after assigning an option group
+        /// with this permanent option.
         /// </para>
         /// </summary>
         public bool Permanent
@@ -212,9 +212,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Persistent. 
         /// <para>
-        ///  A persistent option cannot be removed from the option group once the option group
+        /// A persistent option cannot be removed from the option group once the option group
         /// is used, but this option can be removed from the db instance while modifying the related
-        /// data and assigning another option group without this option. 
+        /// data and assigning another option group without this option.
         /// </para>
         /// </summary>
         public bool Persistent
@@ -232,7 +232,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PortRequired. 
         /// <para>
-        ///  Specifies whether the option requires a port. 
+        /// Specifies whether the option requires a port.
         /// </para>
         /// </summary>
         public bool PortRequired

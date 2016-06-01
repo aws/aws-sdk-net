@@ -26,6 +26,7 @@ using System.IO;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon.Util
 {
@@ -104,7 +105,7 @@ namespace Amazon.Util
                                                    string roleArn,
                                                    string userIdentity)
         {
-            SAMLRoleProfile.Persist(profileName, endpointName, roleArn, userIdentity);
+            SAMLRoleProfile.Persist(profileName, endpointName, roleArn, userIdentity, null);
         }
 
         /// <summary>
@@ -305,10 +306,10 @@ namespace Amazon.Util
         public static T GetProfile<T>(string profileName) where T : ProfileSettingsBase
         {
             if (typeof(T) == typeof(AWSCredentialsProfile))
-                return GetProfile<AWSCredentialsProfile>(profileName) as T;
+                return AWSCredentialsProfile.LoadFrom(profileName) as T;
 
             if (typeof(T) == typeof(SAMLRoleProfile))
-                return GetProfile<SAMLRoleProfile>(profileName) as T;
+                return SAMLRoleProfile.LoadFrom(profileName) as T;
 
             throw new ArgumentException("Unrecognized profile type parameter");
         }
@@ -391,6 +392,11 @@ namespace Amazon.Util
         {
             return settings.FirstOrDefault(x => string.Equals(x[SettingsConstants.DisplayNameField], profileName, StringComparison.OrdinalIgnoreCase));
         }
+
+        internal static SettingsCollection.ObjectSettings ReadSettings(SettingsCollection settings, string settingsKey)
+        {
+            return settings.FirstOrDefault(x => string.Equals(x.UniqueKey, settingsKey, StringComparison.OrdinalIgnoreCase));
+        }
     }
 
     /// <summary>
@@ -436,7 +442,7 @@ namespace Amazon.Util
         /// Tests if an AWSCredentialsProfile instance could be instantiated from
         /// the persisted settings data.
         /// </summary>
-        /// <param name="profileName">The name given to the persisted settings.</param>
+        /// <param name="profileName">The name given to the persisted settings (previously verified as existing).</param>
         /// <returns>True if the settings are compatible with an AWSCredentialsProfile type.</returns>
         public static bool CanCreateFrom(string profileName)
         {
@@ -454,7 +460,23 @@ namespace Amazon.Util
         {
             var osProfileType = os.GetValueOrDefault(SettingsConstants.ProfileTypeField, null);
             // legacy AWS profiles will not have the type key present
-            return osProfileType == null || osProfileType.Equals(ProfileManager.AWSCredentialsProfileType, StringComparison.OrdinalIgnoreCase);
+            if (osProfileType == null || osProfileType.Equals(ProfileManager.AWSCredentialsProfileType, StringComparison.OrdinalIgnoreCase))
+            {
+                try
+                {
+                    Validate(os);
+                    return true;
+                }
+                catch (InvalidDataException)
+                {
+                    var msg = (string.Format(CultureInfo.InvariantCulture,
+                                             "Profile '{0}' indicates AWS credential type but does not contain AWS credential key materials",
+                                             os[SettingsConstants.DisplayNameField]));
+                    Logger.GetLogger(typeof(AWSCredentialsProfile)).InfoFormat(msg);
+                }
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -479,7 +501,9 @@ namespace Amazon.Util
                 throw new ArgumentNullException("os");
 
             if (!CanCreateFrom(os))
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Profile '{0}' does not contain AWS credential materials", os[SettingsConstants.DisplayNameField]));
+                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, 
+                                                          "Profile '{0}' does not contain AWS credential materials", 
+                                                          os[SettingsConstants.DisplayNameField]));
 
             Validate(os);
 
@@ -757,6 +781,8 @@ namespace Amazon.Util
     /// </summary>
     public class SAMLRoleProfile : ProfileSettingsBase
     {
+        private object _synclock = new object();
+
         /// <summary>
         /// The ARN of the role that is to be assumed.
         /// </summary>
@@ -786,6 +812,76 @@ namespace Amazon.Util
             {
                 return string.IsNullOrEmpty(UserIdentity);
             }
+        }
+
+        private SAMLImmutableCredentials _session = null;
+
+        /// <summary>
+        /// Retrieves the active credential session, if any, associated with the
+        /// role profile.
+        /// </summary>
+        /// <returns>
+        /// The current credentials valid for the role specified in the profile. Returns
+        /// null if no active session is available, or the active session has expired.
+        /// </returns>
+        /// <remarks>
+        /// When a user successfully authenticates and receives temporary AWS
+        /// credentials for a role, the profile is updated with details of the
+        /// session. When the profile is loaded by other processes or tools, if
+        /// session data is present and still valid it can be retrieved using this
+        /// method avoiding the need to re-authenticate and get additional temporary
+        /// credentials.
+        /// </remarks>
+        public SAMLImmutableCredentials GetCurrentSession()
+        {
+            SAMLImmutableCredentials session = null;
+            lock (_synclock)
+            {
+                if (_session != null && _session.Expires <= DateTime.UtcNow)
+                {
+                    UpdateProfileSessionData(null);
+                    _session = null;
+                }
+
+                session = _session;
+            }
+
+            return session;
+        }
+
+        /// <summary>
+        /// Persists the current credentials to a 'session' key in the RoleSessions.json file. 
+        /// This enables external applications and tools using the same profile to obtain credentials 
+        /// without needing to separately re-authenticate the user prior to expiry of the current 
+        /// credentials. After persisting the session data it can be retrieved using GetCurrentSession().
+        /// </summary>
+        /// <remarks>
+        /// Although the credentials are temporary we still encrypt the stored data when at rest in
+        /// the sdk credential store.
+        /// </remarks>
+        /// <param name="credentials">
+        /// The current credentials valid for the role specified in the profile.
+        /// </param>
+        public void PersistSession(SAMLImmutableCredentials credentials)
+        {
+            lock (_synclock)
+            {
+                UpdateProfileSessionData(credentials);
+                _session = credentials;
+            }
+        }
+
+        /// <summary>
+        /// Stores or clears the persisted session data.
+        /// </summary>
+        /// <param name="credentials"></param>
+        private void UpdateProfileSessionData(SAMLImmutableCredentials credentials)
+        {
+            string sessionData = null;
+            if (credentials != null)
+                sessionData = credentials.ToJson();
+
+            Persist(sessionData);
         }
 
         /// <summary>
@@ -830,7 +926,10 @@ namespace Amazon.Util
         }
 
         /// <summary>
-        /// Instantiates an instance from the supplied settings.
+        /// Instantiates an instance from the supplied settings. In addition to the profile settings
+        /// the SDK will inspect for a RoleSessions.json file containing active session data and if
+        /// an entry for the profile is present, will add the session data to the returned profile
+        /// object.
         /// </summary>
         /// <param name="os">The persisted settings.</param>
         /// <returns>Profile instance or an exception if the profile data is invalid.</returns>
@@ -847,10 +946,13 @@ namespace Amazon.Util
             var endpointName = os[SettingsConstants.EndpointNameField];
             var endpointSettings = ProfileManager.GetSAMLEndpoint(endpointName);
 
+            var profileName = os[SettingsConstants.DisplayNameField];
             var roleArn = os[SettingsConstants.RoleArnField];
             var userIdentity = os.GetValueOrDefault(SettingsConstants.UserIdentityField, null);
 
-            return new SAMLRoleProfile(os[SettingsConstants.DisplayNameField], endpointSettings, roleArn, userIdentity);
+            SAMLImmutableCredentials activeCredentials = LoadActiveSessionCredentials(profileName);
+
+            return new SAMLRoleProfile(profileName, endpointSettings, roleArn, userIdentity, activeCredentials);
         }
 
         /// <summary>
@@ -889,7 +991,12 @@ namespace Amazon.Util
         /// </summary>
         public override string Persist()
         {
-            return Persist(Name, EndpointSettings.Name, RoleArn, UserIdentity);
+            return Persist(Name, EndpointSettings.Name, RoleArn, UserIdentity, null);
+        }
+
+        private string Persist(string session)
+        {
+            return Persist(Name, EndpointSettings.Name, RoleArn, UserIdentity, session);
         }
 
         /// <summary>
@@ -919,11 +1026,18 @@ namespace Amazon.Util
         /// Optional, can be used to prompt the user for a password for the account when authentication 
         /// is performed from a system that is not domain-joined.
         /// </param>
+        /// <param name="session">
+        /// Optional, details of the currently active credentials for the role that we want to
+        /// persist into the profile for other tools or processes to pick up, avoiding the need
+        /// to continually re-authenticate the user as they switch between tools. The active session,
+        /// if any, is stored separately from the profile using the file RoleSessions.json.
+        /// </param>
         /// <returns>The unique id assigned to the profile.</returns>
         public static string Persist(string profileName,
                                      string endpointSettingsName,
                                      string roleArn,
-                                     string userIdentity)
+                                     string userIdentity,
+                                     string session)
         {
             if (string.IsNullOrEmpty(profileName) || string.IsNullOrEmpty(endpointSettingsName) || string.IsNullOrEmpty(roleArn))
                 throw new ArgumentException("Profile name, endpoint settings name and role ARN must be supplied.");
@@ -946,9 +1060,54 @@ namespace Amazon.Util
             os[SettingsConstants.RoleArnField] = roleArn;
             os[SettingsConstants.UserIdentityField] = userIdentity;
 
+            PersistActiveSessionCredentials(profileName, session);
+
             PersistenceManager.Instance.SaveSettings(SettingsConstants.RegisteredProfiles, settings);
 
             return os.UniqueKey;
+        }
+
+        /// <summary>
+        /// Tests for and loads any active session credentials for the specified profile. The session data
+        /// exists in a separate file from the profile, RoleSessions.json.
+        /// </summary>
+        /// <param name="profileName"></param>
+        /// <returns></returns>
+        private static SAMLImmutableCredentials LoadActiveSessionCredentials(string profileName)
+        {
+            SAMLImmutableCredentials sessionCredentials = null;
+
+            var roleSessions = PersistenceManager.Instance.GetSettings(SettingsConstants.RegisteredRoleSessions);
+            if (roleSessions != null)
+            {
+                var settings = ProfileManager.ReadSettings(roleSessions, profileName);
+                if (settings != null)
+                {
+                    var roleSession = settings[SettingsConstants.RoleSession];
+                    sessionCredentials = SAMLImmutableCredentials.FromJson(roleSession);
+                }
+            }
+
+            return sessionCredentials;
+        }
+
+        /// <summary>
+        /// Stores the supplied session data into the RoleSessions.json backing file.
+        /// </summary>
+        /// <param name="profileName"></param>
+        /// <param name="session"></param>
+        private static void PersistActiveSessionCredentials(string profileName, string session)
+        {
+            var roleSessions = PersistenceManager.Instance.GetSettings(SettingsConstants.RegisteredRoleSessions);
+            if (string.IsNullOrEmpty(session) && roleSessions == null)
+                return;
+
+            var settings = ProfileManager.ReadSettings(roleSessions, profileName);
+            if (settings == null)
+                settings = roleSessions.NewObjectSettings(profileName);
+
+            settings[SettingsConstants.RoleSession] = session;
+            PersistenceManager.Instance.SaveSettings(SettingsConstants.RegisteredRoleSessions, roleSessions);
         }
 
         /// <summary>
@@ -959,15 +1118,21 @@ namespace Amazon.Util
         /// <param name="endpointSettings">The settings for the authentication endpoint.</param>
         /// <param name="roleArn">The role that should be assumed on successful authentication.</param>
         /// <param name="userIdentity">The credentials to supply in authentication, in domain\user format.</param>
+        /// <param name="currentSession">
+        /// Deserialized credential data from the profile, if still valid. Null if the profile does not
+        /// contain any active credentials, or the credentials it did hold are now invalid.
+        /// </param>
         private SAMLRoleProfile(string profileName,
                                 SAMLEndpointSettings endpointSettings,
                                 string roleArn,
-                                string userIdentity)
+                                string userIdentity,
+                                SAMLImmutableCredentials currentSession)
         {
             Name = profileName;
             EndpointSettings = endpointSettings;
             RoleArn = roleArn;
             UserIdentity = userIdentity;
+            _session = currentSession;
         }
 
     }

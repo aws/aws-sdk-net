@@ -43,7 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationNames. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
+        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
         /// those with the specified names. 
         /// </para>
         /// </summary>

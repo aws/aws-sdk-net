@@ -32,12 +32,12 @@ namespace Amazon.IdentityManagement.Model
     /// Lists the instance profiles that have the specified path prefix. If there are none,
     /// the action returns an empty list. For more information about instance profiles, go
     /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-    /// Instance Profiles</a>. 
+    /// Instance Profiles</a>.
     /// 
     ///  
     /// <para>
     /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters. 
+    /// parameters.
     /// </para>
     /// </summary>
     public partial class ListInstanceProfilesRequest : AmazonIdentityManagementServiceRequest
@@ -79,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         /// IAM might return fewer results, even when there are more results available. In that
         /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
         /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from. 
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -99,12 +99,15 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code>
         /// gets all instance profiles whose path starts with <code>/application_abc/component_xyz/</code>.
-        /// 
         /// </para>
         ///  
         /// <para>
-        ///  This parameter is optional. If it is not included, it defaults to a slash (/), listing
-        /// all instance profiles. 
+        /// This parameter is optional. If it is not included, it defaults to a slash (/), listing
+        /// all instance profiles. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+        /// for this parameter is a string of characters consisting of either a forward slash
+        /// (/) by itself or a string that must begin and end with forward slashes, containing
+        /// any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+        /// most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string PathPrefix

@@ -81,9 +81,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if ( context.TestExpression("ReservedCacheNode", targetDepth))
+                    if (context.TestExpression("ReservedCacheNode", targetDepth))
                     {
-                        response.ReservedCacheNode = ReservedCacheNodeUnmarshaller.Instance.Unmarshall(context);
+                        var unmarshaller = ReservedCacheNodeUnmarshaller.Instance;
+                        response.ReservedCacheNode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 

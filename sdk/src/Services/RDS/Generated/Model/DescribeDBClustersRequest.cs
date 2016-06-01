@@ -31,11 +31,10 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeDBClusters operation.
     /// Returns information about provisioned Aurora DB clusters. This API supports pagination.
     /// 
-    /// 
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class DescribeDBClustersRequest : AmazonRDSRequest
@@ -50,15 +49,24 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The user-supplied DB cluster identifier. If this parameter is specified, information
         /// from only the specific DB cluster is returned. This parameter isn't case-sensitive.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBClusterIdentifier
         {

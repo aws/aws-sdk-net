@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the PurchaseReservedInstancesOffering operation.
+    /// Contains the output of PurchaseReservedInstancesOffering.
     /// </summary>
     public partial class PurchaseReservedInstancesOfferingResponse : AmazonWebServiceResponse
     {

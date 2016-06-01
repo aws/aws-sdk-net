@@ -85,7 +85,7 @@ namespace AWSSDK.Tests.Framework
             var tests = runner.Load(currentAssembly, options);
             var testListener = new TestListener();
             var result = runner.Run(testListener, testFilter);
-            TestDriver.Instance.OnTestFinished(result.PassCount, result.FailCount, this.HttpClient, testListener.FailedTestsCases);
+            TestDriver.Instance.OnTestFinished(this.HttpClient, testListener.FailedTestsCases);
         }
 
         #region testfilters

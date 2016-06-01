@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CreateSubnet operation.
+    /// Contains the output of CreateSubnet.
     /// </summary>
     public partial class CreateSubnetResponse : AmazonWebServiceResponse
     {

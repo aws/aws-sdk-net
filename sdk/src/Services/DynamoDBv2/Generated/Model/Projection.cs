@@ -69,16 +69,16 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+        ///  <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>INCLUDE</code> - Only the specified table attributes are projected into the
+        ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
         /// index. The list of projected attributes are in <i>NonKeyAttributes</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ALL</code> - All of the table attributes are projected into the index.
+        ///  <code>ALL</code> - All of the table attributes are projected into the index.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -41,8 +41,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        ///  Indicates whether the changes should be applied immediately, or during the next maintenance
-        /// window for each instance associated with the option group. 
+        /// Indicates whether the changes should be applied immediately, or during the next maintenance
+        /// window for each instance associated with the option group.
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -60,13 +60,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  The name of the option group to be modified. 
+        /// The name of the option group to be modified.
         /// </para>
         ///  
         /// <para>
-        ///  Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
+        /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot
         /// be removed from an option group, and that option group cannot be removed from a DB
-        /// instance once it is associated with a DB instance 
+        /// instance once it is associated with a DB instance
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -84,8 +84,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionsToInclude. 
         /// <para>
-        ///  Options in this list are added to the option group or, if already present, the specified
-        /// configuration is used to update the existing configuration. 
+        /// Options in this list are added to the option group or, if already present, the specified
+        /// configuration is used to update the existing configuration.
         /// </para>
         /// </summary>
         public List<OptionConfiguration> OptionsToInclude
@@ -103,7 +103,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionsToRemove. 
         /// <para>
-        ///  Options in this list are removed from the option group. 
+        /// Options in this list are removed from the option group.
         /// </para>
         /// </summary>
         public List<string> OptionsToRemove

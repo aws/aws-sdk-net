@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
-    /// Contains the output of the <a>DeleteHsm</a> action.
+    /// Contains the output of the <a>DeleteHsm</a> operation.
     /// </summary>
     public partial class DeleteHsmResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the action.
+        /// The status of the operation.
         /// </para>
         /// </summary>
         public string Status

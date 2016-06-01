@@ -11,6 +11,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeDeploy.Model.BatchGetDeploymentGroupsRequest.ApplicationName</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeDeploy.Model.CreateApplicationRequest.ApplicationName</property>
     <min>1</min>
     <max>100</max>

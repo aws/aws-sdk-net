@@ -32,12 +32,32 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class RedshiftDestinationUpdate
     {
+        private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private string _clusterJDBCURL;
         private CopyCommand _copyCommand;
         private string _password;
+        private RedshiftRetryOptions _retryOptions;
         private string _roleARN;
         private S3DestinationUpdate _s3Update;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLoggingOptions. 
+        /// <para>
+        /// Describes CloudWatch logging options for your delivery stream.
+        /// </para>
+        /// </summary>
+        public CloudWatchLoggingOptions CloudWatchLoggingOptions
+        {
+            get { return this._cloudWatchLoggingOptions; }
+            set { this._cloudWatchLoggingOptions = value; }
+        }
+
+        // Check to see if CloudWatchLoggingOptions property is set
+        internal bool IsSetCloudWatchLoggingOptions()
+        {
+            return this._cloudWatchLoggingOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterJDBCURL. 
@@ -94,6 +114,25 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RetryOptions. 
+        /// <para>
+        /// Configures retry behavior in the event that Firehose is unable to deliver documents
+        /// to Amazon Redshift. Default value is 3600 (60 minutes).
+        /// </para>
+        /// </summary>
+        public RedshiftRetryOptions RetryOptions
+        {
+            get { return this._retryOptions; }
+            set { this._retryOptions = value; }
+        }
+
+        // Check to see if RetryOptions property is set
+        internal bool IsSetRetryOptions()
+        {
+            return this._retryOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The ARN of the AWS credentials.
@@ -119,7 +158,7 @@ namespace Amazon.KinesisFirehose.Model
         ///  
         /// <para>
         /// The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified
-        /// in <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift <code>COPY</code>
+        /// in <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift <code>COPY</code>
         /// operation that reads from the S3 bucket doesn't support these compression formats.
         /// </para>
         /// </summary>

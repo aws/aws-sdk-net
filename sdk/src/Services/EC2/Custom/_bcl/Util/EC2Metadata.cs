@@ -49,6 +49,8 @@ namespace Amazon.EC2.Util
     /// More information about EC2 Metadata <see href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html"/>
     /// </para>
     /// </remarks>
+    [Obsolete("This class is deprecated and will be removed in a future release." 
+              + " Please update your code to use the Amazon.Util.EC2InstanceMetadata class, located in the AWSSDK.Core assembly.")]
     public static class EC2Metadata
     {
         private static string
@@ -445,6 +447,8 @@ namespace Amazon.EC2.Util
     /// Returns information about the last time the instance profile was updated, 
     /// including the instance's LastUpdated date, InstanceProfileArn, and InstanceProfileId.
     /// </summary>
+    [Obsolete("This class is deprecated and will be removed in a future release." 
+              + " Please update your code to use the Amazon.Util.IAMInstanceProfileMetadata class, located in the AWSSDK.Core assembly.")]
     public class IAMInfo
     {
         /// <summary>
@@ -476,6 +480,8 @@ namespace Amazon.EC2.Util
     /// <summary>
     /// The temporary security credentials (AccessKeyId, SecretAccessKey, SessionToken, and Expiration) associated with the IAM role.
     /// </summary>
+    [Obsolete("This class is deprecated and will be removed in a future release." 
+              + " Please update your code to use the Amazon.Util.IAMSecurityCredentialMetadata class, located in the AWSSDK.Core assembly.")]
     public class IAMSecurityCredential
     {
         /// <summary>
@@ -522,6 +528,8 @@ namespace Amazon.EC2.Util
     /// <summary>
     /// All of the metadata associated with a network interface on the instance.
     /// </summary>
+    [Obsolete("This class is deprecated and will be removed in a future release." 
+              + " Please update your code to use the Amazon.Util.NetworkInterfaceMetadata class, located in the AWSSDK.Core assembly.")]
     public class NetworkInterface
     {
         private  string _path;

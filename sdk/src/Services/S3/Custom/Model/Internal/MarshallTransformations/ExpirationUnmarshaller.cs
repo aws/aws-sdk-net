@@ -49,6 +49,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("ExpiredObjectDeleteMarker", targetDepth))
+                    {
+                        expiration.ExpiredObjectDeleteMarker = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

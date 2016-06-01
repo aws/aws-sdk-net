@@ -112,7 +112,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates ReceiveMessageRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
         public ReceiveMessageRequest(string queueUrl)
         {
             _queueUrl = queueUrl;
@@ -121,20 +121,42 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property AttributeNames. 
         /// <para>
-        /// A list of attributes that need to be returned along with each message. 
+        /// A list of attributes that need to be returned along with each message. These attributes
+        /// include:
         /// </para>
-        ///  
+        ///  <ul> <li>
         /// <para>
-        ///  The following lists the names and descriptions of the attributes that can be returned:
-        /// 
+        /// <code>All</code> - returns all values.
         /// </para>
-        ///  <ul> <li> <code>All</code> - returns all values.</li> <li> <code>ApproximateFirstReceiveTimestamp</code>
-        /// - returns the time when the message was first received from the queue (epoch time
-        /// in milliseconds).</li> <li> <code>ApproximateReceiveCount</code> - returns the number
-        /// of times a message has been received from the queue but not deleted.</li> <li> <code>SenderId</code>
-        /// - returns the AWS account number (or the IP address, if anonymous access is allowed)
-        /// of the sender.</li> <li> <code>SentTimestamp</code> - returns the time when the message
-        /// was sent to the queue (epoch time in milliseconds).</li> </ul>
+        /// </li> <li>
+        /// <para>
+        /// <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the message
+        /// was first received from the queue (epoch time in milliseconds).
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>ApproximateReceiveCount</code> - returns the number of times a message has been
+        /// received from the queue but not deleted.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>SenderId</code> - returns the AWS account number (or the IP address, if anonymous
+        /// access is allowed) of the sender.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>SentTimestamp</code> - returns the time when the message was sent to the queue
+        /// (epoch time in milliseconds).
+        /// </para>
+        /// </li> </ul> 
+        /// <para>
+        /// Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>,
+        /// <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
+        /// <code>CreatedTimestamp</code>, <code>DelaySeconds</code>, <code>LastModifiedTimestamp</code>,
+        /// <code>MaximumMessageSize</code>, <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+        /// <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>, <code>RedrivePolicy</code>,
+        /// and <code>VisibilityTimeout</code>) will be ignored.
+        /// </para>
         /// </summary>
         public List<string> AttributeNames
         {
@@ -186,8 +208,8 @@ namespace Amazon.SQS.Model
         /// <para>
         /// When using <code>ReceiveMessage</code>, you can send a list of attribute names to
         /// receive, or you can return all of the attributes by specifying "All" or ".*" in your
-        /// request. You can also use "foo.*" to return all message attributes starting with the
-        /// "foo" prefix.
+        /// request. You can also use "bar.*" to return all message attributes starting with the
+        /// "bar" prefix.
         /// </para>
         /// </summary>
         public List<string> MessageAttributeNames
@@ -206,6 +228,10 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property QueueUrl. 
         /// <para>
         /// The URL of the Amazon SQS queue to take action on.
+        /// </para>
+        ///  
+        /// <para>
+        /// Queue URLs are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

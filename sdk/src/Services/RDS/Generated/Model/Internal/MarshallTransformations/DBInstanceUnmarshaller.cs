@@ -158,6 +158,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBSubnetGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DomainMemberships/DomainMembership", targetDepth))
+                    {
+                        var unmarshaller = DomainMembershipUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DomainMemberships.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Endpoint", targetDepth))
                     {
                         var unmarshaller = EndpointUnmarshaller.Instance;
@@ -259,6 +266,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PromotionTier", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.PromotionTier = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PubliclyAccessible", targetDepth))

@@ -46,8 +46,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// The JSON document that describes the policy. The length of the <b>policyDocument</b>
-        /// must be a minimum length of 1, with a maximum length of 2048, excluding whitespace.
+        /// The JSON document that describes the policy. <b>policyDocument</b> must have a minimum
+        /// length of 1, with a maximum length of 2048, excluding whitespace.
         /// </para>
         /// </summary>
         public string PolicyDocument

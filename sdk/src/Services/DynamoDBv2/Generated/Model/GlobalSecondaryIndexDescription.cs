@@ -52,12 +52,12 @@ namespace Amazon.DynamoDBv2.Model
         /// have been processed, the backfilling operation is complete and <i>Backfilling</i>
         /// is false.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i>
         /// attribute does not appear in the <i>DescribeTable</i> output.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public bool Backfilling
         {
@@ -111,7 +111,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property IndexSizeBytes. 
         /// <para>
         /// The total size of the specified index, in bytes. DynamoDB updates this value approximately
-        /// every six hours. Recent changes might not be reflected in this value. 
+        /// every six hours. Recent changes might not be reflected in this value.
         /// </para>
         /// </summary>
         public long IndexSizeBytes
@@ -133,19 +133,19 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>CREATING</i> - The index is being created.
+        ///  <i>CREATING</i> - The index is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>UPDATING</i> - The index is being updated.
+        ///  <i>UPDATING</i> - The index is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>DELETING</i> - The index is being deleted.
+        ///  <i>DELETING</i> - The index is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>ACTIVE</i> - The index is ready for use.
+        ///  <i>ACTIVE</i> - The index is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -165,7 +165,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ItemCount. 
         /// <para>
         /// The number of items in the specified index. DynamoDB updates this value approximately
-        /// every six hours. Recent changes might not be reflected in this value. 
+        /// every six hours. Recent changes might not be reflected in this value.
         /// </para>
         /// </summary>
         public long ItemCount
@@ -186,19 +186,19 @@ namespace Amazon.DynamoDBv2.Model
         /// The complete key schema for a global secondary index, which consists of one or more
         /// pairs of attribute names and key types:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>HASH</code> - partition key
+        ///  <code>HASH</code> - partition key
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>RANGE</code> - sort key
+        ///  <code>RANGE</code> - sort key
         /// </para>
-        /// </li> </ul> <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// The partition key of an item is also known as its <i>hash attribute</i>. The term
-        /// "hash attribute" derives from DynamoDB&#39; usage of an internal hash function to
-        /// evenly distribute data items across partitions, based on their partition key values.
+        /// "hash attribute" derives from DynamoDB' usage of an internal hash function to evenly
+        /// distribute data items across partitions, based on their partition key values.
         /// </para>
         ///  
         /// <para>
@@ -206,7 +206,7 @@ namespace Amazon.DynamoDBv2.Model
         /// attribute" derives from the way DynamoDB stores items with the same partition key
         /// physically close together, in sorted order by the sort key value.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public List<KeySchemaElement> KeySchema
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the MoveAddressToVpc operation.
+    /// Contains the output of MoveAddressToVpc.
     /// </summary>
     public partial class MoveAddressToVpcResponse : AmazonWebServiceResponse
     {

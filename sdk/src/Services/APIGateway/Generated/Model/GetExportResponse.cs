@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// This is the response object from the GetExport operation.
+    /// The binary blob response to <a>GetExport</a>, which contains the generated SDK.
     /// </summary>
     public partial class GetExportResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,10 @@ namespace Amazon.APIGateway.Model
         private string _contentType;
 
         /// <summary>
-        /// Gets and sets the property Body.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The binary blob response to <a>GetExport</a>, which contains the export.
+        /// </para>
         /// </summary>
         public MemoryStream Body
         {
@@ -52,7 +55,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentDisposition.
+        /// Gets and sets the property ContentDisposition. 
+        /// <para>
+        /// The content-disposition header value in the HTTP reseponse.
+        /// </para>
         /// </summary>
         public string ContentDisposition
         {
@@ -67,7 +73,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentType.
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// The content-type header value in the HTTP response. This will correspond to a valid
+        /// 'accept' type in the request.
+        /// </para>
         /// </summary>
         public string ContentType
         {

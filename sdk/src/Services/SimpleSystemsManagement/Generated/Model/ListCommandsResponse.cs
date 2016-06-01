@@ -36,8 +36,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Commands. (Optional) The list of commands requested by
-        /// the user.
+        /// Gets and sets the property Commands. 
+        /// <para>
+        /// (Optional) The list of commands requested by the user. 
+        /// </para>
         /// </summary>
         public List<Command> Commands
         {
@@ -52,8 +54,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. (Optional) The token for the next set of items
-        /// to return. (You received this token from a previous call.)
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// (Optional) The token for the next set of items to return. (You received this token
+        /// from a previous call.)
+        /// </para>
         /// </summary>
         public string NextToken
         {

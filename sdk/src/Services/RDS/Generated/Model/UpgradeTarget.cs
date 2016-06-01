@@ -78,7 +78,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the upgrade target database engine. 
+        /// The name of the upgrade target database engine.
         /// </para>
         /// </summary>
         public string Engine

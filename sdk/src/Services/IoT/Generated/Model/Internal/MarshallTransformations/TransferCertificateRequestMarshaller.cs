@@ -59,11 +59,30 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "PATCH";
 
             string uriResourcePath = "/transfer-certificate/{certificateId}";
-            uriResourcePath = uriResourcePath.Replace("{certificateId}", publicRequest.IsSetCertificateId() ? StringUtils.FromString(publicRequest.CertificateId) : string.Empty);
+            if (!publicRequest.IsSetCertificateId())
+                throw new AmazonIoTException("Request object does not have required field CertificateId set");
+            uriResourcePath = uriResourcePath.Replace("{certificateId}", StringUtils.FromString(publicRequest.CertificateId));
             
             if (publicRequest.IsSetTargetAwsAccount())
                 request.Parameters.Add("targetAwsAccount", StringUtils.FromString(publicRequest.TargetAwsAccount));
             request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetTransferMessage())
+                {
+                    context.Writer.WritePropertyName("transferMessage");
+                    context.Writer.Write(publicRequest.TransferMessage);
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
             request.UseQueryString = true;
 
             return request;

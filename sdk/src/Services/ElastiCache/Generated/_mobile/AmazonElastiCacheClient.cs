@@ -1395,6 +1395,37 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  ListAllowedNodeTypeModifications
+
+        internal ListAllowedNodeTypeModificationsResponse ListAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request)
+        {
+            var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
+            var unmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAllowedNodeTypeModificationsRequest,ListAllowedNodeTypeModificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAllowedNodeTypeModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowedNodeTypeModifications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListAllowedNodeTypeModificationsResponse> ListAllowedNodeTypeModificationsAsync(ListAllowedNodeTypeModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
+            var unmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAllowedNodeTypeModificationsRequest,ListAllowedNodeTypeModificationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)

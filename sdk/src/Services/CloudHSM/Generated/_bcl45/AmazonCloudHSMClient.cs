@@ -225,6 +225,57 @@ namespace Amazon.CloudHSM
         #endregion
 
         
+        #region  AddTagsToResource
+
+
+        /// <summary>
+        /// Adds or overwrites one or more tags for the specified AWS CloudHSM resource.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a key and a value. Tag keys must be unique to each resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
+        /// 
+        /// <returns>The response from the AddTagsToResource service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
+        {
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateHapg
 
 
@@ -327,8 +378,22 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Creates an uninitialized HSM instance. Running this command provisions an HSM appliance
-        /// and will result in charges to your AWS account for the HSM.
+        /// Creates an uninitialized HSM instance.
+        /// 
+        ///  
+        /// <para>
+        /// There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a>
+        /// operation. If you accidentally provision an HSM and want to request a refund, delete
+        /// the instance using the <a>DeleteHsm</a> operation, go to the <a href="https://console.aws.amazon.com/support/home#/">AWS
+        /// Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// It can take up to 20 minutes to create and provision an HSM. You can monitor the status
+        /// of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized
+        /// when the status changes to <code>RUNNING</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHsm service method.</param>
         /// 
@@ -515,7 +580,7 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
+        /// Deletes an HSM. After completion, this operation cannot be undone and your key material
         /// cannot be recovered.
         /// </summary>
         /// <param name="hsmArn">The ARN of the HSM to delete.</param>
@@ -539,7 +604,7 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
+        /// Deletes an HSM. After completion, this operation cannot be undone and your key material
         /// cannot be recovered.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHsm service method.</param>
@@ -564,7 +629,7 @@ namespace Amazon.CloudHSM
 
 
         /// <summary>
-        /// Deletes an HSM. Once complete, this operation cannot be undone and your key material
+        /// Deletes an HSM. After completion, this operation cannot be undone and your key material
         /// cannot be recovered.
         /// </summary>
         /// <param name="hsmArn">The ARN of the HSM to delete.</param>
@@ -1426,6 +1491,52 @@ namespace Amazon.CloudHSM
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of all tags for the specified AWS CloudHSM resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyHapg
 
 
@@ -1477,6 +1588,15 @@ namespace Amazon.CloudHSM
 
         /// <summary>
         /// Modifies an HSM.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation can result in the HSM being offline for up to 15 minutes while the
+        /// AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should
+        /// ensure that your AWS CloudHSM service is configured for high availability, and consider
+        /// executing this operation during a maintenance window.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyHsm service method.</param>
         /// 
@@ -1559,6 +1679,58 @@ namespace Amazon.CloudHSM
             var unmarshaller = ModifyLunaClientResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyLunaClientRequest,ModifyLunaClientResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveTagsFromResource
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified AWS CloudHSM resource.
+        /// 
+        ///  
+        /// <para>
+        /// To remove a tag, specify only the tag key to remove (not the value). To overwrite
+        /// the value for an existing tag, use <a>AddTagsToResource</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTagsFromResource service method, as returned by CloudHSM.</returns>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">
+        /// Indicates that an internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.CloudHsmServiceException">
+        /// Indicates that an exception occurred in the AWS CloudHSM service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSM.Model.InvalidRequestException">
+        /// Indicates that one or more of the request parameters are not valid.
+        /// </exception>
+        public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
+        {
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

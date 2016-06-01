@@ -59,7 +59,9 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/2015-02-01/mount-targets/{MountTargetId}/security-groups";
-            uriResourcePath = uriResourcePath.Replace("{MountTargetId}", publicRequest.IsSetMountTargetId() ? StringUtils.FromString(publicRequest.MountTargetId) : string.Empty);
+            if (!publicRequest.IsSetMountTargetId())
+                throw new AmazonElasticFileSystemException("Request object does not have required field MountTargetId set");
+            uriResourcePath = uriResourcePath.Replace("{MountTargetId}", StringUtils.FromString(publicRequest.MountTargetId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

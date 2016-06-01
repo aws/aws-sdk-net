@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBParameterGroup operation.
-    /// Creates a new DB parameter group. 
+    /// Creates a new DB parameter group.
     /// 
     ///  
     /// <para>
@@ -70,9 +70,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates CreateDBParameterGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupName"> The name of the DB parameter group.   Constraints:  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <note>This value is stored as a lowercase string.</note></param>
-        /// <param name="dbParameterGroupFamily"> The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family. </param>
-        /// <param name="description"> The description for the DB parameter group. </param>
+        /// <param name="dbParameterGroupName">The name of the DB parameter group. Constraints: <ul> <li> Must be 1 to 255 alphanumeric characters </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> <note> This value is stored as a lowercase string. </note></param>
+        /// <param name="dbParameterGroupFamily">The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</param>
+        /// <param name="description">The description for the DB parameter group.</param>
         public CreateDBParameterGroupRequest(string dbParameterGroupName, string dbParameterGroupFamily, string description)
         {
             _dbParameterGroupName = dbParameterGroupName;
@@ -83,10 +83,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 
         /// <para>
-        ///  The DB parameter group family name. A DB parameter group can be associated with one
+        /// The DB parameter group family name. A DB parameter group can be associated with one
         /// and only one DB parameter group family, and can be applied only to a DB instance running
         /// a database engine and engine version compatible with that DB parameter group family.
-        /// 
         /// </para>
         /// </summary>
         public string DBParameterGroupFamily
@@ -104,15 +103,29 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        ///  The name of the DB parameter group. 
+        /// The name of the DB parameter group.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
-        /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul> <note>This value is stored as a lowercase string.</note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This value is stored as a lowercase string.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DBParameterGroupName
         {
@@ -129,7 +142,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description for the DB parameter group. 
+        /// The description for the DB parameter group.
         /// </para>
         /// </summary>
         public string Description

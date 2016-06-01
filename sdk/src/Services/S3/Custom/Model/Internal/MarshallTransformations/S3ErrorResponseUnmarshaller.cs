@@ -48,6 +48,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.RequestId = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzRequestIdHeader);
             if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzId2Header))
                 response.Id2 = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzId2Header);
+            if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzCloudFrontIdHeader))
+                response.AmzCfId = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzCloudFrontIdHeader);
 
             if ((int)statusCode >= 500)
                 response.Type = ErrorType.Receiver;
@@ -148,6 +150,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public string Resource { get; set; }
 
         public string Id2 { get; set; }
+
+        public string AmzCfId { get; set; }
 
         public Exception ParsingException { get; set; }
     }

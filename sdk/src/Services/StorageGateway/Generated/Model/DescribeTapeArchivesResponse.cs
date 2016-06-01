@@ -41,7 +41,7 @@ namespace Amazon.StorageGateway.Model
         /// An opaque string that indicates the position at which the virtual tapes that were
         /// fetched for description ended. Use this marker in your next request to fetch the next
         /// set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual
-        /// tapes to describe, this field does not appear in the response. 
+        /// tapes to describe, this field does not appear in the response.
         /// </para>
         /// </summary>
         public string Marker

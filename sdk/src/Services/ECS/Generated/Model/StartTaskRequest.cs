@@ -126,7 +126,8 @@ namespace Amazon.ECS.Model
         /// trigger a task to run a batch process job, you could apply a unique identifier for
         /// that job to your task with the <code>startedBy</code> parameter. You can then identify
         /// which tasks belong to that job by filtering the results of a <a>ListTasks</a> call
-        /// with the <code>startedBy</code> value.
+        /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
+        /// numbers, hyphens, and underscores are allowed.
         /// </para>
         ///  
         /// <para>

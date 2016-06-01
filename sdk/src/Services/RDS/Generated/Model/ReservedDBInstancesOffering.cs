@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        ///  The currency code for the reserved DB instance offering. 
+        /// The currency code for the reserved DB instance offering.
         /// </para>
         /// </summary>
         public string CurrencyCode
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  The DB instance class for the reserved DB instance. 
+        /// The DB instance class for the reserved DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -88,7 +88,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        ///  The duration of the offering in seconds. 
+        /// The duration of the offering in seconds.
         /// </para>
         /// </summary>
         public int Duration
@@ -106,7 +106,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
-        ///  The fixed price charged for this offering. 
+        /// The fixed price charged for this offering.
         /// </para>
         /// </summary>
         public double FixedPrice
@@ -124,7 +124,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        ///  Indicates if the offering applies to Multi-AZ deployments. 
+        /// Indicates if the offering applies to Multi-AZ deployments.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -142,7 +142,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
-        ///  The offering type. 
+        /// The offering type.
         /// </para>
         /// </summary>
         public string OfferingType
@@ -160,7 +160,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ProductDescription. 
         /// <para>
-        ///  The database engine used by the offering. 
+        /// The database engine used by the offering.
         /// </para>
         /// </summary>
         public string ProductDescription
@@ -178,7 +178,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property RecurringCharges. 
         /// <para>
-        ///  The recurring price charged to run this reserved DB instance. 
+        /// The recurring price charged to run this reserved DB instance.
         /// </para>
         /// </summary>
         public List<RecurringCharge> RecurringCharges
@@ -196,7 +196,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReservedDBInstancesOfferingId. 
         /// <para>
-        ///  The offering identifier. 
+        /// The offering identifier.
         /// </para>
         /// </summary>
         public string ReservedDBInstancesOfferingId
@@ -214,7 +214,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UsagePrice. 
         /// <para>
-        ///  The hourly price charged for this offering. 
+        /// The hourly price charged for this offering.
         /// </para>
         /// </summary>
         public double UsagePrice

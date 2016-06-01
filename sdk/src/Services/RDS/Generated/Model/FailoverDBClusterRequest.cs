@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class FailoverDBClusterRequest : AmazonRDSRequest
@@ -58,15 +58,24 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// A DB cluster identifier to force a failover for. This parameter is not case-sensitive.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBClusterIdentifier
         {

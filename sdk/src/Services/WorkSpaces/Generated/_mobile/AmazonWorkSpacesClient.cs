@@ -234,6 +234,37 @@ namespace Amazon.WorkSpaces
         #endregion
 
         
+        #region  CreateTags
+
+        internal CreateTagsResponse CreateTags(CreateTagsRequest request)
+        {
+            var marshaller = new CreateTagsRequestMarshaller();
+            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTagsRequest,CreateTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateTagsRequestMarshaller();
+            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTagsRequest,CreateTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateWorkspaces
 
         internal CreateWorkspacesResponse CreateWorkspaces(CreateWorkspacesRequest request)
@@ -260,6 +291,68 @@ namespace Amazon.WorkSpaces
             var unmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateWorkspacesRequest,CreateWorkspacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTags
+
+        internal DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTags
+
+        internal DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

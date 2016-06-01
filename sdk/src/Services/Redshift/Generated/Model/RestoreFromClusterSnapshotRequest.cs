@@ -61,6 +61,7 @@ namespace Amazon.Redshift.Model
         private string _elasticIp;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
+        private List<string> _iamRoles = new List<string>();
         private string _kmsKeyId;
         private string _nodeType;
         private string _ownerAccount;
@@ -329,6 +330,30 @@ namespace Amazon.Redshift.Model
         internal bool IsSetHsmConfigurationIdentifier()
         {
             return this._hsmConfigurationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoles. 
+        /// <para>
+        /// A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster
+        /// to access other AWS services. You must supply the IAM roles in their Amazon Resource
+        /// Name (ARN) format. You can supply up to 10 IAM roles in a single request.
+        /// </para>
+        ///  
+        /// <para>
+        /// A cluster can have up to 10 IAM roles associated at any time. 
+        /// </para>
+        /// </summary>
+        public List<string> IamRoles
+        {
+            get { return this._iamRoles; }
+            set { this._iamRoles = value; }
+        }
+
+        // Check to see if IamRoles property is set
+        internal bool IsSetIamRoles()
+        {
+            return this._iamRoles != null && this._iamRoles.Count > 0; 
         }
 
         /// <summary>

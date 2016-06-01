@@ -1822,7 +1822,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the status of one or more instances.
+        /// Describes the status of one or more instances. By default, only running instances
+        /// are described, unless specified otherwise.
         /// 
         ///  
         /// <para>
@@ -2354,6 +2355,22 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeSecurityGroupReferences
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityGroupReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeSecurityGroupReferencesResponse> DescribeSecurityGroupReferencesAsync(DescribeSecurityGroupReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeSecurityGroups
 
 
@@ -2419,12 +2436,23 @@ namespace Amazon.EC2
         /// <para>
         /// The create volume permissions fall into the following categories:
         /// </para>
-        ///  <ul> <li><i>public</i>: The owner of the snapshot granted create volume permissions
-        /// for the snapshot to the <code>all</code> group. All AWS accounts have create volume
-        /// permissions for these snapshots.</li> <li><i>explicit</i>: The owner of the snapshot
-        /// granted create volume permissions to a specific AWS account.</li> <li><i>implicit</i>:
-        /// An AWS account has implicit create volume permissions for all snapshots it owns.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
+        /// for these snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        /// specific AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        /// it owns.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The list of snapshots returned can be modified by specifying snapshot IDs, snapshot
         /// owners, or AWS accounts with create volume permissions. If no options are specified,
@@ -2639,6 +2667,22 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeSpotPriceHistoryResponse> DescribeSpotPriceHistoryAsync(DescribeSpotPriceHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeStaleSecurityGroups
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStaleSecurityGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeStaleSecurityGroupsResponse> DescribeStaleSecurityGroupsAsync(DescribeStaleSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3280,6 +3324,22 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetConsoleScreenshot
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConsoleScreenshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetConsoleScreenshotResponse> GetConsoleScreenshotAsync(GetConsoleScreenshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetPasswordData
 
 
@@ -3581,6 +3641,22 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ModifyVpcEndpointResponse> ModifyVpcEndpointAsync(ModifyVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyVpcPeeringConnectionOptions
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcPeeringConnectionOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ModifyVpcPeeringConnectionOptionsResponse> ModifyVpcPeeringConnectionOptionsAsync(ModifyVpcPeeringConnectionOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

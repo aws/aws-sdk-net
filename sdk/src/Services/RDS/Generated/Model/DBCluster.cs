@@ -28,11 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the following actions: 
+    /// Contains the result of a successful invocation of the following actions:
     /// 
-    ///  <ul> <li> <a>CreateDBCluster</a> </li> <li> <a>DeleteDBCluster</a> </li> <li> <a>FailoverDBCluster</a>
-    /// </li> <li> <a>ModifyDBCluster</a> </li> <li> <a>RestoreDBClusterFromSnapshot</a> </li>
-    /// </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateDBCluster</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteDBCluster</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>FailoverDBCluster</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ModifyDBCluster</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RestoreDBClusterFromSnapshot</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RestoreDBClusterToPointInTime</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// This data type is used as a response element in the <a>DescribeDBClusters</a> action.
     /// </para>
@@ -69,7 +91,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// Specifies the allocated storage size in gigabytes (GB). 
+        /// Specifies the allocated storage size in gigabytes (GB).
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -106,7 +128,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        /// Specifies the number of days for which automatic DB snapshots are retained. 
+        /// Specifies the number of days for which automatic DB snapshots are retained.
         /// </para>
         /// </summary>
         public int BackupRetentionPeriod
@@ -125,7 +147,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CharacterSetName. 
         /// <para>
         /// If present, specifies the name of the character set that this cluster is associated
-        /// with. 
+        /// with.
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -145,7 +167,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Contains the name of the initial database of this DB cluster that was provided at
         /// create time, if one was specified when the DB cluster was created. This same name
-        /// is returned for the life of the DB cluster. 
+        /// is returned for the life of the DB cluster.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -164,7 +186,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// Contains a user-supplied DB cluster identifier. This identifier is the unique key
-        /// that identifies a DB cluster. 
+        /// that identifies a DB cluster.
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -200,7 +222,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterOptionGroupMemberships. 
         /// <para>
-        ///  Provides the list of option group memberships for this DB cluster. 
+        /// Provides the list of option group memberships for this DB cluster.
         /// </para>
         /// </summary>
         public List<DBClusterOptionGroupStatus> DBClusterOptionGroupMemberships
@@ -238,7 +260,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The region-unique, immutable identifier for the DB cluster. This identifier is found
         /// in AWS CloudTrail log entries whenever the KMS key for the DB cluster is accessed.
-        /// 
         /// </para>
         /// </summary>
         public string DbClusterResourceId
@@ -257,7 +278,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBSubnetGroup. 
         /// <para>
         /// Specifies information on the subnet group associated with the DB cluster, including
-        /// the name, description, and subnets in the subnet group. 
+        /// the name, description, and subnets in the subnet group.
         /// </para>
         /// </summary>
         public string DBSubnetGroup
@@ -276,7 +297,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EarliestRestorableTime. 
         /// <para>
         /// Specifies the earliest time to which a database can be restored with point-in-time
-        /// restore. 
+        /// restore.
         /// </para>
         /// </summary>
         public DateTime EarliestRestorableTime
@@ -294,7 +315,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// Specifies the connection endpoint for the primary instance of the DB cluster. 
+        /// Specifies the connection endpoint for the primary instance of the DB cluster.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -312,7 +333,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Provides the name of the database engine to be used for this DB cluster. 
+        /// Provides the name of the database engine to be used for this DB cluster.
         /// </para>
         /// </summary>
         public string Engine
@@ -330,7 +351,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// Indicates the database engine version. 
+        /// Indicates the database engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -386,7 +407,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property LatestRestorableTime. 
         /// <para>
         /// Specifies the latest time to which a database can be restored with point-in-time restore.
-        /// 
         /// </para>
         /// </summary>
         public DateTime LatestRestorableTime
@@ -404,7 +424,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// Contains the master username for the DB cluster. 
+        /// Contains the master username for the DB cluster.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -422,7 +442,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PercentProgress. 
         /// <para>
-        /// Specifies the progress of the operation as a percentage. 
+        /// Specifies the progress of the operation as a percentage.
         /// </para>
         /// </summary>
         public string PercentProgress
@@ -440,7 +460,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Specifies the port that the database engine is listening on. 
+        /// Specifies the port that the database engine is listening on.
         /// </para>
         /// </summary>
         public int Port
@@ -478,7 +498,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
         /// Specifies the weekly time range during which system maintenance can occur, in Universal
-        /// Coordinated Time (UTC). 
+        /// Coordinated Time (UTC).
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -496,7 +516,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the current state of this DB cluster. 
+        /// Specifies the current state of this DB cluster.
         /// </para>
         /// </summary>
         public string Status
@@ -532,7 +552,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroups. 
         /// <para>
-        ///  Provides a list of VPC security groups that the DB cluster belongs to. 
+        /// Provides a list of VPC security groups that the DB cluster belongs to.
         /// </para>
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups

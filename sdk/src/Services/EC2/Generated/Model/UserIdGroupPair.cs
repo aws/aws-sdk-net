@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The name of the security group. In a request, use this parameter for a security group
         /// in EC2-Classic or a default VPC only. For a security group in a nondefault VPC, use
-        /// <code>GroupId</code>.
+        /// the security group ID.
         /// </para>
         /// </summary>
         public string GroupName
@@ -98,7 +98,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The ID of an AWS account.
+        /// The ID of an AWS account. For a referenced security group in another VPC, the account
+        /// ID of the referenced security group is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// [EC2-Classic] Required when adding or removing rules that reference a security group
+        /// in another AWS account.
         /// </para>
         /// </summary>
         public string UserId

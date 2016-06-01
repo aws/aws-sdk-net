@@ -112,6 +112,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 return new DBSnapshotAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
+            {
+                return new InvalidDBClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
             {
                 return new InvalidDBInstanceStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

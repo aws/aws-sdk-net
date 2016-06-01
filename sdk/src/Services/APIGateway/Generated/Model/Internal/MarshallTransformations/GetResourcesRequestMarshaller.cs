@@ -58,7 +58,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/restapis/{restapi_id}/resources";
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", publicRequest.IsSetRestApiId() ? StringUtils.FromString(publicRequest.RestApiId) : string.Empty);
+            if (!publicRequest.IsSetRestApiId())
+                throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
+            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));

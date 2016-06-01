@@ -45,8 +45,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates CreateDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbSnapshotIdentifier"> The identifier for the DB snapshot.  Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <code>my-snapshot-id</code></param>
-        /// <param name="dbInstanceIdentifier"> The DB instance identifier. This is the unique key that identifies a DB instance.  Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul></param>
+        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot. Constraints: <ul> <li> Cannot be null, empty, or blank </li> <li> Must contain from 1 to 255 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
+        /// <param name="dbInstanceIdentifier">The DB instance identifier. This is the unique key that identifies a DB instance. Constraints: <ul> <li> Must contain from 1 to 63 alphanumeric characters or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
         public CreateDBSnapshotRequest(string dbSnapshotIdentifier, string dbInstanceIdentifier)
         {
             _dbSnapshotIdentifier = dbSnapshotIdentifier;
@@ -56,16 +56,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  The DB instance identifier. This is the unique key that identifies a DB instance.
-        /// 
+        /// The DB instance identifier. This is the unique key that identifies a DB instance.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-        /// character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBInstanceIdentifier
         {
@@ -82,17 +91,31 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        ///  The identifier for the DB snapshot. 
+        /// The identifier for the DB snapshot.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-        /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-        /// with a hyphen or contain two consecutive hyphens</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-snapshot-id</code>
+        /// Cannot be null, empty, or blank
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain from 1 to 255 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-snapshot-id</code> 
         /// </para>
         /// </summary>
         public string DBSnapshotIdentifier

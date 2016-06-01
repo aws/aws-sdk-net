@@ -136,7 +136,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagFilters. 
         /// <para>
-        /// The Amazon EC2 tags to filter on.
+        /// The Amazon EC2 tags on which to filter.
         /// </para>
         /// </summary>
         public List<EC2TagFilter> Ec2TagFilters
@@ -154,7 +154,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property OnPremisesInstanceTagFilters. 
         /// <para>
-        /// The on-premises instance tags to filter on.
+        /// The on-premises instance tags on which to filter.
         /// </para>
         /// </summary>
         public List<TagFilter> OnPremisesInstanceTagFilters
@@ -190,8 +190,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetRevision. 
         /// <para>
-        /// Information about the deployment group's target revision, including the revision's
-        /// type and its location.
+        /// Information about the deployment group's target revision, including type and location.
         /// </para>
         /// </summary>
         public RevisionLocation TargetRevision

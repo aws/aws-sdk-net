@@ -42,8 +42,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _platformVersion;
 
         /// <summary>
-        /// Gets and sets the property AgentVersion. The version of the SSM agent running on your
-        /// instance.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the SSM agent running on your instance. 
+        /// </para>
         /// </summary>
         public string AgentVersion
         {
@@ -58,7 +60,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId. The instance ID.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID. 
+        /// </para>
         /// </summary>
         public string InstanceId
         {
@@ -73,8 +78,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsLatestVersion. Indicates whether latest version of the
-        /// SSM agent is running on your instance.
+        /// Gets and sets the property IsLatestVersion. 
+        /// <para>
+        /// Indicates whether latest version of the SSM agent is running on your instance. 
+        /// </para>
         /// </summary>
         public bool IsLatestVersion
         {
@@ -89,8 +96,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastPingDateTime. The date and time when agent last pinged
-        /// SSM service.
+        /// Gets and sets the property LastPingDateTime. 
+        /// <para>
+        /// The date and time when agent last pinged SSM service. 
+        /// </para>
         /// </summary>
         public DateTime LastPingDateTime
         {
@@ -105,7 +114,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PingStatus. Connection status of the SSM agent.
+        /// Gets and sets the property PingStatus. 
+        /// <para>
+        /// Connection status of the SSM agent. 
+        /// </para>
         /// </summary>
         public PingStatus PingStatus
         {
@@ -120,8 +132,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlatformName. The name of the operating system platform
-        /// running on your instance.
+        /// Gets and sets the property PlatformName. 
+        /// <para>
+        /// The name of the operating system platform running on your instance. 
+        /// </para>
         /// </summary>
         public string PlatformName
         {
@@ -136,7 +150,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlatformType. The operating system platform type.
+        /// Gets and sets the property PlatformType. 
+        /// <para>
+        /// The operating system platform type. 
+        /// </para>
         /// </summary>
         public PlatformType PlatformType
         {
@@ -151,8 +168,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlatformVersion. The version of the OS platform running
-        /// on your instance.
+        /// Gets and sets the property PlatformVersion. 
+        /// <para>
+        /// The version of the OS platform running on your instance. 
+        /// </para>
         /// </summary>
         public string PlatformVersion
         {

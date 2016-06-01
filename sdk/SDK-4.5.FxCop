@@ -23,8 +23,11 @@
   <Targets>
     <AssemblyReferenceDirectories>
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/awsmarketplacecommerceanalytics/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/awsmarketplacemetering/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/awssupport/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/certificatemanager/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudformation/bin/Release/net45/</Directory>
@@ -40,8 +43,10 @@
       <Directory>$(ProjectDir)/src/Services/codedeploy/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/codepipeline/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitoidentity/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/cognitoidentityprovider/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/devicefarm/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net45/</Directory>
@@ -89,8 +94,11 @@
       <Directory>$(ProjectDir)/src/Core/bin/Release/net45/</Directory>
     </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSMarketplaceMetering.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSSupport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CertificateManager.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudFormation.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -106,8 +114,10 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeDeploy.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodePipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoIdentity.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoIdentityProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DeviceFarm.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />

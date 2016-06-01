@@ -82,6 +82,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthorizerUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("authType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

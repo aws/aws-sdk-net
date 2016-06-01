@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property OpenIDConnectProviderArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was created.
+        /// The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created.
         /// For more information, see <a>OpenIDConnectProviderListEntry</a>. 
         /// </para>
         /// </summary>

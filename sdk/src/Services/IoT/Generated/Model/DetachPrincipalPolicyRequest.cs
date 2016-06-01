@@ -57,12 +57,12 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The principal
+        /// The principal.
         /// </para>
         ///  
         /// <para>
         /// If the principal is a certificate, specify the certificate ARN. If the principal is
-        /// a Cognito identity specify the identity ID.
+        /// an Amazon Cognito identity, specify the identity ID.
         /// </para>
         /// </summary>
         public string Principal

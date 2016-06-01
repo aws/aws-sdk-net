@@ -60,8 +60,12 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/lock-policy/{lockId}";
             uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{lockId}", publicRequest.IsSetLockId() ? StringUtils.FromString(publicRequest.LockId) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{vaultName}", publicRequest.IsSetVaultName() ? StringUtils.FromString(publicRequest.VaultName) : string.Empty);
+            if (!publicRequest.IsSetLockId())
+                throw new AmazonGlacierException("Request object does not have required field LockId set");
+            uriResourcePath = uriResourcePath.Replace("{lockId}", StringUtils.FromString(publicRequest.LockId));
+            if (!publicRequest.IsSetVaultName())
+                throw new AmazonGlacierException("Request object does not have required field VaultName set");
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
             request.ResourcePath = uriResourcePath;
 
             return request;

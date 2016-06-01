@@ -1,6 +1,15 @@
 {
-  "noArgOverloads": [
-    "ListPresets",
-    "ListPipelines"
-  ]
+    "runtimePipelineOverride": {
+        "overrides": [
+            {
+                "operation": "addBefore",
+                "newType": "Amazon.ElasticTranscoder.Internal.AmazonElasticTranscoderPreMarshallHandler",
+                "targetType": "Amazon.Runtime.Internal.Marshaller"
+            }
+        ]
+    },
+    "noArgOverloads": [
+        "ListPresets",
+        "ListPipelines"
+    ]
 }

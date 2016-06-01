@@ -42,7 +42,11 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs AWS
-        /// API calls. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+        /// API calls. The format of a trail ARN is:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </summary>
         public string Name

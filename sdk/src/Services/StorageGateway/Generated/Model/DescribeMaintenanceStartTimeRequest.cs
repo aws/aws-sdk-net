@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceStartTime operation.
-    /// This operation returns your gateway's weekly maintenance start time including the
-    /// day and time of the week. Note that values are in terms of the gateway's time zone.
+    /// Returns your gateway's weekly maintenance start time including the day and time of
+    /// the week. Note that values are in terms of the gateway's time zone.
     /// </summary>
     public partial class DescribeMaintenanceStartTimeRequest : AmazonStorageGatewayRequest
     {

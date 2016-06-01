@@ -62,7 +62,7 @@ namespace Amazon.SimpleEmail.Model
         /// The encoding to use for the email within the Amazon SNS notification. UTF-8 is easier
         /// to use, but may not preserve all special characters when a message was encoded with
         /// a different encoding format. Base64 preserves all special characters. The default
-        /// value is Base64.
+        /// value is UTF-8.
         /// </para>
         /// </summary>
         public SNSActionEncoding Encoding

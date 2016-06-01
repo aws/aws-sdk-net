@@ -49,7 +49,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the of the cluster that hosts the task.
+        /// The Amazon Resource Name (ARN) of the cluster that hosts the task.
         /// </para>
         /// </summary>
         public string ClusterArn
@@ -270,7 +270,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskDefinitionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the of the task definition that creates the task.
+        /// The Amazon Resource Name (ARN) of the task definition that creates the task.
         /// </para>
         /// </summary>
         public string TaskDefinitionArn

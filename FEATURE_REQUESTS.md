@@ -79,13 +79,6 @@ is a generated partial class.
 
 See [GitHub Issue #146](https://github.com/aws/aws-sdk-net/issues/146)
 
-#### TransferUtility: Headers in ```UploadDirectory``` should behave like ```Upload```
-
-Support setting of arbitrary response headers for S# objects uploaded using the ```UploadDirectory```
-feature of the ```TransferUtility``` class.
-
-See [GitHub Issue #109](https://github.com/aws/aws-sdk-net/issues/109)
-
 #### Support Mono as a first-class SDK platform
 
 See [GitHub Issue #100](https://github.com/aws/aws-sdk-net/issues/100)
@@ -106,7 +99,7 @@ See [Github Issue #296](https://github.com/aws/aws-sdk-net/issues/296)
 
 #### Unity - Webgl Support
 
-See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/50)
+See [Github Issues](https://github.com/aws/aws-sdk-net/issues/326)
 
 #### Unity - Windows 8 & Win Store support
 

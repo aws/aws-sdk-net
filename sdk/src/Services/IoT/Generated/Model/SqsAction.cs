@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes an action to publish data to an SQS queue.
+    /// Describes an action to publish data to an Amazon SQS queue.
     /// </summary>
     public partial class SqsAction
     {

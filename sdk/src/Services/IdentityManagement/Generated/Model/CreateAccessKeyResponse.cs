@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AccessKey. 
         /// <para>
-        /// Information about the access key.
+        /// A structure with details about the access key.
         /// </para>
         /// </summary>
         public AccessKey AccessKey

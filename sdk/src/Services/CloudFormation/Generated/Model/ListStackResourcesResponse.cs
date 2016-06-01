@@ -38,8 +38,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the output exceeds 1 MB in size, a string that identifies the next page of stack
-        /// resources. If no additional page exists, this value is null.
+        /// If the output exceeds 1 MB, a string that identifies the next page of stack resources.
+        /// If no additional page exists, this value is null.
         /// </para>
         /// </summary>
         public string NextToken

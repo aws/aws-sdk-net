@@ -64,12 +64,11 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LogTail. 
         /// <para>
-        /// The last portion of the associated diagnostic log.
+        /// The last portion of the diagnostic log.
         /// </para>
         ///  
         /// <para>
-        /// If available, AWS CodeDeploy returns up to the last 4 KB of the associated diagnostic
-        /// log.
+        /// If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.
         /// </para>
         /// </summary>
         public string LogTail

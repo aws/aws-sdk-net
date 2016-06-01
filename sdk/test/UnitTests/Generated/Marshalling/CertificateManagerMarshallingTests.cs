@@ -43,6 +43,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CertificateManager")]
+        public void AddTagsToCertificateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<AddTagsToCertificateRequest>();
+            var marshaller = new AddTagsToCertificateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<AddTagsToCertificateRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CertificateManager")]
         public void DeleteCertificateMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteCertificateRequest>();
@@ -139,6 +155,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = ListCertificatesResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListCertificatesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CertificateManager")]
+        public void ListTagsForCertificateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTagsForCertificateRequest>();
+            var marshaller = new ListTagsForCertificateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListTagsForCertificateRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsForCertificate").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListTagsForCertificateResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListTagsForCertificateResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CertificateManager")]
+        public void RemoveTagsFromCertificateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RemoveTagsFromCertificateRequest>();
+            var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RemoveTagsFromCertificateRequest>(request,jsonRequest);
+
         }
 
         

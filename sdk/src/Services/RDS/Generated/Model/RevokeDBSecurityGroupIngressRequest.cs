@@ -49,7 +49,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RevokeDBSecurityGroupIngressRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbSecurityGroupName"> The name of the DB security group to revoke ingress from. </param>
+        /// <param name="dbSecurityGroupName">The name of the DB security group to revoke ingress from.</param>
         public RevokeDBSecurityGroupIngressRequest(string dbSecurityGroupName)
         {
             _dbSecurityGroupName = dbSecurityGroupName;
@@ -78,7 +78,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroupName. 
         /// <para>
-        ///  The name of the DB security group to revoke ingress from. 
+        /// The name of the DB security group to revoke ingress from.
         /// </para>
         /// </summary>
         public string DBSecurityGroupName

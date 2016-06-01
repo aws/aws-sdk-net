@@ -29,19 +29,19 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachRolePolicy operation.
-    /// Attaches the specified managed policy to the specified role.
+    /// Attaches the specified managed policy to the specified IAM role.
     /// 
     ///  
     /// <para>
-    /// When you attach a managed policy to a role, the managed policy is used as the role's
-    /// access (permissions) policy. You cannot use a managed policy as the role's trust policy.
-    /// The role's trust policy is created at the same time as the role, using <a>CreateRole</a>.
-    /// You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>. 
+    /// When you attach a managed policy to a role, the managed policy becomes part of the
+    /// role's permission (access) policy. You cannot use a managed policy as the role's trust
+    /// policy. The role's trust policy is created at the same time as the role, using <a>CreateRole</a>.
+    /// You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>.
     /// </para>
     ///  
     /// <para>
-    /// Use this API to attach a managed policy to a role. To embed an inline policy in a
-    /// role, use <a>PutRolePolicy</a>. For more information about policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// Use this API to attach a <i>managed</i> policy to a role. To embed an inline policy
+    /// in a role, use <a>PutRolePolicy</a>. For more information about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
     /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>
@@ -51,7 +51,15 @@ namespace Amazon.IdentityManagement.Model
         private string _roleName;
 
         /// <summary>
-        /// Gets and sets the property PolicyArn.
+        /// Gets and sets the property PolicyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM policy you want to attach.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// </para>
         /// </summary>
         public string PolicyArn
         {
@@ -69,6 +77,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property RoleName. 
         /// <para>
         /// The name (friendly name, not ARN) of the role to attach the policy to.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters consisting of upper and lowercase alphanumeric characters
+        /// with no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleName

@@ -81,6 +81,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.IntegrationResponses = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("passthroughBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PassthroughBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("requestParameters", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -123,6 +129,10 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+            {
+                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
             {

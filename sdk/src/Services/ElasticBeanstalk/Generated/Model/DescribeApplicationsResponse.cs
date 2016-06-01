@@ -37,7 +37,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        ///  This parameter contains a list of <a>ApplicationDescription</a>. 
+        /// This parameter contains a list of <a>ApplicationDescription</a>.
         /// </para>
         /// </summary>
         public List<ApplicationDescription> Applications

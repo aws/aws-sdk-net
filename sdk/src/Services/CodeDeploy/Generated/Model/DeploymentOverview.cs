@@ -41,7 +41,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// The number of instances that have failed in the deployment.
+        /// The number of instances in the deployment in a failed state.
         /// </para>
         /// </summary>
         public long Failed
@@ -59,7 +59,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InProgress. 
         /// <para>
-        /// The number of instances that are in progress in the deployment.
+        /// The number of instances in which the deployment is in progress.
         /// </para>
         /// </summary>
         public long InProgress
@@ -77,7 +77,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Pending. 
         /// <para>
-        /// The number of instances that are pending in the deployment.
+        /// The number of instances in the deployment in a pending state.
         /// </para>
         /// </summary>
         public long Pending
@@ -95,7 +95,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Skipped. 
         /// <para>
-        /// The number of instances that have been skipped in the deployment.
+        /// The number of instances in the deployment in a skipped state.
         /// </para>
         /// </summary>
         public long Skipped
@@ -113,7 +113,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Succeeded. 
         /// <para>
-        /// The number of instances that have succeeded in the deployment.
+        /// The number of instances in the deployment to which revisions have been successfully
+        /// deployed.
         /// </para>
         /// </summary>
         public long Succeeded

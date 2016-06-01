@@ -43,8 +43,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an existing AWS CodeDeploy application associated with the applicable
-        /// IAM user or AWS account.
+        /// The name of an AWS CodeDeploy application associated with the applicable IAM user
+        /// or AWS account.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -62,8 +62,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentConfigName. 
         /// <para>
-        /// The name of an existing deployment configuration associated with the applicable IAM
-        /// user or AWS account.
+        /// The name of a deployment configuration associated with the applicable IAM user or
+        /// AWS account.
         /// </para>
         ///  
         /// <para>
@@ -87,7 +87,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentGroupName. 
         /// <para>
-        /// The deployment group's name.
+        /// The name of the deployment group.
         /// </para>
         /// </summary>
         public string DeploymentGroupName
@@ -124,15 +124,15 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property IgnoreApplicationStopFailures. 
         /// <para>
         /// If set to true, then if the deployment causes the ApplicationStop deployment lifecycle
-        /// event to fail to a specific instance, the deployment will not be considered to have
-        /// failed to that instance at that point and will continue on to the BeforeInstall deployment
+        /// event to an instance to fail, the deployment to that instance will not be considered
+        /// to have failed at that point and will continue on to the BeforeInstall deployment
         /// lifecycle event.
         /// </para>
         ///  
         /// <para>
         /// If set to false or not specified, then if the deployment causes the ApplicationStop
-        /// deployment lifecycle event to fail to a specific instance, the deployment will stop
-        /// to that instance, and the deployment to that instance will be considered to have failed.
+        /// deployment lifecycle event to fail to an instance, the deployment to that instance
+        /// will stop, and the deployment to that instance will be considered to have failed.
         /// </para>
         /// </summary>
         public bool IgnoreApplicationStopFailures
@@ -150,7 +150,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        /// The type of revision to deploy, along with information about the revision's location.
+        /// The type and location of the revision to deploy.
         /// </para>
         /// </summary>
         public RevisionLocation Revision

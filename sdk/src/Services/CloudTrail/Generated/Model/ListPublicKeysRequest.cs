@@ -33,10 +33,14 @@ namespace Amazon.CloudTrail.Model
     /// the specified time range. The public key is needed to validate digest files that were
     /// signed with its corresponding private key.
     /// 
-    ///  <note>CloudTrail uses different private/public key pairs per region. Each digest
-    /// file is signed with a private key unique to its region. Therefore, when you validate
-    /// a digest file from a particular region, you must look in the same region for its corresponding
-    /// public key.</note>
+    ///  <note> 
+    /// <para>
+    /// CloudTrail uses different private/public key pairs per region. Each digest file is
+    /// signed with a private key unique to its region. Therefore, when you validate a digest
+    /// file from a particular region, you must look in the same region for its corresponding
+    /// public key.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListPublicKeysRequest : AmazonCloudTrailRequest
     {
@@ -48,7 +52,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// Optionally specifies, in UTC, the end of the time range to look up public keys for
-        /// CloudTrail digest files. If not specified, the current time is used. 
+        /// CloudTrail digest files. If not specified, the current time is used.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -86,7 +90,7 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// Optionally specifies, in UTC, the start of the time range to look up public keys for
         /// CloudTrail digest files. If not specified, the current time is used, and the current
-        /// public key is returned. 
+        /// public key is returned.
         /// </para>
         /// </summary>
         public DateTime StartTime

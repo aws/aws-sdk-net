@@ -102,7 +102,9 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS
-        /// volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).
+        /// volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned
+        /// IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
+        /// HDD, or <code>standard</code> for Magnetic.
         /// </para>
         ///  </li> <li> 
         /// <para>

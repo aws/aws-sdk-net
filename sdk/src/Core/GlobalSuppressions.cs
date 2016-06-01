@@ -138,6 +138,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.Runtime.Internal.Settings.SettingsCollection+ObjectSettings")]
 [module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.Runtime.FallbackCredentialsFactory+CredentialsGenerator")]
 [module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.Runtime.RefreshingAWSCredentials+CredentialsRefreshState")]
+[module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.Runtime.StoredProfileFederatedCredentials+RequestUserCredential")]
 
 // Normalize strings to uppercase, breaking change
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Auth.AccessControlPolicy.ConditionFactory.#NewCondition(System.String,System.Boolean)")]
@@ -182,6 +183,9 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.Internal.Util.RequestMetrics.#GetErrors()")]
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.IHttpRequest`1.#GetRequestContentAsync()")]
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.IClientConfig.#GetWebProxy()")]
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Util.SAMLRoleProfile.#GetCurrentSession()")]
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.FallbackRegionFactory.#GetRegionEndpoint()")]
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.AWSRegion.#GetRegionEndpoint()")]
 
 // Use properties, huge change
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.Internal.Transform.ResponseMetadataUnmarshaller.#GetInstance()")]
@@ -208,6 +212,8 @@ using System.Diagnostics.CodeAnalysis;
 // Unused parameters
 [module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.Runtime.AmazonWebServiceClient.#LogResponse(Amazon.Runtime.Internal.Util.RequestMetrics,Amazon.Runtime.Internal.IRequest,System.Net.HttpStatusCode)", MessageId = "request")]
 [module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.Runtime.ConstantClass.#ToString(System.IFormatProvider)", MessageId = "provider")]
+[module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.Runtime.Internal.Transform.HttpWebRequestResponseData.#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)", MessageId = "context")]
+[module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.Runtime.Internal.Transform.HttpWebRequestResponseData.#.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)", MessageId = "context")]
 
 // Mark members as static, breaking changes
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#SignRequest(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.IClientConfig,Amazon.Runtime.Internal.Util.RequestMetrics,System.String,System.String)")]
@@ -228,6 +234,7 @@ using System.Diagnostics.CodeAnalysis;
 
 // Initialize reference type static fields inline
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#.cctor()")]
+[module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.FallbackRegionFactory.#.cctor()")]
 
 // Abstract types should not have constructors
 [module: SuppressMessage("Microsoft.Design", "CA1012:AbstractTypesShouldNotHaveConstructors", Scope = "type", Target = "Amazon.Runtime.ClientConfig")]
@@ -259,6 +266,9 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.AmazonClientException")]
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.Internal.Auth.SignatureException")]
 [module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.Internal.HttpErrorResponseException")]
+[module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.CredentialRequestCallbackRequiredException")]
+[module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.Runtime.FederatedAuthenticationFailureException")]
+[module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope="type", Target="Amazon.Runtime.FederatedAuthenticationCancelledException")]
 
 // Use generic event handler instances, breaking change
 [module: SuppressMessage("Microsoft.Design", "CA1003:UseGenericEventHandlerInstances", Scope = "type", Target = "Amazon.Runtime.RequestEventHandler")]

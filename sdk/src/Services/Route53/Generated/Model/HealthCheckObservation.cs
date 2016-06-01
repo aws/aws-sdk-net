@@ -33,13 +33,33 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class HealthCheckObservation
     {
+        private HealthCheckRegion _region;
         private string _ipAddress;
         private StatusReport _statusReport;
 
         /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that performed
+        /// this health check.
+        /// </para>
+        /// </summary>
+        public HealthCheckRegion Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IPAddress. 
         /// <para>
-        /// The IP address of the Amazon Route 53 health checker that performed the health check.
+        /// The IP address of the Amazon Route 53 health checker that performed this health check.
         /// </para>
         /// </summary>
         public string IPAddress

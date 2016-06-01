@@ -10,6 +10,7 @@ using AWSSDK.Tests.Framework;
 using System.IO;
 using UnityEngine;
 using Amazon.Runtime.Internal;
+using Amazon.Util;
 
 namespace AWSSDK.IntegrationTests.S3
 {
@@ -19,6 +20,7 @@ namespace AWSSDK.IntegrationTests.S3
     {
         private static readonly string FileNamePrefix = "UnityTestFile";
         private static readonly string FileNameFormat = FileNamePrefix + "{0}.txt";
+        private static readonly string GzipFileNameFormat = FileNamePrefix + "{0}.gz";
         private static string BucketName = null;
         private static string VersionedBucketName = null;
 
@@ -48,6 +50,22 @@ namespace AWSSDK.IntegrationTests.S3
         [Test]
         [Category("WWW")]
         public void SimplePostTest()
+        {
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                Client.Config.SignatureVersion = "4";
+                SimplePostTestInner();
+                Client.Config.SignatureVersion = "2";
+                SimplePostTestInner();
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+        }
+
+        private void SimplePostTestInner()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
             Exception responseException = new Exception();
@@ -83,6 +101,116 @@ namespace AWSSDK.IntegrationTests.S3
             s3Objects = S3TestUtils.ListObjectsHelper(Client, BucketName);
             Assert.IsNotNull(s3Objects);
             Assert.AreEqual(count, s3Objects.Count);
+        }
+
+        [Test]
+        [Category("WWW")]
+        public void HeadersPostTest()
+        {
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                Client.Config.SignatureVersion = "4";
+                HeadersPostTestInner();
+                Client.Config.SignatureVersion = "2";
+                HeadersPostTestInner();
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+        }
+
+        private void HeadersPostTestInner()
+        {
+            var contentType = "image/jpeg";
+            var cacheControl = "private";
+            var contentEncoding = "deflate";
+            var contentDisposition = "attachment; filename=f.gz";
+            var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
+            var expires = DateTime.Now.AddDays(1);
+
+            S3TestUtils.PostObjectHelper(Client, BucketName, key, delegate (PostObjectRequest request)
+            {
+                request.Headers.ContentType = contentType;
+                request.Headers.CacheControl = cacheControl;
+                request.Headers.ContentEncoding = contentEncoding;
+                request.Headers.ContentDisposition = contentDisposition;
+                request.Headers.Expires = expires;
+            });
+            var gotten = S3TestUtils.GetObjectHelper(Client, BucketName, key);
+            Utils.AssertTrue(string.Compare(gotten.Headers.ContentType, contentType, true) == 0);
+            Utils.AssertTrue(string.Compare(gotten.Headers.CacheControl, cacheControl, true) == 0);
+            Utils.AssertTrue(string.Compare(gotten.Headers.ContentDisposition, contentDisposition, true) == 0);
+            Utils.AssertTrue(string.Compare(gotten.Headers.ContentEncoding, contentEncoding, true) == 0);
+            // strip precision before comparing dates
+            Utils.AssertTrue(gotten.Expires.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat) == expires.ToString(Amazon.Util.AWSSDKUtils.ISO8601BasicDateTimeFormat));
+        }
+
+        [Test]
+        [Category("WWW")]
+        public void GzipPostTest()
+        {
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                Client.Config.SignatureVersion = "4";
+                GzipPostTestInner();
+                Client.Config.SignatureVersion = "2";
+                GzipPostTestInner();
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+        }
+
+        private void GzipPostTestInner()
+        {
+            var contentType = "application/x-gzip";
+            var contentEncoding = "gzip";
+            var key = string.Format(GzipFileNameFormat, DateTime.Now.Ticks);
+
+            AutoResetEvent ars = new AutoResetEvent(false);
+
+            Exception responseException = new Exception();
+            string fileName = string.Format(GzipFileNameFormat, DateTime.Now.Ticks);
+            TextAsset gzippedFile = null;
+            byte[] buffer = null;
+            UnityRequestQueue.Instance.ExecuteOnMainThread(() =>
+            {
+                gzippedFile = Resources.Load("gzipFile") as TextAsset;
+                buffer = gzippedFile.bytes;
+                ars.Set();
+            });
+
+            ars.WaitOne();
+
+            var memoryStream = new MemoryStream(buffer);
+
+            var request = new PostObjectRequest()
+            {
+                Key = fileName,
+                Bucket = BucketName,
+                InputStream = memoryStream,
+                CannedACL = S3CannedACL.Private
+            };
+            request.Headers.ContentEncoding = contentEncoding;
+            request.Headers.ContentType = contentType;
+
+            Client.PostObjectAsync(request, (response) =>
+            {
+                responseException = response.Exception;
+                ars.Set();
+            }, new AsyncOptions { ExecuteCallbackOnMainThread = true });
+
+            ars.WaitOne();
+            Assert.IsNull(responseException);
+
+            var gotten = S3TestUtils.GetObjectHelper(Client, BucketName, fileName);
+            Utils.AssertTrue(string.Compare(gotten.Headers.ContentType, contentType, true) == 0, string.Format("content types: {0} != {1}", gotten.Headers.ContentType, contentType));
+            // Unity removes the Content-Encoding header after unzipping :(.
+            //Utils.AssertTrue(string.Compare(gotten.Headers.ContentEncoding, contentEncoding, true) == 0);
         }
 
         [Test]
@@ -124,6 +252,22 @@ namespace AWSSDK.IntegrationTests.S3
         [Test]
         [Category("WWW")]
         public void TestPostCannedACL()
+        {
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                Client.Config.SignatureVersion = "4";
+                TestPostCannedACLInner();
+                Client.Config.SignatureVersion = "2";
+                TestPostCannedACLInner();
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+        }
+
+        public void TestPostCannedACLInner()
         {
             var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
 
@@ -176,7 +320,7 @@ namespace AWSSDK.IntegrationTests.S3
         }
 
         [Test]
-        [Category("WWW")]      
+        [Category("WWW")]
         public void SimplePathPostObjectTest()
         {
             AutoResetEvent ars = new AutoResetEvent(false);
@@ -199,6 +343,52 @@ namespace AWSSDK.IntegrationTests.S3
             Assert.IsNull(responseException);
         }
 
+
+
+
+        [Test]
+        [Category("WWW")]
+        public void PostObjectKMSTest()
+        {
+
+            string originalSigV = Client.Config.SignatureVersion;
+            try
+            {
+                // KMS only allowed for sigv4
+                Client.Config.SignatureVersion = "4";
+
+                var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
+                S3TestUtils.PostObjectHelper(Client, BucketName, key, (request) =>
+                {
+                    request.Headers[HeaderKeys.XAmzServerSideEncryptionHeader] = ServerSideEncryptionMethod.AWSKMS;
+                });
+
+                AutoResetEvent ars = new AutoResetEvent(false);
+                Exception responseException = new Exception();
+                string objectContent = null;
+                Client.GetObjectAsync(BucketName, key, (response) =>
+                {
+                    responseException = response.Exception;
+                    if (responseException == null)
+                    {
+                        using (var reader = new StreamReader(response.Response.ResponseStream))
+                        {
+                            objectContent = reader.ReadToEnd();
+                        }
+                    }
+                    ars.Set();
+                });
+
+                ars.WaitOne();
+                Assert.IsNull(responseException);
+                Utils.AssertTrue(S3TestUtils.TestContent == objectContent, string.Format("{0} != {1}", S3TestUtils.TestContent, objectContent));
+            }
+            finally
+            {
+                Client.Config.SignatureVersion = originalSigV;
+            }
+
+        }
 
         [Test]
         [Category("WWW")]

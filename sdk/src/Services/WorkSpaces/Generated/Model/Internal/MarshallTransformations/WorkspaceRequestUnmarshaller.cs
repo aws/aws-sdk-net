@@ -82,6 +82,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.RootVolumeEncryptionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

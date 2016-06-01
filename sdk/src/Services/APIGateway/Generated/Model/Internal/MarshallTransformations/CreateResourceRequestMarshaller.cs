@@ -59,8 +59,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/restapis/{restapi_id}/resources/{parent_id}";
-            uriResourcePath = uriResourcePath.Replace("{parent_id}", publicRequest.IsSetParentId() ? StringUtils.FromString(publicRequest.ParentId) : string.Empty);
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", publicRequest.IsSetRestApiId() ? StringUtils.FromString(publicRequest.RestApiId) : string.Empty);
+            if (!publicRequest.IsSetParentId())
+                throw new AmazonAPIGatewayException("Request object does not have required field ParentId set");
+            uriResourcePath = uriResourcePath.Replace("{parent_id}", StringUtils.FromString(publicRequest.ParentId));
+            if (!publicRequest.IsSetRestApiId())
+                throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
+            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
