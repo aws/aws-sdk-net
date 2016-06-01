@@ -98,7 +98,7 @@ namespace Amazon.Runtime
         {
             get
             {
-#if BCL
+#if BCL || CORECLR
                 if (probeForRegionEndpoint)
                 {
                     RegionEndpoint = GetDefaultRegionEndpoint();
