@@ -51,11 +51,13 @@ namespace ServiceClientGenerator.Generators.NuGet
     <tags>AWS Amazon cloud aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+      <group targetFramework=""net35"">
+      </group>
       <group targetFramework=""net45"">
       </group>
 ");
             
-            #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -70,7 +72,7 @@ namespace ServiceClientGenerator.Generators.NuGet
       </group>
 ");
             
-            #line 32 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 
 	}
 
@@ -105,7 +107,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "t45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" " +
                     "/>\r\n\r\n");
             
-            #line 69 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 71 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -136,7 +138,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.xml\" target=\"lib\\wp8\" />\r\n    <fi" +
                     "le src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r\n\r\n");
             
-            #line 99 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 101 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	}
 

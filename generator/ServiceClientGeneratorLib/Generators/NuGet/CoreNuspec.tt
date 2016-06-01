@@ -18,6 +18,8 @@
     <tags>AWS Amazon cloud aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+      <group targetFramework="net35">
+      </group>
       <group targetFramework="net45">
       </group>
 <#	
