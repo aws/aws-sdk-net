@@ -69,6 +69,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var response = Client.ListObjectsV2(new ListObjectsV2Request
             {
                 BucketName = bucketName,
+                StartAfter = keys[0],
+                FetchOwner = true
+            });
+            Assert.IsFalse(response.IsTruncated);
+            Assert.AreEqual(keys.Count - 1, response.KeyCount);
+            Assert.AreEqual(keys.Count - 1, response.S3Objects.Count);
+            Assert.IsNull(response.ContinuationToken);
+            Assert.IsNotNull(response.S3Objects[0].Owner);
+
+            response = Client.ListObjectsV2(new ListObjectsV2Request
+            {
+                BucketName = bucketName,
                 MaxKeys = 1,
                 StartAfter = keys[0],
                 FetchOwner = true

@@ -411,13 +411,13 @@
                 "Core" : "3.2.4.0"
             }
         },
-        "Application Discovery Service"   : {
+        "ApplicationDiscoveryService"   : {
             "Version" : "3.2.4.0",
             "Dependencies" : {
                 "Core" : "3.2.4.0"
             }
         },
-        "Application Auto Scaling"        : {
+        "ApplicationAutoScaling"        : {
             "Version" : "3.2.4.0",
             "Dependencies" : {
                 "Core" : "3.2.4.0"

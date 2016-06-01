@@ -51,7 +51,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listObjectsRequest.IsSetFetchOwner())
                 request.Parameters.Add("fetch-owner", listObjectsRequest.FetchOwner.ToString().ToLowerInvariant());
             if (listObjectsRequest.IsSetStartAfter())
-                request.Parameters.Add("start-key", S3Transforms.ToStringValue(listObjectsRequest.StartAfter));
+                request.Parameters.Add("start-after", S3Transforms.ToStringValue(listObjectsRequest.StartAfter));
 
             request.Parameters.Add("list-type", "2");
 
