@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ApplicationDiscoveryService</id>
     <title>AWSSDK - AWS Application Discovery Service</title>
-    <version>3.1.0.0</version> 
+    <version>3.1.1.1</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.</description>
     <language>en-US</language>
