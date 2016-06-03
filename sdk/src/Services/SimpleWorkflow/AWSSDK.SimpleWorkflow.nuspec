@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SimpleWorkflow</id>
     <title>AWSSDK - Amazon Simple Workflow Service</title>
-    <version>3.1.1.5</version> 
+    <version>3.1.1.6</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon SWF helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state tracker and task coordinator in the Cloud.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

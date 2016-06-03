@@ -1,3 +1,21 @@
+### 3.1.74.0 (2016-06-03 21:43 UTC)
+* ApplicationAutoScaling (3.1.0.2)
+	* Updated incorrect documentation links.
+* EC2 (3.1.16.0)
+	* The new 'type' parameter in the RequestSpotFleet API indicates whether a Spot fleet will only 'request' the target capacity or also attempt to 'maintain' it. When you want to 'maintain' a certain target capacity, Spot fleet will place the required bids to meet this target capacity, and enable you to automatically replenish any interrupted instances. When you simply 'request' a certain target capacity, Spot fleet will only place the required bids but will not attempt to replenish Spot instances if capacity is diminished, nor will it submit bids in alternative Spot pools if capacity is not available. By default, this parameter is set to 'maintain'. - The DescribeSpotFleetRequests API now returns two new parameters: the 'fulfilledCapacity' of a Spot fleet to indicate the capacity that has been successfully launched, and the 'type' parameter to indicate whether the fleet is meant to 'request' or 'maintain' capacity.
+* IdentityManagement (3.1.4.3)
+	* Updated to use new Core, version 3.1.7.0
+	* Fix potential performance issue in service config constructor related to attempting to access EC2 instance metadata when not running on EC2.
+* S3 (3.1.7.0)
+	* Updated to use new Core, version 3.1.7.0
+	* Fix issue with ListObjectsV2, where StartAfter is associated with the wrong header.
+* SecurityToken (3.1.4.1)
+	* Updated to use new Core, version 3.1.7.0
+	* Fix potential performance issue in service config constructor related to attempting to access EC2 instance metadata when not running on EC2.
+* Core 3.1.7.0
+	* Dispose of the CancellationTokenRegistration instance we get back from CancellationToken.Register, fix for https://github.com/aws/aws-sdk-net/issues/361
+	* all services packages updated to require new core
+
 ### 3.1.73.0 (2016-05-26 21:25 UTC)
 * CloudTrail (3.1.4.0)
 	* Regenerated from correct service model. Previous releases contained an exception type, KmsKeyInvalidStateException, which is not currently used and should not have been present (this removal may be a breaking change for some users).

@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Redshift</id>
     <title>AWSSDK - Amazon Redshift</title>
-    <version>3.1.2.1</version> 
+    <version>3.1.2.2</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.6.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
