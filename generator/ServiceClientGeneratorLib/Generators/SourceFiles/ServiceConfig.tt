@@ -47,8 +47,8 @@ namespace <#=this.Config.Namespace#>
             if(!string.IsNullOrEmpty(this.Config.DefaultRegion))
             {
 #>
-            if (this.RegionEndpoint == null)
-                this.RegionEndpoint = RegionEndpoint.<#=this.Config.DefaultRegion#>;
+			var region = FallbackRegionFactory.GetRegionEndpoint(false);
+			this.RegionEndpoint = region ?? RegionEndpoint.<#=this.Config.DefaultRegion#>;
 <#
             }
 #>

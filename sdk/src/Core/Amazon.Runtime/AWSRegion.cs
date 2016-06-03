@@ -155,6 +155,11 @@ namespace Amazon.Runtime
 
         public static RegionEndpoint GetRegionEndpoint()
         {
+            return GetRegionEndpoint(true);
+        }
+
+        public static RegionEndpoint GetRegionEndpoint(bool includeInstanceMetadata)
+        {
             lock(_lock)
             {
                 if (cachedRegion != null)
@@ -164,6 +169,10 @@ namespace Amazon.Runtime
 
                 foreach (var generator in RegionGenerators)
                 {
+#if BCL
+                    if (!includeInstanceMetadata && generator is InstanceProfileAWSRegion)
+                        continue;
+#endif
                     try
                     {
                         cachedRegion = generator();
