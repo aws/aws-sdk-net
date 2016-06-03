@@ -136,17 +136,26 @@ namespace Amazon.Runtime
 
         private delegate AWSRegion RegionGenerator();
 
-        private static List<RegionGenerator> RegionGenerators { get; set; }
+        private static List<RegionGenerator> AllGenerators { get; set; }
+        private static List<RegionGenerator> NonMetadataGenerators { get; set; }
 
         public static void Reset()
         {
             cachedRegion = null;
-            RegionGenerators = new List<RegionGenerator>
+            AllGenerators = new List<RegionGenerator>
             {
                 () => new AppConfigAWSRegion(),
 #if BCL
                 () => new EnvironmentVariableAWSRegion(),
                 () => new InstanceProfileAWSRegion()
+#endif
+            };
+
+            NonMetadataGenerators = new List<RegionGenerator>
+            {
+                () => new AppConfigAWSRegion(),
+#if BCL
+                () => new EnvironmentVariableAWSRegion()
 #endif
             };
         }
@@ -167,12 +176,10 @@ namespace Amazon.Runtime
 
                 List<Exception> errors = new List<Exception>();
 
-                foreach (var generator in RegionGenerators)
+                IEnumerable<RegionGenerator> generators 
+                    = includeInstanceMetadata ? AllGenerators : NonMetadataGenerators;
+                foreach (var generator in generators)
                 {
-#if BCL
-                    if (!includeInstanceMetadata && generator is InstanceProfileAWSRegion)
-                        continue;
-#endif
                     try
                     {
                         cachedRegion = generator();
