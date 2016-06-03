@@ -42,8 +42,8 @@ namespace Amazon.IdentityManagement
         public AmazonIdentityManagementServiceConfig()
         {
             this.AuthenticationServiceName = "iam";
-            if (this.RegionEndpoint == null)
-                this.RegionEndpoint = RegionEndpoint.USEast1;
+            var region = FallbackRegionFactory.GetRegionEndpoint(false);
+            this.RegionEndpoint = region ?? RegionEndpoint.USEast1;
         }
 
         /// <summary>

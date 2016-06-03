@@ -120,8 +120,8 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("            if (this.RegionEndpoint == null)\r\n                this.RegionEndpoint" +
-                    " = RegionEndpoint.");
+            this.Write("\t\t\tvar region = FallbackRegionFactory.GetRegionEndpoint(false);\r\n\t\t\tthis.RegionEn" +
+                    "dpoint = region ?? RegionEndpoint.");
             
             #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceConfig.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.DefaultRegion));
