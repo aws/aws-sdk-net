@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPolicyVersions operation.
-    /// Lists the versions of the specified policy, and identifies the default version.
+    /// Lists the versions of the specified policy and identifies the default version.
     /// </summary>
     public partial class ListPolicyVersionsRequest : AmazonIoTRequest
     {

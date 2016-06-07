@@ -29,8 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEndpoint operation.
-    /// Returns a unique endpoint specific to the AWS account making the call. You specify
-    /// the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
+    /// Returns a unique endpoint specific to the AWS account making the call.
     /// </summary>
     public partial class DescribeEndpointRequest : AmazonIoTRequest
     {

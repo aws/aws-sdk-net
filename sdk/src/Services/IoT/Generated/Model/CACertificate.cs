@@ -94,7 +94,11 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the CA certificate.
+        /// The status of the CA certificate. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The status value REGISTER_INACTIVE is deprecated and should not be used.
         /// </para>
         /// </summary>
         public CACertificateStatus Status

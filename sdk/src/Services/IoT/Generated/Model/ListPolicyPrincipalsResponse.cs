@@ -28,52 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateCACertificate operation.
-    /// Updates a registered CA certificate.
+    /// The output from the ListPolicyPrincipals operation.
     /// </summary>
-    public partial class UpdateCACertificateRequest : AmazonIoTRequest
+    public partial class ListPolicyPrincipalsResponse : AmazonWebServiceResponse
     {
-        private string _certificateId;
-        private CACertificateStatus _newStatus;
+        private string _nextMarker;
+        private List<string> _principals = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CertificateId. 
+        /// Gets and sets the property NextMarker. 
         /// <para>
-        /// The CA certificate identifier.
+        /// The marker for the next set of results, or null if there are no additional results.
         /// </para>
         /// </summary>
-        public string CertificateId
+        public string NextMarker
         {
-            get { return this._certificateId; }
-            set { this._certificateId = value; }
+            get { return this._nextMarker; }
+            set { this._nextMarker = value; }
         }
 
-        // Check to see if CertificateId property is set
-        internal bool IsSetCertificateId()
+        // Check to see if NextMarker property is set
+        internal bool IsSetNextMarker()
         {
-            return this._certificateId != null;
+            return this._nextMarker != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NewStatus. 
+        /// Gets and sets the property Principals. 
         /// <para>
-        /// The updated status of the CA certificate.
-        /// </para>
-        ///  
-        /// <para>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
+        /// The descriptions of the principals.
         /// </para>
         /// </summary>
-        public CACertificateStatus NewStatus
+        public List<string> Principals
         {
-            get { return this._newStatus; }
-            set { this._newStatus = value; }
+            get { return this._principals; }
+            set { this._principals = value; }
         }
 
-        // Check to see if NewStatus property is set
-        internal bool IsSetNewStatus()
+        // Check to see if Principals property is set
+        internal bool IsSetPrincipals()
         {
-            return this._newStatus != null;
+            return this._principals != null && this._principals.Count > 0; 
         }
 
     }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetRegistrationCode operation
+    /// Response Unmarshaller for ListPolicyPrincipals operation
     /// </summary>  
-    public class GetRegistrationCodeResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListPolicyPrincipalsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetRegistrationCodeResponse response = new GetRegistrationCodeResponse();
+            ListPolicyPrincipalsResponse response = new ListPolicyPrincipalsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("registrationCode", targetDepth))
+                if (context.TestExpression("nextMarker", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RegistrationCode = unmarshaller.Unmarshall(context);
+                    response.NextMarker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("principals", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Principals = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,6 +86,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+            {
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
                 return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -95,9 +105,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             return new AmazonIoTException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetRegistrationCodeResponseUnmarshaller _instance = new GetRegistrationCodeResponseUnmarshaller();        
+        private static ListPolicyPrincipalsResponseUnmarshaller _instance = new ListPolicyPrincipalsResponseUnmarshaller();        
 
-        internal static GetRegistrationCodeResponseUnmarshaller GetInstance()
+        internal static ListPolicyPrincipalsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -105,7 +115,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRegistrationCodeResponseUnmarshaller Instance
+        public static ListPolicyPrincipalsResponseUnmarshaller Instance
         {
             get
             {

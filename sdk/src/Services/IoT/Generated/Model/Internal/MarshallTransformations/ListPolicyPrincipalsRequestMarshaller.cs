@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteCACertificate Request Marshaller
+    /// ListPolicyPrincipals Request Marshaller
     /// </summary>       
-    public class DeleteCACertificateRequestMarshaller : IMarshaller<IRequest, DeleteCACertificateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListPolicyPrincipalsRequestMarshaller : IMarshaller<IRequest, ListPolicyPrincipalsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteCACertificateRequest)input);
+            return this.Marshall((ListPolicyPrincipalsRequest)input);
         }
 
         /// <summary>
@@ -52,16 +52,26 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteCACertificateRequest publicRequest)
+        public IRequest Marshall(ListPolicyPrincipalsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
-            request.HttpMethod = "DELETE";
+            request.HttpMethod = "GET";
 
-            string uriResourcePath = "/cacertificate/{caCertificateId}";
-            if (!publicRequest.IsSetCertificateId())
-                throw new AmazonIoTException("Request object does not have required field CertificateId set");
-            uriResourcePath = uriResourcePath.Replace("{caCertificateId}", StringUtils.FromString(publicRequest.CertificateId));
+            string uriResourcePath = "/policy-principals";
+            
+            if (publicRequest.IsSetAscendingOrder())
+                request.Parameters.Add("isAscendingOrder", StringUtils.FromBool(publicRequest.AscendingOrder));
+            
+            if (publicRequest.IsSetMarker())
+                request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
+            
+            if (publicRequest.IsSetPageSize())
+                request.Parameters.Add("pageSize", StringUtils.FromInt(publicRequest.PageSize));
             request.ResourcePath = uriResourcePath;
+        
+            if(publicRequest.IsSetPolicyName())
+                request.Headers["x-amzn-iot-policy"] = publicRequest.PolicyName;
+            request.UseQueryString = true;
 
             return request;
         }
