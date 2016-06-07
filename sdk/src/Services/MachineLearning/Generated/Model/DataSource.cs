@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of the <a>GetDataSource</a> operation. 
+    /// Represents the output of the <code>GetDataSource</code> operation. 
     /// 
     ///  
     /// <para>
@@ -134,8 +134,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataRearrangement. 
         /// <para>
-        /// A JSON string that represents the splitting requirement of a <code>Datasource</code>.
-        /// 
+        /// A JSON string that represents the splitting and rearrangement requirement used when
+        /// this <code>DataSource</code> was created.
         /// </para>
         /// </summary>
         public string DataRearrangement

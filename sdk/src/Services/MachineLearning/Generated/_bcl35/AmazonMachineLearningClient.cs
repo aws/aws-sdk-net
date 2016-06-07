@@ -232,6 +232,73 @@ namespace Amazon.MachineLearning
         #endregion
 
         
+        #region  AddTags
+
+        /// <summary>
+        /// Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key
+        /// and an optional value. If you add a tag using a key that is already associated with
+        /// the ML object, <code>AddTags</code> updates the tag's value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by MachineLearning.</returns>
+        /// <exception cref="Amazon.MachineLearning.Model.InternalServerException">
+        /// An error on the server occurred when trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.MachineLearning.Model.InvalidTagException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
+        /// A specified resource cannot be located.
+        /// </exception>
+        /// <exception cref="Amazon.MachineLearning.Model.TagLimitExceededException">
+        /// 
+        /// </exception>
+        public AddTagsResponse AddTags(AddTagsRequest request)
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation on AmazonMachineLearningClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
+        ///         operation.</returns>
+        public IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
+        /// 
+        /// <returns>Returns a  AddTagsResult from MachineLearning.</returns>
+        public  AddTagsResponse EndAddTags(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateBatchPrediction
 
         /// <summary>
@@ -315,8 +382,8 @@ namespace Amazon.MachineLearning
         /// <summary>
         /// Creates a <code>DataSource</code> object from an <a href="http://aws.amazon.com/rds/">
         /// Amazon Relational Database Service</a> (Amazon RDS). A <code>DataSource</code> references
-        /// data that can be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-        /// <a>CreateBatchPrediction</a> operations.
+        /// data that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>,
+        /// or <code>CreateBatchPrediction</code> operations.
         /// 
         ///  
         /// <para>
@@ -324,15 +391,15 @@ namespace Amazon.MachineLearning
         /// <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML) immediately
         /// returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After
         /// the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code>
-        /// parameter to <code>COMPLETED</code>. <code>DataSource</code> in <code>COMPLETED</code>
-        /// or <code>PENDING</code> status can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>,
-        /// or <a>CreateBatchPrediction</a> operations. 
+        /// parameter to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code>
+        /// or <code>PENDING</code> state can be used only to perform <code>&gt;CreateMLModel</code>&gt;,
+        /// <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations. 
         /// </para>
         ///  
         /// <para>
         ///  If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter
         /// to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute
-        /// of the <a>GetDataSource</a> operation response. 
+        /// of the <code>GetDataSource</code> operation response. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSourceFromRDS service method.</param>
@@ -393,10 +460,9 @@ namespace Amazon.MachineLearning
         #region  CreateDataSourceFromRedshift
 
         /// <summary>
-        /// Creates a <code>DataSource</code> from <a href="http://aws.amazon.com/redshift/">Amazon
-        /// Redshift</a>. A <code>DataSource</code> references data that can be used to perform
-        /// either <a>CreateMLModel</a>, <a>CreateEvaluation</a> or <a>CreateBatchPrediction</a>
-        /// operations.
+        /// Creates a <code>DataSource</code> from a database hosted on an Amazon Redshift cluster.
+        /// A <code>DataSource</code> references data that can be used to perform either <code>CreateMLModel</code>,
+        /// <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
         /// 
         ///  
         /// <para>
@@ -405,34 +471,40 @@ namespace Amazon.MachineLearning
         /// immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>.
         /// After the <code>DataSource</code> is created and ready for use, Amazon ML sets the
         /// <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in
-        /// <code>COMPLETED</code> or <code>PENDING</code> status can only be used to perform
-        /// <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a> operations.
-        /// 
+        /// <code>COMPLETED</code> or <code>PENDING</code> states can be used to perform only
+        /// <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
+        /// operations. 
         /// </para>
         ///  
         /// <para>
-        ///  If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter
+        ///  If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter
         /// to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute
-        /// of the <a>GetDataSource</a> operation response. 
+        /// of the <code>GetDataSource</code> operation response. 
         /// </para>
         ///  
         /// <para>
-        /// The observations should exist in the database hosted on an Amazon Redshift cluster
-        /// and should be specified by a <code>SelectSqlQuery</code>. Amazon ML executes <a href="http://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html">
-        /// Unload</a> command in Amazon Redshift to transfer the result set of <code>SelectSqlQuery</code>
-        /// to <code>S3StagingLocation.</code> 
+        /// The observations should be contained in the database hosted on an Amazon Redshift
+        /// cluster and should be specified by a <code>SelectSqlQuery</code> query. Amazon ML
+        /// executes an <code>Unload</code> command in Amazon Redshift to transfer the result
+        /// set of the <code>SelectSqlQuery</code> query to <code>S3StagingLocation</code>.
         /// </para>
         ///  
         /// <para>
-        /// After the <code>DataSource</code> is created, it's ready for use in evaluations and
-        /// batch predictions. If you plan to use the <code>DataSource</code> to train an <code>MLModel</code>,
-        /// the <code>DataSource</code> requires another item -- a recipe. A recipe describes
-        /// the observation variables that participate in training an <code>MLModel</code>. A
-        /// recipe describes how each input variable will be used in training. Will the variable
-        /// be included or excluded from training? Will the variable be manipulated, for example,
-        /// combined with another variable or split apart into word combinations? The recipe provides
-        /// answers to these questions. For more information, see the Amazon Machine Learning
-        /// Developer Guide.
+        /// After the <code>DataSource</code> has been created, it's ready for use in evaluations
+        /// and batch predictions. If you plan to use the <code>DataSource</code> to train an
+        /// <code>MLModel</code>, the <code>DataSource</code> also requires a recipe. A recipe
+        /// describes how each input variable will be used in training an <code>MLModel</code>.
+        /// Will the variable be included or excluded from training? Will the variable be manipulated;
+        /// for example, will it be combined with another variable or will it be split apart into
+        /// word combinations? The recipe provides answers to these questions.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't change an existing datasource, but you can copy and modify the settings
+        /// from an existing Amazon Redshift datasource to create a new datasource. To do so,
+        /// call <code>GetDataSource</code> for an existing datasource and copy the values to
+        /// a <code>CreateDataSource</code> call. Change the settings that you want to change
+        /// and make sure that all required fields have the appropriate values.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSourceFromRedshift service method.</param>
@@ -494,31 +566,31 @@ namespace Amazon.MachineLearning
 
         /// <summary>
         /// Creates a <code>DataSource</code> object. A <code>DataSource</code> references data
-        /// that can be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a>
-        /// operations.
+        /// that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>,
+        /// or <code>CreateBatchPrediction</code> operations.
         /// 
         ///  
         /// <para>
         /// <code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to <code>CreateDataSourceFromS3</code>,
         /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>DataSource</code>
-        /// status to <code>PENDING</code>. After the <code>DataSource</code> is created and ready
-        /// for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-        /// <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status can
-        /// only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a> or <a>CreateBatchPrediction</a>
-        /// operations. 
+        /// status to <code>PENDING</code>. After the <code>DataSource</code> has been created
+        /// and is ready for use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
+        /// <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code> state
+        /// can be used to perform only <code>CreateMLModel</code>, <code>CreateEvaluation</code>
+        /// or <code>CreateBatchPrediction</code> operations. 
         /// </para>
         ///  
         /// <para>
-        ///  If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter
+        ///  If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter
         /// to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute
-        /// of the <a>GetDataSource</a> operation response. 
+        /// of the <code>GetDataSource</code> operation response. 
         /// </para>
         ///  
         /// <para>
         /// The observation data used in a <code>DataSource</code> should be ready to use; that
         /// is, it should have a consistent structure, and missing data values should be kept
-        /// to a minimum. The observation data must reside in one or more CSV files in an Amazon
-        /// Simple Storage Service (Amazon S3) bucket, along with a schema that describes the
+        /// to a minimum. The observation data must reside in one or more .csv files in an Amazon
+        /// Simple Storage Service (Amazon S3) location, along with a schema that describes the
         /// data items by name and type. The same schema must be used for all of the data files
         /// referenced by the <code>DataSource</code>. 
         /// </para>
@@ -526,13 +598,11 @@ namespace Amazon.MachineLearning
         /// <para>
         /// After the <code>DataSource</code> has been created, it's ready to use in evaluations
         /// and batch predictions. If you plan to use the <code>DataSource</code> to train an
-        /// <code>MLModel</code>, the <code>DataSource</code> requires another item: a recipe.
-        /// A recipe describes the observation variables that participate in training an <code>MLModel</code>.
-        /// A recipe describes how each input variable will be used in training. Will the variable
-        /// be included or excluded from training? Will the variable be manipulated, for example,
-        /// combined with another variable, or split apart into word combinations? The recipe
-        /// provides answers to these questions. For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
-        /// Machine Learning Developer Guide</a>.
+        /// <code>MLModel</code>, the <code>DataSource</code> also needs a recipe. A recipe describes
+        /// how each input variable will be used in training an <code>MLModel</code>. Will the
+        /// variable be included or excluded from training? Will the variable be manipulated;
+        /// for example, will it be combined with another variable or will it be split apart into
+        /// word combinations? The recipe provides answers to these questions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSourceFromS3 service method.</param>
@@ -596,12 +666,12 @@ namespace Amazon.MachineLearning
         /// Creates a new <code>Evaluation</code> of an <code>MLModel</code>. An <code>MLModel</code>
         /// is evaluated on a set of observations associated to a <code>DataSource</code>. Like
         /// a <code>DataSource</code> for an <code>MLModel</code>, the <code>DataSource</code>
-        /// for an <code>Evaluation</code> contains values for the Target Variable. The <code>Evaluation</code>
-        /// compares the predicted result for each observation to the actual outcome and provides
-        /// a summary so that you know how effective the <code>MLModel</code> functions on the
-        /// test data. Evaluation generates a relevant performance metric such as BinaryAUC, RegressionRMSE
-        /// or MulticlassAvgFScore based on the corresponding <code>MLModelType</code>: <code>BINARY</code>,
-        /// <code>REGRESSION</code> or <code>MULTICLASS</code>. 
+        /// for an <code>Evaluation</code> contains values for the <code>Target Variable</code>.
+        /// The <code>Evaluation</code> compares the predicted result for each observation to
+        /// the actual outcome and provides a summary so that you know how effective the <code>MLModel</code>
+        /// functions on the test data. Evaluation generates a relevant performance metric, such
+        /// as BinaryAUC, RegressionRMSE or MulticlassAvgFScore based on the corresponding <code>MLModelType</code>:
+        /// <code>BINARY</code>, <code>REGRESSION</code> or <code>MULTICLASS</code>. 
         /// 
         ///  
         /// <para>
@@ -612,7 +682,7 @@ namespace Amazon.MachineLearning
         /// </para>
         ///  
         /// <para>
-        /// You can use the <a>GetEvaluation</a> operation to check progress of the evaluation
+        /// You can use the <code>GetEvaluation</code> operation to check progress of the evaluation
         /// during the creation operation.
         /// </para>
         /// </summary>
@@ -674,12 +744,12 @@ namespace Amazon.MachineLearning
         #region  CreateMLModel
 
         /// <summary>
-        /// Creates a new <code>MLModel</code> using the data files and the recipe as information
-        /// sources. 
+        /// Creates a new <code>MLModel</code> using the <code>DataSource</code> and the recipe
+        /// as information sources. 
         /// 
         ///  
         /// <para>
-        /// An <code>MLModel</code> is nearly immutable. Users can only update the <code>MLModelName</code>
+        /// An <code>MLModel</code> is nearly immutable. Users can update only the <code>MLModelName</code>
         /// and the <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a
         /// new <code>MLModel</code>. 
         /// </para>
@@ -687,20 +757,20 @@ namespace Amazon.MachineLearning
         /// <para>
         /// <code>CreateMLModel</code> is an asynchronous operation. In response to <code>CreateMLModel</code>,
         /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>MLModel</code>
-        /// status to <code>PENDING</code>. After the <code>MLModel</code> is created and ready
-        /// for use, Amazon ML sets the status to <code>COMPLETED</code>. 
+        /// status to <code>PENDING</code>. After the <code>MLModel</code> has been created and
+        /// ready is for use, Amazon ML sets the status to <code>COMPLETED</code>. 
         /// </para>
         ///  
         /// <para>
-        /// You can use the <a>GetMLModel</a> operation to check progress of the <code>MLModel</code>
+        /// You can use the <code>GetMLModel</code> operation to check the progress of the <code>MLModel</code>
         /// during the creation operation.
         /// </para>
         ///  
         /// <para>
-        ///  <a>CreateMLModel</a> requires a <code>DataSource</code> with computed statistics,
+        ///  <code>CreateMLModel</code> requires a <code>DataSource</code> with computed statistics,
         /// which can be created by setting <code>ComputeStatistics</code> to <code>true</code>
-        /// in <a>CreateDataSourceFromRDS</a>, <a>CreateDataSourceFromS3</a>, or <a>CreateDataSourceFromRedshift</a>
-        /// operations. 
+        /// in <code>CreateDataSourcceFromRDS</code>, <code>CreateDataSourceFromS3</code>, or
+        /// <code>CreateDataSourceFromRedshift</code> operations. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMLModel service method.</param>
@@ -1060,13 +1130,14 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <a>GetEvaluation</a>
+        /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code>
         /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
         /// </para>
-        ///  
+        ///  <caution><title>Caution</title> 
         /// <para>
-        /// <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
+        /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
         /// </para>
+        /// </caution>
         /// </summary>
         /// <param name="evaluationId">A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</param>
         /// 
@@ -1094,13 +1165,14 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <a>GetEvaluation</a>
+        /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code>
         /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
         /// </para>
-        ///  
+        ///  <caution><title>Caution</title> 
         /// <para>
-        /// <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
+        /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
         /// </para>
+        /// </caution>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluation service method.</param>
         /// 
@@ -1159,11 +1231,11 @@ namespace Amazon.MachineLearning
         #region  DeleteMLModel
 
         /// <summary>
-        /// Assigns the DELETED status to an <code>MLModel</code>, rendering it unusable.
+        /// Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.
         /// 
         ///  
         /// <para>
-        /// After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a>
+        /// After using the <code>DeleteMLModel</code> operation, you can use the <code>GetMLModel</code>
         /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
         /// </para>
         ///  
@@ -1192,11 +1264,11 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Assigns the DELETED status to an <code>MLModel</code>, rendering it unusable.
+        /// Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.
         /// 
         ///  
         /// <para>
-        /// After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a>
+        /// After using the <code>DeleteMLModel</code> operation, you can use the <code>GetMLModel</code>
         /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
         /// </para>
         ///  
@@ -1336,6 +1408,74 @@ namespace Amazon.MachineLearning
         public  DeleteRealtimeEndpointResponse EndDeleteRealtimeEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRealtimeEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTags
+
+        /// <summary>
+        /// Deletes the specified tags associated with an ML object. After this operation is complete,
+        /// you can't recover deleted tags.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a tag that doesn't exist, Amazon ML ignores it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTags service method, as returned by MachineLearning.</returns>
+        /// <exception cref="Amazon.MachineLearning.Model.InternalServerException">
+        /// An error on the server occurred when trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.MachineLearning.Model.InvalidTagException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
+        /// A specified resource cannot be located.
+        /// </exception>
+        public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation on AmazonMachineLearningClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
+        /// 
+        /// <returns>Returns a  DeleteTagsResult from MachineLearning.</returns>
+        public  DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTagsResponse>(asyncResult);
         }
 
         #endregion
@@ -1562,6 +1702,65 @@ namespace Amazon.MachineLearning
         public  DescribeMLModelsResponse EndDescribeMLModels(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMLModelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTags
+
+        /// <summary>
+        /// Describes one or more of the tags for your Amazon ML object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by MachineLearning.</returns>
+        /// <exception cref="Amazon.MachineLearning.Model.InternalServerException">
+        /// An error on the server occurred when trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MachineLearning.Model.InvalidInputException">
+        /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.MachineLearning.Model.ResourceNotFoundException">
+        /// A specified resource cannot be located.
+        /// </exception>
+        public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation on AmazonMachineLearningClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
+        /// 
+        /// <returns>Returns a  DescribeTagsResult from MachineLearning.</returns>
+        public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTagsResponse>(asyncResult);
         }
 
         #endregion
@@ -1868,8 +2067,8 @@ namespace Amazon.MachineLearning
         #region  GetMLModel
 
         /// <summary>
-        /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
-        /// as well as the current status of the <code>MLModel</code>.
+        /// Returns an <code>MLModel</code> that includes detailed metadata, data source information,
+        /// and the current status of the <code>MLModel</code>.
         /// 
         ///  
         /// <para>
@@ -1897,8 +2096,8 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
-        /// as well as the current status of the <code>MLModel</code>.
+        /// Returns an <code>MLModel</code> that includes detailed metadata, data source information,
+        /// and the current status of the <code>MLModel</code>.
         /// 
         ///  
         /// <para>
@@ -1928,8 +2127,8 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
-        /// as well as the current status of the <code>MLModel</code>.
+        /// Returns an <code>MLModel</code> that includes detailed metadata, data source information,
+        /// and the current status of the <code>MLModel</code>.
         /// 
         ///  
         /// <para>
@@ -2111,8 +2310,8 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetBatchPrediction</a> operation to view the contents of the updated
-        /// data element.
+        /// You can use the <code>GetBatchPrediction</code> operation to view the contents of
+        /// the updated data element.
         /// </para>
         /// </summary>
         /// <param name="batchPredictionId">The ID assigned to the <code>BatchPrediction</code> during creation.</param>
@@ -2142,8 +2341,8 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetBatchPrediction</a> operation to view the contents of the updated
-        /// data element.
+        /// You can use the <code>GetBatchPrediction</code> operation to view the contents of
+        /// the updated data element.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBatchPrediction service method.</param>
@@ -2207,7 +2406,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetDataSource</a> operation to view the contents of the updated
+        /// You can use the <code>GetDataSource</code> operation to view the contents of the updated
         /// data element.
         /// </para>
         /// </summary>
@@ -2238,7 +2437,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetDataSource</a> operation to view the contents of the updated
+        /// You can use the <code>GetDataSource</code> operation to view the contents of the updated
         /// data element.
         /// </para>
         /// </summary>
@@ -2303,7 +2502,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetEvaluation</a> operation to view the contents of the updated
+        /// You can use the <code>GetEvaluation</code> operation to view the contents of the updated
         /// data element.
         /// </para>
         /// </summary>
@@ -2334,7 +2533,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetEvaluation</a> operation to view the contents of the updated
+        /// You can use the <code>GetEvaluation</code> operation to view the contents of the updated
         /// data element.
         /// </para>
         /// </summary>
@@ -2399,8 +2598,8 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetMLModel</a> operation to view the contents of the updated data
-        /// element.
+        /// You can use the <code>GetMLModel</code> operation to view the contents of the updated
+        /// data element.
         /// </para>
         /// </summary>
         /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> during creation.</param>
@@ -2432,8 +2631,8 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetMLModel</a> operation to view the contents of the updated data
-        /// element.
+        /// You can use the <code>GetMLModel</code> operation to view the contents of the updated
+        /// data element.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMLModel service method.</param>

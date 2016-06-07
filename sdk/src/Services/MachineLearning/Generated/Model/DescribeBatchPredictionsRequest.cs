@@ -157,7 +157,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The number of pages of information to include in the result. The range of acceptable
-        /// values is 1 through 100. The default value is 100.
+        /// values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.
         /// </para>
         /// </summary>
         public int Limit

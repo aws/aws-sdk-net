@@ -179,6 +179,37 @@ namespace Amazon.MachineLearning
         #endregion
 
         
+        #region  AddTags
+
+        internal AddTagsResponse AddTags(AddTagsRequest request)
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddTagsRequest,AddTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateBatchPrediction
 
         internal CreateBatchPredictionResponse CreateBatchPrediction(CreateBatchPredictionRequest request)
@@ -577,13 +608,14 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <a>GetEvaluation</a>
+        /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code>
         /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
         /// </para>
-        ///  
+        ///  <caution><title>Caution</title> 
         /// <para>
-        /// <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
+        /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
         /// </para>
+        /// </caution>
         /// </summary>
         /// <param name="evaluationId">A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</param>
         /// <param name="cancellationToken">
@@ -640,11 +672,11 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Assigns the DELETED status to an <code>MLModel</code>, rendering it unusable.
+        /// Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.
         /// 
         ///  
         /// <para>
-        /// After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a>
+        /// After using the <code>DeleteMLModel</code> operation, you can use the <code>GetMLModel</code>
         /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
         /// </para>
         ///  
@@ -747,6 +779,37 @@ namespace Amazon.MachineLearning
             var unmarshaller = DeleteRealtimeEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRealtimeEndpointRequest,DeleteRealtimeEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTags
+
+        internal DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTagsRequestMarshaller();
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -871,6 +934,37 @@ namespace Amazon.MachineLearning
             var unmarshaller = DescribeMLModelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeMLModelsRequest,DescribeMLModelsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTags
+
+        internal DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1105,8 +1199,8 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
-        /// as well as the current status of the <code>MLModel</code>.
+        /// Returns an <code>MLModel</code> that includes detailed metadata, data source information,
+        /// and the current status of the <code>MLModel</code>.
         /// 
         ///  
         /// <para>
@@ -1137,8 +1231,8 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
-        /// as well as the current status of the <code>MLModel</code>.
+        /// Returns an <code>MLModel</code> that includes detailed metadata, data source information,
+        /// and the current status of the <code>MLModel</code>.
         /// 
         ///  
         /// <para>
@@ -1281,8 +1375,8 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetBatchPrediction</a> operation to view the contents of the updated
-        /// data element.
+        /// You can use the <code>GetBatchPrediction</code> operation to view the contents of
+        /// the updated data element.
         /// </para>
         /// </summary>
         /// <param name="batchPredictionId">The ID assigned to the <code>BatchPrediction</code> during creation.</param>
@@ -1346,7 +1440,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetDataSource</a> operation to view the contents of the updated
+        /// You can use the <code>GetDataSource</code> operation to view the contents of the updated
         /// data element.
         /// </para>
         /// </summary>
@@ -1411,7 +1505,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetEvaluation</a> operation to view the contents of the updated
+        /// You can use the <code>GetEvaluation</code> operation to view the contents of the updated
         /// data element.
         /// </para>
         /// </summary>
@@ -1476,8 +1570,8 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetMLModel</a> operation to view the contents of the updated data
-        /// element.
+        /// You can use the <code>GetMLModel</code> operation to view the contents of the updated
+        /// data element.
         /// </para>
         /// </summary>
         /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> during creation.</param>

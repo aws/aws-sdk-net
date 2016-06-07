@@ -28,49 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the query results from a <code>DescribeEvaluations</code> operation. The
-    /// content is essentially a list of <code>Evaluation</code>.
+    /// A custom key-value pair associated with an ML object, such as an ML model.
     /// </summary>
-    public partial class DescribeEvaluationsResponse : AmazonWebServiceResponse
+    public partial class Tag
     {
-        private string _nextToken;
-        private List<Evaluation> _results = new List<Evaluation>();
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The ID of the next page in the paginated results that indicates at least one more
-        /// page follows.
+        /// A unique identifier for the tag. Valid characters include Unicode letters, digits,
+        /// white space, _, ., /, =, +, -, %, and @.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string Key
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._nextToken != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Results. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// A list of <code>Evaluation</code> that meet the search criteria. 
+        /// An optional string, typically used to describe or define the tag. Valid characters
+        /// include Unicode letters, digits, white space, _, ., /, =, +, -, %, and @.
         /// </para>
         /// </summary>
-        public List<Evaluation> Results
+        public string Value
         {
-            get { return this._results; }
-            set { this._results = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if Results property is set
-        internal bool IsSetResults()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._value != null;
         }
 
     }

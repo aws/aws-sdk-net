@@ -32,12 +32,12 @@ namespace Amazon.MachineLearning.Model
     /// Creates a new <code>Evaluation</code> of an <code>MLModel</code>. An <code>MLModel</code>
     /// is evaluated on a set of observations associated to a <code>DataSource</code>. Like
     /// a <code>DataSource</code> for an <code>MLModel</code>, the <code>DataSource</code>
-    /// for an <code>Evaluation</code> contains values for the Target Variable. The <code>Evaluation</code>
-    /// compares the predicted result for each observation to the actual outcome and provides
-    /// a summary so that you know how effective the <code>MLModel</code> functions on the
-    /// test data. Evaluation generates a relevant performance metric such as BinaryAUC, RegressionRMSE
-    /// or MulticlassAvgFScore based on the corresponding <code>MLModelType</code>: <code>BINARY</code>,
-    /// <code>REGRESSION</code> or <code>MULTICLASS</code>. 
+    /// for an <code>Evaluation</code> contains values for the <code>Target Variable</code>.
+    /// The <code>Evaluation</code> compares the predicted result for each observation to
+    /// the actual outcome and provides a summary so that you know how effective the <code>MLModel</code>
+    /// functions on the test data. Evaluation generates a relevant performance metric, such
+    /// as BinaryAUC, RegressionRMSE or MulticlassAvgFScore based on the corresponding <code>MLModelType</code>:
+    /// <code>BINARY</code>, <code>REGRESSION</code> or <code>MULTICLASS</code>. 
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.MachineLearning.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the <a>GetEvaluation</a> operation to check progress of the evaluation
+    /// You can use the <code>GetEvaluation</code> operation to check progress of the evaluation
     /// during the creation operation.
     /// </para>
     /// </summary>

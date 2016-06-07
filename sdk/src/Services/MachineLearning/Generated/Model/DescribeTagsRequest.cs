@@ -28,49 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the query results from a <code>DescribeEvaluations</code> operation. The
-    /// content is essentially a list of <code>Evaluation</code>.
+    /// Container for the parameters to the DescribeTags operation.
+    /// Describes one or more of the tags for your Amazon ML object.
     /// </summary>
-    public partial class DescribeEvaluationsResponse : AmazonWebServiceResponse
+    public partial class DescribeTagsRequest : AmazonMachineLearningRequest
     {
-        private string _nextToken;
-        private List<Evaluation> _results = new List<Evaluation>();
+        private string _resourceId;
+        private TaggableResourceType _resourceType;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the next page in the paginated results that indicates at least one more
-        /// page follows.
+        /// The ID of the ML object. For example, <code>exampleModelId</code>. 
         /// </para>
         /// </summary>
-        public string NextToken
+        public string ResourceId
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
         {
-            return this._nextToken != null;
+            return this._resourceId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Results. 
+        /// Gets and sets the property ResourceType. 
         /// <para>
-        /// A list of <code>Evaluation</code> that meet the search criteria. 
+        /// The type of the ML object.
         /// </para>
         /// </summary>
-        public List<Evaluation> Results
+        public TaggableResourceType ResourceType
         {
-            get { return this._results; }
-            set { this._results = value; }
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
         }
 
-        // Check to see if Results property is set
-        internal bool IsSetResults()
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._resourceType != null;
         }
 
     }

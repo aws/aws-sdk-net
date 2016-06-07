@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of <a>GetBatchPrediction</a> operation.
+    /// Represents the output of a <code>GetBatchPrediction</code> operation.
     /// 
     ///  
     /// <para>
     ///  The content consists of the detailed metadata, the status, and the data file information
-    /// of a <i>Batch Prediction</i>.
+    /// of a <code>Batch Prediction</code>.
     /// </para>
     /// </summary>
     public partial class BatchPrediction
@@ -224,8 +224,8 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property OutputUri. 
         /// <para>
         /// The location of an Amazon S3 bucket or directory to receive the operation results.
-        /// The following substrings are not allowed in the s3 key portion of the "outputURI"
-        /// field: ':', '//', '/./', '/../'.
+        /// The following substrings are not allowed in the <code>s3 key</code> portion of the
+        /// <code>outputURI</code> field: ':', '//', '/./', '/../'.
         /// </para>
         /// </summary>
         public string OutputUri
@@ -248,8 +248,8 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  <ul> <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a
         /// request to generate predictions for a batch of observations.</li> <li> <code>INPROGRESS</code>
-        /// - The process is underway.</li> <li> <code>FAILED</code> - The request to peform a
-        /// batch prediction did not run to completion. It is not usable.</li> <li> <code>COMPLETED</code>
+        /// - The process is underway.</li> <li> <code>FAILED</code> - The request to perform
+        /// a batch prediction did not run to completion. It is not usable.</li> <li> <code>COMPLETED</code>
         /// - The batch prediction process completed successfully.</li> <li> <code>DELETED</code>
         /// - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
         /// </summary>
