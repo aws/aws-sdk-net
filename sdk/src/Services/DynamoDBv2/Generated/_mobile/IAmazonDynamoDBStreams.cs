@@ -30,48 +30,32 @@ namespace Amazon.DynamoDBv2
     /// <summary>
     /// Interface for accessing DynamoDBStreams
     ///
-    /// Amazon DynamoDB Streams 
+    /// Amazon DynamoDB 
     /// <para>
-    /// This is the Amazon DynamoDB Streams API Reference. This guide describes the low-level
-    /// API actions for accessing streams and processing stream records. For information about
-    /// application development with DynamoDB Streams, see the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide//Streams.html">Amazon
-    /// DynamoDB Developer Guide</a>.
+    /// Amazon DynamoDB Streams provides API actions for accessing streams and processing
+    /// stream records. To learn more about application development with Streams, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing
+    /// Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.
     /// </para>
     ///  
     /// <para>
-    /// Note that this document is intended for use with the following DynamoDB documentation:
+    /// The following are short descriptions of each low-level DynamoDB Streams action:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">Amazon
-    /// DynamoDB Developer Guide</a> 
+    ///  <i>DescribeStream</i> - Returns detailed information about a particular stream.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/">Amazon DynamoDB
-    /// API Reference</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// The following are short descriptions of each low-level DynamoDB Streams API action,
-    /// organized by function.
-    /// </para>
-    ///  <ul> <li>
-    /// <para>
-    /// <i>DescribeStream</i> - Returns detailed information about a particular stream.
-    /// </para>
-    /// </li> <li> 
-    /// <para>
-    /// <i>GetRecords</i> - Retrieves the stream records from within a shard.
+    ///  <i>GetRecords</i> - Retrieves the stream records from within a shard.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <i>GetShardIterator</i> - Returns information on how to retrieve the streams record
+    ///  <i>GetShardIterator</i> - Returns information on how to retrieve the streams record
     /// from a shard with a given shard ID.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <i>ListStreams</i> - Returns a list of all the streams associated with the current
+    ///  <i>ListStreams</i> - Returns a list of all the streams associated with the current
     /// AWS account and endpoint.
     /// </para>
     ///  </li> </ul>
@@ -87,17 +71,17 @@ namespace Amazon.DynamoDBv2
         /// Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB
         /// table.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// Each shard in the stream has a <code>SequenceNumberRange</code> associated with it.
         /// If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code>
         /// but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive
         /// more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
-        /// are present, the that shared is closed and can no longer receive more data.
+        /// are present, then that shard is closed and can no longer receive more data.
         /// </para>
         /// </summary>
         /// <param name="streamArn">The Amazon Resource Name (ARN) for the stream.</param>
@@ -142,12 +126,12 @@ namespace Amazon.DynamoDBv2
         /// list. Note that it might take multiple calls to get to a portion of the shard that
         /// contains stream records.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
-        /// GetRecords can retrieve a maximum of 1 MB of data or 2000 stream records, whichever
-        /// comes first.
+        ///  <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records,
+        /// whichever comes first.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="shardIterator">A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</param>
         /// <param name="cancellationToken">
@@ -182,11 +166,18 @@ namespace Amazon.DynamoDBv2
         /// age exceeds this limit are subject to removal (trimming) from the stream. You might
         /// receive a TrimmedDataAccessException if:
         /// </para>
-        ///  <ul> <li>You request a shard iterator with a sequence number older than the trim
-        /// point (24 hours).</li> <li>You obtain a shard iterator, but before you use the iterator
-        /// in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period
-        /// and is trimmed. This causes the iterator to access a record that no longer exists.</li>
-        /// </ul>
+        ///  <ul> <li>
+        /// <para>
+        /// You request a shard iterator with a sequence number older than the trim point (24
+        /// hours).
+        /// </para>
+        ///  </li> <li>
+        /// <para>
+        /// You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i>
+        /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
+        /// causes the iterator to access a record that no longer exists.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         Task<GetRecordsResponse> GetRecordsAsync(string shardIterator, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -227,11 +218,11 @@ namespace Amazon.DynamoDBv2
         /// If the <code>TableName</code> parameter is present, then <i>ListStreams</i> will return
         /// only the streams ARNs for that table.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

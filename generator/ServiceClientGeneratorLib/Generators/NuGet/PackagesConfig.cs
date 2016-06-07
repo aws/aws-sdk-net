@@ -58,7 +58,7 @@ namespace ServiceClientGenerator.Generators.NuGet
   <package id=""System.Data.SQLite.EF6"" version=""1.0.97.0"" targetFramework=""net45"" />
 ");
             
-            #line 28 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+            #line 27 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
 
     }
 
