@@ -1,3 +1,11 @@
+### 3.1.75.0 (2016-06-07 20:08 UTC)
+* DynamoDBv2 (3.1.5.0)
+	* API Update for DynamoDB Streams to support ApproximationCreationDateTime
+* IoT (3.1.5.0)
+	* Adds new API, ListPolicyPrincipals. ListPolicyPrincipals allows you to list all your principals (certificate or other credential, such as Amazon Cognito ID) attached to a given policy. Also adds an encode function to the SQL syntax function list, and a couple of improvements to Amazon DynamoDB Actions: Range key (primary partition key) is now optional as it is in DynamoDB. "NUMBER" is being introduced as a supported hash key and range key type.
+* MachineLearning (3.1.2.0)
+	* You can now assign tags, which are commonly used for cost allocation, to Amazon Machine Learning datasources, models, evaluations, and batch predictions.
+
 ### 3.1.74.0 (2016-06-03 21:43 UTC)
 * ApplicationAutoScaling (3.1.0.2)
 	* Updated incorrect documentation links.
