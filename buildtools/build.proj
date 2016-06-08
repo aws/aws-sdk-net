@@ -133,19 +133,24 @@
     <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk">
         <MSBuild
             Projects="$(MSBuildProjectFile)"
-            Targets="run-tests"
+            Targets="run-ms-tests"
             Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll" />
         <MSBuild
             Projects="$(MSBuildProjectFile)"
-            Targets="run-tests"
+            Targets="run-ms-tests"
             Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll" />
     </Target>
 
     <Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
         <MSBuild
             Projects="$(MSBuildProjectFile)"
-            Targets="run-tests"
+            Targets="run-ms-tests"
             Properties="TestContainer=..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll" />
+
+        <MSBuild
+            Projects="$(MSBuildProjectFile)"
+            Targets="run-xunit-tests"
+            Properties="ProjectJSON=..\sdk\test\CoreCLR\IntegrationTests\project.json"/>
     </Target>
 
     <Target Name="nuget-pack" DependsOnTargets="build-sdk" Condition="$(Configuration) == 'Release'">
@@ -274,29 +279,42 @@
         <Error Condition="Exists('..\fxcop-report-3.5.xml') or Exists('..\fxcop-report-4.5.xml')" Text="There are FxCop violations!" />
     </Target>
 
-    <Target Name="run-tests">
-        <Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
-        <Message Text="TestCategory = $(TestCategory)" Condition="$(TestCategory.Length) > 0"/>
+    <Target Name="build-test-wrapper">
+        <MSBuild Projects=".\TestWrapper\TestWrapper.sln"
+            Targets="Clean;Build"
+            Properties="Configuration=Debug"/>        
+    </Target>
 
-        <Exec Command="$(devenv2013) /Rebuild Debug .\MSTestWrapper\MSTestWrapper.sln"/>
+    <Target Name="run-ms-tests" DependsOnTargets="build-test-wrapper">
+        <Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
 
         <PropertyGroup >
-            <Container>/testcontainer:$([System.IO.Path]::GetFullPath($(TestContainer)))</Container>
-            <Category></Category>
-        </PropertyGroup>
-        <PropertyGroup Condition="$(TestCategory.Length) > 0">
-            <Category>/category:$(TestCategory)</Category>
+            <Container>/testcontainer:&quot;$([System.IO.Path]::GetFullPath($(TestContainer)))&quot;</Container>
         </PropertyGroup>
 
-        <Exec Command=".\MSTestWrapper\MSTestWrapper\bin\Debug\MSTestWrapper.exe  $(mstest2013) &quot;$(Container)&quot; &quot;$(Category)&quot;"/>
+        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe  mstest $(mstest2013) $(Container)"/>
 
         <!-- Clear our properties -->
         <PropertyGroup >
             <TestContainer></TestContainer>
-            <TestCategory></TestCategory>
         </PropertyGroup>
         <CallTarget Targets="deploy-test-results" />
         <OnError ExecuteTargets="deploy-test-results" />
+    </Target>
+
+    <Target Name="run-xunit-tests" DependsOnTargets="build-test-wrapper;GetSDKToolingInfoTarget">
+        <Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
+
+        <PropertyGroup>
+            <Project>$([System.IO.Path]::GetFullPath($(ProjectJSON)))</Project>
+        </PropertyGroup>
+
+        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe xunit &quot;$(SDKToolingExe)&quot; test &quot;$(Project)&quot;"/>
+
+         <!-- Clear our properties -->
+        <PropertyGroup >
+            <TestContainer></TestContainer>
+        </PropertyGroup>
     </Target>
 
     <UsingTask TaskName="PrepareTestResults" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
