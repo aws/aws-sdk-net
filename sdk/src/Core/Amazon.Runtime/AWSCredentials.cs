@@ -411,8 +411,11 @@ namespace Amazon.Runtime
     {
         public const string DEFAULT_PROFILE_NAME = "default";
         public const string SHARED_CREDENTIALS_FILE_ENVVAR = "AWS_SHARED_CREDENTIALS_FILE";
-        public const string HOME_ENVVAR = "HOME";
-        public const string PROFILE_ENVVAR = "USERPROFILE";
+
+        private static string[] PotentialEnvironmentPathsToCredentialsFile = new string[]{
+            "HOME",
+            "USERPROFILE",
+        };
 
         public const string DefaultSharedCredentialFilename = "credentials";
         public const string DefaultSharedCredentialLocation = ".aws/" + DefaultSharedCredentialFilename;
@@ -495,25 +498,17 @@ namespace Amazon.Runtime
                 return credentialFile;
             }
 
-            var homePath = Environment.GetEnvironmentVariable(HOME_ENVVAR);
-            if (!string.IsNullOrEmpty(homePath))
+            foreach (string environmentVariable in PotentialEnvironmentPathsToCredentialsFile)
             {
-                credentialFile = TestSharedCredentialFileExists(Path.Combine(homePath, DefaultSharedCredentialLocation));
-                if (!string.IsNullOrEmpty(credentialFile))
+                string envPath = Environment.GetEnvironmentVariable(environmentVariable);
+                if (!string.IsNullOrEmpty(envPath))
                 {
-                    logger.InfoFormat("Credentials file found using environment variable '{0}': {1}", HOME_ENVVAR, credentialFile);
-                    return credentialFile;
-                }
-            }
-
-            var profilePath = Environment.GetEnvironmentVariable(PROFILE_ENVVAR);
-            if (!string.IsNullOrEmpty(profilePath))
-            {
-                credentialFile = TestSharedCredentialFileExists(Path.Combine(profilePath, DefaultSharedCredentialLocation));
-                if (!string.IsNullOrEmpty(credentialFile))
-                {
-                    logger.InfoFormat("Credentials file found using environment variable '{0}': {1}", PROFILE_ENVVAR, credentialFile);
-                    return credentialFile;
+                    credentialFile = TestSharedCredentialFileExists(Path.Combine(envPath, DefaultSharedCredentialLocation));
+                    if (!string.IsNullOrEmpty(credentialFile))
+                    {
+                        logger.InfoFormat("Credentials file found using environment variable '{0}': {1}", environmentVariable, credentialFile);
+                        return credentialFile;
+                    }
                 }
             }
 #if BCL45
