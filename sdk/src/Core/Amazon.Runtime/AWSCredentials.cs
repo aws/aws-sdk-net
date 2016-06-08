@@ -412,6 +412,7 @@ namespace Amazon.Runtime
         public const string DEFAULT_PROFILE_NAME = "default";
         public const string SHARED_CREDENTIALS_FILE_ENVVAR = "AWS_SHARED_CREDENTIALS_FILE";
         public const string HOME_ENVVAR = "HOME";
+        public const string PROFILE_ENVVAR = "USERPROFILE";
 
         public const string DefaultSharedCredentialFilename = "credentials";
         public const string DefaultSharedCredentialLocation = ".aws/" + DefaultSharedCredentialFilename;
@@ -505,6 +506,16 @@ namespace Amazon.Runtime
                 }
             }
 
+            var profilePath = Environment.GetEnvironmentVariable(PROFILE_ENVVAR);
+            if (!string.IsNullOrEmpty(profilePath))
+            {
+                credentialFile = TestSharedCredentialFileExists(Path.Combine(profilePath, DefaultSharedCredentialLocation));
+                if (!string.IsNullOrEmpty(credentialFile))
+                {
+                    logger.InfoFormat("Credentials file found using environment variable '{0}': {1}", PROFILE_ENVVAR, credentialFile);
+                    return credentialFile;
+                }
+            }
 #if BCL45
             var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             if (!string.IsNullOrEmpty(profileFolder))
