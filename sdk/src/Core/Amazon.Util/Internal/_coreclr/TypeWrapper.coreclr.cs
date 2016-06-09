@@ -55,17 +55,17 @@ namespace Amazon.Util.Internal
 
             public override IEnumerable<PropertyInfo> GetProperties()
             {
-                return this._typeInfo.GetProperties();
+                return this._type.GetProperties();
             }
 
             public override IEnumerable<FieldInfo> GetFields()
             {
-                return this._typeInfo.GetFields();
+                return this._type.GetFields();
             }
 
             public override FieldInfo GetField(string name)
             {
-                return this._typeInfo.GetField(name);
+                return this._type.GetField(name);
             }
 
             public override MemberInfo[] GetMembers()
@@ -125,7 +125,7 @@ namespace Amazon.Util.Internal
 
             public override MethodInfo GetMethod(string name)
             {
-                return this._typeInfo.GetMethod(name);
+                return this._type.GetMethod(name);
             }
 
             public override bool ContainsGenericParameters
@@ -162,12 +162,12 @@ namespace Amazon.Util.Internal
                 for (int i = 0; i < paramTypes.Length; i++)
                     types[i] = ((AbstractTypeInfo)paramTypes[i]).Type;
 
-                return this._typeInfo.GetMethod(name, types);
+                return this._type.GetMethod(name, types);
             }
 
             public override PropertyInfo GetProperty(string name)
             {
-                return this._typeInfo.GetProperty(name);
+                return this._type.GetProperty(name);
             }
 
             public override bool IsAssignableFrom(ITypeInfo typeInfo)
@@ -224,7 +224,7 @@ namespace Amazon.Util.Internal
                 for (int i = 0; i < paramTypes.Length; i++)
                     types[i] = ((AbstractTypeInfo)paramTypes[i]).Type;
 
-                return this._typeInfo.GetConstructor(types);
+                return this._type.GetConstructor(types);
             }
         }
     }
