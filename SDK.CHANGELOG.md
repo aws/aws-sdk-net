@@ -1,3 +1,9 @@
+### 3.1.75.1 (2016-06-13 22:41 UTC)
+* S3 (3.1.7.1)
+	* Pull request 379, prevent v4 auth from being forced on GET when using non s3 endpoint.
+* SQS (3.1.0.10)
+	* Pull request 380, updating SQSConstants
+
 ### 3.1.75.0 (2016-06-07 20:08 UTC)
 * DynamoDBv2 (3.1.5.0)
 	* API Update for DynamoDB Streams to support ApproximationCreationDateTime

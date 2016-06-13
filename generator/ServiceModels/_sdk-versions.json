@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.1.75.0",
+    "ProductVersion" : "3.1.75.1",
     "CoreVersion"    : "3.1.7.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -275,7 +275,7 @@
             "InPreview"    : false
         },
         "S3"                   : {
-            "Version" : "3.1.7.0",
+            "Version" : "3.1.7.1",
             "Dependencies" : {
                 "Core" : "3.1.7.0"
             },
@@ -317,7 +317,7 @@
             "InPreview"    : false
         },
         "SQS"                       : {
-            "Version" : "3.1.0.9",
+            "Version" : "3.1.0.10",
             "Dependencies" : {
                 "Core" : "3.1.7.0"
             },
