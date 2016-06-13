@@ -169,7 +169,7 @@ namespace Amazon.S3.Util
                 throw new ArgumentNullException("uri");
 
             var match = new Regex(EndpointPattern).Match(uri.Host);
-            if (uri.Host.EndsWith("amazonaws.com"))
+            if (uri.Host.EndsWith("amazonaws.com") || uri.Host.EndsWith("amazonaws.com.cn"))
             {
                 return match.Success;
             }

@@ -216,6 +216,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 "http://bucketname.s3-us-west-2.amazonaws.com",
                 "http://s3.eu-central-1.amazonaws.com",
                 "http://bucketname.s3.eu-central-1.amazonaws.com",
+                "http://s3.cn-north-1.amazonaws.com.cn",
             };
 
             foreach (var uri in thirdPartyProviderUriExamples)
