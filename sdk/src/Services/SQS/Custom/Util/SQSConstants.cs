@@ -19,10 +19,6 @@
  *  API Version: 2012-09-15
  */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Amazon.SQS.Util
 {
     /// <summary>
@@ -94,5 +90,15 @@ namespace Amazon.SQS.Util
         /// The number of milliseconds the oldest message has been on the queue. 
         /// </summary>
         public const string ATTRIBUTE_OLDEST_MESSAGE_AGE = "OldestMessageAge";
+
+        /// <summary>
+        /// The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
+        /// </summary>
+        public const string ATTRIBUTE_RECEIEVE_MESSAGE_WAIT_TIME_SECONDS = "ReceiveMessageWaitTimeSeconds";
+
+        /// <summary>
+        /// The parameters for dead letter queue functionality of the source queue. For more information about RedrivePolicy and dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// </summary>
+        public const string ATTRIBUTE_REDRIVE_POLICY = "RedrivePolicy";
     }
 }
