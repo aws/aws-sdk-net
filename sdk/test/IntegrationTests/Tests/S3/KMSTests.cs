@@ -204,6 +204,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 "http://storage.googleapis.com",
                 "http://bucket.storage.googleapis.com",
+                "http://s3.mycompany.com",
+                "http://storage.s3.company.com"
             };
 
             string[] s3UriExamples =
