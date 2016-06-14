@@ -38,7 +38,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Fully Qualified Domain Name (FQDN) of the certificate being requested. 
+        /// Fully Qualified Domain Name (FQDN) of the certificate being requested.
         /// </para>
         /// </summary>
         public string DomainName
@@ -56,34 +56,35 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property ValidationDomain. 
         /// <para>
-        ///  The domain to which validation email is sent. This is the base validation domain
-        /// that will act as the suffix of the email addresses. This must be the same as the <code>DomainName</code>
+        /// The domain to which validation email is sent. This is the base validation domain that
+        /// will act as the suffix of the email addresses. This must be the same as the <code>DomainName</code>
         /// value or a superdomain of the <code>DomainName</code> value. For example, if you requested
         /// a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b>
         /// of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical
         /// contact, and administrative contact in WHOIS for the base domain and the following
-        /// five addresses: <ul> <li>
+        /// five addresses:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// admin@subdomain.example.com
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// administrator@subdomain.example.com
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// hostmaster@subdomain.example.com
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// postmaster@subdomain.example.com
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// webmaster@subdomain.example.com
         /// </para>
-        /// </li> </ul> 
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ValidationDomain
         {

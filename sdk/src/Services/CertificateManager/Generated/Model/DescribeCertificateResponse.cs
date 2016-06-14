@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the DescribeCertificate operation.
     /// </summary>
     public partial class DescribeCertificateResponse : AmazonWebServiceResponse
     {

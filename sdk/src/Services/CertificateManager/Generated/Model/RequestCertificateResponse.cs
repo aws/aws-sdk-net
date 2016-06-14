@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the RequestCertificate operation.
     /// </summary>
     public partial class RequestCertificateResponse : AmazonWebServiceResponse
     {
@@ -37,8 +37,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        ///  String that contains the ARN of the issued certificate. This must be of the form:
-        /// 
+        /// String that contains the ARN of the issued certificate. This must be of the form:
         /// </para>
         ///  
         /// <para>

@@ -38,7 +38,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        ///  Amazon Resource Name (ARN) of the certificate. This is of the form: 
+        /// Amazon Resource Name (ARN) of the certificate. This is of the form:
         /// </para>
         ///  
         /// <para>
@@ -47,8 +47,8 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>. 
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string CertificateArn
@@ -66,8 +66,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Fully qualified domain name (FQDN), such as www.example.com or example.com, for the
-        /// certificate. 
+        /// Fully qualified domain name (FQDN), such as www.example.com or example.com, for the
+        /// certificate.
         /// </para>
         /// </summary>
         public string DomainName
