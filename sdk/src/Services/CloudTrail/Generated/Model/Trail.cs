@@ -265,8 +265,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property SnsTopicName. 
         /// <para>
-        /// Specifies the name of the Amazon SNS topic that CloudTrail uses to send notifications
-        /// when log files are delivered.
+        /// This field is deprecated. Use SnsTopicARN.
         /// </para>
         /// </summary>
         public string SnsTopicName
