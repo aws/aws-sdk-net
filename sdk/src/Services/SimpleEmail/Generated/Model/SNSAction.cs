@@ -42,9 +42,13 @@ namespace Amazon.SimpleEmail.Model
     /// it. For information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
-    ///  <important>You can only publish emails that are 150 KB or less (including the header)
-    /// to Amazon SNS. Larger emails will bounce. If you anticipate emails larger than 150
-    /// KB, use the S3 action instead.</important> 
+    ///  <important> 
+    /// <para>
+    /// You can only publish emails that are 150 KB or less (including the header) to Amazon
+    /// SNS. Larger emails will bounce. If you anticipate emails larger than 150 KB, use the
+    /// S3 action instead.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// For information about using a receipt rule to publish an Amazon SNS notification,
     /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon

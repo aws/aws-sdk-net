@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents a unique message ID.
+    /// An empty element returned on a successful request.
     /// </summary>
-    public partial class SendRawEmailResponse : AmazonWebServiceResponse
+    public partial class SetIdentityHeadersInNotificationsEnabledResponse : AmazonWebServiceResponse
     {
-        private string _messageId;
-
-        /// <summary>
-        /// Gets and sets the property MessageId. 
-        /// <para>
-        /// The unique message identifier returned from the <code>SendRawEmail</code> action.
-        /// 
-        /// </para>
-        /// </summary>
-        public string MessageId
-        {
-            get { return this._messageId; }
-            set { this._messageId = value; }
-        }
-
-        // Check to see if MessageId property is set
-        internal bool IsSetMessageId()
-        {
-            return this._messageId != null;
-        }
 
     }
 }

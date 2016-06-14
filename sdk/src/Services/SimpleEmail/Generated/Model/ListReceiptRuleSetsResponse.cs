@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the ListReceiptRuleSets operation.
+    /// A list of receipt rule sets that exist under your AWS account.
     /// </summary>
     public partial class ListReceiptRuleSetsResponse : AmazonWebServiceResponse
     {

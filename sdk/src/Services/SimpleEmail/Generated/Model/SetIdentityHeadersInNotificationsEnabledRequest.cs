@@ -28,38 +28,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Container for the parameters to the SetIdentityNotificationTopic operation.
-    /// Given an identity (an email address or a domain), sets the Amazon Simple Notification
-    /// Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or
-    /// delivery notifications for emails sent with that identity as the <code>Source</code>.
+    /// Container for the parameters to the SetIdentityHeadersInNotificationsEnabled operation.
+    /// Given an identity (an email address or a domain), sets whether Amazon SES includes
+    /// the original email headers in the Amazon Simple Notification Service (Amazon SNS)
+    /// notifications of a specified type.
     /// 
-    ///  <note> 
-    /// <para>
-    /// Unless feedback forwarding is enabled, you must specify Amazon SNS topics for bounce
-    /// and complaint notifications. For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>
     ///  
     /// <para>
-    /// For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+    /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
     /// </summary>
-    public partial class SetIdentityNotificationTopicRequest : AmazonSimpleEmailServiceRequest
+    public partial class SetIdentityHeadersInNotificationsEnabledRequest : AmazonSimpleEmailServiceRequest
     {
+        private bool? _enabled;
         private string _identity;
         private NotificationType _notificationType;
-        private string _snsTopic;
+
+        /// <summary>
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Sets whether Amazon SES includes the original email headers in Amazon SNS notifications
+        /// of the specified notification type. A value of <code>true</code> specifies that Amazon
+        /// SES will include headers in notifications, and a value of <code>false</code> specifies
+        /// that Amazon SES will not include headers in notifications.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value can only be set when <code>NotificationType</code> is already set to use
+        /// a particular Amazon SNS topic.
+        /// </para>
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        /// The identity for which the Amazon SNS topic will be set. You can specify an identity
-        /// by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
-        /// <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+        /// The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>,
+        /// <code>example.com</code>.
         /// </para>
         /// </summary>
         public string Identity
@@ -77,7 +97,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property NotificationType. 
         /// <para>
-        /// The type of notifications that will be published to the specified Amazon SNS topic.
+        /// The notification type for which to enable or disable headers in notifications. 
         /// </para>
         /// </summary>
         public NotificationType NotificationType
@@ -90,26 +110,6 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetNotificationType()
         {
             return this._notificationType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SnsTopic. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted
-        /// from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
-        /// is disabled.
-        /// </para>
-        /// </summary>
-        public string SnsTopic
-        {
-            get { return this._snsTopic; }
-            set { this._snsTopic = value; }
-        }
-
-        // Check to see if SnsTopic property is set
-        internal bool IsSetSnsTopic()
-        {
-            return this._snsTopic != null;
         }
 
     }

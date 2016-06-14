@@ -66,9 +66,20 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The name of the IP address filter. The name must:
         /// </para>
-        ///  <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores
-        /// (_), or dashes (-).</li> <li>Start and end with a letter or number.</li> <li>Contain
-        /// less than 64 characters.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start and end with a letter or number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contain less than 64 characters.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Name
         {

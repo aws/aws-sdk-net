@@ -831,6 +831,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmailService")]
+        public void SetIdentityHeadersInNotificationsEnabledMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetIdentityHeadersInNotificationsEnabled");
+
+            var request = InstantiateClassGenerator.Execute<SetIdentityHeadersInNotificationsEnabledRequest>();
+            var marshaller = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SetIdentityHeadersInNotificationsEnabledResponseUnmarshaller.Instance.Unmarshall(context)
+                as SetIdentityHeadersInNotificationsEnabledResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
         public void SetIdentityMailFromDomainMarshallTest()
         {
             var operation = service_model.FindOperation("SetIdentityMailFromDomain");
