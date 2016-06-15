@@ -29,12 +29,16 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIdentityPolicy operation.
-    /// Deletes the specified sending authorization policy for the given identity (email address
-    /// or domain). This API returns successfully even if a policy with the specified name
-    /// does not exist.
+    /// Deletes the specified sending authorization policy for the given identity (an email
+    /// address or a domain). This API returns successfully even if a policy with the specified
+    /// name does not exist.
     /// 
-    ///  <note>This API is for the identity owner only. If you have not verified the identity,
-    /// this API will return an error.</note> 
+    ///  <note> 
+    /// <para>
+    /// This API is for the identity owner only. If you have not verified the identity, this
+    /// API will return an error.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Sending authorization is a feature that enables an identity owner to authorize other
     /// senders to use its identities. For information about using sending authorization,

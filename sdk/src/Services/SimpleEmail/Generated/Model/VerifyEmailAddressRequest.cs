@@ -32,9 +32,12 @@ namespace Amazon.SimpleEmail.Model
     /// Verifies an email address. This action causes a confirmation email message to be sent
     /// to the specified address.
     /// 
-    ///  <important>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release
-    /// of Domain Verification. The VerifyEmailIdentity action is now preferred.</important>
-    /// 
+    ///  <important> 
+    /// <para>
+    /// The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain
+    /// Verification. The VerifyEmailIdentity action is now preferred.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// This action is throttled at one request per second.
     /// </para>

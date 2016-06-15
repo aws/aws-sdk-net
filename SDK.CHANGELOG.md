@@ -1,3 +1,15 @@
+### 3.1.76.0 (2016-06-14 22:42 UTC)
+* CertificateManager (3.1.3.3)
+	* Regenerating from latest service model acm-2015-12-08.normal.json
+* CloudTrail (3.1.5.0)
+	* Regenerating from latest service model cloudtrail-2013-11-01.normal.json
+* RDS (3.1.12.0)
+	* Regenerating from latest service model rds-2014-10-31.normal.json
+* S3 (3.1.7.2)
+	* Minor documentation update.
+* SimpleEmail (3.1.4.0)
+	* Regenerating from latest service model email-2010-12-01.normal.json
+
 ### 3.1.75.1 (2016-06-13 22:41 UTC)
 * S3 (3.1.7.1)
 	* Pull request 379, prevent v4 auth from being forced on GET when using non s3 endpoint.

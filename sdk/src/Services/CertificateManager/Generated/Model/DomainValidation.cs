@@ -40,8 +40,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code><code>example.com</code>
-        /// 
+        /// Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.
         /// </para>
         /// </summary>
         public string DomainName
@@ -59,8 +58,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property ValidationDomain. 
         /// <para>
-        ///  The base validation domain that acts as the suffix of the email addresses that are
-        /// used to send the emails. 
+        /// The base validation domain that acts as the suffix of the email addresses that are
+        /// used to send the emails.
         /// </para>
         /// </summary>
         public string ValidationDomain
@@ -78,7 +77,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property ValidationEmails. 
         /// <para>
-        ///  A list of contact address for the domain registrant. 
+        /// A list of contact address for the domain registrant.
         /// </para>
         /// </summary>
         public List<string> ValidationEmails

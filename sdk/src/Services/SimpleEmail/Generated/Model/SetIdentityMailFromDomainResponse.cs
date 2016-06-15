@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the SetIdentityMailFromDomain operation.
+    /// An empty element returned on a successful request.
     /// </summary>
     public partial class SetIdentityMailFromDomainResponse : AmazonWebServiceResponse
     {

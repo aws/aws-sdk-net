@@ -39,6 +39,9 @@ namespace Amazon.SimpleEmail.Model
         private string _complaintTopic;
         private string _deliveryTopic;
         private bool? _forwardingEnabled;
+        private bool? _headersInBounceNotificationsEnabled;
+        private bool? _headersInComplaintNotificationsEnabled;
+        private bool? _headersInDeliveryNotificationsEnabled;
 
         /// <summary>
         /// Gets and sets the property BounceTopic. 
@@ -116,6 +119,69 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetForwardingEnabled()
         {
             return this._forwardingEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HeadersInBounceNotificationsEnabled. 
+        /// <para>
+        /// Describes whether Amazon SES includes the original email headers in Amazon SNS notifications
+        /// of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES
+        /// will include headers in bounce notifications, and a value of <code>false</code> specifies
+        /// that Amazon SES will not include headers in bounce notifications.
+        /// </para>
+        /// </summary>
+        public bool HeadersInBounceNotificationsEnabled
+        {
+            get { return this._headersInBounceNotificationsEnabled.GetValueOrDefault(); }
+            set { this._headersInBounceNotificationsEnabled = value; }
+        }
+
+        // Check to see if HeadersInBounceNotificationsEnabled property is set
+        internal bool IsSetHeadersInBounceNotificationsEnabled()
+        {
+            return this._headersInBounceNotificationsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HeadersInComplaintNotificationsEnabled. 
+        /// <para>
+        /// Describes whether Amazon SES includes the original email headers in Amazon SNS notifications
+        /// of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon
+        /// SES will include headers in complaint notifications, and a value of <code>false</code>
+        /// specifies that Amazon SES will not include headers in complaint notifications.
+        /// </para>
+        /// </summary>
+        public bool HeadersInComplaintNotificationsEnabled
+        {
+            get { return this._headersInComplaintNotificationsEnabled.GetValueOrDefault(); }
+            set { this._headersInComplaintNotificationsEnabled = value; }
+        }
+
+        // Check to see if HeadersInComplaintNotificationsEnabled property is set
+        internal bool IsSetHeadersInComplaintNotificationsEnabled()
+        {
+            return this._headersInComplaintNotificationsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HeadersInDeliveryNotificationsEnabled. 
+        /// <para>
+        /// Describes whether Amazon SES includes the original email headers in Amazon SNS notifications
+        /// of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon
+        /// SES will include headers in delivery notifications, and a value of <code>false</code>
+        /// specifies that Amazon SES will not include headers in delivery notifications.
+        /// </para>
+        /// </summary>
+        public bool HeadersInDeliveryNotificationsEnabled
+        {
+            get { return this._headersInDeliveryNotificationsEnabled.GetValueOrDefault(); }
+            set { this._headersInDeliveryNotificationsEnabled = value; }
+        }
+
+        // Check to see if HeadersInDeliveryNotificationsEnabled property is set
+        internal bool IsSetHeadersInDeliveryNotificationsEnabled()
+        {
+            return this._headersInDeliveryNotificationsEnabled.HasValue; 
         }
 
     }

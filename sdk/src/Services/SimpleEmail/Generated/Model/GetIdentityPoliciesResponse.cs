@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the GetIdentityPolicies operation.
+    /// Represents the requested sending authorization policies.
     /// </summary>
     public partial class GetIdentityPoliciesResponse : AmazonWebServiceResponse
     {

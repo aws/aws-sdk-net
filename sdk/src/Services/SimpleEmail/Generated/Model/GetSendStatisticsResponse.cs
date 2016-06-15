@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the GetSendStatistics operation.
+    /// Represents a list of data points. This list contains aggregated data from the previous
+    /// two weeks of your sending activity with Amazon SES.
     /// </summary>
     public partial class GetSendStatisticsResponse : AmazonWebServiceResponse
     {

@@ -114,8 +114,12 @@ namespace Amazon.SimpleEmail.Model
         /// structure. Either <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code>
         /// must be a recipient of the original bounced message.
         /// </para>
-        ///  <note>Do not prepend the <code>FinalRecipient</code> email address with <code>rfc
-        /// 822;</code>, as described in <a href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
+        ///  <note> 
+        /// <para>
+        /// Do not prepend the <code>FinalRecipient</code> email address with <code>rfc 822;</code>,
+        /// as described in <a href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string FinalRecipient
         {

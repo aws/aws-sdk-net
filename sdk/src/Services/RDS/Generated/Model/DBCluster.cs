@@ -84,6 +84,8 @@ namespace Amazon.RDS.Model
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private List<string> _readReplicaIdentifiers = new List<string>();
+        private string _replicationSourceIdentifier;
         private string _status;
         private bool? _storageEncrypted;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
@@ -511,6 +513,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadReplicaIdentifiers. 
+        /// <para>
+        /// Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+        /// </para>
+        /// </summary>
+        public List<string> ReadReplicaIdentifiers
+        {
+            get { return this._readReplicaIdentifiers; }
+            set { this._readReplicaIdentifiers = value; }
+        }
+
+        // Check to see if ReadReplicaIdentifiers property is set
+        internal bool IsSetReadReplicaIdentifiers()
+        {
+            return this._readReplicaIdentifiers != null && this._readReplicaIdentifiers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationSourceIdentifier. 
+        /// <para>
+        /// Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+        /// </para>
+        /// </summary>
+        public string ReplicationSourceIdentifier
+        {
+            get { return this._replicationSourceIdentifier; }
+            set { this._replicationSourceIdentifier = value; }
+        }
+
+        // Check to see if ReplicationSourceIdentifier property is set
+        internal bool IsSetReplicationSourceIdentifier()
+        {
+            return this._replicationSourceIdentifier != null;
         }
 
         /// <summary>

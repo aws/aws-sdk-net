@@ -42,8 +42,12 @@ namespace Amazon.SimpleEmail
     /// is intended to be used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>. 
     /// </para>
-    ///  <note>For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
-    /// and Amazon SES</a> in the Amazon SES Developer Guide. </note>
+    ///  <note> 
+    /// <para>
+    ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
+    /// and Amazon SES</a> in the Amazon SES Developer Guide. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AmazonSimpleEmailServiceClient : AmazonServiceClient, IAmazonSimpleEmailService
     {
@@ -806,7 +810,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns the user's sending statistics. The result is a list of data points, representing
-        /// the last two weeks of sending activity. 
+        /// the last two weeks of sending activity.
         /// 
         ///  
         /// <para>
@@ -865,7 +869,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
-        /// a specific AWS Account, regardless of verification status.
+        /// your AWS account, regardless of verification status.
         /// 
         ///  
         /// <para>
@@ -1014,9 +1018,12 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Returns a list containing all of the email addresses that have been verified.
         /// 
-        ///  <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15,
-        /// 2012 release of Domain Verification. The ListIdentities action is now preferred.</important>
-        /// 
+        ///  <important> 
+        /// <para>
+        /// The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release
+        /// of Domain Verification. The ListIdentities action is now preferred.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This action is throttled at one request per second.
         /// </para>
@@ -1295,6 +1302,37 @@ namespace Amazon.SimpleEmail
             var unmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetIdentityFeedbackForwardingEnabledRequest,SetIdentityFeedbackForwardingEnabledResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetIdentityHeadersInNotificationsEnabled
+
+        internal SetIdentityHeadersInNotificationsEnabledResponse SetIdentityHeadersInNotificationsEnabled(SetIdentityHeadersInNotificationsEnabledRequest request)
+        {
+            var marshaller = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();
+            var unmarshaller = SetIdentityHeadersInNotificationsEnabledResponseUnmarshaller.Instance;
+
+            return Invoke<SetIdentityHeadersInNotificationsEnabledRequest,SetIdentityHeadersInNotificationsEnabledResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityHeadersInNotificationsEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityHeadersInNotificationsEnabled operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SetIdentityHeadersInNotificationsEnabledResponse> SetIdentityHeadersInNotificationsEnabledAsync(SetIdentityHeadersInNotificationsEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();
+            var unmarshaller = SetIdentityHeadersInNotificationsEnabledResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetIdentityHeadersInNotificationsEnabledRequest,SetIdentityHeadersInNotificationsEnabledResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
