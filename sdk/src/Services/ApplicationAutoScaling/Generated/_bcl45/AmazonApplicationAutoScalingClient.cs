@@ -38,7 +38,7 @@ namespace Amazon.ApplicationAutoScaling
     ///
     /// Application Auto Scaling is a general purpose Auto Scaling service for supported elastic
     /// AWS resources. With Application Auto Scaling, you can automatically scale your AWS
-    /// resources, with an experience similar to that of Amazon EC2 Auto Scaling.
+    /// resources, with an experience similar to that of Auto Scaling.
     /// 
     ///  <note> 
     /// <para>
@@ -59,6 +59,22 @@ namespace Amazon.ApplicationAutoScaling
     ///  </li> <li> 
     /// <para>
     /// View history of your scaling events 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Application Auto Scaling is available in the following regions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>us-east-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>us-west-2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>eu-west-1</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -282,7 +298,7 @@ namespace Amazon.ApplicationAutoScaling
         /// is thrown if the scalable target with the specified service namespace, resource ID,
         /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
         /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
-        /// can not be found.
+        /// cannot be found.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for
@@ -346,7 +362,7 @@ namespace Amazon.ApplicationAutoScaling
         /// is thrown if the scalable target with the specified service namespace, resource ID,
         /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
         /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
-        /// can not be found.
+        /// cannot be found.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for
@@ -532,7 +548,7 @@ namespace Amazon.ApplicationAutoScaling
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.FailedResourceAccessException">
         /// Failed access to resources caused an exception. This exception currently only applies
         /// to <a>DescribeScalingPolicies</a>. It is thrown when Application Auto Scaling is unable
-        /// to retrieve the alarms associated with a scaling policy due to a client error. For
+        /// to retrieve the alarms associated with a scaling policy due to a client error, for
         /// example, if the role ARN specified for a scalable target does not have the proper
         /// permissions to call the CloudWatch <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
         /// API operation on behalf of your account.
@@ -619,7 +635,7 @@ namespace Amazon.ApplicationAutoScaling
         /// is thrown if the scalable target with the specified service namespace, resource ID,
         /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
         /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
-        /// can not be found.
+        /// cannot be found.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for
@@ -658,7 +674,7 @@ namespace Amazon.ApplicationAutoScaling
 
         /// <summary>
         /// Registers or updates a scalable target. A scalable target is a resource that can be
-        /// scaled up or down with Application Auto Scaling. Once you have registered a scalable
+        /// scaled up or down with Application Auto Scaling. After you have registered a scalable
         /// target, you can use this command to update the minimum and maximum values for your
         /// scalable dimension.
         /// 

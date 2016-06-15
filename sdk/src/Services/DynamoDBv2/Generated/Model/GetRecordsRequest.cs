@@ -40,12 +40,12 @@ namespace Amazon.DynamoDBv2.Model
     /// list. Note that it might take multiple calls to get to a portion of the shard that
     /// contains stream records.
     /// </para>
-    ///  <note>
+    ///  <note> 
     /// <para>
-    /// GetRecords can retrieve a maximum of 1 MB of data or 2000 stream records, whichever
-    /// comes first.
+    ///  <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records,
+    /// whichever comes first.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class GetRecordsRequest : AmazonDynamoDBStreamsRequest
     {

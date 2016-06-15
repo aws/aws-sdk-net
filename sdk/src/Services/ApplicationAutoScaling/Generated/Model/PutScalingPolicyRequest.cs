@@ -97,7 +97,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// The unique resource identifier string for the scalable target that this scaling policy
         /// applies to. For Amazon ECS services, this value is the resource type, followed by
-        /// the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>.
+        /// the cluster name and service name, such as <code>service/default/sample-webapp</code>.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -116,9 +116,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ScalableDimension. 
         /// <para>
         /// The scalable dimension of the scalable target that this scaling policy applies to.
-        /// The scalable dimension contains the service namespace, the resource type, and the
-        /// scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task
-        /// count for an Amazon ECS service.
+        /// The scalable dimension contains the service namespace, resource type, and scaling
+        /// property, such as <code>ecs:service:DesiredCount</code> for the desired task count
+        /// of an Amazon ECS service.
         /// </para>
         /// </summary>
         public ScalableDimension ScalableDimension
@@ -157,9 +157,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property StepScalingPolicyConfiguration. 
         /// <para>
         /// The configuration for the step scaling policy. This parameter is required if you are
-        /// creating a new policy. For more information, see <a href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
-        /// and <a href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
-        /// in the <i>Application Auto Scaling API Reference</i>.
+        /// creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a>
+        /// and <a>StepAdjustment</a>.
         /// </para>
         /// </summary>
         public StepScalingPolicyConfiguration StepScalingPolicyConfiguration

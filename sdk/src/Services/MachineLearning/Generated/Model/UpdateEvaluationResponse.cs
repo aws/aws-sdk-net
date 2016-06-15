@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of an <a>UpdateEvaluation</a> operation.
+    /// Represents the output of an <code>UpdateEvaluation</code> operation.
     /// 
     ///  
     /// <para>
-    /// You can see the updated content by using the <a>GetEvaluation</a> operation.
+    /// You can see the updated content by using the <code>GetEvaluation</code> operation.
     /// </para>
     /// </summary>
     public partial class UpdateEvaluationResponse : AmazonWebServiceResponse

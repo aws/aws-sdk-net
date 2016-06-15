@@ -72,6 +72,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ExcessCapacityTerminationPolicy", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.ExcessCapacityTerminationPolicy));
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetFulfilledCapacity())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "FulfilledCapacity", StringUtils.FromDouble(publicRequest.SpotFleetRequestConfig.FulfilledCapacity));
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetIamFleetRole())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "IamFleetRole", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.IamFleetRole));
@@ -296,6 +300,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.SpotFleetRequestConfig.IsSetTerminateInstancesWithExpiration())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "TerminateInstancesWithExpiration", StringUtils.FromBool(publicRequest.SpotFleetRequestConfig.TerminateInstancesWithExpiration));
+                    }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetType())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "Type", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.Type));
                     }
                     if(publicRequest.SpotFleetRequestConfig.IsSetValidFrom())
                     {

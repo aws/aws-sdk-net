@@ -137,7 +137,8 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to
         /// store the batch prediction results. The following substrings are not allowed in the
-        /// s3 key portion of the "outputURI" field: ':', '//', '/./', '/../'.
+        /// <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./',
+        /// '/../'.
         /// </para>
         ///  
         /// <para>

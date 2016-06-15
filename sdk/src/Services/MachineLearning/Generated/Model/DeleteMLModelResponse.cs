@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <a>DeleteMLModel</a> operation.
+    /// Represents the output of a <code>DeleteMLModel</code> operation.
     /// 
     ///  
     /// <para>
-    /// You can use the <a>GetMLModel</a> operation and check the value of the <code>Status</code>
+    /// You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code>
     /// parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.
     /// </para>
     /// </summary>

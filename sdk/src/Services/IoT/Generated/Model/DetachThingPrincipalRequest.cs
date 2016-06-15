@@ -41,6 +41,11 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The principal.
         /// </para>
+        ///  
+        /// <para>
+        /// If the principal is a certificate, specify the certificate ARN. If the principal is
+        /// an Amazon Cognito identity, specify the identity ID.
+        /// </para>
         /// </summary>
         public string Principal
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <a>GetEvaluation</a> operation and describes an <code>Evaluation</code>.
+    /// Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>.
     /// </summary>
     public partial class GetEvaluationResponse : AmazonWebServiceResponse
     {
@@ -160,7 +160,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
-        /// A link to the file that contains logs of the <a>CreateEvaluation</a> operation.
+        /// A link to the file that contains logs of the <code>CreateEvaluation</code> operation.
         /// </para>
         /// </summary>
         public string LogUri

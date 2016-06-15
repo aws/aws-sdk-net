@@ -65,19 +65,19 @@ namespace Amazon.DynamoDBv2.Model
         /// it is possible that a stream from another table might have the same timestamp. However,
         /// the combination of the following three elements is guaranteed to be unique:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// the AWS customer ID.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// the table name
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// the <i>StreamLabel</i>
+        /// the <i>StreamLabel</i> 
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public string StreamLabel
         {

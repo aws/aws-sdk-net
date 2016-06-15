@@ -33,8 +33,8 @@ namespace Amazon.MachineLearning.Model
     /// 
     ///  
     /// <para>
-    /// You can use the <a>GetBatchPrediction</a> operation to view the contents of the updated
-    /// data element.
+    /// You can use the <code>GetBatchPrediction</code> operation to view the contents of
+    /// the updated data element.
     /// </para>
     /// </summary>
     public partial class UpdateBatchPredictionRequest : AmazonMachineLearningRequest

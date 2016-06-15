@@ -35,6 +35,22 @@ namespace Amazon.MachineLearning
     public partial interface IAmazonMachineLearning : IDisposable
     {
                 
+        #region  AddTags
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateBatchPrediction
 
 
@@ -272,13 +288,14 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <a>GetEvaluation</a>
+        /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code>
         /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
         /// </para>
-        ///  
+        ///  <caution><title>Caution</title> 
         /// <para>
-        /// <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
+        /// The results of the <code>DeleteEvaluation</code> operation are irreversible.
         /// </para>
+        /// </caution>
         /// </summary>
         /// <param name="evaluationId">A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</param>
         /// <param name="cancellationToken">
@@ -314,11 +331,11 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Assigns the DELETED status to an <code>MLModel</code>, rendering it unusable.
+        /// Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.
         /// 
         ///  
         /// <para>
-        /// After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a>
+        /// After using the <code>DeleteMLModel</code> operation, you can use the <code>GetMLModel</code>
         /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
         /// </para>
         ///  
@@ -392,6 +409,22 @@ namespace Amazon.MachineLearning
 
         #endregion
                 
+        #region  DeleteTags
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeBatchPredictions
 
 
@@ -453,6 +486,22 @@ namespace Amazon.MachineLearning
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeMLModelsResponse> DescribeMLModelsAsync(DescribeMLModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeTags
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -607,8 +656,8 @@ namespace Amazon.MachineLearning
 
 
         /// <summary>
-        /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
-        /// as well as the current status of the <code>MLModel</code>.
+        /// Returns an <code>MLModel</code> that includes detailed metadata, data source information,
+        /// and the current status of the <code>MLModel</code>.
         /// 
         ///  
         /// <para>
@@ -633,8 +682,8 @@ namespace Amazon.MachineLearning
         Task<GetMLModelResponse> GetMLModelAsync(string mlModelId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
-        /// as well as the current status of the <code>MLModel</code>.
+        /// Returns an <code>MLModel</code> that includes detailed metadata, data source information,
+        /// and the current status of the <code>MLModel</code>.
         /// 
         ///  
         /// <para>
@@ -732,8 +781,8 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetBatchPrediction</a> operation to view the contents of the updated
-        /// data element.
+        /// You can use the <code>GetBatchPrediction</code> operation to view the contents of
+        /// the updated data element.
         /// </para>
         /// </summary>
         /// <param name="batchPredictionId">The ID assigned to the <code>BatchPrediction</code> during creation.</param>
@@ -775,7 +824,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetDataSource</a> operation to view the contents of the updated
+        /// You can use the <code>GetDataSource</code> operation to view the contents of the updated
         /// data element.
         /// </para>
         /// </summary>
@@ -818,7 +867,7 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetEvaluation</a> operation to view the contents of the updated
+        /// You can use the <code>GetEvaluation</code> operation to view the contents of the updated
         /// data element.
         /// </para>
         /// </summary>
@@ -861,8 +910,8 @@ namespace Amazon.MachineLearning
         /// 
         ///  
         /// <para>
-        /// You can use the <a>GetMLModel</a> operation to view the contents of the updated data
-        /// element.
+        /// You can use the <code>GetMLModel</code> operation to view the contents of the updated
+        /// data element.
         /// </para>
         /// </summary>
         /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> during creation.</param>

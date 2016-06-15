@@ -51,6 +51,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HashKeyField);
             }
 
+            if(requestObject.IsSetHashKeyType())
+            {
+                context.Writer.WritePropertyName("hashKeyType");
+                context.Writer.Write(requestObject.HashKeyType);
+            }
+
             if(requestObject.IsSetHashKeyValue())
             {
                 context.Writer.WritePropertyName("hashKeyValue");
@@ -67,6 +73,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("rangeKeyField");
                 context.Writer.Write(requestObject.RangeKeyField);
+            }
+
+            if(requestObject.IsSetRangeKeyType())
+            {
+                context.Writer.WritePropertyName("rangeKeyType");
+                context.Writer.Write(requestObject.RangeKeyType);
             }
 
             if(requestObject.IsSetRangeKeyValue())

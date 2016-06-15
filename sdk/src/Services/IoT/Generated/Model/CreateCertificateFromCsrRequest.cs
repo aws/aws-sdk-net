@@ -47,7 +47,7 @@ namespace Amazon.IoT.Model
     /// <para>
     /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
     /// </para>
-    /// &gt; 
+    ///  
     /// <para>
     /// On Linux and OS X, the command is:
     /// </para>

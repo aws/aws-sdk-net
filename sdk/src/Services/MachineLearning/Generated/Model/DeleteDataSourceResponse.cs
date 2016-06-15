@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <a>DeleteDataSource</a> operation.
+    /// Represents the output of a <code>DeleteDataSource</code> operation.
     /// </summary>
     public partial class DeleteDataSourceResponse : AmazonWebServiceResponse
     {

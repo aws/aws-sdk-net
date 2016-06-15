@@ -242,7 +242,7 @@ namespace Amazon.IoT
         /// <para>
         /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
         /// </para>
-        /// &gt; 
+        ///  
         /// <para>
         /// On Linux and OS X, the command is:
         /// </para>
@@ -330,7 +330,7 @@ namespace Amazon.IoT
         /// <para>
         /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
         /// </para>
-        /// &gt; 
+        ///  
         /// <para>
         /// On Linux and OS X, the command is:
         /// </para>
@@ -1047,8 +1047,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique endpoint specific to the AWS account making the call. You specify
-        /// the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
+        /// Returns a unique endpoint specific to the AWS account making the call.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1177,7 +1176,7 @@ namespace Amazon.IoT
         /// Detaches the specified principal from the specified thing.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal.</param>
+        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1531,11 +1530,27 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  ListPolicyPrincipals
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicyPrincipals operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyPrincipals operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListPolicyPrincipalsResponse> ListPolicyPrincipalsAsync(ListPolicyPrincipalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPolicyVersions
 
 
         /// <summary>
-        /// Lists the versions of the specified policy, and identifies the default version.
+        /// Lists the versions of the specified policy and identifies the default version.
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// <param name="cancellationToken">
@@ -2063,7 +2078,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</param>
+        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use. <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

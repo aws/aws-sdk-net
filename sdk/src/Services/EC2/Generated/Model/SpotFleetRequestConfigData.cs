@@ -35,11 +35,13 @@ namespace Amazon.EC2.Model
         private AllocationStrategy _allocationStrategy;
         private string _clientToken;
         private ExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
+        private double? _fulfilledCapacity;
         private string _iamFleetRole;
         private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
         private string _spotPrice;
         private int? _targetCapacity;
         private bool? _terminateInstancesWithExpiration;
+        private FleetType _type;
         private DateTime? _validFrom;
         private DateTime? _validUntil;
 
@@ -99,6 +101,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetExcessCapacityTerminationPolicy()
         {
             return this._excessCapacityTerminationPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FulfilledCapacity. 
+        /// <para>
+        /// The number of units fulfilled by this request compared to the set target capacity.
+        /// </para>
+        /// </summary>
+        public double FulfilledCapacity
+        {
+            get { return this._fulfilledCapacity.GetValueOrDefault(); }
+            set { this._fulfilledCapacity = value; }
+        }
+
+        // Check to see if FulfilledCapacity property is set
+        internal bool IsSetFulfilledCapacity()
+        {
+            return this._fulfilledCapacity.HasValue; 
         }
 
         /// <summary>
@@ -194,6 +214,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetTerminateInstancesWithExpiration()
         {
             return this._terminateInstancesWithExpiration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of request. Indicates whether the fleet will only <code>request</code> the
+        /// target capacity or also attempt to <code>maintain</code> it. When you <code>request</code>
+        /// a certain target capacity, the fleet will only place the required bids. It will not
+        /// attempt to replenish Spot instances if capacity is diminished, nor will it submit
+        /// bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code>
+        /// a certain target capacity, fleet will place the required bids to meet this target
+        /// capacity. It will also automatically replenish any interrupted instances. Default:
+        /// <code>maintain</code>. 
+        /// </para>
+        /// </summary>
+        public FleetType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

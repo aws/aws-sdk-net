@@ -98,19 +98,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The type of data modification that was performed on the DynamoDB table:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>INSERT</code> - a new item was added to the table.
+        ///  <code>INSERT</code> - a new item was added to the table.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>MODIFY</code> - one or more of the item's attributes were updated.
+        ///  <code>MODIFY</code> - one or more of an existing item's attributes were modified.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>REMOVE</code> - the item was deleted from the table
+        ///  <code>REMOVE</code> - the item was deleted from the table
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public OperationType EventName
         {
@@ -146,7 +146,14 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property EventVersion. 
         /// <para>
-        /// The version number of the stream record format. Currently, this is <i>1.0</i>.
+        /// The version number of the stream record format. This number is updated whenever the
+        /// structure of <i>Record</i> is modified.
+        /// </para>
+        ///  
+        /// <para>
+        /// Client applications must not assume that <i>eventVersion</i> will remain at a particular
+        /// value, as this number is subject to change at any time. In general, <i>eventVersion</i>
+        /// will only increase as the low-level DynamoDB Streams API evolves.
         /// </para>
         /// </summary>
         public string EventVersion

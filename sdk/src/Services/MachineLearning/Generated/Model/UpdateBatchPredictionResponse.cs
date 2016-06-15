@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of an <a>UpdateBatchPrediction</a> operation.
+    /// Represents the output of an <code>UpdateBatchPrediction</code> operation.
     /// 
     ///  
     /// <para>
-    /// You can see the updated content by using the <a>GetBatchPrediction</a> operation.
+    /// You can see the updated content by using the <code>GetBatchPrediction</code> operation.
     /// </para>
     /// </summary>
     public partial class UpdateBatchPredictionResponse : AmazonWebServiceResponse
