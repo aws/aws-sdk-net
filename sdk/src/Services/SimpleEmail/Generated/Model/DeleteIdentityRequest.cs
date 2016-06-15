@@ -29,7 +29,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIdentity operation.
-    /// Deletes the specified identity (email address or domain) from the list of verified
+    /// Deletes the specified identity (an email address or a domain) from the list of verified
     /// identities.
     /// 
     ///  

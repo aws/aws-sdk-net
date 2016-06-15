@@ -676,7 +676,7 @@ namespace Amazon.IoT
         /// <para>
         /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
         /// </para>
-        /// &gt; 
+        ///  
         /// <para>
         /// On Linux and OS X, the command is:
         /// </para>
@@ -767,7 +767,7 @@ namespace Amazon.IoT
         /// <para>
         /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
         /// </para>
-        /// &gt; 
+        ///  
         /// <para>
         /// On Linux and OS X, the command is:
         /// </para>
@@ -860,7 +860,7 @@ namespace Amazon.IoT
         /// <para>
         /// Assuming a set of CSRs are located inside of the directory my-csr-directory:
         /// </para>
-        /// &gt; 
+        ///  
         /// <para>
         /// On Linux and OS X, the command is:
         /// </para>
@@ -2425,8 +2425,7 @@ namespace Amazon.IoT
         #region  DescribeEndpoint
 
         /// <summary>
-        /// Returns a unique endpoint specific to the AWS account making the call. You specify
-        /// the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
+        /// Returns a unique endpoint specific to the AWS account making the call.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEndpoint service method, as returned by IoT.</returns>
@@ -2447,8 +2446,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique endpoint specific to the AWS account making the call. You specify
-        /// the following URI when updating state information for your thing: https://<i>endpoint</i>/things/<i>thingName</i>/shadow.
+        /// Returns a unique endpoint specific to the AWS account making the call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// 
@@ -2712,7 +2710,7 @@ namespace Amazon.IoT
         /// Detaches the specified principal from the specified thing.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal.</param>
+        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
         /// 
         /// <returns>The response from the DetachThingPrincipal service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -3206,6 +3204,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
         /// An unexpected error has occurred.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
@@ -3677,10 +3678,78 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListPolicyPrincipals
+
+        /// <summary>
+        /// Lists the principals associated with the specified policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyPrincipals service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicyPrincipals service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public ListPolicyPrincipalsResponse ListPolicyPrincipals(ListPolicyPrincipalsRequest request)
+        {
+            var marshaller = new ListPolicyPrincipalsRequestMarshaller();
+            var unmarshaller = ListPolicyPrincipalsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyPrincipalsRequest,ListPolicyPrincipalsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicyPrincipals operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyPrincipals operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyPrincipals
+        ///         operation.</returns>
+        public IAsyncResult BeginListPolicyPrincipals(ListPolicyPrincipalsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListPolicyPrincipalsRequestMarshaller();
+            var unmarshaller = ListPolicyPrincipalsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListPolicyPrincipalsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPolicyPrincipals operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyPrincipals.</param>
+        /// 
+        /// <returns>Returns a  ListPolicyPrincipalsResult from IoT.</returns>
+        public  ListPolicyPrincipalsResponse EndListPolicyPrincipals(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPolicyPrincipalsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPolicyVersions
 
         /// <summary>
-        /// Lists the versions of the specified policy, and identifies the default version.
+        /// Lists the versions of the specified policy and identifies the default version.
         /// </summary>
         /// <param name="policyName">The policy name.</param>
         /// 
@@ -3712,7 +3781,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the versions of the specified policy, and identifies the default version.
+        /// Lists the versions of the specified policy and identifies the default version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyVersions service method.</param>
         /// 
@@ -5009,7 +5078,7 @@ namespace Amazon.IoT
         /// </para>
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
-        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.</param>
+        /// <param name="newStatus">The new status. <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use. <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// 
         /// <returns>The response from the UpdateCertificate service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.CertificateStateException">

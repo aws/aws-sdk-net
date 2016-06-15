@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the GetIdentityMailFromDomainAttributes operation.
+    /// Represents the custom MAIL FROM attributes for a list of identities.
     /// </summary>
     public partial class GetIdentityMailFromDomainAttributesResponse : AmazonWebServiceResponse
     {

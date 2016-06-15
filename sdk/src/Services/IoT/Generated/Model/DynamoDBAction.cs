@@ -63,9 +63,11 @@ namespace Amazon.IoT.Model
     public partial class DynamoDBAction
     {
         private string _hashKeyField;
+        private DynamoKeyType _hashKeyType;
         private string _hashKeyValue;
         private string _payloadField;
         private string _rangeKeyField;
+        private DynamoKeyType _rangeKeyType;
         private string _rangeKeyValue;
         private string _roleArn;
         private string _tableName;
@@ -86,6 +88,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetHashKeyField()
         {
             return this._hashKeyField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HashKeyType. 
+        /// <para>
+        /// The hash key type. Valid values are "STRING" or "NUMBER"
+        /// </para>
+        /// </summary>
+        public DynamoKeyType HashKeyType
+        {
+            get { return this._hashKeyType; }
+            set { this._hashKeyType = value; }
+        }
+
+        // Check to see if HashKeyType property is set
+        internal bool IsSetHashKeyType()
+        {
+            return this._hashKeyType != null;
         }
 
         /// <summary>
@@ -140,6 +160,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetRangeKeyField()
         {
             return this._rangeKeyField != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RangeKeyType. 
+        /// <para>
+        /// The range key type. Valid values are "STRING" or "NUMBER"
+        /// </para>
+        /// </summary>
+        public DynamoKeyType RangeKeyType
+        {
+            get { return this._rangeKeyType; }
+            set { this._rangeKeyType = value; }
+        }
+
+        // Check to see if RangeKeyType property is set
+        internal bool IsSetRangeKeyType()
+        {
+            return this._rangeKeyType != null;
         }
 
         /// <summary>

@@ -2670,6 +2670,37 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  PromoteReadReplicaDBCluster
+
+        internal PromoteReadReplicaDBClusterResponse PromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request)
+        {
+            var marshaller = new PromoteReadReplicaDBClusterRequestMarshaller();
+            var unmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<PromoteReadReplicaDBClusterRequest,PromoteReadReplicaDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PromoteReadReplicaDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplicaDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PromoteReadReplicaDBClusterResponse> PromoteReadReplicaDBClusterAsync(PromoteReadReplicaDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PromoteReadReplicaDBClusterRequestMarshaller();
+            var unmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PromoteReadReplicaDBClusterRequest,PromoteReadReplicaDBClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PurchaseReservedDBInstancesOffering
 
         internal PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request)

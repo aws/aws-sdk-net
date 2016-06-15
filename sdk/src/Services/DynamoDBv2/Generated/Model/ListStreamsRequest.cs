@@ -33,11 +33,11 @@ namespace Amazon.DynamoDBv2.Model
     /// If the <code>TableName</code> parameter is present, then <i>ListStreams</i> will return
     /// only the streams ARNs for that table.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class ListStreamsRequest : AmazonDynamoDBStreamsRequest
     {

@@ -155,19 +155,19 @@ namespace Amazon.DynamoDBv2.Model
         /// it is possible that a stream from another table might have the same timestamp. However,
         /// the combination of the following three elements is guaranteed to be unique:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// the AWS customer ID.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// the table name
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// the <i>StreamLabel</i>
+        /// the <i>StreamLabel</i> 
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public string StreamLabel
         {
@@ -186,23 +186,23 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// Indicates the current status of the stream:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.
+        ///  <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>ENABLING</code> - the stream is enabled.
+        ///  <code>ENABLED</code> - the stream is enabled.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.
+        ///  <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>DISABLED</code> - the stream is disabled.
+        ///  <code>DISABLED</code> - the stream is disabled.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public StreamStatus StreamStatus
         {
@@ -221,27 +221,27 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// Indicates the format of the records within this stream:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the
+        ///  <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the
         /// DynamoDB table.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>NEW_IMAGE</code> - entire item from the table, as it appeared after they were
-        /// modified.
+        ///  <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they
+        /// were modified.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>OLD_IMAGE</code> - entire item from the table, as it appeared before they were
-        /// modified.
+        ///  <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they
+        /// were modified.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from
+        ///  <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from
         /// the table.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public StreamViewType StreamViewType
         {

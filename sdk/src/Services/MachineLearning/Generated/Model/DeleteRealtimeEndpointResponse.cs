@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of an <a>DeleteRealtimeEndpoint</a> operation.
+    /// Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.
     /// 
     ///  
     /// <para>

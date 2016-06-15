@@ -1,3 +1,29 @@
+### 3.1.76.0 (2016-06-14 22:42 UTC)
+* CertificateManager (3.1.3.3)
+	* Regenerating from latest service model acm-2015-12-08.normal.json
+* CloudTrail (3.1.5.0)
+	* Regenerating from latest service model cloudtrail-2013-11-01.normal.json
+* RDS (3.1.12.0)
+	* Regenerating from latest service model rds-2014-10-31.normal.json
+* S3 (3.1.7.2)
+	* Minor documentation update.
+* SimpleEmail (3.1.4.0)
+	* Regenerating from latest service model email-2010-12-01.normal.json
+
+### 3.1.75.1 (2016-06-13 22:41 UTC)
+* S3 (3.1.7.1)
+	* Pull request 379, prevent v4 auth from being forced on GET when using non s3 endpoint.
+* SQS (3.1.0.10)
+	* Pull request 380, updating SQSConstants
+
+### 3.1.75.0 (2016-06-07 20:08 UTC)
+* DynamoDBv2 (3.1.5.0)
+	* API Update for DynamoDB Streams to support ApproximationCreationDateTime
+* IoT (3.1.5.0)
+	* Adds new API, ListPolicyPrincipals. ListPolicyPrincipals allows you to list all your principals (certificate or other credential, such as Amazon Cognito ID) attached to a given policy. Also adds an encode function to the SQL syntax function list, and a couple of improvements to Amazon DynamoDB Actions: Range key (primary partition key) is now optional as it is in DynamoDB. "NUMBER" is being introduced as a supported hash key and range key type.
+* MachineLearning (3.1.2.0)
+	* You can now assign tags, which are commonly used for cost allocation, to Amazon Machine Learning datasources, models, evaluations, and batch predictions.
+
 ### 3.1.74.0 (2016-06-03 21:43 UTC)
 * ApplicationAutoScaling (3.1.0.2)
 	* Updated incorrect documentation links.

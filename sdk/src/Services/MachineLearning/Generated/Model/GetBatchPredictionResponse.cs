@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <a>GetBatchPrediction</a> operation and describes a <code>BatchPrediction</code>.
+    /// Represents the output of a <code>GetBatchPrediction</code> operation and describes
+    /// a <code>BatchPrediction</code>.
     /// </summary>
     public partial class GetBatchPredictionResponse : AmazonWebServiceResponse
     {
@@ -163,7 +164,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
-        /// A link to the file that contains logs of the <a>CreateBatchPrediction</a> operation.
+        /// A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.
         /// </para>
         /// </summary>
         public string LogUri

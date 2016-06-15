@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the GetSendQuota operation.
+    /// Represents your Amazon SES daily sending quota, maximum send rate, and the number
+    /// of emails you have sent in the last 24 hours.
     /// </summary>
     public partial class GetSendQuotaResponse : AmazonWebServiceResponse
     {
@@ -61,8 +62,12 @@ namespace Amazon.SimpleEmail.Model
         /// The maximum number of emails that Amazon SES can accept from the user's account per
         /// second.
         /// </para>
-        ///  <note>The rate at which Amazon SES accepts the user's messages might be less than
-        /// the maximum send rate.</note>
+        ///  <note> 
+        /// <para>
+        /// The rate at which Amazon SES accepts the user's messages might be less than the maximum
+        /// send rate.
+        /// </para>
+        ///  </note>
         /// </summary>
         public double MaxSendRate
         {

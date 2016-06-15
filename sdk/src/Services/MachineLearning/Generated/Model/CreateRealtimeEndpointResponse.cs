@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of an <a>CreateRealtimeEndpoint</a> operation.
+    /// Represents the output of an <code>CreateRealtimeEndpoint</code> operation.
     /// 
     ///  
     /// <para>

@@ -33,17 +33,17 @@ namespace Amazon.DynamoDBv2.Model
     /// Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB
     /// table.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
     /// </para>
-    /// </note> 
+    ///  </note> 
     /// <para>
     /// Each shard in the stream has a <code>SequenceNumberRange</code> associated with it.
     /// If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code>
     /// but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive
     /// more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
-    /// are present, the that shared is closed and can no longer receive more data.
+    /// are present, then that shard is closed and can no longer receive more data.
     /// </para>
     /// </summary>
     public partial class DescribeStreamRequest : AmazonDynamoDBStreamsRequest

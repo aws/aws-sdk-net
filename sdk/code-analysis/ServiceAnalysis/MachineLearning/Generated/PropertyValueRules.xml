@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.MachineLearning.Model.AddTagsRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.AddTagsResponse.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateBatchPredictionRequest.BatchPredictionDataSourceId</property>
     <min>1</min>
     <max>64</max>
@@ -48,7 +60,7 @@
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRDSRequest.RoleARN</property>
     <min>1</min>
-    <max>100</max>
+    <max>110</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRDSResponse.DataSourceId</property>
@@ -70,7 +82,7 @@
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRedshiftRequest.RoleARN</property>
     <min>1</min>
-    <max>100</max>
+    <max>110</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.CreateDataSourceFromRedshiftResponse.DataSourceId</property>
@@ -224,6 +236,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DeleteRealtimeEndpointResponse.MLModelId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.DeleteTagsRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.DeleteTagsResponse.ResourceId</property>
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
@@ -389,6 +413,18 @@
     <pattern>.*\S.*|^$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MachineLearning.Model.DescribeTagsRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.DescribeTagsResponse.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetBatchPredictionRequest.BatchPredictionId</property>
     <min>1</min>
     <max>64</max>
@@ -472,7 +508,7 @@
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetDataSourceResponse.RoleARN</property>
     <min>1</min>
-    <max>100</max>
+    <max>110</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.GetEvaluationRequest.EvaluationId</property>
@@ -706,7 +742,7 @@
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.DataSource.RoleARN</property>
     <min>1</min>
-    <max>100</max>
+    <max>110</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.Evaluation.CreatedByIamUser</property>
@@ -754,6 +790,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MachineLearning.Model.InvalidInputException.Message</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.InvalidTagException.Message</property>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -950,5 +990,21 @@
     <property>Amazon.MachineLearning.Model.S3DataSpec.DataSchemaLocationS3</property>
     <max>2048</max>
     <pattern>s3://([^/]+)(/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MachineLearning.Model.TagLimitExceededException.Message</property>
+    <max>2048</max>
   </property-value-rule>
 </property-value-rules>

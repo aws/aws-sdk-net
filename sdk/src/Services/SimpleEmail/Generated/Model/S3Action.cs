@@ -40,8 +40,12 @@ namespace Amazon.SimpleEmail.Model
     /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
     /// SES Developer Guide</a>.
     /// </para>
-    ///  <note>When you save your emails to an Amazon S3 bucket, the maximum email size (including
-    /// headers) is 30 MB. Emails larger than that will bounce.</note> 
+    ///  <note> 
+    /// <para>
+    /// When you save your emails to an Amazon S3 bucket, the maximum email size (including
+    /// headers) is 30 MB. Emails larger than that will bounce.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For information about specifying Amazon S3 actions in receipt rules, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon
     /// SES Developer Guide</a>.
@@ -79,30 +83,41 @@ namespace Amazon.SimpleEmail.Model
         /// them to the Amazon S3 bucket. You can use the default master key or a custom master
         /// key you created in AWS KMS as follows:
         /// </para>
-        ///  <ul> <li>To use the default master key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>.
+        ///  <ul> <li> 
+        /// <para>
+        /// To use the default master key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>.
         /// For example, if your AWS account ID is 123456789012 and you want to use the default
         /// master key in the US West (Oregon) region, the ARN of the default master key would
         /// be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the default
         /// master key, you don't need to perform any extra steps to give Amazon SES permission
-        /// to use the key.</li> <li>To use a custom master key you created in AWS KMS, provide
-        /// the ARN of the master key and ensure that you add a statement to your key's policy
-        /// to give Amazon SES permission to use it. For more information about giving permissions,
-        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
-        /// SES Developer Guide</a>.</li> </ul> 
+        /// to use the key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To use a custom master key you created in AWS KMS, provide the ARN of the master key
+        /// and ensure that you add a statement to your key's policy to give Amazon SES permission
+        /// to use it. For more information about giving permissions, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For more information about key policies, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
         /// KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not encrypt
         /// your emails.
         /// </para>
-        ///  <important>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client
-        /// before the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon
-        /// S3 server-side encryption. This means that you must use the Amazon S3 encryption client
+        ///  <important> 
+        /// <para>
+        /// Your mail is encrypted by Amazon SES using the Amazon S3 encryption client before
+        /// the mail is submitted to Amazon S3 for storage. It is not encrypted using Amazon S3
+        /// server-side encryption. This means that you must use the Amazon S3 encryption client
         /// to decrypt the email after retrieving it from Amazon S3, as the service has no access
         /// to use your AWS KMS keys for decryption. This encryption client is currently available
-        /// with the <a href="https://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a href="https://aws.amazon.com/sdk-for-ruby/">AWS
+        /// with the <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">AWS
         /// Ruby SDK</a> only. For more information about client-side encryption using AWS KMS
         /// master keys, see the <a href="http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
-        /// S3 Developer Guide</a>. </important>
+        /// S3 Developer Guide</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string KmsKeyArn
         {

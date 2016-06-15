@@ -34,8 +34,12 @@ namespace Amazon.SimpleEmail
     /// is intended to be used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>. 
     /// </para>
-    ///  <note>For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
-    /// and Amazon SES</a> in the Amazon SES Developer Guide. </note>
+    ///  <note> 
+    /// <para>
+    ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
+    /// and Amazon SES</a> in the Amazon SES Developer Guide. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonSimpleEmailService : IDisposable
     {
@@ -294,7 +298,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Deletes the specified identity (email address or domain) from the list of verified
+        /// Deletes the specified identity (an email address or a domain) from the list of verified
         /// identities.
         /// 
         ///  
@@ -337,12 +341,16 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Deletes the specified sending authorization policy for the given identity (email address
-        /// or domain). This API returns successfully even if a policy with the specified name
-        /// does not exist.
+        /// Deletes the specified sending authorization policy for the given identity (an email
+        /// address or a domain). This API returns successfully even if a policy with the specified
+        /// name does not exist.
         /// 
-        ///  <note>This API is for the identity owner only. If you have not verified the identity,
-        /// this API will return an error.</note> 
+        ///  <note> 
+        /// <para>
+        /// This API is for the identity owner only. If you have not verified the identity, this
+        /// API will return an error.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
@@ -488,7 +496,11 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Deletes the specified receipt rule set and all of the receipt rules it contains.
         /// 
-        ///  <note>The currently active rule set cannot be deleted.</note> 
+        ///  <note> 
+        /// <para>
+        /// The currently active rule set cannot be deleted.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
@@ -538,9 +550,12 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Deletes the specified email address from the list of verified addresses.
         /// 
-        ///  <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
-        /// 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</important>
-        /// 
+        ///  <important> 
+        /// <para>
+        /// The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release
+        /// of Domain Verification. The DeleteIdentity action is now preferred.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This action is throttled at one request per second.
         /// </para>
@@ -740,11 +755,21 @@ namespace Amazon.SimpleEmail
         /// This action takes a list of identities as input and returns the following information
         /// for each:
         /// </para>
-        ///  <ul> <li>Whether Easy DKIM signing is enabled or disabled.</li> <li>A set of DKIM
-        /// tokens that represent the identity. If the identity is an email address, the tokens
-        /// represent the domain of that address.</li> <li>Whether Amazon SES has successfully
-        /// verified the DKIM tokens published in the domain's DNS. This information is only returned
-        /// for domain name identities, not for email addresses.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether Easy DKIM signing is enabled or disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A set of DKIM tokens that represent the identity. If the identity is an email address,
+        /// the tokens represent the domain of that address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Whether Amazon SES has successfully verified the DKIM tokens published in the domain's
+        /// DNS. This information is only returned for domain name identities, not for email addresses.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This action is throttled at one request per second and can only get DKIM attributes
         /// for up to 100 identities at a time.
@@ -883,12 +908,16 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Returns the requested sending authorization policies for the given identity (email
-        /// address or domain). The policies are returned as a map of policy names to policy contents.
-        /// You can retrieve a maximum of 20 policies at a time.
+        /// Returns the requested sending authorization policies for the given identity (an email
+        /// address or a domain). The policies are returned as a map of policy names to policy
+        /// contents. You can retrieve a maximum of 20 policies at a time.
         /// 
-        ///  <note>This API is for the identity owner only. If you have not verified the identity,
-        /// this API will return an error.</note> 
+        ///  <note> 
+        /// <para>
+        /// This API is for the identity owner only. If you have not verified the identity, this
+        /// API will return an error.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
@@ -1034,7 +1063,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns the user's sending statistics. The result is a list of data points, representing
-        /// the last two weeks of sending activity. 
+        /// the last two weeks of sending activity.
         /// 
         ///  
         /// <para>
@@ -1051,7 +1080,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns the user's sending statistics. The result is a list of data points, representing
-        /// the last two weeks of sending activity. 
+        /// the last two weeks of sending activity.
         /// 
         ///  
         /// <para>
@@ -1098,7 +1127,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
-        /// a specific AWS Account, regardless of verification status.
+        /// your AWS account, regardless of verification status.
         /// 
         ///  
         /// <para>
@@ -1111,7 +1140,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
-        /// a specific AWS Account, regardless of verification status.
+        /// your AWS account, regardless of verification status.
         /// 
         ///  
         /// <para>
@@ -1154,11 +1183,15 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list of sending authorization policies that are attached to the given identity
-        /// (email address or domain). This API returns only a list. If you want the actual policy
-        /// content, you can use <code>GetIdentityPolicies</code>.
+        /// (an email address or a domain). This API returns only a list. If you want the actual
+        /// policy content, you can use <code>GetIdentityPolicies</code>.
         /// 
-        ///  <note>This API is for the identity owner only. If you have not verified the identity,
-        /// this API will return an error.</note> 
+        ///  <note> 
+        /// <para>
+        /// This API is for the identity owner only. If you have not verified the identity, this
+        /// API will return an error.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
@@ -1205,7 +1238,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Lists the IP address filters associated with your account.
+        /// Lists the IP address filters associated with your AWS account.
         /// 
         ///  
         /// <para>
@@ -1304,9 +1337,12 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Returns a list containing all of the email addresses that have been verified.
         /// 
-        ///  <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15,
-        /// 2012 release of Domain Verification. The ListIdentities action is now preferred.</important>
-        /// 
+        ///  <important> 
+        /// <para>
+        /// The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release
+        /// of Domain Verification. The ListIdentities action is now preferred.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This action is throttled at one request per second.
         /// </para>
@@ -1318,9 +1354,12 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Returns a list containing all of the email addresses that have been verified.
         /// 
-        ///  <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15,
-        /// 2012 release of Domain Verification. The ListIdentities action is now preferred.</important>
-        /// 
+        ///  <important> 
+        /// <para>
+        /// The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release
+        /// of Domain Verification. The ListIdentities action is now preferred.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This action is throttled at one request per second.
         /// </para>
@@ -1360,11 +1399,15 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Adds or updates a sending authorization policy for the specified identity (email address
-        /// or domain).
+        /// Adds or updates a sending authorization policy for the specified identity (an email
+        /// address or a domain).
         /// 
-        ///  <note>This API is for the identity owner only. If you have not verified the identity,
-        /// this API will return an error.</note> 
+        ///  <note> 
+        /// <para>
+        /// This API is for the identity owner only. If you have not verified the identity, this
+        /// API will return an error.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Sending authorization is a feature that enables an identity owner to authorize other
         /// senders to use its identities. For information about using sending authorization,
@@ -1417,9 +1460,13 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Reorders the receipt rules within a receipt rule set.
         /// 
-        ///  <note>All of the rules in the rule set must be represented in this request. That
-        /// is, this API will return an error if the reorder request doesn't explicitly position
-        /// all of the rules.</note> 
+        ///  <note> 
+        /// <para>
+        /// All of the rules in the rule set must be represented in this request. That is, this
+        /// API will return an error if the reorder request doesn't explicitly position all of
+        /// the rules.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
@@ -1474,8 +1521,12 @@ namespace Amazon.SimpleEmail
         /// Amazon SES. You can only use this API on an email up to 24 hours after you receive
         /// it.
         /// 
-        ///  <note>You cannot use this API to send generic bounces for mail that was not received
-        /// by Amazon SES.</note> 
+        ///  <note> 
+        /// <para>
+        /// You cannot use this API to send generic bounces for mail that was not received by
+        /// Amazon SES.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about receiving email through Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
         /// SES Developer Guide</a>.
@@ -1525,27 +1576,40 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Composes an email message based on input data, and then immediately queues the message
-        /// for sending. 
+        /// for sending.
         /// 
         ///  
         /// <para>
         /// There are several important points to know about <code>SendEmail</code>:
         /// </para>
-        ///  <ul> <li>You can only send email from verified email addresses and domains; otherwise,
-        /// you will get an "Email address not verified" error. If your account is still in the
-        /// Amazon SES sandbox, you must also verify every recipient email address except for
-        /// the recipients provided by the Amazon SES mailbox simulator. For more information,
-        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-        /// SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB.
-        /// This includes any attachments that are part of the message.</li> <li>Amazon SES has
-        /// a limit on the total number of recipients per message. The combined number of To:,
-        /// CC: and BCC: email addresses cannot exceed 50. If you need to send an email message
-        /// to a larger audience, you can divide your recipient list into groups of 50 or fewer,
-        /// and then call Amazon SES repeatedly to send the message to each group.</li> <li>For
-        /// every message that you send, the total number of recipients (To:, CC: and BCC:) is
-        /// counted against your sending quota - the maximum number of emails you can send in
-        /// a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-        /// SES Developer Guide</a>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can only send email from verified email addresses and domains; otherwise, you
+        /// will get an "Email address not verified" error. If your account is still in the Amazon
+        /// SES sandbox, you must also verify every recipient email address except for the recipients
+        /// provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The total size of the message cannot exceed 10 MB. This includes any attachments that
+        /// are part of the message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SES has a limit on the total number of recipients per message. The combined
+        /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send
+        /// an email message to a larger audience, you can divide your recipient list into groups
+        /// of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
+        /// is counted against your sending quota - the maximum number of emails you can send
+        /// in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendEmail service method.</param>
         /// 
@@ -1600,38 +1664,75 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// There are several important points to know about <code>SendRawEmail</code>:
         /// </para>
-        ///  <ul> <li>You can only send email from verified email addresses and domains; otherwise,
-        /// you will get an "Email address not verified" error. If your account is still in the
-        /// Amazon SES sandbox, you must also verify every recipient email address except for
-        /// the recipients provided by the Amazon SES mailbox simulator. For more information,
-        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-        /// SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB.
-        /// This includes any attachments that are part of the message.</li> <li>Amazon SES has
-        /// a limit on the total number of recipients per message. The combined number of To:,
-        /// CC: and BCC: email addresses cannot exceed 50. If you need to send an email message
-        /// to a larger audience, you can divide your recipient list into groups of 50 or fewer,
-        /// and then call Amazon SES repeatedly to send the message to each group.</li> <li>The
-        /// To:, CC:, and BCC: headers in the raw message can contain a group list. Note that
-        /// each recipient in a group list counts towards the 50-recipient limit.</li> <li>For
-        /// every message that you send, the total number of recipients (To:, CC: and BCC:) is
-        /// counted against your sending quota - the maximum number of emails you can send in
-        /// a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-        /// SES Developer Guide</a>.</li> <li>If you are using sending authorization to send on
-        /// behalf of another user, <code>SendRawEmail</code> enables you to specify the cross-account
-        /// identity for the email's "Source," "From," and "Return-Path" parameters in one of
-        /// two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>,
-        /// and/or <code>ReturnPathArn</code> to the API, or you can include the following X-headers
-        /// in the header of your raw email: <ul> <li><code>X-SES-SOURCE-ARN</code></li> <li><code>X-SES-FROM-ARN</code></li>
-        /// <li><code>X-SES-RETURN-PATH-ARN</code></li> </ul> <important>Do not include these
-        /// X-headers in the DKIM signature, because they are removed by Amazon SES before sending
-        /// the email.</important> For the most common sending authorization use case, we recommend
-        /// that you specify the <code>SourceIdentityArn</code> and do not specify either the
-        /// <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same note
-        /// applies to the corresponding X-headers.) If you only specify the <code>SourceIdentityArn</code>,
-        /// Amazon SES will simply set the "From" address and the "Return Path" address to the
-        /// identity specified in <code>SourceIdentityArn</code>. For more information about sending
-        /// authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-        /// SES Developer Guide</a>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can only send email from verified email addresses and domains; otherwise, you
+        /// will get an "Email address not verified" error. If your account is still in the Amazon
+        /// SES sandbox, you must also verify every recipient email address except for the recipients
+        /// provided by the Amazon SES mailbox simulator. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The total size of the message cannot exceed 10 MB. This includes any attachments that
+        /// are part of the message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SES has a limit on the total number of recipients per message. The combined
+        /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send
+        /// an email message to a larger audience, you can divide your recipient list into groups
+        /// of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that
+        /// each recipient in a group list counts towards the 50-recipient limit.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
+        /// is counted against your sending quota - the maximum number of emails you can send
+        /// in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code>
+        /// enables you to specify the cross-account identity for the email's "Source," "From,"
+        /// and "Return-Path" parameters in one of two ways: you can pass optional parameters
+        /// <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code> to
+        /// the API, or you can include the following X-headers in the header of your raw email:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>X-SES-SOURCE-ARN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>X-SES-FROM-ARN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>X-SES-RETURN-PATH-ARN</code> 
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// Do not include these X-headers in the DKIM signature, because they are removed by
+        /// Amazon SES before sending the email.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For the most common sending authorization use case, we recommend that you specify
+        /// the <code>SourceIdentityArn</code> and do not specify either the <code>FromIdentityArn</code>
+        /// or <code>ReturnPathIdentityArn</code>. (The same note applies to the corresponding
+        /// X-headers.) If you only specify the <code>SourceIdentityArn</code>, Amazon SES will
+        /// simply set the "From" address and the "Return Path" address to the identity specified
+        /// in <code>SourceIdentityArn</code>. For more information about sending authorization,
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendRawEmail service method.</param>
         /// 
@@ -1680,8 +1781,12 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Sets the specified receipt rule set as the active receipt rule set.
         /// 
-        ///  <note>To disable your email-receiving through Amazon SES completely, you can call
-        /// this API with RuleSetName set to null.</note> 
+        ///  <note> 
+        /// <para>
+        /// To disable your email-receiving through Amazon SES completely, you can call this API
+        /// with RuleSetName set to null.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
         /// SES Developer Guide</a>.
@@ -1731,11 +1836,18 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Enables or disables Easy DKIM signing of email sent from an identity:
         /// 
-        ///  <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>),
+        ///  <ul> <li> 
+        /// <para>
+        /// If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>),
         /// then Amazon SES will DKIM-sign all email sent by addresses under that domain name
-        /// (e.g., <code>user@example.com</code>).</li> <li>If Easy DKIM signing is enabled for
-        /// an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li>
-        /// </ul> 
+        /// (e.g., <code>user@example.com</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign
+        /// all email sent by that email address.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
         /// DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has been
@@ -1786,13 +1898,17 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Given an identity (email address or domain), enables or disables whether Amazon SES
-        /// forwards bounce and complaint notifications as email. Feedback forwarding can only
-        /// be disabled when Amazon Simple Notification Service (Amazon SNS) topics are specified
+        /// Given an identity (an email address or a domain), enables or disables whether Amazon
+        /// SES forwards bounce and complaint notifications as email. Feedback forwarding can
+        /// only be disabled when Amazon Simple Notification Service (Amazon SNS) topics are specified
         /// for both bounces and complaints.
         /// 
-        ///  <note>Feedback forwarding does not apply to delivery notifications. Delivery notifications
-        /// are only available through Amazon SNS.</note> 
+        ///  <note> 
+        /// <para>
+        /// Feedback forwarding does not apply to delivery notifications. Delivery notifications
+        /// are only available through Amazon SNS.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This action is throttled at one request per second.
         /// </para>
@@ -1833,18 +1949,71 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  SetIdentityHeadersInNotificationsEnabled
+
+
+        /// <summary>
+        /// Given an identity (an email address or a domain), sets whether Amazon SES includes
+        /// the original email headers in the Amazon Simple Notification Service (Amazon SNS)
+        /// notifications of a specified type.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using notifications with Amazon SES, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityHeadersInNotificationsEnabled service method.</param>
+        /// 
+        /// <returns>The response from the SetIdentityHeadersInNotificationsEnabled service method, as returned by SimpleEmailService.</returns>
+        SetIdentityHeadersInNotificationsEnabledResponse SetIdentityHeadersInNotificationsEnabled(SetIdentityHeadersInNotificationsEnabledRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIdentityHeadersInNotificationsEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityHeadersInNotificationsEnabled operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIdentityHeadersInNotificationsEnabled
+        ///         operation.</returns>
+        IAsyncResult BeginSetIdentityHeadersInNotificationsEnabled(SetIdentityHeadersInNotificationsEnabledRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetIdentityHeadersInNotificationsEnabled operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIdentityHeadersInNotificationsEnabled.</param>
+        /// 
+        /// <returns>Returns a  SetIdentityHeadersInNotificationsEnabledResult from SimpleEmailService.</returns>
+        SetIdentityHeadersInNotificationsEnabledResponse EndSetIdentityHeadersInNotificationsEnabled(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SetIdentityMailFromDomain
 
 
         /// <summary>
-        /// Enables or disables the custom MAIL FROM domain setup for a verified identity (email
-        /// address or domain). 
+        /// Enables or disables the custom MAIL FROM domain setup for a verified identity (an
+        /// email address or a domain).
         /// 
-        ///  <important>To send emails using the specified MAIL FROM domain, you must add an MX
-        /// record to your MAIL FROM domain's DNS settings. If you want your emails to pass Sender
-        /// Policy Framework (SPF) checks, you must also add or update an SPF record. For more
-        /// information, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
-        /// SES Developer Guide</a>.</important> 
+        ///  <important> 
+        /// <para>
+        /// To send emails using the specified MAIL FROM domain, you must add an MX record to
+        /// your MAIL FROM domain's DNS settings. If you want your emails to pass Sender Policy
+        /// Framework (SPF) checks, you must also add or update an SPF record. For more information,
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This action is throttled at one request per second.
         /// </para>
@@ -1884,13 +2053,16 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Given an identity (email address or domain), sets the Amazon Simple Notification Service
-        /// (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery
-        /// notifications for emails sent with that identity as the <code>Source</code>.
+        /// Given an identity (an email address or a domain), sets the Amazon Simple Notification
+        /// Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or
+        /// delivery notifications for emails sent with that identity as the <code>Source</code>.
         /// 
-        ///  <note>Unless feedback forwarding is enabled, you must specify Amazon SNS topics for
-        /// bounce and complaint notifications. For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.
-        /// </note> 
+        ///  <note> 
+        /// <para>
+        /// Unless feedback forwarding is enabled, you must specify Amazon SNS topics for bounce
+        /// and complaint notifications. For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This action is throttled at one request per second.
         /// </para>
@@ -2166,9 +2338,12 @@ namespace Amazon.SimpleEmail
         /// Verifies an email address. This action causes a confirmation email message to be sent
         /// to the specified address.
         /// 
-        ///  <important>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release
-        /// of Domain Verification. The VerifyEmailIdentity action is now preferred.</important>
-        /// 
+        ///  <important> 
+        /// <para>
+        /// The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain
+        /// Verification. The VerifyEmailIdentity action is now preferred.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This action is throttled at one request per second.
         /// </para>

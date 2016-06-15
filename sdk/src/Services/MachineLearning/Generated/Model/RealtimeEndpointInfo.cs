@@ -62,9 +62,9 @@ namespace Amazon.MachineLearning.Model
         ///  The current status of the real-time endpoint for the <code>MLModel</code>. This element
         /// can have one of the following values: 
         /// </para>
-        ///  <ul> <li>NONE - Endpoint does not exist or was previously deleted.</li> <li>READY
-        /// - Endpoint is ready to be used for real-time predictions.</li> <li>UPDATING - Updating/creating
-        /// the endpoint. </li> </ul>
+        ///  <ul> <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
+        /// <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
+        /// <li> <code>UPDATING</code> - Updating/creating the endpoint. </li> </ul>
         /// </summary>
         public RealtimeEndpointStatus EndpointStatus
         {

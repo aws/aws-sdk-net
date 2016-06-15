@@ -70,6 +70,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.HashKeyField = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hashKeyType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HashKeyType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hashKeyValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RangeKeyField = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rangeKeyType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RangeKeyType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rangeKeyValue", targetDepth))

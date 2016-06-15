@@ -28,14 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <a>CreateMLModel</a> operation, and is an acknowledgement
+    /// Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement
     /// that Amazon ML received the request.
     /// 
     ///  
     /// <para>
-    /// The <a>CreateMLModel</a> operation is asynchronous. You can poll for status updates
-    /// by using the <a>GetMLModel</a> operation and checking the <code>Status</code> parameter.
-    /// 
+    /// The <code>CreateMLModel</code> operation is asynchronous. You can poll for status
+    /// updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code>
+    /// parameter. 
     /// </para>
     /// </summary>
     public partial class CreateMLModelResponse : AmazonWebServiceResponse

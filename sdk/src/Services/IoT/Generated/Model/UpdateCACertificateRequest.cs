@@ -59,6 +59,10 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The updated status of the CA certificate.
         /// </para>
+        ///  
+        /// <para>
+        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.
+        /// </para>
         /// </summary>
         public CACertificateStatus NewStatus
         {

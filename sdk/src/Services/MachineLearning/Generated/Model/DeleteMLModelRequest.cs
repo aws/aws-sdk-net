@@ -29,11 +29,11 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMLModel operation.
-    /// Assigns the DELETED status to an <code>MLModel</code>, rendering it unusable.
+    /// Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.
     /// 
     ///  
     /// <para>
-    /// After using the <code>DeleteMLModel</code> operation, you can use the <a>GetMLModel</a>
+    /// After using the <code>DeleteMLModel</code> operation, you can use the <code>GetMLModel</code>
     /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
     /// </para>
     ///  

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the ListCertificates operation.
     /// </summary>
     public partial class ListCertificatesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateSummaryList. 
         /// <para>
-        ///  A list of the certificate ARNs. 
+        /// A list of ACM Certificates.
         /// </para>
         /// </summary>
         public List<CertificateSummary> CertificateSummaryList
@@ -56,9 +56,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  If the list has been truncated, this value is present and should be used for the
-        /// <code>NextToken</code> input parameter on your next call to <code>ListCertificates</code>.
-        /// 
+        /// When the list is truncated, this value is present and contains the value to use for
+        /// the <code>NextToken</code> parameter in a subsequent pagination request.
         /// </para>
         /// </summary>
         public string NextToken
