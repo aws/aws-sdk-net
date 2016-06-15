@@ -1,12 +1,10 @@
-﻿using System;
-using System.Text;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using System.Reflection;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace IntegrationTestsAnalyzer
 {
@@ -43,12 +41,21 @@ namespace IntegrationTestsAnalyzer
         private static void PopulateValidTestCategories()
         {
             var assembly = Assembly.GetExecutingAssembly();
-            Stream stream = assembly.GetManifestResourceStream("manifest.json");
-            using (StreamReader reader = new StreamReader(stream))
+            StreamReader streamReader = new StreamReader(assembly.GetManifestResourceStream("manifest.json"));
+
+            Regex exp = new Regex(".*\"base-name\"\\s*:\\s*\"(\\w*)\".*");
+            string line = streamReader.ReadLine();
+            while (!streamReader.EndOfStream)
             {
-                // parse the json file and get the list of services
+
+                Match m = exp.Match(line);
+                if (m.Success)
+                {
+                    ValidTestCategories.Add(m.Groups[1].ToString());
+                }
+
+                line = streamReader.ReadLine();
             }
-            ValidTestCategories.Add("s");
         }
 
         private static void AnalyzeTestMethodAttribute(SymbolAnalysisContext context)
