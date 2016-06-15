@@ -1920,11 +1920,12 @@ namespace Amazon.RDS
         /// <summary>
         /// The DeleteDBInstance action deletes a previously provisioned DB instance. When you
         /// delete a DB instance, all automated backups for that instance are deleted and cannot
-        /// be recovered. Manual DB snapshots of the DB instance to be deleted are not deleted.
+        /// be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code>
+        /// are not deleted.
         /// 
         ///  
         /// <para>
-        ///  If a final DB snapshot is requested the status of the RDS instance will be <code>deleting</code>
+        ///  If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
         /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
         /// used to monitor the status of this operation. The action cannot be canceled or reverted
         /// once submitted. 
@@ -1932,8 +1933,28 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
-        /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, it can only
-        /// be deleted when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+        /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only
+        /// delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete
+        /// the DB instance if the following are true:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The DB cluster is a Read Replica of another Amazon Aurora DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The DB instance is the only instance in the DB cluster.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To delete a DB instance in this case, first call the <a>PromoteReadReplicaDBCluster</a>
+        /// API action to promote the DB cluster so it's no longer a Read Replica. After the promotion
+        /// completes, then call the <code>DeleteDBInstance</code> API action to delete the final
+        /// instance in the DB cluster.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
@@ -5032,6 +5053,62 @@ namespace Amazon.RDS
         public  PromoteReadReplicaResponse EndPromoteReadReplica(IAsyncResult asyncResult)
         {
             return EndInvoke<PromoteReadReplicaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PromoteReadReplicaDBCluster
+
+        /// <summary>
+        /// Promotes a Read Replica DB cluster to a standalone DB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplicaDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the PromoteReadReplicaDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        public PromoteReadReplicaDBClusterResponse PromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request)
+        {
+            var marshaller = new PromoteReadReplicaDBClusterRequestMarshaller();
+            var unmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<PromoteReadReplicaDBClusterRequest,PromoteReadReplicaDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PromoteReadReplicaDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PromoteReadReplicaDBCluster operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPromoteReadReplicaDBCluster
+        ///         operation.</returns>
+        public IAsyncResult BeginPromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PromoteReadReplicaDBClusterRequestMarshaller();
+            var unmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PromoteReadReplicaDBClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PromoteReadReplicaDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPromoteReadReplicaDBCluster.</param>
+        /// 
+        /// <returns>Returns a  PromoteReadReplicaDBClusterResult from RDS.</returns>
+        public  PromoteReadReplicaDBClusterResponse EndPromoteReadReplicaDBCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PromoteReadReplicaDBClusterResponse>(asyncResult);
         }
 
         #endregion

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the GetIdentityVerificationAttributes operation.
+    /// The Amazon SES verification status of a list of identities. For domain identities,
+    /// this response also contains the verification token.
     /// </summary>
     public partial class GetIdentityVerificationAttributesResponse : AmazonWebServiceResponse
     {

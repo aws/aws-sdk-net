@@ -47,7 +47,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Instantiates DescribeCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="certificateArn"> String that contains an ACM Certificate ARN. The ARN must be of the form:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn">String that contains an ACM Certificate ARN. The ARN must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         public DescribeCertificateRequest(string certificateArn)
         {
             _certificateArn = certificateArn;
@@ -56,7 +56,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        ///  String that contains an ACM Certificate ARN. The ARN must be of the form: 
+        /// String that contains an ACM Certificate ARN. The ARN must be of the form:
         /// </para>
         ///  
         /// <para>
@@ -65,8 +65,8 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>. 
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string CertificateArn

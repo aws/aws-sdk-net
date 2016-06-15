@@ -38,8 +38,8 @@ namespace Amazon.CertificateManager
     /// For general information about using ACM and for more information about using the console,
     /// see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
     /// Certificate Manager User Guide</a>. For more information about using the ACM API,
-    /// see the <a href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">
-    /// AWS Certificate Manager API Reference</a>. 
+    /// see the <a href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">AWS
+    /// Certificate Manager API Reference</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCertificateManager : IDisposable
@@ -53,24 +53,24 @@ namespace Amazon.CertificateManager
         /// Adds one or more tags to an ACM Certificate. Tags are labels that you can use to identify
         /// and organize your AWS resources. Each tag consists of a <code>key</code> and an optional
         /// <code>value</code>. You specify the certificate on input by its Amazon Resource Name
-        /// (ARN). You specify the tag by using a key-value pair. 
+        /// (ARN). You specify the tag by using a key-value pair.
         /// 
         ///  
         /// <para>
-        ///  You can apply a tag to just one certificate if you want to identify a specific characteristic
+        /// You can apply a tag to just one certificate if you want to identify a specific characteristic
         /// of that certificate, or you can apply the same tag to multiple certificates if you
         /// want to filter for a common relationship among those certificates. Similarly, you
         /// can apply the same tag to multiple resources if you want to specify a relationship
         /// among those resources. For example, you can add the same tag to an ACM Certificate
         /// and an Elastic Load Balancing load balancer to indicate that they are both used by
         /// the same website. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
-        /// ACM Certificates</a>. 
+        /// ACM Certificates</a>.
         /// </para>
         ///  
         /// <para>
         /// To remove one or more tags, use the <a>RemoveTagsFromCertificate</a> action. To view
         /// all of the tags that have been applied to the certificate, use the <a>ListTagsForCertificate</a>
-        /// action. 
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToCertificate service method.</param>
@@ -115,19 +115,22 @@ namespace Amazon.CertificateManager
         /// by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
         /// action. The certificate will not be available for use by other AWS services.
         /// 
-        ///  <note>You cannot delete an ACM Certificate that is being used by another AWS service.
-        /// To delete a certificate that is in use, the certificate association must first be
-        /// removed. </note>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an ACM Certificate that is being used by another AWS service. To
+        /// delete a certificate that is in use, the certificate association must first be removed.
+        /// </para>
+        ///  </note>
         /// </summary>
-        /// <param name="certificateArn"> String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn">String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// 
         /// <returns>The response from the DeleteCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceInUseException">
-        /// The certificate is in use by another AWS service in the caller's account. Remove
-        /// the association and try again.
+        /// The certificate is in use by another AWS service in the caller's account. Remove the
+        /// association and try again.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account, or the caller's
@@ -141,9 +144,12 @@ namespace Amazon.CertificateManager
         /// by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
         /// action. The certificate will not be available for use by other AWS services.
         /// 
-        ///  <note>You cannot delete an ACM Certificate that is being used by another AWS service.
-        /// To delete a certificate that is in use, the certificate association must first be
-        /// removed. </note>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an ACM Certificate that is being used by another AWS service. To
+        /// delete a certificate that is in use, the certificate association must first be removed.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
         /// 
@@ -152,8 +158,8 @@ namespace Amazon.CertificateManager
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceInUseException">
-        /// The certificate is in use by another AWS service in the caller's account. Remove
-        /// the association and try again.
+        /// The certificate is in use by another AWS service in the caller's account. Remove the
+        /// association and try again.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account, or the caller's
@@ -168,11 +174,14 @@ namespace Amazon.CertificateManager
         /// by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
         /// action. The certificate will not be available for use by other AWS services.
         /// 
-        ///  <note>You cannot delete an ACM Certificate that is being used by another AWS service.
-        /// To delete a certificate that is in use, the certificate association must first be
-        /// removed. </note>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an ACM Certificate that is being used by another AWS service. To
+        /// delete a certificate that is in use, the certificate association must first be removed.
+        /// </para>
+        ///  </note>
         /// </summary>
-        /// <param name="certificateArn"> String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn">String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -182,8 +191,8 @@ namespace Amazon.CertificateManager
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceInUseException">
-        /// The certificate is in use by another AWS service in the caller's account. Remove
-        /// the association and try again.
+        /// The certificate is in use by another AWS service in the caller's account. Remove the
+        /// association and try again.
         /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account, or the caller's
@@ -214,7 +223,7 @@ namespace Amazon.CertificateManager
         /// was created. You specify the ACM Certificate on input by its Amazon Resource Name
         /// (ARN).
         /// </summary>
-        /// <param name="certificateArn"> String that contains an ACM Certificate ARN. The ARN must be of the form:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn">String that contains an ACM Certificate ARN. The ARN must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// 
         /// <returns>The response from the DescribeCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -253,7 +262,7 @@ namespace Amazon.CertificateManager
         /// was created. You specify the ACM Certificate on input by its Amazon Resource Name
         /// (ARN).
         /// </summary>
-        /// <param name="certificateArn"> String that contains an ACM Certificate ARN. The ARN must be of the form:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn">String that contains an ACM Certificate ARN. The ARN must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -285,16 +294,20 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves an ACM Certificate and certificate chain for the certificate specified
-        /// by an ARN. The chain is an ordered list of certificates that contains the root certificate,
+        /// Retrieves an ACM Certificate and certificate chain for the certificate specified by
+        /// an ARN. The chain is an ordered list of certificates that contains the root certificate,
         /// intermediate certificates of subordinate CAs, and the ACM Certificate. The certificate
         /// and certificate chain are base64 encoded. If you want to decode the certificate chain
-        /// to see the individual certificate fields, you can use OpenSSL. 
+        /// to see the individual certificate fields, you can use OpenSSL.
         /// 
-        ///  <note> Currently, ACM Certificates can be used only with Elastic Load Balancing and
-        /// Amazon CloudFront. </note>
+        ///  <note> 
+        /// <para>
+        /// Currently, ACM Certificates can be used only with Elastic Load Balancing and Amazon
+        /// CloudFront.
+        /// </para>
+        ///  </note>
         /// </summary>
-        /// <param name="certificateArn"> String that contains a certificate ARN in the following format:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// 
         /// <returns>The response from the GetCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -311,14 +324,18 @@ namespace Amazon.CertificateManager
         GetCertificateResponse GetCertificate(string certificateArn);
 
         /// <summary>
-        /// Retrieves an ACM Certificate and certificate chain for the certificate specified
-        /// by an ARN. The chain is an ordered list of certificates that contains the root certificate,
+        /// Retrieves an ACM Certificate and certificate chain for the certificate specified by
+        /// an ARN. The chain is an ordered list of certificates that contains the root certificate,
         /// intermediate certificates of subordinate CAs, and the ACM Certificate. The certificate
         /// and certificate chain are base64 encoded. If you want to decode the certificate chain
-        /// to see the individual certificate fields, you can use OpenSSL. 
+        /// to see the individual certificate fields, you can use OpenSSL.
         /// 
-        ///  <note> Currently, ACM Certificates can be used only with Elastic Load Balancing and
-        /// Amazon CloudFront. </note>
+        ///  <note> 
+        /// <para>
+        /// Currently, ACM Certificates can be used only with Elastic Load Balancing and Amazon
+        /// CloudFront.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCertificate service method.</param>
         /// 
@@ -338,16 +355,20 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves an ACM Certificate and certificate chain for the certificate specified
-        /// by an ARN. The chain is an ordered list of certificates that contains the root certificate,
+        /// Retrieves an ACM Certificate and certificate chain for the certificate specified by
+        /// an ARN. The chain is an ordered list of certificates that contains the root certificate,
         /// intermediate certificates of subordinate CAs, and the ACM Certificate. The certificate
         /// and certificate chain are base64 encoded. If you want to decode the certificate chain
-        /// to see the individual certificate fields, you can use OpenSSL. 
+        /// to see the individual certificate fields, you can use OpenSSL.
         /// 
-        ///  <note> Currently, ACM Certificates can be used only with Elastic Load Balancing and
-        /// Amazon CloudFront. </note>
+        ///  <note> 
+        /// <para>
+        /// Currently, ACM Certificates can be used only with Elastic Load Balancing and Amazon
+        /// CloudFront.
+        /// </para>
+        ///  </note>
         /// </summary>
-        /// <param name="certificateArn"> String that contains a certificate ARN in the following format:   <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>   For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>. </param>
+        /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -383,12 +404,8 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of the ACM Certificate ARNs, and the domain name for each ARN, owned
-        /// by the calling account. You can filter the list based on the <code>CertificateStatuses</code>
-        /// parameter, and you can display up to <code>MaxItems</code> certificates at one time.
-        /// If you have more than <code>MaxItems</code> certificates, use the <code>NextToken</code>
-        /// marker from the response object in your next call to the <code>ListCertificates</code>
-        /// action to retrieve the next set of certificate ARNs.
+        /// Retrieves a list of ACM Certificates and the domain name for each. You can optionally
+        /// filter the list to return only the certificates that match the specified status.
         /// </summary>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
@@ -396,12 +413,8 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of the ACM Certificate ARNs, and the domain name for each ARN, owned
-        /// by the calling account. You can filter the list based on the <code>CertificateStatuses</code>
-        /// parameter, and you can display up to <code>MaxItems</code> certificates at one time.
-        /// If you have more than <code>MaxItems</code> certificates, use the <code>NextToken</code>
-        /// marker from the response object in your next call to the <code>ListCertificates</code>
-        /// action to retrieve the next set of certificate ARNs.
+        /// Retrieves a list of ACM Certificates and the domain name for each. You can optionally
+        /// filter the list to return only the certificates that match the specified status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// 
@@ -410,12 +423,8 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of the ACM Certificate ARNs, and the domain name for each ARN, owned
-        /// by the calling account. You can filter the list based on the <code>CertificateStatuses</code>
-        /// parameter, and you can display up to <code>MaxItems</code> certificates at one time.
-        /// If you have more than <code>MaxItems</code> certificates, use the <code>NextToken</code>
-        /// marker from the response object in your next call to the <code>ListCertificates</code>
-        /// action to retrieve the next set of certificate ARNs.
+        /// Retrieves a list of ACM Certificates and the domain name for each. You can optionally
+        /// filter the list to return only the certificates that match the specified status.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -479,13 +488,13 @@ namespace Amazon.CertificateManager
         /// Remove one or more tags from an ACM Certificate. A tag consists of a key-value pair.
         /// If you do not specify the value portion of the tag when calling this function, the
         /// tag will be removed regardless of value. If you specify a value, the tag is removed
-        /// only if it is associated with the specified value. 
+        /// only if it is associated with the specified value.
         /// 
         ///  
         /// <para>
         /// To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To view
         /// all of the tags that have been applied to a specific ACM Certificate, use the <a>ListTagsForCertificate</a>
-        /// action. 
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromCertificate service method.</param>
@@ -527,10 +536,10 @@ namespace Amazon.CertificateManager
         /// specify additional FQDNs if users can reach your site by using other names. For each
         /// domain name you specify, email is sent to the domain owner to request approval to
         /// issue the certificate. After receiving approval from the domain owner, the ACM Certificate
-        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">
-        /// AWS Certificate Manager User Guide </a>.
+        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
+        /// Certificate Manager User Guide </a>.
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </param>
+        /// <param name="domainName">Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</param>
         /// 
         /// <returns>The response from the RequestCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidDomainValidationOptionsException">
@@ -551,8 +560,8 @@ namespace Amazon.CertificateManager
         /// specify additional FQDNs if users can reach your site by using other names. For each
         /// domain name you specify, email is sent to the domain owner to request approval to
         /// issue the certificate. After receiving approval from the domain owner, the ACM Certificate
-        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">
-        /// AWS Certificate Manager User Guide </a>.
+        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
+        /// Certificate Manager User Guide </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestCertificate service method.</param>
         /// 
@@ -576,10 +585,10 @@ namespace Amazon.CertificateManager
         /// specify additional FQDNs if users can reach your site by using other names. For each
         /// domain name you specify, email is sent to the domain owner to request approval to
         /// issue the certificate. After receiving approval from the domain owner, the ACM Certificate
-        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">
-        /// AWS Certificate Manager User Guide </a>.
+        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
+        /// Certificate Manager User Guide </a>.
         /// </summary>
-        /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </param>
+        /// <param name="domainName">Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -614,8 +623,8 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Resends the email that requests domain ownership validation. The domain owner or
-        /// an authorized representative must approve the ACM Certificate before it can be issued.
+        /// Resends the email that requests domain ownership validation. The domain owner or an
+        /// authorized representative must approve the ACM Certificate before it can be issued.
         /// The certificate can be approved by clicking a link in the mail to navigate to the
         /// Amazon certificate approval website and then clicking <b>I Approve</b>. However, the
         /// validation email can be blocked by spam filters. Therefore, if you do not receive

@@ -31,8 +31,12 @@ namespace Amazon.SimpleEmail.Model
     /// Container for the parameters to the SetActiveReceiptRuleSet operation.
     /// Sets the specified receipt rule set as the active receipt rule set.
     /// 
-    ///  <note>To disable your email-receiving through Amazon SES completely, you can call
-    /// this API with RuleSetName set to null.</note> 
+    ///  <note> 
+    /// <para>
+    /// To disable your email-receiving through Amazon SES completely, you can call this API
+    /// with RuleSetName set to null.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For information about managing receipt rule sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
     /// SES Developer Guide</a>.

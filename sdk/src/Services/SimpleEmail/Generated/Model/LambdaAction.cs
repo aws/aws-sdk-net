@@ -81,10 +81,14 @@ namespace Amazon.SimpleEmail.Model
         /// types, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
         /// Lambda Developer Guide</a>.
         /// </para>
-        ///  <important>There is a 30-second timeout on <code>RequestResponse</code> invocations.
-        /// You should use <code>Event</code> invocation in most cases. Use <code>RequestResponse</code>
+        ///  <important> 
+        /// <para>
+        /// There is a 30-second timeout on <code>RequestResponse</code> invocations. You should
+        /// use <code>Event</code> invocation in most cases. Use <code>RequestResponse</code>
         /// only when you want to make a mail flow decision, such as whether to stop the receipt
-        /// rule or the receipt rule set.</important>
+        /// rule or the receipt rule set.
+        /// </para>
+        ///  </important>
         /// </summary>
         public InvocationType InvocationType
         {

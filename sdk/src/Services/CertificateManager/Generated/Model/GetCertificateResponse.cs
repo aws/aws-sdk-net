@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// 
+    /// This is the response object from the GetCertificate operation.
     /// </summary>
     public partial class GetCertificateResponse : AmazonWebServiceResponse
     {
@@ -38,8 +38,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        ///  String that contains the ACM Certificate represented by the ARN specified at input.
-        /// 
+        /// String that contains the ACM Certificate represented by the ARN specified at input.
         /// </para>
         /// </summary>
         public string Certificate
@@ -57,8 +56,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateChain. 
         /// <para>
-        ///  The certificate chain that contains the root certificate issued by the certificate
-        /// authority (CA). 
+        /// The certificate chain that contains the root certificate issued by the certificate
+        /// authority (CA).
         /// </para>
         /// </summary>
         public string CertificateChain

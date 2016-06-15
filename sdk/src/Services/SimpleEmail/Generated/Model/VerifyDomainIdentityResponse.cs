@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the VerifyDomainIdentity operation.
+    /// Returns a TXT record that you must publish to the DNS server of your domain to complete
+    /// domain verification with Amazon SES.
     /// </summary>
     public partial class VerifyDomainIdentityResponse : AmazonWebServiceResponse
     {
