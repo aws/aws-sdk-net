@@ -29,8 +29,8 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMLModel operation.
-    /// Returns an <code>MLModel</code> that includes detailed metadata, and data source information
-    /// as well as the current status of the <code>MLModel</code>.
+    /// Returns an <code>MLModel</code> that includes detailed metadata, data source information,
+    /// and the current status of the <code>MLModel</code>.
     /// 
     ///  
     /// <para>

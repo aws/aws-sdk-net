@@ -29,11 +29,15 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the PutIdentityPolicy operation.
-    /// Adds or updates a sending authorization policy for the specified identity (email address
-    /// or domain).
+    /// Adds or updates a sending authorization policy for the specified identity (an email
+    /// address or a domain).
     /// 
-    ///  <note>This API is for the identity owner only. If you have not verified the identity,
-    /// this API will return an error.</note> 
+    ///  <note> 
+    /// <para>
+    /// This API is for the identity owner only. If you have not verified the identity, this
+    /// API will return an error.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Sending authorization is a feature that enables an identity owner to authorize other
     /// senders to use its identities. For information about using sending authorization,

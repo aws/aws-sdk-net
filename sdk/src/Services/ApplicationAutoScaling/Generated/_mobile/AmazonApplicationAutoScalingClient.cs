@@ -38,7 +38,7 @@ namespace Amazon.ApplicationAutoScaling
     ///
     /// Application Auto Scaling is a general purpose Auto Scaling service for supported elastic
     /// AWS resources. With Application Auto Scaling, you can automatically scale your AWS
-    /// resources, with an experience similar to that of Amazon EC2 Auto Scaling.
+    /// resources, with an experience similar to that of Auto Scaling.
     /// 
     ///  <note> 
     /// <para>
@@ -59,6 +59,22 @@ namespace Amazon.ApplicationAutoScaling
     ///  </li> <li> 
     /// <para>
     /// View history of your scaling events 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Application Auto Scaling is available in the following regions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>us-east-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>us-west-2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>eu-west-1</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

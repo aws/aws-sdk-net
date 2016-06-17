@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <a>DeleteEvaluation</a> operation. The output indicates
+    /// Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates
     /// that Amazon Machine Learning (Amazon ML) received the request.
     /// 
     ///  
     /// <para>
-    /// You can use the <a>GetEvaluation</a> operation and check the value of the <code>Status</code>
+    /// You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code>
     /// parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.
     /// </para>
     /// </summary>

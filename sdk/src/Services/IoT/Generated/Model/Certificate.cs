@@ -96,6 +96,10 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The status of the certificate.
         /// </para>
+        ///  
+        /// <para>
+        /// The status value REGISTER_INACTIVE is deprecated and should not be used.
+        /// </para>
         /// </summary>
         public CertificateStatus Status
         {

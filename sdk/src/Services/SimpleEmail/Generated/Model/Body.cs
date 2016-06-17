@@ -44,7 +44,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates Body with the parameterized properties
         /// </summary>
-        /// <param name="text">The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile devices). </param>
+        /// <param name="text">The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks (such as mobile devices).</param>
         public Body(Content text)
         {
             _text = text;
@@ -55,7 +55,6 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The content of the message, in HTML format. Use this for email clients that can process
         /// HTML. You can include clickable links, formatted text, and much more in an HTML message.
-        /// 
         /// </para>
         /// </summary>
         public Content Html
@@ -74,7 +73,7 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Text. 
         /// <para>
         /// The content of the message, in text format. Use this for text-based email clients,
-        /// or clients on high-latency networks (such as mobile devices). 
+        /// or clients on high-latency networks (such as mobile devices).
         /// </para>
         /// </summary>
         public Content Text

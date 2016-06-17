@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the GetIdentityNotificationAttributes operation.
+    /// Represents the notification attributes for a list of identities.
     /// </summary>
     public partial class GetIdentityNotificationAttributesResponse : AmazonWebServiceResponse
     {

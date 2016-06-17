@@ -101,8 +101,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// The unique identifier string for the resource associated with the scaling activity.
         /// For Amazon ECS services, this value is the resource type, followed by the cluster
-        /// name, and then the service name, such as <code>service/default/sample-webapp</code>.
-        /// If you specify a scalable dimension, you must also specify a resource ID.
+        /// name and service name, such as <code>service/default/sample-webapp</code>. If you
+        /// specify a scalable dimension, you must also specify a resource ID.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -121,10 +121,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ScalableDimension. 
         /// <para>
         /// The scalable dimension associated with the scaling activity. The scalable dimension
-        /// contains the service namespace, the resource type, and the scaling property, such
-        /// as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon
-        /// ECS service. If you specify a scalable dimension, you must also specify a resource
-        /// ID.
+        /// contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code>
+        /// for the desired task count of an Amazon ECS service. If you specify a scalable dimension,
+        /// you must also specify a resource ID.
         /// </para>
         /// </summary>
         public ScalableDimension ScalableDimension

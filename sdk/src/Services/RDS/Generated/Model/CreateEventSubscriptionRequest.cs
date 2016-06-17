@@ -180,7 +180,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
+        /// Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code>
+        /// | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
+        /// 
         /// </para>
         /// </summary>
         public string SourceType

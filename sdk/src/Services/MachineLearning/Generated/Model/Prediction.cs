@@ -32,13 +32,14 @@ namespace Amazon.MachineLearning.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Details</code> - Contains the following attributes: DetailsAttributes.PREDICTIVE_MODEL_TYPE
-    /// - REGRESSION | BINARY | MULTICLASS DetailsAttributes.ALGORITHM - SGD 
+    ///  <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE
+    /// - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PredictedLabel</code> - Present for either a BINARY or MULTICLASS <code>MLModel</code>
-    /// request. 
+    ///  <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code>
+    /// <code>MLModel</code> request. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -47,8 +48,8 @@ namespace Amazon.MachineLearning.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PredictedValue</code> - Present for a REGRESSION <code>MLModel</code> request.
-    /// 
+    ///  <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code>
+    /// request. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -75,8 +76,10 @@ namespace Amazon.MachineLearning.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PredictedLabel. The prediction label for either a BINARY
-        /// or MULTICLASS <code>MLModel</code>.
+        /// Gets and sets the property PredictedLabel. 
+        /// <para>
+        /// The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.
+        /// </para>
         /// </summary>
         public string PredictedLabel
         {
@@ -106,7 +109,8 @@ namespace Amazon.MachineLearning.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PredictedValue. The prediction value for REGRESSION <code>MLModel</code>.
+        /// Gets and sets the property PredictedValue. The prediction value for <code>REGRESSION</code>
+        /// <code>MLModel</code>.
         /// </summary>
         public float PredictedValue
         {

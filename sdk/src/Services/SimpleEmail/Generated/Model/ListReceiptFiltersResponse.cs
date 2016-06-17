@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// This is the response object from the ListReceiptFilters operation.
+    /// A list of IP address filters that exist under your AWS account.
     /// </summary>
     public partial class ListReceiptFiltersResponse : AmazonWebServiceResponse
     {

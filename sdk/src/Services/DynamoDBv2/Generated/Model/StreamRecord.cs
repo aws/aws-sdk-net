@@ -33,12 +33,32 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class StreamRecord
     {
+        private DateTime? _approximateCreationDateTime;
         private Dictionary<string, AttributeValue> _keys = new Dictionary<string, AttributeValue>();
         private Dictionary<string, AttributeValue> _newImage = new Dictionary<string, AttributeValue>();
         private Dictionary<string, AttributeValue> _oldImage = new Dictionary<string, AttributeValue>();
         private string _sequenceNumber;
         private long? _sizeBytes;
         private StreamViewType _streamViewType;
+
+        /// <summary>
+        /// Gets and sets the property ApproximateCreationDateTime. 
+        /// <para>
+        /// The approximate date and time when the stream record was created, in <a href="http://www.epochconverter.com/">UNIX
+        /// epoch time</a> format.
+        /// </para>
+        /// </summary>
+        public DateTime ApproximateCreationDateTime
+        {
+            get { return this._approximateCreationDateTime.GetValueOrDefault(); }
+            set { this._approximateCreationDateTime = value; }
+        }
+
+        // Check to see if ApproximateCreationDateTime property is set
+        internal bool IsSetApproximateCreationDateTime()
+        {
+            return this._approximateCreationDateTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Keys. 
@@ -136,23 +156,23 @@ namespace Amazon.DynamoDBv2.Model
         /// The type of data from the modified DynamoDB item that was captured in this stream
         /// record:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>KEYS_ONLY</code> - only the key attributes of the modified item.
+        ///  <code>KEYS_ONLY</code> - only the key attributes of the modified item.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>NEW_IMAGE</code> - the entire item, as it appears after it was modified.
+        ///  <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.
+        ///  <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>NEW_AND_OLD_IMAGES</code> — both the new and the old item images of the item.
+        ///  <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public StreamViewType StreamViewType
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <a>DescribeBatchPredictions</a> operation. The content
+    /// Represents the output of a <code>DescribeBatchPredictions</code> operation. The content
     /// is essentially a list of <code>BatchPrediction</code>s.
     /// </summary>
     public partial class DescribeBatchPredictionsResponse : AmazonWebServiceResponse
@@ -58,7 +58,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A list of <a>BatchPrediction</a> objects that meet the search criteria. 
+        /// A list of <code>BatchPrediction</code> objects that meet the search criteria. 
         /// </para>
         /// </summary>
         public List<BatchPrediction> Results

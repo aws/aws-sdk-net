@@ -29,10 +29,9 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSourceFromRedshift operation.
-    /// Creates a <code>DataSource</code> from <a href="http://aws.amazon.com/redshift/">Amazon
-    /// Redshift</a>. A <code>DataSource</code> references data that can be used to perform
-    /// either <a>CreateMLModel</a>, <a>CreateEvaluation</a> or <a>CreateBatchPrediction</a>
-    /// operations.
+    /// Creates a <code>DataSource</code> from a database hosted on an Amazon Redshift cluster.
+    /// A <code>DataSource</code> references data that can be used to perform either <code>CreateMLModel</code>,
+    /// <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
     /// 
     ///  
     /// <para>
@@ -41,34 +40,40 @@ namespace Amazon.MachineLearning.Model
     /// immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>.
     /// After the <code>DataSource</code> is created and ready for use, Amazon ML sets the
     /// <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in
-    /// <code>COMPLETED</code> or <code>PENDING</code> status can only be used to perform
-    /// <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a> operations.
-    /// 
+    /// <code>COMPLETED</code> or <code>PENDING</code> states can be used to perform only
+    /// <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
+    /// operations. 
     /// </para>
     ///  
     /// <para>
-    ///  If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter
+    ///  If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter
     /// to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute
-    /// of the <a>GetDataSource</a> operation response. 
+    /// of the <code>GetDataSource</code> operation response. 
     /// </para>
     ///  
     /// <para>
-    /// The observations should exist in the database hosted on an Amazon Redshift cluster
-    /// and should be specified by a <code>SelectSqlQuery</code>. Amazon ML executes <a href="http://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html">
-    /// Unload</a> command in Amazon Redshift to transfer the result set of <code>SelectSqlQuery</code>
-    /// to <code>S3StagingLocation.</code> 
+    /// The observations should be contained in the database hosted on an Amazon Redshift
+    /// cluster and should be specified by a <code>SelectSqlQuery</code> query. Amazon ML
+    /// executes an <code>Unload</code> command in Amazon Redshift to transfer the result
+    /// set of the <code>SelectSqlQuery</code> query to <code>S3StagingLocation</code>.
     /// </para>
     ///  
     /// <para>
-    /// After the <code>DataSource</code> is created, it's ready for use in evaluations and
-    /// batch predictions. If you plan to use the <code>DataSource</code> to train an <code>MLModel</code>,
-    /// the <code>DataSource</code> requires another item -- a recipe. A recipe describes
-    /// the observation variables that participate in training an <code>MLModel</code>. A
-    /// recipe describes how each input variable will be used in training. Will the variable
-    /// be included or excluded from training? Will the variable be manipulated, for example,
-    /// combined with another variable or split apart into word combinations? The recipe provides
-    /// answers to these questions. For more information, see the Amazon Machine Learning
-    /// Developer Guide.
+    /// After the <code>DataSource</code> has been created, it's ready for use in evaluations
+    /// and batch predictions. If you plan to use the <code>DataSource</code> to train an
+    /// <code>MLModel</code>, the <code>DataSource</code> also requires a recipe. A recipe
+    /// describes how each input variable will be used in training an <code>MLModel</code>.
+    /// Will the variable be included or excluded from training? Will the variable be manipulated;
+    /// for example, will it be combined with another variable or will it be split apart into
+    /// word combinations? The recipe provides answers to these questions.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can't change an existing datasource, but you can copy and modify the settings
+    /// from an existing Amazon Redshift datasource to create a new datasource. To do so,
+    /// call <code>GetDataSource</code> for an existing datasource and copy the values to
+    /// a <code>CreateDataSource</code> call. Change the settings that you want to change
+    /// and make sure that all required fields have the appropriate values.
     /// </para>
     /// </summary>
     public partial class CreateDataSourceFromRedshiftRequest : AmazonMachineLearningRequest
@@ -85,8 +90,8 @@ namespace Amazon.MachineLearning.Model
         /// The compute statistics for a <code>DataSource</code>. The statistics are generated
         /// from the observation data referenced by a <code>DataSource</code>. Amazon ML uses
         /// the statistics internally during <code>MLModel</code> training. This parameter must
-        /// be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-        /// used for <code>MLModel</code> training
+        /// be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code>
+        /// training.
         /// </para>
         /// </summary>
         public bool ComputeStatistics
@@ -144,28 +149,28 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// DatabaseInformation - <ul> <li> <code>DatabaseName </code> - Name of the Amazon Redshift
-        /// database. </li> <li> <code> ClusterIdentifier </code> - Unique ID for the Amazon Redshift
-        /// cluster.</li> </ul>
+        /// DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name of the Amazon
+        /// Redshift database. </li> <li> <code> ClusterIdentifier</code> - The unique ID for
+        /// the Amazon Redshift cluster.</li> </ul>
         /// </para>
         /// </li> <li>
         /// <para>
-        /// DatabaseCredentials - AWS Identity abd Access Management (IAM) credentials that are
-        /// used to connect to the Amazon Redshift database.
+        /// DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that
+        /// are used to connect to the Amazon Redshift database.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// SelectSqlQuery - Query that is used to retrieve the observation data for the <code>Datasource</code>.
+        /// SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// S3StagingLocation - Amazon Simple Storage Service (Amazon S3) location for staging
-        /// Amazon Redshift data. The data retrieved from Amazon Relational Database Service (Amazon
-        /// RDS) using <code>SelectSqlQuery</code> is stored in this location.
+        /// S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging
+        /// Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
+        /// query is stored in this location.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// DataSchemaUri - Amazon S3 location of the <code>DataSchema</code>.
+        /// DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -174,10 +179,10 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         /// </li> <li> 
         /// <para>
-        /// DataRearrangement - A JSON string representing the splitting requirement of a <code>Datasource</code>.
-        /// 
+        /// DataRearrangement - A JSON string that represents the splitting and rearrangement
+        /// requirements for the <code>DataSource</code>.
         /// </para>
-        ///   
+        ///  
         /// <para>
         ///  Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
         /// 

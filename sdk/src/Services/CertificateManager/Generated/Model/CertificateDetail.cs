@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// This structure is returned in the response object of the <a>DescribeCertificate</a>
-    /// action.
+    /// Contains detailed metadata about an ACM Certificate. This structure is returned in
+    /// the response to a <a>DescribeCertificate</a> request.
     /// </summary>
     public partial class CertificateDetail
     {
@@ -54,17 +54,9 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        ///  Amazon Resource Name (ARN) of the certificate. This is of the form: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>. 
+        /// The Amazon Resource Name (ARN) of the certificate. For more information about ARNs,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string CertificateArn
@@ -82,7 +74,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        ///  Time at which the certificate was requested. 
+        /// The time at which the certificate was requested.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -100,8 +92,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Fully qualified domain name (FQDN), such as www.example.com or example.com, for the
-        /// certificate. 
+        /// The fully qualified domain name (FQDN) for the certificate, such as www.example.com
+        /// or example.com.
         /// </para>
         /// </summary>
         public string DomainName
@@ -119,8 +111,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainValidationOptions. 
         /// <para>
-        ///  References a <a>DomainValidation</a> structure that contains the domain name in the
-        /// certificate and the email address that can be used for validation. 
+        /// Contains information about the email address or addresses used for domain validation.
         /// </para>
         /// </summary>
         public List<DomainValidation> DomainValidationOptions
@@ -138,8 +129,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property InUseBy. 
         /// <para>
-        ///  List that identifies ARNs that are using the certificate. A single ACM Certificate
-        /// can be used by multiple AWS resources. 
+        /// A list of ARNs for the resources that are using the certificate. An ACM Certificate
+        /// can be used by multiple AWS resources.
         /// </para>
         /// </summary>
         public List<string> InUseBy
@@ -157,7 +148,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property IssuedAt. 
         /// <para>
-        ///  Time at which the certificate was issued. 
+        /// The time at which the certificate was issued.
         /// </para>
         /// </summary>
         public DateTime IssuedAt
@@ -175,7 +166,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Issuer. 
         /// <para>
-        ///  The X.500 distinguished name of the CA that issued and signed the certificate. 
+        /// The X.500 distinguished name of the CA that issued and signed the certificate.
         /// </para>
         /// </summary>
         public string Issuer
@@ -193,8 +184,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property KeyAlgorithm. 
         /// <para>
-        ///  Asymmetric algorithm used to generate the public and private key pair. Currently
-        /// the only supported value is <code>RSA_2048</code>. 
+        /// The algorithm used to generate the key pair (the public and private key). Currently
+        /// the only supported value is <code>RSA_2048</code>.
         /// </para>
         /// </summary>
         public KeyAlgorithm KeyAlgorithm
@@ -212,7 +203,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property NotAfter. 
         /// <para>
-        ///  Time after which the certificate is not valid. 
+        /// The time after which the certificate is not valid.
         /// </para>
         /// </summary>
         public DateTime NotAfter
@@ -230,7 +221,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property NotBefore. 
         /// <para>
-        ///  Time before which the certificate is not valid. 
+        /// The time before which the certificate is not valid.
         /// </para>
         /// </summary>
         public DateTime NotBefore
@@ -248,49 +239,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property RevocationReason. 
         /// <para>
-        ///  A <code>RevocationReason</code> enumeration value that indicates why the certificate
-        /// was revoked. This value exists only if the certificate has been revoked. This can
-        /// be one of the following vales: <ul> <li>
-        /// <para>
-        /// UNSPECIFIED
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// KEY_COMPROMISE
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// CA_COMPROMISE
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// AFFILIATION_CHANGED
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// SUPERCEDED
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// CESSATION_OF_OPERATION
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// CERTIFICATE_HOLD
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// REMOVE_FROM_CRL
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// PRIVILEGE_WITHDRAWN
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// A_A_COMPROMISE
-        /// </para>
-        /// </li> </ul> 
+        /// The reason the certificate was revoked. This value exists only when the certificate
+        /// status is <code>REVOKED</code>.
         /// </para>
         /// </summary>
         public RevocationReason RevocationReason
@@ -308,8 +258,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property RevokedAt. 
         /// <para>
-        ///  The time, if any, at which the certificate was revoked. This value exists only if
-        /// the certificate has been revoked. 
+        /// The time at which the certificate was revoked. This value exists only when the certificate
+        /// status is <code>REVOKED</code>.
         /// </para>
         /// </summary>
         public DateTime RevokedAt
@@ -327,7 +277,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Serial. 
         /// <para>
-        ///  String that contains the serial number of the certificate. 
+        /// The serial number of the certificate.
         /// </para>
         /// </summary>
         public string Serial
@@ -345,8 +295,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property SignatureAlgorithm. 
         /// <para>
-        ///  Algorithm used to generate a signature. Currently the only supported value is <code>SHA256WITHRSA</code>.
-        /// 
+        /// The algorithm used to generate a signature. Currently the only supported value is
+        /// <code>SHA256WITHRSA</code>.
         /// </para>
         /// </summary>
         public string SignatureAlgorithm
@@ -364,36 +314,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  A <code>CertificateStatus</code> enumeration value that can contain one of the following:
-        /// <ul> <li>
-        /// <para>
-        /// PENDING_VALIDATION
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// ISSUED
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// INACTIVE
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// EXPIRED
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// REVOKED
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// FAILED
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// VALIDATION_TIMED_OUT
-        /// </para>
-        /// </li> </ul> 
+        /// The status of the certificate.
         /// </para>
         /// </summary>
         public CertificateStatus Status
@@ -411,8 +332,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        ///  The X.500 distinguished name of the entity associated with the public key contained
-        /// in the certificate. 
+        /// The X.500 distinguished name of the entity associated with the public key contained
+        /// in the certificate.
         /// </para>
         /// </summary>
         public string Subject
@@ -430,11 +351,11 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
-        ///  One or more domain names (subject alternative names) included in the certificate
-        /// request. After the certificate is issued, this list includes the domain names bound
-        /// to the public key contained in the certificate. The subject alternative names include
-        /// the canonical domain name (CN) of the certificate and additional domain names that
-        /// can be used to connect to the website. 
+        /// One or more domain names (subject alternative names) included in the certificate request.
+        /// After the certificate is issued, this list includes the domain names bound to the
+        /// public key contained in the certificate. The subject alternative names include the
+        /// canonical domain name (CN) of the certificate and additional domain names that can
+        /// be used to connect to the website.
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames

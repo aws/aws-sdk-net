@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of <a>GetEvaluation</a> operation. 
+    /// Represents the output of <code>GetEvaluation</code> operation. 
     /// 
     ///  
     /// <para>
@@ -221,7 +221,7 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// Measurements of how well the <code>MLModel</code> performed, using observations referenced
         /// by the <code>DataSource</code>. One of the following metrics is returned, based on
-        /// the type of the MLModel: 
+        /// the type of the <code>MLModel</code>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

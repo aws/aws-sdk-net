@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <a>GetDataSource</a> operation and describes a <code>DataSource</code>.
+    /// Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>.
     /// </summary>
     public partial class GetDataSourceResponse : AmazonWebServiceResponse
     {
@@ -130,7 +130,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataRearrangement. 
         /// <para>
-        /// A JSON string that captures the splitting rearrangement requirement of the <code>DataSource</code>.
+        /// A JSON string that represents the splitting and rearrangement requirement used when
+        /// this <code>DataSource</code> was created.
         /// </para>
         /// </summary>
         public string DataRearrangement
@@ -227,7 +228,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
-        /// A link to the file containining logs of either create <code>DataSource</code> operation.
+        /// A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.
         /// </para>
         /// </summary>
         public string LogUri
@@ -245,7 +246,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The description of the most recent details about creating the <code>DataSource</code>.
+        /// The user-supplied description of the most recent details about creating the <code>DataSource</code>.
         /// </para>
         /// </summary>
         public string Message
@@ -347,12 +348,12 @@ namespace Amazon.MachineLearning.Model
         /// The current status of the <code>DataSource</code>. This element can have one of the
         /// following values:
         /// </para>
-        ///  <ul> <li> <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a
-        /// request to create a <code>DataSource</code>.</li> <li> <code>INPROGRESS</code> - The
-        /// creation process is underway.</li> <li> <code>FAILED</code> - The request to create
-        /// a <code>DataSource</code> did not run to completion. It is not usable.</li> <li> <code>COMPLETED</code>
-        /// - The creation process completed successfully.</li> <li> <code>DELETED</code> - The
-        /// <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+        ///  <ul> <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
+        /// <li> <code>INPROGRESS</code> - The creation process is underway.</li> <li> <code>FAILED</code>
+        /// - The request to create a <code>DataSource</code> did not run to completion. It is
+        /// not usable.</li> <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
+        /// <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
+        /// not usable.</li> </ul>
         /// </summary>
         public EntityStatus Status
         {

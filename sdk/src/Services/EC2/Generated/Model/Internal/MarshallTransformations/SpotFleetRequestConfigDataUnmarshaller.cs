@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ExcessCapacityTerminationPolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("fulfilledCapacity", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.FulfilledCapacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("iamFleetRole", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -101,6 +107,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.TerminateInstancesWithExpiration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("type", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("validFrom", targetDepth))

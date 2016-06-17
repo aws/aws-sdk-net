@@ -10111,12 +10111,11 @@ namespace Amazon.EC2
         #region  GetConsoleScreenshot
 
         /// <summary>
-        /// Retrieve a JPG-format screenshot of an instance to help with troubleshooting.
+        /// Retrieve a JPG-format screenshot of a running instance to help with troubleshooting.
         /// 
         ///  
         /// <para>
-        /// For API calls, the returned content is base64-encoded. For command line tools, the
-        /// decoding is performed for you.
+        /// The returned content is base64-encoded.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot service method.</param>

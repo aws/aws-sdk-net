@@ -29,12 +29,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConsoleScreenshot operation.
-    /// Retrieve a JPG-format screenshot of an instance to help with troubleshooting.
+    /// Retrieve a JPG-format screenshot of a running instance to help with troubleshooting.
     /// 
     ///  
     /// <para>
-    /// For API calls, the returned content is base64-encoded. For command line tools, the
-    /// decoding is performed for you.
+    /// The returned content is base64-encoded.
     /// </para>
     /// </summary>
     public partial class GetConsoleScreenshotRequest : AmazonEC2Request
