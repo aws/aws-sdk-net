@@ -29,19 +29,20 @@ namespace TestWrapper
 
         public override string ToString()
         {
-            StringWriter writer = new StringWriter();
-
-            if (0 < this.FailedTestNames.Count)
+            using (StringWriter writer = new StringWriter())
             {
-                writer.WriteLine("Failed Tests : \n");
-                foreach (string testName in this.FailedTestNames)
+                if (0 < this.FailedTestNames.Count)
                 {
-                    writer.WriteLine(String.Format("\t{0}\n", testName));
+                    writer.WriteLine("Failed Tests :");
+                    foreach (string testName in this.FailedTestNames)
+                    {
+                        writer.WriteLine(String.Format("\t{0}\n", testName));
+                    }
                 }
+
+                writer.WriteLine("Passed : {0}, Failed : {1}", this.Passed, this.Failed);
+                return writer.ToString();
             }
-            
-            writer.WriteLine(String.Format("Passed : {0}, Failed : {1}", this.Passed, this.Failed));
-            return writer.ToString();
         }
     }
 
