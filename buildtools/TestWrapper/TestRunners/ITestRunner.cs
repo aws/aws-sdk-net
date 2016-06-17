@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.IO;
 
 namespace TestWrapper
 {
@@ -29,19 +29,19 @@ namespace TestWrapper
 
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            StringWriter writer = new StringWriter();
 
             if (0 < this.FailedTestNames.Count)
-            { 
-                builder.Append("Failed Tests : \n");
+            {
+                writer.WriteLine("Failed Tests : \n");
                 foreach (string testName in this.FailedTestNames)
                 {
-                    builder.Append(String.Format("\t{0}\n", testName));
+                    writer.WriteLine(String.Format("\t{0}\n", testName));
                 }
             }
             
-            builder.Append(String.Format("Passed : {0}, Failed : {1}", this.Passed, this.Failed));
-            return builder.ToString();
+            writer.WriteLine(String.Format("Passed : {0}, Failed : {1}", this.Passed, this.Failed));
+            return writer.ToString();
         }
     }
 

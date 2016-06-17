@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.IO;
-
+using System.Linq;
 
 namespace TestWrapper
 {
@@ -20,22 +20,24 @@ namespace TestWrapper
 
         public ResultsSummary RunTests(IEnumerable<string> tests)
         {
-            Process process = new Process();
-            // Configure the process using the StartInfo properties.
-            process.StartInfo.FileName = executable;
-            process.StartInfo.Arguments = GetArguments(tests);
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.UseShellExecute = false;
-            process.EnableRaisingEvents = true;
+            Process process = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = executable,
+                    Arguments = GetAdditionalArgs(tests),
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                },
+                EnableRaisingEvents = true,
+            };
             StringBuilder buffer = new StringBuilder();
-            process.OutputDataReceived += new DataReceivedEventHandler
-            (
-                delegate (object sender, DataReceivedEventArgs e)
+            process.OutputDataReceived += (s, e) =>
                 {
                     Console.WriteLine(e.Data);
                     buffer.AppendLine(e.Data);
-                }
-            );
+                };
+
             process.Start();
             process.BeginOutputReadLine();
             process.WaitForExit();
@@ -47,26 +49,29 @@ namespace TestWrapper
         {
             bool foundSummary = false;
             string line = null;
-            var reader = new StringReader(output);
             int passed = 0;
             int failed = 0;
             List<string> failedTests = new List<string>();
-            while ((line = reader.ReadLine()) != null)
+
+            using (StringReader reader = new StringReader(output))
             {
-                if (line.StartsWith("Summary") || line.StartsWith("Final Test Results"))
+                while ((line = reader.ReadLine()) != null)
                 {
-                    foundSummary = true;
-                    break;
-                }
+                    if (line.StartsWith("Summary") || line.StartsWith("Final Test Results"))
+                    {
+                        foundSummary = true;
+                        break;
+                    }
 
-                if (line.StartsWith("Passed"))
-                    passed++;
-                if (line.StartsWith("Failed"))
-                {
-                    failed++;
+                    if (line.StartsWith("Passed"))
+                        passed++;
+                    if (line.StartsWith("Failed"))
+                    {
+                        failed++;
 
-                    var testName = line.Substring(line.IndexOf(' ')).Trim();
-                    failedTests.Add(testName);
+                        var testName = line.Substring(line.IndexOf(' ')).Trim();
+                        failedTests.Add(testName);
+                    }
                 }
             }
 
@@ -78,22 +83,16 @@ namespace TestWrapper
             return new ResultsSummary(output, failedTests, passed, failed, 0);
         }
 
-        private string GetArguments(IEnumerable<string> tests)
+        private string GetAdditionalArgs(IEnumerable<string> tests)
         {
-            StringBuilder arguments = new StringBuilder();
-            arguments.Append(String.Join(" ", this.arguments));
-            foreach (var arg in tests)
-            {
-                if (arguments.Length > 0)
-                    arguments.Append(" ");
-                arguments.Append(String.Format("/test:{0} ", arg));
-            }
-            return arguments.ToString();
+            string args = string.Join(" ", this.arguments);
+            string testsArg = string.Join(" ", tests.Select(testName => "/test:" + testName));
+            return string.Format("{0} {1}", args, testsArg);
         }
 
         public override string ToString()
         {
-            return String.Format("Exectuable : {0}\nBase Arguments : {1}", this.executable, String.Join(" ", this.arguments));
+            return string.Format("Exectuable : {0}\nBase Arguments : {1}", this.executable, string.Join(" ", this.arguments));
         }
     }
 }

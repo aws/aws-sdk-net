@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace TestWrapper
 {
@@ -21,22 +22,24 @@ namespace TestWrapper
         {
             StringBuilder buffer = new StringBuilder();
 
-            Process xunit = new Process();
-            xunit.StartInfo.UseShellExecute = false;
-            xunit.StartInfo.RedirectStandardOutput = true;
-            xunit.StartInfo.RedirectStandardError = true;
-            xunit.StartInfo.FileName = this.executable;
-            xunit.StartInfo.Arguments = GetArguments(tests);
-            xunit.EnableRaisingEvents = true;
-
-            DataReceivedEventHandler sink = new DataReceivedEventHandler
-            (
-                delegate (object sender, DataReceivedEventArgs e)
+            Process xunit = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    FileName = this.executable,
+                    Arguments = GetAdditionalArgs(tests),
+                },
+                EnableRaisingEvents = true
+            };
+            DataReceivedEventHandler sink = (s, e) =>
                 {
                     Console.WriteLine(e.Data);
                     buffer.AppendLine(e.Data);
-                }
-            );
+                };
+
             xunit.OutputDataReceived += sink;
             xunit.ErrorDataReceived += sink;
 
@@ -48,27 +51,19 @@ namespace TestWrapper
             string log = buffer.ToString();
             string[] lines = log.Trim().Split('\n');
             List<string> failedTests = GetFailedTests(lines);
-            Tuple<int, int, int> metrics = ExtractSummary(lines);
-
-            return new ResultsSummary(log, failedTests, metrics.Item1, metrics.Item2, metrics.Item3);
+            int passed = 0, failed = 0, skipped = 0;
+            ExtractSummary(lines, out passed, out failed, out skipped);
+            return new ResultsSummary(log, failedTests, passed, failed, skipped);
         }
 
-        private string GetArguments(IEnumerable<string> tests)
+        private string GetAdditionalArgs(IEnumerable<string> tests)
         {
-            string testsArgument = "";
-            foreach (string test in tests)
-            {
-                if (!String.IsNullOrWhiteSpace(test))
-                {
-                    testsArgument += String.Format(" -method \"{0}\"", test);
-                }
-            }
-
-            return String.Format("{0} {1}", String.Join(" ", this.arguments), testsArgument);
+            string testsArgument = string.Join(" ", tests.Select(test => string.Format("-method \"{0}\"", test)));
+            return string.Format("{0} {1}", string.Join(" ", this.arguments), testsArgument);
         }
 
         private static Regex summaryRegex = new Regex(@"Total:\s*(\d*).*Errors:\s*(\d*).*Failed:\s*(\d*).*Skipped:\s*(\d*).*");
-        private Tuple<int, int, int> ExtractSummary(string[] lines)
+        private void ExtractSummary(string[] lines, out int passedCount, out int failedCount, out int skippedCount)
         {
             int total = 0;
             int errors = 0;
@@ -79,7 +74,7 @@ namespace TestWrapper
             {
                 string line = lines[i].Trim();
 
-                if (line.Equals(@"=== TEST EXECUTION SUMMARY ==="))
+                if (line.IndexOf(@"=== TEST EXECUTION SUMMARY ===", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     throw new Exception("Failed to parse the output while generating test run summary.");
                 }
@@ -94,7 +89,9 @@ namespace TestWrapper
                     break;
                 }
             }
-            return new Tuple<int, int, int>(total - errors - failed, errors + failed, skipped);
+            passedCount = total - errors - failed;
+            failedCount = errors + failed;
+            skippedCount = skipped;
         }
 
 
@@ -107,21 +104,14 @@ namespace TestWrapper
 
         private List<string> GetFailedTests(string[] lines)
         {
-            List<string> failedTestNames = new List<string>();
-            foreach (string line in lines)
-            {
-                string failedTestName = ExtractFailedTestName(line);
-                if (!String.IsNullOrEmpty(failedTestName))
-                {
-                    failedTestNames.Add(failedTestName);
-                }                
-            }
-            return failedTestNames;
+            return lines.Select(ExtractFailedTestName)
+                        .Where(testName => !string.IsNullOrEmpty(testName))
+                        .ToList();
         }
 
         public override string ToString()
         {
-            return String.Format("Executable : {0}\nBase Arguments: {1}", this.executable, GetArguments(new List<string>()));
+            return string.Format("Executable : {0}\nBase Arguments: {1}", this.executable, GetAdditionalArgs(new List<string>()));
         }
     }
 }

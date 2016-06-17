@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TestWrapper
 {
+    using CreateTestRunnerFunc = Func<string, string[], ITestRunner>;
+
     class RunTests
     {
+        private static int MAX_TEST_RUNS = 5;
         private static bool ExecuteRunner(ITestRunner runner)
         {
             bool allTestsPassed = false;
@@ -13,10 +17,10 @@ namespace TestWrapper
                 ResultsSummary summary = new ResultsSummary();
                 int prevFailedTestCount = Int32.MaxValue;
                 
-                for(int runCount = 1; ; runCount++)
+                for(int runCount = 1; runCount < MAX_TEST_RUNS; runCount++)
                 {
                     summary = runner.RunTests(summary.FailedTestNames);
-                    Console.WriteLine(String.Format("====== TestWrapper Run Attempt {0} =====", runCount));
+                    Console.WriteLine("====== TestWrapper Run Attempt {0} =====", runCount);
                     Console.WriteLine(runner.ToString());
                     Console.WriteLine(summary);
                     Console.WriteLine("=======================");
@@ -38,22 +42,22 @@ namespace TestWrapper
             }
             catch(Exception e)
             {
-                Console.WriteLine("Exception occurred running tests: {0}", e.Message);
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine("Exception occurred running tests:\n {0}", e.ToString());
                 allTestsPassed = false;
             }
 
             return allTestsPassed;
         }
 
-        private static Dictionary<string, Type> testRunnerTypeMap = new Dictionary<string, Type>(){
-            {"mstest",  typeof(MSTestRunner)},
-            {"xunit",   typeof(XUnitTestRunner)},
+        private static Dictionary<string, CreateTestRunnerFunc> testRunnerMap = new Dictionary<string, CreateTestRunnerFunc>(StringComparer.OrdinalIgnoreCase)
+        {
+            {"mstest", (executable, arguments) => (new MSTestRunner(executable, arguments)) },
+            {"xunit", (executable, arguments)=> (new XUnitTestRunner(executable, arguments)) },
         };
 
         private static string GetHelpString()
         {
-            return @"usage: TestWrappe.exe {mstest | xunit} <test exectuable> <parameters for the test executable>";
+            return @"usage: TestWrapper.exe {mstest | xunit} <test exectuable> <parameters for the test executable>";
         }
 
         public static int Main(string[] args)
@@ -71,36 +75,33 @@ namespace TestWrapper
             {
                 testRunnerType = args[0].ToLower();
                 testSuiteExecutable = args[1];
-                testSuiteArguments = new string[args.Length - 2];
-                Array.Copy(args, 2, testSuiteArguments, 0, args.Length - 2);
+                testSuiteArguments = args.Skip(2).ToArray();
             }
 
-            bool allTestsPassed = true;
-            List<ITestRunner> testSuites = new List<ITestRunner>();
-
-            try
+            ITestRunner runner = null;
+            CreateTestRunnerFunc createTest = null;
+            if (testRunnerMap.TryGetValue(testRunnerType, out createTest))
             {
-                testSuites.Add((ITestRunner)Activator.CreateInstance(testRunnerTypeMap[testRunnerType], testSuiteExecutable, testSuiteArguments));
-            }
-            catch(Exception)
-            {
-                Console.WriteLine("Failed to instantiate an instance of ITestRunner associated with " + testRunnerType);
+                runner = createTest(testSuiteExecutable, testSuiteArguments);
             }
 
-            foreach(ITestRunner runner in testSuites)
+            if (runner == null)
             {
-                allTestsPassed &= ExecuteRunner(runner);
-            }
-
-            if (allTestsPassed)
-            {
-                Console.WriteLine("All tests passed.");
-                return 0;
+                Console.WriteLine("Failed to instantiate an instance of ITestRunner associated with '{}'", testRunnerType);
+                return 87; // Invalid parameter
             }
             else
             {
-                Console.WriteLine("Some tests failed.");
-                return 1;
+                if (ExecuteRunner(runner))
+                {
+                    Console.WriteLine("All tests passed.");
+                    return 0;
+                }
+                else
+                {
+                    Console.WriteLine("Some tests failed.");
+                    return 1;
+                }
             }
         }
     }
