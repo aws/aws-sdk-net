@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
@@ -11,7 +12,7 @@ namespace IntegrationTestsAnalyzer
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class TestMethodAttributeAnlayzer : DiagnosticAnalyzer
     {
-        private static HashSet<string> ValidTestCategories = new HashSet<string>();
+        private static HashSet<string> ValidTestCategories = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         
         private static string DiagnosticCategory = "Integration Test";
         private static DiagnosticDescriptor TestCategoryAttributeRequiredRule = new DiagnosticDescriptor(
@@ -44,30 +45,31 @@ namespace IntegrationTestsAnalyzer
             StreamReader streamReader = new StreamReader(assembly.GetManifestResourceStream("manifest.json"));
 
             Regex exp = new Regex(".*\"base-name\"\\s*:\\s*\"(\\w*)\".*");
-            string line = streamReader.ReadLine();
-            while (!streamReader.EndOfStream)
+            string line;
+            while ((line = streamReader.ReadLine()) != null
+                && !streamReader.EndOfStream)
             {
-
                 Match m = exp.Match(line);
                 if (m.Success)
                 {
                     ValidTestCategories.Add(m.Groups[1].ToString());
                 }
-
-                line = streamReader.ReadLine();
             }
         }
 
         private static void AnalyzeTestMethodAttribute(SymbolAnalysisContext context)
         {
+            if (context.Symbol.Kind != SymbolKind.Method) return;
+
             bool isTestMethod = false;
             bool foundTestCategoryAttribute = false;
             List<Diagnostic> diagnostics = new List<Diagnostic>();
 
-            if (context.Symbol.Kind != SymbolKind.Method) return;
-            
             foreach(AttributeData attribute in context.Symbol.GetAttributes())
             {
+                // Since we don't want to introduce a depenedency to MSTest, just validate that we are looking
+                // at the correct namespace and symbol.
+                if (!attribute.AttributeClass.ContainingNamespace.ToString().Equals("Microsoft.VisualStudio.TestTools.UnitTesting")) continue;
                 isTestMethod |= attribute.AttributeClass.Name.Equals("TestMethodAttribute");
 
                 if (attribute.AttributeClass.Name.Equals("TestCategoryAttribute"))
@@ -100,7 +102,7 @@ namespace IntegrationTestsAnalyzer
                 else
                 {
                     diagnostics.ForEach(d => context.ReportDiagnostic(d));
-                }                
+                }
             }
         }
     }
