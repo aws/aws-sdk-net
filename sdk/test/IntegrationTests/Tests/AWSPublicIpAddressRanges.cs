@@ -8,6 +8,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class AWSPublicIpAddressRangesTests
     {
         [TestMethod]
+        [TestCategory("Always")]
         public void TestLoadAndParse()
         {
             var ranges = AWSPublicIpAddressRanges.Load();
@@ -17,6 +18,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("Always")]
         public void TestQueryByServiceKey()
         {
             var ranges = AWSPublicIpAddressRanges.Load();
@@ -26,6 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("Always")]
         public void TestQueryByRegion()
         {
             var ranges = AWSPublicIpAddressRanges.Load();

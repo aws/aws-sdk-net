@@ -13,6 +13,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class CloudHSM : TestBase<AmazonCloudHSMClient>
     {
         [TestMethod]
+        [TestCategory("CloudHSM")]
         public void TestSimpleMethods()
         {
             var zones = Client.ListAvailableZones().AZList;
@@ -23,6 +24,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("CloudHSM")]
         public void TestHapg()
         {
             var arn = Client.CreateHapg(new CreateHapgRequest { Label = Utils.UtilityMethods.GenerateName() }).HapgArn;

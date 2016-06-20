@@ -51,7 +51,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestCreateAccessKey()
         {
             string username = IAMUtil.CreateTestUser(Client);
@@ -73,7 +73,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestCreateAccessKeyNonExistentUserException()
         {
@@ -83,7 +83,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListAccessKeys()
         {
             string username = IAMUtil.CreateTestUser(Client);
@@ -120,7 +120,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
         // There is a limit of 2 access keys per user
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(LimitExceededException))]
         public void TestLimitExceedException()
         {
@@ -140,7 +140,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestDeleteAccessKey()
         {
             string username = IAMUtil.CreateTestUser(Client);
@@ -174,7 +174,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestDeleteNonExistentAccessKeyException()
         {

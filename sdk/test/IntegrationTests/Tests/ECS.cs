@@ -13,6 +13,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class ECS : TestBase<AmazonECSClient>
     {
         [TestMethod]
+        [TestCategory("ECS")]
         public void ListClusters()
         {            
             var clusters = Client.ListClusters(new ListClustersRequest());            

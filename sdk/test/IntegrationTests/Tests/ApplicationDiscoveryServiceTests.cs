@@ -20,6 +20,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class ApplicationDiscoveryServiceTests : TestBase<AmazonApplicationDiscoveryServiceClient>
     {
         [TestMethod]
+        [TestCategory("ApplicationDiscoveryService")]
         public void TestListConfigurations()
         {
             IAmazonApplicationDiscoveryService client = new AmazonApplicationDiscoveryServiceClient(RegionEndpoint.USWest2);

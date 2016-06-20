@@ -12,7 +12,10 @@ namespace IntegrationTestsAnalyzer
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class TestMethodAttributeAnlayzer : DiagnosticAnalyzer
     {
-        private static HashSet<string> ValidTestCategories = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        private static HashSet<string> ValidTestCategories = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "Always",   // always run these tests
+        };
         
         private static string DiagnosticCategory = "Integration Test";
         private static DiagnosticDescriptor TestCategoryAttributeRequiredRule = new DiagnosticDescriptor(
@@ -69,6 +72,7 @@ namespace IntegrationTestsAnalyzer
             {
                 // Since we don't want to introduce a depenedency to MSTest, just validate that we are looking
                 // at the correct namespace and symbol.
+                System.Diagnostics.Debug.WriteLine(attribute.AttributeClass.ContainingNamespace.ToString());
                 if (!attribute.AttributeClass.ContainingNamespace.ToString().Equals("Microsoft.VisualStudio.TestTools.UnitTesting")) continue;
                 isTestMethod |= attribute.AttributeClass.Name.Equals("TestMethodAttribute");
 

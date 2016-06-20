@@ -42,7 +42,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SNS")]
+        [TestCategory("SimpleNotificationService")]
         public void CRUDTopics()
         {
             // list all topics
@@ -184,7 +184,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SNS")]
+        [TestCategory("SimpleNotificationService")]
         public void TestPublishAsJson()
         {
             // create new topic
@@ -228,7 +228,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SNS")]
+        [TestCategory("SimpleNotificationService")]
         public void TestQueueSubscription()
         {
             // create new topic
@@ -352,7 +352,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SNS")]
+        [TestCategory("SimpleNotificationService")]
         public void TestMultipleQueueSubscription()
         {
             var topicArns = new List<string>();
@@ -390,7 +390,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SNS")]
+        [TestCategory("SimpleNotificationService")]
         public void FindTopic()
         {
             // create new topic

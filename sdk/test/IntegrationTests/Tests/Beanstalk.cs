@@ -20,7 +20,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("Beanstalk")]
+        [TestCategory("ElasticBeanstalk")]
         public void ListAvailableSolutionStacksTest()
         {
             ListAvailableSolutionStacksResponse response = Client.ListAvailableSolutionStacks(new ListAvailableSolutionStacksRequest());
@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("Beanstalk")]
+        [TestCategory("ElasticBeanstalk")]
         public void CheckDNSAvailabilityTest()
         {
             CheckDNSAvailabilityRequest request = new CheckDNSAvailabilityRequest()
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("Beanstalk")]
+        [TestCategory("ElasticBeanstalk")]
         public void CRUDApplication()
         {
             string applicationName = "dotnet-integ-app" + DateTime.Now.Ticks;

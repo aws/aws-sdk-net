@@ -20,6 +20,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class Tests45
     {
         [TestMethod]
+        [TestCategory("Always")]
         public void TestResponseMockingLots()
         {
             var count = 1000;
@@ -31,6 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("Always")]
         public void TestResponseMocking()
         {
             var rawResponse = @"HTTP/1.1 200 OK

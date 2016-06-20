@@ -77,6 +77,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("Lambda")]
         public void ListFunctionsTest()
         {
             Client.ListFunctions();
@@ -86,6 +87,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 #if BCL45
 
         [TestMethod]
+        [TestCategory("Lambda")]
         public void PolicyAndPermissionTest()
         {
             string functionName;
@@ -138,6 +140,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("Lambda")]
         public void LambdaFunctionTest()
         {
             string functionName;
