@@ -53,14 +53,41 @@ namespace Amazon.OpsWorks
     /// (CLI) or by using one of the AWS SDKs to implement applications in your preferred
     /// language. For more information, see:
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
-    /// CLI</a> </li> <li> <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
-    /// SDK for Java</a> </li> <li> <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
-    /// SDK for .NET</a> </li> <li> <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
-    /// SDK for PHP 2</a> </li> <li> <a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
-    /// SDK for Ruby</a> </li> <li> <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS
-    /// SDK for Node.js</a> </li> <li> <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS
-    /// SDK for Python(Boto)</a> </li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
+    /// CLI</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
+    /// SDK for Java</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
+    /// SDK for .NET</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
+    /// SDK for PHP 2</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/sdkforruby/api/">AWS SDK for Ruby</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for Node.js</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for Python(Boto)</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Endpoints</b> 
     /// </para>
@@ -78,12 +105,16 @@ namespace Amazon.OpsWorks
     /// <para>
     /// When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we recommend
     /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version.
-    /// The recommended value for Linux stacks is currently 12 (the default is 11.4). Windows
-    /// stacks use Chef 12.2. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
+    /// The recommended and default value for Linux stacks is currently 12. Windows stacks
+    /// use Chef 12.2. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
-    ///  <note>You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend
-    /// migrating your existing Linux stacks to Chef 12 as soon as possible.</note>
+    ///  <note> 
+    /// <para>
+    /// You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend migrating
+    /// your existing Linux stacks to Chef 12 as soon as possible.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonOpsWorks : IDisposable
     {
@@ -95,12 +126,21 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Assign a registered instance to a layer.
         /// 
-        ///  <ul> <li>You can assign registered on-premises instances to any layer type.</li>
-        /// <li>You can assign registered Amazon EC2 instances only to custom layers.</li> <li>You
-        /// cannot use this action with instances that were created with AWS OpsWorks.</li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management
+        /// You can assign registered on-premises instances to any layer type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can assign registered Amazon EC2 instances only to custom layers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot use this action with instances that were created with AWS OpsWorks.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management
         /// (IAM) user must have a Manage permissions level for the stack or an attached policy
         /// that explicitly grants permissions. For more information on user permissions, see
         /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
@@ -114,7 +154,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         AssignInstanceResponse AssignInstance(AssignInstanceRequest request);
 
@@ -144,7 +184,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -157,7 +197,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         AssignVolumeResponse AssignVolume(AssignVolumeRequest request);
 
@@ -186,7 +226,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -199,7 +239,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request);
 
@@ -233,7 +273,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -246,7 +286,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request);
 
@@ -273,7 +313,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
         /// policy that explicitly grants permissions. For more information on user permissions,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -286,7 +326,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         CloneStackResponse CloneStack(CloneStackRequest request);
 
@@ -313,7 +353,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -326,7 +366,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         CreateAppResponse CreateApp(CreateAppRequest request);
 
@@ -354,7 +394,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
         /// Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -367,7 +407,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request);
 
@@ -394,7 +434,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -407,7 +447,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         CreateInstanceResponse CreateInstance(CreateInstanceRequest request);
 
@@ -442,7 +482,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -455,7 +495,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         CreateLayerResponse CreateLayer(CreateLayerRequest request);
 
@@ -482,7 +522,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
         /// policy that explicitly grants permissions. For more information on user permissions,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -492,7 +532,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the CreateStack service method, as returned by OpsWorks.</returns>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         CreateStackResponse CreateStack(CreateStackRequest request);
 
@@ -518,7 +558,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
         /// policy that explicitly grants permissions. For more information on user permissions,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -528,7 +568,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the CreateUserProfile service method, as returned by OpsWorks.</returns>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request);
 
@@ -554,7 +594,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -567,7 +607,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeleteAppResponse DeleteApp(DeleteAppRequest request);
 
@@ -599,7 +639,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -612,7 +652,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request);
 
@@ -640,7 +680,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -653,7 +693,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeleteLayerResponse DeleteLayer(DeleteLayerRequest request);
 
@@ -681,7 +721,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -694,7 +734,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeleteStackResponse DeleteStack(DeleteStackRequest request);
 
@@ -720,7 +760,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
         /// policy that explicitly grants permissions. For more information on user permissions,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -733,7 +773,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request);
 
@@ -761,9 +801,9 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack or an attached policy that explicitly grants permissions. For
-        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"/>.
+        /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterEcsCluster service method.</param>
@@ -773,7 +813,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeregisterEcsClusterResponse DeregisterEcsCluster(DeregisterEcsClusterRequest request);
 
@@ -801,7 +841,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -814,7 +854,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request);
 
@@ -842,7 +882,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -855,7 +895,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request);
 
@@ -881,7 +921,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -894,7 +934,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request);
 
@@ -922,7 +962,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -935,7 +975,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request);
 
@@ -968,7 +1008,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeAgentVersionsResponse DescribeAgentVersions(DescribeAgentVersionsRequest request);
 
@@ -998,7 +1038,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1011,7 +1051,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeAppsResponse DescribeApps(DescribeAppsRequest request);
 
@@ -1041,7 +1081,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1054,7 +1094,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request);
 
@@ -1084,7 +1124,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1097,7 +1137,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request);
 
@@ -1126,7 +1166,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack or an attached policy that explicitly grants
         /// permission. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1139,7 +1179,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeEcsClustersResponse DescribeEcsClusters(DescribeEcsClustersRequest request);
 
@@ -1170,7 +1210,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1183,7 +1223,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request);
 
@@ -1213,7 +1253,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1225,7 +1265,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers();
 
@@ -1239,7 +1279,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1252,7 +1292,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request);
 
@@ -1266,7 +1306,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1281,7 +1321,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1311,7 +1351,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1324,7 +1364,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request);
 
@@ -1354,7 +1394,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1367,7 +1407,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeLayersResponse DescribeLayers(DescribeLayersRequest request);
 
@@ -1397,7 +1437,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1410,7 +1450,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request);
 
@@ -1436,7 +1476,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have self-management
         /// enabled or an attached policy that explicitly grants permissions. For more information
         /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1452,7 +1492,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have self-management
         /// enabled or an attached policy that explicitly grants permissions. For more information
         /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1469,7 +1509,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have self-management
         /// enabled or an attached policy that explicitly grants permissions. For more information
         /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1504,7 +1544,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1517,7 +1557,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request);
 
@@ -1547,7 +1587,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1560,7 +1600,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request);
 
@@ -1586,7 +1626,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1599,7 +1639,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request);
 
@@ -1625,7 +1665,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1637,7 +1677,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeServiceErrorsResponse DescribeServiceErrors();
 
@@ -1647,7 +1687,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1660,7 +1700,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request);
 
@@ -1670,7 +1710,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1685,7 +1725,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1711,7 +1751,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1724,7 +1764,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request);
 
@@ -1750,7 +1790,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1762,7 +1802,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeStacksResponse DescribeStacks();
 
@@ -1772,7 +1812,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1785,7 +1825,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeStacksResponse DescribeStacks(DescribeStacksRequest request);
 
@@ -1795,7 +1835,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1810,7 +1850,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1837,7 +1877,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1850,7 +1890,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request);
 
@@ -1880,7 +1920,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1893,7 +1933,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request);
 
@@ -1919,7 +1959,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
         /// policy that explicitly grants permissions. For more information on user permissions,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1931,7 +1971,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeUserProfilesResponse DescribeUserProfiles();
 
@@ -1941,7 +1981,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
         /// policy that explicitly grants permissions. For more information on user permissions,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1954,7 +1994,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request);
 
@@ -1964,7 +2004,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
         /// policy that explicitly grants permissions. For more information on user permissions,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1979,7 +2019,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2009,7 +2049,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2022,7 +2062,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request);
 
@@ -2048,7 +2088,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2086,7 +2126,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2099,7 +2139,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request);
 
@@ -2126,7 +2166,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2139,7 +2179,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request);
 
@@ -2161,7 +2201,11 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// <note>This action can be used only with Windows stacks.</note> 
+        /// <note> 
+        /// <para>
+        /// This action can be used only with Windows stacks.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Grants RDP access to a Windows instance for a specified time period.
         /// </para>
@@ -2173,7 +2217,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         GrantAccessResponse GrantAccess(GrantAccessRequest request);
 
@@ -2200,7 +2244,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2213,7 +2257,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         RebootInstanceResponse RebootInstance(RebootInstanceRequest request);
 
@@ -2242,7 +2286,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
         /// Managing User Permissions</a>.
@@ -2255,7 +2299,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         RegisterEcsClusterResponse RegisterEcsCluster(RegisterEcsClusterRequest request);
 
@@ -2285,7 +2329,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2298,7 +2342,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request);
 
@@ -2322,14 +2366,18 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Registers instances with a specified stack that were created outside of AWS OpsWorks.
         /// 
-        ///  <note>We do not recommend using this action to register instances. The complete registration
+        ///  <note> 
+        /// <para>
+        /// We do not recommend using this action to register instances. The complete registration
         /// operation has two primary steps, installing the AWS OpsWorks agent on the instance
         /// and registering the instance with the stack. <code>RegisterInstance</code> handles
         /// only the second step. You should instead use the AWS CLI <code>register</code> command,
         /// which performs the entire registration operation. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-        /// Registering an Instance with an AWS OpsWorks Stack</a>.</note> 
+        /// Registering an Instance with an AWS OpsWorks Stack</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2342,7 +2390,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request);
 
@@ -2368,7 +2416,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2381,7 +2429,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request);
 
@@ -2410,7 +2458,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2423,7 +2471,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request);
 
@@ -2457,7 +2505,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2470,7 +2518,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request);
 
@@ -2497,7 +2545,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2510,7 +2558,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         SetPermissionResponse SetPermission(SetPermissionRequest request);
 
@@ -2538,7 +2586,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2551,7 +2599,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request);
 
@@ -2578,7 +2626,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2591,7 +2639,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         StartInstanceResponse StartInstance(StartInstanceRequest request);
 
@@ -2613,11 +2661,11 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Starts a stack's instances. 
+        /// Starts a stack's instances.
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2630,7 +2678,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         StartStackResponse StartStack(StartStackRequest request);
 
@@ -2659,7 +2707,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2672,7 +2720,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         StopInstanceResponse StopInstance(StopInstanceRequest request);
 
@@ -2698,7 +2746,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2711,7 +2759,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         StopStackResponse StopStack(StopStackRequest request);
 
@@ -2739,7 +2787,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2752,7 +2800,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request);
 
@@ -2780,7 +2828,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2793,7 +2841,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request);
 
@@ -2819,7 +2867,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or
         /// Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2832,7 +2880,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateAppResponse UpdateApp(UpdateAppRequest request);
 
@@ -2859,7 +2907,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2872,7 +2920,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request);
 
@@ -2898,7 +2946,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2911,7 +2959,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request);
 
@@ -2937,7 +2985,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2950,7 +2998,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateLayerResponse UpdateLayer(UpdateLayerRequest request);
 
@@ -2976,7 +3024,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have self-management
         /// enabled or an attached policy that explicitly grants permissions. For more information
         /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -2985,7 +3033,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the UpdateMyUserProfile service method, as returned by OpsWorks.</returns>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateMyUserProfileResponse UpdateMyUserProfile();
 
@@ -2995,7 +3043,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have self-management
         /// enabled or an attached policy that explicitly grants permissions. For more information
         /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -3005,7 +3053,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the UpdateMyUserProfile service method, as returned by OpsWorks.</returns>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request);
 
@@ -3015,7 +3063,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have self-management
         /// enabled or an attached policy that explicitly grants permissions. For more information
         /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -3027,7 +3075,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the UpdateMyUserProfile service method, as returned by OpsWorks.</returns>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -3053,7 +3101,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -3066,7 +3114,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request);
 
@@ -3092,7 +3140,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -3105,7 +3153,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateStackResponse UpdateStack(UpdateStackRequest request);
 
@@ -3131,7 +3179,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
         /// policy that explicitly grants permissions. For more information on user permissions,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -3144,7 +3192,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request);
 
@@ -3171,7 +3219,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack, or an attached policy that explicitly grants permissions. For
         /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -3184,7 +3232,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request);
 

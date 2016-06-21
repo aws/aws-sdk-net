@@ -53,14 +53,41 @@ namespace Amazon.OpsWorks
     /// (CLI) or by using one of the AWS SDKs to implement applications in your preferred
     /// language. For more information, see:
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
-    /// CLI</a> </li> <li> <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
-    /// SDK for Java</a> </li> <li> <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
-    /// SDK for .NET</a> </li> <li> <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
-    /// SDK for PHP 2</a> </li> <li> <a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
-    /// SDK for Ruby</a> </li> <li> <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS
-    /// SDK for Node.js</a> </li> <li> <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS
-    /// SDK for Python(Boto)</a> </li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
+    /// CLI</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS
+    /// SDK for Java</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS
+    /// SDK for .NET</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS
+    /// SDK for PHP 2</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/sdkforruby/api/">AWS SDK for Ruby</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for Node.js</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for Python(Boto)</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Endpoints</b> 
     /// </para>
@@ -78,12 +105,16 @@ namespace Amazon.OpsWorks
     /// <para>
     /// When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we recommend
     /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version.
-    /// The recommended value for Linux stacks is currently 12 (the default is 11.4). Windows
-    /// stacks use Chef 12.2. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
+    /// The recommended and default value for Linux stacks is currently 12. Windows stacks
+    /// use Chef 12.2. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
-    ///  <note>You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend
-    /// migrating your existing Linux stacks to Chef 12 as soon as possible.</note>
+    ///  <note> 
+    /// <para>
+    /// You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend migrating
+    /// your existing Linux stacks to Chef 12 as soon as possible.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonOpsWorks : IDisposable
     {
@@ -532,7 +563,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </note> 
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -547,7 +578,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -621,7 +652,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have self-management
         /// enabled or an attached policy that explicitly grants permissions. For more information
         /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -704,7 +735,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -719,7 +750,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -761,7 +792,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy,
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -776,7 +807,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -834,7 +865,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
         /// policy that explicitly grants permissions. For more information on user permissions,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -849,7 +880,7 @@ namespace Amazon.OpsWorks
         /// Indicates that a resource was not found.
         /// </exception>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1259,7 +1290,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  
         /// <para>
-        /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
+        ///  <b>Required Permissions</b>: To use this action, an IAM user must have self-management
         /// enabled or an attached policy that explicitly grants permissions. For more information
         /// on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
@@ -1271,7 +1302,7 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>The response from the UpdateMyUserProfile service method, as returned by OpsWorks.</returns>
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
-        /// Indicates that a request was invalid.
+        /// Indicates that a request was not valid.
         /// </exception>
         Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

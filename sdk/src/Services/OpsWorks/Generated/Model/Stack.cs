@@ -253,7 +253,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DefaultOs. 
         /// <para>
-        /// The stack's default operating system. 
+        /// The stack's default operating system.
         /// </para>
         /// </summary>
         public string DefaultOs

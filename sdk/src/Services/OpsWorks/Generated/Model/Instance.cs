@@ -96,6 +96,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property AmiId. 
         /// <para>
         /// A custom AMI ID to be used to create the instance. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+        /// 
         /// </para>
         /// </summary>
         public string AmiId
@@ -743,12 +744,67 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The instance status:
         /// </para>
-        ///  <ul> <li> <code>booting</code> </li> <li> <code>connection_lost</code> </li> <li>
-        /// <code>online</code> </li> <li> <code>pending</code> </li> <li> <code>rebooting</code>
-        /// </li> <li> <code>requested</code> </li> <li> <code>running_setup</code> </li> <li>
-        /// <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li> <code>start_failed</code>
-        /// </li> <li> <code>stopped</code> </li> <li> <code>stopping</code> </li> <li> <code>terminated</code>
-        /// </li> <li> <code>terminating</code> </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>booting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>connection_lost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>online</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rebooting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>requested</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>running_setup</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>setup_failed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>shutting_down</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>start_failed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stop_failed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stopped</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stopping</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>terminated</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>terminating</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

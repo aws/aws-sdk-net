@@ -39,12 +39,22 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// An array of <code>Permission</code> objects that describe the stack permissions.
         /// </para>
-        ///  <ul> <li>If the request object contains only a stack ID, the array contains a <code>Permission</code>
-        /// object with permissions for each of the stack IAM ARNs.</li> <li>If the request object
-        /// contains only an IAM ARN, the array contains a <code>Permission</code> object with
-        /// permissions for each of the user's stack IDs.</li> <li>If the request contains a stack
-        /// ID and an IAM ARN, the array contains a single <code>Permission</code> object with
-        /// permissions for the specified stack and IAM ARN.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the request object contains only a stack ID, the array contains a <code>Permission</code>
+        /// object with permissions for each of the stack IAM ARNs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the request object contains only an IAM ARN, the array contains a <code>Permission</code>
+        /// object with permissions for each of the user's stack IDs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code>
+        /// object with permissions for the specified stack and IAM ARN.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Permission> Permissions
         {

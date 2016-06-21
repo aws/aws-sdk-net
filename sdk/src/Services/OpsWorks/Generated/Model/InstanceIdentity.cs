@@ -40,7 +40,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// A JSON document that contains the metadata. 
+        /// A JSON document that contains the metadata.
         /// </para>
         /// </summary>
         public string Document
@@ -58,7 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Signature. 
         /// <para>
-        /// A signature that can be used to verify the document's accuracy and authenticity. 
+        /// A signature that can be used to verify the document's accuracy and authenticity.
         /// </para>
         /// </summary>
         public string Signature

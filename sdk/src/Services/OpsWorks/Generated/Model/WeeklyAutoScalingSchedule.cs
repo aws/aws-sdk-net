@@ -31,13 +31,20 @@ namespace Amazon.OpsWorks.Model
     /// Describes a time-based instance's auto scaling schedule. The schedule consists of
     /// a set of key-value pairs.
     /// 
-    ///  <ul> <li>The key is the time period (a UTC hour) and must be an integer from 0 -
-    /// 23.</li> <li>The value indicates whether the instance should be online or offline
-    /// for the specified period, and must be set to "on" or "off"</li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    /// The key is the time period (a UTC hour) and must be an integer from 0 - 23.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The value indicates whether the instance should be online or offline for the specified
+    /// period, and must be set to "on" or "off"
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// The default setting for all time periods is off, so you use the following parameters
     /// primarily to specify the online periods. You don't have to explicitly specify offline
-    /// periods unless you want to change an online period to an offline period. 
+    /// periods unless you want to change an online period to an offline period.
     /// </para>
     ///  
     /// <para>

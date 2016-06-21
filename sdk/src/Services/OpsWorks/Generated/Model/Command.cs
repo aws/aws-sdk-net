@@ -192,7 +192,23 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The command status:
         /// </para>
-        ///  <ul> <li>failed</li> <li>successful</li> <li>skipped</li> <li>pending</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// failed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// successful
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// skipped
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// pending
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {
@@ -211,11 +227,47 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The command type:
         /// </para>
-        ///  <ul> <li> <code>deploy</code> </li> <li> <code>rollback</code> </li> <li> <code>start</code>
-        /// </li> <li> <code>stop</code> </li> <li> <code>restart</code> </li> <li> <code>undeploy</code>
-        /// </li> <li> <code>update_dependencies</code> </li> <li> <code>install_dependencies</code>
-        /// </li> <li> <code>update_custom_cookbooks</code> </li> <li> <code>execute_recipes</code>
-        /// </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>deploy</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rollback</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>start</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stop</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>restart</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>undeploy</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>update_dependencies</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>install_dependencies</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>update_custom_cookbooks</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>execute_recipes</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Type
         {
