@@ -14,7 +14,8 @@ namespace IntegrationTestsAnalyzer
     {
         private static HashSet<string> ValidTestCategories = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            "Always",   // always run these tests
+            "General",   // always run these tests
+            "Core",      // changes to Core that's not tied to any particular AWS Service
         };
         
         private static string DiagnosticCategory = "Integration Test";

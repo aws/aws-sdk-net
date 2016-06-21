@@ -14,7 +14,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class CredentialsTests
     {
         [TestMethod]
-        [TestCategory("Always")]
+        [TestCategory("General")]
         public void TestSessionCredentials()
         {
             using (var sts = new Amazon.SecurityToken.AmazonSecurityTokenServiceClient())
@@ -58,7 +58,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("Always")]
+        [TestCategory("General")]
         public void TestCredentialsFile()
         {
             var ic = new ImmutableCredentials("access-key", "secret-key", null);
