@@ -28,73 +28,75 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about the state of the stage.
+    /// Container for the parameters to the RetryStageExecution operation.
+    /// Resumes the pipeline execution by retrying the last failed actions in a stage.
     /// </summary>
-    public partial class StageState
+    public partial class RetryStageExecutionRequest : AmazonCodePipelineRequest
     {
-        private List<ActionState> _actionStates = new List<ActionState>();
-        private TransitionState _inboundTransitionState;
-        private StageExecution _latestExecution;
+        private string _pipelineExecutionId;
+        private string _pipelineName;
+        private StageRetryMode _retryMode;
         private string _stageName;
 
         /// <summary>
-        /// Gets and sets the property ActionStates. 
+        /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The state of the stage.
+        /// The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a>
+        /// action to retrieve the current pipelineExecutionId of the failed stage
         /// </para>
         /// </summary>
-        public List<ActionState> ActionStates
+        public string PipelineExecutionId
         {
-            get { return this._actionStates; }
-            set { this._actionStates = value; }
+            get { return this._pipelineExecutionId; }
+            set { this._pipelineExecutionId = value; }
         }
 
-        // Check to see if ActionStates property is set
-        internal bool IsSetActionStates()
+        // Check to see if PipelineExecutionId property is set
+        internal bool IsSetPipelineExecutionId()
         {
-            return this._actionStates != null && this._actionStates.Count > 0; 
+            return this._pipelineExecutionId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property InboundTransitionState. 
+        /// Gets and sets the property PipelineName. 
         /// <para>
-        /// The state of the inbound transition, which is either enabled or disabled.
+        /// The name of the pipeline that contains the failed stage.
         /// </para>
         /// </summary>
-        public TransitionState InboundTransitionState
+        public string PipelineName
         {
-            get { return this._inboundTransitionState; }
-            set { this._inboundTransitionState = value; }
+            get { return this._pipelineName; }
+            set { this._pipelineName = value; }
         }
 
-        // Check to see if InboundTransitionState property is set
-        internal bool IsSetInboundTransitionState()
+        // Check to see if PipelineName property is set
+        internal bool IsSetPipelineName()
         {
-            return this._inboundTransitionState != null;
+            return this._pipelineName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property LatestExecution. 
+        /// Gets and sets the property RetryMode. 
         /// <para>
-        /// Information about the latest execution in the stage, including its ID and status.
+        /// The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
         /// </para>
         /// </summary>
-        public StageExecution LatestExecution
+        public StageRetryMode RetryMode
         {
-            get { return this._latestExecution; }
-            set { this._latestExecution = value; }
+            get { return this._retryMode; }
+            set { this._retryMode = value; }
         }
 
-        // Check to see if LatestExecution property is set
-        internal bool IsSetLatestExecution()
+        // Check to see if RetryMode property is set
+        internal bool IsSetRetryMode()
         {
-            return this._latestExecution != null;
+            return this._retryMode != null;
         }
 
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// The name of the stage.
+        /// The name of the failed stage to be retried.
         /// </para>
         /// </summary>
         public string StageName

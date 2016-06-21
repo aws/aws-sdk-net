@@ -28,35 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a put action revision action.
+    /// Represents information about the run of a stage.
     /// </summary>
-    public partial class PutActionRevisionResponse : AmazonWebServiceResponse
+    public partial class StageExecution
     {
-        private bool? _newRevision;
         private string _pipelineExecutionId;
-
-        /// <summary>
-        /// Gets and sets the property NewRevision. 
-        /// <para>
-        /// The new revision number or ID for the revision after the action completes.
-        /// </para>
-        /// </summary>
-        public bool NewRevision
-        {
-            get { return this._newRevision.GetValueOrDefault(); }
-            set { this._newRevision = value; }
-        }
-
-        // Check to see if NewRevision property is set
-        internal bool IsSetNewRevision()
-        {
-            return this._newRevision.HasValue; 
-        }
+        private StageExecutionStatus _status;
 
         /// <summary>
         /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The ID of the current workflow state of the pipeline.
+        /// The ID of the pipeline execution associated with the stage.
         /// </para>
         /// </summary>
         public string PipelineExecutionId
@@ -69,6 +51,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetPipelineExecutionId()
         {
             return this._pipelineExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the stage, or for a completed stage, the last status of the stage.
+        /// </para>
+        /// </summary>
+        public StageExecutionStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

@@ -47,8 +47,12 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The category of the custom action, such as a source action or a build action.
         /// </para>
-        ///  <note>Although Source is listed as a valid value, it is not currently functional.
-        /// This value is reserved for future use.</note>
+        ///  <note> 
+        /// <para>
+        /// Although Source is listed as a valid value, it is not currently functional. This value
+        /// is reserved for future use.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ActionCategory Category
         {
@@ -67,11 +71,14 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The configuration properties for the custom action.
         /// </para>
-        ///  <note>You can refer to a name in the configuration properties of the custom action
-        /// within the URL templates by following the format of {Config:<i>name</i>}, as long
-        /// as the configuration property is both required and not secret. For more information,
-        /// see <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
-        /// a Custom Action for a Pipeline</a>.</note>
+        ///  <note> 
+        /// <para>
+        /// You can refer to a name in the configuration properties of the custom action within
+        /// the URL templates by following the format of {Config:name}, as long as the configuration
+        /// property is both required and not secret. For more information, see <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+        /// a Custom Action for a Pipeline</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ActionConfigurationProperty> ConfigurationProperties
         {
@@ -151,7 +158,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the custom action. 
+        /// The version number of the custom action.
         /// </para>
         /// </summary>
         public string Version

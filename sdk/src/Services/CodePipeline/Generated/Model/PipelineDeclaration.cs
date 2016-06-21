@@ -56,7 +56,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the action to be performed. 
+        /// The name of the action to be performed.
         /// </para>
         /// </summary>
         public string Name
@@ -93,7 +93,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Stages. 
         /// <para>
-        /// The stage in which to perform the action. 
+        /// The stage in which to perform the action.
         /// </para>
         /// </summary>
         public List<StageDeclaration> Stages

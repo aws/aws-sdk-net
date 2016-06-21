@@ -32,12 +32,12 @@ namespace Amazon.CodePipeline.Model
     /// Marks a custom action as deleted. PollForJobs for the custom action will fail after
     /// the action is marked for deletion. Only used for custom actions.
     /// 
-    ///  <important>
+    ///  <important> 
     /// <para>
     /// You cannot recreate a custom action after it has been deleted unless you increase
     /// the version number of the action.
     /// </para>
-    /// </important>
+    ///  </important>
     /// </summary>
     public partial class DeleteCustomActionTypeRequest : AmazonCodePipelineRequest
     {

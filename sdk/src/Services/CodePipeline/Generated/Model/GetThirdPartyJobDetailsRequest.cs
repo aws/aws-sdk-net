@@ -31,14 +31,14 @@ namespace Amazon.CodePipeline.Model
     /// Container for the parameters to the GetThirdPartyJobDetails operation.
     /// Requests the details of a job for a third party action. Only used for partner actions.
     /// 
-    ///  <important>
+    ///  <important> 
     /// <para>
     /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
     /// S3 bucket used to store artifacts for the pipeline, if the action requires access
     /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
     /// any secret values defined for the action.
     /// </para>
-    /// </important>
+    ///  </important>
     /// </summary>
     public partial class GetThirdPartyJobDetailsRequest : AmazonCodePipelineRequest
     {

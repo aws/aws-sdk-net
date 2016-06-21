@@ -28,35 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a put action revision action.
+    /// Represents the output of a retry stage execution operation.
     /// </summary>
-    public partial class PutActionRevisionResponse : AmazonWebServiceResponse
+    public partial class RetryStageExecutionResponse : AmazonWebServiceResponse
     {
-        private bool? _newRevision;
         private string _pipelineExecutionId;
-
-        /// <summary>
-        /// Gets and sets the property NewRevision. 
-        /// <para>
-        /// The new revision number or ID for the revision after the action completes.
-        /// </para>
-        /// </summary>
-        public bool NewRevision
-        {
-            get { return this._newRevision.GetValueOrDefault(); }
-            set { this._newRevision = value; }
-        }
-
-        // Check to see if NewRevision property is set
-        internal bool IsSetNewRevision()
-        {
-            return this._newRevision.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The ID of the current workflow state of the pipeline.
+        /// The ID of the current workflow execution in the failed stage.
         /// </para>
         /// </summary>
         public string PipelineExecutionId

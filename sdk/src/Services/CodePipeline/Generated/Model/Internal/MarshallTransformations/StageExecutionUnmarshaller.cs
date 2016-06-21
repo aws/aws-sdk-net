@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StageState Object
+    /// Response Unmarshaller for StageExecution Object
     /// </summary>  
-    public class StageStateUnmarshaller : IUnmarshaller<StageState, XmlUnmarshallerContext>, IUnmarshaller<StageState, JsonUnmarshallerContext>
+    public class StageExecutionUnmarshaller : IUnmarshaller<StageExecution, XmlUnmarshallerContext>, IUnmarshaller<StageExecution, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StageState IUnmarshaller<StageState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StageExecution IUnmarshaller<StageExecution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StageState Unmarshall(JsonUnmarshallerContext context)
+        public StageExecution Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StageState unmarshalledObject = new StageState();
+            StageExecution unmarshalledObject = new StageExecution();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("actionStates", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ActionState, ActionStateUnmarshaller>(ActionStateUnmarshaller.Instance);
-                    unmarshalledObject.ActionStates = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inboundTransitionState", targetDepth))
-                {
-                    var unmarshaller = TransitionStateUnmarshaller.Instance;
-                    unmarshalledObject.InboundTransitionState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestExecution", targetDepth))
-                {
-                    var unmarshaller = StageExecutionUnmarshaller.Instance;
-                    unmarshalledObject.LatestExecution = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stageName", targetDepth))
+                if (context.TestExpression("pipelineExecutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StageName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static StageStateUnmarshaller _instance = new StageStateUnmarshaller();        
+        private static StageExecutionUnmarshaller _instance = new StageExecutionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StageStateUnmarshaller Instance
+        public static StageExecutionUnmarshaller Instance
         {
             get
             {

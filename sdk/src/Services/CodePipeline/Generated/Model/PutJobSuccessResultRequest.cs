@@ -46,7 +46,7 @@ namespace Amazon.CodePipeline.Model
         /// successful job provides to identify a custom action in progress. Future jobs will
         /// use this token in order to identify the running instance of the action. It can be
         /// reused to return additional information about the progress of the custom action. When
-        /// the action is complete, no continuation token should be supplied. 
+        /// the action is complete, no continuation token should be supplied.
         /// </para>
         /// </summary>
         public string ContinuationToken
@@ -65,7 +65,6 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property CurrentRevision. 
         /// <para>
         /// The ID of the current revision of the artifact successfully worked upon by the job.
-        /// 
         /// </para>
         /// </summary>
         public CurrentRevision CurrentRevision
@@ -84,7 +83,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property ExecutionDetails. 
         /// <para>
         /// The execution details of the successful job, such as the actions taken by the job
-        /// worker. 
+        /// worker.
         /// </para>
         /// </summary>
         public ExecutionDetails ExecutionDetails
