@@ -45,13 +45,20 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// When included in a request, the parameter depends on the repository type. 
+        /// When included in a request, the parameter depends on the repository type.
         /// </para>
-        ///  <ul> <li>For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM
-        /// secret access key.</li> <li>For HTTP bundles and Subversion repositories, set <code>Password</code>
-        /// to the password.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// For more information on how to safely handle IAM credentials, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
+        /// For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access
+        /// key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information on how to safely handle IAM credentials, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.
         /// </para>
         ///  
         /// <para>
@@ -135,7 +142,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The source URL. 
+        /// The source URL.
         /// </para>
         /// </summary>
         public string Url
@@ -153,11 +160,19 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// This parameter depends on the repository type. 
+        /// This parameter depends on the repository type.
         /// </para>
-        ///  <ul> <li>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM
-        /// access key ID.</li> <li>For HTTP bundles, Git repositories, and Subversion repositories,
-        /// set <code>Username</code> to the user name.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key
+        /// ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code>
+        /// to the user name.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Username
         {

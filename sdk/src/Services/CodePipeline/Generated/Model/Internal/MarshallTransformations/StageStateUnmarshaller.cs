@@ -76,6 +76,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.InboundTransitionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("latestExecution", targetDepth))
+                {
+                    var unmarshaller = StageExecutionUnmarshaller.Instance;
+                    unmarshalledObject.LatestExecution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stageName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

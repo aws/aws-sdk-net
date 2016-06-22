@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// 
     ///  
     /// <para>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack, or an attached policy that explicitly grants permissions. For
     /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
@@ -131,7 +131,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Domains. 
         /// <para>
         /// The app virtual host settings, with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
+        /// <code>'www.example.com, example.com'</code> 
         /// </para>
         /// </summary>
         public List<string> Domains
@@ -174,14 +174,18 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        ///  There is no specific limit on the number of environment variables. However, the size
+        /// There is no specific limit on the number of environment variables. However, the size
         /// of the associated data structure - which includes the variables' names, values, and
         /// protected flag values - cannot exceed 10 KB (10240 Bytes). This limit should accommodate
         /// most if not all use cases. Exceeding it will cause an exception with the message,
-        /// "Environment: is too large (maximum is 10KB)." 
+        /// "Environment: is too large (maximum is 10KB)."
         /// </para>
-        ///  <note>This parameter is supported only by Chef 11.10 stacks. If you have specified
-        /// one or more environment variables, you cannot modify the stack's Chef version.</note>
+        ///  <note> 
+        /// <para>
+        /// This parameter is supported only by Chef 11.10 stacks. If you have specified one or
+        /// more environment variables, you cannot modify the stack's Chef version.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<EnvironmentVariable> Environment
         {

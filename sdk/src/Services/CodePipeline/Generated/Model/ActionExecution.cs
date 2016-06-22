@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about how an action runs.
+    /// Represents information about the run of an action.
     /// </summary>
     public partial class ActionExecution
     {

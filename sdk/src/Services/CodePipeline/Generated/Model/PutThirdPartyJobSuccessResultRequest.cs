@@ -66,7 +66,7 @@ namespace Amazon.CodePipeline.Model
         /// successful job provides to identify a partner action in progress. Future jobs will
         /// use this token in order to identify the running instance of the action. It can be
         /// reused to return additional information about the progress of the partner action.
-        /// When the action is complete, no continuation token should be supplied. 
+        /// When the action is complete, no continuation token should be supplied.
         /// </para>
         /// </summary>
         public string ContinuationToken

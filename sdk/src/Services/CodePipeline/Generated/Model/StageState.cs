@@ -34,6 +34,7 @@ namespace Amazon.CodePipeline.Model
     {
         private List<ActionState> _actionStates = new List<ActionState>();
         private TransitionState _inboundTransitionState;
+        private StageExecution _latestExecution;
         private string _stageName;
 
         /// <summary>
@@ -70,6 +71,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetInboundTransitionState()
         {
             return this._inboundTransitionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestExecution. 
+        /// <para>
+        /// Information about the latest execution in the stage, including its ID and status.
+        /// </para>
+        /// </summary>
+        public StageExecution LatestExecution
+        {
+            get { return this._latestExecution; }
+            set { this._latestExecution = value; }
+        }
+
+        // Check to see if LatestExecution property is set
+        internal bool IsSetLatestExecution()
+        {
+            return this._latestExecution != null;
         }
 
         /// <summary>

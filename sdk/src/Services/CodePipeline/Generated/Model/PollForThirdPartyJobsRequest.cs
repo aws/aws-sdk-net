@@ -32,13 +32,13 @@ namespace Amazon.CodePipeline.Model
     /// Determines whether there are any third party jobs for a job worker to act on. Only
     /// used for partner actions.
     /// 
-    ///  <important>
+    ///  <important> 
     /// <para>
     /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
     /// S3 bucket used to store artifacts for the pipeline, if the action requires access
     /// to that Amazon S3 bucket for input or output artifacts.
     /// </para>
-    /// </important>
+    ///  </important>
     /// </summary>
     public partial class PollForThirdPartyJobsRequest : AmazonCodePipelineRequest
     {

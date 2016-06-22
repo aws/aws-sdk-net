@@ -1,3 +1,9 @@
+### 3.1.77.0 (2016-06-21 23:39 UTC)
+* CodePipeline (3.1.2.0)
+	* The feature Retry Failed Actions allows you to retry a failed pipeline execution from a given stage in the pipeline. Mainly, this can be done by the new API RetryStageExecution with the use of a field from the existing (updated) API GetPielineState's response.
+* OpsWorks (3.1.3.0)
+	* Minor documentation update.
+
 ### 3.1.76.0 (2016-06-14 22:42 UTC)
 * CertificateManager (3.1.3.3)
 	* Regenerating from latest service model acm-2015-12-08.normal.json

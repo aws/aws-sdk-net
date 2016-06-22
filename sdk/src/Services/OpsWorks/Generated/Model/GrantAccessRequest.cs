@@ -29,7 +29,11 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the GrantAccess operation.
-    /// <note>This action can be used only with Windows stacks.</note> 
+    /// <note> 
+    /// <para>
+    /// This action can be used only with Windows stacks.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Grants RDP access to a Windows instance for a specified time period.
     /// </para>

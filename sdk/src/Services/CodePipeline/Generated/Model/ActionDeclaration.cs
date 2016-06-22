@@ -43,7 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ActionTypeId. 
         /// <para>
-        /// The configuration information for the action type. 
+        /// The configuration information for the action type.
         /// </para>
         /// </summary>
         public ActionTypeId ActionTypeId

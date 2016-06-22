@@ -80,7 +80,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property StageName. 
         /// <para>
         /// The name of the stage where you want to disable the inbound or outbound transition
-        /// of artifacts. 
+        /// of artifacts.
         /// </para>
         /// </summary>
         public string StageName

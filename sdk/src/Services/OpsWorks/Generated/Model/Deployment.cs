@@ -256,7 +256,19 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The deployment status:
         /// </para>
-        ///  <ul> <li>running</li> <li>successful</li> <li>failed</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// running
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// successful
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// failed
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {
