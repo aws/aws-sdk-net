@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListIdentityPools operation.
-    /// Lists all of the Cognito identity pools registered for your account.
-    /// 
-    /// 
-    /// <para>
-    /// You must use AWS Developer credentials to call this API.
-    /// </para>
+    /// A provider representing an Amazon Cognito Identity User Pool and its client ID.
     /// </summary>
-    public partial class ListIdentityPoolsRequest : AmazonCognitoIdentityRequest
+    public partial class CognitoIdentityProviderInfo
     {
-        private int? _maxResults;
-        private string _nextToken;
+        private string _clientId;
+        private string _providerName;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of identities to return.
+        /// Gets and sets the property ClientId. 
+        /// <para>
+        /// The client ID for the Amazon Cognito Identity User Pool.
+        /// </para>
         /// </summary>
-        public int MaxResults
+        public string ClientId
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._clientId; }
+            set { this._clientId = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ClientId property is set
+        internal bool IsSetClientId()
         {
-            return this._maxResults.HasValue; 
+            return this._clientId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A pagination token.
+        /// Gets and sets the property ProviderName. 
+        /// <para>
+        /// The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
+        /// </para>
         /// </summary>
-        public string NextToken
+        public string ProviderName
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._providerName; }
+            set { this._providerName = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if ProviderName property is set
+        internal bool IsSetProviderName()
         {
-            return this._nextToken != null;
+            return this._providerName != null;
         }
 
     }

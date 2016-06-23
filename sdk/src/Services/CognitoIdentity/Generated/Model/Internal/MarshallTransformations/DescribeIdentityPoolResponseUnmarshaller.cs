@@ -57,6 +57,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     response.AllowUnauthenticatedIdentities = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CognitoIdentityProviders", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CognitoIdentityProviderInfo, CognitoIdentityProviderInfoUnmarshaller>(CognitoIdentityProviderInfoUnmarshaller.Instance);
+                    response.CognitoIdentityProviders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeveloperProviderName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -79,6 +85,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.OpenIdConnectProviderARNs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SamlProviderARNs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SamlProviderARNs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SupportedLoginProviders", targetDepth))

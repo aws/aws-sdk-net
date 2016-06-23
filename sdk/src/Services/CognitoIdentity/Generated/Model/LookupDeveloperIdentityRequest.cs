@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentity.Model
     /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
     /// is thrown.
     /// 
-    ///  
+    /// 
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>

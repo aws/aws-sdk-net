@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Returns metadata related to the given identity, including when the identity was created
     /// and any associated linked logins.
     /// 
-    ///  
+    /// 
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>
