@@ -1097,6 +1097,73 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeConnectionLoa
+
+        /// <summary>
+        /// Returns the LOA-CFA for a Connection.
+        /// 
+        ///  
+        /// <para>
+        /// The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document
+        /// that your APN partner or service provider uses when establishing your cross connect
+        /// to AWS at the colocation facility. For more information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
+        /// Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user
+        /// guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionLoa service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectionLoa service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
+        {
+            var marshaller = new DescribeConnectionLoaRequestMarshaller();
+            var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectionLoaRequest,DescribeConnectionLoaResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnectionLoa operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionLoa operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectionLoa
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeConnectionLoa(DescribeConnectionLoaRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeConnectionLoaRequestMarshaller();
+            var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeConnectionLoaRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConnectionLoa operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnectionLoa.</param>
+        /// 
+        /// <returns>Returns a  DescribeConnectionLoaResult from DirectConnect.</returns>
+        public  DescribeConnectionLoaResponse EndDescribeConnectionLoa(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConnectionLoaResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeConnections
 
         /// <summary>
@@ -1243,6 +1310,73 @@ namespace Amazon.DirectConnect
         public  DescribeConnectionsOnInterconnectResponse EndDescribeConnectionsOnInterconnect(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConnectionsOnInterconnectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInterconnectLoa
+
+        /// <summary>
+        /// Returns the LOA-CFA for an Interconnect.
+        /// 
+        ///  
+        /// <para>
+        /// The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document
+        /// that is used when establishing your cross connect to AWS at the colocation facility.
+        /// For more information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
+        /// Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user
+        /// guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInterconnectLoa service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInterconnectLoa service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
+        {
+            var marshaller = new DescribeInterconnectLoaRequestMarshaller();
+            var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInterconnectLoaRequest,DescribeInterconnectLoaResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInterconnectLoa operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInterconnectLoa operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInterconnectLoa
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeInterconnectLoa(DescribeInterconnectLoaRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeInterconnectLoaRequestMarshaller();
+            var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeInterconnectLoaRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInterconnectLoa operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInterconnectLoa.</param>
+        /// 
+        /// <returns>Returns a  DescribeInterconnectLoaResult from DirectConnect.</returns>
+        public  DescribeInterconnectLoaResponse EndDescribeInterconnectLoa(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInterconnectLoaResponse>(asyncResult);
         }
 
         #endregion

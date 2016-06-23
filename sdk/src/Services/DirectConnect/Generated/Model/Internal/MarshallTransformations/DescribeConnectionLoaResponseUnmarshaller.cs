@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteConnection operation
+    /// Response Unmarshaller for DescribeConnectionLoa operation
     /// </summary>  
-    public class DeleteConnectionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeConnectionLoaResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,70 +45,16 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteConnectionResponse response = new DeleteConnectionResponse();
+            DescribeConnectionLoaResponse response = new DescribeConnectionLoaResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bandwidth", targetDepth))
+                if (context.TestExpression("loa", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Bandwidth = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("connectionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("connectionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("connectionState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectionState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("loaIssueTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LoaIssueTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("location", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ownerAccount", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OwnerAccount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("partnerName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.PartnerName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("region", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Region = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("vlan", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.Vlan = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LoaUnmarshaller.Instance;
+                    response.Loa = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -137,9 +83,9 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             return new AmazonDirectConnectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteConnectionResponseUnmarshaller _instance = new DeleteConnectionResponseUnmarshaller();        
+        private static DescribeConnectionLoaResponseUnmarshaller _instance = new DescribeConnectionLoaResponseUnmarshaller();        
 
-        internal static DeleteConnectionResponseUnmarshaller GetInstance()
+        internal static DescribeConnectionLoaResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -147,7 +93,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteConnectionResponseUnmarshaller Instance
+        public static DescribeConnectionLoaResponseUnmarshaller Instance
         {
             get
             {

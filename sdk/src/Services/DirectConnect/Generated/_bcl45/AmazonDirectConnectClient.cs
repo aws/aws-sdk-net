@@ -930,6 +930,60 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeConnectionLoa
+
+
+        /// <summary>
+        /// Returns the LOA-CFA for a Connection.
+        /// 
+        ///  
+        /// <para>
+        /// The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document
+        /// that your APN partner or service provider uses when establishing your cross connect
+        /// to AWS at the colocation facility. For more information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
+        /// Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user
+        /// guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionLoa service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectionLoa service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
+        {
+            var marshaller = new DescribeConnectionLoaRequestMarshaller();
+            var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectionLoaRequest,DescribeConnectionLoaResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnectionLoa operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionLoa operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeConnectionLoaResponse> DescribeConnectionLoaAsync(DescribeConnectionLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeConnectionLoaRequestMarshaller();
+            var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConnectionLoaRequest,DescribeConnectionLoaResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeConnections
 
 
@@ -1076,6 +1130,60 @@ namespace Amazon.DirectConnect
             var unmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeConnectionsOnInterconnectRequest,DescribeConnectionsOnInterconnectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInterconnectLoa
+
+
+        /// <summary>
+        /// Returns the LOA-CFA for an Interconnect.
+        /// 
+        ///  
+        /// <para>
+        /// The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document
+        /// that is used when establishing your cross connect to AWS at the colocation facility.
+        /// For more information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
+        /// Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user
+        /// guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInterconnectLoa service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInterconnectLoa service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
+        {
+            var marshaller = new DescribeInterconnectLoaRequestMarshaller();
+            var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInterconnectLoaRequest,DescribeInterconnectLoaResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInterconnectLoa operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInterconnectLoa operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInterconnectLoaResponse> DescribeInterconnectLoaAsync(DescribeInterconnectLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInterconnectLoaRequestMarshaller();
+            var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInterconnectLoaRequest,DescribeInterconnectLoaResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
