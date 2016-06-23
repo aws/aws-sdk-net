@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -49,11 +49,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>fingerprint</code> - The fingerprint of the key pair.
+        ///  <code>fingerprint</code> - The fingerprint of the key pair.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>key-name</code> - The name of the key pair.
+        ///  <code>key-name</code> - The name of the key pair.
         /// </para>
         ///  </li> </ul>
         /// </summary>

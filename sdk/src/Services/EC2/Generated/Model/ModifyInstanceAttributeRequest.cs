@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -322,8 +322,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// Changes the instance's user data to the specified base64-encoded value. For command
-        /// line tools, base64 encoding is performed for you.
+        /// Changes the instance's user data to the specified value. If you are using an AWS SDK
+        /// or command line tool, Base64-encoding is performed for you, and you can load the text
+        /// from a file. Otherwise, you must provide Base64-encoded text.
         /// </para>
         /// </summary>
         public string UserData

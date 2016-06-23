@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
     /// and BGP ASN parameter values. If you run an identical request more than one time,
     /// the first request creates the customer gateway, and subsequent requests return information
     /// about the existing customer gateway. The subsequent requests do not create new customer
-    /// gateway resources. 
+    /// gateway resources.
     /// </para>
     ///  </important>
     /// </summary>

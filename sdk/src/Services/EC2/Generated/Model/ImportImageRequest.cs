@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>i386</code> | <code>x86_64</code>
+        /// Valid values: <code>i386</code> | <code>x86_64</code> 
         /// </para>
         /// </summary>
         public string Architecture
@@ -145,7 +145,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>xen</code>
+        /// Valid values: <code>xen</code> 
         /// </para>
         /// </summary>
         public string Hypervisor
@@ -167,13 +167,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use
+        ///  <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use
         /// these licenses in a third party cloud like AWS. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
         /// Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>AWS</code> | <code>BYOL</code>
+        /// Valid values: <code>AWS</code> | <code>BYOL</code> 
         /// </para>
         /// </summary>
         public string LicenseType
@@ -195,7 +195,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>Windows</code> | <code>Linux</code>
+        /// Valid values: <code>Windows</code> | <code>Linux</code> 
         /// </para>
         /// </summary>
         public string Platform

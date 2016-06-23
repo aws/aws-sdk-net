@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 
 
@@ -624,7 +624,7 @@ namespace Amazon.EC2
         /// <para>
         /// After you've linked an instance, you cannot change the VPC security groups that are
         /// associated with it. To change the security groups, you must first unlink the instance,
-        /// and then link it again. 
+        /// and then link it again.
         /// </para>
         ///  
         /// <para>
@@ -1435,9 +1435,14 @@ namespace Amazon.EC2
         /// remain unencrypted, unless the <code>Encrypted</code> flag is specified during the
         /// snapshot copy operation. By default, encrypted snapshot copies use the default AWS
         /// Key Management Service (AWS KMS) customer master key (CMK); however, you can specify
-        /// a non-default CMK with the <code>KmsKeyId</code> parameter.
+        /// a non-default CMK with the <code>KmsKeyId</code> parameter. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// To copy an encrypted snapshot that has been shared from another account, you must
+        /// have permissions for the CMK used to encrypt the snapshot.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
         /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -1509,7 +1514,7 @@ namespace Amazon.EC2
         /// and BGP ASN parameter values. If you run an identical request more than one time,
         /// the first request creates the customer gateway, and subsequent requests return information
         /// about the existing customer gateway. The subsequent requests do not create new customer
-        /// gateway resources. 
+        /// gateway resources.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1554,16 +1559,16 @@ namespace Amazon.EC2
         /// can specify. For more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
         /// 2132</a>.
         /// 
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
+        ///  <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
         /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
         /// specifying more than one domain name server, specify the IP addresses in a single
         /// parameter, separated by commas.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>domain-name</code> - If you're using AmazonProvidedDNS in "us-east-1", specify
+        ///  <code>domain-name</code> - If you're using AmazonProvidedDNS in "us-east-1", specify
         /// "ec2.internal". If you're using AmazonProvidedDNS in another region, specify "region.compute.internal"
         /// (for example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
         /// (for example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems accept
@@ -1572,23 +1577,23 @@ namespace Amazon.EC2
         /// If your DHCP options set is associated with a VPC that has instances with multiple
         /// operating systems, specify only one domain name.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP)
+        ///  <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP)
         /// servers.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name servers.
+        ///  <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name servers.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend
+        ///  <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend
         /// that you specify 2 (broadcast and multicast are not currently supported). For more
         /// information about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
         /// 2132</a>.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// Your VPC automatically starts out with a set of DHCP options that includes only a
         /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
@@ -1638,7 +1643,7 @@ namespace Amazon.EC2
         /// Logs. If you specify a VPC or subnet in the request, a log stream is created in CloudWatch
         /// Logs for each network interface in the subnet or VPC. Log streams can include information
         /// about accepted and rejected traffic to a network interface. You can view the data
-        /// in your log streams using Amazon CloudWatch Logs. 
+        /// in your log streams using Amazon CloudWatch Logs.
         /// 
         ///  
         /// <para>
@@ -2221,11 +2226,11 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>192.0.2.0/24</code> (goes to some target A)
+        ///  <code>192.0.2.0/24</code> (goes to some target A)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>192.0.2.0/28</code> (goes to some target B)
+        ///  <code>192.0.2.0/28</code> (goes to some target B)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4038,31 +4043,31 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// <code>supported-platforms</code>: Indicates whether your account can launch instances
+        ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
         /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+        ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
         /// run.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
         /// groups that you can assign to a network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
         /// can allocate for use with EC2-Classic. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
+        ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
         /// you can allocate for use with EC2-VPC.
         /// </para>
         ///  </li> </ul>
@@ -4081,31 +4086,31 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// <code>supported-platforms</code>: Indicates whether your account can launch instances
+        ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
         /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+        ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
         /// run.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
         /// groups that you can assign to a network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
         /// can allocate for use with EC2-Classic. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
+        ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
         /// you can allocate for use with EC2-VPC.
         /// </para>
         ///  </li> </ul>
@@ -4128,31 +4133,31 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// <code>supported-platforms</code>: Indicates whether your account can launch instances
+        ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
         /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+        ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
         /// run.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
         /// groups that you can assign to a network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
         /// can allocate for use with EC2-Classic. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
+        ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
         /// you can allocate for use with EC2-VPC.
         /// </para>
         ///  </li> </ul>
@@ -4362,14 +4367,14 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your bundling tasks.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Completed bundle tasks are listed for only a limited time. If your bundle task is
         /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
         /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
         /// task.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
@@ -4382,14 +4387,14 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your bundling tasks.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Completed bundle tasks are listed for only a limited time. If your bundle task is
         /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
         /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
         /// task.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBundleTasks service method.</param>
         /// 
@@ -4406,14 +4411,14 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes one or more of your bundling tasks.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Completed bundle tasks are listed for only a limited time. If your bundle task is
         /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
         /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
         /// task.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4873,6 +4878,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIdentityIdFormat
+
+
+        /// <summary>
+        /// Describes the ID format settings for resources for the specified IAM user, IAM role,
+        /// or root user. For example, you can view the resource types that are enabled for longer
+        /// IDs. This request only returns information about resource types whose ID formats can
+        /// be modified; it does not return information about other resource types. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+        /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
+        /// | <code>snapshot</code> | <code>volume</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// These settings apply to the principal specified in the request. They do not apply
+        /// to the principal that makes the request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityIdFormat service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIdentityIdFormat service method, as returned by EC2.</returns>
+        public DescribeIdentityIdFormatResponse DescribeIdentityIdFormat(DescribeIdentityIdFormatRequest request)
+        {
+            var marshaller = new DescribeIdentityIdFormatRequestMarshaller();
+            var unmarshaller = DescribeIdentityIdFormatResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityIdFormatRequest,DescribeIdentityIdFormatResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIdentityIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeIdentityIdFormatResponse> DescribeIdentityIdFormatAsync(DescribeIdentityIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeIdentityIdFormatRequestMarshaller();
+            var unmarshaller = DescribeIdentityIdFormatResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIdentityIdFormatRequest,DescribeIdentityIdFormatResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeIdFormat
 
 
@@ -4880,7 +4938,7 @@ namespace Amazon.EC2
         /// Describes the ID format settings for your resources on a per-region basis, for example,
         /// to view which resource types are enabled for longer IDs. This request only returns
         /// information about resource types whose ID formats can be modified; it does not return
-        /// information about other resource types. 
+        /// information about other resource types.
         /// 
         ///  
         /// <para>
@@ -4974,12 +5032,12 @@ namespace Amazon.EC2
         /// available to you include public images, private images that you own, and private images
         /// owned by other AWS accounts but for which you have explicit launch permissions.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Deregistered images are included in the returned results for an unspecified interval
         /// after deregistration.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
@@ -4994,12 +5052,12 @@ namespace Amazon.EC2
         /// available to you include public images, private images that you own, and private images
         /// owned by other AWS accounts but for which you have explicit launch permissions.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Deregistered images are included in the returned results for an unspecified interval
         /// after deregistration.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
         /// 
@@ -5018,12 +5076,12 @@ namespace Amazon.EC2
         /// available to you include public images, private images that you own, and private images
         /// owned by other AWS accounts but for which you have explicit launch permissions.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Deregistered images are included in the returned results for an unspecified interval
         /// after deregistration.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5287,23 +5345,23 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
+        ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
         /// Checks for Your Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
+        ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
         /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>Instance state</b> - You can manage your instances from the moment you launch them
-        /// through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        ///  <b>Instance state</b> - You can manage your instances from the moment you launch
+        /// them through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -5326,23 +5384,23 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
+        ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
         /// Checks for Your Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
+        ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
         /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>Instance state</b> - You can manage your instances from the moment you launch them
-        /// through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        ///  <b>Instance state</b> - You can manage your instances from the moment you launch
+        /// them through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -5369,23 +5427,23 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
+        ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
         /// Checks for Your Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
         /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
-        /// </li> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
+        ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
         /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>Instance state</b> - You can manage your instances from the moment you launch them
-        /// through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        ///  <b>Instance state</b> - You can manage your instances from the moment you launch
+        /// them through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -6088,13 +6146,13 @@ namespace Amazon.EC2
         /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
         /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
-        /// like any other Reserved Instances. 
+        /// like any other Reserved Instances.
         /// </para>
         ///  
         /// <para>
         /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
         /// the upfront price to receive for them. Your Reserved Instances are then listed in
-        /// the Reserved Instance Marketplace and are available for purchase. 
+        /// the Reserved Instance Marketplace and are available for purchase.
         /// </para>
         ///  
         /// <para>
@@ -6126,13 +6184,13 @@ namespace Amazon.EC2
         /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
         /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
-        /// like any other Reserved Instances. 
+        /// like any other Reserved Instances.
         /// </para>
         ///  
         /// <para>
         /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
         /// the upfront price to receive for them. Your Reserved Instances are then listed in
-        /// the Reserved Instance Marketplace and are available for purchase. 
+        /// the Reserved Instance Marketplace and are available for purchase.
         /// </para>
         ///  
         /// <para>
@@ -6168,13 +6226,13 @@ namespace Amazon.EC2
         /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
         /// capacity that they no longer need with buyers who want to purchase additional capacity.
         /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
-        /// like any other Reserved Instances. 
+        /// like any other Reserved Instances.
         /// </para>
         ///  
         /// <para>
         /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
         /// the upfront price to receive for them. Your Reserved Instances are then listed in
-        /// the Reserved Instance Marketplace and are available for purchase. 
+        /// the Reserved Instance Marketplace and are available for purchase.
         /// </para>
         ///  
         /// <para>
@@ -6417,7 +6475,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your route tables. 
+        /// Describes one or more of your route tables.
         /// 
         ///  
         /// <para>
@@ -6440,7 +6498,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your route tables. 
+        /// Describes one or more of your route tables.
         /// 
         ///  
         /// <para>
@@ -6467,7 +6525,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your route tables. 
+        /// Describes one or more of your route tables.
         /// 
         ///  
         /// <para>
@@ -6732,7 +6790,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6782,18 +6840,18 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
         /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
         /// for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
         /// specific AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        ///  <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
         /// it owns.
         /// </para>
         ///  </li> </ul> 
@@ -6811,10 +6869,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you specify one or more snapshot owners, only snapshots from the specified owners
-        /// and for which you have access are returned. The results can include the AWS account
-        /// IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or
-        /// <code>self</code> for snapshots that you own.
+        /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
+        /// only snapshots from the specified owners and for which you have access are returned.
+        /// The results can include the AWS account IDs of the specified owners, <code>amazon</code>
+        /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
         /// </para>
         ///  
         /// <para>
@@ -6834,7 +6892,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6858,18 +6916,18 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
         /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
         /// for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
         /// specific AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        ///  <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
         /// it owns.
         /// </para>
         ///  </li> </ul> 
@@ -6887,10 +6945,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you specify one or more snapshot owners, only snapshots from the specified owners
-        /// and for which you have access are returned. The results can include the AWS account
-        /// IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or
-        /// <code>self</code> for snapshots that you own.
+        /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
+        /// only snapshots from the specified owners and for which you have access are returned.
+        /// The results can include the AWS account IDs of the specified owners, <code>amazon</code>
+        /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
         /// </para>
         ///  
         /// <para>
@@ -6910,7 +6968,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6938,18 +6996,18 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <i>public</i>: The owner of the snapshot granted create volume permissions for the
+        ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
         /// snapshot to the <code>all</code> group. All AWS accounts have create volume permissions
         /// for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
+        ///  <i>explicit</i>: The owner of the snapshot granted create volume permissions to a
         /// specific AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
+        ///  <i>implicit</i>: An AWS account has implicit create volume permissions for all snapshots
         /// it owns.
         /// </para>
         ///  </li> </ul> 
@@ -6967,10 +7025,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you specify one or more snapshot owners, only snapshots from the specified owners
-        /// and for which you have access are returned. The results can include the AWS account
-        /// IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or
-        /// <code>self</code> for snapshots that you own.
+        /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
+        /// only snapshots from the specified owners and for which you have access are returned.
+        /// The results can include the AWS account IDs of the specified owners, <code>amazon</code>
+        /// for snapshots owned by Amazon, or <code>self</code> for snapshots that you own.
         /// </para>
         ///  
         /// <para>
@@ -6990,7 +7048,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS snapshots, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html'>Amazon
+        /// For more information about EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
         /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7607,7 +7665,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7659,7 +7717,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7685,7 +7743,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7715,7 +7773,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+        /// For more information about EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
         /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7767,7 +7825,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// <i>Status</i>: Reflects the current status of the volume. The possible values are
+        ///  <i>Status</i>: Reflects the current status of the volume. The possible values are
         /// <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>.
         /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
@@ -7777,7 +7835,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
+        ///  <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
         /// For example, if your volume returns an <code>impaired</code> status, then the volume
         /// event might be <code>potential-data-inconsistency</code>. This means that your volume
         /// has been affected by an issue with the underlying host, has all I/O operations disabled,
@@ -7785,7 +7843,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// <i>Actions</i>: Reflect the actions you may have to take in response to an event.
+        ///  <i>Actions</i>: Reflect the actions you may have to take in response to an event.
         /// For example, if the status of the volume is <code>impaired</code> and the volume event
         /// shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>.
         /// This means that you may want to enable the I/O operations for the volume by calling
@@ -7823,7 +7881,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// <i>Status</i>: Reflects the current status of the volume. The possible values are
+        ///  <i>Status</i>: Reflects the current status of the volume. The possible values are
         /// <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>.
         /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
@@ -7833,7 +7891,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
+        ///  <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
         /// For example, if your volume returns an <code>impaired</code> status, then the volume
         /// event might be <code>potential-data-inconsistency</code>. This means that your volume
         /// has been affected by an issue with the underlying host, has all I/O operations disabled,
@@ -7841,7 +7899,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// <i>Actions</i>: Reflect the actions you may have to take in response to an event.
+        ///  <i>Actions</i>: Reflect the actions you may have to take in response to an event.
         /// For example, if the status of the volume is <code>impaired</code> and the volume event
         /// shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>.
         /// This means that you may want to enable the I/O operations for the volume by calling
@@ -7883,7 +7941,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// <i>Status</i>: Reflects the current status of the volume. The possible values are
+        ///  <i>Status</i>: Reflects the current status of the volume. The possible values are
         /// <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>.
         /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
@@ -7893,7 +7951,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
+        ///  <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
         /// For example, if your volume returns an <code>impaired</code> status, then the volume
         /// event might be <code>potential-data-inconsistency</code>. This means that your volume
         /// has been affected by an issue with the underlying host, has all I/O operations disabled,
@@ -7901,7 +7959,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// <i>Actions</i>: Reflect the actions you may have to take in response to an event.
+        ///  <i>Actions</i>: Reflect the actions you may have to take in response to an event.
         /// For example, if the status of the volume is <code>impaired</code> and the volume event
         /// shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>.
         /// This means that you may want to enable the I/O operations for the volume by calling
@@ -9079,7 +9137,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The returned content is base64-encoded.
+        /// The returned content is Base64-encoded.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot service method.</param>
@@ -9431,6 +9489,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyIdentityIdFormat
+
+
+        /// <summary>
+        /// Modifies the ID format of a resource for the specified IAM user, IAM role, or root
+        /// user. You can specify that resources should receive longer IDs (17-character IDs)
+        /// when they are created. The following resource types support longer IDs: <code>instance</code>
+        /// | <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+        /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// This setting applies to the principal specified in the request; it does not apply
+        /// to the principal that makes the request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources created with longer IDs are visible to all IAM roles and users, regardless
+        /// of these settings and provided that they have permission to use the relevant <code>Describe</code>
+        /// command for the resource type.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIdentityIdFormat service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIdentityIdFormat service method, as returned by EC2.</returns>
+        public ModifyIdentityIdFormatResponse ModifyIdentityIdFormat(ModifyIdentityIdFormatRequest request)
+        {
+            var marshaller = new ModifyIdentityIdFormatRequestMarshaller();
+            var unmarshaller = ModifyIdentityIdFormatResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIdentityIdFormatRequest,ModifyIdentityIdFormatResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIdentityIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIdentityIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyIdentityIdFormatResponse> ModifyIdentityIdFormatAsync(ModifyIdentityIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyIdentityIdFormatRequestMarshaller();
+            var unmarshaller = ModifyIdentityIdFormatResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIdentityIdFormatRequest,ModifyIdentityIdFormatResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyIdFormat
 
 
@@ -9444,17 +9556,15 @@ namespace Amazon.EC2
         /// <para>
         /// This setting applies to the IAM user who makes the request; it does not apply to the
         /// entire AWS account. By default, an IAM user defaults to the same settings as the root
-        /// user. If you're using this action as the root user or as an IAM role that has permission
-        /// to use this action, then these settings apply to the entire account, unless an IAM
-        /// user explicitly overrides these settings for themselves. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
-        /// Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// 
+        /// user. If you're using this action as the root user, then these settings apply to the
+        /// entire account, unless an IAM user explicitly overrides these settings for themselves.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+        /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// Resources created with longer IDs are visible to all IAM users, regardless of these
-        /// settings and provided that they have permission to use the relevant <code>Describe</code>
+        /// Resources created with longer IDs are visible to all IAM roles and users, regardless
+        /// of these settings and provided that they have permission to use the relevant <code>Describe</code>
         /// command for the resource type.
         /// </para>
         /// </summary>
@@ -9496,12 +9606,12 @@ namespace Amazon.EC2
         /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
         /// at a time.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product
         /// code cannot be made public.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyImageAttribute service method.</param>
         /// 
@@ -9734,16 +9844,16 @@ namespace Amazon.EC2
         /// you cannot do both in a single API call. If you need to both add and remove account
         /// IDs for a snapshot, you must use multiple API calls.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Encrypted snapshots and snapshots with AWS Marketplace product codes cannot be made
+        /// public. Snapshots encrypted with your default CMK cannot be shared with other accounts.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information on modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
         /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Snapshots with AWS Marketplace product codes cannot be made public.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotAttribute service method.</param>
         /// 
@@ -10009,17 +10119,17 @@ namespace Amazon.EC2
         /// Modifies the VPC peering connection options on one side of a VPC peering connection.
         /// You can do the following:
         /// 
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// Enable/disable communication over the peering connection between an EC2-Classic instance
-        /// that's linked to your VPC (using ClassicLink) and instances in the peer VPC. 
+        /// that's linked to your VPC (using ClassicLink) and instances in the peer VPC.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// Enable/disable communication over the peering connection between instances in your
         /// VPC and an EC2-Classic instance that's linked to the peer VPC.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// If the peered VPCs are in different accounts, each owner must initiate a separate
         /// request to enable or disable communication in either direction, depending on whether
@@ -10306,12 +10416,12 @@ namespace Amazon.EC2
         /// AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
         /// Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI
         /// in a single request, so you don't have to register the AMI yourself.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI
         /// from a snapshot of a root device volume. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
@@ -10341,12 +10451,12 @@ namespace Amazon.EC2
         /// AMI backed by an instance store volume invalidates its registration. If you make changes
         /// to an image, deregister the previous image and register the new image.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// You can't register an image where a secondary (non-root) snapshot has AWS Marketplace
         /// product codes.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterImage service method.</param>
         /// 
@@ -10490,7 +10600,7 @@ namespace Amazon.EC2
         /// <para>
         /// When Dedicated hosts are released, it make take some time for them to stop counting
         /// toward your limit and you may receive capacity errors when trying to allocate new
-        /// Dedicated hosts. Try waiting a few minutes, and then try again. 
+        /// Dedicated hosts. Try waiting a few minutes, and then try again.
         /// </para>
         ///  
         /// <para>
@@ -10853,11 +10963,11 @@ namespace Amazon.EC2
         /// <summary>
         /// Resets an attribute of an AMI to its default value.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
-        ///  The productCodes attribute can't be reset. 
+        /// The productCodes attribute can't be reset.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetImageAttribute service method.</param>
         /// 
@@ -11194,7 +11304,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// [EC2-VPC only accounts] If you don't specify a subnet in the request, we choose a
-        /// default subnet from your default VPC for you. 
+        /// default subnet from your default VPC for you.
         /// </para>
         ///  
         /// <para>
@@ -11382,7 +11492,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Stops an Amazon EBS-backed instance. 
+        /// Stops an Amazon EBS-backed instance.
         /// 
         ///  
         /// <para>

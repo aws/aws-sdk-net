@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,23 +38,23 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
+    ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
     /// to identify hardware and software issues. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
     /// Checks for Your Instances</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
     /// Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User
     /// Guide</i>.
     /// </para>
-    /// </li> <li> 
+    ///  </li> <li> 
     /// <para>
-    /// <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
+    ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
     /// terminate) for your instances related to hardware issues, software updates, or system
     /// maintenance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
     /// Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <b>Instance state</b> - You can manage your instances from the moment you launch them
-    /// through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+    ///  <b>Instance state</b> - You can manage your instances from the moment you launch
+    /// them through their termination. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
     /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  </li> </ul>
@@ -74,62 +74,62 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone of the instance.
+        ///  <code>availability-zone</code> - The Availability Zone of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.code</code> - The code for the scheduled event (<code>instance-reboot</code>
+        ///  <code>event.code</code> - The code for the scheduled event (<code>instance-reboot</code>
         /// | <code>system-reboot</code> | <code>system-maintenance</code> | <code>instance-retirement</code>
         /// | <code>instance-stop</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.description</code> - A description of the event.
+        ///  <code>event.description</code> - A description of the event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.not-after</code> - The latest end time for the scheduled event (for example,
+        ///  <code>event.not-after</code> - The latest end time for the scheduled event (for example,
         /// <code>2014-09-15T17:15:20.000Z</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.not-before</code> - The earliest start time for the scheduled event (for
+        ///  <code>event.not-before</code> - The earliest start time for the scheduled event (for
         /// example, <code>2014-09-15T17:15:20.000Z</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned
+        ///  <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned
         /// integer. The high byte is an opaque internal value and should be ignored. The low
         /// byte is set based on the state represented. The valid values are 0 (pending), 16 (running),
         /// 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-state-name</code> - The state of the instance (<code>pending</code>
+        ///  <code>instance-state-name</code> - The state of the instance (<code>pending</code>
         /// | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code>
         /// | <code>stopped</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-status.reachability</code> - Filters on instance status where the name
-        /// is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code>
+        ///  <code>instance-status.reachability</code> - Filters on instance status where the
+        /// name is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code>
         /// | <code>insufficient-data</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-status.status</code> - The status of the instance (<code>ok</code>
+        ///  <code>instance-status.status</code> - The status of the instance (<code>ok</code>
         /// | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code>
         /// | <code>not-applicable</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>system-status.reachability</code> - Filters on system status where the name
+        ///  <code>system-status.reachability</code> - Filters on system status where the name
         /// is <code>reachability</code> (<code>passed</code> | <code>failed</code> | <code>initializing</code>
         /// | <code>insufficient-data</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>system-status.status</code> - The system status of the instance (<code>ok</code>
+        ///  <code>system-status.status</code> - The system status of the instance (<code>ok</code>
         /// | <code>impaired</code> | <code>initializing</code> | <code>insufficient-data</code>
         /// | <code>not-applicable</code>).
         /// </para>
@@ -155,7 +155,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool IncludeAllInstances

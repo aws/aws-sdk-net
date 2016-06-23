@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -61,16 +61,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>error</code> - Indicates an error with the Spot fleet request.
+        ///  <code>error</code> - Indicates an error with the Spot fleet request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>fleetRequestChange</code> - Indicates a change in the status or configuration
+        ///  <code>fleetRequestChange</code> - Indicates a change in the status or configuration
         /// of the Spot fleet request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+        ///  <code>instanceChange</code> - Indicates that an instance was launched or terminated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

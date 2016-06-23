@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -87,32 +87,32 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone where the Reserved Instance
+        ///  <code>availability-zone</code> - The Availability Zone where the Reserved Instance
         /// can be used.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>duration</code> - The duration of the Reserved Instance (for example, one year
+        ///  <code>duration</code> - The duration of the Reserved Instance (for example, one year
         /// or three years), in seconds (<code>31536000</code> | <code>94608000</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>fixed-price</code> - The purchase price of the Reserved Instance (for example,
+        ///  <code>fixed-price</code> - The purchase price of the Reserved Instance (for example,
         /// 9800.0).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-type</code> - The instance type that is covered by the reservation.
+        ///  <code>instance-type</code> - The instance type that is covered by the reservation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance
+        ///  <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance
         /// Marketplace offerings. When this filter is not used, which is the default behavior,
         /// all offerings from both AWS and the Reserved Instance Marketplace are listed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>product-description</code> - The Reserved Instance product platform description.
+        ///  <code>product-description</code> - The Reserved Instance product platform description.
         /// Instances that include <code>(Amazon VPC)</code> in the product platform description
         /// will only be displayed to EC2-Classic account holders and are for use with Amazon
         /// VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE
@@ -126,11 +126,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.
+        ///  <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for
+        ///  <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for
         /// example, 0.84).
         /// </para>
         ///  </li> </ul>
@@ -174,7 +174,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>default</code>
+        /// Default: <code>default</code> 
         /// </para>
         /// </summary>
         public Tenancy InstanceTenancy
@@ -302,7 +302,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next page of results. 
+        /// The token to retrieve the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -49,11 +49,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+        ///  <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+        ///  <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

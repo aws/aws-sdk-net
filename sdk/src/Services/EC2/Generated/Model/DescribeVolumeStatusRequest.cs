@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// <i>Status</i>: Reflects the current status of the volume. The possible values are
+    ///  <i>Status</i>: Reflects the current status of the volume. The possible values are
     /// <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>.
     /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
     /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
+    ///  <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
     /// For example, if your volume returns an <code>impaired</code> status, then the volume
     /// event might be <code>potential-data-inconsistency</code>. This means that your volume
     /// has been affected by an issue with the underlying host, has all I/O operations disabled,
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// <i>Actions</i>: Reflect the actions you may have to take in response to an event.
+    ///  <i>Actions</i>: Reflect the actions you may have to take in response to an event.
     /// For example, if the status of the volume is <code>impaired</code> and the volume event
     /// shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>.
     /// This means that you may want to enable the I/O operations for the volume by calling
@@ -90,56 +90,56 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).
+        ///  <code>action.code</code> - The action code for the event (for example, <code>enable-volume-io</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>action.description</code> - A description of the action.
+        ///  <code>action.description</code> - A description of the action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>action.event-id</code> - The event ID associated with the action.
+        ///  <code>action.event-id</code> - The event ID associated with the action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone of the instance.
+        ///  <code>availability-zone</code> - The Availability Zone of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.description</code> - A description of the event.
+        ///  <code>event.description</code> - A description of the event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.event-id</code> - The event ID.
+        ///  <code>event.event-id</code> - The event ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code>
+        ///  <code>event.event-type</code> - The event type (for <code>io-enabled</code>: <code>passed</code>
         /// | <code>failed</code>; for <code>io-performance</code>: <code>io-performance:degraded</code>
         /// | <code>io-performance:severely-degraded</code> | <code>io-performance:stalled</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.not-after</code> - The latest end time for the event.
+        ///  <code>event.not-after</code> - The latest end time for the event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>event.not-before</code> - The earliest start time for the event.
+        ///  <code>event.not-before</code> - The earliest start time for the event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code>
+        ///  <code>volume-status.details-name</code> - The cause for <code>volume-status.status</code>
         /// (<code>io-enabled</code> | <code>io-performance</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code>
+        ///  <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code>
         /// (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>:
         /// <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code>
+        ///  <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code>
         /// | <code>warning</code> | <code>insufficient-data</code>).
         /// </para>
         ///  </li> </ul>

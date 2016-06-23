@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -71,33 +71,33 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+        ///  <code>dhcp-options-id</code> - The ID of a set of DHCP options.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>key</code> - The key for one of the options (for example, <code>domain-name</code>).
+        ///  <code>key</code> - The key for one of the options (for example, <code>domain-name</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>value</code> - The value for one of the options.
+        ///  <code>value</code> - The value for one of the options.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
         /// to the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
-        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
-        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
-        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
-        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-        /// filter.
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+        /// independent of the <code>tag-value</code> filter. For example, if you use both the
+        /// filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
+        /// both the tag key Purpose (regardless of what the tag's value is), and the tag value
+        /// X (regardless of what the tag's key is). If you want to list only resources where
+        /// Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        ///  <code>tag-value</code> - The value of a tag assigned to the resource. This filter
         /// is independent of the <code>tag-key</code> filter.
         /// </para>
         ///  </li> </ul>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates Tag with the parameterized properties
         /// </summary>
-        /// <param name="key">The key of the tag.  Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code></param>
+        /// <param name="key">The key of the tag. Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code> </param>
         /// <param name="value">The value of the tag. Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</param>
         public Tag(string key, string value)
         {
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates Tag with the parameterized properties
         /// </summary>
-        /// <param name="key">The key of the tag.  Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code></param>
+        /// <param name="key">The key of the tag. Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code> </param>
         public Tag(string key)
         {
             _key = key;
@@ -63,12 +63,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the tag. 
+        /// The key of the tag.
         /// </para>
         ///  
         /// <para>
         /// Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters.
-        /// May not begin with <code>aws:</code>
+        /// May not begin with <code>aws:</code> 
         /// </para>
         /// </summary>
         public string Key

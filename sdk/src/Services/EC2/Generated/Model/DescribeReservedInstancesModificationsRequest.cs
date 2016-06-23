@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -53,62 +53,62 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>client-token</code> - The idempotency token for the modification request.
+        ///  <code>client-token</code> - The idempotency token for the modification request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>create-date</code> - The time when the modification request was created.
+        ///  <code>create-date</code> - The time when the modification request was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>effective-date</code> - The time when the modification becomes effective.
+        ///  <code>effective-date</code> - The time when the modification becomes effective.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances
-        /// created as part of the modification request. This ID is only available when the status
-        /// of the modification is <code>fulfilled</code>.
+        ///  <code>modification-result.reserved-instances-id</code> - The ID for the Reserved
+        /// Instances created as part of the modification request. This ID is only available when
+        /// the status of the modification is <code>fulfilled</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>modification-result.target-configuration.availability-zone</code> - The Availability
+        ///  <code>modification-result.target-configuration.availability-zone</code> - The Availability
         /// Zone for the new Reserved Instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>modification-result.target-configuration.instance-count </code> - The number
+        ///  <code>modification-result.target-configuration.instance-count </code> - The number
         /// of new Reserved Instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>modification-result.target-configuration.instance-type</code> - The instance
+        ///  <code>modification-result.target-configuration.instance-type</code> - The instance
         /// type of the new Reserved Instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>modification-result.target-configuration.platform</code> - The network platform
+        ///  <code>modification-result.target-configuration.platform</code> - The network platform
         /// of the new Reserved Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
+        ///  <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>reserved-instances-modification-id</code> - The ID of the modification request.
+        ///  <code>reserved-instances-modification-id</code> - The ID of the modification request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code>
+        ///  <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code>
         /// | <code>fulfilled</code> | <code>failed</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>status-message</code> - The reason for the status.
+        ///  <code>status-message</code> - The reason for the status.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>update-date</code> - The time when the modification request was last updated.
+        ///  <code>update-date</code> - The time when the modification request was last updated.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next page of results. 
+        /// The token to retrieve the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

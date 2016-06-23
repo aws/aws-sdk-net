@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,16 +34,16 @@ namespace Amazon.EC2.Model
     /// you cannot do both in a single API call. If you need to both add and remove account
     /// IDs for a snapshot, you must use multiple API calls.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Encrypted snapshots and snapshots with AWS Marketplace product codes cannot be made
+    /// public. Snapshots encrypted with your default CMK cannot be shared with other accounts.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information on modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
     /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// Snapshots with AWS Marketplace product codes cannot be made public.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ModifySnapshotAttributeRequest : AmazonEC2Request
     {

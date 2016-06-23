@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -100,12 +100,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Important:</b> The <code>host</code> value cannot be used with this parameter.
+        ///  <b>Important:</b> The <code>host</code> value cannot be used with this parameter.
         /// Use the <code>default</code> or <code>dedicated</code> values only.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>default</code>
+        /// Default: <code>default</code> 
         /// </para>
         /// </summary>
         public Tenancy InstanceTenancy

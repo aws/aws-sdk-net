@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         /// to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved
         /// IP address at the base of the VPC network range "plus two" will succeed. If disabled,
         /// the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP
-        /// addresses is not enabled. 
+        /// addresses is not enabled.
         /// </para>
         ///  
         /// <para>

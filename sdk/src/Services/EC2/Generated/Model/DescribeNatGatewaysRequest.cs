@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,20 +45,20 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>nat-gateway-id</code> - The ID of the NAT gateway.
+        ///  <code>nat-gateway-id</code> - The ID of the NAT gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code>
+        ///  <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code>
         /// | <code>available</code> | <code>deleting</code> | <code>deleted</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.
+        ///  <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.
+        ///  <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.
         /// </para>
         ///  </li> </ul>
         /// </summary>

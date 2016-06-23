@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -59,188 +59,189 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>affinity</code> - The affinity setting for an instance running on a Dedicated
+        ///  <code>affinity</code> - The affinity setting for an instance running on a Dedicated
         /// host (<code>default</code> | <code>host</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+        ///  <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone of the instance.
+        ///  <code>availability-zone</code> - The Availability Zone of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume
+        ///  <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume
         /// mapped to the instance, for example, <code>2010-09-15T17:15:20.000Z</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.delete-on-termination</code> - A Boolean that indicates
+        ///  <code>block-device-mapping.delete-on-termination</code> - A Boolean that indicates
         /// whether the EBS volume is deleted on instance termination.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.device-name</code> - The device name for the EBS volume
+        ///  <code>block-device-mapping.device-name</code> - The device name for the EBS volume
         /// (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.status</code> - The status for the EBS volume (<code>attaching</code>
+        ///  <code>block-device-mapping.status</code> - The status for the EBS volume (<code>attaching</code>
         /// | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.volume-id</code> - The volume ID of the EBS volume.
+        ///  <code>block-device-mapping.volume-id</code> - The volume ID of the EBS volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>client-token</code> - The idempotency token you provided when you launched the
-        /// instance.
+        ///  <code>client-token</code> - The idempotency token you provided when you launched
+        /// the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>dns-name</code> - The public DNS name of the instance.
+        ///  <code>dns-name</code> - The public DNS name of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>group-id</code> - The ID of the security group for the instance. EC2-Classic
+        ///  <code>group-id</code> - The ID of the security group for the instance. EC2-Classic
         /// only.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>group-name</code> - The name of the security group for the instance. EC2-Classic
+        ///  <code>group-name</code> - The name of the security group for the instance. EC2-Classic
         /// only.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>host-Id</code> - The ID of the Dedicated host on which the instance is running,
+        ///  <code>host-Id</code> - The ID of the Dedicated host on which the instance is running,
         /// if applicable.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> |
+        ///  <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> |
         /// <code>xen</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>iam-instance-profile.arn</code> - The instance profile associated with the instance.
-        /// Specified as an ARN.
+        ///  <code>iam-instance-profile.arn</code> - The instance profile associated with the
+        /// instance. Specified as an ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>image-id</code> - The ID of the image used to launch the instance.
+        ///  <code>image-id</code> - The ID of the image used to launch the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-id</code> - The ID of the instance.
+        ///  <code>instance-id</code> - The ID of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled
-        /// Instance (<code>spot</code> | <code>scheduled</code>).
+        ///  <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
+        /// Scheduled Instance (<code>spot</code> | <code>scheduled</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned
+        ///  <code>instance-state-code</code> - The state of the instance, as a 16-bit unsigned
         /// integer. The high byte is an opaque internal value and should be ignored. The low
         /// byte is set based on the state represented. The valid values are: 0 (pending), 16
         /// (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-state-name</code> - The state of the instance (<code>pending</code>
+        ///  <code>instance-state-name</code> - The state of the instance (<code>pending</code>
         /// | <code>running</code> | <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code>
         /// | <code>stopped</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-type</code> - The type of instance (for example, <code>t2.micro</code>).
+        ///  <code>instance-type</code> - The type of instance (for example, <code>t2.micro</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance.group-id</code> - The ID of the security group for the instance. 
+        ///  <code>instance.group-id</code> - The ID of the security group for the instance. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance.group-name</code> - The name of the security group for the instance.
+        ///  <code>instance.group-name</code> - The name of the security group for the instance.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ip-address</code> - The public IP address of the instance.
+        ///  <code>ip-address</code> - The public IP address of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>kernel-id</code> - The kernel ID.
+        ///  <code>kernel-id</code> - The kernel ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>key-name</code> - The name of the key pair used when the instance was launched.
+        ///  <code>key-name</code> - The name of the key pair used when the instance was launched.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch-index</code> - When launching multiple instances, this is the index for
-        /// the instance in the launch group (for example, 0, 1, 2, and so on). 
+        ///  <code>launch-index</code> - When launching multiple instances, this is the index
+        /// for the instance in the launch group (for example, 0, 1, 2, and so on). 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launch-time</code> - The time when the instance was launched.
+        ///  <code>launch-time</code> - The time when the instance was launched.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>monitoring-state</code> - Indicates whether monitoring is enabled for the instance
+        ///  <code>monitoring-state</code> - Indicates whether monitoring is enabled for the instance
         /// (<code>disabled</code> | <code>enabled</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>owner-id</code> - The AWS account ID of the instance owner.
+        ///  <code>owner-id</code> - The AWS account ID of the instance owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>placement-group-name</code> - The name of the placement group for the instance.
+        ///  <code>placement-group-name</code> - The name of the placement group for the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>platform</code> - The platform. Use <code>windows</code> if you have Windows
+        ///  <code>platform</code> - The platform. Use <code>windows</code> if you have Windows
         /// instances; otherwise, leave blank.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>private-dns-name</code> - The private DNS name of the instance.
+        ///  <code>private-dns-name</code> - The private DNS name of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>private-ip-address</code> - The private IP address of the instance.
+        ///  <code>private-ip-address</code> - The private IP address of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>product-code</code> - The product code associated with the AMI used to launch
+        ///  <code>product-code</code> - The product code associated with the AMI used to launch
         /// the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>product-code.type</code> - The type of product code (<code>devpay</code> | <code>marketplace</code>).
+        ///  <code>product-code.type</code> - The type of product code (<code>devpay</code> |
+        /// <code>marketplace</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ramdisk-id</code> - The RAM disk ID.
+        ///  <code>ramdisk-id</code> - The RAM disk ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>reason</code> - The reason for the current state of the instance (for example,
+        ///  <code>reason</code> - The reason for the current state of the instance (for example,
         /// shows "User Initiated [date]" when you stop or terminate the instance). Similar to
         /// the state-reason-code filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>requester-id</code> - The ID of the entity that launched the instance on your
+        ///  <code>requester-id</code> - The ID of the entity that launched the instance on your
         /// behalf (for example, AWS Management Console, Auto Scaling, and so on).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>reservation-id</code> - The ID of the instance's reservation. A reservation
+        ///  <code>reservation-id</code> - The ID of the instance's reservation. A reservation
         /// ID is created any time you launch an instance. A reservation ID has a one-to-one relationship
         /// with an instance launch request, but can be associated with more than one instance
         /// if you launch multiple instances using the same launch request. For example, if you
@@ -249,208 +250,208 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>root-device-name</code> - The name of the root device for the instance (for
+        ///  <code>root-device-name</code> - The name of the root device for the instance (for
         /// example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>root-device-type</code> - The type of root device that the instance uses (<code>ebs</code>
+        ///  <code>root-device-type</code> - The type of root device that the instance uses (<code>ebs</code>
         /// | <code>instance-store</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>source-dest-check</code> - Indicates whether the instance performs source/destination
+        ///  <code>source-dest-check</code> - Indicates whether the instance performs source/destination
         /// checking. A value of <code>true</code> means that checking is enabled, and <code>false</code>
         /// means checking is disabled. The value must be <code>false</code> for the instance
         /// to perform network address translation (NAT) in your VPC. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>spot-instance-request-id</code> - The ID of the Spot instance request.
+        ///  <code>spot-instance-request-id</code> - The ID of the Spot instance request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state-reason-code</code> - The reason code for the state change.
+        ///  <code>state-reason-code</code> - The reason code for the state change.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state-reason-message</code> - A message that describes the state change.
+        ///  <code>state-reason-message</code> - A message that describes the state change.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>subnet-id</code> - The ID of the subnet for the instance.
+        ///  <code>subnet-id</code> - The ID of the subnet for the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
         /// to the resource, where <code>tag</code>:<i>key</i> is the tag's key. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
-        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
-        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
-        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
-        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-        /// filter.
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+        /// independent of the <code>tag-value</code> filter. For example, if you use both the
+        /// filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
+        /// both the tag key Purpose (regardless of what the tag's value is), and the tag value
+        /// X (regardless of what the tag's key is). If you want to list only resources where
+        /// Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        ///  <code>tag-value</code> - The value of a tag assigned to the resource. This filter
         /// is independent of the <code>tag-key</code> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code>
+        ///  <code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code>
         /// | <code>host</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code>
+        ///  <code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code>
         /// | <code>hvm</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-id</code> - The ID of the VPC that the instance is running in.
+        ///  <code>vpc-id</code> - The ID of the VPC that the instance is running in.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.description</code> - The description of the network interface.
+        ///  <code>network-interface.description</code> - The description of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.subnet-id</code> - The ID of the subnet for the network interface.
+        ///  <code>network-interface.subnet-id</code> - The ID of the subnet for the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
+        ///  <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.network-interface-id</code> - The ID of the network interface.
+        ///  <code>network-interface.network-interface-id</code> - The ID of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
+        ///  <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.availability-zone</code> - The Availability Zone for the network
-        /// interface.
+        ///  <code>network-interface.availability-zone</code> - The Availability Zone for the
+        /// network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.requester-id</code> - The requester ID for the network interface.
+        ///  <code>network-interface.requester-id</code> - The requester ID for the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.requester-managed</code> - Indicates whether the network interface
-        /// is being managed by AWS.
+        ///  <code>network-interface.requester-managed</code> - Indicates whether the network
+        /// interface is being managed by AWS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.status</code> - The status of the network interface (<code>available</code>)
+        ///  <code>network-interface.status</code> - The status of the network interface (<code>available</code>)
         /// | <code>in-use</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.mac-address</code> - The MAC address of the network interface.
+        ///  <code>network-interface.mac-address</code> - The MAC address of the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.private-dns-name</code> - The private DNS name of the network
+        ///  <code>network-interface.private-dns-name</code> - The private DNS name of the network
         /// interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.source-dest-check</code> - Whether the network interface performs
-        /// source/destination checking. A value of <code>true</code> means checking is enabled,
-        /// and <code>false</code> means checking is disabled. The value must be <code>false</code>
+        ///  <code>network-interface.source-dest-check</code> - Whether the network interface
+        /// performs source/destination checking. A value of <code>true</code> means checking
+        /// is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code>
         /// for the network interface to perform network address translation (NAT) in your VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.group-id</code> - The ID of a security group associated with
+        ///  <code>network-interface.group-id</code> - The ID of a security group associated with
         /// the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.group-name</code> - The name of a security group associated
+        ///  <code>network-interface.group-name</code> - The name of a security group associated
         /// with the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.attachment.attachment-id</code> - The ID of the interface
+        ///  <code>network-interface.attachment.attachment-id</code> - The ID of the interface
         /// attachment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.attachment.instance-id</code> - The ID of the instance to
+        ///  <code>network-interface.attachment.instance-id</code> - The ID of the instance to
         /// which the network interface is attached.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.attachment.instance-owner-id</code> - The owner ID of the
+        ///  <code>network-interface.attachment.instance-owner-id</code> - The owner ID of the
         /// instance to which the network interface is attached.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.addresses.private-ip-address</code> - The private IP address
+        ///  <code>network-interface.addresses.private-ip-address</code> - The private IP address
         /// associated with the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.attachment.device-index</code> - The device index to which
+        ///  <code>network-interface.attachment.device-index</code> - The device index to which
         /// the network interface is attached.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.attachment.status</code> - The status of the attachment (<code>attaching</code>
+        ///  <code>network-interface.attachment.status</code> - The status of the attachment (<code>attaching</code>
         /// | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.attachment.attach-time</code> - The time that the network
+        ///  <code>network-interface.attachment.attach-time</code> - The time that the network
         /// interface was attached to an instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.attachment.delete-on-termination</code> - Specifies whether
+        ///  <code>network-interface.attachment.delete-on-termination</code> - Specifies whether
         /// the attachment is deleted when an instance is terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.addresses.primary</code> - Specifies whether the IP address
+        ///  <code>network-interface.addresses.primary</code> - Specifies whether the IP address
         /// of the network interface is the primary private IP address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.addresses.association.public-ip</code> - The ID of the association
+        ///  <code>network-interface.addresses.association.public-ip</code> - The ID of the association
         /// of an Elastic IP address with a network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of
+        ///  <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of
         /// the private IP address associated with the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>association.public-ip</code> - The address of the Elastic IP address bound to
-        /// the network interface.
+        ///  <code>association.public-ip</code> - The address of the Elastic IP address bound
+        /// to the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>association.ip-owner-id</code> - The owner of the Elastic IP address associated
+        ///  <code>association.ip-owner-id</code> - The owner of the Elastic IP address associated
         /// with the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>association.allocation-id</code> - The allocation ID returned when you allocated
+        ///  <code>association.allocation-id</code> - The allocation ID returned when you allocated
         /// the Elastic IP address for your network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>association.association-id</code> - The association ID returned when the network
+        ///  <code>association.association-id</code> - The association ID returned when the network
         /// interface was associated with an IP address.
         /// </para>
         ///  </li> </ul>

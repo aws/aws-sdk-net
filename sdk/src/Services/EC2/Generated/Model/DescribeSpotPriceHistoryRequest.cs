@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -97,27 +97,27 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone for which prices should be
+        ///  <code>availability-zone</code> - The Availability Zone for which prices should be
         /// returned.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).
+        ///  <code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code>
+        ///  <code>product-description</code> - The product description for the Spot price (<code>Linux/UNIX</code>
         /// | <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code>
         /// | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>spot-price</code> - The Spot price. The value must match exactly (or use wildcards;
+        ///  <code>spot-price</code> - The Spot price. The value must match exactly (or use wildcards;
         /// greater than or less than comparison is not supported).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for
+        ///  <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for
         /// example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can
         /// use wildcards (* and ?). Greater than or less than comparison is not supported.
         /// </para>
