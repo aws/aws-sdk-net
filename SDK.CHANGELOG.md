@@ -1,3 +1,15 @@
+### 3.1.78.0 (2016-06-23 21:11 UTC)
+* CognitoIdentity (3.1.1.0)
+	* API update for role customization
+* DirectConnect (3.1.2.0)
+	* API update for DescribeConnectionLoa and DescribeInterconnectLoa operations
+* EC2 (3.1.17.0)
+	* API update for IdentityId Format
+* IdentityManagement (3.1.4.4)
+	* Doc update
+* RDS (3.1.12.1)
+	* Doc update
+
 ### 3.1.77.0 (2016-06-21 23:39 UTC)
 * CodePipeline (3.1.2.0)
 	* The feature Retry Failed Actions allows you to retry a failed pipeline execution from a given stage in the pipeline. Mainly, this can be done by the new API RetryStageExecution with the use of a field from the existing (updated) API GetPielineState's response.
