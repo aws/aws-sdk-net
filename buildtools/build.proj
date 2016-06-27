@@ -280,6 +280,8 @@
     </Target>
 
     <Target Name="build-test-wrapper">
+	    <Exec Command="..\sdk\.nuget\NuGet.exe restore .\TestWrapper\TestWrapper.sln" />
+		
         <MSBuild Projects=".\TestWrapper\TestWrapper.sln"
             Targets="Clean;Build"
             Properties="Configuration=Debug"/>        
