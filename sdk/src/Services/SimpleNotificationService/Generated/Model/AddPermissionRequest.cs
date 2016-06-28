@@ -49,7 +49,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The ARN of the topic whose access control policy you wish to modify.</param>
         /// <param name="label">A unique identifier for the new policy statement.</param>
-        /// <param name="awsAccountId">The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up  for this service. </param>
+        /// <param name="awsAccountId">The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do not need to be signed up for this service. </param>
         /// <param name="actionName">The action you want to allow for the specified principal(s). Valid values: any Amazon SNS action name.</param>
         public AddPermissionRequest(string topicArn, string label, List<string> awsAccountId, List<string> actionName)
         {
@@ -64,7 +64,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// The action you want to allow for the specified principal(s).
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// Valid values: any Amazon SNS action name.
         /// </para>
@@ -85,8 +85,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// Gets and sets the property AWSAccountId. 
         /// <para>
         /// The AWS account IDs of the users (principals) who will be given access to the specified
-        ///    actions. The users must have AWS accounts, but do not need to be signed up    
-        /// for this service. 
+        /// actions. The users must have AWS accounts, but do not need to be signed up for this
+        /// service. 
         /// </para>
         /// </summary>
         public List<string> AWSAccountId

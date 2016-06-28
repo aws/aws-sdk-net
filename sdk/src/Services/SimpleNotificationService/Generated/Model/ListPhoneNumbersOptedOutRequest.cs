@@ -28,34 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTopics operation.
-    /// Returns a list of the requester's topics. Each call returns a limited list of topics,
-    /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
-    /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
-    /// further results.
+    /// Container for the parameters to the ListPhoneNumbersOptedOut operation.
+    /// Returns a list of phone numbers that are opted out, meaning you cannot send SMS messages
+    /// to them.
+    /// 
+    ///  
+    /// <para>
+    /// The results for <code>ListPhoneNumbersOptedOut</code> are paginated, and each page
+    /// returns up to 100 phone numbers. If additional phone numbers are available after the
+    /// first page of results, then a <code>NextToken</code> string will be returned. To receive
+    /// the next page, you call <code>ListPhoneNumbersOptedOut</code> again using the <code>NextToken</code>
+    /// string received from the previous call. When there are no more records to return,
+    /// <code>NextToken</code> will be null.
+    /// </para>
     /// </summary>
-    public partial class ListTopicsRequest : AmazonSimpleNotificationServiceRequest
+    public partial class ListPhoneNumbersOptedOutRequest : AmazonSimpleNotificationServiceRequest
     {
         private string _nextToken;
 
         /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public ListTopicsRequest() { }
-
-        /// <summary>
-        /// Instantiates ListTopicsRequest with the parameterized properties
-        /// </summary>
-        /// <param name="nextToken">Token returned by the previous <code>ListTopics</code> request.</param>
-        public ListTopicsRequest(string nextToken)
-        {
-            _nextToken = nextToken;
-        }
-
-        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token returned by the previous <code>ListTopics</code> request.
+        /// A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code>
+        /// action to retrieve additional records that are available after the first page of results.
         /// </para>
         /// </summary>
         public string NextToken

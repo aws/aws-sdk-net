@@ -28,31 +28,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePlatformApplication operation.
-    /// Deletes a platform application object for one of the supported push notification services,
-    /// such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-    /// Amazon SNS Mobile Push Notifications</a>.
+    /// The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.
     /// </summary>
-    public partial class DeletePlatformApplicationRequest : AmazonSimpleNotificationServiceRequest
+    public partial class CheckIfPhoneNumberIsOptedOutResponse : AmazonWebServiceResponse
     {
-        private string _platformApplicationArn;
+        private bool? _isOptedOut;
 
         /// <summary>
-        /// Gets and sets the property PlatformApplicationArn. 
+        /// Gets and sets the property IsOptedOut. 
         /// <para>
-        /// PlatformApplicationArn of platform application object to delete.
+        /// Indicates whether the phone number is opted out:
         /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>true</code> – The phone number is opted out, meaning you cannot publish SMS
+        /// messages to it.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>false</code> – The phone number is opted in, meaning you can publish SMS messages
+        /// to it.
+        /// </para>
+        /// </li> </ul>
         /// </summary>
-        public string PlatformApplicationArn
+        public bool IsOptedOut
         {
-            get { return this._platformApplicationArn; }
-            set { this._platformApplicationArn = value; }
+            get { return this._isOptedOut.GetValueOrDefault(); }
+            set { this._isOptedOut = value; }
         }
 
-        // Check to see if PlatformApplicationArn property is set
-        internal bool IsSetPlatformApplicationArn()
+        // Check to see if IsOptedOut property is set
+        internal bool IsSetIsOptedOut()
         {
-            return this._platformApplicationArn != null;
+            return this._isOptedOut.HasValue; 
         }
 
     }

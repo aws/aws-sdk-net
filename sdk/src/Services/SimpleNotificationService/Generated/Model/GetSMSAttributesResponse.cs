@@ -28,31 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePlatformApplication operation.
-    /// Deletes a platform application object for one of the supported push notification services,
-    /// such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-    /// Amazon SNS Mobile Push Notifications</a>.
+    /// The response from the <code>GetSMSAttributes</code> request.
     /// </summary>
-    public partial class DeletePlatformApplicationRequest : AmazonSimpleNotificationServiceRequest
+    public partial class GetSMSAttributesResponse : AmazonWebServiceResponse
     {
-        private string _platformApplicationArn;
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property PlatformApplicationArn. 
+        /// Gets and sets the property Attributes. 
         /// <para>
-        /// PlatformApplicationArn of platform application object to delete.
+        /// The SMS attribute names and their values.
         /// </para>
         /// </summary>
-        public string PlatformApplicationArn
+        public Dictionary<string, string> Attributes
         {
-            get { return this._platformApplicationArn; }
-            set { this._platformApplicationArn = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
-        // Check to see if PlatformApplicationArn property is set
-        internal bool IsSetPlatformApplicationArn()
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
         {
-            return this._platformApplicationArn != null;
+            return this._attributes != null && this._attributes.Count > 0; 
         }
 
     }

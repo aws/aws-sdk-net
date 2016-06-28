@@ -28,33 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Response for Publish action.
+    /// The response for the SetSMSAttributes action.
     /// </summary>
-    public partial class PublishResponse : AmazonWebServiceResponse
+    public partial class SetSMSAttributesResponse : AmazonWebServiceResponse
     {
-        private string _messageId;
-
-        /// <summary>
-        /// Gets and sets the property MessageId. 
-        /// <para>
-        /// Unique identifier assigned to the published message.
-        /// </para>
-        ///  
-        /// <para>
-        /// Length Constraint: Maximum 100 characters
-        /// </para>
-        /// </summary>
-        public string MessageId
-        {
-            get { return this._messageId; }
-            set { this._messageId = value; }
-        }
-
-        // Check to see if MessageId property is set
-        internal bool IsSetMessageId()
-        {
-            return this._messageId != null;
-        }
 
     }
 }

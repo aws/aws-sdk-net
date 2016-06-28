@@ -28,31 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePlatformApplication operation.
-    /// Deletes a platform application object for one of the supported push notification services,
-    /// such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-    /// Amazon SNS Mobile Push Notifications</a>.
+    /// Container for the parameters to the CheckIfPhoneNumberIsOptedOut operation.
+    /// Accepts a phone number and indicates whether the phone holder has opted out of receiving
+    /// SMS messages from your account. You cannot send SMS messages to a number that is opted
+    /// out.
+    /// 
+    ///  
+    /// <para>
+    /// To resume sending messages, you can opt in the number by using the <code>OptInPhoneNumber</code>
+    /// action.
+    /// </para>
     /// </summary>
-    public partial class DeletePlatformApplicationRequest : AmazonSimpleNotificationServiceRequest
+    public partial class CheckIfPhoneNumberIsOptedOutRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string _platformApplicationArn;
+        private string _phoneNumber;
 
         /// <summary>
-        /// Gets and sets the property PlatformApplicationArn. 
+        /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// PlatformApplicationArn of platform application object to delete.
+        /// The phone number for which you want to check the opt out status.
         /// </para>
         /// </summary>
-        public string PlatformApplicationArn
+        public string PhoneNumber
         {
-            get { return this._platformApplicationArn; }
-            set { this._platformApplicationArn = value; }
+            get { return this._phoneNumber; }
+            set { this._phoneNumber = value; }
         }
 
-        // Check to see if PlatformApplicationArn property is set
-        internal bool IsSetPlatformApplicationArn()
+        // Check to see if PhoneNumber property is set
+        internal bool IsSetPhoneNumber()
         {
-            return this._platformApplicationArn != null;
+            return this._phoneNumber != null;
         }
 
     }

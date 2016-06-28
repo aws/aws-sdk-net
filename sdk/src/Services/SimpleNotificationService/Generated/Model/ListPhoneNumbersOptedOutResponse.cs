@@ -28,34 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTopics operation.
-    /// Returns a list of the requester's topics. Each call returns a limited list of topics,
-    /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
-    /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
-    /// further results.
+    /// The response from the <code>ListPhoneNumbersOptedOut</code> action.
     /// </summary>
-    public partial class ListTopicsRequest : AmazonSimpleNotificationServiceRequest
+    public partial class ListPhoneNumbersOptedOutResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-
-        /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public ListTopicsRequest() { }
-
-        /// <summary>
-        /// Instantiates ListTopicsRequest with the parameterized properties
-        /// </summary>
-        /// <param name="nextToken">Token returned by the previous <code>ListTopics</code> request.</param>
-        public ListTopicsRequest(string nextToken)
-        {
-            _nextToken = nextToken;
-        }
+        private List<string> _phoneNumbers = new List<string>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token returned by the previous <code>ListTopics</code> request.
+        /// A <code>NextToken</code> string is returned when you call the <code>ListPhoneNumbersOptedOut</code>
+        /// action if additional records are available after the first page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -68,6 +52,25 @@ namespace Amazon.SimpleNotificationService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhoneNumbers. 
+        /// <para>
+        /// A list of phone numbers that are opted out of receiving SMS messages. The list is
+        /// paginated, and each page can contain up to 100 phone numbers.
+        /// </para>
+        /// </summary>
+        public List<string> PhoneNumbers
+        {
+            get { return this._phoneNumbers; }
+            set { this._phoneNumbers = value; }
+        }
+
+        // Check to see if PhoneNumbers property is set
+        internal bool IsSetPhoneNumbers()
+        {
+            return this._phoneNumbers != null && this._phoneNumbers.Count > 0; 
         }
 
     }

@@ -28,31 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePlatformApplication operation.
-    /// Deletes a platform application object for one of the supported push notification services,
-    /// such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-    /// Amazon SNS Mobile Push Notifications</a>.
+    /// Container for the parameters to the OptInPhoneNumber operation.
+    /// Use this request to opt in a phone number that is opted out, which enables you to
+    /// resume sending SMS messages to the number.
+    /// 
+    ///  
+    /// <para>
+    /// You can opt in a phone number only once every 30 days.
+    /// </para>
     /// </summary>
-    public partial class DeletePlatformApplicationRequest : AmazonSimpleNotificationServiceRequest
+    public partial class OptInPhoneNumberRequest : AmazonSimpleNotificationServiceRequest
     {
-        private string _platformApplicationArn;
+        private string _phoneNumber;
 
         /// <summary>
-        /// Gets and sets the property PlatformApplicationArn. 
+        /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// PlatformApplicationArn of platform application object to delete.
+        /// The phone number to opt in.
         /// </para>
         /// </summary>
-        public string PlatformApplicationArn
+        public string PhoneNumber
         {
-            get { return this._platformApplicationArn; }
-            set { this._platformApplicationArn = value; }
+            get { return this._phoneNumber; }
+            set { this._phoneNumber = value; }
         }
 
-        // Check to see if PlatformApplicationArn property is set
-        internal bool IsSetPlatformApplicationArn()
+        // Check to see if PhoneNumber property is set
+        internal bool IsSetPhoneNumber()
         {
-            return this._platformApplicationArn != null;
+            return this._phoneNumber != null;
         }
 
     }

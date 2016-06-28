@@ -28,38 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Response from GetEndpointAttributes of the EndpointArn.
+    /// Container for the parameters to the GetSMSAttributes operation.
+    /// Returns the settings for sending SMS messages from your account.
+    /// 
+    ///  
+    /// <para>
+    /// These settings are set with the <code>SetSMSAttributes</code> action.
+    /// </para>
     /// </summary>
-    public partial class GetEndpointAttributesResponse : AmazonWebServiceResponse
+    public partial class GetSMSAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private List<string> _attributes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Attributes include the following:
+        /// A list of the individual attribute names, such as <code>MonthlySpendLimit</code>,
+        /// for which you want values.
         /// </para>
-        ///  <ul> <li>
+        ///  
         /// <para>
-        /// <code>CustomUserData</code> -- arbitrary user data to associate with the endpoint.
-        /// Amazon SNS does not use this data. The data must be in UTF-8 format and less than
-        /// 2KB.
+        /// For all attribute names, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.
         /// </para>
-        /// </li> <li>
+        ///  
         /// <para>
-        /// <code>Enabled</code> -- flag that enables/disables delivery to the endpoint. Amazon
-        /// SNS will set this to false when a notification service indicates to Amazon SNS that
-        /// the endpoint is invalid. Users can set it back to true, typically after updating Token.
+        /// If you don't use this parameter, Amazon SNS returns all SMS attributes.
         /// </para>
-        /// </li> <li>
-        /// <para>
-        /// <code>Token</code> -- device token, also referred to as a registration id, for an
-        /// app and mobile device. This is returned from the notification service when an app
-        /// and mobile device are registered with the notification service.
-        /// </para>
-        /// </li> </ul>
         /// </summary>
-        public Dictionary<string, string> Attributes
+        public List<string> Attributes
         {
             get { return this._attributes; }
             set { this._attributes = value; }
