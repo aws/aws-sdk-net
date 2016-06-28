@@ -89,23 +89,22 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "1\" />\r\n        <dependency id=\"System.Reflection.Extensions\" version=\"4.0.1\" />\r" +
                     "\n        <dependency id=\"System.Runtime.Extensions\" version=\"4.1.0\" />\r\n        " +
                     "<dependency id=\"System.Runtime.InteropServices\" version=\"4.1.0\" />\r\n        <dep" +
-                    "endency id=\"System.Runtime.InteropServices.PInvoke\" version=\"4.0.0-rc2-24027\" />" +
-                    "\r\n        <dependency id=\"System.Security.Cryptography.Algorithms\" version=\"4.2." +
-                    "0\" />\r\n        <dependency id=\"System.Text.Encoding.Extensions\" version=\"4.0.11\"" +
-                    " />\r\n        <dependency id=\"System.Text.RegularExpressions\" version=\"4.1.0\" />\r" +
-                    "\n        <dependency id=\"System.Threading\" version=\"4.0.11\" />\r\n        <depende" +
-                    "ncy id=\"System.Threading.Thread\" version=\"4.0.0\" />\r\n        <dependency id=\"Sys" +
-                    "tem.Xml.XDocument\" version=\"4.0.11\" />\r\n        <dependency id=\"Microsoft.CSharp" +
-                    "\" version=\"4.0.1\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <fi" +
-                    "les>\r\n\r\n    <file src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools" +
-                    "\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35\" /" +
-                    ">\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r\n  " +
-                    "  <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n    <" +
-                    "file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <file " +
-                    "src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <file src=\"" +
-                    ".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n");
+                    "endency id=\"System.Security.Cryptography.Algorithms\" version=\"4.2.0\" />\r\n       " +
+                    " <dependency id=\"System.Text.Encoding.Extensions\" version=\"4.0.11\" />\r\n        <" +
+                    "dependency id=\"System.Text.RegularExpressions\" version=\"4.1.0\" />\r\n        <depe" +
+                    "ndency id=\"System.Threading\" version=\"4.0.11\" />\r\n        <dependency id=\"System" +
+                    ".Threading.Thread\" version=\"4.0.0\" />\r\n        <dependency id=\"System.Xml.XDocum" +
+                    "ent\" version=\"4.0.11\" />\r\n        <dependency id=\"Microsoft.CSharp\" version=\"4.0" +
+                    ".1\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n\r\n    <f" +
+                    "ile src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n    <f" +
+                    "ile src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35\" />\r\n    <file s" +
+                    "rc=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r\n    <file src=\"." +
+                    "\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src=\".\\bi" +
+                    "n\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Rel" +
+                    "ease\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\" +
+                    "net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n");
             
-            #line 72 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 71 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -136,7 +135,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.xml\" target=\"lib\\wp8\" />\r\n    <fi" +
                     "le src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r\n\r\n");
             
-            #line 102 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 101 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	}
 
