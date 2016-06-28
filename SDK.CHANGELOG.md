@@ -1,3 +1,11 @@
+### 3.1.79.0 (2016-06-28 01:36 UTC)
+* S3 (3.1.8.0)
+	* Updated to use new Core, version 3.1.8.0
+	* Added support for BOM region.
+* Core 3.1.8.0
+	* Added support for BOM region.
+	* all services packages updated to require new core
+
 ### 3.1.78.0 (2016-06-23 21:11 UTC)
 * CognitoIdentity (3.1.1.0)
 	* API update for role customization

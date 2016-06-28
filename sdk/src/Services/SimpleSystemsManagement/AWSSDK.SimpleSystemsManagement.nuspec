@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SimpleSystemsManagement</id>
     <title>AWSSDK - Amazon Simple Systems Management Service</title>
-    <version>3.1.2.2</version> 
+    <version>3.1.2.3</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
