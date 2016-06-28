@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// This object provides description of a file system.
+    /// Description of the file system.
     /// </summary>
     public partial class CreateFileSystemResponse : AmazonWebServiceResponse
     {
@@ -39,12 +39,13 @@ namespace Amazon.ElasticFileSystem.Model
         private string _name;
         private int? _numberOfMountTargets;
         private string _ownerId;
+        private PerformanceMode _performanceMode;
         private FileSystemSize _sizeInBytes;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time at which the file system was created, in seconds, since 1970-01-01T00:00:00Z.
+        /// Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -62,7 +63,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property CreationToken. 
         /// <para>
-        /// Opaque string specified in the request. 
+        /// Opaque string specified in the request.
         /// </para>
         /// </summary>
         public string CreationToken
@@ -80,7 +81,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The file system ID assigned by Amazon EFS.
+        /// ID of the file system, assigned by Amazon EFS.
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -98,7 +99,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property LifeCycleState. 
         /// <para>
-        /// A predefined string value that indicates the lifecycle phase of the file system. 
+        /// Lifecycle phase of the file system.
         /// </para>
         /// </summary>
         public LifeCycleState LifeCycleState
@@ -116,8 +117,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// You can add tags to a file system (see <a>CreateTags</a>) including a "Name" tag.
-        /// If the file system has a "Name" tag, Amazon EFS returns the value in this field. 
+        /// You can add tags to a file system, including a <code>Name</code> tag. For more information,
+        /// see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS
+        /// returns the value in this field. 
         /// </para>
         /// </summary>
         public string Name
@@ -135,8 +137,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NumberOfMountTargets. 
         /// <para>
-        /// The current number of mount targets (see <a>CreateMountTarget</a>) the file system
-        /// has.
+        /// Current number of mount targets that the file system has. For more information, see
+        /// <a>CreateMountTarget</a>.
         /// </para>
         /// </summary>
         public int NumberOfMountTargets
@@ -154,8 +156,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account that created the file system. If the file system was created by an
-        /// IAM user, the parent account to which the user belongs is the owner.
+        /// AWS account that created the file system. If the file system was created by an IAM
+        /// user, the parent account to which the user belongs is the owner.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -171,11 +173,29 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PerformanceMode. 
+        /// <para>
+        /// The <code>PerformanceMode</code> of the file system.
+        /// </para>
+        /// </summary>
+        public PerformanceMode PerformanceMode
+        {
+            get { return this._performanceMode; }
+            set { this._performanceMode = value; }
+        }
+
+        // Check to see if PerformanceMode property is set
+        internal bool IsSetPerformanceMode()
+        {
+            return this._performanceMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SizeInBytes. 
         /// <para>
-        ///  This object provides the latest known metered size of data stored in the file system,
-        /// in bytes, in its <code>Value</code> field, and the time at which that size was determined
-        /// in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer
+        /// Latest known metered size (in bytes) of data stored in the file system, in bytes,
+        /// in its <code>Value</code> field, and the time at which that size was determined in
+        /// its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer
         /// number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent
         /// the size of a consistent snapshot of the file system, but it is eventually consistent
         /// when there are no writes to the file system. That is, the value will represent actual
