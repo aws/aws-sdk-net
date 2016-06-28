@@ -1,3 +1,19 @@
+### 3.1.80.0 (2016-06-28 22:44 UTC)
+* CloudWatchEvents (3.1.2.0)
+	* Update for new BOM region
+* EC2 (3.1.18.0)
+	* Enable ENA supported instances
+* ElasticFileSystem (3.1.2.0)
+	* Added support for PerformanceMode property
+* GameLift (3.1.1.0)
+	* Support for Multi-Process Support
+* IoT (3.1.6.0)
+	* Added support for Operation property in DynamoDBAction
+* Route53 (3.1.5.0)
+	* Update for new BOM region
+* SimpleNotificationService (3.1.1.0)
+	* Updated support for SMS
+
 ### 3.1.79.0 (2016-06-28 01:36 UTC)
 * S3 (3.1.8.0)
 	* Updated to use new Core, version 3.1.8.0
