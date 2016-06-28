@@ -33,17 +33,12 @@ namespace Amazon.Route53.Model
     /// request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
     /// resource.
     /// 
-    ///  
-    /// <para>
-    /// For more information about deleting a hosted zone, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Deleting
-    /// a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
-    /// </para>
-    ///  <important> You can delete a hosted zone only if there are no resource record sets
+    ///  <important>You can delete a hosted zone only if there are no resource record sets
     /// other than the default SOA record and NS resource record sets. If your hosted zone
     /// contains other resource record sets, you must delete them before you can delete your
     /// hosted zone. If you try to delete a hosted zone that contains other resource record
     /// sets, Amazon Route 53 will deny your request with a <code>HostedZoneNotEmpty</code>
-    /// error. For information about deleting records from your hosted zone, see <a>ChangeResourceRecordSets</a>.</important>
+    /// error. For information about deleting records from your hosted zone, see <code>ChangeResourceRecordSets</code>.</important>
     /// </summary>
     public partial class DeleteHostedZoneRequest : AmazonRoute53Request
     {

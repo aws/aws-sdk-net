@@ -104,10 +104,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// Indicates where to continue listing hosted zones. If <a>ListHostedZonesResponse$IsTruncated</a>
-        /// is <code>true</code>, make another request to <code>ListHostedZones</code> and include
-        /// the value of the <code>NextMarker</code> element in the <code>Marker</code> element
-        /// to get the next page of results.
+        /// Indicates where to continue listing hosted zones. If <code>IsTruncated</code> is <code>true</code>,
+        /// make another request to <code>ListHostedZones</code> and include the value of the
+        /// <code>NextMarker</code> element in the <code>Marker</code> element to get the next
+        /// page of results.
         /// </para>
         /// </summary>
         public string NextMarker
@@ -127,9 +127,9 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The maximum number of hosted zones to be included in the response body. If the number
         /// of hosted zones associated with this AWS account exceeds <code>MaxItems</code>, the
-        /// value of <a>ListHostedZonesResponse$IsTruncated</a> in the response is <code>true</code>.
-        /// Call <code>ListHostedZones</code> again and specify the value of <a>ListHostedZonesResponse$NextMarker</a>
-        /// in the <a>ListHostedZonesRequest$Marker</a> element to get the next page of results.
+        /// value of <code>IsTruncated</code> in the response is <code>true</code>. Call <code>ListHostedZones</code>
+        /// again and specify the value of <code>NextMarker</code> in the <code>Marker</code>
+        /// parameter to get the next page of results.
         /// </para>
         /// </summary>
         public string MaxItems

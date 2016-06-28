@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model
     ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
     /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
     /// that are specified in the traffic policy definition. For more information, see the
-    /// <a>State</a> response element. </note>
+    /// <code>State</code> response element.</note>
     /// </summary>
     public partial class GetTrafficPolicyInstanceRequest : AmazonRoute53Request
     {

@@ -63,7 +63,17 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateZone.
+        /// Gets and sets the property PrivateZone. 
+        /// <para>
+        /// <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A Boolean value
+        /// that indicates whether a hosted zone is private.
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>CreateHostedZone</code> requests: When you're creating a private hosted zone
+        /// (when you specify values for VPCId and VPCRegion), you can optionally specify true
+        /// for PrivateZone. 
+        /// </para>
         /// </summary>
         public bool PrivateZone
         {
