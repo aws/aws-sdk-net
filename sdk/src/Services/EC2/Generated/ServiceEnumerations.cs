@@ -1807,6 +1807,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceAttributeName EbsOptimized = new InstanceAttributeName("ebsOptimized");
         /// <summary>
+        /// Constant EnaSupport for InstanceAttributeName
+        /// </summary>
+        public static readonly InstanceAttributeName EnaSupport = new InstanceAttributeName("enaSupport");
+        /// <summary>
         /// Constant GroupSet for InstanceAttributeName
         /// </summary>
         public static readonly InstanceAttributeName GroupSet = new InstanceAttributeName("groupSet");

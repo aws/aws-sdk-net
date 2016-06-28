@@ -113,6 +113,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetEnaSupport())
+                {
+                    request.Parameters.Add("EnaSupport", StringUtils.FromBool(publicRequest.EnaSupport));
+                }
                 if(publicRequest.IsSetImageLocation())
                 {
                     request.Parameters.Add("ImageLocation", StringUtils.FromString(publicRequest.ImageLocation));

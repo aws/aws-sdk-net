@@ -101,6 +101,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EbsOptimized.Value", StringUtils.FromBool(publicRequest.EbsOptimized));
                 }
+                if(publicRequest.IsSetEnaSupport())
+                {
+                    request.Parameters.Add("EnaSupport.Value", StringUtils.FromBool(publicRequest.EnaSupport));
+                }
                 if(publicRequest.IsSetGroups())
                 {
                     int publicRequestlistValueIndex = 1;

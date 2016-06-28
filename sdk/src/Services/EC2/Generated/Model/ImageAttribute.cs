@@ -168,7 +168,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SriovNetSupport.
+        /// Gets and sets the property SriovNetSupport. 
+        /// <para>
+        /// Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
+        /// is enabled.
+        /// </para>
         /// </summary>
         public string SriovNetSupport
         {

@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
+        private bool? _enaSupport;
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
         private string _instanceId;
         private string _instanceInitiatedShutdownBehavior;
@@ -100,6 +101,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEbsOptimized()
         {
             return this._ebsOptimized.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaSupport. 
+        /// <para>
+        /// Indicates whether enhanced networking with ENA is enabled.
+        /// </para>
+        /// </summary>
+        public bool EnaSupport
+        {
+            get { return this._enaSupport.GetValueOrDefault(); }
+            set { this._enaSupport = value; }
+        }
+
+        // Check to see if EnaSupport property is set
+        internal bool IsSetEnaSupport()
+        {
+            return this._enaSupport.HasValue; 
         }
 
         /// <summary>
@@ -268,7 +287,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SriovNetSupport.
+        /// Gets and sets the property SriovNetSupport. 
+        /// <para>
+        /// Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
+        /// is enabled.
+        /// </para>
         /// </summary>
         public string SriovNetSupport
         {

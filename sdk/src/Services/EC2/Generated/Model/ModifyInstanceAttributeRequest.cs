@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private List<InstanceBlockDeviceMappingSpecification> _blockDeviceMappings = new List<InstanceBlockDeviceMappingSpecification>();
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
+        private bool? _enaSupport;
         private List<string> _groups = new List<string>();
         private string _instanceId;
         private string _instanceInitiatedShutdownBehavior;
@@ -156,6 +157,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetEbsOptimized()
         {
             return this._ebsOptimized.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaSupport. 
+        /// <para>
+        /// Set to <code>true</code> to enable enhanced networking with ENA for the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This option is supported only for HVM instances. Specifying this option with a PV
+        /// instance can make it unreachable.
+        /// </para>
+        /// </summary>
+        public bool EnaSupport
+        {
+            get { return this._enaSupport.GetValueOrDefault(); }
+            set { this._enaSupport = value; }
+        }
+
+        // Check to see if EnaSupport property is set
+        internal bool IsSetEnaSupport()
+        {
+            return this._enaSupport.HasValue; 
         }
 
         /// <summary>
@@ -295,11 +319,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SriovNetSupport. 
         /// <para>
-        /// Set to <code>simple</code> to enable enhanced networking for the instance.
+        /// Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual
+        /// Function interface for the instance.
         /// </para>
         ///  
         /// <para>
-        /// There is no way to disable enhanced networking at this time.
+        /// There is no way to disable enhanced networking with the Intel 82599 Virtual Function
+        /// interface at this time.
         /// </para>
         ///  
         /// <para>

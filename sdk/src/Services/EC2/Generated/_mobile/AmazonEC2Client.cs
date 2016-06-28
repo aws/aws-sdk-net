@@ -3478,6 +3478,13 @@ namespace Amazon.EC2
         /// Recently terminated instances might appear in the returned results. This interval
         /// is usually less than one hour.
         /// </para>
+        ///  
+        /// <para>
+        /// If you describe instances in the rare case where an Availability Zone is experiencing
+        /// a service disruption and you specify instance IDs that are in the affected zone, or
+        /// do not specify any instance IDs at all, the call fails. If you describe instances
+        /// and specify only instance IDs that are in an unaffected zone, the call works normally.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
