@@ -76,6 +76,24 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.DESIRED = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IDLE", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.IDLE = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MAXIMUM", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MAXIMUM = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MINIMUM", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MINIMUM = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PENDING", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -30,9 +30,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DescribePlayerSessions operation.
     /// Retrieves properties for one or more player sessions. This action can be used in several
-    /// ways: (1) provide a <i>PlayerSessionId</i> parameter to request properties for a specific
-    /// player session; (2) provide a <i>GameSessionId</i> parameter to request properties
-    /// for all player sessions in the specified game session; (3) provide a <i>PlayerId</i>
+    /// ways: (1) provide a <code>PlayerSessionId</code> parameter to request properties for
+    /// a specific player session; (2) provide a <code>GameSessionId</code> parameter to request
+    /// properties for all player sessions in the specified game session; (3) provide a <code>PlayerId</code>
     /// parameter to request properties for all player sessions of a specified player. 
     /// 
     ///  
@@ -74,7 +74,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. You can use this parameter with <i>NextToken</i>
+        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages. If a player session ID is specified,
         /// this parameter is ignored.
         /// </para>
@@ -151,13 +151,13 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerSessionStatusFilter. 
         /// <para>
-        /// Player session status to filter results on. Possible player session states include:
-        /// <ul><li>RESERVED: The player session request has been received, but the player has
-        /// not yet connected to the game server and/or been validated. </li><li>ACTIVE: The player
-        /// has been validated by the game server and is currently connected.</li><li>COMPLETED:
-        /// The player connection has been dropped.</li><li>TIMEDOUT: A player session request
-        /// was received, but the player did not connect and/or was not validated within the time-out
-        /// limit (60 seconds).</li></ul>
+        /// Player session status to filter results on. Possible player session states include
+        /// the following: <ul><li><b>RESERVED</b> – The player session request has been received,
+        /// but the player has not yet connected to the server process and/or been validated.
+        /// </li><li><b>ACTIVE</b> – The player has been validated by the server process and is
+        /// currently connected.</li><li><b>COMPLETED</b> – The player connection has been dropped.</li><li><b>TIMEDOUT</b>
+        /// – A player session request was received, but the player did not connect and/or was
+        /// not validated within the time-out limit (60 seconds).</li></ul>
         /// </para>
         /// </summary>
         public string PlayerSessionStatusFilter

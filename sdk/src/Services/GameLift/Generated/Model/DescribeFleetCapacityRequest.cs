@@ -32,17 +32,17 @@ namespace Amazon.GameLift.Model
     /// Retrieves the current status of fleet capacity for one or more fleets. This information
     /// includes the number of instances that have been requested for the fleet and the number
     /// currently active. You can request capacity for all fleets, or specify a list of one
-    /// or more fleet IDs. When requesting all fleets, use the pagination parameters to retrieve
-    /// results as a set of sequential pages. If successful, a <a>FleetCapacity</a> object
-    /// is returned for each requested fleet ID. When specifying a list of fleet IDs, attribute
-    /// objects are returned only for fleets that currently exist. 
+    /// or more fleet IDs. When requesting multiple fleets, use the pagination parameters
+    /// to retrieve results as a set of sequential pages. If successful, a <a>FleetCapacity</a>
+    /// object is returned for each requested fleet ID. When specifying a list of fleet IDs,
+    /// attribute objects are returned only for fleets that currently exist. 
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
     /// exceeds this limit, the request fails and the error message includes the maximum allowed.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class DescribeFleetCapacityRequest : AmazonGameLiftRequest
     {
@@ -54,7 +54,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetIds. 
         /// <para>
         /// Unique identifier for the fleet(s) you want to retrieve capacity information for.
-        /// 
+        /// To request capacity information for all fleets, leave this parameter empty.
         /// </para>
         /// </summary>
         public List<string> FleetIds
@@ -72,7 +72,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. You can use this parameter with <i>NextToken</i>
+        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages. This parameter is ignored when the request
         /// specifies one or a list of fleet IDs.
         /// </para>

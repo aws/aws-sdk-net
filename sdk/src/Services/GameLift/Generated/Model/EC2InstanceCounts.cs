@@ -37,6 +37,9 @@ namespace Amazon.GameLift.Model
     {
         private int? _active;
         private int? _desired;
+        private int? _idle;
+        private int? _maximum;
+        private int? _minimum;
         private int? _pending;
         private int? _terminating;
 
@@ -74,6 +77,60 @@ namespace Amazon.GameLift.Model
         internal bool IsSetDESIRED()
         {
             return this._desired.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IDLE. 
+        /// <para>
+        /// Number of active instances in the fleet that are not currently hosting a game session.
+        /// </para>
+        /// </summary>
+        public int IDLE
+        {
+            get { return this._idle.GetValueOrDefault(); }
+            set { this._idle = value; }
+        }
+
+        // Check to see if IDLE property is set
+        internal bool IsSetIDLE()
+        {
+            return this._idle.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MAXIMUM. 
+        /// <para>
+        /// Maximum value allowed for the fleet's instance count.
+        /// </para>
+        /// </summary>
+        public int MAXIMUM
+        {
+            get { return this._maximum.GetValueOrDefault(); }
+            set { this._maximum = value; }
+        }
+
+        // Check to see if MAXIMUM property is set
+        internal bool IsSetMAXIMUM()
+        {
+            return this._maximum.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MINIMUM. 
+        /// <para>
+        /// Minimum value allowed for the fleet's instance count.
+        /// </para>
+        /// </summary>
+        public int MINIMUM
+        {
+            get { return this._minimum.GetValueOrDefault(); }
+            set { this._minimum = value; }
+        }
+
+        // Check to see if MINIMUM property is set
+        internal bool IsSetMINIMUM()
+        {
+            return this._minimum.HasValue; 
         }
 
         /// <summary>

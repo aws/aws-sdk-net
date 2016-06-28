@@ -87,6 +87,15 @@
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.DeleteScalingPolicyRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DeleteScalingPolicyRequest.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeAliasRequest.AliasId</property>
     <pattern>^alias-\S+</pattern>
   </property-value-rule>
@@ -159,6 +168,37 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.AliasId</property>
+    <pattern>^alias-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.GameSessionId</property>
+    <pattern>^(gamei-|gsess-)\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.Limit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.StatusFilter</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeGameSessionDetailsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionsRequest.AliasId</property>
     <pattern>^alias-\S+</pattern>
   </property-value-rule>
@@ -222,6 +262,28 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeRuntimeConfigurationRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeScalingPoliciesRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeScalingPoliciesRequest.Limit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeScalingPoliciesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeScalingPoliciesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GetGameSessionLogUrlRequest.GameSessionId</property>
     <pattern>^(gamei-|gsess-)\S+</pattern>
   </property-value-rule>
@@ -273,6 +335,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ListFleetsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PutScalingPolicyRequest.EvaluationPeriods</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PutScalingPolicyRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PutScalingPolicyRequest.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PutScalingPolicyResponse.Name</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -343,6 +423,14 @@
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateFleetCapacityRequest.MaxSize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateFleetCapacityRequest.MinSize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateFleetCapacityResponse.FleetId</property>
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
@@ -366,6 +454,10 @@
     <property>Amazon.GameLift.Model.UpdateGameSessionRequest.Name</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.UpdateRuntimeConfigurationRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Alias.AliasId</property>
@@ -401,6 +493,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.EC2InstanceCounts.DESIRED</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.EC2InstanceCounts.IDLE</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.EC2InstanceCounts.MAXIMUM</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.EC2InstanceCounts.MINIMUM</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
@@ -474,6 +578,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.FleetUtilization.ActiveServerProcessCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.FleetUtilization.CurrentPlayerSessionCount</property>
     <min>0</min>
   </property-value-rule>
@@ -513,6 +621,11 @@
     <property>Amazon.GameLift.Model.GameSession.Name</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSession.Port</property>
+    <min>1025</min>
+    <max>60000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionFullException.Message</property>
@@ -574,6 +687,11 @@
     <pattern>^psess-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerSession.Port</property>
+    <min>1025</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.RoutingStrategy.FleetId</property>
     <pattern>^fleet-\S+</pattern>
   </property-value-rule>
@@ -584,6 +702,37 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.S3Location.Key</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.S3Location.RoleArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ScalingPolicy.EvaluationPeriods</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ScalingPolicy.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ScalingPolicy.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ServerProcess.ConcurrentExecutions</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ServerProcess.LaunchPath</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ServerProcess.Parameters</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.TerminalRoutingStrategyException.Message</property>

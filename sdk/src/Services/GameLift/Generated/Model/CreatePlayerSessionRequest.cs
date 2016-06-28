@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreatePlayerSession operation.
     /// Adds a player to a game session and creates a player session record. A game session
-    /// must be in an ACTIVE state, have a creation policy of ALLOW_ALL, and have an open
-    /// player slot before players can be added to the session.
+    /// must be in an <code>ACTIVE</code> state, have a creation policy of <code>ALLOW_ALL</code>,
+    /// and have an open player slot before players can be added to the session.
     /// 
     ///  
     /// <para>

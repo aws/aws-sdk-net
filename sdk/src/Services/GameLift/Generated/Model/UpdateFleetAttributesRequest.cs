@@ -38,11 +38,12 @@ namespace Amazon.GameLift.Model
         private string _description;
         private string _fleetId;
         private string _name;
+        private ProtectionPolicy _newGameSessionProtectionPolicy;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Human-readable description of the fleet.
+        /// Human-readable description of a fleet.
         /// </para>
         /// </summary>
         public string Description
@@ -78,7 +79,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this fleet. Fleet names do not need to be unique.
+        /// Descriptive label associated with a fleet. Fleet names do not need to be unique.
         /// </para>
         /// </summary>
         public string Name
@@ -91,6 +92,29 @@ namespace Amazon.GameLift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NewGameSessionProtectionPolicy. 
+        /// <para>
+        /// Game session protection policy to apply to all new instances created in this fleet.
+        /// Instances that already exist are not affected. You can set protection for individual
+        /// instances using <a>UpdateGameSession</a>. <ul><li><b>NoProtection</b> – The game session
+        /// can be terminated during a scale-down event.</li> <li><b>FullProtection</b> – If the
+        /// game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+        /// scale-down event.</li></ul>
+        /// </para>
+        /// </summary>
+        public ProtectionPolicy NewGameSessionProtectionPolicy
+        {
+            get { return this._newGameSessionProtectionPolicy; }
+            set { this._newGameSessionProtectionPolicy = value; }
+        }
+
+        // Check to see if NewGameSessionProtectionPolicy property is set
+        internal bool IsSetNewGameSessionProtectionPolicy()
+        {
+            return this._newGameSessionProtectionPolicy != null;
         }
 
     }

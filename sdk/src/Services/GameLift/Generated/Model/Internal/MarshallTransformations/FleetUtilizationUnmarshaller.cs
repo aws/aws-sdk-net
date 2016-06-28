@@ -70,6 +70,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActiveGameSessionCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ActiveServerProcessCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ActiveServerProcessCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CurrentPlayerSessionCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

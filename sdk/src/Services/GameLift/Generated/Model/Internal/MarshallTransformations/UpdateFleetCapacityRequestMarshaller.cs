@@ -79,6 +79,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FleetId);
                 }
 
+                if(publicRequest.IsSetMaxSize())
+                {
+                    context.Writer.WritePropertyName("MaxSize");
+                    context.Writer.Write(publicRequest.MaxSize);
+                }
+
+                if(publicRequest.IsSetMinSize())
+                {
+                    context.Writer.WritePropertyName("MinSize");
+                    context.Writer.Write(publicRequest.MinSize);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

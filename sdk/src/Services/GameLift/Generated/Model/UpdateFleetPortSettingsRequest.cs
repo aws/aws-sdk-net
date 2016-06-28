@@ -31,9 +31,10 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the UpdateFleetPortSettings operation.
     /// Updates port settings for a fleet. To update settings, specify the fleet ID to be
     /// updated and list the permissions you want to update. List the permissions you want
-    /// to add in <i>InboundPermissionAuthorizations</i>, and permissions you want to remove
-    /// in <i>InboundPermissionRevocations</i>. Permissions to be removed must match existing
-    /// fleet permissions. If successful, the fleet ID for the updated fleet is returned.
+    /// to add in <code>InboundPermissionAuthorizations</code>, and permissions you want to
+    /// remove in <code>InboundPermissionRevocations</code>. Permissions to be removed must
+    /// match existing fleet permissions. If successful, the fleet ID for the updated fleet
+    /// is returned.
     /// </summary>
     public partial class UpdateFleetPortSettingsRequest : AmazonGameLiftRequest
     {

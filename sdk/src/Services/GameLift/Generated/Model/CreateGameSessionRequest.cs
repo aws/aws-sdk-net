@@ -30,9 +30,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreateGameSession operation.
     /// Creates a multiplayer game session for players. This action creates a game session
-    /// record and assigns the new session to an instance in the specified fleet, which activates
-    /// the server initialization process in your game server. A fleet must be in an ACTIVE
-    /// state before a game session can be created for it.
+    /// record and assigns the new session to an instance in the specified fleet, which initializes
+    /// a new server process to host the game session. A fleet must be in an <code>ACTIVE</code>
+    /// state before a game session can be created in it.
     /// 
     ///  
     /// <para>
@@ -94,7 +94,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameProperties. 
         /// <para>
         /// Set of properties used to administer a game session. These properties are passed to
-        /// your game server.
+        /// the server process hosting it. 
         /// </para>
         /// </summary>
         public List<GameProperty> GameProperties
@@ -131,8 +131,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this game session. Session names do not need to
-        /// be unique.
+        /// Descriptive label associated with a game session. Session names do not need to be
+        /// unique.
         /// </para>
         /// </summary>
         public string Name

@@ -33,13 +33,13 @@ namespace Amazon.GameLift.Model
     /// a game session is terminated, Amazon GameLift automatically stores the logs in Amazon
     /// S3. Use this URL to download the logs.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// See the <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
     /// Service Limits</a> page for maximum log file sizes. Log files that exceed this limit
     /// are not saved.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class GetGameSessionLogUrlRequest : AmazonGameLiftRequest
     {
