@@ -63,6 +63,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HashKeyValue);
             }
 
+            if(requestObject.IsSetOperation())
+            {
+                context.Writer.WritePropertyName("operation");
+                context.Writer.Write(requestObject.Operation);
+            }
+
             if(requestObject.IsSetPayloadField())
             {
                 context.Writer.WritePropertyName("payloadField");

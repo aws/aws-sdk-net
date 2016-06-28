@@ -82,6 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.HashKeyValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("operation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Operation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("payloadField", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
