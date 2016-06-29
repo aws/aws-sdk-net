@@ -67,7 +67,7 @@ namespace Amazon.CloudFront
                                                 string keyPairId,
                                                 DateTime expiresOn)
         {
-            using (var reader = new StreamReader(privateKey.FullName))
+            using (var reader = new StreamReader(File.OpenRead(privateKey.FullName)))
             {
                 return GetCookiesForCannedPolicy(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn);
             }
@@ -118,7 +118,7 @@ namespace Amazon.CloudFront
                                            FileSystemInfo privateKey,
                                            DateTime expiresOn)
         {
-            using (var reader = new StreamReader(privateKey.FullName))
+            using (var reader = new StreamReader(File.OpenRead(privateKey.FullName)))
             {
                 return GetCookiesForCannedPolicy(resourceUrlOrPath, keyPairId, reader, expiresOn);
             }
@@ -189,7 +189,7 @@ namespace Amazon.CloudFront
                                                 DateTime activeFrom,
                                                 string ipRange)
         {
-            using (var reader = new StreamReader(privateKey.FullName))
+            using (var reader = new StreamReader(File.OpenRead(privateKey.FullName)))
             {
                 return GetCookiesForCustomPolicy(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn, activeFrom, ipRange);
             }

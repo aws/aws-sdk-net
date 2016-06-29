@@ -58,7 +58,7 @@ namespace Amazon.CloudFront
                                                 string keyPairId,
                                                 DateTime expiresOn)
         {
-            using (StreamReader reader = new StreamReader(privateKey.FullName))
+            using (StreamReader reader = new StreamReader(File.OpenRead(privateKey.FullName)))
             {
                 return GetCannedSignedURL(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn);
             }
@@ -123,7 +123,7 @@ namespace Amazon.CloudFront
                                                 DateTime activeFrom,
                                                 string ipRange)
         {
-            using (StreamReader reader = new StreamReader(privateKey.FullName))
+            using (StreamReader reader = new StreamReader(File.OpenRead(privateKey.FullName)))
             {
                 return GetCustomSignedURL(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn, activeFrom, ipRange);
             }
@@ -238,7 +238,7 @@ namespace Amazon.CloudFront
         /// <returns>A signed URL that will permit access to distribution and resource path as specified in the policy document.</returns>
         public static string SignUrl(string resourceUrlOrPath, string keyPairId, FileInfo privateKey, string policy)
         {
-            using (StreamReader reader = new StreamReader(privateKey.FullName))
+            using (StreamReader reader = new StreamReader(File.OpenRead(privateKey.FullName)))
             {
                 return SignUrl(resourceUrlOrPath, keyPairId, reader, policy);
             }
@@ -299,7 +299,7 @@ namespace Amazon.CloudFront
                                            FileInfo privateKey,
                                            DateTime expiresOn)
         {
-            using (StreamReader reader = new StreamReader(privateKey.FullName))
+            using (StreamReader reader = new StreamReader(File.OpenRead(privateKey.FullName)))
             {
                 return SignUrlCanned(resourceUrlOrPath, keyPairId, reader, expiresOn);
             }
@@ -507,18 +507,13 @@ namespace Amazon.CloudFront
         /// </summary>
         internal static byte[] SignWithSha1RSA(byte[] dataToSign, RSAParameters rsaParameters)
         {
-            using (SHA1CryptoServiceProvider cryptoSHA1 = new SHA1CryptoServiceProvider())
+            using (SHA1 cryptoSHA1 = GetSHA1Provider())
             {
                 RSACryptoServiceProvider providerRSA = new RSACryptoServiceProvider();
                 providerRSA.ImportParameters(rsaParameters);
 
                 byte[] hashedData = cryptoSHA1.ComputeHash(dataToSign);
-
-                // Format the RSACryptoServiceProvider providerRSA and create the signature.
-                RSAPKCS1SignatureFormatter rsaFormatter = new RSAPKCS1SignatureFormatter(providerRSA);
-                rsaFormatter.SetHashAlgorithm("SHA1");
-                byte[] signedPolicyHash = rsaFormatter.CreateSignature(hashedData);
-                return signedPolicyHash;
+                return GetRSAPKCS1SignatureFromSHA1(hashedData, providerRSA);
             }
         }
 
@@ -536,8 +531,28 @@ namespace Amazon.CloudFront
 
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
             rsa.ImportParameters(rsaParams);
-
             return rsaParams;
+        }
+
+        private static SHA1 GetSHA1Provider()
+        {
+#if CORECLR
+            return SHA1.Create();
+#else
+            return new SHA1CryptoServiceProvider();
+#endif
+        }
+
+        private static byte[] GetRSAPKCS1SignatureFromSHA1(byte[] hashedData, RSA providerRSA)
+        {
+            // Format the RSACryptoServiceProvider and create the signature.
+#if CORECLR
+            return providerRSA.SignHash(hashedData, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+#else
+            RSAPKCS1SignatureFormatter rsaFormatter = new RSAPKCS1SignatureFormatter(providerRSA);
+            rsaFormatter.SetHashAlgorithm("SHA1");
+            return rsaFormatter.CreateSignature(hashedData);
+#endif
         }
     }
 }
