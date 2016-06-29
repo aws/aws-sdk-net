@@ -79,7 +79,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Human-readable description of the alias.
+        /// Human-readable description of an alias.
         /// </para>
         /// </summary>
         public string Description
@@ -116,7 +116,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this alias. Alias names do not need to be unique.
+        /// Descriptive label associated with an alias. Alias names do not need to be unique.
         /// </para>
         /// </summary>
         public string Name

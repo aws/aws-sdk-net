@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code>
+        ///  <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code>
         /// | <code>RestoringToClassic</code>).
         /// </para>
         ///  </li> </ul>

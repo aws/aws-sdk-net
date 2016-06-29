@@ -34,15 +34,37 @@ namespace Amazon.CognitoIdentity.Model
     /// it will be passed through to AWS Security Token Service with the appropriate role
     /// for the token.
     /// 
-    ///  
+    /// 
     /// <para>
     /// This is a public API. You do not need any credentials to call this API.
     /// </para>
     /// </summary>
     public partial class GetCredentialsForIdentityRequest : AmazonCognitoIdentityRequest
     {
+        private string _customRoleArn;
         private string _identityId;
         private Dictionary<string, string> _logins = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property CustomRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
+        /// received in the token from the identity provider. For example, a SAML-based identity
+        /// provider. This parameter is optional for identity providers that do not support role
+        /// customization.
+        /// </para>
+        /// </summary>
+        public string CustomRoleArn
+        {
+            get { return this._customRoleArn; }
+            set { this._customRoleArn = value; }
+        }
+
+        // Check to see if CustomRoleArn property is set
+        internal bool IsSetCustomRoleArn()
+        {
+            return this._customRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityId. 

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DescribeTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="filters">One or more filters. <ul> <li> <code>key</code> - The tag key. </li> <li> <code>resource-id</code> - The resource ID. </li> <li> <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dhcp-options</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li> <code>value</code> - The tag value. </li> </ul></param>
+        /// <param name="filters">One or more filters. <ul> <li>  <code>key</code> - The tag key. </li> <li>  <code>resource-id</code> - The resource ID. </li> <li>  <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dhcp-options</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>  <code>value</code> - The tag value. </li> </ul></param>
         public DescribeTagsRequest(List<Filter> filters)
         {
             _filters = filters;
@@ -64,15 +64,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>key</code> - The tag key.
+        ///  <code>key</code> - The tag key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>resource-id</code> - The resource ID.
+        ///  <code>resource-id</code> - The resource ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dhcp-options</code>
+        ///  <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dhcp-options</code>
         /// | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
         /// | <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code>
         /// | <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code>
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>value</code> - The tag value.
+        ///  <code>value</code> - The tag value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

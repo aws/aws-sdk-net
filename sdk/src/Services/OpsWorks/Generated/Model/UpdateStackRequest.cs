@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// 
     ///  
     /// <para>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack, or an attached policy that explicitly grants permissions. For
     /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
@@ -65,19 +65,29 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The default AWS OpsWorks agent version. You have the following options:
         /// </para>
-        ///  <ul> <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks automatically
-        /// installs new agent versions on the stack's instances as soon as they are available.</li>
-        /// <li>Fixed version - Set this parameter to your preferred agent version. To update
-        /// the agent version, you must edit the stack configuration and specify a new version.
-        /// AWS OpsWorks then automatically installs that version on the stack's instances.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks automatically
+        /// installs new agent versions on the stack's instances as soon as they are available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Fixed version - Set this parameter to your preferred agent version. To update the
+        /// agent version, you must edit the stack configuration and specify a new version. AWS
+        /// OpsWorks then automatically installs that version on the stack's instances.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The default setting is <code>LATEST</code>. To specify an agent version, you must
         /// use the complete version number, not the abbreviated number shown on the console.
         /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
         /// </para>
-        ///  <note>You can also specify an agent version when you create or update an instance,
-        /// which overrides the stack's default setting.</note>
+        ///  <note> 
+        /// <para>
+        /// You can also specify an agent version when you create or update an instance, which
+        /// overrides the stack's default setting.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string AgentVersion
         {
@@ -239,13 +249,35 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The stack's operating system, which must be set to one of the following:
         /// </para>
-        ///  <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-        /// Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04
-        /// LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-        /// 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>. You specify the custom
-        /// AMI you want to use when you create instances. For more information on how to use
-        /// custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
+        /// Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu
+        /// 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Red Hat Enterprise Linux 7</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A supported Windows operating system, such as <code>Microsoft Windows Server 2012
+        /// R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft
+        /// Windows Server 2012 R2 with SQL Server Web</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
+        /// you create instances. For more information on how to use custom AMIs with OpsWorks,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// Custom AMIs</a>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The default option is the stack's current operating system. For more information on
         /// the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
@@ -341,11 +373,51 @@ namespace Amazon.OpsWorks.Model
         /// is set to <code>Layer_Dependent</code>, which creates host names by appending integers
         /// to the layer's short name. The other themes are:
         /// </para>
-        ///  <ul> <li> <code>Baked_Goods</code> </li> <li> <code>Clouds</code> </li> <li> <code>Europe_Cities</code>
-        /// </li> <li> <code>Fruits</code> </li> <li> <code>Greek_Deities</code> </li> <li> <code>Legendary_creatures_from_Japan</code>
-        /// </li> <li> <code>Planets_and_Moons</code> </li> <li> <code>Roman_Deities</code> </li>
-        /// <li> <code>Scottish_Islands</code> </li> <li> <code>US_Cities</code> </li> <li> <code>Wild_Cats</code>
-        /// </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Baked_Goods</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Clouds</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Europe_Cities</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Fruits</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Greek_Deities</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Legendary_creatures_from_Japan</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Planets_and_Moons</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Roman_Deities</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Scottish_Islands</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>US_Cities</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Wild_Cats</code> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns
         /// a host name based on the current theme.
@@ -447,14 +519,21 @@ namespace Amazon.OpsWorks.Model
         /// allows you to provide your own custom security groups instead of using the built-in
         /// groups. <code>UseOpsworksSecurityGroups</code> has the following settings: 
         /// </para>
-        ///  <ul> <li>True - AWS OpsWorks automatically associates the appropriate built-in security
-        /// group with each layer (default setting). You can associate additional security groups
-        /// with a layer after you create it, but you cannot delete the built-in security group.
-        /// </li> <li>False - AWS OpsWorks does not associate built-in security groups with layers.
-        /// You must create appropriate EC2 security groups and associate a security group with
-        /// each layer that you create. However, you can still manually associate a built-in security
+        ///  <ul> <li> 
+        /// <para>
+        /// True - AWS OpsWorks automatically associates the appropriate built-in security group
+        /// with each layer (default setting). You can associate additional security groups with
+        /// a layer after you create it, but you cannot delete the built-in security group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// False - AWS OpsWorks does not associate built-in security groups with layers. You
+        /// must create appropriate EC2 security groups and associate a security group with each
+        /// layer that you create. However, you can still manually associate a built-in security
         /// group with a layer on. Custom security groups are required only for those layers that
-        /// need custom settings. </li> </ul> 
+        /// need custom settings.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
         /// a New Stack</a>.

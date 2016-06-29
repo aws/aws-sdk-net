@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Container for the parameters to the ListIdentities operation.
     /// Lists the identities in a pool.
     /// 
-    ///  
+    /// 
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>

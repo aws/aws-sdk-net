@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,11 +44,11 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <code>192.0.2.0/24</code> (goes to some target A)
+    ///  <code>192.0.2.0/24</code> (goes to some target A)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <code>192.0.2.0/28</code> (goes to some target B)
+    ///  <code>192.0.2.0/28</code> (goes to some target B)
     /// </para>
     ///  </li> </ul> 
     /// <para>

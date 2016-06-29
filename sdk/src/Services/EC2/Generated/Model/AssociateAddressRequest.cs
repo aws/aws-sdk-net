@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates AssociateAddressRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceId">The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one network interface is attached. </param>
+        /// <param name="instanceId">The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one network interface is attached.</param>
         /// <param name="publicIp">The Elastic IP address. This is required for EC2-Classic.</param>
         public AssociateAddressRequest(string instanceId, string publicIp)
         {
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify
         /// either the instance ID or the network interface ID, but not both. The operation fails
-        /// if you specify an instance ID unless exactly one network interface is attached. 
+        /// if you specify an instance ID unless exactly one network interface is attached.
         /// </para>
         /// </summary>
         public string InstanceId

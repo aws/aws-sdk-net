@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.DataPipeline</id>
     <title>AWSSDK - AWS Data Pipeline</title>
-    <version>3.1.0.6</version> 
+    <version>3.1.0.7</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

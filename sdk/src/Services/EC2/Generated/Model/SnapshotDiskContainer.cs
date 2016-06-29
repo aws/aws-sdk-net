@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+        /// 
         /// </para>
         /// </summary>
         public string Format

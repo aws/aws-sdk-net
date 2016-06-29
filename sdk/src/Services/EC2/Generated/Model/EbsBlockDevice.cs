@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -79,23 +79,23 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) that the volume supports. For io1,
+        /// The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code>,
         /// this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code>,
         /// this represents the baseline performance of the volume and the rate at which the volume
-        /// accumulates I/O credits for bursting. For more information on General Purpose SSD
+        /// accumulates I/O credits for bursting. For more information about General Purpose SSD
         /// baseline performance, I/O credits, and bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for <code>gp2</code>
-        /// volumes.
+        /// Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS
+        /// for <code>gp2</code> volumes.
         /// </para>
         ///  
         /// <para>
-        /// Condition: This parameter is required for requests to create <code><code>io1</code></code>
-        /// volumes; it is not used in requests to create <code>gp2</code>, <code>st1</code>,
-        /// <code>sc1</code>, or <code>standard</code> volumes.
+        /// Condition: This parameter is required for requests to create <code>io1</code> volumes;
+        /// it is not used in requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
+        /// or <code>standard</code> volumes.
         /// </para>
         /// </summary>
         public int Iops
@@ -167,7 +167,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code>
+        /// Default: <code>standard</code> 
         /// </para>
         /// </summary>
         public VolumeType VolumeType

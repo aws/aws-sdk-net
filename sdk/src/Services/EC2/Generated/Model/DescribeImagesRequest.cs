@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,12 +33,12 @@ namespace Amazon.EC2.Model
     /// available to you include public images, private images that you own, and private images
     /// owned by other AWS accounts but for which you have explicit launch permissions.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Deregistered images are included in the returned results for an unspecified interval
     /// after deregistration.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class DescribeImagesRequest : AmazonEC2Request
     {
@@ -73,122 +73,123 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
+        ///  <code>architecture</code> - The image architecture (<code>i386</code> | <code>x86_64</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates
+        ///  <code>block-device-mapping.delete-on-termination</code> - A Boolean value that indicates
         /// whether the Amazon EBS volume is deleted on instance termination.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.device-name</code> - The device name for the EBS volume
+        ///  <code>block-device-mapping.device-name</code> - The device name for the EBS volume
         /// (for example, <code>/dev/sdh</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the
+        ///  <code>block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the
         /// EBS volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume,
+        ///  <code>block-device-mapping.volume-size</code> - The volume size of the EBS volume,
         /// in GiB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume
+        ///  <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume
         /// (<code>gp2</code> | <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>description</code> - The description of the image (provided during image creation).
+        ///  <code>description</code> - The description of the image (provided during image creation).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
+        ///  <code>hypervisor</code> - The hypervisor type (<code>ovm</code> | <code>xen</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>image-id</code> - The ID of the image.
+        ///  <code>image-id</code> - The ID of the image.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code>
+        ///  <code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code>
         /// | <code>ramdisk</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>is-public</code> - A Boolean that indicates whether the image is public.
+        ///  <code>is-public</code> - A Boolean that indicates whether the image is public.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>kernel-id</code> - The kernel ID.
+        ///  <code>kernel-id</code> - The kernel ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>manifest-location</code> - The location of the image manifest.
+        ///  <code>manifest-location</code> - The location of the image manifest.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>name</code> - The name of the AMI (provided during image creation).
+        ///  <code>name</code> - The name of the AMI (provided during image creation).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>owner-alias</code> - The AWS account alias (for example, <code>amazon</code>).
+        ///  <code>owner-alias</code> - The AWS account alias (for example, <code>amazon</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>owner-id</code> - The AWS account ID of the image owner.
+        ///  <code>owner-id</code> - The AWS account ID of the image owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
+        ///  <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>product-code</code> - The product code.
+        ///  <code>product-code</code> - The product code.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>product-code.type</code> - The type of the product code (<code>devpay</code>
+        ///  <code>product-code.type</code> - The type of the product code (<code>devpay</code>
         /// | <code>marketplace</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ramdisk-id</code> - The RAM disk ID.
+        ///  <code>ramdisk-id</code> - The RAM disk ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+        ///  <code>root-device-name</code> - The name of the root device volume (for example,
+        /// <code>/dev/sda1</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>root-device-type</code> - The type of the root device volume (<code>ebs</code>
+        ///  <code>root-device-type</code> - The type of the root device volume (<code>ebs</code>
         /// | <code>instance-store</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state</code> - The state of the image (<code>available</code> | <code>pending</code>
+        ///  <code>state</code> - The state of the image (<code>available</code> | <code>pending</code>
         /// | <code>failed</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state-reason-code</code> - The reason code for the state change.
+        ///  <code>state-reason-code</code> - The reason code for the state change.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state-reason-message</code> - The message for the state change.
+        ///  <code>state-reason-message</code> - The message for the state change.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
         /// to the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
-        /// of the tag-value filter. For example, if you use both the filter "tag-key=Purpose"
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+        /// independent of the tag-value filter. For example, if you use both the filter "tag-key=Purpose"
         /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
         /// (regardless of what the tag's value is), and the tag value X (regardless of what the
         /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
@@ -196,12 +197,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        ///  <code>tag-value</code> - The value of a tag assigned to the resource. This filter
         /// is independent of the <code>tag-key</code> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code>
+        ///  <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code>
         /// | <code>hvm</code>).
         /// </para>
         ///  </li> </ul>

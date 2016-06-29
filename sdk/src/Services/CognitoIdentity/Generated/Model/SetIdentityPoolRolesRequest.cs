@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
     /// action.
     /// 
-    ///  
+    /// 
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>

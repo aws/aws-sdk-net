@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -50,35 +50,35 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters.
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>instance-type</code> - The instance type size that the Dedicated host is configured
+        ///  <code>instance-type</code> - The instance type size that the Dedicated host is configured
         /// to support.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code>
+        ///  <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code>
         /// | <code>off</code>).
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>host-reservation-id</code> - The ID of the reservation associated with this
+        ///  <code>host-reservation-id</code> - The ID of the reservation associated with this
         /// host.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>client-token</code> - The idempotency token you provided when you launched the
-        /// instance
+        ///  <code>client-token</code> - The idempotency token you provided when you launched
+        /// the instance
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>state</code>- The allocation state of the Dedicated host (<code>available</code>
+        ///  <code>state</code>- The allocation state of the Dedicated host (<code>available</code>
         /// | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code>
         /// | <code>released-permanent-failure</code>).
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone of the host.
+        ///  <code>availability-zone</code> - The Availability Zone of the host.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -85,6 +85,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetNewGameSessionProtectionPolicy())
+                {
+                    context.Writer.WritePropertyName("NewGameSessionProtectionPolicy");
+                    context.Writer.Write(publicRequest.NewGameSessionProtectionPolicy);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

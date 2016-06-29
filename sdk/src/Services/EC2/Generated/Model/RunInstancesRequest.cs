@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// [EC2-VPC only accounts] If you don't specify a subnet in the request, we choose a
-    /// default subnet from your default VPC for you. 
+    /// default subnet from your default VPC for you.
     /// </para>
     ///  
     /// <para>
@@ -213,7 +213,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -238,7 +238,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -297,7 +297,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>stop</code>
+        /// Default: <code>stop</code> 
         /// </para>
         /// </summary>
         public ShutdownBehavior InstanceInitiatedShutdownBehavior
@@ -320,7 +320,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>m1.small</code>
+        /// Default: <code>m1.small</code> 
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -613,11 +613,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// Data to configure the instance, or a script to run during instance launch. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+        /// The user data to make available to the instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
         /// Commands on Your Linux Instance at Launch</a> (Linux) and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-        /// User Data</a> (Windows). For API calls, the text must be base64-encoded. For command
-        /// line tools, the encoding is performed for you, and you can load the text from a file.
+        /// User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding
+        /// is performed for you, and you can load the text from a file. Otherwise, you must provide
+        /// Base64-encoded text.
         /// </para>
         /// </summary>
         public string UserData

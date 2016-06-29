@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -104,37 +104,37 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property FailureMessage. 
         /// <para>
         /// If the NAT gateway could not be created, specifies the error message for the failure,
-        /// that corresponds to the error code. 
+        /// that corresponds to the error code.
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
         /// create this NAT gateway"
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// For InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not
         /// be associated with this NAT gateway"
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// For InternalError: "Network interface eni-xxxxxxxx, created and used internally by
         /// this NAT gateway is in an invalid state. Please try again."
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist
         /// or could not be found."
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public string FailureMessage
         {
@@ -211,27 +211,27 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>pending</code>: The NAT gateway is being created and is not ready to process
+        ///  <code>pending</code>: The NAT gateway is being created and is not ready to process
         /// traffic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code>
+        ///  <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code>
         /// and <code>failureMessage</code> fields for the reason.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>available</code>: The NAT gateway is able to process traffic. This status remains
+        ///  <code>available</code>: The NAT gateway is able to process traffic. This status remains
         /// until you delete the NAT gateway, and does not indicate the health of the NAT gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>deleting</code>: The NAT gateway is in the process of being terminated and may
-        /// still be processing traffic.
+        ///  <code>deleting</code>: The NAT gateway is in the process of being terminated and
+        /// may still be processing traffic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>deleted</code>: The NAT gateway has been terminated and is no longer processing
+        ///  <code>deleted</code>: The NAT gateway has been terminated and is no longer processing
         /// traffic.
         /// </para>
         ///  </li> </ul>

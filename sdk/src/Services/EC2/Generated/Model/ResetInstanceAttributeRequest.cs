@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ResetInstanceAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="attribute">The attribute to reset. <important>You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an instance attribute, use <a>ModifyInstanceAttribute</a>.</important></param>
+        /// <param name="attribute">The attribute to reset. <important> You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an instance attribute, use <a>ModifyInstanceAttribute</a>. </important></param>
         public ResetInstanceAttributeRequest(string instanceId, InstanceAttributeName attribute)
         {
             _instanceId = instanceId;
@@ -68,12 +68,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The attribute to reset.
         /// </para>
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code>
         /// | <code>sourceDestCheck</code>. To change an instance attribute, use <a>ModifyInstanceAttribute</a>.
         /// </para>
-        /// </important>
+        ///  </important>
         /// </summary>
         public InstanceAttributeName Attribute
         {

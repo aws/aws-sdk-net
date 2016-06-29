@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        ///  The ID of the VPC to which the instance is linked.
+        /// The ID of the VPC to which the instance is linked.
         /// </para>
         /// </summary>
         public string VpcId

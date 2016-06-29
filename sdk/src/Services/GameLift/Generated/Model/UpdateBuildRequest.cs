@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for the build you want to update. 
+        /// Unique identifier of the build you want to update. 
         /// </para>
         /// </summary>
         public string BuildId
@@ -60,7 +60,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this build. Build names do not need to be unique.
+        /// Descriptive label associated with a build. Build names do not need to be unique.
         /// </para>
         /// </summary>
         public string Name

@@ -33,11 +33,11 @@ namespace Amazon.GameLift.Model
     /// set by build ID. Use the pagination parameters to retrieve results in sequential pages.
     /// 
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Fleet records are not listed in any particular order.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class ListFleetsRequest : AmazonGameLiftRequest
     {
@@ -68,7 +68,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. You can use this parameter with <i>NextToken</i>
+        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Instantiates DescribeImageAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
-        /// <param name="attribute">The AMI attribute. <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get information about the block device mapping for the AMI.</param>
+        /// <param name="attribute">The AMI attribute.  <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get information about the block device mapping for the AMI.</param>
         public DescribeImageAttributeRequest(string imageId, ImageAttributeName attribute)
         {
             _imageId = imageId;
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code>
+        ///  <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code>
         /// attribute may return a <code>Client.AuthFailure</code> error. If this happens, use
         /// <a>DescribeImages</a> to get information about the block device mapping for the AMI.
         /// </para>

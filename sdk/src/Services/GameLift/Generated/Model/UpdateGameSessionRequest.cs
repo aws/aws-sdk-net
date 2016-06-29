@@ -29,11 +29,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGameSession operation.
-    /// Updates game session properties. This includes the session name, maximum player count
-    /// and the player session creation policy, which either allows or denies new players
-    /// from joining the session. To update a game session, specify the game session ID and
-    /// the values you want to change. If successful, an updated <a>GameSession</a> object
-    /// is returned.
+    /// Updates game session properties. This includes the session name, maximum player count,
+    /// protection policy, which controls whether or not an active game session can be terminated
+    /// during a scale-down event, and the player session creation policy, which controls
+    /// whether or not new players can join the session. To update a game session, specify
+    /// the game session ID and the values you want to change. If successful, an updated <a>GameSession</a>
+    /// object is returned.
     /// </summary>
     public partial class UpdateGameSessionRequest : AmazonGameLiftRequest
     {
@@ -41,6 +42,7 @@ namespace Amazon.GameLift.Model
         private int? _maximumPlayerSessionCount;
         private string _name;
         private PlayerSessionCreationPolicy _playerSessionCreationPolicy;
+        private ProtectionPolicy _protectionPolicy;
 
         /// <summary>
         /// Gets and sets the property GameSessionId. 
@@ -82,8 +84,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this game session. Session names do not need to
-        /// be unique.
+        /// Descriptive label associated with a game session. Session names do not need to be
+        /// unique.
         /// </para>
         /// </summary>
         public string Name
@@ -114,6 +116,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetPlayerSessionCreationPolicy()
         {
             return this._playerSessionCreationPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtectionPolicy. 
+        /// <para>
+        /// Game session protection policy to apply to this game session only. <ul><li><b>NoProtection</b>
+        /// – The game session can be terminated during a scale-down event.</li> <li><b>FullProtection</b>
+        /// – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+        /// during a scale-down event.</li></ul>
+        /// </para>
+        /// </summary>
+        public ProtectionPolicy ProtectionPolicy
+        {
+            get { return this._protectionPolicy; }
+            set { this._protectionPolicy = value; }
+        }
+
+        // Check to see if ProtectionPolicy property is set
+        internal bool IsSetProtectionPolicy()
+        {
+            return this._protectionPolicy != null;
         }
 
     }

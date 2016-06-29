@@ -32,17 +32,19 @@ namespace Amazon.CognitoIdentity.Model
     /// Creates a new identity pool. The identity pool is a store of user identity information
     /// that is specific to your AWS account. The limit on identity pools is 60 per account.
     /// The keys for <code>SupportedLoginProviders</code> are as follows: <ul> <li>Facebook:
-    /// <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code>
-    /// </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>api.twitter.com</code>
-    /// </li> <li>Digits: <code>www.digits.com</code> </li> </ul> You must use AWS Developer
-    /// credentials to call this API.
+    /// <code>graph.facebook.com</code></li> <li>Google: <code>accounts.google.com</code></li>
+    /// <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li>
+    /// <li>Digits: <code>www.digits.com</code></li> </ul> You must use AWS Developer credentials
+    /// to call this API.
     /// </summary>
     public partial class CreateIdentityPoolRequest : AmazonCognitoIdentityRequest
     {
         private bool? _allowUnauthenticatedIdentities;
+        private List<CognitoIdentityProviderInfo> _cognitoIdentityProviders = new List<CognitoIdentityProviderInfo>();
         private string _developerProviderName;
         private string _identityPoolName;
         private List<string> _openIdConnectProviderARNs = new List<string>();
+        private List<string> _samlProviderARNs = new List<string>();
         private Dictionary<string, string> _supportedLoginProviders = new Dictionary<string, string>();
 
         /// <summary>
@@ -61,6 +63,24 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetAllowUnauthenticatedIdentities()
         {
             return this._allowUnauthenticatedIdentities.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CognitoIdentityProviders. 
+        /// <para>
+        /// An array of Amazon Cognito Identity user pools.
+        /// </para>
+        /// </summary>
+        public List<CognitoIdentityProviderInfo> CognitoIdentityProviders
+        {
+            get { return this._cognitoIdentityProviders; }
+            set { this._cognitoIdentityProviders = value; }
+        }
+
+        // Check to see if CognitoIdentityProviders property is set
+        internal bool IsSetCognitoIdentityProviders()
+        {
+            return this._cognitoIdentityProviders != null && this._cognitoIdentityProviders.Count > 0; 
         }
 
         /// <summary>
@@ -123,6 +143,24 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetOpenIdConnectProviderARNs()
         {
             return this._openIdConnectProviderARNs != null && this._openIdConnectProviderARNs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SamlProviderARNs. 
+        /// <para>
+        /// An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.
+        /// </para>
+        /// </summary>
+        public List<string> SamlProviderARNs
+        {
+            get { return this._samlProviderARNs; }
+            set { this._samlProviderARNs = value; }
+        }
+
+        // Check to see if SamlProviderARNs property is set
+        internal bool IsSetSamlProviderARNs()
+        {
+            return this._samlProviderARNs != null && this._samlProviderARNs.Count > 0; 
         }
 
         /// <summary>

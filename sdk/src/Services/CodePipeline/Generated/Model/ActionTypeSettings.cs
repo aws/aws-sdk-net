@@ -101,7 +101,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property ThirdPartyConfigurationUrl. 
         /// <para>
         /// The URL of a sign-up page where users can sign up for an external service and perform
-        /// initial configuration of the action provided by that service. 
+        /// initial configuration of the action provided by that service.
         /// </para>
         /// </summary>
         public string ThirdPartyConfigurationUrl

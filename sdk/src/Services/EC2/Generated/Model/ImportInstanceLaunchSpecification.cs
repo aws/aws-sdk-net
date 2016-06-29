@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -230,7 +230,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The Base64-encoded MIME user data to be made available to the instance.
+        /// The user data to make available to the instance. If you are using an AWS SDK or command
+        /// line tool, Base64-encoding is performed for you, and you can load the text from a
+        /// file. Otherwise, you must provide Base64-encoded text.
         /// </para>
         /// </summary>
         public UserData UserData

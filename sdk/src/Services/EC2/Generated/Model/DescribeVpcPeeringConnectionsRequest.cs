@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,68 +43,67 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+        ///  <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer
-        /// VPC.
+        ///  <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the
+        /// peer VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+        ///  <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>expiration-time</code> - The expiration date and time for the VPC peering connection.
+        ///  <code>expiration-time</code> - The expiration date and time for the VPC peering connection.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester&apos;s
-        /// VPC.
+        ///  <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the
+        ///  <code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of the
         /// requester VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.
+        ///  <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code>
+        ///  <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code>
         /// | <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code>
         /// | <code>deleted</code> | <code>rejected</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>status-message</code> - A message that provides more information about the status
-        /// of the VPC peering connection, if applicable.
+        ///  <code>status-message</code> - A message that provides more information about the
+        /// status of the VPC peering connection, if applicable.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
         /// to the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
-        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
-        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
-        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
-        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-        /// filter.
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+        /// independent of the <code>tag-value</code> filter. For example, if you use both the
+        /// filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
+        /// both the tag key Purpose (regardless of what the tag's value is), and the tag value
+        /// X (regardless of what the tag's key is). If you want to list only resources where
+        /// Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        ///  <code>tag-value</code> - The value of a tag assigned to the resource. This filter
         /// is independent of the <code>tag-key</code> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-peering-connection-id</code> - The ID of the VPC peering connection.
+        ///  <code>vpc-peering-connection-id</code> - The ID of the VPC peering connection.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -29,15 +29,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBuilds operation.
-    /// Retrieves build records for all builds associated with an AWS account. You can filter
-    /// the result set by build status. Use the pagination parameters to retrieve results
-    /// in a set of sequential pages. 
+    /// Retrieves build records for all builds associated with the AWS account in use. You
+    /// can limit results to builds in a specific state using the <code>Status</code> parameter.
+    /// Use the pagination parameters to retrieve results in a set of sequential pages. 
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Build records are not listed in any particular order.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class ListBuildsRequest : AmazonGameLiftRequest
     {
@@ -48,7 +48,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. You can use this parameter with <i>NextToken</i>
+        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
@@ -87,13 +87,13 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Build state to filter results on. Use this parameter to retrieve builds in a certain
-        /// state. To retrieve all builds, leave this parameter empty. Possible build states include:
-        /// <ul><li>INITIALIZED: A new build has been defined, but no files have been uploaded.
-        /// You cannot create fleets for builds that are in this state. When a build is successfully
-        /// created, the build state is set to this value. </li><li>READY: The game build has
-        /// been successfully uploaded. You can now create new fleets for this build.</li><li>FAILED:
-        /// The game build upload failed. You cannot create new fleets for this build. </li></ul>
+        /// Build state to filter results by. To retrieve all builds, leave this parameter empty.
+        /// Possible build states include the following: <ul><li><b>INITIALIZED</b> – A new build
+        /// has been defined, but no files have been uploaded. You cannot create fleets for builds
+        /// that are in this state. When a build is successfully created, the build state is set
+        /// to this value. </li><li><b>READY</b> – The game build has been successfully uploaded.
+        /// You can now create new fleets for this build.</li><li><b>FAILED</b> – The game build
+        /// upload failed. You cannot create new fleets for this build. </li></ul>
         /// </para>
         /// </summary>
         public BuildStatus Status

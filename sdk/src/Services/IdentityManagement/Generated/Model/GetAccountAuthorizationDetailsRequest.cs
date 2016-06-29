@@ -49,8 +49,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// A list of entity types (user, group, role, local managed policy, or AWS managed policy)
-        /// for filtering the results.
+        /// A list of entity types used to filter the results. Only the entities that match the
+        /// types you specify are included in the output. Use the value <code>LocalManagedPolicy</code>
+        /// to include customer managed policies.
         /// </para>
         ///  
         /// <para>

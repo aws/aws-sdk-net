@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,29 +45,29 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters.
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code>
+        ///  <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code>
         /// | <code>FAILED</code>).
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>flow-log-id</code> - The ID of the flow log.
+        ///  <code>flow-log-id</code> - The ID of the flow log.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>log-group-name</code> - The name of the log group.
+        ///  <code>log-group-name</code> - The name of the log group.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>resource-id</code> - The ID of the VPC, subnet, or network interface.
+        ///  <code>resource-id</code> - The ID of the VPC, subnet, or network interface.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code>
+        ///  <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code>
         /// | <code>ALL</code>)
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filter
         {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,20 +46,20 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+        ///  <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+        ///  <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or
+        ///  <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or
         /// <code>EC2-VPC</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+        ///  <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,8 +30,8 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the ListSubscriptions operation.
     /// Returns a list of the requester's subscriptions. Each call returns a limited list
-    ///      of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
-    /// is also returned. Use the <code>NextToken</code> parameter in a       new <code>ListSubscriptions</code>
+    /// of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
+    /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code>
     /// call to get further results.
     /// </summary>
     public partial class ListSubscriptionsRequest : AmazonSimpleNotificationServiceRequest

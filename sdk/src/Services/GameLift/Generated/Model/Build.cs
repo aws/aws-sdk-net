@@ -79,8 +79,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this build. Build names do not need to be unique.
-        /// It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+        /// Descriptive label associated with a build. Build names do not need to be unique. It
+        /// can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
         /// </para>
         /// </summary>
         public string Name
@@ -99,7 +99,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property SizeOnDisk. 
         /// <para>
         /// File size of the uploaded game build, expressed in bytes. When the build state is
-        /// INITIALIZED, this value is 0.
+        /// <code>INITIALIZED</code>, this value is 0.
         /// </para>
         /// </summary>
         public long SizeOnDisk
@@ -117,12 +117,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the build. Possible build states include: <ul><li>INITIALIZED: A
-        /// new build has been defined, but no files have been uploaded. You cannot create fleets
-        /// for builds that are in this state. When a build is successfully created, the build
-        /// state is set to this value. </li><li>READY: The game build has been successfully uploaded.
-        /// You can now create new fleets for this build.</li><li>FAILED: The game build upload
-        /// failed. You cannot create new fleets for this build. </li></ul>
+        /// Current status of the build. Possible build states include the following: <ul><li><b>INITIALIZED</b>
+        /// – A new build has been defined, but no files have been uploaded. You cannot create
+        /// fleets for builds that are in this state. When a build is successfully created, the
+        /// build state is set to this value. </li><li><b>READY</b> – The game build has been
+        /// successfully uploaded. You can now create new fleets for this build.</li><li><b>FAILED</b>
+        /// – The game build upload failed. You cannot create new fleets for this build. </li></ul>
         /// </para>
         /// </summary>
         public BuildStatus Status

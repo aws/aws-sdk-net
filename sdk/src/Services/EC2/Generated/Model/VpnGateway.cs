@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
         /// The Availability Zone where the virtual private gateway was created, if applicable.
-        /// This field may be empty or not returned. 
+        /// This field may be empty or not returned.
         /// </para>
         /// </summary>
         public string AvailabilityZone

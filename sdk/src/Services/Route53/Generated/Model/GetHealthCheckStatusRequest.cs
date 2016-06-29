@@ -70,7 +70,7 @@ namespace Amazon.Route53.Model
         /// sets in an alias, weighted alias, latency alias, geolocation alias, or failover alias
         /// resource record set, and you specify health check IDs for all of the resource record
         /// sets that are referenced by the alias resource record sets. For more information about
-        /// this configuration, see <a>EvaluateTargetHealth</a>.
+        /// this configuration, see <code>EvaluateTargetHealth</code>.
         /// </para>
         ///  
         /// <para>

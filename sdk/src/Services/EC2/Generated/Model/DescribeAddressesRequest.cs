@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -73,39 +73,39 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.
+        ///  <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>association-id</code> - [EC2-VPC] The association ID for the address.
+        ///  <code>association-id</code> - [EC2-VPC] The association ID for the address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
+        ///  <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
         /// or in a VPC (<code>vpc</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-id</code> - The ID of the instance the address is associated with,
+        ///  <code>instance-id</code> - The ID of the instance the address is associated with,
         /// if any.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that
+        ///  <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that
         /// the address is associated with, if any.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+        ///  <code>network-interface-owner-id</code> - The AWS account ID of the owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with
+        ///  <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with
         /// the Elastic IP address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>public-ip</code> - The Elastic IP address.
+        ///  <code>public-ip</code> - The Elastic IP address.
         /// </para>
         ///  </li> </ul>
         /// </summary>

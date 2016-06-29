@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Container for the parameters to the GetIdentityPoolRoles operation.
     /// Gets the roles for an identity pool.
     /// 
-    ///  
+    /// 
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>

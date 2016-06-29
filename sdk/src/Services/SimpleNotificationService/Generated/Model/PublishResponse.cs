@@ -39,7 +39,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// Unique identifier assigned to the published message.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// Length Constraint: Maximum 100 characters
         /// </para>

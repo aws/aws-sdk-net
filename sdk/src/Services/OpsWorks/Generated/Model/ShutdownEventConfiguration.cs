@@ -40,7 +40,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// Whether to enable Elastic Load Balancing connection draining. For more information,
         /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
-        /// Draining</a>
+        /// Draining</a> 
         /// </para>
         /// </summary>
         public bool DelayUntilElbConnectionsDrained

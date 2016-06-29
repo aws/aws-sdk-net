@@ -79,7 +79,11 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The version number of the pipeline.
         /// </para>
-        ///  <note>A newly-created pipeline is always assigned a version number of <code>1</code>.</note>
+        ///  <note> 
+        /// <para>
+        /// A newly-created pipeline is always assigned a version number of <code>1</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int PipelineVersion
         {
@@ -97,7 +101,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property StageStates. 
         /// <para>
         /// A list of the pipeline stage output information, including stage name, state, most
-        /// recent run details, whether the stage is disabled, and other data. 
+        /// recent run details, whether the stage is disabled, and other data.
         /// </para>
         /// </summary>
         public List<StageState> StageStates

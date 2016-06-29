@@ -134,8 +134,19 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The volume type:
         /// </para>
-        ///  <ul> <li><code>standard</code> - Magnetic</li> <li><code>io1</code> - Provisioned
-        /// IOPS (SSD)</li> <li><code>gp2</code> - General Purpose (SSD)</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>standard</code> - Magnetic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io1</code> - Provisioned IOPS (SSD)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>gp2</code> - General Purpose (SSD)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string VolumeType
         {

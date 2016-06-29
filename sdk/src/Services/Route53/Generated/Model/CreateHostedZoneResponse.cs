@@ -60,8 +60,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property ChangeInfo. 
         /// <para>
         /// A complex type that contains information about the request to create a hosted zone.
-        /// This includes an ID that you use when you call the <a>GetChange</a> action to get
-        /// the current status of the change request.
+        /// This includes an ID that you use when you call the <code>GetChange</code> action to
+        /// get the current status of the change request.
         /// </para>
         /// </summary>
         public ChangeInfo ChangeInfo

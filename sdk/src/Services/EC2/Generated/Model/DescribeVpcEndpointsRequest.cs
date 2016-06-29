@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,19 +45,19 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>service-name</code>: The name of the AWS service.
+        ///  <code>service-name</code>: The name of the AWS service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-id</code>: The ID of the VPC in which the endpoint resides.
+        ///  <code>vpc-id</code>: The ID of the VPC in which the endpoint resides.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-endpoint-id</code>: The ID of the endpoint.
+        ///  <code>vpc-endpoint-id</code>: The ID of the endpoint.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code>
+        ///  <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code>
         /// | <code>available</code> | <code>deleting</code> | <code>deleted</code>)
         /// </para>
         ///  </li> </ul>

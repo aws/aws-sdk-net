@@ -270,10 +270,10 @@ namespace Amazon.CognitoIdentity
         /// Creates a new identity pool. The identity pool is a store of user identity information
         /// that is specific to your AWS account. The limit on identity pools is 60 per account.
         /// The keys for <code>SupportedLoginProviders</code> are as follows: <ul> <li>Facebook:
-        /// <code>graph.facebook.com</code> </li> <li>Google: <code>accounts.google.com</code>
-        /// </li> <li>Amazon: <code>www.amazon.com</code> </li> <li>Twitter: <code>api.twitter.com</code>
-        /// </li> <li>Digits: <code>www.digits.com</code> </li> </ul> You must use AWS Developer
-        /// credentials to call this API.
+        /// <code>graph.facebook.com</code></li> <li>Google: <code>accounts.google.com</code></li>
+        /// <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li>
+        /// <li>Digits: <code>www.digits.com</code></li> </ul> You must use AWS Developer credentials
+        /// to call this API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool service method.</param>
         /// 
@@ -344,7 +344,7 @@ namespace Amazon.CognitoIdentity
         /// Deletes identities from an identity pool. You can specify a list of 1-60 identities
         /// that you want to delete.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -409,7 +409,7 @@ namespace Amazon.CognitoIdentity
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -444,7 +444,7 @@ namespace Amazon.CognitoIdentity
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -515,7 +515,7 @@ namespace Amazon.CognitoIdentity
         /// Returns metadata related to the given identity, including when the identity was created
         /// and any associated linked logins.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -550,7 +550,7 @@ namespace Amazon.CognitoIdentity
         /// Returns metadata related to the given identity, including when the identity was created
         /// and any associated linked logins.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -621,7 +621,7 @@ namespace Amazon.CognitoIdentity
         /// Gets details about a particular identity pool, including the pool name, ID description,
         /// creation date, and current number of users.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -656,7 +656,7 @@ namespace Amazon.CognitoIdentity
         /// Gets details about a particular identity pool, including the pool name, ID description,
         /// creation date, and current number of users.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -729,7 +729,7 @@ namespace Amazon.CognitoIdentity
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -776,7 +776,7 @@ namespace Amazon.CognitoIdentity
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -825,7 +825,7 @@ namespace Amazon.CognitoIdentity
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -906,7 +906,7 @@ namespace Amazon.CognitoIdentity
         /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
         /// linked account.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -985,7 +985,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Gets the roles for an identity pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1022,7 +1022,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Gets the roles for an identity pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1101,7 +1101,7 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// The OpenId token is valid for 15 minutes.
         /// </para>
-        ///  
+        /// 
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -1147,7 +1147,7 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// The OpenId token is valid for 15 minutes.
         /// </para>
-        ///  
+        /// 
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -1236,7 +1236,7 @@ namespace Amazon.CognitoIdentity
         /// identity, you can do so by providing the existing <code>IdentityId</code>. This API
         /// will create the identity in the specified <code>IdentityPoolId</code>.
         /// </para>
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1313,7 +1313,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Lists the identities in a pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1383,7 +1383,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Lists all of the Cognito identity pools registered for your account.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1458,7 +1458,7 @@ namespace Amazon.CognitoIdentity
         /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
         /// is thrown.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1537,7 +1537,7 @@ namespace Amazon.CognitoIdentity
         /// users can be merged. If the users to be merged are associated with the same public
         /// provider, but as two different users, an exception will be thrown.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1611,7 +1611,7 @@ namespace Amazon.CognitoIdentity
         /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
         /// action.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1654,7 +1654,7 @@ namespace Amazon.CognitoIdentity
         /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
         /// action.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1733,7 +1733,7 @@ namespace Amazon.CognitoIdentity
         /// a given Cognito identity, you remove all federated identities as well as the developer
         /// user identifier, the Cognito identity becomes inaccessible.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1808,7 +1808,7 @@ namespace Amazon.CognitoIdentity
         /// new identities next time they are seen. Removing the last linked login will make this
         /// identity inaccessible.
         /// 
-        ///  
+        /// 
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -1884,7 +1884,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Updates a user pool.
         /// 
-        ///  
+        /// 
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1900,6 +1900,9 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.LimitExceededException">
+        /// Thrown when the total number of user pools has exceeded a preset limit.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
         /// Thrown when a user is not authorized to access the requested resource.

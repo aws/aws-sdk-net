@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,27 +43,27 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>0</code> : <code>pending</code>
+        ///  <code>0</code> : <code>pending</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>16</code> : <code>running</code>
+        ///  <code>16</code> : <code>running</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>32</code> : <code>shutting-down</code>
+        ///  <code>32</code> : <code>shutting-down</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>48</code> : <code>terminated</code>
+        ///  <code>48</code> : <code>terminated</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>64</code> : <code>stopping</code>
+        ///  <code>64</code> : <code>stopping</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>80</code> : <code>stopped</code>
+        ///  <code>80</code> : <code>stopped</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
