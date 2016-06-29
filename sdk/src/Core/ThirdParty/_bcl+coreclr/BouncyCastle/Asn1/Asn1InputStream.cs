@@ -163,7 +163,7 @@ namespace ThirdParty.BouncyCastle.Asn1
 			}
 			catch (ArgumentException e)
 			{
-				throw new ApplicationException("corrupted stream detected", e);
+				throw new Exception("corrupted stream detected", e);
 			}
 		}
 
@@ -255,7 +255,7 @@ namespace ThirdParty.BouncyCastle.Asn1
 				case Integer:
 					return new DerInteger(bytes);
 				default:
-					throw new ApplicationException("Unknown primitive tag");
+					throw new Exception("Unknown primitive tag");
 			}
 		}
 	}

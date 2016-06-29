@@ -54,7 +54,7 @@ namespace ThirdParty.BouncyCastle.OpenSsl
             Asn1Sequence seq = (Asn1Sequence)Asn1Object.FromByteArray(keyBytes);
 
             if (seq.Count != 9)
-                throw new ApplicationException("malformed sequence in RSA private key");
+                throw new Exception("malformed sequence in RSA private key");
 
             return convertSequenceToRSAParameters(seq);
         }
