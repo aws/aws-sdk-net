@@ -118,6 +118,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetNewGameSessionProtectionPolicy())
+                {
+                    context.Writer.WritePropertyName("NewGameSessionProtectionPolicy");
+                    context.Writer.Write(publicRequest.NewGameSessionProtectionPolicy);
+                }
+
+                if(publicRequest.IsSetRuntimeConfiguration())
+                {
+                    context.Writer.WritePropertyName("RuntimeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RuntimeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RuntimeConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetServerLaunchParameters())
                 {
                     context.Writer.WritePropertyName("ServerLaunchParameters");

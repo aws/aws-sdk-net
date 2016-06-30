@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.KinesisFirehose</id>
     <title>AWSSDK - Amazon Kinesis Firehose</title>
-    <version>3.1.2.2</version> 
+    <version>3.1.2.3</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.7.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

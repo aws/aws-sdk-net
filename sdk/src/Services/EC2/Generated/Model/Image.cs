@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
         private string _creationDate;
         private string _description;
+        private bool? _enaSupport;
         private HypervisorType _hypervisor;
         private string _imageId;
         private string _imageLocation;
@@ -126,6 +127,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaSupport. 
+        /// <para>
+        /// Specifies whether enhanced networking with ENA is enabled.
+        /// </para>
+        /// </summary>
+        public bool EnaSupport
+        {
+            get { return this._enaSupport.GetValueOrDefault(); }
+            set { this._enaSupport = value; }
+        }
+
+        // Check to see if EnaSupport property is set
+        internal bool IsSetEnaSupport()
+        {
+            return this._enaSupport.HasValue; 
         }
 
         /// <summary>
@@ -387,7 +406,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SriovNetSupport. 
         /// <para>
-        /// Specifies whether enhanced networking is enabled.
+        /// Specifies whether enhanced networking with the Intel 82599 Virtual Function interface
+        /// is enabled.
         /// </para>
         /// </summary>
         public string SriovNetSupport

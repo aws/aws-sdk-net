@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about EBS volumes, see <a href='http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html'>Amazon
+    /// For more information about EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
     /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
@@ -74,79 +74,79 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>attachment.attach-time</code> - The time stamp when the attachment initiated.
+        ///  <code>attachment.attach-time</code> - The time stamp when the attachment initiated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>attachment.delete-on-termination</code> - Whether the volume is deleted on instance
-        /// termination.
+        ///  <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
+        /// instance termination.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>attachment.device</code> - The device name that is exposed to the instance (for
-        /// example, <code>/dev/sda1</code>).
+        ///  <code>attachment.device</code> - The device name that is exposed to the instance
+        /// (for example, <code>/dev/sda1</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>attachment.instance-id</code> - The ID of the instance the volume is attached
+        ///  <code>attachment.instance-id</code> - The ID of the instance the volume is attached
         /// to.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code>
+        ///  <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code>
         /// | <code>detaching</code> | <code>detached</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone in which the volume was created.
+        ///  <code>availability-zone</code> - The Availability Zone in which the volume was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>create-time</code> - The time stamp when the volume was created.
+        ///  <code>create-time</code> - The time stamp when the volume was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>encrypted</code> - The encryption status of the volume.
+        ///  <code>encrypted</code> - The encryption status of the volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>size</code> - The size of the volume, in GiB.
+        ///  <code>size</code> - The size of the volume, in GiB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>snapshot-id</code> - The snapshot from which the volume was created.
+        ///  <code>snapshot-id</code> - The snapshot from which the volume was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code>
+        ///  <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code>
         /// | <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
         /// to the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
-        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
-        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
-        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
-        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-        /// filter.
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+        /// independent of the <code>tag-value</code> filter. For example, if you use both the
+        /// filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
+        /// both the tag key Purpose (regardless of what the tag's value is), and the tag value
+        /// X (regardless of what the tag's key is). If you want to list only resources where
+        /// Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        ///  <code>tag-value</code> - The value of a tag assigned to the resource. This filter
         /// is independent of the <code>tag-key</code> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>volume-id</code> - The volume ID.
+        ///  <code>volume-id</code> - The volume ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code>
+        ///  <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code>
         /// for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code>
         /// for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code>
         /// for Magnetic volumes.

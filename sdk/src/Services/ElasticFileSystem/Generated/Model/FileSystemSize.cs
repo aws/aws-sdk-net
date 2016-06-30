@@ -28,14 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// This object provides the latest known metered size, in bytes, of data stored in the
-    /// file system, in its <code>Value</code> field, and the time at which that size was
-    /// determined in its <code>Timestamp</code> field. Note that the value does not represent
-    /// the size of a consistent snapshot of the file system, but it is eventually consistent
-    /// when there are no writes to the file system. That is, the value will represent the
-    /// actual size only if the file system is not modified for a period longer than a couple
-    /// of hours. Otherwise, the value is not necessarily the exact size the file system was
-    /// at any instant in time.
+    /// Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code>
+    /// field, and the time at which that size was determined in its <code>Timestamp</code>
+    /// field. Note that the value does not represent the size of a consistent snapshot of
+    /// the file system, but it is eventually consistent when there are no writes to the file
+    /// system. That is, the value will represent the actual size only if the file system
+    /// is not modified for a period longer than a couple of hours. Otherwise, the value is
+    /// not necessarily the exact size the file system was at any instant in time.
     /// </summary>
     public partial class FileSystemSize
     {
@@ -45,8 +44,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time at which the size of data, returned in the <code>Value</code> field, was
-        /// determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.
+        /// Time at which the size of data, returned in the <code>Value</code> field, was determined.
+        /// The value is the integer number of seconds since 1970-01-01T00:00:00Z.
         /// </para>
         /// </summary>
         public DateTime Timestamp
@@ -64,7 +63,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The latest known metered size, in bytes, of data stored in the file system.
+        /// Latest known metered size (in bytes) of data stored in the file system.
         /// </para>
         /// </summary>
         public long Value

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -50,51 +50,51 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>attachment.state</code> - The current state of the attachment between the gateway
+        ///  <code>attachment.state</code> - The current state of the attachment between the gateway
         /// and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code>
         /// | <code>detached</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>attachment.vpc-id</code> - The ID of an attached VPC.
+        ///  <code>attachment.vpc-id</code> - The ID of an attached VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>availability-zone</code> - The Availability Zone for the virtual private gateway
+        ///  <code>availability-zone</code> - The Availability Zone for the virtual private gateway
         /// (if applicable).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state</code> - The state of the virtual private gateway (<code>pending</code>
+        ///  <code>state</code> - The state of the virtual private gateway (<code>pending</code>
         /// | <code>available</code> | <code>deleting</code> | <code>deleted</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
         /// to the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
-        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
-        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
-        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
-        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-        /// filter.
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+        /// independent of the <code>tag-value</code> filter. For example, if you use both the
+        /// filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
+        /// both the tag key Purpose (regardless of what the tag's value is), and the tag value
+        /// X (regardless of what the tag's key is). If you want to list only resources where
+        /// Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        ///  <code>tag-value</code> - The value of a tag assigned to the resource. This filter
         /// is independent of the <code>tag-key</code> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>type</code> - The type of virtual private gateway. Currently the only supported
+        ///  <code>type</code> - The type of virtual private gateway. Currently the only supported
         /// type is <code>ipsec.1</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpn-gateway-id</code> - The ID of the virtual private gateway.
+        ///  <code>vpn-gateway-id</code> - The ID of the virtual private gateway.
         /// </para>
         ///  </li> </ul>
         /// </summary>

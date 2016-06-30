@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -110,42 +110,42 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>instance-stuck-in-state</code>: My instance is stuck in a state.
+        ///  <code>instance-stuck-in-state</code>: My instance is stuck in a state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>unresponsive</code>: My instance is unresponsive.
+        ///  <code>unresponsive</code>: My instance is unresponsive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
+        ///  <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>password-not-available</code>: A password is not available for my instance.
+        ///  <code>password-not-available</code>: A password is not available for my instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>performance-network</code>: My instance is experiencing performance problems
+        ///  <code>performance-network</code>: My instance is experiencing performance problems
         /// which I believe are network related.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>performance-instance-store</code>: My instance is experiencing performance problems
-        /// which I believe are related to the instance stores.
+        ///  <code>performance-instance-store</code>: My instance is experiencing performance
+        /// problems which I believe are related to the instance stores.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>performance-ebs-volume</code>: My instance is experiencing performance problems
+        ///  <code>performance-ebs-volume</code>: My instance is experiencing performance problems
         /// which I believe are related to an EBS volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>performance-other</code>: My instance is experiencing performance problems.
+        ///  <code>performance-other</code>: My instance is experiencing performance problems.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>other</code>: [explain using the description parameter]
+        ///  <code>other</code>: [explain using the description parameter]
         /// </para>
         ///  </li> </ul>
         /// </summary>

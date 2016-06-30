@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>i386</code> | <code>x86_64</code>
+        /// Valid values: <code>i386</code> | <code>x86_64</code> 
         /// </para>
         /// </summary>
         public string Architecture
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>xen</code>
+        /// Valid values: <code>xen</code> 
         /// </para>
         /// </summary>
         public string Hypervisor

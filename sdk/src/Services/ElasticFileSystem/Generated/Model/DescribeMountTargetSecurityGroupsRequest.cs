@@ -30,16 +30,24 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// Container for the parameters to the DescribeMountTargetSecurityGroups operation.
     /// Returns the security groups currently in effect for a mount target. This operation
-    /// requires that the network interface of the mount target has been created and the life
-    /// cycle state of the mount target is not "deleted".
+    /// requires that the network interface of the mount target has been created and the lifecycle
+    /// state of the mount target is not <code>deleted</code>.
     /// 
     ///  
     /// <para>
     /// This operation requires permissions for the following actions:
     /// </para>
-    ///  <ul> <li> <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action
-    /// on the mount target's file system. </li> <li> <code>ec2:DescribeNetworkInterfaceAttribute</code>
-    /// action on the mount target's network interface. </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the mount
+    /// target's file system. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's network
+    /// interface. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeMountTargetSecurityGroupsRequest : AmazonElasticFileSystemRequest
     {
@@ -48,7 +56,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MountTargetId. 
         /// <para>
-        /// The ID of the mount target whose security groups you want to retrieve.
+        /// ID of the mount target whose security groups you want to retrieve.
         /// </para>
         /// </summary>
         public string MountTargetId

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,14 +31,14 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeBundleTasks operation.
     /// Describes one or more of your bundling tasks.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Completed bundle tasks are listed for only a limited time. If your bundle task is
     /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
     /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
     /// task.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class DescribeBundleTasksRequest : AmazonEC2Request
     {
@@ -74,46 +74,46 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>bundle-id</code> - The ID of the bundle task.
+        ///  <code>bundle-id</code> - The ID of the bundle task.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>error-code</code> - If the task failed, the error code returned.
+        ///  <code>error-code</code> - If the task failed, the error code returned.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>error-message</code> - If the task failed, the error message returned.
+        ///  <code>error-message</code> - If the task failed, the error message returned.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>instance-id</code> - The ID of the instance.
+        ///  <code>instance-id</code> - The ID of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>progress</code> - The level of task completion, as a percentage (for example,
+        ///  <code>progress</code> - The level of task completion, as a percentage (for example,
         /// 20%).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.
+        ///  <code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>s3-prefix</code> - The beginning of the AMI name.
+        ///  <code>s3-prefix</code> - The beginning of the AMI name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).
+        ///  <code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code>
+        ///  <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code>
         /// | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code>
         /// | <code>failed</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>update-time</code> - The time of the most recent update for the task.
+        ///  <code>update-time</code> - The time of the most recent update for the task.
         /// </para>
         ///  </li> </ul>
         /// </summary>

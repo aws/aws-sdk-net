@@ -92,6 +92,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     request.Parameters.Add("MessageStructure", StringUtils.FromString(publicRequest.MessageStructure));
                 }
+                if(publicRequest.IsSetPhoneNumber())
+                {
+                    request.Parameters.Add("PhoneNumber", StringUtils.FromString(publicRequest.PhoneNumber));
+                }
                 if(publicRequest.IsSetSubject())
                 {
                     request.Parameters.Add("Subject", StringUtils.FromString(publicRequest.Subject));

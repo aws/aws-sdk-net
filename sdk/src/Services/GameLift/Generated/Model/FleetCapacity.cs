@@ -78,10 +78,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// Type of EC2 instances used in the fleet. EC2 instance types define the CPU, memory,
-        /// storage, and networking capacity of the fleetaposs hosts. Amazon GameLift supports
-        /// the EC2 instance types listed below. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon
-        /// EC2 Instance Types</a> for detailed descriptions of each.
+        /// Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance
+        /// type determines the computing resources of each instance in the fleet, including CPU,
+        /// memory, storage, and networking capacity. GameLift supports the following EC2 instance
+        /// types. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+        /// Types</a> for detailed descriptions.
         /// </para>
         /// </summary>
         public EC2InstanceType InstanceType

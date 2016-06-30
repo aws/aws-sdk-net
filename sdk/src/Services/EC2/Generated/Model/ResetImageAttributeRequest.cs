@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,11 +31,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ResetImageAttribute operation.
     /// Resets an attribute of an AMI to its default value.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
-    ///  The productCodes attribute can't be reset. 
+    /// The productCodes attribute can't be reset.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class ResetImageAttributeRequest : AmazonEC2Request
     {

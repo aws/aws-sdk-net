@@ -33,20 +33,28 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  
     /// <para>
-    /// When you create a mount target, Amazon EFS also creates a new network interface (see
-    /// <a>CreateMountTarget</a>). This operation replaces the security groups in effect for
-    /// the network interface associated with a mount target, with the <code>SecurityGroups</code>
-    /// provided in the request. This operation requires that the network interface of the
-    /// mount target has been created and the life cycle state of the mount target is not
-    /// "deleted". 
+    /// When you create a mount target, Amazon EFS also creates a new network interface. For
+    /// more information, see <a>CreateMountTarget</a>. This operation replaces the security
+    /// groups in effect for the network interface associated with a mount target, with the
+    /// <code>SecurityGroups</code> provided in the request. This operation requires that
+    /// the network interface of the mount target has been created and the lifecycle state
+    /// of the mount target is not <code>deleted</code>. 
     /// </para>
     ///  
     /// <para>
     /// The operation requires permissions for the following actions:
     /// </para>
-    ///  <ul> <li> <code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action on
-    /// the mount target's file system. </li> <li> <code>ec2:ModifyNetworkInterfaceAttribute</code>
-    /// action on the mount target's network interface. </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action on the mount
+    /// target's file system. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's network
+    /// interface. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ModifyMountTargetSecurityGroupsRequest : AmazonElasticFileSystemRequest
     {
@@ -56,7 +64,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MountTargetId. 
         /// <para>
-        /// The ID of the mount target whose security groups you want to modify.
+        /// ID of the mount target whose security groups you want to modify.
         /// </para>
         /// </summary>
         public string MountTargetId
@@ -74,7 +82,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// An array of up to five VPC security group IDs.
+        /// Array of up to five VPC security group IDs.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

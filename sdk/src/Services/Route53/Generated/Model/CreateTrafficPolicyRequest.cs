@@ -68,7 +68,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// The definition of this traffic policy in JSON format.
+        /// The definition of this traffic policy in JSON format. For more information, see <a
+        /// href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+        /// Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.
         /// </para>
         /// </summary>
         public string Document

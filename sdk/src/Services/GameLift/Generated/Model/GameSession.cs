@@ -41,6 +41,7 @@ namespace Amazon.GameLift.Model
         private int? _maximumPlayerSessionCount;
         private string _name;
         private PlayerSessionCreationPolicy _playerSessionCreationPolicy;
+        private int? _port;
         private GameSessionStatus _status;
         private DateTime? _terminationTime;
 
@@ -138,7 +139,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IP address of the game session.
+        /// IP address of the game session. To connect to a GameLift server process, an app needs
+        /// both the IP address and port number.
         /// </para>
         /// </summary>
         public string IpAddress
@@ -174,8 +176,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this game session. Session names do not need to
-        /// be unique.
+        /// Descriptive label associated with a game session. Session names do not need to be
+        /// unique.
         /// </para>
         /// </summary>
         public string Name
@@ -209,10 +211,29 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// Port number for the game session. To connect to a GameLift server process, an app
+        /// needs both the IP address and port number.
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the game session. A game session must be in an ACTIVE state to have
-        /// player sessions.
+        /// Current status of the game session. A game session must be in an <code>ACTIVE</code>
+        /// state to have player sessions.
         /// </para>
         /// </summary>
         public GameSessionStatus Status

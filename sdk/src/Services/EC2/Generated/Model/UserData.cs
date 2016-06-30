@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the user data to be made available to an instance.
+    /// Describes the user data for an instance.
     /// </summary>
     public partial class UserData
     {
@@ -37,7 +37,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The Base64-encoded MIME user data for the instance.
+        /// The user data. If you are using an AWS SDK or command line tool, Base64-encoding is
+        /// performed for you, and you can load the text from a file. Otherwise, you must provide
+        /// Base64-encoded text.
         /// </para>
         /// </summary>
         public string Data

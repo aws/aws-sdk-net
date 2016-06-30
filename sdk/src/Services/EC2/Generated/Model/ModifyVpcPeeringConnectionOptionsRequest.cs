@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,17 +32,17 @@ namespace Amazon.EC2.Model
     /// Modifies the VPC peering connection options on one side of a VPC peering connection.
     /// You can do the following:
     /// 
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
     /// Enable/disable communication over the peering connection between an EC2-Classic instance
-    /// that's linked to your VPC (using ClassicLink) and instances in the peer VPC. 
+    /// that's linked to your VPC (using ClassicLink) and instances in the peer VPC.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// Enable/disable communication over the peering connection between instances in your
     /// VPC and an EC2-Classic instance that's linked to the peer VPC.
     /// </para>
-    /// </li> </ul> 
+    ///  </li> </ul> 
     /// <para>
     /// If the peered VPCs are in different accounts, each owner must initiate a separate
     /// request to enable or disable communication in either direction, depending on whether

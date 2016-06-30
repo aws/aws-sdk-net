@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -65,23 +65,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>iamFleetRoleInvalid</code> - The Spot fleet did not have the required permissions
+        ///  <code>iamFleetRoleInvalid</code> - The Spot fleet did not have the required permissions
         /// either to launch or terminate an instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and
+        ///  <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and
         /// several attempts to launch instances have failed. For more information, see the description
         /// of the event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid.
+        ///  <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid.
         /// For more information, see the description of the event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the number
+        ///  <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the number
         /// of Spot instances that you can launch.
         /// </para>
         ///  </li> </ul> 
@@ -90,48 +90,48 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>active</code> - The Spot fleet has been validated and Amazon EC2 is attempting
+        ///  <code>active</code> - The Spot fleet has been validated and Amazon EC2 is attempting
         /// to maintain the target number of running Spot instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>cancelled</code> - The Spot fleet is canceled and has no running Spot instances.
+        ///  <code>cancelled</code> - The Spot fleet is canceled and has no running Spot instances.
         /// The Spot fleet will be deleted two days after its instances were terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>cancelled_running</code> - The Spot fleet is canceled and will not launch additional
+        ///  <code>cancelled_running</code> - The Spot fleet is canceled and will not launch additional
         /// Spot instances, but its existing Spot instances continue to run until they are interrupted
         /// or terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>cancelled_terminating</code> - The Spot fleet is canceled and its Spot instances
+        ///  <code>cancelled_terminating</code> - The Spot fleet is canceled and its Spot instances
         /// are terminating.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>expired</code> - The Spot fleet request has expired. A subsequent event indicates
+        ///  <code>expired</code> - The Spot fleet request has expired. A subsequent event indicates
         /// that the instances were terminated, if the request was created with <code>TerminateInstancesWithExpiration</code>
         /// set.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>modify_in_progress</code> - A request to modify the Spot fleet request was accepted
-        /// and is in progress.
+        ///  <code>modify_in_progress</code> - A request to modify the Spot fleet request was
+        /// accepted and is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>modify_successful</code> - The Spot fleet request was modified.
+        ///  <code>modify_successful</code> - The Spot fleet request was modified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>price_update</code> - The bid price for a launch configuration was adjusted
+        ///  <code>price_update</code> - The bid price for a launch configuration was adjusted
         /// because it was too high. This change is permanent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>submitted</code> - The Spot fleet request is being evaluated and Amazon EC2
+        ///  <code>submitted</code> - The Spot fleet request is being evaluated and Amazon EC2
         /// is preparing to launch the target number of Spot instances.
         /// </para>
         ///  </li> </ul> 
@@ -140,11 +140,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>launched</code> - A bid was fulfilled and a new instance was launched.
+        ///  <code>launched</code> - A bid was fulfilled and a new instance was launched.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>terminated</code> - An instance was terminated by the user.
+        ///  <code>terminated</code> - An instance was terminated by the user.
         /// </para>
         ///  </li> </ul>
         /// </summary>

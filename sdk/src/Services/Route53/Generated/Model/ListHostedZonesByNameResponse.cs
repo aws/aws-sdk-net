@@ -122,12 +122,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextDNSName. 
         /// <para>
-        /// If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>, there are
-        /// more hosted zones associated with the current AWS account. To get the next page of
-        /// results, make another request to <code>ListHostedZonesByName</code>. Specify the value
-        /// of <a>ListHostedZonesByNameResponse$NextDNSName</a> in the <a>ListHostedZonesByNameRequest$DNSName</a>
-        /// element and <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the <a>ListHostedZonesByNameRequest$HostedZoneId</a>
-        /// element.
+        /// If the value of <code>IsTruncated</code> in the <code>ListHostedZonesByNameResponse</code>
+        /// is <code>true</code>, there are more hosted zones associated with the current AWS
+        /// account. To get the next page of results, make another request to <code>ListHostedZonesByName</code>.
+        /// Specify the value of <code>NextDNSName</code> in the <code>DNSName</code> parameter.
+        /// Specify <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
         /// </para>
         /// </summary>
         public string NextDNSName
@@ -145,12 +144,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextHostedZoneId. 
         /// <para>
-        /// If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>, there are
-        /// more hosted zones associated with the current AWS account. To get the next page of
-        /// results, make another request to <code>ListHostedZonesByName</code>. Specify the value
-        /// of <a>ListHostedZonesByNameResponse$NextDNSName</a> in the <a>ListHostedZonesByNameRequest$DNSName</a>
-        /// element and <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the <a>ListHostedZonesByNameRequest$HostedZoneId</a>
-        /// element.
+        /// If the value of <code>IsTruncated</code> in the <code>ListHostedZonesByNameResponse</code>
+        /// is <code>true</code>, there are more hosted zones associated with the current AWS
+        /// account. To get the next page of results, make another request to <code>ListHostedZonesByName</code>.
+        /// Specify the value of <code>NextDNSName</code> in the <code>DNSName</code> parameter.
+        /// Specify <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.
         /// </para>
         /// </summary>
         public string NextHostedZoneId
@@ -170,10 +168,10 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The maximum number of hosted zones to be included in the response body. If the number
         /// of hosted zones associated with this AWS account exceeds <code>MaxItems</code>, the
-        /// value of <a>ListHostedZonesByNameResponse$IsTruncated</a> in the response is <code>true</code>.
-        /// Call <code>ListHostedZonesByName</code> again and specify the value of <a>ListHostedZonesByNameResponse$NextDNSName</a>
-        /// and <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements respectively to
-        /// get the next page of results.
+        /// value of <code>IsTruncated</code> in the <code>ListHostedZonesByNameResponse</code>
+        /// is <code>true</code>. Call <code>ListHostedZonesByName</code> again and specify the
+        /// value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from
+        /// the previous response to get the next page of results.
         /// </para>
         /// </summary>
         public string MaxItems

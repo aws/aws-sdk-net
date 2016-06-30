@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Describes the ID format settings for your resources on a per-region basis, for example,
     /// to view which resource types are enabled for longer IDs. This request only returns
     /// information about resource types whose ID formats can be modified; it does not return
-    /// information about other resource types. 
+    /// information about other resource types.
     /// 
     ///  
     /// <para>

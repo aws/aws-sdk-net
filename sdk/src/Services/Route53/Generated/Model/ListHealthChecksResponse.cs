@@ -104,8 +104,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// Indicates where to continue listing health checks. If <a>ListHealthChecksResponse$IsTruncated</a>
-        /// is <code>true</code>, make another request to <code>ListHealthChecks</code> and include
+        /// Indicates where to continue listing health checks. If <code>IsTruncated</code> is
+        /// <code>true</code>, make another request to <code>ListHealthChecks</code> and include
         /// the value of the <code>NextMarker</code> element in the <code>Marker</code> element
         /// to get the next page of results.
         /// </para>
@@ -127,9 +127,9 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The maximum number of health checks to be included in the response body. If the number
         /// of health checks associated with this AWS account exceeds <code>MaxItems</code>, the
-        /// value of <a>ListHealthChecksResponse$IsTruncated</a> in the response is <code>true</code>.
-        /// Call <code>ListHealthChecks</code> again and specify the value of <a>ListHealthChecksResponse$NextMarker</a>
-        /// in the <a>ListHostedZonesRequest$Marker</a> element to get the next page of results.
+        /// value of <code>IsTruncated</code> in the response is <code>true</code>. Call <code>ListHealthChecks</code>
+        /// again and specify the value of <code>NextMarker</code> from the last response in the
+        /// <code>Marker</code> element of the next request to get the next page of results.
         /// </para>
         /// </summary>
         public string MaxItems

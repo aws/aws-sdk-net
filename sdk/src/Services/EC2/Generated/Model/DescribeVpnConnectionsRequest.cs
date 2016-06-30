@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -50,65 +50,65 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>customer-gateway-configuration</code> - The configuration information for the
+        ///  <code>customer-gateway-configuration</code> - The configuration information for the
         /// customer gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>customer-gateway-id</code> - The ID of a customer gateway associated with the
+        ///  <code>customer-gateway-id</code> - The ID of a customer gateway associated with the
         /// VPN connection.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>state</code> - The state of the VPN connection (<code>pending</code> | <code>available</code>
+        ///  <code>state</code> - The state of the VPN connection (<code>pending</code> | <code>available</code>
         /// | <code>deleting</code> | <code>deleted</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>option.static-routes-only</code> - Indicates whether the connection has static
+        ///  <code>option.static-routes-only</code> - Indicates whether the connection has static
         /// routes only. Used for devices that do not support Border Gateway Protocol (BGP).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route.destination-cidr-block</code> - The destination CIDR block. This corresponds
+        ///  <code>route.destination-cidr-block</code> - The destination CIDR block. This corresponds
         /// to the subnet used in a customer data center.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>bgp-asn</code> - The BGP Autonomous System Number (ASN) associated with a BGP
+        ///  <code>bgp-asn</code> - The BGP Autonomous System Number (ASN) associated with a BGP
         /// device.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
         /// to the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
-        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
-        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
-        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
-        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-        /// filter.
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+        /// independent of the <code>tag-value</code> filter. For example, if you use both the
+        /// filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
+        /// both the tag key Purpose (regardless of what the tag's value is), and the tag value
+        /// X (regardless of what the tag's key is). If you want to list only resources where
+        /// Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        ///  <code>tag-value</code> - The value of a tag assigned to the resource. This filter
         /// is independent of the <code>tag-key</code> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>type</code> - The type of VPN connection. Currently the only supported type
+        ///  <code>type</code> - The type of VPN connection. Currently the only supported type
         /// is <code>ipsec.1</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpn-connection-id</code> - The ID of the VPN connection.
+        ///  <code>vpn-connection-id</code> - The ID of the VPN connection.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated with
+        ///  <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated with
         /// the VPN connection.
         /// </para>
         ///  </li> </ul>

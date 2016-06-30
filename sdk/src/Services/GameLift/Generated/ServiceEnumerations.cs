@@ -79,6 +79,64 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type ComparisonOperatorType.
+    /// </summary>
+    public class ComparisonOperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GreaterThanOrEqualToThreshold for ComparisonOperatorType
+        /// </summary>
+        public static readonly ComparisonOperatorType GreaterThanOrEqualToThreshold = new ComparisonOperatorType("GreaterThanOrEqualToThreshold");
+        /// <summary>
+        /// Constant GreaterThanThreshold for ComparisonOperatorType
+        /// </summary>
+        public static readonly ComparisonOperatorType GreaterThanThreshold = new ComparisonOperatorType("GreaterThanThreshold");
+        /// <summary>
+        /// Constant LessThanOrEqualToThreshold for ComparisonOperatorType
+        /// </summary>
+        public static readonly ComparisonOperatorType LessThanOrEqualToThreshold = new ComparisonOperatorType("LessThanOrEqualToThreshold");
+        /// <summary>
+        /// Constant LessThanThreshold for ComparisonOperatorType
+        /// </summary>
+        public static readonly ComparisonOperatorType LessThanThreshold = new ComparisonOperatorType("LessThanThreshold");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComparisonOperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComparisonOperatorType FindValue(string value)
+        {
+            return FindValue<ComparisonOperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComparisonOperatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EC2InstanceType.
     /// </summary>
     public class EC2InstanceType : ConstantClass
@@ -262,6 +320,10 @@ namespace Amazon.GameLift
         /// Constant FLEET_INITIALIZATION_FAILED for EventCode
         /// </summary>
         public static readonly EventCode FLEET_INITIALIZATION_FAILED = new EventCode("FLEET_INITIALIZATION_FAILED");
+        /// <summary>
+        /// Constant FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = new EventCode("FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED");
         /// <summary>
         /// Constant FLEET_SCALING_EVENT for EventCode
         /// </summary>
@@ -529,6 +591,72 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type MetricName.
+    /// </summary>
+    public class MetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ActivatingGameSessions for MetricName
+        /// </summary>
+        public static readonly MetricName ActivatingGameSessions = new MetricName("ActivatingGameSessions");
+        /// <summary>
+        /// Constant ActiveGameSessions for MetricName
+        /// </summary>
+        public static readonly MetricName ActiveGameSessions = new MetricName("ActiveGameSessions");
+        /// <summary>
+        /// Constant ActiveInstances for MetricName
+        /// </summary>
+        public static readonly MetricName ActiveInstances = new MetricName("ActiveInstances");
+        /// <summary>
+        /// Constant AvailablePlayerSessions for MetricName
+        /// </summary>
+        public static readonly MetricName AvailablePlayerSessions = new MetricName("AvailablePlayerSessions");
+        /// <summary>
+        /// Constant CurrentPlayerSessions for MetricName
+        /// </summary>
+        public static readonly MetricName CurrentPlayerSessions = new MetricName("CurrentPlayerSessions");
+        /// <summary>
+        /// Constant IdleInstances for MetricName
+        /// </summary>
+        public static readonly MetricName IdleInstances = new MetricName("IdleInstances");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricName FindValue(string value)
+        {
+            return FindValue<MetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PlayerSessionCreationPolicy.
     /// </summary>
     public class PlayerSessionCreationPolicy : ConstantClass
@@ -637,6 +765,56 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type ProtectionPolicy.
+    /// </summary>
+    public class ProtectionPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FullProtection for ProtectionPolicy
+        /// </summary>
+        public static readonly ProtectionPolicy FullProtection = new ProtectionPolicy("FullProtection");
+        /// <summary>
+        /// Constant NoProtection for ProtectionPolicy
+        /// </summary>
+        public static readonly ProtectionPolicy NoProtection = new ProtectionPolicy("NoProtection");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectionPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectionPolicy FindValue(string value)
+        {
+            return FindValue<ProtectionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RoutingStrategyType.
     /// </summary>
     public class RoutingStrategyType : ConstantClass
@@ -680,6 +858,130 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RoutingStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScalingAdjustmentType.
+    /// </summary>
+    public class ScalingAdjustmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ChangeInCapacity for ScalingAdjustmentType
+        /// </summary>
+        public static readonly ScalingAdjustmentType ChangeInCapacity = new ScalingAdjustmentType("ChangeInCapacity");
+        /// <summary>
+        /// Constant ExactCapacity for ScalingAdjustmentType
+        /// </summary>
+        public static readonly ScalingAdjustmentType ExactCapacity = new ScalingAdjustmentType("ExactCapacity");
+        /// <summary>
+        /// Constant PercentChangeInCapacity for ScalingAdjustmentType
+        /// </summary>
+        public static readonly ScalingAdjustmentType PercentChangeInCapacity = new ScalingAdjustmentType("PercentChangeInCapacity");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScalingAdjustmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScalingAdjustmentType FindValue(string value)
+        {
+            return FindValue<ScalingAdjustmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScalingAdjustmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScalingStatusType.
+    /// </summary>
+    public class ScalingStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ScalingStatusType
+        /// </summary>
+        public static readonly ScalingStatusType ACTIVE = new ScalingStatusType("ACTIVE");
+        /// <summary>
+        /// Constant DELETE_REQUESTED for ScalingStatusType
+        /// </summary>
+        public static readonly ScalingStatusType DELETE_REQUESTED = new ScalingStatusType("DELETE_REQUESTED");
+        /// <summary>
+        /// Constant DELETED for ScalingStatusType
+        /// </summary>
+        public static readonly ScalingStatusType DELETED = new ScalingStatusType("DELETED");
+        /// <summary>
+        /// Constant DELETING for ScalingStatusType
+        /// </summary>
+        public static readonly ScalingStatusType DELETING = new ScalingStatusType("DELETING");
+        /// <summary>
+        /// Constant ERROR for ScalingStatusType
+        /// </summary>
+        public static readonly ScalingStatusType ERROR = new ScalingStatusType("ERROR");
+        /// <summary>
+        /// Constant UPDATE_REQUESTED for ScalingStatusType
+        /// </summary>
+        public static readonly ScalingStatusType UPDATE_REQUESTED = new ScalingStatusType("UPDATE_REQUESTED");
+        /// <summary>
+        /// Constant UPDATING for ScalingStatusType
+        /// </summary>
+        public static readonly ScalingStatusType UPDATING = new ScalingStatusType("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScalingStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScalingStatusType FindValue(string value)
+        {
+            return FindValue<ScalingStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScalingStatusType(string value)
         {
             return FindValue(value);
         }

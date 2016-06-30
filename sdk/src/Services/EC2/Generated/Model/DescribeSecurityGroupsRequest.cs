@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -55,70 +55,70 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>description</code> - The description of the security group.
+        ///  <code>description</code> - The description of the security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
+        ///  <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS service
         /// to which the security group allows access.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>group-id</code> - The ID of the security group. 
+        ///  <code>group-id</code> - The ID of the security group. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>group-name</code> - The name of the security group.
+        ///  <code>group-name</code> - The name of the security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+        ///  <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ip-permission.from-port</code> - The start of port range for the TCP and UDP
+        ///  <code>ip-permission.from-port</code> - The start of port range for the TCP and UDP
         /// protocols, or an ICMP type number.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ip-permission.group-id</code> - The ID of a security group that has been granted
+        ///  <code>ip-permission.group-id</code> - The ID of a security group that has been granted
         /// permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ip-permission.group-name</code> - The name of a security group that has been
+        ///  <code>ip-permission.group-name</code> - The name of a security group that has been
         /// granted permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ip-permission.protocol</code> - The IP protocol for the permission (<code>tcp</code>
+        ///  <code>ip-permission.protocol</code> - The IP protocol for the permission (<code>tcp</code>
         /// | <code>udp</code> | <code>icmp</code> or a protocol number).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ip-permission.to-port</code> - The end of port range for the TCP and UDP protocols,
+        ///  <code>ip-permission.to-port</code> - The end of port range for the TCP and UDP protocols,
         /// or an ICMP code.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ip-permission.user-id</code> - The ID of an AWS account that has been granted
+        ///  <code>ip-permission.user-id</code> - The ID of an AWS account that has been granted
         /// permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>owner-id</code> - The AWS account ID of the owner of the security group.
+        ///  <code>owner-id</code> - The AWS account ID of the owner of the security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-key</code> - The key of a tag assigned to the security group.
+        ///  <code>tag-key</code> - The key of a tag assigned to the security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-value</code> - The value of a tag assigned to the security group.
+        ///  <code>tag-value</code> - The value of a tag assigned to the security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-id</code> - The ID of the VPC specified when the security group was created.
+        ///  <code>vpc-id</code> - The ID of the VPC specified when the security group was created.
         /// </para>
         ///  </li> </ul>
         /// </summary>

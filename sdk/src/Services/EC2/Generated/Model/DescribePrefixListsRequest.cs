@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -48,11 +48,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>prefix-list-id</code>: The ID of a prefix list.
+        ///  <code>prefix-list-id</code>: The ID of a prefix list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>prefix-list-name</code>: The name of a prefix list.
+        ///  <code>prefix-list-name</code>: The name of a prefix list.
         /// </para>
         ///  </li> </ul>
         /// </summary>

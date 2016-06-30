@@ -34,8 +34,8 @@ namespace Amazon.Route53.Model
     /// 
     ///  <note>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's
     /// a brief delay while Amazon Route 53 creates the resource record sets that are specified
-    /// in the traffic policy definition. For more information, see the <a>State</a> response
-    /// element.</note> 
+    /// in the traffic policy definition. For more information, see the <code>State</code>
+    /// response element.</note> 
     /// <para>
     /// To get information about the traffic policy instances that you created in a specified
     /// hosted zone, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
