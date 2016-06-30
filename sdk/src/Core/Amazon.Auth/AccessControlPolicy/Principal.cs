@@ -85,14 +85,12 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </summary>
         /// <param name="accountId">An AWS account ID.</param>
         public Principal(string accountId) 
+            : this(AWS_PROVIDER, accountId)
         {
-            this.provider = AWS_PROVIDER;
             if (accountId == null) 
             {
                 throw new ArgumentNullException("accountId");
             }
-            
-            this.id = accountId.Replace("-", "");
         }
 
         /// <summary>
@@ -101,9 +99,21 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <param name="provider">The provider of the principal</param>
         /// <param name="id">The unique ID of the Principal within the provider</param>
         public Principal(string provider, string id)
+            : this(provider, id, provider == AWS_PROVIDER)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a new principal with the specified provider and id 
+        /// and optionally strips hyphens from the id
+        /// </summary>
+        /// <param name="provider">The provider of the principal</param>
+        /// <param name="id">The unique ID of the Principal within the provider</param>
+        /// <param name="stripHyphen">Strip hyphen</param>
+        public Principal(string provider, string id, bool stripHyphen)
         {
             this.provider = provider;
-            if (string.Equals(provider, AWS_PROVIDER))
+            if (stripHyphen)
             {
                 id = id.Replace("-", "");
             }
