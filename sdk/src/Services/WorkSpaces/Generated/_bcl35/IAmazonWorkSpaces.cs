@@ -444,6 +444,98 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeWorkspacesConnectionStatus
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesConnectionStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspacesConnectionStatus service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        DescribeWorkspacesConnectionStatusResponse DescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspacesConnectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesConnectionStatus operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspacesConnectionStatus
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorkspacesConnectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspacesConnectionStatus.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorkspacesConnectionStatusResult from WorkSpaces.</returns>
+        DescribeWorkspacesConnectionStatusResponse EndDescribeWorkspacesConnectionStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyWorkspaceProperties
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
+        /// 
+        /// <returns>The response from the ModifyWorkspaceProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedWorkspaceConfigurationException">
+        /// 
+        /// </exception>
+        ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyWorkspaceProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyWorkspaceProperties
+        ///         operation.</returns>
+        IAsyncResult BeginModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyWorkspaceProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyWorkspaceProperties.</param>
+        /// 
+        /// <returns>Returns a  ModifyWorkspacePropertiesResult from WorkSpaces.</returns>
+        ModifyWorkspacePropertiesResponse EndModifyWorkspaceProperties(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RebootWorkspaces
 
 
@@ -549,6 +641,80 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>Returns a  RebuildWorkspacesResult from WorkSpaces.</returns>
         RebuildWorkspacesResponse EndRebuildWorkspaces(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartWorkspaces
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces service method.</param>
+        /// 
+        /// <returns>The response from the StartWorkspaces service method, as returned by WorkSpaces.</returns>
+        StartWorkspacesResponse StartWorkspaces(StartWorkspacesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartWorkspaces
+        ///         operation.</returns>
+        IAsyncResult BeginStartWorkspaces(StartWorkspacesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartWorkspaces.</param>
+        /// 
+        /// <returns>Returns a  StartWorkspacesResult from WorkSpaces.</returns>
+        StartWorkspacesResponse EndStartWorkspaces(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopWorkspaces
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces service method.</param>
+        /// 
+        /// <returns>The response from the StopWorkspaces service method, as returned by WorkSpaces.</returns>
+        StopWorkspacesResponse StopWorkspaces(StopWorkspacesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopWorkspaces
+        ///         operation.</returns>
+        IAsyncResult BeginStopWorkspaces(StopWorkspacesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopWorkspaces.</param>
+        /// 
+        /// <returns>Returns a  StopWorkspacesResult from WorkSpaces.</returns>
+        StopWorkspacesResponse EndStopWorkspaces(IAsyncResult asyncResult);
 
         #endregion
         

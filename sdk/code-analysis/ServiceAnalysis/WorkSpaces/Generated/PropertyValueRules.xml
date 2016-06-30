@@ -61,6 +61,20 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeWorkspacesConnectionStatusRequest.NextToken</property>
+    <min>1</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeWorkspacesConnectionStatusResponse.NextToken</property>
+    <min>1</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ModifyWorkspacePropertiesRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DefaultWorkspaceCreationProperties.CustomSecurityGroupId</property>
     <pattern>^(sg-[0-9a-f]{8})$</pattern>
   </property-value-rule>
@@ -83,6 +97,14 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ResourceUnavailableException.ResourceId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.StartRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.StopRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.Tag.Key</property>
@@ -129,6 +151,10 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.WorkspaceBundle.Name</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkspaceConnectionStatus.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.WorkspaceDirectory.CustomerUserName</property>

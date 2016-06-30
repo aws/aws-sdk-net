@@ -106,6 +106,34 @@
       ],
       "documentation":"<p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>"
     },
+    "DescribeWorkspacesConnectionStatus":{
+      "name":"DescribeWorkspacesConnectionStatus",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeWorkspacesConnectionStatusRequest"},
+      "output":{"shape":"DescribeWorkspacesConnectionStatusResult"},
+      "errors":[
+        {"shape":"InvalidParameterValuesException"}
+      ]
+    },
+    "ModifyWorkspaceProperties":{
+      "name":"ModifyWorkspaceProperties",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyWorkspacePropertiesRequest"},
+      "output":{"shape":"ModifyWorkspacePropertiesResult"},
+      "errors":[
+        {"shape":"InvalidParameterValuesException"},
+        {"shape":"InvalidResourceStateException"},
+        {"shape":"OperationInProgressException"},
+        {"shape":"UnsupportedWorkspaceConfigurationException"},
+        {"shape":"ResourceNotFoundException"}
+      ]
+    },
     "RebootWorkspaces":{
       "name":"RebootWorkspaces",
       "http":{
@@ -125,6 +153,24 @@
       "input":{"shape":"RebuildWorkspacesRequest"},
       "output":{"shape":"RebuildWorkspacesResult"},
       "documentation":"<p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have been installed, or system settings that have been made since the WorkSpace was created will be lost.</li> <li>The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely rebuilt.</p> </note>"
+    },
+    "StartWorkspaces":{
+      "name":"StartWorkspaces",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartWorkspacesRequest"},
+      "output":{"shape":"StartWorkspacesResult"}
+    },
+    "StopWorkspaces":{
+      "name":"StopWorkspaces",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StopWorkspacesRequest"},
+      "output":{"shape":"StopWorkspacesResult"}
     },
     "TerminateWorkspaces":{
       "name":"TerminateWorkspaces",
@@ -178,6 +224,14 @@
       "documentation":"<p>Contains information about the compute type of a WorkSpace bundle.</p>"
     },
     "ComputerName":{"type":"string"},
+    "ConnectionState":{
+      "type":"string",
+      "enum":[
+        "CONNECTED",
+        "DISCONNECTED",
+        "UNKNOWN"
+      ]
+    },
     "CreateTagsRequest":{
       "type":"structure",
       "required":[
@@ -359,6 +413,20 @@
       },
       "documentation":"<p>Contains the results of the <a>DescribeWorkspaceDirectories</a> operation.</p>"
     },
+    "DescribeWorkspacesConnectionStatusRequest":{
+      "type":"structure",
+      "members":{
+        "WorkspaceIds":{"shape":"WorkspaceIdList"},
+        "NextToken":{"shape":"PaginationToken"}
+      }
+    },
+    "DescribeWorkspacesConnectionStatusResult":{
+      "type":"structure",
+      "members":{
+        "WorkspacesConnectionStatus":{"shape":"WorkspaceConnectionStatusList"},
+        "NextToken":{"shape":"PaginationToken"}
+      }
+    },
     "DescribeWorkspacesRequest":{
       "type":"structure",
       "members":{
@@ -455,6 +523,14 @@
       "type":"list",
       "member":{"shape":"FailedWorkspaceChangeRequest"}
     },
+    "FailedStartWorkspaceRequests":{
+      "type":"list",
+      "member":{"shape":"FailedWorkspaceChangeRequest"}
+    },
+    "FailedStopWorkspaceRequests":{
+      "type":"list",
+      "member":{"shape":"FailedWorkspaceChangeRequest"}
+    },
     "FailedTerminateWorkspaceRequests":{
       "type":"list",
       "member":{"shape":"FailedWorkspaceChangeRequest"}
@@ -488,15 +564,45 @@
       "documentation":"<p>One or more parameter values are not valid.</p>",
       "exception":true
     },
+    "InvalidResourceStateException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "exception":true
+    },
     "IpAddress":{"type":"string"},
     "Limit":{
       "type":"integer",
       "max":25,
       "min":1
     },
+    "ModifyWorkspacePropertiesRequest":{
+      "type":"structure",
+      "required":[
+        "WorkspaceId",
+        "WorkspaceProperties"
+      ],
+      "members":{
+        "WorkspaceId":{"shape":"WorkspaceId"},
+        "WorkspaceProperties":{"shape":"WorkspaceProperties"}
+      }
+    },
+    "ModifyWorkspacePropertiesResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "NonEmptyString":{
       "type":"string",
       "min":1
+    },
+    "OperationInProgressException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "exception":true
     },
     "PaginationToken":{
       "type":"string",
@@ -625,9 +731,67 @@
       "documentation":"<p>The specified resource is not available.</p>",
       "exception":true
     },
+    "RunningMode":{
+      "type":"string",
+      "enum":[
+        "AUTO_STOP",
+        "ALWAYS_ON"
+      ]
+    },
+    "RunningModeAutoStopTimeoutInMinutes":{"type":"integer"},
     "SecurityGroupId":{
       "type":"string",
       "pattern":"^(sg-[0-9a-f]{8})$"
+    },
+    "StartRequest":{
+      "type":"structure",
+      "members":{
+        "WorkspaceId":{"shape":"WorkspaceId"}
+      }
+    },
+    "StartWorkspaceRequests":{
+      "type":"list",
+      "member":{"shape":"StartRequest"},
+      "max":25,
+      "min":1
+    },
+    "StartWorkspacesRequest":{
+      "type":"structure",
+      "required":["StartWorkspaceRequests"],
+      "members":{
+        "StartWorkspaceRequests":{"shape":"StartWorkspaceRequests"}
+      }
+    },
+    "StartWorkspacesResult":{
+      "type":"structure",
+      "members":{
+        "FailedRequests":{"shape":"FailedStartWorkspaceRequests"}
+      }
+    },
+    "StopRequest":{
+      "type":"structure",
+      "members":{
+        "WorkspaceId":{"shape":"WorkspaceId"}
+      }
+    },
+    "StopWorkspaceRequests":{
+      "type":"list",
+      "member":{"shape":"StopRequest"},
+      "max":25,
+      "min":1
+    },
+    "StopWorkspacesRequest":{
+      "type":"structure",
+      "required":["StopWorkspaceRequests"],
+      "members":{
+        "StopWorkspaceRequests":{"shape":"StopWorkspaceRequests"}
+      }
+    },
+    "StopWorkspacesResult":{
+      "type":"structure",
+      "members":{
+        "FailedRequests":{"shape":"FailedStopWorkspaceRequests"}
+      }
     },
     "SubnetId":{
       "type":"string",
@@ -707,6 +871,14 @@
       },
       "documentation":"<p>Contains the results of the <a>TerminateWorkspaces</a> operation.</p>"
     },
+    "Timestamp":{"type":"timestamp"},
+    "UnsupportedWorkspaceConfigurationException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "exception":true
+    },
     "UserName":{
       "type":"string",
       "max":63,
@@ -777,7 +949,8 @@
         "RootVolumeEncryptionEnabled":{
           "shape":"BooleanObject",
           "documentation":"<p>Specifies whether the data stored on the root volume, or C: drive, is encrypted.</p>"
-        }
+        },
+        "WorkspaceProperties":{"shape":"WorkspaceProperties"}
       },
       "documentation":"<p>Contains information about a WorkSpace.</p>"
     },
@@ -810,6 +983,19 @@
         }
       },
       "documentation":"<p>Contains information about a WorkSpace bundle.</p>"
+    },
+    "WorkspaceConnectionStatus":{
+      "type":"structure",
+      "members":{
+        "WorkspaceId":{"shape":"WorkspaceId"},
+        "ConnectionState":{"shape":"ConnectionState"},
+        "ConnectionStateCheckTimestamp":{"shape":"Timestamp"},
+        "LastKnownUserConnectionTimestamp":{"shape":"Timestamp"}
+      }
+    },
+    "WorkspaceConnectionStatusList":{
+      "type":"list",
+      "member":{"shape":"WorkspaceConnectionStatus"}
     },
     "WorkspaceDirectory":{
       "type":"structure",
@@ -897,6 +1083,13 @@
       "type":"list",
       "member":{"shape":"Workspace"}
     },
+    "WorkspaceProperties":{
+      "type":"structure",
+      "members":{
+        "RunningMode":{"shape":"RunningMode"},
+        "RunningModeAutoStopTimeoutInMinutes":{"shape":"RunningModeAutoStopTimeoutInMinutes"}
+      }
+    },
     "WorkspaceRequest":{
       "type":"structure",
       "required":[
@@ -929,6 +1122,7 @@
           "shape":"BooleanObject",
           "documentation":"<p>Specifies whether the data stored on the root volume, or C: drive, is encrypted.</p>"
         },
+        "WorkspaceProperties":{"shape":"WorkspaceProperties"},
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>The tags of the WorkSpace request.</p>"
@@ -950,10 +1144,14 @@
         "IMPAIRED",
         "UNHEALTHY",
         "REBOOTING",
+        "STARTING",
         "REBUILDING",
+        "MAINTENANCE",
         "TERMINATING",
         "TERMINATED",
         "SUSPENDED",
+        "STOPPING",
+        "STOPPED",
         "ERROR"
       ]
     }

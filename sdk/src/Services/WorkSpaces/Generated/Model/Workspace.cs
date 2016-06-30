@@ -45,6 +45,7 @@ namespace Amazon.WorkSpaces.Model
         private bool? _userVolumeEncryptionEnabled;
         private string _volumeEncryptionKey;
         private string _workspaceId;
+        private WorkspaceProperties _workspaceProperties;
 
         /// <summary>
         /// Gets and sets the property BundleId. 
@@ -279,6 +280,21 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetWorkspaceId()
         {
             return this._workspaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceProperties.
+        /// </summary>
+        public WorkspaceProperties WorkspaceProperties
+        {
+            get { return this._workspaceProperties; }
+            set { this._workspaceProperties = value; }
+        }
+
+        // Check to see if WorkspaceProperties property is set
+        internal bool IsSetWorkspaceProperties()
+        {
+            return this._workspaceProperties != null;
         }
 
     }
