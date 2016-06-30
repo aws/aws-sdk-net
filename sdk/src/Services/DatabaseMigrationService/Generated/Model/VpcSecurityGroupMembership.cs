@@ -30,47 +30,45 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// 
     /// </summary>
-    public partial class DescribeConnectionsResponse : AmazonWebServiceResponse
+    public partial class VpcSecurityGroupMembership
     {
-        private List<Connection> _connections = new List<Connection>();
-        private string _marker;
+        private string _status;
+        private string _vpcSecurityGroupId;
 
         /// <summary>
-        /// Gets and sets the property Connections. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// A description of the connections.
+        /// The status of the VPC security group.
         /// </para>
         /// </summary>
-        public List<Connection> Connections
+        public string Status
         {
-            get { return this._connections; }
-            set { this._connections = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Connections property is set
-        internal bool IsSetConnections()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._connections != null && this._connections.Count > 0; 
+            return this._status != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Marker. 
+        /// Gets and sets the property VpcSecurityGroupId. 
         /// <para>
-        ///  An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// The VPC security group Id.
         /// </para>
         /// </summary>
-        public string Marker
+        public string VpcSecurityGroupId
         {
-            get { return this._marker; }
-            set { this._marker = value; }
+            get { return this._vpcSecurityGroupId; }
+            set { this._vpcSecurityGroupId = value; }
         }
 
-        // Check to see if Marker property is set
-        internal bool IsSetMarker()
+        // Check to see if VpcSecurityGroupId property is set
+        internal bool IsSetVpcSecurityGroupId()
         {
-            return this._marker != null;
+            return this._vpcSecurityGroupId != null;
         }
 
     }

@@ -33,8 +33,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// group, and migration task. These tags can also be used with cost allocation reporting
     /// to track cost associated with DMS resources, or used in a Condition statement in an
     /// IAM policy for DMS.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class AddTagsToResourceRequest : AmazonDatabaseMigrationServiceRequest
     {

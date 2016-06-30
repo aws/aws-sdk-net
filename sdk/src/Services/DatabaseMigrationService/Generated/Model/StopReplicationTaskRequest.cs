@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the StopReplicationTask operation.
     /// Stops the replication task.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class StopReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
     {

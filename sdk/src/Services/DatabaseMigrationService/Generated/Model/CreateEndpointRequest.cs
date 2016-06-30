@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the CreateEndpoint operation.
     /// Creates an endpoint using the provided settings.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class CreateEndpointRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -107,7 +105,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EngineName. 
         /// <para>
         /// The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES,
-        /// MARIADB, AURORA, SQLSERVER.
+        /// MARIADB, AURORA, REDSHIFT, and SQLSERVER.
         /// </para>
         /// </summary>
         public string EngineName
@@ -143,10 +141,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  The KMS key identifier that will be used to encrypt the connection parameters. If
+        /// The KMS key identifier that will be used to encrypt the connection parameters. If
         /// you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your
         /// default encryption key. AWS KMS creates the default encryption key for your AWS account.
-        /// Your AWS account has a different default encryption key for each AWS region. 
+        /// Your AWS account has a different default encryption key for each AWS region.
         /// </para>
         /// </summary>
         public string KmsKeyId

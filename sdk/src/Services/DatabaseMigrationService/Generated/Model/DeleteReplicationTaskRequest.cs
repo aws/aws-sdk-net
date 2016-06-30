@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DeleteReplicationTask operation.
     /// Deletes the specified replication task.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DeleteReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
     {

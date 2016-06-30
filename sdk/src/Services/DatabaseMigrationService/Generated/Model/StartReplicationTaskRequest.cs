@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the StartReplicationTask operation.
     /// Starts the replication task.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class StartReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
     {

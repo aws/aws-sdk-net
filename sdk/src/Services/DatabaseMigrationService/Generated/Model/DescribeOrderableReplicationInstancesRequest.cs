@@ -31,8 +31,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// Container for the parameters to the DescribeOrderableReplicationInstances operation.
     /// Returns information about the replication instance types that can be created in the
     /// specified region.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeOrderableReplicationInstancesRequest : AmazonDatabaseMigrationServiceRequest
     {
