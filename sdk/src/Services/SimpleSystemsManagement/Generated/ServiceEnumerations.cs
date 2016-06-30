@@ -389,6 +389,60 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type DescribeActivationsFilterKeys.
+    /// </summary>
+    public class DescribeActivationsFilterKeys : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ActivationIds for DescribeActivationsFilterKeys
+        /// </summary>
+        public static readonly DescribeActivationsFilterKeys ActivationIds = new DescribeActivationsFilterKeys("ActivationIds");
+        /// <summary>
+        /// Constant DefaultInstanceName for DescribeActivationsFilterKeys
+        /// </summary>
+        public static readonly DescribeActivationsFilterKeys DefaultInstanceName = new DescribeActivationsFilterKeys("DefaultInstanceName");
+        /// <summary>
+        /// Constant IamRole for DescribeActivationsFilterKeys
+        /// </summary>
+        public static readonly DescribeActivationsFilterKeys IamRole = new DescribeActivationsFilterKeys("IamRole");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DescribeActivationsFilterKeys(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DescribeActivationsFilterKeys FindValue(string value)
+        {
+            return FindValue<DescribeActivationsFilterKeys>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DescribeActivationsFilterKeys(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentFilterKey.
     /// </summary>
     public class DocumentFilterKey : ConstantClass
@@ -703,9 +757,17 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant ActivationIds for InstanceInformationFilterKey
+        /// </summary>
+        public static readonly InstanceInformationFilterKey ActivationIds = new InstanceInformationFilterKey("ActivationIds");
+        /// <summary>
         /// Constant AgentVersion for InstanceInformationFilterKey
         /// </summary>
         public static readonly InstanceInformationFilterKey AgentVersion = new InstanceInformationFilterKey("AgentVersion");
+        /// <summary>
+        /// Constant IamRole for InstanceInformationFilterKey
+        /// </summary>
+        public static readonly InstanceInformationFilterKey IamRole = new InstanceInformationFilterKey("IamRole");
         /// <summary>
         /// Constant InstanceIds for InstanceInformationFilterKey
         /// </summary>
@@ -718,6 +780,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant PlatformTypes for InstanceInformationFilterKey
         /// </summary>
         public static readonly InstanceInformationFilterKey PlatformTypes = new InstanceInformationFilterKey("PlatformTypes");
+        /// <summary>
+        /// Constant ResourceType for InstanceInformationFilterKey
+        /// </summary>
+        public static readonly InstanceInformationFilterKey ResourceType = new InstanceInformationFilterKey("ResourceType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -852,6 +918,106 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PlatformType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Document for ResourceType
+        /// </summary>
+        public static readonly ResourceType Document = new ResourceType("Document");
+        /// <summary>
+        /// Constant EC2Instance for ResourceType
+        /// </summary>
+        public static readonly ResourceType EC2Instance = new ResourceType("EC2Instance");
+        /// <summary>
+        /// Constant ManagedInstance for ResourceType
+        /// </summary>
+        public static readonly ResourceType ManagedInstance = new ResourceType("ManagedInstance");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceTypeForTagging.
+    /// </summary>
+    public class ResourceTypeForTagging : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ManagedInstance for ResourceTypeForTagging
+        /// </summary>
+        public static readonly ResourceTypeForTagging ManagedInstance = new ResourceTypeForTagging("ManagedInstance");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceTypeForTagging(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceTypeForTagging FindValue(string value)
+        {
+            return FindValue<ResourceTypeForTagging>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceTypeForTagging(string value)
         {
             return FindValue(value);
         }
