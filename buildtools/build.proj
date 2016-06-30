@@ -294,7 +294,7 @@
             <Container>/testcontainer:&quot;$([System.IO.Path]::GetFullPath($(TestContainer)))&quot;</Container>
         </PropertyGroup>
 
-        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe  mstest $(mstest2013) $(Container)"/>
+        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe  mstest $(mstest2013) $(Container)" IgnoreStandardErrorWarningFormat="true"/>
 
         <!-- Clear our properties -->
         <PropertyGroup >
