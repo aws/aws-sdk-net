@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -20,20 +20,16 @@
  *
  */
 
+using Amazon.Runtime.Internal;
+using Amazon.S3.Model;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
-
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
-using Amazon.S3.Model;
-using Amazon.Util;
 
 namespace Amazon.S3.Util
 {
@@ -78,37 +74,21 @@ namespace Amazon.S3.Util
             var url = s3Client.GetPreSignedURL(request);
             var uri = new Uri(url);
 
-            var httpRequest = WebRequest.Create(uri) as HttpWebRequest;
-            httpRequest.Method = "HEAD";
-            var concreteClient = s3Client as AmazonS3Client;
-            if (concreteClient != null)
+            var config = (s3Client as AmazonS3Client)?.Config;
+            var response = AmazonS3HttpUtil.GetHead(s3Client, config, url, HeaderKeys.XAmzBucketRegion);
+            if (response.StatusCode == null)
             {
-                concreteClient.ConfigureProxy(httpRequest);
+                // there was a problem with the request and we weren't able
+                // conclusively determine if the bucket exists
+                return false;
             }
-
-            try
+            else
             {
-                using (var httpResponse = httpRequest.GetResponse() as HttpWebResponse)
-                {
-                    // If all went well, the bucket was found!
-                    return true;
-                }
-            }
-            catch (WebException we)
-            {
-                using (var errorResponse = we.Response as HttpWebResponse)
-                {
-                    if (errorResponse != null)
-                    {
-                        var code = errorResponse.StatusCode;
-                        return code != HttpStatusCode.NotFound &&
-                            code != HttpStatusCode.BadRequest;
-                    }
-
-                    // The Error Response is null which is indicative of either
-                    // a bad request or some other problem
-                    return false;
-                }
+                AmazonS3Uri s3Uri;
+                var mismatchDetected = AmazonS3Uri.TryParseAmazonS3Uri(uri, out s3Uri) &&
+                            BucketRegionDetector.GetCorrectRegion(s3Uri, response.StatusCode.Value, response.HeaderValue) != null;
+                var statusCodeAcceptable = response.StatusCode != HttpStatusCode.NotFound && response.StatusCode != HttpStatusCode.BadRequest;
+                return statusCodeAcceptable || mismatchDetected;
             }
         }
 

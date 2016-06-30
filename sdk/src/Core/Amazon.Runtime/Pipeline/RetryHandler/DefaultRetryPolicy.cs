@@ -1,17 +1,17 @@
-﻿/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
 using Amazon.Util;
 using System;
@@ -25,7 +25,7 @@ namespace Amazon.Runtime.Internal
     /// <summary>
     /// The default implementation of the retry policy.
     /// </summary>
-    public class DefaultRetryPolicy : RetryPolicy
+    public partial class DefaultRetryPolicy : RetryPolicy
     {
         private int _maxBackoffInMilliseconds = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
 
@@ -129,6 +129,18 @@ namespace Amazon.Runtime.Internal
         /// <returns>Return true if the request should be retried.</returns>
         public override bool RetryForException(IExecutionContext executionContext, Exception exception)
         {
+            return RetryForExceptionSync(executionContext, exception);
+        }
+
+        /// <summary>
+        /// Perform the processor-bound portion of the RetryForException logic.
+        /// This is shared by the sync, async, and APM versions of the RetryForException method.
+        /// </summary>
+        /// <param name="executionContext">Request context containing the state of the request.</param>
+        /// <param name="exception">The exception thrown by the previous request.</param>
+        /// <returns>Return true if the request should be retried.</returns>
+        private bool RetryForExceptionSync(IExecutionContext executionContext, Exception exception)
+        {
             // An IOException was thrown by the underlying http client.
             if (exception is IOException)
             {
@@ -211,10 +223,15 @@ namespace Amazon.Runtime.Internal
 
         public static void WaitBeforeRetry(int retries, int maxBackoffInMilliseconds)
         {
+            AWSSDKUtils.Sleep(CalculateRetryDelay(retries, maxBackoffInMilliseconds));
+        }
+
+        private static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
+        {
             int delay = (int)(Math.Pow(4, retries) * 100);
             if (retries > 0 && (delay > maxBackoffInMilliseconds || delay <= 0))
                 delay = maxBackoffInMilliseconds;
-            AWSSDKUtils.Sleep(delay);
+            return delay;
         }
 
         protected static bool IsInnerException<T>(Exception exception)

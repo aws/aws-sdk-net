@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -154,6 +154,46 @@ namespace Amazon.S3.Util
                     }
                 }
                     
+            }
+        }
+
+        /// <summary>
+        /// If the given string is an AmazonS3Endpoint return true and set the AmazonS3Uri out parameter.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="amazonS3Uri"></param>
+        /// <returns>true if the string is an AmazonS3Endpoint, and the out paramter has been filled in, false otherwise</returns>
+        public static bool TryParseAmazonS3Uri(string uri, out AmazonS3Uri amazonS3Uri)
+        {
+            if (IsAmazonS3Endpoint(uri))
+            {
+                amazonS3Uri = new AmazonS3Uri(uri);
+                return true;
+            }
+            else
+            {
+                amazonS3Uri = null;
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// If the given Uri is an AmazonS3Endpoint return true and set the AmazonS3Uri out parameter.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="amazonS3Uri"></param>
+        /// <returns>true if the Uri is an AmazonS3Endpoint, and the out paramter has been filled in, false otherwise</returns>
+        public static bool TryParseAmazonS3Uri(Uri uri, out AmazonS3Uri amazonS3Uri)
+        {
+            if (IsAmazonS3Endpoint(uri))
+            {
+                amazonS3Uri = new AmazonS3Uri(uri);
+                return true;
+            }
+            else
+            {
+                amazonS3Uri = null;
+                return false;
             }
         }
 

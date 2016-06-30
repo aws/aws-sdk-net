@@ -60,6 +60,9 @@
     <Compile Include="Custom\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Internal\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,6 +79,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl+coreclr+pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Util\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\*.cs">
