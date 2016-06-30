@@ -393,8 +393,4 @@
             SourceFiles="$(TestSettingsFile)"
             DestinationFolder="$(TestSettingsLocation)" />
     </Target>
-
-
-
-
 </Project>

@@ -366,9 +366,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Custom\Runtime\TestResponses\*.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Custom\TestTools\ComparerTest.json" />
+    <EmbeddedResource Include="Custom\CloudFront\sample.rsa.private.key.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

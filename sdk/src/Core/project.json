@@ -14,6 +14,7 @@
       "endpoints.json",
       "endpoints.customizations.json"
     ],
+    "debugType" : "portable",
     "compile": {
       "exclude": [
         "**/_pcl/*",
