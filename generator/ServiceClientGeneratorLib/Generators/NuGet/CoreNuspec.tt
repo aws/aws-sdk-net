@@ -39,7 +39,6 @@
         <dependency id="System.Collections.NonGeneric" version="4.0.1" />
         <dependency id="System.Console" version="4.0.0" />
         <dependency id="System.Diagnostics.Tools" version="4.0.1" />
-        <dependency id="System.Diagnostics.Debug" version="4.0.11" />
         <dependency id="System.IO.FileSystem" version="4.0.1" />
         <dependency id="System.Linq" version="4.1.0" />
         <dependency id="System.Net.Http" version="4.1.0" />

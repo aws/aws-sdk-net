@@ -147,8 +147,6 @@ namespace ThirdParty.BouncyCastle.Math
                         inverse[index++] = (byte)~bytes[iBval++];
                     }
 
-                    Debug.Assert(iBval == end);
-
                     while (inverse[--index] == byte.MaxValue)
                     {
                         inverse[index] = byte.MinValue;
@@ -515,9 +513,6 @@ namespace ThirdParty.BouncyCastle.Math
             int		yStart,
             int[]	y)
         {
-            Debug.Assert(yStart < y.Length);
-            Debug.Assert(x.Length - xStart >= y.Length - yStart);
-
             int iT = x.Length;
             int iV = y.Length;
             long m;

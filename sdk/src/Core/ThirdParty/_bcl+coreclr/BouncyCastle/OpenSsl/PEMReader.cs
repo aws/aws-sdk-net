@@ -47,8 +47,6 @@ namespace ThirdParty.BouncyCastle.OpenSsl
         {
             PemObject pemObject = ReadPemObject();
 
-            Debug.Assert(pemObject.Type.EndsWith("PRIVATE KEY"));
-
             string type = pemObject.Type.Substring(0, pemObject.Type.Length - "PRIVATE KEY".Length).Trim();
             byte[] keyBytes = pemObject.Content;
             Asn1Sequence seq = (Asn1Sequence)Asn1Object.FromByteArray(keyBytes);
