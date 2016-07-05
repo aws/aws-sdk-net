@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a retry stage execution action.
+    /// Represents information about the result of an approval request.
     /// </summary>
-    public partial class RetryStageExecutionResponse : AmazonWebServiceResponse
+    public partial class ApprovalResult
     {
-        private string _pipelineExecutionId;
+        private ApprovalStatus _status;
+        private string _summary;
 
         /// <summary>
-        /// Gets and sets the property PipelineExecutionId. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The ID of the current workflow execution in the failed stage.
+        /// The response submitted by a reviewer assigned to an approval action request.
         /// </para>
         /// </summary>
-        public string PipelineExecutionId
+        public ApprovalStatus Status
         {
-            get { return this._pipelineExecutionId; }
-            set { this._pipelineExecutionId = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if PipelineExecutionId property is set
-        internal bool IsSetPipelineExecutionId()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._pipelineExecutionId != null;
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Summary. 
+        /// <para>
+        /// The summary of the current status of the approval request.
+        /// </para>
+        /// </summary>
+        public string Summary
+        {
+            get { return this._summary; }
+            set { this._summary = value; }
+        }
+
+        // Check to see if Summary property is set
+        internal bool IsSetSummary()
+        {
+            return this._summary != null;
         }
 
     }
