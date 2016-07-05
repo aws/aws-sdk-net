@@ -74,7 +74,9 @@ You can also do this configuration in a script
 			<namespace fullname="System.Security.Cryptography" preserve="all"/>
    		</assembly>
 
-		<assembly fullname="AWSSDK.Core" preserve="all"/>
+		<assembly fullname="AWSSDK.Core" preserve="all">
+			<namespace fullname="Amazon.Util.Internal.PlatformServices" preserve="all"/>
+		</assembly>
    		<assembly fullname="AWSSDK.CognitoIdentity" preserve="all"/>
    		<assembly fullname="AWSSDK.SecurityToken" preserve="all"/>
 		add more services that you need here... 
