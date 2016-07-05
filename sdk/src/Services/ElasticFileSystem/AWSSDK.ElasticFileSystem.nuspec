@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ElasticFileSystem</id>
     <title>AWSSDK - Amazon Elastic File System</title>
-    <version>3.1.2.0</version> 
+    <version>3.1.2.1</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Elastic File System (Amazon EFS) is a file storage service for Amazon Elastic Compute Cloud (Amazon EC2) instances.</description>
     <language>en-US</language>
