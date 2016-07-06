@@ -17,20 +17,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-#if AWS_ASYNC_API
-using System.Threading.Tasks;
-#endif
-
+using Amazon.Runtime;
 using Amazon.Runtime.SharedInterfaces;
+
 using Amazon.SimpleNotificationService.Model;
+
+using Amazon.Auth.AccessControlPolicy;
+using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
+using System.Globalization;
 
 namespace Amazon.SimpleNotificationService
 {
-    public partial interface IAmazonSimpleNotificationService : IDisposable
+    public partial class AmazonSimpleNotificationServiceClient
     {
 
         #region SubscribeQueue
-#if BCL
+
         /// <summary>
         /// Subscribes an existing Amazon SQS queue to an existing Amazon SNS topic.
         /// <para>
@@ -41,9 +43,7 @@ namespace Amazon.SimpleNotificationService
         /// 	"Statement" : [{
         /// 	    "Sid" : "topic-subscription-arn:aws:sns:us-west-2:599109622955:myTopic",
         /// 		"Effect" : "Allow",
-        /// 		"Principal" : {
-        /// 			"AWS":["*"]
-        /// 		},
+        /// 		"Principal" : "*",
         /// 		"Action" : ["sqs:SendMessage"],
         /// 		"Resource":["arn:aws:sqs:us-west-2:599109622955:myQueue"],
         /// 		"Condition" : {
@@ -69,51 +69,11 @@ namespace Amazon.SimpleNotificationService
         /// <param name="sqsQueueUrl">The queue to add a subscription to.</param>
         /// <returns>The subscription ARN as returned by Amazon SNS when the queue is 
         /// successfully subscribed to the topic.</returns>
-        string SubscribeQueue(string topicArn, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
-#endif
-#if AWS_ASYNC_API
-        /// <summary>
-        /// Subscribes an existing Amazon SQS queue to an existing Amazon SNS topic asynchronously.
-        /// <para>
-        /// The policy applied to the SQS queue is similar to this:
-        /// <code>
-        /// {
-        /// 	"Version" : "2008-10-17",
-        /// 	"Statement" : [{
-        /// 	    "Sid" : "topic-subscription-arn:aws:sns:us-west-2:599109622955:myTopic",
-        /// 		"Effect" : "Allow",
-        /// 		"Principal" : {
-        /// 			"AWS":["*"]
-        /// 		},
-        /// 		"Action" : ["sqs:SendMessage"],
-        /// 		"Resource":["arn:aws:sqs:us-west-2:599109622955:myQueue"],
-        /// 		"Condition" : {
-        /// 			"ArnLike":{
-        /// 				"aws:SourceArn":["arn:aws:sns:us-west-2:599109622955:myTopic"]
-        /// 			}
-        /// 		}
-        ///     }]
-        /// }
-        /// </code>
-        /// </para>
-        /// <para>
-        /// There might be a small time period immediately after
-        /// subscribing the SQS queue to the SNS topic and updating the SQS queue's
-        /// policy, where messages are not able to be delivered to the queue. After a
-        /// moment, the new queue policy will propagate and the queue will be able to
-        /// receive messages. This delay only occurs immediately after initially
-        /// subscribing the queue.
-        /// </para>
-        /// </summary>
-        /// <param name="topicArn">The topic to subscribe to</param>
-        /// <param name="sqsClient">The SQS client used to get attributes and set the policy on the SQS queue.</param>
-        /// <param name="sqsQueueUrl">The queue to add a subscription to.</param>
-        /// <returns>A Task containing the subscription ARN as returned by Amazon SNS when the queue is 
-        /// successfully subscribed to the topic.</returns>
-        Task<string> SubscribeQueueAsync(string topicArn, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
-#endif
+        public string SubscribeQueue(string topicArn, ICoreAmazonSQS sqsClient, string sqsQueueUrl)
+        {
+            return SubscribeQueueToTopics(new List<string>() { topicArn }, sqsClient, sqsQueueUrl).Values.First();
+        }
 
-#if BCL
         /// <summary>
         /// Subscribes an existing Amazon SQS queue to existing Amazon SNS topics.
         /// <para>
@@ -150,50 +110,49 @@ namespace Amazon.SimpleNotificationService
         /// <param name="sqsQueueUrl">The queue to add a subscription to.</param>
         /// <returns>The mapping of topic ARNs to subscription ARNs as returned by Amazon SNS when the queue is 
         /// successfully subscribed to each topic.</returns>
-        IDictionary<string, string> SubscribeQueueToTopics(IList<string> topicArns, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
-#endif
-#if AWS_ASYNC_API
-        /// <summary>
-        /// Subscribes an existing Amazon SQS queue to existing Amazon SNS topics asynchronously.
-        /// <para>
-        /// The policy applied to the SQS queue is similar to this:
-        /// <code>
-        /// {
-        /// 	"Version" : "2008-10-17",
-        /// 	"Statement" : [{
-        /// 	    "Sid" : "topic-subscription-arn:aws:sns:us-west-2:599109622955:myTopic",
-        /// 		"Effect" : "Allow",
-        /// 		"Principal" : "*",
-        /// 		"Action" : ["sqs:SendMessage"],
-        /// 		"Resource":["arn:aws:sqs:us-west-2:599109622955:myQueue"],
-        /// 		"Condition" : {
-        /// 			"ArnLike":{
-        /// 				"aws:SourceArn":["arn:aws:sns:us-west-2:599109622955:myTopic"]
-        /// 			}
-        /// 		}
-        ///     }]
-        /// }
-        /// </code>
-        /// </para>
-        /// <para>
-        /// There might be a small time period immediately after
-        /// subscribing the SQS queue to the SNS topic and updating the SQS queue's
-        /// policy, where messages are not able to be delivered to the queue. After a
-        /// moment, the new queue policy will propagate and the queue will be able to
-        /// receive messages. This delay only occurs immediately after initially
-        /// subscribing the queue.
-        /// </para>
-        /// </summary>
-        /// <param name="topicArns">The topics to subscribe to</param>
-        /// <param name="sqsClient">The SQS client used to get attributes and set the policy on the SQS queue.</param>
-        /// <param name="sqsQueueUrl">The queue to add a subscription to.</param>
-        /// <returns>A Task containing the mapping of topic ARNs to subscription ARNs as returned by Amazon SNS wrapped when the queue is 
-        /// successfully subscribed to each topic.</returns>
-        Task<IDictionary<string, string>> SubscribeQueueToTopicsAsync(IList<string> topicArns, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
-#endif
+        public IDictionary<string, string> SubscribeQueueToTopics(IList<string> topicArns, ICoreAmazonSQS sqsClient, string sqsQueueUrl)
+        {
+            // Get the queue's existing policy and ARN
+            var queueAttributes = sqsClient.GetAttributes(sqsQueueUrl);
+
+            string sqsQueueArn = queueAttributes["QueueArn"];
+
+            Policy policy;
+            string policyStr = null;
+            if(queueAttributes.ContainsKey("Policy"))
+                policyStr = queueAttributes["Policy"];
+            if (string.IsNullOrEmpty(policyStr))
+                policy = new Policy();
+            else
+                policy = Policy.FromJson(policyStr);
+
+            var subscriptionArns = new Dictionary<string,string>();
+
+            foreach (var topicArn in topicArns)
+            {
+                if (!HasSQSPermission(policy, topicArn, sqsQueueArn))
+                    AddSQSPermission(policy, topicArn, sqsQueueArn);
+
+                var arn = this.Subscribe(new SubscribeRequest
+                {
+                    TopicArn = topicArn,
+                    Protocol = "sqs",
+                    Endpoint = sqsQueueArn
+                }).SubscriptionArn;
+
+                subscriptionArns.Add(topicArn, arn);
+            }
+
+            var setAttributes = new Dictionary<string, string> { { "Policy", policy.ToJson() } };
+            sqsClient.SetAttributes(sqsQueueUrl, setAttributes);
+
+            return subscriptionArns;
+        }
+
         #endregion
 
-#if BCL
+        #region FindTopic
+
         /// <summary>
         /// Finds an existing Amazon SNS topic by iterating all SNS topics until a match is found.
         /// <para>
@@ -203,7 +162,51 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="topicName">The name of the topic find</param>
         /// <returns>The matched SNS topic.</returns>
-        Topic FindTopic(string topicName);
+        public Topic FindTopic(string topicName)
+        {
+            var nextToken = string.Empty;
+
+            do
+            {
+                var response = this.ListTopics(new ListTopicsRequest { NextToken = nextToken });
+
+                var matchedTopic = response.Topics.FirstOrDefault(x => TopicNameMatcher(x.TopicArn, topicName));
+
+                if (matchedTopic != null)
+                {
+                    return matchedTopic;
+                }
+
+                nextToken = response.NextToken;
+
+            } while (!string.IsNullOrEmpty(nextToken));
+
+            return null;
+        }
+
+        private static bool TopicNameMatcher(string topicArn, string topicName)
+        {
+            if (String.IsNullOrEmpty(topicArn))
+            {
+                return false;
+            }
+
+            if (String.IsNullOrEmpty(topicName))
+            {
+                return false;
+            }
+
+            int indexOfLastColon = topicArn.LastIndexOf(":", StringComparison.OrdinalIgnoreCase);
+
+            if (indexOfLastColon.Equals(-1))
+            {
+                return false;
+            }
+
+            return topicArn.Substring(indexOfLastColon + 1).Equals(topicName);
+        }
+        #endregion
+
 
         /// <summary>
         /// This is a utility method which updates the policy of a topic to allow the
@@ -211,7 +214,44 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="topicArn">The topic that will have its policy updated.</param>
         /// <param name="bucket">The bucket that will be given access to publish from.</param>
-        void AuthorizeS3ToPublish(string topicArn, string bucket);
-#endif
+        public void AuthorizeS3ToPublish(string topicArn, string bucket)
+        {
+            var attributes = this.GetTopicAttributes(new GetTopicAttributesRequest
+                {
+                    TopicArn = topicArn
+                }).Attributes;
+
+            Policy policy;
+            if(attributes.ContainsKey("Policy") && !string.IsNullOrEmpty(attributes["Policy"]))
+            {
+                policy = Policy.FromJson(attributes["Policy"]);
+            }
+            else
+            {
+                policy = new Policy();
+            }
+
+            var sourceArn = string.Format(CultureInfo.InvariantCulture, "arn:aws:s3:*:*:{0}", bucket);
+
+
+            Statement newStatement = new Statement(Statement.StatementEffect.Allow);
+            newStatement.Actions.Add(SNSActionIdentifiers.Publish);
+            newStatement.Resources.Add(new Resource(topicArn));
+            newStatement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));
+            newStatement.Principals.Add(new Principal("*"));
+
+            if (!policy.CheckIfStatementExists(newStatement))
+            {
+                policy.Statements.Add(newStatement);
+
+                var policyString = policy.ToJson();
+                this.SetTopicAttributes(new SetTopicAttributesRequest
+                {
+                    TopicArn = topicArn,
+                    AttributeName = "Policy",
+                    AttributeValue = policyString
+                });
+            }
+        }
     }
 }

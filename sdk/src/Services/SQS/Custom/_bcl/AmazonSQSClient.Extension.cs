@@ -24,19 +24,14 @@ using Amazon.Runtime.SharedInterfaces;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 
-#if BCL
 using Amazon.Auth.AccessControlPolicy;
 using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 using System.Globalization;
-#endif
-
 
 namespace Amazon.SQS
 {
     public partial class AmazonSQSClient : AmazonServiceClient, IAmazonSQS
     {
-#if BCL
-
         Dictionary<string, string> ICoreAmazonSQS.GetAttributes(string queueUrl)
         {
             var getAttributeResponse = this.GetQueueAttributes(new GetQueueAttributesRequest()
@@ -107,6 +102,5 @@ namespace Amazon.SQS
 
             return getAttributeResponse.QueueARN;
         }
-#endif
     }
 }

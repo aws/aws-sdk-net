@@ -23,11 +23,8 @@ using Amazon.Runtime.SharedInterfaces;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 
-#if BCL
 using Amazon.Auth.AccessControlPolicy;
 using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
-#endif
-
 
 namespace Amazon.SQS
 {
