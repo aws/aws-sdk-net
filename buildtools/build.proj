@@ -11,6 +11,10 @@
         <GeneratorDisablePCLSupport Condition="'$(DisablePCLSupport)'=='true'">-disable.pcl-support</GeneratorDisablePCLSupport>
 
         <SmokeBuild></SmokeBuild>
+
+        <!-- perform a release build by default -->
+        <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
+
     </PropertyGroup>
 
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
@@ -19,14 +23,10 @@
 	<Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
 	<Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.targets" Condition="'$(VSToolsPath)' != ''" />
 
-    <!-- properties used in sdk generation/build -->
-    <PropertyGroup>
-        <!-- perform a release build by default -->
-        <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
-
+	<PropertyGroup>
 		<GeneratorUnityPath>--unitypath &quot;$(unitypath)&quot;</GeneratorUnityPath>
-    </PropertyGroup>
-
+	</PropertyGroup>
+	
     <!-- properties used in documentation generation -->
     <PropertyGroup>
         <!-- resources folder where test settings should be placed -->
@@ -84,7 +84,7 @@
 		<Message Text="Compile the Desktop SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.Desktop.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
 	<Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
@@ -97,7 +97,7 @@
 		<Message Text="Compile the Portable Class Library SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.PCL.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
 	<Target Name="build-sdk-coreclr" DependsOnTargets="GetSDKToolingInfoTarget">
@@ -117,7 +117,7 @@
 		<Message Text="Compile the Unity SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.Unity.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
 	<Target Name="dnxcore-nuget" DependsOnTargets="">
@@ -134,26 +134,26 @@
         <MSBuild
             Projects="$(MSBuildProjectFile)"
             Targets="run-ms-tests"
-            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll" />
+            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll;Configuration=$(Configuration)" />
         <MSBuild
             Projects="$(MSBuildProjectFile)"
             Targets="run-ms-tests"
-            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll" />
+            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll;Configuration=$(Configuration)" />
     </Target>
 
     <Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
         <MSBuild
             Projects="$(MSBuildProjectFile)"
             Targets="run-ms-tests"
-            Properties="TestContainer=..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll" />
+            Properties="TestContainer=..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll;Configuration=$(Configuration)" />
 
         <MSBuild
             Projects="$(MSBuildProjectFile)"
             Targets="run-xunit-tests"
-            Properties="ProjectJSON=..\sdk\test\CoreCLR\IntegrationTests\project.json"/>
+            Properties="ProjectJSON=..\sdk\test\CoreCLR\IntegrationTests\project.json;Configuration=$(Configuration)"/>
     </Target>
 
-    <Target Name="nuget-pack" DependsOnTargets="build-sdk" Condition="$(Configuration) == 'Release'">
+    <Target Name="nuget-pack" DependsOnTargets="build-sdk" Condition="'$(Configuration)' == 'Release'">
         <Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />
     </Target>
@@ -202,11 +202,11 @@
 
 		<!-- copy all new assemblies to the test project -->
 		<ItemGroup>
-			<DllFiles Include="..\sdk\src\Core\bin\Release\unity\AWSSDK.*.dll"/>
-			<PdbFiles Include="..\sdk\src\Core\bin\Release\unity\AWSSDK.*.pdb"/>
+			<DllFiles Include="..\sdk\src\Core\bin\$(Configuration)\unity\AWSSDK.*.dll"/>
+			<PdbFiles Include="..\sdk\src\Core\bin\$(Configuration)\unity\AWSSDK.*.pdb"/>
 
-			<DllFiles Include="..\sdk\src\Services\**\bin\Release\unity\AWSSDK.*.dll"/>
-			<PdbFiles Include="..\sdk\src\Services\**\bin\Release\unity\AWSSDK.*.pdb"/>
+			<DllFiles Include="..\sdk\src\Services\**\bin\$(Configuration)\unity\AWSSDK.*.dll"/>
+			<PdbFiles Include="..\sdk\src\Services\**\bin\$(Configuration)\unity\AWSSDK.*.pdb"/>
 		</ItemGroup>
 
 		<Copy
