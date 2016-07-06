@@ -110,23 +110,7 @@ namespace SDKDocGenerator
             var parameters = new StringBuilder();
             foreach (var param in info.GetParameters())
             {
-                if (parameters.Length > 0)
-                    parameters.Append(",");
-                if (param.ParameterType.IsGenericType)
-                {
-
-                    parameters
-                        .Append(param.ParameterType.GenericTypeName)
-                        .Append("{")
-                        .Append(string.Join(",", param.ParameterType.GenericTypeArguments().Select(a => a.FullName)))
-                        .Append("}");
-                }
-                else
-                {
-                    parameters.Append(param.ParameterType.FullName);
-                    if (param.IsOut)
-                        parameters.Append("@");
-                }
+                GenericTypeNameBuilder(param.ParameterType, parameters, param.IsOut);
             }
 
             var genericTag = "";
@@ -140,6 +124,38 @@ namespace SDKDocGenerator
                 : string.Format("M:{0}.{1}{2}", type.FullName, info.Name, genericTag);
 
             return signature;
+        }
+
+        private static void GenericTypeNameBuilder(TypeWrapper typeInfo, StringBuilder parameters, bool isOut)
+        {
+            if (typeInfo.IsGenericType)
+            {
+                parameters
+                    .Append(typeInfo.GenericTypeName)
+                    .Append("{");
+                IList<TypeWrapper> args = typeInfo.GenericTypeArguments();
+
+                for (var i = 0; i < args.Count; i++)
+                {
+                    if (i != 0)
+                    {
+                        parameters.Append(",");
+                    }
+                    GenericTypeNameBuilder(args[i], parameters, isOut);
+                }
+
+                parameters.Append("}");
+            }
+            else
+            {
+                parameters.Append(typeInfo.FullName);
+
+                if (isOut)
+                {
+                    parameters.Append("@");
+                    isOut = true;
+                }
+            }
         }
 
         public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
