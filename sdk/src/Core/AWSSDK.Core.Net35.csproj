@@ -183,25 +183,25 @@
     <Compile Include="ThirdParty\MD5\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\Asn1\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\Asn1\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\Asn1\Utilities\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\Asn1\Utilities\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\Math\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\Math\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\OpenSsl\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\OpenSsl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\OpenSsl\pem\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\OpenSsl\pem\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="_bcl\*.cs">
