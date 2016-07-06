@@ -33,6 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class General
     {
         [TestMethod]
+        [TestCategory("General")]
         public void TestSerializingExceptions()
         {
             using(var client = new Amazon.S3.AmazonS3Client())
@@ -256,6 +257,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestSDKExceptions()
         {
             var allTypes = new List<Type>();
@@ -310,6 +312,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestLargeRetryCount()
         {
             var maxRetries = 1000;
@@ -334,6 +337,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestBidiCharsInUri()
         {
             var bidiChar = '\u200E';
@@ -363,6 +367,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestClientDispose()
         {
             IAmazonS3 client;
@@ -478,6 +483,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         // correctly handle clock skew errors.
         // By default it only tests a small subset of services.
         [TestMethod]
+        [TestCategory("General")]
         public void TestClockSkewCorrection()
         {
             VerifyClockSkewSetting();

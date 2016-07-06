@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeReplicationSubnetGroups operation.
     /// Returns information about the replication subnet groups.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeReplicationSubnetGroupsRequest : AmazonDatabaseMigrationServiceRequest
     {

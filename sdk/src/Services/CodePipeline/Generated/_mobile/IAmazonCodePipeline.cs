@@ -744,6 +744,22 @@ namespace Amazon.CodePipeline
 
         #endregion
                 
+        #region  PutApprovalResult
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutApprovalResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutApprovalResult operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutApprovalResultResponse> PutApprovalResultAsync(PutApprovalResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutJobFailureResult
 
 

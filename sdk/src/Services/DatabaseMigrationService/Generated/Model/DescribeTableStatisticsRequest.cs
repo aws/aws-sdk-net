@@ -31,8 +31,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// Container for the parameters to the DescribeTableStatistics operation.
     /// Returns table statistics on the database migration task, including table name, rows
     /// inserted, rows updated, and rows deleted.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeTableStatisticsRequest : AmazonDatabaseMigrationServiceRequest
     {

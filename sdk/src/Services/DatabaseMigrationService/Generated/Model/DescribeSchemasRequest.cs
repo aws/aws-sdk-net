@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeSchemas operation.
     /// Returns information about the schema for the specified endpoint.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeSchemasRequest : AmazonDatabaseMigrationServiceRequest
     {

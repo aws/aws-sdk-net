@@ -51,7 +51,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestCreateGetGroup()
         {
             string groupname = Guid.NewGuid().ToString().Replace('-', '0');
@@ -70,7 +70,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestGroupWithUsers()
         {
             string
@@ -124,7 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestRemoveUsersFromGroup()
         {
             string
@@ -183,7 +183,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestGroupPaging()
         {
             string
@@ -265,7 +265,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListGroupWithPaths()
         {
 
@@ -334,7 +334,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListGroupsPaging()
         {
             string
@@ -408,7 +408,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void AddUserToNonExistentGroup()
         {
@@ -427,7 +427,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(EntityAlreadyExistsException))]
         public void TestDoubleCreation()
         {
@@ -446,7 +446,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(DeleteConflictException))]
         public void TestDeleteUserInGroupThrowsException()
         {
@@ -471,7 +471,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(DeleteConflictException))]
         public void TestDeleteGroupWithUsersThrowsException()
         {

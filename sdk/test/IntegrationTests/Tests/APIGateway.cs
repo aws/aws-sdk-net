@@ -53,6 +53,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("APIGateWay")]
         public void TestResources()
         {
             var allResources = GetResources().ToList();
@@ -110,6 +111,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("APIGateWay")]
         public void TestRestApiCalls()
         {
             var apis = GetRestApis().ToList();
@@ -182,6 +184,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("APIGateWay")]
         public void TestOtherOperations()
         {
             var account = Client.GetAccount(new GetAccountRequest());

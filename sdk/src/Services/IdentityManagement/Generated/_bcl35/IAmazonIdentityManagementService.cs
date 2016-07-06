@@ -3424,7 +3424,15 @@ namespace Amazon.IdentityManagement
         /// Retrieves the specified inline policy document that is embedded in the specified IAM
         /// group.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An IAM group can also have managed policies attached to it. To retrieve a managed
         /// policy document that is attached to a group, use <a>GetPolicy</a> to determine the
@@ -3689,7 +3697,15 @@ namespace Amazon.IdentityManagement
         /// Retrieves information about the specified version of the specified managed policy,
         /// including the policy document.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To list the available versions for a policy, use <a>ListPolicyVersions</a>.
         /// </para>
@@ -3760,6 +3776,16 @@ namespace Amazon.IdentityManagement
         /// and the role's trust policy that grants permission to assume the role. For more information
         /// about roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
         /// with Roles</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRole service method.</param>
         /// 
@@ -3806,7 +3832,15 @@ namespace Amazon.IdentityManagement
         /// Retrieves the specified inline policy document that is embedded with the specified
         /// IAM role.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An IAM role can also have managed policies attached to it. To retrieve a managed policy
         /// document that is attached to a role, use <a>GetPolicy</a> to determine the policy's
@@ -4100,7 +4134,15 @@ namespace Amazon.IdentityManagement
         /// Retrieves the specified inline policy document that is embedded in the specified IAM
         /// user.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An IAM user can also have managed policies attached to it. To retrieve a managed policy
         /// document that is attached to a user, use <a>GetPolicy</a> to determine the policy's

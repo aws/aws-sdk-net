@@ -183,6 +183,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         [TestMethod]
+        [TestCategory("DynamoDB")]
         public void TestDataCalls()
         {
             // Test hash-key table
@@ -1006,6 +1007,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         [TestMethod]
+        [TestCategory("DynamoDB")]
         public void TestDynamoDBStreamWithServiceURL()
         {
             var config = new AmazonDynamoDBStreamsConfig();

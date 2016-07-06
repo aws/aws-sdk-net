@@ -32,14 +32,39 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class InstanceInformation
     {
+        private string _activationId;
         private string _agentVersion;
+        private string _computerName;
+        private string _iamRole;
         private string _instanceId;
+        private string _ipAddress;
         private bool? _isLatestVersion;
         private DateTime? _lastPingDateTime;
+        private string _name;
         private PingStatus _pingStatus;
         private string _platformName;
         private PlatformType _platformType;
         private string _platformVersion;
+        private DateTime? _registrationDate;
+        private ResourceType _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property ActivationId. 
+        /// <para>
+        /// The activation ID created by SSM when the server or VM was registered.
+        /// </para>
+        /// </summary>
+        public string ActivationId
+        {
+            get { return this._activationId; }
+            set { this._activationId = value; }
+        }
+
+        // Check to see if ActivationId property is set
+        internal bool IsSetActivationId()
+        {
+            return this._activationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentVersion. 
@@ -60,6 +85,43 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComputerName. 
+        /// <para>
+        /// The fully qualified host name of the managed instance.
+        /// </para>
+        /// </summary>
+        public string ComputerName
+        {
+            get { return this._computerName; }
+            set { this._computerName = value; }
+        }
+
+        // Check to see if ComputerName property is set
+        internal bool IsSetComputerName()
+        {
+            return this._computerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRole. 
+        /// <para>
+        /// The Amazon Identity and Access Management (IAM) role assigned to EC2 instances or
+        /// managed instances. 
+        /// </para>
+        /// </summary>
+        public string IamRole
+        {
+            get { return this._iamRole; }
+            set { this._iamRole = value; }
+        }
+
+        // Check to see if IamRole property is set
+        internal bool IsSetIamRole()
+        {
+            return this._iamRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The instance ID. 
@@ -75,6 +137,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IPAddress. 
+        /// <para>
+        /// The IP address of the managed instance.
+        /// </para>
+        /// </summary>
+        public string IPAddress
+        {
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
+        }
+
+        // Check to see if IPAddress property is set
+        internal bool IsSetIPAddress()
+        {
+            return this._ipAddress != null;
         }
 
         /// <summary>
@@ -111,6 +191,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetLastPingDateTime()
         {
             return this._lastPingDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the managed instance.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
@@ -183,6 +281,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetPlatformVersion()
         {
             return this._platformVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegistrationDate. 
+        /// <para>
+        /// The date the server or VM was registered with AWS as a managed instance.
+        /// </para>
+        /// </summary>
+        public DateTime RegistrationDate
+        {
+            get { return this._registrationDate.GetValueOrDefault(); }
+            set { this._registrationDate = value; }
+        }
+
+        // Check to see if RegistrationDate property is set
+        internal bool IsSetRegistrationDate()
+        {
+            return this._registrationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The type of instance. Instances are either EC2 instances or managed instances. 
+        /// </para>
+        /// </summary>
+        public ResourceType ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
         }
 
     }

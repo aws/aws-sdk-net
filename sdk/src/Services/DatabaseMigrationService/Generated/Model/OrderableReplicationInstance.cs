@@ -43,8 +43,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DefaultAllocatedStorage. 
         /// <para>
-        ///  The default amount of storage (in gigabytes) that is allocated for the replication
-        /// instance. 
+        /// The default amount of storage (in gigabytes) that is allocated for the replication
+        /// instance.
         /// </para>
         /// </summary>
         public int DefaultAllocatedStorage
@@ -80,8 +80,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property IncludedAllocatedStorage. 
         /// <para>
-        ///  The amount of storage (in gigabytes) that is allocated for the replication instance.
-        /// 
+        /// The amount of storage (in gigabytes) that is allocated for the replication instance.
         /// </para>
         /// </summary>
         public int IncludedAllocatedStorage
@@ -99,8 +98,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MaxAllocatedStorage. 
         /// <para>
-        ///  The minimum amount of storage (in gigabytes) that can be allocated for the replication
-        /// instance. 
+        /// The minimum amount of storage (in gigabytes) that can be allocated for the replication
+        /// instance.
         /// </para>
         /// </summary>
         public int MaxAllocatedStorage
@@ -118,8 +117,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MinAllocatedStorage. 
         /// <para>
-        ///  The minimum amount of storage (in gigabytes) that can be allocated for the replication
-        /// instance. 
+        /// The minimum amount of storage (in gigabytes) that can be allocated for the replication
+        /// instance.
         /// </para>
         /// </summary>
         public int MinAllocatedStorage
@@ -137,12 +136,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceClass. 
         /// <para>
-        ///  The compute and memory capacity of the replication instance. 
+        /// The compute and memory capacity of the replication instance.
         /// </para>
         ///  
         /// <para>
         ///  Valid Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass

@@ -86,6 +86,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("CognitoSync")]
         public void CacheTest()
         {
             var syncRequestType = typeof(AmazonCognitoSyncRequest);
@@ -108,6 +109,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 // This test depends on functionality that is only in 4.5
 #if BCL45
         [TestMethod]
+        [TestCategory("CognitoSync")]
         public void EventsTest()
         {
             CognitoIdentity.CreateIdentityPool(out poolId, out poolName);

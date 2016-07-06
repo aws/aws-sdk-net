@@ -31,24 +31,35 @@ namespace Amazon.SimpleSystemsManagement
     /// Interface for accessing SimpleSystemsManagement
     ///
     /// This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables you to
-    /// remotely manage the configuration of your Amazon EC2 instance using scripts or commands
-    /// with either an on-demand solution called <i>SSM Run Command</i> or a lightweight instance
-    /// configuration solution called <i>SSM Config</i>. 
+    /// remotely manage the configuration of your on-premises servers and virtual machines
+    /// (VMs) and your Amazon EC2 instances using scripts, commands, or the Amazon EC2 console.
+    /// SSM includes an on-demand solution called <i>Amazon EC2 Run Command</i> and a lightweight
+    /// instance configuration solution called <i>SSM Config</i>. 
     /// 
     ///  
     /// <para>
-    /// This references is intended to be used with the SSM User Guide for <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
+    /// This references is intended to be used with the EC2 Run Command User Guide for <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
     /// or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html">Windows</a>.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You must register your on-premises servers and VMs through an activation process before
+    /// you can configure them using Run Command. Registered servers and VMs are called <i>managed
+    /// instances</i>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
+    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Linux</a> or
+    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
+    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Windows</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Run Command</b> 
     /// </para>
     ///  
     /// <para>
     /// Run Command provides an on-demand experience for executing commands. You can use pre-defined
-    /// Amazon SSM documents to perform the actions listed later in this section, or you can
-    /// create your own documents. With these documents, you can remotely configure your instances
+    /// SSM documents to perform the actions listed later in this section, or you can create
+    /// your own documents. With these documents, you can remotely configure your instances
     /// by sending commands using the <b>Commands</b> page in the <a href="http://console.aws.amazon.com/ec2/">Amazon
     /// EC2 console</a>, <a href="http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html">AWS
     /// Tools for Windows PowerShell</a>, the <a href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
@@ -89,7 +100,7 @@ namespace Amazon.SimpleSystemsManagement
     /// </para>
     ///  
     /// <para>
-    /// SSM Config and SSM Run Command include the following pre-defined documents.
+    /// SSM Config and Run Command include the following pre-defined documents.
     /// </para>
     ///  
     /// <para>
@@ -161,12 +172,12 @@ namespace Amazon.SimpleSystemsManagement
     /// on your instances because the Amazon SSM agent runs as root on Linux and the EC2Config
     /// service runs in the Local System account on Windows. If a user has permission to execute
     /// any of the pre-defined SSM documents (any document that begins with AWS-*) then that
-    /// user also has administrator access to the instance. Delegate access to SSM and Run
-    /// Command judiciously. This becomes extremely important if you create your own SSM documents.
-    /// Amazon Web Services does not provide guidance about how to create secure SSM documents.
-    /// You create SSM documents and delegate access to Run Command at your own risk. As a
-    /// security best practice, we recommend that you assign access to "AWS-*" documents,
-    /// especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript
+    /// user also has administrator access to the instance. Delegate access to Run Command
+    /// and SSM Config judiciously. This becomes extremely important if you create your own
+    /// SSM documents. Amazon Web Services does not provide guidance about how to create secure
+    /// SSM documents. You create SSM documents and delegate access to Run Command at your
+    /// own risk. As a security best practice, we recommend that you assign access to "AWS-*"
+    /// documents, especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript
     /// document on Windows, to trusted administrators only. You can create SSM documents
     /// for specific tasks and delegate access to non-administrators.
     /// </para>
@@ -192,6 +203,62 @@ namespace Amazon.SimpleSystemsManagement
     public partial interface IAmazonSimpleSystemsManagement : IDisposable
     {
 
+        
+        #region  AddTagsToResource
+
+
+        /// <summary>
+        /// Adds or overwrites one or more tags for the specified resource. Tags are metadata
+        /// that you assign to your managed instances. Tags enable you to categorize your managed
+        /// instances in different ways, for example, by purpose, owner, or environment. Each
+        /// tag consists of a key and an optional value, both of which you define. For example,
+        /// you could define a set of tags for your account's managed instances that helps you
+        /// track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin,
+        /// SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test. Each
+        /// resource can have a maximum of 10 tags. 
+        /// 
+        ///  
+        /// <para>
+        ///  We recommend that you devise a set of tag keys that meets your needs for each resource
+        /// type. Using a consistent set of tag keys makes it easier for you to manage your resources.
+        /// You can search and filter the resources based on the tags you add. Tags don't have
+        /// any semantic meaning to Amazon EC2 and are interpreted strictly as a string of characters.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
+        /// 
+        /// <returns>The response from the AddTagsToResource service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
+        /// The resource type is not valid. If you are attempting to tag an instance, the instance
+        /// must be a registered, managed instance.
+        /// </exception>
+        AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  CancelCommand
 
@@ -325,6 +392,39 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CancelCommandResponse> CancelCommandAsync(CancelCommandRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateActivation
+
+
+        /// <summary>
+        /// Registers your on-premises server or virtual machine with Amazon EC2 so that you can
+        /// manage these resources using Run Command. An on-premises server or virtual machine
+        /// that has been registered with EC2 is called a managed instance. For more information
+        /// about activations, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
+        /// Up Managed Instances (Linux)</a> or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
+        /// Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateActivation service method.</param>
+        /// 
+        /// <returns>The response from the CreateActivation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        CreateActivationResponse CreateActivation(CreateActivationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateActivation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateActivation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateActivationResponse> CreateActivationAsync(CreateActivationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -648,6 +748,45 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeleteActivation
+
+
+        /// <summary>
+        /// Deletes an activation. You are not required to delete an activation. If you delete
+        /// an activation, you can no longer use it to register additional managed instances.
+        /// Deleting an activation does not de-register managed instances. You must manually de-register
+        /// managed instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteActivation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteActivation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationException">
+        /// The activation is not valid. The activation might have been deleted, or the ActivationId
+        /// and the ActivationCode do not match.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
+        /// The activation ID is not valid. Verify the you entered the correct ActivationId or
+        /// ActivationCode and try again.
+        /// </exception>
+        DeleteActivationResponse DeleteActivation(DeleteActivationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteActivation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteActivation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteActivationResponse> DeleteActivationAsync(DeleteActivationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteAssociation
 
 
@@ -864,6 +1003,76 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteDocumentResponse> DeleteDocumentAsync(DeleteDocumentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeregisterManagedInstance
+
+
+        /// <summary>
+        /// Removes the server or virtual machine from the list of registered servers. You can
+        /// reregister the instance again at any time. If you don’t plan to use Run Command on
+        /// the server, we suggest uninstalling the SSM agent first.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterManagedInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterManagedInstance service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterManagedInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterManagedInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeregisterManagedInstanceResponse> DeregisterManagedInstanceAsync(DeregisterManagedInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeActivations
+
+
+        /// <summary>
+        /// Details about the activation, including: the date and time the activation was created,
+        /// the expiration date, the IAM role assigned to the instances in the activation, and
+        /// the number of instances activated by this registration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeActivations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        DescribeActivationsResponse DescribeActivations(DescribeActivationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActivations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeActivationsResponse> DescribeActivationsAsync(DescribeActivationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1628,6 +1837,41 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of the tags assigned to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
+        /// The resource type is not valid. If you are attempting to tag an instance, the instance
+        /// must be a registered, managed instance.
+        /// </exception>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyDocumentPermission
 
 
@@ -1673,6 +1917,41 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  RemoveTagsFromResource
+
+
+        /// <summary>
+        /// Removes all tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
+        /// 
+        /// <returns>The response from the RemoveTagsFromResource service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
+        /// The resource type is not valid. If you are attempting to tag an instance, the instance
+        /// must be a registered, managed instance.
+        /// </exception>
+        RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SendCommand
 
 
@@ -1680,7 +1959,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Executes commands on one or more remote instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.</param>
-        /// <param name="instanceIds">Required. The instance IDs where the command should execute.</param>
+        /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
@@ -1752,7 +2031,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Executes commands on one or more remote instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.</param>
-        /// <param name="instanceIds">Required. The instance IDs where the command should execute.</param>
+        /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1841,6 +2120,39 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateAssociationStatusResponse> UpdateAssociationStatusAsync(UpdateAssociationStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateManagedInstanceRole
+
+
+        /// <summary>
+        /// Assigns or changes an Amazon Identity and Access Management (IAM) role to the managed
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateManagedInstanceRole service method.</param>
+        /// 
+        /// <returns>The response from the UpdateManagedInstanceRole service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </exception>
+        UpdateManagedInstanceRoleResponse UpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateManagedInstanceRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateManagedInstanceRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateManagedInstanceRoleResponse> UpdateManagedInstanceRoleAsync(UpdateManagedInstanceRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

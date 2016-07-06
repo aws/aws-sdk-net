@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeRefreshSchemasStatus operation.
     /// Returns the status of the RefreshSchemas operation.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeRefreshSchemasStatusRequest : AmazonDatabaseMigrationServiceRequest
     {

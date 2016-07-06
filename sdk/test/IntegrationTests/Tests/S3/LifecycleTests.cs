@@ -34,6 +34,7 @@ namespace S3UnitTest
         }
 
         [TestMethod]
+        [TestCategory("S3")]
         public void LifecycleTest()
         {
             var s3Configuration = Client.GetLifecycleConfiguration(bucketName).Configuration;

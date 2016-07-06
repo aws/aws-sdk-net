@@ -32,11 +32,11 @@ namespace Amazon.DatabaseMigrationService
     ///
     /// AWS Database Migration Service 
     /// <para>
-    ///  AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
+    /// AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
     /// widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft
-    /// SQL Server, MariaDB, Amazon Aurora, and MySQL. The service supports homogeneous migrations
-    /// such as Oracle to Oracle, as well as heterogeneous migrations between different database
-    /// platforms, such as Oracle to MySQL or SQL Server to PostgreSQL. 
+    /// SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, and MySQL. The service supports
+    /// homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations
+    /// between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
     /// </para>
     /// </summary>
     public partial interface IAmazonDatabaseMigrationService : IDisposable
@@ -51,8 +51,6 @@ namespace Amazon.DatabaseMigrationService
         /// group, and migration task. These tags can also be used with cost allocation reporting
         /// to track cost associated with DMS resources, or used in a Condition statement in an
         /// IAM policy for DMS.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
@@ -81,17 +79,21 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates an endpoint using the provided settings.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
         /// 
         /// <returns>The response from the CreateEndpoint service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
         /// AWS DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
@@ -117,8 +119,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates the replication instance using the specified parameters.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationInstance service method.</param>
         /// 
@@ -175,8 +175,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates a replication subnet group given a list of the subnet IDs in a VPC.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationSubnetGroup service method.</param>
         /// 
@@ -221,8 +219,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates a replication task using the specified parameters.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationTask service method.</param>
         /// 
@@ -262,10 +258,13 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Deletes the specified endpoint. 
+        /// Deletes the specified endpoint.
         /// 
-        ///  <note>All tasks associated with the endpoint must be deleted before you can delete
-        /// the endpoint.</note>
+        ///  <note> 
+        /// <para>
+        /// All tasks associated with the endpoint must be deleted before you can delete the endpoint.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// 
@@ -296,10 +295,14 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Deletes the specified replication instance. 
+        /// Deletes the specified replication instance.
         /// 
-        ///  <note>You must delete any migration tasks that are associated with the replication
-        /// instance before you can delete it.</note>
+        ///  <note> 
+        /// <para>
+        /// You must delete any migration tasks that are associated with the replication instance
+        /// before you can delete it.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationInstance service method.</param>
         /// 
@@ -331,8 +334,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Deletes a subnet group.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationSubnetGroup service method.</param>
         /// 
@@ -364,8 +365,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Deletes the specified replication task.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationTask service method.</param>
         /// 
@@ -399,13 +398,12 @@ namespace Amazon.DatabaseMigrationService
         /// Lists all of the AWS DMS attributes for a customer account. The attributes include
         /// AWS DMS quotas for the account, such as the number of replication instances allowed.
         /// The description for a quota includes the quota name, current usage toward that quota,
-        /// and the quota's maximum value. 
+        /// and the quota's maximum value.
         /// 
         ///  
         /// <para>
         /// This command does not take any parameters.
         /// </para>
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
@@ -432,8 +430,6 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Describes the status of the connections that have been made between the replication
         /// instance and an endpoint. Connections are created when you test an endpoint.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnections service method.</param>
         /// 
@@ -462,8 +458,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the endpoints for your account in the current region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints service method.</param>
         /// 
@@ -492,8 +486,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the type of endpoints available.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointTypes service method.</param>
         /// 
@@ -520,8 +512,6 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Returns information about the replication instance types that can be created in the
         /// specified region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableReplicationInstances service method.</param>
         /// 
@@ -547,8 +537,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns the status of the RefreshSchemas operation.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRefreshSchemasStatus service method.</param>
         /// 
@@ -580,8 +568,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about replication instances for your account in the current region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationInstances service method.</param>
         /// 
@@ -610,8 +596,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the replication subnet groups.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationSubnetGroups service method.</param>
         /// 
@@ -640,8 +624,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about replication tasks for your account in the current region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTasks service method.</param>
         /// 
@@ -670,8 +652,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the schema for the specified endpoint.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSchemas service method.</param>
         /// 
@@ -704,8 +684,6 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Returns table statistics on the database migration task, including table name, rows
         /// inserted, rows updated, and rows deleted.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTableStatistics service method.</param>
         /// 
@@ -737,8 +715,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists all tags for an AWS DMS resource.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -767,8 +743,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Modifies the specified endpoint.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyEndpoint service method.</param>
         /// 
@@ -808,7 +782,10 @@ namespace Amazon.DatabaseMigrationService
         /// Modifies the replication instance to apply new settings. You can change one or more
         /// parameters by specifying these parameters and the new values in the request.
         /// 
-        ///  <note>Some settings are applied during the maintenance window.</note>
+        ///  
+        /// <para>
+        /// Some settings are applied during the maintenance window.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationInstance service method.</param>
         /// 
@@ -852,8 +829,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Modifies the settings for the specified replication subnet group.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationSubnetGroup service method.</param>
         /// 
@@ -897,8 +872,6 @@ namespace Amazon.DatabaseMigrationService
         /// Populates the schema for the specified endpoint. This is an asynchronous operation
         /// and can take several minutes. You can check the status of this operation by calling
         /// the DescribeRefreshSchemasStatus operation.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshSchemas service method.</param>
         /// 
@@ -936,8 +909,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Removes metadata tags from a DMS resource.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
@@ -966,8 +937,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Starts the replication task.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReplicationTask service method.</param>
         /// 
@@ -999,8 +968,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Stops the replication task.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopReplicationTask service method.</param>
         /// 
@@ -1031,9 +998,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Tests the connection between the replication instance and the endpoint. 
-        /// 
-        ///  <note/>
+        /// Tests the connection between the replication instance and the endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestConnection service method.</param>
         /// 

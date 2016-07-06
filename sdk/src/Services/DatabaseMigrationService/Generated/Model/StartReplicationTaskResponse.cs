@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// This is the response object from the StartReplicationTask operation.
+    /// 
     /// </summary>
     public partial class StartReplicationTaskResponse : AmazonWebServiceResponse
     {

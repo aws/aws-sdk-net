@@ -19,6 +19,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class RegionsTest
     {
         [TestMethod]
+        [TestCategory("S3")]
         public void TestLocation()
         {
             foreach (var location in new S3Region[] { S3Region.USW1, S3Region.EUC1 })
@@ -55,6 +56,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
+        [TestCategory("S3")]
         public void TestPostUpload()
         {
             var region = RegionEndpoint.USWest1;
@@ -90,6 +92,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// to us-east-1.
         /// </summary>
         [TestMethod]
+        [TestCategory("S3")]
         public void TestAWS2ToAWS4RedirectBeforeDNSPropagation()
         {
             var useast1Client = new AmazonS3Client(RegionEndpoint.USEast1);
@@ -121,6 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// a bucket in a region such as us-west-2. 
         /// </summary>
         [TestMethod]
+        [TestCategory("S3")]
         [ExpectedException(typeof(AmazonS3Exception), 
             "The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.")]
         public void Test301RedirectTriggersException()

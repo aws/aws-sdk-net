@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeReplicationTasks operation.
     /// Returns information about replication tasks for your account in the current region.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeReplicationTasksRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -47,7 +45,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// Valid filter names: replication-task-arn | replication-task-id | migration-type |
-        /// endpoint-arn | replication-instance-arn 
+        /// endpoint-arn | replication-instance-arn
         /// </para>
         /// </summary>
         public List<Filter> Filters

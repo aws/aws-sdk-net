@@ -48,12 +48,12 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _replicationInstancePublicIpAddress;
         private string _replicationInstanceStatus;
         private ReplicationSubnetGroup _replicationSubnetGroup;
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  The amount of storage (in gigabytes) that is allocated for the replication instance.
-        /// 
+        /// The amount of storage (in gigabytes) that is allocated for the replication instance.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -108,7 +108,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The engine version number of the replication instance. 
+        /// The engine version number of the replication instance.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -144,10 +144,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  The KMS key identifier that is used to encrypt the content on the replication instance.
+        /// The KMS key identifier that is used to encrypt the content on the replication instance.
         /// If you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your
         /// default encryption key. AWS KMS creates the default encryption key for your AWS account.
-        /// Your AWS account has a different default encryption key for each AWS region. 
+        /// Your AWS account has a different default encryption key for each AWS region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -239,12 +239,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceClass. 
         /// <para>
-        ///  The compute and memory capacity of the replication instance. 
+        /// The compute and memory capacity of the replication instance.
         /// </para>
         ///  
         /// <para>
         ///  Valid Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass
@@ -268,11 +268,21 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-        /// character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>myrepinstance</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>myrepinstance</code> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceIdentifier
@@ -357,6 +367,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationSubnetGroup()
         {
             return this._replicationSubnetGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroups. 
+        /// <para>
+        /// The VPC security group for the instance.
+        /// </para>
+        /// </summary>
+        public List<VpcSecurityGroupMembership> VpcSecurityGroups
+        {
+            get { return this._vpcSecurityGroups; }
+            set { this._vpcSecurityGroups = value; }
+        }
+
+        // Check to see if VpcSecurityGroups property is set
+        internal bool IsSetVpcSecurityGroups()
+        {
+            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
         }
 
     }

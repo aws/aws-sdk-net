@@ -12,7 +12,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class DataMigrationTests : TestBase<AmazonDatabaseMigrationServiceClient>
     {
         [TestMethod]
-        [TestCategory("DataMigration")]
+        [TestCategory("DatabaseMigrationService")]
         public void TestDescribeEndpoints()
         {
             var response = Client.DescribeEndpoints(new DescribeEndpointsRequest { });

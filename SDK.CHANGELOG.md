@@ -1,3 +1,19 @@
+### 3.1.82.0 (2016-07-05 19:32 UTC)
+* CodePipeline (3.1.3.0)
+	* Updates CodePipeline API to support manual approvals.
+* ElasticFileSystem (3.1.2.1)
+	* Documentation update.
+* IdentityManagement (3.1.4.6)
+	* Documentation update.
+
+### 3.1.81.0 (2016-06-30 20:27 UTC)
+* DatabaseMigrationService (3.1.1.0)
+	* Allow the ability to specify VpcSecurityGroupId for the replication instance
+* SimpleSystemsManagement (3.1.3.0)
+	* Amazon EC2 Run Command now works with any instance or virtual machine outside of AWS, including your own data centers or other clouds.
+* Core 3.1.8.1
+	* Pull request 412, overload to optionally strip hyphen from the ID in the Principal object
+
 ### 3.1.80.0 (2016-06-28 22:44 UTC)
 * CloudWatchEvents (3.1.2.0)
 	* Update for new BOM region

@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeReplicationInstances operation.
     /// Returns information about replication instances for your account in the current region.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeReplicationInstancesRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -47,7 +45,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class
-        /// | engine-version 
+        /// | engine-version
         /// </para>
         /// </summary>
         public List<Filter> Filters

@@ -58,7 +58,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestPrincipalPolicies()
         {
             string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
@@ -172,7 +172,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestCustomPolicies()
         {
             var s3SamplePolicy = @"{
@@ -304,7 +304,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestPutGetUserPolicy()
         {
             string username = IAMUtil.CreateTestUser(Client);
@@ -334,7 +334,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestPutGetGroupPolicy()
         {
             string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
@@ -366,7 +366,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestGetNonExistantPolicy()
         {
@@ -385,7 +385,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListUserPolicies()
         {
             string username = IAMUtil.CreateTestUser(Client);
@@ -428,7 +428,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListGroupPolicies()
         {
             string grpname = "sdk-testgroup-" + DateTime.Now.Ticks;
@@ -478,7 +478,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListUserPoliciesPaging()
         {
             string username = IAMUtil.CreateTestUser(Client);
@@ -538,7 +538,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListGroupPoliciesPaging()
         {
             string grpname = "sdk-testgroup-" + DateTime.Now.Ticks;
@@ -605,7 +605,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestDeleteUserPolicy()
         {
             string username = IAMUtil.CreateTestUser(Client);
@@ -638,7 +638,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestDeleteGroupPolicy()
         {
             string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
@@ -673,7 +673,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestDeleteNonExistentGroupPolicyException()
         {
@@ -691,7 +691,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestGetNonExistentGroupPolicyException()
         {
@@ -709,7 +709,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestDeleteNonExistentUserPolicyException()
         {
@@ -726,7 +726,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestGetNonExistentUserPolicyException()
         {
@@ -743,7 +743,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(MalformedPolicyDocumentException))]
         public void TestPutUserPolicyMalformedPolicyDocumentException()
         {
@@ -766,7 +766,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestCreateManagedPolicy()
         {
             string policyName = "test-policy-" + DateTime.Now.Ticks;
@@ -818,7 +818,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestAttachManagedPolicy()
         {
             string username = IAMUtil.CreateTestUser(Client);
