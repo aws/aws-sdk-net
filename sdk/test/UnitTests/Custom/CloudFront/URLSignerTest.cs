@@ -10,13 +10,13 @@ namespace AWSSDK_DotNet35.UnitTests
     [TestClass]
     public class URLSignerTest
     {
-        private static string privateRSAKeyFileName = @"sample.rsa.private.key.txt";
+        private static string privateRSAKeyResourceName = @"sample.rsa.private.key.txt";
         private static StreamReader privateRSAKeyStreamReader = null;
 
         [TestInitialize]
         public void Initialize()
         {
-            privateRSAKeyStreamReader = new StreamReader(Utils.GetResourceStream(privateRSAKeyFileName));
+            privateRSAKeyStreamReader = new StreamReader(Utils.GetResourceStream(privateRSAKeyResourceName));
         }
 
         [TestMethod]
