@@ -893,4 +893,51 @@ namespace Amazon.Util
         #endregion
         
     }
+
+    public class JitteredDelay
+    {
+        private TimeSpan _maxDelay;
+        private TimeSpan _variance;
+        private TimeSpan _baseIncrement;
+        private Random _rand = null;
+        private int _count = 0;
+
+        public JitteredDelay(TimeSpan baseIncrement, TimeSpan variance)
+            : this(baseIncrement, variance, new TimeSpan(0, 0, 30))
+        {
+        }
+
+        public JitteredDelay(TimeSpan baseIncrement, TimeSpan variance, TimeSpan maxDelay)
+        {
+            _baseIncrement = baseIncrement;
+            _variance = variance;
+            _maxDelay = maxDelay;
+            _rand = new System.Random();
+        }
+
+        public TimeSpan GetRetryDelay(int attemptCount)
+        {
+            long ticks = (_baseIncrement.Ticks * (long)Math.Pow(2, attemptCount) + (long)(_rand.NextDouble() * _variance.Ticks));
+            return new TimeSpan(ticks);
+        }
+
+        public TimeSpan Next()
+        {
+            long nextTick = GetRetryDelay(_count + 1).Ticks;
+            if (nextTick < _maxDelay.Ticks)
+            {
+                _count++;
+            }
+            else
+            {
+                nextTick = _maxDelay.Ticks;
+            }
+            return new TimeSpan(nextTick);
+        }
+
+        public void Reset()
+        {
+            _count = 0;
+        }
+    }
 }
