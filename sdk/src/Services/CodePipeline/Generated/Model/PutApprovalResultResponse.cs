@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a retry stage execution action.
+    /// Represents the output of a put approval result action.
     /// </summary>
-    public partial class RetryStageExecutionResponse : AmazonWebServiceResponse
+    public partial class PutApprovalResultResponse : AmazonWebServiceResponse
     {
-        private string _pipelineExecutionId;
+        private DateTime? _approvedAt;
 
         /// <summary>
-        /// Gets and sets the property PipelineExecutionId. 
+        /// Gets and sets the property ApprovedAt. 
         /// <para>
-        /// The ID of the current workflow execution in the failed stage.
+        /// The timestamp showing when the approval or rejection was submitted.
         /// </para>
         /// </summary>
-        public string PipelineExecutionId
+        public DateTime ApprovedAt
         {
-            get { return this._pipelineExecutionId; }
-            set { this._pipelineExecutionId = value; }
+            get { return this._approvedAt.GetValueOrDefault(); }
+            set { this._approvedAt = value; }
         }
 
-        // Check to see if PipelineExecutionId property is set
-        internal bool IsSetPipelineExecutionId()
+        // Check to see if ApprovedAt property is set
+        internal bool IsSetApprovedAt()
         {
-            return this._pipelineExecutionId != null;
+            return this._approvedAt.HasValue; 
         }
 
     }

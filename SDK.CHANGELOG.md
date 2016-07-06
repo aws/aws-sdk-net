@@ -1,3 +1,11 @@
+### 3.1.82.0 (2016-07-05 19:32 UTC)
+* CodePipeline (3.1.3.0)
+	* Updates CodePipeline API to support manual approvals.
+* ElasticFileSystem (3.1.2.1)
+	* Documentation update.
+* IdentityManagement (3.1.4.6)
+	* Documentation update.
+
 ### 3.1.81.0 (2016-06-30 20:27 UTC)
 * DatabaseMigrationService (3.1.1.0)
 	* Allow the ability to specify VpcSecurityGroupId for the replication instance

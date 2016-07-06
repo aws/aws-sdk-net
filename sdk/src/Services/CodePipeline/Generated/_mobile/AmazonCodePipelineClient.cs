@@ -1209,6 +1209,37 @@ namespace Amazon.CodePipeline
 
         #endregion
         
+        #region  PutApprovalResult
+
+        internal PutApprovalResultResponse PutApprovalResult(PutApprovalResultRequest request)
+        {
+            var marshaller = new PutApprovalResultRequestMarshaller();
+            var unmarshaller = PutApprovalResultResponseUnmarshaller.Instance;
+
+            return Invoke<PutApprovalResultRequest,PutApprovalResultResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutApprovalResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutApprovalResult operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutApprovalResultResponse> PutApprovalResultAsync(PutApprovalResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutApprovalResultRequestMarshaller();
+            var unmarshaller = PutApprovalResultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutApprovalResultRequest,PutApprovalResultResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutJobFailureResult
 
         internal PutJobFailureResultResponse PutJobFailureResult(PutJobFailureResultRequest request)

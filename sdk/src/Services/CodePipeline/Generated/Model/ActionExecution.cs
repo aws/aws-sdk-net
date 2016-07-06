@@ -36,9 +36,11 @@ namespace Amazon.CodePipeline.Model
         private string _externalExecutionId;
         private string _externalExecutionUrl;
         private DateTime? _lastStatusChange;
+        private string _lastUpdatedBy;
         private int? _percentComplete;
         private ActionExecutionStatus _status;
         private string _summary;
+        private string _token;
 
         /// <summary>
         /// Gets and sets the property ErrorDetails. 
@@ -114,6 +116,24 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastUpdatedBy. 
+        /// <para>
+        /// The ARN of the user who last changed the pipeline.
+        /// </para>
+        /// </summary>
+        public string LastUpdatedBy
+        {
+            get { return this._lastUpdatedBy; }
+            set { this._lastUpdatedBy = value; }
+        }
+
+        // Check to see if LastUpdatedBy property is set
+        internal bool IsSetLastUpdatedBy()
+        {
+            return this._lastUpdatedBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PercentComplete. 
         /// <para>
         /// A percentage of completeness of the action as it runs.
@@ -165,6 +185,27 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetSummary()
         {
             return this._summary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Token. 
+        /// <para>
+        /// The system-generated token used to identify a unique approval request. The token for
+        /// each open approval request can be obtained using the GetPipelineState command and
+        /// is used to validate that the approval request corresponding to this token is still
+        /// valid.
+        /// </para>
+        /// </summary>
+        public string Token
+        {
+            get { return this._token; }
+            set { this._token = value; }
+        }
+
+        // Check to see if Token property is set
+        internal bool IsSetToken()
+        {
+            return this._token != null;
         }
 
     }

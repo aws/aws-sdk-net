@@ -88,6 +88,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastStatusChange = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastUpdatedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdatedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("percentComplete", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Summary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("token", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Token = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
