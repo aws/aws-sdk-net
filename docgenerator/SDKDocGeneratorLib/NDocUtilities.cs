@@ -110,7 +110,13 @@ namespace SDKDocGenerator
             var parameters = new StringBuilder();
             foreach (var param in info.GetParameters())
             {
-                GenericTypeNameBuilder(param.ParameterType, parameters, param.IsOut);
+                if (parameters.Length > 0)
+                    parameters.Append(",");
+                DetermineParameterName(param.ParameterType, parameters);
+                if (param.IsOut)
+                {
+                    parameters.Append("@");
+                }
             }
 
             var genericTag = "";
@@ -126,14 +132,15 @@ namespace SDKDocGenerator
             return signature;
         }
 
-        private static void GenericTypeNameBuilder(TypeWrapper typeInfo, StringBuilder parameters, bool isOut)
+        private static void DetermineParameterName(TypeWrapper parameterTypeInfo, StringBuilder parameters)
         {
-            if (typeInfo.IsGenericType)
+
+            if (parameterTypeInfo.IsGenericType)
             {
                 parameters
-                    .Append(typeInfo.GenericTypeName)
+                    .Append(parameterTypeInfo.GenericTypeName)
                     .Append("{");
-                IList<TypeWrapper> args = typeInfo.GenericTypeArguments();
+                IList<TypeWrapper> args = parameterTypeInfo.GenericTypeArguments();
 
                 for (var i = 0; i < args.Count; i++)
                 {
@@ -141,20 +148,14 @@ namespace SDKDocGenerator
                     {
                         parameters.Append(",");
                     }
-                    GenericTypeNameBuilder(args[i], parameters, isOut);
+                    DetermineParameterName(args[i], parameters);
                 }
-
                 parameters.Append("}");
+
             }
             else
             {
-                parameters.Append(typeInfo.FullName);
-
-                if (isOut)
-                {
-                    parameters.Append("@");
-                    isOut = true;
-                }
+                parameters.Append(parameterTypeInfo.FullName);
             }
         }
 
@@ -413,8 +414,8 @@ namespace SDKDocGenerator
                 parameters.Append(param.ParameterType.FullName);
             }
 
-            var formattedParmaters = parameters.Length > 0 
-                ? string.Format("({0})", parameters) 
+            var formattedParmaters = parameters.Length > 0
+                ? string.Format("({0})", parameters)
                 : parameters.ToString();
 
             var signature = string.Format("M:{0}.#ctor{1}", type.FullName, formattedParmaters);
@@ -525,7 +526,7 @@ namespace SDKDocGenerator
                         scanIndex++;
                 }
 
-                scanIndex = innerText.IndexOf(crossReferenceOpeningTagText, scanIndex, StringComparison.Ordinal);                
+                scanIndex = innerText.IndexOf(crossReferenceOpeningTagText, scanIndex, StringComparison.Ordinal);
             }
 
             return innerText;
@@ -536,7 +537,7 @@ namespace SDKDocGenerator
             var attrTargetStart = crefAttrStart + innerCrefAttributeText.Length;
 
             var crefTargetEnd = nodeText.IndexOf('"', attrTargetStart);
-            crossRefTagEndIndex = nodeText.IndexOf(crossReferenceClosingTagText, crefTargetEnd, StringComparison.Ordinal) 
+            crossRefTagEndIndex = nodeText.IndexOf(crossReferenceClosingTagText, crefTargetEnd, StringComparison.Ordinal)
                                     + crossReferenceClosingTagText.Length;
 
             var cref = nodeText.Substring(attrTargetStart, crefTargetEnd - attrTargetStart);
@@ -689,15 +690,15 @@ namespace SDKDocGenerator
         {
             if (!string.IsNullOrEmpty(samplesDir))
             {
-                var extraDocNodes = new List<XmlNode>(); 
-                foreach (var pattern in new [] {".extra.xml", ".GeneratedSamples.extra.xml"})
+                var extraDocNodes = new List<XmlNode>();
+                foreach (var pattern in new[] { ".extra.xml", ".GeneratedSamples.extra.xml" })
                 {
                     var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER, serviceName + pattern);
                     if (File.Exists(extraFile))
                     {
                         var extraDoc = new XmlDocument();
                         extraDoc.Load(extraFile);
-                        foreach(XmlNode node in extraDoc.SelectNodes("docs/doc"))
+                        foreach (XmlNode node in extraDoc.SelectNodes("docs/doc"))
                         {
                             extraDocNodes.Add(node);
                         }
@@ -748,7 +749,7 @@ namespace SDKDocGenerator
 
             return map;
         }
-            
+
         private static void ProcessExtraDoc(XmlDocument sdkDocument, IDictionary<string, string> examplesMap)
         {
             foreach (var memberSpec in examplesMap.Keys)

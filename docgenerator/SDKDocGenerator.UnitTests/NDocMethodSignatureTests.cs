@@ -15,54 +15,38 @@ namespace SDKDocGenerator.UnitTests
         [Fact]
         public void GenericReturnMethod()
         {
-            var methodInfo = typeof(TestMethods).GetMethod("Query", new Type[]{typeof(string)});
+            var methodInfo = typeof(TestMethods).GetMethod("Query", new Type[] { typeof(string) });
             var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
             Assert.Equal("M:SDKDocGenerator.UnitTests.TestMethods.Query``1(System.String)", signature);
         }
 
         [Fact]
-        public static void CollectionTestMethod()
+        public void CollectionTestMethod()
         {
             var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "CollectionTest");
             var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
             Assert.Equal(
-                "M:SDKDocGenerator.UnitTests.TestMethods.CollectionTest(System.Collections.Generic.IList{System.Collections.Generic.IDictionary{System.String,SDKDocGenerator.UnitTests.TestMethods}})", 
+                "M:SDKDocGenerator.UnitTests.TestMethods.CollectionTest(System.Collections.Generic.IList{System.Collections.Generic.IDictionary{System.String,SDKDocGenerator.UnitTests.TestMethods}})",
                 signature);
         }
 
         [Fact]
-        public static void StringTestMethod()
+        public void MultiOutTestMethod()
         {
-            var methodInfo = typeof(TestMethods).GetMethod("StringTest", new Type[] {typeof(string)});
-            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
-            Assert.Equal("M:SDKDocGenerator.UnitTests.TestMethods.StringTest(System.String)", signature);
-        }
-
-        [Fact]
-        public static void ListTestMethod()
-        {
-            var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "ListTest");
-            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
-            Assert.Equal("M:SDKDocGenerator.UnitTests.TestMethods.ListTest(System.Collections.Generic.IList{System.String})", signature);
-        }
-
-        [Fact]
-        public static void DictionaryTestMethod()
-        {
-            var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "DictionaryTest");
+            var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "MultiOutTest");
             var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
             Assert.Equal(
-                "M:SDKDocGenerator.UnitTests.TestMethods.DictionaryTest(System.Collections.Generic.IDictionary{System.String,SDKDocGenerator.UnitTests.TestMethods})", 
+                "M:SDKDocGenerator.UnitTests.TestMethods.MultiOutTest(System.Int32@,System.String@)",
                 signature);
         }
 
         [Fact]
-        public static void CollectionOfCollectionTestMethod()
+        public void CollectionOutTestMethod()
         {
-            var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "CollectionOfCollectionTest");
+            var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "CollectionOutTest");
             var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
             Assert.Equal(
-                "M:SDKDocGenerator.UnitTests.TestMethods.CollectionOfCollectionTest(System.Collections.Generic.IList{System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IList{System.String}}})", 
+                "M:SDKDocGenerator.UnitTests.TestMethods.CollectionOutTest(System.Collections.Generic.IList{System.String}@)",
                 signature);
         }
 
@@ -93,37 +77,22 @@ namespace SDKDocGenerator.UnitTests
         /// <summary>
         /// Test Method
         /// </summary>
-        /// <param name="name"></param>
-        public void StringTest(string name)
+        /// <param name="s1"></param>
+        /// <param name="s2"></param>
+        public void MultiOutTest(out int s1, out string s2)
         {
-
+            s1 = 1;
+            s2 = "Test";
         }
 
         /// <summary>
         /// Test Method
         /// </summary>
         /// <param name="param"></param>
-        public void ListTest(IList<string> param)
+        public void CollectionOutTest(out IList<string> param)
         {
-
+            param = new List<string>();
         }
 
-        /// <summary>
-        /// Test Method
-        /// </summary>
-        /// <param name="param"></param>
-        public void DictionaryTest(IDictionary<string, TestMethods> param)
-        {
-
-        }
-
-        /// <summary>
-        /// Test Method
-        /// </summary>
-        /// <param name="param"></param>
-        public void CollectionOfCollectionTest(IList<IDictionary<string, IList<string>>> param)
-        {
-
-        }
     }
 }
