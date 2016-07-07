@@ -28,44 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeTrusts operation.
-    /// Obtains information about the trust relationships for this account.
-    /// 
-    ///  
-    /// <para>
-    /// If no input parameters are provided, such as DirectoryId or TrustIds, this request
-    /// describes all the trust relationships belonging to the account.
-    /// </para>
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists all tags on an Amazon Directory Services directory.
     /// </summary>
-    public partial class DescribeTrustsRequest : AmazonDirectoryServiceRequest
+    public partial class ListTagsForResourceRequest : AmazonDirectoryServiceRequest
     {
-        private string _directoryId;
         private int? _limit;
         private string _nextToken;
-        private List<string> _trustIds = new List<string>();
-
-        /// <summary>
-        /// Gets and sets the property DirectoryId. 
-        /// <para>
-        /// The Directory ID of the AWS directory that is a part of the requested trust relationship.
-        /// </para>
-        /// </summary>
-        public string DirectoryId
-        {
-            get { return this._directoryId; }
-            set { this._directoryId = value; }
-        }
-
-        // Check to see if DirectoryId property is set
-        internal bool IsSetDirectoryId()
-        {
-            return this._directoryId != null;
-        }
+        private string _resourceId;
 
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of objects to return.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public int Limit
@@ -83,8 +58,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <a>DescribeTrusts</a>.
-        /// Pass null if this is the first call.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string NextToken
@@ -100,27 +74,21 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustIds. 
+        /// Gets and sets the property ResourceId. 
         /// <para>
-        /// A list of identifiers of the trust relationships for which to obtain the information.
-        /// If this member is null, all trust relationships that belong to the current account
-        /// are returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// An empty list results in an <code>InvalidParameterException</code> being thrown.
+        /// The ID of the directory for which you want to retrieve tags.
         /// </para>
         /// </summary>
-        public List<string> TrustIds
+        public string ResourceId
         {
-            get { return this._trustIds; }
-            set { this._trustIds = value; }
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
         }
 
-        // Check to see if TrustIds property is set
-        internal bool IsSetTrustIds()
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
         {
-            return this._trustIds != null && this._trustIds.Count > 0; 
+            return this._resourceId != null;
         }
 
     }

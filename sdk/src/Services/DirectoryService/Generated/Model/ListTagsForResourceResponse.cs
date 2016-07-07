@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The result of a DescribeConditionalForwarder request.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class DescribeConditionalForwardersResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private List<ConditionalForwarder> _conditionalForwarders = new List<ConditionalForwarder>();
+        private string _nextToken;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ConditionalForwarders. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The list of conditional forwarders that have been created.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
-        public List<ConditionalForwarder> ConditionalForwarders
+        public string NextToken
         {
-            get { return this._conditionalForwarders; }
-            set { this._conditionalForwarders = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ConditionalForwarders property is set
-        internal bool IsSetConditionalForwarders()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._conditionalForwarders != null && this._conditionalForwarders.Count > 0; 
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// List of tags returned by the ListTagsForResource operation.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

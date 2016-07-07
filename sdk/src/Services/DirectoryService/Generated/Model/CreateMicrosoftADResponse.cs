@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// This is the response object from the CreateMicrosoftAD operation.
+    /// Result of a CreateMicrosoftAD request.
     /// </summary>
     public partial class CreateMicrosoftADResponse : AmazonWebServiceResponse
     {
         private string _directoryId;
 
         /// <summary>
-        /// Gets and sets the property DirectoryId. The identifier of the directory that was created.
+        /// Gets and sets the property DirectoryId. 
+        /// <para>
+        /// The identifier of the directory that was created.
+        /// </para>
         /// </summary>
         public string DirectoryId
         {

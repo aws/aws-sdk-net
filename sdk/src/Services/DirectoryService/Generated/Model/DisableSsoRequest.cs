@@ -79,7 +79,7 @@ namespace Amazon.DirectoryService.Model
         /// <para>
         /// The username of an alternate account to use to disable single-sign on. This is only
         /// used for AD Connector directories. This account must have privileges to remove a service
-        /// principal name. 
+        /// principal name.
         /// </para>
         ///  
         /// <para>

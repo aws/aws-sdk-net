@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// This is the response object from the RegisterEventTopic operation.
+    /// The result of a RegisterEventTopic request.
     /// </summary>
     public partial class RegisterEventTopicResponse : AmazonWebServiceResponse
     {

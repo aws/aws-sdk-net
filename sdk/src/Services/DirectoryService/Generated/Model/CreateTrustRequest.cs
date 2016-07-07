@@ -35,7 +35,7 @@ namespace Amazon.DirectoryService.Model
     /// allow you to provide users and groups access to resources in either domain, with a
     /// single set of credentials.
     /// 
-    /// 
+    ///  
     /// <para>
     /// This action initiates the creation of the AWS side of a trust relationship between
     /// a Microsoft AD in the AWS cloud and an external domain.
@@ -51,7 +51,10 @@ namespace Amazon.DirectoryService.Model
         private TrustType _trustType;
 
         /// <summary>
-        /// Gets and sets the property ConditionalForwarderIpAddrs.
+        /// Gets and sets the property ConditionalForwarderIpAddrs. 
+        /// <para>
+        /// The IP addresses of the remote DNS server associated with RemoteDomainName.
+        /// </para>
         /// </summary>
         public List<string> ConditionalForwarderIpAddrs
         {
@@ -66,8 +69,11 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectoryId. The Directory ID of the Microsoft AD in the
-        /// AWS cloud for which to establish the trust relationship.
+        /// Gets and sets the property DirectoryId. 
+        /// <para>
+        /// The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust
+        /// relationship.
+        /// </para>
         /// </summary>
         public string DirectoryId
         {
@@ -82,8 +88,11 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RemoteDomainName. The Fully Qualified Domain Name (FQDN)
-        /// of the external domain for which to create the trust relationship.
+        /// Gets and sets the property RemoteDomainName. 
+        /// <para>
+        /// The Fully Qualified Domain Name (FQDN) of the external domain for which to create
+        /// the trust relationship.
+        /// </para>
         /// </summary>
         public string RemoteDomainName
         {
@@ -98,7 +107,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustDirection. The direction of the trust relationship.
+        /// Gets and sets the property TrustDirection. 
+        /// <para>
+        /// The direction of the trust relationship.
+        /// </para>
         /// </summary>
         public TrustDirection TrustDirection
         {
@@ -113,8 +125,11 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustPassword. The trust password. The must be the same
-        /// password that was used when creating the trust relationship on the external domain.
+        /// Gets and sets the property TrustPassword. 
+        /// <para>
+        /// The trust password. The must be the same password that was used when creating the
+        /// trust relationship on the external domain.
+        /// </para>
         /// </summary>
         public string TrustPassword
         {
@@ -129,7 +144,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustType. The trust relationship type.
+        /// Gets and sets the property TrustType. 
+        /// <para>
+        /// The trust relationship type.
+        /// </para>
         /// </summary>
         public TrustType TrustType
         {

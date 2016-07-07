@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The result of an UpdateConditionalForwarder request.
+    /// This is the response object from the RemoveTagsFromResource operation.
     /// </summary>
-    public partial class UpdateConditionalForwarderResponse : AmazonWebServiceResponse
+    public partial class RemoveTagsFromResourceResponse : AmazonWebServiceResponse
     {
 
     }
