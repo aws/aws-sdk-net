@@ -1719,7 +1719,7 @@
       },
       "input":{"shape":"ModifyVpcPeeringConnectionOptionsRequest"},
       "output":{"shape":"ModifyVpcPeeringConnectionOptionsResult"},
-      "documentation":"<p>Modifies the VPC peering connection options on one side of a VPC peering connection. You can do the following:</p> <ul> <li> <p>Enable/disable communication over the peering connection between an EC2-Classic instance that's linked to your VPC (using ClassicLink) and instances in the peer VPC.</p> </li> <li> <p>Enable/disable communication over the peering connection between instances in your VPC and an EC2-Classic instance that's linked to the peer VPC.</p> </li> <li> <p>Enable/disable a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p> </li> </ul> <p>If the peered VPCs are in different accounts, each owner must initiate a separate request to modify the peering connection options, depending on whether their VPC was the requester or accepter for the VPC peering connection. If the peered VPCs are in the same account, you can modify the requester and accepter options in the same request. To confirm which VPC is the accepter and requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a> command.</p>"
+      "documentation":"<p>Modifies the VPC peering connection options on one side of a VPC peering connection. You can do the following:</p> <ul> <li> <p>Enable/disable communication over the peering connection between an EC2-Classic instance that's linked to your VPC (using ClassicLink) and instances in the peer VPC.</p> </li> <li> <p>Enable/disable communication over the peering connection between instances in your VPC and an EC2-Classic instance that's linked to the peer VPC.</p> </li> </ul> <p>If the peered VPCs are in different accounts, each owner must initiate a separate request to enable or disable communication in either direction, depending on whether their VPC was the requester or accepter for the VPC peering connection. If the peered VPCs are in the same account, you can modify the requester and accepter options in the same request. To confirm which VPC is the accepter and requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a> command.</p>"
     },
     "MonitorInstances":{
       "name":"MonitorInstances",
@@ -2710,7 +2710,7 @@
         },
         "IpProtocol":{
           "shape":"String",
-          "documentation":"<p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href=\"http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml\">Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all.</p>"
+          "documentation":"<p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href=\"http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml\">Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all traffic. If you specify <code>-1</code>, traffic on all ports is allowed, regardless of any ports you specify.</p>"
         },
         "FromPort":{
           "shape":"Integer",
@@ -12144,7 +12144,6 @@
         },
         "AllowDnsResolutionFromRemoteVpc":{
           "shape":"Boolean",
-          "documentation":"<p>If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p>",
           "locationName":"allowDnsResolutionFromRemoteVpc"
         }
       },
@@ -12161,10 +12160,7 @@
           "shape":"Boolean",
           "documentation":"<p>If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to a peer VPC via ClassicLink.</p>"
         },
-        "AllowDnsResolutionFromRemoteVpc":{
-          "shape":"Boolean",
-          "documentation":"<p>If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p>"
-        }
+        "AllowDnsResolutionFromRemoteVpc":{"shape":"Boolean"}
       },
       "documentation":"<p>The VPC peering connection options.</p>"
     },
@@ -16157,15 +16153,15 @@
       "type":"structure",
       "required":["Error"],
       "members":{
-        "Error":{
-          "shape":"UnsuccessfulItemError",
-          "documentation":"<p>Information about the error.</p>",
-          "locationName":"error"
-        },
         "ResourceId":{
           "shape":"String",
           "documentation":"<p>The ID of the resource.</p>",
           "locationName":"resourceId"
+        },
+        "Error":{
+          "shape":"UnsuccessfulItemError",
+          "documentation":"<p>Information about the error.</p>",
+          "locationName":"error"
         }
       },
       "documentation":"<p>Information about items that were not successfully processed in a batch call.</p>"
@@ -16922,7 +16918,6 @@
         },
         "AllowDnsResolutionFromRemoteVpc":{
           "shape":"Boolean",
-          "documentation":"<p>Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from instances in a peer VPC.</p>",
           "locationName":"allowDnsResolutionFromRemoteVpc"
         }
       },

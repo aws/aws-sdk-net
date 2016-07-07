@@ -11473,19 +11473,14 @@ namespace Amazon.EC2
         /// Enable/disable communication over the peering connection between instances in your
         /// VPC and an EC2-Classic instance that's linked to the peer VPC.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Enable/disable a local VPC to resolve public DNS hostnames to private IP addresses
-        /// when queried from instances in the peer VPC.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the peered VPCs are in different accounts, each owner must initiate a separate
-        /// request to modify the peering connection options, depending on whether their VPC was
-        /// the requester or accepter for the VPC peering connection. If the peered VPCs are in
-        /// the same account, you can modify the requester and accepter options in the same request.
-        /// To confirm which VPC is the accepter and requester for a VPC peering connection, use
-        /// the <a>DescribeVpcPeeringConnections</a> command.
+        /// request to enable or disable communication in either direction, depending on whether
+        /// their VPC was the requester or accepter for the VPC peering connection. If the peered
+        /// VPCs are in the same account, you can modify the requester and accepter options in
+        /// the same request. To confirm which VPC is the accepter and requester for a VPC peering
+        /// connection, use the <a>DescribeVpcPeeringConnections</a> command.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions service method.</param>

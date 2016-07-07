@@ -37,11 +37,7 @@ namespace Amazon.EC2.Model
         private bool? _allowEgressFromLocalVpcToRemoteClassicLink;
 
         /// <summary>
-        /// Gets and sets the property AllowDnsResolutionFromRemoteVpc. 
-        /// <para>
-        /// Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses
-        /// when queried from instances in a peer VPC.
-        /// </para>
+        /// Gets and sets the property AllowDnsResolutionFromRemoteVpc.
         /// </summary>
         public bool AllowDnsResolutionFromRemoteVpc
         {
