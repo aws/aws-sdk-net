@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Options for how AWS Config delivers configuration snapshots to the Amazon S3 bucket
-    /// in your delivery channel.
+    /// This is the response object from the DeleteConfigurationRecorder operation.
     /// </summary>
-    public partial class ConfigSnapshotDeliveryProperties
+    public partial class DeleteConfigurationRecorderResponse : AmazonWebServiceResponse
     {
-        private MaximumExecutionFrequency _deliveryFrequency;
-
-        /// <summary>
-        /// Gets and sets the property DeliveryFrequency. 
-        /// <para>
-        /// The frequency with which AWS Config recurringly delivers configuration snapshots.
-        /// </para>
-        /// </summary>
-        public MaximumExecutionFrequency DeliveryFrequency
-        {
-            get { return this._deliveryFrequency; }
-            set { this._deliveryFrequency = value; }
-        }
-
-        // Check to see if DeliveryFrequency property is set
-        internal bool IsSetDeliveryFrequency()
-        {
-            return this._deliveryFrequency != null;
-        }
 
     }
 }

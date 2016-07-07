@@ -29,20 +29,24 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutDeliveryChannel operation.
-    /// Creates a new delivery channel object to deliver the configuration information to
-    /// an Amazon S3 bucket, and to an Amazon SNS topic. 
+    /// Creates a delivery channel object to deliver configuration information to an Amazon
+    /// S3 bucket and Amazon SNS topic.
     /// 
+    ///  
+    /// <para>
+    /// Before you can create a delivery channel, you must create a configuration recorder.
+    /// </para>
     ///  
     /// <para>
     /// You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the
     /// existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic,
     /// call this action and specify the changed values for the S3 bucket and the SNS topic.
     /// If you specify a different value for either the S3 bucket or the SNS topic, this action
-    /// will keep the existing value for the parameter that is not changed. 
+    /// will keep the existing value for the parameter that is not changed.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Currently, you can specify only one delivery channel per account.
+    /// You can have only one delivery channel per AWS account.
     /// </para>
     ///  </note>
     /// </summary>

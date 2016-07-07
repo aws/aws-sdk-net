@@ -59,6 +59,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void DeleteConfigurationRecorderMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationRecorderRequest>();
+            var marshaller = new DeleteConfigurationRecorderRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteConfigurationRecorderRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void DeleteDeliveryChannelMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteDeliveryChannelRequest>();

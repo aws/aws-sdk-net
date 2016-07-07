@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutConfigRule operation
+    /// Response Unmarshaller for DeleteConfigurationRecorder operation
     /// </summary>  
-    public class PutConfigRuleResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteConfigurationRecorderResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutConfigRuleResponse response = new PutConfigRuleResponse();
+            DeleteConfigurationRecorderResponse response = new DeleteConfigurationRecorderResponse();
 
 
             return response;
@@ -61,32 +61,16 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientPermissionsException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchConfigurationRecorderException"))
             {
-                return new InsufficientPermissionsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
-            {
-                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MaxNumberOfConfigRulesExceededException"))
-            {
-                return new MaxNumberOfConfigRulesExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoAvailableConfigurationRecorderException"))
-            {
-                return new NoAvailableConfigurationRecorderException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
-            {
-                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new NoSuchConfigurationRecorderException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonConfigServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static PutConfigRuleResponseUnmarshaller _instance = new PutConfigRuleResponseUnmarshaller();        
+        private static DeleteConfigurationRecorderResponseUnmarshaller _instance = new DeleteConfigurationRecorderResponseUnmarshaller();        
 
-        internal static PutConfigRuleResponseUnmarshaller GetInstance()
+        internal static DeleteConfigurationRecorderResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -94,7 +78,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutConfigRuleResponseUnmarshaller Instance
+        public static DeleteConfigurationRecorderResponseUnmarshaller Instance
         {
             get
             {
