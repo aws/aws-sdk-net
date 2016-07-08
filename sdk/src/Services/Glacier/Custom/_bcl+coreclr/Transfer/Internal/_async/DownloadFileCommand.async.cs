@@ -46,8 +46,8 @@ namespace Amazon.Glacier.Transfer.Internal
             await this.setupTopicAndQueueAsync();
             try
             {
-                var jobId = await initiateJobAsync();
-                await processQueueAsync(jobId);
+                var jobId = await initiateJobAsync().ConfigureAwait(false);
+                await processQueueAsync(jobId).ConfigureAwait(false);
             }
             finally
             {
@@ -56,9 +56,9 @@ namespace Amazon.Glacier.Transfer.Internal
         }
         async Task processQueueAsync(string jobId)
         {
-            Message message = await readNextMessageAsync();
-            await processMessageAsync(message, jobId);
-            await this.sqsClient.DeleteMessageAsync(new DeleteMessageRequest() { QueueUrl = this.queueUrl, ReceiptHandle = message.ReceiptHandle });
+            Message message = await readNextMessageAsync().ConfigureAwait(false);
+            await processMessageAsync(message, jobId).ConfigureAwait(false);
+            await this.sqsClient.DeleteMessageAsync(new DeleteMessageRequest() { QueueUrl = this.queueUrl, ReceiptHandle = message.ReceiptHandle }).ConfigureAwait(false);
         }
 
         async Task processMessageAsync(Message message, string jobId)
@@ -68,7 +68,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 return;
 
             var command = new DownloadJobCommand(this.manager, this.vaultName, jobId, this.filePath, this.options);
-            await command.ExecuteAsync();
+            await command.ExecuteAsync().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -84,12 +84,12 @@ namespace Amazon.Glacier.Transfer.Internal
             {
                 try
                 {
-                    var receiveResponse = await this.sqsClient.ReceiveMessageAsync(receiveRequest);
+                    var receiveResponse = await this.sqsClient.ReceiveMessageAsync(receiveRequest).ConfigureAwait(false);
                     retryAttempts = 0;
 
                     if (receiveResponse.Messages.Count == 0)
                     {
-                        await Task.Delay((int)(this.options.PollingInterval * 1000 * 60));
+                        await Task.Delay((int)(this.options.PollingInterval * 1000 * 60)).ConfigureAwait(false);
                         continue;
                     }
 
@@ -121,16 +121,16 @@ namespace Amazon.Glacier.Transfer.Internal
             };
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("DownloadArchive").UserAgentRequestEventHandlerSync);
 
-            var response = await this.manager.GlacierClient.InitiateJobAsync(request);
+            var response = await this.manager.GlacierClient.InitiateJobAsync(request).ConfigureAwait(false);
             return response.JobId;
         }
 
         internal async Task setupTopicAndQueueAsync()
         {
             var guidStr = Guid.NewGuid().ToString("N");
-            this.topicArn = (await this.snsClient.CreateTopicAsync(new CreateTopicRequest() { Name = "GlacierDownload-" + guidStr })).TopicArn;
-            this.queueUrl = (await this.sqsClient.CreateQueueAsync(new CreateQueueRequest() { QueueName = "GlacierDownload-" + guidStr })).QueueUrl;
-            this.queueArn = (await this.sqsClient.GetQueueAttributesAsync(new GetQueueAttributesRequest() { QueueUrl = this.queueUrl, AttributeNames = new List<string> { SQSConstants.ATTRIBUTE_QUEUE_ARN } })).Attributes[SQSConstants.ATTRIBUTE_QUEUE_ARN];
+            this.topicArn = (await this.snsClient.CreateTopicAsync(new CreateTopicRequest() { Name = "GlacierDownload-" + guidStr }).ConfigureAwait(false)).TopicArn;
+            this.queueUrl = (await this.sqsClient.CreateQueueAsync(new CreateQueueRequest() { QueueName = "GlacierDownload-" + guidStr }).ConfigureAwait(false)).QueueUrl;
+            this.queueArn = (await this.sqsClient.GetQueueAttributesAsync(new GetQueueAttributesRequest() { QueueUrl = this.queueUrl, AttributeNames = new List<string> { SQSConstants.ATTRIBUTE_QUEUE_ARN } }).ConfigureAwait(false)).Attributes[SQSConstants.ATTRIBUTE_QUEUE_ARN];
 
             await this.snsClient.SubscribeAsync(new SubscribeRequest()
             {
@@ -146,13 +146,13 @@ namespace Amazon.Glacier.Transfer.Internal
             };
             setQueueAttributesRequest.Attributes.Add("Policy", policy);
 
-            await this.sqsClient.SetQueueAttributesAsync(setQueueAttributesRequest);
+            await this.sqsClient.SetQueueAttributesAsync(setQueueAttributesRequest).ConfigureAwait(false);
         }
 
         internal async Task tearDownTopicAndQueueAsync()
         {
-            await this.snsClient.DeleteTopicAsync(new DeleteTopicRequest() { TopicArn = this.topicArn });
-            await this.sqsClient.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = this.queueUrl });
+            await this.snsClient.DeleteTopicAsync(new DeleteTopicRequest() { TopicArn = this.topicArn }).ConfigureAwait(false);
+            await this.sqsClient.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = this.queueUrl }).ConfigureAwait(false);
         }
     }
 }

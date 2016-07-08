@@ -80,7 +80,7 @@ namespace Amazon.Glacier.Transfer
         /// <returns>The results of the upload including the archive ID.</returns>
         public async Task<UploadResult> UploadAsync(string vaultName, string archiveDescription, string filepath)
         {
-            return await UploadAsync(vaultName, archiveDescription, filepath, new UploadOptions());
+            return await UploadAsync(vaultName, archiveDescription, filepath, new UploadOptions()).ConfigureAwait(false);
         }
         /// <summary>
         /// <para>
@@ -105,7 +105,7 @@ namespace Amazon.Glacier.Transfer
                 command = new MultipartUploadCommand(this, vaultName, archiveDescription, filepath, options);
             else
                 command = new SinglepartUploadCommand(this, vaultName, archiveDescription, filepath, options);
-            await command.ExecuteAsync();
+            await command.ExecuteAsync().ConfigureAwait(false);
             return command.UploadResult;
         }
 
@@ -130,7 +130,7 @@ namespace Amazon.Glacier.Transfer
         /// <param name="archiveId">The unique ID of the archive to download.</param>
         public async Task DownloadAsync(string vaultName, string archiveId, string filePath)
         {
-            await DownloadAsync(vaultName, archiveId, filePath, new DownloadOptions());
+            await DownloadAsync(vaultName, archiveId, filePath, new DownloadOptions()).ConfigureAwait(false);
         }
         /// <summary>
         /// <para>
@@ -157,7 +157,7 @@ namespace Amazon.Glacier.Transfer
         public async Task DownloadAsync(string vaultName, string archiveId, string filePath, DownloadOptions options)
         {
             var command = new DownloadFileCommand(this, vaultName, archiveId, filePath, options);
-            await command.ExecuteAsync();
+            await command.ExecuteAsync().ConfigureAwait(false);
         }
         #endregion
 
@@ -177,7 +177,7 @@ namespace Amazon.Glacier.Transfer
         /// <param name="filePath">The file path to save the job output at.</param>
         public async Task DownloadJobAsync(string vaultName, string jobId, string filePath)
         {
-            await DownloadJobAsync(vaultName, jobId, filePath, new DownloadOptions());
+            await DownloadJobAsync(vaultName, jobId, filePath, new DownloadOptions()).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace Amazon.Glacier.Transfer
         public async Task  DownloadJobAsync(string vaultName, string jobId, string filePath, DownloadOptions options)
         {
             var command = new DownloadJobCommand(this, vaultName, jobId, filePath, options);
-            await command.ExecuteAsync();
+            await command.ExecuteAsync().ConfigureAwait(false);
         }
 
         #endregion
@@ -212,7 +212,7 @@ namespace Amazon.Glacier.Transfer
         /// <returns>The job id for the initiated job.</returns>
         public async Task<string> InitiateArchiveRetrievalJobAsync(string vaultName, string archiveId)
         {
-            return await InitiateArchiveRetrievalJobAsync(vaultName, archiveId, null);
+            return await InitiateArchiveRetrievalJobAsync(vaultName, archiveId, null).ConfigureAwait(false);
         }
         /// <summary>
         /// This method initiates an archive retieval job for the specified archive and returns back the job id.
@@ -240,7 +240,7 @@ namespace Amazon.Glacier.Transfer
                 jobRequest.JobParameters.SNSTopic = options.SNSTopic;
             }
 
-            var glacierClientTask = await glacierClient.InitiateJobAsync(jobRequest);
+            var glacierClientTask = await glacierClient.InitiateJobAsync(jobRequest).ConfigureAwait(false);
             return glacierClientTask.JobId;
         }
         #endregion

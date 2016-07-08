@@ -50,7 +50,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 };
 
                 ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initiateRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
-                InitiateMultipartUploadResponse initiateResponse = await this.manager.GlacierClient.InitiateMultipartUploadAsync(initiateRequest);
+                InitiateMultipartUploadResponse initiateResponse = await this.manager.GlacierClient.InitiateMultipartUploadAsync(initiateRequest).ConfigureAwait(false);
 
 
                 uploadId = initiateResponse.UploadId;
@@ -83,7 +83,7 @@ namespace Amazon.Glacier.Transfer.Internal
                     uploadRequest.StreamTransferProgress += this.ProgressCallback;
                     ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
 
-                    await this.manager.GlacierClient.UploadMultipartPartAsync(uploadRequest);
+                    await this.manager.GlacierClient.UploadMultipartPartAsync(uploadRequest).ConfigureAwait(false);
                     currentPosition += partSize;
                 }
 
@@ -99,7 +99,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 };
 
                 ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)compRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
-                CompleteMultipartUploadResponse completeMultipartUploadResponse = await this.manager.GlacierClient.CompleteMultipartUploadAsync(compRequest);
+                CompleteMultipartUploadResponse completeMultipartUploadResponse = await this.manager.GlacierClient.CompleteMultipartUploadAsync(compRequest).ConfigureAwait(false);
 
                 string archiveId = completeMultipartUploadResponse.ArchiveId;
                 this.UploadResult = new UploadResult(archiveId, totalFileChecksum);

@@ -65,7 +65,7 @@ namespace Amazon.Glacier.Transfer.Internal
                             };
 
                             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)getJobOutputRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("DownloadArchive").UserAgentRequestEventHandlerSync);
-                            GetJobOutputResponse jobOutputResponse = await this.manager.GlacierClient.GetJobOutputAsync(getJobOutputRequest);
+                            GetJobOutputResponse jobOutputResponse = await this.manager.GlacierClient.GetJobOutputAsync(getJobOutputRequest).ConfigureAwait(false);
                             if (contentLength < 0)
                             {
                                 contentLength = jobOutputResponse.ContentLength;

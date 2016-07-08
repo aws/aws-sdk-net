@@ -49,7 +49,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("SingleUpload").UserAgentRequestEventHandlerSync);
 
                 UploadArchiveResponse uploadArchivResponse =
-                    await this.manager.GlacierClient.UploadArchiveAsync(uploadRequest);
+                    await this.manager.GlacierClient.UploadArchiveAsync(uploadRequest).ConfigureAwait(false);
                 string archiveId = uploadArchivResponse.ArchiveId;
                 this.UploadResult = new UploadResult(archiveId, checksum);
             }
