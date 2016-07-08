@@ -1,3 +1,13 @@
+### 3.1.83.0 (2016-07-07 23:26 UTC)
+* ConfigService (3.1.5.0)
+	* API Update for AWS Config: DeleteConfigurationRecorder API.
+* DirectoryService (3.1.4.0)
+	* API Update for AWS Directory Service: Tagging APIs (Add, Remove and List).
+* OpsWorks (3.1.3.2)
+	* Documentation update.
+* ServiceCatalog (3.1.0.0)
+	* Added support for AWS Service Catalog. This service allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
+
 ### 3.1.82.0 (2016-07-05 19:32 UTC)
 * CodePipeline (3.1.3.0)
 	* Updates CodePipeline API to support manual approvals.
