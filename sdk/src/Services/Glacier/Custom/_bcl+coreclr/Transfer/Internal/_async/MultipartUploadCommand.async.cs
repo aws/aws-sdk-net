@@ -123,10 +123,8 @@ namespace Amazon.Glacier.Transfer.Internal
             }
             finally
             {
-#if BCL
-                try { fileStream.Close(); }
+                try { fileStream.Dispose(); }
                 catch (Exception) { }
-#endif
             }
         }
     }
