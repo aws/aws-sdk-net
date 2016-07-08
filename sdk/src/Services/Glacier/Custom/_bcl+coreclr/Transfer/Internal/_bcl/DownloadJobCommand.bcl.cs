@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading;
-using System.Threading.Tasks;
 
 using Amazon.Glacier.Model;
 using Amazon.Util;
@@ -64,7 +63,7 @@ namespace Amazon.Glacier.Transfer.Internal
                             };
 
                             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)getJobOutputRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("DownloadArchive").UserAgentRequestEventHandlerSync);
-                            GetJobOutputResponse jobOutputResponse = await this.manager.GlacierClient.GetJobOutput(getJobOutputRequest);
+                            GetJobOutputResponse jobOutputResponse = this.manager.GlacierClient.GetJobOutput(getJobOutputRequest);
                             if (contentLength < 0)
                             {
                                 contentLength = jobOutputResponse.ContentLength;

@@ -51,7 +51,7 @@ namespace Amazon.Glacier.Transfer.Internal
             }
             finally
             {
-                await this.tearDownTopicAndQueueAsync();
+                this.tearDownTopicAndQueueAsync().Wait();
             }
         }
         async Task processQueueAsync(string jobId)
@@ -99,7 +99,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 {
                     retryAttempts++;
                     if (retryAttempts <= MAX_OPERATION_RETRY)
-                        await Task.Delay(1000 * 60);
+                        Task.Delay(1000 * 60).Wait();
                     else
                         throw;
                 }

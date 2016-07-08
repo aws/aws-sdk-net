@@ -23,7 +23,6 @@ using Amazon.Glacier.Model;
 using Amazon.Glacier.Transfer.Internal;
 using Amazon.Runtime;
 using Amazon.Util;
-using System.Threading.Tasks;
 
 namespace Amazon.Glacier.Transfer
 {

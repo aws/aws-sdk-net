@@ -1,4 +1,4 @@
-﻿/*
+﻿    /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -140,7 +140,7 @@ namespace Amazon.Glacier.Transfer
         /// <param name="options">Additional options that can be used for the download.</param>
         public void Download(string vaultName, string archiveId, string filePath, DownloadOptions options)
         {
-           var command = new DownloadFileCommand(this, vaultName, archiveId, filePath, options))
+           var command = new DownloadFileCommand(this, vaultName, archiveId, filePath, options);
            command.Execute();
         }
         #endregion

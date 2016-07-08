@@ -116,7 +116,7 @@ namespace Amazon.Glacier.Transfer.Internal
                         UploadId = uploadId
                     };
                     ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)abortRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
-                    await this.manager.GlacierClient.AbortMultipartUploadAsync(abortRequest);
+                    this.manager.GlacierClient.AbortMultipartUploadAsync(abortRequest).Wait();
                 }
 
                 throw;

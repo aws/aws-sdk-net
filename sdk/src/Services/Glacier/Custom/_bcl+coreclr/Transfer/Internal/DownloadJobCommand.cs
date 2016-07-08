@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading;
-using System.Threading.Tasks;
 
 using Amazon.Glacier.Model;
 using Amazon.Util;
