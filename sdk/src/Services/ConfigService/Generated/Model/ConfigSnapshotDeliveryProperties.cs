@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryFrequency. 
         /// <para>
-        /// The frequency with which a AWS Config recurringly delivers configuration snapshots.
+        /// The frequency with which AWS Config recurringly delivers configuration snapshots.
         /// </para>
         /// </summary>
         public MaximumExecutionFrequency DeliveryFrequency

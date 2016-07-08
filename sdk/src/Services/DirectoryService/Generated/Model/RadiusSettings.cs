@@ -100,7 +100,6 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property RadiusRetries. 
         /// <para>
         /// The maximum number of times that communication with the RADIUS server is attempted.
-        /// 
         /// </para>
         /// </summary>
         public int RadiusRetries

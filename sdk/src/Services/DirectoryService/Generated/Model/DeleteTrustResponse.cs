@@ -28,15 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteTrust operation.
+    /// The result of a DeleteTrust request.
     /// </summary>
     public partial class DeleteTrustResponse : AmazonWebServiceResponse
     {
         private string _trustId;
 
         /// <summary>
-        /// Gets and sets the property TrustId. The Trust ID of the trust relationship that was
-        /// deleted.
+        /// Gets and sets the property TrustId. 
+        /// <para>
+        /// The Trust ID of the trust relationship that was deleted.
+        /// </para>
         /// </summary>
         public string TrustId
         {

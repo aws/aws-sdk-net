@@ -73,6 +73,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 return new MaxNumberOfConfigRulesExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoAvailableConfigurationRecorderException"))
+            {
+                return new NoAvailableConfigurationRecorderException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
             {
                 return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

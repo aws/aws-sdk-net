@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteConditionalForwarder operation.
+    /// The result of a DeleteConditionalForwarder request.
     /// </summary>
     public partial class DeleteConditionalForwarderResponse : AmazonWebServiceResponse
     {

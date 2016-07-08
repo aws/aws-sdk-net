@@ -79,7 +79,7 @@ namespace Amazon.DirectoryService.Model
         /// <para>
         /// The username of an alternate account to use to enable single-sign on. This is only
         /// used for AD Connector directories. This account must have privileges to add a service
-        /// principal name. 
+        /// principal name.
         /// </para>
         ///  
         /// <para>
