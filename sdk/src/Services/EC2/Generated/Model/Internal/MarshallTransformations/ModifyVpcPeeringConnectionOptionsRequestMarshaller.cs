@@ -60,10 +60,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAccepterPeeringConnectionOptions())
                 {
-                    if(publicRequest.AccepterPeeringConnectionOptions.IsSetAllowDnsResolutionFromRemoteVpc())
-                    {
-                        request.Parameters.Add("AccepterPeeringConnectionOptions" + "." + "AllowDnsResolutionFromRemoteVpc", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc));
-                    }
                     if(publicRequest.AccepterPeeringConnectionOptions.IsSetAllowEgressFromLocalClassicLinkToRemoteVpc())
                     {
                         request.Parameters.Add("AccepterPeeringConnectionOptions" + "." + "AllowEgressFromLocalClassicLinkToRemoteVpc", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc));
@@ -75,10 +71,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRequesterPeeringConnectionOptions())
                 {
-                    if(publicRequest.RequesterPeeringConnectionOptions.IsSetAllowDnsResolutionFromRemoteVpc())
-                    {
-                        request.Parameters.Add("RequesterPeeringConnectionOptions" + "." + "AllowDnsResolutionFromRemoteVpc", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc));
-                    }
                     if(publicRequest.RequesterPeeringConnectionOptions.IsSetAllowEgressFromLocalClassicLinkToRemoteVpc())
                     {
                         request.Parameters.Add("RequesterPeeringConnectionOptions" + "." + "AllowEgressFromLocalClassicLinkToRemoteVpc", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc));
