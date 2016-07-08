@@ -482,7 +482,7 @@ namespace Amazon.S3.Model
 
         private void ValidateWrittenStreamSize(long bytesWritten)
         {
-#if !PCL && !CORECLR
+#if !PCL
             // Check if response stream or it's base stream is a AESDecryptionStream
             var stream = Runtime.Internal.Util.WrapperStream.SearchWrappedStream(this.ResponseStream,
                 (s => s is Runtime.Internal.Util.DecryptStream));

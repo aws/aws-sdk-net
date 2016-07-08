@@ -91,6 +91,9 @@
     <Compile Include="Custom\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\_bcl+coreclr\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\_bcl+coreclr+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -112,10 +115,10 @@
     <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl\Encryption\*.cs">
+    <Compile Include="Custom\_bcl+coreclr\Encryption\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl\Encryption\Internal\*.cs">
+    <Compile Include="Custom\_bcl+coreclr\Encryption\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl\IO\*.cs">

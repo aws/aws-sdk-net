@@ -54,7 +54,7 @@ namespace Amazon.Runtime.Internal.Util
 
                 this.partSize = partSize;
 
-#if !PCL && !UNITY && !CORECLR
+#if !PCL && !UNITY
 
                 var encryptionStream = BaseStream as AESEncryptionUploadPartStream;
                 if (encryptionStream != null && (partSize % 16) != 0)

@@ -15,6 +15,9 @@ using System.Reflection;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 
+using System.Security.Cryptography;
+using Xunit;
+
 namespace Amazon.DNXCore.IntegrationTests
 {
     internal class UtilityMethods
@@ -68,6 +71,32 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             return name + new Random().Next();
         }
+
+        public static void WriteFile(string path, string contents)
+        {
+            string fullPath = Path.GetFullPath(path);
+            new DirectoryInfo(Path.GetDirectoryName(fullPath)).Create();
+            File.WriteAllText(fullPath, contents);
+        }
+
+        public static void GenerateFile(string path, long size)
+        {
+            string contents = GenerateTestContents(size);
+            WriteFile(path, contents);
+        }
+
+        public static string GenerateTestContents(long size)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (long i = 0; i < size; i++)
+            {
+                char c = (char)('a' + (i % 26));
+                sb.Append(c);
+            }
+            string contents = sb.ToString();
+            return contents;
+        }
+
 
         public static Task DeleteBucketWithObjectsAsync(IAmazonS3 s3Client, string bucketName)
         {
@@ -325,5 +354,28 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             return TestBase.CreateClient<T>();            
         }
+
+        private static byte[] computeHash(string file)
+        {
+            byte[] fileMD5;
+            using (Stream fileStream = File.OpenRead(file))
+            {
+                fileMD5 = MD5.Create().ComputeHash(fileStream);
+            }
+            return fileMD5;
+        }
+
+        public static void CompareFiles(string file1, string file2)
+        {
+            byte[] file1MD5 = computeHash(file1);
+            byte[] file2MD5 = computeHash(file2);
+
+            Assert.Equal(file1MD5.Length, file2MD5.Length);
+            for (int i = 0; i < file1MD5.Length; i++)
+            {
+                Assert.Equal(file1MD5[i], file2MD5[i]);
+            }
+        }
+
     }
 }

@@ -58,8 +58,17 @@ namespace Amazon.S3.Encryption
 
         private static byte[] EncryptEnvelopeKeyUsingAsymmetricKeyPair(AsymmetricAlgorithm asymmetricAlgorithm, byte[] envelopeKey)
         {
+#if CORECLR
+            RSA rsaCrypto = asymmetricAlgorithm as RSA;
+            if (rsaCrypto == null)
+            {
+                throw new NotSupportedException("RSA is the only supported algorithm with this method.");
+            }
+            return rsaCrypto.Encrypt(envelopeKey, RSAEncryptionPadding.Pkcs1);
+#else
             RSACryptoServiceProvider rsaCrypto = asymmetricAlgorithm as RSACryptoServiceProvider;
-            return (rsaCrypto.Encrypt(envelopeKey, false));
+            return rsaCrypto.Encrypt(envelopeKey, false);
+#endif
         }
 
         private static byte[] EncryptEnvelopeKeyUsingSymmetricKey(SymmetricAlgorithm symmetricAlgorithm, byte[] envelopeKey)
@@ -92,8 +101,17 @@ namespace Amazon.S3.Encryption
 
         private static byte[] DecryptEnvelopeKeyUsingAsymmetricKeyPair(AsymmetricAlgorithm asymmetricAlgorithm, byte[] encryptedEnvelopeKey)
         {
+#if CORECLR
+            RSA rsaCrypto = asymmetricAlgorithm as RSA;
+            if (rsaCrypto == null)
+            {
+                throw new NotSupportedException("RSA is the only supported algorithm with this method.");
+            }
+            return rsaCrypto.Decrypt(encryptedEnvelopeKey, RSAEncryptionPadding.Pkcs1);
+#else
             RSACryptoServiceProvider rsaCrypto = asymmetricAlgorithm as RSACryptoServiceProvider;
-            return (rsaCrypto.Decrypt(encryptedEnvelopeKey, false));
+            return rsaCrypto.Decrypt(encryptedEnvelopeKey, false);
+#endif
         }
 
         private static byte[] DecryptEnvelopeKeyUsingSymmetricKey(SymmetricAlgorithm symmetricAlgorithm, byte[] encryptedEnvelopeKey)
@@ -105,7 +123,7 @@ namespace Amazon.S3.Encryption
             }
         }
 
-        #region StreamEncryption
+#region StreamEncryption
 
         /// <summary>
         /// Returns an updated stream where the stream contains the encrypted object contents.
@@ -149,9 +167,9 @@ namespace Amazon.S3.Encryption
             aesEStream = new AESEncryptionUploadPartStream(toBeEncrypted, instructions.EnvelopeKey, instructions.InitializationVector);
             return aesEStream;
         }
-        #endregion
+#endregion
 
-        #region StreamDecrption
+#region StreamDecrption
 
         /// <summary>
         /// Updates object where the object
@@ -177,9 +195,9 @@ namespace Amazon.S3.Encryption
         }
 
 
-        #endregion
+#endregion
 
-        #region InstructionGeneration
+#region InstructionGeneration
 
         /// <summary>
         ///  Generates an instruction that will be used to encrypt an object.
@@ -259,9 +277,9 @@ namespace Amazon.S3.Encryption
             }
         }
 
-        #endregion
+#endregion
 
-        #region UpdateMetadata
+#region UpdateMetadata
 
         /// <summary>
         /// Update the request's ObjectMetadata with the necessary information for decrypting the object.
@@ -392,6 +410,6 @@ namespace Amazon.S3.Encryption
             else
                 return false;
         }
-        #endregion
+#endregion
     }
 }

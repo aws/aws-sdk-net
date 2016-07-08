@@ -19,36 +19,44 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
-using Amazon.Runtime;
 
 namespace Amazon.Runtime.Internal.Util
 {
-    public abstract class DecryptionWrapper : IDecryptionWrapper
+    public abstract class EncryptionWrapper : IEncryptionWrapper
     {
         private SymmetricAlgorithm algorithm;
-        private ICryptoTransform decryptor;
+        private ICryptoTransform encryptor;
         private const int encryptionKeySize = 256;
 
-        protected DecryptionWrapper()
+        protected EncryptionWrapper()
         {
             algorithm = CreateAlgorithm();
         }
 
-        #region IDecryptionWrapper Members
-
         protected abstract SymmetricAlgorithm CreateAlgorithm();
-        
-        public ICryptoTransform Transformer
+
+        #region IEncryptionWrapper Members
+
+        public int AppendBlock(byte[] buffer, int offset, int count, byte[] target, int targetOffset)
         {
-            get { return this.decryptor; }
+            int bytesRead = encryptor.TransformBlock(buffer, offset, count, target, targetOffset);
+            return bytesRead;
         }
 
-        public void SetDecryptionData(byte[] key, byte[] IV)
+        public byte[] AppendLastBlock(byte[] buffer, int offset, int count)
+        {
+            byte[] finalTransform = encryptor.TransformFinalBlock(buffer, offset, count);
+            return finalTransform;
+        }
+
+        public void CreateEncryptor()
+        {
+            encryptor = algorithm.CreateEncryptor();
+        }
+
+        public void SetEncryptionData(byte[] key, byte[] IV)
         {
             algorithm.KeySize = encryptionKeySize;
             algorithm.Padding = PaddingMode.PKCS7;
@@ -57,22 +65,23 @@ namespace Amazon.Runtime.Internal.Util
             algorithm.IV = IV;
         }
 
-        public void CreateDecryptor()
+        public void Reset()
         {
-            decryptor = algorithm.CreateDecryptor();
+            CreateEncryptor();
         }
+
         #endregion
     }
 
-    public class DecryptionWrapperAES : DecryptionWrapper
+
+    public class EncryptionWrapperAES : EncryptionWrapper
     {
-        public DecryptionWrapperAES()
-            : base()
-        { }
+        public EncryptionWrapperAES()
+            : base() { }
 
         protected override SymmetricAlgorithm CreateAlgorithm()
         {
-            return AesManaged.Create();
+            return Aes.Create();
         }
     }
 }

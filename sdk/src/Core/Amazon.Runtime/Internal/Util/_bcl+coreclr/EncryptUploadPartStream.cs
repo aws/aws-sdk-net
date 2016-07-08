@@ -23,36 +23,37 @@
 using System;
 using System.IO;
 using Amazon.Runtime;
-using System.Security.Cryptography;
 
 namespace Amazon.Runtime.Internal.Util
 {
     /// <summary>
-    /// A wrapper stream that decrypts the base stream as it
+    /// A wrapper stream that encrypts the base stream as it
     /// is being read.
     /// </summary>
-    public abstract class DecryptStream : WrapperStream
+    public abstract class EncryptUploadPartStream : WrapperStream
     {
         #region Properties
 
-        protected CryptoStream CryptoStream { get; set; }
-        protected IDecryptionWrapper Algorithm { get; set; }
-        
+        protected IEncryptionWrapper Algorithm { get; set; }
+        private byte[] internalBuffer;
+        public byte[] InitializationVector { get; protected set; }
+        internal const int InternalEncryptionBlockSize = 16;
+
         #endregion
 
         #region Constructors
 
         /// <summary>
-        /// Initializes an DecryptStream with an decryption algorithm and a base stream.
+        /// Initializes an EncryptStream for Multipart uploads with an encryption algorithm and a base stream.
         /// </summary>
         /// <param name="baseStream">Stream to perform encryption on..</param>
-        protected DecryptStream(Stream baseStream)
+        protected EncryptUploadPartStream(Stream baseStream)
             : base(baseStream)
         {
+            internalBuffer = new byte[InternalEncryptionBlockSize];
+            InitializationVector = new byte[InternalEncryptionBlockSize];
             ValidateBaseStream();
         }
-
-
         #endregion
 
         #region Stream overrides
@@ -80,49 +81,75 @@ namespace Amazon.Runtime.Internal.Util
         /// </returns>
         public override int Read(byte[] buffer, int offset, int count)
         {
-            int result = this.CryptoStream.Read(buffer, offset, count);
-            return result;
+            int readBytes = base.Read(buffer, offset, count);
+
+            if (readBytes == 0)
+                return 0;
+
+            int numBytesRead = 0;
+            while (numBytesRead < readBytes)
+            {
+                numBytesRead += Algorithm.AppendBlock(buffer, offset, InternalEncryptionBlockSize, internalBuffer, 0);
+                Buffer.BlockCopy(internalBuffer, 0, buffer, offset, InternalEncryptionBlockSize);
+                offset = offset + InternalEncryptionBlockSize;
+            }
+
+            Buffer.BlockCopy(buffer, numBytesRead - InternalEncryptionBlockSize, InitializationVector, 0, InternalEncryptionBlockSize);
+            return numBytesRead;
         }
 
+#if BCL
         public override void Close()
         {
             base.Close();
         }
-
+#endif
         /// <summary>
         /// Gets a value indicating whether the current stream supports seeking.
-        /// DecryptStream does not support seeking, this will always be false.
         /// </summary>
         public override bool CanSeek
         {
             get
             {
-                // Restrict random access
-                return false;
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Returns encrypted content length.
+        /// </summary>
+        public override long Length
+        {
+            get
+            {
+                if (base.Length % InternalEncryptionBlockSize == 0)
+                {
+                    return (base.Length);
+                }
+                else
+                {
+                    return (base.Length + InternalEncryptionBlockSize - (base.Length % InternalEncryptionBlockSize));
+                }
             }
         }
 
         /// <summary>
         /// Gets or sets the position within the current stream.
-        /// DecryptStream does not support seeking, attempting to set Position
-        /// will throw NotSupportedException.
         /// </summary>
         public override long Position
         {
             get
             {
-                throw new NotSupportedException("DecryptStream does not support seeking");
+                return BaseStream.Position;
             }
             set
             {
-                throw new NotSupportedException("DecryptStream does not support seeking");
+                Seek(offset: value, origin: SeekOrigin.Begin);
             }
         }
 
         /// <summary>
         /// Sets the position within the current stream.
-        /// DecryptStream does not support seeking, attempting to call Seek
-        /// will throw NotSupportedException.
         /// </summary>
         /// <param name="offset">A byte offset relative to the origin parameter.</param>
         /// <param name="origin">
@@ -131,8 +158,12 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>The new position within the current stream.</returns>
         public override long Seek(long offset, SeekOrigin origin)
         {
-            throw new NotSupportedException("DecryptStream does not support seeking");
+            long position = BaseStream.Seek(offset, origin);
+            this.Algorithm.Reset();
+
+            return position;
         }
+
         #endregion
 
         #region Private methods
@@ -143,7 +174,7 @@ namespace Amazon.Runtime.Internal.Util
         private void ValidateBaseStream()
         {
             if (!BaseStream.CanRead && !BaseStream.CanWrite)
-                throw new InvalidDataException("DecryptStream does not support base streams that are not capable of reading or writing");
+                throw new InvalidDataException("EncryptStreamForUploadPart does not support base streams that are not capable of reading or writing");
         }
 
         #endregion
@@ -151,51 +182,50 @@ namespace Amazon.Runtime.Internal.Util
 
 
     /// <summary>
-    /// A wrapper stream that decrypts the base stream as it
+    /// A wrapper stream that encrypts the base stream as it
     /// is being read.
-    /// </summary>
-    public class DecryptStream<T> : DecryptStream
-            where T : class, IDecryptionWrapper, new()
+    /// </summary>   
+    public class EncryptUploadPartStream<T> : EncryptUploadPartStream
+            where T : class, IEncryptionWrapper, new()
     {
         #region Constructors
 
         /// <summary>
-        /// Initializes an DecryptStream with an decryption algorithm and a base stream.
+        /// Initializes an EncryptStream with an encryption algorithm and a base stream.
         /// </summary>
         /// <param name="baseStream">Stream to perform encryption on..</param>
-        /// <param name="envelopeKey">Symmetric key to perform decryption</param>
-        /// <param name="IV">Initialization vector to perform decryption</param>
-        public DecryptStream(Stream baseStream, byte[] envelopeKey, byte[] IV)
+        /// <param name="key">Symmetric key to perform encryption</param>
+        /// <param name="IV">Initialization vector to perform encryption</param>
+        public EncryptUploadPartStream(Stream baseStream, byte[] key, byte[] IV)
             : base(baseStream)
         {
             Algorithm = new T();
-            Algorithm.SetDecryptionData(envelopeKey, IV);
-            Algorithm.CreateDecryptor();
-            CryptoStream = new CryptoStream(this.BaseStream, Algorithm.Transformer, CryptoStreamMode.Read);
+            Algorithm.SetEncryptionData(key, IV);
+            Algorithm.CreateEncryptor();
         }
-
 
         #endregion
     }
 
 
     /// <summary>
-    /// A wrapper stream that decrypts the base stream using AES algorithm as it
+    /// A wrapper stream that encrypts the base stream as it
     /// is being read.
-    /// </summary>
-    public class AESDecryptionStream : DecryptStream<DecryptionWrapperAES>
+    /// </summary>   
+    public class AESEncryptionUploadPartStream : EncryptUploadPartStream<EncryptionWrapperAES>
     {
         #region Constructors
 
         /// <summary>
-        /// Initializes an AESDecryptionStream with a base stream.
+        /// Initializes an AESEncryptionStream with a base stream.
         /// </summary>
-        /// <param name="baseStream">Stream to perform decryption on..</param>
-        /// <param name="key">Symmetric key to perform decryption</param>
-        /// <param name="IV">Initialization vector to perform decryption</param>
-        public AESDecryptionStream(Stream baseStream, byte[] key, byte[] IV)
+        /// <param name="baseStream">Stream to perform encryption on..</param>
+        /// <param name="key">Symmetric key to perform encryption</param>
+        /// <param name="IV">Initialization vector to perform encryption</param>
+        public AESEncryptionUploadPartStream(Stream baseStream, byte[] key, byte[] IV)
             : base(baseStream, key, IV) { }
 
         #endregion
     }
+
 }

@@ -23,6 +23,8 @@
 using System;
 using System.IO;
 using Amazon.Runtime;
+using System.Collections;
+using System.Diagnostics;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -30,33 +32,34 @@ namespace Amazon.Runtime.Internal.Util
     /// A wrapper stream that encrypts the base stream as it
     /// is being read.
     /// </summary>
-    public abstract class EncryptUploadPartStream : WrapperStream
+    public abstract class EncryptStream : WrapperStream
     {
         #region Properties
 
         protected IEncryptionWrapper Algorithm { get; set; }
+        private const int internalEncryptionBlockSize = 16;
         private byte[] internalBuffer;
-        public byte[] InitializationVector { get; protected set; }
-        internal const int InternalEncryptionBlockSize = 16;
+        private bool performedLastBlockTransform;
 
         #endregion
 
         #region Constructors
 
         /// <summary>
-        /// Initializes an EncryptStream for Multipart uploads with an encryption algorithm and a base stream.
+        /// Initializes an EncryptStream with an encryption algorithm and a base stream.
         /// </summary>
         /// <param name="baseStream">Stream to perform encryption on..</param>
-        protected EncryptUploadPartStream(Stream baseStream)
+        protected EncryptStream(Stream baseStream)
             : base(baseStream)
         {
-            internalBuffer = new byte[InternalEncryptionBlockSize];
-            InitializationVector = new byte[InternalEncryptionBlockSize];
+            performedLastBlockTransform = false;
+            internalBuffer = new byte[internalEncryptionBlockSize];
             ValidateBaseStream();
         }
         #endregion
 
         #region Stream overrides
+
 
         /// <summary>
         /// Reads a sequence of bytes from the current stream and advances the position
@@ -81,27 +84,47 @@ namespace Amazon.Runtime.Internal.Util
         /// </returns>
         public override int Read(byte[] buffer, int offset, int count)
         {
-            int readBytes = base.Read(buffer, offset, count);
-
-            if (readBytes == 0)
+            if (performedLastBlockTransform)
                 return 0;
 
-            int numBytesRead = 0;
-            while (numBytesRead < readBytes)
+            long previousPosition = this.Position;
+            int maxBytesRead = count - (count % internalEncryptionBlockSize);
+            int readBytes = base.Read(buffer, offset, maxBytesRead);
+
+            if (readBytes == 0)
             {
-                numBytesRead += Algorithm.AppendBlock(buffer, offset, InternalEncryptionBlockSize, internalBuffer, 0);
-                Buffer.BlockCopy(internalBuffer, 0, buffer, offset, InternalEncryptionBlockSize);
-                offset = offset + InternalEncryptionBlockSize;
+                byte[] finalBytes = Algorithm.AppendLastBlock(buffer, offset, 0);
+                finalBytes.CopyTo(buffer, offset);
+                performedLastBlockTransform = true;
+                return finalBytes.Length;
             }
 
-            Buffer.BlockCopy(buffer, numBytesRead - InternalEncryptionBlockSize, InitializationVector, 0, InternalEncryptionBlockSize);
-            return numBytesRead;
+            long currentPosition = previousPosition;
+           
+            while (this.Position - currentPosition >= internalEncryptionBlockSize)
+            {
+                currentPosition += Algorithm.AppendBlock(buffer, offset, internalEncryptionBlockSize, internalBuffer, 0);
+                Buffer.BlockCopy(internalBuffer, 0, buffer, offset, internalEncryptionBlockSize);
+                offset = offset + internalEncryptionBlockSize;
+            }
+
+            if ((this.Length - this.Position) < internalEncryptionBlockSize)
+            {
+                byte[] finalBytes = Algorithm.AppendLastBlock(buffer, offset, (int)(this.Position - currentPosition));
+                finalBytes.CopyTo(buffer, offset);
+                currentPosition += finalBytes.Length;
+                performedLastBlockTransform = true;
+            }
+
+            return (int)(currentPosition - previousPosition);
         }
 
+#if BCL
         public override void Close()
         {
             base.Close();
         }
+#endif
 
         /// <summary>
         /// Gets a value indicating whether the current stream supports seeking.
@@ -121,13 +144,13 @@ namespace Amazon.Runtime.Internal.Util
         {
             get
             {
-                if (base.Length % InternalEncryptionBlockSize == 0)
+                if (base.Length % internalEncryptionBlockSize == 0)
                 {
-                    return (base.Length);
+                    return (base.Length + internalEncryptionBlockSize);
                 }
                 else
                 {
-                    return (base.Length + InternalEncryptionBlockSize - (base.Length % InternalEncryptionBlockSize));
+                    return (base.Length + internalEncryptionBlockSize - (base.Length % internalEncryptionBlockSize));
                 }
             }
         }
@@ -158,6 +181,8 @@ namespace Amazon.Runtime.Internal.Util
         public override long Seek(long offset, SeekOrigin origin)
         {
             long position = BaseStream.Seek(offset, origin);
+
+            this.performedLastBlockTransform = false;
             this.Algorithm.Reset();
 
             return position;
@@ -173,18 +198,17 @@ namespace Amazon.Runtime.Internal.Util
         private void ValidateBaseStream()
         {
             if (!BaseStream.CanRead && !BaseStream.CanWrite)
-                throw new InvalidDataException("EncryptStreamForUploadPart does not support base streams that are not capable of reading or writing");
+                throw new InvalidDataException("EncryptStream does not support base streams that are not capable of reading or writing");
         }
 
         #endregion
     }
 
-
     /// <summary>
     /// A wrapper stream that encrypts the base stream as it
     /// is being read.
     /// </summary>   
-    public class EncryptUploadPartStream<T> : EncryptUploadPartStream
+    public class EncryptStream<T> : EncryptStream
             where T : class, IEncryptionWrapper, new()
     {
         #region Constructors
@@ -195,23 +219,22 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="baseStream">Stream to perform encryption on..</param>
         /// <param name="key">Symmetric key to perform encryption</param>
         /// <param name="IV">Initialization vector to perform encryption</param>
-        public EncryptUploadPartStream(Stream baseStream, byte[] key, byte[] IV)
+        public EncryptStream(Stream baseStream, byte[] key, byte[] IV)
             : base(baseStream)
         {
             Algorithm = new T();
             Algorithm.SetEncryptionData(key, IV);
             Algorithm.CreateEncryptor();
         }
-
         #endregion
     }
 
 
     /// <summary>
-    /// A wrapper stream that encrypts the base stream as it
+    /// A wrapper stream that encrypts the base stream using AES algorithm as it
     /// is being read.
-    /// </summary>   
-    public class AESEncryptionUploadPartStream : EncryptUploadPartStream<EncryptionWrapperAES>
+    /// </summary>
+    public class AESEncryptionPutObjectStream : EncryptStream<EncryptionWrapperAES>
     {
         #region Constructors
 
@@ -221,10 +244,9 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="baseStream">Stream to perform encryption on..</param>
         /// <param name="key">Symmetric key to perform encryption</param>
         /// <param name="IV">Initialization vector to perform encryption</param>
-        public AESEncryptionUploadPartStream(Stream baseStream, byte[] key, byte[] IV)
+        public AESEncryptionPutObjectStream(Stream baseStream, byte[] key, byte[] IV)
             : base(baseStream, key, IV) { }
 
         #endregion
     }
-
 }
