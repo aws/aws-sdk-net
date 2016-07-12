@@ -16,12 +16,6 @@ namespace AWSSDKDocSamples.CloudWatch
       #region CWGetMetricStatistics
       var client = new AmazonCloudWatchClient();
 
-      var dimension = new Dimension
-      {
-        Name = "InstanceType",
-        Value = "t1.micro"
-      };
-
       var request = new GetMetricStatisticsRequest
       {
         Dimensions = new List<Dimension>() { dimension },
