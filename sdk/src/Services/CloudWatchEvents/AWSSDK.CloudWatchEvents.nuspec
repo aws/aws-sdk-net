@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.CloudWatchEvents</id>
     <title>AWSSDK - Amazon CloudWatch Events</title>
-    <version>3.1.2.0</version> 
+    <version>3.1.2.1</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

@@ -1,3 +1,15 @@
+### 3.1.84.0 (2016-07-13 22:00 UTC)
+* DatabaseMigrationService (3.1.2.0)
+	* API updates to enable SSL-enabled endpoints.
+* ECS (3.1.6.0)
+	* Added support for specifying an IAM role ARN for tasks.
+* RDS (3.1.13.0)
+	* API Update for RDS Aurora: new parameter TargetDBInstanceIdentifier of FailoverDBCluster API. 
+API Update for RDS Aurora: New method CopyDBClusterParameterGroup.
+* Core 3.1.9.0
+	* Updated to support ECS container credentials.
+	* all services packages updated to require new core
+
 ### 3.1.83.0 (2016-07-07 23:26 UTC)
 * ConfigService (3.1.5.0)
 	* API Update for AWS Config: DeleteConfigurationRecorder API.
