@@ -1285,7 +1285,12 @@ namespace Amazon.Runtime
             try
             {
                 HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+#if PCL
+                IAsyncResult result = request.BeginGetResponse(null, null);
+                HttpWebResponse response = request.EndGetResponse(result) as HttpWebResponse;
+#else
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+#endif
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))
                 {
                     return reader.ReadToEnd();
@@ -1532,6 +1537,7 @@ namespace Amazon.Runtime
         #endregion
     }
 
+#if !PCL
     /// <summary>
     /// When running in an ECS container and AWS_CONTAINER_CREDENTIALS_RELATIVE_URI is set,
     /// use the given end point to retrieve the credentials.
@@ -1590,7 +1596,7 @@ namespace Amazon.Runtime
             };
         }
     }
-
+#endif
 #if BCL
 
     /// <summary>
@@ -2210,6 +2216,7 @@ namespace Amazon.Runtime
         /// using ECS endpoint instead of referring to instance profile credentials.
         private static AWSCredentials ECSEC2CredentialsWrapper()
         {
+#if !PCL
             try{
                 string uri = System.Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
                 if (!string.IsNullOrEmpty(uri))
@@ -2221,7 +2228,7 @@ namespace Amazon.Runtime
             {
                 Logger.GetLogger(typeof(ECSTaskCredentials)).Error(e, "Failed to access environment variable {0}", ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
             }
-
+#endif
             return new InstanceProfileAWSCredentials();
         }
 
