@@ -67,6 +67,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCertificateArn())
+                {
+                    context.Writer.WritePropertyName("CertificateArn");
+                    context.Writer.Write(publicRequest.CertificateArn);
+                }
+
                 if(publicRequest.IsSetDatabaseName())
                 {
                     context.Writer.WritePropertyName("DatabaseName");
@@ -119,6 +125,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ServerName");
                     context.Writer.Write(publicRequest.ServerName);
+                }
+
+                if(publicRequest.IsSetSslMode())
+                {
+                    context.Writer.WritePropertyName("SslMode");
+                    context.Writer.Write(publicRequest.SslMode);
                 }
 
                 if(publicRequest.IsSetTags())

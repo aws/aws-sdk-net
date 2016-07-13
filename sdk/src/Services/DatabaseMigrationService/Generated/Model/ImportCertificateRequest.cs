@@ -28,48 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the TestConnection operation.
-    /// Tests the connection between the replication instance and the endpoint.
+    /// Container for the parameters to the ImportCertificate operation.
+    /// Uploads the specified certificate.
     /// </summary>
-    public partial class TestConnectionRequest : AmazonDatabaseMigrationServiceRequest
+    public partial class ImportCertificateRequest : AmazonDatabaseMigrationServiceRequest
     {
-        private string _endpointArn;
-        private string _replicationInstanceArn;
+        private string _certificateIdentifier;
+        private string _certificatePem;
 
         /// <summary>
-        /// Gets and sets the property EndpointArn. 
+        /// Gets and sets the property CertificateIdentifier. 
         /// <para>
-        /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+        /// The customer-assigned name of the certificate. Valid characters are [A-z_0-9].
         /// </para>
         /// </summary>
-        public string EndpointArn
+        public string CertificateIdentifier
         {
-            get { return this._endpointArn; }
-            set { this._endpointArn = value; }
+            get { return this._certificateIdentifier; }
+            set { this._certificateIdentifier = value; }
         }
 
-        // Check to see if EndpointArn property is set
-        internal bool IsSetEndpointArn()
+        // Check to see if CertificateIdentifier property is set
+        internal bool IsSetCertificateIdentifier()
         {
-            return this._endpointArn != null;
+            return this._certificateIdentifier != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationInstanceArn. 
+        /// Gets and sets the property CertificatePem. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the replication instance.
+        /// The contents of the .pem X.509 certificate file.
         /// </para>
         /// </summary>
-        public string ReplicationInstanceArn
+        public string CertificatePem
         {
-            get { return this._replicationInstanceArn; }
-            set { this._replicationInstanceArn = value; }
+            get { return this._certificatePem; }
+            set { this._certificatePem = value; }
         }
 
-        // Check to see if ReplicationInstanceArn property is set
-        internal bool IsSetReplicationInstanceArn()
+        // Check to see if CertificatePem property is set
+        internal bool IsSetCertificatePem()
         {
-            return this._replicationInstanceArn != null;
+            return this._certificatePem != null;
         }
 
     }

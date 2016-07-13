@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the TestConnection operation.
-    /// Tests the connection between the replication instance and the endpoint.
+    /// This is the response object from the DescribeCertificates operation.
     /// </summary>
-    public partial class TestConnectionRequest : AmazonDatabaseMigrationServiceRequest
+    public partial class DescribeCertificatesResponse : AmazonWebServiceResponse
     {
-        private string _endpointArn;
-        private string _replicationInstanceArn;
+        private List<Certificate> _certificates = new List<Certificate>();
+        private string _marker;
 
         /// <summary>
-        /// Gets and sets the property EndpointArn. 
+        /// Gets and sets the property Certificates. 
         /// <para>
-        /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+        /// The SSL certificates associated with the replication instance.
         /// </para>
         /// </summary>
-        public string EndpointArn
+        public List<Certificate> Certificates
         {
-            get { return this._endpointArn; }
-            set { this._endpointArn = value; }
+            get { return this._certificates; }
+            set { this._certificates = value; }
         }
 
-        // Check to see if EndpointArn property is set
-        internal bool IsSetEndpointArn()
+        // Check to see if Certificates property is set
+        internal bool IsSetCertificates()
         {
-            return this._endpointArn != null;
+            return this._certificates != null && this._certificates.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationInstanceArn. 
+        /// Gets and sets the property Marker. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the replication instance.
+        /// The pagination token.
         /// </para>
         /// </summary>
-        public string ReplicationInstanceArn
+        public string Marker
         {
-            get { return this._replicationInstanceArn; }
-            set { this._replicationInstanceArn = value; }
+            get { return this._marker; }
+            set { this._marker = value; }
         }
 
-        // Check to see if ReplicationInstanceArn property is set
-        internal bool IsSetReplicationInstanceArn()
+        // Check to see if Marker property is set
+        internal bool IsSetMarker()
         {
-            return this._replicationInstanceArn != null;
+            return this._marker != null;
         }
 
     }

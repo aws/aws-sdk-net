@@ -38,6 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _engineVersion;
         private DateTime? _instanceCreateTime;
         private string _kmsKeyId;
+        private bool? _multiAZ;
         private ReplicationPendingModifiedValues _pendingModifiedValues;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
@@ -45,7 +46,9 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _replicationInstanceClass;
         private string _replicationInstanceIdentifier;
         private string _replicationInstancePrivateIpAddress;
+        private List<string> _replicationInstancePrivateIpAddresses = new List<string>();
         private string _replicationInstancePublicIpAddress;
+        private List<string> _replicationInstancePublicIpAddresses = new List<string>();
         private string _replicationInstanceStatus;
         private ReplicationSubnetGroup _replicationSubnetGroup;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
@@ -160,6 +163,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        ///  Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
         }
 
         /// <summary>
@@ -316,6 +339,24 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationInstancePrivateIpAddresses. 
+        /// <para>
+        /// The private IP address of the replication instance.
+        /// </para>
+        /// </summary>
+        public List<string> ReplicationInstancePrivateIpAddresses
+        {
+            get { return this._replicationInstancePrivateIpAddresses; }
+            set { this._replicationInstancePrivateIpAddresses = value; }
+        }
+
+        // Check to see if ReplicationInstancePrivateIpAddresses property is set
+        internal bool IsSetReplicationInstancePrivateIpAddresses()
+        {
+            return this._replicationInstancePrivateIpAddresses != null && this._replicationInstancePrivateIpAddresses.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicationInstancePublicIpAddress. 
         /// <para>
         /// The public IP address of the replication instance.
@@ -331,6 +372,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationInstancePublicIpAddress()
         {
             return this._replicationInstancePublicIpAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationInstancePublicIpAddresses. 
+        /// <para>
+        /// The public IP address of the replication instance.
+        /// </para>
+        /// </summary>
+        public List<string> ReplicationInstancePublicIpAddresses
+        {
+            get { return this._replicationInstancePublicIpAddresses; }
+            set { this._replicationInstancePublicIpAddresses = value; }
+        }
+
+        // Check to see if ReplicationInstancePublicIpAddresses property is set
+        internal bool IsSetReplicationInstancePublicIpAddresses()
+        {
+            return this._replicationInstancePublicIpAddresses != null && this._replicationInstancePublicIpAddresses.Count > 0; 
         }
 
         /// <summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Endpoint Object
+    /// Response Unmarshaller for Certificate Object
     /// </summary>  
-    public class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext>
+    public class CertificateUnmarshaller : IUnmarshaller<Certificate, XmlUnmarshallerContext>, IUnmarshaller<Certificate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Endpoint IUnmarshaller<Endpoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Certificate IUnmarshaller<Certificate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Endpoint Unmarshall(JsonUnmarshallerContext context)
+        public Certificate Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Endpoint unmarshalledObject = new Endpoint();
+            Certificate unmarshalledObject = new Certificate();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,76 +70,52 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DatabaseName", targetDepth))
+                if (context.TestExpression("CertificateCreationDate", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CertificateCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndpointArn", targetDepth))
+                if (context.TestExpression("CertificateIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndpointIdentifier", targetDepth))
+                if (context.TestExpression("CertificateOwner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateOwner = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndpointType", targetDepth))
+                if (context.TestExpression("CertificatePem", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificatePem = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EngineName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExtraConnectionAttributes", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExtraConnectionAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KmsKeyId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Port", targetDepth))
+                if (context.TestExpression("KeyLength", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ServerName", targetDepth))
+                if (context.TestExpression("SigningAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SigningAlgorithm = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SslMode", targetDepth))
+                if (context.TestExpression("ValidFromDate", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SslMode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ValidFromDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("ValidToDate", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Username", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ValidToDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -148,12 +124,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static EndpointUnmarshaller _instance = new EndpointUnmarshaller();        
+        private static CertificateUnmarshaller _instance = new CertificateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EndpointUnmarshaller Instance
+        public static CertificateUnmarshaller Instance
         {
             get
             {

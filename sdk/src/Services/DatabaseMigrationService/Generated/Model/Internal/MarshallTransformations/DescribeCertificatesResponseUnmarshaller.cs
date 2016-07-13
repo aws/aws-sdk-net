@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModifyReplicationSubnetGroup operation
+    /// Response Unmarshaller for DescribeCertificates operation
     /// </summary>  
-    public class ModifyReplicationSubnetGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeCertificatesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ModifyReplicationSubnetGroupResponse response = new ModifyReplicationSubnetGroupResponse();
+            DescribeCertificatesResponse response = new DescribeCertificatesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ReplicationSubnetGroup", targetDepth))
+                if (context.TestExpression("Certificates", targetDepth))
                 {
-                    var unmarshaller = ReplicationSubnetGroupUnmarshaller.Instance;
-                    response.ReplicationSubnetGroup = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Certificate, CertificateUnmarshaller>(CertificateUnmarshaller.Instance);
+                    response.Certificates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Marker", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Marker = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,36 +78,16 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedFault"))
-            {
-                return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnet"))
-            {
-                return new InvalidSubnetException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ReplicationSubnetGroupDoesNotCoverEnoughAZs"))
-            {
-                return new ReplicationSubnetGroupDoesNotCoverEnoughAZsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundFault"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceQuotaExceededFault"))
-            {
-                return new ResourceQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SubnetAlreadyInUse"))
-            {
-                return new SubnetAlreadyInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonDatabaseMigrationServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ModifyReplicationSubnetGroupResponseUnmarshaller _instance = new ModifyReplicationSubnetGroupResponseUnmarshaller();        
+        private static DescribeCertificatesResponseUnmarshaller _instance = new DescribeCertificatesResponseUnmarshaller();        
 
-        internal static ModifyReplicationSubnetGroupResponseUnmarshaller GetInstance()
+        internal static DescribeCertificatesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +95,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyReplicationSubnetGroupResponseUnmarshaller Instance
+        public static DescribeCertificatesResponseUnmarshaller Instance
         {
             get
             {
