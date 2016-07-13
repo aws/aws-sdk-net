@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FailoverDBCluster operation
+    /// Response Unmarshaller for CopyDBClusterParameterGroup operation
     /// </summary>  
-    public class FailoverDBClusterResponseUnmarshaller : XmlResponseUnmarshaller
+    public class CopyDBClusterParameterGroupResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            FailoverDBClusterResponse response = new FailoverDBClusterResponse();
+            CopyDBClusterParameterGroupResponse response = new CopyDBClusterParameterGroupResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("FailoverDBClusterResult", 2))
+                    if(context.TestExpression("CopyDBClusterParameterGroupResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, FailoverDBClusterResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, CopyDBClusterParameterGroupResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("DBCluster", targetDepth))
+                    if (context.TestExpression("DBClusterParameterGroup", targetDepth))
                     {
-                        var unmarshaller = DBClusterUnmarshaller.Instance;
-                        response.DBCluster = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DBClusterParameterGroupUnmarshaller.Instance;
+                        response.DBClusterParameterGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -104,23 +104,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBParameterGroupAlreadyExists"))
             {
-                return new DBClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DBParameterGroupAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBParameterGroupNotFound"))
             {
-                return new InvalidDBClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DBParameterGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBParameterGroupQuotaExceeded"))
             {
-                return new InvalidDBInstanceStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DBParameterGroupQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static FailoverDBClusterResponseUnmarshaller _instance = new FailoverDBClusterResponseUnmarshaller();        
+        private static CopyDBClusterParameterGroupResponseUnmarshaller _instance = new CopyDBClusterParameterGroupResponseUnmarshaller();        
 
-        internal static FailoverDBClusterResponseUnmarshaller GetInstance()
+        internal static CopyDBClusterParameterGroupResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +128,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FailoverDBClusterResponseUnmarshaller Instance
+        public static CopyDBClusterParameterGroupResponseUnmarshaller Instance
         {
             get
             {

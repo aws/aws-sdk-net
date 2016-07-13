@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Contains the result of a successful invocation of the <a>CreateDBClusterParameterGroup</a>
-    /// action. 
+    /// or <a>CopyDBClusterParameterGroup</a> action. 
     /// 
     ///  
     /// <para>
