@@ -89,6 +89,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Family);
                 }
 
+                if(publicRequest.IsSetTaskRoleArn())
+                {
+                    context.Writer.WritePropertyName("taskRoleArn");
+                    context.Writer.Write(publicRequest.TaskRoleArn);
+                }
+
                 if(publicRequest.IsSetVolumes())
                 {
                     context.Writer.WritePropertyName("volumes");

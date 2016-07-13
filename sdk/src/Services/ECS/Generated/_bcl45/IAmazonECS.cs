@@ -823,6 +823,12 @@ namespace Amazon.ECS
         /// name, by a particular container instance, or by the desired status of the task with
         /// the <code>family</code>, <code>containerInstance</code>, and <code>desiredStatus</code>
         /// parameters.
+        /// 
+        ///  
+        /// <para>
+        /// Recently-stopped tasks might appear in the returned results. Currently, stopped tasks
+        /// appear in the returned results for at least one hour. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTasks service method.</param>
         /// 
@@ -871,6 +877,15 @@ namespace Amazon.ECS
         /// parameter. For more information about task definition parameters and defaults, see
         /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You may also specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
+        /// When you specify an IAM role for a task, its containers can then use the latest versions
+        /// of the AWS CLI or SDKs to make API requests to the AWS services that are specified
+        /// in the IAM policy associated with the role. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTaskDefinition service method.</param>
         /// 
