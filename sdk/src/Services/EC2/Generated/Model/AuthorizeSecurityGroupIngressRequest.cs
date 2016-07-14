@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         /// Instantiates AuthorizeSecurityGroupIngressRequest with the parameterized properties
         /// </summary>
         /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group.</param>
-        /// <param name="ipPermissions">A set of IP permissions. Can be used to specify multiple rules in a single command. </param>
+        /// <param name="ipPermissions">A set of IP permissions. Can be used to specify multiple rules in a single command.</param>
         public AuthorizeSecurityGroupIngressRequest(string groupName, List<IpPermission> ipPermissions)
         {
             _groupName = groupName;
@@ -121,7 +121,6 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property IpPermissions. 
         /// <para>
         /// A set of IP permissions. Can be used to specify multiple rules in a single command.
-        /// 
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions

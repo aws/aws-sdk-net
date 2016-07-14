@@ -38,7 +38,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the Amazon S3 bucket. 
+        /// The name of the Amazon S3 bucket.
         /// </para>
         /// </summary>
         public string BucketName
@@ -57,7 +57,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property ObjectKey. 
         /// <para>
         /// The key of the object in the Amazon S3 bucket, which uniquely identifies the object
-        /// in the bucket. 
+        /// in the bucket.
         /// </para>
         /// </summary>
         public string ObjectKey

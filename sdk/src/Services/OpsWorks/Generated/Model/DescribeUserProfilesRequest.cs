@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// 
     ///  
     /// <para>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached
+    ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
     /// policy that explicitly grants permissions. For more information on user permissions,
     /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
@@ -46,7 +46,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property IamUserArns. 
         /// <para>
-        /// An array of IAM user ARNs that identify the users to be described. 
+        /// An array of IAM user ARNs that identify the users to be described.
         /// </para>
         /// </summary>
         public List<string> IamUserArns

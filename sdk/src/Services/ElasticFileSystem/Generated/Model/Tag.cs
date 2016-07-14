@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// A tag is a pair of key and value. The allowed characters in keys and values are letters,
-    /// whitespace, and numbers, representable in UTF-8, and the characters '+', '-', '=',
-    /// '.', '_', ':', and '/'.
+    /// A tag is a key-value pair. Allowed characters: letters, whitespace, and numbers, representable
+    /// in UTF-8, and the following characters:<code> + - = . _ : /</code>
     /// </summary>
     public partial class Tag
     {
@@ -40,7 +39,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Tag key, a string. The key must not start with "aws:".
+        /// Tag key (String). The key can't start with <code>aws:</code>.
         /// </para>
         /// </summary>
         public string Key

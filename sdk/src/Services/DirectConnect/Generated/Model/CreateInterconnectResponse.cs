@@ -51,6 +51,7 @@ namespace Amazon.DirectConnect.Model
         private string _interconnectId;
         private string _interconnectName;
         private InterconnectState _interconnectState;
+        private DateTime? _loaIssueTime;
         private string _location;
         private string _region;
 
@@ -112,6 +113,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetInterconnectState()
         {
             return this._interconnectState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoaIssueTime. 
+        /// <para>
+        /// The time of the most recent call to DescribeInterconnectLoa for this Interconnect.
+        /// </para>
+        /// </summary>
+        public DateTime LoaIssueTime
+        {
+            get { return this._loaIssueTime.GetValueOrDefault(); }
+            set { this._loaIssueTime = value; }
+        }
+
+        // Check to see if LoaIssueTime property is set
+        internal bool IsSetLoaIssueTime()
+        {
+            return this._loaIssueTime.HasValue; 
         }
 
         /// <summary>

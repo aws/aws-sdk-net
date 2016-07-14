@@ -30,36 +30,38 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreateBuild operation.
     /// Initializes a new build record and generates information required to upload a game
-    /// build to Amazon GameLift. Once the build record has been created and is in an INITIALIZED
+    /// build to Amazon GameLift. Once the build record has been created and is in an <code>INITIALIZED</code>
     /// state, you can upload your game build.
     /// 
-    ///  <important>
+    ///  <important> 
     /// <para>
-    /// To create a build, use the CLI command <code>upload-build</code>, which creates a
-    /// new build record and uploads the build files in one step. (See the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+    /// Do not use this API action unless you are using your own Amazon Simple Storage Service
+    /// (Amazon S3) client and need to manually upload your build files. Instead, to create
+    /// a build, use the CLI command <code>upload-build</code>, which creates a new build
+    /// record and uploads the build files in one step. (See the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
     /// GameLift Developer Guide</a> for more details on the CLI and the upload process.)
-    /// Call the <code>CreateBuild</code> action only if you have your own Amazon Simple Storage
-    /// Service (Amazon S3) client and need to manually upload your build files.
+    /// 
     /// </para>
-    /// </important> 
+    ///  </important> 
     /// <para>
     /// To create a new build, optionally specify a build name and version. This metadata
     /// is stored with other properties in the build record and is displayed in the GameLift
-    /// console (but not visible to players). If successful, this action returns the newly
-    /// created build record along with an Amazon S3 storage location and AWS account credentials.
+    /// console (it is not visible to players). If successful, this action returns the newly
+    /// created build record along with the Amazon S3 storage location and AWS account credentials.
     /// Use the location and credentials to upload your game build.
     /// </para>
     /// </summary>
     public partial class CreateBuildRequest : AmazonGameLiftRequest
     {
         private string _name;
+        private S3Location _storageLocation;
         private string _version;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this build. Build names do not need to be unique.
-        /// A build name can be changed later using <a>UpdateBuild</a>.
+        /// Descriptive label associated with a build. Build names do not need to be unique. A
+        /// build name can be changed later using <code><a>UpdateBuild</a></code>.
         /// </para>
         /// </summary>
         public string Name
@@ -75,10 +77,25 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageLocation.
+        /// </summary>
+        public S3Location StorageLocation
+        {
+            get { return this._storageLocation; }
+            set { this._storageLocation = value; }
+        }
+
+        // Check to see if StorageLocation property is set
+        internal bool IsSetStorageLocation()
+        {
+            return this._storageLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
         /// Version associated with this build. Version strings do not need to be unique to a
-        /// build. A build version can be changed later using <a>UpdateBuild</a>.
+        /// build. A build version can be changed later using <code><a>UpdateBuild</a></code>.
         /// </para>
         /// </summary>
         public string Version

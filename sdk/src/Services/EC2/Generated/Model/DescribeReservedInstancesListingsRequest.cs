@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,13 +36,13 @@ namespace Amazon.EC2.Model
     /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
     /// capacity that they no longer need with buyers who want to purchase additional capacity.
     /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
-    /// like any other Reserved Instances. 
+    /// like any other Reserved Instances.
     /// </para>
     ///  
     /// <para>
     /// As a seller, you choose to list some or all of your Reserved Instances, and you specify
     /// the upfront price to receive for them. Your Reserved Instances are then listed in
-    /// the Reserved Instance Marketplace and are available for purchase. 
+    /// the Reserved Instance Marketplace and are available for purchase.
     /// </para>
     ///  
     /// <para>
@@ -71,20 +71,20 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>reserved-instances-id</code> - The ID of the Reserved Instances.
+        ///  <code>reserved-instances-id</code> - The ID of the Reserved Instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
+        ///  <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances listing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>status</code> - The status of the Reserved Instance listing (<code>pending</code>
+        ///  <code>status</code> - The status of the Reserved Instance listing (<code>pending</code>
         /// | <code>active</code> | <code>cancelled</code> | <code>closed</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>status-message</code> - The reason for the status.
+        ///  <code>status-message</code> - The reason for the status.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -293,6 +293,37 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteConfigurationRecorder
+
+        internal DeleteConfigurationRecorderResponse DeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request)
+        {
+            var marshaller = new DeleteConfigurationRecorderRequestMarshaller();
+            var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationRecorderRequest,DeleteConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationRecorder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationRecorder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteConfigurationRecorderResponse> DeleteConfigurationRecorderAsync(DeleteConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteConfigurationRecorderRequestMarshaller();
+            var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConfigurationRecorderRequest,DeleteConfigurationRecorderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDeliveryChannel
 
         internal DeleteDeliveryChannelResponse DeleteDeliveryChannel(DeleteDeliveryChannelRequest request)
@@ -305,13 +336,12 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified delivery channel.
+        /// Deletes the delivery channel.
         /// 
         ///  
         /// <para>
-        /// The delivery channel cannot be deleted if it is the only delivery channel and the
-        /// configuration recorder is still running. To delete the delivery channel, stop the
-        /// running configuration recorder using the <a>StopConfigurationRecorder</a> action.
+        /// Before you can delete the delivery channel, you must stop the configuration recorder
+        /// by using the <a>StopConfigurationRecorder</a> action.
         /// </para>
         /// </summary>
         /// <param name="deliveryChannelName">The name of the delivery channel to delete.</param>
@@ -623,7 +653,11 @@ namespace Amazon.ConfigService
         /// recorder is not specified, this action returns the status of all configuration recorder
         /// associated with the account.
         /// 
-        ///  <note>Currently, you can specify only one configuration recorder per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one configuration recorder per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -739,7 +773,11 @@ namespace Amazon.ConfigService
         /// is not specified, this action returns the current status of all delivery channels
         /// associated with the account. 
         /// 
-        ///  <note>Currently, you can specify only one delivery channel per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one delivery channel per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

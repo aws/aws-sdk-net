@@ -48,13 +48,17 @@ namespace Amazon.ConfigService.Model
     /// resources (for example, IAM resources). Global resources are not tied to an individual
     /// region and can be used in all regions.
     /// </para>
-    ///  <important>The configuration details for any global resource are the same in all
-    /// regions. If you customize AWS Config in multiple regions to record global resources,
-    /// it will create multiple configuration items each time a global resource changes: one
-    /// configuration item for each region. These configuration items will contain identical
-    /// data. To prevent duplicate configuration items, you should consider customizing AWS
-    /// Config in only one region to record global resources, unless you want the configuration
-    /// items to be available in multiple regions.</important> 
+    ///  <important> 
+    /// <para>
+    /// The configuration details for any global resource are the same in all regions. If
+    /// you customize AWS Config in multiple regions to record global resources, it will create
+    /// multiple configuration items each time a global resource changes: one configuration
+    /// item for each region. These configuration items will contain identical data. To prevent
+    /// duplicate configuration items, you should consider customizing AWS Config in only
+    /// one region to record global resources, unless you want the configuration items to
+    /// be available in multiple regions.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// If you don't want AWS Config to record all resources, you can specify which types
     /// of resources it will record with the <code>resourceTypes</code> parameter.

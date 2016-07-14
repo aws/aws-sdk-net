@@ -31,8 +31,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// Container for the parameters to the DescribeConnections operation.
     /// Describes the status of the connections that have been made between the replication
     /// instance and an endpoint. Connections are created when you test an endpoint.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeConnectionsRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -47,7 +45,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid filter names: endpoint-arn | replication-instance-arn 
+        /// Valid filter names: endpoint-arn | replication-instance-arn
         /// </para>
         /// </summary>
         public List<Filter> Filters

@@ -64,8 +64,8 @@ namespace Amazon.Route53.Model
         /// <para>
         /// A flag that indicates whether there are more geo locations to be listed. If your results
         /// were truncated, you can make a follow-up request for the next page of results by using
-        /// the values included in the <a>ListGeoLocationsResponse$NextContinentCode</a>, <a>ListGeoLocationsResponse$NextCountryCode</a>
-        /// and <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.
+        /// the values included in the <code>NextContinentCode</code>, <code>NextCountryCode</code>,
+        /// and <code>NextSubdivisionCode</code> elements.
         /// </para>
         ///  
         /// <para>
@@ -88,8 +88,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property NextContinentCode. 
         /// <para>
         /// If the results were truncated, the continent code of the next geo location in the
-        /// list. This element is present only if <a>ListGeoLocationsResponse$IsTruncated</a>
-        /// is true and the next geo location to list is a continent location. 
+        /// list. This element is present only if <code>IsTruncated</code> is true and the next
+        /// geo location to list is a continent location. 
         /// </para>
         /// </summary>
         public string NextContinentCode
@@ -108,8 +108,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property NextCountryCode. 
         /// <para>
         /// If the results were truncated, the country code of the next geo location in the list.
-        /// This element is present only if <a>ListGeoLocationsResponse$IsTruncated</a> is true
-        /// and the next geo location to list is not a continent location. 
+        /// This element is present only if <code>IsTruncated</code> is true and the next geo
+        /// location to list is not a continent location. 
         /// </para>
         /// </summary>
         public string NextCountryCode
@@ -128,8 +128,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property NextSubdivisionCode. 
         /// <para>
         /// If the results were truncated, the subdivision code of the next geo location in the
-        /// list. This element is present only if <a>ListGeoLocationsResponse$IsTruncated</a>
-        /// is true and the next geo location has a subdivision. 
+        /// list. This element is present only if <code>IsTruncated</code> is true and the next
+        /// geo location has a subdivision. 
         /// </para>
         /// </summary>
         public string NextSubdivisionCode

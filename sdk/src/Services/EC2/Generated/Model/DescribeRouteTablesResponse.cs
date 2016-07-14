@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RouteTables. 
         /// <para>
-        /// Information about one or more route tables. 
+        /// Information about one or more route tables.
         /// </para>
         /// </summary>
         public List<RouteTable> RouteTables

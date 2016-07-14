@@ -64,7 +64,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// A flag that indicates whether there are more resource record sets to be listed. If
         /// your results were truncated, you can make a follow-up request for the next page of
-        /// results by using the <a>ListResourceRecordSetsResponse$NextRecordName</a> element.
+        /// results by using the <code>NextRecordName</code> element.
         /// </para>
         ///  
         /// <para>
@@ -87,7 +87,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property NextRecordName. 
         /// <para>
         /// If the results were truncated, the name of the next record in the list. This element
-        /// is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is true. 
+        /// is present only if <code>IsTruncated</code> is true. 
         /// </para>
         /// </summary>
         public string NextRecordName
@@ -106,7 +106,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property NextRecordType. 
         /// <para>
         /// If the results were truncated, the type of the next record in the list. This element
-        /// is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is true. 
+        /// is present only if <code>IsTruncated</code> is true. 
         /// </para>
         /// </summary>
         public RRType NextRecordType

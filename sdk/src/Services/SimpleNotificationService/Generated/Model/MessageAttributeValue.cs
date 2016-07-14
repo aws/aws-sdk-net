@@ -29,15 +29,16 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// The user-specified message attribute value. For string data types, the value attribute
-    /// has the same restrictions on the content as the message body.       For more information,
+    /// has the same restrictions on the content as the message body. For more information,
     /// see <a href="http://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.
     /// 
-    ///         
+    ///  
     /// <para>
     /// Name, type, and value must not be empty or null. In addition, the message body should
-    /// not be empty or null.       All parts of the message attribute, including name, type,
-    /// and value, are included in the message size restriction, which is currently 256 KB
-    /// (262,144 bytes).
+    /// not be empty or null. All parts of the message attribute, including name, type, and
+    /// value, are included in the message size restriction, which is currently 256 KB (262,144
+    /// bytes). For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using
+    /// Amazon SNS Message Attributes</a>.
     /// </para>
     /// </summary>
     public partial class MessageAttributeValue
@@ -88,8 +89,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property StringValue. 
         /// <para>
-        /// Strings are Unicode with UTF8 binary encoding.       For a list of code values, see
-        /// <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+        /// Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
         /// </para>
         /// </summary>
         public string StringValue

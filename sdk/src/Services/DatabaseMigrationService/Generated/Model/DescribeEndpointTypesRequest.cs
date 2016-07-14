@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeEndpointTypes operation.
     /// Returns information about the type of endpoints available.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeEndpointTypesRequest : AmazonDatabaseMigrationServiceRequest
     {

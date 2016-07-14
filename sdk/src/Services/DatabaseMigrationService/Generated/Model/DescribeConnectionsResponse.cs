@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeConnections operation.
+    /// 
     /// </summary>
     public partial class DescribeConnectionsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Connections. 
         /// <para>
-        /// A description of the connections. 
+        /// A description of the connections.
         /// </para>
         /// </summary>
         public List<Connection> Connections

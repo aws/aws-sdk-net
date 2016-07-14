@@ -73,6 +73,11 @@
     <pattern>[\w ]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest.CustomRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.GetCredentialsForIdentityRequest.IdentityId</property>
     <min>1</min>
     <max>55</max>
@@ -331,6 +336,18 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.CognitoIdentityProviderInfo.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.CognitoIdentityProviderInfo.ProviderName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w._:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.IdentityPoolShortDescription.IdentityPoolId</property>

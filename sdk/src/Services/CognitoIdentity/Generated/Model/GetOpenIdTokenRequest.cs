@@ -37,7 +37,7 @@ namespace Amazon.CognitoIdentity.Model
     /// <para>
     /// The OpenId token is valid for 15 minutes.
     /// </para>
-    ///  
+    /// 
     /// <para>
     /// This is a public API. You do not need any credentials to call this API.
     /// </para>

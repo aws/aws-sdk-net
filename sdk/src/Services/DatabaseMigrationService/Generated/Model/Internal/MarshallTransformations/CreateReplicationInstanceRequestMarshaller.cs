@@ -143,6 +143,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetVpcSecurityGroupIds())
+                {
+                    context.Writer.WritePropertyName("VpcSecurityGroupIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                    {
+                            context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

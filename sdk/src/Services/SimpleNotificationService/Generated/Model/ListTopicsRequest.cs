@@ -30,9 +30,9 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the ListTopics operation.
     /// Returns a list of the requester's topics. Each call returns a limited list of topics,
-    /// up to 100. If      there are more topics, a <code>NextToken</code> is also returned.
-    /// Use the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to
-    /// get      further results.
+    /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
+    /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
+    /// further results.
     /// </summary>
     public partial class ListTopicsRequest : AmazonSimpleNotificationServiceRequest
     {

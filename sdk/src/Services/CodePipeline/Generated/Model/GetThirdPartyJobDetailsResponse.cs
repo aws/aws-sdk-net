@@ -37,7 +37,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property JobDetails. 
         /// <para>
-        /// The details of the job, including any protected values defined for the job. 
+        /// The details of the job, including any protected values defined for the job.
         /// </para>
         /// </summary>
         public ThirdPartyJobDetails JobDetails

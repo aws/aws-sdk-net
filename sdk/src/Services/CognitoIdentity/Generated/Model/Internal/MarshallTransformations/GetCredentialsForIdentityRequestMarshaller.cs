@@ -67,6 +67,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomRoleArn())
+                {
+                    context.Writer.WritePropertyName("CustomRoleArn");
+                    context.Writer.Write(publicRequest.CustomRoleArn);
+                }
+
                 if(publicRequest.IsSetIdentityId())
                 {
                     context.Writer.WritePropertyName("IdentityId");

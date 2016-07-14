@@ -348,6 +348,10 @@
       <Project>{E9CEBF4C-B19E-48EC-96FB-88A558D1F52E}</Project>
       <Name>AWSSDK.ApplicationAutoScaling.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ServiceCatalog\AWSSDK.ServiceCatalog.Net35.csproj">
+      <Project>{F263FC0C-4701-4B32-A021-9B7C328BA85E}</Project>
+      <Name>AWSSDK.ServiceCatalog.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

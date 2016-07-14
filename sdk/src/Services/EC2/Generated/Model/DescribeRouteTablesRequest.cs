@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRouteTables operation.
-    /// Describes one or more of your route tables. 
+    /// Describes one or more of your route tables.
     /// 
     ///  
     /// <para>
@@ -55,53 +55,53 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>association.route-table-association-id</code> - The ID of an association ID
+        ///  <code>association.route-table-association-id</code> - The ID of an association ID
         /// for the route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>association.route-table-id</code> - The ID of the route table involved in the
+        ///  <code>association.route-table-id</code> - The ID of the route table involved in the
         /// association.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>association.subnet-id</code> - The ID of the subnet involved in the association.
+        ///  <code>association.subnet-id</code> - The ID of the subnet involved in the association.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>association.main</code> - Indicates whether the route table is the main route
+        ///  <code>association.main</code> - Indicates whether the route table is the main route
         /// table for the VPC (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route-table-id</code> - The ID of the route table.
+        ///  <code>route-table-id</code> - The ID of the route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route.destination-cidr-block</code> - The CIDR range specified in a route in
+        ///  <code>route.destination-cidr-block</code> - The CIDR range specified in a route in
         /// the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service
+        ///  <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service
         /// specified in a route in the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route.gateway-id</code> - The ID of a gateway specified in a route in the table.
+        ///  <code>route.gateway-id</code> - The ID of a gateway specified in a route in the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route.instance-id</code> - The ID of an instance specified in a route in the
+        ///  <code>route.instance-id</code> - The ID of an instance specified in a route in the
         /// table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route.nat-gateway-id</code> - The ID of a NAT gateway.
+        ///  <code>route.nat-gateway-id</code> - The ID of a NAT gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route.origin</code> - Describes how the route was created. <code>CreateRouteTable</code>
+        ///  <code>route.origin</code> - Describes how the route was created. <code>CreateRouteTable</code>
         /// indicates that the route was automatically created when the route table was created;
         /// <code>CreateRoute</code> indicates that the route was manually added to the route
         /// table; <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
@@ -109,38 +109,38 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route.state</code> - The state of a route in the route table (<code>active</code>
+        ///  <code>route.state</code> - The state of a route in the route table (<code>active</code>
         /// | <code>blackhole</code>). The blackhole state indicates that the route's target isn't
         /// available (for example, the specified gateway isn't attached to the VPC, the specified
         /// NAT instance has been terminated, and so on).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering connection
+        ///  <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering connection
         /// specified in a route in the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
+        ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
         /// to the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent
-        /// of the <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose"
-        /// and the filter "tag-value=X", you get any resources assigned both the tag key Purpose
-        /// (regardless of what the tag's value is), and the tag value X (regardless of what the
-        /// tag's key is). If you want to list only resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-        /// filter.
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
+        /// independent of the <code>tag-value</code> filter. For example, if you use both the
+        /// filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
+        /// both the tag key Purpose (regardless of what the tag's value is), and the tag value
+        /// X (regardless of what the tag's key is). If you want to list only resources where
+        /// Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>tag-value</code> - The value of a tag assigned to the resource. This filter
+        ///  <code>tag-value</code> - The value of a tag assigned to the resource. This filter
         /// is independent of the <code>tag-key</code> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>vpc-id</code> - The ID of the VPC for the route table.
+        ///  <code>vpc-id</code> - The ID of the VPC for the route table.
         /// </para>
         ///  </li> </ul>
         /// </summary>

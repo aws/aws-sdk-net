@@ -35,8 +35,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
-    /// action, on either the file system id that you specify in <code>FileSystemId</code>,
+    /// This operation requires permissions for the <code>elasticfilesystem:DescribeMountTargets</code>
+    /// action, on either the file system ID that you specify in <code>FileSystemId</code>,
     /// or on the file system of the mount target that you specify in <code>MountTargetId</code>.
     /// </para>
     /// </summary>
@@ -55,7 +55,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Instantiates DescribeMountTargetsRequest with the parameterized properties
         /// </summary>
-        /// <param name="fileSystemId">Optional. String. The ID of the file system whose mount targets you want to list. It must be included in your request if <code>MountTargetId</code> is not included.</param>
+        /// <param name="fileSystemId">(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if <code>MountTargetId</code> is not included.</param>
         public DescribeMountTargetsRequest(string fileSystemId)
         {
             _fileSystemId = fileSystemId;
@@ -64,8 +64,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// Optional. String. The ID of the file system whose mount targets you want to list.
-        /// It must be included in your request if <code>MountTargetId</code> is not included.
+        /// (Optional) ID of the file system whose mount targets you want to list (String). It
+        /// must be included in your request if <code>MountTargetId</code> is not included.
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -83,9 +83,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Optional. String. Opaque pagination token returned from a previous <code>DescribeMountTargets</code>
-        /// operation. If present, it specifies to continue the list from where the previous returning
-        /// call left off.
+        /// (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code>
+        /// operation (String). If present, it specifies to continue the list from where the previous
+        /// returning call left off.
         /// </para>
         /// </summary>
         public string Marker
@@ -103,7 +103,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Optional. Maximum number of mount targets to return in the response. It must be an
+        /// (Optional) Maximum number of mount targets to return in the response. It must be an
         /// integer with a value greater than zero.
         /// </para>
         /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MountTargetId. 
         /// <para>
-        /// Optional. String. The ID of the mount target that you want to have described. It must
+        /// (Optional) ID of the mount target that you want to have described (String). It must
         /// be included in your request if <code>FileSystemId</code> is not included.
         /// </para>
         /// </summary>

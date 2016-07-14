@@ -73,6 +73,22 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AllowUnauthenticatedIdentities);
                 }
 
+                if(publicRequest.IsSetCognitoIdentityProviders())
+                {
+                    context.Writer.WritePropertyName("CognitoIdentityProviders");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCognitoIdentityProvidersListValue in publicRequest.CognitoIdentityProviders)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CognitoIdentityProviderInfoMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCognitoIdentityProvidersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDeveloperProviderName())
                 {
                     context.Writer.WritePropertyName("DeveloperProviderName");
@@ -98,6 +114,17 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     foreach(var publicRequestOpenIdConnectProviderARNsListValue in publicRequest.OpenIdConnectProviderARNs)
                     {
                             context.Writer.Write(publicRequestOpenIdConnectProviderARNsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSamlProviderARNs())
+                {
+                    context.Writer.WritePropertyName("SamlProviderARNs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSamlProviderARNsListValue in publicRequest.SamlProviderARNs)
+                    {
+                            context.Writer.Write(publicRequestSamlProviderARNsListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }

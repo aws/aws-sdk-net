@@ -29,9 +29,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetEvents operation.
-    /// Retrieves entries from the fleet event log. You can specify a time range to limit
-    /// the result set. Use the pagination parameters to retrieve results as a set of sequential
-    /// pages. If successful, a collection of event log entries matching the request are returned.
+    /// Retrieves entries from the specified fleet's event log. You can specify a time range
+    /// to limit the result set. Use the pagination parameters to retrieve results as a set
+    /// of sequential pages. If successful, a collection of event log entries matching the
+    /// request are returned.
     /// </summary>
     public partial class DescribeFleetEventsRequest : AmazonGameLiftRequest
     {
@@ -82,7 +83,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. You can use this parameter with <i>NextToken</i>
+        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>

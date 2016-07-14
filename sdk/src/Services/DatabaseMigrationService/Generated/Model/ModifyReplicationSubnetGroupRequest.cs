@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the ModifyReplicationSubnetGroup operation.
     /// Modifies the settings for the specified replication subnet group.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class ModifyReplicationSubnetGroupRequest : AmazonDatabaseMigrationServiceRequest
     {

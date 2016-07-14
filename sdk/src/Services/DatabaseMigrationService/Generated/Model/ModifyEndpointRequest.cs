@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the ModifyEndpoint operation.
     /// Modifies the specified endpoint.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class ModifyEndpointRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -87,7 +85,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The database endpoint identifier. Identifiers must begin with a letter; must contain
         /// only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain
-        /// two consecutive hyphens. 
+        /// two consecutive hyphens.
         /// </para>
         /// </summary>
         public string EndpointIdentifier
@@ -123,7 +121,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES.
+        /// The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES,
+        /// MARIADB, AURORA, REDSHIFT, and SQLSERVER.
         /// </para>
         /// </summary>
         public string EngineName

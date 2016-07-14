@@ -135,6 +135,28 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PutApprovalResultRequest.ActionName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PutApprovalResultRequest.PipelineName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PutApprovalResultRequest.StageName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.PutApprovalResultRequest.Token</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.PutJobFailureResultRequest.JobId</property>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
@@ -151,6 +173,26 @@
     <property>Amazon.CodePipeline.Model.PutThirdPartyJobSuccessResultRequest.JobId</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.RetryStageExecutionRequest.PipelineExecutionId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.RetryStageExecutionRequest.PipelineName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.RetryStageExecutionRequest.StageName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.RetryStageExecutionResponse.PipelineExecutionId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.StartPipelineExecutionRequest.Name</property>
@@ -186,7 +228,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionDeclaration.RoleArn</property>
-    <pattern>arn:[^:]+:iam::[0-9]{12}:role/.*</pattern>
+    <max>1024</max>
+    <pattern>arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ActionDeclaration.RunOrder</property>
@@ -265,6 +308,11 @@
     <property>Amazon.CodePipeline.Model.ActionTypeSettings.ThirdPartyConfigurationUrl</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ApprovalResult.Summary</property>
+    <min>0</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.Artifact.Name</property>
@@ -370,7 +418,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineDeclaration.RoleArn</property>
-    <pattern>arn:[^:]+:iam::[0-9]{12}:role/.*</pattern>
+    <max>1024</max>
+    <pattern>arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.PipelineDeclaration.Version</property>
@@ -397,6 +446,10 @@
     <min>1</min>
     <max>100</max>
     <pattern>[A-Za-z0-9.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.StageExecution.PipelineExecutionId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.StageState.StageName</property>

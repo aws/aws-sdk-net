@@ -31,6 +31,10 @@ namespace Amazon.CodePipeline
     {
 
         /// <summary>
+        /// Constant Approval for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory Approval = new ActionCategory("Approval");
+        /// <summary>
         /// Constant Build for ActionCategory
         /// </summary>
         public static readonly ActionCategory Build = new ActionCategory("Build");
@@ -242,6 +246,56 @@ namespace Amazon.CodePipeline
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ActionOwner(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApprovalStatus.
+    /// </summary>
+    public class ApprovalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Approved for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus Approved = new ApprovalStatus("Approved");
+        /// <summary>
+        /// Constant Rejected for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus Rejected = new ApprovalStatus("Rejected");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApprovalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApprovalStatus FindValue(string value)
+        {
+            return FindValue<ApprovalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApprovalStatus(string value)
         {
             return FindValue(value);
         }
@@ -562,6 +616,106 @@ namespace Amazon.CodePipeline
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StageExecutionStatus.
+    /// </summary>
+    public class StageExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for StageExecutionStatus
+        /// </summary>
+        public static readonly StageExecutionStatus Failed = new StageExecutionStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for StageExecutionStatus
+        /// </summary>
+        public static readonly StageExecutionStatus InProgress = new StageExecutionStatus("InProgress");
+        /// <summary>
+        /// Constant Succeeded for StageExecutionStatus
+        /// </summary>
+        public static readonly StageExecutionStatus Succeeded = new StageExecutionStatus("Succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StageExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StageExecutionStatus FindValue(string value)
+        {
+            return FindValue<StageExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StageExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StageRetryMode.
+    /// </summary>
+    public class StageRetryMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED_ACTIONS for StageRetryMode
+        /// </summary>
+        public static readonly StageRetryMode FAILED_ACTIONS = new StageRetryMode("FAILED_ACTIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StageRetryMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StageRetryMode FindValue(string value)
+        {
+            return FindValue<StageRetryMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StageRetryMode(string value)
         {
             return FindValue(value);
         }

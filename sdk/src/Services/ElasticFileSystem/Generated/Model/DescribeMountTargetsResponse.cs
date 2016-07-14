@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeMountTargets operation.
+    /// 
     /// </summary>
     public partial class DescribeMountTargetsResponse : AmazonWebServiceResponse
     {

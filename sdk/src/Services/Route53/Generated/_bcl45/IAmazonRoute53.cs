@@ -133,8 +133,7 @@ namespace Amazon.Route53
         /// <returns>The response from the ChangeResourceRecordSets service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidChangeBatchException">
         /// This error contains a list of one or more error messages. Each error message indicates
-        /// one error in the change batch. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html#example_Errors">Example
-        /// InvalidChangeBatch Errors</a>.
+        /// one error in the change batch.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
@@ -576,7 +575,7 @@ namespace Amazon.Route53
         /// health check, you must disassociate them before you can delete your health check.
         /// If you try to delete a health check that is associated with resource record sets,
         /// Amazon Route 53 will deny your request with a <code>HealthCheckInUse</code> error.
-        /// For information about disassociating the records from your health check, see <a>ChangeResourceRecordSets</a>.</important>
+        /// For information about disassociating the records from your health check, see <code>ChangeResourceRecordSets</code>.</important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck service method.</param>
         /// 
@@ -615,17 +614,12 @@ namespace Amazon.Route53
         /// request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
         /// resource.
         /// 
-        ///  
-        /// <para>
-        /// For more information about deleting a hosted zone, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Deleting
-        /// a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
-        /// </para>
-        ///  <important> You can delete a hosted zone only if there are no resource record sets
+        ///  <important>You can delete a hosted zone only if there are no resource record sets
         /// other than the default SOA record and NS resource record sets. If your hosted zone
         /// contains other resource record sets, you must delete them before you can delete your
         /// hosted zone. If you try to delete a hosted zone that contains other resource record
         /// sets, Amazon Route 53 will deny your request with a <code>HostedZoneNotEmpty</code>
-        /// error. For information about deleting records from your hosted zone, see <a>ChangeResourceRecordSets</a>.</important>
+        /// error. For information about deleting records from your hosted zone, see <code>ChangeResourceRecordSets</code>.</important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHostedZone service method.</param>
         /// 
@@ -634,6 +628,9 @@ namespace Amazon.Route53
         /// The hosted zone contains resource record sets in addition to the default NS and SOA
         /// resource record sets. Before you can delete the hosted zone, you must delete the additional
         /// resource record sets.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidDomainNameException">
+        /// This error indicates that the specified domain name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// Some value specified in the request is invalid or the XML document is malformed.
@@ -1284,7 +1281,7 @@ namespace Amazon.Route53
         ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
         /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
         /// that are specified in the traffic policy definition. For more information, see the
-        /// <a>State</a> response element. </note>
+        /// <code>State</code> response element.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstance service method.</param>
         /// 
@@ -1747,51 +1744,50 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Imagine all the resource record sets in a zone listed out in front of you. Imagine
-        /// them sorted lexicographically first by DNS name (with the labels reversed, like "com.amazon.www"
-        /// for example), and secondarily, lexicographically by record type. This operation retrieves
-        /// at most MaxItems resource record sets from this list, in order, starting at a position
-        /// specified by the Name and Type arguments:
+        /// List the resource record sets in a specified hosted zone. Send a GET request to the
+        /// <code>2013-04-01/hostedzone/<i>hosted zone ID</i>/rrset</code> resource.
         /// 
-        ///  <ul> <li>If both Name and Type are omitted, this means start the results at the first
-        /// RRSET in the HostedZone.</li> <li>If Name is specified but Type is omitted, this means
-        /// start the results at the first RRSET in the list whose name is greater than or equal
-        /// to Name. </li> <li>If both Name and Type are specified, this means start the results
-        /// at the first RRSET in the list whose name is greater than or equal to Name and whose
-        /// type is greater than or equal to Type.</li> <li>It is an error to specify the Type
-        /// but not the Name.</li> </ul> 
+        ///  
         /// <para>
-        /// Use ListResourceRecordSets to retrieve a single known record set by specifying the
-        /// record set's name and type, and setting MaxItems = 1
+        /// <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time
+        /// in ASCII order, beginning at a position specified by the name and type elements. The
+        /// action sorts results first by DNS name with the labels reversed, for example:
         /// </para>
         ///  
         /// <para>
-        /// To retrieve all the records in a HostedZone, first pause any processes making calls
-        /// to ChangeResourceRecordSets. Initially call ListResourceRecordSets without a Name
-        /// and Type to get the first page of record sets. For subsequent calls, set Name and
-        /// Type to the NextName and NextType values returned by the previous response. 
+        /// <code>com.example.www.</code>
         /// </para>
         ///  
         /// <para>
-        /// In the presence of concurrent ChangeResourceRecordSets calls, there is no consistency
-        /// of results across calls to ListResourceRecordSets. The only way to get a consistent
-        /// multi-page snapshot of all RRSETs in a zone is to stop making changes while pagination
-        /// is in progress.
+        /// Note the trailing dot, which can change the sort order in some circumstances. When
+        /// multiple records have the same DNS name, the action sorts results by the record type.
         /// </para>
         ///  
         /// <para>
-        /// However, the results from ListResourceRecordSets are consistent within a page. If
-        /// MakeChange calls are taking place concurrently, the result of each one will either
-        /// be completely visible in your results or not at all. You will not see partial changes,
-        /// or changes that do not ultimately succeed. (This follows from the fact that MakeChange
-        /// is atomic) 
+        /// You can use the name and type elements to adjust the beginning position of the list
+        /// of resource record sets returned:
+        /// </para>
+        ///  <ul> <li><b>If you do not specify <code>Name</code> or <code>Type</code></b>: The
+        /// results begin with the first resource record set that the hosted zone contains.</li>
+        /// <li><b>If you specify <code>Name</code> but not <code>Type</code></b>: The results
+        /// begin with the first resource record set in the list whose name is greater than or
+        /// equal to Name.</li> <li><b>If you specify <code>Type</code> but not <code>Name</code></b>:
+        /// Amazon Route 53 returns the <code>InvalidInput</code> error.</li> <li><b>If you specify
+        /// both <code>Name</code> and <code>Type</code></b>: The results begin with the first
+        /// resource record set in the list whose name is greater than or equal to <code>Name</code>,
+        /// and whose type is greater than or equal to <code>Type</code>.</li> </ul> 
+        /// <para>
+        /// This action returns the most current version of the records. This includes records
+        /// that are <code>PENDING</code>, and that are not yet available on all Amazon Route
+        /// 53 DNS servers.
         /// </para>
         ///  
         /// <para>
-        /// The results from ListResourceRecordSets are strongly consistent with ChangeResourceRecordSets.
-        /// To be precise, if a single process makes a call to ChangeResourceRecordSets and receives
-        /// a successful response, the effects of that change will be visible in a subsequent
-        /// call to ListResourceRecordSets by that process.
+        /// To ensure that you get an accurate listing of the resource record sets for a hosted
+        /// zone at a point in time, do not submit a <code>ChangeResourceRecordSets</code> request
+        /// while you are paging through the results of a <code>ListResourceRecordSets</code>
+        /// request. If you do, some pages may display results without the latest changes while
+        /// other pages display results with the latest changes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSets service method.</param>
@@ -2059,8 +2055,8 @@ namespace Amazon.Route53
         /// 
         ///  <note>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's
         /// a brief delay while Amazon Route 53 creates the resource record sets that are specified
-        /// in the traffic policy definition. For more information, see the <a>State</a> response
-        /// element.</note> 
+        /// in the traffic policy definition. For more information, see the <code>State</code>
+        /// response element.</note> 
         /// <para>
         /// To get information about the traffic policy instances that are associated with the
         /// current AWS account, send a <code>GET</code> request to the <code>/<i>Route 53 API
@@ -2142,8 +2138,8 @@ namespace Amazon.Route53
         /// 
         ///  <note>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's
         /// a brief delay while Amazon Route 53 creates the resource record sets that are specified
-        /// in the traffic policy definition. For more information, see the <a>State</a> response
-        /// element.</note> 
+        /// in the traffic policy definition. For more information, see the <code>State</code>
+        /// response element.</note> 
         /// <para>
         /// To get information about the traffic policy instances that you created in a specified
         /// hosted zone, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
@@ -2229,7 +2225,7 @@ namespace Amazon.Route53
         ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
         /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
         /// that are specified in the traffic policy definition. For more information, see the
-        /// <a>State</a> response element.</note> 
+        /// <code>State</code> response element.</note> 
         /// <para>
         /// To get information about the traffic policy instances that you created by using a
         /// specify traffic policy version, send a <code>GET</code> request to the <code>/<i>Route

@@ -71,6 +71,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreationToken);
                 }
 
+                if(publicRequest.IsSetPerformanceMode())
+                {
+                    context.Writer.WritePropertyName("PerformanceMode");
+                    context.Writer.Write(publicRequest.PerformanceMode);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

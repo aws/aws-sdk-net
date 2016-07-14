@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// 
     ///  
     /// <para>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack, or an attached policy that explicitly grants permissions. For
     /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
@@ -59,11 +59,18 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The default AWS OpsWorks agent version. You have the following options:
         /// </para>
-        ///  <ul> <li><code>INHERIT</code> - Use the stack's default agent version setting.</li>
-        /// <li><i>version_number</i> - Use the specified agent version. This value overrides
-        /// the stack's default setting. To update the agent version, you must edit the instance
-        /// configuration and specify a new version. AWS OpsWorks then automatically installs
-        /// that version on the instance.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>INHERIT</code> - Use the stack's default agent version setting.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>version_number</i> - Use the specified agent version. This value overrides the
+        /// stack's default setting. To update the agent version, you must edit the instance configuration
+        /// and specify a new version. AWS OpsWorks then automatically installs that version on
+        /// the instance.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The default setting is <code>INHERIT</code>. To specify an agent version, you must
         /// use the complete version number, not the abbreviated number shown on the console.
@@ -87,8 +94,13 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A custom AMI ID to be used to create the instance. The AMI must be based on one of
         /// the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+        /// 
         /// </para>
-        ///  <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
+        ///  <note> 
+        /// <para>
+        /// If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string AmiId
         {
@@ -271,10 +283,36 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The instance's operating system, which must be set to one of the following.
         /// </para>
-        ///  <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-        /// Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04
-        /// LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-        /// 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
+        /// Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu
+        /// 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CentOS 7</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Red Hat Enterprise Linux 7</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A supported Windows operating system, such as <code>Microsoft Windows Server 2012
+        /// R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft
+        /// Windows Server 2012 R2 with SQL Server Web</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A custom AMI: <code>Custom</code>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
         /// OpsWorks Operating Systems</a>.
@@ -289,8 +327,12 @@ namespace Amazon.OpsWorks.Model
         /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>
-        ///  <note>You can specify a different Linux operating system for the updated stack, but
-        /// you cannot change from Linux to Windows or Windows to Linux.</note>
+        ///  <note> 
+        /// <para>
+        /// You can specify a different Linux operating system for the updated stack, but you
+        /// cannot change from Linux to Windows or Windows to Linux.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Os
         {

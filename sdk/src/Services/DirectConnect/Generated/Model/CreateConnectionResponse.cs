@@ -37,6 +37,7 @@ namespace Amazon.DirectConnect.Model
         private string _connectionId;
         private string _connectionName;
         private ConnectionState _connectionState;
+        private DateTime? _loaIssueTime;
         private string _location;
         private string _ownerAccount;
         private string _partnerName;
@@ -112,6 +113,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetConnectionState()
         {
             return this._connectionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoaIssueTime. 
+        /// <para>
+        /// The time of the most recent call to DescribeConnectionLoa for this Connection.
+        /// </para>
+        /// </summary>
+        public DateTime LoaIssueTime
+        {
+            get { return this._loaIssueTime.GetValueOrDefault(); }
+            set { this._loaIssueTime = value; }
+        }
+
+        // Check to see if LoaIssueTime property is set
+        internal bool IsSetLoaIssueTime()
+        {
+            return this._loaIssueTime.HasValue; 
         }
 
         /// <summary>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// A policy to attach to the endpoint that controls access to the service. The policy
         /// must be in valid JSON format. If this parameter is not specified, we attach a default
-        /// policy that allows full access to the service. 
+        /// policy that allows full access to the service.
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -109,8 +109,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i></code>.
-        /// To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
+        /// The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i>
+        /// </code>. To get a list of available services, use the <a>DescribeVpcEndpointServices</a>
+        /// request.
         /// </para>
         /// </summary>
         public string ServiceName

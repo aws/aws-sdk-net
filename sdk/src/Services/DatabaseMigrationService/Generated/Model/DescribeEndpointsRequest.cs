@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeEndpoints operation.
     /// Returns information about the endpoints for your account in the current region.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DescribeEndpointsRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -46,7 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name 
+        /// Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
         /// </para>
         /// </summary>
         public List<Filter> Filters

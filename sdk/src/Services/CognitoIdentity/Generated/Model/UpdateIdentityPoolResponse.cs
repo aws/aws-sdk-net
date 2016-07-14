@@ -33,10 +33,12 @@ namespace Amazon.CognitoIdentity.Model
     public partial class UpdateIdentityPoolResponse : AmazonWebServiceResponse
     {
         private bool? _allowUnauthenticatedIdentities;
+        private List<CognitoIdentityProviderInfo> _cognitoIdentityProviders = new List<CognitoIdentityProviderInfo>();
         private string _developerProviderName;
         private string _identityPoolId;
         private string _identityPoolName;
         private List<string> _openIdConnectProviderARNs = new List<string>();
+        private List<string> _samlProviderARNs = new List<string>();
         private Dictionary<string, string> _supportedLoginProviders = new Dictionary<string, string>();
 
         /// <summary>
@@ -53,6 +55,24 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetAllowUnauthenticatedIdentities()
         {
             return this._allowUnauthenticatedIdentities.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CognitoIdentityProviders. 
+        /// <para>
+        /// A list representing an Amazon Cognito Identity User Pool and its client ID.
+        /// </para>
+        /// </summary>
+        public List<CognitoIdentityProviderInfo> CognitoIdentityProviders
+        {
+            get { return this._cognitoIdentityProviders; }
+            set { this._cognitoIdentityProviders = value; }
+        }
+
+        // Check to see if CognitoIdentityProviders property is set
+        internal bool IsSetCognitoIdentityProviders()
+        {
+            return this._cognitoIdentityProviders != null && this._cognitoIdentityProviders.Count > 0; 
         }
 
         /// <summary>
@@ -122,6 +142,24 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetOpenIdConnectProviderARNs()
         {
             return this._openIdConnectProviderARNs != null && this._openIdConnectProviderARNs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SamlProviderARNs. 
+        /// <para>
+        /// An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.
+        /// </para>
+        /// </summary>
+        public List<string> SamlProviderARNs
+        {
+            get { return this._samlProviderARNs; }
+            set { this._samlProviderARNs = value; }
+        }
+
+        // Check to see if SamlProviderARNs property is set
+        internal bool IsSetSamlProviderARNs()
+        {
+            return this._samlProviderARNs != null && this._samlProviderARNs.Count > 0; 
         }
 
         /// <summary>

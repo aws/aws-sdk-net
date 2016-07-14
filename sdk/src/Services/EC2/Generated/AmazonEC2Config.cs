@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 
 
@@ -32,7 +32,7 @@ namespace Amazon.EC2
     public partial class AmazonEC2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.2.5.0");
+            InternalSDKUtils.BuildUserAgentString("3.2.6.0");
 
         private string _userAgent = UserAgentString;
 
@@ -62,7 +62,7 @@ namespace Amazon.EC2
         {
             get
             {
-                return "2015-10-01";
+                return "2016-04-01";
             }
         }
 

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -57,8 +57,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The console output, base64-encoded. If using a command line tool, the tools decode
-        /// the output for you. 
+        /// The console output, Base64-encoded. If using a command line tool, the tool decodes
+        /// the output for you.
         /// </para>
         /// </summary>
         public string Output

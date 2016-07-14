@@ -88,6 +88,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("loaIssueTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LoaIssueTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

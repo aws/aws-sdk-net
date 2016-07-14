@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,31 +34,31 @@ namespace Amazon.EC2.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// <code>supported-platforms</code>: Indicates whether your account can launch instances
+    ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
     /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+    ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <code>max-instances</code>: The maximum number of On-Demand instances that you can
+    ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
     /// run.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+    ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
     /// groups that you can assign to a network interface.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+    ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
     /// can allocate for use with EC2-Classic. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
+    ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
     /// you can allocate for use with EC2-VPC.
     /// </para>
     ///  </li> </ul>

@@ -29,10 +29,10 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmSubscription operation.
-    /// Verifies an endpoint owner's intent to receive messages by validating      the token
-    /// sent to the endpoint by an earlier <code>Subscribe</code> action. If the      token
-    /// is valid, the action creates a new subscription and returns its      Amazon Resource
-    /// Name (ARN). This call requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code>
+    /// Verifies an endpoint owner's intent to receive messages by validating the token sent
+    /// to the endpoint by an earlier <code>Subscribe</code> action. If the token is valid,
+    /// the action creates a new subscription and returns its Amazon Resource Name (ARN).
+    /// This call requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code>
     /// flag is set to "true".
     /// </summary>
     public partial class ConfirmSubscriptionRequest : AmazonSimpleNotificationServiceRequest
@@ -62,7 +62,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to confirm a subscription.</param>
         /// <param name="token">Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</param>
-        /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription.  If the value of this parameter is <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the endpoint.  The unsubscribe action requires AWS authentication. </param>
+        /// <param name="authenticateOnUnsubscribe">Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires AWS authentication. </param>
         public ConfirmSubscriptionRequest(string topicArn, string token, string authenticateOnUnsubscribe)
         {
             _topicArn = topicArn;
@@ -73,10 +73,10 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property AuthenticateOnUnsubscribe. 
         /// <para>
-        /// Disallows unauthenticated unsubscribes of the subscription.     If the value of this
-        /// parameter is <code>true</code> and the request has an AWS signature, then only the
-        /// topic owner    and the subscription owner can unsubscribe the endpoint.  The unsubscribe
-        ///    action requires AWS authentication. 
+        /// Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter
+        /// is <code>true</code> and the request has an AWS signature, then only the topic owner
+        /// and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires
+        /// AWS authentication. 
         /// </para>
         /// </summary>
         public string AuthenticateOnUnsubscribe

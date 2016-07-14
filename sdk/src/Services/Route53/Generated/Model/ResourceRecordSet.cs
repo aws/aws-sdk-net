@@ -382,7 +382,8 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The cache time to live for the current resource record set. Note the following:
         /// </para>
-        ///  <ul> <li>If you're creating an alias resource record set, omit <code>TTL</code>.
+        ///  <ul> <li>If you're creating a non-alias resource record set, <code>TTL</code> is
+        /// required. </li> <li>If you're creating an alias resource record set, omit <code>TTL</code>.
         /// Amazon Route 53 uses the value of <code>TTL</code> for the alias target. </li> <li>If
         /// you're associating this resource record set with a health check (if you're adding
         /// a <code>HealthCheckId</code> element), we recommend that you specify a <code>TTL</code>

@@ -54,9 +54,9 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property AccessUrl. 
         /// <para>
-        /// The access URL for the directory, such as <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>.
-        /// If no alias has been created for the directory, <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code>
-        /// is the directory identifier, such as <code>d-XXXXXXXXXX</code>.
+        /// The access URL for the directory, such as <code>http://&lt;alias&gt;.awsapps.com</code>.
+        /// If no alias has been created for the directory, <code>&lt;alias&gt;</code> is the
+        /// directory identifier, such as <code>d-XXXXXXXXXX</code>.
         /// </para>
         /// </summary>
         public string AccessUrl

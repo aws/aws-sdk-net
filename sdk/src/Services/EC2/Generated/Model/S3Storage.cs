@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -100,9 +100,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UploadPolicy. 
         /// <para>
-        /// A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to upload
-        /// items into Amazon S3 on your behalf. For command line tools, base64 encoding is performed
-        /// for you.
+        /// An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon
+        /// S3 on your behalf.
         /// </para>
         /// </summary>
         public string UploadPolicy
@@ -120,7 +119,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UploadPolicySignature. 
         /// <para>
-        /// The signature of the Base64 encoded JSON document.
+        /// The signature of the JSON document.
         /// </para>
         /// </summary>
         public string UploadPolicySignature

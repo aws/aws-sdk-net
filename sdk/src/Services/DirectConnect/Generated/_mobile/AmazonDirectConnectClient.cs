@@ -643,6 +643,37 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeConnectionLoa
+
+        internal DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
+        {
+            var marshaller = new DescribeConnectionLoaRequestMarshaller();
+            var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectionLoaRequest,DescribeConnectionLoaResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnectionLoa operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionLoa operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeConnectionLoaResponse> DescribeConnectionLoaAsync(DescribeConnectionLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeConnectionLoaRequestMarshaller();
+            var unmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConnectionLoaRequest,DescribeConnectionLoaResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeConnections
 
         internal DescribeConnectionsResponse DescribeConnections()
@@ -731,6 +762,37 @@ namespace Amazon.DirectConnect
             var unmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeConnectionsOnInterconnectRequest,DescribeConnectionsOnInterconnectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInterconnectLoa
+
+        internal DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
+        {
+            var marshaller = new DescribeInterconnectLoaRequestMarshaller();
+            var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInterconnectLoaRequest,DescribeInterconnectLoaResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInterconnectLoa operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInterconnectLoa operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInterconnectLoaResponse> DescribeInterconnectLoaAsync(DescribeInterconnectLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInterconnectLoaRequestMarshaller();
+            var unmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInterconnectLoaRequest,DescribeInterconnectLoaResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

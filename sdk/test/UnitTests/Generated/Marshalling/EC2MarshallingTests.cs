@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 
 
@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class EC2MarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2015-10-01.normal.json", "ec2.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2016-04-01.normal.json", "ec2.customizations.json");
         
 
         [TestMethod]
@@ -1997,6 +1997,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeIdentityIdFormatMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeIdentityIdFormat");
+
+            var request = InstantiateClassGenerator.Execute<DescribeIdentityIdFormatRequest>();
+            var marshaller = new DescribeIdentityIdFormatRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeIdentityIdFormatResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeIdentityIdFormatResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeIdFormatMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeIdFormat");
@@ -3701,6 +3725,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = ModifyHostsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyHostsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyIdentityIdFormatMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyIdentityIdFormat");
+
+            var request = InstantiateClassGenerator.Execute<ModifyIdentityIdFormatRequest>();
+            var marshaller = new ModifyIdentityIdFormatRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
         }
 
         

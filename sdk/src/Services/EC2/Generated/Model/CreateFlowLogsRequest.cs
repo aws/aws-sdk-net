@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// Logs. If you specify a VPC or subnet in the request, a log stream is created in CloudWatch
     /// Logs for each network interface in the subnet or VPC. Log streams can include information
     /// about accepted and rejected traffic to a network interface. You can view the data
-    /// in your log streams using Amazon CloudWatch Logs. 
+    /// in your log streams using Amazon CloudWatch Logs.
     /// 
     ///  
     /// <para>

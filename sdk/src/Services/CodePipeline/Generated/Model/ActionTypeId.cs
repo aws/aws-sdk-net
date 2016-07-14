@@ -42,7 +42,6 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// A category defines what kind of action can be taken in the stage, and constrains the
         /// provider type for the action. Valid categories are limited to one of the values below.
-        /// 
         /// </para>
         /// </summary>
         public ActionCategory Category
@@ -60,7 +59,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The creator of the action being called. 
+        /// The creator of the action being called.
         /// </para>
         /// </summary>
         public ActionOwner Owner
@@ -98,7 +97,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// A string that identifies the action type. 
+        /// A string that identifies the action type.
         /// </para>
         /// </summary>
         public string Version

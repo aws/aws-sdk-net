@@ -40,11 +40,7 @@ namespace Amazon.Route53.Model
     /// record sets in the same private hosted zone. Creating alias resource record sets for
     /// CloudFront distributions, ELB load balancers, and Amazon S3 buckets is not supported.</li>
     /// <li>You can't create alias resource record sets for failover, geolocation, or latency
-    /// resource record sets in a private hosted zone.</li> </ul> 
-    /// <para>
-    /// For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-    /// Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API Reference</i>.
-    /// </para>
+    /// resource record sets in a private hosted zone.</li> </ul>
     /// </summary>
     public partial class AliasTarget
     {
@@ -60,8 +56,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates AliasTarget with the parameterized properties
         /// </summary>
-        /// <param name="hostedZoneId"><i>Alias resource record sets only:</i> The value you use depends on where you want to route queries: <ul> <li><b>A CloudFront distribution:</b> Specify <code>Z2FDTNDATAQYW2</code>.</li> <li>An ELB load balancer: Specify the value of the hosted zone ID for the load balancer. You can get the hosted zone ID by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value from the API or the CLI, creating the resource record set will fail.</li> <li><b>An Amazon S3 bucket that is configured as a static website:</b> Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more information about valid values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set in your hosted zone:</b> Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource record set in a different hosted zone.)</li> </ul> For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API Reference</i>.</param>
-        /// <param name="dnsName"><i>Alias resource record sets only:</i> The external DNS name associated with the AWS Resource. The value that you specify depends on where you want to route queries: <ul> <li><b>A CloudFront distribution:</b> Specify the domain name that CloudFront assigned when you created your distribution. Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <code>acme.example.com</code>, your CloudFront distribution must include <code>acme.example.com</code> as one of the alternate domain names. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</li> <li><b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. You can get the DNS name by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value from the API or the CLI, creating the resource record set will fail.</li> <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME attribute for the environment. (The environment must have a regionalized domain name.) </li> <li><b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon S3 website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using Amazon S3 buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record set:</b> Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</li> </ul> For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API Reference</i>.</param>
+        /// <param name="hostedZoneId"><i>Alias resource record sets only:</i> The value you use depends on where you want to route queries: <ul> <li><b>A CloudFront distribution:</b> Specify <code>Z2FDTNDATAQYW2</code>.</li> <li>An ELB load balancer: Specify the value of the hosted zone ID for the load balancer. You can get the hosted zone ID by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value from the API or the CLI, creating the resource record set will fail.</li> <li><b>An Amazon S3 bucket that is configured as a static website:</b> Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more information about valid values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set in your hosted zone:</b> Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource record set in a different hosted zone.)</li> </ul></param>
+        /// <param name="dnsName"><i>Alias resource record sets only:</i> The external DNS name associated with the AWS Resource. The value that you specify depends on where you want to route queries: <ul> <li><b>A CloudFront distribution:</b> Specify the domain name that CloudFront assigned when you created your distribution. Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <code>acme.example.com</code>, your CloudFront distribution must include <code>acme.example.com</code> as one of the alternate domain names. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</li> <li><b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. You can get the DNS name by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value from the API or the CLI, creating the resource record set will fail.</li> <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME attribute for the environment. (The environment must have a regionalized domain name.) </li> <li><b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon S3 website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using Amazon S3 buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record set:</b> Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</li> </ul></param>
         public AliasTarget(string hostedZoneId, string dnsName)
         {
             _hostedZoneId = hostedZoneId;
@@ -87,11 +83,6 @@ namespace Amazon.Route53.Model
         /// Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set in your hosted
         /// zone:</b> Specify the hosted zone ID of your hosted zone. (An alias resource record
         /// set cannot reference a resource record set in a different hosted zone.)</li> </ul>
-        /// 
-        /// <para>
-        /// For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-        /// Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API Reference</i>.
-        /// </para>
         /// </summary>
         public string HostedZoneId
         {
@@ -134,11 +125,7 @@ namespace Amazon.Route53.Model
         /// a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service Developer
         /// Guide</i>.</li> <li><b>Another Amazon Route 53 resource record set:</b> Specify the
         /// value of the <code>Name</code> element for a resource record set in the current hosted
-        /// zone.</li> </ul> 
-        /// <para>
-        /// For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-        /// Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API Reference</i>.
-        /// </para>
+        /// zone.</li> </ul>
         /// </summary>
         public string DNSName
         {
@@ -188,18 +175,16 @@ namespace Amazon.Route53.Model
         /// is a resource record set or a group of resource record sets (for example, a group
         /// of weighted resource record sets), but it is not another alias resource record set,
         /// we recommend that you associate a health check with all of the resource record sets
-        /// in the alias target. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
-        /// Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</li>
-        /// <li>If you specify an ELB load balancer in <code>AliasTarget</code>, Elastic Load
-        /// Balancing routes queries only to the healthy Amazon EC2 instances that are registered
-        /// with the load balancer. If no Amazon EC2 instances are healthy or if the load balancer
-        /// itself is unhealthy, and if <code>EvaluateTargetHealth</code> is <code>true</code>
-        /// for the corresponding alias resource record set, Amazon Route 53 routes queries to
-        /// other resources.</li> <li>When you create a load balancer, you configure settings
-        /// for Elastic Load Balancing health checks; they're not Amazon Route 53 health checks,
-        /// but they perform a similar function. Do not create Amazon Route 53 health checks for
-        /// the Amazon EC2 instances that you register with an ELB load balancer. For more information,
-        /// see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html">How
+        /// in the alias target.</li> <li>If you specify an ELB load balancer in <code>AliasTarget</code>,
+        /// Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that
+        /// are registered with the load balancer. If no Amazon EC2 instances are healthy or if
+        /// the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code> is
+        /// <code>true</code> for the corresponding alias resource record set, Amazon Route 53
+        /// routes queries to other resources.</li> <li>When you create a load balancer, you configure
+        /// settings for Elastic Load Balancing health checks; they're not Amazon Route 53 health
+        /// checks, but they perform a similar function. Do not create Amazon Route 53 health
+        /// checks for the Amazon EC2 instances that you register with an ELB load balancer. For
+        /// more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html">How
         /// Health Checks Work in More Complex Amazon Route 53 Configurations</a> in the <i>Amazon
         /// Route 53 Developer Guide</i>.</li> </ul> 
         /// <para>

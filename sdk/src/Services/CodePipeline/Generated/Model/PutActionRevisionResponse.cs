@@ -56,7 +56,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The ID of the current workflow state of the pipeline. 
+        /// The ID of the current workflow state of the pipeline.
         /// </para>
         /// </summary>
         public string PipelineExecutionId

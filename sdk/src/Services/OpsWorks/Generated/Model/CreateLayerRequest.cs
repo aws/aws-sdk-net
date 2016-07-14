@@ -42,7 +42,7 @@ namespace Amazon.OpsWorks.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack, or an attached policy that explicitly grants permissions. For
     /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
@@ -361,7 +361,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The layer type. A stack cannot have more than one built-in layer of the same type.
-        /// It can have any number of custom layers.
+        /// It can have any number of custom layers. Built-in layers are not available in Chef
+        /// 12 stacks.
         /// </para>
         /// </summary>
         public LayerType Type

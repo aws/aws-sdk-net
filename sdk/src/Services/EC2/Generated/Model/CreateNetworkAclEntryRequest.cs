@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -200,7 +200,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved
-        /// for internal use. 
+        /// for internal use.
         /// </para>
         /// </summary>
         public int RuleNumber

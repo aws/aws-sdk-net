@@ -30,18 +30,18 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DescribeFleetUtilization operation.
     /// Retrieves utilization statistics for one or more fleets. You can request utilization
-    /// data for all fleets, or specify a list of one or more fleet IDs. When requesting all
+    /// data for all fleets, or specify a list of one or more fleet IDs. When requesting multiple
     /// fleets, use the pagination parameters to retrieve results as a set of sequential pages.
     /// If successful, a <a>FleetUtilization</a> object is returned for each requested fleet
     /// ID. When specifying a list of fleet IDs, utilization objects are returned only for
     /// fleets that currently exist. 
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Some API actions may limit the number of fleet IDs allowed in one request. If a request
     /// exceeds this limit, the request fails and the error message includes the maximum allowed.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class DescribeFleetUtilizationRequest : AmazonGameLiftRequest
     {
@@ -52,8 +52,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetIds. 
         /// <para>
-        /// Unique identifier for the fleet(s) you want to retrieve utilization data for. Leave
-        /// this parameter empty to retrieve utilization data for all fleets.
+        /// Unique identifier for the fleet(s) you want to retrieve utilization data for. To request
+        /// utilization data for all fleets, leave this parameter empty.
         /// </para>
         /// </summary>
         public List<string> FleetIds
@@ -71,7 +71,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. You can use this parameter with <i>NextToken</i>
+        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages. This parameter is ignored when the request
         /// specifies one or a list of fleet IDs.
         /// </para>

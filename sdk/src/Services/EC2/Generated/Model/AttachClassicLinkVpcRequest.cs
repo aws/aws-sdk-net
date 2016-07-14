@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// After you've linked an instance, you cannot change the VPC security groups that are
     /// associated with it. To change the security groups, you must first unlink the instance,
-    /// and then link it again. 
+    /// and then link it again.
     /// </para>
     ///  
     /// <para>

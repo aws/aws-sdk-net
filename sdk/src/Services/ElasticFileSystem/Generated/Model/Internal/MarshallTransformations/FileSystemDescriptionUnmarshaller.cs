@@ -106,6 +106,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PerformanceMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PerformanceMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SizeInBytes", targetDepth))
                 {
                     var unmarshaller = FileSystemSizeUnmarshaller.Instance;

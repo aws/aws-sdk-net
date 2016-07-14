@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// 
     ///  
     /// <para>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
+    ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
     /// level for the stack, or an attached policy that explicitly grants permissions. For
     /// more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
@@ -66,11 +66,18 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The default AWS OpsWorks agent version. You have the following options:
         /// </para>
-        ///  <ul> <li><code>INHERIT</code> - Use the stack's default agent version setting.</li>
-        /// <li><i>version_number</i> - Use the specified agent version. This value overrides
-        /// the stack's default setting. To update the agent version, edit the instance configuration
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>INHERIT</code> - Use the stack's default agent version setting.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>version_number</i> - Use the specified agent version. This value overrides the
+        /// stack's default setting. To update the agent version, edit the instance configuration
         /// and specify a new version. AWS OpsWorks then automatically installs that version on
-        /// the instance.</li> </ul> 
+        /// the instance.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The default setting is <code>INHERIT</code>. To specify an agent version, you must
         /// use the complete version number, not the abbreviated number shown on the console.
@@ -96,7 +103,11 @@ namespace Amazon.OpsWorks.Model
         /// of the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>
-        ///  <note>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</note>
+        ///  <note> 
+        /// <para>
+        /// If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string AmiId
         {
@@ -300,10 +311,36 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The instance's operating system, which must be set to one of the following.
         /// </para>
-        ///  <ul> <li>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-        /// Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04
-        /// LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li><code>Microsoft Windows Server
-        /// 2012 R2 Base</code>.</li> <li>A custom AMI: <code>Custom</code>.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
+        /// Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu
+        /// 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CentOS 7</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Red Hat Enterprise Linux 7</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A supported Windows operating system, such as <code>Microsoft Windows Server 2012
+        /// R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft
+        /// Windows Server 2012 R2 with SQL Server Web</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A custom AMI: <code>Custom</code>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For more information on the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
         /// OpsWorks Operating Systems</a>.
@@ -392,7 +429,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The ID of the instance's subnet. If the stack is running in a VPC, you can use this
         /// parameter to override the stack's default subnet ID value and direct AWS OpsWorks
-        /// to launch the instance in a different subnet. 
+        /// to launch the instance in a different subnet.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -415,10 +452,10 @@ namespace Amazon.OpsWorks.Model
         /// values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>.
         /// Because there are costs associated with changes in tenancy options, we recommend that
         /// you research tenancy options before choosing them for your instances. For more information
-        /// about dedicated hosts, see <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated
-        /// Hosts Overview</a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon
+        /// about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated
+        /// Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon
         /// EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
-        /// Instances</a> and <a href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
+        /// Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
         /// EC2 Dedicated Instances</a>.
         /// </para>
         /// </summary>

@@ -40,7 +40,7 @@ namespace Amazon.OpsWorks.Model
     /// To specify a recipe, use the cookbook's directory name in the repository followed
     /// by two colons and the recipe name, which is the recipe's file name without the .rb
     /// extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's
-    /// phpapp2 folder. 
+    /// phpapp2 folder.
     /// </para>
     /// </summary>
     public partial class Recipes

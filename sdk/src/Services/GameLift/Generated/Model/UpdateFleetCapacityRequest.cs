@@ -30,24 +30,33 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the UpdateFleetCapacity operation.
     /// Updates capacity settings for a fleet. Use this action to specify the number of EC2
-    /// instances (hosts) you want this fleet to contain. Before calling this action, you
-    /// may want to call <a>DescribeEC2InstanceLimits</a> to get the maximum capacity based
-    /// on the fleet's EC2 instance type.
+    /// instances (hosts) that you want this fleet to contain. Before calling this action,
+    /// you may want to call <a>DescribeEC2InstanceLimits</a> to get the maximum capacity
+    /// based on the fleet's EC2 instance type.
     /// 
     ///  
     /// <para>
-    /// To update fleet capacity, specify the fleet ID and the desired number of instances.
-    /// If successful, Amazon GameLift starts or terminates instances so that the fleet's
-    /// active instance count matches the desired instance count. You can view a fleet's current
-    /// capacity information by calling <a>DescribeFleetCapacity</a>. If the desired instance
-    /// count is higher than the instance type's limit, the "Limit Exceeded" exception will
-    /// occur.
+    /// If you're using autoscaling (see <a>PutScalingPolicy</a>), you may want to specify
+    /// a minimum and/or maximum capacity. If you don't provide these, autoscaling can set
+    /// capacity anywhere between zero and the <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">service
+    /// limits</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To update fleet capacity, specify the fleet ID and the number of instances you want
+    /// the fleet to host. If successful, Amazon GameLift starts or terminates instances so
+    /// that the fleet's active instance count matches the desired instance count. You can
+    /// view a fleet's current capacity information by calling <a>DescribeFleetCapacity</a>.
+    /// If the desired instance count is higher than the instance type's limit, the "Limit
+    /// Exceeded" exception occurs.
     /// </para>
     /// </summary>
     public partial class UpdateFleetCapacityRequest : AmazonGameLiftRequest
     {
         private int? _desiredInstances;
         private string _fleetId;
+        private int? _maxSize;
+        private int? _minSize;
 
         /// <summary>
         /// Gets and sets the property DesiredInstances. 
@@ -83,6 +92,42 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxSize. 
+        /// <para>
+        /// Maximum value allowed for the fleet's instance count. Default if not set is 1.
+        /// </para>
+        /// </summary>
+        public int MaxSize
+        {
+            get { return this._maxSize.GetValueOrDefault(); }
+            set { this._maxSize = value; }
+        }
+
+        // Check to see if MaxSize property is set
+        internal bool IsSetMaxSize()
+        {
+            return this._maxSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinSize. 
+        /// <para>
+        /// Minimum value allowed for the fleet's instance count. Default if not set is 0.
+        /// </para>
+        /// </summary>
+        public int MinSize
+        {
+            get { return this._minSize.GetValueOrDefault(); }
+            set { this._minSize = value; }
+        }
+
+        // Check to see if MinSize property is set
+        internal bool IsSetMinSize()
+        {
+            return this._minSize.HasValue; 
         }
 
     }

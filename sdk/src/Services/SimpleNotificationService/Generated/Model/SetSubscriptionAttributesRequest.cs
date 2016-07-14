@@ -61,7 +61,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The name of the attribute you want to set. Only a subset of the subscriptions attributes
         /// are mutable.
         /// </para>
-        ///     
+        ///  
         /// <para>
         /// Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
         /// </para>

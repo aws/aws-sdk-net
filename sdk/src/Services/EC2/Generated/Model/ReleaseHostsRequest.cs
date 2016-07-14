@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2015-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// When Dedicated hosts are released, it make take some time for them to stop counting
     /// toward your limit and you may receive capacity errors when trying to allocate new
-    /// Dedicated hosts. Try waiting a few minutes, and then try again. 
+    /// Dedicated hosts. Try waiting a few minutes, and then try again.
     /// </para>
     ///  
     /// <para>

@@ -63,6 +63,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleNotificationService")]
+        public void CheckIfPhoneNumberIsOptedOutMarshallTest()
+        {
+            var operation = service_model.FindOperation("CheckIfPhoneNumberIsOptedOut");
+
+            var request = InstantiateClassGenerator.Execute<CheckIfPhoneNumberIsOptedOutRequest>();
+            var marshaller = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance.Unmarshall(context)
+                as CheckIfPhoneNumberIsOptedOutResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
         public void ConfirmSubscriptionMarshallTest()
         {
             var operation = service_model.FindOperation("ConfirmSubscription");
@@ -264,6 +288,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleNotificationService")]
+        public void GetSMSAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSMSAttributes");
+
+            var request = InstantiateClassGenerator.Execute<GetSMSAttributesRequest>();
+            var marshaller = new GetSMSAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetSMSAttributesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetSMSAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
         public void GetSubscriptionAttributesMarshallTest()
         {
             var operation = service_model.FindOperation("GetSubscriptionAttributes");
@@ -327,6 +375,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListEndpointsByPlatformApplicationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void ListPhoneNumbersOptedOutMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPhoneNumbersOptedOut");
+
+            var request = InstantiateClassGenerator.Execute<ListPhoneNumbersOptedOutRequest>();
+            var marshaller = new ListPhoneNumbersOptedOutRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListPhoneNumbersOptedOutResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -432,6 +504,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleNotificationService")]
+        public void OptInPhoneNumberMarshallTest()
+        {
+            var operation = service_model.FindOperation("OptInPhoneNumber");
+
+            var request = InstantiateClassGenerator.Execute<OptInPhoneNumberRequest>();
+            var marshaller = new OptInPhoneNumberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = OptInPhoneNumberResponseUnmarshaller.Instance.Unmarshall(context)
+                as OptInPhoneNumberResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
         public void PublishMarshallTest()
         {
             var operation = service_model.FindOperation("Publish");
@@ -505,6 +601,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleNotificationService")]
+        public void SetSMSAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetSMSAttributes");
+
+            var request = InstantiateClassGenerator.Execute<SetSMSAttributesRequest>();
+            var marshaller = new SetSMSAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SetSMSAttributesResponseUnmarshaller.Instance.Unmarshall(context)
+                as SetSMSAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

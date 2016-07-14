@@ -30,7 +30,11 @@ namespace Amazon.CodePipeline
     /// <summary>
     /// Interface for accessing CodePipeline
     ///
-    /// AWS CodePipeline <b>Overview</b> 
+    /// AWS CodePipeline 
+    /// <para>
+    ///  <b>Overview</b> 
+    /// </para>
+    ///  
     /// <para>
     /// This is the AWS CodePipeline API Reference. This guide provides descriptions of the
     /// actions and data types for AWS CodePipeline. Some functionality for your pipeline
@@ -44,22 +48,46 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  
     /// <para>
-    /// <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely
+    ///  <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely
     /// named, and consists of actions, gates, and stages. 
     /// </para>
     ///  
     /// <para>
-    /// You can work with pipelines by calling: <ul><li><a>CreatePipeline</a>, which creates
-    /// a uniquely-named pipeline.</li> <li><a>DeletePipeline</a>, which deletes the specified
-    /// pipeline.</li> <li><a>GetPipeline</a>, which returns information about a pipeline
-    /// structure.</li> <li><a>GetPipelineState</a>, which returns information about the current
-    /// state of the stages and actions of a pipeline.</li> <li> <a>ListPipelines</a>, which
-    /// gets a summary of all of the pipelines associated with your account.</li> <li><a>StartPipelineExecution</a>,
-    /// which runs the the most recent revision of an artifact through the pipeline.</li>
-    /// <li><a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure
-    /// of the pipeline.</li> </ul>
+    /// You can work with pipelines by calling:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreatePipeline</a>, which creates a uniquely-named pipeline.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeletePipeline</a>, which deletes the specified pipeline.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetPipeline</a>, which returns information about a pipeline structure.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetPipelineState</a>, which returns information about the current state of the
+    /// stages and actions of a pipeline.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with
+    /// your account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartPipelineExecution</a>, which runs the the most recent revision of an artifact
+    /// through the pipeline.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure
+    /// of the pipeline.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Pipelines include <i>stages</i>, which are which are logical groupings of gates and
     /// actions. Each stage contains one or more actions that must complete before the next
@@ -91,11 +119,19 @@ namespace Amazon.CodePipeline
     /// <para>
     /// You can work with transitions by calling:
     /// </para>
-    ///  <ul> <li><a>DisableStageTransition</a>, which prevents artifacts from transitioning
-    /// to the next stage in a pipeline.</li> <li><a>EnableStageTransition</a>, which enables
-    /// transition of artifacts between stages in a pipeline. </li> </ul> 
+    ///  <ul> <li> 
     /// <para>
-    /// <b>Using the API to integrate with AWS CodePipeline</b>
+    ///  <a>DisableStageTransition</a>, which prevents artifacts from transitioning to the
+    /// next stage in a pipeline.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>EnableStageTransition</a>, which enables transition of artifacts between stages
+    /// in a pipeline. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Using the API to integrate with AWS CodePipeline</b> 
     /// </para>
     ///  
     /// <para>
@@ -104,28 +140,70 @@ namespace Amazon.CodePipeline
     /// order to integrate with AWS CodePipeline, developers will need to work with the following
     /// items:
     /// </para>
-    ///  <ul> <li>Jobs, which are instances of an action. For example, a job for a source
-    /// action might import a revision of an artifact from a source. 
+    ///  
+    /// <para>
+    ///  <b>Jobs</b>, which are instances of an action. For example, a job for a source action
+    /// might import a revision of an artifact from a source. 
+    /// </para>
+    ///  
     /// <para>
     /// You can work with jobs by calling:
     /// </para>
-    ///  <ul> <li><a>AcknowledgeJob</a>, which confirms whether a job worker has received
-    /// the specified job,</li> <li><a>GetJobDetails</a>, which returns the details of a job,</li>
-    /// <li><a>PollForJobs</a>, which determines whether there are any jobs to act upon, </li>
-    /// <li><a>PutJobFailureResult</a>, which provides details of a job failure, and</li>
-    /// <li><a>PutJobSuccessResult</a>, which provides details of a job success.</li> </ul></li>
-    /// <li>Third party jobs, which are instances of an action created by a partner action
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified
+    /// job,
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetJobDetails</a>, which returns the details of a job,
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PollForJobs</a>, which determines whether there are any jobs to act upon, 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutJobFailureResult</a>, which provides details of a job failure, and
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutJobSuccessResult</a>, which provides details of a job success.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Third party jobs</b>, which are instances of an action created by a partner action
     /// and integrated into AWS CodePipeline. Partner actions are created by members of the
-    /// AWS Partner Network. 
+    /// AWS Partner Network.
+    /// </para>
+    ///  
     /// <para>
     /// You can work with third party jobs by calling:
     /// </para>
-    ///  <ul><li><a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has
-    /// received the specified job,</li> <li><a>GetThirdPartyJobDetails</a>, which requests
-    /// the details of a job for a partner action,</li> <li><a>PollForThirdPartyJobs</a>,
-    /// which determines whether there are any jobs to act upon, </li> <li><a>PutThirdPartyJobFailureResult</a>,
-    /// which provides details of a job failure, and</li> <li><a>PutThirdPartyJobSuccessResult</a>,
-    /// which provides details of a job success.</li> </ul></li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received
+    /// the specified job,
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner
+    /// action,
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act
+    /// upon, 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure, and
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutThirdPartyJobSuccessResult</a>, which provides details of a job success.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonCodePipeline : IDisposable
     {
@@ -358,14 +436,14 @@ namespace Amazon.CodePipeline
         /// <summary>
         /// Returns information about a job. Only used for custom actions.
         /// 
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
         /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
         /// any secret values defined for the action.
         /// </para>
-        /// </important>
+        ///  </important>
         /// </summary>
         /// <param name="jobId">The unique system-generated ID for the job.</param>
         /// <param name="cancellationToken">
@@ -459,8 +537,7 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Returns information about the state of a pipeline, including the stages, actions,
-        /// and details about the last run of the pipeline.
+        /// Returns information about the state of a pipeline, including the stages and actions.
         /// </summary>
         /// <param name="name">The name of the pipeline about which you want to get information.</param>
         /// <param name="cancellationToken">
@@ -495,14 +572,14 @@ namespace Amazon.CodePipeline
         /// <summary>
         /// Requests the details of a job for a third party action. Only used for partner actions.
         /// 
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// When this API is called, AWS CodePipeline returns temporary credentials for the Amazon
         /// S3 bucket used to store artifacts for the pipeline, if the action requires access
         /// to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns
         /// any secret values defined for the action.
         /// </para>
-        /// </important>
+        ///  </important>
         /// </summary>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
         /// <param name="jobId">The unique system-generated ID used for identifying the job.</param>
@@ -667,6 +744,22 @@ namespace Amazon.CodePipeline
 
         #endregion
                 
+        #region  PutApprovalResult
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutApprovalResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutApprovalResult operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutApprovalResultResponse> PutApprovalResultAsync(PutApprovalResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutJobFailureResult
 
 
@@ -675,7 +768,7 @@ namespace Amazon.CodePipeline
         /// used for custom actions.
         /// </summary>
         /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from PollForJobs.</param>
-        /// <param name="failureDetails">The details about the failure of a job. </param>
+        /// <param name="failureDetails">The details about the failure of a job.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -776,6 +869,22 @@ namespace Amazon.CodePipeline
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutThirdPartyJobSuccessResultResponse> PutThirdPartyJobSuccessResultAsync(PutThirdPartyJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RetryStageExecution
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RetryStageExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RetryStageExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RetryStageExecutionResponse> RetryStageExecutionAsync(RetryStageExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

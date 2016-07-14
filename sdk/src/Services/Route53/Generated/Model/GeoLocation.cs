@@ -50,7 +50,7 @@ namespace Amazon.Route53.Model
         ///  
         /// <para>
         /// Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code>
-        /// or <code>SubdivisionCode</code> returns an <a>InvalidInput</a> error.
+        /// or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.
         /// </para>
         /// </summary>
         public string ContinentCode
@@ -98,7 +98,7 @@ namespace Amazon.Route53.Model
         ///  
         /// <para>
         /// Constraint: Specifying <code>SubdivisionCode</code> without <code>CountryCode</code>
-        /// returns an <a>InvalidInput</a> error.
+        /// returns an <code>InvalidInput</code> error.
         /// </para>
         /// </summary>
         public string SubdivisionCode

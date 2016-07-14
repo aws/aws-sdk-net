@@ -29,13 +29,12 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the Unsubscribe operation.
-    /// Deletes a subscription. If the subscription requires authentication for       deletion,
-    /// only the owner of the subscription or the topic's owner       can unsubscribe, and
-    /// an AWS signature is required. If the       <code>Unsubscribe</code> call does not
-    /// require authentication and the requester is not       the subscription owner, a final
-    /// cancellation message is delivered to the       endpoint, so that the endpoint owner
-    /// can easily resubscribe to the topic if       the <code>Unsubscribe</code> request
-    /// was unintended.
+    /// Deletes a subscription. If the subscription requires authentication for deletion,
+    /// only the owner of the subscription or the topic's owner can unsubscribe, and an AWS
+    /// signature is required. If the <code>Unsubscribe</code> call does not require authentication
+    /// and the requester is not the subscription owner, a final cancellation message is delivered
+    /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
+    /// the <code>Unsubscribe</code> request was unintended.
     /// </summary>
     public partial class UnsubscribeRequest : AmazonSimpleNotificationServiceRequest
     {

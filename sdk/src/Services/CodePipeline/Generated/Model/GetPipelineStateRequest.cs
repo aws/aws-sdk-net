@@ -29,8 +29,7 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPipelineState operation.
-    /// Returns information about the state of a pipeline, including the stages, actions,
-    /// and details about the last run of the pipeline.
+    /// Returns information about the state of a pipeline, including the stages and actions.
     /// </summary>
     public partial class GetPipelineStateRequest : AmazonCodePipelineRequest
     {

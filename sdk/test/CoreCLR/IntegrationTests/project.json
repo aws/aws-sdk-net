@@ -84,7 +84,8 @@
         "ApplicationDiscoveryService"     : "1.0.0-*",
         "AWSMarketplaceMetering"          : "1.0.0-*",
         "CognitoIdentityProvider"         : "1.0.0-*",
-        "DatabaseMigrationService"        : "1.0.0-*"
+        "DatabaseMigrationService"        : "1.0.0-*",
+        "ServiceCatalog"                  : "1.0.0-*"
     },
     "testRunner"   : "xunit",
     "frameworks"   : {

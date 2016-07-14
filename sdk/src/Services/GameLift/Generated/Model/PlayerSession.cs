@@ -38,6 +38,7 @@ namespace Amazon.GameLift.Model
         private string _ipAddress;
         private string _playerId;
         private string _playerSessionId;
+        private int? _port;
         private PlayerSessionStatus _status;
         private DateTime? _terminationTime;
 
@@ -152,14 +153,34 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// Port number for the game session. To connect to a GameLift server process, an app
+        /// needs both the IP address and port number.
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the player session. Possible player session states include: <ul><li>RESERVED:
-        /// The player session request has been received, but the player has not yet connected
-        /// to the game server and/or been validated. </li><li>ACTIVE: The player has been validated
-        /// by the game server and is currently connected.</li><li>COMPLETED: The player connection
-        /// has been dropped.</li><li>TIMEDOUT: A player session request was received, but the
-        /// player did not connect and/or was not validated within the time-out limit (60 seconds).</li></ul>
+        /// Current status of the player session. Possible player session states include the following:
+        /// <ul><li><b>RESERVED</b> – The player session request has been received, but the player
+        /// has not yet connected to the server process and/or been validated. </li><li><b>ACTIVE</b>
+        /// – The player has been validated by the server process and is currently connected.</li><li><b>COMPLETED</b>
+        /// – The player connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session
+        /// request was received, but the player did not connect and/or was not validated within
+        /// the time-out limit (60 seconds).</li></ul>
         /// </para>
         /// </summary>
         public PlayerSessionStatus Status

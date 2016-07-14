@@ -531,6 +531,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly ResourceRecordSetRegion ApNortheast2 = new ResourceRecordSetRegion("ap-northeast-2");
         /// <summary>
+        /// Constant ApSouth1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion ApSouth1 = new ResourceRecordSetRegion("ap-south-1");
+        /// <summary>
         /// Constant ApSoutheast1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion ApSoutheast1 = new ResourceRecordSetRegion("ap-southeast-1");
@@ -810,6 +814,10 @@ namespace Amazon.Route53
         /// Constant ApNortheast2 for VPCRegion
         /// </summary>
         public static readonly VPCRegion ApNortheast2 = new VPCRegion("ap-northeast-2");
+        /// <summary>
+        /// Constant ApSouth1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion ApSouth1 = new VPCRegion("ap-south-1");
         /// <summary>
         /// Constant ApSoutheast1 for VPCRegion
         /// </summary>
