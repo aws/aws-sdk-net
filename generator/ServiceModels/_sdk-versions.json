@@ -249,6 +249,12 @@
                 "Core" : "3.2.5.0"
             }
         },
+        "ServiceCatalog"        : {
+            "Version" : "3.2.5.0",
+            "Dependencies" : {
+                "Core" : "3.2.5.0"
+            }
+        },
         "SimpleDB"             : {
             "Version" : "3.2.5.0",
             "Dependencies" : {

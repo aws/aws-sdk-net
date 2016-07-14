@@ -2,6 +2,11 @@
 	"unityOverrides":{
 		"generateSyncClient" : true
 	},
+	"shapeSubstitutions": {
+        "CognitoIdentityProvider": {
+            "renameShape": "CognitoIdentityProviderInfo"
+        }
+    },	
     "simpleMethods" : {
         "operations" : {
             "DescribeIdentity" : {
