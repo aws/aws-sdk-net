@@ -118,6 +118,11 @@ namespace Amazon.Util.Internal
                 get { return this._typeInfo.IsAbstract; }
             }
 
+            public override bool IsSealed
+            {
+                get { return this._typeInfo.IsSealed; }
+            }
+
             public override bool IsEnum
             {
                 get { return this._typeInfo.IsEnum; }

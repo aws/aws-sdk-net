@@ -92,6 +92,11 @@ namespace Amazon.Util.Internal
                 get { return this._type.IsAbstract; }
             }
 
+            public override bool IsSealed
+            {
+                get { return this._type.IsSealed; }
+            }
+
             public override bool IsEnum
             {
                 get { return this._type.IsEnum; }
