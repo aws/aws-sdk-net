@@ -547,6 +547,65 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CopyDBClusterParameterGroup
+
+        /// <summary>
+        /// Copies the specified DB cluster parameter group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the CopyDBClusterParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupAlreadyExistsException">
+        /// A DB parameter group with the same name exists.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB parameter groups.
+        /// </exception>
+        public CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request)
+        {
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CopyDBClusterParameterGroupRequest,CopyDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyDBClusterParameterGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginCopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CopyDBClusterParameterGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyDBClusterParameterGroup.</param>
+        /// 
+        /// <returns>Returns a  CopyDBClusterParameterGroupResult from RDS.</returns>
+        public  CopyDBClusterParameterGroupResponse EndCopyDBClusterParameterGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CopyDBClusterParameterGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CopyDBClusterSnapshot
 
         /// <summary>
@@ -4164,6 +4223,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
         public FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request)
         {

@@ -364,7 +364,7 @@
                     { "name": "System.Data", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\System.Data.dll" },
                     { "name": "Mono.Data.SQLite", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll"}
                 ]
-        },
+            },
             "nuget-dependencies": {
                 "Net35": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
                 "Net45": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
@@ -538,7 +538,7 @@
             "authentication-service-name": "elasticmapreduce",
             "service-url": "https://elasticmapreduce.amazonaws.com",
             "synopsis": "Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.",
-            "tags":  [ "EMR" ]
+            "tags": [ "EMR" ]
         },
         {
             "active": true,
@@ -599,8 +599,8 @@
             "base-name": "IotData",
             "region-lookup-name": "data.iot",
             "service-url": "https://data.iot.us-east-1.amazonaws.com/",
-			"authentication-service-name": "iotdata",
-			"generate-client-constructors": false,
+            "authentication-service-name": "iotdata",
+            "generate-client-constructors": false,
             "synopsis": "AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud."
         },
         {
@@ -628,13 +628,13 @@
             "service-url": "https://importexport.amazonaws.com/",
             "synopsis": "AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport."
         },
-                {
+        {
             "active": true,
 
             "model": "iot-2015-",
             "base-name": "IoT",
             "region-lookup-name": "iot",
-			"authentication-service-name": "execute-api",
+            "authentication-service-name": "execute-api",
             "service-url": "https://iot.us-east-1.amazonaws.com/",
             "synopsis": "AWS IoT allows you to leverage AWS to build your Internet of Things."
         },
@@ -721,7 +721,7 @@
                 "Net45": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
                 "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
                 "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
-        },
+            },
             "platforms": [ "Unity" ]
         },
         {
@@ -835,7 +835,7 @@
             "authentication-service-name": "sns",
             "synopsis": "Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services.",
             "platforms": [ "Unity" ],
-            "tags":  [ "SNS" ]
+            "tags": [ "SNS" ]
         },
         {
             "active": true,

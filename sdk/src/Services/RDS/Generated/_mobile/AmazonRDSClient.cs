@@ -425,6 +425,37 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CopyDBClusterParameterGroup
+
+        internal CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request)
+        {
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CopyDBClusterParameterGroupRequest,CopyDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CopyDBClusterParameterGroupResponse> CopyDBClusterParameterGroupAsync(CopyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyDBClusterParameterGroupRequest,CopyDBClusterParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CopyDBClusterSnapshot
 
         internal CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request)

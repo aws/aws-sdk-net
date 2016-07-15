@@ -112,6 +112,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 return new InvalidDBClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
+            {
+                return new InvalidDBInstanceStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static FailoverDBClusterResponseUnmarshaller _instance = new FailoverDBClusterResponseUnmarshaller();        

@@ -254,6 +254,37 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DeleteCertificate
+
+
+        /// <summary>
+        /// Deletes the specified certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCertificate service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteEndpoint
 
 
@@ -421,6 +452,34 @@ namespace Amazon.DatabaseMigrationService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeCertificates
+
+
+        /// <summary>
+        /// Provides a description of the certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificates service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -710,6 +769,37 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ImportCertificate
+
+
+        /// <summary>
+        /// Uploads the specified certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
+        /// 
+        /// <returns>The response from the ImportCertificate service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidCertificateException">
+        /// The certificate was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        ImportCertificateResponse ImportCertificate(ImportCertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -833,6 +923,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
         /// The subnet provided is invalid.
         /// </exception>
