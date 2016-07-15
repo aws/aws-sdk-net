@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// 
+    /// Describes the start request.
     /// </summary>
     public partial class StartRequest
     {
         private string _workspaceId;
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId.
+        /// Gets and sets the property WorkspaceId. 
+        /// <para>
+        /// The ID of the WorkSpace.
+        /// </para>
         /// </summary>
         public string WorkspaceId
         {

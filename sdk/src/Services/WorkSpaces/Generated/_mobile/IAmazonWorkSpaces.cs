@@ -32,8 +32,7 @@ namespace Amazon.WorkSpaces
     ///
     /// Amazon WorkSpaces Service 
     /// <para>
-    /// This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides detailed information
-    /// about Amazon WorkSpaces operations, data types, parameters, and errors.
+    /// This reference provides detailed information about the Amazon WorkSpaces operations.
     /// </para>
     /// </summary>
     public partial interface IAmazonWorkSpaces : IDisposable
@@ -188,7 +187,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Obtains information about the specified WorkSpaces. 
+        /// Obtains information about the specified WorkSpaces.
         /// 
         ///  
         /// <para>

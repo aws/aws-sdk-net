@@ -29,14 +29,18 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the StopWorkspaces operation.
-    /// 
+    /// Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
+    /// configured as AutoStop and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
     /// </summary>
     public partial class StopWorkspacesRequest : AmazonWorkSpacesRequest
     {
         private List<StopRequest> _stopWorkspaceRequests = new List<StopRequest>();
 
         /// <summary>
-        /// Gets and sets the property StopWorkspaceRequests.
+        /// Gets and sets the property StopWorkspaceRequests. 
+        /// <para>
+        /// The requests.
+        /// </para>
         /// </summary>
         public List<StopRequest> StopWorkspaceRequests
         {

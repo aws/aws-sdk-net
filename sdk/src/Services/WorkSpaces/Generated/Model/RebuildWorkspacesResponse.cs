@@ -37,7 +37,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property FailedRequests. 
         /// <para>
-        /// An array of structures that represent any WorkSpaces that could not be rebuilt.
+        /// An array of structures representing any WorkSpaces that could not be rebuilt.
         /// </para>
         /// </summary>
         public List<FailedWorkspaceChangeRequest> FailedRequests

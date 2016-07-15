@@ -35,7 +35,10 @@ namespace Amazon.WorkSpaces.Model
         private List<FailedWorkspaceChangeRequest> _failedRequests = new List<FailedWorkspaceChangeRequest>();
 
         /// <summary>
-        /// Gets and sets the property FailedRequests.
+        /// Gets and sets the property FailedRequests. 
+        /// <para>
+        /// The failed requests.
+        /// </para>
         /// </summary>
         public List<FailedWorkspaceChangeRequest> FailedRequests
         {

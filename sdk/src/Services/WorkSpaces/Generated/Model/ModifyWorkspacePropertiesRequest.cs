@@ -29,7 +29,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyWorkspaceProperties operation.
-    /// 
+    /// Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
     /// </summary>
     public partial class ModifyWorkspacePropertiesRequest : AmazonWorkSpacesRequest
     {
@@ -37,7 +37,10 @@ namespace Amazon.WorkSpaces.Model
         private WorkspaceProperties _workspaceProperties;
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId.
+        /// Gets and sets the property WorkspaceId. 
+        /// <para>
+        /// The ID of the WorkSpace.
+        /// </para>
         /// </summary>
         public string WorkspaceId
         {
@@ -52,7 +55,10 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WorkspaceProperties.
+        /// Gets and sets the property WorkspaceProperties. 
+        /// <para>
+        /// The WorkSpace properties of the request.
+        /// </para>
         /// </summary>
         public WorkspaceProperties WorkspaceProperties
         {

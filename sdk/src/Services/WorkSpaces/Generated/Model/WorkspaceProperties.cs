@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// 
+    /// Describes the properties of a WorkSpace.
     /// </summary>
     public partial class WorkspaceProperties
     {
@@ -36,7 +36,12 @@ namespace Amazon.WorkSpaces.Model
         private int? _runningModeAutoStopTimeoutInMinutes;
 
         /// <summary>
-        /// Gets and sets the property RunningMode.
+        /// Gets and sets the property RunningMode. 
+        /// <para>
+        /// The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop
+        /// WorkSpaces are billed by the hour and stopped when no longer being used in order to
+        /// save on costs.
+        /// </para>
         /// </summary>
         public RunningMode RunningMode
         {
@@ -51,7 +56,11 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RunningModeAutoStopTimeoutInMinutes.
+        /// Gets and sets the property RunningModeAutoStopTimeoutInMinutes. 
+        /// <para>
+        /// The time after a user logs off when WorkSpaces are automatically stopped. Configured
+        /// in 60 minute intervals.
+        /// </para>
         /// </summary>
         public int RunningModeAutoStopTimeoutInMinutes
         {

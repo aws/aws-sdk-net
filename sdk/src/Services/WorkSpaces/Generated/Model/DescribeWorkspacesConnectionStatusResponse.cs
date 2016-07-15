@@ -36,7 +36,10 @@ namespace Amazon.WorkSpaces.Model
         private List<WorkspaceConnectionStatus> _workspacesConnectionStatus = new List<WorkspaceConnectionStatus>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The next token of the result.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -51,7 +54,10 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WorkspacesConnectionStatus.
+        /// Gets and sets the property WorkspacesConnectionStatus. 
+        /// <para>
+        /// The connection status of the WorkSpace.
+        /// </para>
         /// </summary>
         public List<WorkspaceConnectionStatus> WorkspacesConnectionStatus
         {

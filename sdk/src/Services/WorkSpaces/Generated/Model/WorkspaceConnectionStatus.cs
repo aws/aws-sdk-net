@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// 
+    /// Describes the connection status of a WorkSpace.
     /// </summary>
     public partial class WorkspaceConnectionStatus
     {
@@ -38,7 +38,11 @@ namespace Amazon.WorkSpaces.Model
         private string _workspaceId;
 
         /// <summary>
-        /// Gets and sets the property ConnectionState.
+        /// Gets and sets the property ConnectionState. 
+        /// <para>
+        /// The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped
+        /// state.
+        /// </para>
         /// </summary>
         public ConnectionState ConnectionState
         {
@@ -53,7 +57,10 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConnectionStateCheckTimestamp.
+        /// Gets and sets the property ConnectionStateCheckTimestamp. 
+        /// <para>
+        /// The timestamp of the connection state check.
+        /// </para>
         /// </summary>
         public DateTime ConnectionStateCheckTimestamp
         {
@@ -68,7 +75,10 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastKnownUserConnectionTimestamp.
+        /// Gets and sets the property LastKnownUserConnectionTimestamp. 
+        /// <para>
+        /// The timestamp of the last known user connection.
+        /// </para>
         /// </summary>
         public DateTime LastKnownUserConnectionTimestamp
         {
@@ -83,7 +93,10 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId.
+        /// Gets and sets the property WorkspaceId. 
+        /// <para>
+        /// The ID of the WorkSpace.
+        /// </para>
         /// </summary>
         public string WorkspaceId
         {

@@ -29,14 +29,18 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the StartWorkspaces operation.
-    /// 
+    /// Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
+    /// configured as AutoStop and the State set to “STOPPED.”
     /// </summary>
     public partial class StartWorkspacesRequest : AmazonWorkSpacesRequest
     {
         private List<StartRequest> _startWorkspaceRequests = new List<StartRequest>();
 
         /// <summary>
-        /// Gets and sets the property StartWorkspaceRequests.
+        /// Gets and sets the property StartWorkspaceRequests. 
+        /// <para>
+        /// The requests.
+        /// </para>
         /// </summary>
         public List<StartRequest> StartWorkspaceRequests
         {

@@ -32,8 +32,7 @@ namespace Amazon.WorkSpaces
     ///
     /// Amazon WorkSpaces Service 
     /// <para>
-    /// This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides detailed information
-    /// about Amazon WorkSpaces operations, data types, parameters, and errors.
+    /// This reference provides detailed information about the Amazon WorkSpaces operations.
     /// </para>
     /// </summary>
     public partial interface IAmazonWorkSpaces : IDisposable
@@ -345,7 +344,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Obtains information about the specified WorkSpaces. 
+        /// Obtains information about the specified WorkSpaces.
         /// 
         ///  
         /// <para>
@@ -371,7 +370,7 @@ namespace Amazon.WorkSpaces
         DescribeWorkspacesResponse DescribeWorkspaces();
 
         /// <summary>
-        /// Obtains information about the specified WorkSpaces. 
+        /// Obtains information about the specified WorkSpaces.
         /// 
         ///  
         /// <para>
@@ -399,7 +398,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Obtains information about the specified WorkSpaces. 
+        /// Obtains information about the specified WorkSpaces.
         /// 
         ///  
         /// <para>
@@ -444,7 +443,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// 
+        /// Describes the connection status of a specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesConnectionStatus service method.</param>
         /// 
@@ -472,7 +471,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// 
+        /// Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// 
@@ -481,16 +480,18 @@ namespace Amazon.WorkSpaces
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
-        /// 
+        /// The specified WorkSpace has an invalid state for this operation.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
-        /// 
+        /// The properties of this WorkSpace are currently being modified. Try again in a moment.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedWorkspaceConfigurationException">
-        /// 
+        /// The WorkSpace does not have the supported configuration for this operation. For more
+        /// information, see the <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide">Amazon
+        /// WorkSpaces Administration Guide</a>.
         /// </exception>
         ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request);
 
@@ -521,7 +522,7 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is asynchronous and will return before the WorkSpaces have rebooted.
+        /// This operation is asynchronous and returns before the WorkSpaces have rebooted.
         /// </para>
         ///  </note>
         /// </summary>
@@ -555,20 +556,27 @@ namespace Amazon.WorkSpaces
         /// Rebuilding a WorkSpace is a potentially destructive action that can result in the
         /// loss of data. Rebuilding a WorkSpace causes the following to occur:
         /// </para>
-        ///  <ul> <li>The system is restored to the image of the bundle that the WorkSpace is
-        /// created from. Any applications that have been installed, or system settings that have
-        /// been made since the WorkSpace was created will be lost.</li> <li>The data drive (D
-        /// drive) is re-created from the last automatic snapshot taken of the data drive. The
-        /// current contents of the data drive are overwritten. Automatic snapshots of the data
-        /// drive are taken every 12 hours, so the snapshot can be as much as 12 hours old.</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// The system is restored to the image of the bundle that the WorkSpace is created from.
+        /// Any applications that have been installed, or system settings that have been made
+        /// since the WorkSpace was created will be lost.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The data drive (D drive) is re-created from the last automatic snapshot taken of the
+        /// data drive. The current contents of the data drive are overwritten. Automatic snapshots
+        /// of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours
+        /// old.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>
         /// or <code>ERROR</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is asynchronous and will return before the WorkSpaces have been completely
+        /// This operation is asynchronous and returns before the WorkSpaces have been completely
         /// rebuilt.
         /// </para>
         ///  </note>
@@ -596,7 +604,8 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// 
+        /// Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
+        /// configured as AutoStop and the State set to “STOPPED.”
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces service method.</param>
         /// 
@@ -621,7 +630,8 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// 
+        /// Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
+        /// configured as AutoStop and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces service method.</param>
         /// 
@@ -660,7 +670,7 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is asynchronous and will return before the WorkSpaces have been completely
+        /// This operation is asynchronous and returns before the WorkSpaces have been completely
         /// terminated.
         /// </para>
         ///  </note>
