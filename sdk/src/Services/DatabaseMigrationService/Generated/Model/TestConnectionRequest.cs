@@ -29,9 +29,7 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the TestConnection operation.
-    /// Tests the connection between the replication instance and the endpoint. 
-    /// 
-    ///  <note/>
+    /// Tests the connection between the replication instance and the endpoint.
     /// </summary>
     public partial class TestConnectionRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -59,7 +57,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the replication instance.
+        /// The Amazon Resource Name (ARN) of the replication instance.
         /// </para>
         /// </summary>
         public string ReplicationInstanceArn

@@ -97,8 +97,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CloudOnlyMicrosoftADCurrentCount. The current number of
-        /// Microsoft AD directories in the region.
+        /// Gets and sets the property CloudOnlyMicrosoftADCurrentCount. 
+        /// <para>
+        /// The current number of Microsoft AD directories in the region.
+        /// </para>
         /// </summary>
         public int CloudOnlyMicrosoftADCurrentCount
         {
@@ -113,8 +115,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CloudOnlyMicrosoftADLimit. The maximum number of Microsoft
-        /// AD directories allowed in the region.
+        /// Gets and sets the property CloudOnlyMicrosoftADLimit. 
+        /// <para>
+        /// The maximum number of Microsoft AD directories allowed in the region.
+        /// </para>
         /// </summary>
         public int CloudOnlyMicrosoftADLimit
         {
@@ -129,8 +133,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CloudOnlyMicrosoftADLimitReached. Indicates if the Microsoft
-        /// AD directory limit has been reached.
+        /// Gets and sets the property CloudOnlyMicrosoftADLimitReached. 
+        /// <para>
+        /// Indicates if the Microsoft AD directory limit has been reached.
+        /// </para>
         /// </summary>
         public bool CloudOnlyMicrosoftADLimitReached
         {

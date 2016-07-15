@@ -32,6 +32,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class Endpoint
     {
+        private string _certificateArn;
         private string _databaseName;
         private string _endpointArn;
         private string _endpointIdentifier;
@@ -41,8 +42,27 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _kmsKeyId;
         private int? _port;
         private string _serverName;
+        private DmsSslModeValue _sslMode;
         private string _status;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
+        /// </para>
+        /// </summary>
+        public string CertificateArn
+        {
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
+        }
+
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
+        {
+            return this._certificateArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -157,10 +177,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  The KMS key identifier that will be used to encrypt the connection parameters. If
+        /// The KMS key identifier that will be used to encrypt the connection parameters. If
         /// you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your
         /// default encryption key. AWS KMS creates the default encryption key for your AWS account.
-        /// Your AWS account has a different default encryption key for each AWS region. 
+        /// Your AWS account has a different default encryption key for each AWS region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -209,6 +229,32 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SslMode. 
+        /// <para>
+        /// The SSL mode used to connect to the endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// SSL mode can be one of four values: none, require, verify-ca, verify-full. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is none.
+        /// </para>
+        /// </summary>
+        public DmsSslModeValue SslMode
+        {
+            get { return this._sslMode; }
+            set { this._sslMode = value; }
+        }
+
+        // Check to see if SslMode property is set
+        internal bool IsSetSslMode()
+        {
+            return this._sslMode != null;
         }
 
         /// <summary>

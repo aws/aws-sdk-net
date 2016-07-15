@@ -52,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates SendCommandRequest with the parameterized properties
         /// </summary>
         /// <param name="documentName">Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.</param>
-        /// <param name="instanceIds">Required. The instance IDs where the command should execute.</param>
+        /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
         public SendCommandRequest(string documentName, List<string> instanceIds)
         {
             _documentName = documentName;
@@ -146,7 +146,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// Required. The instance IDs where the command should execute.
+        /// Required. The instance IDs where the command should execute. You can specify a maximum
+        /// of 50 IDs.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

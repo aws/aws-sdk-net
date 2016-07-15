@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
     public partial class FailoverDBClusterRequest : AmazonRDSRequest
     {
         private string _dbClusterIdentifier;
+        private string _targetDBInstanceIdentifier;
 
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
@@ -87,6 +88,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetDBInstanceIdentifier. 
+        /// <para>
+        /// The name of the instance to promote to the primary instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the instance identifier for an Aurora Replica in the DB cluster.
+        /// For example, <code>mydbcluster-replica1</code>.
+        /// </para>
+        /// </summary>
+        public string TargetDBInstanceIdentifier
+        {
+            get { return this._targetDBInstanceIdentifier; }
+            set { this._targetDBInstanceIdentifier = value; }
+        }
+
+        // Check to see if TargetDBInstanceIdentifier property is set
+        internal bool IsSetTargetDBInstanceIdentifier()
+        {
+            return this._targetDBInstanceIdentifier != null;
         }
 
     }

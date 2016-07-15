@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the CreateReplicationInstance operation.
     /// Creates the replication instance using the specified parameters.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class CreateReplicationInstanceRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -40,18 +38,20 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _availabilityZone;
         private string _engineVersion;
         private string _kmsKeyId;
+        private bool? _multiAZ;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
         private string _replicationInstanceClass;
         private string _replicationInstanceIdentifier;
         private string _replicationSubnetGroupIdentifier;
         private List<Tag> _tags = new List<Tag>();
+        private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  The amount of storage (in gigabytes) to be initially allocated for the replication
-        /// instance. 
+        /// The amount of storage (in gigabytes) to be initially allocated for the replication
+        /// instance.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -69,12 +69,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  Indicates that minor engine upgrades will be applied automatically to the replication
-        /// instance during the maintenance window. 
+        /// Indicates that minor engine upgrades will be applied automatically to the replication
+        /// instance during the maintenance window.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code>
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -92,15 +92,15 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The EC2 Availability Zone that the replication instance will be created in. 
+        /// The EC2 Availability Zone that the replication instance will be created in.
         /// </para>
         ///  
         /// <para>
-        ///  Default: A random, system-chosen Availability Zone in the endpoint's region. 
+        /// Default: A random, system-chosen Availability Zone in the endpoint's region.
         /// </para>
         ///  
         /// <para>
-        ///  Example: <code>us-east-1d</code>
+        ///  Example: <code>us-east-1d</code> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -118,7 +118,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The engine version number of the replication instance. 
+        /// The engine version number of the replication instance.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -136,11 +136,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  The KMS key identifier that will be used to encrypt the content on the replication
+        /// The KMS key identifier that will be used to encrypt the content on the replication
         /// instance. If you do not specify a value for the KmsKeyId parameter, then AWS DMS will
         /// use your default encryption key. AWS KMS creates the default encryption key for your
         /// AWS account. Your AWS account has a different default encryption key for each AWS
-        /// region. 
+        /// region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -156,19 +156,39 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        ///  Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  The weekly time range during which system maintenance can occur, in Universal Coordinated
-        /// Time (UTC). 
+        /// The weekly time range during which system maintenance can occur, in Universal Coordinated
+        /// Time (UTC).
         /// </para>
         ///  
         /// <para>
-        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
+        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Default: A 30-minute window selected at random from an 8-hour block of time per region,
-        /// occurring on a random day of the week. 
+        /// Default: A 30-minute window selected at random from an 8-hour block of time per region,
+        /// occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>
@@ -214,13 +234,13 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceClass. 
         /// <para>
-        ///  The compute and memory capacity of the replication instance as specified by the replication
-        /// instance class. 
+        /// The compute and memory capacity of the replication instance as specified by the replication
+        /// instance class.
         /// </para>
         ///  
         /// <para>
         ///  Valid Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass
@@ -244,11 +264,21 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-        /// character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>myrepinstance</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>myrepinstance</code> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceIdentifier
@@ -266,7 +296,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationSubnetGroupIdentifier. 
         /// <para>
-        ///  A subnet group to associate with the replication instance. 
+        /// A subnet group to associate with the replication instance.
         /// </para>
         /// </summary>
         public string ReplicationSubnetGroupIdentifier
@@ -297,6 +327,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroupIds. 
+        /// <para>
+        ///  Specifies the VPC security group to be used with the replication instance. The VPC
+        /// security group must work with the VPC containing the replication instance. 
+        /// </para>
+        /// </summary>
+        public List<string> VpcSecurityGroupIds
+        {
+            get { return this._vpcSecurityGroupIds; }
+            set { this._vpcSecurityGroupIds = value; }
+        }
+
+        // Check to see if VpcSecurityGroupIds property is set
+        internal bool IsSetVpcSecurityGroupIds()
+        {
+            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
         }
 
     }

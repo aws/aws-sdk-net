@@ -38,11 +38,11 @@ namespace Amazon.DatabaseMigrationService
     ///
     /// AWS Database Migration Service 
     /// <para>
-    ///  AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
+    /// AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
     /// widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft
-    /// SQL Server, MariaDB, Amazon Aurora, and MySQL. The service supports homogeneous migrations
-    /// such as Oracle to Oracle, as well as heterogeneous migrations between different database
-    /// platforms, such as Oracle to MySQL or SQL Server to PostgreSQL. 
+    /// SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, and MySQL. The service supports
+    /// homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations
+    /// between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
     /// </para>
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceClient : AmazonServiceClient, IAmazonDatabaseMigrationService
@@ -332,6 +332,37 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DeleteCertificate
+
+        internal DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
+        {
+            var marshaller = new DeleteCertificateRequestMarshaller();
+            var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteCertificateRequestMarshaller();
+            var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEndpoint
 
         internal DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
@@ -482,6 +513,37 @@ namespace Amazon.DatabaseMigrationService
             var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCertificates
+
+        internal DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
+        {
+            var marshaller = new DescribeCertificatesRequestMarshaller();
+            var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCertificatesRequest,DescribeCertificatesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeCertificatesRequestMarshaller();
+            var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCertificatesRequest,DescribeCertificatesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -792,6 +854,37 @@ namespace Amazon.DatabaseMigrationService
             var unmarshaller = DescribeTableStatisticsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTableStatisticsRequest,DescribeTableStatisticsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportCertificate
+
+        internal ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
+        {
+            var marshaller = new ImportCertificateRequestMarshaller();
+            var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<ImportCertificateRequest,ImportCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportCertificateRequestMarshaller();
+            var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportCertificateRequest,ImportCertificateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
     /// Removes metadata tags from a DMS resource.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class RemoveTagsFromResourceRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -41,7 +39,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// >The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be removed from.
+        /// &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be removed
+        /// from.
         /// </para>
         /// </summary>
         public string ResourceArn

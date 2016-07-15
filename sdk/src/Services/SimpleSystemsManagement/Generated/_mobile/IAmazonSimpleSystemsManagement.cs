@@ -31,24 +31,35 @@ namespace Amazon.SimpleSystemsManagement
     /// Interface for accessing SimpleSystemsManagement
     ///
     /// This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables you to
-    /// remotely manage the configuration of your Amazon EC2 instance using scripts or commands
-    /// with either an on-demand solution called <i>SSM Run Command</i> or a lightweight instance
-    /// configuration solution called <i>SSM Config</i>. 
+    /// remotely manage the configuration of your on-premises servers and virtual machines
+    /// (VMs) and your Amazon EC2 instances using scripts, commands, or the Amazon EC2 console.
+    /// SSM includes an on-demand solution called <i>Amazon EC2 Run Command</i> and a lightweight
+    /// instance configuration solution called <i>SSM Config</i>. 
     /// 
     ///  
     /// <para>
-    /// This references is intended to be used with the SSM User Guide for <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
+    /// This references is intended to be used with the EC2 Run Command User Guide for <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
     /// or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html">Windows</a>.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You must register your on-premises servers and VMs through an activation process before
+    /// you can configure them using Run Command. Registered servers and VMs are called <i>managed
+    /// instances</i>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
+    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Linux</a> or
+    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
+    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Windows</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Run Command</b> 
     /// </para>
     ///  
     /// <para>
     /// Run Command provides an on-demand experience for executing commands. You can use pre-defined
-    /// Amazon SSM documents to perform the actions listed later in this section, or you can
-    /// create your own documents. With these documents, you can remotely configure your instances
+    /// SSM documents to perform the actions listed later in this section, or you can create
+    /// your own documents. With these documents, you can remotely configure your instances
     /// by sending commands using the <b>Commands</b> page in the <a href="http://console.aws.amazon.com/ec2/">Amazon
     /// EC2 console</a>, <a href="http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html">AWS
     /// Tools for Windows PowerShell</a>, the <a href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
@@ -89,7 +100,7 @@ namespace Amazon.SimpleSystemsManagement
     /// </para>
     ///  
     /// <para>
-    /// SSM Config and SSM Run Command include the following pre-defined documents.
+    /// SSM Config and Run Command include the following pre-defined documents.
     /// </para>
     ///  
     /// <para>
@@ -161,12 +172,12 @@ namespace Amazon.SimpleSystemsManagement
     /// on your instances because the Amazon SSM agent runs as root on Linux and the EC2Config
     /// service runs in the Local System account on Windows. If a user has permission to execute
     /// any of the pre-defined SSM documents (any document that begins with AWS-*) then that
-    /// user also has administrator access to the instance. Delegate access to SSM and Run
-    /// Command judiciously. This becomes extremely important if you create your own SSM documents.
-    /// Amazon Web Services does not provide guidance about how to create secure SSM documents.
-    /// You create SSM documents and delegate access to Run Command at your own risk. As a
-    /// security best practice, we recommend that you assign access to "AWS-*" documents,
-    /// especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript
+    /// user also has administrator access to the instance. Delegate access to Run Command
+    /// and SSM Config judiciously. This becomes extremely important if you create your own
+    /// SSM documents. Amazon Web Services does not provide guidance about how to create secure
+    /// SSM documents. You create SSM documents and delegate access to Run Command at your
+    /// own risk. As a security best practice, we recommend that you assign access to "AWS-*"
+    /// documents, especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript
     /// document on Windows, to trusted administrators only. You can create SSM documents
     /// for specific tasks and delegate access to non-administrators.
     /// </para>
@@ -191,6 +202,22 @@ namespace Amazon.SimpleSystemsManagement
     /// </summary>
     public partial interface IAmazonSimpleSystemsManagement : IDisposable
     {
+                
+        #region  AddTagsToResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  CancelCommand
 
@@ -256,6 +283,22 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CancelCommandResponse> CancelCommandAsync(CancelCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateActivation
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateActivation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateActivation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateActivationResponse> CreateActivationAsync(CreateActivationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -387,6 +430,22 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
                 
+        #region  DeleteActivation
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteActivation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteActivation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteActivationResponse> DeleteActivationAsync(DeleteActivationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteAssociation
 
 
@@ -482,6 +541,38 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteDocumentResponse> DeleteDocumentAsync(DeleteDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeregisterManagedInstance
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterManagedInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterManagedInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeregisterManagedInstanceResponse> DeregisterManagedInstanceAsync(DeregisterManagedInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeActivations
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActivations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeActivationsResponse> DescribeActivationsAsync(DescribeActivationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -856,6 +947,22 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyDocumentPermission
 
 
@@ -872,6 +979,22 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
                 
+        #region  RemoveTagsFromResource
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SendCommand
 
 
@@ -879,7 +1002,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Executes commands on one or more remote instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.</param>
-        /// <param name="instanceIds">Required. The instance IDs where the command should execute.</param>
+        /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -940,6 +1063,22 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateAssociationStatusResponse> UpdateAssociationStatusAsync(UpdateAssociationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateManagedInstanceRole
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateManagedInstanceRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateManagedInstanceRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateManagedInstanceRoleResponse> UpdateManagedInstanceRoleAsync(UpdateManagedInstanceRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

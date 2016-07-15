@@ -97,6 +97,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineVersion);
                 }
 
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    context.Writer.WritePropertyName("MultiAZ");
+                    context.Writer.Write(publicRequest.MultiAZ);
+                }
+
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     context.Writer.WritePropertyName("PreferredMaintenanceWindow");
@@ -119,6 +125,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ReplicationInstanceIdentifier");
                     context.Writer.Write(publicRequest.ReplicationInstanceIdentifier);
+                }
+
+                if(publicRequest.IsSetVpcSecurityGroupIds())
+                {
+                    context.Writer.WritePropertyName("VpcSecurityGroupIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                    {
+                            context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

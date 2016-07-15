@@ -296,6 +296,10 @@
       <Project>{89D04592-47DB-4292-8BEA-78BA2F33954F}</Project>
       <Name>AWSSDK.SecurityToken.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ServiceCatalog/AWSSDK.ServiceCatalog.CodeAnalysis.csproj">
+      <Project>{C3F067D9-9A46-4B4D-85C6-490C0410C924}</Project>
+      <Name>AWSSDK.ServiceCatalog.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SimpleDB/AWSSDK.SimpleDB.CodeAnalysis.csproj">
       <Project>{63F6BADD-A734-409F-836A-46817493F7C6}</Project>
       <Name>AWSSDK.SimpleDB.CodeAnalysis</Name>

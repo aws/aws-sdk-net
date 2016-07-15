@@ -7,6 +7,9 @@ using Amazon.Runtime;
 using Amazon;
 using Amazon.S3;
 using System.IO;
+using System.Net;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -65,6 +68,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             TestCredentialsFile(ic);
             ic = new ImmutableCredentials("access-key", "secret-key", "token");
             TestCredentialsFile(ic);
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        [TestCategory("ECS")]
+        public void TestECSCredentialsLocal()
+        {
+
+            string uri = "/ECS/Test/Endpoint/";
+            string accessKey = "SomeKey";
+            string secretKey = "SomeSecretKey";
+            string token = "Token";
+            string expiration = DateTime.UtcNow.AddHours(1).ToString("s") + "Z";
+
+            System.Environment.SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable, uri);
+
+            using (ResponseTestServlet servlet = new ResponseTestServlet(uri))
+            {
+                string server = "http://localhost:" + servlet.Port;
+
+                servlet.Response = string.Format(
+@"{{
+    ""AccessKeyId"" : ""{0}"",
+    ""SecretAccessKey"" : ""{1}"",
+    ""Token"" : ""{2}"",
+    ""Expiration"" : ""{3}""
+}}", accessKey, secretKey, token, expiration);
+
+                ECSTaskCredentials generator = new ECSTaskCredentials();
+
+                FieldInfo serverField = generator.GetType().GetField("Server", BindingFlags.Instance | BindingFlags.NonPublic );
+                Assert.IsNotNull(serverField);
+                serverField.SetValue(generator, server);
+
+                ImmutableCredentials credentials = generator.GetCredentials();
+
+                Assert.AreEqual(accessKey, credentials.AccessKey);
+                Assert.AreEqual(secretKey, credentials.SecretKey);
+                Assert.AreEqual(token, credentials.Token);
+            }
+
+            System.Environment.SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable, "");
         }
 
         private static void TestCredentialsFile(ImmutableCredentials ic)

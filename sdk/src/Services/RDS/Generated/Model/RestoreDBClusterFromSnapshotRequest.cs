@@ -205,8 +205,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted
-        /// DB cluster snapshot.
+        /// The KMS key identifier to use when restoring an encrypted DB cluster from a DB cluster
+        /// snapshot.
         /// </para>
         ///  
         /// <para>
@@ -227,14 +227,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the DB cluster snapshot is not encrypted, then the restored DB cluster is not encrypted.
+        /// If the DB cluster snapshot is not encrypted, then the restored DB cluster is encrypted
+        /// using the specified encryption key.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that is not encrypted,
-        /// and you specify a value for the <code>KmsKeyId</code> parameter, then the restore
-        /// request is rejected.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string KmsKeyId
         {

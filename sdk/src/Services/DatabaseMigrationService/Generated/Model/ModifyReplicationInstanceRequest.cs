@@ -32,7 +32,10 @@ namespace Amazon.DatabaseMigrationService.Model
     /// Modifies the replication instance to apply new settings. You can change one or more
     /// parameters by specifying these parameters and the new values in the request.
     /// 
-    ///  <note>Some settings are applied during the maintenance window.</note>
+    ///  
+    /// <para>
+    /// Some settings are applied during the maintenance window.
+    /// </para>
     /// </summary>
     public partial class ModifyReplicationInstanceRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -41,16 +44,17 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
         private string _engineVersion;
+        private bool? _multiAZ;
         private string _preferredMaintenanceWindow;
         private string _replicationInstanceArn;
         private string _replicationInstanceClass;
         private string _replicationInstanceIdentifier;
+        private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  The amount of storage (in gigabytes) to be allocated for the replication instance.
-        /// 
+        /// The amount of storage (in gigabytes) to be allocated for the replication instance.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -68,9 +72,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AllowMajorVersionUpgrade. 
         /// <para>
-        ///  Indicates that major version upgrades are allowed. Changing this parameter does not
+        /// Indicates that major version upgrades are allowed. Changing this parameter does not
         /// result in an outage and the change is asynchronously applied as soon as possible.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -94,8 +97,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        ///  Indicates whether the changes should be applied immediately or during the next maintenance
-        /// window. 
+        /// Indicates whether the changes should be applied immediately or during the next maintenance
+        /// window.
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -136,7 +139,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The engine version number of the replication instance. 
+        /// The engine version number of the replication instance.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -152,13 +155,33 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        ///  Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  The weekly time range (in UTC) during which system maintenance can occur, which might
+        /// The weekly time range (in UTC) during which system maintenance can occur, which might
         /// result in an outage. Changing this parameter does not result in an outage, except
         /// in the following situation, and the change is asynchronously applied as soon as possible.
         /// If moving this window to the current time, there must be at least 30 minutes between
-        /// the current time and end of the window to ensure pending changes are applied. 
+        /// the current time and end of the window to ensure pending changes are applied.
         /// </para>
         ///  
         /// <para>
@@ -210,12 +233,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceClass. 
         /// <para>
-        ///  The compute and memory capacity of the replication instance. 
+        /// The compute and memory capacity of the replication instance.
         /// </para>
         ///  
         /// <para>
         ///  Valid Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass
@@ -246,6 +269,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationInstanceIdentifier()
         {
             return this._replicationInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroupIds. 
+        /// <para>
+        ///  Specifies the VPC security group to be used with the replication instance. The VPC
+        /// security group must work with the VPC containing the replication instance. 
+        /// </para>
+        /// </summary>
+        public List<string> VpcSecurityGroupIds
+        {
+            get { return this._vpcSecurityGroupIds; }
+            set { this._vpcSecurityGroupIds = value; }
+        }
+
+        // Check to see if VpcSecurityGroupIds property is set
+        internal bool IsSetVpcSecurityGroupIds()
+        {
+            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
         }
 
     }

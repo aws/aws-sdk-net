@@ -1,3 +1,41 @@
+### 3.1.84.0 (2016-07-13 22:00 UTC)
+* DatabaseMigrationService (3.1.2.0)
+	* API updates to enable SSL-enabled endpoints.
+* ECS (3.1.6.0)
+	* Added support for specifying an IAM role ARN for tasks.
+* RDS (3.1.13.0)
+	* API Update for RDS Aurora: new parameter TargetDBInstanceIdentifier of FailoverDBCluster API. 
+API Update for RDS Aurora: New method CopyDBClusterParameterGroup.
+* Core 3.1.9.0
+	* Updated to support ECS container credentials.
+	* all services packages updated to require new core
+
+### 3.1.83.0 (2016-07-07 23:26 UTC)
+* ConfigService (3.1.5.0)
+	* API Update for AWS Config: DeleteConfigurationRecorder API.
+* DirectoryService (3.1.4.0)
+	* API Update for AWS Directory Service: Tagging APIs (Add, Remove and List).
+* OpsWorks (3.1.3.2)
+	* Documentation update.
+* ServiceCatalog (3.1.0.0)
+	* Added support for AWS Service Catalog. This service allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
+
+### 3.1.82.0 (2016-07-05 19:32 UTC)
+* CodePipeline (3.1.3.0)
+	* Updates CodePipeline API to support manual approvals.
+* ElasticFileSystem (3.1.2.1)
+	* Documentation update.
+* IdentityManagement (3.1.4.6)
+	* Documentation update.
+
+### 3.1.81.0 (2016-06-30 20:27 UTC)
+* DatabaseMigrationService (3.1.1.0)
+	* Allow the ability to specify VpcSecurityGroupId for the replication instance
+* SimpleSystemsManagement (3.1.3.0)
+	* Amazon EC2 Run Command now works with any instance or virtual machine outside of AWS, including your own data centers or other clouds.
+* Core 3.1.8.1
+	* Pull request 412, overload to optionally strip hyphen from the ID in the Principal object
+
 ### 3.1.80.0 (2016-06-28 22:44 UTC)
 * CloudWatchEvents (3.1.2.0)
 	* Update for new BOM region

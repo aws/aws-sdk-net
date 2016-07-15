@@ -45,8 +45,10 @@ namespace Amazon.DirectoryService.Model
         private TrustType _trustType;
 
         /// <summary>
-        /// Gets and sets the property CreatedDateTime. The date and time that the trust relationship
-        /// was created.
+        /// Gets and sets the property CreatedDateTime. 
+        /// <para>
+        /// The date and time that the trust relationship was created.
+        /// </para>
         /// </summary>
         public DateTime CreatedDateTime
         {
@@ -61,8 +63,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectoryId. The Directory ID of the AWS directory involved
-        /// in the trust relationship.
+        /// Gets and sets the property DirectoryId. 
+        /// <para>
+        /// The Directory ID of the AWS directory involved in the trust relationship.
+        /// </para>
         /// </summary>
         public string DirectoryId
         {
@@ -77,8 +81,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdatedDateTime. The date and time that the trust relationship
-        /// was last updated.
+        /// Gets and sets the property LastUpdatedDateTime. 
+        /// <para>
+        /// The date and time that the trust relationship was last updated.
+        /// </para>
         /// </summary>
         public DateTime LastUpdatedDateTime
         {
@@ -93,8 +99,11 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RemoteDomainName. The Fully Qualified Domain Name (FQDN)
-        /// of the external domain involved in the trust relationship.
+        /// Gets and sets the property RemoteDomainName. 
+        /// <para>
+        /// The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust
+        /// relationship.
+        /// </para>
         /// </summary>
         public string RemoteDomainName
         {
@@ -109,8 +118,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StateLastUpdatedDateTime. The date and time that the TrustState
-        /// was last updated.
+        /// Gets and sets the property StateLastUpdatedDateTime. 
+        /// <para>
+        /// The date and time that the TrustState was last updated.
+        /// </para>
         /// </summary>
         public DateTime StateLastUpdatedDateTime
         {
@@ -125,7 +136,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustDirection. The trust relationship direction.
+        /// Gets and sets the property TrustDirection. 
+        /// <para>
+        /// The trust relationship direction.
+        /// </para>
         /// </summary>
         public TrustDirection TrustDirection
         {
@@ -140,7 +154,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustId. The unique ID of the trust relationship.
+        /// Gets and sets the property TrustId. 
+        /// <para>
+        /// The unique ID of the trust relationship.
+        /// </para>
         /// </summary>
         public string TrustId
         {
@@ -155,7 +172,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustState. The trust relationship state.
+        /// Gets and sets the property TrustState. 
+        /// <para>
+        /// The trust relationship state.
+        /// </para>
         /// </summary>
         public TrustState TrustState
         {
@@ -188,7 +208,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustType. The trust relationship type.
+        /// Gets and sets the property TrustType. 
+        /// <para>
+        /// The trust relationship type.
+        /// </para>
         /// </summary>
         public TrustType TrustType
         {

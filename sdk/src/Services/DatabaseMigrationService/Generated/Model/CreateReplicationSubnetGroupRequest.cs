@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the CreateReplicationSubnetGroup operation.
     /// Creates a replication subnet group given a list of the subnet IDs in a VPC.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class CreateReplicationSubnetGroupRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -43,7 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationSubnetGroupDescription. 
         /// <para>
-        ///  The description for the subnet group. 
+        /// The description for the subnet group.
         /// </para>
         /// </summary>
         public string ReplicationSubnetGroupDescription
@@ -61,8 +59,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationSubnetGroupIdentifier. 
         /// <para>
-        ///  The name for the replication subnet group. This value is stored as a lowercase string.
-        /// 
+        /// The name for the replication subnet group. This value is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -71,7 +68,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code>
+        /// Example: <code>mySubnetgroup</code> 
         /// </para>
         /// </summary>
         public string ReplicationSubnetGroupIdentifier
@@ -89,7 +86,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        ///  The EC2 subnet IDs for the subnet group. 
+        /// The EC2 subnet IDs for the subnet group.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

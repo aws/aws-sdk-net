@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeReplicationTasks operation.
+    /// 
     /// </summary>
     public partial class DescribeReplicationTasksResponse : AmazonWebServiceResponse
     {

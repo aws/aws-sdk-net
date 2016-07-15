@@ -38,6 +38,7 @@ namespace Amazon.ECS.Model
         private int? _revision;
         private TaskDefinitionStatus _status;
         private string _taskDefinitionArn;
+        private string _taskRoleArn;
         private List<Volume> _volumes = new List<Volume>();
 
         /// <summary>
@@ -153,6 +154,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetTaskDefinitionArn()
         {
             return this._taskDefinitionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume.
+        /// All containers in this task are granted the permissions that are specified in this
+        /// role.
+        /// </para>
+        /// </summary>
+        public string TaskRoleArn
+        {
+            get { return this._taskRoleArn; }
+            set { this._taskRoleArn = value; }
+        }
+
+        // Check to see if TaskRoleArn property is set
+        internal bool IsSetTaskRoleArn()
+        {
+            return this._taskRoleArn != null;
         }
 
         /// <summary>

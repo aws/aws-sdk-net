@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateConditionalForwarder operation.
+    /// The result of an UpdateConditionalForwarder request.
     /// </summary>
     public partial class UpdateConditionalForwarderResponse : AmazonWebServiceResponse
     {

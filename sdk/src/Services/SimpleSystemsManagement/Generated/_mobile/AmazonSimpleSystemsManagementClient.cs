@@ -37,24 +37,35 @@ namespace Amazon.SimpleSystemsManagement
     /// Implementation for accessing SimpleSystemsManagement
     ///
     /// This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables you to
-    /// remotely manage the configuration of your Amazon EC2 instance using scripts or commands
-    /// with either an on-demand solution called <i>SSM Run Command</i> or a lightweight instance
-    /// configuration solution called <i>SSM Config</i>. 
+    /// remotely manage the configuration of your on-premises servers and virtual machines
+    /// (VMs) and your Amazon EC2 instances using scripts, commands, or the Amazon EC2 console.
+    /// SSM includes an on-demand solution called <i>Amazon EC2 Run Command</i> and a lightweight
+    /// instance configuration solution called <i>SSM Config</i>. 
     /// 
     ///  
     /// <para>
-    /// This references is intended to be used with the SSM User Guide for <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
+    /// This references is intended to be used with the EC2 Run Command User Guide for <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
     /// or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html">Windows</a>.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You must register your on-premises servers and VMs through an activation process before
+    /// you can configure them using Run Command. Registered servers and VMs are called <i>managed
+    /// instances</i>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
+    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Linux</a> or
+    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
+    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Windows</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Run Command</b> 
     /// </para>
     ///  
     /// <para>
     /// Run Command provides an on-demand experience for executing commands. You can use pre-defined
-    /// Amazon SSM documents to perform the actions listed later in this section, or you can
-    /// create your own documents. With these documents, you can remotely configure your instances
+    /// SSM documents to perform the actions listed later in this section, or you can create
+    /// your own documents. With these documents, you can remotely configure your instances
     /// by sending commands using the <b>Commands</b> page in the <a href="http://console.aws.amazon.com/ec2/">Amazon
     /// EC2 console</a>, <a href="http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html">AWS
     /// Tools for Windows PowerShell</a>, the <a href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
@@ -95,7 +106,7 @@ namespace Amazon.SimpleSystemsManagement
     /// </para>
     ///  
     /// <para>
-    /// SSM Config and SSM Run Command include the following pre-defined documents.
+    /// SSM Config and Run Command include the following pre-defined documents.
     /// </para>
     ///  
     /// <para>
@@ -167,12 +178,12 @@ namespace Amazon.SimpleSystemsManagement
     /// on your instances because the Amazon SSM agent runs as root on Linux and the EC2Config
     /// service runs in the Local System account on Windows. If a user has permission to execute
     /// any of the pre-defined SSM documents (any document that begins with AWS-*) then that
-    /// user also has administrator access to the instance. Delegate access to SSM and Run
-    /// Command judiciously. This becomes extremely important if you create your own SSM documents.
-    /// Amazon Web Services does not provide guidance about how to create secure SSM documents.
-    /// You create SSM documents and delegate access to Run Command at your own risk. As a
-    /// security best practice, we recommend that you assign access to "AWS-*" documents,
-    /// especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript
+    /// user also has administrator access to the instance. Delegate access to Run Command
+    /// and SSM Config judiciously. This becomes extremely important if you create your own
+    /// SSM documents. Amazon Web Services does not provide guidance about how to create secure
+    /// SSM documents. You create SSM documents and delegate access to Run Command at your
+    /// own risk. As a security best practice, we recommend that you assign access to "AWS-*"
+    /// documents, especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript
     /// document on Windows, to trusted administrators only. You can create SSM documents
     /// for specific tasks and delegate access to non-administrators.
     /// </para>
@@ -327,6 +338,37 @@ namespace Amazon.SimpleSystemsManagement
         #endregion
 
         
+        #region  AddTagsToResource
+
+        internal AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
+        {
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+
+            return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTagsToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelCommand
 
         internal CancelCommandResponse CancelCommand(CancelCommandRequest request)
@@ -417,6 +459,37 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = CancelCommandResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelCommandRequest,CancelCommandResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateActivation
+
+        internal CreateActivationResponse CreateActivation(CreateActivationRequest request)
+        {
+            var marshaller = new CreateActivationRequestMarshaller();
+            var unmarshaller = CreateActivationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateActivationRequest,CreateActivationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateActivation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateActivation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateActivationResponse> CreateActivationAsync(CreateActivationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateActivationRequestMarshaller();
+            var unmarshaller = CreateActivationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateActivationRequest,CreateActivationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -609,6 +682,37 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeleteActivation
+
+        internal DeleteActivationResponse DeleteActivation(DeleteActivationRequest request)
+        {
+            var marshaller = new DeleteActivationRequestMarshaller();
+            var unmarshaller = DeleteActivationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteActivationRequest,DeleteActivationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteActivation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteActivation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteActivationResponse> DeleteActivationAsync(DeleteActivationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteActivationRequestMarshaller();
+            var unmarshaller = DeleteActivationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteActivationRequest,DeleteActivationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAssociation
 
         internal DeleteAssociationResponse DeleteAssociation(DeleteAssociationRequest request)
@@ -745,6 +849,68 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDocumentRequest,DeleteDocumentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterManagedInstance
+
+        internal DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request)
+        {
+            var marshaller = new DeregisterManagedInstanceRequestMarshaller();
+            var unmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterManagedInstanceRequest,DeregisterManagedInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterManagedInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterManagedInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeregisterManagedInstanceResponse> DeregisterManagedInstanceAsync(DeregisterManagedInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeregisterManagedInstanceRequestMarshaller();
+            var unmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterManagedInstanceRequest,DeregisterManagedInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeActivations
+
+        internal DescribeActivationsResponse DescribeActivations(DescribeActivationsRequest request)
+        {
+            var marshaller = new DescribeActivationsRequestMarshaller();
+            var unmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeActivationsRequest,DescribeActivationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeActivations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeActivationsResponse> DescribeActivationsAsync(DescribeActivationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeActivationsRequestMarshaller();
+            var unmarshaller = DescribeActivationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeActivationsRequest,DescribeActivationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1315,6 +1481,37 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyDocumentPermission
 
         internal ModifyDocumentPermissionResponse ModifyDocumentPermission(ModifyDocumentPermissionRequest request)
@@ -1346,6 +1543,37 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  RemoveTagsFromResource
+
+        internal RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
+        {
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTagsFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendCommand
 
         internal SendCommandResponse SendCommand(SendCommandRequest request)
@@ -1361,7 +1589,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Executes commands on one or more remote instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.</param>
-        /// <param name="instanceIds">Required. The instance IDs where the command should execute.</param>
+        /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1449,6 +1677,37 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAssociationStatusRequest,UpdateAssociationStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateManagedInstanceRole
+
+        internal UpdateManagedInstanceRoleResponse UpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request)
+        {
+            var marshaller = new UpdateManagedInstanceRoleRequestMarshaller();
+            var unmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateManagedInstanceRoleRequest,UpdateManagedInstanceRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateManagedInstanceRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateManagedInstanceRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateManagedInstanceRoleResponse> UpdateManagedInstanceRoleAsync(UpdateManagedInstanceRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateManagedInstanceRoleRequestMarshaller();
+            var unmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateManagedInstanceRoleRequest,UpdateManagedInstanceRoleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

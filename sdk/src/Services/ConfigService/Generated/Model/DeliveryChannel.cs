@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// A logical container used for storing the configuration changes of an AWS resource.
+    /// The channel through which AWS Config delivers notifications and updated configuration
+    /// states.
     /// </summary>
     public partial class DeliveryChannel
     {
@@ -56,9 +57,11 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the delivery channel. By default, AWS Config automatically assigns the
-        /// name &quot;default&quot; when creating the delivery channel. You cannot change the
-        /// assigned name. 
+        /// The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot;
+        /// when creating the delivery channel. To change the delivery channel name, you must
+        /// use the DeleteDeliveryChannel action to delete your current delivery channel, and
+        /// then you must use the PutDeliveryChannel command to create a delivery channel that
+        /// has the desired name.
         /// </para>
         /// </summary>
         public string Name
@@ -76,8 +79,15 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The name of the Amazon S3 bucket used to store configuration history for the delivery
-        /// channel.
+        /// The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots
+        /// and configuration history files.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a bucket that belongs to another AWS account, that bucket must have
+        /// policies that grant access permissions to AWS Config. For more information, see <a
+        /// href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+        /// for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.
         /// </para>
         /// </summary>
         public string S3BucketName
@@ -113,8 +123,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SnsTopicARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications
-        /// to.
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications
+        /// about configuration changes.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose a topic from another account, the topic must have policies that grant
+        /// access permissions to AWS Config. For more information, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+        /// for the Amazon SNS Topic</a> in the AWS Config Developer Guide.
         /// </para>
         /// </summary>
         public string SnsTopicARN

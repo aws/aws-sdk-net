@@ -34,11 +34,21 @@ namespace Amazon.ECS.Model
     /// parameter. For more information about task definition parameters and defaults, see
     /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
     /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// You may also specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
+    /// When you specify an IAM role for a task, its containers can then use the latest versions
+    /// of the AWS CLI or SDKs to make API requests to the AWS services that are specified
+    /// in the IAM policy associated with the role. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+    /// Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class RegisterTaskDefinitionRequest : AmazonECSRequest
     {
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _family;
+        private string _taskRoleArn;
         private List<Volume> _volumes = new List<Volume>();
 
         /// <summary>
@@ -79,6 +89,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetFamily()
         {
             return this._family != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume.
+        /// All containers in this task are granted the permissions that are specified in this
+        /// role.
+        /// </para>
+        /// </summary>
+        public string TaskRoleArn
+        {
+            get { return this._taskRoleArn; }
+            set { this._taskRoleArn = value; }
+        }
+
+        // Check to see if TaskRoleArn property is set
+        internal bool IsSetTaskRoleArn()
+        {
+            return this._taskRoleArn != null;
         }
 
         /// <summary>

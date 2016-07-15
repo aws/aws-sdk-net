@@ -30,6 +30,7 @@ using Amazon.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces;
 using System.Text;
+using System.Security;
 
 namespace Amazon.Runtime
 {
@@ -1275,10 +1276,78 @@ namespace Amazon.Runtime
         #endregion
     }
 
+    public class URIBasedRefreshingCredentialHelper : RefreshingAWSCredentials
+    {
+        private static string SuccessCode = "Success";
+
+        protected static string GetContents(Uri uri)
+        {
+            try
+            {
+                HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+#if PCL
+                IAsyncResult result = request.BeginGetResponse(null, null);
+                HttpWebResponse response = request.EndGetResponse(result) as HttpWebResponse;
+#else
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+#endif
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
+            catch (WebException)
+            {
+                throw new AmazonServiceException("Unable to reach credentials server");
+            }
+        }
+
+        protected static T GetObjectFromResponse<T>(Uri uri)
+        {
+            string json = GetContents(uri);
+            return JsonMapper.ToObject<T>(json);
+        }
+
+        protected static void ValidateResponse(SecurityBase response)
+        {
+            if (!string.Equals(response.Code, SuccessCode, StringComparison.OrdinalIgnoreCase))
+            {
+                throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to retrieve credentials. Code = \"{0}\". Message = \"{1}\".",
+                    response.Code, response.Message));
+            }
+        }
+
+        #region Private serialization classes
+        protected class SecurityBase
+        {
+            public string Code { get; set; }
+            public string Message { get; set; }
+            public DateTime LastUpdated { get; set; }
+        }
+
+        protected class SecurityInfo : SecurityBase
+        {
+            public string InstanceProfileArn { get; set; }
+            public string InstanceProfileId { get; set; }
+        }
+
+        protected class SecurityCredentials : SecurityBase
+        {
+            public string Type { get; set; }
+            public string AccessKeyId { get; set; }
+            public string SecretAccessKey { get; set; }
+            public string Token { get; set; }
+            public DateTime Expiration { get; set; }
+        }
+        #endregion
+
+    }
+
     /// <summary>
     /// Credentials that are retrieved from the Instance Profile service on an EC2 instance
     /// </summary>
-    public class InstanceProfileAWSCredentials : RefreshingAWSCredentials
+    public class InstanceProfileAWSCredentials : URIBasedRefreshingCredentialHelper
     {
         #region Private members
 
@@ -1385,7 +1454,6 @@ namespace Amazon.Runtime
         private static string Server = "http://169.254.169.254";
         private static string RolesPath = "/latest/meta-data/iam/security-credentials/";
         private static string InfoPath = "/latest/meta-data/iam/info";
-        private static string SuccessCode = "Success";
 
         private static Uri RolesUri
         {
@@ -1446,46 +1514,12 @@ namespace Amazon.Runtime
 
         private static SecurityInfo GetServiceInfo()
         {
-            string json = GetContents(InfoUri);
-            SecurityInfo info = JsonMapper.ToObject<SecurityInfo>(json);
-            ValidateResponse(info);
-            return info;
+            return GetObjectFromResponse<SecurityInfo>(InfoUri);
         }
 
         private SecurityCredentials GetRoleCredentials()
         {
-            string json = GetContents(CurrentRoleUri);
-            SecurityCredentials credentials = JsonMapper.ToObject<SecurityCredentials>(json);
-            ValidateResponse(credentials);
-            return credentials;
-        }
-
-        private static void ValidateResponse(SecurityBase response)
-        {
-            if (!string.Equals(response.Code, SuccessCode, StringComparison.OrdinalIgnoreCase))
-            {
-                throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture,
-                    "Unable to retrieve credentials. Code = \"{0}\". Message = \"{1}\".",
-                    response.Code, response.Message));
-            }
-        }
-
-        private static string GetContents(Uri uri)
-        {
-            try
-            {
-                HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
-                var asyncResult = request.BeginGetResponse(null, null);
-                using (HttpWebResponse response = request.EndGetResponse(asyncResult) as HttpWebResponse)
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                {
-                    return reader.ReadToEnd();
-                }
-            }
-            catch (WebException)
-            {
-                throw new AmazonServiceException("Unable to reach credentials server");
-            }
+            return GetObjectFromResponse<SecurityCredentials>(CurrentRoleUri);
         }
 
         private static string GetFirstRole()
@@ -1501,35 +1535,68 @@ namespace Amazon.Runtime
         }
 
         #endregion
-
-
-        #region Private serialization classes
-
-        private class SecurityBase
-        {
-            public string Code { get; set; }
-            public string Message { get; set; }
-            public DateTime LastUpdated { get; set; }
-        }
-
-        private class SecurityInfo : SecurityBase
-        {
-            public string InstanceProfileArn { get; set; }
-            public string InstanceProfileId { get; set; }
-        }
-
-        private class SecurityCredentials : SecurityBase
-        {
-            public string Type { get; set; }
-            public string AccessKeyId { get; set; }
-            public string SecretAccessKey { get; set; }
-            public string Token { get; set; }
-            public DateTime Expiration { get; set; }
-        }
-
-        #endregion
     }
 
+#if !PCL
+    /// <summary>
+    /// When running in an ECS container and AWS_CONTAINER_CREDENTIALS_RELATIVE_URI is set,
+    /// use the given end point to retrieve the credentials.
+    /// </summary>
+    public class ECSTaskCredentials : URIBasedRefreshingCredentialHelper
+    {
+        /// <summary>
+        /// These constants should not be consumed by client code.  They are only relevant
+        /// in the context of ECS container and, especially, AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
+        /// environment variable should not be overriden by the client code.
+        /// </summary>
+        public const string ContainerCredentialsURIEnvVariable = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
+        public const string EndpointAddress = "http://169.254.170.2";
+
+        private string Uri = null;
+        private string Server = null;
+        private static int MaxRetries = 5;
+
+        public ECSTaskCredentials()
+        {
+            Uri = System.Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
+            Server = EndpointAddress;
+        }
+
+        protected override CredentialsRefreshState GenerateNewCredentials()
+        {
+            SecurityCredentials credentials = null;
+            Uri ecsEndpointUri = new Uri(Server + Uri);
+            JitteredDelay retry = new JitteredDelay(new TimeSpan(0,0,0,0,200), new TimeSpan(0,0,0,0,50));
+            // Attempt to get the credentials 4 times ignoring null return/exceptions and on the 5th try, escalate the exception if there is one.
+            for (int i = 1; ; i++)
+            {
+                try
+                {
+                    credentials = GetObjectFromResponse<SecurityCredentials>(ecsEndpointUri);
+                    if (credentials != null)
+                    {
+                        break;
+                    }
+                }
+                catch (Exception e) {
+                    if (i == MaxRetries)
+                    {
+                        throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture,
+                        "Unable to retrieve credentials. Message = \"{0}\".",
+                        e.Message));
+                    }
+                };
+                Util.AWSSDKUtils.Sleep(retry.Next());
+            }
+
+            return new CredentialsRefreshState
+            {
+                Credentials = new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token),
+                Expiration = credentials.Expiration
+            };
+        }
+    }
+#endif
 #if BCL
 
     /// <summary>
@@ -2135,17 +2202,36 @@ namespace Amazon.Runtime
             CredentialsGenerators = new List<CredentialsGenerator>
             {
 #if BCL
-                
                 () => new AppConfigAWSCredentials(),            // test explicit keys/profile name first
                 () => new StoredProfileAWSCredentials(),        // then attempt to load default profile        
                 () => new StoredProfileFederatedCredentials(),  // if default/named profile didn't contain AWS credentials,
                                                                 // was it a named or default federated role profile?
                 () => new EnvironmentVariablesAWSCredentials(), // credentials set in environment vars?
 #endif
-                () => new InstanceProfileAWSCredentials()       // if we're running on an EC2 instance try and get credentials 
-                                                                // from instance profile
+                ECSEC2CredentialsWrapper,                       // either get ECS credentials or instance profile credentials
             };
         }
+
+        /// If AWS_CONTAINER_CREDENTIALS_RELATIVE_URI environment variable is set, we want to attempt to retrieve credentials
+        /// using ECS endpoint instead of referring to instance profile credentials.
+        private static AWSCredentials ECSEC2CredentialsWrapper()
+        {
+#if !PCL
+            try{
+                string uri = System.Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
+                if (!string.IsNullOrEmpty(uri))
+                {
+                    return new ECSTaskCredentials();
+                }
+            }
+            catch (SecurityException e)
+            {
+                Logger.GetLogger(typeof(ECSTaskCredentials)).Error(e, "Failed to access environment variable {0}", ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
+            }
+#endif
+            return new InstanceProfileAWSCredentials();
+        }
+
 
         private static AWSCredentials cachedCredentials;
         public static AWSCredentials GetCredentials()
