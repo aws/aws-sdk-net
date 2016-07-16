@@ -49,7 +49,7 @@
   },
 
   "frameworks": {
-    "netstandard1.5": {
+    "netstandard1.3": {
       "buildOptions": {
         "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY", "ADD_SUPPORT_ICLONEABLE" ]
       },

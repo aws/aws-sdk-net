@@ -37,7 +37,7 @@
   },
 
   "frameworks": {
-    "netstandard1.5": {
+    "netstandard1.3": {
       "buildOptions": {
         "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY", "ADD_SUPPORT_ICLONEABLE" ]
       },
@@ -45,17 +45,18 @@
         "System.Collections": "4.0.11",
         "System.Collections.NonGeneric": "4.0.1",
         "System.Console": "4.0.0",
-        "System.Diagnostics.Debug" : "4.0.11",
+        "System.Diagnostics.Debug": "4.0.11",
         "System.Diagnostics.Tools": "4.0.1",
         "System.IO.FileSystem": "4.0.1",
         "System.Linq": "4.1.0",
         "System.Net.Http": "4.1.0",
         "System.Net.Requests": "4.0.11",
         "System.Reflection.Extensions": "4.0.1",
+        "System.Reflection.TypeExtensions": "4.1.0",
         "System.Runtime.Extensions": "4.1.0",
         "System.Runtime.InteropServices": "4.1.0",
         "System.Security.Cryptography.Algorithms": "4.2.0",
-        "System.Security.Cryptography.Csp" : "4.0.0",
+        "System.Security.Cryptography.Csp": "4.0.0",
         "System.Text.Encoding.Extensions": "4.0.11",
         "System.Text.RegularExpressions": "4.1.0",
         "System.Threading": "4.0.11",

@@ -83,21 +83,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
         ""**/_win8/*"",
         ""**/_winPhone81/*"",
         ""**/_winPhoneSilverlight8/*"",
-		""**/_winstorage/*"",
-		""**/Custom/SyncManager/*""
+        ""**/_winstorage/*"",
+        ""**/Custom/SyncManager/*""
       ]
     }
   },
 
-
   ""frameworks"": {
-    ""netstandard1.5"": {
+    ""netstandard1.3"": {
       ""buildOptions"": {
         ""define"": [ ""ADD_SUPPORT_IORDERED_DICTIONARY"", ""ADD_SUPPORT_ICLONEABLE"" ]
       },
       ""dependencies"": {
         ""System.Collections"": ""4.0.11"",
         ""System.Linq"": ""4.1.0"",
+        ""System.Security.Cryptography.Csp"": ""4.0.0"",
         ""Microsoft.CSharp"": ""4.0.1""
       }
     }
