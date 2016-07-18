@@ -83,155 +83,151 @@ namespace Amazon.EC2.Util
 
             return null;
         }
-        /// <summary>
-        /// This class has utility methods for finding common Amazon machine images.
-        /// </summary>
-            private static void LoadDefinitionsFromWeb(AmazonEC2Config ec2Config)
+        
+        private static void LoadDefinitionsFromWeb(AmazonEC2Config ec2Config)
+        {
+            lock (LOCK_OBJECT)
             {
-                lock (LOCK_OBJECT)
+                if (ImageDefinitionsLoaded)
+                    return;
+            }
+
+            IWebProxy webProxy = null;
+            if (ec2Config != null)
+                webProxy = ec2Config.GetWebProxy();
+
+            int retries = 0;
+            while (retries < MAX_DOWNLOAD_RETRIES)
+            {
+                try
                 {
-                    if (ImageDefinitionsLoaded)
-                        return;
-                }
-
-                IWebProxy webProxy = null;
-                if (ec2Config != null)
-                    webProxy = ec2Config.GetWebProxy();
-
-                int retries = 0;
-                while (retries < MAX_DOWNLOAD_RETRIES)
-                {
-                    try
+                    HttpWebResponse response = null;
+                    foreach (var location in DownloadLocations)
                     {
-                        HttpWebResponse response = null;
-                        foreach (var location in DownloadLocations)
+                        try
                         {
-                            try
-                            {
-                                response = DownloadControlFile(location, webProxy);
-                                if (response != null)
-                                    break;
-                            }
-                            catch (Exception e)
-                            {
-                                Logger.InfoFormat("Failed to download stockamis.json from {0}, exception {1}", location, e);
-                            }
+                            response = DownloadControlFile(location, webProxy);
+                            if (response != null)
+                                break;
                         }
-
-                        if (response == null)
-                            throw new AmazonClientException("Failed to download ImageUtilities metadata file stockamis.json from known locations.");
-
-                        using (response)
+                        catch (Exception e)
                         {
-                            using (var reader = new StreamReader(response.GetResponseStream()))
-                            {
-                                lock (LOCK_OBJECT)
-                                {
-                                    ParseAMIDefinitions(reader);
-                                    ImageDefinitionsLoaded = true;
-
-                                    return;
-                                }
-                            }
-                        }
-                    }
-                    catch (AmazonClientException e)
-                    {
-                        retries++;
-                        if (retries == MAX_DOWNLOAD_RETRIES)
-                        {
-                            Logger.Error(e, "Error downloading AMI definition file, ImageDescriptors were not initialized.");
-                            break;
+                            Logger.InfoFormat("Failed to download stockamis.json from {0}, exception {1}", location, e);
                         }
                     }
 
-                    int delay = (int)(Math.Pow(4, retries) * 100);
-                    delay = Math.Min(delay, 30 * 1000);
-                    Thread.Sleep(delay);
-                }
-            }
+                    if (response == null)
+                        throw new AmazonClientException("Failed to download ImageUtilities metadata file stockamis.json from known locations.");
 
-            private static HttpWebResponse DownloadControlFile(string location, IWebProxy proxy)
-            {
-                var request = WebRequest.Create(location) as HttpWebRequest;
-                if (proxy != null)
-                    request.Proxy = proxy;
-                return request.GetResponse() as HttpWebResponse;
-            }
-            /// <summary>
-            /// Find the Amazon machine image identified by the version-independent key name.
-            /// </summary>
-            /// <param name="ec2Client">The EC2 client used to search for the image.</param>
-            /// <param name="imageKey">The keyname used to identify the image.</param>
-            /// <returns>The Amazon machine image.</returns>
-            public static Image FindImage(IAmazonEC2 ec2Client, string imageKey)
-            {
-                ImageDescriptor descriptor = DescriptorFromKey(imageKey);
-
-                if (descriptor != null)
-                    return FindImage(ec2Client, descriptor);
-                else
-                    throw new ArgumentException("Image key '{ 0}' is not recognized.", imageKey);
-            }
-
-            /// <summary>
-            /// Find the Amazon machine image identified by the ImageDescriptor.
-            /// </summary>
-            /// <param name="ec2Client">The EC2 client used to search for the image.</param>
-            /// <param name="descriptor">The descriptor used to identify the image.</param>
-            /// <returns>The Amazon machine image.</returns>
-            public static Image FindImage(IAmazonEC2 ec2Client, ImageDescriptor descriptor)
-            {
-                if (ec2Client == null)
-                    throw new ArgumentNullException("ec2Client");
-                if (descriptor == null)
-                    throw new ArgumentNullException("descriptor");
-
-                var config = ConfigFromClient(ec2Client);
-                LoadDefinitionsFromWeb(config);
-
-                int retryCount = 1;
-                Image image = null;
-                do
-                {
-                    var result = ec2Client.DescribeImages(new DescribeImagesRequest()
+                    using (response)
                     {
-                        Owners = new List<string>() { "amazon" },
-                        Filters = new List<Filter>()
-                {
-                    new Filter(){Name = "name", Values = new List<string>(){descriptor.NamePrefix}}
-                }
-                    });
-
-                    if (result.Images.Any())
-                        image = result.Images.OrderByDescending(x => x.Name).First();
-                    else
-                    {
-                        // backing control file may be outdated, reload and try once more
-                        if (retryCount == 1)
+                        using (var reader = new StreamReader(response.GetResponseStream()))
                         {
-                            Logger.InfoFormat("FindImage - DescribeImages call for image descriptor '{0}' (name prefix '{1}') yielded no results, assuming outdated control file and reloading",
-                                              descriptor.DefinitionKey,
-                                              descriptor.NamePrefix);
                             lock (LOCK_OBJECT)
                             {
-                                ImageDefinitionsLoaded = false;
+                                ParseAMIDefinitions(reader);
+                                ImageDefinitionsLoaded = true;
+
+                                return;
                             }
-
-                            LoadDefinitionsFromWeb(config);
                         }
-                        retryCount++;
                     }
-                } while (image == null && retryCount <= 2);
+                }
+                catch (AmazonClientException e)
+                {
+                    retries++;
+                    if (retries == MAX_DOWNLOAD_RETRIES)
+                    {
+                        Logger.Error(e, "Error downloading AMI definition file, ImageDescriptors were not initialized.");
+                        break;
+                    }
+                }
 
-                if (image == null)
-                    Logger.InfoFormat("FindImage - failed to find valid AMI image for descriptor '{0}' (name prefix '{1}')",
-                                      descriptor.DefinitionKey,
-                                      descriptor.NamePrefix);
-
-                return image;
+                int delay = (int)(Math.Pow(4, retries) * 100);
+                delay = Math.Min(delay, 30 * 1000);
+                Thread.Sleep(delay);
             }
-    }
+        }
 
-   
+        private static HttpWebResponse DownloadControlFile(string location, IWebProxy proxy)
+        {
+            var request = WebRequest.Create(location) as HttpWebRequest;
+            if (proxy != null)
+                request.Proxy = proxy;
+            return request.GetResponse() as HttpWebResponse;
+        }
+        /// <summary>
+        /// Find the Amazon machine image identified by the version-independent key name.
+        /// </summary>
+        /// <param name="ec2Client">The EC2 client used to search for the image.</param>
+        /// <param name="imageKey">The keyname used to identify the image.</param>
+        /// <returns>The Amazon machine image.</returns>
+        public static Image FindImage(IAmazonEC2 ec2Client, string imageKey)
+        {
+            ImageDescriptor descriptor = DescriptorFromKey(imageKey);
+
+            if (descriptor != null)
+                return FindImage(ec2Client, descriptor);
+            else
+                throw new ArgumentException("Image key '{0}' is not recognized.", imageKey);
+        }
+
+        /// <summary>
+        /// Find the Amazon machine image identified by the ImageDescriptor.
+        /// </summary>
+        /// <param name="ec2Client">The EC2 client used to search for the image.</param>
+        /// <param name="descriptor">The descriptor used to identify the image.</param>
+        /// <returns>The Amazon machine image.</returns>
+        public static Image FindImage(IAmazonEC2 ec2Client, ImageDescriptor descriptor)
+        {
+            if (ec2Client == null)
+                throw new ArgumentNullException("ec2Client");
+            if (descriptor == null)
+                throw new ArgumentNullException("descriptor");
+
+            var config = ConfigFromClient(ec2Client);
+            LoadDefinitionsFromWeb(config);
+
+            int retryCount = 1;
+            Image image = null;
+            do
+            {
+                var result = ec2Client.DescribeImages(new DescribeImagesRequest()
+                {
+                    Owners = new List<string>() { "amazon" },
+                    Filters = new List<Filter>()
+            {
+                new Filter(){Name = "name", Values = new List<string>(){descriptor.NamePrefix}}
+            }
+                });
+
+                if (result.Images.Any())
+                    image = result.Images.OrderByDescending(x => x.Name).First();
+                else
+                {
+                    // backing control file may be outdated, reload and try once more
+                    if (retryCount == 1)
+                    {
+                        Logger.InfoFormat("FindImage - DescribeImages call for image descriptor '{0}' (name prefix '{1}') yielded no results, assuming outdated control file and reloading",
+                                            descriptor.DefinitionKey,
+                                            descriptor.NamePrefix);
+                        lock (LOCK_OBJECT)
+                        {
+                            ImageDefinitionsLoaded = false;
+                        }
+
+                        LoadDefinitionsFromWeb(config);
+                    }
+                    retryCount++;
+                }
+            } while (image == null && retryCount <= 2);
+
+            if (image == null)
+                Logger.InfoFormat("FindImage - failed to find valid AMI image for descriptor '{0}' (name prefix '{1}')",
+                                    descriptor.DefinitionKey,
+                                    descriptor.NamePrefix);
+
+            return image;
+        }
+    }
 }

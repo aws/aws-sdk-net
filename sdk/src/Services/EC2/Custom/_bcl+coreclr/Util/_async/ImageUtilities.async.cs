@@ -90,7 +90,7 @@ namespace Amazon.EC2.Util
 
             return null;
         }
-
+        
         private static async Task  LoadDefinitionsFromWebAsync(AmazonEC2Config ec2Config)
         {
             lock (LOCK_OBJECT)
@@ -163,7 +163,12 @@ namespace Amazon.EC2.Util
             return await request.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse;
         }
 
-
+        /// <summary>
+        /// Find the Amazon machine image identified by the version-independent key name.
+        /// </summary>
+        /// <param name="ec2Client">The EC2 client used to search for the image.</param>
+        /// <param name="imageKey">The keyname used to identify the image.</param>
+        /// <returns>The Amazon machine image.</returns>
         public static async Task<Image> FindImageAsync(IAmazonEC2 ec2Client, string imageKey)
         {
             ImageDescriptor descriptor = await DescriptorFromKeyAsync(imageKey).ConfigureAwait(false);
@@ -171,7 +176,7 @@ namespace Amazon.EC2.Util
             if (descriptor != null)
                 return await FindImageAsync(ec2Client, descriptor).ConfigureAwait(false);
             else
-                throw new ArgumentException("Image key '{ 0}' is not recognized.", imageKey);
+                throw new ArgumentException("Image key '{0}' is not recognized.", imageKey);
         }
 
         /// <summary>
