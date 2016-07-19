@@ -37,10 +37,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _documentName;
         private DateTime? _expiresAfter;
         private List<string> _instanceIds = new List<string>();
+        private NotificationConfig _notificationConfig;
         private string _outputS3BucketName;
         private string _outputS3KeyPrefix;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private DateTime? _requestedDateTime;
+        private string _serviceRole;
         private CommandStatus _status;
 
         /// <summary>
@@ -137,6 +139,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NotificationConfig. 
+        /// <para>
+        /// Configurations for sending notifications about command status changes. 
+        /// </para>
+        /// </summary>
+        public NotificationConfig NotificationConfig
+        {
+            get { return this._notificationConfig; }
+            set { this._notificationConfig = value; }
+        }
+
+        // Check to see if NotificationConfig property is set
+        internal bool IsSetNotificationConfig()
+        {
+            return this._notificationConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputS3BucketName. 
         /// <para>
         /// The S3 bucket where the responses to the command executions should be stored. This
@@ -208,6 +228,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRequestedDateTime()
         {
             return this._requestedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRole. 
+        /// <para>
+        /// The IAM service role that SSM uses to act on your behalf when sending notifications
+        /// about command status changes. 
+        /// </para>
+        /// </summary>
+        public string ServiceRole
+        {
+            get { return this._serviceRole; }
+            set { this._serviceRole = value; }
+        }
+
+        // Check to see if ServiceRole property is set
+        internal bool IsSetServiceRole()
+        {
+            return this._serviceRole != null;
         }
 
         /// <summary>
