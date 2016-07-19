@@ -36,11 +36,8 @@ using System.Threading.Tasks;
 namespace Amazon.EC2.Util
 {
     /// <summary>
-    /// Find the Amazon machine image identified by the version-independent key name.
+    /// This class has utility methods for finding common Amazon machine images.
     /// </summary>
-    /// <param name="ec2Client">The EC2 client used to search for the image.</param>
-    /// <param name="imageKey">The keyname used to identify the image.</param>
-    /// <returns>The Amazon machine image.</returns>
     public static partial class ImageUtilities
     {
         /// <summary>

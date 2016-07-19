@@ -34,6 +34,9 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Util
 {
+    /// <summary>
+    /// This class has utility methods for finding common Amazon machine images.
+    /// </summary>
     public static partial class ImageUtilities
     {
         /// <summary>
@@ -196,9 +199,9 @@ namespace Amazon.EC2.Util
                 {
                     Owners = new List<string>() { "amazon" },
                     Filters = new List<Filter>()
-            {
-                new Filter(){Name = "name", Values = new List<string>(){descriptor.NamePrefix}}
-            }
+                {
+                    new Filter(){Name = "name", Values = new List<string>(){descriptor.NamePrefix}}
+                }
                 });
 
                 if (result.Images.Any())
