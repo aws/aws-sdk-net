@@ -85,5 +85,61 @@ namespace Amazon.SimpleNotificationService
 
             return false;
         }
+
+        /// <summary>
+        /// Verifies that the ARN for the topic matches the topic name
+        /// </summary>
+        /// <param name="topicArn"></param>
+        /// <param name="topicName"></param>
+        /// <returns></returns>
+        private static bool TopicNameMatcher(string topicArn, string topicName)
+        {
+            if (String.IsNullOrEmpty(topicArn))
+            {
+                return false;
+            }
+
+            if (String.IsNullOrEmpty(topicName))
+            {
+                return false;
+            }
+
+            int indexOfLastColon = topicArn.LastIndexOf(":", StringComparison.OrdinalIgnoreCase);
+
+            if (indexOfLastColon.Equals(-1))
+            {
+                return false;
+            }
+
+            return topicArn.Substring(indexOfLastColon + 1).Equals(topicName);
+        }
+
+        /// <summary>
+        /// Helper method for AuthorizeS3ToPublishAsync()
+        /// </summary>
+        /// <param name="attributes"></param>
+        /// <param name="topicArn"></param>
+        /// <param name="bucket"></param>
+        /// <param name="policy"></param>
+        /// <param name="statement"></param>
+        private static void GetNewPolicyAndStatementForTopicAttributes(Dictionary<string, string> attributes, string topicArn, string bucket, out Policy policy, out Statement statement)
+        {
+            if(attributes.ContainsKey("Policy") && !string.IsNullOrEmpty(attributes["Policy"]))
+            {
+                policy = Policy.FromJson(attributes["Policy"]);
+            }
+            else
+            {
+                policy = new Policy();
+            }
+
+            var sourceArn = string.Format(CultureInfo.InvariantCulture, "arn:aws:s3:*:*:{0}", bucket);
+
+            statement = new Statement(Statement.StatementEffect.Allow);
+            statement.Actions.Add(SNSActionIdentifiers.Publish);
+            statement.Resources.Add(new Resource(topicArn));
+            statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));
+            statement.Principals.Add(new Principal("*"));
+        }
     }
 }

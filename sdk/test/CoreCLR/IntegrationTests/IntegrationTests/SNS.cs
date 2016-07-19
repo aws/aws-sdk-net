@@ -16,11 +16,10 @@ using Amazon.SQS.Model;
 
 using SNSMessageAttributeValue = Amazon.SimpleNotificationService.Model.MessageAttributeValue;
 using Xunit;
-using Amazon.DNXCore.IntegrationTests;
 
 namespace Amazon.DNXCore.IntegrationTests
 {
-    
+
     public class SNS : TestBase<AmazonSimpleNotificationServiceClient>
     {
         static AmazonSQSClient sqsClient;
@@ -169,6 +168,38 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     SubscriptionArn = subArn
                 });
+            }
+            finally
+            {
+                // delete the topic
+                var deleteTopicRequest = new DeleteTopicRequest
+                {
+                    TopicArn = topicArn
+                };
+                await Client.DeleteTopicAsync(deleteTopicRequest);
+            }
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute, "SNS")]
+        public async Task FindTopic()
+        {
+            // create new topic
+            var name = "dotnetsdk" + DateTime.Now.Ticks;
+            var createTopicRequest = new CreateTopicRequest
+            {
+                Name = name
+            };
+            var createTopicResult = await Client.CreateTopicAsync(createTopicRequest);
+            var topicArn = createTopicResult.TopicArn;
+
+            try
+            {
+                // find the topic by name
+                var foundTopic = await Client.FindTopicAsync(name);
+
+                // verify that the topic was fund
+                Assert.NotNull(foundTopic);
             }
             finally
             {

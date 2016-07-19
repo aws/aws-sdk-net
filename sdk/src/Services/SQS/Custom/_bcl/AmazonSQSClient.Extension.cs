@@ -68,22 +68,8 @@ namespace Amazon.SQS
             });
 
             Policy policy;
-            if (!string.IsNullOrEmpty(getAttributeResponse.Policy))
-            {
-                policy = Policy.FromJson(getAttributeResponse.Policy);
-            }
-            else
-            {
-                policy = new Policy();
-            }
-
-            var sourceArn = string.Format(CultureInfo.InvariantCulture, "arn:aws:s3:*:*:{0}", bucket);
-
-            Statement statement = new Statement(Statement.StatementEffect.Allow);
-            statement.Actions.Add(SQSActionIdentifiers.SendMessage);
-            statement.Resources.Add(new Resource(getAttributeResponse.QueueARN));
-            statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));
-            statement.Principals.Add(new Principal("*"));
+            Statement statement;
+            GetNewPolicyAndStatement(getAttributeResponse, bucket, out policy, out statement);
 
             if (!policy.CheckIfStatementExists(statement))
             {

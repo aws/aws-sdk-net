@@ -193,6 +193,8 @@ namespace Amazon.SimpleNotificationService
 #endif
         #endregion
 
+
+        #region FindTopic
 #if BCL
         /// <summary>
         /// Finds an existing Amazon SNS topic by iterating all SNS topics until a match is found.
@@ -204,7 +206,23 @@ namespace Amazon.SimpleNotificationService
         /// <param name="topicName">The name of the topic find</param>
         /// <returns>The matched SNS topic.</returns>
         Topic FindTopic(string topicName);
+#endif
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Finds an existing Amazon SNS topic by iterating all SNS topics until a match is found asynchronously.
+        /// <para>
+        /// The ListTopics method is used to fetch upto 100 SNS topics at a time until a SNS topic 
+        /// with an TopicArn that matches <paramref name="topicName"/> is found.
+        /// </para>
+        /// </summary>
+        /// <param name="topicName">The name of the topic find</param>
+        /// <returns>A Task containing the matched SNS topic.</returns>
+        Task<Topic> FindTopicAsync(string topicName);
+#endif
+        #endregion
 
+        #region AuthorizeS3ToPublish
+#if BCL
         /// <summary>
         /// This is a utility method which updates the policy of a topic to allow the
         /// S3 bucket to publish events to it.
@@ -213,5 +231,16 @@ namespace Amazon.SimpleNotificationService
         /// <param name="bucket">The bucket that will be given access to publish from.</param>
         void AuthorizeS3ToPublish(string topicArn, string bucket);
 #endif
+#if AWS_ASYNC_API
+        /// <summary>
+        /// This is a utility method which updates the policy of a topic to allow the
+        /// S3 bucket to publish events to it.
+        /// </summary>
+        /// <param name="topicArn">The topic that will have its policy updated.</param>
+        /// <param name="bucket">The bucket that will be given access to publish from.</param>
+        /// /// <returns>A Task</returns>
+        Task AuthorizeS3ToPublishAsync(string topicArn, string bucket);
+#endif
+        #endregion
     }
 }

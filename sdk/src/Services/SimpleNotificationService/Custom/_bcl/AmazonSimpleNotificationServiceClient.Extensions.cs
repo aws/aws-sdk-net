@@ -183,28 +183,6 @@ namespace Amazon.SimpleNotificationService
 
             return null;
         }
-
-        private static bool TopicNameMatcher(string topicArn, string topicName)
-        {
-            if (String.IsNullOrEmpty(topicArn))
-            {
-                return false;
-            }
-
-            if (String.IsNullOrEmpty(topicName))
-            {
-                return false;
-            }
-
-            int indexOfLastColon = topicArn.LastIndexOf(":", StringComparison.OrdinalIgnoreCase);
-
-            if (indexOfLastColon.Equals(-1))
-            {
-                return false;
-            }
-
-            return topicArn.Substring(indexOfLastColon + 1).Equals(topicName);
-        }
         #endregion
 
 
@@ -222,23 +200,8 @@ namespace Amazon.SimpleNotificationService
                 }).Attributes;
 
             Policy policy;
-            if(attributes.ContainsKey("Policy") && !string.IsNullOrEmpty(attributes["Policy"]))
-            {
-                policy = Policy.FromJson(attributes["Policy"]);
-            }
-            else
-            {
-                policy = new Policy();
-            }
-
-            var sourceArn = string.Format(CultureInfo.InvariantCulture, "arn:aws:s3:*:*:{0}", bucket);
-
-
-            Statement newStatement = new Statement(Statement.StatementEffect.Allow);
-            newStatement.Actions.Add(SNSActionIdentifiers.Publish);
-            newStatement.Resources.Add(new Resource(topicArn));
-            newStatement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));
-            newStatement.Principals.Add(new Principal("*"));
+            Statement newStatement;
+            GetNewPolicyAndStatementForTopicAttributes(attributes, topicArn, bucket, out policy, out newStatement);
 
             if (!policy.CheckIfStatementExists(newStatement))
             {

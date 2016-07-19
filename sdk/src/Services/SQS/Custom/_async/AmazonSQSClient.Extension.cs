@@ -12,18 +12,16 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
-using System.Text;
+using System.Globalization;
 
 using Amazon.Runtime;
-
 using Amazon.Runtime.SharedInterfaces;
 
-using Amazon.SQS;
 using Amazon.SQS.Model;
+using Amazon.Auth.AccessControlPolicy;
+using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 
 namespace Amazon.SQS
 {
@@ -47,6 +45,43 @@ namespace Amazon.SQS
                 QueueUrl = queueUrl,
                 Attributes = attributes
             });
+        }
+
+        /// <summary>
+        /// This is a utility method which updates the policy of a queue to allow the
+        /// S3 bucket to publish events to it.
+        /// </summary>
+        /// <param name="queueUrl">The queue that will have its policy updated.</param>
+        /// <param name="bucket">The bucket that will be given access to send messages from.</param>
+        /// <returns>The ARN for the SQS queue. This can be used when setting up the S3 bucket notification.</returns>
+        public async Task<string> AuthorizeS3ToSendMessageAsync(string queueUrl, string bucket)
+        {
+            var getAttributeResponse = await this.GetQueueAttributesAsync(new GetQueueAttributesRequest
+            {
+                QueueUrl = queueUrl,
+                AttributeNames = new List<string> { "All" }
+            }).ConfigureAwait(false);
+
+            Policy policy;
+            Statement statement;
+            GetNewPolicyAndStatement(getAttributeResponse, bucket, out policy, out statement);
+
+            if (!policy.CheckIfStatementExists(statement))
+            {
+                policy.Statements.Add(statement);
+
+                var policyString = policy.ToJson();
+                await this.SetQueueAttributesAsync(new SetQueueAttributesRequest
+                {
+                    QueueUrl = queueUrl,
+                    Attributes = new Dictionary<string, string>
+                    {
+                        {"Policy", policyString}
+                    }
+                }).ConfigureAwait(false);
+            }
+
+            return getAttributeResponse.QueueARN;
         }
     }
 }

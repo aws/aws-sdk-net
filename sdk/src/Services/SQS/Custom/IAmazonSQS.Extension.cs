@@ -13,23 +13,14 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-using Amazon.Runtime;
 using Amazon.Runtime.SharedInterfaces;
-
-using Amazon.SQS;
-using Amazon.SQS.Model;
-
-using Amazon.Auth.AccessControlPolicy;
-using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 
 namespace Amazon.SQS
 {
     public partial interface IAmazonSQS : IDisposable, ICoreAmazonSQS
     {
+
 #if BCL
         /// <summary>
         /// This is a utility method which updates the policy of a queue to allow the
@@ -39,6 +30,16 @@ namespace Amazon.SQS
         /// <param name="bucket">The bucket that will be given access to send messages from.</param>
         /// <returns>The ARN for the SQS queue. This can be used when setting up the S3 bucket notification.</returns>
         string AuthorizeS3ToSendMessage(string queueUrl, string bucket);
+#endif
+#if AWS_ASYNC_API
+        /// <summary>
+        /// This is a utility method which asynchronously updates the policy of a queue to allow the
+        /// S3 bucket to publish events to it.
+        /// </summary>
+        /// <param name="queueUrl">The queue that will have its policy updated.</param>
+        /// <param name="bucket">The bucket that will be given access to send messages from.</param>
+        /// <returns>A Task containing the ARN for the SQS queue. This can be used when setting up the S3 bucket notification.</returns>
+        System.Threading.Tasks.Task<string> AuthorizeS3ToSendMessageAsync(string queueUrl, string bucket);
 #endif
     }
 }

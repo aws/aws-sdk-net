@@ -1,35 +1,33 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-
-
-
+using Amazon.S3;
+using Amazon.S3.Model;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using Amazon.SQS.Util;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Xunit;
-using Amazon.DNXCore.IntegrationTests;
 
 namespace Amazon.DNXCore.IntegrationTests
 {
     /// <summary>
     /// Summary description for SQSIntegrationTest
     /// </summary>
-    
+
     public class SQS : TestBase<AmazonSQSClient>
     {
-
+        private static Random _rand;
         private const string prefix = "TestQueue";
         private const string defaultTimeout = "30";
+        private AmazonS3Config s3ClientConfig = null;
 
         public SQS()
         {
+            _rand = new Random();
+            s3ClientConfig = new AmazonS3Config();
         }
 
         async Task SQSCleanup()
@@ -38,7 +36,7 @@ namespace Amazon.DNXCore.IntegrationTests
             foreach (string queue in result.QueueUrls)
             {
                 Console.WriteLine("Queue: {0}", queue);
-                if (queue.Contains("TestQueue"))
+                if (queue.Contains(prefix))
                 {
                     try
                     {
@@ -52,6 +50,43 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
+        async Task S3BucketCleanUp()
+        {
+            using (var s3Client = new AmazonS3Client(s3ClientConfig))
+            {
+                var buckets = (await s3Client.ListBucketsAsync()).Buckets;
+                foreach (S3Bucket bucket in buckets)
+                {
+                    if (bucket.BucketName.Contains(prefix))
+                    {
+                        try
+                        {
+                            await EmptyS3Bucket(s3Client, bucket.BucketName);
+                            await s3Client.DeleteBucketAsync(new DeleteBucketRequest
+                            {
+                                BucketName = bucket.BucketName
+                            });
+                            
+                        }
+                        catch(Exception)
+                        {
+                            Console.WriteLine("Failed to clean up bucket {0}", bucket.BucketName);
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        async Task EmptyS3Bucket(AmazonS3Client client, string bucketName)
+        {
+            var objects = (await client.ListObjectsAsync(bucketName)).S3Objects;
+            var deleteRequest = new DeleteObjectsRequest();
+            deleteRequest.BucketName = bucketName;
+            objects.ForEach(obj => { deleteRequest.AddKey(obj.Key); });
+
+            await client.DeleteObjectsAsync(deleteRequest);
+        }
 
         [Fact]
         [Trait(CategoryAttribute,"SQS")]
@@ -59,9 +94,9 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             try
             {
-                string mainQueueName = prefix + new Random().Next() + "MQ";
+                string mainQueueName = prefix + _rand.Next() + "MQ";
                 string mainQueueURL = await createQueueTest(mainQueueName);
-                string deadQueueName = prefix + new Random().Next() + "DLQ";
+                string deadQueueName = prefix + _rand.Next() + "DLQ";
                 string deadQueueURL = await createQueueTest(deadQueueName);
 
                 string deadQueueArn = await getQueueArn(deadQueueURL);
@@ -103,7 +138,7 @@ namespace Amazon.DNXCore.IntegrationTests
             try
             {
                 int maxMessageLength = 20 * 1024;
-                string queueName = prefix + new Random().Next();
+                string queueName = prefix + _rand.Next();
                 string queueURL;
                 queueURL = await createQueueTest(queueName);
                 StringBuilder sb = new StringBuilder("The quick brown fox jumped over the lazy dog");
@@ -120,6 +155,101 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
+        [Fact]
+        [Trait(CategoryAttribute, "SQS")]
+        public async Task AuthorizeS3ToSendMessageAsyncTest()
+        {
+            await SQSCleanup();
+            await S3BucketCleanUp();
+
+            string randid = "" + _rand.Next();
+            string bucketName = prefix + randid + "BUCKET";
+            string mainQueueName = prefix + randid + "MQ";
+            string mainQueueURL = await createQueueTest(mainQueueName);
+            string s3ObjectKey = randid + "KEY";
+
+            Assert.False(String.Compare(mainQueueURL, "fail") == 0, "Failed to create an SQS queue");
+
+            using (var s3Client = new AmazonS3Client(s3ClientConfig))
+            {
+                await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName });
+
+                Assert.True(await hasS3Bucket(s3Client, bucketName), "Failed to create an S3 bucket");
+
+                var arn = await Client.AuthorizeS3ToSendMessageAsync(mainQueueURL, bucketName);
+                await s3Client.PutBucketNotificationAsync(new PutBucketNotificationRequest{
+                    BucketName = bucketName,
+                    QueueConfigurations = new List<QueueConfiguration>{
+                        new QueueConfiguration { Queue = arn, Events = new List<EventType>{
+                                EventType.ObjectCreatedAll
+                            }
+                        }
+                    },
+                });
+
+                var count = (await Client.ReceiveMessageAsync(mainQueueURL)).Messages.Count;
+
+                await s3Client.PutObjectAsync(new PutObjectRequest {
+                    ContentBody = "Hello World",
+                    BucketName = bucketName,
+                    Key = s3ObjectKey,
+                });
+                
+                Assert.True(await hasS3Object(s3Client, bucketName, s3ObjectKey), "Failed to put an S3 object");
+
+                bool objectCreaedMessageReceived = false;
+                for (int i = 0; i < 5; i++)
+                {
+                    var messages = (await Client.ReceiveMessageAsync(mainQueueURL)).Messages;
+
+                    foreach (var message in messages)
+                    {
+                        objectCreaedMessageReceived = message.Body.Contains("ObjectCreated:Put");
+                        if (objectCreaedMessageReceived)
+                            return;
+                    }
+
+                    UtilityMethods.Sleep(TimeSpan.FromSeconds(2));
+                }
+
+                Assert.True(objectCreaedMessageReceived, "Failed to receive object creaed message.");
+            }
+        }
+
+        private async static Task<bool> hasS3Bucket(AmazonS3Client client, string bucketName)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                var buckets = (await client.ListBucketsAsync()).Buckets;
+                foreach (S3Bucket bucket in buckets)
+                {
+                    if (bucket.BucketName.Contains(bucketName))
+                        return true;
+                }
+
+                UtilityMethods.Sleep(TimeSpan.FromSeconds(2));
+            }
+
+            return false;
+        }
+
+
+        private async static Task<bool> hasS3Object(AmazonS3Client client, string bucketName, string key)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                var response = (await client.ListObjectsAsync(new ListObjectsRequest { BucketName = bucketName }));
+                foreach (var obj in response.S3Objects)
+                {
+                    if (String.Compare(obj.Key, key) == 0) 
+                        return true;
+                }
+
+                UtilityMethods.Sleep(TimeSpan.FromSeconds(2));
+            }
+            return false;
+        }
+        
         static Dictionary<string, MessageAttributeValue> messageAttributes = new Dictionary<string, MessageAttributeValue>
         {
             { "StringAttribute", new MessageAttributeValue { DataType = "String", StringValue = "StringAttributeValue" } },
