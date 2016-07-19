@@ -45,9 +45,9 @@ namespace Amazon.EC2.Util
         /// </summary>
         /// <param name="key">The version-independent key identifying the descriptor</param>
         /// <returns>Matching descriptor containing the name filter to search on</returns>
-        public static async Task<ImageDescriptor> DescriptorFromKeyAsync(string key)
+        public static Task<ImageDescriptor> DescriptorFromKeyAsync(string key)
         {
-            return await DescriptorFromKeyAsync(key, null).ConfigureAwait(false);
+            return DescriptorFromKeyAsync(key, null);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.EC2.Util
             return null;
         }
         
-        private static async Task  LoadDefinitionsFromWebAsync(AmazonEC2Config ec2Config)
+        private static async Task LoadDefinitionsFromWebAsync(AmazonEC2Config ec2Config)
         {
             lock (LOCK_OBJECT)
             {
