@@ -1,3 +1,9 @@
+### 3.1.85.0 (2016-07-19 21:11 UTC)
+* DeviceFarm (3.1.7.0)
+	* Add support for managing remote access sessions.
+* SimpleSystemsManagement (3.1.4.0)
+	* Added notification support,allowing customers to be notified when a command reaches a terminated status.
+
 ### 3.1.84.0 (2016-07-13 22:00 UTC)
 * DatabaseMigrationService (3.1.2.0)
 	* API updates to enable SSL-enabled endpoints.
