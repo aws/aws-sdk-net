@@ -105,7 +105,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// ERRORED: An error condition.
+        /// PENDING: A pending condition.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// PASSED: A passing condition.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// WARNED: A warning condition.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -117,19 +125,11 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// ERRORED: An error condition.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// STOPPED: A stopped condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// PASSED: A passing condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// PENDING: A pending condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// WARNED: A warning condition.
         /// </para>
         /// </li> </ul>
         /// </summary>

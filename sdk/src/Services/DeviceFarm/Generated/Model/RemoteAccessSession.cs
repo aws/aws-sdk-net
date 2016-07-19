@@ -28,26 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents a collection of one or more tests.
+    /// Represents information about the remote access session.
     /// </summary>
-    public partial class Suite
+    public partial class RemoteAccessSession
     {
         private string _arn;
-        private Counters _counters;
+        private BillingMethod _billingMethod;
         private DateTime? _created;
+        private Device _device;
         private DeviceMinutes _deviceMinutes;
+        private string _endpoint;
         private string _message;
         private string _name;
         private ExecutionResult _result;
         private DateTime? _started;
         private ExecutionStatus _status;
         private DateTime? _stopped;
-        private TestType _type;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The suite's ARN.
+        /// The Amazon Resource Name (ARN) of the remote access session.
         /// </para>
         /// </summary>
         public string Arn
@@ -63,27 +64,29 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Counters. 
+        /// Gets and sets the property BillingMethod. 
         /// <para>
-        /// The suite's result counters.
+        /// The billing method of the remote access session. Possible values include <code>METERED</code>
+        /// or <code>UNMETERED</code>. For more information about metered devices, see <a href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+        /// Device Farm terminology</a>."
         /// </para>
         /// </summary>
-        public Counters Counters
+        public BillingMethod BillingMethod
         {
-            get { return this._counters; }
-            set { this._counters = value; }
+            get { return this._billingMethod; }
+            set { this._billingMethod = value; }
         }
 
-        // Check to see if Counters property is set
-        internal bool IsSetCounters()
+        // Check to see if BillingMethod property is set
+        internal bool IsSetBillingMethod()
         {
-            return this._counters != null;
+            return this._billingMethod != null;
         }
 
         /// <summary>
         /// Gets and sets the property Created. 
         /// <para>
-        /// When the suite was created.
+        /// The date and time the remote access session was created.
         /// </para>
         /// </summary>
         public DateTime Created
@@ -99,10 +102,22 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeviceMinutes. 
-        /// <para>
-        /// Represents the total (metered or unmetered) minutes used by the test suite.
-        /// </para>
+        /// Gets and sets the property Device.
+        /// </summary>
+        public Device Device
+        {
+            get { return this._device; }
+            set { this._device = value; }
+        }
+
+        // Check to see if Device property is set
+        internal bool IsSetDevice()
+        {
+            return this._device != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceMinutes.
         /// </summary>
         public DeviceMinutes DeviceMinutes
         {
@@ -117,9 +132,27 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
+        /// The endpoint for the remote access sesssion.
+        /// </para>
+        /// </summary>
+        public string Endpoint
+        {
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
+        }
+
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
+        {
+            return this._endpoint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A message about the suite's result.
+        /// A message about the remote access session.
         /// </para>
         /// </summary>
         public string Message
@@ -137,7 +170,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The suite's name.
+        /// The name of the remote access session.
         /// </para>
         /// </summary>
         public string Name
@@ -155,11 +188,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        /// The suite's result.
-        /// </para>
-        ///  
-        /// <para>
-        /// Allowed values include:
+        /// The result of the remote access session. Can be any of the following:
         /// </para>
         ///  <ul> <li>
         /// <para>
@@ -206,7 +235,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Started. 
         /// <para>
-        /// The suite's start time.
+        /// The date and time the remote access session was started.
         /// </para>
         /// </summary>
         public DateTime Started
@@ -224,11 +253,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The suite's status.
-        /// </para>
-        ///  
-        /// <para>
-        /// Allowed values include:
+        /// The status of the remote access session. Can be any of the following:
         /// </para>
         ///  <ul> <li>
         /// <para>
@@ -283,7 +308,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Stopped. 
         /// <para>
-        /// The suite's stop time.
+        /// The date and time the remote access session was stopped.
         /// </para>
         /// </summary>
         public DateTime Stopped
@@ -296,86 +321,6 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetStopped()
         {
             return this._stopped.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The suite's type.
-        /// </para>
-        ///  
-        /// <para>
-        /// Must be one of the following values:
-        /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// BUILTIN_FUZZ: The built-in fuzz type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app,
-        /// interacting with it and capturing screenshots at the same time.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_PYTHON: The Appium Python type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// CALABASH: The Calabash type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// INSTRUMENTATION: The Instrumentation type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// UIAUTOMATION: The uiautomation type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// UIAUTOMATOR: The uiautomator type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// XCTEST: The XCode test type.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// XCTEST_UI: The XCode UI test type.
-        /// </para>
-        /// </li> </ul>
-        /// </summary>
-        public TestType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }
