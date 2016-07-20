@@ -27,25 +27,22 @@ using System.Threading;
 using Amazon.EC2.Model;
 using Amazon.Util;
 using System.Globalization;
+using System.Threading.Tasks;
 
 namespace Amazon.EC2.Util
 {
     /// <summary>
     /// This class has utility methods used for setting up a VPC.
     /// </summary>
-    public static class VPCUtilities
+    public static partial class VPCUtilities
     {
-        /// <summary>
-        /// A callback delegate used to get progress messages as the VPC environment is being created.
-        /// </summary>
-        public delegate void Progress(string message);
-
+        
         /// <summary>
         /// Find the current VPC NAT image in the region for the AmazonEC2 client.
         /// </summary>
         /// <param name="ec2Client">The ec2client used to look up the image.</param>
         /// <returns>The image</returns>
-        public static Image FindNATImage(IAmazonEC2 ec2Client)
+        public static async Task<Image> FindNATImageAsync(IAmazonEC2 ec2Client)
         {
             if (ec2Client == null)
                 throw new ArgumentNullException("ec2Client");
@@ -55,7 +52,7 @@ namespace Amazon.EC2.Util
                 new Filter(){Name = "architecture", Values = new List<string>(){"x86_64"}},
                 new Filter(){Name = "name", Values = new List<string>(){"ami-vpc-nat-*.x86_64-ebs"}}
             };
-            DescribeImagesResponse imageResponse = ec2Client.DescribeImages(new DescribeImagesRequest() { Filters = filters });
+            DescribeImagesResponse imageResponse = await ec2Client.DescribeImagesAsync(new DescribeImagesRequest() { Filters = filters }).ConfigureAwait(false);
             var image = imageResponse.Images.OrderByDescending(x => x.Name).FirstOrDefault();
 
             return image;
@@ -67,7 +64,7 @@ namespace Amazon.EC2.Util
         /// <param name="ec2Client">The ec2client used to create the NAT instance</param>
         /// <param name="request">The properties used to launch the NAT instance.</param>
         /// <returns></returns>
-        public static Instance LaunchNATInstance(IAmazonEC2 ec2Client, LaunchNATInstanceRequest request)
+        public static async Task<Instance> LaunchNATInstanceAsync(IAmazonEC2 ec2Client, LaunchNATInstanceRequest request)
         {
             if (ec2Client == null)
                 throw new ArgumentNullException("ec2Client");
@@ -83,8 +80,8 @@ namespace Amazon.EC2.Util
                 new Filter(){Name = "architecture", Values = new List<string>(){"x86_64"}},
                 new Filter(){Name = "name", Values = new List<string>(){"ami-vpc-nat-*.x86_64-ebs"}}
             };
-            DescribeImagesResponse imageResponse = ec2Client.DescribeImages(new DescribeImagesRequest() { Filters = filters });
-            var image = FindNATImage(ec2Client);
+            DescribeImagesResponse imageResponse = await ec2Client.DescribeImagesAsync(new DescribeImagesRequest() { Filters = filters }).ConfigureAwait(false);
+            var image = await FindNATImageAsync(ec2Client).ConfigureAwait(false);
             if (image == null)
             {
                 throw new AmazonEC2Exception("No NAT image found in this region");
@@ -99,10 +96,10 @@ namespace Amazon.EC2.Util
                 MaxCount = 1,
                 SubnetId = request.SubnetId
             };
-            RunInstancesResponse runResponse = ec2Client.RunInstances(runRequest);
+            RunInstancesResponse runResponse = await ec2Client.RunInstancesAsync(runRequest).ConfigureAwait(false);
             string instanceId = runResponse.Reservation.Instances[0].InstanceId;
             // Can't associated elastic IP address until the instance is available
-            WaitForInstanceToStartUp(ec2Client, instanceId);
+            await WaitForInstanceToStartUpAsync(ec2Client, instanceId).ConfigureAwait(false);
 
             ModifyInstanceAttributeRequest modifyRequest = new ModifyInstanceAttributeRequest()
             {
@@ -110,22 +107,23 @@ namespace Amazon.EC2.Util
                 Attribute = "sourceDestCheck",
                 Value = "false"
             };
-            ec2Client.ModifyInstanceAttribute(modifyRequest);
+            await ec2Client.ModifyInstanceAttributeAsync(modifyRequest).ConfigureAwait(false);
 
-            ec2Client.CreateTags(new CreateTagsRequest()
+            await ec2Client.CreateTagsAsync(new CreateTagsRequest()
             {
                 Resources = new List<string>() { instanceId },
                 Tags = new List<Tag>() { new Tag() { Key = "Name", Value = "NAT" } }
-            });
+            }).ConfigureAwait(false);
 
-            var allocationId = ec2Client.AllocateAddress(new AllocateAddressRequest() { Domain = "vpc" }).AllocationId;
-            ec2Client.AssociateAddress(new AssociateAddressRequest() { InstanceId = instanceId, AllocationId = allocationId });
+            AllocateAddressResponse allocateAddressResponse = await ec2Client.AllocateAddressAsync(new AllocateAddressRequest() { Domain = "vpc" }).ConfigureAwait(false);
+            var allocationId = allocateAddressResponse.AllocationId;
+            await ec2Client.AssociateAddressAsync(new AssociateAddressRequest() { InstanceId = instanceId, AllocationId = allocationId }).ConfigureAwait(false);
 
-            var instance = ec2Client.DescribeInstances(new DescribeInstancesRequest() { InstanceIds = new List<string>() { instanceId } }).Reservations[0].Instances[0];
+            DescribeInstancesResponse describeInstancesResponse = await ec2Client.DescribeInstancesAsync(new DescribeInstancesRequest() { InstanceIds = new List<string>() { instanceId } }).ConfigureAwait(false);
+            var instance = describeInstancesResponse.Reservations[0].Instances[0];
 
             return instance;
         }
-
 
         /// <summary>
         /// This method will create a VPC with a subnet that will have an internet gateway attached making instances available to the internet.
@@ -133,10 +131,10 @@ namespace Amazon.EC2.Util
         /// <param name="ec2Client">The ec2client used to create the VPC</param>
         /// <param name="request">The properties used to create the VPC.</param>
         /// <returns>The response contains all the VPC objects that were created.</returns>
-        public static LaunchVPCWithPublicSubnetResponse LaunchVPCWithPublicSubnet(IAmazonEC2 ec2Client, LaunchVPCWithPublicSubnetRequest request)
+        public static async Task<LaunchVPCWithPublicSubnetResponse> LaunchVPCWithPublicSubnetAsync(IAmazonEC2 ec2Client, LaunchVPCWithPublicSubnetRequest request)
         {
             LaunchVPCWithPublicSubnetResponse response = new LaunchVPCWithPublicSubnetResponse();
-            LaunchVPCWithPublicSubnet(ec2Client, request, response);
+            await LaunchVPCWithPublicSubnetAsync(ec2Client, request, response).ConfigureAwait(false);
             return response;
         }
 
@@ -146,86 +144,96 @@ namespace Amazon.EC2.Util
         /// <param name="ec2Client">The ec2client used to create the VPC</param>
         /// <param name="request">The properties used to create the VPC.</param>
         /// <param name="response">The response contains all the VPC objects that were created.</param>
-        private static void LaunchVPCWithPublicSubnet(IAmazonEC2 ec2Client, LaunchVPCWithPublicSubnetRequest request, LaunchVPCWithPublicSubnetResponse response)
+        private static async Task LaunchVPCWithPublicSubnetAsync(IAmazonEC2 ec2Client, LaunchVPCWithPublicSubnetRequest request, LaunchVPCWithPublicSubnetResponse response)
         {
-            response.VPC = ec2Client.CreateVpc(new CreateVpcRequest()
+            CreateVpcResponse createVpcResponse = await ec2Client.CreateVpcAsync(new CreateVpcRequest()
             {
                 CidrBlock = request.VPCCidrBlock,
                 InstanceTenancy = request.InstanceTenancy
-            }).Vpc;
+            }).ConfigureAwait(false);
+
+            response.VPC = createVpcResponse.Vpc;
             WriteProgress(request.ProgressCallback, "Created vpc {0}", response.VPC.VpcId);
 
             var describeVPCRequest = new DescribeVpcsRequest() { VpcIds = new List<string>() { response.VPC.VpcId } };
-            WaitTillTrue(((Func<bool>)(() => ec2Client.DescribeVpcs(describeVPCRequest).Vpcs.Count == 1)));
+            DescribeVpcsResponse describeVpcsResponse = await ec2Client.DescribeVpcsAsync(describeVPCRequest).ConfigureAwait(false);
+
+            WaitTillTrue(((Func<bool>)(() => describeVpcsResponse.Vpcs.Count == 1)));
 
             if(!string.IsNullOrEmpty(request.VPCName))
             {
-                ec2Client.CreateTags(new CreateTagsRequest()
+                await ec2Client.CreateTagsAsync(new CreateTagsRequest()
                 {
                     Resources = new List<string>(){ response.VPC.VpcId}, 
                     Tags = new List<Tag>(){new Tag(){Key = "Name", Value = request.VPCName}}
-                });
+                }).ConfigureAwait(false);
             }
 
-            response.PublicSubnet = ec2Client.CreateSubnet(new CreateSubnetRequest()
+            CreateSubnetResponse createSubnetResponse = await ec2Client.CreateSubnetAsync(new CreateSubnetRequest()
             {
                 AvailabilityZone = request.PublicSubnetAvailabilityZone,
                 CidrBlock = request.PublicSubnetCiderBlock,
                 VpcId = response.VPC.VpcId
-            }).Subnet;
+            }).ConfigureAwait(false);
+            response.PublicSubnet = createSubnetResponse.Subnet;
             WriteProgress(request.ProgressCallback, "Created public subnet {0}", response.PublicSubnet.SubnetId);
 
-            WaitTillTrue(((Func<bool>)(() => (ec2Client.DescribeSubnets(new DescribeSubnetsRequest() { SubnetIds = new List<string>() { response.PublicSubnet.SubnetId } }).Subnets.Count == 1))));
+            DescribeSubnetsResponse describeSubnetsResponse = await ec2Client.DescribeSubnetsAsync(new DescribeSubnetsRequest() { SubnetIds = new List<string>() { response.PublicSubnet.SubnetId } }).ConfigureAwait(false);
 
-            ec2Client.CreateTags(new CreateTagsRequest()
+            WaitTillTrue(((Func<bool>)(() => (describeSubnetsResponse.Subnets.Count == 1))));
+
+            await ec2Client.CreateTagsAsync(new CreateTagsRequest()
             {
                 Resources = new List<string>() { response.PublicSubnet.SubnetId },
                 Tags = new List<Tag>() { new Tag() { Key = "Name", Value = "Public" } }
-            });
+            }).ConfigureAwait(false);
 
-            response.InternetGateway = ec2Client.CreateInternetGateway(new CreateInternetGatewayRequest()
-            {
-            }).InternetGateway;
+            CreateInternetGatewayResponse createInternetGatewayResponse = await ec2Client.CreateInternetGatewayAsync(new CreateInternetGatewayRequest() { }).ConfigureAwait(false);
+
+            response.InternetGateway = createInternetGatewayResponse.InternetGateway;
             WriteProgress(request.ProgressCallback, "Created internet gateway {0}", response.InternetGateway.InternetGatewayId);
 
-            ec2Client.AttachInternetGateway(new AttachInternetGatewayRequest()
+           await ec2Client.AttachInternetGatewayAsync(new AttachInternetGatewayRequest()
             {
                 InternetGatewayId = response.InternetGateway.InternetGatewayId,
                 VpcId = response.VPC.VpcId
-            });
+            }).ConfigureAwait(false);
             WriteProgress(request.ProgressCallback, "Attached internet gateway to vpc");
 
-            response.PublicSubnetRouteTable = ec2Client.CreateRouteTable(new CreateRouteTableRequest()
+            CreateRouteTableResponse createRouteTableResponse = await ec2Client.CreateRouteTableAsync(new CreateRouteTableRequest()
             {
                 VpcId = response.VPC.VpcId
-            }).RouteTable;
+            }).ConfigureAwait(false);
+            response.PublicSubnetRouteTable = createRouteTableResponse.RouteTable;
             WriteProgress(request.ProgressCallback, "Created route table {0}", response.PublicSubnetRouteTable.RouteTableId);
 
             var describeRouteTableRequest = new DescribeRouteTablesRequest() { RouteTableIds = new List<string>() { response.PublicSubnetRouteTable.RouteTableId } };
-            WaitTillTrue(((Func<bool>)(() => (ec2Client.DescribeRouteTables(describeRouteTableRequest).RouteTables.Count == 1))));
+            DescribeRouteTablesResponse describeRouteTablesResponse = await ec2Client.DescribeRouteTablesAsync(describeRouteTableRequest).ConfigureAwait(false);
+            WaitTillTrue(((Func<bool>)(() => (describeRouteTablesResponse.RouteTables.Count == 1))));
 
-            ec2Client.CreateTags(new CreateTagsRequest()
+           await ec2Client.CreateTagsAsync(new CreateTagsRequest()
             {
                 Resources = new List<string>() { response.PublicSubnetRouteTable.RouteTableId },
                 Tags = new List<Tag>() { new Tag() { Key = "Name", Value = "Public" } }
-            });
+            }).ConfigureAwait(false);
 
-            ec2Client.AssociateRouteTable(new AssociateRouteTableRequest()
+            await ec2Client.AssociateRouteTableAsync(new AssociateRouteTableRequest()
             {
                 RouteTableId = response.PublicSubnetRouteTable.RouteTableId,
                 SubnetId = response.PublicSubnet.SubnetId
-            });
+            }).ConfigureAwait(false);
             WriteProgress(request.ProgressCallback, "Associated route table to public subnet");
 
-            ec2Client.CreateRoute(new CreateRouteRequest()
+            await ec2Client.CreateRouteAsync(new CreateRouteRequest()
             {
                 DestinationCidrBlock = "0.0.0.0/0",
                 GatewayId = response.InternetGateway.InternetGatewayId,
                 RouteTableId = response.PublicSubnetRouteTable.RouteTableId
-            });
+            }).ConfigureAwait(false);
             WriteProgress(request.ProgressCallback, "Added route for internet gateway to route table {0}", response.PublicSubnetRouteTable.RouteTableId);
-
-            response.PublicSubnetRouteTable = ec2Client.DescribeRouteTables(describeRouteTableRequest).RouteTables[0];
+            
+            describeRouteTablesResponse = await ec2Client.DescribeRouteTablesAsync(describeRouteTableRequest).ConfigureAwait(false);
+            response.PublicSubnetRouteTable = describeRouteTablesResponse.RouteTables[0];
         }
 
         /// <summary>
@@ -235,57 +243,62 @@ namespace Amazon.EC2.Util
         /// <param name="ec2Client">The ec2client used to create the VPC</param>
         /// <param name="request">The properties used to create the VPC.</param>
         /// <returns>The response contains all the VPC objects that were created.</returns>
-        public static LaunchVPCWithPublicAndPrivateSubnetsResponse LaunchVPCWithPublicAndPrivateSubnets(IAmazonEC2 ec2Client, LaunchVPCWithPublicAndPrivateSubnetsRequest request)
+        public static async Task<LaunchVPCWithPublicAndPrivateSubnetsResponse> LaunchVPCWithPublicAndPrivateSubnetsAsync(IAmazonEC2 ec2Client, LaunchVPCWithPublicAndPrivateSubnetsRequest request)
         {
             LaunchVPCWithPublicAndPrivateSubnetsResponse response = new LaunchVPCWithPublicAndPrivateSubnetsResponse();
 
-            LaunchVPCWithPublicSubnet(ec2Client, request, response);
+            await LaunchVPCWithPublicSubnetAsync(ec2Client, request, response).ConfigureAwait(false);
 
-            response.PrivateSubnet = ec2Client.CreateSubnet(new CreateSubnetRequest()
+            CreateSubnetResponse createSubnetResponse = await ec2Client.CreateSubnetAsync(new CreateSubnetRequest()
             {
                 AvailabilityZone = request.PrivateSubnetAvailabilityZone ?? response.PublicSubnet.AvailabilityZone,
                 CidrBlock = request.PrivateSubnetCiderBlock,
                 VpcId = response.VPC.VpcId
-            }).Subnet;
+            }).ConfigureAwait(false);
+            response.PrivateSubnet = createSubnetResponse.Subnet;
             WriteProgress(request.ProgressCallback, "Created private subnet {0}", response.PublicSubnet.SubnetId);
 
-            WaitTillTrue(((Func<bool>)(() => (ec2Client.DescribeSubnets(new DescribeSubnetsRequest() { SubnetIds = new List<string>() { response.PrivateSubnet.SubnetId } }).Subnets.Count == 1))));
 
-            ec2Client.CreateTags(new CreateTagsRequest()
+            DescribeSubnetsResponse describeSubnetsResponse = await ec2Client.DescribeSubnetsAsync(new DescribeSubnetsRequest() { SubnetIds = new List<string>() { response.PrivateSubnet.SubnetId } }).ConfigureAwait(false);
+            WaitTillTrue(((Func<bool>)(() => (describeSubnetsResponse.Subnets.Count == 1))));
+
+            await ec2Client.CreateTagsAsync(new CreateTagsRequest()
             {
                 Resources = new List<string>() { response.PrivateSubnet.SubnetId },
                 Tags = new List<Tag>() { new Tag() { Key = "Name", Value = "Private" } }
-            });
+            }).ConfigureAwait(false);
 
             WriteProgress(request.ProgressCallback, "Launching NAT instance");
-            response.NATInstance = LaunchNATInstance(ec2Client, new LaunchNATInstanceRequest()
+            response.NATInstance = await LaunchNATInstanceAsync(ec2Client, new LaunchNATInstanceRequest()
             {
                 InstanceType = request.InstanceType,
                 KeyName = request.KeyName,
                 SubnetId = response.PublicSubnet.SubnetId
-            });
+            }).ConfigureAwait(false);
             WriteProgress(request.ProgressCallback, "NAT instance is available");
 
-            var defaultRouteTable = GetDefaultRouteTable(ec2Client, response.VPC.VpcId);
+            var defaultRouteTable = await GetDefaultRouteTableAsync(ec2Client, response.VPC.VpcId).ConfigureAwait(false);
             if (defaultRouteTable == null)
                 throw new AmazonEC2Exception("No default route table found for VPC");
-            ec2Client.CreateRoute(new CreateRouteRequest()
+            await ec2Client.CreateRouteAsync(new CreateRouteRequest()
             {
                 RouteTableId = defaultRouteTable.RouteTableId,
                 DestinationCidrBlock = "0.0.0.0/0",
                 InstanceId = response.NATInstance.InstanceId
-            });
+            }).ConfigureAwait(false);
             WriteProgress(request.ProgressCallback, "Added route to the NAT instance in the default route table");
 
             if (request.ConfigureDefaultVPCGroupForNAT)
             {
-                var defaultSecurityGroup = GetDefaultSecurityGroup(ec2Client, response.VPC.VpcId);
-                var groupId = ec2Client.CreateSecurityGroup(new CreateSecurityGroupRequest()
+                var defaultSecurityGroup = await GetDefaultSecurityGroupAsync(ec2Client, response.VPC.VpcId).ConfigureAwait(false);
+                CreateSecurityGroupResponse createSecurityGroupResponse = await ec2Client.CreateSecurityGroupAsync(new CreateSecurityGroupRequest()
                 {
                     VpcId = response.VPC.VpcId,
                     GroupName = "NATGroup",
                     Description = "Give EC2 Instances access through the NAT"
-                }).GroupId;
+                }).ConfigureAwait(false);
+
+                var groupId = createSecurityGroupResponse.GroupId;
                 WriteProgress(request.ProgressCallback, "Created security group for NAT configuration");
 
 
@@ -296,23 +309,24 @@ namespace Amazon.EC2.Util
                     UserIdGroupPairs = new List<UserIdGroupPair>() { new UserIdGroupPair() { GroupId = groupId } }
                 };
 
-                ec2Client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest()
+                await ec2Client.AuthorizeSecurityGroupIngressAsync(new AuthorizeSecurityGroupIngressRequest()
                 {
                     IpPermissions = new List<IpPermission>() { spec },
                     GroupId = defaultSecurityGroup.GroupId
-                });
+                }).ConfigureAwait(false);
                 WriteProgress(request.ProgressCallback, "Added permission to the default security group {0} to allow traffic from security group {1}", defaultSecurityGroup.GroupId, groupId);
 
-                response.NATSecurityGroup = ec2Client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest() 
-                { 
-                    GroupIds = new List<string>(){ groupId }
-                }).SecurityGroups[0];
+                DescribeSecurityGroupsResponse describeSecurityGroupsResponse = await ec2Client.DescribeSecurityGroupsAsync(new DescribeSecurityGroupsRequest()
+                {
+                    GroupIds = new List<string>() { groupId }
+                }).ConfigureAwait(false);
+                response.NATSecurityGroup = describeSecurityGroupsResponse.SecurityGroups[0];
             }
 
             return response;
         }
 
-        private static RouteTable GetDefaultRouteTable(IAmazonEC2 ec2Client, string vpcId)
+        private static async Task<RouteTable> GetDefaultRouteTableAsync(IAmazonEC2 ec2Client, string vpcId)
         {
             var filters = new List<Filter>() 
             { 
@@ -320,14 +334,14 @@ namespace Amazon.EC2.Util
                 new Filter() { Name = "association.main", Values = new List<string>() { "true" } } 
             };
 
-            var response = ec2Client.DescribeRouteTables(new DescribeRouteTablesRequest() { Filters = filters });
+            var response = await ec2Client.DescribeRouteTablesAsync(new DescribeRouteTablesRequest() { Filters = filters }).ConfigureAwait(false);
             if (response.RouteTables.Count != 1)
                 return null;
 
             return response.RouteTables[0];
         }
 
-        private static SecurityGroup GetDefaultSecurityGroup(IAmazonEC2 ec2Client, string vpcId)
+        private static async Task<SecurityGroup> GetDefaultSecurityGroupAsync(IAmazonEC2 ec2Client, string vpcId)
         {
             var filters = new List<Filter>() 
             { 
@@ -335,7 +349,7 @@ namespace Amazon.EC2.Util
                 new Filter() { Name = "group-name", Values = new List<string>() { "default" } } 
             };
 
-            var response = ec2Client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest() { Filters = filters });
+            var response = await ec2Client.DescribeSecurityGroupsAsync(new DescribeSecurityGroupsRequest() { Filters = filters }).ConfigureAwait(false);
             if (response.SecurityGroups.Count != 1)
                 return null;
 
@@ -343,14 +357,14 @@ namespace Amazon.EC2.Util
         }
 
 
-        private static Instance WaitForInstanceToStartUp(IAmazonEC2 ec2Client, string instanceId)
+        private static async Task<Instance> WaitForInstanceToStartUpAsync(IAmazonEC2 ec2Client, string instanceId)
         {
             var describeRequest = new DescribeInstancesRequest() { InstanceIds = new List<string>() { instanceId } };
             for (int tries = 0; tries < 40; tries++)
             {
                 AWSSDKUtils.Sleep(10 * 1000);
 
-                var result = ec2Client.DescribeInstances(describeRequest);
+                var result = await ec2Client.DescribeInstancesAsync(describeRequest).ConfigureAwait(false);
                 if (result.Reservations.Count != 1 && result.Reservations[0].Instances.Count != 1)
                     return null;
 
@@ -366,26 +380,5 @@ namespace Amazon.EC2.Util
             return null;
         }
 
-        private static void WaitTillTrue(Func<bool> func)
-        {
-            for(int i = 0; i < 40; i++)
-            {
-                try
-                {
-                    if (func())
-                        return;
-                }
-                catch { }
-                AWSSDKUtils.Sleep(1000);
-            }
-        }
-
-        private static void WriteProgress(Progress callback, string message, params string[] args)
-        {
-            if (callback == null)
-                return;
-
-            callback(string.Format(CultureInfo.InvariantCulture, message, args));
-        }
     }
 }
