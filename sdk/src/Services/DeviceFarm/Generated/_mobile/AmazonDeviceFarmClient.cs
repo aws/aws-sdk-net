@@ -322,6 +322,37 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  CreateRemoteAccessSession
+
+        internal CreateRemoteAccessSessionResponse CreateRemoteAccessSession(CreateRemoteAccessSessionRequest request)
+        {
+            var marshaller = new CreateRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = CreateRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRemoteAccessSessionRequest,CreateRemoteAccessSessionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateRemoteAccessSessionResponse> CreateRemoteAccessSessionAsync(CreateRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = CreateRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRemoteAccessSessionRequest,CreateRemoteAccessSessionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUpload
 
         internal CreateUploadResponse CreateUpload(CreateUploadRequest request)
@@ -410,6 +441,37 @@ namespace Amazon.DeviceFarm
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRemoteAccessSession
+
+        internal DeleteRemoteAccessSessionResponse DeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request)
+        {
+            var marshaller = new DeleteRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = DeleteRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRemoteAccessSessionRequest,DeleteRemoteAccessSessionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteRemoteAccessSessionResponse> DeleteRemoteAccessSessionAsync(DeleteRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = DeleteRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRemoteAccessSessionRequest,DeleteRemoteAccessSessionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -841,6 +903,37 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  GetRemoteAccessSession
+
+        internal GetRemoteAccessSessionResponse GetRemoteAccessSession(GetRemoteAccessSessionRequest request)
+        {
+            var marshaller = new GetRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = GetRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetRemoteAccessSessionRequest,GetRemoteAccessSessionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetRemoteAccessSessionResponse> GetRemoteAccessSessionAsync(GetRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = GetRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRemoteAccessSessionRequest,GetRemoteAccessSessionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRun
 
         internal GetRunResponse GetRun(GetRunRequest request)
@@ -1081,6 +1174,37 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  InstallToRemoteAccessSession
+
+        internal InstallToRemoteAccessSessionResponse InstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request)
+        {
+            var marshaller = new InstallToRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = InstallToRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return Invoke<InstallToRemoteAccessSessionRequest,InstallToRemoteAccessSessionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InstallToRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InstallToRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<InstallToRemoteAccessSessionResponse> InstallToRemoteAccessSessionAsync(InstallToRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new InstallToRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = InstallToRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InstallToRemoteAccessSessionRequest,InstallToRemoteAccessSessionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListArtifacts
 
         internal ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
@@ -1293,6 +1417,37 @@ namespace Amazon.DeviceFarm
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProjectsRequest,ListProjectsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRemoteAccessSessions
+
+        internal ListRemoteAccessSessionsResponse ListRemoteAccessSessions(ListRemoteAccessSessionsRequest request)
+        {
+            var marshaller = new ListRemoteAccessSessionsRequestMarshaller();
+            var unmarshaller = ListRemoteAccessSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRemoteAccessSessionsRequest,ListRemoteAccessSessionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRemoteAccessSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteAccessSessions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListRemoteAccessSessionsResponse> ListRemoteAccessSessionsAsync(ListRemoteAccessSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListRemoteAccessSessionsRequestMarshaller();
+            var unmarshaller = ListRemoteAccessSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRemoteAccessSessionsRequest,ListRemoteAccessSessionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1572,6 +1727,37 @@ namespace Amazon.DeviceFarm
             var unmarshaller = ScheduleRunResponseUnmarshaller.Instance;
 
             return InvokeAsync<ScheduleRunRequest,ScheduleRunResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopRemoteAccessSession
+
+        internal StopRemoteAccessSessionResponse StopRemoteAccessSession(StopRemoteAccessSessionRequest request)
+        {
+            var marshaller = new StopRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = StopRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StopRemoteAccessSessionRequest,StopRemoteAccessSessionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StopRemoteAccessSessionResponse> StopRemoteAccessSessionAsync(StopRemoteAccessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopRemoteAccessSessionRequestMarshaller();
+            var unmarshaller = StopRemoteAccessSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopRemoteAccessSessionRequest,StopRemoteAccessSessionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
