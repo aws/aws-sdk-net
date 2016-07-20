@@ -227,35 +227,6 @@ namespace Amazon.S3.Transfer
             return command.ExecuteAsync(cancellationToken);
         }
 
-#if CORECLR
-        /// <summary>
-        /// 	Downloads the content from Amazon S3 and writes it to the specified file.    
-        /// </summary>
-        /// <param name="filePath">
-        /// 	The file path where the content from Amazon S3 will be written to.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The name of the bucket containing the Amazon S3 object to download.
-        /// </param>
-        /// <param name="key">
-        /// 	The key under which the Amazon S3 object is stored.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task DownloadAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var request = new TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = key,
-                FilePath = filePath                
-            };
-            var command = new DownloadCommand(this._s3Client, request);
-            return command.ExecuteAsync(cancellationToken);
-        }
-#endif
     #endregion
 
         #region OpenStream

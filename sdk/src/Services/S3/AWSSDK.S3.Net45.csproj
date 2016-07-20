@@ -107,19 +107,19 @@
     <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\_bcl\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\_bcl45\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\_bcl45+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_bcl\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_bcl45\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_bcl45+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl+coreclr\Encryption\*.cs">

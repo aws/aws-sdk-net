@@ -105,6 +105,7 @@ namespace Amazon.S3.Transfer
         public TransferUtility(TransferUtilityConfig config)
             : this(new AmazonS3Client(), config)
         {
+            this._shouldDispose = true;
             this._config = config;
         }
 
