@@ -41,7 +41,8 @@ namespace Amazon.DNXCore.IntegrationTests
         }
     }
 
-    public abstract class TestBase<T> : TestBase where T : AmazonServiceClient, IDisposable
+    public abstract class TestBase<T> : TestBase, IDisposable
+        where T : AmazonServiceClient, IDisposable
     {
         private bool _disposed = false;
 
