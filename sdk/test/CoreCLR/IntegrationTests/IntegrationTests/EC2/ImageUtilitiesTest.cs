@@ -11,8 +11,8 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
     public class ImageUtilitiesTest : TestBase<AmazonEC2Client>
     {
         static string[] imgs = { "WINDOWS_2012R2_BASE", "WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014", "WINDOWS_2012R2_SQL_SERVER_STANDARD_2014", "WINDOWS_2012R2_SQL_SERVER_WEB_2014", "WINDOWS_2012_BASE","WINDOWS_2012_SQL_SERVER_EXPRESS_2014","WINDOWS_2012_SQL_SERVER_STANDARD_2014","WINDOWS_2012_SQL_SERVER_WEB_2014" };
-
-        [Trait(CategoryAttribute, "Glacier")]
+        
+        [Trait(CategoryAttribute, "EC2")]
         [Fact]
         public async Task ImageTest()
         {
