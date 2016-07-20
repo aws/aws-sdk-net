@@ -319,7 +319,7 @@ namespace Amazon.EC2.Util
 
         private static bool ImageDefinitionsLoaded { get; set; }
 
-        private static ImageDescriptor DescriptorFromKey(string key)
+        private static ImageDescriptor FindDescriptorWithKey(string key)
         {
             foreach (var d in WindowsDescriptors)
             {

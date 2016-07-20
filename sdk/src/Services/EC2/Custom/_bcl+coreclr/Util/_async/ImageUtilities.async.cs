@@ -72,7 +72,7 @@ namespace Amazon.EC2.Util
         public static async Task<ImageDescriptor> DescriptorFromKeyAsync(string key, IAmazonEC2 ec2Client)
         {
             await LoadDefinitionsFromWebAsync(ConfigFromClient(ec2Client)).ConfigureAwait(false);
-            return DescriptorFromKey(key);
+            return FindDescriptorWithKey(key);
         }
 
         private static async Task LoadDefinitionsFromWebAsync(AmazonEC2Config ec2Config)

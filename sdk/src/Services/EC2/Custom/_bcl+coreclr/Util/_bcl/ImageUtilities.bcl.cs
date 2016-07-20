@@ -72,7 +72,7 @@ namespace Amazon.EC2.Util
         {
             LoadDefinitionsFromWeb(ConfigFromClient(ec2Client));
 
-            return DescriptorFromKey(key);
+            return FindDescriptorWithKey(key);
         }
         
         private static void LoadDefinitionsFromWeb(AmazonEC2Config ec2Config)
