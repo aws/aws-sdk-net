@@ -8,20 +8,19 @@ using Amazon.EC2;
 
 namespace Amazon.DNXCore.IntegrationTests.EC2
 {
-    public class ImageUtilitiesTest
+    public class ImageUtilitiesTest : TestBase<AmazonEC2Client>
     {
         static string[] imgs = { "WINDOWS_2012R2_BASE", "WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014", "WINDOWS_2012R2_SQL_SERVER_STANDARD_2014", "WINDOWS_2012R2_SQL_SERVER_WEB_2014", "WINDOWS_2012_BASE","WINDOWS_2012_SQL_SERVER_EXPRESS_2014","WINDOWS_2012_SQL_SERVER_STANDARD_2014","WINDOWS_2012_SQL_SERVER_WEB_2014" };
 
-        [Trait("Category","EC2-ImageUtilities")]
+        [Trait(CategoryAttribute, "Glacier")]
         [Fact]
         public async Task ImageTest()
         {
-            var client = TestBase.CreateClient<AmazonEC2Client>(null,RegionEndpoint.USEast1);
             foreach (string img in imgs)
             {
-                var image = await ImageUtilities.FindImageAsync((Amazon.EC2.IAmazonEC2)client, img).ConfigureAwait(false);
+                var image = await ImageUtilities.FindImageAsync(Client, img).ConfigureAwait(false);
                 Assert.NotNull(image);
-            }   
+            }
         }
     }   
 }
