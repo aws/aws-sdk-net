@@ -319,7 +319,34 @@ namespace Amazon.EC2.Util
 
         private static bool ImageDefinitionsLoaded { get; set; }
 
-       
+        private static ImageDescriptor DescriptorFromKey(string key)
+        {
+            foreach (var d in WindowsDescriptors)
+            {
+                if (d.DefinitionKey.Equals(key, StringComparison.OrdinalIgnoreCase))
+                    return d;
+            }
+
+            foreach (var d in LinuxDescriptors)
+            {
+                if (d.DefinitionKey.Equals(key, StringComparison.OrdinalIgnoreCase))
+                    return d;
+            }
+
+            return null;
+        }
+
+        private static DescribeImagesRequest CreateDescribeImagesRequest(ImageDescriptor descriptor)
+        {
+            return new DescribeImagesRequest()
+            {
+                Owners = new List<string>() { "amazon" },
+                Filters = new List<Filter>()
+                {
+                    new Filter(){Name = "name", Values = new List<string>(){descriptor.NamePrefix}}
+                }
+            };
+        }
 
         /// <summary>
         /// Parses the ami definition content into the ImageDescriptor members. 
@@ -391,6 +418,16 @@ namespace Amazon.EC2.Util
             return new AmazonEC2Config();
         }
 
+        private static AmazonEC2Config CreateConfigFromClient(IAmazonEC2 ec2Client, ImageDescriptor descriptor)
+        {
+            if (ec2Client == null)
+                throw new ArgumentNullException("ec2Client");
+            if (descriptor == null)
+                throw new ArgumentNullException("descriptor");
+
+            var config = ConfigFromClient(ec2Client);
+            return config;
+        }
         #endregion
 
         /// <summary>

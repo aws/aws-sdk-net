@@ -72,22 +72,9 @@ namespace Amazon.EC2.Util
         public static async Task<ImageDescriptor> DescriptorFromKeyAsync(string key, IAmazonEC2 ec2Client)
         {
             await LoadDefinitionsFromWebAsync(ConfigFromClient(ec2Client)).ConfigureAwait(false);
-
-            foreach (var d in WindowsDescriptors)
-            {
-                if (d.DefinitionKey.Equals(key, StringComparison.OrdinalIgnoreCase))
-                    return d;
-            }
-
-            foreach (var d in LinuxDescriptors)
-            {
-                if (d.DefinitionKey.Equals(key, StringComparison.OrdinalIgnoreCase))
-                    return d;
-            }
-
-            return null;
+            return DescriptorFromKey(key);
         }
-        
+
         private static async Task LoadDefinitionsFromWebAsync(AmazonEC2Config ec2Config)
         {
             lock (LOCK_OBJECT)
@@ -184,26 +171,15 @@ namespace Amazon.EC2.Util
         /// <returns>The Amazon machine image.</returns>
         public static async Task<Image> FindImageAsync(IAmazonEC2 ec2Client, ImageDescriptor descriptor)
         {
-            if (ec2Client == null)
-                throw new ArgumentNullException("ec2Client");
-            if (descriptor == null)
-                throw new ArgumentNullException("descriptor");
-
-            var config = ConfigFromClient(ec2Client);
+            AmazonEC2Config config = CreateConfigFromClient(ec2Client, descriptor);
             await LoadDefinitionsFromWebAsync(config).ConfigureAwait(false);
 
             int retryCount = 1;
             Image image = null;
             do
             {
-                var result = await ec2Client.DescribeImagesAsync(new DescribeImagesRequest()
-                {
-                    Owners = new List<string>() { "amazon" },
-                    Filters = new List<Filter>()
-                {
-                    new Filter(){Name = "name", Values = new List<string>(){descriptor.NamePrefix}}
-                }
-                }).ConfigureAwait(false);
+
+                var result = await ec2Client.DescribeImagesAsync(CreateDescribeImagesRequest(descriptor)).ConfigureAwait(false);
 
                 if (result.Images.Any())
                     image = result.Images.OrderByDescending(x => x.Name).First();
@@ -213,8 +189,8 @@ namespace Amazon.EC2.Util
                     if (retryCount == 1)
                     {
                         Logger.InfoFormat("FindImage - DescribeImages call for image descriptor '{0}' (name prefix '{1}') yielded no results, assuming outdated control file and reloading",
-                                          descriptor.DefinitionKey,
-                                          descriptor.NamePrefix);
+                                            descriptor.DefinitionKey,
+                                            descriptor.NamePrefix);
                         lock (LOCK_OBJECT)
                         {
                             ImageDefinitionsLoaded = false;
@@ -228,8 +204,8 @@ namespace Amazon.EC2.Util
 
             if (image == null)
                 Logger.InfoFormat("FindImage - failed to find valid AMI image for descriptor '{0}' (name prefix '{1}')",
-                                  descriptor.DefinitionKey,
-                                  descriptor.NamePrefix);
+                                    descriptor.DefinitionKey,
+                                    descriptor.NamePrefix);
 
             return image;
         }

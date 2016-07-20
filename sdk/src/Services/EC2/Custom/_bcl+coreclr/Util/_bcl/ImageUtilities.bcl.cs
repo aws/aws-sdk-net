@@ -72,19 +72,7 @@ namespace Amazon.EC2.Util
         {
             LoadDefinitionsFromWeb(ConfigFromClient(ec2Client));
 
-            foreach (var d in WindowsDescriptors)
-            {
-                if (d.DefinitionKey.Equals(key, StringComparison.OrdinalIgnoreCase))
-                    return d;
-            }
-
-            foreach (var d in LinuxDescriptors)
-            {
-                if (d.DefinitionKey.Equals(key, StringComparison.OrdinalIgnoreCase))
-                    return d;
-            }
-
-            return null;
+            return DescriptorFromKey(key);
         }
         
         private static void LoadDefinitionsFromWeb(AmazonEC2Config ec2Config)
@@ -183,26 +171,14 @@ namespace Amazon.EC2.Util
         /// <returns>The Amazon machine image.</returns>
         public static Image FindImage(IAmazonEC2 ec2Client, ImageDescriptor descriptor)
         {
-            if (ec2Client == null)
-                throw new ArgumentNullException("ec2Client");
-            if (descriptor == null)
-                throw new ArgumentNullException("descriptor");
-
-            var config = ConfigFromClient(ec2Client);
+            AmazonEC2Config config = CreateConfigFromClient(ec2Client, descriptor);
             LoadDefinitionsFromWeb(config);
 
             int retryCount = 1;
             Image image = null;
             do
             {
-                var result = ec2Client.DescribeImages(new DescribeImagesRequest()
-                {
-                    Owners = new List<string>() { "amazon" },
-                    Filters = new List<Filter>()
-                {
-                    new Filter(){Name = "name", Values = new List<string>(){descriptor.NamePrefix}}
-                }
-                });
+                var result = ec2Client.DescribeImages(CreateDescribeImagesRequest(descriptor));
 
                 if (result.Images.Any())
                     image = result.Images.OrderByDescending(x => x.Name).First();
