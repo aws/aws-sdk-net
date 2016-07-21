@@ -73,21 +73,6 @@
     <Compile Include="Custom\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+coreclr\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\_bcl+coreclr\Import\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\_bcl+coreclr\Util\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\_bcl+coreclr\Util\_async\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Custom\_bcl+coreclr\Util\_bcl\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Custom\_bcl\Import\*.cs">
       <SubType>Code</SubType>
     </Compile>
