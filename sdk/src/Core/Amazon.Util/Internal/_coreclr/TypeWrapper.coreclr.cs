@@ -203,14 +203,14 @@ namespace Amazon.Util.Internal
                 var attributeRealType = ((TypeInfoWrapper)attributeType)._type;
 
                 var attributes = new List<CustomAttributeData>();
-                attributes.AddRange(this._typeInfo.CustomAttributes.Where(x => x.GetType().Equals(attributeRealType)));
+                attributes.AddRange(this._typeInfo.CustomAttributes.Where(x => x.AttributeType.Equals(attributeRealType)));
                 if (inherit)
                 {
                     var type = this._typeInfo.BaseType;
                     while (type != null)
                     {
                         var info = type.GetTypeInfo();
-                        attributes.AddRange(info.CustomAttributes.Where(x => x.GetType().Equals(attributeRealType)));
+                        attributes.AddRange(info.CustomAttributes.Where(x => x.AttributeType.Equals(attributeRealType)));
                         type = info.BaseType;
                     }
                 }
