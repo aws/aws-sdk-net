@@ -57,7 +57,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the replication instance.
+        /// The Amazon Resource Name (ARN) of the replication instance.
         /// </para>
         /// </summary>
         public string ReplicationInstanceArn

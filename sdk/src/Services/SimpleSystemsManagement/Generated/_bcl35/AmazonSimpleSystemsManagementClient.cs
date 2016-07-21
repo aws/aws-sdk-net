@@ -33,11 +33,12 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Implementation for accessing SimpleSystemsManagement
     ///
-    /// This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables you to
-    /// remotely manage the configuration of your on-premises servers and virtual machines
-    /// (VMs) and your Amazon EC2 instances using scripts, commands, or the Amazon EC2 console.
-    /// SSM includes an on-demand solution called <i>Amazon EC2 Run Command</i> and a lightweight
-    /// instance configuration solution called <i>SSM Config</i>. 
+    /// This is the Amazon EC2 Simple Systems Manager (SSM) API Reference. SSM enables you
+    /// to remotely manage the configuration of your Amazon EC2 instances, virtual machines
+    /// (VMs), or servers in your on-premises environment or in an environment provided by
+    /// other cloud providers using scripts, commands, or the Amazon EC2 console. SSM includes
+    /// an on-demand solution called <i>Amazon EC2 Run Command</i> and a lightweight instance
+    /// configuration solution called <i>SSM Config</i>. 
     /// 
     ///  
     /// <para>
@@ -2391,12 +2392,22 @@ namespace Amazon.SimpleSystemsManagement
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
+        /// One or more configuration items is not valid. Verify that a valid Amazon Resource
+        /// Name (ARN) was provided for an Amazon SNS topic.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputFolderException">
         /// The S3 bucket does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
+        /// The role name can't contain invalid characters. Also verify that you specified an
+        /// IAM role for notifications that includes the required trust policy. For information
+        /// about configuring the IAM role for SSM notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Configuring
+        /// SNS Notifications SSM</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
@@ -2433,12 +2444,22 @@ namespace Amazon.SimpleSystemsManagement
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
+        /// One or more configuration items is not valid. Verify that a valid Amazon Resource
+        /// Name (ARN) was provided for an Amazon SNS topic.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputFolderException">
         /// The S3 bucket does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
+        /// The role name can't contain invalid characters. Also verify that you specified an
+        /// IAM role for notifications that includes the required trust policy. For information
+        /// about configuring the IAM role for SSM notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Configuring
+        /// SNS Notifications SSM</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.

@@ -97,6 +97,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
+                if(publicRequest.IsSetMultiAZ())
+                {
+                    context.Writer.WritePropertyName("MultiAZ");
+                    context.Writer.Write(publicRequest.MultiAZ);
+                }
+
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     context.Writer.WritePropertyName("PreferredMaintenanceWindow");

@@ -41,7 +41,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _comment;
         private string _documentName;
         private string _instanceId;
+        private NotificationConfig _notificationConfig;
         private DateTime? _requestedDateTime;
+        private string _serviceRole;
         private CommandInvocationStatus _status;
         private string _traceOutput;
 
@@ -134,6 +136,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NotificationConfig. 
+        /// <para>
+        /// Configurations for sending notifications about command status changes on a per instance
+        /// basis.
+        /// </para>
+        /// </summary>
+        public NotificationConfig NotificationConfig
+        {
+            get { return this._notificationConfig; }
+            set { this._notificationConfig = value; }
+        }
+
+        // Check to see if NotificationConfig property is set
+        internal bool IsSetNotificationConfig()
+        {
+            return this._notificationConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RequestedDateTime. 
         /// <para>
         /// The time and date the request was sent to this instance.
@@ -149,6 +170,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRequestedDateTime()
         {
             return this._requestedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRole. 
+        /// <para>
+        /// The IAM service role that SSM uses to act on your behalf when sending notifications
+        /// about command status changes on a per instance basis.
+        /// </para>
+        /// </summary>
+        public string ServiceRole
+        {
+            get { return this._serviceRole; }
+            set { this._serviceRole = value; }
+        }
+
+        // Check to see if ServiceRole property is set
+        internal bool IsSetServiceRole()
+        {
+            return this._serviceRole != null;
         }
 
         /// <summary>

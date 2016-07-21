@@ -148,7 +148,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Lambda will assume when it executes
-        /// your function. 
+        /// your function.
         /// </para>
         /// </summary>
         public string Role
@@ -164,7 +164,15 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Runtime.
+        /// Gets and sets the property Runtime. 
+        /// <para>
+        /// The runtime environment for the Lambda function.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime
+        /// (v0.10.42), set the value to "nodejs".
+        /// </para>
         /// </summary>
         public Runtime Runtime
         {
@@ -183,7 +191,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The function execution time at which AWS Lambda should terminate the function. Because
         /// the execution time has cost implications, we recommend you set this value based on
-        /// your expected execution time. The default is 3 seconds. 
+        /// your expected execution time. The default is 3 seconds.
         /// </para>
         /// </summary>
         public int Timeout

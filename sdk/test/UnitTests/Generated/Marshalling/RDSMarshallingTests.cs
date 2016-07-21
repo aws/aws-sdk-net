@@ -135,6 +135,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CopyDBClusterParameterGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyDBClusterParameterGroup");
+
+            var request = InstantiateClassGenerator.Execute<CopyDBClusterParameterGroupRequest>();
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CopyDBClusterParameterGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as CopyDBClusterParameterGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CopyDBClusterSnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("CopyDBClusterSnapshot");

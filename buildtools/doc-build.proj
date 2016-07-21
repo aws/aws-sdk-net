@@ -100,6 +100,10 @@
 	</Target>
     
     <Target Name="build-docgenerator">
+	
+		<Message Text="Restore nuget references for ..\docgenerator\AWSSDKDocGenerator.sln"/>
+		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\docgenerator\AWSSDKDocGenerator.sln" />
+	
 		<Message Text="Building documentation generator"/>
 		<MSBuild Projects="..\docgenerator\AWSSDKDocGenerator.sln"
 			Targets="Clean;Build"

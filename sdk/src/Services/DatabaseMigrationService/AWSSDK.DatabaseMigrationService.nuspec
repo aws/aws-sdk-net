@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.DatabaseMigrationService</id>
     <title>AWSSDK - AWS Database Migration Service</title>
-    <version>3.1.1.0</version> 
+    <version>3.1.2.0</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Database Migration Service (AWS DMS) can migrate your data to and from most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Aurora, MariaDB, and MySQL. The service supports homogeneous migrations such as Oracle to Oracle, and also heterogeneous migrations between different database platforms, such as Oracle to MySQL or MySQL to Amazon Aurora.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
       </group>
     </dependencies>
   </metadata> 
