@@ -1,3 +1,20 @@
+### 3.1.86.0 (2016-07-21 23:04 UTC)
+* CertificateManager (3.1.4.0)
+	* Add reason for failure when describing certificates.
+* CloudFormation (3.1.6.0)
+	* Added support for specifying IAM capabilities for stacks.
+* ConfigService (3.1.6.0)
+	* Adding support for ACM and RDS resource types.
+Two new features (Hybrid Rules & Forced Evaluation).
+* ECS (3.1.6.1)
+	* Documentation update.
+* ElasticTranscoder (3.1.0.10)
+	* Updated documentation for WAV file output format support.
+* Lambda (3.1.4.5)
+	* Minor documentation update.
+* Core 3.1.9.1
+	* Fixed issue where hyphens were automatically stripped from access policies during unmarshall.
+
 ### 3.1.85.0 (2016-07-19 21:11 UTC)
 * DeviceFarm (3.1.7.0)
 	* Add support for managing remote access sessions.
