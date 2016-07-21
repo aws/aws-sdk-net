@@ -71,7 +71,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// format to another. All captions must be in UTF-8. Elastic Transcoder supports two
         /// types of captions:
         /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li>
         /// <para>
         /// <b>Embedded:</b> Embedded captions are included in the same file as the audio and
         /// video. Elastic Transcoder supports only one embedded caption per language, to a maximum
@@ -90,7 +90,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// Elastic Transcoder supports a maximum of one embedded format per output.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li>
         /// <para>
         /// <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio
         /// and video data. Sidecar captions require a player that is capable of understanding
@@ -108,7 +108,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>,
         /// <code>srt</code>, and <code>webvtt</code>.
         /// </para>
-        ///  </li> </ul> 
+        /// </li> </ul> 
         /// <para>
         ///  If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
         /// </para>
