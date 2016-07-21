@@ -62,7 +62,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The code for the Lambda function. 
+        /// The code for the Lambda function.
         /// </para>
         /// </summary>
         public FunctionCode Code
@@ -164,7 +164,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Publish. 
         /// <para>
         /// This boolean parameter can be used to request AWS Lambda to create the Lambda function
-        /// and publish a version as an atomic operation. 
+        /// and publish a version as an atomic operation.
         /// </para>
         /// </summary>
         public bool Publish
@@ -203,7 +203,12 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The runtime environment for the Lambda function you are uploading. 
+        /// The runtime environment for the Lambda function you are uploading.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime
+        /// (v0.10.42), set the value to "nodejs".
         /// </para>
         /// </summary>
         public Runtime Runtime
@@ -223,7 +228,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The function execution time at which Lambda should terminate the function. Because
         /// the execution time has cost implications, we recommend you set this value based on
-        /// your expected execution time. The default is 3 seconds. 
+        /// your expected execution time. The default is 3 seconds.
         /// </para>
         /// </summary>
         public int Timeout
