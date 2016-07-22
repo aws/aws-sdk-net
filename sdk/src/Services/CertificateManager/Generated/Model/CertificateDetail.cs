@@ -37,6 +37,7 @@ namespace Amazon.CertificateManager.Model
         private DateTime? _createdAt;
         private string _domainName;
         private List<DomainValidation> _domainValidationOptions = new List<DomainValidation>();
+        private FailureReason _failureReason;
         private List<string> _inUseBy = new List<string>();
         private DateTime? _issuedAt;
         private string _issuer;
@@ -124,6 +125,26 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetDomainValidationOptions()
         {
             return this._domainValidationOptions != null && this._domainValidationOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason the certificate request failed. This value exists only when the structure's
+        /// <code>Status</code> is <code>FAILED</code>. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+        /// Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+        /// </para>
+        /// </summary>
+        public FailureReason FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>

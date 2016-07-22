@@ -54,6 +54,7 @@ namespace Amazon.ConfigService.Model
         private string _resourceId;
         private string _resourceName;
         private ResourceType _resourceType;
+        private Dictionary<string, string> _supplementaryConfiguration = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
 
@@ -340,6 +341,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupplementaryConfiguration. 
+        /// <para>
+        /// Configuration attributes that AWS Config returns for certain resource types to supplement
+        /// the information returned for the <code>configuration</code> parameter.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> SupplementaryConfiguration
+        {
+            get { return this._supplementaryConfiguration; }
+            set { this._supplementaryConfiguration = value; }
+        }
+
+        // Check to see if SupplementaryConfiguration property is set
+        internal bool IsSetSupplementaryConfiguration()
+        {
+            return this._supplementaryConfiguration != null && this._supplementaryConfiguration.Count > 0; 
         }
 
         /// <summary>

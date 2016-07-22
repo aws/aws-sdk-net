@@ -63,10 +63,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property HorizontalAlign. 
         /// <para>
         /// The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:
-        /// <ul> <li> <b>Left</b>: The left edge of the watermark is aligned with the left border
-        /// of the video.</li> <li> <b>Right</b>: The right edge of the watermark is aligned with
-        /// the right border of the video.</li> <li> <b>Center</b>: The watermark is centered
-        /// between the left and right borders.</li> </ul>
+        /// <ul> <li><b>Left</b>: The left edge of the watermark is aligned with the left border
+        /// of the video.</li> <li><b>Right</b>: The right edge of the watermark is aligned with
+        /// the right border of the video.</li> <li><b>Center</b>: The watermark is centered between
+        /// the left and right borders.</li></ul>
         /// </para>
         /// </summary>
         public string HorizontalAlign
@@ -213,17 +213,17 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property SizingPolicy. 
         /// <para>
-        /// A value that controls scaling of the watermark: <ul> <li> <b>Fit</b>: Elastic Transcoder
+        /// A value that controls scaling of the watermark: <ul> <li><b>Fit</b>: Elastic Transcoder
         /// scales the watermark so it matches the value that you specified in either <code>MaxWidth</code>
-        /// or <code>MaxHeight</code> without exceeding the other value.</li> <li> <b>Stretch</b>:
+        /// or <code>MaxHeight</code> without exceeding the other value.</li> <li><b>Stretch</b>:
         /// Elastic Transcoder stretches the watermark to match the values that you specified
         /// for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions
         /// of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code>
-        /// are different, the watermark will be distorted.</li> <li> <b>ShrinkToFit</b>: Elastic
+        /// are different, the watermark will be distorted.</li> <li><b>ShrinkToFit</b>: Elastic
         /// Transcoder scales the watermark down so that its dimensions match the values that
         /// you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
         /// without exceeding either value. If you specify this option, Elastic Transcoder does
-        /// not scale the watermark up.</li> </ul> 
+        /// not scale the watermark up.</li></ul> 
         /// </para>
         /// </summary>
         public string SizingPolicy
@@ -243,12 +243,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// A value that determines how Elastic Transcoder interprets values that you specified
         /// for <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>,
-        /// and <code>MaxHeight</code>: <ul> <li> <b>Content</b>: <code>HorizontalOffset</code>
+        /// and <code>MaxHeight</code>: <ul><li><b>Content</b>: <code>HorizontalOffset</code>
         /// and <code>VerticalOffset</code> values are calculated based on the borders of the
         /// video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code>
         /// and <code>MaxHeight</code>, if specified as a percentage, are calculated based on
         /// the borders of the video excluding black bars added by Elastic Transcoder, if any.</li>
-        /// <li> <b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values
+        /// <li><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values
         /// are calculated based on the borders of the video including black bars added by Elastic
         /// Transcoder, if any.</li> In addition, <code>MaxWidth</code> and <code>MaxHeight</code>,
         /// if specified as a percentage, are calculated based on the borders of the video including
@@ -271,10 +271,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property VerticalAlign. 
         /// <para>
         /// The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:
-        /// <ul> <li> <b>Top</b>: The top edge of the watermark is aligned with the top border
-        /// of the video.</li> <li> <b>Bottom</b>: The bottom edge of the watermark is aligned
-        /// with the bottom border of the video.</li> <li> <b>Center</b>: The watermark is centered
-        /// between the top and bottom borders.</li> </ul>
+        /// <ul> <li><b>Top</b>: The top edge of the watermark is aligned with the top border
+        /// of the video.</li> <li><b>Bottom</b>: The bottom edge of the watermark is aligned
+        /// with the bottom border of the video.</li> <li><b>Center</b>: The watermark is centered
+        /// between the top and bottom borders.</li></ul>
         /// </para>
         /// </summary>
         public string VerticalAlign

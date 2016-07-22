@@ -34,19 +34,18 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// You can use this action for customer managed Config rules and AWS managed Config rules.
-    /// A customer managed Config rule is a custom rule that you develop and maintain. An
-    /// AWS managed Config rule is a customizable, predefined rule that is provided by AWS
-    /// Config.
+    /// You can use this action for custom Config rules and AWS managed Config rules. A custom
+    /// Config rule is a rule that you develop and maintain. An AWS managed Config rule is
+    /// a customizable, predefined rule that AWS Config provides.
     /// </para>
     ///  
     /// <para>
-    /// If you are adding a new customer managed Config rule, you must first create the AWS
-    /// Lambda function that the rule invokes to evaluate your resources. When you use the
-    /// <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify
-    /// the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the
-    /// ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
-    /// object, which is part of the <code>ConfigRule</code> object. 
+    /// If you are adding a new custom Config rule, you must first create the AWS Lambda function
+    /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
+    /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
+    /// that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
+    /// key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code>
+    /// object. 
     /// </para>
     ///  
     /// <para>

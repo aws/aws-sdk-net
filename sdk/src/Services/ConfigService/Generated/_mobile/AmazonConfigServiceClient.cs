@@ -325,6 +325,37 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteEvaluationResults
+
+        internal DeleteEvaluationResultsResponse DeleteEvaluationResults(DeleteEvaluationResultsRequest request)
+        {
+            var marshaller = new DeleteEvaluationResultsRequestMarshaller();
+            var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEvaluationResultsRequest,DeleteEvaluationResultsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEvaluationResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationResults operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteEvaluationResultsResponse> DeleteEvaluationResultsAsync(DeleteEvaluationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteEvaluationResultsRequestMarshaller();
+            var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEvaluationResultsRequest,DeleteEvaluationResultsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeliverConfigSnapshot
 
         internal DeliverConfigSnapshotResponse DeliverConfigSnapshot(DeliverConfigSnapshotRequest request)
@@ -1058,6 +1089,37 @@ namespace Amazon.ConfigService
             var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartConfigRulesEvaluation
+
+        internal StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request)
+        {
+            var marshaller = new StartConfigRulesEvaluationRequestMarshaller();
+            var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
+
+            return Invoke<StartConfigRulesEvaluationRequest,StartConfigRulesEvaluationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartConfigRulesEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigRulesEvaluation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StartConfigRulesEvaluationResponse> StartConfigRulesEvaluationAsync(StartConfigRulesEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartConfigRulesEvaluationRequestMarshaller();
+            var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartConfigRulesEvaluationRequest,StartConfigRulesEvaluationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

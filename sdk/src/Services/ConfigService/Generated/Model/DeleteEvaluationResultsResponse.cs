@@ -14,21 +14,24 @@
  */
 
 /*
- * Do not modify this file. This is a generated file.
+ * Do not modify this file. This file is generated from the config-2014-11-12.normal.json service model.
  */
-
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Globalization;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
-using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
-namespace Amazon.Util.Internal
+namespace Amazon.ConfigService.Model
 {
-    public static partial class InternalSDKUtils
+    /// <summary>
+    /// The output when you delete the evaluation results for the specified Config rule.
+    /// </summary>
+    public partial class DeleteEvaluationResultsResponse : AmazonWebServiceResponse
     {
-        internal const string CoreVersionNumber = "3.1.9.1";
+
     }
 }
