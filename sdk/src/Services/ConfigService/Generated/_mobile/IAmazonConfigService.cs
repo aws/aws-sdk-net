@@ -139,6 +139,22 @@ namespace Amazon.ConfigService
 
         #endregion
                 
+        #region  DeleteEvaluationResults
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEvaluationResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationResults operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteEvaluationResultsResponse> DeleteEvaluationResultsAsync(DeleteEvaluationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeliverConfigSnapshot
 
 
@@ -555,6 +571,22 @@ namespace Amazon.ConfigService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartConfigRulesEvaluation
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartConfigRulesEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigRulesEvaluation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StartConfigRulesEvaluationResponse> StartConfigRulesEvaluationAsync(StartConfigRulesEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

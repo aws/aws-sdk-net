@@ -95,6 +95,68 @@ namespace Amazon.CertificateManager
 
 
     /// <summary>
+    /// Constants used for properties of type FailureReason.
+    /// </summary>
+    public class FailureReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITIONAL_VERIFICATION_REQUIRED for FailureReason
+        /// </summary>
+        public static readonly FailureReason ADDITIONAL_VERIFICATION_REQUIRED = new FailureReason("ADDITIONAL_VERIFICATION_REQUIRED");
+        /// <summary>
+        /// Constant DOMAIN_NOT_ALLOWED for FailureReason
+        /// </summary>
+        public static readonly FailureReason DOMAIN_NOT_ALLOWED = new FailureReason("DOMAIN_NOT_ALLOWED");
+        /// <summary>
+        /// Constant INVALID_PUBLIC_DOMAIN for FailureReason
+        /// </summary>
+        public static readonly FailureReason INVALID_PUBLIC_DOMAIN = new FailureReason("INVALID_PUBLIC_DOMAIN");
+        /// <summary>
+        /// Constant NO_AVAILABLE_CONTACTS for FailureReason
+        /// </summary>
+        public static readonly FailureReason NO_AVAILABLE_CONTACTS = new FailureReason("NO_AVAILABLE_CONTACTS");
+        /// <summary>
+        /// Constant OTHER for FailureReason
+        /// </summary>
+        public static readonly FailureReason OTHER = new FailureReason("OTHER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FailureReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailureReason FindValue(string value)
+        {
+            return FindValue<FailureReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailureReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KeyAlgorithm.
     /// </summary>
     public class KeyAlgorithm : ConstantClass

@@ -43,11 +43,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// The capabilities found within the template. Currently, AWS CloudFormation supports
-        /// only the CAPABILITY_IAM capability. If your template contains IAM resources, you must
-        /// specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a>
-        /// or <a>UpdateStack</a> actions with your template; otherwise, those actions return
-        /// an InsufficientCapabilities error.
+        /// The capabilities found within the template. If your template contains IAM resources,
+        /// you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter
+        /// when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+        /// otherwise, those actions return an InsufficientCapabilities error.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+        /// IAM Resources in AWS CloudFormation Templates</a>.
         /// </para>
         /// </summary>
         public List<string> Capabilities

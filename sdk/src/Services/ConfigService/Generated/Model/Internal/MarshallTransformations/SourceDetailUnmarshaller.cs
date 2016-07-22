@@ -70,6 +70,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaximumExecutionFrequency", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaximumExecutionFrequency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MessageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
