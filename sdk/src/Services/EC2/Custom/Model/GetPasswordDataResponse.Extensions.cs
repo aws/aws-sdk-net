@@ -20,17 +20,13 @@ using System.Text;
 using Amazon.EC2;
 using Amazon.Runtime;
 using System.IO;
-
-#if BCL
 using System.Security.Cryptography;
 using ThirdParty.BouncyCastle.OpenSsl;
-#endif
 
 namespace Amazon.EC2.Model
 {
     public partial class GetPasswordDataResponse : AmazonWebServiceResponse
     {
-#if BCL
         /// <summary>
         /// Gets the decrypted password using the RSA private key which can be found in the
         /// PEM file for the key pair.
@@ -58,6 +54,5 @@ namespace Amazon.EC2.Model
             string decrypted = Encoding.UTF8.GetString(decryptedBytes);
             return decrypted;
         }
-#endif
     }
 }
