@@ -76,6 +76,9 @@
     <Compile Include="Custom\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\_bcl+coreclr\Model\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\_bcl+coreclr\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
