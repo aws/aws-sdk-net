@@ -337,7 +337,7 @@ namespace ServiceClientGenerator
 
                 if (projectFileConfiguration.IsPlatformCodeFolder(folder))
                 {
-                    if (projectFileConfiguration.IsValidPlatformCodeFolderForProject(folder))
+                    if (projectFileConfiguration.IsValidPlatformPathForProject(folder))
                         sourceCodeFolders.Add(folder);
                 }
                 else
@@ -431,9 +431,11 @@ namespace ServiceClientGenerator
                         if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
                             continue;
 
+                        
+
                         if (projectFileConfiguration.IsPlatformCodeFolder(serviceRelativeFolder))
                         {
-                            if (projectFileConfiguration.IsValidPlatformCodeFolderForProject(serviceRelativeFolder))
+                            if (projectFileConfiguration.IsValidPlatformPathForProject(serviceRelativeFolder))
                                 sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
                         }
                         else
