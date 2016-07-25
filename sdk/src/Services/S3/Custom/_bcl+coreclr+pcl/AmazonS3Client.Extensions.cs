@@ -231,21 +231,20 @@ namespace Amazon.S3
             return protocol;
         }
 
-#if BCL
         internal void ConfigureProxy(HttpWebRequest httpRequest)
         {
-            if (!string.IsNullOrEmpty(Config.ProxyHost) && Config.ProxyPort != -1)
+            if (Config.GetWebProxy()!=null)
             {
-                WebProxy proxy = new WebProxy(Config.ProxyHost, Config.ProxyPort);
-                httpRequest.Proxy = proxy;
+                httpRequest.Proxy = Config.GetWebProxy();
             }
 
+            
             if (httpRequest.Proxy != null && Config.ProxyCredentials != null)
             {
                 httpRequest.Proxy.Credentials = Config.ProxyCredentials;
             }
     }
-#endif
+
 
         //protected override void ProcessExceptionHandlers(Exception exception, IRequest request)
         //{
