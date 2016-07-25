@@ -12,38 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-
-#if AWS_ASYNC_API
-using System.Threading.Tasks;
-#endif
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
-using Amazon.Util;
-using Amazon.Util.Internal;
 using Amazon.S3.Internal;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.S3.Util;
-using Map = System.Collections.Generic.Dictionary<Amazon.S3.S3QueryParameter, string>;
+using Amazon.Util;
+using Amazon.Util.Internal;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
 
 namespace Amazon.S3
 {
     public partial class AmazonS3Client : AmazonServiceClient, IAmazonS3
     {
+        internal void ConfigureProxy(HttpWebRequest httpRequest)
+        {
+#if BCL
+            if (!string.IsNullOrEmpty(Config.ProxyHost) && Config.ProxyPort != -1)
+            {
+                WebProxy proxy = new WebProxy(Config.ProxyHost, Config.ProxyPort);
+                httpRequest.Proxy = proxy;
+            }
+
+            if (httpRequest.Proxy != null && Config.ProxyCredentials != null)
+            {
+                httpRequest.Proxy.Credentials = Config.ProxyCredentials;
+            }
+#elif CORECLR
+#endif
+        }
+
+
         #region GetPreSignedURL
 
         /// <summary>
@@ -231,32 +240,6 @@ namespace Amazon.S3
             return protocol;
         }
 
-#if BCL
-        internal void ConfigureProxy(HttpWebRequest httpRequest)
-        {
-            if (!string.IsNullOrEmpty(Config.ProxyHost) && Config.ProxyPort != -1)
-            {
-                WebProxy proxy = new WebProxy(Config.ProxyHost, Config.ProxyPort);
-                httpRequest.Proxy = proxy;
-            }
-
-            if (httpRequest.Proxy != null && Config.ProxyCredentials != null)
-            {
-                httpRequest.Proxy.Credentials = Config.ProxyCredentials;
-            }
-    }
-#endif
-
-        //protected override void ProcessExceptionHandlers(Exception exception, IRequest request)
-        //{
-        //    base.ProcessExceptionHandlers(exception, request);
-
-        //    CleanupRequest(request);
-        //}
-
-
-
-
         #region ICoreAmazonS3 Implementation
 
         string ICoreAmazonS3.GeneratePreSignedURL(string bucketName, string objectKey, DateTime expiration, IDictionary<string, object> additionalProperties)
@@ -272,129 +255,6 @@ namespace Amazon.S3
 
             return this.GetPreSignedURL(request);
         }
-
-#if BCL
-        IList<string> ICoreAmazonS3.GetAllObjectKeys(string bucketName, string prefix, IDictionary<string, object> additionalProperties)
-        {
-            var keys = new List<string>();
-            string marker = null;
-            do
-            {
-                var request = new ListObjectsRequest
-                {
-                    BucketName = bucketName,
-                    Prefix = prefix,
-                    Marker = marker
-                };
-                InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-                var listResponse = this.ListObjects(request);
-                keys.AddRange(listResponse.S3Objects.Select(o => o.Key));
-                marker = listResponse.NextMarker;
-            } while (!string.IsNullOrEmpty(marker));
-
-            return keys;
-        }
-
-        void ICoreAmazonS3.Delete(string bucketName, string objectKey, IDictionary<string, object> additionalProperties)
-        {
-            var request = new DeleteObjectRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-            this.DeleteObject(request);
-        }
-
-        void ICoreAmazonS3.Deletes(string bucketName, IEnumerable<string> objectKeys, IDictionary<string, object> additionalProperties)
-        {
-            var request = new DeleteObjectsRequest
-            {
-                BucketName = bucketName
-            };
-
-            foreach(var key in objectKeys)
-            {
-                request.AddKey(key);
-            }
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-            this.DeleteObjects(request);
-        }
-
-        void ICoreAmazonS3.UploadObjectFromStream(string bucketName, string objectKey, Stream stream, IDictionary<string, object> additionalProperties)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                InputStream = stream
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-            transfer.Upload(request);
-        }
-
-        void ICoreAmazonS3.UploadObjectFromFilePath(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                FilePath = filepath
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-            transfer.Upload(request);
-        }
-
-        void ICoreAmazonS3.DownloadToFilePath(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-
-            var request = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                FilePath = filepath
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-            transfer.Download(request);
-        }
-
-        Stream ICoreAmazonS3.GetObjectStream(string bucketName, string objectKey, IDictionary<string, object> additionalProperties)
-        {
-            var request = new GetObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = objectKey
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-            return this.GetObject(request).ResponseStream;
-        }
-
-        void ICoreAmazonS3.MakeObjectPublic(string bucket, string objectKey, bool enable)
-        {
-            var request = new PutACLRequest
-            {
-                BucketName = bucket,
-                Key = objectKey,
-                CannedACL = enable ? S3CannedACL.PublicRead : S3CannedACL.Private
-            };
-            this.PutACL(request);
-        }
-
-        void ICoreAmazonS3.EnsureBucketExists(string bucketName)
-        {
-            this.PutBucket(bucketName);
-        }
-
-        bool ICoreAmazonS3.DoesS3BucketExist(string bucketName)
-        {
-            return Amazon.S3.Util.AmazonS3Util.DoesS3BucketExist(this, bucketName);
-        }
-
-#endif
 
 #if AWS_APM_API
 
@@ -491,79 +351,6 @@ namespace Amazon.S3
         Stream ICoreAmazonS3.EndGetObjectStream(IAsyncResult result)
         {
             return this.EndGetObject(result).ResponseStream;
-        }
-
-#elif AWS_ASYNC_API
-
-        async Task ICoreAmazonS3.DeleteAsync(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
-        {
-            var request = new DeleteObjectRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            await this.DeleteObjectAsync(request, cancellationToken).ConfigureAwait(false);
-        }
-
-        async Task ICoreAmazonS3.UploadObjectFromStreamAsync(string bucketName, string objectKey, Stream stream, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                InputStream = stream
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            await transfer.UploadAsync(request, cancellationToken).ConfigureAwait(false);
-        }
-
-        async Task<Stream> ICoreAmazonS3.GetObjectStreamAsync(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
-        {
-            var request = new GetObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = objectKey
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            return (await this.GetObjectAsync(request, cancellationToken).ConfigureAwait(false)).ResponseStream;
-        }
-
-        Task ICoreAmazonS3.UploadObjectFromFilePathAsync(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                FilePath = filepath
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            return transfer.UploadAsync(request, cancellationToken);
-        }
-
-#endif
-
-#if BCL45
-
-        Task ICoreAmazonS3.DownloadToFilePathAsync(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-
-            var request = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                FilePath = filepath
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            return transfer.DownloadAsync(request, cancellationToken);
         }
 #endif
         #endregion
