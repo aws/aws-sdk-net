@@ -29,16 +29,37 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteThing operation.
-    /// Deletes the specified thing from the Thing Registry.
+    /// Deletes the specified thing.
     /// </summary>
     public partial class DeleteThingRequest : AmazonIoTRequest
     {
+        private long? _expectedVersion;
         private string _thingName;
+
+        /// <summary>
+        /// Gets and sets the property ExpectedVersion. 
+        /// <para>
+        /// The expected version of the thing record in the registry. If the version of the record
+        /// in the registry does not match the expected version specified in the request, the
+        /// <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.
+        /// </para>
+        /// </summary>
+        public long ExpectedVersion
+        {
+            get { return this._expectedVersion.GetValueOrDefault(); }
+            set { this._expectedVersion = value; }
+        }
+
+        // Check to see if ExpectedVersion property is set
+        internal bool IsSetExpectedVersion()
+        {
+            return this._expectedVersion.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ThingName. 
         /// <para>
-        /// The thing name.
+        /// The name of the thing to delete.
         /// </para>
         /// </summary>
         public string ThingName

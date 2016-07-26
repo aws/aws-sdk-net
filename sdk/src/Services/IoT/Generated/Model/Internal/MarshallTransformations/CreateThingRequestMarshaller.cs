@@ -79,6 +79,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetThingTypeName())
+                {
+                    context.Writer.WritePropertyName("thingTypeName");
+                    context.Writer.Write(publicRequest.ThingTypeName);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

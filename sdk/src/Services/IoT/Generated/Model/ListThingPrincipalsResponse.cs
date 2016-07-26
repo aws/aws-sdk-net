@@ -37,7 +37,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// The principals.
+        /// The principals associated with the thing.
         /// </para>
         /// </summary>
         public List<string> Principals
