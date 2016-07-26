@@ -52,7 +52,7 @@ namespace Amazon.S3
             return keys;
         }
 
-        async Task ICoreAmazonS3.DeleteAsync(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
+        Task ICoreAmazonS3.DeleteAsync(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
         {
             var request = new DeleteObjectRequest
             {
@@ -60,11 +60,10 @@ namespace Amazon.S3
                 Key = objectKey
             };
             InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            await this.DeleteObjectAsync(request, cancellationToken).ConfigureAwait(false);
+            return this.DeleteObjectAsync(request, cancellationToken);
         }
 
-        async Task ICoreAmazonS3.DeletesAsync(string bucketName, IEnumerable<string> objectKeys, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
+        Task ICoreAmazonS3.DeletesAsync(string bucketName, IEnumerable<string> objectKeys, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
         {
             var request = new DeleteObjectsRequest
             {
@@ -76,11 +75,10 @@ namespace Amazon.S3
                 request.AddKey(key);
             }
             InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            await this.DeleteObjectsAsync(request, cancellationToken).ConfigureAwait(false);
+            return this.DeleteObjectsAsync(request, cancellationToken);
         }
 
-        async Task ICoreAmazonS3.UploadObjectFromStreamAsync(string bucketName, string objectKey, Stream stream, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
+        Task ICoreAmazonS3.UploadObjectFromStreamAsync(string bucketName, string objectKey, Stream stream, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
         {
             var transfer = new Amazon.S3.Transfer.TransferUtility(this);
             var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
@@ -90,8 +88,7 @@ namespace Amazon.S3
                 InputStream = stream
             };
             InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            await transfer.UploadAsync(request, cancellationToken).ConfigureAwait(false);
+            return transfer.UploadAsync(request, cancellationToken);
         }
 
         async Task<Stream> ICoreAmazonS3.GetObjectStreamAsync(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, CancellationToken cancellationToken)
