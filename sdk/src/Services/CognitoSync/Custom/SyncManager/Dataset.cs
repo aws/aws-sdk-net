@@ -404,6 +404,7 @@ namespace Amazon.CognitoSync.SyncManager
 #else
                 FireSyncSuccessEvent(new List<Record>());
 #endif
+                return;
             }
 
             // get latest modified records from remote
