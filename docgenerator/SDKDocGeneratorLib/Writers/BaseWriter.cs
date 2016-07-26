@@ -489,13 +489,19 @@ namespace SDKDocGenerator.Writers
 
             var docs35 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net35"), wrapper);
             var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
+            var docsCore = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard1.3"), wrapper);
             var docsPCL = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), wrapper);
             var docsUnity = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("unity"), wrapper);
 
             // If there is no documentation then assume it is available for all platforms, excluding Unity.
-            var boolNoDocs = docs35 == null && docs45 == null && docsPCL == null && docsUnity == null;
+            var boolNoDocs = docs35 == null && docs45 == null && docsCore == null && docsPCL == null && docsUnity == null;
 
-            var sb = new StringBuilder();
+            // .NET core Framework
+            if (boolNoDocs || (wrapper != null && docsCore != null))
+                writer.WriteLine("<p><strong>.NET Core: </strong><br/>Supported in: 1.3<br/>");
+
+            // .NET Framework
+            StringBuilder sb = new StringBuilder();
             if (boolNoDocs || (wrapper != null && docs45 != null))
                 sb.Append("4.5");
             if (boolNoDocs || (wrapper != null && docs35 != null))
