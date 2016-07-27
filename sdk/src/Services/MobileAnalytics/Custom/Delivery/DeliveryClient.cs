@@ -137,10 +137,15 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 submitEventsLength += eventString.Length;
                 if (submitEventsLength < _maConfig.MaxRequestSize)
                 {
-                    Amazon.MobileAnalytics.Model.Event _analyticsEvent = JsonMapper.ToObject<Amazon.MobileAnalytics.Model.Event>(eventString);
+                    try {
+                        Amazon.MobileAnalytics.Model.Event _analyticsEvent = JsonMapper.ToObject<Amazon.MobileAnalytics.Model.Event>(eventString);
+                        submitEventsList.Add(_analyticsEvent);
+                    } catch (JsonException e) {
+                        _logger.Error(e, "Could not load event from event store, discarding.");
+                    }
 
                     submitEventsIdList.Add(eventData["id"].ToString());
-                    submitEventsList.Add(_analyticsEvent);
+                    
                 }
                 else
                 {

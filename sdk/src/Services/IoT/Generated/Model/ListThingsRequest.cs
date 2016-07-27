@@ -29,8 +29,10 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListThings operation.
-    /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
-    /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
+    /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
+    /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
+    /// and attributeValue=Red retrieves all things in the registry that contain an attribute
+    /// <b>Color</b> with the value <b>Red</b>.
     /// </summary>
     public partial class ListThingsRequest : AmazonIoTRequest
     {
@@ -38,11 +40,12 @@ namespace Amazon.IoT.Model
         private string _attributeValue;
         private string _marker;
         private int? _maxResults;
+        private string _thingTypeName;
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The attribute name.
+        /// The attribute name used to search for things.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -60,7 +63,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AttributeValue. 
         /// <para>
-        /// The attribute value.
+        /// The attribute value used to search for things.
         /// </para>
         /// </summary>
         public string AttributeValue
@@ -78,7 +81,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The token for the next value.
+        /// The token for the next set of results, or <b>null</b> if there are no additional results.
         /// </para>
         /// </summary>
         public string Marker
@@ -96,7 +99,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results.
+        /// The maximum number of results to return in this operation.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -109,6 +112,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingTypeName. 
+        /// <para>
+        /// The name of the thing type used to search for things.
+        /// </para>
+        /// </summary>
+        public string ThingTypeName
+        {
+            get { return this._thingTypeName; }
+            set { this._thingTypeName = value; }
+        }
+
+        // Check to see if ThingTypeName property is set
+        internal bool IsSetThingTypeName()
+        {
+            return this._thingTypeName != null;
         }
 
     }
