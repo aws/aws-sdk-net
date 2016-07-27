@@ -1,5 +1,42 @@
-﻿{
+{
     "endpoints": {
+        "*/*": {
+            "endpoint": "{service}.{region}.amazonaws.com"
+        },
+        "cn-north-1/*": {
+            "endpoint": "{service}.{region}.amazonaws.com.cn",
+            "signatureVersion": "v4"
+        },
+        "us-gov-west-1/iam": {
+            "endpoint": "iam.us-gov.amazonaws.com"
+        },
+        "us-gov-west-1/s3": {
+            "endpoint": "s3-{region}.amazonaws.com"
+        },
+        "*/cloudfront": {
+            "endpoint": "cloudfront.amazonaws.com"
+        },
+        "*/iam": {
+            "endpoint": "iam.amazonaws.com"
+        },
+        "*/importexport": {
+            "endpoint": "importexport.amazonaws.com"
+        },
+        "*/route53": {
+            "endpoint": "route53.amazonaws.com"
+        },
+        "*/waf": {
+            "endpoint": "waf.amazonaws.com"
+        },
+        "us-east-1/sdb": {
+            "endpoint": "sdb.amazonaws.com"
+        },
+        "eu-west-1/s3": {
+            "endpoint": "s3-{region}.amazonaws.com"
+        },
+        "sa-east-1/s3": {
+            "endpoint": "s3-{region}.amazonaws.com"
+        },
         "*/sts": {
             "endpoint": "sts.amazonaws.com"
         },

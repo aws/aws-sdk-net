@@ -10,8 +10,8 @@
     "projectUrl"  : "",
     "licenseUrl"  : "",
     "dependencies" : {
-        "APIGateway" : "1.0.0-*",
-        "AutoScaling" : "1.0.0-*",
+        "APIGateway"                      : "1.0.0-*",
+        "AutoScaling"                     : "1.0.0-*",
         "AWSMarketplaceCommerceAnalytics" : "1.0.0-*",
         "AWSSupport"                      : "1.0.0-*",
         "CloudFormation"                  : "1.0.0-*",

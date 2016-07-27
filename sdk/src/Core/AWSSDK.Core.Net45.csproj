@@ -183,6 +183,9 @@
     <Compile Include="Amazon.Util\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RegionEndpoint\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ThirdParty\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -225,9 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="endpoints.json">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="endpoints.customizations.json">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

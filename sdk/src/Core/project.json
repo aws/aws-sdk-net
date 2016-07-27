@@ -12,6 +12,7 @@
     "define": [ "CORECLR", "AWS_ASYNC_API" ],
     "embed": [
       "endpoints.json",
+      "endpoints.v3.json",
       "endpoints.customizations.json"
     ],
     "debugType" : "portable",

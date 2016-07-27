@@ -331,7 +331,7 @@ namespace Amazon
 
         /// <summary>
         /// Key for the EndpointDefinition property.
-        /// <seealso cref="Amazon.AWSConfigs.LogMetrics"/>
+        /// <seealso cref="Amazon.AWSConfigs.EndpointDefinition"/>
         /// </summary>
         public const string EndpointDefinitionKey = "AWSEndpointDefinition";
 
