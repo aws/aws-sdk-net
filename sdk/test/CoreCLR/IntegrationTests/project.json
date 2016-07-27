@@ -76,10 +76,10 @@
         "GameLift"                        : "1.0.0-*",
         "Microsoft.NETCore.App"           : {
             "type" : "platform",
-            "version" : "1.0.0-rc2-*"
+            "version" : "1.0.0-*"
         },
-        "xunit"                           : "2.1.0-rc2-*",
-        "dotnet-test-xunit"               : "1.0.0-rc2-*",
+        "xunit"                           : "2.1.0-*",
+        "dotnet-test-xunit"               : "2.2.0-*",
         "ApplicationAutoScaling"          : "1.0.0-*",
         "ApplicationDiscoveryService"     : "1.0.0-*",
         "AWSMarketplaceMetering"          : "1.0.0-*",

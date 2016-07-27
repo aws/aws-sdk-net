@@ -139,6 +139,10 @@
             Projects="$(MSBuildProjectFile)"
             Targets="run-ms-tests"
             Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll;Configuration=$(Configuration)" />
+        <MSBuild
+            Projects="$(MSBuildProjectFile)"
+            Targets="run-xunit-tests"
+            Properties="ProjectJSON=..\sdk\test\CoreCLR\UnitTests\project.json;Configuration=$(Configuration)"/>
     </Target>
 
     <Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
