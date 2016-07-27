@@ -1,3 +1,11 @@
+### 3.1.87.0 (2016-07-26 23:19 UTC)
+* CognitoSync (3.1.1.6)
+	* Github pull request 400 fixing an issue when deleting a merged dataset after the deletion is complete.
+* IoT (3.1.7.0)
+	* This update adds support for thing types. Thing types are entities that store a description of common features of Things that are of the same logical type.
+* MobileAnalytics (3.1.1.11)
+	*     Github pull request 417 making the event parsing more robust.
+
 ### 3.1.86.0 (2016-07-21 23:04 UTC)
 * CertificateManager (3.1.4.0)
 	* Add reason for failure when describing certificates.
