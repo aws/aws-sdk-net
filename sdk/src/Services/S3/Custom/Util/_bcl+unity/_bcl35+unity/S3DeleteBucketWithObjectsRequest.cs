@@ -1,4 +1,5 @@
-﻿/*******************************************************************************
+﻿
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -32,24 +33,6 @@ namespace Amazon.S3.Util
     /// </summary>
     internal partial class S3DeleteBucketWithObjectsRequest
     {
-        /// <summary>
-        /// Name of the bucket to be deleted.
-        /// </summary>
-        public string BucketName { get; set; }
-
-        /// <summary>
-        /// The Amazon S3 Client to use for S3 specific operations.
-        /// </summary>
-        public IAmazonS3 S3Client { get; set; }
-
-        /// <summary>
-        /// Options to control the behavior of the delete operation.
-        /// </summary>
-        public S3DeleteBucketWithObjectsOptions DeleteOptions { get; set; }
-
-        /// <summary>
-        /// The callback which is used to send updates about the delete operation.
-        /// </summary>
-        public Action<S3DeleteBucketWithObjectsUpdate> UpdateCallback { get; set; }
+        public AsyncCancelableResult AsyncCancelableResult { get; set; }
     }
 }
