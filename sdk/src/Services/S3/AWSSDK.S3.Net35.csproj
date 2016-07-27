@@ -85,7 +85,16 @@
     <Compile Include="Custom\Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Util\_bcl+coreclr+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Util\_bcl+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Util\_bcl+unity\_bcl35+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Util\_bcl\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl\*.cs">
