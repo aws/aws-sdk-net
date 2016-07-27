@@ -122,6 +122,12 @@
     <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_bcl45+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\_bcl+coreclr+pcl\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+coreclr+pcl\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\_bcl+coreclr\Encryption\*.cs">
       <SubType>Code</SubType>
     </Compile>
