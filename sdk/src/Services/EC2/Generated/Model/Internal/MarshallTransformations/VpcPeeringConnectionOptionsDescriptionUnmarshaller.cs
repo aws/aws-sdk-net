@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("allowDnsResolutionFromRemoteVpc", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AllowDnsResolutionFromRemoteVpc = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("allowEgressFromLocalClassicLinkToRemoteVpc", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

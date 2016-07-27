@@ -12141,16 +12141,16 @@
           "shape":"Boolean",
           "documentation":"<p>If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to a peer VPC via ClassicLink.</p>",
           "locationName":"allowEgressFromLocalVpcToRemoteClassicLink"
+        },
+        "AllowDnsResolutionFromRemoteVpc":{
+          "shape":"Boolean",
+          "locationName":"allowDnsResolutionFromRemoteVpc"
         }
       },
       "documentation":"<p>Describes the VPC peering connection options.</p>"
     },
     "PeeringConnectionOptionsRequest":{
       "type":"structure",
-      "required":[
-        "AllowEgressFromLocalClassicLinkToRemoteVpc",
-        "AllowEgressFromLocalVpcToRemoteClassicLink"
-      ],
       "members":{
         "AllowEgressFromLocalClassicLinkToRemoteVpc":{
           "shape":"Boolean",
@@ -12159,7 +12159,8 @@
         "AllowEgressFromLocalVpcToRemoteClassicLink":{
           "shape":"Boolean",
           "documentation":"<p>If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to a peer VPC via ClassicLink.</p>"
-        }
+        },
+        "AllowDnsResolutionFromRemoteVpc":{"shape":"Boolean"}
       },
       "documentation":"<p>The VPC peering connection options.</p>"
     },
@@ -16152,15 +16153,15 @@
       "type":"structure",
       "required":["Error"],
       "members":{
-        "Error":{
-          "shape":"UnsuccessfulItemError",
-          "documentation":"<p>Information about the error.</p>",
-          "locationName":"error"
-        },
         "ResourceId":{
           "shape":"String",
           "documentation":"<p>The ID of the resource.</p>",
           "locationName":"resourceId"
+        },
+        "Error":{
+          "shape":"UnsuccessfulItemError",
+          "documentation":"<p>Information about the error.</p>",
+          "locationName":"error"
         }
       },
       "documentation":"<p>Information about items that were not successfully processed in a batch call.</p>"
@@ -16914,6 +16915,10 @@
           "shape":"Boolean",
           "documentation":"<p>Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering connection.</p>",
           "locationName":"allowEgressFromLocalVpcToRemoteClassicLink"
+        },
+        "AllowDnsResolutionFromRemoteVpc":{
+          "shape":"Boolean",
+          "locationName":"allowDnsResolutionFromRemoteVpc"
         }
       },
       "documentation":"<p>Describes the VPC peering connection options.</p>"

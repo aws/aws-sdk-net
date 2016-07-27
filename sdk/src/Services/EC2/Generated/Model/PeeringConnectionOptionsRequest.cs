@@ -32,8 +32,24 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class PeeringConnectionOptionsRequest
     {
+        private bool? _allowDnsResolutionFromRemoteVpc;
         private bool? _allowEgressFromLocalClassicLinkToRemoteVpc;
         private bool? _allowEgressFromLocalVpcToRemoteClassicLink;
+
+        /// <summary>
+        /// Gets and sets the property AllowDnsResolutionFromRemoteVpc.
+        /// </summary>
+        public bool AllowDnsResolutionFromRemoteVpc
+        {
+            get { return this._allowDnsResolutionFromRemoteVpc.GetValueOrDefault(); }
+            set { this._allowDnsResolutionFromRemoteVpc = value; }
+        }
+
+        // Check to see if AllowDnsResolutionFromRemoteVpc property is set
+        internal bool IsSetAllowDnsResolutionFromRemoteVpc()
+        {
+            return this._allowDnsResolutionFromRemoteVpc.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AllowEgressFromLocalClassicLinkToRemoteVpc. 
