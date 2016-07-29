@@ -32,8 +32,28 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class PeeringConnectionOptions
     {
+        private bool? _allowDnsResolutionFromRemoteVpc;
         private bool? _allowEgressFromLocalClassicLinkToRemoteVpc;
         private bool? _allowEgressFromLocalVpcToRemoteClassicLink;
+
+        /// <summary>
+        /// Gets and sets the property AllowDnsResolutionFromRemoteVpc. 
+        /// <para>
+        /// If true, enables a local VPC to resolve public DNS hostnames to private IP addresses
+        /// when queried from instances in the peer VPC.
+        /// </para>
+        /// </summary>
+        public bool AllowDnsResolutionFromRemoteVpc
+        {
+            get { return this._allowDnsResolutionFromRemoteVpc.GetValueOrDefault(); }
+            set { this._allowDnsResolutionFromRemoteVpc = value; }
+        }
+
+        // Check to see if AllowDnsResolutionFromRemoteVpc property is set
+        internal bool IsSetAllowDnsResolutionFromRemoteVpc()
+        {
+            return this._allowDnsResolutionFromRemoteVpc.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AllowEgressFromLocalClassicLinkToRemoteVpc. 
