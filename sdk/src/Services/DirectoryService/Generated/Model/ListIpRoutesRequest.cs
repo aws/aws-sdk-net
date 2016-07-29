@@ -28,19 +28,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists all tags on an Amazon Directory Services directory.
+    /// Container for the parameters to the ListIpRoutes operation.
+    /// Lists the address blocks that you have added to a directory.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonDirectoryServiceRequest
+    public partial class ListIpRoutesRequest : AmazonDirectoryServiceRequest
     {
+        private string _directoryId;
         private int? _limit;
         private string _nextToken;
-        private string _resourceId;
+
+        /// <summary>
+        /// Gets and sets the property DirectoryId. 
+        /// <para>
+        /// Identifier (ID) of the directory for which you want to retrieve the IP addresses.
+        /// </para>
+        /// </summary>
+        public string DirectoryId
+        {
+            get { return this._directoryId; }
+            set { this._directoryId = value; }
+        }
+
+        // Check to see if DirectoryId property is set
+        internal bool IsSetDirectoryId()
+        {
+            return this._directoryId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Reserved for future use.
+        /// Maximum number of items to return. If this value is zero, the maximum number of items
+        /// is specified by the limitations of the operation.
         /// </para>
         /// </summary>
         public int Limit
@@ -58,7 +77,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Reserved for future use.
+        /// The <i>ListIpRoutes.NextToken</i> value from a previous call to <a>ListIpRoutes</a>.
+        /// Pass null if this is the first call.
         /// </para>
         /// </summary>
         public string NextToken
@@ -71,24 +91,6 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceId. 
-        /// <para>
-        /// Identifier (ID) of the directory for which you want to retrieve tags.
-        /// </para>
-        /// </summary>
-        public string ResourceId
-        {
-            get { return this._resourceId; }
-            set { this._resourceId = value; }
-        }
-
-        // Check to see if ResourceId property is set
-        internal bool IsSetResourceId()
-        {
-            return this._resourceId != null;
         }
 
     }

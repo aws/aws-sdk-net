@@ -28,48 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// Removes tags from an Amazon Directory Services directory.
+    /// Container for the parameters to the RemoveIpRoutes operation.
+    /// Removes IP address blocks from a directory.
     /// </summary>
-    public partial class RemoveTagsFromResourceRequest : AmazonDirectoryServiceRequest
+    public partial class RemoveIpRoutesRequest : AmazonDirectoryServiceRequest
     {
-        private string _resourceId;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _cidrIps = new List<string>();
+        private string _directoryId;
 
         /// <summary>
-        /// Gets and sets the property ResourceId. 
+        /// Gets and sets the property CidrIps. 
         /// <para>
-        /// Identifier (ID) of the directory from which to remove the tag.
+        /// IP address blocks that you want to remove.
         /// </para>
         /// </summary>
-        public string ResourceId
+        public List<string> CidrIps
         {
-            get { return this._resourceId; }
-            set { this._resourceId = value; }
+            get { return this._cidrIps; }
+            set { this._cidrIps = value; }
         }
 
-        // Check to see if ResourceId property is set
-        internal bool IsSetResourceId()
+        // Check to see if CidrIps property is set
+        internal bool IsSetCidrIps()
         {
-            return this._resourceId != null;
+            return this._cidrIps != null && this._cidrIps.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The tag key (name) of the tag to be removed.
+        /// Identifier (ID) of the directory from which you want to remove the IP addresses.
         /// </para>
         /// </summary>
-        public List<string> TagKeys
+        public string DirectoryId
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._directoryId; }
+            set { this._directoryId = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if DirectoryId property is set
+        internal bool IsSetDirectoryId()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._directoryId != null;
         }
 
     }

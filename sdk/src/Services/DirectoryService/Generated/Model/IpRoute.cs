@@ -28,48 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// Removes tags from an Amazon Directory Services directory.
+    /// IP address block. This is often the address block of the DNS server used for your
+    /// on-premises domain.
     /// </summary>
-    public partial class RemoveTagsFromResourceRequest : AmazonDirectoryServiceRequest
+    public partial class IpRoute
     {
-        private string _resourceId;
-        private List<string> _tagKeys = new List<string>();
+        private string _cidrIp;
+        private string _description;
 
         /// <summary>
-        /// Gets and sets the property ResourceId. 
+        /// Gets and sets the property CidrIp. 
         /// <para>
-        /// Identifier (ID) of the directory from which to remove the tag.
+        /// IP address block using CIDR format, for example 10.0.0.0/24. This is often the address
+        /// block of the DNS server used for your on-premises domain. For a single IP address
+        /// use a CIDR address block with /32. For example 10.0.0.0/32.
         /// </para>
         /// </summary>
-        public string ResourceId
+        public string CidrIp
         {
-            get { return this._resourceId; }
-            set { this._resourceId = value; }
+            get { return this._cidrIp; }
+            set { this._cidrIp = value; }
         }
 
-        // Check to see if ResourceId property is set
-        internal bool IsSetResourceId()
+        // Check to see if CidrIp property is set
+        internal bool IsSetCidrIp()
         {
-            return this._resourceId != null;
+            return this._cidrIp != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property Description. 
         /// <para>
-        /// The tag key (name) of the tag to be removed.
+        /// Description of the address block.
         /// </para>
         /// </summary>
-        public List<string> TagKeys
+        public string Description
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._description != null;
         }
 
     }

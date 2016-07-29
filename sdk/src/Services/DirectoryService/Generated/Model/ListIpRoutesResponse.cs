@@ -28,48 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// Removes tags from an Amazon Directory Services directory.
+    /// This is the response object from the ListIpRoutes operation.
     /// </summary>
-    public partial class RemoveTagsFromResourceRequest : AmazonDirectoryServiceRequest
+    public partial class ListIpRoutesResponse : AmazonWebServiceResponse
     {
-        private string _resourceId;
-        private List<string> _tagKeys = new List<string>();
+        private List<IpRouteInfo> _ipRoutesInfo = new List<IpRouteInfo>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ResourceId. 
+        /// Gets and sets the property IpRoutesInfo. 
         /// <para>
-        /// Identifier (ID) of the directory from which to remove the tag.
+        /// A list of <a>IpRoute</a>s.
         /// </para>
         /// </summary>
-        public string ResourceId
+        public List<IpRouteInfo> IpRoutesInfo
         {
-            get { return this._resourceId; }
-            set { this._resourceId = value; }
+            get { return this._ipRoutesInfo; }
+            set { this._ipRoutesInfo = value; }
         }
 
-        // Check to see if ResourceId property is set
-        internal bool IsSetResourceId()
+        // Check to see if IpRoutesInfo property is set
+        internal bool IsSetIpRoutesInfo()
         {
-            return this._resourceId != null;
+            return this._ipRoutesInfo != null && this._ipRoutesInfo.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The tag key (name) of the tag to be removed.
+        /// If not null, more results are available. Pass this value for the <i>NextToken</i>
+        /// parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of
+        /// items.
         /// </para>
         /// </summary>
-        public List<string> TagKeys
+        public string NextToken
         {
-            get { return this._tagKeys; }
-            set { this._tagKeys = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if TagKeys property is set
-        internal bool IsSetTagKeys()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._nextToken != null;
         }
 
     }
