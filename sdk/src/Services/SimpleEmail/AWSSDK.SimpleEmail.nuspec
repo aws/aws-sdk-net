@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.SimpleEmail</id>
     <title>AWSSDK - Amazon Simple Email Service</title>
-    <version>3.1.4.2</version> 
+    <version>3.1.4.3</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.</description>
     <language>en-US</language>

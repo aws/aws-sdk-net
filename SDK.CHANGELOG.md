@@ -1,3 +1,17 @@
+### 3.1.88.0 (2016-07-29 02:27 UTC)
+* APIGateway (3.1.6.0)
+	* Added support for Cognito User Pools Auth 
+* DirectoryService (3.1.5.0)
+	* New APIs for Microsoft AD to manage routing 
+* EC2 (3.1.19.0)
+	* Updated for DNS for VPC Peering 
+* Elasticsearch (3.1.1.0)
+	* Amazon Elasticsearch Service now supports elasticsearch version 2.3. Version 2.3 offers improved performance, memory management, and security. It also offers several new features including: pipeline aggregations to perform advanced analytics like moving averages and derivatives, and enhancements to geospatial queries
+* SecurityToken (3.1.4.4)
+	* Doc only update
+* SimpleEmail (3.1.4.3)
+	* Doc update
+
 ### 3.1.87.0 (2016-07-26 23:19 UTC)
 * CognitoSync (3.1.1.6)
 	* Github pull request 400 fixing an issue when deleting a merged dataset after the deletion is complete.
