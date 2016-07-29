@@ -33,22 +33,22 @@ namespace Amazon.Glacier.Transfer
         /// Creates a vault.
         /// </summary>
         /// <param name="vaultName">The name of the vault to create.</param>
-        public async void CreateVaultAsync(string vaultName)
+        public Task CreateVaultAsync(string vaultName)
         {
             CreateVaultRequest request = new CreateVaultRequest() { VaultName = vaultName };
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(new UserAgentPostFix("CreateVault").UserAgentRequestEventHandlerSync);
-            await this.glacierClient.CreateVaultAsync(request);
+            return this.glacierClient.CreateVaultAsync(request);
         }
 
         /// <summary>
         /// Deletes the specified vault. Before deletion, the vault must be empty of all archives.
         /// </summary>
         /// <param name="vaultName">The name of the vault to delete.</param>
-        public async void DeleteVaultAsync(string vaultName)
+        public Task DeleteVaultAsync(string vaultName)
         {
             DeleteVaultRequest request = new DeleteVaultRequest() { VaultName = vaultName };
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(new UserAgentPostFix("DeleteVault").UserAgentRequestEventHandlerSync);
-            await this.glacierClient.DeleteVaultAsync(request);
+            return this.glacierClient.DeleteVaultAsync(request);
         }
 
         /// <summary>
@@ -56,11 +56,11 @@ namespace Amazon.Glacier.Transfer
         /// </summary>
         /// <param name="vaultName">The name of the vault containing the archive.</param>
         /// <param name="archiveId">The archive ID of the archive to delete.</param>
-        public async void DeleteArchiveAsync(string vaultName, string archiveId)
+        public Task DeleteArchiveAsync(string vaultName, string archiveId)
         {
             DeleteArchiveRequest request = new DeleteArchiveRequest() { VaultName = vaultName, ArchiveId = archiveId };
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(new UserAgentPostFix("DeleteArchive").UserAgentRequestEventHandlerSync);
-            await this.glacierClient.DeleteArchiveAsync(request);
+            return this.glacierClient.DeleteArchiveAsync(request);
         }
 
         #endregion
@@ -78,9 +78,9 @@ namespace Amazon.Glacier.Transfer
         /// <param name="archiveDescription">A description for the archive.</param>
         /// <param name="filepath">The file path to the file to upload.</param>
         /// <returns>The results of the upload including the archive ID.</returns>
-        public async Task<UploadResult> UploadAsync(string vaultName, string archiveDescription, string filepath)
+        public Task<UploadResult> UploadAsync(string vaultName, string archiveDescription, string filepath)
         {
-            return await UploadAsync(vaultName, archiveDescription, filepath, new UploadOptions()).ConfigureAwait(false);
+            return UploadAsync(vaultName, archiveDescription, filepath, new UploadOptions());
         }
         /// <summary>
         /// <para>
@@ -128,9 +128,9 @@ namespace Amazon.Glacier.Transfer
         /// <param name="filePath">The file path to save the archive to.</param>
         /// <param name="vaultName">The name of the vault to download the archive from.</param>
         /// <param name="archiveId">The unique ID of the archive to download.</param>
-        public async Task DownloadAsync(string vaultName, string archiveId, string filePath)
+        public Task DownloadAsync(string vaultName, string archiveId, string filePath)
         {
-            await DownloadAsync(vaultName, archiveId, filePath, new DownloadOptions()).ConfigureAwait(false);
+            return DownloadAsync(vaultName, archiveId, filePath, new DownloadOptions());
         }
         /// <summary>
         /// <para>
@@ -154,10 +154,10 @@ namespace Amazon.Glacier.Transfer
         /// <param name="vaultName">The name of the vault to download the archive from.</param>
         /// <param name="archiveId">The unique ID of the archive to download.</param>
         /// <param name="options">Additional options that can be used for the download.</param>
-        public async Task DownloadAsync(string vaultName, string archiveId, string filePath, DownloadOptions options)
+        public Task DownloadAsync(string vaultName, string archiveId, string filePath, DownloadOptions options)
         {
             var command = new DownloadFileCommand(this, vaultName, archiveId, filePath, options);
-            await command.ExecuteAsync().ConfigureAwait(false);
+            return command.ExecuteAsync();
         }
         #endregion
 
@@ -175,9 +175,9 @@ namespace Amazon.Glacier.Transfer
         /// <param name="vaultName">The name of the vault to download the job output from.</param>
         /// <param name="jobId">The unique job ID for an archive retrieval job.</param>
         /// <param name="filePath">The file path to save the job output at.</param>
-        public async Task DownloadJobAsync(string vaultName, string jobId, string filePath)
+        public Task DownloadJobAsync(string vaultName, string jobId, string filePath)
         {
-            await DownloadJobAsync(vaultName, jobId, filePath, new DownloadOptions()).ConfigureAwait(false);
+            return DownloadJobAsync(vaultName, jobId, filePath, new DownloadOptions());
         }
 
         /// <summary>
@@ -194,10 +194,10 @@ namespace Amazon.Glacier.Transfer
         /// <param name="jobId">The unique job ID for an archive retrieval job.</param>
         /// <param name="filePath">The file path to save the job output at.</param>
         /// <param name="options">Additional options that can be used for the download.</param>
-        public async Task  DownloadJobAsync(string vaultName, string jobId, string filePath, DownloadOptions options)
+        public Task DownloadJobAsync(string vaultName, string jobId, string filePath, DownloadOptions options)
         {
             var command = new DownloadJobCommand(this, vaultName, jobId, filePath, options);
-            await command.ExecuteAsync().ConfigureAwait(false);
+            return command.ExecuteAsync();
         }
 
         #endregion
@@ -210,9 +210,9 @@ namespace Amazon.Glacier.Transfer
         /// <param name="vaultName">The name of the vault that contains the archive to initiate the job for.</param>
         /// <param name="archiveId">The archive id that the download job will retrieve.</param>
         /// <returns>The job id for the initiated job.</returns>
-        public async Task<string> InitiateArchiveRetrievalJobAsync(string vaultName, string archiveId)
+        public Task<string> InitiateArchiveRetrievalJobAsync(string vaultName, string archiveId)
         {
-            return await InitiateArchiveRetrievalJobAsync(vaultName, archiveId, null).ConfigureAwait(false);
+            return InitiateArchiveRetrievalJobAsync(vaultName, archiveId, null);
         }
         /// <summary>
         /// This method initiates an archive retieval job for the specified archive and returns back the job id.
