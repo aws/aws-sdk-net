@@ -14,24 +14,20 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
+using System.Net;
 using System.Text;
+using System.Threading;
 
-namespace Amazon.Glacier.Transfer
+using Amazon.Glacier.Model;
+using Amazon.Glacier.Transfer.Internal;
+using Amazon.Util;
+
+namespace Amazon.Glacier.Transfer.Internal
 {
-    /// <summary>
-    /// Options for initiating an archive retrieval.
-    /// </summary>
-    public class InitiateArchiveRetrievalOptions : CommonOptions
+    internal  abstract partial class BaseUploadCommand
     {
-        /// <summary>
-        /// The Amazon SNS topic ARN to which Amazon Glacier sends a notification when the job is completed and the output is ready for you to download.
-        /// The specified topic publishes the notification to its subscribers. The SNS topic must exist.
-        /// </summary>
-        public string SNSTopic
-        {
-            get;
-            set;
-        }
+        internal abstract void Execute();
+
     }
 }

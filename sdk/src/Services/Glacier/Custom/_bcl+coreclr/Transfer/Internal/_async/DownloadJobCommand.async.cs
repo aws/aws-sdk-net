@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Amazon.Glacier.Model;
 using Amazon.Util;
@@ -24,29 +25,10 @@ using System.Globalization;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
-    internal class DownloadJobCommand
+    internal partial class DownloadJobCommand
     {
-        const int PART_STREAM_HASH_SIZE = 1024 * 1024;
 
-        ArchiveTransferManager manager;
-        string vaultName;
-        string jobId;
-        string filePath;
-        DownloadOptions options;
-
-        internal DownloadJobCommand(ArchiveTransferManager manager, string vaultName, string jobId, string filePath, DownloadOptions options)
-        {
-            this.manager = manager;
-            this.vaultName = vaultName;
-            this.jobId = jobId;
-            this.filePath = filePath;
-            this.options = options;
-
-            if (this.options == null)
-                this.options = new DownloadOptions();
-        }
-
-        internal void Execute()
+        internal async Task ExecuteAsync()
         {
             long contentLength = -1;
             string glacierProvidedCheckSum = null;
@@ -82,8 +64,8 @@ namespace Amazon.Glacier.Transfer.Internal
                                 Range = rangeValue
                             };
 
-                            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)getJobOutputRequest).AddBeforeRequestHandler(new UserAgentPostFix("DownloadArchive").UserAgentRequestEventHandlerSync);
-                            GetJobOutputResponse jobOutputResponse = this.manager.GlacierClient.GetJobOutput(getJobOutputRequest);
+                            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)getJobOutputRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("DownloadArchive").UserAgentRequestEventHandlerSync);
+                            GetJobOutputResponse jobOutputResponse = await this.manager.GlacierClient.GetJobOutputAsync(getJobOutputRequest).ConfigureAwait(false);
                             if (contentLength < 0)
                             {
                                 contentLength = jobOutputResponse.ContentLength;
@@ -154,10 +136,10 @@ namespace Amazon.Glacier.Transfer.Internal
                         }
                         finally
                         {
-                            output.Close();
+                            output.Dispose();
                             output = null;
 
-                            try { if (input != null) input.Close(); }
+                            try { if (input != null) input.Dispose(); }
                             catch (Exception) { }
                         }
                     }
@@ -197,9 +179,9 @@ namespace Amazon.Glacier.Transfer.Internal
             }
             finally
             {
-                try { if (input != null) input.Close(); }
+                try { if (input != null) input.Dispose(); }
                 catch (Exception) { }
-                try { if (output != null) output.Close(); }
+                try { if (output != null) output.Dispose(); }
                 catch (Exception) { }
             }
         }

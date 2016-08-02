@@ -18,6 +18,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Amazon.Glacier.Model;
 using Amazon.Glacier.Transfer.Internal;
@@ -25,14 +26,9 @@ using Amazon.Util;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
-    internal class SinglepartUploadCommand : BaseUploadCommand
+    internal partial class SinglepartUploadCommand : BaseUploadCommand
     {
-        internal SinglepartUploadCommand(ArchiveTransferManager mananger, string vaultName, string archiveDescription, string filePath, UploadOptions options)
-            : base(mananger, vaultName, archiveDescription, filePath, options)
-        {
-        }
-
-        internal override void Execute()
+        internal override async Task ExecuteAsync()
         {
             FileStream input = File.OpenRead(filePath);
 
@@ -50,23 +46,18 @@ namespace Amazon.Glacier.Transfer.Internal
                 };
 
                 uploadRequest.StreamTransferProgress += this.ProgressCallback;
-                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).AddBeforeRequestHandler(new UserAgentPostFix("SingleUpload").UserAgentRequestEventHandlerSync);
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("SingleUpload").UserAgentRequestEventHandlerSync);
 
                 UploadArchiveResponse uploadArchivResponse =
-                    this.manager.GlacierClient.UploadArchive(uploadRequest);
+                    await this.manager.GlacierClient.UploadArchiveAsync(uploadRequest).ConfigureAwait(false);
                 string archiveId = uploadArchivResponse.ArchiveId;
                 this.UploadResult = new UploadResult(archiveId, checksum);
             }
             finally
             {
-                try { input.Close(); }
+                try { input.Dispose(); }
                 catch (Exception) { }
             }
-        }
-
-        void ProgressCallback(object sender, Runtime.StreamTransferProgressArgs args)
-        {
-            AWSSDKUtils.InvokeInBackground(this.options.StreamTransferProgress, args, this);
         }
     }
 }

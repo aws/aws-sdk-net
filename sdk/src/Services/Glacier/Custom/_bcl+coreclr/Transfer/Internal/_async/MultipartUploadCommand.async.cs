@@ -18,6 +18,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using Amazon.Glacier.Model;
 using Amazon.Glacier.Transfer.Internal;
 using Amazon.Runtime;
@@ -28,23 +29,9 @@ using System.Globalization;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
-    internal class MultipartUploadCommand : BaseUploadCommand
+    internal partial class MultipartUploadCommand : BaseUploadCommand
     {
-        // The maximum part size for a Glacier multipart upload.
-        const long MAXIMUM_PART_SIZE = 1024L * 1024 * 1024 * 4;
-
-        // The minimum part size for a Glacier multipart upload.
-        const long MINIMUM_PART_SIZE = 1024L * 1024;
-
-        object currentUploadProgressArgsLock = new object();
-        StreamTransferProgressArgs currentUploadProgressArgs;
-
-        internal MultipartUploadCommand(ArchiveTransferManager manager, string vaultName, string archiveDescription, string filePath, UploadOptions options)
-            : base(manager, vaultName, archiveDescription, filePath, options)
-        {
-        }
-
-        internal override void Execute()
+        internal override async Task ExecuteAsync()
         {
             FileInfo fileInfo = new FileInfo(filePath);
             FileStream fileStream = File.OpenRead(filePath);
@@ -62,8 +49,8 @@ namespace Amazon.Glacier.Transfer.Internal
                     PartSize = partSize
                 };
 
-                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initiateRequest).AddBeforeRequestHandler(new UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
-                InitiateMultipartUploadResponse initiateResponse = this.manager.GlacierClient.InitiateMultipartUpload(initiateRequest);
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initiateRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
+                InitiateMultipartUploadResponse initiateResponse = await this.manager.GlacierClient.InitiateMultipartUploadAsync(initiateRequest).ConfigureAwait(false);
 
 
                 uploadId = initiateResponse.UploadId;
@@ -86,7 +73,7 @@ namespace Amazon.Glacier.Transfer.Internal
                     UploadMultipartPartRequest uploadRequest = new UploadMultipartPartRequest()
                     {
                         AccountId = this.options.AccountId,
-                        Checksum = checksum, 
+                        Checksum = checksum,
                         Range = "bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*",
                         UploadId = uploadId,
                         VaultName = vaultName,
@@ -94,9 +81,9 @@ namespace Amazon.Glacier.Transfer.Internal
                     };
 
                     uploadRequest.StreamTransferProgress += this.ProgressCallback;
-                    ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).AddBeforeRequestHandler(new UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
+                    ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
 
-                    this.manager.GlacierClient.UploadMultipartPart(uploadRequest);
+                    await this.manager.GlacierClient.UploadMultipartPartAsync(uploadRequest).ConfigureAwait(false);
                     currentPosition += partSize;
                 }
 
@@ -111,8 +98,8 @@ namespace Amazon.Glacier.Transfer.Internal
                     UploadId = uploadId
                 };
 
-                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)compRequest).AddBeforeRequestHandler(new UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
-                CompleteMultipartUploadResponse completeMultipartUploadResponse = this.manager.GlacierClient.CompleteMultipartUpload(compRequest);
+                ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)compRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
+                CompleteMultipartUploadResponse completeMultipartUploadResponse = await this.manager.GlacierClient.CompleteMultipartUploadAsync(compRequest).ConfigureAwait(false);
 
                 string archiveId = completeMultipartUploadResponse.ArchiveId;
                 this.UploadResult = new UploadResult(archiveId, totalFileChecksum);
@@ -128,53 +115,17 @@ namespace Amazon.Glacier.Transfer.Internal
                         VaultName = this.vaultName,
                         UploadId = uploadId
                     };
-                    ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)abortRequest).AddBeforeRequestHandler(new UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
-                    this.manager.GlacierClient.AbortMultipartUpload(abortRequest);
+                    ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)abortRequest).AddBeforeRequestHandler(new ArchiveTransferManager.UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync);
+                    this.manager.GlacierClient.AbortMultipartUploadAsync(abortRequest).Wait();
                 }
 
                 throw;
             }
             finally
             {
-                try { fileStream.Close(); }
+                try { fileStream.Dispose(); }
                 catch (Exception) { }
             }
-        }
-
-
-        void ProgressCallback(object sender, Runtime.StreamTransferProgressArgs args)
-        {
-            lock (currentUploadProgressArgsLock)
-            {
-                this.currentUploadProgressArgs = new StreamTransferProgressArgs(args.IncrementTransferred,
-                    this.currentUploadProgressArgs.TransferredBytes + args.IncrementTransferred,
-                    this.currentUploadProgressArgs.TotalBytes);
-            }
-
-            AWSSDKUtils.InvokeInBackground(this.options.StreamTransferProgress,
-                this.currentUploadProgressArgs, this);
-        }
-
-        /// <summary>
-        /// Calculates the part size to use when uploading an archive of the
-        /// specified size using Glacier's multipart upload APIs. Because of the tree
-        /// hashing algorithm, part sizes must be aligned on 2^n MB boundaries (ex:
-        /// 1MB, 2MB, 4MB, 8MB, etc). All parts must be the same size, except for the
-        /// last part.
-        /// </summary>
-        /// <param name="fileSize">The size of the file being uploaded.</param>
-        /// <returns>The part size to use in the multipart upload.</returns>
-        internal static long CalculatePartSize(long fileSize)
-        {
-            long partSize = MINIMUM_PART_SIZE;
-            int approxNumParts = 1;
-	        while (partSize * approxNumParts < fileSize && partSize*2 <= MAXIMUM_PART_SIZE) 
-            {
-                partSize *= 2;
-                approxNumParts *= 2;
-            }
-	
-            return partSize;        
         }
     }
 }

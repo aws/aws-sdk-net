@@ -70,13 +70,19 @@
     <Compile Include="Custom\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl\*.cs">
+    <Compile Include="Custom\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl\Transfer\*.cs">
+    <Compile Include="Custom\_bcl+coreclr\Transfer\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl\Transfer\Internal\*.cs">
+    <Compile Include="Custom\_bcl+coreclr\Transfer\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+coreclr\Transfer\Internal\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+coreclr\Transfer\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">
