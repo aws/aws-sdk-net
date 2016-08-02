@@ -154,7 +154,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property SharedSecret. 
         /// <para>
-        /// The shared secret code that was specified when your RADIUS endpoints were created.
+        /// Not currently used.
         /// </para>
         /// </summary>
         public string SharedSecret
