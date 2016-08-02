@@ -38,7 +38,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ThingArn. 
         /// <para>
-        /// The thing ARN.
+        /// The ARN of the new thing.
         /// </para>
         /// </summary>
         public string ThingArn
@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ThingName. 
         /// <para>
-        /// The name of the thing.
+        /// The name of the new thing.
         /// </para>
         /// </summary>
         public string ThingName

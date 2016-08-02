@@ -57,6 +57,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
+            if(requestObject.IsSetSeparator())
+            {
+                context.Writer.WritePropertyName("separator");
+                context.Writer.Write(requestObject.Separator);
+            }
+
         }
 
         /// <summary>
