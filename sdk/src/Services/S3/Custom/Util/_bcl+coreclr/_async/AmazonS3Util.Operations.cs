@@ -213,7 +213,7 @@ namespace Amazon.S3.Util
                 }
 
                 // List all the versions of all the objects in the bucket.
-                listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest).ConfigureAwait(false);
+                listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest,token).ConfigureAwait(false);
 
                 if (listVersionsResponse.Versions.Count == 0)
                 {
@@ -239,7 +239,7 @@ namespace Amazon.S3.Util
                         BucketName = bucketName,
                         Objects = keyVersionList,
                         Quiet = deleteOptions.QuietMode
-                    }).ConfigureAwait(false);
+                    },token).ConfigureAwait(false);
 
                     if (!deleteOptions.QuietMode)
                     {
@@ -293,7 +293,7 @@ namespace Amazon.S3.Util
                     await s3Client.DeleteBucketAsync(new DeleteBucketRequest
                     {
                         BucketName = bucketName
-                    }).ConfigureAwait(false);
+                    },token).ConfigureAwait(false);
                     break;
                 }
                 catch (AmazonS3Exception e)

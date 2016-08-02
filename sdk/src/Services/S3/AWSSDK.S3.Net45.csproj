@@ -83,13 +83,16 @@
     <Compile Include="Custom\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\Util\_async\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Custom\Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Util\_bcl+coreclr\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Util\_bcl+coreclr+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Util\_bcl+coreclr\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\Util\_bcl+unity\*.cs">
