@@ -28,27 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableDomainAutoRenew operation.
-    /// This operation disables automatic renewal of domain registration for the specified
-    /// domain.
+    /// This is the response object from the GetDomainSuggestions operation.
     /// </summary>
-    public partial class DisableDomainAutoRenewRequest : AmazonRoute53DomainsRequest
+    public partial class GetDomainSuggestionsResponse : AmazonWebServiceResponse
     {
-        private string _domainName;
+        private List<DomainSuggestion> _suggestionsList = new List<DomainSuggestion>();
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property SuggestionsList.
         /// </summary>
-        public string DomainName
+        public List<DomainSuggestion> SuggestionsList
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._suggestionsList; }
+            set { this._suggestionsList = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if SuggestionsList property is set
+        internal bool IsSetSuggestionsList()
         {
-            return this._domainName != null;
+            return this._suggestionsList != null && this._suggestionsList.Count > 0; 
         }
 
     }
