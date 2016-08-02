@@ -71,8 +71,12 @@ namespace Amazon.Glacier.Transfer.Internal
                                 contentLength = jobOutputResponse.ContentLength;
                                 glacierProvidedCheckSum = jobOutputResponse.Checksum;
                             }
-
+#if CORECLR
+                            input = jobOutputResponse.Body;
+#else
                             input = new BufferedStream(jobOutputResponse.Body);
+#endif
+
 
                             long totalBytesFromGetJobOutput = jobOutputResponse.ContentLength;
                             long bytesReadFromGetJobOutput = 0;
