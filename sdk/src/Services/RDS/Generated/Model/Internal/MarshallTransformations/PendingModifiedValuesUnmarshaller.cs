@@ -96,6 +96,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LicenseModel", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LicenseModel = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MasterUserPassword", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
