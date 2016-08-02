@@ -55,12 +55,12 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates InstanceGroupDetail with the parameterized properties
         /// </summary>
-        /// <param name="instanceRole">Instance group role in the cluster </param>
+        /// <param name="instanceRole">Instance group role in the cluster</param>
         /// <param name="instanceType">Amazon EC2 Instance type.</param>
-        /// <param name="instanceRequestCount">Target number of instances to run in the instance group. </param>
-        /// <param name="instanceRunningCount">Actual count of running instances. </param>
+        /// <param name="instanceRequestCount">Target number of instances to run in the instance group.</param>
+        /// <param name="instanceRunningCount">Actual count of running instances.</param>
         /// <param name="state">State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</param>
-        /// <param name="creationDateTime">The date/time the instance group was created. </param>
+        /// <param name="creationDateTime">The date/time the instance group was created.</param>
         public InstanceGroupDetail(InstanceRoleType instanceRole, string instanceType, int instanceRequestCount, int instanceRunningCount, InstanceGroupState state, DateTime creationDateTime)
         {
             _instanceRole = instanceRole;
@@ -92,7 +92,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
-        /// The date/time the instance group was created. 
+        /// The date/time the instance group was created.
         /// </para>
         /// </summary>
         public DateTime CreationDateTime
@@ -128,7 +128,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceGroupId. 
         /// <para>
-        /// Unique identifier for the instance group. 
+        /// Unique identifier for the instance group.
         /// </para>
         /// </summary>
         public string InstanceGroupId
@@ -146,7 +146,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceRequestCount. 
         /// <para>
-        /// Target number of instances to run in the instance group. 
+        /// Target number of instances to run in the instance group.
         /// </para>
         /// </summary>
         public int InstanceRequestCount
@@ -164,7 +164,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceRole. 
         /// <para>
-        /// Instance group role in the cluster 
+        /// Instance group role in the cluster
         /// </para>
         /// </summary>
         public InstanceRoleType InstanceRole
@@ -182,7 +182,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceRunningCount. 
         /// <para>
-        /// Actual count of running instances. 
+        /// Actual count of running instances.
         /// </para>
         /// </summary>
         public int InstanceRunningCount
@@ -218,7 +218,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property LastStateChangeReason. 
         /// <para>
-        /// Details regarding the state of the instance group. 
+        /// Details regarding the state of the instance group.
         /// </para>
         /// </summary>
         public string LastStateChangeReason
@@ -236,7 +236,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Market. 
         /// <para>
-        /// Market type of the Amazon EC2 instances used to create a cluster node. 
+        /// Market type of the Amazon EC2 instances used to create a cluster node.
         /// </para>
         /// </summary>
         public MarketType Market
@@ -254,7 +254,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Friendly name for the instance group. 
+        /// Friendly name for the instance group.
         /// </para>
         /// </summary>
         public string Name
@@ -272,7 +272,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ReadyDateTime. 
         /// <para>
-        /// The date/time the instance group was available to the cluster. 
+        /// The date/time the instance group was available to the cluster.
         /// </para>
         /// </summary>
         public DateTime ReadyDateTime

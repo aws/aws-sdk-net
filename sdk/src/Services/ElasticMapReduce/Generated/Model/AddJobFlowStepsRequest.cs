@@ -29,8 +29,8 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the AddJobFlowSteps operation.
-    /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are
-    /// allowed in each job flow. 
+    /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed
+    /// in each job flow.
     /// 
     ///  
     /// <para>
@@ -44,20 +44,20 @@ namespace Amazon.ElasticMapReduce.Model
     /// </para>
     ///  
     /// <para>
-    ///  A step specifies the location of a JAR file stored either on the master node of the
+    /// A step specifies the location of a JAR file stored either on the master node of the
     /// job flow or in Amazon S3. Each step is performed by the main function of the main
     /// class of the JAR file. The main class can be specified either in the manifest of the
-    /// JAR or by using the MainFunction parameter of the step. 
+    /// JAR or by using the MainFunction parameter of the step.
     /// </para>
     ///  
     /// <para>
-    ///  Elastic MapReduce executes each step in the order listed. For a step to be considered
+    /// Elastic MapReduce executes each step in the order listed. For a step to be considered
     /// complete, the main function must exit with a zero exit code and all Hadoop jobs started
-    /// while the step was running must have completed and run successfully. 
+    /// while the step was running must have completed and run successfully.
     /// </para>
     ///  
     /// <para>
-    ///  You can only add steps to a job flow that is in one of the following states: STARTING,
+    /// You can only add steps to a job flow that is in one of the following states: STARTING,
     /// BOOTSTRAPPING, RUNNING, or WAITING.
     /// </para>
     /// </summary>

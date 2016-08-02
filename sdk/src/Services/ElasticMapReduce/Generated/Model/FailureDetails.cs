@@ -28,36 +28,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// The details of the step state change reason.
+    /// The details of the step failure. The service attempts to detect the root cause for
+    /// many common failures.
     /// </summary>
-    public partial class StepStateChangeReason
+    public partial class FailureDetails
     {
-        private StepStateChangeReasonCode _code;
+        private string _logFile;
         private string _message;
+        private string _reason;
 
         /// <summary>
-        /// Gets and sets the property Code. 
+        /// Gets and sets the property LogFile. 
         /// <para>
-        /// The programmable code for the state change reason. Note: Currently, the service provides
-        /// no code for the state change.
+        /// The path to the log file where the step failure root cause was originally recorded.
         /// </para>
         /// </summary>
-        public StepStateChangeReasonCode Code
+        public string LogFile
         {
-            get { return this._code; }
-            set { this._code = value; }
+            get { return this._logFile; }
+            set { this._logFile = value; }
         }
 
-        // Check to see if Code property is set
-        internal bool IsSetCode()
+        // Check to see if LogFile property is set
+        internal bool IsSetLogFile()
         {
-            return this._code != null;
+            return this._logFile != null;
         }
 
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The descriptive message for the state change reason.
+        /// The descriptive message including the error the EMR service has identified as the
+        /// cause of step failure. This is text from an error log that describes the root cause
+        /// of the failure.
         /// </para>
         /// </summary>
         public string Message
@@ -70,6 +73,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for the step failure. In the case where the service cannot successfully
+        /// determine the root cause of the failure, it returns "Unknown Error" as a reason.
+        /// </para>
+        /// </summary>
+        public string Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
         }
 
     }

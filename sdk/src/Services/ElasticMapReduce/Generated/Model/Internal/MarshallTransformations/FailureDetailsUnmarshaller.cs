@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StepStatus Object
+    /// Response Unmarshaller for FailureDetails Object
     /// </summary>  
-    public class StepStatusUnmarshaller : IUnmarshaller<StepStatus, XmlUnmarshallerContext>, IUnmarshaller<StepStatus, JsonUnmarshallerContext>
+    public class FailureDetailsUnmarshaller : IUnmarshaller<FailureDetails, XmlUnmarshallerContext>, IUnmarshaller<FailureDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StepStatus IUnmarshaller<StepStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FailureDetails IUnmarshaller<FailureDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StepStatus Unmarshall(JsonUnmarshallerContext context)
+        public FailureDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StepStatus unmarshalledObject = new StepStatus();
+            FailureDetails unmarshalledObject = new FailureDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FailureDetails", targetDepth))
-                {
-                    var unmarshaller = FailureDetailsUnmarshaller.Instance;
-                    unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("LogFile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogFile = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("StateChangeReason", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
-                    var unmarshaller = StepStateChangeReasonUnmarshaller.Instance;
-                    unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Timeline", targetDepth))
+                if (context.TestExpression("Reason", targetDepth))
                 {
-                    var unmarshaller = StepTimelineUnmarshaller.Instance;
-                    unmarshalledObject.Timeline = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
 
 
-        private static StepStatusUnmarshaller _instance = new StepStatusUnmarshaller();        
+        private static FailureDetailsUnmarshaller _instance = new FailureDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StepStatusUnmarshaller Instance
+        public static FailureDetailsUnmarshaller Instance
         {
             get
             {
