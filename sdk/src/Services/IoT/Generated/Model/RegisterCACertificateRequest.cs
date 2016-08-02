@@ -38,9 +38,28 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class RegisterCACertificateRequest : AmazonIoTRequest
     {
+        private bool? _allowAutoRegistration;
         private string _caCertificate;
         private bool? _setAsActive;
         private string _verificationCertificate;
+
+        /// <summary>
+        /// Gets and sets the property AllowAutoRegistration. 
+        /// <para>
+        /// Allows this CA certificate to be used for auto registration of device certificates.
+        /// </para>
+        /// </summary>
+        public bool AllowAutoRegistration
+        {
+            get { return this._allowAutoRegistration.GetValueOrDefault(); }
+            set { this._allowAutoRegistration = value; }
+        }
+
+        // Check to see if AllowAutoRegistration property is set
+        internal bool IsSetAllowAutoRegistration()
+        {
+            return this._allowAutoRegistration.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CaCertificate. 

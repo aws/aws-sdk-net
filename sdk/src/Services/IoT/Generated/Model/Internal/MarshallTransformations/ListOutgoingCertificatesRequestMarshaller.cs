@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateCACertificate Request Marshaller
+    /// ListOutgoingCertificates Request Marshaller
     /// </summary>       
-    public class UpdateCACertificateRequestMarshaller : IMarshaller<IRequest, UpdateCACertificateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListOutgoingCertificatesRequestMarshaller : IMarshaller<IRequest, ListOutgoingCertificatesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateCACertificateRequest)input);
+            return this.Marshall((ListOutgoingCertificatesRequest)input);
         }
 
         /// <summary>
@@ -52,22 +52,21 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateCACertificateRequest publicRequest)
+        public IRequest Marshall(ListOutgoingCertificatesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
-            request.Headers["Content-Type"] = "application/x-amz-json-";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "GET";
 
-            string uriResourcePath = "/cacertificate/{caCertificateId}";
-            if (!publicRequest.IsSetCertificateId())
-                throw new AmazonIoTException("Request object does not have required field CertificateId set");
-            uriResourcePath = uriResourcePath.Replace("{caCertificateId}", StringUtils.FromString(publicRequest.CertificateId));
+            string uriResourcePath = "/certificates-out-going";
             
-            if (publicRequest.IsSetNewAutoRegistrationStatus())
-                request.Parameters.Add("newAutoRegistrationStatus", StringUtils.FromString(publicRequest.NewAutoRegistrationStatus));
+            if (publicRequest.IsSetAscendingOrder())
+                request.Parameters.Add("isAscendingOrder", StringUtils.FromBool(publicRequest.AscendingOrder));
             
-            if (publicRequest.IsSetNewStatus())
-                request.Parameters.Add("newStatus", StringUtils.FromString(publicRequest.NewStatus));
+            if (publicRequest.IsSetMarker())
+                request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
+            
+            if (publicRequest.IsSetPageSize())
+                request.Parameters.Add("pageSize", StringUtils.FromInt(publicRequest.PageSize));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
