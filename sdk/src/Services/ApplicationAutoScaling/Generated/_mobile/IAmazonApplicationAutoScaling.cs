@@ -64,7 +64,27 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>us-west-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>us-west-2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ap-southeast-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ap-southeast-2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ap-northeast-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>eu-central-1</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>

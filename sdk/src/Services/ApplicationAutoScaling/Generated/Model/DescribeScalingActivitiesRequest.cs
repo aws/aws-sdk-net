@@ -29,7 +29,8 @@ namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingActivities operation.
-    /// Provides descriptive information for scaling activities with a specified service namespace.
+    /// Provides descriptive information for scaling activities with a specified service namespace
+    /// for the previous six weeks.
     /// 
     ///  
     /// <para>
