@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Represents a matched event from a <code class="code">FilterLogEvents</code> request.
+    /// Represents a matched event from a <code>FilterLogEvents</code> request.
     /// </summary>
     public partial class FilteredLogEvent
     {

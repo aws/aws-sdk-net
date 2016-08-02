@@ -36,21 +36,19 @@ namespace Amazon.CloudWatchLogs
     /// <summary>
     /// Implementation for accessing CloudWatchLogs
     ///
-    /// Amazon CloudWatch Logs API Reference 
-    /// <para>
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
     /// Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon CloudTrail, or other sources.
     /// You can then retrieve the associated log data from CloudWatch Logs using the Amazon
     /// CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch Logs
     /// API, or the CloudWatch Logs SDK.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// You can use CloudWatch Logs to:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use CloudWatch
+    ///  <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use CloudWatch
     /// Logs to monitor applications and systems using log data. For example, CloudWatch Logs
     /// can track the number of errors that occur in your application logs and send you a
     /// notification whenever the rate of errors exceeds a threshold you specify. CloudWatch
@@ -63,13 +61,13 @@ namespace Amazon.CloudWatchLogs
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in Amazon CloudWatch
+    ///  <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in Amazon CloudWatch
     /// and receive notifications of particular API activity as captured by CloudTrail and
     /// use the notification to perform troubleshooting.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data in highly
+    ///  <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data in highly
     /// durable storage. You can change the log retention setting so that any log events older
     /// than this setting are automatically deleted. The CloudWatch Logs agent makes it easy
     /// to quickly send both rotated and non-rotated log data off of a host and into the log
@@ -598,14 +596,14 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns all the log groups that are associated with the AWS account making the request.
-        /// The list returned in the response is ASCII-sorted by log group name. 
+        /// The list returned in the response is ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns up to 50 log groups. If there are more log groups
-        /// to list, the response would contain a <code class="code">nextToken</code> value in
-        /// the response body. You can also limit the number of log groups returned in the response
-        /// by specifying the <code class="code">limit</code> parameter in the request. 
+        /// By default, this operation returns up to 50 log groups. If there are more log groups
+        /// to list, the response would contain a <code>nextToken</code> value in the response
+        /// body. You can also limit the number of log groups returned in the response by specifying
+        /// the <code>limit</code> parameter in the request.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">

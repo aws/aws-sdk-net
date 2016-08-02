@@ -30,30 +30,50 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Container for the parameters to the PutMetricAlarm operation.
     /// Creates or updates an alarm and associates it with the specified Amazon CloudWatch
-    /// metric. Optionally, this operation can associate one or more Amazon Simple Notification
-    /// Service resources with the alarm. 
+    /// metric. Optionally, this operation can associate one or more Amazon SNS resources
+    /// with the alarm.
     /// 
     ///  
     /// <para>
     ///  When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
     /// The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions
-    /// associated with the <code>StateValue</code> is then executed. 
+    /// associated with the <code>StateValue</code> are then executed. 
     /// </para>
-    ///  <note> When updating an existing alarm, its <code>StateValue</code> is left unchanged.
-    /// </note> <note> If you are using an AWS Identity and Access Management (IAM) account
-    /// to create or modify an alarm, you must have the following Amazon EC2 permissions:
-    /// <ul> <li><code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
-    /// for all alarms on Amazon EC2 instance status metrics.</li> <li><code>ec2:StopInstances</code>
-    /// for alarms with stop actions.</li> <li><code>ec2:TerminateInstances</code> for alarms
-    /// with terminate actions.</li> <li><code>ec2:DescribeInstanceRecoveryAttribute</code>,
-    /// and <code>ec2:RecoverInstances</code> for alarms with recover actions.</li> </ul>
-    /// 
+    ///  <note> 
+    /// <para>
+    /// When updating an existing alarm, its <code>StateValue</code> is left unchanged, but
+    /// it completely overwrites the alarm's previous configuration.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// If you are using an AWS Identity and Access Management (IAM) account to create or
+    /// modify an alarm, you must have the following Amazon EC2 permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for
+    /// all alarms on Amazon EC2 instance status metrics.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ec2:StopInstances</code> for alarms with stop actions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ec2:TerminateInstances</code> for alarms with terminate actions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ec2:DescribeInstanceRecoveryAttribute</code>, and <code>ec2:RecoverInstances</code>
+    /// for alarms with recover actions.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you
     /// can still create an alarm but the stop or terminate actions won't be performed on
     /// the Amazon EC2 instance. However, if you are later granted permission to use the associated
     /// Amazon EC2 APIs, the alarm actions you created earlier will be performed. For more
-    /// information about IAM permissions, see <a href="http://docs.aws.amazon.com//IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
+    /// information about IAM permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
     /// and Policies</a> in <i>Using IAM</i>.
     /// </para>
     ///  
@@ -92,8 +112,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ActionsEnabled. 
         /// <para>
-        ///  Indicates whether or not actions should be executed during any changes to the alarm's
-        /// state. 
+        /// Indicates whether or not actions should be executed during any changes to the alarm's
+        /// state.
         /// </para>
         /// </summary>
         public bool ActionsEnabled
@@ -128,10 +148,10 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> You must create at least one stop, terminate, or reboot alarm using the
-        /// Amazon EC2 or CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role for
-        /// the first time. After this IAM role is created, you can create stop, terminate, or
-        /// reboot alarms using the CLI.
+        ///  <b>Note:</b> You must create at least one stop, terminate, or reboot alarm using
+        /// the Amazon EC2 or CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role
+        /// for the first time. After this IAM role is created, you can create stop, terminate,
+        /// or reboot alarms using the CLI.
         /// </para>
         /// </summary>
         public List<string> AlarmActions
@@ -149,7 +169,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmDescription. 
         /// <para>
-        ///  The description for the alarm. 
+        /// The description for the alarm.
         /// </para>
         /// </summary>
         public string AlarmDescription
@@ -167,8 +187,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmName. 
         /// <para>
-        ///  The descriptive name for the alarm. This name must be unique within the user's AWS
-        /// account 
+        /// The descriptive name for the alarm. This name must be unique within the user's AWS
+        /// account
         /// </para>
         /// </summary>
         public string AlarmName
@@ -206,7 +226,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        ///  The dimensions for the alarm's associated metric. 
+        /// The dimensions for the alarm's associated metric.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -224,7 +244,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property EvaluationPeriods. 
         /// <para>
-        ///  The number of periods over which data is compared to the specified threshold. 
+        /// The number of periods over which data is compared to the specified threshold.
         /// </para>
         /// </summary>
         public int EvaluationPeriods
@@ -259,10 +279,10 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> You must create at least one stop, terminate, or reboot alarm using the
-        /// Amazon EC2 or CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role for
-        /// the first time. After this IAM role is created, you can create stop, terminate, or
-        /// reboot alarms using the CLI.
+        ///  <b>Note:</b> You must create at least one stop, terminate, or reboot alarm using
+        /// the Amazon EC2 or CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role
+        /// for the first time. After this IAM role is created, you can create stop, terminate,
+        /// or reboot alarms using the CLI.
         /// </para>
         /// </summary>
         public List<string> InsufficientDataActions
@@ -280,7 +300,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        ///  The name for the alarm's associated metric. 
+        /// The name for the alarm's associated metric.
         /// </para>
         /// </summary>
         public string MetricName
@@ -298,7 +318,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace for the alarm's associated metric. 
+        /// The namespace for the alarm's associated metric.
         /// </para>
         /// </summary>
         public string Namespace
@@ -333,10 +353,10 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>Note:</b> You must create at least one stop, terminate, or reboot alarm using the
-        /// Amazon EC2 or CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role for
-        /// the first time. After this IAM role is created, you can create stop, terminate, or
-        /// reboot alarms using the CLI.
+        ///  <b>Note:</b> You must create at least one stop, terminate, or reboot alarm using
+        /// the Amazon EC2 or CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role
+        /// for the first time. After this IAM role is created, you can create stop, terminate,
+        /// or reboot alarms using the CLI.
         /// </para>
         /// </summary>
         public List<string> OKActions
@@ -354,7 +374,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        ///  The period in seconds over which the specified statistic is applied. 
+        /// The period in seconds over which the specified statistic is applied.
         /// </para>
         /// </summary>
         public int Period
@@ -372,7 +392,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        ///  The statistic to apply to the alarm's associated metric. 
+        /// The statistic to apply to the alarm's associated metric.
         /// </para>
         /// </summary>
         public Statistic Statistic
@@ -390,7 +410,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Threshold. 
         /// <para>
-        ///  The value against which the specified statistic is compared. 
+        /// The value against which the specified statistic is compared.
         /// </para>
         /// </summary>
         public double Threshold
@@ -408,11 +428,11 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        ///  The statistic's unit of measure. For example, the units for the Amazon EC2 NetworkIn
+        /// The statistic's unit of measure. For example, the units for the Amazon EC2 NetworkIn
         /// metric are Bytes because NetworkIn tracks the number of bytes that an instance receives
         /// on all network interfaces. You can also specify a unit when you create a custom metric.
         /// Units help provide conceptual meaning to your data. Metric data points that specify
-        /// a unit of measure, such as Percent, are aggregated separately. 
+        /// a unit of measure, such as Percent, are aggregated separately.
         /// </para>
         ///  
         /// <para>

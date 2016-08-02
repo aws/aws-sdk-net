@@ -44,7 +44,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the dimension. 
+        /// The name of the dimension.
         /// </para>
         /// </summary>
         public string Name
@@ -62,7 +62,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value representing the dimension measurement 
+        /// The value representing the dimension measurement
         /// </para>
         /// </summary>
         public string Value

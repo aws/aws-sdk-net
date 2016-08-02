@@ -29,22 +29,21 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the FilterLogEvents operation.
-    /// Retrieves log events, optionally filtered by a filter pattern from the specified
-    /// log group. You can provide an optional time range to filter the results on the event
-    /// <code class="code">timestamp</code>. You can limit the streams searched to an explicit
-    /// list of <code class="code">logStreamNames</code>. 
+    /// Retrieves log events, optionally filtered by a filter pattern from the specified log
+    /// group. You can provide an optional time range to filter the results on the event <code>timestamp</code>.
+    /// You can limit the streams searched to an explicit list of <code>logStreamNames</code>.
     /// 
     ///  
     /// <para>
-    ///  By default, this operation returns as much matching log events as can fit in a response
+    /// By default, this operation returns as much matching log events as can fit in a response
     /// size of 1MB, up to 10,000 log events, or all the events found within a time-bounded
-    /// scan window. If the response includes a <code class="code">nextToken</code>, then
-    /// there is more data to search, and the search can be resumed with a new request providing
-    /// the nextToken. The response will contain a list of <code class="code">searchedLogStreams</code>
-    /// that contains information about which streams were searched in the request and whether
-    /// they have been searched completely or require further pagination. The <code class="code">limit</code>
-    /// parameter in the request. can be used to specify the maximum number of events to return
-    /// in a page. 
+    /// scan window. If the response includes a <code>nextToken</code>, then there is more
+    /// data to search, and the search can be resumed with a new request providing the nextToken.
+    /// The response will contain a list of <code>searchedLogStreams</code> that contains
+    /// information about which streams were searched in the request and whether they have
+    /// been searched completely or require further pagination. The <code>limit</code> parameter
+    /// in the request can be used to specify the maximum number of events to return in a
+    /// page.
     /// </para>
     /// </summary>
     public partial class FilterLogEventsRequest : AmazonCloudWatchLogsRequest
@@ -80,8 +79,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterPattern. 
         /// <para>
-        ///  A valid CloudWatch Logs filter pattern to use for filtering the response. If not
-        /// provided, all the events are matched. 
+        /// A valid CloudWatch Logs filter pattern to use for filtering the response. If not provided,
+        /// all the events are matched.
         /// </para>
         /// </summary>
         public string FilterPattern
@@ -138,7 +137,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        ///  The name of the log group to query. 
+        /// The name of the log group to query.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -156,8 +155,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamNames. 
         /// <para>
-        ///  Optional list of log stream names within the specified log group to search. Defaults
-        /// to all the log streams in the log group. 
+        /// Optional list of log stream names within the specified log group to search. Defaults
+        /// to all the log streams in the log group.
         /// </para>
         /// </summary>
         public List<string> LogStreamNames
@@ -175,9 +174,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token obtained from a <code class="code">FilterLogEvents</code> response
-        /// to continue paginating the FilterLogEvents results. This token is omitted from the
-        /// response when there are no other events to display.
+        /// A pagination token obtained from a <code>FilterLogEvents</code> response to continue
+        /// paginating the FilterLogEvents results. This token is omitted from the response when
+        /// there are no other events to display.
         /// </para>
         /// </summary>
         public string NextToken
