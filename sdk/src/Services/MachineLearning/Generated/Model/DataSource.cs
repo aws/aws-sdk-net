@@ -39,12 +39,14 @@ namespace Amazon.MachineLearning.Model
     public partial class DataSource
     {
         private bool? _computeStatistics;
+        private long? _computeTime;
         private DateTime? _createdAt;
         private string _createdByIamUser;
         private string _dataLocationS3;
         private string _dataRearrangement;
         private long? _dataSizeInBytes;
         private string _dataSourceId;
+        private DateTime? _finishedAt;
         private DateTime? _lastUpdatedAt;
         private string _message;
         private string _name;
@@ -52,6 +54,7 @@ namespace Amazon.MachineLearning.Model
         private RDSMetadata _rdsMetadata;
         private RedshiftMetadata _redshiftMetadata;
         private string _roleARN;
+        private DateTime? _startedAt;
         private EntityStatus _status;
 
         /// <summary>
@@ -71,6 +74,21 @@ namespace Amazon.MachineLearning.Model
         internal bool IsSetComputeStatistics()
         {
             return this._computeStatistics.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeTime.
+        /// </summary>
+        public long ComputeTime
+        {
+            get { return this._computeTime.GetValueOrDefault(); }
+            set { this._computeTime = value; }
+        }
+
+        // Check to see if ComputeTime property is set
+        internal bool IsSetComputeTime()
+        {
+            return this._computeTime.HasValue; 
         }
 
         /// <summary>
@@ -185,6 +203,21 @@ namespace Amazon.MachineLearning.Model
         internal bool IsSetDataSourceId()
         {
             return this._dataSourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FinishedAt.
+        /// </summary>
+        public DateTime FinishedAt
+        {
+            get { return this._finishedAt.GetValueOrDefault(); }
+            set { this._finishedAt = value; }
+        }
+
+        // Check to see if FinishedAt property is set
+        internal bool IsSetFinishedAt()
+        {
+            return this._finishedAt.HasValue; 
         }
 
         /// <summary>
@@ -303,6 +336,21 @@ namespace Amazon.MachineLearning.Model
         internal bool IsSetRoleARN()
         {
             return this._roleARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedAt.
+        /// </summary>
+        public DateTime StartedAt
+        {
+            get { return this._startedAt.GetValueOrDefault(); }
+            set { this._startedAt = value; }
+        }
+
+        // Check to see if StartedAt property is set
+        internal bool IsSetStartedAt()
+        {
+            return this._startedAt.HasValue; 
         }
 
         /// <summary>

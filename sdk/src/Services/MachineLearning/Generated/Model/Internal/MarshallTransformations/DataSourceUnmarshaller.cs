@@ -70,6 +70,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeStatistics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComputeTime", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ComputeTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FinishedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.FinishedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
@@ -146,6 +158,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
