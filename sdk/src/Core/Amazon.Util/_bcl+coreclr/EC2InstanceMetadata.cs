@@ -471,7 +471,7 @@ namespace Amazon.Util
 
             try
             {
-                var content = AWSSDKUtils.DownloadStringContent(new Uri(path));
+                var content = AWSSDKUtils.DownloadStringContent(new Uri(EC2_METADATA_ROOT + path));
                 using (var stream = new StringReader(content))
                 {
                     if (slurp)
