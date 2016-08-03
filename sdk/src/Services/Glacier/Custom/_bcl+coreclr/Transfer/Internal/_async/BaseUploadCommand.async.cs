@@ -14,22 +14,20 @@
  */
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Amazon.Glacier.Transfer
+using Amazon.Glacier.Model;
+using Amazon.Glacier.Transfer.Internal;
+using Amazon.Util;
+
+namespace Amazon.Glacier.Transfer.Internal
 {
-    /// <summary>
-    /// Common options used for requests to Amazon Glacier.
-    /// </summary>
-    public abstract class CommonOptions
+    internal abstract partial class BaseUploadCommand
     {
-        /// <summary>
-        /// The ID for the account which owns the Glacier vault. 
-        /// </summary>
-        public string AccountId
-        {
-            get;
-            set;
-        }
+
+        internal abstract Task ExecuteAsync();
     }
 }

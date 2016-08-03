@@ -16,42 +16,34 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Text;
 using System.Threading;
 
 using Amazon.Glacier.Model;
-using Amazon.Glacier.Transfer.Internal;
 using Amazon.Util;
+using System.Globalization;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
-    internal abstract class BaseUploadCommand
+    internal partial class DownloadJobCommand
     {
-        protected ArchiveTransferManager manager;
-        protected UploadOptions options;
-        protected string vaultName;
-        protected string archiveDescription;
-        protected string filePath;
+        const int PART_STREAM_HASH_SIZE = 1024 * 1024;
 
-        internal BaseUploadCommand(ArchiveTransferManager manager, string vaultName, string archiveDescription, string filePath, UploadOptions options)
+        ArchiveTransferManager manager;
+        string vaultName;
+        string jobId;
+        string filePath;
+        DownloadOptions options;
+
+        internal DownloadJobCommand(ArchiveTransferManager manager, string vaultName, string jobId, string filePath, DownloadOptions options)
         {
             this.manager = manager;
             this.vaultName = vaultName;
-            this.archiveDescription = archiveDescription;
+            this.jobId = jobId;
             this.filePath = filePath;
             this.options = options;
 
             if (this.options == null)
-                this.options = new UploadOptions();
-        }
-
-        internal abstract void Execute();
-
-
-        public UploadResult UploadResult
-        {
-            get;
-            protected set;
+                this.options = new DownloadOptions();
         }
     }
 }

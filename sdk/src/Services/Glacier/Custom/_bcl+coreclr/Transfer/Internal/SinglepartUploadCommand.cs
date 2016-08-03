@@ -14,25 +14,27 @@
  */
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Text;
+using System.Threading;
 
+using Amazon.Glacier.Model;
+using Amazon.Glacier.Transfer.Internal;
+using Amazon.Util;
 
-namespace Amazon.Glacier.Transfer
+namespace Amazon.Glacier.Transfer.Internal
 {
-    /// <summary>
-    /// Options that can be specified for upload methods.
-    /// </summary>
-    public class UploadOptions : CommonOptions
+    internal partial class SinglepartUploadCommand : BaseUploadCommand
     {
-
-
-        /// <summary>
-        /// The delegate callback for tracking the progress of the upload.
-        /// </summary>
-        public EventHandler<Runtime.StreamTransferProgressArgs> StreamTransferProgress
+        internal SinglepartUploadCommand(ArchiveTransferManager mananger, string vaultName, string archiveDescription, string filePath, UploadOptions options)
+            : base(mananger, vaultName, archiveDescription, filePath, options)
         {
-            get;
-            set;
+        }
+
+        void ProgressCallback(object sender, Runtime.StreamTransferProgressArgs args)
+        {
+            AWSSDKUtils.InvokeInBackground(this.options.StreamTransferProgress, args, this);
         }
     }
 }
