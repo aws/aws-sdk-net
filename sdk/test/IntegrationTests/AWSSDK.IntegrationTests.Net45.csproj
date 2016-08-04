@@ -344,6 +344,10 @@
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>
       <Name>AWSSDK.WorkSpaces.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net45.csproj">
+      <Project>{5de41572-b345-4727-ad6d-0d08ab92e49b}</Project>
+      <Name>AWSSDK.CommonTest.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\App.45.config">

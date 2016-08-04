@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2011-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces;
 using System.Text;
 using System.Security;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Runtime
 {
@@ -659,8 +660,8 @@ namespace Amazon.Runtime
                 var credentialsFilePath = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
                 if (!string.IsNullOrEmpty(credentialsFilePath))
                 {
-                    var parser = new CredentialsFileParser(credentialsFilePath);
-                    var section = parser.FindSection(lookupName);
+                    var file = new SharedCredentialsFile(credentialsFilePath);
+                    var section = file[lookupName];
                     if (section != null)
                     {
                         section.Validate();
@@ -717,9 +718,8 @@ namespace Amazon.Runtime
             string sharedCredentialsFile = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
             if (!string.IsNullOrEmpty(sharedCredentialsFile))
             {
-                var parser = new CredentialsFileParser(sharedCredentialsFile);
-                var section = parser.FindSection(profileName);
-                return section != null;
+                var file = new SharedCredentialsFile(sharedCredentialsFile);
+                return file[profileName] != null;
             }
 
             return false;
@@ -745,8 +745,8 @@ namespace Amazon.Runtime
             var credentialsFilePath = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
             if (!string.IsNullOrEmpty(credentialsFilePath))
             {
-                var parser = new CredentialsFileParser(credentialsFilePath);
-                var section = parser.FindSection(profileName);
+                var file = new SharedCredentialsFile(credentialsFilePath);
+                CredentialsSection section = file[profileName];
                 if (section != null)
                 {
                     try
@@ -773,131 +773,7 @@ namespace Amazon.Runtime
             return false;
         }
 
-        private class CredentialsFileParser
-        {
-            private const string profileNamePrefix = "[";
-            private const string profileNameSuffix = "]";
-            private const string dataPrefix = "aws_";
-            private const string keyValueSeparator = "=";
-            private const string accessKeyName = "aws_access_key_id";
-            private const string secretKeyName = "aws_secret_access_key";
-            private const string tokenName = "aws_session_token";
-            private List<CredentialsSection> Sections { get; set; }
 
-            public CredentialsFileParser(string filePath)
-            {
-                var lines = File.ReadAllLines(filePath);
-                Parse(lines);
-            }
-
-            private void Parse(string[] lines)
-            {
-                Sections = new List<CredentialsSection>();
-                CredentialsSection currentSection = null;
-                foreach (var l in lines)
-                {
-                    var line = l ?? string.Empty;
-                    line = line.Trim();
-                    if (string.IsNullOrEmpty(line))
-                        continue;
-
-                    if (line.StartsWith(profileNamePrefix, StringComparison.OrdinalIgnoreCase) &&
-                        line.EndsWith(profileNameSuffix, StringComparison.OrdinalIgnoreCase))
-                    {
-                        if (currentSection != null)
-                            Sections.Add(currentSection);
-
-                        var profileName = GetProfileName(line);
-                        currentSection = new CredentialsSection(profileName);
-                    }
-                    else if (line.StartsWith(dataPrefix, StringComparison.OrdinalIgnoreCase) && currentSection != null)
-                    {
-                        // split data into key-value pairs, store appropriately
-                        var split = SplitData(line);
-                        if (split.Count > 0)
-                        {
-                            var name = split[0];
-                            var value = split.Count > 1 ? split[1] : null;
-
-                            SetSectionValue(currentSection, name, value);
-                        }
-                    }
-                }
-
-                if (currentSection != null)
-                    Sections.Add(currentSection);
-            }
-            private static List<string> SplitData(string line)
-            {
-                var split = line
-                    .Split(new string[] { keyValueSeparator }, 2, StringSplitOptions.None)
-                    .Select(s => s.Trim())
-                    .Where(s => !string.IsNullOrEmpty(s))
-                    .ToList();
-                return split;
-            }
-            private static string GetProfileName(string line)
-            {
-                // get profile name by trimming off the [ and ] characters
-                var profileName = line;
-                profileName = profileName.Substring(profileNamePrefix.Length);
-                profileName = profileName.Substring(0, profileName.Length - profileNameSuffix.Length);
-                return profileName;
-            }
-            private static void SetSectionValue(CredentialsSection section, string name, string value)
-            {
-                if (string.Equals(accessKeyName, name, StringComparison.OrdinalIgnoreCase))
-                    section.AccessKey = value;
-                else if (string.Equals(secretKeyName, name, StringComparison.OrdinalIgnoreCase))
-                    section.SecretKey = value;
-                else if (string.Equals(tokenName, name, StringComparison.OrdinalIgnoreCase))
-                    section.Token = value;
-            }
-
-            public CredentialsSection FindSection(string profileName)
-            {
-                foreach (var section in Sections)
-                    if (string.Equals(section.ProfileName, profileName, StringComparison.Ordinal))
-                        return section;
-                return null;
-            }
-
-            public class CredentialsSection
-            {
-                public CredentialsSection(string profileName)
-                {
-                    ProfileName = profileName;
-                }
-
-                public string ProfileName { get; set; }
-                public string AccessKey { get; set; }
-                public string SecretKey { get; set; }
-                public string Token { get; set; }
-
-                public void Validate()
-                {
-                    if (!HasValidCredentials)
-                        throw new InvalidDataException("Credential profile does not contain valid access and/or secret key materials.");
-                }
-
-                public bool HasValidCredentials
-                {
-                    get
-                    {
-                        return
-                            !string.IsNullOrEmpty(AccessKey) &&
-                            !string.IsNullOrEmpty(SecretKey);
-                    }
-                }
-                public ImmutableCredentials Credentials
-                {
-                    get
-                    {
-                        return new ImmutableCredentials(AccessKey, SecretKey, Token);
-                    }
-                }
-            }
-        }
 
             #region Abstract class overrides
 
