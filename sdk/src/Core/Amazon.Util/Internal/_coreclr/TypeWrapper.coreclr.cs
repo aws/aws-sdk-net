@@ -182,40 +182,12 @@ namespace Amazon.Util.Internal
 
             public override object[] GetCustomAttributes(bool inherit)
             {
-                var attributes = new List<CustomAttributeData>();
-                attributes.AddRange(this._typeInfo.CustomAttributes);
-                if (inherit)
-                {
-                    var type = this._typeInfo.BaseType;
-                    while (type != null)
-                    {
-                        var info = type.GetTypeInfo();
-                        attributes.AddRange(info.CustomAttributes);
-                        type = info.BaseType;
-                    }
-                }
-
-                return attributes.ToArray();
+                return CustomAttributeExtensions.GetCustomAttributes(this.Type.GetTypeInfo(), inherit).ToArray<object>();
             }
 
             public override object[] GetCustomAttributes(ITypeInfo attributeType, bool inherit)
             {
-                var attributeRealType = ((TypeInfoWrapper)attributeType)._type;
-
-                var attributes = new List<CustomAttributeData>();
-                attributes.AddRange(this._typeInfo.CustomAttributes.Where(x => x.AttributeType.Equals(attributeRealType)));
-                if (inherit)
-                {
-                    var type = this._typeInfo.BaseType;
-                    while (type != null)
-                    {
-                        var info = type.GetTypeInfo();
-                        attributes.AddRange(info.CustomAttributes.Where(x => x.AttributeType.Equals(attributeRealType)));
-                        type = info.BaseType;
-                    }
-                }
-
-                return attributes.ToArray();
+                return CustomAttributeExtensions.GetCustomAttributes(this.Type.GetTypeInfo(), attributeType.Type, inherit).ToArray<object>();
             }
 
             public override Assembly Assembly
