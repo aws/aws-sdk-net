@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// You can update an event source mapping. This is useful if you want to change the parameters
     /// of the existing mapping without losing your position in the stream. You can change
     /// which function will receive the stream records, but to change the stream itself, you
-    /// must create a new mapping. 
+    /// must create a new mapping.
     /// 
     ///  
     /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.Lambda.Model
         /// If you are using versioning, you can also provide a qualified function ARN (ARN that
         /// is qualified with function version or alias name as suffix). For more information
         /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-        /// Lambda Function Versioning and Aliases</a>
+        /// Lambda Function Versioning and Aliases</a> 
         /// </para>
         ///  
         /// <para>

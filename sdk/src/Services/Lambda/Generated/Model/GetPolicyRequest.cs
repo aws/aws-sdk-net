@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// You need permission for the <code>lambda:GetPolicy action.</code>
+    /// You need permission for the <code>lambda:GetPolicy action.</code> 
     /// </para>
     /// </summary>
     public partial class GetPolicyRequest : AmazonLambdaRequest
@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// Function name whose resource policy you want to retrieve. 
+        /// Function name whose resource policy you want to retrieve.
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.Lambda.Model
         /// You can specify this optional query parameter to specify a function version or an
         /// alias name in which case this API will return all permissions associated with the
         /// specific qualified ARN. If you don't provide this parameter, the API will return permissions
-        /// that apply to the unqualified function ARN. 
+        /// that apply to the unqualified function ARN.
         /// </para>
         /// </summary>
         public string Qualifier

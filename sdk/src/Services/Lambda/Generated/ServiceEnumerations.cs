@@ -235,4 +235,58 @@ namespace Amazon.Lambda
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type ThrottleReason.
+    /// </summary>
+    public class ThrottleReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CallerRateLimitExceeded for ThrottleReason
+        /// </summary>
+        public static readonly ThrottleReason CallerRateLimitExceeded = new ThrottleReason("CallerRateLimitExceeded");
+        /// <summary>
+        /// Constant ConcurrentInvocationLimitExceeded for ThrottleReason
+        /// </summary>
+        public static readonly ThrottleReason ConcurrentInvocationLimitExceeded = new ThrottleReason("ConcurrentInvocationLimitExceeded");
+        /// <summary>
+        /// Constant FunctionInvocationRateLimitExceeded for ThrottleReason
+        /// </summary>
+        public static readonly ThrottleReason FunctionInvocationRateLimitExceeded = new ThrottleReason("FunctionInvocationRateLimitExceeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThrottleReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThrottleReason FindValue(string value)
+        {
+            return FindValue<ThrottleReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThrottleReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }
