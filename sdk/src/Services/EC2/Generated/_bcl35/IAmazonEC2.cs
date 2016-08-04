@@ -4362,80 +4362,6 @@ namespace Amazon.EC2
 
         #endregion
         
-        #region  DescribeHostReservationOfferings
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings service method.</param>
-        /// 
-        /// <returns>The response from the DescribeHostReservationOfferings service method, as returned by EC2.</returns>
-        DescribeHostReservationOfferingsResponse DescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeHostReservationOfferings operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings operation on AmazonEC2Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHostReservationOfferings
-        ///         operation.</returns>
-        IAsyncResult BeginDescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DescribeHostReservationOfferings operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHostReservationOfferings.</param>
-        /// 
-        /// <returns>Returns a  DescribeHostReservationOfferingsResult from EC2.</returns>
-        DescribeHostReservationOfferingsResponse EndDescribeHostReservationOfferings(IAsyncResult asyncResult);
-
-        #endregion
-        
-        #region  DescribeHostReservations
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations service method.</param>
-        /// 
-        /// <returns>The response from the DescribeHostReservations service method, as returned by EC2.</returns>
-        DescribeHostReservationsResponse DescribeHostReservations(DescribeHostReservationsRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeHostReservations operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations operation on AmazonEC2Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHostReservations
-        ///         operation.</returns>
-        IAsyncResult BeginDescribeHostReservations(DescribeHostReservationsRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DescribeHostReservations operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHostReservations.</param>
-        /// 
-        /// <returns>Returns a  DescribeHostReservationsResult from EC2.</returns>
-        DescribeHostReservationsResponse EndDescribeHostReservations(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  DescribeHosts
 
 
@@ -8002,43 +7928,6 @@ namespace Amazon.EC2
 
         #endregion
         
-        #region  GetHostReservationPurchasePreview
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview service method.</param>
-        /// 
-        /// <returns>The response from the GetHostReservationPurchasePreview service method, as returned by EC2.</returns>
-        GetHostReservationPurchasePreviewResponse GetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetHostReservationPurchasePreview operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview operation on AmazonEC2Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostReservationPurchasePreview
-        ///         operation.</returns>
-        IAsyncResult BeginGetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  GetHostReservationPurchasePreview operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostReservationPurchasePreview.</param>
-        /// 
-        /// <returns>Returns a  GetHostReservationPurchasePreviewResult from EC2.</returns>
-        GetHostReservationPurchasePreviewResponse EndGetHostReservationPurchasePreview(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  GetPasswordData
 
 
@@ -9128,43 +9017,6 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  MoveAddressToVpcResult from EC2.</returns>
         MoveAddressToVpcResponse EndMoveAddressToVpc(IAsyncResult asyncResult);
-
-        #endregion
-        
-        #region  PurchaseHostReservation
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation service method.</param>
-        /// 
-        /// <returns>The response from the PurchaseHostReservation service method, as returned by EC2.</returns>
-        PurchaseHostReservationResponse PurchaseHostReservation(PurchaseHostReservationRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PurchaseHostReservation operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation operation on AmazonEC2Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseHostReservation
-        ///         operation.</returns>
-        IAsyncResult BeginPurchaseHostReservation(PurchaseHostReservationRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  PurchaseHostReservation operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseHostReservation.</param>
-        /// 
-        /// <returns>Returns a  PurchaseHostReservationResult from EC2.</returns>
-        PurchaseHostReservationResponse EndPurchaseHostReservation(IAsyncResult asyncResult);
 
         #endregion
         

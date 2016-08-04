@@ -1973,54 +1973,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
-        public void DescribeHostReservationOfferingsMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeHostReservationOfferings");
-
-            var request = InstantiateClassGenerator.Execute<DescribeHostReservationOfferingsRequest>();
-            var marshaller = new DescribeHostReservationOfferingsRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
-            var response = DescribeHostReservationOfferingsResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeHostReservationOfferingsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("EC2")]
-        public void DescribeHostReservationsMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeHostReservations");
-
-            var request = InstantiateClassGenerator.Execute<DescribeHostReservationsRequest>();
-            var marshaller = new DescribeHostReservationsRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
-            var response = DescribeHostReservationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeHostReservationsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("EC2")]
         public void DescribeHostsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeHosts");
@@ -3613,30 +3565,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
-        public void GetHostReservationPurchasePreviewMarshallTest()
-        {
-            var operation = service_model.FindOperation("GetHostReservationPurchasePreview");
-
-            var request = InstantiateClassGenerator.Execute<GetHostReservationPurchasePreviewRequest>();
-            var marshaller = new GetHostReservationPurchasePreviewRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
-            var response = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetHostReservationPurchasePreviewResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("EC2")]
         public void GetPasswordDataMarshallTest()
         {
             var operation = service_model.FindOperation("GetPasswordData");
@@ -4135,30 +4063,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = MoveAddressToVpcResponseUnmarshaller.Instance.Unmarshall(context)
                 as MoveAddressToVpcResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("EC2")]
-        public void PurchaseHostReservationMarshallTest()
-        {
-            var operation = service_model.FindOperation("PurchaseHostReservation");
-
-            var request = InstantiateClassGenerator.Execute<PurchaseHostReservationRequest>();
-            var marshaller = new PurchaseHostReservationRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
-            var response = PurchaseHostReservationResponseUnmarshaller.Instance.Unmarshall(context)
-                as PurchaseHostReservationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
