@@ -28,21 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDBCluster operation.
-    /// Creates a new Amazon Aurora DB cluster.
-    /// 
-    ///  
-    /// <para>
-    /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-    /// cluster as a Read Replica of another DB cluster.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
-    /// </para>
+    /// Container for the parameters to the RestoreDBClusterFromS3 operation.
+    /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
+    /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
+    /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html">Migrating
+    /// Data from an External MySQL Database to an Amazon Aurora DB Cluster</a>.
     /// </summary>
-    public partial class CreateDBClusterRequest : AmazonRDSRequest
+    public partial class RestoreDBClusterFromS3Request : AmazonRDSRequest
     {
         private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
@@ -60,7 +52,11 @@ namespace Amazon.RDS.Model
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
-        private string _replicationSourceIdentifier;
+        private string _s3BucketName;
+        private string _s3IngestionRoleArn;
+        private string _s3Prefix;
+        private string _sourceEngine;
+        private string _sourceEngineVersion;
         private bool? _storageEncrypted;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
@@ -68,9 +64,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of EC2 Availability Zones that instances in the DB cluster can be created in.
-        /// For information on regions and Availability Zones, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-        /// and Availability Zones</a>. 
+        /// A list of EC2 Availability Zones that instances in the restored DB cluster can be
+        /// created in.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -88,8 +83,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        /// The number of days for which automated backups are retained. You must specify a minimum
-        /// value of 1.
+        /// The number of days for which automated backups of the restored DB cluster are retained.
+        /// You must specify a minimum value of 1.
         /// </para>
         ///  
         /// <para>
@@ -120,8 +115,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        /// A value that indicates that the DB cluster should be associated with the specified
-        /// CharacterSet.
+        /// A value that indicates that the restored DB cluster should be associated with the
+        /// specified CharacterSet.
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -139,8 +134,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name for your database of up to 8 alpha-numeric characters. If you do not provide
-        /// a name, Amazon RDS will not create a database in the DB cluster you are creating.
+        /// The database name for the restored DB cluster.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -158,7 +152,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The DB cluster identifier. This parameter is stored as a lowercase string.
+        /// The name of the DB cluster to create from the source data in the S3 bucket. This parameter
+        /// is isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -196,8 +191,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        ///  The name of the DB cluster parameter group to associate with this DB cluster. If
-        /// this argument is omitted, <code>default.aurora5.6</code> will be used. 
+        /// The name of the DB cluster parameter group to associate with the restored DB cluster.
+        /// If this argument is omitted, <code>default.aurora5.6</code> will be used. 
         /// </para>
         ///  
         /// <para>
@@ -232,7 +227,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// A DB subnet group to associate with this DB cluster.
+        /// A DB subnet group to associate with the restored DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -259,7 +254,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for this DB cluster.
+        /// The name of the database engine to be used for the restored DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -339,7 +334,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The name of the master user for the DB cluster.
+        /// The name of the master user for the restored DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -397,13 +392,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// A value that indicates that the DB cluster should be associated with the specified
-        /// option group.
+        /// A value that indicates that the restored DB cluster should be associated with the
+        /// specified option group.
         /// </para>
         ///  
         /// <para>
-        /// Permanent options cannot be removed from an option group. The option group cannot
-        /// be removed from a DB cluster once it is associated with a DB cluster.
+        /// Permanent options cannot be removed from an option group. An option group cannot be
+        /// removed from a DB cluster once it is associated with a DB cluster.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -421,7 +416,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number on which the instances in the DB cluster accept connections.
+        /// The port number on which the instances in the restored DB cluster accept connections.
         /// </para>
         ///  
         /// <para>
@@ -526,28 +521,116 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationSourceIdentifier. 
+        /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created
-        /// as a Read Replica.
+        /// The name of the Amazon S3 bucket that contains the data used to create the Amazon
+        /// Aurora DB cluster.
         /// </para>
         /// </summary>
-        public string ReplicationSourceIdentifier
+        public string S3BucketName
         {
-            get { return this._replicationSourceIdentifier; }
-            set { this._replicationSourceIdentifier = value; }
+            get { return this._s3BucketName; }
+            set { this._s3BucketName = value; }
         }
 
-        // Check to see if ReplicationSourceIdentifier property is set
-        internal bool IsSetReplicationSourceIdentifier()
+        // Check to see if S3BucketName property is set
+        internal bool IsSetS3BucketName()
         {
-            return this._replicationSourceIdentifier != null;
+            return this._s3BucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3IngestionRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+        /// that authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
+        /// </para>
+        /// </summary>
+        public string S3IngestionRoleArn
+        {
+            get { return this._s3IngestionRoleArn; }
+            set { this._s3IngestionRoleArn = value; }
+        }
+
+        // Check to see if S3IngestionRoleArn property is set
+        internal bool IsSetS3IngestionRoleArn()
+        {
+            return this._s3IngestionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Prefix. 
+        /// <para>
+        /// The prefix for all of the file names that contain the data used to create the Amazon
+        /// Aurora DB cluster. If you do not specify a <b>SourceS3Prefix</b> value, then the Amazon
+        /// Aurora DB cluster is created by using all of the files in the Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        public string S3Prefix
+        {
+            get { return this._s3Prefix; }
+            set { this._s3Prefix = value; }
+        }
+
+        // Check to see if S3Prefix property is set
+        internal bool IsSetS3Prefix()
+        {
+            return this._s3Prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceEngine. 
+        /// <para>
+        /// The identifier for the database engine that was backed up to create the files stored
+        /// in the Amazon S3 bucket. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>mysql</code> 
+        /// </para>
+        /// </summary>
+        public string SourceEngine
+        {
+            get { return this._sourceEngine; }
+            set { this._sourceEngine = value; }
+        }
+
+        // Check to see if SourceEngine property is set
+        internal bool IsSetSourceEngine()
+        {
+            return this._sourceEngine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceEngineVersion. 
+        /// <para>
+        /// The version of the database that the backup files were created from.
+        /// </para>
+        ///  
+        /// <para>
+        /// MySQL version 5.5 and 5.6 are supported. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>5.6.22</code> 
+        /// </para>
+        /// </summary>
+        public string SourceEngineVersion
+        {
+            get { return this._sourceEngineVersion; }
+            set { this._sourceEngineVersion = value; }
+        }
+
+        // Check to see if SourceEngineVersion property is set
+        internal bool IsSetSourceEngineVersion()
+        {
+            return this._sourceEngineVersion != null;
         }
 
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        /// Specifies whether the DB cluster is encrypted.
+        /// Specifies whether the restored DB cluster is encrypted.
         /// </para>
         /// </summary>
         public bool StorageEncrypted
@@ -580,7 +663,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of EC2 VPC security groups to associate with this DB cluster.
+        /// A list of EC2 VPC security groups to associate with the restored DB cluster.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

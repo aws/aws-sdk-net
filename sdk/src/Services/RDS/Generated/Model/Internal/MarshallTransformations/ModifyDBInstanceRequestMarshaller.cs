@@ -111,6 +111,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetDBSubnetGroupName())
+                {
+                    request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
+                }
                 if(publicRequest.IsSetDomain())
                 {
                     request.Parameters.Add("Domain", StringUtils.FromString(publicRequest.Domain));

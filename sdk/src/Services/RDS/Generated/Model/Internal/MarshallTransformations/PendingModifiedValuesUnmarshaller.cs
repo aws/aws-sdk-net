@@ -84,6 +84,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBInstanceIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBSubnetGroupName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSubnetGroupName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EngineVersion", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

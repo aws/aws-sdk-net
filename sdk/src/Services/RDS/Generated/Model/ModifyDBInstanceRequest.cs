@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         private string _dbParameterGroupName;
         private int? _dbPortNumber;
         private List<string> _dbSecurityGroups = new List<string>();
+        private string _dbSubnetGroupName;
         private string _domain;
         private string _domainIAMRoleName;
         private string _engineVersion;
@@ -625,6 +626,43 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSecurityGroups()
         {
             return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSubnetGroupName. 
+        /// <para>
+        /// The new DB subnet group for the DB instance. You can use this parameter to move your
+        /// DB instance to a different VPC, or to a different subnet group in the same VPC. If
+        /// your DB instance is not in a VPC, you can also use this parameter to move your DB
+        /// instance into a VPC. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+        /// the VPC for a DB Instance</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Changing the subnet group causes an outage during the change. The change is applied
+        /// during the next maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code>
+        /// parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// spaces, or hyphens.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mySubnetGroup</code> 
+        /// </para>
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
+        }
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this._dbSubnetGroupName != null;
         }
 
         /// <summary>
