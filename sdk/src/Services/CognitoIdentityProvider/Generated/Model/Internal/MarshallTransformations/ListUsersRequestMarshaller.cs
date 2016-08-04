@@ -78,6 +78,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFilter())
+                {
+                    context.Writer.WritePropertyName("Filter");
+                    context.Writer.Write(publicRequest.Filter);
+                }
+
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");
@@ -94,12 +100,6 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("UserPoolId");
                     context.Writer.Write(publicRequest.UserPoolId);
-                }
-
-                if(publicRequest.IsSetUserStatus())
-                {
-                    context.Writer.WritePropertyName("UserStatus");
-                    context.Writer.Write(publicRequest.UserStatus);
                 }
 
         
