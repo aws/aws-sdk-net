@@ -151,7 +151,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StatusFilter. 
         /// <para>
-        /// Game session status to filter results on. Possible game session states include ACTIVE,
+        /// Game session status to filter results on. Possible game session statuses include ACTIVE,
         /// <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the
         /// last two are transitory). 
         /// </para>

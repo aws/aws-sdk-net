@@ -77,8 +77,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EventTime. 
         /// <para>
-        /// Time stamp indicating when this event occurred. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this event occurred. Format is a number expressed in Unix
+        /// time as milliseconds (ex: "1469498468.057".
         /// </para>
         /// </summary>
         public DateTime EventTime

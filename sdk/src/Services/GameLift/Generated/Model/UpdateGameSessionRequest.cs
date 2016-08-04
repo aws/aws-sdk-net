@@ -121,11 +121,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ProtectionPolicy. 
         /// <para>
-        /// Game session protection policy to apply to this game session only. <ul><li><b>NoProtection</b>
-        /// – The game session can be terminated during a scale-down event.</li> <li><b>FullProtection</b>
-        /// – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
-        /// during a scale-down event.</li></ul>
+        /// Game session protection policy to apply to this game session only.
         /// </para>
+        ///  <ul><li><b>NoProtection</b> – The game session can be terminated during a scale-down
+        /// event.</li> <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code>
+        /// status, it cannot be terminated during a scale-down event.</li></ul>
         /// </summary>
         public ProtectionPolicy ProtectionPolicy
         {
