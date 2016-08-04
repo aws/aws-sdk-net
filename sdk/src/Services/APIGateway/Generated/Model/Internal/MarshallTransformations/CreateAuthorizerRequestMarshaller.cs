@@ -110,6 +110,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetProviderARNs())
+                {
+                    context.Writer.WritePropertyName("providerARNs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProviderARNsListValue in publicRequest.ProviderARNs)
+                    {
+                            context.Writer.Write(publicRequestProviderARNsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("type");

@@ -32,12 +32,35 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class MetricTransformation
     {
+        private double? _defaultValue;
         private string _metricName;
         private string _metricNamespace;
         private string _metricValue;
 
         /// <summary>
-        /// Gets and sets the property MetricName.
+        /// Gets and sets the property DefaultValue. 
+        /// <para>
+        /// (Optional) A default value to emit when a filter pattern does not match a log event.
+        /// Can be null.
+        /// </para>
+        /// </summary>
+        public double DefaultValue
+        {
+            get { return this._defaultValue.GetValueOrDefault(); }
+            set { this._defaultValue = value; }
+        }
+
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
+        {
+            return this._defaultValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        /// Name of the metric.
+        /// </para>
         /// </summary>
         public string MetricName
         {
@@ -52,7 +75,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricNamespace.
+        /// Gets and sets the property MetricNamespace. 
+        /// <para>
+        /// Namespace to which the metric belongs.
+        /// </para>
         /// </summary>
         public string MetricNamespace
         {
@@ -67,7 +93,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricValue.
+        /// Gets and sets the property MetricValue. 
+        /// <para>
+        ///  A string representing a value to publish to this metric when a filter pattern matches
+        /// a log event. 
+        /// </para>
         /// </summary>
         public string MetricValue
         {

@@ -215,6 +215,72 @@ namespace Amazon.DirectoryService
 
 
     /// <summary>
+    /// Constants used for properties of type IpRouteStatusMsg.
+    /// </summary>
+    public class IpRouteStatusMsg : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Added for IpRouteStatusMsg
+        /// </summary>
+        public static readonly IpRouteStatusMsg Added = new IpRouteStatusMsg("Added");
+        /// <summary>
+        /// Constant AddFailed for IpRouteStatusMsg
+        /// </summary>
+        public static readonly IpRouteStatusMsg AddFailed = new IpRouteStatusMsg("AddFailed");
+        /// <summary>
+        /// Constant Adding for IpRouteStatusMsg
+        /// </summary>
+        public static readonly IpRouteStatusMsg Adding = new IpRouteStatusMsg("Adding");
+        /// <summary>
+        /// Constant Removed for IpRouteStatusMsg
+        /// </summary>
+        public static readonly IpRouteStatusMsg Removed = new IpRouteStatusMsg("Removed");
+        /// <summary>
+        /// Constant RemoveFailed for IpRouteStatusMsg
+        /// </summary>
+        public static readonly IpRouteStatusMsg RemoveFailed = new IpRouteStatusMsg("RemoveFailed");
+        /// <summary>
+        /// Constant Removing for IpRouteStatusMsg
+        /// </summary>
+        public static readonly IpRouteStatusMsg Removing = new IpRouteStatusMsg("Removing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpRouteStatusMsg(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpRouteStatusMsg FindValue(string value)
+        {
+            return FindValue<IpRouteStatusMsg>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpRouteStatusMsg(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RadiusAuthenticationProtocol.
     /// </summary>
     public class RadiusAuthenticationProtocol : ConstantClass

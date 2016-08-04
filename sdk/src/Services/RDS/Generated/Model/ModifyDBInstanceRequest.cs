@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         private string _domainIAMRoleName;
         private string _engineVersion;
         private int? _iops;
+        private string _licenseModel;
         private string _masterUserPassword;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
@@ -757,6 +758,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseModel. 
+        /// <para>
+        /// The license model for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
+        /// | <code>general-public-license</code> 
+        /// </para>
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this._licenseModel; }
+            set { this._licenseModel = value; }
+        }
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this._licenseModel != null;
         }
 
         /// <summary>

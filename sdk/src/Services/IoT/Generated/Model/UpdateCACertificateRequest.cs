@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     public partial class UpdateCACertificateRequest : AmazonIoTRequest
     {
         private string _certificateId;
+        private AutoRegistrationStatus _newAutoRegistrationStatus;
         private CACertificateStatus _newStatus;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCertificateId()
         {
             return this._certificateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NewAutoRegistrationStatus. 
+        /// <para>
+        /// The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".
+        /// </para>
+        /// </summary>
+        public AutoRegistrationStatus NewAutoRegistrationStatus
+        {
+            get { return this._newAutoRegistrationStatus; }
+            set { this._newAutoRegistrationStatus = value; }
+        }
+
+        // Check to see if NewAutoRegistrationStatus property is set
+        internal bool IsSetNewAutoRegistrationStatus()
+        {
+            return this._newAutoRegistrationStatus != null;
         }
 
         /// <summary>

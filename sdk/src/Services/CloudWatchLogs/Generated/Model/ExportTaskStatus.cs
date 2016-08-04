@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Status message related to the <code class="code">code</code>.
+        /// Status message related to the <code>code</code>.
         /// </para>
         /// </summary>
         public string Message

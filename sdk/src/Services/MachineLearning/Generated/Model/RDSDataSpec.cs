@@ -67,7 +67,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property DatabaseInformation. 
         /// <para>
         /// Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code> of an
-        /// an Amazon RDS database.
+        /// Amazon RDS database.
         /// </para>
         /// </summary>
         public RDSDatabase DatabaseInformation

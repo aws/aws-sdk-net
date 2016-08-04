@@ -58,8 +58,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ActionsEnabled. 
         /// <para>
-        ///  Indicates whether actions should be executed during any changes to the alarm's state.
-        /// 
+        /// Indicates whether actions should be executed during any changes to the alarm's state.
         /// </para>
         /// </summary>
         public bool ActionsEnabled
@@ -97,7 +96,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the alarm. 
+        /// The Amazon Resource Name (ARN) of the alarm.
         /// </para>
         /// </summary>
         public string AlarmArn
@@ -115,7 +114,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmConfigurationUpdatedTimestamp. 
         /// <para>
-        ///  The time stamp of the last update to the alarm configuration. 
+        /// The time stamp of the last update to the alarm configuration.
         /// </para>
         /// </summary>
         public DateTime AlarmConfigurationUpdatedTimestamp
@@ -133,7 +132,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmDescription. 
         /// <para>
-        ///  The description for the alarm. 
+        /// The description for the alarm.
         /// </para>
         /// </summary>
         public string AlarmDescription
@@ -151,7 +150,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmName. 
         /// <para>
-        ///  The name of the alarm. 
+        /// The name of the alarm.
         /// </para>
         /// </summary>
         public string AlarmName
@@ -189,7 +188,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        ///  The list of dimensions associated with the alarm's associated metric. 
+        /// The list of dimensions associated with the alarm's associated metric.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -207,7 +206,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property EvaluationPeriods. 
         /// <para>
-        ///  The number of periods over which data is compared to the specified threshold. 
+        /// The number of periods over which data is compared to the specified threshold.
         /// </para>
         /// </summary>
         public int EvaluationPeriods
@@ -229,7 +228,11 @@ namespace Amazon.CloudWatch.Model
         /// state from any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// 
         /// </para>
-        ///  <important>The current WSDL lists this attribute as <code>UnknownActions</code>.</important>
+        ///  <important> 
+        /// <para>
+        /// The current WSDL lists this attribute as <code>UnknownActions</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         public List<string> InsufficientDataActions
         {
@@ -246,7 +249,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        ///  The name of the alarm's metric. 
+        /// The name of the alarm's metric.
         /// </para>
         /// </summary>
         public string MetricName
@@ -264,7 +267,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of alarm's associated metric. 
+        /// The namespace of alarm's associated metric.
         /// </para>
         /// </summary>
         public string Namespace
@@ -302,7 +305,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        ///  The period in seconds over which the statistic is applied. 
+        /// The period in seconds over which the statistic is applied.
         /// </para>
         /// </summary>
         public int Period
@@ -320,7 +323,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateReason. 
         /// <para>
-        ///  A human-readable explanation for the alarm's state. 
+        /// A human-readable explanation for the alarm's state.
         /// </para>
         /// </summary>
         public string StateReason
@@ -338,7 +341,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateReasonData. 
         /// <para>
-        ///  An explanation for the alarm's state in machine-readable JSON format 
+        /// An explanation for the alarm's state in machine-readable JSON format
         /// </para>
         /// </summary>
         public string StateReasonData
@@ -356,7 +359,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateUpdatedTimestamp. 
         /// <para>
-        ///  The time stamp of the last update to the alarm's state. 
+        /// The time stamp of the last update to the alarm's state.
         /// </para>
         /// </summary>
         public DateTime StateUpdatedTimestamp
@@ -374,7 +377,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateValue. 
         /// <para>
-        ///  The state value for the alarm. 
+        /// The state value for the alarm.
         /// </para>
         /// </summary>
         public StateValue StateValue
@@ -392,7 +395,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        ///  The statistic to apply to the alarm's associated metric. 
+        /// The statistic to apply to the alarm's associated metric.
         /// </para>
         /// </summary>
         public Statistic Statistic
@@ -410,7 +413,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Threshold. 
         /// <para>
-        ///  The value against which the specified statistic is compared. 
+        /// The value against which the specified statistic is compared.
         /// </para>
         /// </summary>
         public double Threshold
@@ -428,7 +431,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        ///  The unit of the alarm's associated metric. 
+        /// The unit of the alarm's associated metric.
         /// </para>
         /// </summary>
         public StandardUnit Unit

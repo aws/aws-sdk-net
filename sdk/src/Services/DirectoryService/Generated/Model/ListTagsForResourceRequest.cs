@@ -76,7 +76,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the directory for which you want to retrieve tags.
+        /// Identifier (ID) of the directory for which you want to retrieve tags.
         /// </para>
         /// </summary>
         public string ResourceId

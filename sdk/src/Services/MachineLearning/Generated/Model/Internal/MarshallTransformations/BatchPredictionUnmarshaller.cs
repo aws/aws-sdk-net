@@ -76,6 +76,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                     unmarshalledObject.BatchPredictionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComputeTime", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ComputeTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -88,10 +94,22 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedByIamUser = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FinishedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.FinishedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputDataLocationS3", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputDataLocationS3 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InvalidRecordCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.InvalidRecordCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
@@ -124,10 +142,22 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                     unmarshalledObject.OutputUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StartedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalRecordCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TotalRecordCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

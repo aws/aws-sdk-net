@@ -87,11 +87,11 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configurations. <note>
+        /// Gets and sets the property Configurations. <note> 
         /// <para>
         /// Amazon EMR releases 4.x or later.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// The list of Configurations supplied to the EMR cluster.
         /// </para>
@@ -257,7 +257,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property RunningAmiVersion. 
         /// <para>
-        /// The AMI version running on this cluster. 
+        /// The AMI version running on this cluster.
         /// </para>
         /// </summary>
         public string RunningAmiVersion

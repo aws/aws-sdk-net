@@ -31,19 +31,32 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutSubscriptionFilter operation.
     /// Creates or updates a subscription filter and associates it with the specified log
     /// group. Subscription filters allow you to subscribe to a real-time stream of log events
-    /// ingested through <code class="code">PutLogEvents</code> requests and have them delivered
-    /// to a specific destination. Currently, the supported destinations are: <ul> <li> An
-    /// Amazon Kinesis stream belonging to the same account as the subscription filter, for
-    /// same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>)
-    /// belonging to a different account, for cross-account delivery. </li> <li> An Amazon
-    /// Kinesis Firehose stream belonging to the same account as the subscription filter,
-    /// for same-account delivery. </li> <li> An AWS Lambda function belonging to the same
-    /// account as the subscription filter, for same-account delivery. </li> </ul> 
+    /// ingested through <code>PutLogEvents</code> requests and have them delivered to a specific
+    /// destination. Currently, the supported destinations are:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    ///  Currently there can only be one subscription filter associated with a log group.
-    /// 
+    /// An Amazon Kinesis stream belonging to the same account as the subscription filter,
+    /// for same-account delivery.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  A logical destination (used via an ARN of <code>Destination</code>) belonging to
+    /// a different account, for cross-account delivery.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An Amazon Kinesis Firehose stream belonging to the same account as the subscription
+    /// filter, for same-account delivery.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An AWS Lambda function belonging to the same account as the subscription filter, for
+    /// same-account delivery.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Currently there can only be one subscription filter associated with a log group.
     /// </para>
     /// </summary>
     public partial class PutSubscriptionFilterRequest : AmazonCloudWatchLogsRequest
@@ -58,14 +71,29 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property DestinationArn. 
         /// <para>
         /// The ARN of the destination to deliver matching log events to. Currently, the supported
-        /// destinations are: <ul> <li> An Amazon Kinesis stream belonging to the same account
-        /// as the subscription filter, for same-account delivery. </li> <li> A logical destination
-        /// (used via an ARN of <code>Destination</code>) belonging to a different account, for
-        /// cross-account delivery. </li> <li> An Amazon Kinesis Firehose stream belonging to
-        /// the same account as the subscription filter, for same-account delivery. </li> <li>
-        /// An AWS Lambda function belonging to the same account as the subscription filter, for
-        /// same-account delivery. </li> </ul> 
+        /// destinations are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Kinesis stream belonging to the same account as the subscription filter,
+        /// for same-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A logical destination (used via an ARN of <code>Destination</code>) belonging to a
+        /// different account, for cross-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon Kinesis Firehose stream belonging to the same account as the subscription
+        /// filter, for same-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An AWS Lambda function belonging to the same account as the subscription filter, for
+        /// same-account delivery.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DestinationArn
         {

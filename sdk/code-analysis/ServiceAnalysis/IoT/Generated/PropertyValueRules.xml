@@ -300,6 +300,11 @@
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListOutgoingCertificatesRequest.PageSize</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListPoliciesRequest.PageSize</property>
     <min>1</min>
     <max>250</max>
@@ -537,6 +542,20 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.KeyPair.PublicKey</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.OutgoingCertificate.CertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.OutgoingCertificate.TransferMessage</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.OutgoingCertificate.TransferredTo</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Policy.PolicyName</property>

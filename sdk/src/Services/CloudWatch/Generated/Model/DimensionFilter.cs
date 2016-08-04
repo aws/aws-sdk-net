@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The dimension name to be matched. 
+        /// The dimension name to be matched.
         /// </para>
         /// </summary>
         public string Name
@@ -56,10 +56,14 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value of the dimension to be matched. 
+        /// The value of the dimension to be matched.
         /// </para>
-        ///  <note> Specifying a <code>Name</code> without specifying a <code>Value</code> returns
-        /// all values associated with that <code>Name</code>. </note>
+        ///  <note> 
+        /// <para>
+        /// Specifying a <code>Name</code> without specifying a <code>Value</code> returns all
+        /// values associated with that <code>Name</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Value
         {

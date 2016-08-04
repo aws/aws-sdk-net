@@ -80,6 +80,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.OptionSettings.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("OptionVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OptionVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Permanent", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

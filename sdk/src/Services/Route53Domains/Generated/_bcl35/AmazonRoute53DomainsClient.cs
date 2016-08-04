@@ -388,10 +388,6 @@ namespace Amazon.Route53Domains
         /// <summary>
         /// This operation disables automatic renewal of domain registration for the specified
         /// domain.
-        /// 
-        ///  <note>Caution! Amazon Route 53 doesn't have a manual renewal process, so if you disable
-        /// automatic renewal, registration for the domain will not be renewed when the expiration
-        /// date passes, and you will lose control of the domain name.</note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableDomainAutoRenew service method.</param>
         /// 
@@ -788,6 +784,76 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  GetDomainSuggestions
+
+        /// <summary>
+        /// The GetDomainSuggestions operation returns a list of suggested domain names given
+        /// a string, which can either be a domain name or simply a word or phrase (without spaces).
+        /// 
+        ///  
+        /// <para>
+        ///  Parameters: <ul><li>DomainName (string): The basis for your domain suggestion search,
+        /// a string with (or without) top-level domain specified.</li> <li>SuggestionCount (int):
+        /// The number of domain suggestions to be returned, maximum 50, minimum 1.</li> <li>OnlyAvailable
+        /// (bool): If true, availability check will be performed on suggestion results, and only
+        /// available domains will be returned. If false, suggestions will be returned without
+        /// checking whether the domain is actually available, and caller will have to call checkDomainAvailability
+        /// for each suggestion to determine availability for registration.</li> </ul> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainSuggestions service method.</param>
+        /// 
+        /// <returns>The response from the GetDomainSuggestions service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
+        public GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request)
+        {
+            var marshaller = new GetDomainSuggestionsRequestMarshaller();
+            var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainSuggestionsRequest,GetDomainSuggestionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainSuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainSuggestions operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainSuggestions
+        ///         operation.</returns>
+        public IAsyncResult BeginGetDomainSuggestions(GetDomainSuggestionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetDomainSuggestionsRequestMarshaller();
+            var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDomainSuggestionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDomainSuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainSuggestions.</param>
+        /// 
+        /// <returns>Returns a  GetDomainSuggestionsResult from Route53Domains.</returns>
+        public  GetDomainSuggestionsResponse EndGetDomainSuggestions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDomainSuggestionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetOperationDetail
 
         /// <summary>
@@ -1168,6 +1234,83 @@ namespace Amazon.Route53Domains
         public  RegisterDomainResponse EndRegisterDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RenewDomain
+
+        /// <summary>
+        /// This operation renews a domain for the specified number of years. The cost of renewing
+        /// your domain is billed to your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you renew your domain several weeks before the expiration date.
+        /// Some TLD registries delete domains before the expiration date if you haven't renewed
+        /// far enough in advance. For more information about renewing domain registration, see
+        /// <a href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing Registration
+        /// for a Domain</a> in the Amazon Route 53 documentation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RenewDomain service method.</param>
+        /// 
+        /// <returns>The response from the RenewDomain service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.DuplicateRequestException">
+        /// The request is already in progress for the domain.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.OperationLimitExceededException">
+        /// The number of operations or jobs running exceeded the allowed threshold for the account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.TLDRulesViolationException">
+        /// The top-level domain does not support this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
+        /// Amazon Route 53 does not support this top-level domain.
+        /// </exception>
+        public RenewDomainResponse RenewDomain(RenewDomainRequest request)
+        {
+            var marshaller = new RenewDomainRequestMarshaller();
+            var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
+
+            return Invoke<RenewDomainRequest,RenewDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenewDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenewDomain operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRenewDomain
+        ///         operation.</returns>
+        public IAsyncResult BeginRenewDomain(RenewDomainRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RenewDomainRequestMarshaller();
+            var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RenewDomainRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RenewDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRenewDomain.</param>
+        /// 
+        /// <returns>Returns a  RenewDomainResult from Route53Domains.</returns>
+        public  RenewDomainResponse EndRenewDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RenewDomainResponse>(asyncResult);
         }
 
         #endregion
@@ -1720,6 +1863,62 @@ namespace Amazon.Route53Domains
         public  UpdateTagsForDomainResponse EndUpdateTagsForDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTagsForDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ViewBilling
+
+        /// <summary>
+        /// This operation returns all the domain-related billing records for the current AWS
+        /// account for a specified period
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ViewBilling service method.</param>
+        /// 
+        /// <returns>The response from the ViewBilling service method, as returned by Route53Domains.</returns>
+        /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
+        /// The requested item is not acceptable. For example, for an OperationId it may refer
+        /// to the ID of an operation that is already completed. For a domain name, it may not
+        /// be a valid domain name or belong to the requester account.
+        /// </exception>
+        public ViewBillingResponse ViewBilling(ViewBillingRequest request)
+        {
+            var marshaller = new ViewBillingRequestMarshaller();
+            var unmarshaller = ViewBillingResponseUnmarshaller.Instance;
+
+            return Invoke<ViewBillingRequest,ViewBillingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ViewBilling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ViewBilling operation on AmazonRoute53DomainsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndViewBilling
+        ///         operation.</returns>
+        public IAsyncResult BeginViewBilling(ViewBillingRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ViewBillingRequestMarshaller();
+            var unmarshaller = ViewBillingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ViewBillingRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ViewBilling operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginViewBilling.</param>
+        /// 
+        /// <returns>Returns a  ViewBillingResult from Route53Domains.</returns>
+        public  ViewBillingResponse EndViewBilling(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ViewBillingResponse>(asyncResult);
         }
 
         #endregion

@@ -67,11 +67,11 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configurations. <note>
+        /// Gets and sets the property Configurations. <note> 
         /// <para>
         /// Amazon EMR releases 4.x or later.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// The list of configurations supplied for an EMR cluster instance group. You can specify
         /// a separate configuration for each instance group (master, core, and task).
@@ -110,9 +110,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized
+        /// If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses an optimized
         /// configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.
-        /// 
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -166,7 +165,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The EC2 instance type for all instances in the instance group. 
+        /// The EC2 instance type for all instances in the instance group.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -221,7 +220,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property RequestedInstanceCount. 
         /// <para>
-        /// The target number of instances for the instance group. 
+        /// The target number of instances for the instance group.
         /// </para>
         /// </summary>
         public int RequestedInstanceCount

@@ -1,3 +1,39 @@
+### 3.1.89.0 (2016-08-02 21:00 UTC)
+* ApplicationAutoScaling (3.1.0.5)
+	* Documentation update reflecting scalable target limit increase.
+* AWSMarketplaceMetering (3.1.0.5)
+	* Add path shortening for new discovery service
+* CloudWatch (3.1.0.10)
+	* Documentation update for MetricDatum.
+* CloudWatchLogs (3.1.3.0)
+	* Documentation update. Adding an optional parameter, DefaultValue, to PutMetricFilterRequest.
+* DirectoryService (3.1.5.1)
+	* Documentation update.
+* ElasticMapReduce (3.1.6.0)
+	* API Update for EMR: Enhanced Debugging
+* IoT (3.1.8.0)
+	* Regenerating from latest service model iot-2015-05-28.normal.json
+* MachineLearning (3.1.3.0)
+	* Added the timestamps StartedAt, FinishedAt, and ComputeTime to the following API responses:DescribeBatchPredictionsOutput DescribeDataSourcesOutput DescribeEvaluationsOutput DescribeMLModelsOutput GetBatchPredictionsOutput GetDataSourcesOutput GetEvaluationsOutput GetMLModelsOutput. Added TotalRecordCount and InvalidRecordCount to the following API responses: DescribeBatchPredictionsOutput GetBatchPredictionsOutput.
+* RDS (3.1.14.0)
+	* Support for License model and versioning of option groups.
+* Route53Domains (3.1.2.0)
+	*  Adds new APIs to renew domains for a specified duration, get domain suggestions, and view billing.
+
+### 3.1.88.0 (2016-07-29 02:27 UTC)
+* APIGateway (3.1.6.0)
+	* Added support for Cognito User Pools Auth 
+* DirectoryService (3.1.5.0)
+	* New APIs for Microsoft AD to manage routing 
+* EC2 (3.1.19.0)
+	* Updated for DNS for VPC Peering 
+* Elasticsearch (3.1.1.0)
+	* Amazon Elasticsearch Service now supports elasticsearch version 2.3. Version 2.3 offers improved performance, memory management, and security. It also offers several new features including: pipeline aggregations to perform advanced analytics like moving averages and derivatives, and enhancements to geospatial queries
+* SecurityToken (3.1.4.4)
+	* Doc only update
+* SimpleEmail (3.1.4.3)
+	* Doc update
+
 ### 3.1.87.0 (2016-07-26 23:19 UTC)
 * CognitoSync (3.1.1.6)
 	* Github pull request 400 fixing an issue when deleting a merged dataset after the deletion is complete.

@@ -32,7 +32,7 @@ namespace Amazon.AWSMarketplaceMetering
     public partial class AmazonAWSMarketplaceMeteringConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.1.0.4");
+            InternalSDKUtils.BuildUserAgentString("3.1.0.5");
 
         private string _userAgent = UserAgentString;
 

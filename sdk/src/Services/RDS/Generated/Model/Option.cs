@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
         private string _optionDescription;
         private string _optionName;
         private List<OptionSetting> _optionSettings = new List<OptionSetting>();
+        private string _optionVersion;
         private bool? _permanent;
         private bool? _persistent;
         private int? _port;
@@ -112,6 +113,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionSettings()
         {
             return this._optionSettings != null && this._optionSettings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionVersion. 
+        /// <para>
+        /// The version of the option.
+        /// </para>
+        /// </summary>
+        public string OptionVersion
+        {
+            get { return this._optionVersion; }
+            set { this._optionVersion = value; }
+        }
+
+        // Check to see if OptionVersion property is set
+        internal bool IsSetOptionVersion()
+        {
+            return this._optionVersion != null;
         }
 
         /// <summary>

@@ -57,6 +57,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.Authorization = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("claims", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Claims = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clientStatus", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

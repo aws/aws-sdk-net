@@ -45,7 +45,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ActionPrefix. 
         /// <para>
-        ///  The action name prefix. 
+        /// The action name prefix.
         /// </para>
         /// </summary>
         public string ActionPrefix
@@ -63,8 +63,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNamePrefix. 
         /// <para>
-        ///  The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter
-        /// is specified. 
+        /// The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter
+        /// is specified.
         /// </para>
         /// </summary>
         public string AlarmNamePrefix
@@ -82,7 +82,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNames. 
         /// <para>
-        ///  A list of alarm names to retrieve information for. 
+        /// A list of alarm names to retrieve information for.
         /// </para>
         /// </summary>
         public List<string> AlarmNames
@@ -100,7 +100,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of alarm descriptions to retrieve. 
+        /// The maximum number of alarm descriptions to retrieve.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -118,8 +118,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token returned by a previous call to indicate that there is more data available.
-        /// 
+        /// The token returned by a previous call to indicate that there is more data available.
         /// </para>
         /// </summary>
         public string NextToken
@@ -137,7 +136,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateValue. 
         /// <para>
-        ///  The state value to be used in matching alarms. 
+        /// The state value to be used in matching alarms.
         /// </para>
         /// </summary>
         public StateValue StateValue
