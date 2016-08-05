@@ -1,3 +1,13 @@
+### 3.1.90.0 (2016-08-04 23:43 UTC)
+* CognitoIdentityProvider (3.1.1.0)
+	* Adding Auth Support for Cognito User Pools 
+* GameLift (3.1.2.0)
+	* Added support for GameSession Search API
+* Lambda (3.1.4.6)
+	* Doc only update
+* RDS (3.1.15.0)
+	* S3 Snapshot Ingestion and MoveToVpc feature added
+
 ### 3.1.89.0 (2016-08-02 21:00 UTC)
 * ApplicationAutoScaling (3.1.0.5)
 	* Documentation update reflecting scalable target limit increase.
