@@ -1146,6 +1146,8 @@ namespace Amazon.Runtime
             }
         }
 
+        public Func<DateTime> DateTimeProvider { get; set; }
+
         #endregion
 
         #region Override methods
@@ -1203,7 +1205,7 @@ namespace Amazon.Runtime
                 else
                     errorMessage = string.Format(CultureInfo.InvariantCulture,
                         "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
-                        DateTime.Now, state.Expiration);
+                        GetDateTimeUtcNow().ToLocalTime(), state.Expiration);
                 throw new AmazonClientException(errorMessage);
             }
 
@@ -1217,7 +1219,7 @@ namespace Amazon.Runtime
                 var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
                 logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
-                    DateTime.Now,
+                    GetDateTimeUtcNow().ToLocalTime(),
                     _currentState.Expiration,
                     PreemptExpiryTime);
             }
@@ -1235,10 +1237,15 @@ namespace Amazon.Runtime
                     return true;
 
                 //  it's past the expiration time
-                var now = DateTime.UtcNow;
+                var now = GetDateTimeUtcNow();
                 var exp = _currentState.Expiration.ToUniversalTime();
                 return (now > exp);
             }
+        }
+
+        private DateTime GetDateTimeUtcNow()
+        {
+            return DateTimeProvider != null ? DateTimeProvider() : DateTime.UtcNow;
         }
 
         /// <summary>
