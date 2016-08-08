@@ -131,6 +131,11 @@ namespace ThirdParty.Json.LitJson
 
         private static JsonWriter      static_writer;
         private static readonly object static_writer_lock = new Object ();
+
+        private static readonly HashSet<string> dictionary_properties_to_ignore = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "Comparer", "Count", "Keys", "Values"
+        };
         #endregion
 
 
@@ -226,6 +231,9 @@ namespace ThirdParty.Json.LitJson
 
                     continue;
                 }
+
+                if (data.IsDictionary && dictionary_properties_to_ignore.Contains(p_info.Name))
+                    continue;
 
                 PropertyMetadata p_data = new PropertyMetadata ();
                 p_data.Info = p_info;
