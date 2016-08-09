@@ -1,3 +1,8 @@
+### 3.1.90.1 (2016-08-09 00:44 UTC)
+* Core 3.1.9.2
+	* Fix issue with LitJSON not properly deserializing dictionaries
+	* all services packages updated to require new core
+
 ### 3.1.90.0 (2016-08-04 23:43 UTC)
 * CognitoIdentityProvider (3.1.1.0)
 	* Adding Auth Support for Cognito User Pools 
