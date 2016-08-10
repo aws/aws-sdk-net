@@ -1,3 +1,13 @@
+### 3.1.91.0 (2016-08-10 00:12 UTC)
+* AWSMarketplaceCommerceAnalytics (3.1.3.0)
+	* In this release, we added a new API, StartSupportDataExport, to the AWS Marketplace Commerce Analytics Service. StartSupportDataExport returns static test data only at this time. The AWS Marketplace Commerce Analytics Service allows AWS Marketplace Sellers to programmatically access product and customer data on AWS Marketplace. For more information, contact aws-marketplace-seller-ops@amazon.com.
+* CloudFront (3.1.5.0)
+	* Amazon CloudFront now supports tagging for Web and Streaming distributions. Tags make it easier for you to allocate costs and optimize spending by categorizing and grouping AWS resources.
+* ECR (3.1.2.0)
+	* Adds filtering of ListImages requests based on whether an image is tagged or untagged
+* S3 (3.1.8.3)
+	* Minor update to PutBucket operation
+
 ### 3.1.90.1 (2016-08-09 00:44 UTC)
 * Core 3.1.9.2
 	* Fix issue with LitJSON not properly deserializing dictionaries
