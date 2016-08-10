@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-08-01.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
     public partial class DistributionSummary
     {
         private Aliases _aliases;
+        private string _arn;
         private CacheBehaviors _cacheBehaviors;
         private string _comment;
         private CustomErrorResponses _customErrorResponses;
@@ -67,6 +68,23 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetAliases()
         {
             return this._aliases != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ARN. The ARN (Amazon Resource Name) for the distribution.
+        /// For example: arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where
+        /// 123456789012 is your AWS account Id.
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
         }
 
         /// <summary>
