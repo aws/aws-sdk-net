@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private string _caCertificateIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
+        private string _dbSubnetGroupName;
         private string _engineVersion;
         private int? _iops;
         private string _licenseModel;
@@ -141,6 +142,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this._dbInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSubnetGroupName. 
+        /// <para>
+        /// The new DB subnet group for the DB instance. 
+        /// </para>
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
+        }
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this._dbSubnetGroupName != null;
         }
 
         /// <summary>

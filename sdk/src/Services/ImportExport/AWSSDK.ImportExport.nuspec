@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ImportExport</id>
     <title>AWSSDK - AWS Import/Export</title>
-    <version>3.1.1.7</version> 
+    <version>3.1.1.8</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

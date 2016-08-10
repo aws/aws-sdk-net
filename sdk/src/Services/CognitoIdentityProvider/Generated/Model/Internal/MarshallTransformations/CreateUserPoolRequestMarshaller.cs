@@ -89,6 +89,28 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDeviceConfiguration())
+                {
+                    context.Writer.WritePropertyName("DeviceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeviceConfigurationTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEmailConfiguration())
+                {
+                    context.Writer.WritePropertyName("EmailConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EmailConfigurationTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EmailConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEmailVerificationMessage())
                 {
                     context.Writer.WritePropertyName("EmailVerificationMessage");
@@ -139,6 +161,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SmsAuthenticationMessage");
                     context.Writer.Write(publicRequest.SmsAuthenticationMessage);
+                }
+
+                if(publicRequest.IsSetSmsConfiguration())
+                {
+                    context.Writer.WritePropertyName("SmsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SmsConfigurationTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SmsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSmsVerificationMessage())

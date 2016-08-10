@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Glacier</id>
     <title>AWSSDK - Amazon Glacier</title>
-    <version>3.1.0.10</version> 
+    <version>3.1.0.11</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.</description>
     <language>en-US</language>
@@ -14,15 +14,15 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.SQS" version="[3.1.0.12, 3.2)" />
-        <dependency id="AWSSDK.SimpleNotificationService" version="[3.1.1.1, 3.2)" />
-        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
+        <dependency id="AWSSDK.SQS" version="[3.1.0.13, 3.2)" />
+        <dependency id="AWSSDK.SimpleNotificationService" version="[3.1.1.2, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.SQS" version="[3.1.0.12, 3.2)" />
-        <dependency id="AWSSDK.SimpleNotificationService" version="[3.1.1.1, 3.2)" />
-        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
+        <dependency id="AWSSDK.SQS" version="[3.1.0.13, 3.2)" />
+        <dependency id="AWSSDK.SimpleNotificationService" version="[3.1.1.2, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

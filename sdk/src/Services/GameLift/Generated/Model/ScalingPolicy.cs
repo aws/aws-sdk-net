@@ -101,9 +101,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// Name of the GameLift-defined metric that is used to trigger an adjustment. <ul> <li>
-        /// <b>ActivatingGameSessions</b> – number of game sessions in the process of being created
-        /// (game session status = <code>ACTIVATING</code>).</li> <li> <b>ActiveGameSessions</b>
+        /// Name of the GameLift-defined metric that is used to trigger an adjustment.
+        /// </para>
+        ///  <ul> <li> <b>ActivatingGameSessions</b> – number of game sessions in the process
+        /// of being created (game session status = <code>ACTIVATING</code>).</li> <li> <b>ActiveGameSessions</b>
         /// – number of game sessions currently running (game session status = <code>ACTIVE</code>).</li>
         /// <li> <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player
         /// session status = <code>ACTIVE</code> or <code>RESERVED</code>). </li> <li> <b>AvailablePlayerSessions</b>
@@ -114,7 +115,6 @@ namespace Amazon.GameLift.Model
         /// = <code>DENY_ALL</code>).</li> <li> <b>ActiveInstances</b> – number of instances currently
         /// running a game session.</li> <li> <b>IdleInstances</b> – number of instances not currently
         /// running a game session.</li> </ul>
-        /// </para>
         /// </summary>
         public MetricName MetricName
         {
@@ -169,13 +169,13 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ScalingAdjustmentType. 
         /// <para>
         /// Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
-        /// <ul> <li> <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value
+        /// </para>
+        ///  <ul> <li> <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value
         /// from the current instance count. Positive values scale up while negative values scale
         /// down.</li> <li> <b>ExactCapacity</b> – set the instance count to the scaling adjustment
         /// value.</li> <li> <b>PercentChangeInCapacity</b> – increase or reduce the current instance
         /// count by the scaling adjustment, read as a percentage. Positive values scale up while
         /// negative values scale down.</li> </ul>
-        /// </para>
         /// </summary>
         public ScalingAdjustmentType ScalingAdjustmentType
         {
@@ -193,14 +193,15 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Current status of the scaling policy. The scaling policy is only in force when in
-        /// an Active state. <ul> <li> <b>ACTIVE</b> – The scaling policy is currently in force.</li>
-        /// <li> <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.</li>
-        /// <li> <b>UPDATING</b> – A change is being made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b>
-        /// – A request to delete the scaling policy has been received.</li> <li> <b>DELETING</b>
+        /// an <code>ACTIVE</code> status.
+        /// </para>
+        ///  <ul> <li> <b>ACTIVE</b> – The scaling policy is currently in force.</li> <li> <b>UPDATEREQUESTED</b>
+        /// – A request to update the scaling policy has been received.</li> <li> <b>UPDATING</b>
+        /// – A change is being made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> –
+        /// A request to delete the scaling policy has been received.</li> <li> <b>DELETING</b>
         /// – The scaling policy is being deleted.</li> <li> <b>DELETED</b> – The scaling policy
         /// has been deleted.</li> <li> <b>ERROR</b> – An error occurred in creating the policy.
         /// It should be removed and recreated.</li> </ul>
-        /// </para>
         /// </summary>
         public ScalingStatusType Status
         {

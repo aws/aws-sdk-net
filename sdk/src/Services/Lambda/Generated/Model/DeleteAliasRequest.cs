@@ -46,7 +46,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property FunctionName. 
         /// <para>
         /// The Lambda function name for which the alias is created. Deleting an alias does not
-        /// delete the function version to which it is pointing. 
+        /// delete the function version to which it is pointing.
         /// </para>
         /// </summary>
         public string FunctionName

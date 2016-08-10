@@ -197,8 +197,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         ///  The name of the DB cluster parameter group to associate with this DB cluster. If
-        /// this argument is omitted, <code>default.aurora5.6</code> for the specified engine
-        /// will be used. 
+        /// this argument is omitted, <code>default.aurora5.6</code> will be used. 
         /// </para>
         ///  
         /// <para>
@@ -340,7 +339,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The name of the master user for the client DB cluster.
+        /// The name of the master user for the DB cluster.
         /// </para>
         ///  
         /// <para>

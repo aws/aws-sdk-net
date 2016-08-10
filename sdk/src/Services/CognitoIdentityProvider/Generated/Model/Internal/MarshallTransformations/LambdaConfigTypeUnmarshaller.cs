@@ -64,10 +64,22 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CreateAuthChallenge", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreateAuthChallenge = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefineAuthChallenge", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefineAuthChallenge = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PostAuthentication", targetDepth))
@@ -92,6 +104,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreSignUp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VerifyAuthChallengeResponse", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VerifyAuthChallengeResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

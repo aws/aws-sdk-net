@@ -82,5 +82,53 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
         #endregion
         
+        #region  StartSupportDataExport
+
+
+        /// <summary>
+        /// Given a data set type and a from date, asynchronously publishes the requested customer
+        /// support data to the specified S3 bucket and notifies the specified SNS topic once
+        /// the data is available. Returns a unique request identifier that can be used to correlate
+        /// requests with notifications from the SNS topic. Data sets will be published in comma-separated
+        /// values (CSV) format with the file name {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv.
+        /// If a file with the same name already exists (e.g. if the same data set is requested
+        /// twice), the original file will be overwritten by the new file. Requires a Role with
+        /// an attached permissions policy providing Allow permissions for the following actions:
+        /// s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSupportDataExport service method.</param>
+        /// 
+        /// <returns>The response from the StartSupportDataExport service method, as returned by AWSMarketplaceCommerceAnalytics.</returns>
+        /// <exception cref="Amazon.AWSMarketplaceCommerceAnalytics.Model.MarketplaceCommerceAnalyticsException">
+        /// This exception is thrown when an internal service error occurs.
+        /// </exception>
+        StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSupportDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSupportDataExport operation on AmazonAWSMarketplaceCommerceAnalyticsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSupportDataExport
+        ///         operation.</returns>
+        IAsyncResult BeginStartSupportDataExport(StartSupportDataExportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSupportDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSupportDataExport.</param>
+        /// 
+        /// <returns>Returns a  StartSupportDataExportResult from AWSMarketplaceCommerceAnalytics.</returns>
+        StartSupportDataExportResponse EndStartSupportDataExport(IAsyncResult asyncResult);
+
+        #endregion
+        
     }
 }

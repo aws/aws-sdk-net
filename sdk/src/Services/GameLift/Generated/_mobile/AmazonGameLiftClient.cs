@@ -72,8 +72,8 @@ namespace Amazon.GameLift
     /// game sessions and player sessions.
     /// </para>
     ///  <ul> <li> <b>Game sessions</b> <ul> <li><a>CreateGameSession</a></li> <li><a>DescribeGameSessions</a></li>
-    /// <li><a>DescribeGameSessionDetails</a></li> <li><a>UpdateGameSession</a></li> </ul>
-    /// </li> <li> <b>Player sessions</b> <ul> <li><a>CreatePlayerSession</a></li> <li><a>CreatePlayerSessions</a></li>
+    /// <li><a>DescribeGameSessionDetails</a></li> <li><a>UpdateGameSession</a></li> <li><a>SearchGameSessions</a></li>
+    /// </ul> </li> <li> <b>Player sessions</b> <ul> <li><a>CreatePlayerSession</a></li> <li><a>CreatePlayerSessions</a></li>
     /// <li><a>DescribePlayerSessions</a></li> </ul> </li> <li> <b>Other actions:</b> <ul>
     /// <li><a>GetGameSessionLogUrl</a></li> </ul> </li> </ul> 
     /// <para>
@@ -376,7 +376,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Adds a player to a game session and creates a player session record. A game session
-        /// must be in an <code>ACTIVE</code> state, have a creation policy of <code>ALLOW_ALL</code>,
+        /// must be in an <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>,
         /// and have an open player slot before players can be added to the session.
         /// 
         ///  
@@ -417,8 +417,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -467,8 +467,8 @@ namespace Amazon.GameLift
         /// Adds a group of players to a game session. Similar to <a>CreatePlayerSession</a>,
         /// this action allows you to add multiple players in a single call, which is useful for
         /// games that provide party and/or matchmaking features. A game session must be in an
-        /// <code>ACTIVE</code> state, have a creation policy of <code>ALLOW_ALL</code>, and have
-        /// an open player slot before players can be added to the session.
+        /// <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>, and
+        /// have an open player slot before players can be added to the session.
         /// 
         ///  
         /// <para>
@@ -508,8 +508,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -1550,7 +1550,7 @@ namespace Amazon.GameLift
         /// <para>
         /// Upload credentials are returned when you create the build, but they have a limited
         /// lifespan. You can get fresh credentials and use them to re-upload game files until
-        /// the state of that build changes to <code>READY</code>. Once this happens, you must
+        /// the status of that build changes to <code>READY</code>. Once this happens, you must
         /// create a brand new build.
         /// </para>
         /// </summary>
@@ -1638,8 +1638,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -1667,6 +1667,37 @@ namespace Amazon.GameLift
             var unmarshaller = ResolveAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResolveAliasRequest,ResolveAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchGameSessions
+
+        internal SearchGameSessionsResponse SearchGameSessions(SearchGameSessionsRequest request)
+        {
+            var marshaller = new SearchGameSessionsRequestMarshaller();
+            var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchGameSessionsRequest,SearchGameSessionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchGameSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchGameSessions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SearchGameSessionsResponse> SearchGameSessionsAsync(SearchGameSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SearchGameSessionsRequestMarshaller();
+            var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchGameSessionsRequest,SearchGameSessionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

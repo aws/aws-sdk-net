@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// Creates a new Lambda function. The function metadata is created from the request parameters,
     /// and the code for the function is provided by a .zip file in the request body. If the
     /// function name already exists, the operation will fail. Note that the function name
-    /// is case-sensitive. 
+    /// is case-sensitive.
     /// 
     ///  
     /// <para>

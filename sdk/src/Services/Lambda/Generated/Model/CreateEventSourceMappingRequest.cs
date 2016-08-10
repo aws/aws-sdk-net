@@ -36,30 +36,30 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// This association between a stream source and a Lambda function is called the event
-    /// source mapping. 
+    /// source mapping.
     /// </para>
-    ///  <important>This event source mapping is relevant only in the AWS Lambda pull model,
-    /// where AWS Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</important> 
+    ///  <important>
     /// <para>
-    ///  You provide mapping information (for example, which stream to read from and which
-    /// Lambda function to invoke) in the request body. 
+    /// This event source mapping is relevant only in the AWS Lambda pull model, where AWS
+    /// Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// You provide mapping information (for example, which stream to read from and which
+    /// Lambda function to invoke) in the request body.
     /// </para>
     ///  
     /// <para>
-    ///  Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
+    /// Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
     /// with multiple AWS Lambda function. A given Lambda function can be associated with
-    /// multiple AWS event sources. 
+    /// multiple AWS event sources.
     /// </para>
-    ///  
-    /// <para>
     ///  
     /// <para>
     /// If you are using versioning, you can specify a specific function version or an alias
     /// via the function name parameter. For more information about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
     /// Lambda Function Versioning and Aliases</a>. 
-    /// </para>
-    ///  
     /// </para>
     ///  
     /// <para>
@@ -160,8 +160,8 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        ///  Note that the length constraint applies only to the ARN. If you specify only the
-        /// function name, it is limited to 64 character in length. 
+        /// Note that the length constraint applies only to the ARN. If you specify only the function
+        /// name, it is limited to 64 character in length.
         /// </para>
         /// </summary>
         public string FunctionName

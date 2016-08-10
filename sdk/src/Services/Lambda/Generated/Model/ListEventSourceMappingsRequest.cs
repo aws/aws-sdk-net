@@ -60,7 +60,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Kinesis stream.
+        /// The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter is optional.)
         /// </para>
         /// </summary>
         public string EventSourceArn
