@@ -67,6 +67,17 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilter())
+                {
+                    context.Writer.WritePropertyName("filter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ListImagesFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
