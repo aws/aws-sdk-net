@@ -2121,6 +2121,15 @@
         "locationName":"item"
       }
     },
+    "ActivityStatus":{
+      "type":"string",
+      "enum":[
+        "error",
+        "pending_fulfillment",
+        "pending_termination",
+        "fulfilled"
+      ]
+    },
     "Address":{
       "type":"structure",
       "members":{
@@ -15405,6 +15414,10 @@
           "shape":"DateTime",
           "documentation":"<p>The creation date and time of the request.</p>",
           "locationName":"createTime"
+        },
+        "ActivityStatus":{
+          "shape":"ActivityStatus",
+          "locationName":"activityStatus"
         }
       },
       "documentation":"<p>Describes a Spot fleet request.</p>"
@@ -16157,15 +16170,15 @@
       "type":"structure",
       "required":["Error"],
       "members":{
-        "ResourceId":{
-          "shape":"String",
-          "documentation":"<p>The ID of the resource.</p>",
-          "locationName":"resourceId"
-        },
         "Error":{
           "shape":"UnsuccessfulItemError",
           "documentation":"<p>Information about the error.</p>",
           "locationName":"error"
+        },
+        "ResourceId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the resource.</p>",
+          "locationName":"resourceId"
         }
       },
       "documentation":"<p>Information about items that were not successfully processed in a batch call.</p>"

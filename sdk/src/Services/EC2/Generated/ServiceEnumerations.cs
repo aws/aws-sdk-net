@@ -75,6 +75,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ActivityStatus.
+    /// </summary>
+    public class ActivityStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Error for ActivityStatus
+        /// </summary>
+        public static readonly ActivityStatus Error = new ActivityStatus("error");
+        /// <summary>
+        /// Constant Fulfilled for ActivityStatus
+        /// </summary>
+        public static readonly ActivityStatus Fulfilled = new ActivityStatus("fulfilled");
+        /// <summary>
+        /// Constant Pending_fulfillment for ActivityStatus
+        /// </summary>
+        public static readonly ActivityStatus Pending_fulfillment = new ActivityStatus("pending_fulfillment");
+        /// <summary>
+        /// Constant Pending_termination for ActivityStatus
+        /// </summary>
+        public static readonly ActivityStatus Pending_termination = new ActivityStatus("pending_termination");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActivityStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActivityStatus FindValue(string value)
+        {
+            return FindValue<ActivityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActivityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Affinity.
     /// </summary>
     public class Affinity : ConstantClass

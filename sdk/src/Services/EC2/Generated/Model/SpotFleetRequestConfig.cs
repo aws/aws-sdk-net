@@ -32,10 +32,26 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class SpotFleetRequestConfig
     {
+        private ActivityStatus _activityStatus;
         private SpotFleetRequestConfigData _configData;
         private DateTime? _createTime;
         private string _spotFleetRequestId;
         private BatchState _spotFleetRequestState;
+
+        /// <summary>
+        /// Gets and sets the property ActivityStatus.
+        /// </summary>
+        public ActivityStatus ActivityStatus
+        {
+            get { return this._activityStatus; }
+            set { this._activityStatus = value; }
+        }
+
+        // Check to see if ActivityStatus property is set
+        internal bool IsSetActivityStatus()
+        {
+            return this._activityStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfigData. 
