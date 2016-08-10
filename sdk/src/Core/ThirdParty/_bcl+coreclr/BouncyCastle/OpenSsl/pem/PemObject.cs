@@ -34,14 +34,14 @@ namespace ThirdParty.BouncyCastle.Utilities.IO.Pem
 		private byte[]		content;
 
 		public PemObject(string type, byte[] content)
-            : this(type, new ArrayList(), content)
+			: this(type, Platform.CreateArrayList(), content)
 		{
 		}
 
 		public PemObject(String type, IList headers, byte[] content)
 		{
 			this.type = type;
-            this.headers = new ArrayList(headers);
+			this.headers = Platform.CreateArrayList(headers);
 			this.content = content;
 		}
 

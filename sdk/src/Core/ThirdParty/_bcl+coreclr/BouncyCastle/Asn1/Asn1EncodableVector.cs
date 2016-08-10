@@ -29,7 +29,7 @@ namespace ThirdParty.BouncyCastle.Asn1
     public class Asn1EncodableVector
 		: IEnumerable
     {
-        private IList v = new ArrayList();
+        private IList v = Platform.CreateArrayList();
 
 		public static Asn1EncodableVector FromEnumerable(
 			IEnumerable e)

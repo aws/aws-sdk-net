@@ -70,7 +70,7 @@ namespace ThirdParty.BouncyCastle.Utilities.IO.Pem
 		private PemObject LoadObject(string type)
 		{
 			string endMarker = EndString + type;
-			IList headers = new ArrayList();
+			IList headers = Platform.CreateArrayList();
 			StringBuilder buf = new StringBuilder();
 
 			string line;
