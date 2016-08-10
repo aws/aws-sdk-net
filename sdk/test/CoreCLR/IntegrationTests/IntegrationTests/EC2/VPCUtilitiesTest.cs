@@ -14,28 +14,36 @@ using Amazon.DNXCore.IntegrationTests.IntegrationTests.EC2;
 
 namespace Amazon.DNXCore.IntegrationTests.EC2
 {
-    
     public class VPCUtilitiesTest : TestBase<AmazonEC2Client>
     {
+        EC2TestHelper _helper;
+        private List<string> _vpcIds;
+
+        public VPCUtilitiesTest()
+            : base()
+        {
+            _vpcIds = new List<string>();
+            _helper = new EC2TestHelper(Client);
+        }
 
         protected override void Dispose(bool disposing)
         {
-
-            EC2TestHelper helper = new EC2TestHelper();
-            helper.deleteAllVpcsAsync().Wait();
-
+            foreach (string vpcId in _vpcIds)
+            {
+                _helper.deleteTestVpcAsync(vpcId).Wait();
+            }
         }
 
         [Trait(CategoryAttribute, "EC2")]
         [Fact]
         public async Task LaunchNATTest()
         {
-            
             CreateVpcResponse createVpcResponse = await Client.CreateVpcAsync(new CreateVpcRequest
             {
-                CidrBlock = "10.0.0.0/16"
+                CidrBlock = "10.0.0.0/16",
             });
             var newVpc = createVpcResponse.Vpc;
+            _vpcIds.Add(newVpc.VpcId);
 
             CreateSubnetResponse createSubnetResponse = await Client.CreateSubnetAsync(new CreateSubnetRequest()
             {
@@ -49,31 +57,27 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
             await Client.AttachInternetGatewayAsync(new AttachInternetGatewayRequest() { VpcId = newVpc.VpcId, InternetGatewayId = gateway.InternetGatewayId });
 
 
-            var instance = await VPCUtilities.LaunchNATInstanceAsync(Client, new LaunchNATInstanceRequest() { SubnetId = subnet.SubnetId, InstanceType = "m1.small" });
+            var instance = await VPCUtilities.LaunchNATInstanceAsync(Client, new LaunchNATInstanceRequest() { SubnetId = subnet.SubnetId});
             Assert.NotNull(instance);
 
             Assert.NotNull(instance.PrivateIpAddress);
-
-            await Client.TerminateInstancesAsync(new TerminateInstancesRequest() { InstanceIds = new List<string>() { instance.InstanceId } });
-            await waitForInstanceToTransitionToStateAsync(instance.InstanceId, "terminated");
-
         }
 
         [Trait(CategoryAttribute, "EC2")]
         [Fact]
         public async Task LaunchVPCWithPublicSubnetTest()
         {
-
             var request = new LaunchVPCWithPublicSubnetRequest() { };
             var response = await VPCUtilities.LaunchVPCWithPublicSubnetAsync(Client, request);
 
             Assert.NotNull(response.VPC);
+            _vpcIds.Add(response.VPC.VpcId);
+
             Assert.NotNull(response.InternetGateway);
             Assert.NotNull(response.PublicSubnet);
             Assert.NotNull(response.PublicSubnetRouteTable);
 
             Assert.NotNull(response.PublicSubnetRouteTable.Routes.FirstOrDefault(x => x.GatewayId == response.InternetGateway.InternetGatewayId && x.DestinationCidrBlock == "0.0.0.0/0"));
-
         }
 
         [Trait(CategoryAttribute, "EC2")]
@@ -81,11 +85,12 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
         public async Task LaunchVPCWithPublicAndPrivateSubnetsTest()
         {
             var progress = ((VPCUtilities.Progress)(x => Console.WriteLine(x)));
-            var request = new LaunchVPCWithPublicAndPrivateSubnetsRequest() { ConfigureDefaultVPCGroupForNAT = true, ProgressCallback = progress };
+            var request = new LaunchVPCWithPublicAndPrivateSubnetsRequest() { ConfigureDefaultVPCGroupForNAT = true, ProgressCallback = progress};
             var response = await VPCUtilities.LaunchVPCWithPublicAndPrivateSubnetsAsync(Client, request);
             try
             {
                 Assert.NotNull(response.VPC);
+                _vpcIds.Add(response.VPC.VpcId);
                 Assert.NotNull(response.InternetGateway);
                 Assert.NotNull(response.PublicSubnet);
                 Assert.NotNull(response.PublicSubnetRouteTable);
@@ -102,7 +107,6 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
             }
             finally
             {
-                
                 for (int i = 0; i < 40; i++)
                 {
                     try
@@ -113,9 +117,7 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
                     catch { }
                     AWSSDKUtils.Sleep(500);
                 }
-                
             }
-
         }
 
         private async Task<SecurityGroup> GetDefaultSecurityGroupAsync(IAmazonEC2 ec2Client, string vpcId)
@@ -170,6 +172,5 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
                 }
             }
         }
-
     }
 }

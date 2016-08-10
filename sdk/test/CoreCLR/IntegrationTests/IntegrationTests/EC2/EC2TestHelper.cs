@@ -17,149 +17,63 @@ namespace Amazon.DNXCore.IntegrationTests.IntegrationTests.EC2
 {
     public class EC2TestHelper
     {
+        private AmazonEC2Client _ec2Client;
 
-        private static AmazonEC2Client ec2Client;
-
-        public EC2TestHelper()
+        public EC2TestHelper(AmazonEC2Client client)
         {
-            AmazonEC2Config config = new AmazonEC2Config
-            {
-                RegionEndpoint = RegionEndpoint.USEast1
-            };
-            ec2Client = new AmazonEC2Client(config);
+            _ec2Client = client;
         }
 
         public async Task deleteSecurityGroupIPPermissionsAsync(string vpcId)
         {
-            var vpcGroups = new HashSet<string>();
-            var describResponse = await ec2Client.DescribeSecurityGroupsAsync(new DescribeSecurityGroupsRequest());
+            var describeResponse = await _ec2Client.DescribeSecurityGroupsAsync(new DescribeSecurityGroupsRequest{
+                Filters = { new Filter("vpc-id", new List<string> { vpcId }) }
+            });
 
-            foreach (var group in describResponse.SecurityGroups)
+            foreach (var group in describeResponse.SecurityGroups)
             {
-                if (group.VpcId == vpcId)
-                    vpcGroups.Add(group.GroupId);
-            }
 
-            foreach (var group in describResponse.SecurityGroups)
-            {
-                await deleteSecurityGroupIPPermissionsAsync(group.GroupId, group.IpPermissions, false, vpcGroups);
-                await deleteSecurityGroupIPPermissionsAsync(group.GroupId, group.IpPermissionsEgress, true, vpcGroups);
-            }
-        }
-
-        public async Task deleteSecurityGroupIPPermissionsAsync(string groupId, List<IpPermission> permissions, bool egress, HashSet<string> vpcGroupIds)
-        {
-            foreach (var permission in permissions)
-            {
-                foreach (var pair in permission.UserIdGroupPairs)
+                if (group.IpPermissions.Count != 0)
                 {
-                    if (!vpcGroupIds.Contains(pair.GroupId))
-                        continue;
-
-                    IpPermission spec = new IpPermission()
+                    await _ec2Client.RevokeSecurityGroupIngressAsync(new RevokeSecurityGroupIngressRequest
                     {
-                        UserIdGroupPairs = new List<UserIdGroupPair>() { pair },
-                        IpRanges = permission.IpRanges,
-                        IpProtocol = permission.IpProtocol
-                    };
+                        GroupId = group.GroupId,
+                        IpPermissions = group.IpPermissions
+                    });
+                }
+                if (group.IpPermissionsEgress.Count != 0)
+                {
+                    await _ec2Client.RevokeSecurityGroupEgressAsync(new RevokeSecurityGroupEgressRequest{
+                        GroupId = group.GroupId,
+                        IpPermissions = group.IpPermissionsEgress
+                    });
+                }
+            }
 
-                    try
-                    {
-                        if (egress)
-                        {
-                            var revokeRequest = new RevokeSecurityGroupEgressRequest()
-                            {
-                                GroupId = groupId,
-                                IpPermissions = new List<IpPermission>() { spec }
-                            };
-                            await ec2Client.RevokeSecurityGroupEgressAsync(revokeRequest);
-                        }
-                        else
-                        {
-                            var revokeRequest = new RevokeSecurityGroupIngressRequest()
-                            {
-                                GroupId = groupId,
-                                IpPermissions = new List<IpPermission>() { spec }
-                            };
-
-                            await ec2Client.RevokeSecurityGroupIngressAsync(revokeRequest);
-                        }
-
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine("Unable to delete security group {0}, exception {1}", groupId, e.Message);
-                    }
+            foreach (var group in describeResponse.SecurityGroups)
+            {
+                if (string.Compare(group.GroupName, "default") != 0)
+                {
+                    await _ec2Client.DeleteSecurityGroupAsync(new DeleteSecurityGroupRequest { GroupId = group.GroupId });
                 }
             }
         }
 
         public async Task deleteNetworkInterfaces(string vpcId)
         {
-            try
-            {
-                var descResponse = await ec2Client.DescribeNetworkInterfacesAsync(new DescribeNetworkInterfacesRequest() { Filters = new List<Filter>() { new Filter() { Name = "vpc-id", Values = new List<string>() { vpcId } } } });
+            var descResponse = await _ec2Client.DescribeNetworkInterfacesAsync(new DescribeNetworkInterfacesRequest() { Filters = new List<Filter>() { new Filter() { Name = "vpc-id", Values = new List<string>() { vpcId } } } });
 
-                foreach (var item in descResponse.NetworkInterfaces)
+            foreach (var item in descResponse.NetworkInterfaces)
+            {
+                if (item.Attachment != null && !string.IsNullOrEmpty(item.Attachment.AttachmentId))
                 {
-                    if (item.Attachment != null && !string.IsNullOrEmpty(item.Attachment.AttachmentId))
-                    {
-                        try
-                        {
-                            await ec2Client.DetachNetworkInterfaceAsync(new DetachNetworkInterfaceRequest() { AttachmentId = item.Attachment.AttachmentId, Force = true });
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine("Unable to detach network interface {0}, exception {1}", item.Attachment.AttachmentId, e.Message);
-                        }
-                    }
-
-                    try
-                    {
-                        await ec2Client.DeleteNetworkInterfaceAsync(new DeleteNetworkInterfaceRequest() { NetworkInterfaceId = item.NetworkInterfaceId });
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine("Unable to delete network interface {0}, exception {1}", item.NetworkInterfaceId, e.Message);
-                    }
+                    await _ec2Client.DetachNetworkInterfaceAsync(new DetachNetworkInterfaceRequest() { AttachmentId = item.Attachment.AttachmentId, Force = true });
                 }
-            }
-            catch (Exception e)
-            {
-               
+
+                await _ec2Client.DeleteNetworkInterfaceAsync(new DeleteNetworkInterfaceRequest() { NetworkInterfaceId = item.NetworkInterfaceId });
             }
         }
-
-        public async Task disassociateRouteTables(string vpcId)
-        {
-            try
-            {
-                var descResponse = await ec2Client.DescribeRouteTablesAsync(new DescribeRouteTablesRequest() { Filters = new List<Filter>() { new Filter() { Name = "vpc-id", Values = new List<string>() { vpcId } } } });
-
-                foreach (var item in descResponse.RouteTables)
-                {
-                    foreach (var association in item.Associations)
-                    {
-                        try
-                        {
-                            if (!association.Main)
-                            {
-                                await ec2Client.DisassociateRouteTableAsync(new DisassociateRouteTableRequest() { AssociationId = association.RouteTableAssociationId });
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine("Unable to disassociate route table {0}, exception {1}", association.RouteTableAssociationId, e.Message);
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Unable to describe route table {0}, exception {1}", vpcId, e.Message);
-            }
-        }
-
+        
         // cleans all subelements for a vpc, and then the vpc, created during a test
         public async Task deleteTestVpcAsync(Vpc vpc)
         {
@@ -168,47 +82,33 @@ namespace Amazon.DNXCore.IntegrationTests.IntegrationTests.EC2
 
         public async Task deleteTestVpcAsync(string vpcid)
         {
-            await terminateAllInstancesInVpcAsync(vpcid);
+            await terminateVPCInstanceAsync(vpcid);
+
             AWSSDKUtils.Sleep(1000);
-            await disassociateRouteTables(vpcid);
-            await deleteSecurityGroupIPPermissionsAsync(vpcid);
-            await deleteNetworkInterfaces(vpcid);
-            await deleteVpcSecurityGroupsAsync(vpcid);
-            await deleteInternetGatewaysAsync(vpcid);
+
+            await disassociateAndDeleteDhcpOptionSet(vpcid);
             await deleteSubnetsAsync(vpcid);
+            await detachAndDeleteInternetGatewaysAsync(vpcid);
+            await disassociateAndDeleteRouteTables(vpcid);
+            await deleteSecurityGroupIPPermissionsAsync(vpcid);
+            await deleteNetworkInterfaces(vpcid);            
             await deleteNetworkAclAsync(vpcid);
-            await deleteRouteTablesAsync(vpcid);
             await deleteVpcAsync(vpcid);
         }
 
-      
-
-        /**
-         * Deletes VPN gateway
-         * 
-         * @param vpnGatewayId
-         *            id of the gateway to delete
-         */
-        public async Task deletVpnGatewayAsync(String vpnGatewayId)
+        public async Task disassociateAndDeleteDhcpOptionSet(string vpcid)
         {
-            DeleteVpnGatewayRequest request = new DeleteVpnGatewayRequest();
-            request.VpnGatewayId = vpnGatewayId;
+            DescribeVpcsResponse response = await _ec2Client.DescribeVpcsAsync(new DescribeVpcsRequest {
+                VpcIds = new List<string>{ vpcid }
+            });
+            string dhcpOptionsId = response.Vpcs[0].DhcpOptionsId;
 
-            await ec2Client.DeleteVpnGatewayAsync(request);
-        }
+            await _ec2Client.AssociateDhcpOptionsAsync(new AssociateDhcpOptionsRequest {
+                VpcId = vpcid,
+                DhcpOptionsId = "default"
+            });
 
-        /**
-         * Deletes VPN connection
-         * 
-         * @param vpnConnectionId
-         *            vpn connection id
-         */
-        public async Task deleteVpnConnectionAsync(String vpnConnectionId)
-        {
-            DeleteVpnConnectionRequest request = new DeleteVpnConnectionRequest();
-            request.VpnConnectionId = vpnConnectionId;
-
-            await ec2Client.DeleteVpnConnectionAsync(request);
+            await _ec2Client.DeleteDhcpOptionsAsync(new DeleteDhcpOptionsRequest{DhcpOptionsId = dhcpOptionsId});
         }
 
         /**
@@ -217,277 +117,74 @@ namespace Amazon.DNXCore.IntegrationTests.IntegrationTests.EC2
          * @param vpcId
          *            VPC id
          */
-        public async Task deleteVpcAsync(String vpcId)
+        public Task deleteVpcAsync(String vpcId)
         {
-            try
-            {
-                DeleteVpcRequest request = new DeleteVpcRequest();
-                request.VpcId = vpcId;
-                await ec2Client.DeleteVpcAsync(request);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Unable to delete test vpc {0}, exception {1}", vpcId, e.Message);
-            }
+            return _ec2Client.DeleteVpcAsync(new DeleteVpcRequest{ VpcId = vpcId});
         }
 
-        public async Task deleteAllInternetGatewaysAsync()
-        {
-            var response = await ec2Client.DescribeInternetGatewaysAsync(new DescribeInternetGatewaysRequest());
-            foreach (var gateway in response.InternetGateways)
-            {
-                try
-                {
-                    await deleteInternetGatewayAsync(gateway.InternetGatewayId);
-                }
-                catch { }
-            }
-        }
 
-        public async Task deleteInternetGatewaysAsync(string vpcid)
+        public async Task detachAndDeleteInternetGatewaysAsync(string vpcid)
         {
             var request = new DescribeInternetGatewaysRequest();
             var filter = new Filter { Name = "attachment.vpc-id" };
             filter.Values.Add(vpcid);
             request.Filters.Add(filter);
 
-            var response = await ec2Client.DescribeInternetGatewaysAsync(request);
+            var response = await _ec2Client.DescribeInternetGatewaysAsync(request);
+
             foreach (var gateway in response.InternetGateways)
             {
-                try
-                {
-                    await ec2Client.DetachInternetGatewayAsync(new DetachInternetGatewayRequest() { InternetGatewayId = gateway.InternetGatewayId, VpcId = vpcid });
-                    await deleteInternetGatewayAsync(gateway.InternetGatewayId);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Unable to delete gateway {0}, exception {1}", gateway.InternetGatewayId, e.Message);
-                }
-            }
-        }
-
-        public async Task deleteInternetGatewayAsync(string gatewayId)
-        {
-            await ec2Client.DeleteInternetGatewayAsync(new DeleteInternetGatewayRequest { InternetGatewayId = gatewayId });
-        }
-
-        public async Task deleteAllAddressAsync()
-        {
-            DescribeAddressesResponse desResult = await ec2Client.DescribeAddressesAsync(new DescribeAddressesRequest());
-            foreach (var address in desResult.Addresses)
-            {
-                try
-                {
-                    if (string.IsNullOrEmpty(address.AssociationId))
-                    {
-                        await ec2Client.DisassociateAddressAsync(new DisassociateAddressRequest { PublicIp = address.PublicIp });
-                    }
-                    else
-                    {
-                        await ec2Client.DisassociateAddressAsync(new DisassociateAddressRequest { AssociationId = address.AssociationId });
-                    }
-                }
-                catch { }
-
-                try
-                {
-                    await ec2Client.ReleaseAddressAsync(new ReleaseAddressRequest { AllocationId = address.AllocationId });
-                }
-                catch { }
-            }
-        }
-
-        /**
-         * Describe VPC by VPC Id
-         * 
-         * @param vpcId
-         *            VPC Id
-         * @return DescribeVpcsResult
-         */
-        public async Task<DescribeVpcsResponse> describeVpcAsync(String vpcId)
-        {
-            List<String> ids = new List<String>();
-
-            ids.Add(vpcId);
-
-            return await describeVpcsAsync(ids);
-        }
-
-        /**
-         * Describe VPC by list of VPC Ids
-         * 
-         * @param ids
-         *            list of VPC ids
-         * @return DescribeVpcsResult
-         */
-        public async Task<DescribeVpcsResponse> describeVpcsAsync(List<String> ids)
-        {
-            DescribeVpcsRequest request = new DescribeVpcsRequest();
-            if (ids != null)
-                request.VpcIds = ids;
-
-            return await ec2Client.DescribeVpcsAsync(request);
-        }
-
-        public async Task deleteAllVpcSecurityGroupsAsync()
-        {
-            DescribeSecurityGroupsResponse desResults = await ec2Client.DescribeSecurityGroupsAsync(new DescribeSecurityGroupsRequest());
-            foreach (SecurityGroup group in desResults.SecurityGroups)
-            {
-                if (!string.IsNullOrEmpty(group.VpcId))
-                {
-                    try
-                    {
-                        // avoid exception from trying to delete default group from messing up any
-                        // genuine errors in test
-                        if (group.GroupName != "default")
-                            await ec2Client.DeleteSecurityGroupAsync(new DeleteSecurityGroupRequest { GroupId = group.GroupId });
-                    }
-                    catch { }
-                }
-            }
-        }
-
-        public async Task deleteVpcSecurityGroupsAsync(string vpcid)
-        {
-            var request = new DescribeSecurityGroupsRequest();
-            var filter = new Filter { Name = "vpc-id" };
-            filter.Values.Add(vpcid);
-            request.Filters.Add(filter);
-
-            DescribeSecurityGroupsResponse desResults = await ec2Client.DescribeSecurityGroupsAsync(request);
-            foreach (var group in desResults.SecurityGroups)
-            {
-                try
-                {
-                    // avoid exception from trying to delete default group from messing up any
-                    // genuine errors in test
-                    if (group.GroupName != "default")
-                        await ec2Client.DeleteSecurityGroupAsync(new DeleteSecurityGroupRequest { GroupId = group.GroupId });
-                }
-                catch { }
-            }
-        }
-
-        /**
-         * Deletes ALL Vpc
-         * 
-         */
-        public async Task deleteAllVpcsAsync()
-        {
-            DescribeVpcsResponse describeResult = await describeVpcsAsync(null);
-            foreach (Vpc vpc in describeResult.Vpcs)
-            {
-                try
-                {
-                    await deleteTestVpcAsync(vpc.VpcId);
-                }
-                catch { }
-            }
-        }
-
-        public async Task deleteAllSubnetsAsync()
-        {
-            await deleteAllInstancesWithSubnetsAsync();
-            foreach (var subnet in (await describeSubnetAsync(null)).Subnets)
-            {
-                await deleteSubnetAsync(subnet.SubnetId);
+                await _ec2Client.DetachInternetGatewayAsync(new DetachInternetGatewayRequest {
+                    InternetGatewayId = gateway.InternetGatewayId, VpcId = vpcid
+                });
+                await _ec2Client.DeleteInternetGatewayAsync(new DeleteInternetGatewayRequest {
+                    InternetGatewayId = gateway.InternetGatewayId
+                });
             }
         }
 
         // this expects that all instances have been terminated
         public async Task deleteSubnetsAsync(string vpcid)
         {
-            var request = new DescribeSubnetsRequest();
-            var filter = new Filter { Name = "vpc-id" };
-            filter.Values.Add(vpcid);
-            request.Filters.Add(filter);
+            var response = await _ec2Client.DescribeSubnetsAsync(new DescribeSubnetsRequest{
+                Filters = { new Filter("vpc-id", new List<string> { vpcid })}
+            });
 
-            foreach (var subnet in (await ec2Client.DescribeSubnetsAsync(request)).Subnets)
+            foreach (var subnet in response.Subnets)
             {
-                try
-                {
-                    await deleteSubnetAsync(subnet.SubnetId);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Unable to delete subnet {0}, exception {1}", subnet.SubnetId, e.Message);
-                }
-            }
-        }
-
-
-        public async Task deleteAllNetworkAclAsync()
-        {
-            DescribeNetworkAclsResponse describeResponse = await ec2Client.DescribeNetworkAclsAsync(new DescribeNetworkAclsRequest());
-            foreach (NetworkAcl acl in describeResponse.NetworkAcls)
-            {
-                try
-                {
-                    await ec2Client.DeleteNetworkAclAsync(new DeleteNetworkAclRequest { NetworkAclId = acl.NetworkAclId });
-                }
-                catch { }
+                await _ec2Client.DeleteSubnetAsync(new DeleteSubnetRequest { SubnetId = subnet.SubnetId });
             }
         }
 
         public async Task deleteNetworkAclAsync(string vpcid)
         {
-            var request = new DescribeNetworkAclsRequest();
-            var filter = new Filter { Name = "vpc-id" };
-            filter.Values.Add(vpcid);
-            request.Filters.Add(filter);
+            var describeResponse = await _ec2Client.DescribeNetworkAclsAsync(new DescribeNetworkAclsRequest{
+                Filters = { new Filter("vpc-id", new List<string> {vpcid })}
+            });
 
-            var describeResponse = await ec2Client.DescribeNetworkAclsAsync(request);
             foreach (var acl in describeResponse.NetworkAcls)
             {
-                try
+                if (!acl.IsDefault)
                 {
-                    await ec2Client.DeleteNetworkAclAsync(new DeleteNetworkAclRequest { NetworkAclId = acl.NetworkAclId });
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Unable to delete network acl {0}, exception {1}", acl.NetworkAclId, e.Message);
+                    await _ec2Client.DeleteNetworkAclAsync(new DeleteNetworkAclRequest { NetworkAclId = acl.NetworkAclId });
                 }
             }
         }
 
-
-        public async Task deleteAllInstancesWithSubnetsAsync()
-        {
-            List<string> ids = new List<string>();
-            foreach (var reservation in (await ec2Client.DescribeInstancesAsync(new DescribeInstancesRequest())).Reservations)
-            {
-                foreach (var instance in reservation.Instances)
-                {
-                    if (!string.IsNullOrEmpty(instance.SubnetId))
-                    {
-                        await ec2Client.TerminateInstancesAsync(new TerminateInstancesRequest { InstanceIds = new List<string> { instance.InstanceId } });
-                        ids.Add(instance.InstanceId);
-                    }
-                }
-            }
-
-            foreach (string instanceId in ids)
-            {
-                await waitForInstanceToTransitionToStateAsync(instanceId, "terminated");
-            }
-        }
-
-        public async Task terminateAllInstancesInVpcAsync(string vpcid)
+        public async Task terminateVPCInstanceAsync(string vpcid)
         {
             var ids = new List<string>();
-            var request = new DescribeInstancesRequest();
-            var filter = new Filter { Name = "vpc-id" };
-            filter.Values.Add(vpcid);
-            request.Filters.Add(filter);
+            var response = await _ec2Client.DescribeInstancesAsync(new DescribeInstancesRequest {
+                Filters = { new Filter("vpc-id", new List<string>{ vpcid })}
+            });
 
-            foreach (var reservation in (await ec2Client.DescribeInstancesAsync(request)).Reservations)
+            foreach (var reservation in response.Reservations)
             {
                 foreach (var instance in reservation.Instances)
                 {
                     if (!string.IsNullOrEmpty(instance.SubnetId))
                     {
-                        await ec2Client.TerminateInstancesAsync(new TerminateInstancesRequest { InstanceIds = new List<string> { instance.InstanceId } });
+                        await _ec2Client.TerminateInstancesAsync(new TerminateInstancesRequest { InstanceIds = new List<string> { instance.InstanceId } });
                         ids.Add(instance.InstanceId);
                     }
                 }
@@ -498,115 +195,59 @@ namespace Amazon.DNXCore.IntegrationTests.IntegrationTests.EC2
                 await waitForInstanceToTransitionToStateAsync(instanceId, "terminated");
             }
         }
-
-
-        /**
-         * Deletes subnet
-         * 
-         * @param subnetId
-         *            subnet id
-         */
-        public async Task deleteSubnetAsync(String subnetId)
+        
+        public async Task disassociateAndDeleteRouteTables(string vpcid)
         {
-            DeleteSubnetRequest request = new DeleteSubnetRequest();
-            request.SubnetId = subnetId;
-            await ec2Client.DeleteSubnetAsync(request);
-        }
+            var response = await _ec2Client.DescribeRouteTablesAsync(new DescribeRouteTablesRequest{
+                Filters = { new Filter("vpc-id", new List<string> { vpcid }) }
+            });
 
-        public async Task deleteAllRouteTables()
-        {
-            foreach (var table in (await ec2Client.DescribeRouteTablesAsync(new DescribeRouteTablesRequest())).RouteTables)
+            foreach (var table in response.RouteTables)
             {
-                try
-                {
-                    await deleteRouteTableAsync(table);
-                }
-                catch { }
-            }
-        }
-
-        public async Task deleteRouteTablesAsync(string vpcid)
-        {
-            var request = new DescribeRouteTablesRequest();
-            var filter = new Filter { Name = "vpc-id" };
-            filter.Values.Add(vpcid);
-            request.Filters.Add(filter);
-
-            foreach (var table in (await ec2Client.DescribeRouteTablesAsync(request)).RouteTables)
-            {
-                try
-                {
-                    await deleteRouteTableAsync(table);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Unable to delete route table {0}, exception {1}", table.RouteTableId, e.Message);
-                }
+                await disassociateAndDeleteRouteTableAsync(table);
             }
         }
 
 
-        public async Task deleteRouteTableAsync(RouteTable table)
+        public async Task disassociateAndDeleteRouteTableAsync(RouteTable table)
         {
+            bool isMain = false;
             foreach (var association in table.Associations)
             {
                 if (!association.Main)
                 {
-                   await ec2Client.DisassociateRouteTableAsync(new DisassociateRouteTableRequest { AssociationId = association.RouteTableAssociationId });
+                   await _ec2Client.DisassociateRouteTableAsync(new DisassociateRouteTableRequest { AssociationId = association.RouteTableAssociationId });
+                }
+                else
+                {
+                    isMain = true;
                 }
             }
+
             foreach (var route in table.Routes)
             {
                 if (route.GatewayId != "local")
                 {
-                    await ec2Client.DeleteRouteAsync(new DeleteRouteRequest
+                    await _ec2Client.DeleteRouteAsync(new DeleteRouteRequest
                     {
                         RouteTableId = table.RouteTableId,
                         DestinationCidrBlock = route.DestinationCidrBlock
                     });
                 }
             }
-            await ec2Client.DeleteTagsAsync(new DeleteTagsRequest { Resources = new List<string> { table.RouteTableId } });
 
-            await ec2Client.DeleteRouteTableAsync(new DeleteRouteTableRequest { RouteTableId = table.RouteTableId });
-        }
-
-      
-        /**
-         * Describes subnets
-         * 
-         * @param subnetId
-         *            subnet id
-         * @return DescribeSubnetsResult
-         */
-        public async Task<DescribeSubnetsResponse> describeSubnetAsync(String subnetId)
-        {
-            List<String> ids = new List<String>();
-
-            ids.Add(subnetId);
-
-            return await describeSubnetsAsync(ids);
-        }
-
-        /**
-         * Describes subnets given the list of subnet ids
-         * 
-         * @param subnetIds
-         *            subnet ids
-         * @return DescribeSubnetsResult
-         */
-        public async Task<DescribeSubnetsResponse> describeSubnetsAsync(List<String> subnetIds)
-        {
-            DescribeSubnetsRequest request = new DescribeSubnetsRequest();
-            request.SubnetIds = subnetIds;
-
-            return await ec2Client.DescribeSubnetsAsync(request);
+            if (!isMain)
+            {
+                await _ec2Client.DeleteRouteTableAsync(new DeleteRouteTableRequest { RouteTableId = table.RouteTableId });
+            }
         }
 
         public async Task terminateInstanceAsync(string instanceId)
         {
-            TerminateInstancesRequest request = new TerminateInstancesRequest { InstanceIds = new List<string> { instanceId } };
-            await ec2Client.TerminateInstancesAsync(request);
+            TerminateInstancesRequest request = new TerminateInstancesRequest {
+                InstanceIds = new List<string> { instanceId }
+            };
+            await _ec2Client.TerminateInstancesAsync(request);
         }
 
         /**
@@ -634,7 +275,7 @@ namespace Amazon.DNXCore.IntegrationTests.IntegrationTests.EC2
                 Thread.Sleep(1000 * 5);
 
                 count++;
-                Instance runningInstance = (await ec2Client.DescribeInstancesAsync(
+                Instance runningInstance = (await _ec2Client.DescribeInstancesAsync(
                         new DescribeInstancesRequest { InstanceIds = new List<string> { instanceId } }))
                         .Reservations[0].Instances[0];
 
