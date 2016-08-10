@@ -187,6 +187,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Util.SAMLRoleProfile.#GetCurrentSession()")]
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.FallbackRegionFactory.#GetRegionEndpoint()")]
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.AWSRegion.#GetRegionEndpoint()")]
+[module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.SharedCredentialsFile.#GetSections()")]
 
 // Use properties, huge change
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.Internal.Transform.ResponseMetadataUnmarshaller.#GetInstance()")]

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -197,7 +198,7 @@ namespace Amazon.Runtime.Internal.Auth
                     }
                     else
                     {
-                        throw new IOException(string.Format("Cannot write to credentials file {0}.  The file has been modified since it was last read.", FilePath));
+                        throw new IOException(string.Format(CultureInfo.InvariantCulture, "Cannot write to credentials file {0}.  The file has been modified since it was last read.", FilePath));
                     }
                 }
             }
@@ -304,7 +305,7 @@ namespace Amazon.Runtime.Internal.Auth
         public void Validate()
         {
             if (!HasValidCredentials)
-                throw new InvalidDataException(String.Format("Credential profile [{0}] does not contain valid access and/or secret key materials.", ProfileName));
+                throw new InvalidDataException(String.Format(CultureInfo.InvariantCulture, "Credential profile [{0}] does not contain valid access and/or secret key materials.", ProfileName));
         }
 
         public bool HasValidCredentials
