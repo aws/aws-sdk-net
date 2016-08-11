@@ -16,7 +16,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("Snowball")]
         public void ListJobs()
         {
-            var client = new AmazonSnowballClient(Amazon.RegionEndpoint.USWest1);
+            var client = new AmazonSnowballClient(Amazon.RegionEndpoint.EUCentral1);
             client.ListJobs(new ListJobsRequest());
         }
 
@@ -24,7 +24,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("Snowball")]
         public void GetSnowballUsage()
         {
-            var client = new AmazonSnowballClient(Amazon.RegionEndpoint.USWest1);
+            var client = new AmazonSnowballClient(Amazon.RegionEndpoint.EUCentral1);
             var response = client.GetSnowballUsage(new GetSnowballUsageRequest());
         }
     }
