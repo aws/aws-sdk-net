@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using System.Globalization;
-using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 
 namespace Amazon.Util.Internal.PlatformServices
 {
-    public class EnvironmentInfo : IEnvironmentInfo
+    public class EnvironmentInfo : IEnvironmentInfo 
     {
         public EnvironmentInfo()
         {
-            this.Platform = "Unknown";
-            this.PlatformVersion = "Unknown";
-            this.PlatformUserAgent = "Unknown";
+            this.Platform = InternalSDKUtils.DetermineOS();
+            this.PlatformVersion = InternalSDKUtils.DetermineOSVersion();
+            this.PlatformUserAgent = InternalSDKUtils.PlatformUserAgent();
             this.Model = "Unknown";
             this.Make = "Unknown";
             this.Locale = CultureInfo.CurrentCulture.DisplayName;
             this.FrameworkUserAgent =
                 string.Format(CultureInfo.InvariantCulture,
-                "CoreCLR");
+                ".NET_Core/{0}",
+                InternalSDKUtils.DetermineFramework());
             this.PclPlatform = string.Empty;
         }
 
