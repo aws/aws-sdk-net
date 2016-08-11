@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
-    /// Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SetDesiredCapacityRequest : AmazonAutoScalingRequest

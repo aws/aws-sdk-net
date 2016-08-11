@@ -57,7 +57,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleHookNames. 
         /// <para>
-        /// The names of one or more lifecycle hooks.
+        /// The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle
+        /// hooks are described.
         /// </para>
         /// </summary>
         public List<string> LifecycleHookNames

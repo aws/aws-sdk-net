@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeTags operation.
+    /// Contains the output for DescribeTags.
     /// </summary>
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {

@@ -118,8 +118,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledActionNames. 
         /// <para>
-        /// Describes one or more scheduled actions. If you omit this list, the call describes
-        /// all scheduled actions. If you specify an unknown scheduled action it is ignored with
+        /// Describes one or more scheduled actions. If you omit this parameter, all scheduled
+        /// actions are described. If you specify an unknown scheduled action, it is ignored with
         /// no error.
         /// </para>
         ///  

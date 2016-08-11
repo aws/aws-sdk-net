@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the SetLoadBalancerListenerSSLCertificate operation.
+    /// Contains the output of SetLoadBalancerListenerSSLCertificate.
     /// </summary>
     public partial class SetLoadBalancerListenerSSLCertificateResponse : AmazonWebServiceResponse
     {

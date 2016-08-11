@@ -82,6 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoadBalancerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("targetGroupArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetGroupArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

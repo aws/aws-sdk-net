@@ -93,10 +93,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DesiredStatus. 
         /// <para>
-        /// The task status with which to filter the <code>ListTasks</code> results. Specifying
+        /// The task desired status with which to filter the <code>ListTasks</code> results. Specifying
         /// a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that
-        /// are in the <code>STOPPED</code> status, which can be useful for debugging tasks that
-        /// are not starting properly or have died or finished. The default status filter is status
+        /// ECS has set the desired status to <code>STOPPED</code>, which can be useful for debugging
+        /// tasks that are not starting properly or have died or finished. The default status
         /// filter is <code>RUNNING</code>, which shows tasks that ECS has set the desired status
         /// to <code>RUNNING</code>.
         /// </para>

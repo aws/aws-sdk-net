@@ -36,7 +36,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// If you are attempting to recreate a load balancer, you must reconfigure all settings.
     /// The DNS name associated with a deleted load balancer are no longer usable. The name
     /// and associated DNS record of the deleted load balancer no longer exist and traffic
-    /// sent to any of its IP addresses is no longer delivered to back-end instances.
+    /// sent to any of its IP addresses is no longer delivered to your instances.
     /// </para>
     ///  
     /// <para>

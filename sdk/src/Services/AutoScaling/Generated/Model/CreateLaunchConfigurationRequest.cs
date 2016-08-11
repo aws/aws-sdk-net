@@ -40,7 +40,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
-    /// Configurations</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// Configurations</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLaunchConfigurationRequest : AmazonAutoScalingRequest
@@ -70,7 +70,7 @@ namespace Amazon.AutoScaling.Model
         /// Used for groups that launch instances into a virtual private cloud (VPC). Specifies
         /// whether to assign a public IP address to each instance. For more information, see
         /// <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
-        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -194,7 +194,7 @@ namespace Amazon.AutoScaling.Model
         /// available. You can use IAM roles with Auto Scaling to automatically enable applications
         /// running on your EC2 instances to securely access other AWS resources. For more information,
         /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
-        /// Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string IamInstanceProfile
@@ -247,8 +247,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
-        /// a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling Developer
-        /// Guide</i>.
+        /// a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -274,7 +273,7 @@ namespace Amazon.AutoScaling.Model
         /// and your account is charged a fee. When you disable detailed monitoring, by specifying
         /// <code>False</code>, CloudWatch generates metrics every 5 minutes. For more information,
         /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
-        /// Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public InstanceMonitoring InstanceMonitoring
@@ -292,7 +291,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        ///  The instance type of the EC2 instance. For information about available instance types,
+        /// The instance type of the EC2 instance. For information about available instance types,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
         /// Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
         /// 
@@ -313,7 +312,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property KernelId. 
         /// <para>
-        ///  The ID of the kernel associated with the AMI. 
+        /// The ID of the kernel associated with the AMI.
         /// </para>
         /// </summary>
         public string KernelId
@@ -386,11 +385,11 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
-        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>default</code> | <code>dedicated</code>
+        /// Valid values: <code>default</code> | <code>dedicated</code> 
         /// </para>
         /// </summary>
         public string PlacementTenancy
@@ -408,7 +407,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property RamdiskId. 
         /// <para>
-        ///  The ID of the RAM disk associated with the AMI. 
+        /// The ID of the RAM disk associated with the AMI.
         /// </para>
         /// </summary>
         public string RamdiskId
@@ -460,7 +459,7 @@ namespace Amazon.AutoScaling.Model
         /// The maximum hourly price to be paid for any Spot Instance launched to fulfill the
         /// request. Spot Instances are launched when the price you specify exceeds the current
         /// Spot market price. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
-        /// Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string SpotPrice

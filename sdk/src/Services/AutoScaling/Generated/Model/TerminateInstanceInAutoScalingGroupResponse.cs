@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the TerminateInstanceInAutoScalingGroup operation.
+    /// Contains the output of TerminateInstancesInAutoScalingGroup.
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupResponse : AmazonWebServiceResponse
     {

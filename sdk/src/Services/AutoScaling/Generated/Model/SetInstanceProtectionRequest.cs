@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
-    /// Protection</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// Protection</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SetInstanceProtectionRequest : AmazonAutoScalingRequest

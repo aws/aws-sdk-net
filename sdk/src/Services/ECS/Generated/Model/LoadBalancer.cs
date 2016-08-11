@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
         private string _containerName;
         private int? _containerPort;
         private string _loadBalancerName;
+        private string _targetGroupArn;
 
         /// <summary>
         /// Gets and sets the property ContainerName. 
@@ -91,6 +92,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetLoadBalancerName()
         {
             return this._loadBalancerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetGroupArn. 
+        /// <para>
+        /// The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated
+        /// with a service.
+        /// </para>
+        /// </summary>
+        public string TargetGroupArn
+        {
+            get { return this._targetGroupArn; }
+            set { this._targetGroupArn = value; }
+        }
+
+        // Check to see if TargetGroupArn property is set
+        internal bool IsSetTargetGroupArn()
+        {
+            return this._targetGroupArn != null;
         }
 
     }

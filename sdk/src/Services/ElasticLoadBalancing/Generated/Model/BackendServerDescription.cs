@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Information about the configuration of a back-end server.
+    /// Information about the configuration of an EC2 instance.
     /// </summary>
     public partial class BackendServerDescription
     {
@@ -38,7 +38,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property InstancePort. 
         /// <para>
-        /// The port on which the back-end server is listening.
+        /// The port on which the EC2 instance is listening.
         /// </para>
         /// </summary>
         public int InstancePort
@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        /// The names of the policies enabled for the back-end server.
+        /// The names of the policies enabled for the EC2 instance.
         /// </para>
         /// </summary>
         public List<string> PolicyNames

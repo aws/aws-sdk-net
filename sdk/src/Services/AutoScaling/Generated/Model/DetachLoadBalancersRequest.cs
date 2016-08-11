@@ -29,8 +29,13 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachLoadBalancers operation.
-    /// Removes one or more load balancers from the specified Auto Scaling group.
+    /// Detaches one or more Classic load balancers from the specified Auto Scaling group.
     /// 
+    ///  
+    /// <para>
+    /// Note that this operation detaches only Classic load balancers. If you have Application
+    /// load balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
+    /// </para>
     ///  
     /// <para>
     /// When you detach a load balancer, it enters the <code>Removing</code> state while deregistering
@@ -47,7 +52,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name of the group.
+        /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName

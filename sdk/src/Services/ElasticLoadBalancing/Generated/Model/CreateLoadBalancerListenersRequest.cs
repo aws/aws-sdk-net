@@ -35,8 +35,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html">Add
-    /// a Listener to Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+    /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLoadBalancerListenersRequest : AmazonElasticLoadBalancingRequest

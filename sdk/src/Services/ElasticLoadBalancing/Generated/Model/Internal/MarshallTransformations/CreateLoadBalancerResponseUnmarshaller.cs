@@ -144,6 +144,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             {
                 return new TooManyTagsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedProtocol"))
+            {
+                return new UnsupportedProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonElasticLoadBalancingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static CreateLoadBalancerResponseUnmarshaller _instance = new CreateLoadBalancerResponseUnmarshaller();        

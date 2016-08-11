@@ -60,39 +60,39 @@ namespace Amazon.AutoScaling.Model
         /// One or more of the following metrics. If you omit this parameter, all metrics are
         /// disabled.
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>GroupMinSize</code>
+        ///  <code>GroupMinSize</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>GroupMaxSize</code>
+        ///  <code>GroupMaxSize</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>GroupDesiredCapacity</code>
+        ///  <code>GroupDesiredCapacity</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>GroupInServiceInstances</code>
+        ///  <code>GroupInServiceInstances</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>GroupPendingInstances</code>
+        ///  <code>GroupPendingInstances</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>GroupStandbyInstances</code>
+        ///  <code>GroupStandbyInstances</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>GroupTerminatingInstances</code>
+        ///  <code>GroupTerminatingInstances</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>GroupTotalInstances</code>
+        ///  <code>GroupTotalInstances</code> 
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public List<string> Metrics
         {

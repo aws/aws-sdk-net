@@ -63,7 +63,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether access log is enabled for the load balancer.
+        /// Specifies whether access logs are enabled for the load balancer.
         /// </para>
         /// </summary>
         public bool Enabled

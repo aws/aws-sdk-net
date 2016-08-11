@@ -29,8 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLaunchConfigurations operation.
-    /// Describes one or more launch configurations. If you omit the list of names, then the
-    /// call describes all launch configurations.
+    /// Describes one or more launch configurations.
     /// </summary>
     public partial class DescribeLaunchConfigurationsRequest : AmazonAutoScalingRequest
     {
@@ -41,7 +40,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationNames. 
         /// <para>
-        /// The launch configuration names.
+        /// The launch configuration names. If you omit this parameter, all launch configurations
+        /// are described.
         /// </para>
         /// </summary>
         public List<string> LaunchConfigurationNames
