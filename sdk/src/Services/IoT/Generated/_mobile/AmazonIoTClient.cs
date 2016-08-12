@@ -360,7 +360,7 @@ namespace Amazon.IoT
         /// Attaches the specified principal to the specified thing.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal (certificate or other credential).</param>
+        /// <param name="principal">The principal, such as a certificate or other credential.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1071,6 +1071,37 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateThingType
+
+        internal CreateThingTypeResponse CreateThingType(CreateThingTypeRequest request)
+        {
+            var marshaller = new CreateThingTypeRequestMarshaller();
+            var unmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThingTypeRequest,CreateThingTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateThingType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateThingTypeResponse> CreateThingTypeAsync(CreateThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateThingTypeRequestMarshaller();
+            var unmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateThingTypeRequest,CreateThingTypeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTopicRule
 
         internal CreateTopicRuleResponse CreateTopicRule(CreateTopicRuleRequest request)
@@ -1415,9 +1446,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes the specified thing from the Thing Registry.
+        /// Deletes the specified thing.
         /// </summary>
-        /// <param name="thingName">The thing name.</param>
+        /// <param name="thingName">The name of the thing to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1440,6 +1471,10 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of a thing passed to a command is different than
+        /// the version specified with the --version parameter.
         /// </exception>
         public Task<DeleteThingResponse> DeleteThingAsync(string thingName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1464,6 +1499,37 @@ namespace Amazon.IoT
             var unmarshaller = DeleteThingResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteThingRequest,DeleteThingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteThingType
+
+        internal DeleteThingTypeResponse DeleteThingType(DeleteThingTypeRequest request)
+        {
+            var marshaller = new DeleteThingTypeRequestMarshaller();
+            var unmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThingTypeRequest,DeleteThingTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThingType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteThingTypeResponse> DeleteThingTypeAsync(DeleteThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteThingTypeRequestMarshaller();
+            var unmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteThingTypeRequest,DeleteThingTypeResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1524,6 +1590,37 @@ namespace Amazon.IoT
             var unmarshaller = DeleteTopicRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTopicRuleRequest,DeleteTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeprecateThingType
+
+        internal DeprecateThingTypeResponse DeprecateThingType(DeprecateThingTypeRequest request)
+        {
+            var marshaller = new DeprecateThingTypeRequestMarshaller();
+            var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeprecateThingTypeRequest,DeprecateThingTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeprecateThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeprecateThingType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeprecateThingTypeResponse> DeprecateThingTypeAsync(DeprecateThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeprecateThingTypeRequestMarshaller();
+            var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeprecateThingTypeRequest,DeprecateThingTypeResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1747,6 +1844,37 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeThingType
+
+        internal DescribeThingTypeResponse DescribeThingType(DescribeThingTypeRequest request)
+        {
+            var marshaller = new DescribeThingTypeRequestMarshaller();
+            var unmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThingTypeRequest,DescribeThingTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThingType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeThingTypeResponse> DescribeThingTypeAsync(DescribeThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeThingTypeRequestMarshaller();
+            var unmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeThingTypeRequest,DescribeThingTypeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DetachPrincipalPolicy
 
         internal DetachPrincipalPolicyResponse DetachPrincipalPolicy(DetachPrincipalPolicyRequest request)
@@ -1830,7 +1958,7 @@ namespace Amazon.IoT
         /// Detaches the specified principal from the specified thing.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
+        /// <param name="principal">If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2583,6 +2711,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
@@ -2646,6 +2777,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
@@ -2695,8 +2829,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
-        /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
+        /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
+        /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
+        /// and attributeValue=Red retrieves all things in the registry that contain an attribute
+        /// <b>Color</b> with the value <b>Red</b>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2740,6 +2876,37 @@ namespace Amazon.IoT
             var unmarshaller = ListThingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListThingsRequest,ListThingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThingTypes
+
+        internal ListThingTypesResponse ListThingTypes(ListThingTypesRequest request)
+        {
+            var marshaller = new ListThingTypesRequestMarshaller();
+            var unmarshaller = ListThingTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListThingTypesRequest,ListThingTypesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThingTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThingTypes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListThingTypesResponse> ListThingTypesAsync(ListThingTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListThingTypesRequestMarshaller();
+            var unmarshaller = ListThingTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListThingTypesRequest,ListThingTypesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

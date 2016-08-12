@@ -90,6 +90,9 @@
     <Compile Include="Amazon.Runtime\Internal\Auth\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Auth\_bcl+coreclr\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\Internal\Settings\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -174,6 +177,9 @@
     <Compile Include="Amazon.Util\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RegionEndpoint\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ThirdParty\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -216,9 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="endpoints.json">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="endpoints.customizations.json">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

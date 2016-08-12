@@ -61,7 +61,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetThingName())
                 throw new AmazonIoTException("Request object does not have required field ThingName set");
             uriResourcePath = uriResourcePath.Replace("{thingName}", StringUtils.FromString(publicRequest.ThingName));
+            
+            if (publicRequest.IsSetExpectedVersion())
+                request.Parameters.Add("expectedVersion", StringUtils.FromLong(publicRequest.ExpectedVersion));
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }

@@ -40,6 +40,7 @@ namespace Amazon.Elasticsearch.Model
         private string _domainName;
         private EBSOptions _ebsOptions;
         private ElasticsearchClusterConfig _elasticsearchClusterConfig;
+        private string _elasticsearchVersion;
         private SnapshotOptions _snapshotOptions;
 
         /// <summary>
@@ -137,6 +138,27 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetElasticsearchClusterConfig()
         {
             return this._elasticsearchClusterConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticsearchVersion. 
+        /// <para>
+        /// String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or
+        /// "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+        /// target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ElasticsearchVersion
+        {
+            get { return this._elasticsearchVersion; }
+            set { this._elasticsearchVersion = value; }
+        }
+
+        // Check to see if ElasticsearchVersion property is set
+        internal bool IsSetElasticsearchVersion()
+        {
+            return this._elasticsearchVersion != null;
         }
 
         /// <summary>

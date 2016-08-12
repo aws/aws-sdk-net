@@ -354,6 +354,10 @@
       <Project>{440F01E4-310D-4514-8478-7F7E12DBFE34}</Project>
       <Name>AWSSDK.ServiceCatalog.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net45.csproj">
+      <Project>{5de41572-b345-4727-ad6d-0d08ab92e49b}</Project>
+      <Name>AWSSDK.CommonTest.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

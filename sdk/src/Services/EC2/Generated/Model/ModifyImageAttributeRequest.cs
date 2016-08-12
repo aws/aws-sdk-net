@@ -37,6 +37,12 @@ namespace Amazon.EC2.Model
     /// AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product
     /// code cannot be made public.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// The SriovNetSupport enhanced networking attribute cannot be changed using this command.
+    /// Instead, enable SriovNetSupport on an instance and create an AMI from the instance.
+    /// This will result in an image with SriovNetSupport enabled.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class ModifyImageAttributeRequest : AmazonEC2Request

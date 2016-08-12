@@ -1981,6 +1981,10 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Amazon SES overrides any Message-ID and Date headers you provide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
         /// is counted against your sending quota - the maximum number of emails you can send
         /// in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon

@@ -234,6 +234,37 @@ namespace Amazon.DirectoryService
         #endregion
 
         
+        #region  AddIpRoutes
+
+        internal AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request)
+        {
+            var marshaller = new AddIpRoutesRequestMarshaller();
+            var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<AddIpRoutesRequest,AddIpRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddIpRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddIpRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddIpRoutesResponse> AddIpRoutesAsync(AddIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddIpRoutesRequestMarshaller();
+            var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddIpRoutesRequest,AddIpRoutesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddTagsToResource
 
         internal AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
@@ -1087,6 +1118,37 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  ListIpRoutes
+
+        internal ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request)
+        {
+            var marshaller = new ListIpRoutesRequestMarshaller();
+            var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIpRoutesRequest,ListIpRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIpRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIpRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListIpRoutesResponse> ListIpRoutesAsync(ListIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListIpRoutesRequestMarshaller();
+            var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIpRoutesRequest,ListIpRoutesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1144,6 +1206,37 @@ namespace Amazon.DirectoryService
             var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterEventTopicRequest,RegisterEventTopicResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveIpRoutes
+
+        internal RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request)
+        {
+            var marshaller = new RemoveIpRoutesRequestMarshaller();
+            var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveIpRoutesRequest,RemoveIpRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveIpRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveIpRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveIpRoutesResponse> RemoveIpRoutesAsync(RemoveIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveIpRoutesRequestMarshaller();
+            var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveIpRoutesRequest,RemoveIpRoutesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

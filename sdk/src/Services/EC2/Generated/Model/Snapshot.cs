@@ -277,7 +277,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the volume that was used to create the snapshot.
+        /// The ID of the volume that was used to create the snapshot. Snapshots created by the
+        /// <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for
+        /// any purpose.
         /// </para>
         /// </summary>
         public string VolumeId

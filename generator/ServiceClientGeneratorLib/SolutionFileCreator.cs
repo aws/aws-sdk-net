@@ -260,7 +260,7 @@ namespace ServiceClientGenerator
             };
 
             var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-            foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+            foreach (var testFoldername in new[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
             {
                 var testsFolder = Path.Combine(sdkTestsFolder, testFoldername);
                 foreach (var projectFile in Directory.GetFiles(testsFolder, awssdkProjectFileNamePattern, SearchOption.TopDirectoryOnly))
@@ -351,7 +351,7 @@ namespace ServiceClientGenerator
                     var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
 
                     var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-                    foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+                    foreach (var testFoldername in new[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
                     {
                         var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
                         foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
@@ -477,7 +477,7 @@ namespace ServiceClientGenerator
             if (includeTests)
             {
                 var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-                foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+                foreach (var testFoldername in new[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
                 {
                     var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
                     foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))

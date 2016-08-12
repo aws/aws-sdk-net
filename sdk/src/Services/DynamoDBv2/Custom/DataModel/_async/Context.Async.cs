@@ -351,7 +351,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="values">
         /// Value(s) of the condition.
         /// For all operations except QueryOperator.Between, values should be one value.
-        /// For QueryOperator.Betwee, values should be two values.
+        /// For QueryOperator.Between, values should be two values.
         /// </param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>

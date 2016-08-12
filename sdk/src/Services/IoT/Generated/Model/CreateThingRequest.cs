@@ -29,18 +29,23 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateThing operation.
-    /// Creates a thing in the Thing Registry.
+    /// Creates a thing record in the thing registry.
     /// </summary>
     public partial class CreateThingRequest : AmazonIoTRequest
     {
         private AttributePayload _attributePayload;
         private string _thingName;
+        private string _thingTypeName;
 
         /// <summary>
         /// Gets and sets the property AttributePayload. 
         /// <para>
-        /// The attribute payload, which consists of up to 3 name/value pairs in a JSON document
-        /// (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+        /// The attribute payload, which consists of up to three name/value pairs in a JSON document.
+        /// For example:
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
         /// </para>
         /// </summary>
         public AttributePayload AttributePayload
@@ -58,7 +63,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ThingName. 
         /// <para>
-        /// The name of the thing.
+        /// The name of the thing to create.
         /// </para>
         /// </summary>
         public string ThingName
@@ -71,6 +76,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingName()
         {
             return this._thingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingTypeName. 
+        /// <para>
+        /// The name of the thing type associated with the new thing.
+        /// </para>
+        /// </summary>
+        public string ThingTypeName
+        {
+            get { return this._thingTypeName; }
+            set { this._thingTypeName = value; }
+        }
+
+        // Check to see if ThingTypeName property is set
+        internal bool IsSetThingTypeName()
+        {
+            return this._thingTypeName != null;
         }
 
     }

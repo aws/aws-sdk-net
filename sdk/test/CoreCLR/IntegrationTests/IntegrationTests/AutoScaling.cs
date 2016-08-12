@@ -22,103 +22,30 @@ namespace Amazon.DNXCore.IntegrationTests
         public async Task DescribeAccountLimitsTest()
         {
             var response = await Client.DescribeAccountLimitsAsync();
-            var result = response;
             Assert.NotNull(response);
             Assert.NotNull(response.ResponseMetadata);
             Assert.NotNull(response.ResponseMetadata.RequestId);
-            Assert.NotNull(result);
-            Assert.NotEqual(0, result.MaxNumberOfAutoScalingGroups);
-            Assert.NotEqual(0, result.MaxNumberOfLaunchConfigurations);
+            Assert.NotEqual(0, response.MaxNumberOfAutoScalingGroups);
+            Assert.NotEqual(0, response.MaxNumberOfLaunchConfigurations);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeAutoScalingGroupsTest()
+        public async Task NoParamOperationsTest()
         {
-            var response = await Client.DescribeAutoScalingGroupsAsync();
-            Assert.NotNull(response);
+            Assert.NotNull(await Client.DescribeAutoScalingGroupsAsync());
+            Assert.NotNull(await Client.DescribePoliciesAsync());
+            Assert.NotNull(await Client.DescribeScalingProcessTypesAsync());
+            Assert.NotNull(await Client.DescribeScalingActivitiesAsync());
+            Assert.NotNull(await Client.DescribeNotificationConfigurationsAsync());
+            Assert.NotNull(await Client.DescribeAutoScalingNotificationTypesAsync());
+            Assert.NotNull(await Client.DescribeAutoScalingInstancesAsync());
+            Assert.NotNull(await Client.DescribeLaunchConfigurationsAsync());
+            Assert.NotNull(await Client.DescribeAdjustmentTypesAsync());
+            Assert.NotNull(await Client.DescribeScheduledActionsAsync());
+            Assert.NotNull(await Client.DescribeMetricCollectionTypesAsync());
         }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribePoliciesTest()
-        {
-            var response = await Client.DescribePoliciesAsync();
-            Assert.NotNull(response);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeScalingProcessTypesTest()
-        {
-            var response = await Client.DescribeScalingProcessTypesAsync();
-            Assert.NotNull(response);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeScalingActivitiesTest()
-        {
-            var response = await Client.DescribeScalingActivitiesAsync();
-            Assert.NotNull(response);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeNotificationConfigurationsTest()
-        {
-            var response = await Client.DescribeNotificationConfigurationsAsync();
-            Assert.NotNull(response);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeAutoScalingNotificationTypesTest()
-        {
-            var response = await Client.DescribeAutoScalingNotificationTypesAsync();
-            Assert.NotNull(response);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeAutoScalingInstancesTest()
-        {
-            var response = await Client.DescribeAutoScalingInstancesAsync();
-            Assert.NotNull(response);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeLaunchConfigurationsTest()
-        {
-            var response = await Client.DescribeLaunchConfigurationsAsync();
-            Assert.NotNull(response);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeAdjustmentTypesTest()
-        {
-            var response = await Client.DescribeAdjustmentTypesAsync();
-            Assert.NotNull(response);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeScheduledActionsTest()
-        {
-            var response = await Client.DescribeScheduledActionsAsync();
-            Assert.NotNull(response);
-        }
-
-        [Fact]
-        [Trait(CategoryAttribute,"AutoScaling")]
-        public async Task NoParamDescribeMetricCollectionTypesTest()
-        {
-            var response = await Client.DescribeMetricCollectionTypesAsync();
-            Assert.NotNull(response);
-        }
-
+        
         [Fact]
         [Trait(CategoryAttribute,"AutoScaling")]
         public async Task NoParamDescribeTerminationTests()
