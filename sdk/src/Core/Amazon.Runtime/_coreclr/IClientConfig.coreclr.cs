@@ -26,6 +26,16 @@ namespace Amazon.Runtime
     public partial interface IClientConfig
     {
         /// <summary>
+        /// Gets the ProxyHost property.
+        /// </summary>
+        string ProxyHost { get;  }
+
+        /// <summary>
+        /// Gets the ProxyPort property.
+        /// </summary>
+        int ProxyPort { get;  }
+
+        /// <summary>
         /// Returns a WebProxy instance configured to match the proxy settings
         /// in the client configuration.
         /// </summary>

@@ -37,23 +37,23 @@ namespace Amazon.S3
     {
         internal void ConfigureProxy(HttpWebRequest httpRequest)
         {
-#if BCL
+#if !CORECLR
             if (!string.IsNullOrEmpty(Config.ProxyHost) && Config.ProxyPort != -1)
             {
                 WebProxy proxy = new WebProxy(Config.ProxyHost, Config.ProxyPort);
                 httpRequest.Proxy = proxy;
             }
-
+#else
+            httpRequest.Proxy = Config.GetWebProxy();
+#endif
             if (httpRequest.Proxy != null && Config.ProxyCredentials != null)
             {
                 httpRequest.Proxy.Credentials = Config.ProxyCredentials;
             }
-#elif CORECLR
-#endif
         }
 
 
-        #region GetPreSignedURL
+#region GetPreSignedURL
 
         /// <summary>
         /// Create a signed URL allowing access to a resource that would 
@@ -232,7 +232,7 @@ namespace Amazon.S3
             return request;
         }
 
-        #endregion    
+#endregion
 
         private Protocol DetermineProtocol()
         {
@@ -241,7 +241,7 @@ namespace Amazon.S3
             return protocol;
         }
 
-        #region ICoreAmazonS3 Implementation
+#region ICoreAmazonS3 Implementation
 
         string ICoreAmazonS3.GeneratePreSignedURL(string bucketName, string objectKey, DateTime expiration, IDictionary<string, object> additionalProperties)
         {
@@ -354,7 +354,7 @@ namespace Amazon.S3
             return this.EndGetObject(result).ResponseStream;
         }
 #endif
-        #endregion
+#endregion
     }
 }
 

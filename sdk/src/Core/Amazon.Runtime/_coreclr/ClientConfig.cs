@@ -16,6 +16,8 @@ using System;
 using System.Net;
 using Amazon.Util;
 using System.Globalization;
+using Amazon.Runtime.Internal.Util;
+
 
 namespace Amazon.Runtime
 {
@@ -25,8 +27,9 @@ namespace Amazon.Runtime
     /// </summary>    
     public abstract partial class ClientConfig
     {
-        private IWebProxy _proxy;
-        
+        private IWebProxy proxy = null;
+        private string proxyHost;
+        private int proxyPort = -1;
         private static RegionEndpoint GetDefaultRegionEndpoint()
         {
             return FallbackRegionFactory.GetRegionEndpoint();
@@ -38,7 +41,7 @@ namespace Amazon.Runtime
         /// </summary>
         public IWebProxy GetWebProxy()
         {
-            return this._proxy;
+            return proxy;
         }
 
         /// <summary>
@@ -48,9 +51,51 @@ namespace Amazon.Runtime
         /// <param name="proxy">The proxy details</param>
         public void SetWebProxy(IWebProxy proxy)
         {
-            this._proxy = proxy;
+            this.proxy = proxy;
         }
 
+        /// <summary>
+        /// Gets and sets of the ProxyHost property.
+        /// </summary>
+        public string ProxyHost
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.proxyHost))
+                    return AWSConfigs.ProxyConfig.Host;
+
+                return this.proxyHost;
+            }
+            set
+            {
+                this.proxyHost = value;
+                if (this.ProxyPort>0)
+                {
+                    this.proxy = new WebProxy(ProxyHost, ProxyPort);
+                }
+            }
+        }
+        /// <summary>
+        /// Gets and sets of the ProxyPort property.
+        /// </summary>
+        public int ProxyPort
+        {
+            get
+            {
+                if (this.proxyPort <= 0)
+                    return AWSConfigs.ProxyConfig.Port.GetValueOrDefault();
+
+                return this.proxyPort;
+            }
+            set
+            {
+                this.proxyPort = value;
+                if (this.ProxyHost!=null)
+                {
+                    this.proxy = new WebProxy(ProxyHost, ProxyPort);
+                }
+            }
+        }
 
     }
 }

@@ -521,6 +521,7 @@ namespace Amazon.S3.Util
             var concreteClient = s3Client as AmazonS3Client;
             if (concreteClient != null)
             {
+
                 concreteClient.ConfigureProxy(httpRequest);
             }
 
