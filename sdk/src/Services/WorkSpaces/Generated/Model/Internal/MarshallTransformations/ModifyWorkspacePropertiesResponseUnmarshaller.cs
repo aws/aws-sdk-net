@@ -61,6 +61,10 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+            {
+                return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValuesException"))
             {
                 return new InvalidParameterValuesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -76,6 +80,10 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceUnavailableException"))
+            {
+                return new ResourceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedWorkspaceConfigurationException"))
             {

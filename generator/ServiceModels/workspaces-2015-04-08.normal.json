@@ -132,7 +132,9 @@
         {"shape":"InvalidResourceStateException"},
         {"shape":"OperationInProgressException"},
         {"shape":"UnsupportedWorkspaceConfigurationException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceUnavailableException"}
       ],
       "documentation":"<p>Modifies the WorkSpace properties, including the RunningMode and AutoStop time.</p>"
     },
@@ -191,6 +193,13 @@
     "ARN":{
       "type":"string",
       "pattern":"^arn:aws:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$"
+    },
+    "AccessDeniedException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "exception":true
     },
     "Alias":{"type":"string"},
     "BooleanObject":{"type":"boolean"},

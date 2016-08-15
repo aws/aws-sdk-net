@@ -799,6 +799,9 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// 
         /// <returns>The response from the ModifyWorkspaceProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
@@ -810,6 +813,9 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedWorkspaceConfigurationException">
         /// The WorkSpace does not have the supported configuration for this operation. For more
