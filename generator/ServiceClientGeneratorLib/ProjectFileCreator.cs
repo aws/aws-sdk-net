@@ -62,7 +62,6 @@ namespace ServiceClientGenerator
                 templateSession["IndividualFileIncludes"] = new List<string>
                 {
                     "endpoints.json",
-                    "endpoints.customizations.json"
                 };
                 templateSession["KeyFilePath"] = @"..\..\awssdk.dll.snk";
                 templateSession["SupressWarnings"] = "419,1570,1591";

@@ -141,7 +141,19 @@ namespace Amazon.S3.Util
                     || regionGroupValue.Equals("external-1", StringComparison.Ordinal))
                     this.Region = RegionEndpoint.USEast1;
                 else
-                    this.Region = RegionEndpoint.GetBySystemName(regionGroupValue);
+                {
+                    try
+                    {
+                        this.Region = RegionEndpoint.GetBySystemName(regionGroupValue);
+                    }
+                    catch (Amazon.Runtime.AmazonClientException)
+                    {
+                        // in cases where endpoints such as "s3-accelerate" matches, 
+                        // just set the region to null and move on.
+                        this.Region = null;
+                    }
+                }
+                    
             }
         }
 

@@ -516,7 +516,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (endpoint != null)
             {
                 var serviceEndpoint = endpoint.GetEndpointForService(serviceName);
-                if (serviceEndpoint.AuthRegion != null)
+                if (!string.IsNullOrEmpty(serviceEndpoint.AuthRegion))
                     return serviceEndpoint.AuthRegion;
 
                 return endpoint.SystemName; 

@@ -38,7 +38,7 @@ namespace ThirdParty.BouncyCastle.Asn1
 		protected internal Asn1Sequence(
 			int capacity)
 		{
-            seq = new ArrayList(capacity);
+            seq = Platform.CreateArrayList(capacity);
 		}
 
 		public virtual IEnumerator GetEnumerator()

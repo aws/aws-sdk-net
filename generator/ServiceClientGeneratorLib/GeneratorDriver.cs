@@ -94,6 +94,7 @@ namespace ServiceClientGenerator
         public const string ServicesSubFoldername = "Services";
         public const string CoreSubFoldername = "Core";
         public const string GeneratedCodeFoldername = "Generated";
+        public const string CommonTestSubFoldername = "Common";
         public const string UnitTestsSubFoldername = "UnitTests";
         public const string IntegrationTestsSubFolderName = "IntegrationTests";
         public const string XamarinComponentsSubFolderName = "xamarin-components";

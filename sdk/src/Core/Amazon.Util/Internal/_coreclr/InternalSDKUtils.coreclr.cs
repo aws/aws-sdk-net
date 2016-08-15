@@ -17,31 +17,63 @@
  *
  *  AWS SDK for .NET
  */
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq;
-using System.Text;
+
+using System.Runtime.InteropServices;
 
 namespace Amazon.Util.Internal
 {
     public static partial class InternalSDKUtils
     {
         static string _userAgentBaseName = "aws-sdk-dotnet-coreclr";
-
-        static string DetermineRuntime()
+        private readonly static string _unknown = "Unknown";
+        
+        public static string GetValidSubstringOrUnknown(string str, int start, int end)
         {
-            return "CoreCLR";
+            if ((start != -1) && (end != -1) &&
+                (0 <= start) && (end <= str.Length))
+            {
+                string substr = str.Substring(start, end-start);
+                if (!string.IsNullOrWhiteSpace(substr))
+                {
+                    return substr.Trim().Replace(' ', '_');
+                }
+
+            }
+            return _unknown;
         }
 
-        static string DetermineFramework()
+        public static string DetermineRuntime()
         {
-            return "Unknown";
+            string desc = RuntimeInformation.FrameworkDescription.Trim();
+            return GetValidSubstringOrUnknown(desc, 0, desc.LastIndexOf(' '));
         }
 
-        static string DetermineOSVersion()
+        public static string DetermineFramework()
         {
-            return "Unknown";
+            string desc = RuntimeInformation.FrameworkDescription.Trim();
+            return GetValidSubstringOrUnknown(desc, desc.LastIndexOf(' ') + 1, desc.Length);
+        }
+
+        public static string DetermineOS()
+        {
+            string desc = RuntimeInformation.OSDescription.Trim();
+            return GetValidSubstringOrUnknown(desc, 0, desc.LastIndexOf(' '));
+        }
+
+        public static string DetermineOSVersion()
+        {
+            string desc = RuntimeInformation.OSDescription.Trim();
+            return GetValidSubstringOrUnknown(desc, desc.LastIndexOf(' ') + 1, desc.Length);
+        }
+
+        public static string PlatformUserAgent()
+        {
+            string desc = RuntimeInformation.OSDescription;
+            if (!string.IsNullOrWhiteSpace(desc))
+            {
+                return desc.Trim().Replace(' ', '_');
+            }
+            return _unknown;
         }
     }
 }
