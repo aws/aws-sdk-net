@@ -513,9 +513,8 @@ namespace Amazon.CognitoSync.SyncManager.Internal
              * Grab an instance of the record from the local store with the remote change's 
              * key and the snapshot version.
              * 1) If both are null the remote change is new and we should save. 
-             * 2) If both exist but the values and sync counts have changed, 
-             *    it has changed locally and we shouldn't overwrite with the remote changes, 
-             *    which will still exist in remote. 
+             * 2) If both exist but the value has changed locally we shouldn't overwrite with the remote changes, 
+             *    which will still exist in remote, but should update the sync count to avoid a false-conflict later. 
              * 3) If both exist and the values have not changed, we should save the remote change.	
              * 4) If the current check exists but it wasn't in the snapshot, we should save.	
              */
@@ -531,14 +530,52 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             {
                 Record databaseRecord = this.GetRecord(identityId, datasetName, record.Key);
                 Record oldDatabaseRecord = localRecordMap.ContainsKey(record.Key) ? localRecordMap[record.Key] : null;
-                if (databaseRecord != null && oldDatabaseRecord != null
-                        && (!StringUtils.Equals(databaseRecord.Value, oldDatabaseRecord.Value)
-                        || databaseRecord.SyncCount != oldDatabaseRecord.SyncCount
-                        || !StringUtils.Equals(databaseRecord.LastModifiedBy, oldDatabaseRecord.LastModifiedBy)))
+
+                if (databaseRecord != null && oldDatabaseRecord != null)
                 {
-                    continue;
+                    // The record exists both before and after the update locally, but has it changed?
+
+                    if (databaseRecord.SyncCount != oldDatabaseRecord.SyncCount
+                        || !StringUtils.Equals(databaseRecord.LastModifiedBy, oldDatabaseRecord.LastModifiedBy))
+                    {
+                        continue;
+                    }
+
+                    if (!StringUtils.Equals(databaseRecord.Value, oldDatabaseRecord.Value))
+                    {
+                        if (StringUtils.Equals(record.Value, oldDatabaseRecord.Value))
+                        {
+                            // The value has changed, so this is a local change during the push record operation.
+                            // Avoid a future conflict by updating the metadata so that it looks like the modifications that 
+                            // occurred during the put record operation happened after the put operation completed.
+                            Record resolvedRecord =
+                                new Record(
+                                    record.Key,
+                                    databaseRecord.Value,
+                                    record.SyncCount,
+                                    record.LastModifiedDate,
+                                    record.LastModifiedBy,
+                                    databaseRecord.DeviceLastModifiedDate,
+                                    true
+                                    );
+
+                            UpdateOrInsertRecord(identityId, datasetName, resolvedRecord);
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                        
+                    }
+                    else
+                    {
+                        UpdateOrInsertRecord(identityId, datasetName, record);
+                    }
                 }
-                UpdateOrInsertRecord(identityId, datasetName, record);
+                else
+                {
+                    UpdateOrInsertRecord(identityId, datasetName, record);
+                }
             }
         }
 

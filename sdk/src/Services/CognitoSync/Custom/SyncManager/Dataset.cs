@@ -566,13 +566,13 @@ namespace Amazon.CognitoSync.SyncManager
 
             // push changes to remote
             List<Record> localChanges = this.ModifiedRecords;
-            long maxPatchSyncCount = 0;
+            long minPatchSyncCount = lastSyncCount;
             foreach (Record r in localChanges)
             {
                 //track the max sync count
-                if (r.SyncCount > maxPatchSyncCount)
+                if (r.SyncCount < minPatchSyncCount)
                 {
-                    maxPatchSyncCount = r.SyncCount;
+                    minPatchSyncCount = r.SyncCount;
                 }
             }
             if (localChanges.Count != 0)
@@ -631,9 +631,9 @@ namespace Amazon.CognitoSync.SyncManager
                     else
                     {
                         //it's possible there is a local dirty record with a stale sync count this will fix it
-                        if (lastSyncCount > maxPatchSyncCount)
+                        if (lastSyncCount > minPatchSyncCount)
                         {
-                            Local.UpdateLastSyncCount(IdentityId, DatasetName, maxPatchSyncCount);
+                            Local.UpdateLastSyncCount(IdentityId, DatasetName, minPatchSyncCount);
                         }
 #if BCL35
                         RunSyncOperation(--retry);
