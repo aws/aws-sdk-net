@@ -59,6 +59,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMerge())
+            {
+                context.Writer.WritePropertyName("merge");
+                context.Writer.Write(requestObject.Merge);
+            }
+
         }
 
         /// <summary>

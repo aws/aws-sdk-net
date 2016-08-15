@@ -97,8 +97,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        /// One or more policy names or policy ARNs to be described. If you omit this list, all
-        /// policy names are described. If an group name is provided, the results are limited
+        /// One or more policy names or policy ARNs to be described. If you omit this parameter,
+        /// all policy names are described. If an group name is provided, the results are limited
         /// to that group. This list is limited to 50 items. If you specify an unknown policy
         /// name, it is ignored with no error.
         /// </para>

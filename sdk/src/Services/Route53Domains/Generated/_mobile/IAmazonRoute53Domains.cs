@@ -192,6 +192,22 @@ namespace Amazon.Route53Domains
 
         #endregion
                 
+        #region  GetDomainSuggestions
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainSuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainSuggestions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDomainSuggestionsResponse> GetDomainSuggestionsAsync(GetDomainSuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetOperationDetail
 
 
@@ -333,6 +349,22 @@ namespace Amazon.Route53Domains
 
         #endregion
                 
+        #region  RenewDomain
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenewDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenewDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RenewDomainResponse> RenewDomainAsync(RenewDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ResendContactReachabilityEmail
 
 
@@ -471,6 +503,22 @@ namespace Amazon.Route53Domains
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(UpdateTagsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ViewBilling
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ViewBilling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ViewBilling operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ViewBillingResponse> ViewBillingAsync(ViewBillingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

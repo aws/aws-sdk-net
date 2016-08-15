@@ -75,12 +75,17 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of routing strategy. Possible routing types include the following: <ul><li><b>SIMPLE</b>
-        /// – The alias resolves to one specific fleet. Use this type when routing to active fleets.</li><li><b>TERMINAL</b>
-        /// – The alias does not resolve to a fleet but instead can be used to display a message
-        /// to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
-        /// message embedded.</li></ul>
+        /// Type of routing strategy.
         /// </para>
+        ///  
+        /// <para>
+        /// Possible routing types include the following:
+        /// </para>
+        ///  <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when
+        /// routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not resolve to
+        /// a fleet but instead can be used to display a message to the user. A terminal alias
+        /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+        /// embedded.</li></ul>
         /// </summary>
         public RoutingStrategyType Type
         {

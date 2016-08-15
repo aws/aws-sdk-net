@@ -1,3 +1,116 @@
+### 3.1.92.0 (2016-08-11 07:53 UTC)
+* AutoScaling (3.1.4.0)
+	* New API for AutoScaling - ELB L7 integration.
+* ECS (3.1.7.0)
+	* Amazon EC2 Container services support Application Load Balancer target groups to enable dynamic ports and path-based routing.
+* ElasticLoadBalancing (3.1.1.0)
+	* Documentation and other minor changes to the classic Elastic Load Balancing model to support the launch of Elastic Load Balancing V2 API which can be found in the Amazon.ElasticLoadBalancingV2 namespace.
+* ElasticLoadBalancingV2 (3.1.0.0)
+	* Application load balancers are a new load balancer that is now supported by the Elastic Load Balancing service. Application load balancers support HTTP/2, WebSockets, routing based on URL path, and routing to multiple ports on a single instance.
+* KeyManagementService (3.1.3.0)
+	* New import key feature lets you import keys from your own key management infrastructure to KMS for greater control over generation and storage of keys and meeting compliance requirements of sensitive workloads.
+* KinesisAnalytics (3.1.0.0)
+	* Added support for Amazon Kinesis Analytics, a fully managed service for continuously querying streaming data using standard SQL. With Kinesis Analytics, you can write standard SQL queries on streaming data and gain actionable insights in real-time, without having to learn any new programming skills. The service allows you to build applications that continuously read data from streaming data sources, process that data using standard SQL, and send the processed data to up to four destinations of your choice. Kinesis Analytics enables you to generate time-series analytics, feed a real-time dashboard, create real-time alarms and notifications, and much more.
+* S3 (3.1.9.0)
+	* Updated to use new Core, version 3.1.10.0
+	* Added support for requesting dualstack (ipv6) endpoints using a new UseDualstackEndpoint property on the service configuration class. Note that not all regions currently support dualstack endpoints - you should consult S3 documentation to verify a dualstack endpoint is available for the region you intend to use before setting this switch.
+* Snowball (3.1.0.0)
+	* Added support for the Snowball job management API.
+* Core 3.1.10.0
+	* Added a new flag, UseDualstackEndpoint, to the base configuration class for all services. Currently this flag is for use with Amazon S3 only. Other services will add dualstack (ipv6) endpoints in the future.
+
+### 3.1.91.0 (2016-08-10 00:12 UTC)
+* AWSMarketplaceCommerceAnalytics (3.1.3.0)
+	* In this release, we added a new API, StartSupportDataExport, to the AWS Marketplace Commerce Analytics Service. StartSupportDataExport returns static test data only at this time. The AWS Marketplace Commerce Analytics Service allows AWS Marketplace Sellers to programmatically access product and customer data on AWS Marketplace. For more information, contact aws-marketplace-seller-ops@amazon.com.
+* CloudFront (3.1.5.0)
+	* Amazon CloudFront now supports tagging for Web and Streaming distributions. Tags make it easier for you to allocate costs and optimize spending by categorizing and grouping AWS resources.
+* ECR (3.1.2.0)
+	* Adds filtering of ListImages requests based on whether an image is tagged or untagged
+* S3 (3.1.8.3)
+	* Minor update to PutBucket operation
+
+### 3.1.90.1 (2016-08-09 00:44 UTC)
+* Core 3.1.9.2
+	* Fix issue with LitJSON not properly deserializing dictionaries
+	* all services packages updated to require new core
+
+### 3.1.90.0 (2016-08-04 23:43 UTC)
+* CognitoIdentityProvider (3.1.1.0)
+	* Adding Auth Support for Cognito User Pools 
+* GameLift (3.1.2.0)
+	* Added support for GameSession Search API
+* Lambda (3.1.4.6)
+	* Doc only update
+* RDS (3.1.15.0)
+	* S3 Snapshot Ingestion and MoveToVpc feature added
+
+### 3.1.89.0 (2016-08-02 21:00 UTC)
+* ApplicationAutoScaling (3.1.0.5)
+	* Documentation update reflecting scalable target limit increase.
+* AWSMarketplaceMetering (3.1.0.5)
+	* Add path shortening for new discovery service
+* CloudWatch (3.1.0.10)
+	* Documentation update for MetricDatum.
+* CloudWatchLogs (3.1.3.0)
+	* Documentation update. Adding an optional parameter, DefaultValue, to PutMetricFilterRequest.
+* DirectoryService (3.1.5.1)
+	* Documentation update.
+* ElasticMapReduce (3.1.6.0)
+	* API Update for EMR: Enhanced Debugging
+* IoT (3.1.8.0)
+	* Regenerating from latest service model iot-2015-05-28.normal.json
+* MachineLearning (3.1.3.0)
+	* Added the timestamps StartedAt, FinishedAt, and ComputeTime to the following API responses:DescribeBatchPredictionsOutput DescribeDataSourcesOutput DescribeEvaluationsOutput DescribeMLModelsOutput GetBatchPredictionsOutput GetDataSourcesOutput GetEvaluationsOutput GetMLModelsOutput. Added TotalRecordCount and InvalidRecordCount to the following API responses: DescribeBatchPredictionsOutput GetBatchPredictionsOutput.
+* RDS (3.1.14.0)
+	* Support for License model and versioning of option groups.
+* Route53Domains (3.1.2.0)
+	*  Adds new APIs to renew domains for a specified duration, get domain suggestions, and view billing.
+
+### 3.1.88.0 (2016-07-29 02:27 UTC)
+* APIGateway (3.1.6.0)
+	* Added support for Cognito User Pools Auth 
+* DirectoryService (3.1.5.0)
+	* New APIs for Microsoft AD to manage routing 
+* EC2 (3.1.19.0)
+	* Updated for DNS for VPC Peering 
+* Elasticsearch (3.1.1.0)
+	* Amazon Elasticsearch Service now supports elasticsearch version 2.3. Version 2.3 offers improved performance, memory management, and security. It also offers several new features including: pipeline aggregations to perform advanced analytics like moving averages and derivatives, and enhancements to geospatial queries
+* SecurityToken (3.1.4.4)
+	* Doc only update
+* SimpleEmail (3.1.4.3)
+	* Doc update
+
+### 3.1.87.0 (2016-07-26 23:19 UTC)
+* CognitoSync (3.1.1.6)
+	* Github pull request 400 fixing an issue when deleting a merged dataset after the deletion is complete.
+* IoT (3.1.7.0)
+	* This update adds support for thing types. Thing types are entities that store a description of common features of Things that are of the same logical type.
+* MobileAnalytics (3.1.1.11)
+	*     Github pull request 417 making the event parsing more robust.
+
+### 3.1.86.0 (2016-07-21 23:04 UTC)
+* CertificateManager (3.1.4.0)
+	* Add reason for failure when describing certificates.
+* CloudFormation (3.1.6.0)
+	* Added support for specifying IAM capabilities for stacks.
+* ConfigService (3.1.6.0)
+	* Adding support for ACM and RDS resource types.
+Two new features (Hybrid Rules & Forced Evaluation).
+* ECS (3.1.6.1)
+	* Documentation update.
+* ElasticTranscoder (3.1.0.10)
+	* Updated documentation for WAV file output format support.
+* Lambda (3.1.4.5)
+	* Minor documentation update.
+* Core 3.1.9.1
+	* Fixed issue where hyphens were automatically stripped from access policies during unmarshall.
+
+### 3.1.85.0 (2016-07-19 21:11 UTC)
+* DeviceFarm (3.1.7.0)
+	* Add support for managing remote access sessions.
+* SimpleSystemsManagement (3.1.4.0)
+	* Added notification support,allowing customers to be notified when a command reaches a terminated status.
+
 ### 3.1.84.0 (2016-07-13 22:00 UTC)
 * DatabaseMigrationService (3.1.2.0)
 	* API updates to enable SSL-enabled endpoints.

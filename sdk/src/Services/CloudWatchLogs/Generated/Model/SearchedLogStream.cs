@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// An object indicating the search status of a log stream in a <code class="code">FilterLogEvents</code>
+    /// An object indicating the search status of a log stream in a <code>FilterLogEvents</code>
     /// request.
     /// </summary>
     public partial class SearchedLogStream

@@ -72,8 +72,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are
-        /// allowed in each job flow. 
+        /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed
+        /// in each job flow.
         /// 
         ///  
         /// <para>
@@ -87,20 +87,20 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  
         /// <para>
-        ///  A step specifies the location of a JAR file stored either on the master node of the
+        /// A step specifies the location of a JAR file stored either on the master node of the
         /// job flow or in Amazon S3. Each step is performed by the main function of the main
         /// class of the JAR file. The main class can be specified either in the manifest of the
-        /// JAR or by using the MainFunction parameter of the step. 
+        /// JAR or by using the MainFunction parameter of the step.
         /// </para>
         ///  
         /// <para>
-        ///  Elastic MapReduce executes each step in the order listed. For a step to be considered
+        /// Elastic MapReduce executes each step in the order listed. For a step to be considered
         /// complete, the main function must exit with a zero exit code and all Hadoop jobs started
-        /// while the step was running must have completed and run successfully. 
+        /// while the step was running must have completed and run successfully.
         /// </para>
         ///  
         /// <para>
-        ///  You can only add steps to a job flow that is in one of the following states: STARTING,
+        /// You can only add steps to a job flow that is in one of the following states: STARTING,
         /// BOOTSTRAPPING, RUNNING, or WAITING.
         /// </para>
         /// </summary>
@@ -236,26 +236,33 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  
         /// <para>
-        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
         /// The parameters can include a list of job flow IDs, job flow states, and restrictions
         /// on job flow creation date and time.
         /// </para>
         ///  
         /// <para>
-        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// Regardless of supplied parameters, only job flows created within the last two months
         /// are returned.
         /// </para>
         ///  
         /// <para>
-        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// If no parameters are supplied, then job flows matching either of the following criteria
         /// are returned:
         /// </para>
-        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
-        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
-        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// Job flows created and completed in the last two weeks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Job flows created within the last two months that are in one of the following states:
+        /// <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// 
@@ -275,26 +282,33 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  
         /// <para>
-        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
         /// The parameters can include a list of job flow IDs, job flow states, and restrictions
         /// on job flow creation date and time.
         /// </para>
         ///  
         /// <para>
-        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// Regardless of supplied parameters, only job flows created within the last two months
         /// are returned.
         /// </para>
         ///  
         /// <para>
-        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// If no parameters are supplied, then job flows matching either of the following criteria
         /// are returned:
         /// </para>
-        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
-        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
-        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// Job flows created and completed in the last two weeks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Job flows created within the last two months that are in one of the following states:
+        /// <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobFlows service method.</param>
@@ -315,26 +329,33 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  
         /// <para>
-        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
         /// The parameters can include a list of job flow IDs, job flow states, and restrictions
         /// on job flow creation date and time.
         /// </para>
         ///  
         /// <para>
-        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// Regardless of supplied parameters, only job flows created within the last two months
         /// are returned.
         /// </para>
         ///  
         /// <para>
-        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// If no parameters are supplied, then job flows matching either of the following criteria
         /// are returned:
         /// </para>
-        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
-        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
-        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// Job flows created and completed in the last two weeks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Job flows created within the last two months that are in one of the following states:
+        /// <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -898,9 +919,9 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  
         /// <para>
-        ///  SetTerminationProtection is used to prevent accidental termination of a job flow
-        /// and to ensure that in the event of an error, the instances will persist so you can
-        /// recover any data stored in their ephemeral instance storage.
+        /// SetTerminationProtection is used to prevent accidental termination of a job flow and
+        /// to ensure that in the event of an error, the instances will persist so you can recover
+        /// any data stored in their ephemeral instance storage.
         /// </para>
         ///  
         /// <para>
@@ -912,6 +933,7 @@ namespace Amazon.ElasticMapReduce
         /// <para>
         ///  For more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
         /// a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTerminationProtection service method.</param>
@@ -977,14 +999,14 @@ namespace Amazon.ElasticMapReduce
         /// TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any
         /// step not yet completed is canceled and the EC2 instances on which the job flow is
         /// running are stopped. Any log files not already saved are uploaded to Amazon S3 if
-        /// a LogUri was specified when the job flow was created. 
+        /// a LogUri was specified when the job flow was created.
         /// 
         ///  
         /// <para>
-        ///  The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous.
+        /// The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous.
         /// Depending on the configuration of the job flow, it may take up to 5-20 minutes for
         /// the job flow to completely terminate and release allocated resources, such as Amazon
-        /// EC2 instances. 
+        /// EC2 instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateJobFlows service method.</param>

@@ -845,7 +845,8 @@ namespace Amazon.KeyManagementService
         /// correct.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
-        /// The request was rejected because a specified parameter is not supported.
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         public CreateKeyResponse CreateKey(CreateKeyRequest request)
         {
@@ -1102,6 +1103,86 @@ namespace Amazon.KeyManagementService
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteImportedKeyMaterial
+
+
+        /// <summary>
+        /// Deletes key material that you previously imported and makes the specified customer
+        /// master key (CMK) unusable. For more information about importing key material into
+        /// AWS KMS, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// When the specified CMK is in the <code>PendingDeletion</code> state, this operation
+        /// does not change the CMK's state. Otherwise, it changes the CMK's state to <code>PendingImport</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the
+        /// same key material into the CMK.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportedKeyMaterial service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImportedKeyMaterial service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        public DeleteImportedKeyMaterialResponse DeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request)
+        {
+            var marshaller = new DeleteImportedKeyMaterialRequestMarshaller();
+            var unmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImportedKeyMaterialRequest,DeleteImportedKeyMaterialResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImportedKeyMaterial operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportedKeyMaterial operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteImportedKeyMaterialRequestMarshaller();
+            var unmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteImportedKeyMaterialRequest,DeleteImportedKeyMaterialResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1406,6 +1487,10 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
         public DisableKeyRotationResponse DisableKeyRotation(string keyId)
         {
             var request = new DisableKeyRotationRequest();
@@ -1447,6 +1532,10 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         public DisableKeyRotationResponse DisableKeyRotation(DisableKeyRotationRequest request)
         {
@@ -1493,6 +1582,10 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         public Task<DisableKeyRotationResponse> DisableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1716,6 +1809,10 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
         public EnableKeyRotationResponse EnableKeyRotation(string keyId)
         {
             var request = new EnableKeyRotationRequest();
@@ -1757,6 +1854,10 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         public EnableKeyRotationResponse EnableKeyRotation(EnableKeyRotationRequest request)
         {
@@ -1803,6 +1904,10 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         public Task<EnableKeyRotationResponse> EnableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2390,6 +2495,10 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
         public GetKeyRotationStatusResponse GetKeyRotationStatus(string keyId)
         {
             var request = new GetKeyRotationStatusRequest();
@@ -2429,6 +2538,10 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         public GetKeyRotationStatusResponse GetKeyRotationStatus(GetKeyRotationStatusRequest request)
         {
@@ -2474,6 +2587,10 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
         public Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetKeyRotationStatusRequest();
@@ -2496,6 +2613,201 @@ namespace Amazon.KeyManagementService
             var unmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetKeyRotationStatusRequest,GetKeyRotationStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetParametersForImport
+
+
+        /// <summary>
+        /// Returns the items you need in order to import key material into AWS KMS from your
+        /// existing key management infrastructure. For more information about importing key material
+        /// into AWS KMS, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the key ID of the customer master key (CMK) into which you will import
+        /// key material. This CMK's <code>Origin</code> must be <code>EXTERNAL</code>. You must
+        /// also specify the wrapping algorithm and type of wrapping key (public key) that you
+        /// will use to encrypt the key material.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns a public key and an import token. Use the public key to encrypt
+        /// the key material. Store the import token to send with a subsequent <a>ImportKeyMaterial</a>
+        /// request. The public key and import token from the same response must be used together.
+        /// These items are valid for 24 hours, after which they cannot be used for a subsequent
+        /// <a>ImportKeyMaterial</a> request. To retrieve new ones, send another <code>GetParametersForImport</code>
+        /// request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetParametersForImport service method.</param>
+        /// 
+        /// <returns>The response from the GetParametersForImport service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        public GetParametersForImportResponse GetParametersForImport(GetParametersForImportRequest request)
+        {
+            var marshaller = new GetParametersForImportRequestMarshaller();
+            var unmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
+
+            return Invoke<GetParametersForImportRequest,GetParametersForImportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParametersForImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParametersForImport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetParametersForImportResponse> GetParametersForImportAsync(GetParametersForImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetParametersForImportRequestMarshaller();
+            var unmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetParametersForImportRequest,GetParametersForImportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportKeyMaterial
+
+
+        /// <summary>
+        /// Imports key material into an AWS KMS customer master key (CMK) from your existing
+        /// key management infrastructure. For more information about importing key material into
+        /// AWS KMS, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify the key ID of the CMK to import the key material into. This CMK's
+        /// <code>Origin</code> must be <code>EXTERNAL</code>. You must also send an import token
+        /// and the encrypted key material. Send the import token that you received in the same
+        /// <a>GetParametersForImport</a> response that contained the public key that you used
+        /// to encrypt the key material. You must also specify whether the key material expires
+        /// and if so, when. When the key material expires, AWS KMS deletes the key material and
+        /// the CMK becomes unusable. To use the CMK again, you can reimport the same key material.
+        /// If you set an expiration date, you can change it only by reimporting the same key
+        /// material and specifying a new expiration date.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this operation is successful, the specified CMK's key state changes to <code>Enabled</code>,
+        /// and you can use the CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you successfully import key material into a CMK, you can reimport the same key
+        /// material into that CMK, but you cannot import different key material.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportKeyMaterial service method.</param>
+        /// 
+        /// <returns>The response from the ImportKeyMaterial service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.ExpiredImportTokenException">
+        /// The request was rejected because the provided import token is expired. Use <a>GetParametersForImport</a>
+        /// to retrieve a new import token and public key, use the new public key to encrypt the
+        /// key material, and then try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.IncorrectKeyMaterialException">
+        /// The request was rejected because the provided key material is invalid or is not the
+        /// same key material that was previously imported into this customer master key (CMK).
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidCiphertextException">
+        /// The request was rejected because the specified ciphertext has been corrupted or is
+        /// otherwise invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidImportTokenException">
+        /// The request was rejected because the provided import token is invalid or is associated
+        /// with a different customer master key (CMK).
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource is not valid
+        /// for this request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how key state affects the use of a customer master key
+        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        public ImportKeyMaterialResponse ImportKeyMaterial(ImportKeyMaterialRequest request)
+        {
+            var marshaller = new ImportKeyMaterialRequestMarshaller();
+            var unmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
+
+            return Invoke<ImportKeyMaterialRequest,ImportKeyMaterialResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportKeyMaterial operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportKeyMaterial operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportKeyMaterialResponse> ImportKeyMaterialAsync(ImportKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportKeyMaterialRequestMarshaller();
+            var unmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportKeyMaterialRequest,ImportKeyMaterialResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2949,7 +3261,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the CMK. Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example: <ul> <li> Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul></param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> It must allow the principal making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>. </li> <li> The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>. </li> </ul> The policy size limit is 32 KiB (32768 bytes).</param>
+        /// <param name="policy">The key policy to attach to the CMK. If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the following criteria: <ul> <li> It must allow the principal making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>. </li> <li> The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>. </li> </ul> The policy size limit is 32 KiB (32768 bytes).</param>
         /// <param name="policyName">The name of the key policy. This value must be <code>default</code>.</param>
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
@@ -2988,7 +3300,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
-        /// The request was rejected because a specified parameter is not supported.
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         public PutKeyPolicyResponse PutKeyPolicy(string keyId, string policy, string policyName)
         {
@@ -3047,7 +3360,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
-        /// The request was rejected because a specified parameter is not supported.
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         public PutKeyPolicyResponse PutKeyPolicy(PutKeyPolicyRequest request)
         {
@@ -3068,7 +3382,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the CMK. Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example: <ul> <li> Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul></param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> It must allow the principal making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>. </li> <li> The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>. </li> </ul> The policy size limit is 32 KiB (32768 bytes).</param>
+        /// <param name="policy">The key policy to attach to the CMK. If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the following criteria: <ul> <li> It must allow the principal making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>. </li> <li> The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>. </li> </ul> The policy size limit is 32 KiB (32768 bytes).</param>
         /// <param name="policyName">The name of the key policy. This value must be <code>default</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3110,7 +3424,8 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
-        /// The request was rejected because a specified parameter is not supported.
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         public Task<PutKeyPolicyResponse> PutKeyPolicyAsync(string keyId, string policy, string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

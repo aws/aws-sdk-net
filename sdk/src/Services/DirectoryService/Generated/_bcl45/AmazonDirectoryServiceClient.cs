@@ -229,13 +229,76 @@ namespace Amazon.DirectoryService
         #endregion
 
         
+        #region  AddIpRoutes
+
+
+        /// <summary>
+        /// If the DNS server for your on-premises domain uses a publicly addressable IP address,
+        /// you must add a CIDR address block to correctly route traffic to and from your Microsoft
+        /// AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also
+        /// use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from
+        /// your Microsoft AD on AWS to a peer VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddIpRoutes service method.</param>
+        /// 
+        /// <returns>The response from the AddIpRoutes service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.IpRouteLimitExceededException">
+        /// The maximum allowed number of IP addresses was exceeded. The default limit is 100
+        /// IP address blocks.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        public AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request)
+        {
+            var marshaller = new AddIpRoutesRequestMarshaller();
+            var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<AddIpRoutesRequest,AddIpRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddIpRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddIpRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddIpRoutesResponse> AddIpRoutesAsync(AddIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddIpRoutesRequestMarshaller();
+            var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddIpRoutesRequest,AddIpRoutesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddTagsToResource
 
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified Amazon Directory Services directory.
         /// Each directory can have a maximum of 10 tags. Each tag consists of a key and optional
-        /// value. Tag keys must be unique per resource.
+        /// value. Tag keys must be unique to each resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
@@ -1735,6 +1798,58 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  ListIpRoutes
+
+
+        /// <summary>
+        /// Lists the address blocks that you have added to a directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIpRoutes service method.</param>
+        /// 
+        /// <returns>The response from the ListIpRoutes service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <i>NextToken</i> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        public ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request)
+        {
+            var marshaller = new ListIpRoutesRequestMarshaller();
+            var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIpRoutesRequest,ListIpRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIpRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIpRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListIpRoutesResponse> ListIpRoutesAsync(ListIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListIpRoutesRequestMarshaller();
+            var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIpRoutesRequest,ListIpRoutesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1835,6 +1950,58 @@ namespace Amazon.DirectoryService
             var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterEventTopicRequest,RegisterEventTopicResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveIpRoutes
+
+
+        /// <summary>
+        /// Removes IP address blocks from a directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveIpRoutes service method.</param>
+        /// 
+        /// <returns>The response from the RemoveIpRoutes service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        public RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request)
+        {
+            var marshaller = new RemoveIpRoutesRequestMarshaller();
+            var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveIpRoutesRequest,RemoveIpRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveIpRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveIpRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveIpRoutesResponse> RemoveIpRoutesAsync(RemoveIpRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveIpRoutesRequestMarshaller();
+            var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveIpRoutesRequest,RemoveIpRoutesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

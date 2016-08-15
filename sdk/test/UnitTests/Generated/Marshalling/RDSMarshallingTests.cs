@@ -1857,6 +1857,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RestoreDBClusterFromS3MarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBClusterFromS3");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBClusterFromS3Request>();
+            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RestoreDBClusterFromS3ResponseUnmarshaller.Instance.Unmarshall(context)
+                as RestoreDBClusterFromS3Response;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RestoreDBClusterFromSnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreDBClusterFromSnapshot");

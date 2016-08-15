@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private string _minimumRequiredMinorEngineVersion;
         private string _name;
         private List<OptionGroupOptionSetting> _optionGroupOptionSettings = new List<OptionGroupOptionSetting>();
+        private List<OptionVersion> _optionGroupOptionVersions = new List<OptionVersion>();
         private List<string> _optionsDependedOn = new List<string>();
         private bool? _permanent;
         private bool? _persistent;
@@ -169,6 +170,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupOptionSettings()
         {
             return this._optionGroupOptionSettings != null && this._optionGroupOptionSettings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionGroupOptionVersions. 
+        /// <para>
+        /// Specifies the versions that are available for the option.
+        /// </para>
+        /// </summary>
+        public List<OptionVersion> OptionGroupOptionVersions
+        {
+            get { return this._optionGroupOptionVersions; }
+            set { this._optionGroupOptionVersions = value; }
+        }
+
+        // Check to see if OptionGroupOptionVersions property is set
+        internal bool IsSetOptionGroupOptionVersions()
+        {
+            return this._optionGroupOptionVersions != null && this._optionGroupOptionVersions.Count > 0; 
         }
 
         /// <summary>

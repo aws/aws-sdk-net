@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The output for the <a>ListMetrics</a> action.
+    /// The output for <a>ListMetrics</a>.
     /// </summary>
     public partial class ListMetricsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        ///  A list of metrics used to generate statistics for an AWS account. 
+        /// A list of metrics used to generate statistics for an AWS account.
         /// </para>
         /// </summary>
         public List<Metric> Metrics
@@ -56,7 +56,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results. 
+        /// A string that marks the start of the next batch of returned results.
         /// </para>
         /// </summary>
         public string NextToken

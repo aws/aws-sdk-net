@@ -100,7 +100,8 @@ namespace Amazon.ECS
         /// <para>
         /// In addition to maintaining the desired count of tasks in your service, you can optionally
         /// run your service behind a load balancer. The load balancer distributes traffic across
-        /// the tasks that are associated with the service.
+        /// the tasks that are associated with the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+        /// Load Balancing</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>

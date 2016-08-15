@@ -154,6 +154,43 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  CreateRemoteAccessSession
+
+
+        /// <summary>
+        /// Specifies and starts a remote access session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the CreateRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        CreateRemoteAccessSessionResponse CreateRemoteAccessSession(CreateRemoteAccessSessionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateRemoteAccessSessionResponse> CreateRemoteAccessSessionAsync(CreateRemoteAccessSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateUpload
 
 
@@ -268,6 +305,43 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRemoteAccessSession
+
+
+        /// <summary>
+        /// Deletes a completed remote access session and its results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        DeleteRemoteAccessSessionResponse DeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteRemoteAccessSessionResponse> DeleteRemoteAccessSessionAsync(DeleteRemoteAccessSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -834,6 +908,43 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  GetRemoteAccessSession
+
+
+        /// <summary>
+        /// Returns a link to a currently running remote access session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the GetRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        GetRemoteAccessSessionResponse GetRemoteAccessSession(GetRemoteAccessSessionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetRemoteAccessSessionResponse> GetRemoteAccessSessionAsync(GetRemoteAccessSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetRun
 
 
@@ -1154,6 +1265,44 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  InstallToRemoteAccessSession
+
+
+        /// <summary>
+        /// Installs an application to the device in a remote access session. For Android applications,
+        /// the file must be in .apk format. For iOS applications, the file must be in .ipa format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InstallToRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the InstallToRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        InstallToRemoteAccessSessionResponse InstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InstallToRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InstallToRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<InstallToRemoteAccessSessionResponse> InstallToRemoteAccessSessionAsync(InstallToRemoteAccessSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListArtifacts
 
 
@@ -1424,6 +1573,43 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListRemoteAccessSessions
+
+
+        /// <summary>
+        /// Returns a list of all currently running remote access sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteAccessSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListRemoteAccessSessions service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        ListRemoteAccessSessionsResponse ListRemoteAccessSessions(ListRemoteAccessSessionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRemoteAccessSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteAccessSessions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListRemoteAccessSessionsResponse> ListRemoteAccessSessionsAsync(ListRemoteAccessSessionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1773,6 +1959,43 @@ namespace Amazon.DeviceFarm
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ScheduleRunResponse> ScheduleRunAsync(ScheduleRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopRemoteAccessSession
+
+
+        /// <summary>
+        /// Ends a specified remote access session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the StopRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        StopRemoteAccessSessionResponse StopRemoteAccessSession(StopRemoteAccessSessionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRemoteAccessSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StopRemoteAccessSessionResponse> StopRemoteAccessSessionAsync(StopRemoteAccessSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

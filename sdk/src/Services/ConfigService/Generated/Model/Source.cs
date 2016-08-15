@@ -83,8 +83,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// For customer managed Config rules, the identifier is the Amazon Resource Name (ARN)
-        /// of the rule's AWS Lambda function.
+        /// For custom Config rules, the identifier is the Amazon Resource Name (ARN) of the rule's
+        /// AWS Lambda function.
         /// </para>
         /// </summary>
         public string SourceIdentifier

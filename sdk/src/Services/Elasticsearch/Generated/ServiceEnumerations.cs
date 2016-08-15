@@ -55,6 +55,26 @@ namespace Amazon.Elasticsearch
         /// </summary>
         public static readonly ESPartitionInstanceType M3XlargeElasticsearch = new ESPartitionInstanceType("m3.xlarge.elasticsearch");
         /// <summary>
+        /// Constant M410xlargeElasticsearch for ESPartitionInstanceType
+        /// </summary>
+        public static readonly ESPartitionInstanceType M410xlargeElasticsearch = new ESPartitionInstanceType("m4.10xlarge.elasticsearch");
+        /// <summary>
+        /// Constant M42xlargeElasticsearch for ESPartitionInstanceType
+        /// </summary>
+        public static readonly ESPartitionInstanceType M42xlargeElasticsearch = new ESPartitionInstanceType("m4.2xlarge.elasticsearch");
+        /// <summary>
+        /// Constant M44xlargeElasticsearch for ESPartitionInstanceType
+        /// </summary>
+        public static readonly ESPartitionInstanceType M44xlargeElasticsearch = new ESPartitionInstanceType("m4.4xlarge.elasticsearch");
+        /// <summary>
+        /// Constant M4LargeElasticsearch for ESPartitionInstanceType
+        /// </summary>
+        public static readonly ESPartitionInstanceType M4LargeElasticsearch = new ESPartitionInstanceType("m4.large.elasticsearch");
+        /// <summary>
+        /// Constant M4XlargeElasticsearch for ESPartitionInstanceType
+        /// </summary>
+        public static readonly ESPartitionInstanceType M4XlargeElasticsearch = new ESPartitionInstanceType("m4.xlarge.elasticsearch");
+        /// <summary>
         /// Constant R32xlargeElasticsearch for ESPartitionInstanceType
         /// </summary>
         public static readonly ESPartitionInstanceType R32xlargeElasticsearch = new ESPartitionInstanceType("r3.2xlarge.elasticsearch");

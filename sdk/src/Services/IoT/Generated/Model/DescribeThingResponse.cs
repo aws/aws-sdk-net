@@ -35,12 +35,13 @@ namespace Amazon.IoT.Model
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _defaultClientId;
         private string _thingName;
+        private string _thingTypeName;
+        private long? _version;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attributes, which are name/value pairs in JSON format (for example: {\"attributes\":{\"some-name1\":\"some-value1\"},
-        /// {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})
+        /// The thing attributes.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -89,6 +90,49 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingName()
         {
             return this._thingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingTypeName. 
+        /// <para>
+        /// The thing type name.
+        /// </para>
+        /// </summary>
+        public string ThingTypeName
+        {
+            get { return this._thingTypeName; }
+            set { this._thingTypeName = value; }
+        }
+
+        // Check to see if ThingTypeName property is set
+        internal bool IsSetThingTypeName()
+        {
+            return this._thingTypeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The current version of the thing record in the registry.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To avoid unintentional changes to the information in the registry, you can pass the
+        /// version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code>
+        /// and <code>DeleteThing</code> calls.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public long Version
+        {
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
     }

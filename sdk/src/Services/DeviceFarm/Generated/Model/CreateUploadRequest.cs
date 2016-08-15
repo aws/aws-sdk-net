@@ -59,7 +59,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The upload's file name.
+        /// The upload's file name. The name should not contain the '/' character.
         /// </para>
         /// </summary>
         public string Name

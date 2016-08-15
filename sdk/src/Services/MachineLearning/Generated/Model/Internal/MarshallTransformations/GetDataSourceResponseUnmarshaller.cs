@@ -57,6 +57,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                     response.ComputeStatistics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComputeTime", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.ComputeTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -97,6 +103,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DataSourceSchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FinishedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.FinishedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
@@ -145,6 +157,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

@@ -51,6 +51,7 @@ namespace Amazon.AutoScaling.Model
         private string _status;
         private List<SuspendedProcess> _suspendedProcesses = new List<SuspendedProcess>();
         private List<TagDescription> _tags = new List<TagDescription>();
+        private List<string> _targetGroupARNs = new List<string>();
         private List<string> _terminationPolicies = new List<string>();
         private string _vpcZoneIdentifier;
 
@@ -400,6 +401,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetGroupARNs. 
+        /// <para>
+        /// The Amazon Resource Names (ARN) of the target groups for your load balancer.
+        /// </para>
+        /// </summary>
+        public List<string> TargetGroupARNs
+        {
+            get { return this._targetGroupARNs; }
+            set { this._targetGroupARNs = value; }
+        }
+
+        // Check to see if TargetGroupARNs property is set
+        internal bool IsSetTargetGroupARNs()
+        {
+            return this._targetGroupARNs != null && this._targetGroupARNs.Count > 0; 
         }
 
         /// <summary>

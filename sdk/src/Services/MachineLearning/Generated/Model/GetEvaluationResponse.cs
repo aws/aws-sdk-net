@@ -32,10 +32,12 @@ namespace Amazon.MachineLearning.Model
     /// </summary>
     public partial class GetEvaluationResponse : AmazonWebServiceResponse
     {
+        private long? _computeTime;
         private DateTime? _createdAt;
         private string _createdByIamUser;
         private string _evaluationDataSourceId;
         private string _evaluationId;
+        private DateTime? _finishedAt;
         private string _inputDataLocationS3;
         private DateTime? _lastUpdatedAt;
         private string _logUri;
@@ -43,7 +45,29 @@ namespace Amazon.MachineLearning.Model
         private string _mlModelId;
         private string _name;
         private PerformanceMetrics _performanceMetrics;
+        private DateTime? _startedAt;
         private EntityStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property ComputeTime. 
+        /// <para>
+        /// The approximate CPU time in milliseconds that Amazon Machine Learning spent processing
+        /// the <code>Evaluation</code>, normalized and scaled on computation resources. <code>ComputeTime</code>
+        /// is only available if the <code>Evaluation</code> is in the <code>COMPLETED</code>
+        /// state.
+        /// </para>
+        /// </summary>
+        public long ComputeTime
+        {
+            get { return this._computeTime.GetValueOrDefault(); }
+            set { this._computeTime = value; }
+        }
+
+        // Check to see if ComputeTime property is set
+        internal bool IsSetComputeTime()
+        {
+            return this._computeTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -120,6 +144,27 @@ namespace Amazon.MachineLearning.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FinishedAt. 
+        /// <para>
+        /// The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as
+        /// <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available
+        /// when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code>
+        /// state.
+        /// </para>
+        /// </summary>
+        public DateTime FinishedAt
+        {
+            get { return this._finishedAt.GetValueOrDefault(); }
+            set { this._finishedAt = value; }
+        }
+
+        // Check to see if FinishedAt property is set
+        internal bool IsSetFinishedAt()
+        {
+            return this._finishedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InputDataLocationS3. 
         /// <para>
         /// The location of the data file or directory in Amazon Simple Storage Service (Amazon
@@ -141,8 +186,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time of the most recent edit to the <code>BatchPrediction</code>. The time is
-        /// expressed in epoch time.
+        /// The time of the most recent edit to the <code>Evaluation</code>. The time is expressed
+        /// in epoch time.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -268,6 +313,26 @@ namespace Amazon.MachineLearning.Model
         internal bool IsSetPerformanceMetrics()
         {
             return this._performanceMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedAt. 
+        /// <para>
+        /// The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as
+        /// <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code>
+        /// is in the <code>PENDING</code> state.
+        /// </para>
+        /// </summary>
+        public DateTime StartedAt
+        {
+            get { return this._startedAt.GetValueOrDefault(); }
+            set { this._startedAt = value; }
+        }
+
+        // Check to see if StartedAt property is set
+        internal bool IsSetStartedAt()
+        {
+            return this._startedAt.HasValue; 
         }
 
         /// <summary>

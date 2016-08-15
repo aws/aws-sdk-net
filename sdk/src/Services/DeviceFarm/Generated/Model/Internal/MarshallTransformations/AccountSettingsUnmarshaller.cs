@@ -76,6 +76,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.UnmeteredDevices = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("unmeteredRemoteAccessDevices", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.UnmeteredRemoteAccessDevices = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

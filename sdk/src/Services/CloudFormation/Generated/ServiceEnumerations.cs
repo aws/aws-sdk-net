@@ -34,6 +34,10 @@ namespace Amazon.CloudFormation
         /// Constant CAPABILITY_IAM for Capability
         /// </summary>
         public static readonly Capability CAPABILITY_IAM = new Capability("CAPABILITY_IAM");
+        /// <summary>
+        /// Constant CAPABILITY_NAMED_IAM for Capability
+        /// </summary>
+        public static readonly Capability CAPABILITY_NAMED_IAM = new Capability("CAPABILITY_NAMED_IAM");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

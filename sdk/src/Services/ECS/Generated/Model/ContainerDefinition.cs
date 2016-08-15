@@ -449,8 +449,8 @@ namespace Amazon.ECS.Model
         /// information on linking Docker containers, see <a href="https://docs.docker.com/userguide/dockerlinks/">https://docs.docker.com/userguide/dockerlinks/</a>.
         /// This parameter maps to <code>Links</code> in the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
-        /// Remote API</a> and the <code>--link</code> option to <a href="https://docs.docker.com/reference/commandline/run/">
-        /// docker run </a>.
+        /// Remote API</a> and the <code>--link</code> option to <a href="https://docs.docker.com/reference/commandline/run/">docker
+        /// run</a>.
         /// </para>
         ///  <important> 
         /// <para>

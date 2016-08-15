@@ -37,7 +37,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CreatePresetRequest.Container</property>
-    <pattern>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)</pattern>
+    <pattern>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CreatePresetRequest.Description</property>
@@ -182,8 +182,8 @@
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.Artwork.InputKey</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>(^.{1,}.jpg$)|(^.{1,}.jpeg$)|(^.{1,}.png$)</pattern>
+    <max>1024</max>
+    <pattern>(^.{1,1020}.jpg$)|(^.{1,1019}.jpeg$)|(^.{1,1020}.png$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.Artwork.MaxHeight</property>
@@ -203,7 +203,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.AudioCodecOptions.BitDepth</property>
-    <pattern>(^16$)|(^24$)</pattern>
+    <pattern>(^8$)|(^16$)|(^24$)|(^32$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.AudioCodecOptions.BitOrder</property>
@@ -215,7 +215,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.AudioCodecOptions.Signed</property>
-    <pattern>(^Signed$)</pattern>
+    <pattern>(^Unsigned$)|(^Signed$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.AudioParameters.AudioPackingMode</property>
@@ -239,7 +239,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CaptionFormat.Format</property>
-    <pattern>(^mov-text$)|(^srt$)|(^scc$)|(^webvtt$)|(^dfxp$)</pattern>
+    <pattern>(^mov-text$)|(^srt$)|(^scc$)|(^webvtt$)|(^dfxp$)|(^cea-708$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CaptionFormat.Pattern</property>
@@ -252,7 +252,7 @@
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CaptionSource.Key</property>
     <min>1</min>
-    <max>255</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CaptionSource.Label</property>
@@ -291,7 +291,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CreateJobPlaylist.Format</property>
-    <pattern>(^HLSv3$)|(^HLSv4$)|(^Smooth$)</pattern>
+    <pattern>(^HLSv3$)|(^HLSv4$)|(^Smooth$)|(^MPEG-DASH$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CreateJobPlaylist.Name</property>
@@ -385,7 +385,7 @@
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.JobInput.Key</property>
     <min>1</min>
-    <max>255</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.JobInput.Resolution</property>
@@ -428,8 +428,8 @@
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.JobWatermark.InputKey</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>(^.{1,}.jpg$)|(^.{1,}.jpeg$)|(^.{1,}.png$)</pattern>
+    <max>1024</max>
+    <pattern>(^.{1,1020}.jpg$)|(^.{1,1019}.jpeg$)|(^.{1,1020}.png$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.JobWatermark.PresetWatermarkId</property>
@@ -501,7 +501,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.Playlist.Format</property>
-    <pattern>(^HLSv3$)|(^HLSv4$)|(^Smooth$)</pattern>
+    <pattern>(^HLSv3$)|(^HLSv4$)|(^Smooth$)|(^MPEG-DASH$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.Playlist.Name</property>
@@ -545,7 +545,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.Preset.Container</property>
-    <pattern>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)</pattern>
+    <pattern>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.Preset.Description</property>
@@ -656,7 +656,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.VideoParameters.Codec</property>
-    <pattern>(^H\.264$)|(^vp8$)|(^mpeg2$)|(^gif$)</pattern>
+    <pattern>(^H\.264$)|(^vp8$)|(^vp9$)|(^mpeg2$)|(^gif$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.VideoParameters.DisplayAspectRatio</property>

@@ -45,10 +45,22 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LambdaConfigType requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCreateAuthChallenge())
+            {
+                context.Writer.WritePropertyName("CreateAuthChallenge");
+                context.Writer.Write(requestObject.CreateAuthChallenge);
+            }
+
             if(requestObject.IsSetCustomMessage())
             {
                 context.Writer.WritePropertyName("CustomMessage");
                 context.Writer.Write(requestObject.CustomMessage);
+            }
+
+            if(requestObject.IsSetDefineAuthChallenge())
+            {
+                context.Writer.WritePropertyName("DefineAuthChallenge");
+                context.Writer.Write(requestObject.DefineAuthChallenge);
             }
 
             if(requestObject.IsSetPostAuthentication())
@@ -73,6 +85,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PreSignUp");
                 context.Writer.Write(requestObject.PreSignUp);
+            }
+
+            if(requestObject.IsSetVerifyAuthChallengeResponse())
+            {
+                context.Writer.WritePropertyName("VerifyAuthChallengeResponse");
+                context.Writer.Write(requestObject.VerifyAuthChallengeResponse);
             }
 
         }

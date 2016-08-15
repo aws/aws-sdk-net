@@ -40,7 +40,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A token used to retrieve the next value.
+        /// The token for the next set of results, or <b>null</b> if there are no additional results.
         /// </para>
         /// </summary>
         public string Marker
@@ -58,7 +58,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of principals to return.
+        /// The maximum number of results to return in this operation.
         /// </para>
         /// </summary>
         public int MaxResults

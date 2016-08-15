@@ -44,7 +44,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the service was created.
+        /// The Unix timestamp for when the service was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -174,7 +174,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the service was last updated.
+        /// The Unix timestamp for when the service was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

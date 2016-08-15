@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteLoadBalancerPolicy operation.
+    /// Contains the output of DeleteLoadBalancerPolicy.
     /// </summary>
     public partial class DeleteLoadBalancerPolicyResponse : AmazonWebServiceResponse
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the AttachLoadBalancerToSubnets operation.
+    /// Contains the output of AttachLoadBalancerToSubnets.
     /// </summary>
     public partial class AttachLoadBalancerToSubnetsResponse : AmazonWebServiceResponse
     {

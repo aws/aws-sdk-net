@@ -115,6 +115,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             {
                 return new AccessPointNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DependencyThrottle"))
+            {
+                return new DependencyThrottleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonElasticLoadBalancingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static DescribeLoadBalancersResponseUnmarshaller _instance = new DescribeLoadBalancersResponseUnmarshaller();        

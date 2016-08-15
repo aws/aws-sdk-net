@@ -35,6 +35,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         private List<string> _aliasAttributes = new List<string>();
         private List<string> _autoVerifiedAttributes = new List<string>();
         private DateTime? _creationDate;
+        private DeviceConfigurationType _deviceConfiguration;
+        private EmailConfigurationType _emailConfiguration;
+        private string _emailConfigurationFailure;
         private string _emailVerificationMessage;
         private string _emailVerificationSubject;
         private int? _estimatedNumberOfUsers;
@@ -46,6 +49,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         private UserPoolPolicyType _policies;
         private List<SchemaAttributeType> _schemaAttributes = new List<SchemaAttributeType>();
         private string _smsAuthenticationMessage;
+        private SmsConfigurationType _smsConfiguration;
+        private string _smsConfigurationFailure;
         private string _smsVerificationMessage;
         private StatusType _status;
 
@@ -101,6 +106,60 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceConfiguration. 
+        /// <para>
+        /// The device configuration.
+        /// </para>
+        /// </summary>
+        public DeviceConfigurationType DeviceConfiguration
+        {
+            get { return this._deviceConfiguration; }
+            set { this._deviceConfiguration = value; }
+        }
+
+        // Check to see if DeviceConfiguration property is set
+        internal bool IsSetDeviceConfiguration()
+        {
+            return this._deviceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailConfiguration. 
+        /// <para>
+        /// The email configuration.
+        /// </para>
+        /// </summary>
+        public EmailConfigurationType EmailConfiguration
+        {
+            get { return this._emailConfiguration; }
+            set { this._emailConfiguration = value; }
+        }
+
+        // Check to see if EmailConfiguration property is set
+        internal bool IsSetEmailConfiguration()
+        {
+            return this._emailConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailConfigurationFailure. 
+        /// <para>
+        /// The reason why the email configuration cannot send the messages to your users.
+        /// </para>
+        /// </summary>
+        public string EmailConfigurationFailure
+        {
+            get { return this._emailConfigurationFailure; }
+            set { this._emailConfigurationFailure = value; }
+        }
+
+        // Check to see if EmailConfigurationFailure property is set
+        internal bool IsSetEmailConfigurationFailure()
+        {
+            return this._emailConfigurationFailure != null;
         }
 
         /// <summary>
@@ -304,6 +363,42 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSmsAuthenticationMessage()
         {
             return this._smsAuthenticationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SmsConfiguration. 
+        /// <para>
+        /// The SMS configuration.
+        /// </para>
+        /// </summary>
+        public SmsConfigurationType SmsConfiguration
+        {
+            get { return this._smsConfiguration; }
+            set { this._smsConfiguration = value; }
+        }
+
+        // Check to see if SmsConfiguration property is set
+        internal bool IsSetSmsConfiguration()
+        {
+            return this._smsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SmsConfigurationFailure. 
+        /// <para>
+        /// The reason why the SMS configuration cannot send the message(s) to your users.
+        /// </para>
+        /// </summary>
+        public string SmsConfigurationFailure
+        {
+            get { return this._smsConfigurationFailure; }
+            set { this._smsConfigurationFailure = value; }
+        }
+
+        // Check to see if SmsConfigurationFailure property is set
+        internal bool IsSetSmsConfigurationFailure()
+        {
+            return this._smsConfigurationFailure != null;
         }
 
         /// <summary>

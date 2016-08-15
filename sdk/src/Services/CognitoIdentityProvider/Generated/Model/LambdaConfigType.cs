@@ -32,11 +32,32 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class LambdaConfigType
     {
+        private string _createAuthChallenge;
         private string _customMessage;
+        private string _defineAuthChallenge;
         private string _postAuthentication;
         private string _postConfirmation;
         private string _preAuthentication;
         private string _preSignUp;
+        private string _verifyAuthChallengeResponse;
+
+        /// <summary>
+        /// Gets and sets the property CreateAuthChallenge. 
+        /// <para>
+        /// Creates an authentication challenge.
+        /// </para>
+        /// </summary>
+        public string CreateAuthChallenge
+        {
+            get { return this._createAuthChallenge; }
+            set { this._createAuthChallenge = value; }
+        }
+
+        // Check to see if CreateAuthChallenge property is set
+        internal bool IsSetCreateAuthChallenge()
+        {
+            return this._createAuthChallenge != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomMessage. 
@@ -54,6 +75,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetCustomMessage()
         {
             return this._customMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefineAuthChallenge. 
+        /// <para>
+        /// Defines the authentication challenge.
+        /// </para>
+        /// </summary>
+        public string DefineAuthChallenge
+        {
+            get { return this._defineAuthChallenge; }
+            set { this._defineAuthChallenge = value; }
+        }
+
+        // Check to see if DefineAuthChallenge property is set
+        internal bool IsSetDefineAuthChallenge()
+        {
+            return this._defineAuthChallenge != null;
         }
 
         /// <summary>
@@ -126,6 +165,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetPreSignUp()
         {
             return this._preSignUp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerifyAuthChallengeResponse. 
+        /// <para>
+        /// Verifies the authentication challenge response.
+        /// </para>
+        /// </summary>
+        public string VerifyAuthChallengeResponse
+        {
+            get { return this._verifyAuthChallengeResponse; }
+            set { this._verifyAuthChallengeResponse = value; }
+        }
+
+        // Check to see if VerifyAuthChallengeResponse property is set
+        internal bool IsSetVerifyAuthChallengeResponse()
+        {
+            return this._verifyAuthChallengeResponse != null;
         }
 
     }

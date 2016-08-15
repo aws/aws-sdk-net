@@ -36,11 +36,11 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// When a load balancer implements this policy, the load balancer uses a special cookie
-    /// to track the back-end server instance for each request. When the load balancer receives
-    /// a request, it first checks to see if this cookie is present in the request. If so,
-    /// the load balancer sends the request to the application server specified in the cookie.
-    /// If not, the load balancer sends the request to a server that is chosen based on the
-    /// existing load-balancing algorithm.
+    /// to track the instance for each request. When the load balancer receives a request,
+    /// it first checks to see if this cookie is present in the request. If so, the load balancer
+    /// sends the request to the application server specified in the cookie. If not, the load
+    /// balancer sends the request to a server that is chosen based on the existing load-balancing
+    /// algorithm.
     /// </para>
     ///  
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
-    /// Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
+    /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLBCookieStickinessPolicyRequest : AmazonElasticLoadBalancingRequest
@@ -80,8 +80,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Gets and sets the property CookieExpirationPeriod. 
         /// <para>
         /// The time period, in seconds, after which the cookie should be considered stale. If
-        /// you do not specify this parameter, the sticky session lasts for the duration of the
-        /// browser session.
+        /// you do not specify this parameter, the default value is 0, which indicates that the
+        /// sticky session should last for the duration of the browser session.
         /// </para>
         /// </summary>
         public long CookieExpirationPeriod

@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ElasticBeanstalk</id>
     <title>AWSSDK - AWS Elastic Beanstalk</title>
-    <version>3.1.5.4</version> 
+    <version>3.1.5.5</version> 
     <authors>Amazon Web Services</authors>
     <description>AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

@@ -33,6 +33,7 @@ namespace Amazon.APIGateway.Model
     public partial class TestInvokeAuthorizerResponse : AmazonWebServiceResponse
     {
         private Dictionary<string, List<string>> _authorization = new Dictionary<string, List<string>>();
+        private Dictionary<string, string> _claims = new Dictionary<string, string>();
         private int? _clientStatus;
         private long? _latency;
         private string _log;
@@ -52,6 +53,21 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetAuthorization()
         {
             return this._authorization != null && this._authorization.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Claims.
+        /// </summary>
+        public Dictionary<string, string> Claims
+        {
+            get { return this._claims; }
+            set { this._claims = value; }
+        }
+
+        // Check to see if Claims property is set
+        internal bool IsSetClaims()
+        {
+            return this._claims != null && this._claims.Count > 0; 
         }
 
         /// <summary>

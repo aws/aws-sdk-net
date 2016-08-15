@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The output for the <a>GetMetricStatistics</a> action.
+    /// The output for <a>GetMetricStatistics</a>.
     /// </summary>
     public partial class GetMetricStatisticsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Datapoints. 
         /// <para>
-        ///  The datapoints for the specified metric. 
+        /// The datapoints for the specified metric.
         /// </para>
         /// </summary>
         public List<Datapoint> Datapoints
@@ -56,7 +56,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
-        ///  A label describing the specified metric. 
+        /// A label describing the specified metric.
         /// </para>
         /// </summary>
         public string Label

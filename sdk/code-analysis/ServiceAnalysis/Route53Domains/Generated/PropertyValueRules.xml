@@ -71,6 +71,11 @@
     <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Domains.Model.GetDomainSuggestionsRequest.DomainName</property>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Domains.Model.GetOperationDetailRequest.OperationId</property>
     <max>255</max>
   </property-value-rule>
@@ -128,6 +133,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.RegisterDomainResponse.OperationId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.RenewDomainRequest.DomainName</property>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.RenewDomainRequest.DurationInYears</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.RenewDomainResponse.OperationId</property>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -208,6 +227,23 @@
     <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Domains.Model.ViewBillingRequest.Marker</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.ViewBillingRequest.MaxItems</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.ViewBillingResponse.NextPageMarker</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.BillingRecord.DomainName</property>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.AddressLine1</property>
     <max>255</max>
   </property-value-rule>
@@ -250,6 +286,11 @@
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.ContactDetail.ZipCode</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.DomainSuggestion.DomainName</property>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.DomainSummary.DomainName</property>

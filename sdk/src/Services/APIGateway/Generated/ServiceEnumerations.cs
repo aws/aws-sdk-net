@@ -31,6 +31,10 @@ namespace Amazon.APIGateway
     {
 
         /// <summary>
+        /// Constant COGNITO_USER_POOLS for AuthorizerType
+        /// </summary>
+        public static readonly AuthorizerType COGNITO_USER_POOLS = new AuthorizerType("COGNITO_USER_POOLS");
+        /// <summary>
         /// Constant TOKEN for AuthorizerType
         /// </summary>
         public static readonly AuthorizerType TOKEN = new AuthorizerType("TOKEN");

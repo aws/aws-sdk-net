@@ -34,6 +34,7 @@ namespace Amazon.DeviceFarm.Model
     {
         private string _awsAccountNumber;
         private Dictionary<string, int> _unmeteredDevices = new Dictionary<string, int>();
+        private Dictionary<string, int> _unmeteredRemoteAccessDevices = new Dictionary<string, int>();
 
         /// <summary>
         /// Gets and sets the property AwsAccountNumber. 
@@ -56,7 +57,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property UnmeteredDevices. 
         /// <para>
-        /// Returns the unmetered devices you have purchased.
+        /// Returns the unmetered devices you have purchased or want to purchase.
         /// </para>
         /// </summary>
         public Dictionary<string, int> UnmeteredDevices
@@ -69,6 +70,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetUnmeteredDevices()
         {
             return this._unmeteredDevices != null && this._unmeteredDevices.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnmeteredRemoteAccessDevices. 
+        /// <para>
+        /// Returns the unmetered remote access devices you have purchased or want to purchase.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, int> UnmeteredRemoteAccessDevices
+        {
+            get { return this._unmeteredRemoteAccessDevices; }
+            set { this._unmeteredRemoteAccessDevices = value; }
+        }
+
+        // Check to see if UnmeteredRemoteAccessDevices property is set
+        internal bool IsSetUnmeteredRemoteAccessDevices()
+        {
+            return this._unmeteredRemoteAccessDevices != null && this._unmeteredRemoteAccessDevices.Count > 0; 
         }
 
     }

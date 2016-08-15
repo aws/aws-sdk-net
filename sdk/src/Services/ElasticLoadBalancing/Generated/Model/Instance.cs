@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// The ID of a back-end instance.
+    /// The ID of an EC2 instance.
     /// </summary>
     public partial class Instance
     {
@@ -42,7 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates Instance with the parameterized properties
         /// </summary>
-        /// <param name="instanceId">The ID of the instance.</param>
+        /// <param name="instanceId">The instance ID.</param>
         public Instance(string instanceId)
         {
             _instanceId = instanceId;
@@ -51,7 +51,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance.
+        /// The instance ID.
         /// </para>
         /// </summary>
         public string InstanceId

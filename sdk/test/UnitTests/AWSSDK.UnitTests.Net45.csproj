@@ -354,6 +354,18 @@
       <Project>{4C063C79-E34D-4984-9C1F-EF978FD7E018}</Project>
       <Name>AWSSDK.ServiceCatalog.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net45.csproj">
+      <Project>{98942FE9-3700-42F2-8092-56611F4FC0B1}</Project>
+      <Name>AWSSDK.ElasticLoadBalancingV2.Net45</Name>
+	</ProjectReference>
+    <ProjectReference Include="..\..\src\Services\KinesisAnalytics\AWSSDK.KinesisAnalytics.Net45.csproj">
+      <Project>{1FB4DA13-5DC3-419C-B93C-D12158FF94A0}</Project>
+      <Name>AWSSDK.KinesisAnalytics.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net45.csproj">
+      <Project>{48DE2DBA-D6DE-4677-8A5C-DF42CD34EBE1}</Project>
+      <Name>AWSSDK.Snowball.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

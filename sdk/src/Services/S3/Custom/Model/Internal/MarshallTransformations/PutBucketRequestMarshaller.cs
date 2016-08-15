@@ -72,7 +72,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (regionCode != null)
                 {
-                    xmlWriter.WriteStartElement("PutBucketConfiguration", "");
+                    xmlWriter.WriteStartElement("CreateBucketConfiguration", "");
                     xmlWriter.WriteElementString("LocationConstraint", "", regionCode);
                     xmlWriter.WriteEndElement();
                 }

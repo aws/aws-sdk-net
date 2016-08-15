@@ -29,8 +29,20 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the SetLoadBalancerPoliciesOfListener operation.
-    /// Associates, updates, or disables a policy with a listener for the specified load balancer.
-    /// You can associate multiple policies with a listener.
+    /// Replaces the current set of policies for the specified load balancer port with the
+    /// specified set of policies.
+    /// 
+    ///  
+    /// <para>
+    /// To enable back-end server authentication, use <a>SetLoadBalancerPoliciesForBackendServer</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about setting policies, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html">Update
+    /// the SSL Negotiation Configuration</a>, <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
+    /// Session Stickiness</a>, and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
+    /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+    /// </para>
     /// </summary>
     public partial class SetLoadBalancerPoliciesOfListenerRequest : AmazonElasticLoadBalancingRequest
     {
@@ -47,8 +59,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Instantiates SetLoadBalancerPoliciesOfListenerRequest with the parameterized properties
         /// </summary>
         /// <param name="loadBalancerName">The name of the load balancer.</param>
-        /// <param name="loadBalancerPort">The external port of the load balancer for the policy.</param>
-        /// <param name="policyNames">The names of the policies. If the list is empty, the current policy is removed from the listener.</param>
+        /// <param name="loadBalancerPort">The external port of the load balancer.</param>
+        /// <param name="policyNames">The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</param>
         public SetLoadBalancerPoliciesOfListenerRequest(string loadBalancerName, int loadBalancerPort, List<string> policyNames)
         {
             _loadBalancerName = loadBalancerName;
@@ -77,7 +89,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerPort. 
         /// <para>
-        /// The external port of the load balancer for the policy.
+        /// The external port of the load balancer.
         /// </para>
         /// </summary>
         public int LoadBalancerPort
@@ -95,8 +107,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        /// The names of the policies. If the list is empty, the current policy is removed from
-        /// the listener.
+        /// The names of the policies. This list must include all policies to be enabled. If you
+        /// omit a policy that is currently enabled, it is disabled. If the list is empty, all
+        /// current policies are disabled.
         /// </para>
         /// </summary>
         public List<string> PolicyNames

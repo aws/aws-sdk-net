@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// The programmable code for the state change reason. Note: Currently, the service provides
-        /// no code for the state change. 
+        /// no code for the state change.
         /// </para>
         /// </summary>
         public StepStateChangeReasonCode Code
@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The descriptive message for the state change reason. 
+        /// The descriptive message for the state change reason.
         /// </para>
         /// </summary>
         public string Message

@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ECR</id>
     <title>AWSSDK - Amazon EC2 Container Registry</title>
-    <version>3.1.1.4</version> 
+    <version>3.1.2.0</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.9.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

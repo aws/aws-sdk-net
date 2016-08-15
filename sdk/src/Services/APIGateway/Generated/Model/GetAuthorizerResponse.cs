@@ -41,6 +41,7 @@ namespace Amazon.APIGateway.Model
         private string _identitySource;
         private string _identityValidationExpression;
         private string _name;
+        private List<string> _providerarNs = new List<string>();
         private AuthorizerType _type;
 
         /// <summary>
@@ -202,6 +203,21 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderARNs.
+        /// </summary>
+        public List<string> ProviderARNs
+        {
+            get { return this._providerarNs; }
+            set { this._providerarNs = value; }
+        }
+
+        // Check to see if ProviderARNs property is set
+        internal bool IsSetProviderARNs()
+        {
+            return this._providerarNs != null && this._providerarNs.Count > 0; 
         }
 
         /// <summary>

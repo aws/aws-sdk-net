@@ -119,7 +119,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// The key policy must meet the following criteria:
+        /// If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy
+        /// must meet the following criteria:
         /// </para>
         ///  <ul> <li> 
         /// <para>

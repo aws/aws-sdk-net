@@ -40,7 +40,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) that the volume supports. 
+        /// The number of I/O operations per second (IOPS) that the volume supports.
         /// </para>
         /// </summary>
         public int Iops
@@ -58,8 +58,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property SizeInGB. 
         /// <para>
-        /// The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If the volume
-        /// type is EBS-optimized, the minimum value is 10. 
+        /// The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume
+        /// type is EBS-optimized, the minimum value is 10.
         /// </para>
         /// </summary>
         public int SizeInGB
@@ -77,7 +77,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. Volume types supported are gp2, io1, standard. 
+        /// The volume type. Volume types supported are gp2, io1, standard.
         /// </para>
         /// </summary>
         public string VolumeType

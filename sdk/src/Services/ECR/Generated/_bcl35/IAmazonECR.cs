@@ -688,6 +688,15 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Lists all the image IDs for a given repository.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter images based on whether or not they are tagged by setting the <code>tagStatus</code>
+        /// parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can filter
+        /// your results to return only <code>UNTAGGED</code> images and then pipe that result
+        /// to a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your results
+        /// to return only <code>TAGGED</code> images to list all of the tags in your repository.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// 

@@ -30,16 +30,15 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the DescribeLogStreams operation.
     /// Returns all the log streams that are associated with the specified log group. The
-    /// list returned in the response is ASCII-sorted by log stream name. 
+    /// list returned in the response is ASCII-sorted by log stream name.
     /// 
     ///  
     /// <para>
-    ///  By default, this operation returns up to 50 log streams. If there are more log streams
-    /// to list, the response would contain a <code class="code">nextToken</code> value in
-    /// the response body. You can also limit the number of log streams returned in the response
-    /// by specifying the <code class="code">limit</code> parameter in the request. This operation
-    /// has a limit of five transactions per second, after which transactions are throttled.
-    /// 
+    /// By default, this operation returns up to 50 log streams. If there are more log streams
+    /// to list, the response would contain a <code>nextToken</code> value in the response
+    /// body. You can also limit the number of log streams returned in the response by specifying
+    /// the <code>limit</code> parameter in the request. This operation has a limit of five
+    /// transactions per second, after which transactions are throttled.
     /// </para>
     /// </summary>
     public partial class DescribeLogStreamsRequest : AmazonCloudWatchLogsRequest
@@ -68,8 +67,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Descending. 
         /// <para>
-        ///  If set to true, results are returned in descending order. If you don't specify a
-        /// value or set it to false, results are returned in ascending order. 
+        /// If set to true, results are returned in descending order. If you don't specify a value
+        /// or set it to false, results are returned in ascending order.
         /// </para>
         /// </summary>
         public bool Descending
@@ -87,8 +86,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        ///  The maximum number of items returned in the response. If you don't specify a value,
-        /// the request would return up to 50 items. 
+        /// The maximum number of items returned in the response. If you don't specify a value,
+        /// the request would return up to 50 items.
         /// </para>
         /// </summary>
         public int Limit
@@ -124,8 +123,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamNamePrefix. 
         /// <para>
-        ///  Will only return log streams that match the provided logStreamNamePrefix. If you
-        /// don't specify a value, no prefix filter is applied. 
+        /// Will only return log streams that match the provided logStreamNamePrefix. If you don't
+        /// specify a value, no prefix filter is applied.
         /// </para>
         /// </summary>
         public string LogStreamNamePrefix
@@ -143,9 +142,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string token used for pagination that points to the next page of results. It must
-        /// be a value obtained from the response of the previous <code class="code">DescribeLogStreams</code>
-        /// request. 
+        /// A string token used for pagination that points to the next page of results. It must
+        /// be a value obtained from the response of the previous <code>DescribeLogStreams</code>
+        /// request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -163,10 +162,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property OrderBy. 
         /// <para>
-        ///  Specifies what to order the returned log streams by. Valid arguments are 'LogStreamName'
+        /// Specifies what to order the returned log streams by. Valid arguments are 'LogStreamName'
         /// or 'LastEventTime'. If you don't specify a value, results are ordered by LogStreamName.
         /// If 'LastEventTime' is chosen, the request cannot also contain a logStreamNamePrefix.
-        /// 
         /// </para>
         /// </summary>
         public OrderBy OrderBy

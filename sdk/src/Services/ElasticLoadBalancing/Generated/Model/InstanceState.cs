@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Information about the state of a back-end instance.
+    /// Information about the state of an EC2 instance.
     /// </summary>
     public partial class InstanceState
     {
@@ -50,54 +50,54 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>N/A</code>
+        ///  <code>N/A</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>A transient error occurred. Please try again later.</code>
+        ///  <code>A transient error occurred. Please try again later.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Instance has failed at least the UnhealthyThreshold number of health checks
-        /// consecutively.</code>
+        ///  <code>Instance has failed at least the UnhealthyThreshold number of health checks
+        /// consecutively.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Instance has not passed the configured HealthyThreshold number of health checks
-        /// consecutively.</code>
+        ///  <code>Instance has not passed the configured HealthyThreshold number of health checks
+        /// consecutively.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Instance registration is still in progress.</code>
+        ///  <code>Instance registration is still in progress.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured
-        /// to route traffic to.</code>
+        ///  <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured
+        /// to route traffic to.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Instance is not currently registered with the LoadBalancer.</code>
+        ///  <code>Instance is not currently registered with the LoadBalancer.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Instance deregistration currently in progress.</code>
+        ///  <code>Instance deregistration currently in progress.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Disable Availability Zone is currently in progress.</code>
+        ///  <code>Disable Availability Zone is currently in progress.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Instance is in pending state.</code>
+        ///  <code>Instance is in pending state.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Instance is in stopped state.</code>
+        ///  <code>Instance is in stopped state.</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Instance is in terminated state.</code>
+        ///  <code>Instance is in terminated state.</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -139,7 +139,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code>
+        /// Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> 
         /// </para>
         /// </summary>
         public string ReasonCode
@@ -162,6 +162,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         ///  
         /// <para>
         /// Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code>
+        /// 
         /// </para>
         /// </summary>
         public string State

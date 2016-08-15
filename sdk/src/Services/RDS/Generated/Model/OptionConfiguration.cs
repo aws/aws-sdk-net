@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private List<string> _dbSecurityGroupMemberships = new List<string>();
         private string _optionName;
         private List<OptionSetting> _optionSettings = new List<OptionSetting>();
+        private string _optionVersion;
         private int? _port;
         private List<string> _vpcSecurityGroupMemberships = new List<string>();
 
@@ -90,6 +91,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionSettings()
         {
             return this._optionSettings != null && this._optionSettings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionVersion. 
+        /// <para>
+        /// The version for the option.
+        /// </para>
+        /// </summary>
+        public string OptionVersion
+        {
+            get { return this._optionVersion; }
+            set { this._optionVersion = value; }
+        }
+
+        // Check to see if OptionVersion property is set
+        internal bool IsSetOptionVersion()
+        {
+            return this._optionVersion != null;
         }
 
         /// <summary>

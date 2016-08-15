@@ -31,10 +31,14 @@ namespace Amazon.CloudWatch.Model
     /// Container for the parameters to the DescribeAlarmHistory operation.
     /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
     /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
-    /// the owner's alarms. 
+    /// the owner's alarms.
     /// 
-    ///  <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or
-    /// not you delete the alarm. </note>
+    ///  <note> 
+    /// <para>
+    /// Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you
+    /// delete the alarm.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeAlarmHistoryRequest : AmazonCloudWatchRequest
     {
@@ -48,7 +52,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmName. 
         /// <para>
-        ///  The name of the alarm. 
+        /// The name of the alarm.
         /// </para>
         /// </summary>
         public string AlarmName
@@ -66,7 +70,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        ///  The ending date to retrieve alarm history. 
+        /// The ending date to retrieve alarm history.
         /// </para>
         /// </summary>
         public DateTime EndDate
@@ -84,7 +88,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property HistoryItemType. 
         /// <para>
-        ///  The type of alarm histories to retrieve. 
+        /// The type of alarm histories to retrieve.
         /// </para>
         /// </summary>
         public HistoryItemType HistoryItemType
@@ -102,7 +106,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of alarm history records to retrieve. 
+        /// The maximum number of alarm history records to retrieve.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -120,8 +124,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token returned by a previous call to indicate that there is more data available.
-        /// 
+        /// The token returned by a previous call to indicate that there is more data available.
         /// </para>
         /// </summary>
         public string NextToken
@@ -139,7 +142,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        ///  The starting date to retrieve alarm history. 
+        /// The starting date to retrieve alarm history.
         /// </para>
         /// </summary>
         public DateTime StartDate

@@ -70,6 +70,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetThingTypeName())
+                request.Parameters.Add("thingTypeName", StringUtils.FromString(publicRequest.ThingTypeName));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 

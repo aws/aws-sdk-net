@@ -39,7 +39,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the directory from which to remove the tag.
+        /// Identifier (ID) of the directory from which to remove the tag.
         /// </para>
         /// </summary>
         public string ResourceId

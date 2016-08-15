@@ -28,21 +28,19 @@ namespace Amazon.CloudWatchLogs
     /// <summary>
     /// Interface for accessing CloudWatchLogs
     ///
-    /// Amazon CloudWatch Logs API Reference 
-    /// <para>
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
     /// Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon CloudTrail, or other sources.
     /// You can then retrieve the associated log data from CloudWatch Logs using the Amazon
     /// CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch Logs
     /// API, or the CloudWatch Logs SDK.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// You can use CloudWatch Logs to:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use CloudWatch
+    ///  <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use CloudWatch
     /// Logs to monitor applications and systems using log data. For example, CloudWatch Logs
     /// can track the number of errors that occur in your application logs and send you a
     /// notification whenever the rate of errors exceeds a threshold you specify. CloudWatch
@@ -55,13 +53,13 @@ namespace Amazon.CloudWatchLogs
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in Amazon CloudWatch
+    ///  <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in Amazon CloudWatch
     /// and receive notifications of particular API activity as captured by CloudTrail and
     /// use the notification to perform troubleshooting.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data in highly
+    ///  <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data in highly
     /// durable storage. You can change the log retention setting so that any log events older
     /// than this setting are automatically deleted. The CloudWatch Logs agent makes it easy
     /// to quickly send both rotated and non-rotated log data off of a host and into the log
@@ -127,20 +125,20 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates an <code>ExportTask</code> which allows you to efficiently export data from
-        /// a Log Group to your Amazon S3 bucket. 
+        /// a Log Group to your Amazon S3 bucket.
         /// 
         ///  
         /// <para>
-        ///  This is an asynchronous call. If all the required information is provided, this API
+        /// This is an asynchronous call. If all the required information is provided, this API
         /// will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code>
         /// can be used to get the status of an export task. You can only have one active (<code>RUNNING</code>
-        /// or <code>PENDING</code>) export task at a time, per account. 
+        /// or <code>PENDING</code>) export task at a time, per account.
         /// </para>
         ///  
         /// <para>
-        ///  You can export logs from multiple log groups or multiple time ranges to the same
-        /// Amazon S3 bucket. To separate out log data for each export task, you can specify a
-        /// prefix that will be used as the Amazon S3 key prefix for all exported objects. 
+        /// You can export logs from multiple log groups or multiple time ranges to the same Amazon
+        /// S3 bucket. To separate out log data for each export task, you can specify a prefix
+        /// that will be used as the Amazon S3 key prefix for all exported objects.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
@@ -198,15 +196,22 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates a new log group with the specified name. The name of the log group must be
         /// unique within a region for an AWS account. You can create up to 500 log groups per
-        /// account. 
+        /// account.
         /// 
         ///  
         /// <para>
-        ///  You must use the following guidelines when naming a log group: <ul> <li>Log group
-        /// names can be between 1 and 512 characters long.</li> <li>Allowed characters are a-z,
-        /// A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</li>
-        /// </ul> 
+        /// You must use the following guidelines when naming a log group:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Log group names can be between 1 and 512 characters long.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward
+        /// slash), and '.' (period).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLogGroup service method.</param>
         /// 
@@ -260,14 +265,21 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates a new log stream in the specified log group. The name of the log stream must
         /// be unique within the log group. There is no limit on the number of log streams that
-        /// can exist in a log group. 
+        /// can exist in a log group.
         /// 
         ///  
         /// <para>
-        ///  You must use the following guidelines when naming a log stream: <ul> <li>Log stream
-        /// names can be between 1 and 512 characters long.</li> <li>The ':' colon character is
-        /// not allowed.</li> </ul> 
+        /// You must use the following guidelines when naming a log stream:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Log stream names can be between 1 and 512 characters long.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ':' colon character is not allowed.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLogStream service method.</param>
         /// 
@@ -615,15 +627,15 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns all the destinations that are associated with the AWS account making the
-        /// request. The list returned in the response is ASCII-sorted by destination name. 
+        /// Returns all the destinations that are associated with the AWS account making the request.
+        /// The list returned in the response is ASCII-sorted by destination name.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns up to 50 destinations. If there are more destinations
-        /// to list, the response would contain a <code class="code">nextToken</code> value in
-        /// the response body. You can also limit the number of destinations returned in the response
-        /// by specifying the <code class="code">limit</code> parameter in the request. 
+        /// By default, this operation returns up to 50 destinations. If there are more destinations
+        /// to list, the response would contain a <code>nextToken</code> value in the response
+        /// body. You can also limit the number of destinations returned in the response by specifying
+        /// the <code>limit</code> parameter in the request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDestinations service method.</param>
@@ -667,17 +679,15 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns all the export tasks that are associated with the AWS account making the
-        /// request. The export tasks can be filtered based on <code>TaskId</code> or <code>TaskStatus</code>.
-        /// 
+        /// Returns all the export tasks that are associated with the AWS account making the request.
+        /// The export tasks can be filtered based on <code>TaskId</code> or <code>TaskStatus</code>.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns up to 50 export tasks that satisfy the specified
-        /// filters. If there are more export tasks to list, the response would contain a <code
-        /// class="code">nextToken</code> value in the response body. You can also limit the number
-        /// of export tasks returned in the response by specifying the <code class="code">limit</code>
-        /// parameter in the request. 
+        /// By default, this operation returns up to 50 export tasks that satisfy the specified
+        /// filters. If there are more export tasks to list, the response would contain a <code>nextToken</code>
+        /// value in the response body. You can also limit the number of export tasks returned
+        /// in the response by specifying the <code>limit</code> parameter in the request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
@@ -722,14 +732,14 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns all the log groups that are associated with the AWS account making the request.
-        /// The list returned in the response is ASCII-sorted by log group name. 
+        /// The list returned in the response is ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns up to 50 log groups. If there are more log groups
-        /// to list, the response would contain a <code class="code">nextToken</code> value in
-        /// the response body. You can also limit the number of log groups returned in the response
-        /// by specifying the <code class="code">limit</code> parameter in the request. 
+        /// By default, this operation returns up to 50 log groups. If there are more log groups
+        /// to list, the response would contain a <code>nextToken</code> value in the response
+        /// body. You can also limit the number of log groups returned in the response by specifying
+        /// the <code>limit</code> parameter in the request.
         /// </para>
         /// </summary>
         /// 
@@ -744,14 +754,14 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns all the log groups that are associated with the AWS account making the request.
-        /// The list returned in the response is ASCII-sorted by log group name. 
+        /// The list returned in the response is ASCII-sorted by log group name.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns up to 50 log groups. If there are more log groups
-        /// to list, the response would contain a <code class="code">nextToken</code> value in
-        /// the response body. You can also limit the number of log groups returned in the response
-        /// by specifying the <code class="code">limit</code> parameter in the request. 
+        /// By default, this operation returns up to 50 log groups. If there are more log groups
+        /// to list, the response would contain a <code>nextToken</code> value in the response
+        /// body. You can also limit the number of log groups returned in the response by specifying
+        /// the <code>limit</code> parameter in the request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogGroups service method.</param>
@@ -796,16 +806,15 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns all the log streams that are associated with the specified log group. The
-        /// list returned in the response is ASCII-sorted by log stream name. 
+        /// list returned in the response is ASCII-sorted by log stream name.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns up to 50 log streams. If there are more log streams
-        /// to list, the response would contain a <code class="code">nextToken</code> value in
-        /// the response body. You can also limit the number of log streams returned in the response
-        /// by specifying the <code class="code">limit</code> parameter in the request. This operation
-        /// has a limit of five transactions per second, after which transactions are throttled.
-        /// 
+        /// By default, this operation returns up to 50 log streams. If there are more log streams
+        /// to list, the response would contain a <code>nextToken</code> value in the response
+        /// body. You can also limit the number of log streams returned in the response by specifying
+        /// the <code>limit</code> parameter in the request. This operation has a limit of five
+        /// transactions per second, after which transactions are throttled.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogStreams service method.</param>
@@ -853,15 +862,14 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns all the metrics filters associated with the specified log group. The list
-        /// returned in the response is ASCII-sorted by filter name. 
+        /// returned in the response is ASCII-sorted by filter name.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns up to 50 metric filters. If there are more metric
-        /// filters to list, the response would contain a <code class="code">nextToken</code>
-        /// value in the response body. You can also limit the number of metric filters returned
-        /// in the response by specifying the <code class="code">limit</code> parameter in the
-        /// request. 
+        /// By default, this operation returns up to 50 metric filters. If there are more metric
+        /// filters to list, the response would contain a <code>nextToken</code> value in the
+        /// response body. You can also limit the number of metric filters returned in the response
+        /// by specifying the <code>limit</code> parameter in the request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricFilters service method.</param>
@@ -909,15 +917,14 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns all the subscription filters associated with the specified log group. The
-        /// list returned in the response is ASCII-sorted by filter name. 
+        /// list returned in the response is ASCII-sorted by filter name.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns up to 50 subscription filters. If there are more
-        /// subscription filters to list, the response would contain a <code class="code">nextToken</code>
+        /// By default, this operation returns up to 50 subscription filters. If there are more
+        /// subscription filters to list, the response would contain a <code>nextToken</code>
         /// value in the response body. You can also limit the number of subscription filters
-        /// returned in the response by specifying the <code class="code">limit</code> parameter
-        /// in the request. 
+        /// returned in the response by specifying the <code>limit</code> parameter in the request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubscriptionFilters service method.</param>
@@ -964,22 +971,21 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Retrieves log events, optionally filtered by a filter pattern from the specified
-        /// log group. You can provide an optional time range to filter the results on the event
-        /// <code class="code">timestamp</code>. You can limit the streams searched to an explicit
-        /// list of <code class="code">logStreamNames</code>. 
+        /// Retrieves log events, optionally filtered by a filter pattern from the specified log
+        /// group. You can provide an optional time range to filter the results on the event <code>timestamp</code>.
+        /// You can limit the streams searched to an explicit list of <code>logStreamNames</code>.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns as much matching log events as can fit in a response
+        /// By default, this operation returns as much matching log events as can fit in a response
         /// size of 1MB, up to 10,000 log events, or all the events found within a time-bounded
-        /// scan window. If the response includes a <code class="code">nextToken</code>, then
-        /// there is more data to search, and the search can be resumed with a new request providing
-        /// the nextToken. The response will contain a list of <code class="code">searchedLogStreams</code>
-        /// that contains information about which streams were searched in the request and whether
-        /// they have been searched completely or require further pagination. The <code class="code">limit</code>
-        /// parameter in the request. can be used to specify the maximum number of events to return
-        /// in a page. 
+        /// scan window. If the response includes a <code>nextToken</code>, then there is more
+        /// data to search, and the search can be resumed with a new request providing the nextToken.
+        /// The response will contain a list of <code>searchedLogStreams</code> that contains
+        /// information about which streams were searched in the request and whether they have
+        /// been searched completely or require further pagination. The <code>limit</code> parameter
+        /// in the request can be used to specify the maximum number of events to return in a
+        /// page.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FilterLogEvents service method.</param>
@@ -1027,17 +1033,16 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Retrieves log events from the specified log stream. You can provide an optional time
-        /// range to filter the results on the event <code class="code">timestamp</code>. 
+        /// range to filter the results on the event <code>timestamp</code>.
         /// 
         ///  
         /// <para>
-        ///  By default, this operation returns as much log events as can fit in a response size
-        /// of 1MB, up to 10,000 log events. The response will always include a <code class="code">nextForwardToken</code>
-        /// and a <code class="code">nextBackwardToken</code> in the response body. You can use
-        /// any of these tokens in subsequent <code class="code">GetLogEvents</code> requests
-        /// to paginate through events in either forward or backward direction. You can also limit
-        /// the number of log events returned in the response by specifying the <code class="code">limit</code>
-        /// parameter in the request. 
+        /// By default, this operation returns as much log events as can fit in a response size
+        /// of 1MB, up to 10,000 log events. The response will always include a <code>nextForwardToken</code>
+        /// and a <code>nextBackwardToken</code> in the response body. You can use any of these
+        /// tokens in subsequent <code>GetLogEvents</code> requests to paginate through events
+        /// in either forward or backward direction. You can also limit the number of log events
+        /// returned in the response by specifying the <code>limit</code> parameter in the request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogEvents service method.</param>
@@ -1086,17 +1091,17 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a <code>Destination</code>. A destination encapsulates a physical
         /// resource (such as a Kinesis stream) and allows you to subscribe to a real-time stream
-        /// of log events of a different account, ingested through <code class="code">PutLogEvents</code>
-        /// requests. Currently, the only supported physical resource is a Amazon Kinesis stream
-        /// belonging to the same account as the destination. 
+        /// of log events of a different account, ingested through <code>PutLogEvents</code> requests.
+        /// Currently, the only supported physical resource is a Amazon Kinesis stream belonging
+        /// to the same account as the destination.
         /// 
         ///  
         /// <para>
-        ///  A destination controls what is written to its Amazon Kinesis stream through an access
+        /// A destination controls what is written to its Amazon Kinesis stream through an access
         /// policy. By default, PutDestination does not set any access policy with the destination,
         /// which means a cross-account user will not be able to call <code>PutSubscriptionFilter</code>
         /// against this destination. To enable that, the destination owner must call <code>PutDestinationPolicy</code>
-        /// after PutDestination. 
+        /// after PutDestination.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDestination service method.</param>
@@ -1192,26 +1197,47 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Uploads a batch of log events to the specified log stream. 
+        /// Uploads a batch of log events to the specified log stream.
         /// 
         ///  
         /// <para>
-        ///  Every PutLogEvents request must include the <code class="code">sequenceToken</code>
-        /// obtained from the response of the previous request. An upload in a newly created log
-        /// stream does not require a <code class="code">sequenceToken</code>. 
+        /// Every PutLogEvents request must include the <code>sequenceToken</code> obtained from
+        /// the response of the previous request. An upload in a newly created log stream does
+        /// not require a <code>sequenceToken</code>. You can also get the <code>sequenceToken</code>
+        /// using <a>DescribeLogStreams</a>.
         /// </para>
         ///  
         /// <para>
-        ///  The batch of events must satisfy the following constraints: <ul> <li>The maximum
-        /// batch size is 1,048,576 bytes, and this size is calculated as the sum of all event
-        /// messages in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events
-        /// in the batch can be more than 2 hours in the future.</li> <li>None of the log events
-        /// in the batch can be older than 14 days or the retention period of the log group.</li>
-        /// <li>The log events in the batch must be in chronological ordered by their <code class="code">timestamp</code>.</li>
-        /// <li>The maximum number of log events in a batch is 10,000.</li> <li>A batch of log
-        /// events in a single PutLogEvents request cannot span more than 24 hours. Otherwise,
-        /// the PutLogEvents operation will fail.</li> </ul> 
+        /// The batch of events must satisfy the following constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum
+        /// of all event messages in UTF-8, plus 26 bytes for each log event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// None of the log events in the batch can be more than 2 hours in the future.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// None of the log events in the batch can be older than 14 days or the retention period
+        /// of the log group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The log events in the batch must be in chronological ordered by their <code>timestamp</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The maximum number of log events in a batch is 10,000.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A batch of log events in a single PutLogEvents request cannot span more than 24 hours.
+        /// Otherwise, the PutLogEvents operation will fail.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLogEvents service method.</param>
         /// 
@@ -1224,9 +1250,6 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException">
         /// 
-        /// </exception>
-        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// Returned if the specified resource does not exist.
@@ -1268,12 +1291,11 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a metric filter and associates it with the specified log group.
         /// Metric filters allow you to configure rules to extract metric data from log events
-        /// ingested through <code class="code">PutLogEvents</code> requests. 
+        /// ingested through <code>PutLogEvents</code> requests.
         /// 
         ///  
         /// <para>
-        ///  The maximum number of metric filters that can be associated with a log group is 100.
-        /// 
+        /// The maximum number of metric filters that can be associated with a log group is 100.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricFilter service method.</param>
@@ -1378,19 +1400,32 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a subscription filter and associates it with the specified log
         /// group. Subscription filters allow you to subscribe to a real-time stream of log events
-        /// ingested through <code class="code">PutLogEvents</code> requests and have them delivered
-        /// to a specific destination. Currently, the supported destinations are: <ul> <li> An
-        /// Amazon Kinesis stream belonging to the same account as the subscription filter, for
-        /// same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>)
-        /// belonging to a different account, for cross-account delivery. </li> <li> An Amazon
-        /// Kinesis Firehose stream belonging to the same account as the subscription filter,
-        /// for same-account delivery. </li> <li> An AWS Lambda function belonging to the same
-        /// account as the subscription filter, for same-account delivery. </li> </ul> 
+        /// ingested through <code>PutLogEvents</code> requests and have them delivered to a specific
+        /// destination. Currently, the supported destinations are:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  Currently there can only be one subscription filter associated with a log group.
-        /// 
+        /// An Amazon Kinesis stream belonging to the same account as the subscription filter,
+        /// for same-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  A logical destination (used via an ARN of <code>Destination</code>) belonging to
+        /// a different account, for cross-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon Kinesis Firehose stream belonging to the same account as the subscription
+        /// filter, for same-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An AWS Lambda function belonging to the same account as the subscription filter, for
+        /// same-account delivery.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Currently there can only be one subscription filter associated with a log group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter service method.</param>

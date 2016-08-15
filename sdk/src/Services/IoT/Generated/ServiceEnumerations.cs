@@ -25,6 +25,56 @@ namespace Amazon.IoT
 {
 
     /// <summary>
+    /// Constants used for properties of type AutoRegistrationStatus.
+    /// </summary>
+    public class AutoRegistrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE for AutoRegistrationStatus
+        /// </summary>
+        public static readonly AutoRegistrationStatus DISABLE = new AutoRegistrationStatus("DISABLE");
+        /// <summary>
+        /// Constant ENABLE for AutoRegistrationStatus
+        /// </summary>
+        public static readonly AutoRegistrationStatus ENABLE = new AutoRegistrationStatus("ENABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoRegistrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoRegistrationStatus FindValue(string value)
+        {
+            return FindValue<AutoRegistrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoRegistrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CACertificateStatus.
     /// </summary>
     public class CACertificateStatus : ConstantClass
@@ -88,6 +138,10 @@ namespace Amazon.IoT
         /// Constant INACTIVE for CertificateStatus
         /// </summary>
         public static readonly CertificateStatus INACTIVE = new CertificateStatus("INACTIVE");
+        /// <summary>
+        /// Constant PENDING_ACTIVATION for CertificateStatus
+        /// </summary>
+        public static readonly CertificateStatus PENDING_ACTIVATION = new CertificateStatus("PENDING_ACTIVATION");
         /// <summary>
         /// Constant PENDING_TRANSFER for CertificateStatus
         /// </summary>
