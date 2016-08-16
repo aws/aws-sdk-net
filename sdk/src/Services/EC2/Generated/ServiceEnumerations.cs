@@ -2907,6 +2907,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type PaymentOption.
+    /// </summary>
+    public class PaymentOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllUpfront for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption AllUpfront = new PaymentOption("AllUpfront");
+        /// <summary>
+        /// Constant NoUpfront for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption NoUpfront = new PaymentOption("NoUpfront");
+        /// <summary>
+        /// Constant PartialUpfront for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption PartialUpfront = new PaymentOption("PartialUpfront");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentOption FindValue(string value)
+        {
+            return FindValue<PaymentOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PermissionGroup.
     /// </summary>
     public class PermissionGroup : ConstantClass
@@ -3320,6 +3374,64 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReportStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationState.
+    /// </summary>
+    public class ReservationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ReservationState
+        /// </summary>
+        public static readonly ReservationState Active = new ReservationState("active");
+        /// <summary>
+        /// Constant PaymentFailed for ReservationState
+        /// </summary>
+        public static readonly ReservationState PaymentFailed = new ReservationState("payment-failed");
+        /// <summary>
+        /// Constant PaymentPending for ReservationState
+        /// </summary>
+        public static readonly ReservationState PaymentPending = new ReservationState("payment-pending");
+        /// <summary>
+        /// Constant Retired for ReservationState
+        /// </summary>
+        public static readonly ReservationState Retired = new ReservationState("retired");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationState FindValue(string value)
+        {
+            return FindValue<ReservationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationState(string value)
         {
             return FindValue(value);
         }

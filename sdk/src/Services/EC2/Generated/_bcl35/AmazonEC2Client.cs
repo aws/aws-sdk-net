@@ -5725,6 +5725,106 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeHostReservationOfferings
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHostReservationOfferings service method, as returned by EC2.</returns>
+        public DescribeHostReservationOfferingsResponse DescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request)
+        {
+            var marshaller = new DescribeHostReservationOfferingsRequestMarshaller();
+            var unmarshaller = DescribeHostReservationOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHostReservationOfferingsRequest,DescribeHostReservationOfferingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHostReservationOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHostReservationOfferings
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeHostReservationOfferingsRequestMarshaller();
+            var unmarshaller = DescribeHostReservationOfferingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeHostReservationOfferingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHostReservationOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHostReservationOfferings.</param>
+        /// 
+        /// <returns>Returns a  DescribeHostReservationOfferingsResult from EC2.</returns>
+        public  DescribeHostReservationOfferingsResponse EndDescribeHostReservationOfferings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeHostReservationOfferingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeHostReservations
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHostReservations service method, as returned by EC2.</returns>
+        public DescribeHostReservationsResponse DescribeHostReservations(DescribeHostReservationsRequest request)
+        {
+            var marshaller = new DescribeHostReservationsRequestMarshaller();
+            var unmarshaller = DescribeHostReservationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHostReservationsRequest,DescribeHostReservationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHostReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHostReservations
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeHostReservations(DescribeHostReservationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeHostReservationsRequestMarshaller();
+            var unmarshaller = DescribeHostReservationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeHostReservationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHostReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHostReservations.</param>
+        /// 
+        /// <returns>Returns a  DescribeHostReservationsResult from EC2.</returns>
+        public  DescribeHostReservationsResponse EndDescribeHostReservations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeHostReservationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeHosts
 
         /// <summary>
@@ -10256,6 +10356,56 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetHostReservationPurchasePreview
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview service method.</param>
+        /// 
+        /// <returns>The response from the GetHostReservationPurchasePreview service method, as returned by EC2.</returns>
+        public GetHostReservationPurchasePreviewResponse GetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request)
+        {
+            var marshaller = new GetHostReservationPurchasePreviewRequestMarshaller();
+            var unmarshaller = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostReservationPurchasePreviewRequest,GetHostReservationPurchasePreviewResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHostReservationPurchasePreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostReservationPurchasePreview
+        ///         operation.</returns>
+        public IAsyncResult BeginGetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetHostReservationPurchasePreviewRequestMarshaller();
+            var unmarshaller = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetHostReservationPurchasePreviewRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetHostReservationPurchasePreview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostReservationPurchasePreview.</param>
+        /// 
+        /// <returns>Returns a  GetHostReservationPurchasePreviewResult from EC2.</returns>
+        public  GetHostReservationPurchasePreviewResponse EndGetHostReservationPurchasePreview(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetHostReservationPurchasePreviewResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPasswordData
 
         /// <summary>
@@ -11643,6 +11793,56 @@ namespace Amazon.EC2
         public  MoveAddressToVpcResponse EndMoveAddressToVpc(IAsyncResult asyncResult)
         {
             return EndInvoke<MoveAddressToVpcResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PurchaseHostReservation
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation service method.</param>
+        /// 
+        /// <returns>The response from the PurchaseHostReservation service method, as returned by EC2.</returns>
+        public PurchaseHostReservationResponse PurchaseHostReservation(PurchaseHostReservationRequest request)
+        {
+            var marshaller = new PurchaseHostReservationRequestMarshaller();
+            var unmarshaller = PurchaseHostReservationResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseHostReservationRequest,PurchaseHostReservationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseHostReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseHostReservation
+        ///         operation.</returns>
+        public IAsyncResult BeginPurchaseHostReservation(PurchaseHostReservationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PurchaseHostReservationRequestMarshaller();
+            var unmarshaller = PurchaseHostReservationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PurchaseHostReservationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PurchaseHostReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseHostReservation.</param>
+        /// 
+        /// <returns>Returns a  PurchaseHostReservationResult from EC2.</returns>
+        public  PurchaseHostReservationResponse EndPurchaseHostReservation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PurchaseHostReservationResponse>(asyncResult);
         }
 
         #endregion

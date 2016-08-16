@@ -848,6 +848,24 @@
       "output":{"shape":"DescribeFlowLogsResult"},
       "documentation":"<p>Describes one or more flow logs. To view the information in your flow logs (the log streams for the network interfaces), you must use the CloudWatch Logs console or the CloudWatch Logs API.</p>"
     },
+    "DescribeHostReservationOfferings":{
+      "name":"DescribeHostReservationOfferings",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeHostReservationOfferingsRequest"},
+      "output":{"shape":"DescribeHostReservationOfferingsResult"}
+    },
+    "DescribeHostReservations":{
+      "name":"DescribeHostReservations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeHostReservationsRequest"},
+      "output":{"shape":"DescribeHostReservationsResult"}
+    },
     "DescribeHosts":{
       "name":"DescribeHosts",
       "http":{
@@ -1520,6 +1538,15 @@
       "output":{"shape":"GetConsoleScreenshotResult"},
       "documentation":"<p>Retrieve a JPG-format screenshot of a running instance to help with troubleshooting.</p> <p>The returned content is Base64-encoded.</p>"
     },
+    "GetHostReservationPurchasePreview":{
+      "name":"GetHostReservationPurchasePreview",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetHostReservationPurchasePreviewRequest"},
+      "output":{"shape":"GetHostReservationPurchasePreviewResult"}
+    },
     "GetPasswordData":{
       "name":"GetPasswordData",
       "http":{
@@ -1740,6 +1767,15 @@
       "input":{"shape":"MoveAddressToVpcRequest"},
       "output":{"shape":"MoveAddressToVpcResult"},
       "documentation":"<p>Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform. The Elastic IP address must be allocated to your account for more than 24 hours, and it must not be associated with an instance. After the Elastic IP address is moved, it is no longer available for use in the EC2-Classic platform, unless you move it back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic platform. </p>"
+    },
+    "PurchaseHostReservation":{
+      "name":"PurchaseHostReservation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PurchaseHostReservationRequest"},
+      "output":{"shape":"PurchaseHostReservationResult"}
     },
     "PurchaseReservedInstancesOffering":{
       "name":"PurchaseReservedInstancesOffering",
@@ -5533,6 +5569,52 @@
       },
       "documentation":"<p>Contains the output of DescribeFlowLogs.</p>"
     },
+    "DescribeHostReservationOfferingsRequest":{
+      "type":"structure",
+      "members":{
+        "OfferingId":{"shape":"String"},
+        "MinDuration":{"shape":"Integer"},
+        "MaxDuration":{"shape":"Integer"},
+        "Filter":{"shape":"FilterList"},
+        "MaxResults":{"shape":"Integer"},
+        "NextToken":{"shape":"String"}
+      }
+    },
+    "DescribeHostReservationOfferingsResult":{
+      "type":"structure",
+      "members":{
+        "OfferingSet":{
+          "shape":"HostOfferingSet",
+          "locationName":"offeringSet"
+        },
+        "NextToken":{
+          "shape":"String",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "DescribeHostReservationsRequest":{
+      "type":"structure",
+      "members":{
+        "HostReservationIdSet":{"shape":"HostReservationIdSet"},
+        "Filter":{"shape":"FilterList"},
+        "MaxResults":{"shape":"Integer"},
+        "NextToken":{"shape":"String"}
+      }
+    },
+    "DescribeHostReservationsResult":{
+      "type":"structure",
+      "members":{
+        "HostReservationSet":{
+          "shape":"HostReservationSet",
+          "locationName":"hostReservationSet"
+        },
+        "NextToken":{
+          "shape":"String",
+          "locationName":"nextToken"
+        }
+      }
+    },
     "DescribeHostsRequest":{
       "type":"structure",
       "members":{
@@ -8544,6 +8626,38 @@
       },
       "documentation":"<p>Contains the output of the request.</p>"
     },
+    "GetHostReservationPurchasePreviewRequest":{
+      "type":"structure",
+      "required":[
+        "OfferingId",
+        "HostIdSet"
+      ],
+      "members":{
+        "OfferingId":{"shape":"String"},
+        "HostIdSet":{"shape":"RequestHostIdSet"}
+      }
+    },
+    "GetHostReservationPurchasePreviewResult":{
+      "type":"structure",
+      "members":{
+        "Purchase":{
+          "shape":"PurchaseSet",
+          "locationName":"purchase"
+        },
+        "TotalUpfrontPrice":{
+          "shape":"String",
+          "locationName":"totalUpfrontPrice"
+        },
+        "TotalHourlyPrice":{
+          "shape":"String",
+          "locationName":"totalHourlyPrice"
+        },
+        "CurrencyCode":{
+          "shape":"CurrencyCodeValues",
+          "locationName":"currencyCode"
+        }
+      }
+    },
     "GetPasswordDataRequest":{
       "type":"structure",
       "required":["InstanceId"],
@@ -8739,6 +8853,43 @@
         "locationName":"item"
       }
     },
+    "HostOffering":{
+      "type":"structure",
+      "members":{
+        "OfferingId":{
+          "shape":"String",
+          "locationName":"offeringId"
+        },
+        "InstanceFamily":{
+          "shape":"String",
+          "locationName":"instanceFamily"
+        },
+        "PaymentOption":{
+          "shape":"PaymentOption",
+          "locationName":"paymentOption"
+        },
+        "UpfrontPrice":{
+          "shape":"String",
+          "locationName":"upfrontPrice"
+        },
+        "HourlyPrice":{
+          "shape":"String",
+          "locationName":"hourlyPrice"
+        },
+        "CurrencyCode":{
+          "shape":"CurrencyCodeValues",
+          "locationName":"currencyCode"
+        },
+        "Duration":{
+          "shape":"Integer",
+          "locationName":"duration"
+        }
+      }
+    },
+    "HostOfferingSet":{
+      "type":"list",
+      "member":{"shape":"HostOffering"}
+    },
     "HostProperties":{
       "type":"structure",
       "members":{
@@ -8764,6 +8915,74 @@
         }
       },
       "documentation":"<p>Describes properties of a Dedicated host.</p>"
+    },
+    "HostReservation":{
+      "type":"structure",
+      "members":{
+        "HostReservationId":{
+          "shape":"String",
+          "locationName":"hostReservationId"
+        },
+        "HostIdSet":{
+          "shape":"ResponseHostIdSet",
+          "locationName":"hostIdSet"
+        },
+        "OfferingId":{
+          "shape":"String",
+          "locationName":"offeringId"
+        },
+        "InstanceFamily":{
+          "shape":"String",
+          "locationName":"instanceFamily"
+        },
+        "PaymentOption":{
+          "shape":"PaymentOption",
+          "locationName":"paymentOption"
+        },
+        "HourlyPrice":{
+          "shape":"String",
+          "locationName":"hourlyPrice"
+        },
+        "UpfrontPrice":{
+          "shape":"String",
+          "locationName":"upfrontPrice"
+        },
+        "CurrencyCode":{
+          "shape":"CurrencyCodeValues",
+          "locationName":"currencyCode"
+        },
+        "Count":{
+          "shape":"Integer",
+          "locationName":"count"
+        },
+        "Duration":{
+          "shape":"Integer",
+          "locationName":"duration"
+        },
+        "End":{
+          "shape":"DateTime",
+          "locationName":"end"
+        },
+        "Start":{
+          "shape":"DateTime",
+          "locationName":"start"
+        },
+        "State":{
+          "shape":"ReservationState",
+          "locationName":"state"
+        }
+      }
+    },
+    "HostReservationIdSet":{
+      "type":"list",
+      "member":{
+        "shape":"String",
+        "locationName":"item"
+      }
+    },
+    "HostReservationSet":{
+      "type":"list",
+      "member":{"shape":"HostReservation"}
     },
     "HostTenancy":{
       "type":"string",
@@ -12138,6 +12357,14 @@
         "locationName":"Owner"
       }
     },
+    "PaymentOption":{
+      "type":"string",
+      "enum":[
+        "AllUpfront",
+        "PartialUpfront",
+        "NoUpfront"
+      ]
+    },
     "PeeringConnectionOptions":{
       "type":"structure",
       "members":{
@@ -12549,6 +12776,82 @@
         "locationName":"PublicIp"
       }
     },
+    "Purchase":{
+      "type":"structure",
+      "members":{
+        "HostReservationId":{
+          "shape":"String",
+          "locationName":"hostReservationId"
+        },
+        "HostIdSet":{
+          "shape":"ResponseHostIdSet",
+          "locationName":"hostIdSet"
+        },
+        "InstanceFamily":{
+          "shape":"String",
+          "locationName":"instanceFamily"
+        },
+        "PaymentOption":{
+          "shape":"PaymentOption",
+          "locationName":"paymentOption"
+        },
+        "UpfrontPrice":{
+          "shape":"String",
+          "locationName":"upfrontPrice"
+        },
+        "HourlyPrice":{
+          "shape":"String",
+          "locationName":"hourlyPrice"
+        },
+        "CurrencyCode":{
+          "shape":"CurrencyCodeValues",
+          "locationName":"currencyCode"
+        },
+        "Duration":{
+          "shape":"Integer",
+          "locationName":"duration"
+        }
+      }
+    },
+    "PurchaseHostReservationRequest":{
+      "type":"structure",
+      "required":[
+        "OfferingId",
+        "HostIdSet"
+      ],
+      "members":{
+        "OfferingId":{"shape":"String"},
+        "HostIdSet":{"shape":"RequestHostIdSet"},
+        "LimitPrice":{"shape":"String"},
+        "CurrencyCode":{"shape":"CurrencyCodeValues"},
+        "ClientToken":{"shape":"String"}
+      }
+    },
+    "PurchaseHostReservationResult":{
+      "type":"structure",
+      "members":{
+        "Purchase":{
+          "shape":"PurchaseSet",
+          "locationName":"purchase"
+        },
+        "TotalUpfrontPrice":{
+          "shape":"String",
+          "locationName":"totalUpfrontPrice"
+        },
+        "TotalHourlyPrice":{
+          "shape":"String",
+          "locationName":"totalHourlyPrice"
+        },
+        "CurrencyCode":{
+          "shape":"CurrencyCodeValues",
+          "locationName":"currencyCode"
+        },
+        "ClientToken":{
+          "shape":"String",
+          "locationName":"clientToken"
+        }
+      }
+    },
     "PurchaseRequest":{
       "type":"structure",
       "required":[
@@ -12645,6 +12948,10 @@
         }
       },
       "documentation":"<p>Contains the output of PurchaseScheduledInstances.</p>"
+    },
+    "PurchaseSet":{
+      "type":"list",
+      "member":{"shape":"Purchase"}
     },
     "PurchasedScheduledInstanceSet":{
       "type":"list",
@@ -13150,6 +13457,13 @@
         "locationName":"item"
       }
     },
+    "RequestHostIdSet":{
+      "type":"list",
+      "member":{
+        "shape":"String",
+        "locationName":"item"
+      }
+    },
     "RequestSpotFleetRequest":{
       "type":"structure",
       "required":["SpotFleetRequestConfig"],
@@ -13368,6 +13682,15 @@
         "shape":"Reservation",
         "locationName":"item"
       }
+    },
+    "ReservationState":{
+      "type":"string",
+      "enum":[
+        "payment-pending",
+        "payment-failed",
+        "active",
+        "retired"
+      ]
     },
     "ReservedInstanceLimitPrice":{
       "type":"structure",
@@ -13902,6 +14225,13 @@
       ]
     },
     "ResponseHostIdList":{
+      "type":"list",
+      "member":{
+        "shape":"String",
+        "locationName":"item"
+      }
+    },
+    "ResponseHostIdSet":{
       "type":"list",
       "member":{
         "shape":"String",
@@ -16170,15 +16500,15 @@
       "type":"structure",
       "required":["Error"],
       "members":{
-        "Error":{
-          "shape":"UnsuccessfulItemError",
-          "documentation":"<p>Information about the error.</p>",
-          "locationName":"error"
-        },
         "ResourceId":{
           "shape":"String",
           "documentation":"<p>The ID of the resource.</p>",
           "locationName":"resourceId"
+        },
+        "Error":{
+          "shape":"UnsuccessfulItemError",
+          "documentation":"<p>Information about the error.</p>",
+          "locationName":"error"
         }
       },
       "documentation":"<p>Information about items that were not successfully processed in a batch call.</p>"
