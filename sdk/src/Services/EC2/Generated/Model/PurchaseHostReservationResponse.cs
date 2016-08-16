@@ -39,7 +39,12 @@ namespace Amazon.EC2.Model
         private string _totalUpfrontPrice;
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+        /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> 
+        /// </para>
         /// </summary>
         public string ClientToken
         {
@@ -54,7 +59,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrencyCode.
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
+        /// The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code>
+        /// amounts are specified. At this time, the only supported currency is <code>USD</code>.
+        /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode
         {
@@ -69,7 +78,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Purchase.
+        /// Gets and sets the property Purchase. 
+        /// <para>
+        /// Describes the details of the purchase.
+        /// </para>
         /// </summary>
         public List<Purchase> Purchase
         {
@@ -84,7 +96,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalHourlyPrice.
+        /// Gets and sets the property TotalHourlyPrice. 
+        /// <para>
+        /// The total hourly price of the reservation calculated per hour.
+        /// </para>
         /// </summary>
         public string TotalHourlyPrice
         {
@@ -99,7 +114,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalUpfrontPrice.
+        /// Gets and sets the property TotalUpfrontPrice. 
+        /// <para>
+        /// The total amount that will be charged to your account when you purchase the reservation.
+        /// </para>
         /// </summary>
         public string TotalUpfrontPrice
         {

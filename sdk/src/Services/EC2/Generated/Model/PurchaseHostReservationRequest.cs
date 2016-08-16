@@ -29,7 +29,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseHostReservation operation.
-    /// 
+    /// Purchase a reservation with configurations that match those of your Dedicated Host.
+    /// You must have active Dedicated Hosts in your account before you purchase a reservation.
+    /// This action results in the specified reservation being purchased and charged to your
+    /// account.
     /// </summary>
     public partial class PurchaseHostReservationRequest : AmazonEC2Request
     {
@@ -40,7 +43,12 @@ namespace Amazon.EC2.Model
         private string _offeringId;
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+        /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         public string ClientToken
         {
@@ -55,7 +63,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrencyCode.
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
+        /// The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>,
+        /// and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported
+        /// currency is <code>USD</code>.
+        /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode
         {
@@ -70,7 +83,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostIdSet.
+        /// Gets and sets the property HostIdSet. 
+        /// <para>
+        /// The ID/s of the Dedicated Host/s that the reservation will be associated with.
+        /// </para>
         /// </summary>
         public List<string> HostIdSet
         {
@@ -85,7 +101,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LimitPrice.
+        /// Gets and sets the property LimitPrice. 
+        /// <para>
+        /// The specified limit is checked against the total upfront cost of the reservation (calculated
+        /// as the offering's upfront cost multiplied by the host count). If the total upfront
+        /// cost is greater than the specified price limit, the request will fail. This is used
+        /// to ensure that the purchase does not exceed the expected upfront cost of the purchase.
+        /// At this time, the only supported currency is <code>USD</code>. For example, to indicate
+        /// a limit price of USD 100, specify 100.00.
+        /// </para>
         /// </summary>
         public string LimitPrice
         {
@@ -100,7 +124,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfferingId.
+        /// Gets and sets the property OfferingId. 
+        /// <para>
+        /// The ID of the offering.
+        /// </para>
         /// </summary>
         public string OfferingId
         {

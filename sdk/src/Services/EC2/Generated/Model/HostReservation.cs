@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Details about the Dedicated Host Reservation and associated Dedicated Hosts.
     /// </summary>
     public partial class HostReservation
     {
@@ -47,7 +47,10 @@ namespace Amazon.EC2.Model
         private string _upfrontPrice;
 
         /// <summary>
-        /// Gets and sets the property Count.
+        /// Gets and sets the property Count. 
+        /// <para>
+        /// The number of Dedicated Hosts the reservation is associated with.
+        /// </para>
         /// </summary>
         public int Count
         {
@@ -62,7 +65,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CurrencyCode.
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
+        /// The currency in which the <code>upfrontPrice</code> and <code>hourlyPrice</code> amounts
+        /// are specified. At this time, the only supported currency is <code>USD</code>.
+        /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode
         {
@@ -77,7 +84,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Duration.
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// The length of the reservation's term, specified in seconds. Can be <code>31536000
+        /// (1 year)</code> | <code>94608000 (3 years)</code> | <code>157680000 (5 years)</code>.
+        /// </para>
         /// </summary>
         public int Duration
         {
@@ -92,7 +103,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property End.
+        /// Gets and sets the property End. 
+        /// <para>
+        /// The date and time that the reservation ends.
+        /// </para>
         /// </summary>
         public DateTime End
         {
@@ -107,7 +121,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostIdSet.
+        /// Gets and sets the property HostIdSet. 
+        /// <para>
+        /// The IDs of the Dedicated Hosts associated with the reservation.
+        /// </para>
         /// </summary>
         public List<string> HostIdSet
         {
@@ -122,7 +139,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostReservationId.
+        /// Gets and sets the property HostReservationId. 
+        /// <para>
+        /// The ID of the reservation that specifies the associated Dedicated Hosts.
+        /// </para>
         /// </summary>
         public string HostReservationId
         {
@@ -137,7 +157,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HourlyPrice.
+        /// Gets and sets the property HourlyPrice. 
+        /// <para>
+        /// The hourly price of the reservation.
+        /// </para>
         /// </summary>
         public string HourlyPrice
         {
@@ -152,7 +175,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceFamily.
+        /// Gets and sets the property InstanceFamily. 
+        /// <para>
+        /// The instance family of the Dedicated Host Reservation. The instance family on the
+        /// Dedicated Host must be the same in order for it to benefit from the reservation.
+        /// </para>
         /// </summary>
         public string InstanceFamily
         {
@@ -167,7 +194,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfferingId.
+        /// Gets and sets the property OfferingId. 
+        /// <para>
+        /// The ID of the reservation. This remains the same regardless of which Dedicated Hosts
+        /// are associated with it.
+        /// </para>
         /// </summary>
         public string OfferingId
         {
@@ -182,7 +213,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PaymentOption.
+        /// Gets and sets the property PaymentOption. 
+        /// <para>
+        /// The payment option selected for this reservation.
+        /// </para>
         /// </summary>
         public PaymentOption PaymentOption
         {
@@ -197,7 +231,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Start.
+        /// Gets and sets the property Start. 
+        /// <para>
+        /// The date and time that the reservation started.
+        /// </para>
         /// </summary>
         public DateTime Start
         {
@@ -212,7 +249,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the reservation.
+        /// </para>
         /// </summary>
         public ReservationState State
         {
@@ -227,7 +267,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpfrontPrice.
+        /// Gets and sets the property UpfrontPrice. 
+        /// <para>
+        /// The upfront price of the reservation.
+        /// </para>
         /// </summary>
         public string UpfrontPrice
         {

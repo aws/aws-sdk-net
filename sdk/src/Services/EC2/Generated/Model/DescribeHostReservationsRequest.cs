@@ -29,7 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHostReservations operation.
-    /// 
+    /// Describes Dedicated Host Reservations which are associated with Dedicated Hosts in
+    /// your account.
     /// </summary>
     public partial class DescribeHostReservationsRequest : AmazonEC2Request
     {
@@ -39,7 +40,25 @@ namespace Amazon.EC2.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filter.
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial
+        /// Upfront</code> | <code>All Upfront</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>state</code> - The state of the reservation (<code>payment-pending</code> |
+        /// <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filter
         {
@@ -54,7 +73,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostReservationIdSet.
+        /// Gets and sets the property HostReservationIdSet. 
+        /// <para>
+        /// One or more host reservation IDs.
+        /// </para>
         /// </summary>
         public List<string> HostReservationIdSet
         {
@@ -69,7 +91,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return for the request in a single page. The remaining
+        /// results can be seen by sending another request with the returned <code>nextToken</code>
+        /// value. This value can be between 5 and 500; if <code>maxResults</code> is given a
+        /// larger value than 500, you will receive an error.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -84,7 +112,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

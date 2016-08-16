@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property HostReservationSet.
+        /// Gets and sets the property HostReservationSet. 
+        /// <para>
+        /// Details about the reservation's configuration.
+        /// </para>
         /// </summary>
         public List<HostReservation> HostReservationSet
         {
@@ -51,7 +54,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
+        /// </para>
         /// </summary>
         public string NextToken
         {

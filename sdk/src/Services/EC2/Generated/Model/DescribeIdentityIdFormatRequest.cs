@@ -73,7 +73,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The type of resource.
+        /// The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code>
+        /// | <code>volume</code> 
         /// </para>
         /// </summary>
         public string Resource

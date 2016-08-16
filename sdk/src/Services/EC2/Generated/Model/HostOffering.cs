@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Details about the Dedicated Host Reservation offering.
     /// </summary>
     public partial class HostOffering
     {
@@ -41,7 +41,10 @@ namespace Amazon.EC2.Model
         private string _upfrontPrice;
 
         /// <summary>
-        /// Gets and sets the property CurrencyCode.
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
+        /// The currency of the offering.
+        /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode
         {
@@ -56,7 +59,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Duration.
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// The duration of the offering (in seconds).
+        /// </para>
         /// </summary>
         public int Duration
         {
@@ -71,7 +77,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HourlyPrice.
+        /// Gets and sets the property HourlyPrice. 
+        /// <para>
+        /// The hourly price of the offering.
+        /// </para>
         /// </summary>
         public string HourlyPrice
         {
@@ -86,7 +95,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceFamily.
+        /// Gets and sets the property InstanceFamily. 
+        /// <para>
+        /// The instance family that the offering covers.
+        /// </para>
         /// </summary>
         public string InstanceFamily
         {
@@ -101,7 +113,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfferingId.
+        /// Gets and sets the property OfferingId. 
+        /// <para>
+        /// The ID of the offering.
+        /// </para>
         /// </summary>
         public string OfferingId
         {
@@ -116,7 +131,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PaymentOption.
+        /// Gets and sets the property PaymentOption. 
+        /// <para>
+        /// The available payment option.
+        /// </para>
         /// </summary>
         public PaymentOption PaymentOption
         {
@@ -131,7 +149,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpfrontPrice.
+        /// Gets and sets the property UpfrontPrice. 
+        /// <para>
+        /// The upfront price of the offering. Does not apply to No Upfront offerings.
+        /// </para>
         /// </summary>
         public string UpfrontPrice
         {

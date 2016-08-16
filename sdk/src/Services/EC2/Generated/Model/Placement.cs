@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Affinity. 
         /// <para>
-        /// The affinity setting for the instance on the Dedicated host. This parameter is not
+        /// The affinity setting for the instance on the Dedicated Host. This parameter is not
         /// supported for the <a>ImportInstance</a> command.
         /// </para>
         /// </summary>

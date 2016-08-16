@@ -29,7 +29,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHostReservationOfferings operation.
+    /// Describes the Dedicated Host Reservations that are available to purchase.
     /// 
+    ///  
+    /// <para>
+    /// The results describe all the Dedicated Host Reservation offerings, including offerings
+    /// that may not match the instance family and region of your Dedicated Hosts. When purchasing
+    /// an offering, ensure that the the instance family and region of the offering matches
+    /// that of the Dedicated Host/s it will be associated with. For an overview of supported
+    /// instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+    /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+    /// </para>
     /// </summary>
     public partial class DescribeHostReservationOfferingsRequest : AmazonEC2Request
     {
@@ -41,7 +51,20 @@ namespace Amazon.EC2.Model
         private string _offeringId;
 
         /// <summary>
-        /// Gets and sets the property Filter.
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// One or more filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial
+        /// Upfront</code> | <code>All Upfront</code>).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filter
         {
@@ -56,7 +79,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxDuration.
+        /// Gets and sets the property MaxDuration. 
+        /// <para>
+        /// This is the maximum duration of the reservation you'd like to purchase, specified
+        /// in seconds.Reservations are available in 1, 3, and 5 year terms. The number of seconds
+        /// specified must be the number of seconds in a year (365x24x60x60) times one of the
+        /// supported durations (1, 3, or 5). For example, specify 157680000 for 5 years.
+        /// </para>
         /// </summary>
         public int MaxDuration
         {
@@ -71,7 +100,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return for the request in a single page. The remaining
+        /// results can be seen by sending another request with the returned <code>nextToken</code>
+        /// value. This value can be between 5 and 500; if <code>maxResults</code> is given a
+        /// larger value than 500, you will receive an error.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -86,7 +121,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinDuration.
+        /// Gets and sets the property MinDuration. 
+        /// <para>
+        /// This is the minimum duration of the reservation you'd like to purchase, specified
+        /// in seconds. Reservations are available in 1, 3, and 5 year terms. The number of seconds
+        /// specified must be the number of seconds in a year (365x24x60x60) times one of the
+        /// supported durations (1, 3, or 5). For example, specify 94608000 for 3 years.
+        /// </para>
         /// </summary>
         public int MinDuration
         {
@@ -101,7 +142,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -116,7 +160,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfferingId.
+        /// Gets and sets the property OfferingId. 
+        /// <para>
+        /// The ID of the reservation offering.
+        /// </para>
         /// </summary>
         public string OfferingId
         {

@@ -30,7 +30,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ImportImage operation.
     /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
-    /// Image (AMI).
+    /// Image (AMI). For more information, see <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+    /// a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
     /// </summary>
     public partial class ImportImageRequest : AmazonEC2Request
     {
@@ -168,8 +169,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         ///  <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use
-        /// these licenses in a third party cloud like AWS. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
-        /// Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// these licenses in a third party cloud like AWS. For more information, see <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
+        /// in the VM Import/Export User Guide.
         /// </para>
         ///  
         /// <para>

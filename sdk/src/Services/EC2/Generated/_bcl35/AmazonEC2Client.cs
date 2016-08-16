@@ -368,7 +368,7 @@ namespace Amazon.EC2
         #region  AllocateHosts
 
         /// <summary>
-        /// Allocates a Dedicated host to your account. At minimum you need to specify the instance
+        /// Allocates a Dedicated Host to your account. At minimum you need to specify the instance
         /// size type, Availability Zone, and quantity of hosts you want to allocate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateHosts service method.</param>
@@ -1271,9 +1271,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+        /// a Virtual Machine Using the Amazon EC2 CLI</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelConversionTask service method.</param>
@@ -2103,8 +2102,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For information about the supported operating systems, image formats, and known limitations
-        /// for the types of instances you can export, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Exporting
-        /// EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// for the types of instances you can export, see <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+        /// an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceExportTask service method.</param>
@@ -5394,9 +5393,8 @@ namespace Amazon.EC2
         #region  DescribeConversionTasks
 
         /// <summary>
-        /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// Describes one or more of your conversion tasks. For more information, see the <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+        /// Import/Export User Guide</a>.
         /// 
         ///  
         /// <para>
@@ -5412,9 +5410,8 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// Describes one or more of your conversion tasks. For more information, see the <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+        /// Import/Export User Guide</a>.
         /// 
         ///  
         /// <para>
@@ -5728,7 +5725,17 @@ namespace Amazon.EC2
         #region  DescribeHostReservationOfferings
 
         /// <summary>
+        /// Describes the Dedicated Host Reservations that are available to purchase.
         /// 
+        ///  
+        /// <para>
+        /// The results describe all the Dedicated Host Reservation offerings, including offerings
+        /// that may not match the instance family and region of your Dedicated Hosts. When purchasing
+        /// an offering, ensure that the the instance family and region of the offering matches
+        /// that of the Dedicated Host/s it will be associated with. For an overview of supported
+        /// instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+        /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings service method.</param>
         /// 
@@ -5778,7 +5785,8 @@ namespace Amazon.EC2
         #region  DescribeHostReservations
 
         /// <summary>
-        /// 
+        /// Describes Dedicated Host Reservations which are associated with Dedicated Hosts in
+        /// your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations service method.</param>
         /// 
@@ -5828,12 +5836,12 @@ namespace Amazon.EC2
         #region  DescribeHosts
 
         /// <summary>
-        /// Describes one or more of your Dedicated hosts.
+        /// Describes one or more of your Dedicated Hosts.
         /// 
         ///  
         /// <para>
-        /// The results describe only the Dedicated hosts in the region you're currently using.
-        /// All listed instances consume capacity on your Dedicated host. Dedicated hosts that
+        /// The results describe only the Dedicated Hosts in the region you're currently using.
+        /// All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that
         /// have recently been released will be listed with the state <code>released</code>.
         /// </para>
         /// </summary>
@@ -9614,13 +9622,12 @@ namespace Amazon.EC2
         /// <summary>
         /// Detaches an EBS volume from an instance. Make sure to unmount any file systems on
         /// the device within your operating system before detaching the volume. Failure to do
-        /// so results in the volume being stuck in a busy state while detaching.
+        /// so can result in the volume becoming stuck in the <code>busy</code> state while detaching.
+        /// If this happens, detachment can be delayed indefinitely until you unmount the volume,
+        /// force detachment, reboot the instance, or all three. If an EBS volume is the root
+        /// device of an instance, it can't be detached while the instance is running. To detach
+        /// the root volume, stop the instance first.
         /// 
-        ///  
-        /// <para>
-        /// If an Amazon EBS volume is the root device of an instance, it can't be detached while
-        /// the instance is running. To detach the root volume, stop the instance first.
-        /// </para>
         ///  
         /// <para>
         /// When a volume with an AWS Marketplace product code is detached from an instance, the
@@ -10359,7 +10366,14 @@ namespace Amazon.EC2
         #region  GetHostReservationPurchasePreview
 
         /// <summary>
+        /// Preview a reservation purchase with configurations that match those of your Dedicated
+        /// Host. You must have active Dedicated Hosts in your account before you purchase a reservation.
         /// 
+        ///  
+        /// <para>
+        /// This is a preview of the <a>PurchaseHostReservation</a> action and does not result
+        /// in the offering being purchased.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview service method.</param>
         /// 
@@ -10480,7 +10494,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
-        /// Image (AMI).
+        /// Image (AMI). For more information, see <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+        /// a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportImage service method.</param>
         /// 
@@ -10532,10 +10547,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates an import instance task using metadata from the specified disk image. <code>ImportInstance</code>
         /// only supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>.
-        /// After importing the image, you then upload it using the <code>ec2-import-volume</code>
-        /// command in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+        /// a Virtual Machine Using the Amazon EC2 CLI</a>.
         /// 
         ///  
         /// <para>
@@ -10701,12 +10714,9 @@ namespace Amazon.EC2
         #region  ImportVolume
 
         /// <summary>
-        /// Creates an import volume task using metadata from the specified disk image. After
-        /// importing the image, you then upload it using the <code>ec2-import-volume</code> command
-        /// in the Amazon EC2 command-line interface (CLI) tools. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// Creates an import volume task using metadata from the specified disk image.For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
+        /// Disks to Amazon EBS</a>.
         /// 
         ///  
         /// <para>
@@ -10762,9 +10772,9 @@ namespace Amazon.EC2
         #region  ModifyHosts
 
         /// <summary>
-        /// Modify the auto-placement setting of a Dedicated host. When auto-placement is enabled,
+        /// Modify the auto-placement setting of a Dedicated Host. When auto-placement is enabled,
         /// AWS will place instances that you launch with a tenancy of <code>host</code>, but
-        /// without targeting a specific host ID, onto any available Dedicated host in your account
+        /// without targeting a specific host ID, onto any available Dedicated Host in your account
         /// which has auto-placement enabled. When auto-placement is disabled, you need to provide
         /// a host ID if you want the instance to launch onto a specific host. If no host ID is
         /// provided, the instance will be launched onto a suitable host which has auto-placement
@@ -11082,7 +11092,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Instance affinity is disabled by default. When instance affinity is <code>host</code>
-        /// and it is not associated with a specific Dedicated host, the next time it is launched
+        /// and it is not associated with a specific Dedicated Host, the next time it is launched
         /// it will automatically be associated with the host it lands on. This relationship will
         /// persist if the instance is stopped/started, or rebooted.
         /// </para>
@@ -11800,7 +11810,10 @@ namespace Amazon.EC2
         #region  PurchaseHostReservation
 
         /// <summary>
-        /// 
+        /// Purchase a reservation with configurations that match those of your Dedicated Host.
+        /// You must have active Dedicated Hosts in your account before you purchase a reservation.
+        /// This action results in the specified reservation being purchased and charged to your
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation service method.</param>
         /// 
@@ -12263,20 +12276,21 @@ namespace Amazon.EC2
         #region  ReleaseHosts
 
         /// <summary>
-        /// When you no longer want to use a Dedicated host it can be released. On-Demand billing
-        /// is stopped and the host goes into <code>released</code> state. The host ID of Dedicated
-        /// hosts that have been released can no longer be specified in another request, e.g.,
-        /// ModifyHosts. You must stop or terminate all instances on a host before it can be released.
+        /// When you no longer want to use an On-Demand Dedicated Host it can be released. On-Demand
+        /// billing is stopped and the host goes into <code>released</code> state. The host ID
+        /// of Dedicated Hosts that have been released can no longer be specified in another request,
+        /// e.g., ModifyHosts. You must stop or terminate all instances on a host before it can
+        /// be released.
         /// 
         ///  
         /// <para>
-        /// When Dedicated hosts are released, it make take some time for them to stop counting
+        /// When Dedicated Hosts are released, it make take some time for them to stop counting
         /// toward your limit and you may receive capacity errors when trying to allocate new
         /// Dedicated hosts. Try waiting a few minutes, and then try again.
         /// </para>
         ///  
         /// <para>
-        /// Released hosts will still appear in a DescribeHosts response.
+        /// Released hosts will still appear in a <a>DescribeHosts</a> response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleaseHosts service method.</param>

@@ -116,8 +116,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-alias</code> - The AWS account alias (for example, <code>amazon</code>)
-        /// that owns the snapshot.
+        ///  <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code>
+        /// | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to
+        /// be confused with the user-configured AWS account alias, which is set from the IAM
+        /// consolew.
         /// </para>
         ///  </li> <li> 
         /// <para>

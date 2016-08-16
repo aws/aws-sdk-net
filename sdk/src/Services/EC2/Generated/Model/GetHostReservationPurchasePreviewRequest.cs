@@ -29,7 +29,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHostReservationPurchasePreview operation.
+    /// Preview a reservation purchase with configurations that match those of your Dedicated
+    /// Host. You must have active Dedicated Hosts in your account before you purchase a reservation.
     /// 
+    ///  
+    /// <para>
+    /// This is a preview of the <a>PurchaseHostReservation</a> action and does not result
+    /// in the offering being purchased.
+    /// </para>
     /// </summary>
     public partial class GetHostReservationPurchasePreviewRequest : AmazonEC2Request
     {
@@ -37,7 +44,10 @@ namespace Amazon.EC2.Model
         private string _offeringId;
 
         /// <summary>
-        /// Gets and sets the property HostIdSet.
+        /// Gets and sets the property HostIdSet. 
+        /// <para>
+        /// The ID/s of the Dedicated Host/s that the reservation will be associated with.
+        /// </para>
         /// </summary>
         public List<string> HostIdSet
         {
@@ -52,7 +62,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfferingId.
+        /// Gets and sets the property OfferingId. 
+        /// <para>
+        /// The offering ID of the reservation.
+        /// </para>
         /// </summary>
         public string OfferingId
         {

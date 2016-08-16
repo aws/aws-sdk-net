@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an instance running on a Dedicated host.
+    /// Describes an instance running on a Dedicated Host.
     /// </summary>
     public partial class HostInstance
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// the IDs of instances that are running on the Dedicated host.
+        /// the IDs of instances that are running on the Dedicated Host.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type size (for example, m3.medium) of the running instance.
+        /// The instance type size (for example, <code>m3.medium</code>) of the running instance.
         /// </para>
         /// </summary>
         public string InstanceType

@@ -38,7 +38,11 @@ namespace Amazon.EC2.Model
         private string _totalUpfrontPrice;
 
         /// <summary>
-        /// Gets and sets the property CurrencyCode.
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
+        /// The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code>
+        /// amounts are specified. At this time, the only supported currency is <code>USD</code>.
+        /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode
         {
@@ -53,7 +57,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Purchase.
+        /// Gets and sets the property Purchase. 
+        /// <para>
+        /// The purchase information of the Dedicated Host Reservation and the Dedicated Hosts
+        /// associated with it.
+        /// </para>
         /// </summary>
         public List<Purchase> Purchase
         {
@@ -68,7 +76,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalHourlyPrice.
+        /// Gets and sets the property TotalHourlyPrice. 
+        /// <para>
+        /// The potential total hourly price of the reservation per hour.
+        /// </para>
         /// </summary>
         public string TotalHourlyPrice
         {
@@ -83,7 +94,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalUpfrontPrice.
+        /// Gets and sets the property TotalUpfrontPrice. 
+        /// <para>
+        /// The potential total upfront price. This is billed immediately.
+        /// </para>
         /// </summary>
         public string TotalUpfrontPrice
         {
