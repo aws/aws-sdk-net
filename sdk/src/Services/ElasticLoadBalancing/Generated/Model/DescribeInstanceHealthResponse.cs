@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeInstanceHealth operation.
+    /// Contains the output for DescribeInstanceHealth.
     /// </summary>
     public partial class DescribeInstanceHealthResponse : AmazonWebServiceResponse
     {

@@ -55,6 +55,7 @@ namespace Amazon.KeyManagementService.Model
         private bool? _bypassPolicyLockoutSafetyCheck;
         private string _description;
         private KeyUsageType _keyUsage;
+        private OriginType _origin;
         private string _policy;
 
         /// <summary>
@@ -140,13 +141,45 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Origin. 
+        /// <para>
+        /// The source of the CMK's key material.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material.
+        /// When this parameter is set to <code>EXTERNAL</code>, the request creates a CMK without
+        /// key material so that you can import key material from your existing key management
+        /// infrastructure. For more information about importing key material into AWS KMS, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+        /// </para>
+        /// </summary>
+        public OriginType Origin
+        {
+            get { return this._origin; }
+            set { this._origin = value; }
+        }
+
+        // Check to see if Origin property is set
+        internal bool IsSetOrigin()
+        {
+            return this._origin != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
         /// The key policy to attach to the CMK.
         /// </para>
         ///  
         /// <para>
-        /// If you specify a key policy, it must meet the following criteria:
+        /// If you specify a policy and do not set <code>BypassPolicyLockoutSafetyCheck</code>
+        /// to true, the policy must meet the following criteria:
         /// </para>
         ///  <ul> <li> 
         /// <para>

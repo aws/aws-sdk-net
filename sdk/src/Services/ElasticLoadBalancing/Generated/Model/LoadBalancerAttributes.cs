@@ -46,8 +46,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable
-        /// Access Logs</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
+        /// Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         public AccessLog AccessLog
@@ -84,12 +84,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Gets and sets the property ConnectionDraining. 
         /// <para>
         /// If enabled, the load balancer allows existing requests to complete before the load
-        /// balancer shifts traffic away from a deregistered or unhealthy back-end instance.
+        /// balancer shifts traffic away from a deregistered or unhealthy instance.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable
-        /// Connection Draining</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+        /// Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         public ConnectionDraining ConnectionDraining
@@ -114,8 +114,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <para>
         /// By default, Elastic Load Balancing maintains a 60-second idle connection timeout for
         /// both front-end and back-end connections of your load balancer. For more information,
-        /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html">Configure
-        /// Idle Connection Timeout</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
+        /// Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         public ConnectionSettings ConnectionSettings
@@ -133,13 +133,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property CrossZoneLoadBalancing. 
         /// <para>
-        /// If enabled, the load balancer routes the request traffic evenly across all back-end
-        /// instances regardless of the Availability Zones.
+        /// If enabled, the load balancer routes the request traffic evenly across all instances
+        /// regardless of the Availability Zones.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable
-        /// Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+        /// Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         public CrossZoneLoadBalancing CrossZoneLoadBalancing

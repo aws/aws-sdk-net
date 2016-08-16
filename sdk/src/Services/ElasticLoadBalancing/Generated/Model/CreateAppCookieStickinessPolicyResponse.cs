@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the CreateAppCookieStickinessPolicy operation.
+    /// Contains the output for CreateAppCookieStickinessPolicy.
     /// </summary>
     public partial class CreateAppCookieStickinessPolicyResponse : AmazonWebServiceResponse
     {

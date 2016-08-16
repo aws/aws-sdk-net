@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DetachLoadBalancers operation.
+    /// Contains the output for DetachLoadBalancers.
     /// </summary>
     public partial class DetachLoadBalancersResponse : AmazonWebServiceResponse
     {

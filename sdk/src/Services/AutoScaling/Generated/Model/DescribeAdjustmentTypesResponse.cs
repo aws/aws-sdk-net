@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAdjustmentTypes operation.
+    /// Contains the parameters for DescribeAdjustmentTypes.
     /// </summary>
     public partial class DescribeAdjustmentTypesResponse : AmazonWebServiceResponse
     {

@@ -39,7 +39,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
-    /// Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateOrUpdateTagsRequest : AmazonAutoScalingRequest

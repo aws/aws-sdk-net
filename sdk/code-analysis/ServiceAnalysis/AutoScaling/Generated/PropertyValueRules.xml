@@ -11,6 +11,11 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AttachLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.CompleteLifecycleActionRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>1600</max>
@@ -59,7 +64,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.VPCZoneIdentifier</property>
     <min>1</min>
-    <max>255</max>
+    <max>2047</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest.ClassicLinkVPCId</property>
@@ -206,6 +211,17 @@
     <property>Amazon.AutoScaling.Model.DescribeLoadBalancersResponse.NextToken</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsRequest.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsResponse.NextToken</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeNotificationConfigurationsRequest.NextToken</property>
   </property-value-rule>
   <property-value-rule>
@@ -257,6 +273,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DetachLoadBalancersRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.DetachLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>1600</max>
   </property-value-rule>
@@ -455,7 +476,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.VPCZoneIdentifier</property>
     <min>1</min>
-    <max>255</max>
+    <max>2047</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.Activity.ActivityId</property>
@@ -534,7 +555,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingGroup.VPCZoneIdentifier</property>
     <min>1</min>
-    <max>255</max>
+    <max>2047</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.AutoScalingGroupName</property>
@@ -731,6 +752,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LoadBalancerState.State</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LoadBalancerTargetGroupState.LoadBalancerTargetGroupARN</property>
+    <min>1</min>
+    <max>511</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LoadBalancerTargetGroupState.State</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

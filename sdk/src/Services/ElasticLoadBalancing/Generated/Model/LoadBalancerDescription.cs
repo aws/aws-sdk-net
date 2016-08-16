@@ -75,7 +75,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property BackendServerDescriptions. 
         /// <para>
-        /// Information about the back-end servers.
+        /// Information about your EC2 instances.
         /// </para>
         /// </summary>
         public List<BackendServerDescription> BackendServerDescriptions
@@ -93,13 +93,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property CanonicalHostedZoneName. 
         /// <para>
-        /// The Amazon Route 53 hosted zone associated with the load balancer.
+        /// The DNS name of the load balancer.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-        /// Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer
-        /// Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+        /// a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         public string CanonicalHostedZoneName
@@ -117,7 +116,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property CanonicalHostedZoneNameID. 
         /// <para>
-        /// The ID of the Amazon Route 53 hosted zone name associated with the load balancer.
+        /// The ID of the Amazon Route 53 hosted zone for the load balancer.
         /// </para>
         /// </summary>
         public string CanonicalHostedZoneNameID
@@ -153,7 +152,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property DNSName. 
         /// <para>
-        /// The external DNS name of the load balancer.
+        /// The DNS name of the load balancer.
         /// </para>
         /// </summary>
         public string DNSName
@@ -307,10 +306,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property SourceSecurityGroup. 
         /// <para>
-        /// The security group that you can use as part of your inbound rules for your load balancer's
-        /// back-end application instances. To only allow traffic from load balancers, add a security
-        /// group rule to your back end instance that specifies this source security group as
-        /// the inbound source.
+        /// The security group for the load balancer, which you can use as part of your inbound
+        /// rules for your registered instances. To only allow traffic from load balancers, add
+        /// a security group rule that specifies this source security group as the inbound source.
         /// </para>
         /// </summary>
         public SourceSecurityGroup SourceSecurityGroup

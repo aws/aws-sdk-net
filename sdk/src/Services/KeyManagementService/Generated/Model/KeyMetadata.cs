@@ -44,14 +44,17 @@ namespace Amazon.KeyManagementService.Model
         private DateTime? _deletionDate;
         private string _description;
         private bool? _enabled;
+        private ExpirationModelType _expirationModel;
         private string _keyId;
         private KeyState _keyState;
         private KeyUsageType _keyUsage;
+        private OriginType _origin;
+        private DateTime? _validTo;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the key. For examples, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+        /// The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
         /// Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
         /// Reference</i>.
         /// </para>
@@ -71,7 +74,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
-        /// The twelve-digit account ID of the AWS account that owns the key.
+        /// The twelve-digit account ID of the AWS account that owns the CMK.
         /// </para>
         /// </summary>
         public string AWSAccountId
@@ -89,7 +92,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date and time when the key was created.
+        /// The date and time when the CMK was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -107,9 +110,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DeletionDate. 
         /// <para>
-        /// The date and time after which AWS KMS deletes the customer master key (CMK). This
-        /// value is present only when <code>KeyState</code> is <code>PendingDeletion</code>,
-        /// otherwise this value is null.
+        /// The date and time after which AWS KMS deletes the CMK. This value is present only
+        /// when <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this value is
+        /// omitted.
         /// </para>
         /// </summary>
         public DateTime DeletionDate
@@ -127,7 +130,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The friendly description of the key.
+        /// The description of the CMK.
         /// </para>
         /// </summary>
         public string Description
@@ -145,7 +148,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether the key is enabled. When <code>KeyState</code> is <code>Enabled</code>
+        /// Specifies whether the CMK is enabled. When <code>KeyState</code> is <code>Enabled</code>
         /// this value is true, otherwise it is false.
         /// </para>
         /// </summary>
@@ -162,9 +165,28 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpirationModel. 
+        /// <para>
+        /// Specifies whether the CMK's key material expires. This value is present only when
+        /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.
+        /// </para>
+        /// </summary>
+        public ExpirationModelType ExpirationModel
+        {
+            get { return this._expirationModel; }
+            set { this._expirationModel = value; }
+        }
+
+        // Check to see if ExpirationModel property is set
+        internal bool IsSetExpirationModel()
+        {
+            return this._expirationModel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The globally unique identifier for the key.
+        /// The globally unique identifier for the CMK.
         /// </para>
         /// </summary>
         public string KeyId
@@ -182,7 +204,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyState. 
         /// <para>
-        /// The state of the customer master key (CMK).
+        /// The state of the CMK.
         /// </para>
         ///  
         /// <para>
@@ -206,8 +228,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyUsage. 
         /// <para>
-        /// The cryptographic operations for which you can use the key. Currently the only allowed
-        /// value is <code>ENCRYPT_DECRYPT</code>, which means you can use the key for the <a>Encrypt</a>
+        /// The cryptographic operations for which you can use the CMK. Currently the only allowed
+        /// value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a>
         /// and <a>Decrypt</a> operations.
         /// </para>
         /// </summary>
@@ -221,6 +243,48 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetKeyUsage()
         {
             return this._keyUsage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Origin. 
+        /// <para>
+        /// The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS
+        /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material
+        /// was imported from your existing key management infrastructure or the CMK lacks key
+        /// material.
+        /// </para>
+        /// </summary>
+        public OriginType Origin
+        {
+            get { return this._origin; }
+            set { this._origin = value; }
+        }
+
+        // Check to see if Origin property is set
+        internal bool IsSetOrigin()
+        {
+            return this._origin != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidTo. 
+        /// <para>
+        /// The time at which the imported key material expires. When the key material expires,
+        /// AWS KMS deletes the key material and the CMK becomes unusable. This value is present
+        /// only for CMKs whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
+        /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.
+        /// </para>
+        /// </summary>
+        public DateTime ValidTo
+        {
+            get { return this._validTo.GetValueOrDefault(); }
+            set { this._validTo = value; }
+        }
+
+        // Check to see if ValidTo property is set
+        internal bool IsSetValidTo()
+        {
+            return this._validTo.HasValue; 
         }
 
     }

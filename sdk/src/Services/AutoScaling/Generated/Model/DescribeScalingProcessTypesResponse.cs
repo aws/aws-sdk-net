@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeScalingProcessTypes operation.
+    /// Contains the output of DescribeScalingProcessTypes.
     /// </summary>
     public partial class DescribeScalingProcessTypesResponse : AmazonWebServiceResponse
     {

@@ -39,6 +39,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("ElasticLoadBalancing")]
+        public void TestBasicDescribe()
+        {
+            Client.DescribeLoadBalancers();
+        }
+
+        [TestMethod]
+        [TestCategory("ElasticLoadBalancing")]
         public void TestLoadBalancerOperations()
         {
             loadBalancerName = SDK_TEST_PREFIX+"-lb" + DateTime.Now.Ticks;

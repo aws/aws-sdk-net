@@ -46,7 +46,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code>
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -158,11 +158,11 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
+        /// Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code>
+        /// Default: <code>standard</code> 
         /// </para>
         /// </summary>
         public string VolumeType

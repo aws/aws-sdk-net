@@ -85,6 +85,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KeyUsage);
                 }
 
+                if(publicRequest.IsSetOrigin())
+                {
+                    context.Writer.WritePropertyName("Origin");
+                    context.Writer.Write(publicRequest.Origin);
+                }
+
                 if(publicRequest.IsSetPolicy())
                 {
                     context.Writer.WritePropertyName("Policy");

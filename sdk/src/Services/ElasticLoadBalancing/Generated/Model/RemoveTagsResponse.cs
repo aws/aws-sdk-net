@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the RemoveTags operation.
+    /// Contains the output of RemoveTags.
     /// </summary>
     public partial class RemoveTagsResponse : AmazonWebServiceResponse
     {

@@ -522,8 +522,18 @@
         {
             "active": true,
 
-            "model": "elasticloadbalancing",
+            "model": "elasticloadbalancing-",
             "base-name": "ElasticLoadBalancing",
+            "region-lookup-name": "elasticloadbalancing",
+            "authentication-service-name": "elasticloadbalancing",
+            "service-url": "https://elasticloadbalancing.us-east-1.amazonaws.com",
+            "synopsis": "Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud."
+        },
+        {
+            "active": true,
+
+            "model": "elasticloadbalancingv2-",
+            "base-name": "ElasticLoadBalancingV2",
             "region-lookup-name": "elasticloadbalancing",
             "authentication-service-name": "elasticloadbalancing",
             "service-url": "https://elasticloadbalancing.us-east-1.amazonaws.com",
@@ -571,6 +581,16 @@
             "synopsis": "Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.",
             "platforms": [ "Unity" ]
         },
+		{
+            "active": true,
+
+            "model": "kinesisanalytics",
+            "base-name": "KinesisAnalytics",
+            "region-lookup-name": "kinesisanalytics",
+            "authentication-service-name": "kinesisanalytics",
+            "service-url": "https://kinesisanalytics.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL."
+		},
         {
             "active": true,
 
@@ -641,6 +661,16 @@
         {
             "active": true,
 
+            "model": "snowball",
+            "base-name": "Snowball",
+            "region-lookup-name": "snowball",
+            "authentication-service-name": "snowball",
+            "service-url": "https://snowball.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud"
+        },
+        {
+            "active": true,
+
             "model": "inspector",
             "base-name": "Inspector",
             "region-lookup-name": "inspector",
@@ -650,7 +680,7 @@
         {
             "active": true,
 
-            "model": "kinesis",
+            "model": "kinesis-",
             "base-name": "Kinesis",
             "region-lookup-name": "kinesis",
             "authentication-service-name": "kinesis",
@@ -795,7 +825,7 @@
             "tags": [ "STS" ],
             "platforms": [ "Unity" ]
         },
-		{
+        {
             "active": true,
 
             "model": "servicecatalog",
@@ -803,7 +833,7 @@
             "region-lookup-name": "servicecatalog",
             "authentication-service-name": "servicecatalog",
             "synopsis": "AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS."
-		},
+        },
         {
             "active": true,
 

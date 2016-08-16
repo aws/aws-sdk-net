@@ -33,9 +33,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// For information about the protocols and the ports supported by Elastic Load Balancing,
-    /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-    /// Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer
-    /// Guide</i>.
+    /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+    /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class Listener
@@ -85,8 +84,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property InstanceProtocol. 
         /// <para>
-        /// The protocol to use for routing traffic to back-end instances: HTTP, HTTPS, TCP, or
-        /// SSL.
+        /// The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.
         /// </para>
         ///  
         /// <para>

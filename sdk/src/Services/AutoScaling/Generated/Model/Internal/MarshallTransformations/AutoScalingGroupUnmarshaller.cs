@@ -174,6 +174,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("TargetGroupARNs/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TargetGroupARNs.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("TerminationPolicies/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
