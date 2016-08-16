@@ -67,9 +67,9 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The AWS Lambda action you want to allow in this statement. Each Lambda action is a
-        /// string starting with <code>lambda:</code> followed by the API name (see <a>Operations</a>).
-        /// For example, <code>lambda:CreateFunction</code>. You can use wildcard (<code>lambda:*</code>)
-        /// to grant permission for all AWS Lambda actions. 
+        /// string starting with <code>lambda:</code> followed by the API name . For example,
+        /// <code>lambda:CreateFunction</code>. You can use wildcard (<code>lambda:*</code>) to
+        /// grant permission for all AWS Lambda actions. 
         /// </para>
         /// </summary>
         public string Action
@@ -85,7 +85,11 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventSourceToken.
+        /// Gets and sets the property EventSourceToken. 
+        /// <para>
+        /// A unique token that must be supplied by the principal invoking the function. This
+        /// is currently only used for Alexa Smart Home functions.
+        /// </para>
         /// </summary>
         public string EventSourceToken
         {
@@ -155,11 +159,11 @@ namespace Amazon.Lambda.Model
         /// You can use this optional query parameter to describe a qualified ARN using a function
         /// version or an alias name. The permission will then apply to the specific qualified
         /// ARN. For example, if you specify function version 2 as the qualifier, then permission
-        /// applies only when request is made using qualified function ARN: 
+        /// applies only when request is made using qualified function ARN:
         /// </para>
         ///  
         /// <para>
-        /// <code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
+        ///  <code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code> 
         /// </para>
         ///  
         /// <para>
@@ -168,16 +172,16 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code>
+        ///  <code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code> 
         /// </para>
         ///  
         /// <para>
         /// If the qualifier is not specified, the permission is valid only when requests is made
-        /// using unqualified function ARN. 
+        /// using unqualified function ARN.
         /// </para>
         ///  
         /// <para>
-        /// <code>arn:aws:lambda:aws-region:acct-id:function:function-name</code>
+        ///  <code>arn:aws:lambda:aws-region:acct-id:function:function-name</code> 
         /// </para>
         /// </summary>
         public string Qualifier
@@ -195,12 +199,13 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccount. 
         /// <para>
-        /// The AWS account ID (without a hyphen) of the source owner. For example, if the <code>SourceArn</code>
-        /// identifies a bucket, then this is the bucket owner's account ID. You can use this
-        /// additional condition to ensure the bucket you specify is owned by a specific account
-        /// (it is possible the bucket owner deleted the bucket and some other AWS account created
-        /// the bucket). You can also use this condition to specify all sources (that is, you
-        /// don't specify the <code>SourceArn</code>) owned by a specific account. 
+        /// This parameter is used for S3 and SES only. The AWS account ID (without a hyphen)
+        /// of the source owner. For example, if the <code>SourceArn</code> identifies a bucket,
+        /// then this is the bucket owner's account ID. You can use this additional condition
+        /// to ensure the bucket you specify is owned by a specific account (it is possible the
+        /// bucket owner deleted the bucket and some other AWS account created the bucket). You
+        /// can also use this condition to specify all sources (that is, you don't specify the
+        /// <code>SourceArn</code>) owned by a specific account. 
         /// </para>
         /// </summary>
         public string SourceAccount
@@ -219,13 +224,16 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property SourceArn. 
         /// <para>
         /// This is optional; however, when granting Amazon S3 permission to invoke your function,
-        /// you should specify this field with the bucket Amazon Resource Name (ARN) as its value.
-        /// This ensures that only events generated from the specified bucket can invoke the function.
-        /// 
+        /// you should specify this field with the Amazon Resource Name (ARN) as its value. This
+        /// ensures that only events generated from the specified source can invoke the function.
         /// </para>
-        ///  <important>If you add a permission for the Amazon S3 principal without providing
-        /// the source ARN, any AWS account that creates a mapping to your function ARN can send
-        /// events to invoke your Lambda function from Amazon S3.</important>
+        ///  <important>
+        /// <para>
+        /// If you add a permission for the Amazon S3 principal without providing the source ARN,
+        /// any AWS account that creates a mapping to your function ARN can send events to invoke
+        /// your Lambda function from Amazon S3.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string SourceArn
         {

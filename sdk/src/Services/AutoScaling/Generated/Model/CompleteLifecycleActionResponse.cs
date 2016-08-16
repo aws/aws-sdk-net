@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the CompleteLifecycleAction operation.
+    /// Contains the output of CompleteLifecycleAction.
     /// </summary>
     public partial class CompleteLifecycleActionResponse : AmazonWebServiceResponse
     {

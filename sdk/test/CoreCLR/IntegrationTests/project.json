@@ -10,8 +10,8 @@
     "projectUrl"  : "",
     "licenseUrl"  : "",
     "dependencies" : {
-        "APIGateway"                      : "1.0.0-*",
-        "AutoScaling"                     : "1.0.0-*",
+        "APIGateway" : "1.0.0-*",
+        "AutoScaling" : "1.0.0-*",
         "AWSMarketplaceCommerceAnalytics" : "1.0.0-*",
         "AWSSupport"                      : "1.0.0-*",
         "CloudFormation"                  : "1.0.0-*",
@@ -85,7 +85,10 @@
         "AWSMarketplaceMetering"          : "1.0.0-*",
         "CognitoIdentityProvider"         : "1.0.0-*",
         "DatabaseMigrationService"        : "1.0.0-*",
-        "ServiceCatalog"                  : "1.0.0-*"
+        "ServiceCatalog"                  : "1.0.0-*",
+        "ElasticLoadBalancingV2"          : "1.0.0-*",
+        "KinesisAnalytics"                : "1.0.0-*",
+        "Snowball"                        : "1.0.0-*"
     },
     "testRunner"   : "xunit",
     "frameworks"   : {

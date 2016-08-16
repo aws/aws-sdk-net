@@ -60,7 +60,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ActiveServerProcessCount. 
         /// <para>
-        /// Number of server processes in an <code>ACTIVE</code> state currently running across
+        /// Number of server processes in an <code>ACTIVE</code> status currently running across
         /// all instances in the fleet
         /// </para>
         /// </summary>

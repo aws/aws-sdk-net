@@ -46,8 +46,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// Most recent date to retrieve event logs for. If no end time is specified, this call
-        /// returns entries from the specified start time up to the present. Format is an integer
-        /// representing the number of seconds since the Unix epoch (Unix time).
+        /// returns entries from the specified start time up to the present. Format is a number
+        /// expressed in Unix time as milliseconds (ex: "1469498468.057".
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -124,8 +124,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Earliest date to retrieve event logs for. If no start time is specified, this call
         /// returns entries starting from when the fleet was created to the specified end time.
-        /// Format is an integer representing the number of seconds since the Unix epoch (Unix
-        /// time).
+        /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057".
         /// </para>
         /// </summary>
         public DateTime StartTime

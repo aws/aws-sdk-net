@@ -25,6 +25,60 @@ namespace Amazon.KeyManagementService
 {
 
     /// <summary>
+    /// Constants used for properties of type AlgorithmSpec.
+    /// </summary>
+    public class AlgorithmSpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RSAES_OAEP_SHA_1 for AlgorithmSpec
+        /// </summary>
+        public static readonly AlgorithmSpec RSAES_OAEP_SHA_1 = new AlgorithmSpec("RSAES_OAEP_SHA_1");
+        /// <summary>
+        /// Constant RSAES_OAEP_SHA_256 for AlgorithmSpec
+        /// </summary>
+        public static readonly AlgorithmSpec RSAES_OAEP_SHA_256 = new AlgorithmSpec("RSAES_OAEP_SHA_256");
+        /// <summary>
+        /// Constant RSAES_PKCS1_V1_5 for AlgorithmSpec
+        /// </summary>
+        public static readonly AlgorithmSpec RSAES_PKCS1_V1_5 = new AlgorithmSpec("RSAES_PKCS1_V1_5");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AlgorithmSpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlgorithmSpec FindValue(string value)
+        {
+            return FindValue<AlgorithmSpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AlgorithmSpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataKeySpec.
     /// </summary>
     public class DataKeySpec : ConstantClass
@@ -68,6 +122,56 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataKeySpec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExpirationModelType.
+    /// </summary>
+    public class ExpirationModelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KEY_MATERIAL_DOES_NOT_EXPIRE for ExpirationModelType
+        /// </summary>
+        public static readonly ExpirationModelType KEY_MATERIAL_DOES_NOT_EXPIRE = new ExpirationModelType("KEY_MATERIAL_DOES_NOT_EXPIRE");
+        /// <summary>
+        /// Constant KEY_MATERIAL_EXPIRES for ExpirationModelType
+        /// </summary>
+        public static readonly ExpirationModelType KEY_MATERIAL_EXPIRES = new ExpirationModelType("KEY_MATERIAL_EXPIRES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExpirationModelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExpirationModelType FindValue(string value)
+        {
+            return FindValue<ExpirationModelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExpirationModelType(string value)
         {
             return FindValue(value);
         }
@@ -170,6 +274,10 @@ namespace Amazon.KeyManagementService
         /// Constant PendingDeletion for KeyState
         /// </summary>
         public static readonly KeyState PendingDeletion = new KeyState("PendingDeletion");
+        /// <summary>
+        /// Constant PendingImport for KeyState
+        /// </summary>
+        public static readonly KeyState PendingImport = new KeyState("PendingImport");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -246,6 +354,102 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyUsageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OriginType.
+    /// </summary>
+    public class OriginType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_KMS for OriginType
+        /// </summary>
+        public static readonly OriginType AWS_KMS = new OriginType("AWS_KMS");
+        /// <summary>
+        /// Constant EXTERNAL for OriginType
+        /// </summary>
+        public static readonly OriginType EXTERNAL = new OriginType("EXTERNAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OriginType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OriginType FindValue(string value)
+        {
+            return FindValue<OriginType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OriginType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WrappingKeySpec.
+    /// </summary>
+    public class WrappingKeySpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RSA_2048 for WrappingKeySpec
+        /// </summary>
+        public static readonly WrappingKeySpec RSA_2048 = new WrappingKeySpec("RSA_2048");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WrappingKeySpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WrappingKeySpec FindValue(string value)
+        {
+            return FindValue<WrappingKeySpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WrappingKeySpec(string value)
         {
             return FindValue(value);
         }

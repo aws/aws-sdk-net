@@ -297,10 +297,14 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
         /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
-        /// the owner's alarms. 
+        /// the owner's alarms.
         /// 
-        ///  <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or
-        /// not you delete the alarm. </note>
+        ///  <note> 
+        /// <para>
+        /// Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you
+        /// delete the alarm.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -534,12 +538,18 @@ namespace Amazon.CloudWatch
         /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
         /// metric. 
         /// 
-        ///  <note> Up to 500 results are returned for any one call. To retrieve further results,
-        /// use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code>
-        /// operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action,
-        /// allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code>
-        /// action. Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
-        /// </note>
+        ///  <note> 
+        /// <para>
+        ///  Up to 500 results are returned for any one call. To retrieve further results, use
+        /// returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  If you create a metric with <a>PutMetricData</a>, allow up to fifteen minutes for
+        /// the metric to appear in calls to <code>ListMetrics</code>. Statistics about the metric,
+        /// however, are available sooner using <a>GetMetricStatistics</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

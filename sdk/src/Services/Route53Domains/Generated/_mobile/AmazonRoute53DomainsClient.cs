@@ -514,6 +514,37 @@ namespace Amazon.Route53Domains
 
         #endregion
         
+        #region  GetDomainSuggestions
+
+        internal GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request)
+        {
+            var marshaller = new GetDomainSuggestionsRequestMarshaller();
+            var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainSuggestionsRequest,GetDomainSuggestionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainSuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainSuggestions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDomainSuggestionsResponse> GetDomainSuggestionsAsync(GetDomainSuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDomainSuggestionsRequestMarshaller();
+            var unmarshaller = GetDomainSuggestionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDomainSuggestionsRequest,GetDomainSuggestionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetOperationDetail
 
         internal GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request)
@@ -745,6 +776,37 @@ namespace Amazon.Route53Domains
             var unmarshaller = RegisterDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterDomainRequest,RegisterDomainResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RenewDomain
+
+        internal RenewDomainResponse RenewDomain(RenewDomainRequest request)
+        {
+            var marshaller = new RenewDomainRequestMarshaller();
+            var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
+
+            return Invoke<RenewDomainRequest,RenewDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenewDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenewDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RenewDomainResponse> RenewDomainAsync(RenewDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RenewDomainRequestMarshaller();
+            var unmarshaller = RenewDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RenewDomainRequest,RenewDomainResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -998,6 +1060,37 @@ namespace Amazon.Route53Domains
             var unmarshaller = UpdateTagsForDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateTagsForDomainRequest,UpdateTagsForDomainResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ViewBilling
+
+        internal ViewBillingResponse ViewBilling(ViewBillingRequest request)
+        {
+            var marshaller = new ViewBillingRequestMarshaller();
+            var unmarshaller = ViewBillingResponseUnmarshaller.Instance;
+
+            return Invoke<ViewBillingRequest,ViewBillingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ViewBilling operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ViewBilling operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ViewBillingResponse> ViewBillingAsync(ViewBillingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ViewBillingRequestMarshaller();
+            var unmarshaller = ViewBillingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ViewBillingRequest,ViewBillingResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

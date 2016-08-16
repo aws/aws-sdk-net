@@ -32,7 +32,7 @@ namespace Amazon.Lambda
     ///
     /// AWS Lambda 
     /// <para>
-    /// <b>Overview</b>
+    ///  <b>Overview</b> 
     /// </para>
     ///  
     /// <para>
@@ -121,9 +121,10 @@ namespace Amazon.Lambda
         /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
         /// to AWS Lambda Aliases</a>.
         /// 
-        ///  Alias names are unique for a given function. 
+        ///  
         /// <para>
-        /// This requires permission for the lambda:CreateAlias action.
+        /// Alias names are unique for a given function. This requires permission for the lambda:CreateAlias
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
@@ -174,30 +175,30 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// This association between a stream source and a Lambda function is called the event
-        /// source mapping. 
+        /// source mapping.
         /// </para>
-        ///  <important>This event source mapping is relevant only in the AWS Lambda pull model,
-        /// where AWS Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-        /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</important> 
+        ///  <important>
         /// <para>
-        ///  You provide mapping information (for example, which stream to read from and which
-        /// Lambda function to invoke) in the request body. 
+        /// This event source mapping is relevant only in the AWS Lambda pull model, where AWS
+        /// Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+        /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You provide mapping information (for example, which stream to read from and which
+        /// Lambda function to invoke) in the request body.
         /// </para>
         ///  
         /// <para>
-        ///  Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
+        /// Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
         /// with multiple AWS Lambda function. A given Lambda function can be associated with
-        /// multiple AWS event sources. 
+        /// multiple AWS event sources.
         /// </para>
-        ///  
-        /// <para>
         ///  
         /// <para>
         /// If you are using versioning, you can specify a specific function version or an alias
         /// via the function name parameter. For more information about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
         /// Lambda Function Versioning and Aliases</a>. 
-        /// </para>
-        ///  
         /// </para>
         ///  
         /// <para>
@@ -249,7 +250,7 @@ namespace Amazon.Lambda
         /// Creates a new Lambda function. The function metadata is created from the request parameters,
         /// and the code for the function is provided by a .zip file in the request body. If the
         /// function name already exists, the operation will fail. Note that the function name
-        /// is case-sensitive. 
+        /// is case-sensitive.
         /// 
         ///  
         /// <para>
@@ -662,7 +663,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The Lambda function name.   You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="functionName">The Lambda function name.  You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -741,7 +742,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The Lambda function name.   You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="functionName">The Lambda function name.  You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -934,7 +935,7 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// You need permission for the <code>lambda:GetPolicy action.</code>
+        /// You need permission for the <code>lambda:GetPolicy action.</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
@@ -975,7 +976,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Invokes a specific Lambda function. 
+        /// Invokes a specific Lambda function.
         /// 
         ///  
         /// <para>
@@ -983,7 +984,9 @@ namespace Amazon.Lambda
         /// by providing function version or alias name that is pointing to the function version
         /// using the <code>Qualifier</code> parameter in the request. If you don't provide the
         /// <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda function
-        /// is invoked. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// is invoked. Invocations occur at least once in response to an event and functions
+        /// must be idempotent to handle this. For information about the versioning feature, see
+        /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
         /// Lambda Function Versioning and Aliases</a>. 
         /// </para>
         ///  
@@ -998,7 +1001,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2ThrottledException">
-        /// AWS Lambda was throttled by Amazon EC2 during Lambda function initiatization using
+        /// AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using
         /// the execution role provided for the Lambda function.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2UnexpectedException">
@@ -1023,6 +1026,9 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidSubnetIDException">
         /// The Subnet ID provided in the Lambda function VPC configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidZipFileException">
+        /// AWS Lambda could not unzip the function zip file.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.
@@ -1065,8 +1071,11 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// <important>This API is deprecated. We recommend you use <code>Invoke</code> API (see
-        /// <a>Invoke</a>).</important> 
+        /// <important>
+        /// <para>
+        /// This API is deprecated. We recommend you use <code>Invoke</code> API (see <a>Invoke</a>).
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Submits an invocation request to AWS Lambda. Upon receiving the request, Lambda executes
         /// the specified function asynchronously. To see the logs generated by the Lambda function
@@ -1410,7 +1419,6 @@ namespace Amazon.Lambda
         /// You can remove individual permissions from an resource policy associated with a Lambda
         /// function by providing a statement ID that you provided when you added the permission.
         /// 
-        /// 
         ///  
         /// <para>
         /// If you are using versioning, the permissions you remove are specific to the Lambda
@@ -1422,7 +1430,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Note that removal of a permission will cause an active event source to lose permission
-        /// to the function. 
+        /// to the function.
         /// </para>
         ///  
         /// <para>
@@ -1517,7 +1525,7 @@ namespace Amazon.Lambda
         /// You can update an event source mapping. This is useful if you want to change the parameters
         /// of the existing mapping without losing your position in the stream. You can change
         /// which function will receive the stream records, but to change the stream itself, you
-        /// must create a new mapping. 
+        /// must create a new mapping.
         /// 
         ///  
         /// <para>
@@ -1583,7 +1591,6 @@ namespace Amazon.Lambda
         /// Updates the code for the specified Lambda function. This operation must only be used
         /// on an existing Lambda function and cannot be used to update the function configuration.
         /// 
-        /// 
         ///  
         /// <para>
         /// If you are using the versioning feature, note this API will always update the $LATEST
@@ -1641,7 +1648,7 @@ namespace Amazon.Lambda
         /// Updates the configuration parameters for the specified Lambda function by using the
         /// values provided in the request. You provide only the parameters you want to change.
         /// This operation must only be used on an existing Lambda function and cannot be used
-        /// to update the function's code. 
+        /// to update the function's code.
         /// 
         ///  
         /// <para>

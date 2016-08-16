@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNames. 
         /// <para>
-        ///  A list of alarms to be deleted. 
+        /// A list of alarms to be deleted.
         /// </para>
         /// </summary>
         public List<string> AlarmNames

@@ -102,6 +102,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 return new InvalidSubnetIDException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidZipFileException"))
+            {
+                return new InvalidZipFileException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("RequestTooLargeException"))
             {
                 return new RequestTooLargeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Upload credentials are returned when you create the build, but they have a limited
     /// lifespan. You can get fresh credentials and use them to re-upload game files until
-    /// the state of that build changes to <code>READY</code>. Once this happens, you must
+    /// the status of that build changes to <code>READY</code>. Once this happens, you must
     /// create a brand new build.
     /// </para>
     /// </summary>

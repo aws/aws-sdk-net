@@ -84,8 +84,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        ///  Optional integer. Specifies the maximum number of AWS Lambda function versions to
-        /// return in response. This parameter value must be greater than 0. 
+        /// Optional integer. Specifies the maximum number of AWS Lambda function versions to
+        /// return in response. This parameter value must be greater than 0.
         /// </para>
         /// </summary>
         public int MaxItems

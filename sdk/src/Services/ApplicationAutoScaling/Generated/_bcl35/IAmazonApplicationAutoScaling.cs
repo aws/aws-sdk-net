@@ -62,7 +62,27 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>us-west-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>us-west-2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ap-southeast-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ap-southeast-2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ap-northeast-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>eu-central-1</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -271,7 +291,8 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Provides descriptive information for scaling activities with a specified service namespace.
+        /// Provides descriptive information for scaling activities with a specified service namespace
+        /// for the previous six weeks.
         /// 
         ///  
         /// <para>
@@ -434,9 +455,8 @@ namespace Amazon.ApplicationAutoScaling
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
         /// Your account exceeded a limit. This exception is thrown when a per-account resource
-        /// limit is exceeded. Application Auto Scaling has a limit of 40 scalable targets per
-        /// account for Amazon ECS services, 50 scaling policies per scalable target, and 20 step
-        /// adjustments per step scaling policy.
+        /// limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
+        /// Auto Scaling Limits</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
         /// The specified object could not be found. For any <code>Put</code> or <code>Register</code>
@@ -511,9 +531,8 @@ namespace Amazon.ApplicationAutoScaling
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
         /// Your account exceeded a limit. This exception is thrown when a per-account resource
-        /// limit is exceeded. Application Auto Scaling has a limit of 40 scalable targets per
-        /// account for Amazon ECS services, 50 scaling policies per scalable target, and 20 step
-        /// adjustments per step scaling policy.
+        /// limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
+        /// Auto Scaling Limits</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for

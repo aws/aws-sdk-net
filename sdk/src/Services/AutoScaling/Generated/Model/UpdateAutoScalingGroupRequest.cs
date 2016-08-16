@@ -129,7 +129,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
-        /// Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -168,12 +168,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
         /// The amount of time, in seconds, that Auto Scaling waits before checking the health
-        /// status of an EC2 instance that has come into service. The default is 300.
+        /// status of an EC2 instance that has come into service. The default is 0.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-        /// Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Checks</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -310,7 +310,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html">Controlling
         /// Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies
@@ -339,7 +339,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
-        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

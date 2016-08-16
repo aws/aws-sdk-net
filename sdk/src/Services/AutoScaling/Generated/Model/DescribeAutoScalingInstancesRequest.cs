@@ -29,8 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingInstances operation.
-    /// Describes one or more Auto Scaling instances. If a list is not provided, the call
-    /// describes all instances.
+    /// Describes one or more Auto Scaling instances.
     /// </summary>
     public partial class DescribeAutoScalingInstancesRequest : AmazonAutoScalingRequest
     {

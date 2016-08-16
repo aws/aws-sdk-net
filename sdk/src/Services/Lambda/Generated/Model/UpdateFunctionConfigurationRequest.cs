@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// Updates the configuration parameters for the specified Lambda function by using the
     /// values provided in the request. You provide only the parameters you want to change.
     /// This operation must only be used on an existing Lambda function and cannot be used
-    /// to update the function's code. 
+    /// to update the function's code.
     /// 
     ///  
     /// <para>

@@ -45,6 +45,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricTransformation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDefaultValue())
+            {
+                context.Writer.WritePropertyName("defaultValue");
+                context.Writer.Write(requestObject.DefaultValue);
+            }
+
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("metricName");

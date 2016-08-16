@@ -63,6 +63,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field CertificateId set");
             uriResourcePath = uriResourcePath.Replace("{caCertificateId}", StringUtils.FromString(publicRequest.CertificateId));
             
+            if (publicRequest.IsSetNewAutoRegistrationStatus())
+                request.Parameters.Add("newAutoRegistrationStatus", StringUtils.FromString(publicRequest.NewAutoRegistrationStatus));
+            
             if (publicRequest.IsSetNewStatus())
                 request.Parameters.Add("newStatus", StringUtils.FromString(publicRequest.NewStatus));
             request.ResourcePath = uriResourcePath;

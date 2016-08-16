@@ -143,7 +143,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceGroups. 
         /// <para>
-        /// Details about the job flow's instance groups. 
+        /// Details about the job flow's instance groups.
         /// </para>
         /// </summary>
         public List<InstanceGroupDetail> InstanceGroups
@@ -292,7 +292,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property TerminationProtected. 
         /// <para>
         /// Specifies whether the Amazon EC2 instances in the cluster are protected from termination
-        /// by API calls, user intervention, or in the event of a job flow error. 
+        /// by API calls, user intervention, or in the event of a job flow error.
         /// </para>
         /// </summary>
         public bool TerminationProtected

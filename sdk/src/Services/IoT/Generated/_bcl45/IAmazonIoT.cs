@@ -3526,6 +3526,46 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListOutgoingCertificates
+
+
+        /// <summary>
+        /// Lists certificates that are being transfered but not yet accepted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates service method.</param>
+        /// 
+        /// <returns>The response from the ListOutgoingCertificates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        ListOutgoingCertificatesResponse ListOutgoingCertificates(ListOutgoingCertificatesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOutgoingCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListOutgoingCertificatesResponse> ListOutgoingCertificatesAsync(ListOutgoingCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListPolicies
 
 

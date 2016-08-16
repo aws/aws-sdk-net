@@ -64,6 +64,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ComputeTime", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ComputeTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EvaluationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FinishedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.FinishedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InputDataLocationS3", targetDepth))
@@ -122,6 +134,12 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PerformanceMetricsUnmarshaller.Instance;
                     unmarshalledObject.PerformanceMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

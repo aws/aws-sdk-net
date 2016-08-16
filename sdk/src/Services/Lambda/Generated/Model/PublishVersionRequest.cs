@@ -46,7 +46,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The SHA256 hash of the deployment package you want to publish. This provides validation
         /// on the code you are publishing. If you provide this parameter value must match the
-        /// SHA256 of the $LATEST version for the publication to succeed. 
+        /// SHA256 of the $LATEST version for the publication to succeed.
         /// </para>
         /// </summary>
         public string CodeSha256
@@ -64,8 +64,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description for the version you are publishing. If not provided, AWS Lambda copies
-        /// the description from the $LATEST version. 
+        /// The description for the version you are publishing. If not provided, AWS Lambda copies
+        /// the description from the $LATEST version.
         /// </para>
         /// </summary>
         public string Description

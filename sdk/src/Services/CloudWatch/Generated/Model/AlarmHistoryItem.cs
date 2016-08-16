@@ -43,7 +43,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmName. 
         /// <para>
-        ///  The descriptive name for the alarm. 
+        /// The descriptive name for the alarm.
         /// </para>
         /// </summary>
         public string AlarmName
@@ -61,7 +61,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property HistoryData. 
         /// <para>
-        ///  Machine-readable data about the alarm in JSON format. 
+        /// Machine-readable data about the alarm in JSON format.
         /// </para>
         /// </summary>
         public string HistoryData
@@ -79,7 +79,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property HistoryItemType. 
         /// <para>
-        ///  The type of alarm history item. 
+        /// The type of alarm history item.
         /// </para>
         /// </summary>
         public HistoryItemType HistoryItemType
@@ -97,7 +97,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property HistorySummary. 
         /// <para>
-        ///  A human-readable summary of the alarm history. 
+        /// A human-readable summary of the alarm history.
         /// </para>
         /// </summary>
         public string HistorySummary
@@ -115,7 +115,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        ///  The time stamp for the alarm history item. 
+        /// The time stamp for the alarm history item.
         /// </para>
         /// </summary>
         public DateTime Timestamp

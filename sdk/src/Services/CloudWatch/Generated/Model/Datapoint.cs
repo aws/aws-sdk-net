@@ -44,7 +44,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Average. 
         /// <para>
-        ///  The average of metric values that correspond to the datapoint. 
+        /// The average of metric values that correspond to the datapoint.
         /// </para>
         /// </summary>
         public double Average
@@ -62,7 +62,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Maximum. 
         /// <para>
-        ///  The maximum of the metric value used for the datapoint. 
+        /// The maximum of the metric value used for the datapoint.
         /// </para>
         /// </summary>
         public double Maximum
@@ -80,7 +80,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Minimum. 
         /// <para>
-        ///  The minimum metric value used for the datapoint. 
+        /// The minimum metric value used for the datapoint.
         /// </para>
         /// </summary>
         public double Minimum
@@ -98,8 +98,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property SampleCount. 
         /// <para>
-        ///  The number of metric values that contributed to the aggregate value of this datapoint.
-        /// 
+        /// The number of metric values that contributed to the aggregate value of this datapoint.
         /// </para>
         /// </summary>
         public double SampleCount
@@ -117,7 +116,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Sum. 
         /// <para>
-        ///  The sum of metric values used for the datapoint. 
+        /// The sum of metric values used for the datapoint.
         /// </para>
         /// </summary>
         public double Sum
@@ -135,7 +134,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        ///  The time stamp used for the datapoint. 
+        /// The time stamp used for the datapoint.
         /// </para>
         /// </summary>
         public DateTime Timestamp
@@ -153,7 +152,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        ///  The standard unit used for the datapoint. 
+        /// The standard unit used for the datapoint.
         /// </para>
         /// </summary>
         public StandardUnit Unit

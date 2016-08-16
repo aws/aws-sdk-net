@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeLoadBalancerPolicies operation.
+    /// Contains the output of DescribeLoadBalancerPolicies.
     /// </summary>
     public partial class DescribeLoadBalancerPoliciesResponse : AmazonWebServiceResponse
     {

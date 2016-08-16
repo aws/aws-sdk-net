@@ -39,7 +39,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNames. 
         /// <para>
-        ///  The names of the alarms to disable actions for. 
+        /// The names of the alarms to disable actions for.
         /// </para>
         /// </summary>
         public List<string> AlarmNames

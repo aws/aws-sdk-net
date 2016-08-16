@@ -204,6 +204,10 @@
       <Project>{72BA2A85-2F3C-4248-8FFD-C216DF769B6D}</Project>
       <Name>AWSSDK.ElasticLoadBalancing.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ElasticLoadBalancingV2/AWSSDK.ElasticLoadBalancingV2.CodeAnalysis.csproj">
+      <Project>{F4504FC4-8AFB-43DC-A2FF-5C1F06D43978}</Project>
+      <Name>AWSSDK.ElasticLoadBalancingV2.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ElasticMapReduce/AWSSDK.ElasticMapReduce.CodeAnalysis.csproj">
       <Project>{9F2D250A-19D3-47AA-BA60-2F733921D445}</Project>
       <Name>AWSSDK.ElasticMapReduce.CodeAnalysis</Name>
@@ -251,6 +255,10 @@
     <ProjectReference Include="../ServiceAnalysis/Kinesis/AWSSDK.Kinesis.CodeAnalysis.csproj">
       <Project>{6ECCDB4C-7136-4430-A8D7-5C8726C23996}</Project>
       <Name>AWSSDK.Kinesis.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KinesisAnalytics/AWSSDK.KinesisAnalytics.CodeAnalysis.csproj">
+      <Project>{C8CA4E5A-31A2-4932-990C-25C84DAFFA8C}</Project>
+      <Name>AWSSDK.KinesisAnalytics.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/KinesisFirehose/AWSSDK.KinesisFirehose.CodeAnalysis.csproj">
       <Project>{7C69A0B1-C32D-4F12-9CA1-33242BDB4A4A}</Project>
@@ -319,6 +327,10 @@
     <ProjectReference Include="../ServiceAnalysis/SimpleWorkflow/AWSSDK.SimpleWorkflow.CodeAnalysis.csproj">
       <Project>{A4F15C44-98AE-4FB1-B3EE-EC2104671752}</Project>
       <Name>AWSSDK.SimpleWorkflow.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Snowball/AWSSDK.Snowball.CodeAnalysis.csproj">
+      <Project>{185C5678-DA64-4941-AA03-AE7E781BA180}</Project>
+      <Name>AWSSDK.Snowball.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SQS/AWSSDK.SQS.CodeAnalysis.csproj">
       <Project>{2C8CA822-7F6A-4797-ADF3-3B35EC09734C}</Project>

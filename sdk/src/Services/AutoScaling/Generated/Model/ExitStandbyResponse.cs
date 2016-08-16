@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the ExitStandby operation.
+    /// Contains the parameters for ExitStandby.
     /// </summary>
     public partial class ExitStandbyResponse : AmazonWebServiceResponse
     {

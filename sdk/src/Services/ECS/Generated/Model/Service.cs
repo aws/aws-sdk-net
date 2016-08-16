@@ -68,7 +68,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the service was created.
+        /// The Unix timestamp for when the service was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -161,9 +161,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
-        /// A list of load balancer objects, containing the load balancer name, the container
-        /// name (as it appears in a container definition), and the container port to access from
-        /// the load balancer.
+        /// A list of Elastic Load Balancing load balancer objects, containing the load balancer
+        /// name, the container name (as it appears in a container definition), and the container
+        /// port to access from the load balancer.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -200,7 +200,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role associated with the service that allows
-        /// the Amazon ECS container agent to register container instances with a load balancer.
+        /// the Amazon ECS container agent to register container instances with an Elastic Load
+        /// Balancing load balancer.
         /// </para>
         /// </summary>
         public string RoleArn

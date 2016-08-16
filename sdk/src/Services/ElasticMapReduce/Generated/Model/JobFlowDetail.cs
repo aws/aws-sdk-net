@@ -71,7 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The version of the AMI used to initialize Amazon EC2 instances in the job flow. For
         /// a list of AMI versions currently supported by Amazon ElasticMapReduce, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
         /// Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer
-        /// Guide.</i>
+        /// Guide.</i> 
         /// </para>
         /// </summary>
         public string AmiVersion
@@ -180,7 +180,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
-        /// The location in Amazon S3 where log files for the job are stored. 
+        /// The location in Amazon S3 where log files for the job are stored.
         /// </para>
         /// </summary>
         public string LogUri

@@ -33,12 +33,18 @@ namespace Amazon.CloudWatch.Model
     /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
     /// metric. 
     /// 
-    ///  <note> Up to 500 results are returned for any one call. To retrieve further results,
-    /// use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code>
-    /// operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action,
-    /// allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code>
-    /// action. Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
-    /// </note>
+    ///  <note> 
+    /// <para>
+    ///  Up to 500 results are returned for any one call. To retrieve further results, use
+    /// returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    ///  If you create a metric with <a>PutMetricData</a>, allow up to fifteen minutes for
+    /// the metric to appear in calls to <code>ListMetrics</code>. Statistics about the metric,
+    /// however, are available sooner using <a>GetMetricStatistics</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListMetricsRequest : AmazonCloudWatchRequest
     {
@@ -50,7 +56,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        ///  A list of dimensions to filter against. 
+        /// A list of dimensions to filter against.
         /// </para>
         /// </summary>
         public List<DimensionFilter> Dimensions
@@ -68,7 +74,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        ///  The name of the metric to filter against. 
+        /// The name of the metric to filter against.
         /// </para>
         /// </summary>
         public string MetricName
@@ -86,7 +92,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace to filter against. 
+        /// The namespace to filter against.
         /// </para>
         /// </summary>
         public string Namespace
@@ -104,8 +110,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token returned by a previous call to indicate that there is more data available.
-        /// 
+        /// The token returned by a previous call to indicate that there is more data available.
         /// </para>
         /// </summary>
         public string NextToken

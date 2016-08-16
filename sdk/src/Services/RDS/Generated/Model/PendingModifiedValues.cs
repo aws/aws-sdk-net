@@ -37,8 +37,10 @@ namespace Amazon.RDS.Model
         private string _caCertificateIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
+        private string _dbSubnetGroupName;
         private string _engineVersion;
         private int? _iops;
+        private string _licenseModel;
         private string _masterUserPassword;
         private bool? _multiAZ;
         private int? _port;
@@ -143,6 +145,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DBSubnetGroupName. 
+        /// <para>
+        /// The new DB subnet group for the DB instance. 
+        /// </para>
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
+        }
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// Indicates the database engine version.
@@ -177,6 +197,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseModel. 
+        /// <para>
+        /// The license model for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
+        /// | <code>general-public-license</code> 
+        /// </para>
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this._licenseModel; }
+            set { this._licenseModel = value; }
+        }
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this._licenseModel != null;
         }
 
         /// <summary>

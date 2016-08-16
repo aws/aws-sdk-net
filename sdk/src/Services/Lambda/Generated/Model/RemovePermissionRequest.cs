@@ -32,7 +32,6 @@ namespace Amazon.Lambda.Model
     /// You can remove individual permissions from an resource policy associated with a Lambda
     /// function by providing a statement ID that you provided when you added the permission.
     /// 
-    /// 
     ///  
     /// <para>
     /// If you are using versioning, the permissions you remove are specific to the Lambda
@@ -44,7 +43,7 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// Note that removal of a permission will cause an active event source to lose permission
-    /// to the function. 
+    /// to the function.
     /// </para>
     ///  
     /// <para>

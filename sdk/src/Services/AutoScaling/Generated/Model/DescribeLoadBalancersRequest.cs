@@ -30,6 +30,12 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
     /// Describes the load balancers for the specified Auto Scaling group.
+    /// 
+    ///  
+    /// <para>
+    /// Note that this operation describes only Classic load balancers. If you have Application
+    /// load balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
+    /// </para>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonAutoScalingRequest
     {

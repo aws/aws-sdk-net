@@ -34,10 +34,10 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class ListUsersRequest : AmazonCognitoIdentityProviderRequest
     {
         private List<string> _attributesToGet = new List<string>();
+        private string _filter;
         private int? _limit;
         private string _paginationToken;
         private string _userPoolId;
-        private UserStatusType _userStatus;
 
         /// <summary>
         /// Gets and sets the property AttributesToGet. 
@@ -55,6 +55,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAttributesToGet()
         {
             return this._attributesToGet != null && this._attributesToGet.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// The filter for the list users request.
+        /// </para>
+        /// </summary>
+        public string Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
         /// <summary>
@@ -110,28 +128,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetUserPoolId()
         {
             return this._userPoolId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserStatus. 
-        /// <para>
-        /// The user status. Can be one of the following:
-        /// </para>
-        ///  <ul> <li>UNCONFIRMED - User has been created but not confirmed.</li> <li>CONFIRMED
-        /// - User has been confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED
-        /// - User is disabled due to a potential security threat.</li> <li>UNKNOWN - User status
-        /// is not known.</li> </ul>
-        /// </summary>
-        public UserStatusType UserStatus
-        {
-            get { return this._userStatus; }
-            set { this._userStatus = value; }
-        }
-
-        // Check to see if UserStatus property is set
-        internal bool IsSetUserStatus()
-        {
-            return this._userStatus != null;
         }
 
     }

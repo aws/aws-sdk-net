@@ -33,6 +33,7 @@ namespace Amazon.MachineLearning.Model
     public partial class GetDataSourceResponse : AmazonWebServiceResponse
     {
         private bool? _computeStatistics;
+        private long? _computeTime;
         private DateTime? _createdAt;
         private string _createdByIamUser;
         private string _dataLocationS3;
@@ -40,6 +41,7 @@ namespace Amazon.MachineLearning.Model
         private long? _dataSizeInBytes;
         private string _dataSourceId;
         private string _dataSourceSchema;
+        private DateTime? _finishedAt;
         private DateTime? _lastUpdatedAt;
         private string _logUri;
         private string _message;
@@ -48,6 +50,7 @@ namespace Amazon.MachineLearning.Model
         private RDSMetadata _rdsMetadata;
         private RedshiftMetadata _redshiftMetadata;
         private string _roleARN;
+        private DateTime? _startedAt;
         private EntityStatus _status;
 
         /// <summary>
@@ -67,6 +70,27 @@ namespace Amazon.MachineLearning.Model
         internal bool IsSetComputeStatistics()
         {
             return this._computeStatistics.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeTime. 
+        /// <para>
+        /// The approximate CPU time in milliseconds that Amazon Machine Learning spent processing
+        /// the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code>
+        /// is only available if the <code>DataSource</code> is in the <code>COMPLETED</code>
+        /// state and the <code>ComputeStatistics</code> is set to true.
+        /// </para>
+        /// </summary>
+        public long ComputeTime
+        {
+            get { return this._computeTime.GetValueOrDefault(); }
+            set { this._computeTime = value; }
+        }
+
+        // Check to see if ComputeTime property is set
+        internal bool IsSetComputeTime()
+        {
+            return this._computeTime.HasValue; 
         }
 
         /// <summary>
@@ -207,6 +231,27 @@ namespace Amazon.MachineLearning.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FinishedAt. 
+        /// <para>
+        /// The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as
+        /// <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available
+        /// when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code>
+        /// state.
+        /// </para>
+        /// </summary>
+        public DateTime FinishedAt
+        {
+            get { return this._finishedAt.GetValueOrDefault(); }
+            set { this._finishedAt = value; }
+        }
+
+        // Check to see if FinishedAt property is set
+        internal bool IsSetFinishedAt()
+        {
+            return this._finishedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
         /// The time of the most recent edit to the <code>DataSource</code>. The time is expressed
@@ -340,6 +385,26 @@ namespace Amazon.MachineLearning.Model
         internal bool IsSetRoleARN()
         {
             return this._roleARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedAt. 
+        /// <para>
+        /// The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as
+        /// <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code>
+        /// is in the <code>PENDING</code> state.
+        /// </para>
+        /// </summary>
+        public DateTime StartedAt
+        {
+            get { return this._startedAt.GetValueOrDefault(); }
+            set { this._startedAt = value; }
+        }
+
+        // Check to see if StartedAt property is set
+        internal bool IsSetStartedAt()
+        {
+            return this._startedAt.HasValue; 
         }
 
         /// <summary>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the DeregisterInstancesFromLoadBalancer operation.
+    /// Contains the output of DeregisterInstancesFromLoadBalancer.
     /// </summary>
     public partial class DeregisterInstancesFromLoadBalancerResponse : AmazonWebServiceResponse
     {

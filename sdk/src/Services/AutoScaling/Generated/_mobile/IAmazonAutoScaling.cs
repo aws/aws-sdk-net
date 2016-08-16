@@ -72,6 +72,22 @@ namespace Amazon.AutoScaling
 
         #endregion
                 
+        #region  AttachLoadBalancerTargetGroups
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachLoadBalancerTargetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTargetGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AttachLoadBalancerTargetGroupsResponse> AttachLoadBalancerTargetGroupsAsync(AttachLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CompleteLifecycleAction
 
 
@@ -320,8 +336,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes one or more Auto Scaling groups. If a list of names is not provided, the
-        /// call describes all Auto Scaling groups.
+        /// Describes one or more Auto Scaling groups.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -355,8 +370,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes one or more Auto Scaling instances. If a list is not provided, the call
-        /// describes all instances.
+        /// Describes one or more Auto Scaling instances.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -421,8 +435,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes one or more launch configurations. If you omit the list of names, then the
-        /// call describes all launch configurations.
+        /// Describes one or more launch configurations.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -497,6 +510,22 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeLoadBalancerTargetGroups
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLoadBalancerTargetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerTargetGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeLoadBalancerTargetGroupsResponse> DescribeLoadBalancerTargetGroupsAsync(DescribeLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -609,10 +638,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes one or more scaling activities for the specified Auto Scaling group. If
-        /// you omit the <code>ActivityIds</code>, the call returns all activities from the past
-        /// six weeks. Activities are sorted by the start time. Activities still in progress appear
-        /// first on the list.
+        /// Describes one or more scaling activities for the specified Auto Scaling group.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -815,6 +841,22 @@ namespace Amazon.AutoScaling
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DetachLoadBalancersResponse> DetachLoadBalancersAsync(DetachLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DetachLoadBalancerTargetGroups
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachLoadBalancerTargetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerTargetGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DetachLoadBalancerTargetGroupsResponse> DetachLoadBalancerTargetGroupsAsync(DetachLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

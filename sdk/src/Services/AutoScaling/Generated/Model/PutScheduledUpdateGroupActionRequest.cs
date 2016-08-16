@@ -31,12 +31,12 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the PutScheduledUpdateGroupAction operation.
     /// Creates or updates a scheduled scaling action for an Auto Scaling group. When updating
     /// a scheduled scaling action, if you leave a parameter unspecified, the corresponding
-    /// value remains unchanged in the affected Auto Scaling group. 
+    /// value remains unchanged in the affected Auto Scaling group.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
-    /// Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// Scaling</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class PutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        ///  The number of EC2 instances that should be running in the group. 
+        /// The number of EC2 instances that should be running in the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -108,7 +108,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        ///  The maximum size for the Auto Scaling group. 
+        /// The maximum size for the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -126,7 +126,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        ///  The minimum size for the Auto Scaling group. 
+        /// The minimum size for the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MinSize
@@ -193,7 +193,6 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// If you try to schedule your action in the past, Auto Scaling returns an error message.
-        /// 
         /// </para>
         ///  
         /// <para>

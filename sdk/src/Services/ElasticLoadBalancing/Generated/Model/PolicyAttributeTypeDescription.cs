@@ -83,9 +83,23 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <para>
         /// Valid values:
         /// </para>
-        ///  <ul> <li>ONE(1) : Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value
-        /// can be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
-        /// <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// ONE(1) : Single value required
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ZERO_OR_ONE(0..1) : Up to one value is allowed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ONE_OR_MORE(1..*0) : Required. Multiple values are allowed
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Cardinality
         {

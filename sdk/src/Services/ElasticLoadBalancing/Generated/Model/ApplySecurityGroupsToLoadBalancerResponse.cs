@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the ApplySecurityGroupsToLoadBalancer operation.
+    /// Contains the output of ApplySecurityGroupsToLoadBalancer.
     /// </summary>
     public partial class ApplySecurityGroupsToLoadBalancerResponse : AmazonWebServiceResponse
     {

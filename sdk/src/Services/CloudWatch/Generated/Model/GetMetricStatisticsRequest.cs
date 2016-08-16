@@ -29,7 +29,7 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMetricStatistics operation.
-    /// Gets statistics for the specified metric. 
+    /// Gets statistics for the specified metric.
     /// 
     ///  
     /// <para>
@@ -37,8 +37,9 @@ namespace Amazon.CloudWatch.Model
     /// number of data points returned from a single <code>GetMetricStatistics</code> request
     /// is 1,440. If you make a request that generates more than 1,440 data points, Amazon
     /// CloudWatch returns an error. In such a case, you can alter the request by narrowing
-    /// the specified time range or increasing the specified period. Alternatively, you can
-    /// make multiple requests across adjacent time ranges. <code>GetMetricStatistics</code>
+    /// the specified time range or increasing the specified period. A period can be as short
+    /// as one minute (60 seconds) or as long as one day (86,400 seconds). Alternatively,
+    /// you can make multiple requests across adjacent time ranges. <code>GetMetricStatistics</code>
     /// does not return the data in chronological order. 
     /// </para>
     ///  
@@ -55,9 +56,19 @@ namespace Amazon.CloudWatch.Model
     /// of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with
     /// detailed (one-minute) monitoring enabled: 
     /// </para>
-    ///  <ul> <li>Statistics for up to 400 instances for a span of one hour</li> <li>Statistics
-    /// for up to 35 instances over a span of 24 hours</li> <li>Statistics for up to 2 instances
-    /// over a span of 2 weeks</li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    /// Statistics for up to 400 instances for a span of one hour
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Statistics for up to 35 instances over a span of 24 hours
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Statistics for up to 2 instances over a span of 2 weeks
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  For information about the namespace, metric names, and dimensions that other Amazon
     /// Web Services products use to send metrics to CloudWatch, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
@@ -79,7 +90,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        ///  A list of dimensions describing qualities of the metric. 
+        /// A list of dimensions describing qualities of the metric.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -97,9 +108,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  The time stamp to use for determining the last datapoint to return. The value specified
+        /// The time stamp to use for determining the last datapoint to return. The value specified
         /// is exclusive; results will include datapoints up to the time stamp specified. The
-        /// time stamp must be in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z). 
+        /// time stamp must be in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -117,7 +128,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        ///  The name of the metric, with or without spaces. 
+        /// The name of the metric, with or without spaces.
         /// </para>
         /// </summary>
         public string MetricName
@@ -135,7 +146,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the metric, with or without spaces. 
+        /// The namespace of the metric, with or without spaces.
         /// </para>
         /// </summary>
         public string Namespace
@@ -153,8 +164,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        ///  The granularity, in seconds, of the returned datapoints. <code>Period</code> must
-        /// be at least 60 seconds and must be a multiple of 60. The default value is 60. 
+        ///  The granularity, in seconds, of the returned datapoints. A <code>Period</code> can
+        /// be as short as one minute (60 seconds) or as long as one day (86,400 seconds), and
+        /// must be a multiple of 60. The default value is 60. 
         /// </para>
         /// </summary>
         public int Period
@@ -172,14 +184,18 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  The time stamp to use for determining the first datapoint to return. The value specified
+        /// The time stamp to use for determining the first datapoint to return. The value specified
         /// is inclusive; results include datapoints with the time stamp specified. The time stamp
-        /// must be in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z). 
+        /// must be in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).
         /// </para>
-        ///  <note> The specified start time is rounded down to the nearest value. Datapoints
-        /// are returned for start times up to two weeks in the past. Specified start times that
-        /// are more than two weeks in the past will not return datapoints for metrics that are
-        /// older than two weeks. 
+        ///  <note> 
+        /// <para>
+        /// The specified start time is rounded down to the nearest value. Datapoints are returned
+        /// for start times up to two weeks in the past. Specified start times that are more than
+        /// two weeks in the past will not return datapoints for metrics that are older than two
+        /// weeks.
+        /// </para>
+        ///  
         /// <para>
         /// Data that is timestamped 24 hours or more in the past may take in excess of 48 hours
         /// to become available from submission time using <code>GetMetricStatistics</code>.
@@ -221,7 +237,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        ///  The unit for the metric. 
+        /// The specific unit for a given metric. Metrics may be reported in multiple units. Not
+        /// supplying a unit results in all units being returned. If the metric only ever reports
+        /// one unit, specifying a unit will have no effect.
         /// </para>
         /// </summary>
         public StandardUnit Unit

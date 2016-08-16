@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <note>
+    /// <note> 
     /// <para>
     /// Amazon EMR releases 4.x or later.
     /// </para>
-    /// </note> 
+    ///  </note> 
     /// <para>
     /// Specifies a hardware and software configuration of the EMR cluster. This includes
     /// configurations for applications and software bundled with Amazon EMR. The Configuration
@@ -69,7 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Configurations. 
         /// <para>
-        /// A list of configurations you apply to this configuration object. 
+        /// A list of configurations you apply to this configuration object.
         /// </para>
         /// </summary>
         public List<Configuration> Configurations

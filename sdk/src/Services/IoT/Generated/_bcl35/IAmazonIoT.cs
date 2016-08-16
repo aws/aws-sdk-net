@@ -3051,6 +3051,58 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListOutgoingCertificates
+
+
+        /// <summary>
+        /// Lists certificates that are being transfered but not yet accepted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates service method.</param>
+        /// 
+        /// <returns>The response from the ListOutgoingCertificates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        ListOutgoingCertificatesResponse ListOutgoingCertificates(ListOutgoingCertificatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOutgoingCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOutgoingCertificates
+        ///         operation.</returns>
+        IAsyncResult BeginListOutgoingCertificates(ListOutgoingCertificatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOutgoingCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOutgoingCertificates.</param>
+        /// 
+        /// <returns>Returns a  ListOutgoingCertificatesResult from IoT.</returns>
+        ListOutgoingCertificatesResponse EndListOutgoingCertificates(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPolicies
 
 

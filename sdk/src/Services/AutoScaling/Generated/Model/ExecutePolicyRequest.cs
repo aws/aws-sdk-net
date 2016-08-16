@@ -94,7 +94,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
-        /// Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public bool HonorCooldown
