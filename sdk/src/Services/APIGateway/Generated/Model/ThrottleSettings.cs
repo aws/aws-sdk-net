@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Returns the throttle settings.
+    /// The API request rate limits.
     /// </summary>
     public partial class ThrottleSettings
     {
@@ -38,7 +38,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property BurstLimit. 
         /// <para>
-        /// Returns the burstLimit when <b>ThrottleSettings</b> is called.
+        /// The API request burst limit, the maximum rate limit over a time ranging from one to
+        /// a few seconds, depending upon whether the underlying token bucket is at its full capacity.
         /// </para>
         /// </summary>
         public int BurstLimit
@@ -56,7 +57,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RateLimit. 
         /// <para>
-        /// Returns the rateLimit when <b>ThrottleSettings</b> is called.
+        /// The API request steady-state rate limit.
         /// </para>
         /// </summary>
         public double RateLimit

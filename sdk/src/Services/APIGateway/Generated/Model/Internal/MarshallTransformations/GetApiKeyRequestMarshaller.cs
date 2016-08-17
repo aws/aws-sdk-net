@@ -61,7 +61,11 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetApiKey())
                 throw new AmazonAPIGatewayException("Request object does not have required field ApiKey set");
             uriResourcePath = uriResourcePath.Replace("{api_Key}", StringUtils.FromString(publicRequest.ApiKey));
+            
+            if (publicRequest.IsSetIncludeValue())
+                request.Parameters.Add("includeValue", StringUtils.FromBool(publicRequest.IncludeValue));
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }

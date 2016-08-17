@@ -42,9 +42,10 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A key-value map of query string parameters that specify properties of the SDK, depending
-        /// on the requested sdkType. For sdkType 'objectivec', a parameter named "classPrefix"
-        /// is required. For sdkType 'android', parameters named "groupId", "artifactId", "artifactVersion",
-        /// and "invokerPackage" are required.
+        /// on the requested <code>sdkType</code>. For <code>sdkType</code> of <code>objectivec</code>,
+        /// a parameter named <code>classPrefix</code> is required. For <code>sdkType</code> of
+        /// <code>android</code>, parameters named <code>groupId</code>, <code>artifactId</code>,
+        /// <code>artifactVersion</code>, and <code>invokerPackage</code> are required.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -80,8 +81,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property SdkType. 
         /// <para>
-        /// The language for the generated SDK. Currently javascript, android, and objectivec
-        /// (for iOS) are supported.
+        /// The language for the generated SDK. Currently <code>javascript</code>, <code>android</code>,
+        /// and <code>objectivec</code> (for iOS) are supported.
         /// </para>
         /// </summary>
         public string SdkType

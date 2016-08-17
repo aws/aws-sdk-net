@@ -59,8 +59,14 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/apikeys";
             
+            if (publicRequest.IsSetIncludeValues())
+                request.Parameters.Add("includeValues", StringUtils.FromBool(publicRequest.IncludeValues));
+            
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
+            
+            if (publicRequest.IsSetNameQuery())
+                request.Parameters.Add("name", StringUtils.FromString(publicRequest.NameQuery));
             
             if (publicRequest.IsSetPosition())
                 request.Parameters.Add("position", StringUtils.FromString(publicRequest.Position));

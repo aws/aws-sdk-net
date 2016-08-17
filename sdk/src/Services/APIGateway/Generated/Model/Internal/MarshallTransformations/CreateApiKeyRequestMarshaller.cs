@@ -77,6 +77,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Enabled);
                 }
 
+                if(publicRequest.IsSetGenerateDistinctId())
+                {
+                    context.Writer.WritePropertyName("generateDistinctId");
+                    context.Writer.Write(publicRequest.GenerateDistinctId);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -97,6 +103,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetValue())
+                {
+                    context.Writer.WritePropertyName("value");
+                    context.Writer.Write(publicRequest.Value);
                 }
 
         

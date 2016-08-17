@@ -65,7 +65,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property ClientCertificateId. 
         /// <para>
         /// A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will
-        /// use use the certificate when making the HTTPS request to the defined backend endpoint.
+        /// use the certificate when making the HTTPS request to the defined back-end endpoint.
         /// </para>
         /// </summary>
         public string ClientCertificateId

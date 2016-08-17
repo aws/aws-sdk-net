@@ -28,7 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents the response of the test invoke request in HTTP method.
+    /// Represents the response of the test invoke request in the HTTP method.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console">Test
+    /// API using the API Gateway console</a> </div>
     /// </summary>
     public partial class TestInvokeMethodResponse : AmazonWebServiceResponse
     {
@@ -41,7 +44,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The body of HTTP response.
+        /// The body of the HTTP response.
         /// </para>
         /// </summary>
         public string Body
@@ -59,7 +62,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Headers. 
         /// <para>
-        /// The headers of HTTP response.
+        /// The headers of the HTTP response.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Headers

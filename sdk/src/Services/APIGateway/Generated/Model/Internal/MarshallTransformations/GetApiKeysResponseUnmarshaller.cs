@@ -63,6 +63,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.Position = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("warnings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Warnings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

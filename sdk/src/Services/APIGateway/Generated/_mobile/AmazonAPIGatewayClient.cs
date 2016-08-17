@@ -38,8 +38,8 @@ namespace Amazon.APIGateway
     ///
     /// Amazon API Gateway 
     /// <para>
-    /// Amazon API Gateway helps developers deliver robust, secure and scalable mobile and
-    /// web application backends. Amazon API Gateway allows developers to securely connect
+    /// Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and
+    /// web application back ends. Amazon API Gateway allows developers to securely connect
     /// mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly
     /// addressable web services that are hosted outside of AWS.
     /// </para>
@@ -515,6 +515,68 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateUsagePlan
+
+        internal CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
+        {
+            var marshaller = new CreateUsagePlanRequestMarshaller();
+            var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUsagePlanRequest,CreateUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateUsagePlanResponse> CreateUsagePlanAsync(CreateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateUsagePlanRequestMarshaller();
+            var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUsagePlanRequest,CreateUsagePlanResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUsagePlanKey
+
+        internal CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
+        {
+            var marshaller = new CreateUsagePlanKeyRequestMarshaller();
+            var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUsagePlanKeyRequest,CreateUsagePlanKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlanKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateUsagePlanKeyResponse> CreateUsagePlanKeyAsync(CreateUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateUsagePlanKeyRequestMarshaller();
+            var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUsagePlanKeyRequest,CreateUsagePlanKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteApiKey
 
         internal DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
@@ -944,6 +1006,68 @@ namespace Amazon.APIGateway
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStageRequest,DeleteStageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUsagePlan
+
+        internal DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
+        {
+            var marshaller = new DeleteUsagePlanRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUsagePlanRequest,DeleteUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteUsagePlanResponse> DeleteUsagePlanAsync(DeleteUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteUsagePlanRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUsagePlanRequest,DeleteUsagePlanResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUsagePlanKey
+
+        internal DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
+        {
+            var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUsagePlanKeyRequest,DeleteUsagePlanKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlanKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteUsagePlanKeyResponse> DeleteUsagePlanKeyAsync(DeleteUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUsagePlanKeyRequest,DeleteUsagePlanKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1910,6 +2034,192 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetUsage
+
+        internal GetUsageResponse GetUsage(GetUsageRequest request)
+        {
+            var marshaller = new GetUsageRequestMarshaller();
+            var unmarshaller = GetUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsageRequest,GetUsageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsageResponse> GetUsageAsync(GetUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsageRequestMarshaller();
+            var unmarshaller = GetUsageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsageRequest,GetUsageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlan
+
+        internal GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
+        {
+            var marshaller = new GetUsagePlanRequestMarshaller();
+            var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlanRequest,GetUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsagePlanResponse> GetUsagePlanAsync(GetUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsagePlanRequestMarshaller();
+            var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsagePlanRequest,GetUsagePlanResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlanKey
+
+        internal GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
+        {
+            var marshaller = new GetUsagePlanKeyRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlanKeyRequest,GetUsagePlanKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsagePlanKeyResponse> GetUsagePlanKeyAsync(GetUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsagePlanKeyRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsagePlanKeyRequest,GetUsagePlanKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlanKeys
+
+        internal GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
+        {
+            var marshaller = new GetUsagePlanKeysRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlanKeysRequest,GetUsagePlanKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlanKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsagePlanKeysResponse> GetUsagePlanKeysAsync(GetUsagePlanKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsagePlanKeysRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsagePlanKeysRequest,GetUsagePlanKeysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlans
+
+        internal GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
+        {
+            var marshaller = new GetUsagePlansRequestMarshaller();
+            var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlansRequest,GetUsagePlansResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlans operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsagePlansResponse> GetUsagePlansAsync(GetUsagePlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsagePlansRequestMarshaller();
+            var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsagePlansRequest,GetUsagePlansResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportApiKeys
+
+        internal ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
+        {
+            var marshaller = new ImportApiKeysRequestMarshaller();
+            var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ImportApiKeysRequest,ImportApiKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportApiKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportApiKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportApiKeysResponse> ImportApiKeysAsync(ImportApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportApiKeysRequestMarshaller();
+            var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportApiKeysRequest,ImportApiKeysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportRestApi
 
         internal ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
@@ -2618,6 +2928,68 @@ namespace Amazon.APIGateway
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateStageRequest,UpdateStageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUsage
+
+        internal UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
+        {
+            var marshaller = new UpdateUsageRequestMarshaller();
+            var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUsageRequest,UpdateUsageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateUsageResponse> UpdateUsageAsync(UpdateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateUsageRequestMarshaller();
+            var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUsageRequest,UpdateUsageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUsagePlan
+
+        internal UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
+        {
+            var marshaller = new UpdateUsagePlanRequestMarshaller();
+            var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUsagePlanRequest,UpdateUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsagePlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateUsagePlanResponse> UpdateUsagePlanAsync(UpdateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateUsagePlanRequestMarshaller();
+            var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUsagePlanRequest,UpdateUsagePlanResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

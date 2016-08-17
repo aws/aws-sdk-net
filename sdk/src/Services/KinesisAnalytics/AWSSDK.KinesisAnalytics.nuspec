@@ -13,10 +13,6 @@
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
 
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-      <dependency id="AWSSDK.Core" version="[3.2.6.0-beta, 3.3-beta)" />
-      </group>
-
       <group>
         <dependency id="AWSSDK.Core" version="[3.2.6.0-beta, 3.3-beta)" />
       </group>
@@ -35,9 +31,6 @@
     <file src=".\bin\Release\net45\AWSSDK.KinesisAnalytics.xml" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.KinesisAnalytics.pdb" target="lib\net45" />
 
-    <file src=".\bin\Release\pcl\AWSSDK.KinesisAnalytics.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.KinesisAnalytics.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.KinesisAnalytics.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\netstandard1.3\AWSSDK.KinesisAnalytics.dll" target="lib\netstandard1.3" />
     <file src=".\bin\Release\netstandard1.3\AWSSDK.KinesisAnalytics.pdb" target="lib\netstandard1.3" />
 

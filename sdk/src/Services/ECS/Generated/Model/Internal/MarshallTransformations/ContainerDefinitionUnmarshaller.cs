@@ -160,6 +160,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("memoryReservation", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MemoryReservation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mountPoints", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<MountPoint, MountPointUnmarshaller>(MountPointUnmarshaller.Instance);

@@ -1,3 +1,11 @@
+### 3.1.93.0 (2016-08-17 01:52 UTC)
+* APIGateway (3.1.7.0)
+	* Amazon API Gateway now supports API usage plans. You can now easily define plans for 3rd party developers by associating them with individual API keys. This allows you to configure which APIs the caller can access as well as define throttling and request quota limits. You can also extract utilization data on a per-API key basis to analyze API usage and generate billing documents. Usage plans allows you to easily manage and monetize your APIs for your API-based business.
+* CognitoSync (3.1.2.0)
+	* Merged GitHub PR 409: Improve DataConflictException handling in case of partial local modification (https://github.com/aws/aws-sdk-net/pull/409)
+* ECS (3.1.8.0)
+	* Regenerating from latest service model ecs-2014-11-13.normal.json
+
 ### 3.1.92.0 (2016-08-11 07:53 UTC)
 * AutoScaling (3.1.4.0)
 	* New API for AutoScaling - ELB L7 integration.
