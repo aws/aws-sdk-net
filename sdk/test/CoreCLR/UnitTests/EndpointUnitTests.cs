@@ -63,12 +63,12 @@ namespace AWSSDK_CoreCLR.UnitTests
             var useast1 = provider.GetRegionEndpoint("us-east-1");
             var uswest2 = provider.GetRegionEndpoint("us-west-2");
             var euwest1 = provider.GetRegionEndpoint("eu-west-1");
-            Assert.Equal("application-autoscaling.us-east-1.amazonaws.com", useast1.GetEndpointForService("application-autoscaling").Hostname);
-            Assert.Equal("application-autoscaling.us-west-2.amazonaws.com", uswest2.GetEndpointForService("application-autoscaling").Hostname);
-            Assert.Equal("application-autoscaling.eu-west-1.amazonaws.com", euwest1.GetEndpointForService("application-autoscaling").Hostname);
+            Assert.Equal("application-autoscaling.us-east-1.amazonaws.com", useast1.GetEndpointForService("application-autoscaling", false).Hostname);
+            Assert.Equal("application-autoscaling.us-west-2.amazonaws.com", uswest2.GetEndpointForService("application-autoscaling", false).Hostname);
+            Assert.Equal("application-autoscaling.eu-west-1.amazonaws.com", euwest1.GetEndpointForService("application-autoscaling", false).Hostname);
 
             var apne2 = provider.GetRegionEndpoint("ap-northeast-2");
-            Assert.Equal("sts.amazonaws.com", apne2.GetEndpointForService("sts").Hostname);
+            Assert.Equal("sts.amazonaws.com", apne2.GetEndpointForService("sts", false).Hostname);
         }
 
         private FileInfo CreateEndpointCustomizationFile()

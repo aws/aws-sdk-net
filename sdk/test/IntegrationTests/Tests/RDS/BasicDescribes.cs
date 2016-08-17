@@ -567,6 +567,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
         }
 
         [TestMethod]
+        [TestCategory("RDS")]
         public void TestDescribeDBInstanceException()
         {
             try

@@ -39,6 +39,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class NotificationTests
     {
         [TestMethod]
+        [TestCategory("S3")]
         public void SetTopicConfigurationTests()
         {
             var s3Config = new AmazonS3Config();
@@ -90,6 +91,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
+        [TestCategory("S3")]
         public void SetQueueConfigurationTests()
         {
             var filterRule = new FilterRule("Prefix", "test/");

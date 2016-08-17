@@ -26,13 +26,13 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 using Amazon.SecurityToken.SAML;
 
-
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
     public class General
     {
         [TestMethod]
+        [TestCategory("General")]
         public void TestSerializingExceptions()
         {
             using(var client = new Amazon.S3.AmazonS3Client())
@@ -256,6 +256,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
+        public void JsonCountSerializationBug()
+        {
+            var json = @"{""Data"":{""NotCount"":""42""}}";
+            var poco = ThirdParty.Json.LitJson.JsonMapper.ToObject<Poco>(json);
+            Assert.AreEqual(1, poco.Data.Count);
+            Assert.AreEqual("42", poco.Data["NotCount"]);
+
+            json = @"{""Data"":{""Count"":""Dracula""}}";
+            poco = ThirdParty.Json.LitJson.JsonMapper.ToObject<Poco>(json);
+            Assert.AreEqual(1, poco.Data.Count);
+            Assert.AreEqual("Dracula", poco.Data["Count"]);
+        }
+        private class Poco
+        {
+            public Dictionary<string, string> Data { get; set; }
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
         public void TestSDKExceptions()
         {
             var allTypes = new List<Type>();
@@ -310,6 +330,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestLargeRetryCount()
         {
             var maxRetries = 1000;
@@ -334,6 +355,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestBidiCharsInUri()
         {
             var bidiChar = '\u200E';
@@ -363,6 +385,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestClientDispose()
         {
             IAmazonS3 client;
@@ -478,6 +501,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         // correctly handle clock skew errors.
         // By default it only tests a small subset of services.
         [TestMethod]
+        [TestCategory("General")]
         public void TestClockSkewCorrection()
         {
             VerifyClockSkewSetting();

@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestCreateGetLoginProfile()
         {
             string username = IAMUtil.CreateTestUser(Client);
@@ -104,7 +104,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(EntityAlreadyExistsException))]
         public void TestCreateLoginProfileTwiceException()
         {
@@ -124,7 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestDeleteLoginProfile()
         {

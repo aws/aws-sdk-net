@@ -79,9 +79,18 @@ using Amazon.Runtime.Internal.Util;
 <#+
 		foreach(var staticQueryParam in operation.StaticQueryParameters)
 		{
+			if(staticQueryParam.Value != null)
+			{
 #>
 			request.AddSubResource("<#=staticQueryParam.Key#>", "<#=staticQueryParam.Value#>");
 <#+			
+			}
+			else
+			{
+#>
+			request.AddSubResource("<#=staticQueryParam.Key#>");
+<#+						
+			}
 		}
 	}
 

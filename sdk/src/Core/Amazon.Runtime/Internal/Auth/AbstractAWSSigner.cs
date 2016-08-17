@@ -112,7 +112,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             if (r != null)
             {
-                var endpoint = r.GetEndpointForService(config.RegionEndpointServiceName);
+                var endpoint = r.GetEndpointForService(config.RegionEndpointServiceName, config.UseDualstackEndpoint);
                 if (endpoint != null && (endpoint.SignatureVersionOverride == "4" || string.IsNullOrEmpty(endpoint.SignatureVersionOverride)))
                     return true;
             }

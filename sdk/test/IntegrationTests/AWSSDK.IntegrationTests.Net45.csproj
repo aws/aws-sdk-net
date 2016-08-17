@@ -212,6 +212,10 @@
       <Project>{156D9313-7650-4141-8DCD-D3C8DBBF7642}</Project>
       <Name>AWSSDK.ElasticBeanstalk.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net45.csproj">
+      <Project>{4449e966-e00f-4673-b468-48866576da5c}</Project>
+      <Name>AWSSDK.ElasticLoadBalancingV2.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net45.csproj">
       <Project>{AB715742-9EE8-4D2A-AD38-F0E75723A9AB}</Project>
       <Name>AWSSDK.ElasticLoadBalancing.Net45</Name>
@@ -327,6 +331,10 @@
     <ProjectReference Include="..\..\src\Services\SimpleWorkflow\AWSSDK.SimpleWorkflow.Net45.csproj">
       <Project>{E8FF4CE2-1557-428B-97CE-859C8DCBA2D2}</Project>
       <Name>AWSSDK.SimpleWorkflow.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net45.csproj">
+      <Project>{f54015b4-1f57-474e-8351-b9819bebc5b0}</Project>
+      <Name>AWSSDK.Snowball.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net45.csproj">
       <Project>{3E6F35CA-693B-45D6-8AC0-BAE9BE94F2BB}</Project>

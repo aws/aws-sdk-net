@@ -159,6 +159,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("Kinesis")]
         public void TestListDeliveryStreams()
         {
             List<string> streamNames = Client.ListDeliveryStreams().DeliveryStreamNames;
@@ -166,6 +167,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("Kinesis")]
         public void TestPutRecord()
         {
             using (var data = new MemoryStream())
@@ -185,6 +187,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("Kinesis")]
         [ExpectedException(typeof(ResourceNotFoundException))]
         public void TestPutRecordNonExistantStream()
         {
@@ -202,6 +205,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("Kinesis")]
         public void TestPutRecordBatch()
         {
             int recordCount = 8;

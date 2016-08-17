@@ -96,13 +96,42 @@ namespace Amazon.Internal
             /// <param name="serviceName">The services system name.</param>
             /// <exception cref="System.ArgumentException">Thrown when the request service does not have a valid endpoint in the region.</exception>
             /// <returns></returns>
-            public Amazon.RegionEndpoint.Endpoint GetEndpointForService(string serviceName)
+            public Amazon.RegionEndpoint.Endpoint GetEndpointForService(string serviceName, bool dualStack)
             {
                 if (!RegionEndpoint.loaded)
                     RegionEndpoint.LoadEndpointDefinitions();
 
                 var rule = GetEndpointRule(serviceName);
                 var endpointTemplate = rule["endpoint"].ToString();
+                if (dualStack)
+                {
+                    // We need special handling for S3's s3.amazonaws.com endpoint, which doesn't
+                    // support dualstack (need to transform to s3.dualstack.us-east-1.amazonaws.com).
+                    // Other endpoints that begin s3-* need to transform to s3.* for dualstack support.
+                    // S3's 'external' endpoints do not support dualstack and should not be transformed.
+                    if (serviceName.Equals("s3", StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (endpointTemplate.Equals("s3.amazonaws.com", StringComparison.OrdinalIgnoreCase))
+                            endpointTemplate = "s3.dualstack.us-east-1.amazonaws.com";
+                        else
+                        {
+                            var isExternalEndpoint = endpointTemplate.StartsWith("s3-external-", StringComparison.OrdinalIgnoreCase);
+                            if (!isExternalEndpoint)
+                            {
+                                // transform fixed s3-<region> to s3.<region> and then onto s3.dualstack.<region>,
+                                // bypassing endpoints that do not start with the expected tags.
+                                if (endpointTemplate.StartsWith("s3-", StringComparison.OrdinalIgnoreCase))
+                                    endpointTemplate = "s3." + endpointTemplate.Substring(3);
+
+                                if (endpointTemplate.StartsWith("s3.", StringComparison.OrdinalIgnoreCase))
+                                    endpointTemplate = endpointTemplate.Replace("s3.", "s3.dualstack.");
+                            }
+                        }
+                    }
+                    else
+                        endpointTemplate = endpointTemplate.Replace("{region}", "dualstack.{region}");
+                }
+
                 var hostName = endpointTemplate.Replace("{region}", this.SystemName).Replace("{service}", serviceName);
 
                 string signatureVersion = null;

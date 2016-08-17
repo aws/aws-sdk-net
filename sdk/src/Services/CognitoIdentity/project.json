@@ -30,7 +30,8 @@
         "**/_winstorage/*",
         "**/Custom/SyncManager/*"
       ]
-    }
+    },
+    "xmlDoc": true
   },
 
   "frameworks": {

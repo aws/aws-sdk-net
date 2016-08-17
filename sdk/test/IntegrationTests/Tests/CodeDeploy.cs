@@ -13,12 +13,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class CodeDeploy : TestBase<AmazonCodeDeployClient>
     {
         [TestMethod]
+        [TestCategory("CodeDeploy")]
         public void TestListApplications()
         {
             Client.ListApplications();
         }
 
         [TestMethod]
+        [TestCategory("CodeDeploy")]
         public void TestCreateApplication()
         {
             var appName = Utils.UtilityMethods.GenerateName();
@@ -28,6 +30,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("CodeDeploy")]
         public void TestDeleteApplication()
         {
             var appName = Utils.UtilityMethods.GenerateName();

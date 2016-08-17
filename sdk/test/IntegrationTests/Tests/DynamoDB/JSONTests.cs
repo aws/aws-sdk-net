@@ -34,6 +34,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 }";
         
         [TestMethod]
+        [TestCategory("DynamoDB")]
         public void TestJSON()
         {
             TestJsonConversions();

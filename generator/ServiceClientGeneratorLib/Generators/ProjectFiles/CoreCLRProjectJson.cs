@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
+    #line 1 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class CoreCLRProjectJson : CoreCLRProjectJsonBase
     {
@@ -31,7 +31,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("{\r\n  \"version\": \"1.0.0-*\",\r\n  \"description\": \"\",\r\n  \"authors\": [ \"\" ],\r\n\r\n  \"depe" +
                     "ndencies\": {\r\n");
             
-            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
+            #line 12 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
 
     if(this.Session.ContainsKey("ServiceDependencies"))
     {
@@ -43,14 +43,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    \"");
             
-            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
+            #line 18 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dependency));
             
             #line default
             #line hidden
             this.Write("\": \"1.0.0-*\",\r\n");
             
-            #line 19 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
+            #line 19 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
 
         }
     }
@@ -60,7 +60,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    \"Core\": \"1.0.0-*\"\r\n  },\r\n\r\n  \"buildOptions\": {\r\n    \"outputName\": \"");
             
-            #line 27 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
+            #line 27 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\CoreCLRProjectJson.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -86,7 +86,8 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
         ""**/_winstorage/*"",
         ""**/Custom/SyncManager/*""
       ]
-    }
+    },
+	""xmlDoc"": true
   },
 
   ""frameworks"": {

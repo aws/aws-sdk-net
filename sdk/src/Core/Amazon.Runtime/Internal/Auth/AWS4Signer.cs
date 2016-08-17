@@ -491,7 +491,7 @@ namespace Amazon.Runtime.Internal.Auth
             // client config properties.
             if (alternateEndpoint != null)
             {
-                var serviceEndpoint = alternateEndpoint.GetEndpointForService(serviceName);
+                var serviceEndpoint = alternateEndpoint.GetEndpointForService(serviceName, clientConfig.UseDualstackEndpoint);
                 if (serviceEndpoint.AuthRegion != null)
                     return serviceEndpoint.AuthRegion;
 
@@ -515,7 +515,7 @@ namespace Amazon.Runtime.Internal.Auth
             var endpoint = clientConfig.RegionEndpoint;
             if (endpoint != null)
             {
-                var serviceEndpoint = endpoint.GetEndpointForService(serviceName);
+                var serviceEndpoint = endpoint.GetEndpointForService(serviceName, clientConfig.UseDualstackEndpoint);
                 if (!string.IsNullOrEmpty(serviceEndpoint.AuthRegion))
                     return serviceEndpoint.AuthRegion;
 

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+    #line 1 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class LegacyResponseClass : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 6 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
 
 	AddLicenseHeader();
 
@@ -38,42 +38,42 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\nusing System;\r\n\r\nnamespace ");
             
-            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 12 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n    /// <summary>\r\n    /// Configuration for accessing Amazon ");
             
-            #line 15 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 15 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write(" service\r\n    /// </summary>\r\n\tpublic partial class ");
             
-            #line 17 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 17 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Response : ");
             
-            #line 17 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 17 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result\r\n\t{\r\n        /// <summary>\r\n        /// Gets and sets the ");
             
-            #line 20 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 20 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result property.\r\n        /// Represents the output of a ");
             
-            #line 21 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 21 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
@@ -81,42 +81,42 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(" operation.\r\n        /// </summary>\r\n        [Obsolete(@\"This property has been d" +
                     "eprecated. All properties of the ");
             
-            #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 23 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result class are now available on the ");
             
-            #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 23 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Response class. You should use the properties on ");
             
-            #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 23 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Response instead of accessing them through ");
             
-            #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 23 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result.\")]\r\n        public ");
             
-            #line 24 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 24 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
             #line hidden
             this.Write("Result ");
             
-            #line 24 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+            #line 24 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
@@ -126,7 +126,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
+        #line 34 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\LegacyResponseClass.tt"
 
     public string OperationName { get; set; }
 

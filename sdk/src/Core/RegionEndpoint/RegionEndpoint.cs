@@ -225,7 +225,22 @@ namespace Amazon
         /// <returns></returns>
         public Endpoint GetEndpointForService(string serviceName)
         {
-            return InternedRegionEndpoint.GetEndpointForService(serviceName);
+            return GetEndpointForService(serviceName, false);
+        }
+
+        /// <summary>
+        /// Gets the endpoint for a service in a region, optionally selecting a dualstack compatible endpoint.
+        /// </summary>
+        /// <param name="serviceName">The services system name.</param>
+        /// <param name="dualStack">
+        /// If true a dualstack endpoint is returned. It is the user's responsibility to verify that the given service 
+        /// supports a dualstack endpoint for the region.
+        /// </param>
+        /// <exception cref="System.ArgumentException">Thrown when the request service does not have a valid endpoint in the region.</exception>
+        /// <returns></returns>
+        public Endpoint GetEndpointForService(string serviceName, bool dualStack)
+        {
+            return InternedRegionEndpoint.GetEndpointForService(serviceName, dualStack);
         }
 
         public override string ToString()

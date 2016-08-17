@@ -34,8 +34,7 @@ namespace Amazon.Internal
 {
     public class RegionEndpointV3 : IRegionEndpoint
     {
-        private Dictionary<string, Amazon.RegionEndpoint.Endpoint> _serviceMap = new Dictionary<string, RegionEndpoint.Endpoint>();
-
+        private ServiceMap _serviceMap = new ServiceMap();
         public string RegionName { get; private set; }
         public string DisplayName { get; private set; }
         public string PartitionName
@@ -59,11 +58,11 @@ namespace Amazon.Internal
             _servicesJsonData = services;
         }
 
-        public RegionEndpoint.Endpoint GetEndpointForService(string serviceName)
+        public RegionEndpoint.Endpoint GetEndpointForService(string serviceName, bool dualStack)
         {
             RegionEndpoint.Endpoint endpointObject = null;
 
-            lock(_serviceMap)
+            lock (_serviceMap)
             {
                 if (!_servicesLoaded)
                 {
@@ -71,7 +70,7 @@ namespace Amazon.Internal
                     _servicesLoaded = true;
                 }
 
-                _serviceMap.TryGetValue(serviceName, out endpointObject);
+                _serviceMap.TryGetEndpoint(serviceName, dualStack, out endpointObject);
             }
             return endpointObject;
         }
@@ -127,10 +126,49 @@ namespace Amazon.Internal
 
         private void CreateEndpointAndAddToServiceMap(JsonData result, string regionName, string serviceName)
         {
+            CreateEndpointAndAddToServiceMap(result, regionName, serviceName, false);
+            CreateEndpointAndAddToServiceMap(result, regionName, serviceName, true);
+        }
+
+        private void CreateEndpointAndAddToServiceMap(JsonData result, string regionName, string serviceName, bool dualStack)
+        {
             string template = (string)result["hostname"];
-            string hostname = template.Replace("{service}", serviceName)
+            string hostname = null;
+
+            if (dualStack)
+            {
+                // We need special handling for S3's s3.amazonaws.com endpoint, which doesn't
+                // support dualstack (need to transform to s3.dualstack.us-east-1.amazonaws.com).
+                // Other endpoints that begin s3-* need to transform to s3.* for dualstack support.
+                // S3's 'external' endpoints do not support dualstack and should not be transformed.
+                if (serviceName.Equals("s3", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (template.Equals("s3.amazonaws.com", StringComparison.OrdinalIgnoreCase))
+                        hostname = "s3.dualstack.us-east-1.amazonaws.com";
+                    else
+                    {
+                        var isExternalEndpoint = template.StartsWith("s3-external-", StringComparison.OrdinalIgnoreCase);
+                        if (!isExternalEndpoint)
+                        {
+                            // transform fixed s3-<region> to s3.<region> and then onto s3.dualstack.<region>,
+                            // bypassing endpoints that do not start with the expected tags.
+                            if (template.StartsWith("s3-", StringComparison.OrdinalIgnoreCase))
+                                hostname = "s3." + template.Substring(3);
+
+                            if (template.StartsWith("s3.", StringComparison.OrdinalIgnoreCase))
+                                hostname = template.Replace("s3.", "s3.dualstack.");
+                        }
+                    }
+                }
+                else
+                    hostname = template.Replace("{region}", "dualstack.{region}");
+            }
+            else
+            {
+                hostname = template.Replace("{service}", serviceName)
                                  .Replace("{region}", regionName)
                                  .Replace("{dnsSuffix}", (string)_partitionJsonData["dnsSuffix"]);
+            }
 
             string authRegion = null;
             string customService = null;
@@ -150,10 +188,10 @@ namespace Amazon.Internal
 
             RegionEndpoint.Endpoint endpoint = new RegionEndpoint.Endpoint(hostname, authRegion, null);
 
-            _serviceMap.Add(serviceName, endpoint);
+            _serviceMap.Add(serviceName, dualStack, endpoint);
             if (!string.IsNullOrEmpty(customService) && !_serviceMap.ContainsKey(customService))
             {
-                _serviceMap.Add(customService, endpoint);
+                _serviceMap.Add(customService, dualStack, endpoint);
             }
         }
 
@@ -165,6 +203,33 @@ namespace Amazon.Internal
                 authRegion = (string) credentialScope["region"];
             }
             return authRegion;
+        }
+
+        class ServiceMap
+        {
+            private Dictionary<string, Amazon.RegionEndpoint.Endpoint> _serviceMap = new Dictionary<string, RegionEndpoint.Endpoint>();
+            private Dictionary<string, Amazon.RegionEndpoint.Endpoint> _dualServiceMap = new Dictionary<string, RegionEndpoint.Endpoint>();
+
+            private Dictionary<string, Amazon.RegionEndpoint.Endpoint> GetMap(bool dualStack)
+            {
+                return dualStack ? _dualServiceMap : _serviceMap;
+            }
+
+            public bool ContainsKey(string servicName)
+            {
+                return _serviceMap.ContainsKey(servicName);
+            }
+
+            public void Add(string serviceName, bool dualStack, RegionEndpoint.Endpoint endpoint)
+            {
+                var map = dualStack ? _dualServiceMap : _serviceMap;
+                GetMap(dualStack).Add(serviceName, endpoint);
+            }
+
+            public bool TryGetEndpoint(string serviceName, bool dualStack, out RegionEndpoint.Endpoint endpoint)
+            {
+                return this.GetMap(dualStack).TryGetValue(serviceName, out endpoint);
+            }
         }
     }
 

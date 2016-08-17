@@ -75,7 +75,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void Roles()
         {
             var roles = GetRoles();
@@ -127,7 +127,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void RolePolicies()
         {
             client.CreateRole(new CreateRoleRequest
@@ -214,7 +214,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void IdentityProfiles()
         {
             var profiles = client.ListInstanceProfiles().InstanceProfiles;
@@ -292,7 +292,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void AssumeRolePolicyDocument()
         {
             client.CreateRole(new CreateRoleRequest

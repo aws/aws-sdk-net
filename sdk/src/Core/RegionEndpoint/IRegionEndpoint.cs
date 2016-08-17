@@ -26,7 +26,7 @@ namespace Amazon.Internal
     {
         string RegionName { get;  }
         string DisplayName { get; }
-        Amazon.RegionEndpoint.Endpoint GetEndpointForService(string serviceName);
+        Amazon.RegionEndpoint.Endpoint GetEndpointForService(string serviceName, bool dualStack);
     }
 
     public interface IRegionEndpointProvider

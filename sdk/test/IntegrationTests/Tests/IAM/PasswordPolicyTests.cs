@@ -23,7 +23,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void CRUDPasswordPolicy()
         {
             var request = new UpdateAccountPasswordPolicyRequest

@@ -49,6 +49,9 @@ namespace Amazon.S3
         /// <li>DeleteBucket</li>
         /// </ol>
         /// </summary>
+        /// <remarks>
+        /// This option cannot be used at the same time as UseDualstackEndpoint.
+        /// </remarks>
         public bool UseAccelerateEndpoint
         {
             get { return useAccelerateEndpoint; }
@@ -67,6 +70,11 @@ namespace Amazon.S3
                 throw new AmazonClientException(
                         @"S3 accelerate is not compatible with Path style requests. Disable Path style requests" +
                          " using AmazonS3Config.ForcePathStyle property to use S3 accelerate.");
+            }
+
+            if (this.UseAccelerateEndpoint && this.UseDualstackEndpoint)
+            {
+                throw new AmazonClientException("The dualstack mode of Amazon S3 cannot be used with accelerate mode.");
             }
 
             var isExplicitAccelerateEndpoint = !string.IsNullOrEmpty(this.ServiceURL) &&
@@ -90,9 +98,9 @@ namespace Amazon.S3
 
                     this.UseAccelerateEndpoint = true;
                 }
-            }          
+            }
         }
-        
+
         /// <summary>
         /// This method contains custom initializations for the config object.
         /// </summary>

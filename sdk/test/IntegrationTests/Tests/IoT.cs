@@ -12,12 +12,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class IoT : TestBase<AmazonIoTClient>
     {
         [TestMethod]
+        [TestCategory("IoT")]
         public void TestListCall()
         {
             Client.ListPolicies(new ListPoliciesRequest { AscendingOrder = true });
         }
 
         [TestMethod]
+        [TestCategory("IoT")]
         public void TestThingOperations()
         {
             var thingName = Utils.UtilityMethods.GenerateName();
@@ -40,6 +42,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("IoT")]
         public void TestErrorMessage()
         {
             try
@@ -53,6 +56,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("IoT")]
         public void TestCertificateOperations()
         {
             var response = Client.CreateKeysAndCertificate(new CreateKeysAndCertificateRequest { });

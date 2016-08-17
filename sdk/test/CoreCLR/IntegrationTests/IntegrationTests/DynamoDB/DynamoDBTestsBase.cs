@@ -312,38 +312,41 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
         {
             return WaitForTableStatus(new string[] { tableName }, status);
         }
-        public async Task WaitForTableStatus(IEnumerable<string> tableNames, TableStatus status)
+        public Task WaitForTableStatus(IEnumerable<string> tableNames, TableStatus status)
         {
-            Console.WriteLine("Waiting for tables [{0}] to reach status {1}",
-                string.Join(", ", tableNames.ToArray()), status);
-            var tablesList = new List<string>(tableNames);
-
-            Func<bool> testFunction = () =>
+            return Task.Run(() =>
             {
-                bool allReady = true;
-                foreach(var tableName in tablesList.ToArray())
+                Console.WriteLine("Waiting for tables [{0}] to reach status {1}",
+                    string.Join(", ", tableNames.ToArray()), status);
+                var tablesList = new List<string>(tableNames);
+
+                Func<bool> testFunction = () =>
                 {
-                    var tableStatus = GetStatus(tableName).Result;
-                    allReady &= (tableStatus == status);
-                    if (allReady)
-                        tablesList.Remove(tableName);
+                    bool allReady = true;
+                    foreach (var tableName in tablesList.ToArray())
+                    {
+                        var tableStatus = GetStatus(tableName).Result;
+                        allReady &= (tableStatus == status);
+                        if (allReady)
+                            tablesList.Remove(tableName);
 
-                    if (!allReady)
-                        break;
-                }
+                        if (!allReady)
+                            break;
+                    }
 
-                return allReady;
-            };
+                    return allReady;
+                };
 
-            UtilityMethods.WaitUntil(testFunction);
-            Console.WriteLine("All tables ready");
+                UtilityMethods.WaitUntil(testFunction);
+                Console.WriteLine("All tables ready");
+            });
         }
         public async Task<TableStatus> GetStatus(string tableName)
         {
             TableStatus status = null;
             try
             {
-                status = (await Client.DescribeTableAsync(tableName)).Table.TableStatus;
+                status = (await Client.DescribeTableAsync(tableName).ConfigureAwait(false)).Table.TableStatus;
             }
             catch(ResourceNotFoundException)
             {

@@ -58,7 +58,7 @@ namespace Amazon.DNXCore.IntegrationTests
         public async static Task<string> CreateBucketAsync(IAmazonS3 s3Client, string testName)
         {
             string bucketName = string.Format("{0}-{1}-{2}", UtilityMethods.SDK_TEST_PREFIX, testName, DateTime.Now.Ticks);
-            await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName });
+            await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName }).ConfigureAwait(false);
             return bucketName;
         }
 

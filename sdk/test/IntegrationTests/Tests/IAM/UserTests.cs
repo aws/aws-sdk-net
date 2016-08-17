@@ -51,7 +51,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestGetUserImplicit()
         {
             GetUserRequest request = new GetUserRequest();
@@ -64,7 +64,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestCreateGetUser()
         {
             string username = "sdk-testuser-" + DateTime.Now.Ticks;
@@ -85,7 +85,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListUsers()
         {
             string username1 = IAMUtil.CreateTestUser(Client);
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestUserWithPath()
         {
             string username = "sdk-testuser-" + DateTime.Now.Ticks;
@@ -135,7 +135,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListUsersByPath()
         {
             string username1 = "sdk-testuser1-" + DateTime.Now.Ticks;
@@ -202,7 +202,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestListUsersMaxResults()
         {
             string username1 = IAMUtil.CreateTestUser(Client);
@@ -259,7 +259,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void TestUpdateUser()
         {
             string
@@ -293,7 +293,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestDeleteUser()
         {
@@ -310,7 +310,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(EntityAlreadyExistsException))]
         public void TestDoubleCreateUser()
         {
@@ -328,7 +328,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestUpdateNonexistantUser()
         {

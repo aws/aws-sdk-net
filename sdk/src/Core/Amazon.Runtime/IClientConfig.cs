@@ -164,6 +164,17 @@ namespace Amazon.Runtime
         /// </remarks>
         TimeSpan? Timeout { get; }
 
+        /// <summary>
+        /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
+        /// for the configured region.
+        /// </summary>
+        /// <remarks>
+        /// Note: AWS services are enabling dualstack endpoints over time. It is your responsibility to check 
+        /// that the service actually supports a dualstack endpoint in the configured region before enabling 
+        /// this option for a service.
+        /// </remarks>
+        bool UseDualstackEndpoint { get; }
+
 
         /// <summary>
         /// Using either the RegionEndpoint or the ServiceURL determine what the URL to the service is.

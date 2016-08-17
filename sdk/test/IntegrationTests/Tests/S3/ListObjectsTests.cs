@@ -64,6 +64,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
 
         [TestMethod]
+        [TestCategory("S3")]
         public void TestListV2()
         {
             var response = Client.ListObjectsV2(new ListObjectsV2Request

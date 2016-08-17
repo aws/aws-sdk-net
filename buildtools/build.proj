@@ -41,6 +41,12 @@
         <MSBuild Projects=".\CustomTasks\CustomTasks.sln"
             Targets="Clean;Build"
             Properties="Configuration=Release" />
+
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\test\TestAnalyzer\TestAnalyzer.sln" />
+
+        <MSBuild Projects="..\sdk\test\TestAnalyzer\TestAnalyzer.sln"
+            Targets="Clean;Build"
+            Properties="Configuration=Debug"/>
     </Target>
 
     <UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
