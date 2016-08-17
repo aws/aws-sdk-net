@@ -39,7 +39,14 @@ namespace Amazon.EC2.Model
         private BatchState _spotFleetRequestState;
 
         /// <summary>
-        /// Gets and sets the property ActivityStatus.
+        /// Gets and sets the property ActivityStatus. 
+        /// <para>
+        /// The progress of the Spot fleet request. If there is an error, the status is <code>error</code>.
+        /// After all bids are placed, the status is <code>pending_fulfillment</code>. If the
+        /// size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>.
+        /// If the size of the fleet is decreased, the status is <code>pending_termination</code>
+        /// while Spot instances are terminating.
+        /// </para>
         /// </summary>
         public ActivityStatus ActivityStatus
         {

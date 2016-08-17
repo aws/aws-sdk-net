@@ -15846,6 +15846,7 @@
         },
         "ActivityStatus":{
           "shape":"ActivityStatus",
+          "documentation":"<p>The progress of the Spot fleet request. If there is an error, the status is <code>error</code>. After all bids are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is <code>pending_termination</code> while Spot instances are terminating.</p>",
           "locationName":"activityStatus"
         }
       },
@@ -15917,7 +15918,7 @@
         },
         "Type":{
           "shape":"FleetType",
-          "documentation":"<p>The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or also attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the fleet will only place the required bids. It will not attempt to replenish Spot instances if capacity is diminished, nor will it submit bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code> a certain target capacity, fleet will place the required bids to meet this target capacity. It will also automatically replenish any interrupted instances. Default: <code>maintain</code>. </p>",
+          "documentation":"<p>The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or also attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the fleet will only place the required bids. It will not attempt to replenish Spot instances if capacity is diminished, nor will it submit bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code> a certain target capacity, fleet will place the required bids to meet this target capacity. It will also automatically replenish any interrupted instances. Default: <code>maintain</code>.</p>",
           "locationName":"type"
         }
       },
