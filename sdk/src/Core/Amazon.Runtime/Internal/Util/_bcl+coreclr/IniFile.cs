@@ -285,7 +285,7 @@ namespace Amazon.Runtime.Internal.Util
                                  FilePath);
         }
 
-        private bool IsCommentOrBlank(string line)
+        private static bool IsCommentOrBlank(string line)
         {
             if (line == null)
             {
@@ -294,24 +294,25 @@ namespace Amazon.Runtime.Internal.Util
             else
             {
                 line = line.Trim();
-                return string.IsNullOrEmpty(line) ||
-                    line.StartsWith(semiColonComment) ||
-                    line.StartsWith(hashComment);
+                return string.IsNullOrEmpty(line) 
+                    || line.StartsWith(semiColonComment, StringComparison.Ordinal) 
+                    || line.StartsWith(hashComment, StringComparison.Ordinal);
             }
         }
 
-        private bool IsSection(string line)
+        private static bool IsSection(string line)
         {
             string dummy;
             return TryParseSection(line, out dummy);
         }
 
-        private bool TryParseSection(string line, out string sectionName)
+        private static bool TryParseSection(string line, out string sectionName)
         {
             if (line != null)
             {
                 line = line.Trim();
-                if (line.StartsWith(sectionNamePrefix) && line.EndsWith(sectionNameSuffix))
+                if (line.StartsWith(sectionNamePrefix, StringComparison.Ordinal) 
+                    && line.EndsWith(sectionNameSuffix, StringComparison.Ordinal))
                 {
                     sectionName = line.Substring(1, line.Length - 2).Trim();
                     return true;
@@ -321,19 +322,19 @@ namespace Amazon.Runtime.Internal.Util
             return false;
         }
 
-        private bool IsProperty(string line)
+        private static bool IsProperty(string line)
         {
             string dummyName;
             string dummyValue;
             return TryParseProperty(line, out dummyName, out dummyValue);
         }
 
-        private bool TryParseProperty(string line, out string propertyName, out string propertyValue)
+        private static bool TryParseProperty(string line, out string propertyName, out string propertyValue)
         {
             if (line != null)
             {
                 line = line.Trim();
-                var separatorIndex = line.IndexOf(keyValueSeparator);
+                var separatorIndex = line.IndexOf(keyValueSeparator, StringComparison.Ordinal);
                 if (separatorIndex >= 0)
                 {
                     propertyName = line.Substring(0, separatorIndex).Trim();

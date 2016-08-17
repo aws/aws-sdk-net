@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 
@@ -96,7 +97,9 @@ namespace Amazon.Runtime.Internal.Util
                     }
                     else
                     {
-                        throw new IOException(string.Format("Cannot write to file {0}. The file has been modified since it was last read.", FilePath));
+                        throw new IOException(string.Format(CultureInfo.InvariantCulture,
+                                                            "Cannot write to file {0}. The file has been modified since it was last read.", 
+                                                            FilePath));
                     }
                 }
             }

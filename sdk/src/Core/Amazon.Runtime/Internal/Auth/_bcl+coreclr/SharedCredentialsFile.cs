@@ -92,15 +92,15 @@ namespace Amazon.Runtime.Internal.Auth
         {
             if (string.IsNullOrEmpty(profileName))
             {
-                throw new ArgumentNullException("profileName cannot be null or empty.", "profileName");
+                throw new ArgumentNullException("profileName", "profileName cannot be null or empty.");
             }
             if (string.IsNullOrEmpty(accessKey))
             {
-                throw new ArgumentNullException("accessKey cannot be null or empty.", "accessKey");
+                throw new ArgumentNullException("accessKey", "accessKey cannot be null or empty.");
             }
             if (string.IsNullOrEmpty(secretAccessKey))
             {
-                throw new ArgumentNullException("secretAccessKey cannot be null or empty.", "secretAccessKey");
+                throw new ArgumentNullException("secretAccessKey", "secretAccessKey cannot be null or empty.");
             }
             var properties = new List<KeyValuePair<string, string>>();
             properties.Add(new KeyValuePair<string, string>(accessKeyPropertyName, accessKey));
