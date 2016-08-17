@@ -350,7 +350,9 @@ namespace ThirdParty.Json.LitJson
 
             if (reader.Token == JsonToken.Double ||
                 reader.Token == JsonToken.Int ||
+                reader.Token == JsonToken.UInt ||
                 reader.Token == JsonToken.Long ||
+                reader.Token == JsonToken.ULong ||
                 reader.Token == JsonToken.String ||
                 reader.Token == JsonToken.Boolean) {
 
@@ -517,8 +519,18 @@ namespace ThirdParty.Json.LitJson
                 return instance;
             }
 
+            if (reader.Token == JsonToken.UInt) {
+                instance.SetUInt((uint)reader.Value);
+                return instance;
+            }
+
             if (reader.Token == JsonToken.Long) {
                 instance.SetLong ((long) reader.Value);
+                return instance;
+            }
+
+            if (reader.Token == JsonToken.ULong) {
+                instance.SetULong((ulong)reader.Value);
                 return instance;
             }
 
