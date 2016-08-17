@@ -12,17 +12,16 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal.Util;
 using System;
 using System.Globalization;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace Amazon.Runtime.Internal.Auth
 {
     /// <summary>
-    /// Provides access to read and write credentials INI files.
+    /// Provides access to read and write to the shared credentials INI file.
     /// The file is read, parsed, and validated at construction time.
     /// Changes can be made using the AddOrUpdateSection() and
     /// DeleteSection() methods.
@@ -32,34 +31,11 @@ namespace Amazon.Runtime.Internal.Auth
     /// </summary>
     public class SharedCredentialsFile
     {
-        private const string profileNamePrefix = "[";
-        private const string profileNameSuffix = "]";
-        private const string dataPrefix = "aws_";
-        private const string keyValueSeparator = "=";
-        private const string accessKeyName = "aws_access_key_id";
-        private const string secretKeyName = "aws_secret_access_key";
-        private const string tokenName = "aws_session_token";
+        private const string accessKeyPropertyName = "aws_access_key_id";
+        private const string secretKeyPropertyName = "aws_secret_access_key";
+        private const string tokenPropertyName = "aws_session_token";
 
-        private Dictionary<string, CredentialsSection> Sections { get; set; }
-
-        /// <summary>
-        /// list of profile names
-        /// The list is used to maintain the order of the sections in the credentials file.
-        /// </summary>
-        private List<string> ProfileNames { get; set; }
-
-        /// <summary>
-        /// a full copy of the original file
-        /// This is used for optimistic concurrency on the credentials file.
-        /// Note that this assumes a small credentials file and does
-        /// not scale for very large files.
-        /// </summary>
-        private string OriginalContents { get; set; }
-
-        /// <summary>
-        /// path of the shared credentials file
-        /// </summary>
-        public string FilePath { get; private set; }
+        private IniFile iniFile;
 
         /// <summary>
         /// Construct a new SharedCredentialsFile.
@@ -67,263 +43,128 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="filePath">path of the shared credentials file</param>
         public SharedCredentialsFile(string filePath)
         {
-            FilePath = filePath;
-            Parse();
+            iniFile = new IniFile(filePath);
         }
 
         /// <summary>
-        /// Gets the CredentialsSection for the profileName given, or null if one doesn't exist.
+        /// Get credentials for the given profile.
         /// </summary>
-        /// <param name="profileName">the name of the profile to get</param>
-        /// <returns></returns>
-        public CredentialsSection this[string profileName]
+        /// <param name="profileName">name of profile to find credentials for</param>
+        /// <returns>true if the profile exists and has valid credentials, false otherwise</returns>
+        public ImmutableCredentials GetCredentials(string profileName)
         {
-            get
-            {
-                CredentialsSection section = null;
-                Sections.TryGetValue(profileName, out section);
-                return section;
-            }
+            return GetCredentials(profileName, true);
         }
 
         /// <summary>
-        /// Add a section to the SharedCredentialsFile.
-        /// If a section already exists with the same ProfileName, replace it.
+        /// Return the credentials for the profile if valid credentials can be found.
+        /// </summary>
+        /// <param name="profileName">name of profile to find credentials for</param>
+        /// <param name="credentials">the credentials for the profile</param>
+        /// <returns>true if the profile was found and it contained valid credentials, false otherwise</returns>
+        public bool TryGetCredentials(string profileName, out ImmutableCredentials credentials)
+        {
+            credentials = GetCredentials(profileName, false);
+            return credentials != null;
+        }
+
+        /// <summary>
+        /// Add credentials for the profile given.  If credentials for the profile already exist, update them.
         /// Changes are not written to disk until the Persist() method is called.
         /// </summary>
-        /// <param name="section"></param>
-        public void AddOrUpdateSection(CredentialsSection section)
+        /// <param name="profileName">name of profile</param>
+        /// <param name="accessKey">access key for the credentials</param>
+        /// <param name="secretAccessKey">secret access key for the credentials</param>
+        public void AddOrUpdateCredentials(string profileName, string accessKey, string secretAccessKey)
         {
-            section.Validate();
-            // If the section doesn't exist yet add it to the end of the list.
-            if (!Sections.ContainsKey(section.ProfileName))
-            {
-                ProfileNames.Add(section.ProfileName);
-            }
-
-            Sections[section.ProfileName] = section;
+            AddOrUpdateCredentials(profileName, accessKey, secretAccessKey, null);
         }
 
+        /// <summary>
+        /// Add credentials for the profile given.  If credentials for the profile already exist, update them.
+        /// Changes are not written to disk until the Persist() method is called.
+        /// </summary>
+        /// <param name="profileName">name of profile</param>
+        /// <param name="accessKey">access key for the credentials</param>
+        /// <param name="secretAccessKey">secret access key for the credentials</param>
+        /// <param name="token">token for the credentials</param>
+        public void AddOrUpdateCredentials(string profileName, string accessKey, string secretAccessKey, string token)
+        {
+            if (string.IsNullOrEmpty(profileName))
+            {
+                throw new ArgumentNullException("profileName cannot be null or empty.", "profileName");
+            }
+            if (string.IsNullOrEmpty(accessKey))
+            {
+                throw new ArgumentNullException("accessKey cannot be null or empty.", "accessKey");
+            }
+            if (string.IsNullOrEmpty(secretAccessKey))
+            {
+                throw new ArgumentNullException("secretAccessKey cannot be null or empty.", "secretAccessKey");
+            }
+            var properties = new List<KeyValuePair<string, string>>();
+            properties.Add(new KeyValuePair<string, string>(accessKeyPropertyName, accessKey));
+            properties.Add(new KeyValuePair<string, string>(secretKeyPropertyName, secretAccessKey));
+            if (token != null)
+            {
+                properties.Add(new KeyValuePair<string, string>(tokenPropertyName, token));
+            }
+            iniFile.EditSection(profileName, properties);
+        }
 
         /// <summary>
         /// Deletes the section with the given ProfileName from the SharedCredentialsFile, if one exists.
         /// Changes are not written to disk until the Persist() method is called.
         /// </summary>
         /// <param name="profileName">ProfileName of section to delete</param>
-        public void DeleteSection(string profileName)
+        public void DeleteProfile(string profileName)
         {
-            if (Sections.ContainsKey(profileName))
-            {
-                Sections[profileName] = null;
-                // No need to delete the name from ProfileNames
-                // since GetSections() handles extra names in that list.
-            }
+            iniFile.DeleteSection(profileName);
         }
 
         /// <summary>
-        /// Get a list of all of the CredentialsSections in the SharedCredentialsFile.
-        /// </summary>
-        /// <returns>a list of the CredentialsSection</returns>
-        public List<CredentialsSection> GetSections()
-        {
-            // Build the list of sections based on the ordered
-            // list of profileNames.  If there are profileNames
-            // in the list that were removed from the dictionary
-            // just skip them.
-            var sectionList = new List<CredentialsSection>();
-            foreach (string profileName in ProfileNames)
-            {
-                if (this[profileName] != null)
-                {
-                    sectionList.Add(this[profileName]);
-                }
-            }
-            return sectionList;
-        }
-
-        /// <summary>
-        /// the number of CredentialsSections in this SharedCredentialsFile
-        /// </summary>
-        public int Count
-        {
-            get
-            {
-                return Sections.Count;
-            }
-        }
-
-        /// <summary>
-        /// Persist changes to the SharedCredentialsFile to disk.
+        /// Persist any changes to disk.
         /// </summary>
         public void Persist()
         {
-            // build the new contents
-            var newContents = new StringBuilder();
-            foreach (CredentialsSection section in GetSections())
-            {
-                section.Validate();
-                newContents.AppendLine(profileNamePrefix + section.ProfileName + profileNameSuffix);
-                newContents.AppendLine(accessKeyName + keyValueSeparator + section.AccessKey);
-                newContents.AppendLine(secretKeyName + keyValueSeparator + section.SecretKey);
-                if (section.Token != null)
-                {
-                    newContents.AppendLine(tokenName + keyValueSeparator + section.Token);
-                }
-            }
+            iniFile.Persist();
+        }
 
-            // open the file with exclusive access
-            using (var fileStream = new FileStream(FilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None))
+        private ImmutableCredentials GetCredentials(string profileName, bool throwIfInvalid)
+        {
+            Dictionary<string, string> properties;
+            if (iniFile.TryGetSection(profileName, out properties))
             {
-                // get a current copy of the file
-                string currentContents = null;
-                using (var streamReader = new StreamReader(fileStream))
-                {
-                    currentContents = streamReader.ReadToEnd();
+                string accessKey = null;
+                string secretKey = null;
+                string token = null;
+                properties.TryGetValue(accessKeyPropertyName, out accessKey);
+                properties.TryGetValue(secretKeyPropertyName, out secretKey);
+                properties.TryGetValue(tokenPropertyName, out token);
 
-                    // optimistic concurrency check - make sure the file hasn't changed since it was read
-                    if (string.Equals(currentContents, OriginalContents, StringComparison.Ordinal))
+                if (string.IsNullOrEmpty(accessKey) || string.IsNullOrEmpty(secretKey))
+                {
+                    if (throwIfInvalid)
                     {
-                        // write the new contents
-                        fileStream.Seek(0, SeekOrigin.Begin);
-                        using (var streamWriter = new StreamWriter(fileStream))
-                        {
-                            streamWriter.Write(newContents.ToString());
-                            streamWriter.Flush();
-
-                            // set the length in case the new contents are shorter than the old contents
-                            fileStream.Flush();
-                            fileStream.SetLength(fileStream.Position);
-                            OriginalContents = newContents.ToString();
-                        }
+                        throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
+                                                                    "Credential profile [{0}] does not contain valid access and/or secret key materials.", 
+                                                                    profileName));
                     }
                     else
                     {
-                        throw new IOException(string.Format(CultureInfo.InvariantCulture, "Cannot write to credentials file {0}.  The file has been modified since it was last read.", FilePath));
+                        return null;
                     }
                 }
-            }
-        }
-
-        private void Parse()
-        {
-            Sections = new Dictionary<string, CredentialsSection>();
-            ProfileNames = new List<string>();
-            CredentialsSection currentSection = null;
-
-            // Store a copy of the file for checking concurrency
-            OriginalContents = "";
-            try
-            {
-                OriginalContents = File.ReadAllText(FilePath);
-            }
-            catch (FileNotFoundException)
-            {
-                // This is OK.  The Persist() method will create it if necessary.
-            }
-
-            using (var stringReader = new StringReader(OriginalContents))
-            {
-                var line = stringReader.ReadLine();
-                while (line != null)
+                else
                 {
-                    line = line.Trim();
-                    if (line.StartsWith(profileNamePrefix, StringComparison.OrdinalIgnoreCase) &&
-                        line.EndsWith(profileNameSuffix, StringComparison.OrdinalIgnoreCase))
-                    {
-                        if (currentSection != null)
-                        {
-                            AddOrUpdateSection(currentSection);
-                        }
-
-                        var profileName = GetProfileName(line);
-                        currentSection = new CredentialsSection(profileName);
-                    }
-                    else if (line.StartsWith(dataPrefix, StringComparison.OrdinalIgnoreCase) && currentSection != null)
-                    {
-                        // split data into key-value pairs, store appropriately
-                        var split = SplitData(line);
-                        if (split.Count > 0)
-                        {
-                            var name = split[0];
-                            var value = split.Count > 1 ? split[1] : null;
-
-                            SetSectionValue(currentSection, name, value);
-                        }
-                    }
-                    line = stringReader.ReadLine();
+                    return new ImmutableCredentials(accessKey, secretKey, token);
                 }
             }
-
-            if (currentSection != null)
+            else
             {
-                AddOrUpdateSection(currentSection);
+                return null;
             }
         }
 
-        private static List<string> SplitData(string line)
-        {
-            var split = line
-                .Split(new string[] { keyValueSeparator }, 2, StringSplitOptions.None)
-                .Select(s => s.Trim())
-                .Where(s => !string.IsNullOrEmpty(s))
-                .ToList();
-            return split;
-        }
-
-        private static string GetProfileName(string line)
-        {
-            // get profile name by trimming off the [ and ] characters
-            var profileName = line;
-            profileName = profileName.Substring(profileNamePrefix.Length);
-            profileName = profileName.Substring(0, profileName.Length - profileNameSuffix.Length);
-            return profileName.Trim();
-        }
-
-        private static void SetSectionValue(CredentialsSection section, string name, string value)
-        {
-            if (string.Equals(accessKeyName, name, StringComparison.OrdinalIgnoreCase))
-                section.AccessKey = value;
-            else if (string.Equals(secretKeyName, name, StringComparison.OrdinalIgnoreCase))
-                section.SecretKey = value;
-            else if (string.Equals(tokenName, name, StringComparison.OrdinalIgnoreCase))
-                section.Token = value;
-        }
     }
-
-    public class CredentialsSection
-    {
-        public CredentialsSection(string profileName)
-        {
-            ProfileName = profileName;
-        }
-
-        public string ProfileName { get; set; }
-        public string AccessKey { get; set; }
-        public string SecretKey { get; set; }
-        public string Token { get; set; }
-
-        public void Validate()
-        {
-            if (!HasValidCredentials)
-                throw new InvalidDataException(String.Format(CultureInfo.InvariantCulture, "Credential profile [{0}] does not contain valid access and/or secret key materials.", ProfileName));
-        }
-
-        public bool HasValidCredentials
-        {
-            get
-            {
-                return
-                    !string.IsNullOrEmpty(AccessKey) &&
-                    !string.IsNullOrEmpty(SecretKey);
-            }
-        }
-        public ImmutableCredentials Credentials
-        {
-            get
-            {
-                return new ImmutableCredentials(AccessKey, SecretKey, Token);
-            }
-        }
-    }
-
 }
