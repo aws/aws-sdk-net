@@ -171,6 +171,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly LogDriver JsonFile = new LogDriver("json-file");
         /// <summary>
+        /// Constant Splunk for LogDriver
+        /// </summary>
+        public static readonly LogDriver Splunk = new LogDriver("splunk");
+        /// <summary>
         /// Constant Syslog for LogDriver
         /// </summary>
         public static readonly LogDriver Syslog = new LogDriver("syslog");
@@ -204,6 +208,60 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogDriver(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkMode.
+    /// </summary>
+    public class NetworkMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bridge for NetworkMode
+        /// </summary>
+        public static readonly NetworkMode Bridge = new NetworkMode("bridge");
+        /// <summary>
+        /// Constant Host for NetworkMode
+        /// </summary>
+        public static readonly NetworkMode Host = new NetworkMode("host");
+        /// <summary>
+        /// Constant None for NetworkMode
+        /// </summary>
+        public static readonly NetworkMode None = new NetworkMode("none");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkMode FindValue(string value)
+        {
+            return FindValue<NetworkMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkMode(string value)
         {
             return FindValue(value);
         }

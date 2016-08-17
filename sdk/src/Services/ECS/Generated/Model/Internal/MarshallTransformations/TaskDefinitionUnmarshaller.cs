@@ -76,6 +76,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Family = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("networkMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("requiresAttributes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Attribute, AttributeUnmarshaller>(AttributeUnmarshaller.Instance);

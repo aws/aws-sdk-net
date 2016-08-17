@@ -1274,11 +1274,18 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// You may also specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
+        /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
         /// When you specify an IAM role for a task, its containers can then use the latest versions
         /// of the AWS CLI or SDKs to make API requests to the AWS services that are specified
         /// in the IAM policy associated with the role. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
         /// Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a Docker networking mode for the containers in your task definition
+        /// with the <code>networkMode</code> parameter. The available network modes correspond
+        /// to those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
+        /// settings</a> in the Docker run reference.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTaskDefinition service method.</param>
