@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     {
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _family;
+        private NetworkMode _networkMode;
         private List<Attribute> _requiresAttributes = new List<Attribute>();
         private int? _revision;
         private TaskDefinitionStatus _status;
@@ -78,6 +79,38 @@ namespace Amazon.ECS.Model
         internal bool IsSetFamily()
         {
             return this._family != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkMode. 
+        /// <para>
+        /// The Docker networking mode to use for the containers in the task. The valid values
+        /// are <code>none</code>, <code>bridge</code>, and <code>host</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the network mode is <code>none</code>, the containers do not have external connectivity.
+        /// The default Docker network mode is <code>bridge</code>. The <code>host</code> network
+        /// mode offers the highest networking performance for containers because it uses the
+        /// host network stack instead of the virtualized network stack provided by the <code>bridge</code>
+        /// mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+        /// settings</a> in the <i>Docker run reference</i>.
+        /// </para>
+        /// </summary>
+        public NetworkMode NetworkMode
+        {
+            get { return this._networkMode; }
+            set { this._networkMode = value; }
+        }
+
+        // Check to see if NetworkMode property is set
+        internal bool IsSetNetworkMode()
+        {
+            return this._networkMode != null;
         }
 
         /// <summary>

@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// The HTTP verb that identifies the <a>Method</a> resource.
+        /// The HTTP verb of the <a>Method</a> resource.
         /// </para>
         /// </summary>
         public string HttpMethod
@@ -59,8 +59,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// A list of operations describing the updates to apply to the specified resource. The
-        /// patches are applied in the order specified in the list.
+        /// A list of update operations to be applied to the specified resource and in the order
+        /// specified in this list.
         /// </para>
         /// </summary>
         public List<PatchOperation> PatchOperations

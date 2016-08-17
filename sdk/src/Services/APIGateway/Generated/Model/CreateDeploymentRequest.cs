@@ -156,8 +156,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A map that defines the stage variables for the <a>Stage</a> resource that is associated
-        /// with the new deployment. Variable names can have alphanumeric characters, and the
-        /// values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+        /// with the new deployment. Variable names can have alphanumeric and underscore characters,
+        /// and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

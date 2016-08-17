@@ -29,6 +29,9 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a collection of <a>BasePathMapping</a> resources.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
+    /// Custom Domain Names</a> </div>
     /// </summary>
     public partial class GetBasePathMappingsResponse : AmazonWebServiceResponse
     {

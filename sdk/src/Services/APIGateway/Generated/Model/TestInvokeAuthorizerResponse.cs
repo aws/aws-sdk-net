@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents the response of the test invoke request in for a custom <a>Authorizer</a>
+    /// Represents the response of the test invoke request for a custom <a>Authorizer</a>
     /// </summary>
     public partial class TestInvokeAuthorizerResponse : AmazonWebServiceResponse
     {
@@ -56,7 +56,12 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Claims.
+        /// Gets and sets the property Claims. 
+        /// <para>
+        /// The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+        /// identity claims</a>, with any supported custom attributes, returned from the Cognito
+        /// Your User Pool configured for the API.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Claims
         {
@@ -92,7 +97,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Latency. 
         /// <para>
-        /// The execution latency of the test authorizer request
+        /// The execution latency of the test authorizer request.
         /// </para>
         /// </summary>
         public long Latency
@@ -128,7 +133,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The policy JSON document returned by the <a>Authorizer</a>
+        /// The JSON policy document returned by the <a>Authorizer</a>
         /// </para>
         /// </summary>
         public string Policy

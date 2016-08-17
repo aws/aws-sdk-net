@@ -34,6 +34,7 @@ namespace Amazon.APIGateway.Model
     public partial class GetApiKeyRequest : AmazonAPIGatewayRequest
     {
         private string _apiKey;
+        private bool? _includeValue;
 
         /// <summary>
         /// Gets and sets the property ApiKey. 
@@ -51,6 +52,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetApiKey()
         {
             return this._apiKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeValue. 
+        /// <para>
+        /// A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>)
+        /// the result contains the key value.
+        /// </para>
+        /// </summary>
+        public bool IncludeValue
+        {
+            get { return this._includeValue.GetValueOrDefault(); }
+            set { this._includeValue = value; }
+        }
+
+        // Check to see if IncludeValue property is set
+        internal bool IsSetIncludeValue()
+        {
+            return this._includeValue.HasValue; 
         }
 
     }

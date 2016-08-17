@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.APIGateway</id>
     <title>AWSSDK - Amazon API Gateway</title>
-    <version>3.1.6.1</version> 
+    <version>3.1.7.0</version> 
     <authors>Amazon Web Services</authors>
     <description>Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.</description>
     <language>en-US</language>

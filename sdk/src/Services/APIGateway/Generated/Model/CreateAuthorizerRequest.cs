@@ -30,6 +30,9 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Container for the parameters to the CreateAuthorizer operation.
     /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
+    /// 
+    ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
+    /// CLI</a></div>
     /// </summary>
     public partial class CreateAuthorizerRequest : AmazonAPIGatewayRequest
     {
@@ -172,7 +175,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProviderARNs.
+        /// Gets and sets the property ProviderARNs. 
+        /// <para>
+        /// A list of the Cognito Your User Pool authorizer's provider ARNs.
+        /// </para>
         /// </summary>
         public List<string> ProviderARNs
         {
