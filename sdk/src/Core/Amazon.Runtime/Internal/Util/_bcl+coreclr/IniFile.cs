@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace Amazon.Runtime.Internal.Util
@@ -277,7 +278,11 @@ namespace Amazon.Runtime.Internal.Util
 
         private string GetErrorMessage(int lineNumber)
         {
-            return string.Format("Line {0}:<{1}> in file {2} does not contain a section, property or comment.", lineNumber + 1, Lines[lineNumber], FilePath);
+            return string.Format(CultureInfo.InvariantCulture,
+                                 "Line {0}:<{1}> in file {2} does not contain a section, property or comment.", 
+                                 lineNumber + 1, 
+                                 Lines[lineNumber], 
+                                 FilePath);
         }
 
         private bool IsCommentOrBlank(string line)

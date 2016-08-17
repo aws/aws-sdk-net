@@ -146,7 +146,9 @@ namespace Amazon.Runtime.Internal.Auth
                 {
                     if (throwIfInvalid)
                     {
-                        throw new InvalidDataException(String.Format("Credential profile [{0}] does not contain valid access and/or secret key materials.", profileName));
+                        throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
+                                                                    "Credential profile [{0}] does not contain valid access and/or secret key materials.", 
+                                                                    profileName));
                     }
                     else
                     {
