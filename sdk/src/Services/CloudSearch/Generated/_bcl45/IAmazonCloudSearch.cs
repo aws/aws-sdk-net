@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudSearch.Model;
 
 namespace Amazon.CloudSearch
@@ -45,7 +46,7 @@ namespace Amazon.CloudSearch
     /// target="_blank">Regions and Endpoints</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudSearch : IDisposable
+    public partial interface IAmazonCloudSearch : IAmazonService, IDisposable
     {
 
         

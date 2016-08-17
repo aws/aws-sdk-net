@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.IoT.Model;
 
 namespace Amazon.IoT
@@ -43,7 +44,7 @@ namespace Amazon.IoT
     /// Guide</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonIoT : IDisposable
+    public partial interface IAmazonIoT : IAmazonService, IDisposable
     {
 
         

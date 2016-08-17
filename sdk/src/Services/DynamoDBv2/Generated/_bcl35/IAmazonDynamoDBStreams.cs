@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DynamoDBv2.Model;
 
 namespace Amazon.DynamoDBv2
@@ -58,7 +59,7 @@ namespace Amazon.DynamoDBv2
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonDynamoDBStreams : IDisposable
+    public partial interface IAmazonDynamoDBStreams : IAmazonService, IDisposable
     {
 
         

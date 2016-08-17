@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.GameLift.Model;
 
 namespace Amazon.GameLift
@@ -101,7 +102,7 @@ namespace Amazon.GameLift
     /// History</a> page.
     /// </para>
     /// </summary>
-    public partial interface IAmazonGameLift : IDisposable
+    public partial interface IAmazonGameLift : IAmazonService, IDisposable
     {
                 
         #region  CreateAlias

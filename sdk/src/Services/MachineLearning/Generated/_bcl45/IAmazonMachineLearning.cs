@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.MachineLearning.Model;
 
 namespace Amazon.MachineLearning
@@ -32,7 +33,7 @@ namespace Amazon.MachineLearning
     ///
     /// Definition of the public APIs exposed by Amazon Machine Learning
     /// </summary>
-    public partial interface IAmazonMachineLearning : IDisposable
+    public partial interface IAmazonMachineLearning : IAmazonService, IDisposable
     {
 
         

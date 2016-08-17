@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudFront.Model;
 
 namespace Amazon.CloudFront
@@ -30,7 +31,7 @@ namespace Amazon.CloudFront
     ///
     /// 
     /// </summary>
-    public partial interface IAmazonCloudFront : IDisposable
+    public partial interface IAmazonCloudFront : IAmazonService, IDisposable
     {
 
         

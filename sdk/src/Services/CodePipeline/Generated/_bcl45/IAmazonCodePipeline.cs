@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CodePipeline.Model;
 
 namespace Amazon.CodePipeline
@@ -205,7 +206,7 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonCodePipeline : IDisposable
+    public partial interface IAmazonCodePipeline : IAmazonService, IDisposable
     {
 
         

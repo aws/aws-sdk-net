@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.AWSMarketplaceCommerceAnalytics.Model;
 
 namespace Amazon.AWSMarketplaceCommerceAnalytics
@@ -30,7 +31,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     ///
     /// Provides AWS Marketplace business intelligence data on-demand.
     /// </summary>
-    public partial interface IAmazonAWSMarketplaceCommerceAnalytics : IDisposable
+    public partial interface IAmazonAWSMarketplaceCommerceAnalytics : IAmazonService, IDisposable
     {
 
         

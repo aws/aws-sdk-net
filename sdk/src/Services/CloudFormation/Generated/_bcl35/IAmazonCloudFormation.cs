@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudFormation.Model;
 
 namespace Amazon.CloudFormation
@@ -55,7 +56,7 @@ namespace Amazon.CloudFormation
     /// at <a href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudFormation : IDisposable
+    public partial interface IAmazonCloudFormation : IAmazonService, IDisposable
     {
 
         

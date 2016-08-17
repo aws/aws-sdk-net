@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CodeDeploy.Model;
 
 namespace Amazon.CodeDeploy
@@ -102,7 +103,7 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonCodeDeploy : IDisposable
+    public partial interface IAmazonCodeDeploy : IAmazonService, IDisposable
     {
 
         

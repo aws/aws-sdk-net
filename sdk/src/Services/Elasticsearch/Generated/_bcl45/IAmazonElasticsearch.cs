@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Elasticsearch.Model;
 
 namespace Amazon.Elasticsearch
@@ -43,7 +44,7 @@ namespace Amazon.Elasticsearch
     /// target="_blank">Regions and Endpoints</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonElasticsearch : IDisposable
+    public partial interface IAmazonElasticsearch : IAmazonService, IDisposable
     {
 
         

@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.OpsWorks.Model;
 
 namespace Amazon.OpsWorks
@@ -119,7 +120,7 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  </note>
     /// </summary>
-    public partial interface IAmazonOpsWorks : IDisposable
+    public partial interface IAmazonOpsWorks : IAmazonService, IDisposable
     {
                 
         #region  AssignInstance

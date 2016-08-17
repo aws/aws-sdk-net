@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudWatchLogs.Model;
 
 namespace Amazon.CloudWatchLogs
@@ -69,7 +70,7 @@ namespace Amazon.CloudWatchLogs
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonCloudWatchLogs : IDisposable
+    public partial interface IAmazonCloudWatchLogs : IAmazonService, IDisposable
     {
 
         

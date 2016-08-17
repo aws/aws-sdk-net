@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudTrail.Model;
 
 namespace Amazon.CloudTrail
@@ -56,7 +57,7 @@ namespace Amazon.CloudTrail
     /// each AWS API call listed in the log files.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudTrail : IDisposable
+    public partial interface IAmazonCloudTrail : IAmazonService, IDisposable
     {
 
         

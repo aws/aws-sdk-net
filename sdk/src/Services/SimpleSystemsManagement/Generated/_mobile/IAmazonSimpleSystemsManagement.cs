@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.SimpleSystemsManagement.Model;
 
 namespace Amazon.SimpleSystemsManagement
@@ -201,7 +202,7 @@ namespace Amazon.SimpleSystemsManagement
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonSimpleSystemsManagement : IDisposable
+    public partial interface IAmazonSimpleSystemsManagement : IAmazonService, IDisposable
     {
                 
         #region  AddTagsToResource

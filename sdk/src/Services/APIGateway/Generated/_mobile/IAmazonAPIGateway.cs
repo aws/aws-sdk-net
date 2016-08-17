@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.APIGateway.Model;
 
 namespace Amazon.APIGateway
@@ -38,7 +39,7 @@ namespace Amazon.APIGateway
     /// addressable web services that are hosted outside of AWS.
     /// </para>
     /// </summary>
-    public partial interface IAmazonAPIGateway : IDisposable
+    public partial interface IAmazonAPIGateway : IAmazonService, IDisposable
     {
                 
         #region  CreateApiKey

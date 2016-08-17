@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CognitoIdentityProvider.Model;
 
 namespace Amazon.CognitoIdentityProvider
@@ -39,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider
     /// which is a new capability that is available as a beta.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCognitoIdentityProvider : IDisposable
+    public partial interface IAmazonCognitoIdentityProvider : IAmazonService, IDisposable
     {
                 
         #region  AddCustomAttributes

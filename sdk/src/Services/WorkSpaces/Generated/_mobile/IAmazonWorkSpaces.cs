@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.WorkSpaces.Model;
 
 namespace Amazon.WorkSpaces
@@ -36,7 +37,7 @@ namespace Amazon.WorkSpaces
     /// about Amazon WorkSpaces operations, data types, parameters, and errors.
     /// </para>
     /// </summary>
-    public partial interface IAmazonWorkSpaces : IDisposable
+    public partial interface IAmazonWorkSpaces : IAmazonService, IDisposable
     {
                 
         #region  CreateTags

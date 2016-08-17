@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ElasticBeanstalk.Model;
 
 namespace Amazon.ElasticBeanstalk
@@ -55,7 +56,7 @@ namespace Amazon.ElasticBeanstalk
     /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonElasticBeanstalk : IDisposable
+    public partial interface IAmazonElasticBeanstalk : IAmazonService, IDisposable
     {
                 
         #region  AbortEnvironmentUpdate

@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Kinesis.Model;
 
 namespace Amazon.Kinesis
@@ -34,7 +35,7 @@ namespace Amazon.Kinesis
     /// processing of streaming big data.
     /// </para>
     /// </summary>
-    public partial interface IAmazonKinesis : IDisposable
+    public partial interface IAmazonKinesis : IAmazonService, IDisposable
     {
 
         

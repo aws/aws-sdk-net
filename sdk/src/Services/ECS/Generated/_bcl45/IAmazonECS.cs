@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ECS.Model;
 
 namespace Amazon.ECS
@@ -45,7 +46,7 @@ namespace Amazon.ECS
     /// and configuration management systems or worry about scaling your management infrastructure.
     /// </para>
     /// </summary>
-    public partial interface IAmazonECS : IDisposable
+    public partial interface IAmazonECS : IAmazonService, IDisposable
     {
 
         

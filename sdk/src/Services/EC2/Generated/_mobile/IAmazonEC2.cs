@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.EC2.Model;
 
 namespace Amazon.EC2
@@ -37,7 +38,7 @@ namespace Amazon.EC2
     /// in hardware up front, so you can develop and deploy applications faster.
     /// </para>
     /// </summary>
-    public partial interface IAmazonEC2 : IDisposable
+    public partial interface IAmazonEC2 : IAmazonService, IDisposable
     {
                 
         #region  AcceptVpcPeeringConnection

@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DynamoDBv2.Model;
 
 namespace Amazon.DynamoDBv2
@@ -192,7 +193,7 @@ namespace Amazon.DynamoDBv2
     /// and Scan Operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonDynamoDB : IDisposable
+    public partial interface IAmazonDynamoDB : IAmazonService, IDisposable
     {
 
         

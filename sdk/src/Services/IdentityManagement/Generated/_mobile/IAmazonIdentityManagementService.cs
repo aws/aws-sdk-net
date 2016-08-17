@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.IdentityManagement.Model;
 
 namespace Amazon.IdentityManagement
@@ -107,7 +108,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonIdentityManagementService : IDisposable
+    public partial interface IAmazonIdentityManagementService : IAmazonService, IDisposable
     {
                 
         #region  AddClientIDToOpenIDConnectProvider

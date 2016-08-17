@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ElasticMapReduce.Model;
 
 namespace Amazon.ElasticMapReduce
@@ -35,7 +36,7 @@ namespace Amazon.ElasticMapReduce
     /// several AWS products to do tasks such as web indexing, data mining, log file analysis,
     /// machine learning, scientific simulation, and data warehousing.
     /// </summary>
-    public partial interface IAmazonElasticMapReduce : IDisposable
+    public partial interface IAmazonElasticMapReduce : IAmazonService, IDisposable
     {
                 
         #region  AddInstanceGroups

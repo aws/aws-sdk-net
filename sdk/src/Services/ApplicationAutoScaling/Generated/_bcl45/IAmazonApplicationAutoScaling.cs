@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ApplicationAutoScaling.Model;
 
 namespace Amazon.ApplicationAutoScaling
@@ -72,7 +73,7 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonApplicationAutoScaling : IDisposable
+    public partial interface IAmazonApplicationAutoScaling : IAmazonService, IDisposable
     {
 
         

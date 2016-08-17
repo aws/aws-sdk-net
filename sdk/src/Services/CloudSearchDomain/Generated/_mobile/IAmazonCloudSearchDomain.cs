@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudSearchDomain.Model;
 
 namespace Amazon.CloudSearchDomain
@@ -47,7 +48,7 @@ namespace Amazon.CloudSearchDomain
     /// CloudSearch Developer Guide</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudSearchDomain : IDisposable
+    public partial interface IAmazonCloudSearchDomain : IAmazonService, IDisposable
     {
                 
         #region  Search

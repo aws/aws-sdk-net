@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.AWSMarketplaceMetering.Model;
 
 namespace Amazon.AWSMarketplaceMetering
@@ -49,7 +50,7 @@ namespace Amazon.AWSMarketplaceMetering
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonAWSMarketplaceMetering : IDisposable
+    public partial interface IAmazonAWSMarketplaceMetering : IAmazonService, IDisposable
     {
 
         

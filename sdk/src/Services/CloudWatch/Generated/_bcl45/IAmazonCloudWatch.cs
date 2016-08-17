@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudWatch.Model;
 
 namespace Amazon.CloudWatch
@@ -50,7 +51,7 @@ namespace Amazon.CloudWatch
     /// utilization, application performance, and operational health.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudWatch : IDisposable
+    public partial interface IAmazonCloudWatch : IAmazonService, IDisposable
     {
 
         

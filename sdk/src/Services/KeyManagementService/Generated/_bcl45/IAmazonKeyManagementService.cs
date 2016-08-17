@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.KeyManagementService.Model;
 
 namespace Amazon.KeyManagementService
@@ -143,7 +144,7 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonKeyManagementService : IDisposable
+    public partial interface IAmazonKeyManagementService : IAmazonService, IDisposable
     {
 
         

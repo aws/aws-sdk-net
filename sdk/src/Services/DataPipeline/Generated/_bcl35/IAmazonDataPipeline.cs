@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DataPipeline.Model;
 
 namespace Amazon.DataPipeline
@@ -53,7 +54,7 @@ namespace Amazon.DataPipeline
     /// the task to the web service.
     /// </para>
     /// </summary>
-    public partial interface IAmazonDataPipeline : IDisposable
+    public partial interface IAmazonDataPipeline : IAmazonService, IDisposable
     {
 
         

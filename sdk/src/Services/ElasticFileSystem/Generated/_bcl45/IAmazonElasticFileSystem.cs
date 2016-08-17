@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ElasticFileSystem.Model;
 
 namespace Amazon.ElasticFileSystem
@@ -32,7 +33,7 @@ namespace Amazon.ElasticFileSystem
     ///
     /// Amazon Elastic File System
     /// </summary>
-    public partial interface IAmazonElasticFileSystem : IDisposable
+    public partial interface IAmazonElasticFileSystem : IAmazonService, IDisposable
     {
 
         
