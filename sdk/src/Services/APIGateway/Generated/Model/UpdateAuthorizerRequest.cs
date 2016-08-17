@@ -30,6 +30,9 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Container for the parameters to the UpdateAuthorizer operation.
     /// Updates an existing <a>Authorizer</a> resource.
+    /// 
+    ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
+    /// CLI</a></div>
     /// </summary>
     public partial class UpdateAuthorizerRequest : AmazonAPIGatewayRequest
     {
@@ -58,8 +61,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// A list of operations describing the updates to apply to the specified resource. The
-        /// patches are applied in the order specified in the list.
+        /// A list of update operations to be applied to the specified resource and in the order
+        /// specified in this list.
         /// </para>
         /// </summary>
         public List<PatchOperation> PatchOperations

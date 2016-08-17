@@ -29,6 +29,9 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a collection of <a>ClientCertificate</a> resources.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use
+    /// Client-Side Certificate</a> </div>
     /// </summary>
     public partial class GetClientCertificatesResponse : AmazonWebServiceResponse
     {

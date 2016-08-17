@@ -40,7 +40,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Flatten. 
         /// <para>
-        /// Resolves all external model references and returns a flattened model schema.
+        /// A query parameter of a Boolean value to resolve (<code>true</code>) all external model
+        /// references and returns a flattened model schema or not (<code>false</code>) The default
+        /// is <code>false</code>.
         /// </para>
         /// </summary>
         public bool Flatten

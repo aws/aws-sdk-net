@@ -29,6 +29,9 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a collection of <a>Resource</a> resources.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
+    /// an API</a> </div>
     /// </summary>
     public partial class GetResourcesResponse : AmazonWebServiceResponse
     {

@@ -30,6 +30,9 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Represents a unique identifier for a version of a deployed <a>RestApi</a> that is
     /// callable by users.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy
+    /// an API</a> </div>
     /// </summary>
     public partial class Stage
     {
@@ -100,7 +103,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientCertificateId.
+        /// Gets and sets the property ClientCertificateId. 
+        /// <para>
+        /// The identifier of a client certificate for an API stage.
+        /// </para>
         /// </summary>
         public string ClientCertificateId
         {
@@ -191,9 +197,11 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property MethodSettings. 
         /// <para>
-        /// A map that defines the method settings for a <a>Stage</a> resource. Keys are defined
-        /// as <code>{resource_path}/{http_method}</code> for an individual method override, or
-        /// <code>\*/\*</code> for the settings applied to all methods in the stage.
+        /// A map that defines the method settings for a <a>Stage</a> resource. Keys (designated
+        /// as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
+        /// for an individual method override, or <code>/\*/\*</code> for overriding all methods
+        /// in the stage. Any forward slash ("/") characters in the <code>resource_path</code>
+        /// part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, MethodSetting> MethodSettings
@@ -231,7 +239,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A map that defines the stage variables for a <a>Stage</a> resource. Variable names
-        /// can have alphanumeric characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+        /// can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

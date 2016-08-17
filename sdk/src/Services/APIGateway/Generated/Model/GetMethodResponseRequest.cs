@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// The HTTP verb identifier for the parent <a>Method</a> resource.
+        /// The HTTP verb of the <a>Method</a> resource.
         /// </para>
         /// </summary>
         public string HttpMethod
@@ -95,7 +95,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The status code identifier for the <a>MethodResponse</a> resource.
+        /// The status code for the <a>MethodResponse</a> resource.
         /// </para>
         /// </summary>
         public string StatusCode

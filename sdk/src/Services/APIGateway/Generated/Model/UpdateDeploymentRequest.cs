@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The replacment identifier for the <a>Deployment</a> resource to change information
+        /// The replacement identifier for the <a>Deployment</a> resource to change information
         /// about.
         /// </para>
         /// </summary>
@@ -59,8 +59,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// A list of operations describing the updates to apply to the specified resource. The
-        /// patches are applied in the order specified in the list.
+        /// A list of update operations to be applied to the specified resource and in the order
+        /// specified in this list.
         /// </para>
         /// </summary>
         public List<PatchOperation> PatchOperations

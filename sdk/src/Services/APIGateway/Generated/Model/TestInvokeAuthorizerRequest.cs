@@ -31,6 +31,9 @@ namespace Amazon.APIGateway.Model
     /// Container for the parameters to the TestInvokeAuthorizer operation.
     /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
     /// parameters, and an incoming request body.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+    /// custom authorizers</a> </div>
     /// </summary>
     public partial class TestInvokeAuthorizerRequest : AmazonAPIGatewayRequest
     {
