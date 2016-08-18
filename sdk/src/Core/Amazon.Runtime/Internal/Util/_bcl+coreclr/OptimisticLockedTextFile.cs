@@ -70,6 +70,10 @@ namespace Amazon.Runtime.Internal.Util
         public void Persist()
         {
             var newContents = ToString();
+            var path = Path.GetDirectoryName(FilePath);
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
             // open the file with exclusive access
             using (var fileStream = new FileStream(FilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None))
             {
