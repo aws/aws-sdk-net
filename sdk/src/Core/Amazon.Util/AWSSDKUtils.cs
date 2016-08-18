@@ -144,7 +144,7 @@ namespace Amazon.Util
 
         #endregion
 
-        
+
 
         #region Internal Methods
 
@@ -332,7 +332,7 @@ namespace Amazon.Util
             if (delimIndex >= 0)
                 url = url.Substring(delimIndex + 2);
 
-            if(url.EndsWith("/", StringComparison.Ordinal))
+            if (url.EndsWith("/", StringComparison.Ordinal))
                 url = url.Substring(0, url.Length - 1);
 
             int awsIndex = url.IndexOf(".amazonaws.com", StringComparison.Ordinal);
@@ -388,7 +388,7 @@ namespace Amazon.Util
             if (delimIndex >= 0)
                 url = url.Substring(delimIndex + 2);
 
-            string[] urlParts = url.Split(new char[] {'.'}, StringSplitOptions.RemoveEmptyEntries);
+            string[] urlParts = url.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
             if (urlParts == null || urlParts.Length == 0)
                 return string.Empty;
 
@@ -597,8 +597,8 @@ namespace Amazon.Util
             {
                 destination.Write(array, 0, count);
             }
-        }        
-	#endregion
+        }
+        #endregion
 
         #region Public Methods and Properties
 
@@ -826,7 +826,7 @@ namespace Amazon.Util
             if (string.IsNullOrEmpty(input))
                 return false;
 
-            foreach(var c in input)
+            foreach (var c in input)
             {
                 if (IsBidiControlChar(c))
                     return true;
@@ -853,10 +853,16 @@ namespace Amazon.Util
 
         public static string DownloadStringContent(Uri uri)
         {
+            return DownloadStringContent(uri, TimeSpan.Zero);
+        }
+
+        public static string DownloadStringContent(Uri uri, TimeSpan timeout)
+        {
 #if CORECLR
             using (var client = new System.Net.Http.HttpClient())
             {
-                var task = client.GetStringAsync(uri);
+                if (timeout > TimeSpan.Zero)
+                    client.Timeout = timeout;
                 var content = AsyncHelpers.RunSync<string>(() =>
                 {
                     return client.GetStringAsync(uri);
@@ -865,6 +871,8 @@ namespace Amazon.Util
             }
 #else
             HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+            if (timeout > TimeSpan.Zero)
+                request.Timeout = (int)timeout.TotalMilliseconds;
             var asyncResult = request.BeginGetResponse(null, null);
             using (HttpWebResponse response = request.EndGetResponse(asyncResult) as HttpWebResponse)
             using (StreamReader reader = new StreamReader(response.GetResponseStream()))

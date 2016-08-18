@@ -31,7 +31,7 @@ namespace Amazon.Runtime.Internal
 
         public static Task<T> Run<T>(Func<T> action, CancellationToken cancellationToken)
         {
-#if PCL || CORECLR
+#if PCL
             Task<T> task = Task.Run<T>(action);
             return task;
 #else
@@ -50,11 +50,13 @@ namespace Amazon.Runtime.Internal
                         exception = e;
                     }
                 });
+#if !CORECLR
                 using (var ctr = cancellationToken.Register(() =>
                 {
                     if (thread.IsAlive)
                         thread.Abort();
                 }))
+#endif
                 {
                     thread.Start();
                     thread.Join();

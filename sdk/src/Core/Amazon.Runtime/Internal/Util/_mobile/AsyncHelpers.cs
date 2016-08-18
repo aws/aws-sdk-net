@@ -24,27 +24,32 @@ namespace Amazon.Runtime.Internal.Util
         public static void RunSync(Func<Task> task)
         {
             var oldContext = SynchronizationContext.Current;
-            var synch = new ExclusiveSynchronizationContext();
-            SynchronizationContext.SetSynchronizationContext(synch);
-            synch.Post(async _ =>
+            try
             {
-                try
+                var synch = new ExclusiveSynchronizationContext();
+                SynchronizationContext.SetSynchronizationContext(synch);
+                synch.Post(async _ =>
                 {
-                    await task();
-                }
-                catch (Exception e)
-                {
-                    synch.InnerException = e;
-                    throw;
-                }
-                finally
-                {
-                    synch.EndMessageLoop();
-                }
-            }, null);
-            synch.BeginMessageLoop();
-
-            SynchronizationContext.SetSynchronizationContext(oldContext);
+                    try
+                    {
+                        await task();
+                    }
+                    catch (Exception e)
+                    {
+                        synch.InnerException = e;
+                        throw;
+                    }
+                    finally
+                    {
+                        synch.EndMessageLoop();
+                    }
+                }, null);
+                synch.BeginMessageLoop();
+            }
+            finally
+            {
+                SynchronizationContext.SetSynchronizationContext(oldContext);
+            }
         }
 
         /// <summary>
@@ -56,28 +61,34 @@ namespace Amazon.Runtime.Internal.Util
         public static T RunSync<T>(Func<Task<T>> task)
         {
             var oldContext = SynchronizationContext.Current;
-            var synch = new ExclusiveSynchronizationContext();
-            SynchronizationContext.SetSynchronizationContext(synch);
-            T ret = default(T);
-            synch.Post(async _ =>
+            try
             {
-                try
+                var synch = new ExclusiveSynchronizationContext();
+                SynchronizationContext.SetSynchronizationContext(synch);
+                T ret = default(T);
+                synch.Post(async _ =>
                 {
-                    ret = await task();
-                }
-                catch (Exception e)
-                {
-                    synch.InnerException = e;
-                    throw;
-                }
-                finally
-                {
-                    synch.EndMessageLoop();
-                }
-            }, null);
-            synch.BeginMessageLoop();
-            SynchronizationContext.SetSynchronizationContext(oldContext);
-            return ret;
+                    try
+                    {
+                        ret = await task();
+                    }
+                    catch (Exception e)
+                    {
+                        synch.InnerException = e;
+                        throw;
+                    }
+                    finally
+                    {
+                        synch.EndMessageLoop();
+                    }
+                }, null);
+                synch.BeginMessageLoop();
+                return ret;
+            }
+            finally
+            {
+                SynchronizationContext.SetSynchronizationContext(oldContext);
+            }            
         }
 
         private class ExclusiveSynchronizationContext : SynchronizationContext
