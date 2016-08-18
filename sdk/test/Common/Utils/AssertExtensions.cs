@@ -85,7 +85,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 gotException = true;
             }
 
-            Assert.IsTrue(gotException, "Failed to get expected exception: " + exceptionType.FullName);
+            string message = (exceptionType == null) ? 
+                "Failed to get an exception." :
+                String.Format("Failed to get expected exception: {0}" + exceptionType.FullName);
+
+            Assert.IsTrue(gotException, message);
+
             return exception;
         }
     }
