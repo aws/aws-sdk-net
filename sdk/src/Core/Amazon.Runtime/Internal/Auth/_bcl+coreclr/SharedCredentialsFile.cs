@@ -105,7 +105,7 @@ namespace Amazon.Runtime.Internal.Auth
             var properties = new List<KeyValuePair<string, string>>();
             properties.Add(new KeyValuePair<string, string>(accessKeyPropertyName, accessKey));
             properties.Add(new KeyValuePair<string, string>(secretKeyPropertyName, secretAccessKey));
-            if (token != null)
+            if (!string.IsNullOrEmpty(token))
             {
                 properties.Add(new KeyValuePair<string, string>(tokenPropertyName, token));
             }
