@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates CreateGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">The name of the group to create. Do not include the path in this value. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="groupName">The name of the group to create. Do not include the path in this value. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-. The group name must be unique within the account. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".</param>
         public CreateGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -65,7 +65,9 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
         /// is a string of characters consisting of upper and lowercase alphanumeric characters
-        /// with no spaces. You can also include any of the following characters: =,.@-
+        /// with no spaces. You can also include any of the following characters: =,.@-. The group
+        /// name must be unique within the account. Group names are not distinguished by case.
+        /// For example, you cannot create groups named both "ADMINS" and "admins".
         /// </para>
         /// </summary>
         public string GroupName
