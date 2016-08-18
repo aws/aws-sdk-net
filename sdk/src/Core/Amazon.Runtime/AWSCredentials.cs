@@ -661,11 +661,10 @@ namespace Amazon.Runtime
                 if (!string.IsNullOrEmpty(credentialsFilePath))
                 {
                     var file = new SharedCredentialsFile(credentialsFilePath);
-                    var section = file[lookupName];
-                    if (section != null)
+                    ImmutableCredentials credentials;
+                    if (file.TryGetCredentials(lookupName, out credentials))
                     {
-                        section.Validate();
-                        this._wrappedCredentials = section.Credentials;
+                        this._wrappedCredentials = credentials;
                         var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                         logger.InfoFormat("Credentials found using account name {0} and looking in {1}.", lookupName, credentialsFilePath);
                     }
@@ -713,16 +712,13 @@ namespace Amazon.Runtime
         public static bool IsProfileKnown(string profileName, string profilesLocation)
         {
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(profileName))
-                return true;
-
-            string sharedCredentialsFile = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
-            if (!string.IsNullOrEmpty(sharedCredentialsFile))
             {
-                var file = new SharedCredentialsFile(sharedCredentialsFile);
-                return file[profileName] != null;
+                return true;
             }
-
-            return false;
+            else
+            {
+                return ValidCredentialsExistInSharedFile(profilesLocation, profileName);
+            }
         }
 
         /// <summary>
@@ -740,28 +736,42 @@ namespace Amazon.Runtime
         public static bool CanCreateFrom(string profileName, string profilesLocation)
         {
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(profileName))
+            {
                 return AWSCredentialsProfile.CanCreateFrom(profileName);
+            }
+            else
+            {
+                return ValidCredentialsExistInSharedFile(profilesLocation, profileName);
+            }
+        }
 
+        private static bool ValidCredentialsExistInSharedFile(string profilesLocation, string profileName)
+        {
             var credentialsFilePath = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
             if (!string.IsNullOrEmpty(credentialsFilePath))
             {
-                var file = new SharedCredentialsFile(credentialsFilePath);
-                CredentialsSection section = file[profileName];
-                if (section != null)
+                var doLog = false;
+                try
                 {
-                    try
+                    var file = new SharedCredentialsFile(credentialsFilePath);
+                    if (file.GetCredentials(profileName) != null)
                     {
-                        section.Validate();
                         return true;
                     }
-                    catch (InvalidDataException)
+                    else
                     {
+                        doLog = true;
                     }
                 }
-                else
+                catch (InvalidDataException)
+                {
+                    doLog = true;
+                }
+
+                if (doLog)
                 {
                     var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
-                    logger.InfoFormat("Credentials file {0} does not contain profile {1}.", credentialsFilePath, profileName);
+                    logger.InfoFormat("Credentials file {0} does not contain a valid profile named {1}.", credentialsFilePath, profileName);
                 }
             }
             else
@@ -769,11 +779,8 @@ namespace Amazon.Runtime
                 var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                 logger.InfoFormat("Credentials file not found {0}.", credentialsFilePath);
             }
-
             return false;
         }
-
-
 
             #region Abstract class overrides
 

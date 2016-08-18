@@ -18,36 +18,50 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text.RegularExpressions;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
     public static class AssertExtensions
     {
-        public static Exception ExpectException(Action action)
-        {
-            bool gotException = false;
-            Exception exception = null;
-            try
-            {
-                action();
-            }
-            catch (Exception e)
-            {
-                gotException = true;
-                exception = e;
-            }
-
-            Assert.IsTrue(gotException, "Failed to get expected exception");
-            return exception;
-        }
-
         public static T ExpectException<T>(Action action) where T : Exception
         {
             var exceptionType = typeof(T);
-            return (T)ExpectException(action, exceptionType);
+            return (T)ExpectException(action, exceptionType, (Action<string>)null);
         }
 
-        public static Exception ExpectException(Action action, Type exceptionType, string exceptionMessage = null)
+        public static Exception ExpectException(Action action)
+        {
+            return ExpectException(action, null, (Action<string>)null);
+        }
+
+        public static Exception ExpectException(Action action, Type exceptionType)
+        {
+            return ExpectException(action, exceptionType, (Action<string>)null);
+        }
+
+        public static Exception ExpectException(Action action, Type exceptionType, String expectedMessage)
+        {
+            Action<string> validateMessage = expectedMessage == null ? (Action<string>)null :
+                (message) =>
+                {
+                    Assert.AreEqual(expectedMessage, message);
+                };
+            return ExpectException(action, exceptionType, validateMessage);
+        }
+
+        public static Exception ExpectException(Action action, Type exceptionType, Regex messageRegex)
+        {
+            Action<string> validateMessage = messageRegex == null ? (Action<string>)null :
+                (message) =>
+                {
+                    Assert.IsTrue(messageRegex.IsMatch(message),
+                        string.Format("Expected exception message <{0}> to match regular expression <{1}>", message, messageRegex));
+                };
+            return ExpectException(action, exceptionType, validateMessage);
+        }
+
+        public static Exception ExpectException(Action action, Type exceptionType, Action<string> validateMessage)
         {
             bool gotException = false;
             Exception exception = null;
@@ -58,10 +72,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             catch (Exception e)
             {
                 exception = e;
-                Assert.AreEqual(exceptionType, e.GetType());
-                if (exceptionMessage != null)
+
+                if (exceptionType != null)
                 {
-                    Assert.AreEqual(exceptionMessage, e.Message);
+                    Assert.AreEqual(exceptionType, e.GetType());
+                }
+
+                if (validateMessage != null)
+                {
+                    validateMessage(e.Message);
                 }
                 gotException = true;
             }

@@ -88,5 +88,25 @@ namespace AWSSDK_CoreCLR.UnitTests
 
             return fi;
         }
+
+        [Fact]
+        [Trait("Category", "Core")]
+        public void UnknownEndpointTest()
+        {
+            Assert.Equal("someservice.cn-north-1.amazonaws.com.cn",         RegionEndpoint.CNNorth1.GetEndpointForService("someservice").Hostname);
+            Assert.Equal("amazingservice.ap-southeast-2.amazonaws.com",     RegionEndpoint.APSoutheast2.GetEndpointForService("amazingservice").Hostname);
+            Assert.Equal("mediocreservice.us-gov-west-1.amazonaws.com",     RegionEndpoint.USGovCloudWest1.GetEndpointForService("mediocreservice").Hostname);
+        }
+
+        [Fact]
+        [Trait("Category", "Core")]
+        public void S3SignatureTest()
+        {
+            Assert.Equal("4", RegionEndpoint.APNortheast2.GetEndpointForService("s3").SignatureVersionOverride);
+            Assert.Equal("4", RegionEndpoint.CNNorth1.GetEndpointForService("s3").SignatureVersionOverride);
+            Assert.Equal("2", RegionEndpoint.SAEast1.GetEndpointForService("s3").SignatureVersionOverride);
+            Assert.Equal("2", RegionEndpoint.USEast1.GetEndpointForService("s3").SignatureVersionOverride);
+            Assert.Equal("2", RegionEndpoint.EUWest1.GetEndpointForService("s3").SignatureVersionOverride);
+        }
     }
 }

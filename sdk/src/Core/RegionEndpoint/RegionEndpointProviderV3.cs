@@ -19,6 +19,7 @@
  *
  */
 using Amazon.Runtime;
+using System.Globalization;
 using Amazon.Runtime.Internal.Auth;
 using System;
 using System.Collections.Generic;
@@ -70,9 +71,30 @@ namespace Amazon.Internal
                     _servicesLoaded = true;
                 }
 
-                _serviceMap.TryGetEndpoint(serviceName, dualStack, out endpointObject);
+                if (!_serviceMap.TryGetEndpoint(serviceName, dualStack, out endpointObject))
+                {
+                    // Do a fallback of creating an unknown endpoint based on the
+                    // current region's hostname template.
+                    endpointObject = CreateUnknownEndpoint(serviceName, dualStack);
+                }
             }
             return endpointObject;
+        }
+
+        private RegionEndpoint.Endpoint CreateUnknownEndpoint(string serviceName, bool dualStack)
+        {
+            string template = (string)_partitionJsonData["defaults"]["hostname"];
+
+            if (dualStack)
+            {
+                template = template.Replace("{region}", "dualstack.{region}");
+            }
+
+            string hostname = template.Replace("{service}", serviceName)
+                                 .Replace("{region}", RegionName)
+                                 .Replace("{dnsSuffix}", (string)_partitionJsonData["dnsSuffix"]);
+
+            return new RegionEndpoint.Endpoint(hostname, null, null);
         }
 
         private void ParseAllServices()
@@ -161,7 +183,9 @@ namespace Amazon.Internal
                     }
                 }
                 else
+                {
                     hostname = template.Replace("{region}", "dualstack.{region}");
+                }
             }
             else
             {
@@ -186,13 +210,35 @@ namespace Amazon.Internal
                 }
             }
 
-            RegionEndpoint.Endpoint endpoint = new RegionEndpoint.Endpoint(hostname, authRegion, null);
+            string signatureOverride = DetermineSignatureOverride(result, serviceName);
+
+            RegionEndpoint.Endpoint endpoint = new RegionEndpoint.Endpoint(hostname, authRegion, signatureOverride);
 
             _serviceMap.Add(serviceName, dualStack, endpoint);
             if (!string.IsNullOrEmpty(customService) && !_serviceMap.ContainsKey(customService))
             {
                 _serviceMap.Add(customService, dualStack, endpoint);
             }
+        }
+
+        private static string DetermineSignatureOverride(JsonData defaults, string serviceName)
+        {
+            if (string.Equals(serviceName, "s3", StringComparison.OrdinalIgnoreCase))
+            {
+                bool supportsSigV2 = false;
+                foreach (JsonData element in defaults["signatureVersions"])
+                {
+                    string sig = (string)element;
+                    if (string.Equals(sig, "s3", StringComparison.OrdinalIgnoreCase))
+                    {
+                        supportsSigV2 = true;
+                        break;
+                    }
+                }
+                return (supportsSigV2 ? "2" : "4");
+            }
+
+            return null;
         }
 
         private static string DetermineAuthRegion(JsonData credentialScope)
