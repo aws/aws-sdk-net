@@ -97,25 +97,29 @@ namespace Amazon.DNXCore.IntegrationTests
             using (var client = UtilityMethods.CreateClient<AmazonS3Client>())
             {
                 var bucketName = await UtilityMethods.CreateBucketAsync(client, "TestRestXml_Async");
-
-                var buckets = (await client.ListBucketsAsync(new ListBucketsRequest())).Buckets;
-                Assert.NotNull(buckets);
-                Assert.NotEqual(0, buckets.Count);
-                Assert.Equal(1, buckets
-                    .Count(b =>
-                        string.Equals(bucketName, b.BucketName, StringComparison.OrdinalIgnoreCase)));
-
-                var fakeBucketName = "really-fake-bucket-that-shout-not-exist" + DateTime.Now.ToFileTime();
-                var as3e = await AssertExtensions.ExpectExceptionAsync<AmazonS3Exception>(client.DeleteBucketAsync(new DeleteBucketRequest
+                try
                 {
-                    BucketName = fakeBucketName
-                }));
-                Assert.NotNull(as3e);
-                Assert.NotNull(as3e.Message);
-                //Assert.NotNull(aete.ErrorCode);
-                Assert.Equal(as3e.ErrorType, ErrorType.Sender);
+                    var buckets = (await client.ListBucketsAsync(new ListBucketsRequest())).Buckets;
+                    Assert.NotNull(buckets);
+                    Assert.NotEqual(0, buckets.Count);
+                    Assert.Equal(1, buckets
+                        .Count(b =>
+                            string.Equals(bucketName, b.BucketName, StringComparison.OrdinalIgnoreCase)));
 
-                await UtilityMethods.DeleteBucketWithObjectsAsync(client, bucketName);
+                    var fakeBucketName = "really-fake-bucket-that-shout-not-exist" + DateTime.Now.ToFileTime();
+                    var as3e = await AssertExtensions.ExpectExceptionAsync<AmazonS3Exception>(client.DeleteBucketAsync(new DeleteBucketRequest
+                    {
+                        BucketName = fakeBucketName
+                    }));
+                    Assert.NotNull(as3e);
+                    Assert.NotNull(as3e.Message);
+                    //Assert.NotNull(aete.ErrorCode);
+                    Assert.Equal(as3e.ErrorType, ErrorType.Sender);
+                }
+                finally
+                {
+                    await UtilityMethods.DeleteBucketWithObjectsAsync(client, bucketName);
+                }
             }
         }
 
@@ -131,14 +135,21 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     DomainName = domainName
                 });
-                var domains = (await client.ListDomainNamesAsync(new ListDomainNamesRequest())).DomainNames;
-                Assert.NotNull(domains);
-                Assert.NotEqual(0, domains.Count);
 
-                await client.DeleteDomainAsync(new DeleteDomainRequest
+                try
                 {
-                    DomainName = domainName
-                });
+                    var domains = (await client.ListDomainNamesAsync(new ListDomainNamesRequest())).DomainNames;
+                    Assert.NotNull(domains);
+                    Assert.NotEqual(0, domains.Count);
+                }
+                finally
+                {
+                    await client.DeleteDomainAsync(new DeleteDomainRequest
+                    {
+                        DomainName = domainName
+                    });
+                }
+                
 
                 var fakeDomain = new string('a', 30); // service defines valid domains as 28 characters long
                 await AssertExtensions.ExpectExceptionAsync(client.DeleteDomainAsync(new DeleteDomainRequest

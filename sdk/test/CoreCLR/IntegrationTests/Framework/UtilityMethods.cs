@@ -69,7 +69,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
         public static string GenerateName(string name)
         {
-            return name + new Random().Next();
+            return SDK_TEST_PREFIX + "-" + name + "-" + new Random().Next();
         }
 
         public static void WriteFile(string path, string contents)

@@ -19,22 +19,31 @@ namespace Amazon.DNXCore.IntegrationTests
 {
     public class ArchiveTransferManagerTests : TestBase<AmazonGlacierClient>
     {
-
-        static string testingVaultName = "sdk-dot-archive-manager-glacier-test";
-
-        static DownloadOptions defaultDownloadOptions = new DownloadOptions() { PollingInterval = 0.1 };
-
+        static string testingVaultName = UtilityMethods.SDK_TEST_PREFIX + "-archive-manager-glacier-test";
+        
         [Trait(CategoryAttribute, "Glacier")]
         [Fact]
         public async Task ListGlacierCalls()
         {
-            Assert.NotNull(await Client.ListJobsAsync(new ListJobsRequest { VaultName = testingVaultName }).ConfigureAwait(false));
-            Assert.NotNull(await Client.ListMultipartUploadsAsync(new Glacier.Model.ListMultipartUploadsRequest { VaultName = testingVaultName }).ConfigureAwait(false));
-            Assert.NotNull(await Client.ListVaultsAsync(new ListVaultsRequest()).ConfigureAwait(false));
+            string vaultName = UtilityMethods.GenerateName("glacier-test");
+            Client.CreateVaultAsync(new CreateVaultRequest
+            {
+                VaultName = vaultName
+            }).Wait();
+            try
+            {
+                Assert.NotNull(await Client.ListJobsAsync(new ListJobsRequest { VaultName = vaultName }).ConfigureAwait(false));
+                Assert.NotNull(await Client.ListMultipartUploadsAsync(new Glacier.Model.ListMultipartUploadsRequest { VaultName = vaultName }).ConfigureAwait(false));
+                Assert.NotNull(await Client.ListVaultsAsync(new ListVaultsRequest()).ConfigureAwait(false));
+            }
+            finally
+            {
+                await Client.DeleteVaultAsync(new DeleteVaultRequest { VaultName = vaultName });
+            }
         }
 
+        
         [Fact]
-
         public async Task TestSimpleUpload()
         {
             await Client.CreateVaultAsync(new CreateVaultRequest()
@@ -43,26 +52,21 @@ namespace Amazon.DNXCore.IntegrationTests
             }).ConfigureAwait(false);
             const string accountID = "-";
             string archiveID = null;
-
-            try
+            
+            var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes("data to archive"));
+            var uploadArchiveRequest = new UploadArchiveRequest
             {
-                var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes("data to archive"));
-                var uploadArchiveRequest = new UploadArchiveRequest
-                {
-                    VaultName = testingVaultName,
-                    Body = memoryStream,
-                    Checksum = TreeHashGenerator.CalculateTreeHash(memoryStream),
-                    AccountId = accountID,
-                    ArchiveDescription = "my first archive"
-                };
+                VaultName = testingVaultName,
+                Body = memoryStream,
+                Checksum = TreeHashGenerator.CalculateTreeHash(memoryStream),
+                AccountId = accountID,
+                ArchiveDescription = "my first archive"
+            };
 
-                var response = await Client.UploadArchiveAsync(uploadArchiveRequest).ConfigureAwait(false);
-                archiveID = response.ArchiveId;
-            }
-            finally
-            {
-                await Client.DeleteArchiveAsync(new DeleteArchiveRequest { AccountId = accountID, VaultName = testingVaultName, ArchiveId = archiveID });
-            }
+            var response = await Client.UploadArchiveAsync(uploadArchiveRequest).ConfigureAwait(false);
+            archiveID = response.ArchiveId;
+
+            await Client.DeleteArchiveAsync(new DeleteArchiveRequest { AccountId = accountID, VaultName = testingVaultName, ArchiveId = archiveID });
         }
     }
 }

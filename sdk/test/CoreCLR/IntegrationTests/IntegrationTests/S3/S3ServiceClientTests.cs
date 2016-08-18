@@ -16,13 +16,22 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 {
     public class S3ServiceClientTests : TestBase<AmazonS3Client>
     {
-        [Fact]
+        private string bucketName;
 
+        public S3ServiceClientTests()
+        {
+            bucketName = UtilityMethods.CreateBucketAsync(Client, "s3serviceclienttest").Result;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            UtilityMethods.DeleteBucketWithObjectsAsync(Client, bucketName).Wait();
+            base.Dispose(disposing);
+        }
+
+        [Fact]
         public async Task TestS3PutWithBodyProperty()
         {
-            var bucketName = "aws-sdk-net-TestS3PutWithBodyProperty-" + DateTime.Now.Ticks;
-            await Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName });
-
             var putObjectRequest = new PutObjectRequest
             {
                 BucketName = bucketName,
@@ -43,10 +52,6 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 var content = reader.ReadToEnd();
                 Assert.Equal(putObjectRequest.ContentBody, content);
             }
-
-            await Client.DeleteObjectAsync(new DeleteObjectRequest { BucketName = bucketName, Key = "test.txt" });
-            await Client.DeleteBucketAsync(new DeleteBucketRequest { BucketName = bucketName });
-
         }
     }
 }

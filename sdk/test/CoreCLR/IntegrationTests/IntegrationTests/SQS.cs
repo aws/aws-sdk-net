@@ -24,155 +24,108 @@ namespace Amazon.DNXCore.IntegrationTests
         private const string defaultTimeout = "30";
         private AmazonS3Config s3ClientConfig = null;
 
+        private List<string> _bucketNames = new List<string>();
+        private List<string> _queueUrls = new List<string>();
+
         public SQS()
         {
             _rand = new Random();
             s3ClientConfig = new AmazonS3Config();
         }
 
-        async Task SQSCleanup()
+        protected override void Dispose(bool disposing)
         {
-            var result = await Client.ListQueuesAsync(new ListQueuesRequest());
-            foreach (string queue in result.QueueUrls)
+            if (_bucketNames.Count != 0)
             {
-                Console.WriteLine("Queue: {0}", queue);
-                if (queue.Contains(prefix))
+                using (AmazonS3Client client = new AmazonS3Client(s3ClientConfig))
                 {
-                    try
+                    foreach (string bucketName in _bucketNames)
                     {
-                        await Client.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = queue });
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Failed to clean up queue {0}", queue);
+                        UtilityMethods.DeleteBucketWithObjectsAsync(client, bucketName).Wait();
                     }
                 }
             }
-        }
-
-        async Task S3BucketCleanUp()
-        {
-            using (var s3Client = new AmazonS3Client(s3ClientConfig))
+            
+            foreach (string url in _queueUrls)
             {
-                var buckets = (await s3Client.ListBucketsAsync()).Buckets;
-                foreach (S3Bucket bucket in buckets)
+                try
                 {
-                    if (bucket.BucketName.Contains(prefix))
-                    {
-                        try
-                        {
-                            await EmptyS3Bucket(s3Client, bucket.BucketName);
-                            await s3Client.DeleteBucketAsync(new DeleteBucketRequest
-                            {
-                                BucketName = bucket.BucketName
-                            });
-                            
-                        }
-                        catch(Exception)
-                        {
-                            Console.WriteLine("Failed to clean up bucket {0}", bucket.BucketName);
-                        }
-                    }
-                    
+                    Client.DeleteQueueAsync(new DeleteQueueRequest { QueueUrl = url }).Wait();
                 }
+                catch { };
             }
-        }
-
-        async Task EmptyS3Bucket(AmazonS3Client client, string bucketName)
-        {
-            var objects = (await client.ListObjectsAsync(bucketName)).S3Objects;
-            var deleteRequest = new DeleteObjectsRequest();
-            deleteRequest.BucketName = bucketName;
-            objects.ForEach(obj => { deleteRequest.AddKey(obj.Key); });
-
-            await client.DeleteObjectsAsync(deleteRequest);
+                
+            base.Dispose(disposing);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"SQS")]
         public async Task SQSDLQTest()
         {
-            try
+            string mainQueueName = prefix + _rand.Next() + "MQ";
+            string mainQueueURL = await createQueueTest(mainQueueName);
+            string deadQueueName = prefix + _rand.Next() + "DLQ";
+            string deadQueueURL = await createQueueTest(deadQueueName);
+            string deadQueueArn = await getQueueArn(deadQueueURL);
+
+            string redrivePolicy = string.Format(@"{{""maxReceiveCount"" : 5, ""deadLetterTargetArn"" : ""{0}""}}", deadQueueArn);
+            await Client.SetQueueAttributesAsync(new SetQueueAttributesRequest
             {
-                string mainQueueName = prefix + _rand.Next() + "MQ";
-                string mainQueueURL = await createQueueTest(mainQueueName);
-                string deadQueueName = prefix + _rand.Next() + "DLQ";
-                string deadQueueURL = await createQueueTest(deadQueueName);
-
-                string deadQueueArn = await getQueueArn(deadQueueURL);
-
-                string redrivePolicy = string.Format(@"{{""maxReceiveCount"" : 5, ""deadLetterTargetArn"" : ""{0}""}}", deadQueueArn);
-                await Client.SetQueueAttributesAsync(new SetQueueAttributesRequest
+                QueueUrl = mainQueueURL,
+                Attributes = new Dictionary<string, string>
                 {
-                    QueueUrl = mainQueueURL,
-                    Attributes = new Dictionary<string, string>
-                    {
-                        { QueueAttributeName.RedrivePolicy, redrivePolicy }
-                    }
-                });
+                    { QueueAttributeName.RedrivePolicy, redrivePolicy }
+                }
+            });
 
-                // Wait a bit to make sure the attribute has fully propagated.
-                UtilityMethods.Sleep(TimeSpan.FromSeconds(1));
+            // Wait a bit to make sure the attribute has fully propagated.
+            UtilityMethods.Sleep(TimeSpan.FromSeconds(1));
 
-                var response = await Client.ListDeadLetterSourceQueuesAsync(new ListDeadLetterSourceQueuesRequest
-                {
-                    QueueUrl = deadQueueURL
-                });
-                Assert.NotNull(response);
-                Assert.NotNull(response.QueueUrls);
-                Assert.Equal(1, response.QueueUrls.Count);
-                var metadata = response.ResponseMetadata;
-                Assert.NotNull(metadata);
-                Assert.NotNull(metadata.RequestId);
-            }
-            finally
+            var response = await Client.ListDeadLetterSourceQueuesAsync(new ListDeadLetterSourceQueuesRequest
             {
-                await SQSCleanup();
-            }
+                QueueUrl = deadQueueURL
+            });
+            Assert.NotNull(response);
+            Assert.NotNull(response.QueueUrls);
+            Assert.Equal(1, response.QueueUrls.Count);
+            var metadata = response.ResponseMetadata;
+            Assert.NotNull(metadata);
+            Assert.NotNull(metadata.RequestId);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"SQS")]
         public async Task SimpleSend()
         {
-            try
-            {
-                int maxMessageLength = 20 * 1024;
-                string queueName = prefix + _rand.Next();
-                string queueURL;
-                queueURL = await createQueueTest(queueName);
-                StringBuilder sb = new StringBuilder("The quick brown fox jumped over the lazy dog");
-                string messageBody = sb.ToString();
-                if (messageBody.Length > maxMessageLength)
-                    messageBody = messageBody.Substring(0, maxMessageLength);
+            int maxMessageLength = 20 * 1024;
+            string queueName = UtilityMethods.GenerateName("SimpleSend");
+            string queueURL = await createQueueTest(queueName);
 
-                await TestSendMessage(Client, queueURL, messageBody);
-                await TestSendMessageBatch(Client, queueURL, messageBody);
-                await TestReceiveMessage(Client, queueURL);
-            }finally
-            {
-                await SQSCleanup();
-            }
+            StringBuilder sb = new StringBuilder("The quick brown fox jumped over the lazy dog");
+            string messageBody = sb.ToString();
+            if (messageBody.Length > maxMessageLength)
+                messageBody = messageBody.Substring(0, maxMessageLength);
+
+            await TestSendMessage(Client, queueURL, messageBody);
+            await TestSendMessageBatch(Client, queueURL, messageBody);
+            await TestReceiveMessage(Client, queueURL);
         }
 
         [Fact]
         [Trait(CategoryAttribute, "SQS")]
         public async Task AuthorizeS3ToSendMessageAsyncTest()
         {
-            await SQSCleanup();
-            await S3BucketCleanUp();
-
-            string randid = "" + _rand.Next();
-            string bucketName = prefix + randid + "BUCKET";
-            string mainQueueName = prefix + randid + "MQ";
+            string bucketName = UtilityMethods.GenerateName("AuthorizeS3ToSendMessageAsync");
+            string mainQueueName = UtilityMethods.GenerateName("AuthorizeS3ToSendMessageAsync");
             string mainQueueURL = await createQueueTest(mainQueueName);
-            string s3ObjectKey = randid + "KEY";
+            string s3ObjectKey = UtilityMethods.GenerateName("key");
 
             Assert.False(String.Compare(mainQueueURL, "fail") == 0, "Failed to create an SQS queue");
 
             using (var s3Client = new AmazonS3Client(s3ClientConfig))
             {
-                await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName });
+                var bucketResponse = await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName });
+                    _bucketNames.Add(bucketName);
 
                 Assert.True(await hasS3Bucket(s3Client, bucketName), "Failed to create an S3 bucket");
 
@@ -319,22 +272,16 @@ namespace Amazon.DNXCore.IntegrationTests
         [Trait(CategoryAttribute,"SQS")]
         public async Task TestGetQueueUrl()
         {            
-            string queueName = "TestGetQueueUrl" + DateTime.Now.Ticks;
+            string queueName = UtilityMethods.GenerateName("TestGetQueueUrl");
             CreateQueueResponse createResponse = await Client.CreateQueueAsync(new CreateQueueRequest()
             {
                 QueueName = queueName
             });
-            try
-            {
-                GetQueueUrlRequest request = new GetQueueUrlRequest() { QueueName = queueName };
-                GetQueueUrlResponse response = await Client.GetQueueUrlAsync(request);
-                Assert.Equal(createResponse.QueueUrl, response.QueueUrl);
-            }
-            finally
-            {
-                await Client.DeleteQueueAsync(new DeleteQueueRequest() { QueueUrl = createResponse.QueueUrl });
-                await SQSCleanup();
-            }
+            _queueUrls.Add(createResponse.QueueUrl);
+
+            GetQueueUrlRequest request = new GetQueueUrlRequest() { QueueName = queueName };
+            GetQueueUrlResponse response = await Client.GetQueueUrlAsync(request);
+            Assert.Equal(createResponse.QueueUrl, response.QueueUrl);
         }
 
         private async Task<string> getQueueArn(string queueUrl)
@@ -390,9 +337,12 @@ namespace Amazon.DNXCore.IntegrationTests
 
             for (int i = 0; i < 30; i++)
             {
-                var listResult = await Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = prefix });
+                var listResult = await Client.ListQueuesAsync(new ListQueuesRequest() { QueueNamePrefix = name });
                 if (listResult.QueueUrls.FirstOrDefault(x => x == result.QueueUrl) != null)
+                {
+                    _queueUrls.Add(result.QueueUrl);
                     return result.QueueUrl;
+                }
 
                 Console.WriteLine("Sleeping 10s while queue is being created");
                 UtilityMethods.Sleep(TimeSpan.FromSeconds(2));

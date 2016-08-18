@@ -326,9 +326,6 @@ THtAmDAtOhds6TGBpAWw";
             var tableName= await SetupTable(client);
             try
             {
-
-
-
                 var table = Table.LoadTable(client, tableName);
 
                 await InsertData(table, "445", _body);

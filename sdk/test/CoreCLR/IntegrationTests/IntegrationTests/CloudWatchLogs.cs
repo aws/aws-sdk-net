@@ -126,21 +126,19 @@ namespace Amazon.DNXCore.IntegrationTests
                     Assert.Equal(DateTime.UtcNow.Date, getResponse.Events[1].Timestamp.Date);
 
                     Assert.True(getResponse.Events[0].Timestamp < getResponse.Events[1].Timestamp);
-
-
-                    await Client.DeleteLogStreamAsync(new DeleteLogStreamRequest
-                        {
-                            LogGroupName = logGroupName,
-                            LogStreamName = "sample"
-                        });
                 }
             }
             finally
             {
+                await Client.DeleteLogStreamAsync(new DeleteLogStreamRequest
+                {
+                    LogGroupName = logGroupName,
+                    LogStreamName = "sample"
+                });
                 await Client.DeleteLogGroupAsync(new DeleteLogGroupRequest
-                    {
-                        LogGroupName = logGroupName
-                    });
+                {
+                    LogGroupName = logGroupName
+                });
             }
         }
     }

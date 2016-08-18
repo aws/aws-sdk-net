@@ -13,29 +13,23 @@ using Amazon.DNXCore.IntegrationTests;
 
 namespace Amazon.DNXCore.IntegrationTests
 {
-    
+
     public class Kinesis : TestBase<AmazonKinesisClient>
     {
+        private List<string> _streamNames = new List<string>();
+
         protected override void Dispose(bool disposing)
         {
-            // Delete all dotnet integ test streams.
-            var streamNames = Client.ListStreamsAsync().Result.StreamNames;
-            foreach (var streamName in streamNames)
+            foreach (var streamName in _streamNames)
             {
-                if (streamName.Contains("dotnet-integ-test-stream"))
+                try
                 {
-                    try
+                    Client.DeleteStreamAsync(new DeleteStreamRequest
                     {
-                        Client.DeleteStreamAsync(new DeleteStreamRequest
-                        {
-                            StreamName = streamName
-                        }).Wait();
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine("Failed to delete stream {0}: {1}", streamName, e.Message);
-                    }
+                        StreamName = streamName
+                    }).Wait();
                 }
+                catch { };
             }
             base.Dispose(disposing);
         }
@@ -44,7 +38,7 @@ namespace Amazon.DNXCore.IntegrationTests
         [Trait(CategoryAttribute,"Kinesis")]
         public async Task KinesisCRUD()
         {
-            var streamName = "dotnet-integ-test-stream-" + DateTime.Now.Ticks;
+            var streamName = UtilityMethods.GenerateName("KinesisCRUD");
 
             // Create a stream.
             await Client.CreateStreamAsync(new CreateStreamRequest
@@ -52,6 +46,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 ShardCount = 1,
                 StreamName = streamName
             });
+            _streamNames.Add(streamName);
 
             // Describe the stream.
             var stream = (await Client.DescribeStreamAsync(new DescribeStreamRequest
@@ -67,17 +62,6 @@ namespace Amazon.DNXCore.IntegrationTests
             var streamNames = (await Client.ListStreamsAsync()).StreamNames;
             Assert.True(streamNames.Count > 0);
             Assert.True(streamNames.Contains(streamName));
-
-            // Delete the stream.
-            await Client.DeleteStreamAsync(new DeleteStreamRequest
-            {
-                StreamName = streamName
-            });
-            stream = (await Client.DescribeStreamAsync(new DescribeStreamRequest
-            {
-                StreamName = streamName
-            })).StreamDescription;
-            Assert.True(stream.StreamStatus == StreamStatus.DELETING);
         }
 
         private StreamDescription WaitForStreamToBeActive(string streamName)

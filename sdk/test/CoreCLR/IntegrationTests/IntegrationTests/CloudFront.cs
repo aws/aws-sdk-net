@@ -37,32 +37,37 @@ namespace Amazon.DNXCore.IntegrationTests
             var createResponse = await Client.CreateCloudFrontOriginAccessIdentityAsync(createRequest);
             Assert.NotNull(createResponse.ETag);
             Assert.NotNull(createResponse.CloudFrontOriginAccessIdentity.Id);
-
-            var updateRequest = new UpdateCloudFrontOriginAccessIdentityRequest()
+            string etag = createResponse.ETag;
+            try
             {
-                CloudFrontOriginAccessIdentityConfig = new CloudFrontOriginAccessIdentityConfig()
+                var updateRequest = new UpdateCloudFrontOriginAccessIdentityRequest()
                 {
-                    CallerReference = createRequest.CloudFrontOriginAccessIdentityConfig.CallerReference,
-                    Comment = UtilityMethods.SDK_TEST_PREFIX + "update"
-                },
-                Id = createResponse.CloudFrontOriginAccessIdentity.Id,
-                IfMatch = createResponse.ETag
-            };
-            var updateResponse = await Client.UpdateCloudFrontOriginAccessIdentityAsync(updateRequest);
-            Assert.NotNull(updateResponse.ETag);
-            Assert.NotNull(updateResponse.CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig.Comment);
+                    CloudFrontOriginAccessIdentityConfig = new CloudFrontOriginAccessIdentityConfig()
+                    {
+                        CallerReference = createRequest.CloudFrontOriginAccessIdentityConfig.CallerReference,
+                        Comment = UtilityMethods.SDK_TEST_PREFIX + "update"
+                    },
+                    Id = createResponse.CloudFrontOriginAccessIdentity.Id,
+                    IfMatch = createResponse.ETag
+                };
+                var updateResponse = await Client.UpdateCloudFrontOriginAccessIdentityAsync(updateRequest);
+                Assert.NotNull(updateResponse.ETag);
+                etag = updateResponse.ETag;
+                Assert.NotNull(updateResponse.CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig.Comment);
 
-
-            var listResponse = await Client.ListCloudFrontOriginAccessIdentitiesAsync();
-            Assert.True(listResponse.CloudFrontOriginAccessIdentityList.Items.Count > 0);
-
-            var deleteRequest = new DeleteCloudFrontOriginAccessIdentityRequest()
+                var listResponse = await Client.ListCloudFrontOriginAccessIdentitiesAsync();
+                Assert.True(listResponse.CloudFrontOriginAccessIdentityList.Items.Count > 0);
+            }
+            finally
             {
-                Id = createResponse.CloudFrontOriginAccessIdentity.Id,
-                IfMatch = updateResponse.ETag
-            };
-            var deleteResponse = await Client.DeleteCloudFrontOriginAccessIdentityAsync(deleteRequest);
-            Assert.NotNull(deleteResponse.ResponseMetadata.RequestId);
+                var deleteRequest = new DeleteCloudFrontOriginAccessIdentityRequest()
+                {
+                    Id = createResponse.CloudFrontOriginAccessIdentity.Id,
+                    IfMatch = etag
+                };
+                var deleteResponse = await Client.DeleteCloudFrontOriginAccessIdentityAsync(deleteRequest);
+                Assert.NotNull(deleteResponse.ResponseMetadata.RequestId);
+            }
         }
     }
 }

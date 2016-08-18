@@ -121,20 +121,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             using (var session = new IAMTestSession("TestDeleteNonExistentAccessKeyException", Client))
             {
                 string username = session.CreateTestUser();
-                try
-                {
-                    CreateAccessKeyResponse response =
-                        await Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username });
 
-                    string keyId = response.AccessKey.AccessKeyId;
+                CreateAccessKeyResponse response = await Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username });
 
-                    await Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId });
-                    await Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId });
-                }
-                catch (NoSuchEntityException ae)
-                {
-                    
-                }
+                string keyId = response.AccessKey.AccessKeyId;
+                await Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId });
+
+                await Assert.ThrowsAsync<NoSuchEntityException>(() => Client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest() { UserName = username, AccessKeyId = keyId }));
             }
         }
     }

@@ -22,7 +22,8 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             using (var snsClient = new AmazonSimpleNotificationServiceClient())
             {
-                var snsCreateResponse = await snsClient.CreateTopicAsync("events-test-" + DateTime.Now.Ticks);
+                string topicName = UtilityMethods.GenerateName("events-test");
+                var snsCreateResponse = await snsClient.CreateTopicAsync(topicName);
                 var bucketName = await UtilityMethods.CreateBucketAsync(Client, "SetTopicConfigurationTests");
 
                 try
@@ -72,7 +73,8 @@ namespace Amazon.DNXCore.IntegrationTests
             var filterRule = new FilterRule("Prefix", "test/");
             using (var sqsClient = new AmazonSQSClient())
             {
-                var createResponse = await sqsClient.CreateQueueAsync("events-test-" + DateTime.Now.Ticks);
+                string topicName = UtilityMethods.GenerateName("events-test");
+                var createResponse = await sqsClient.CreateQueueAsync(topicName);
                 var bucketName = await UtilityMethods.CreateBucketAsync(Client, "SetQueueConfigurationTests");
                 try
                 {

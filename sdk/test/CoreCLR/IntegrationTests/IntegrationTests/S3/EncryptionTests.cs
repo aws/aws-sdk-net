@@ -19,13 +19,14 @@ namespace Amazon.DNXCore.IntegrationTests.S3
     {
         private static Random random = new Random();
         private static string bucketName;
-        private static string fileName = "PutObjectFile.txt";
         private string filePath = "";
         private static string sampleContent = "Encryption Client Testing!";
 
         private static AmazonS3EncryptionClient s3EncryptionClientMetadataMode;
         private static AmazonS3EncryptionClient s3EncryptionClientFileMode;
         private static EncryptionMaterials encryptionMaterials = new EncryptionMaterials(CreateAsymmetricProvider());
+
+        private List<string> _filesToDelete = new List<string>();
 
         public EncryptionTests()
         {
@@ -38,14 +39,14 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             s3EncryptionClientFileMode = new AmazonS3EncryptionClient(config, encryptionMaterials);
 
 
-            using (StreamWriter writer = File.CreateText(fileName))
+            filePath = Path.Combine(Path.GetTempPath(), "EncryptionPutObjectFile.txt");
+            using (StreamWriter writer = File.CreateText(filePath))
             {
                 writer.Write(sampleContent);
             }
+            _filesToDelete.Add(filePath);
 
             bucketName = UtilityMethods.CreateBucketAsync(s3EncryptionClientFileMode, "EncryptionTests").Result;
-            
-            filePath = Path.Combine(BaseDirectoryPath, "PutObjectFile.txt");
         }
 
         protected override void Dispose(bool disposing) 
@@ -54,6 +55,14 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             s3EncryptionClientMetadataMode.Dispose();
             s3EncryptionClientFileMode.Dispose();
+
+            foreach(string file in _filesToDelete)
+            {
+                if (File.Exists(file))
+                {
+                    File.Delete(file);
+                }
+            }
 
             base.Dispose(disposing);
         }
@@ -66,11 +75,11 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             {
                 BucketName = bucketName,
                 Key = "PutGetFileUsingMetadataMode" + random.Next(),
-                FilePath = fileName
+                FilePath = filePath
             };
 
             PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
-            TestGet(request.Key, File.ReadAllText(filePath), s3EncryptionClientMetadataMode);
+            await TestGet(request.Key, File.ReadAllText(filePath), s3EncryptionClientMetadataMode);
         }
 
         [Fact]
@@ -81,12 +90,12 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             {
                 BucketName = bucketName,
                 Key = "PutGetFileUsingInstructionFileMode" + random.Next(),
-                FilePath = fileName
+                FilePath = filePath
             };
 
             PutObjectResponse response = await s3EncryptionClientFileMode.PutObjectAsync(request);
 
-            TestGet(request.Key, File.ReadAllText(filePath), s3EncryptionClientFileMode);
+            await TestGet(request.Key, File.ReadAllText(filePath), s3EncryptionClientFileMode);
         }
 
         [Fact]
@@ -103,7 +112,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
 
-            TestGet(request.Key, sampleContent, s3EncryptionClientMetadataMode);
+            await TestGet(request.Key, sampleContent, s3EncryptionClientMetadataMode);
         }
 
         [Fact]
@@ -120,7 +129,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             PutObjectResponse response = await s3EncryptionClientFileMode.PutObjectAsync(request);
 
-            TestGet(request.Key, sampleContent, s3EncryptionClientFileMode);
+            await TestGet(request.Key, sampleContent, s3EncryptionClientFileMode);
         }
 
         [Fact]
@@ -137,7 +146,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
 
-            TestGet(request.Key, request.ContentBody, s3EncryptionClientMetadataMode);
+            await TestGet(request.Key, request.ContentBody, s3EncryptionClientMetadataMode);
         }
 
         [Fact]
@@ -154,7 +163,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
 
-            TestGet(request.Key, request.ContentBody, s3EncryptionClientMetadataMode);
+            await TestGet(request.Key, request.ContentBody, s3EncryptionClientMetadataMode);
         }
 
         [Fact]
@@ -170,7 +179,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             PutObjectResponse response = await s3EncryptionClientMetadataMode.PutObjectAsync(request);
 
-            TestGet(request.Key, "", s3EncryptionClientMetadataMode);
+            await TestGet(request.Key, "", s3EncryptionClientMetadataMode);
         }
 
         [Fact]
@@ -187,26 +196,22 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             PutObjectResponse response = await s3EncryptionClientFileMode.PutObjectAsync(request);
 
-            TestGet(request.Key, request.ContentBody, s3EncryptionClientFileMode);
+            await TestGet(request.Key, request.ContentBody, s3EncryptionClientFileMode);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async Task MultipartEncryptionTestMetadataMode()
         {
-            string filePath = @"C:\coderepo\multi.txt";
-            string retrievedFilepath = @"C:\coderepo\retreived.txt";
+            string filePath = Path.Combine(Path.GetTempPath(), "MultipartEncryptionTestMetaDatamode_upload.txt");
+            string retrievedFilepath = Path.Combine(Path.GetTempPath(), "MultipartEncryptionTestMetaDatamode_download.txt");
             int MEG_SIZE = (int)Math.Pow(2, 20);
             long totalSize = (long)(15 * MEG_SIZE);
             UtilityMethods.GenerateFile(filePath, totalSize);
-
+                _filesToDelete.Add(filePath);
             string key = "MultipartEncryptionTestMetadataMode" + random.Next();
 
-            await s3EncryptionClientMetadataMode.PutBucketAsync(new PutBucketRequest() { BucketName = bucketName });
-
-
-            Stream inputStream = File.OpenRead(filePath);
-            try
+            using(Stream inputStream = File.OpenRead(filePath))
             {
                 InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
                 {
@@ -302,6 +307,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
                 GetObjectResponse getResponse = await s3EncryptionClientMetadataMode.GetObjectAsync(getRequest);
                 await getResponse.WriteResponseStreamToFileAsync(retrievedFilepath, false, System.Threading.CancellationToken.None);
+                _filesToDelete.Add(retrievedFilepath);
 
                 UtilityMethods.CompareFiles(filePath, retrievedFilepath);
 
@@ -313,32 +319,22 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 GetObjectMetadataResponse metaDataResponse = await s3EncryptionClientMetadataMode.GetObjectMetadataAsync(metaDataRequest);
                 Assert.Equal("text/html", metaDataResponse.Headers.ContentType);
             }
-            finally
-            {
-                inputStream.Dispose();
-                if (File.Exists(filePath))
-                    File.Delete(filePath);
-                if (File.Exists(retrievedFilepath))
-                    File.Delete(retrievedFilepath);
-            }
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async Task MultipartEncryptionTestInstructionFile()
         {
-            string filePath = @"C:\temp\Upload15MegFileIn3PartsViaStream.txt";
-            string retrievedFilepath = @"C:\temp\Upload15MegFileIn3PartsViaStreamRetreived.txt";
+            string filePath = Path.Combine(Path.GetTempPath(), "MulitpartEncryptionTestInstructionFile_upload.txt");
+            string retrievedFilepath = Path.Combine(Path.GetTempPath(), "MulitpartEncryptionTestInstructionFile_download.txt");
             int MEG_SIZE = (int)Math.Pow(2, 20);
             long totalSize = (long)(15 * MEG_SIZE) + 4001;
             UtilityMethods.GenerateFile(filePath, totalSize);
+                _filesToDelete.Add(filePath);
 
             string key = "MultipartEncryptionTestInstrcutionFile" + random.Next();
 
-            await s3EncryptionClientFileMode.PutBucketAsync(new PutBucketRequest() { BucketName = bucketName });
-
-            Stream inputStream = File.OpenRead(filePath);
-            try
+            using (Stream inputStream = File.OpenRead(filePath))
             {
                 InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
                 {
@@ -354,7 +350,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 // Upload part 1
                 UploadPartRequest uploadRequest = new UploadPartRequest()
                 {
-                    BucketName = bucketName,    
+                    BucketName = bucketName,
                     Key = key,
                     UploadId = initResponse.UploadId,
                     PartNumber = 1,
@@ -436,6 +432,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
                 GetObjectResponse getResponse = await s3EncryptionClientFileMode.GetObjectAsync(getRequest);
                 await getResponse.WriteResponseStreamToFileAsync(retrievedFilepath, false, System.Threading.CancellationToken.None);
+                    _filesToDelete.Add(retrievedFilepath);
 
                 UtilityMethods.CompareFiles(filePath, retrievedFilepath);
 
@@ -447,17 +444,9 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 GetObjectMetadataResponse metaDataResponse = await s3EncryptionClientFileMode.GetObjectMetadataAsync(metaDataRequest);
                 Assert.Equal("text/html", metaDataResponse.Headers.ContentType);
             }
-            finally
-            {
-                inputStream.Dispose();
-                if (File.Exists(filePath))
-                    File.Delete(filePath);
-                if (File.Exists(retrievedFilepath))
-                    File.Delete(retrievedFilepath);
-            }
         }
 
-        private static async void TestGet(string key, string uploadedData, AmazonS3EncryptionClient s3EncryptionClient)
+        private static async Task TestGet(string key, string uploadedData, AmazonS3EncryptionClient s3EncryptionClient)
         {
             GetObjectRequest getObjectRequest = new GetObjectRequest
             {
@@ -474,25 +463,6 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Assert.Equal(uploadedData, data);
                 }
             }
-        }
-
-        private static async void TestGet2(string key, string uploadedFile, AmazonS3EncryptionClient s3EncryptionClient)
-        {
-            GetObjectRequest getObjectRequest = new GetObjectRequest
-            {
-                BucketName = bucketName,
-                Key = key
-            };
-
-            var destinationFile = fileName + ".downloaded";
-            using (GetObjectResponse getObjectResponse = await s3EncryptionClient.GetObjectAsync(getObjectRequest))
-            {
-                await getObjectResponse.WriteResponseStreamToFileAsync(destinationFile, false, System.Threading.CancellationToken.None);
-            }
-
-            var originalMd5 = HashFile(uploadedFile);
-            var downloadedMd5 = HashFile(destinationFile);
-            Assert.Equal(originalMd5, downloadedMd5);
         }
 
         private static string HashFile(string file)
