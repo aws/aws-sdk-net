@@ -29,7 +29,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspaces operation.
-    /// Obtains information about the specified WorkSpaces. 
+    /// Obtains information about the specified WorkSpaces.
     /// 
     ///  
     /// <para>
@@ -134,7 +134,7 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// Used with the <code>DirectoryId</code> parameter to specify the directory user for
-        /// which to obtain the WorkSpace.
+        /// whom to obtain the WorkSpace.
         /// </para>
         /// </summary>
         public string UserName
@@ -157,9 +157,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  
         /// <para>
-        /// Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier returned
-        /// by <a>CreateWorkspaces</a> is not immediately available. If you immediately call <a>DescribeWorkspaces</a>
-        /// with this identifier, no information will be returned.
+        /// Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier it returns
+        /// is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with
+        /// this identifier, no information is returned.
         /// </para>
         /// </summary>
         public List<string> WorkspaceIds

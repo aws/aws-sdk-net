@@ -28,19 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains the results for the <a>DescribeWorkspaces</a> operation.
+    /// This is the response object from the DescribeWorkspacesConnectionStatus operation.
     /// </summary>
-    public partial class DescribeWorkspacesResponse : AmazonWebServiceResponse
+    public partial class DescribeWorkspacesConnectionStatusResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Workspace> _workspaces = new List<Workspace>();
+        private List<WorkspaceConnectionStatus> _workspacesConnectionStatus = new List<WorkspaceConnectionStatus>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to this operation to retrieve the next set of items.
-        /// This token is valid for one day and must be used within that time frame.
+        /// The next token of the result.
         /// </para>
         /// </summary>
         public string NextToken
@@ -56,26 +54,21 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Workspaces. 
+        /// Gets and sets the property WorkspacesConnectionStatus. 
         /// <para>
-        /// An array of structures that contain the information about the WorkSpaces.
-        /// </para>
-        ///  
-        /// <para>
-        /// Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information
-        /// may be incomplete for a newly-created WorkSpace.
+        /// The connection status of the WorkSpace.
         /// </para>
         /// </summary>
-        public List<Workspace> Workspaces
+        public List<WorkspaceConnectionStatus> WorkspacesConnectionStatus
         {
-            get { return this._workspaces; }
-            set { this._workspaces = value; }
+            get { return this._workspacesConnectionStatus; }
+            set { this._workspacesConnectionStatus = value; }
         }
 
-        // Check to see if Workspaces property is set
-        internal bool IsSetWorkspaces()
+        // Check to see if WorkspacesConnectionStatus property is set
+        internal bool IsSetWorkspacesConnectionStatus()
         {
-            return this._workspaces != null && this._workspaces.Count > 0; 
+            return this._workspacesConnectionStatus != null && this._workspacesConnectionStatus.Count > 0; 
         }
 
     }

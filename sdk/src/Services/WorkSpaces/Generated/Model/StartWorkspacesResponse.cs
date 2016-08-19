@@ -28,16 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains the results of the <a>TerminateWorkspaces</a> operation.
+    /// This is the response object from the StartWorkspaces operation.
     /// </summary>
-    public partial class TerminateWorkspacesResponse : AmazonWebServiceResponse
+    public partial class StartWorkspacesResponse : AmazonWebServiceResponse
     {
         private List<FailedWorkspaceChangeRequest> _failedRequests = new List<FailedWorkspaceChangeRequest>();
 
         /// <summary>
         /// Gets and sets the property FailedRequests. 
         /// <para>
-        /// An array of structures representing any WorkSpaces that could not be terminated.
+        /// The failed requests.
         /// </para>
         /// </summary>
         public List<FailedWorkspaceChangeRequest> FailedRequests

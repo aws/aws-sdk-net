@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains the results of the <a>TerminateWorkspaces</a> operation.
+    /// Describes the stop request.
     /// </summary>
-    public partial class TerminateWorkspacesResponse : AmazonWebServiceResponse
+    public partial class StopRequest
     {
-        private List<FailedWorkspaceChangeRequest> _failedRequests = new List<FailedWorkspaceChangeRequest>();
+        private string _workspaceId;
 
         /// <summary>
-        /// Gets and sets the property FailedRequests. 
+        /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// An array of structures representing any WorkSpaces that could not be terminated.
+        /// The ID of the WorkSpace.
         /// </para>
         /// </summary>
-        public List<FailedWorkspaceChangeRequest> FailedRequests
+        public string WorkspaceId
         {
-            get { return this._failedRequests; }
-            set { this._failedRequests = value; }
+            get { return this._workspaceId; }
+            set { this._workspaceId = value; }
         }
 
-        // Check to see if FailedRequests property is set
-        internal bool IsSetFailedRequests()
+        // Check to see if WorkspaceId property is set
+        internal bool IsSetWorkspaceId()
         {
-            return this._failedRequests != null && this._failedRequests.Count > 0; 
+            return this._workspaceId != null;
         }
 
     }

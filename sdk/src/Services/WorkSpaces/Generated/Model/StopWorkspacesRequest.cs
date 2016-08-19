@@ -28,28 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains the results of the <a>TerminateWorkspaces</a> operation.
+    /// Container for the parameters to the StopWorkspaces operation.
+    /// Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
+    /// configured as AutoStop and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
     /// </summary>
-    public partial class TerminateWorkspacesResponse : AmazonWebServiceResponse
+    public partial class StopWorkspacesRequest : AmazonWorkSpacesRequest
     {
-        private List<FailedWorkspaceChangeRequest> _failedRequests = new List<FailedWorkspaceChangeRequest>();
+        private List<StopRequest> _stopWorkspaceRequests = new List<StopRequest>();
 
         /// <summary>
-        /// Gets and sets the property FailedRequests. 
+        /// Gets and sets the property StopWorkspaceRequests. 
         /// <para>
-        /// An array of structures representing any WorkSpaces that could not be terminated.
+        /// The requests.
         /// </para>
         /// </summary>
-        public List<FailedWorkspaceChangeRequest> FailedRequests
+        public List<StopRequest> StopWorkspaceRequests
         {
-            get { return this._failedRequests; }
-            set { this._failedRequests = value; }
+            get { return this._stopWorkspaceRequests; }
+            set { this._stopWorkspaceRequests = value; }
         }
 
-        // Check to see if FailedRequests property is set
-        internal bool IsSetFailedRequests()
+        // Check to see if StopWorkspaceRequests property is set
+        internal bool IsSetStopWorkspaceRequests()
         {
-            return this._failedRequests != null && this._failedRequests.Count > 0; 
+            return this._stopWorkspaceRequests != null && this._stopWorkspaceRequests.Count > 0; 
         }
 
     }

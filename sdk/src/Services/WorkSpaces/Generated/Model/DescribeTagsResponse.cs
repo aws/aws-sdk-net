@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// The result of the describe tags action.
+    /// The result of the <a>DescribeTags</a> operation.
     /// </summary>
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {

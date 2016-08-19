@@ -28,19 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains the results for the <a>DescribeWorkspaces</a> operation.
+    /// Container for the parameters to the DescribeWorkspacesConnectionStatus operation.
+    /// Describes the connection status of a specified WorkSpace.
     /// </summary>
-    public partial class DescribeWorkspacesResponse : AmazonWebServiceResponse
+    public partial class DescribeWorkspacesConnectionStatusRequest : AmazonWorkSpacesRequest
     {
         private string _nextToken;
-        private List<Workspace> _workspaces = new List<Workspace>();
+        private List<string> _workspaceIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to this operation to retrieve the next set of items.
-        /// This token is valid for one day and must be used within that time frame.
+        /// The next token of the request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -56,26 +55,21 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Workspaces. 
+        /// Gets and sets the property WorkspaceIds. 
         /// <para>
-        /// An array of structures that contain the information about the WorkSpaces.
-        /// </para>
-        ///  
-        /// <para>
-        /// Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information
-        /// may be incomplete for a newly-created WorkSpace.
+        /// An array of strings that contain the identifiers of the WorkSpaces.
         /// </para>
         /// </summary>
-        public List<Workspace> Workspaces
+        public List<string> WorkspaceIds
         {
-            get { return this._workspaces; }
-            set { this._workspaces = value; }
+            get { return this._workspaceIds; }
+            set { this._workspaceIds = value; }
         }
 
-        // Check to see if Workspaces property is set
-        internal bool IsSetWorkspaces()
+        // Check to see if WorkspaceIds property is set
+        internal bool IsSetWorkspaceIds()
         {
-            return this._workspaces != null && this._workspaces.Count > 0; 
+            return this._workspaceIds != null && this._workspaceIds.Count > 0; 
         }
 
     }
