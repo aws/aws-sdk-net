@@ -1,3 +1,13 @@
+### 3.1.94.0 (2016-08-19 02:24 UTC)
+* EC2 (3.1.20.0)
+	* Schema Update for Dedicated Host Reservations and API Update for EC2-SpotFleet: Adding new parameters to DescribeSpotFleerRequest API
+* IdentityManagement (3.1.4.9)
+	* Doc only update
+* KeyManagementService (3.1.3.1)
+	* Updating the version numbers
+* WorkSpaces (3.1.3.0)
+	* New APIs to support the launch and management of WorkSpaces that are paid for and used by the hour.
+
 ### 3.1.93.0 (2016-08-17 01:52 UTC)
 * APIGateway (3.1.7.0)
 	* Amazon API Gateway now supports API usage plans. You can now easily define plans for 3rd party developers by associating them with individual API keys. This allows you to configure which APIs the caller can access as well as define throttling and request quota limits. You can also extract utilization data on a per-API key basis to analyze API usage and generate billing documents. Usage plans allows you to easily manage and monetize your APIs for your API-based business.
