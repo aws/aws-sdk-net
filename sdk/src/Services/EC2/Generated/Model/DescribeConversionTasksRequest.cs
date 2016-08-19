@@ -29,9 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConversionTasks operation.
-    /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-    /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i>.
+    /// Describes one or more of your conversion tasks. For more information, see the <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+    /// Import/Export User Guide</a>.
     /// 
     ///  
     /// <para>

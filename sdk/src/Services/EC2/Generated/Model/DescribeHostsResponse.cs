@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Hosts. 
         /// <para>
-        /// Information about the Dedicated hosts.
+        /// Information about the Dedicated Hosts.
         /// </para>
         /// </summary>
         public List<Host> Hosts

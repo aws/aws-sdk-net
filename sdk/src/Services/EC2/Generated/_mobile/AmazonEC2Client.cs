@@ -3000,9 +3000,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// Describes one or more of your conversion tasks. For more information, see the <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+        /// Import/Export User Guide</a>.
         /// 
         ///  
         /// <para>
@@ -3227,6 +3226,68 @@ namespace Amazon.EC2
             var unmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFlowLogsRequest,DescribeFlowLogsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeHostReservationOfferings
+
+        internal DescribeHostReservationOfferingsResponse DescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request)
+        {
+            var marshaller = new DescribeHostReservationOfferingsRequestMarshaller();
+            var unmarshaller = DescribeHostReservationOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHostReservationOfferingsRequest,DescribeHostReservationOfferingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHostReservationOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeHostReservationOfferingsResponse> DescribeHostReservationOfferingsAsync(DescribeHostReservationOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeHostReservationOfferingsRequestMarshaller();
+            var unmarshaller = DescribeHostReservationOfferingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeHostReservationOfferingsRequest,DescribeHostReservationOfferingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeHostReservations
+
+        internal DescribeHostReservationsResponse DescribeHostReservations(DescribeHostReservationsRequest request)
+        {
+            var marshaller = new DescribeHostReservationsRequestMarshaller();
+            var unmarshaller = DescribeHostReservationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHostReservationsRequest,DescribeHostReservationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHostReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeHostReservationsResponse> DescribeHostReservationsAsync(DescribeHostReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeHostReservationsRequestMarshaller();
+            var unmarshaller = DescribeHostReservationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeHostReservationsRequest,DescribeHostReservationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6159,6 +6220,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetHostReservationPurchasePreview
+
+        internal GetHostReservationPurchasePreviewResponse GetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request)
+        {
+            var marshaller = new GetHostReservationPurchasePreviewRequestMarshaller();
+            var unmarshaller = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance;
+
+            return Invoke<GetHostReservationPurchasePreviewRequest,GetHostReservationPurchasePreviewResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHostReservationPurchasePreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetHostReservationPurchasePreviewResponse> GetHostReservationPurchasePreviewAsync(GetHostReservationPurchasePreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetHostReservationPurchasePreviewRequestMarshaller();
+            var unmarshaller = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHostReservationPurchasePreviewRequest,GetHostReservationPurchasePreviewResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPasswordData
 
         internal GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)
@@ -6867,6 +6959,37 @@ namespace Amazon.EC2
             var unmarshaller = MoveAddressToVpcResponseUnmarshaller.Instance;
 
             return InvokeAsync<MoveAddressToVpcRequest,MoveAddressToVpcResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PurchaseHostReservation
+
+        internal PurchaseHostReservationResponse PurchaseHostReservation(PurchaseHostReservationRequest request)
+        {
+            var marshaller = new PurchaseHostReservationRequestMarshaller();
+            var unmarshaller = PurchaseHostReservationResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseHostReservationRequest,PurchaseHostReservationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseHostReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PurchaseHostReservationResponse> PurchaseHostReservationAsync(PurchaseHostReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PurchaseHostReservationRequestMarshaller();
+            var unmarshaller = PurchaseHostReservationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PurchaseHostReservationRequest,PurchaseHostReservationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

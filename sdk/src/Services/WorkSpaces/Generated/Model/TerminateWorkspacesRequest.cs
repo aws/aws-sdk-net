@@ -43,7 +43,7 @@ namespace Amazon.WorkSpaces.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This operation is asynchronous and will return before the WorkSpaces have been completely
+    /// This operation is asynchronous and returns before the WorkSpaces have been completely
     /// terminated.
     /// </para>
     ///  </note>

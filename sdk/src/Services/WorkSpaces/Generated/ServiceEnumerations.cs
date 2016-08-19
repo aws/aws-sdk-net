@@ -79,6 +79,110 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectionState.
+    /// </summary>
+    public class ConnectionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState CONNECTED = new ConnectionState("CONNECTED");
+        /// <summary>
+        /// Constant DISCONNECTED for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState DISCONNECTED = new ConnectionState("DISCONNECTED");
+        /// <summary>
+        /// Constant UNKNOWN for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState UNKNOWN = new ConnectionState("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionState FindValue(string value)
+        {
+            return FindValue<ConnectionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RunningMode.
+    /// </summary>
+    public class RunningMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS_ON for RunningMode
+        /// </summary>
+        public static readonly RunningMode ALWAYS_ON = new RunningMode("ALWAYS_ON");
+        /// <summary>
+        /// Constant AUTO_STOP for RunningMode
+        /// </summary>
+        public static readonly RunningMode AUTO_STOP = new RunningMode("AUTO_STOP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RunningMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RunningMode FindValue(string value)
+        {
+            return FindValue<RunningMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RunningMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkspaceDirectoryState.
     /// </summary>
     public class WorkspaceDirectoryState : ConstantClass
@@ -209,6 +313,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceState IMPAIRED = new WorkspaceState("IMPAIRED");
         /// <summary>
+        /// Constant MAINTENANCE for WorkspaceState
+        /// </summary>
+        public static readonly WorkspaceState MAINTENANCE = new WorkspaceState("MAINTENANCE");
+        /// <summary>
         /// Constant PENDING for WorkspaceState
         /// </summary>
         public static readonly WorkspaceState PENDING = new WorkspaceState("PENDING");
@@ -220,6 +328,18 @@ namespace Amazon.WorkSpaces
         /// Constant REBUILDING for WorkspaceState
         /// </summary>
         public static readonly WorkspaceState REBUILDING = new WorkspaceState("REBUILDING");
+        /// <summary>
+        /// Constant STARTING for WorkspaceState
+        /// </summary>
+        public static readonly WorkspaceState STARTING = new WorkspaceState("STARTING");
+        /// <summary>
+        /// Constant STOPPED for WorkspaceState
+        /// </summary>
+        public static readonly WorkspaceState STOPPED = new WorkspaceState("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for WorkspaceState
+        /// </summary>
+        public static readonly WorkspaceState STOPPING = new WorkspaceState("STOPPING");
         /// <summary>
         /// Constant SUSPENDED for WorkspaceState
         /// </summary>
