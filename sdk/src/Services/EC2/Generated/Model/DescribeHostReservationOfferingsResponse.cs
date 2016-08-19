@@ -28,30 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeHosts.
+    /// This is the response object from the DescribeHostReservationOfferings operation.
     /// </summary>
-    public partial class DescribeHostsResponse : AmazonWebServiceResponse
+    public partial class DescribeHostReservationOfferingsResponse : AmazonWebServiceResponse
     {
-        private List<Host> _hosts = new List<Host>();
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property Hosts. 
-        /// <para>
-        /// Information about the Dedicated Hosts.
-        /// </para>
-        /// </summary>
-        public List<Host> Hosts
-        {
-            get { return this._hosts; }
-            set { this._hosts = value; }
-        }
-
-        // Check to see if Hosts property is set
-        internal bool IsSetHosts()
-        {
-            return this._hosts != null && this._hosts.Count > 0; 
-        }
+        private List<HostOffering> _offeringSet = new List<HostOffering>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,6 +52,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferingSet. 
+        /// <para>
+        /// Information about the offerings.
+        /// </para>
+        /// </summary>
+        public List<HostOffering> OfferingSet
+        {
+            get { return this._offeringSet; }
+            set { this._offeringSet = value; }
+        }
+
+        // Check to see if OfferingSet property is set
+        internal bool IsSetOfferingSet()
+        {
+            return this._offeringSet != null && this._offeringSet.Count > 0; 
         }
 
     }

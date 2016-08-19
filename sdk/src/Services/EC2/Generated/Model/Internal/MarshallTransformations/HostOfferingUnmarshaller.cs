@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpotFleetRequestConfig Object
+    /// Response Unmarshaller for HostOffering Object
     /// </summary>  
-    public class SpotFleetRequestConfigUnmarshaller : IUnmarshaller<SpotFleetRequestConfig, XmlUnmarshallerContext>, IUnmarshaller<SpotFleetRequestConfig, JsonUnmarshallerContext>
+    public class HostOfferingUnmarshaller : IUnmarshaller<HostOffering, XmlUnmarshallerContext>, IUnmarshaller<HostOffering, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpotFleetRequestConfig Unmarshall(XmlUnmarshallerContext context)
+        public HostOffering Unmarshall(XmlUnmarshallerContext context)
         {
-            SpotFleetRequestConfig unmarshalledObject = new SpotFleetRequestConfig();
+            HostOffering unmarshalledObject = new HostOffering();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,34 +54,46 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("activityStatus", targetDepth))
+                    if (context.TestExpression("currencyCode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ActivityStatus = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("spotFleetRequestConfig", targetDepth))
+                    if (context.TestExpression("duration", targetDepth))
                     {
-                        var unmarshaller = SpotFleetRequestConfigDataUnmarshaller.Instance;
-                        unmarshalledObject.ConfigData = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("createTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("spotFleetRequestId", targetDepth))
+                    if (context.TestExpression("hourlyPrice", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpotFleetRequestId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.HourlyPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("spotFleetRequestState", targetDepth))
+                    if (context.TestExpression("instanceFamily", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpotFleetRequestState = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.InstanceFamily = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("offeringId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OfferingId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("paymentOption", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("upfrontPrice", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UpfrontPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -99,18 +111,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpotFleetRequestConfig Unmarshall(JsonUnmarshallerContext context)
+        public HostOffering Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static SpotFleetRequestConfigUnmarshaller _instance = new SpotFleetRequestConfigUnmarshaller();        
+        private static HostOfferingUnmarshaller _instance = new HostOfferingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpotFleetRequestConfigUnmarshaller Instance
+        public static HostOfferingUnmarshaller Instance
         {
             get
             {

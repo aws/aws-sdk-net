@@ -28,20 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeHosts operation.
-    /// Describes one or more of your Dedicated Hosts.
-    /// 
-    ///  
-    /// <para>
-    /// The results describe only the Dedicated Hosts in the region you're currently using.
-    /// All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that
-    /// have recently been released will be listed with the state <code>released</code>.
-    /// </para>
+    /// Container for the parameters to the DescribeHostReservations operation.
+    /// Describes Dedicated Host Reservations which are associated with Dedicated Hosts in
+    /// your account.
     /// </summary>
-    public partial class DescribeHostsRequest : AmazonEC2Request
+    public partial class DescribeHostReservationsRequest : AmazonEC2Request
     {
         private List<Filter> _filter = new List<Filter>();
-        private List<string> _hostIds = new List<string>();
+        private List<string> _hostReservationIdSet = new List<string>();
         private int? _maxResults;
         private string _nextToken;
 
@@ -52,32 +46,17 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>instance-type</code> - The instance type size that the Dedicated Host is configured
-        /// to support.
+        ///  <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code>
-        /// | <code>off</code>).
+        ///  <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial
+        /// Upfront</code> | <code>All Upfront</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>host-reservation-id</code> - The ID of the reservation assigned to this host.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>client-token</code> - The idempotency token you provided when you launched
-        /// the instance
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>state</code>- The allocation state of the Dedicated Host (<code>available</code>
-        /// | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code>
-        /// | <code>released-permanent-failure</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>availability-zone</code> - The Availability Zone of the host.
+        ///  <code>state</code> - The state of the reservation (<code>payment-pending</code> |
+        /// <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -94,21 +73,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostIds. 
+        /// Gets and sets the property HostReservationIdSet. 
         /// <para>
-        /// The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.
+        /// One or more host reservation IDs.
         /// </para>
         /// </summary>
-        public List<string> HostIds
+        public List<string> HostReservationIdSet
         {
-            get { return this._hostIds; }
-            set { this._hostIds = value; }
+            get { return this._hostReservationIdSet; }
+            set { this._hostReservationIdSet = value; }
         }
 
-        // Check to see if HostIds property is set
-        internal bool IsSetHostIds()
+        // Check to see if HostReservationIdSet property is set
+        internal bool IsSetHostReservationIdSet()
         {
-            return this._hostIds != null && this._hostIds.Count > 0; 
+            return this._hostReservationIdSet != null && this._hostReservationIdSet.Count > 0; 
         }
 
         /// <summary>
@@ -117,8 +96,7 @@ namespace Amazon.EC2.Model
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results can be seen by sending another request with the returned <code>nextToken</code>
         /// value. This value can be between 5 and 500; if <code>maxResults</code> is given a
-        /// larger value than 500, you will receive an error. You cannot specify this parameter
-        /// and the host IDs parameter in the same request.
+        /// larger value than 500, you will receive an error.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -136,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next page of results.
+        /// The token to use to retrieve the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

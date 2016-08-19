@@ -32,90 +32,95 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpotFleetRequestConfig Object
+    /// Response Unmarshaller for PurchaseHostReservation operation
     /// </summary>  
-    public class SpotFleetRequestConfigUnmarshaller : IUnmarshaller<SpotFleetRequestConfig, XmlUnmarshallerContext>, IUnmarshaller<SpotFleetRequestConfig, JsonUnmarshallerContext>
+    public class PurchaseHostReservationResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpotFleetRequestConfig Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            SpotFleetRequestConfig unmarshalledObject = new SpotFleetRequestConfig();
+            PurchaseHostReservationResponse response = new PurchaseHostReservationResponse();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+               targetDepth = 2;
+
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("activityStatus", targetDepth))
+
+                    if (context.TestExpression("clientToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ActivityStatus = unmarshaller.Unmarshall(context);
+                        response.ClientToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("spotFleetRequestConfig", targetDepth))
-                    {
-                        var unmarshaller = SpotFleetRequestConfigDataUnmarshaller.Instance;
-                        unmarshalledObject.ConfigData = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("createTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("spotFleetRequestId", targetDepth))
+                    if (context.TestExpression("currencyCode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpotFleetRequestId = unmarshaller.Unmarshall(context);
+                        response.CurrencyCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("spotFleetRequestState", targetDepth))
+                    if (context.TestExpression("purchase/member", targetDepth))
+                    {
+                        var unmarshaller = PurchaseUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Purchase.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("totalHourlyPrice", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpotFleetRequestState = unmarshaller.Unmarshall(context);
+                        response.TotalHourlyPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                    if (context.TestExpression("totalUpfrontPrice", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.TotalUpfrontPrice = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                } 
             }
 
-            return unmarshalledObject;
+            return response;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public SpotFleetRequestConfig Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            return null;
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+        private static PurchaseHostReservationResponseUnmarshaller _instance = new PurchaseHostReservationResponseUnmarshaller();        
 
-
-        private static SpotFleetRequestConfigUnmarshaller _instance = new SpotFleetRequestConfigUnmarshaller();        
+        internal static PurchaseHostReservationResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpotFleetRequestConfigUnmarshaller Instance
+        public static PurchaseHostReservationResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

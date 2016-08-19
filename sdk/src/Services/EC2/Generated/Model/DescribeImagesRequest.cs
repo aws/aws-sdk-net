@@ -135,7 +135,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-alias</code> - The AWS account alias (for example, <code>amazon</code>).
+        ///  <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code>
+        /// | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to
+        /// be confused with the user-configured AWS account alias, which is set from the IAM
+        /// console.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -244,10 +247,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Owners. 
         /// <para>
-        /// Filters the images by the owner. Specify an AWS account ID, <code>amazon</code> (owner
-        /// is Amazon), <code>aws-marketplace</code> (owner is AWS Marketplace), <code>self</code>
-        /// (owner is the sender of the request). Omitting this option returns all images for
-        /// which you have launch permissions, regardless of ownership.
+        /// Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner
+        /// is the sender of the request), or an AWS owner alias (valid values are <code>amazon</code>
+        /// | <code>aws-marketplace</code> | <code>microsoft</code>). Omitting this option returns
+        /// all images for which you have launch permissions, regardless of ownership.
         /// </para>
         /// </summary>
         public List<string> Owners

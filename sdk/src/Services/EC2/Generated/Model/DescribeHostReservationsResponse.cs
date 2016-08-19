@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeHosts.
+    /// This is the response object from the DescribeHostReservations operation.
     /// </summary>
-    public partial class DescribeHostsResponse : AmazonWebServiceResponse
+    public partial class DescribeHostReservationsResponse : AmazonWebServiceResponse
     {
-        private List<Host> _hosts = new List<Host>();
+        private List<HostReservation> _hostReservationSet = new List<HostReservation>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Hosts. 
+        /// Gets and sets the property HostReservationSet. 
         /// <para>
-        /// Information about the Dedicated Hosts.
+        /// Details about the reservation's configuration.
         /// </para>
         /// </summary>
-        public List<Host> Hosts
+        public List<HostReservation> HostReservationSet
         {
-            get { return this._hosts; }
-            set { this._hosts = value; }
+            get { return this._hostReservationSet; }
+            set { this._hostReservationSet = value; }
         }
 
-        // Check to see if Hosts property is set
-        internal bool IsSetHosts()
+        // Check to see if HostReservationSet property is set
+        internal bool IsSetHostReservationSet()
         {
-            return this._hosts != null && this._hosts.Count > 0; 
+            return this._hostReservationSet != null && this._hostReservationSet.Count > 0; 
         }
 
         /// <summary>

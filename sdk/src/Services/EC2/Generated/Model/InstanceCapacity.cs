@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Information about the instance type that the Dedicated host supports.
+    /// Information about the instance type that the Dedicated Host supports.
     /// </summary>
     public partial class InstanceCapacity
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailableCapacity. 
         /// <para>
-        /// The number of instances that can still be launched onto the Dedicated host.
+        /// The number of instances that can still be launched onto the Dedicated Host.
         /// </para>
         /// </summary>
         public int AvailableCapacity
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type size supported by the Dedicated host.
+        /// The instance type size supported by the Dedicated Host.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TotalCapacity. 
         /// <para>
-        /// The total number of instances that can be launched onto the Dedicated host.
+        /// The total number of instances that can be launched onto the Dedicated Host.
         /// </para>
         /// </summary>
         public int TotalCapacity
