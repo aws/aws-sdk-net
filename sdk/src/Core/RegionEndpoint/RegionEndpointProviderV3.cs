@@ -155,7 +155,9 @@ namespace Amazon.Internal
         private void CreateEndpointAndAddToServiceMap(JsonData result, string regionName, string serviceName, bool dualStack)
         {
             string template = (string)result["hostname"];
-            string hostname = null;
+            string hostname = template.Replace("{service}", serviceName)
+                                 .Replace("{region}", regionName)
+                                 .Replace("{dnsSuffix}", (string)_partitionJsonData["dnsSuffix"]);
 
             if (dualStack)
             {
@@ -165,33 +167,34 @@ namespace Amazon.Internal
                 // S3's 'external' endpoints do not support dualstack and should not be transformed.
                 if (serviceName.Equals("s3", StringComparison.OrdinalIgnoreCase))
                 {
-                    if (template.Equals("s3.amazonaws.com", StringComparison.OrdinalIgnoreCase))
+                    if (hostname.Equals("s3.amazonaws.com", StringComparison.OrdinalIgnoreCase))
+                    {
                         hostname = "s3.dualstack.us-east-1.amazonaws.com";
+                    }
                     else
                     {
-                        var isExternalEndpoint = template.StartsWith("s3-external-", StringComparison.OrdinalIgnoreCase);
+                        var isExternalEndpoint = hostname.StartsWith("s3-external-", StringComparison.OrdinalIgnoreCase);
                         if (!isExternalEndpoint)
                         {
                             // transform fixed s3-<region> to s3.<region> and then onto s3.dualstack.<region>,
                             // bypassing endpoints that do not start with the expected tags.
-                            if (template.StartsWith("s3-", StringComparison.OrdinalIgnoreCase))
-                                hostname = "s3." + template.Substring(3);
+                            if (hostname.StartsWith("s3-", StringComparison.OrdinalIgnoreCase))
+                                hostname = "s3." + hostname.Substring(3);
 
-                            if (template.StartsWith("s3.", StringComparison.OrdinalIgnoreCase))
-                                hostname = template.Replace("s3.", "s3.dualstack.");
+                            if (hostname.StartsWith("s3.", StringComparison.OrdinalIgnoreCase))
+                                hostname = hostname.Replace("s3.", "s3.dualstack.");
                         }
                     }
                 }
                 else
                 {
-                    hostname = template.Replace("{region}", "dualstack.{region}");
+                    // For certain region and endpoint combination, we actually get an explicit endpoint as "hostname" property
+                    // (e.g. sts.ap-northeast-2.amazon.com). We can't assume that the template variable will be {service}.{region}.{dnsSuffix},
+                    // so just construct a brand new endpoint.
+                    hostname = string.Format("{0}.{1}.{2}", serviceName,
+                                                            "dualstack." + regionName,
+                                                            (string)_partitionJsonData["dnsSuffix"]);
                 }
-            }
-            else
-            {
-                hostname = template.Replace("{service}", serviceName)
-                                 .Replace("{region}", regionName)
-                                 .Replace("{dnsSuffix}", (string)_partitionJsonData["dnsSuffix"]);
             }
 
             string authRegion = null;
