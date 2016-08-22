@@ -403,7 +403,7 @@ namespace Amazon.Util
         /// <summary>
         /// Return the list of items in the metadata at path.
         /// </summary>
-        /// <param name="path">Path at which to query the metadata</param>
+        /// <param name="path">Path at which to query the metadata; may be relative or absolute.</param>
         /// <returns>List of items returned by the metadata service</returns>
         public static IEnumerable<string> GetItems(string path)
         {
@@ -413,7 +413,7 @@ namespace Amazon.Util
         /// <summary>
         /// Return the metadata at the path
         /// </summary>
-        /// <param name="path">Path at which to query the metadata</param>
+        /// <param name="path">Path at which to query the metadata; may be relative or absolute.</param>
         /// <returns>Data returned by the metadata service</returns>
         public static string GetData(string path)
         {
@@ -423,7 +423,7 @@ namespace Amazon.Util
         /// <summary>
         /// Return the metadata at the path
         /// </summary>
-        /// <param name="path">Path at which to query the metadata</param>
+        /// <param name="path">Path at which to query the metadata; may be relative or absolute.</param>
         /// <param name="tries">Number of attempts to make</param>
         /// <returns>Data returned by the metadata service</returns>
         public static string GetData(string path, int tries)
@@ -437,7 +437,7 @@ namespace Amazon.Util
         /// <summary>
         /// Return the list of items in the metadata at path.
         /// </summary>
-        /// <param name="path">Path at which to query the metadata</param>
+        /// <param name="path">Path at which to query the metadata; may be relative or absolute.</param>
         /// <param name="tries">Number of attempts to make</param>
         /// <returns>List of items returned by the metadata service</returns>
         public static IEnumerable<string> GetItems(string path, int tries)
@@ -465,13 +465,19 @@ namespace Amazon.Util
             }
         }
 
-        private static List<string> GetItems(string path, int tries, bool slurp)
+        private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp)
         {
             var items = new List<string>();
 
             try
             {
-                var content = AWSSDKUtils.DownloadStringContent(new Uri(EC2_METADATA_ROOT + path),  TimeSpan.FromSeconds(5));
+                // if we are given a relative path, we assume the data we need exists under the
+                // main metadata root
+                var uri = relativeOrAbsolutePath.StartsWith(EC2_METADATA_SVC, StringComparison.Ordinal)
+                            ? new Uri(relativeOrAbsolutePath)
+                            : new Uri(EC2_METADATA_ROOT + relativeOrAbsolutePath);
+
+                var content = AWSSDKUtils.DownloadStringContent(uri,  TimeSpan.FromSeconds(5));
                 using (var stream = new StringReader(content))
                 {
                     if (slurp)
@@ -502,7 +508,7 @@ namespace Amazon.Util
                 }
 
                 PauseExponentially(tries);
-                return GetItems(path, tries - 1, slurp);
+                return GetItems(relativeOrAbsolutePath, tries - 1, slurp);
             }
 
             return items;
