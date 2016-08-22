@@ -191,7 +191,7 @@ namespace Amazon.Internal
                     // For certain region and endpoint combination, we actually get an explicit endpoint as "hostname" property
                     // (e.g. sts.ap-northeast-2.amazon.com). We can't assume that the template variable will be {service}.{region}.{dnsSuffix},
                     // so just construct a brand new endpoint.
-                    hostname = string.Format("{0}.{1}.{2}", serviceName,
+                    hostname = string.Format(CultureInfo.InvariantCulture, "{0}.{1}.{2}", serviceName,
                                                             "dualstack." + regionName,
                                                             (string)_partitionJsonData["dnsSuffix"]);
                 }
