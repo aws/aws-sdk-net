@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 * 
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ using UnityEngine;
 using Amazon.Runtime.Internal.Util;
 using Logger = Amazon.Runtime.Internal.Util.Logger;
 using ILogger = Amazon.Runtime.Internal.Util.ILogger;
-using UnityEngine.Experimental.Networking;
 using System.Text;
 
 namespace Amazon.Runtime.Internal.Transform
