@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ using System.ComponentModel;
 using System.IO;
 using System.Net;
 using System.Threading;
-using UnityEngine.Experimental.Networking;
 
 namespace Amazon.Runtime.Internal
 {
