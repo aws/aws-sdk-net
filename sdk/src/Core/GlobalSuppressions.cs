@@ -135,6 +135,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.Runtime.FallbackCredentialsFactory+CredentialsGenerator")]
 [module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.Runtime.RefreshingAWSCredentials+CredentialsRefreshState")]
 [module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.Runtime.StoredProfileFederatedCredentials+RequestUserCredential")]
+[module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.Util.AWSPublicIpAddressRange+AddressFormat")]
 
 // Normalize strings to uppercase, breaking change
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Auth.AccessControlPolicy.ConditionFactory.#NewCondition(System.String,System.Boolean)")]
