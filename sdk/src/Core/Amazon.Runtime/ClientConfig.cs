@@ -216,9 +216,9 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets the LogResponse.
-        /// If this property is set to true, the service response
-        /// is read in its entirety and logged.
+        /// Gets and sets the LogResponse property.
+        /// If this property is set to true, the service response is logged.
+        /// The size of response being logged is controlled by the AWSConfigs.LoggingConfig.LogResponsesSizeLimit property.
         /// </summary>
         public bool LogResponse
         {
@@ -227,10 +227,13 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets the ReadEntireResponse.
-        /// If this property is set to true, the service response
-        /// is read in its entirety before being processed.
+        /// Gets and sets the ReadEntireResponse property.
+        /// NOTE: This property does not effect response processing and is deprecated.
+        /// To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig
+        /// properties can be used.
         /// </summary>
+        [Obsolete("This property does not effect response processing and is deprecated." +
+            "To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig.LogResponses properties can be used.")]
         public bool ReadEntireResponse
         {
             get { return this.readEntireResponse; }
