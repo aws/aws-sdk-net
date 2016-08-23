@@ -34,6 +34,18 @@ namespace Amazon.Util
         /// </summary>
         public const string GlobalRegionIdentifier = "GLOBAL";
 
+#region Json parse keys
+        const string createDateKey = "createDate";
+        const string ipv4PrefixesKey = "prefixes";
+        const string ipv4PrefixKey = "ip_prefix";
+        const string ipv6PrefixesKey = "ipv6_prefixes";
+        const string ipv6PrefixKey = "ipv6_prefix";
+        const string regionKey = "region";
+        const string serviceKey = "service";
+
+        const string createDateFormatString = "yyyy-MM-dd-HH-mm-ss";
+#endregion
+
         /// <summary>
         /// Collection of service keys found in the data file.
         /// </summary>
@@ -118,14 +130,6 @@ namespace Amazon.Util
 
         private static AWSPublicIpAddressRanges Parse(string fileContent)
         {
-            const string createDateKey = "createDate";
-            const string prefixesKey = "prefixes";
-            const string ipPrefixKey = "ip_prefix";
-            const string regionKey = "region";
-            const string serviceKey = "service";
-
-            const string createDateFormatString = "yyyy-MM-dd-HH-mm-ss";
-
             try
             {
                 var instance = new AWSPublicIpAddressRanges();
@@ -143,27 +147,42 @@ namespace Amazon.Util
 
                 instance.CreateDate = creationDateTime.GetValueOrDefault(DateTime.Now.ToUniversalTime());
 
+                // ipv4 and v6 addresses occupy different keys in the data file and can't easily be merged
+                // so process each subset separately
                 var parsedRanges = new List<AWSPublicIpAddressRange>();
+                var ipv4Ranges = json[ipv4PrefixesKey];
+                var ipv6Ranges = json[ipv6PrefixesKey];
+                if (!ipv4Ranges.IsArray || !ipv6Ranges.IsArray)
+                    throw new InvalidDataException("Expected array content for ip_prefixes and/or ipv6_prefixes keys.");
+
+                parsedRanges.AddRange(ParseRange(ipv4Ranges, AWSPublicIpAddressRange.AddressFormat.Ipv4));
+                parsedRanges.AddRange(ParseRange(ipv6Ranges, AWSPublicIpAddressRange.AddressFormat.Ipv6));
+
                 instance.AllAddressRanges = parsedRanges;
-
-                var ranges = json[prefixesKey];
-                if (!ranges.IsArray)
-                    throw new InvalidDataException("Expected array content for prefixes key.");
-
-                parsedRanges.AddRange(from JsonData range in ranges
-                    select new AWSPublicIpAddressRange
-                    {
-                        IpPrefix = (string)range[ipPrefixKey],
-                        Region = (string)range[regionKey],
-                        Service = (string)range[serviceKey]
-                    });
-
                 return instance;
             }
             catch (Exception e)
             {
                 throw new InvalidDataException("IP address ranges content in unexpected/invalid format.", e);
             }
+        }
+
+        private static IEnumerable<AWSPublicIpAddressRange> ParseRange(JsonData ranges, AWSPublicIpAddressRange.AddressFormat addressFormat)
+        {
+            var prefixKey = addressFormat == AWSPublicIpAddressRange.AddressFormat.Ipv4 
+                    ? ipv4PrefixKey
+                    : ipv6PrefixKey;
+
+            var parsedRanges = new List<AWSPublicIpAddressRange>();
+            parsedRanges.AddRange(from JsonData range in ranges
+                select new AWSPublicIpAddressRange
+                {
+                    IpAddressFormat = addressFormat,
+                    IpPrefix = (string)range[prefixKey],
+                    Region = (string)range[regionKey],
+                    Service = (string)range[serviceKey]
+                });
+            return parsedRanges;
         }
 
         private AWSPublicIpAddressRanges()
@@ -179,9 +198,20 @@ namespace Amazon.Util
     public class AWSPublicIpAddressRange
     {
         /// <summary>
-        /// The public IP address range, in CIDR notation.
+        /// The public IPv4 or Ipv6 address range, in CIDR notation.
         /// </summary>
         public string IpPrefix { get; internal set; }
+
+        public enum AddressFormat
+        {
+            Ipv4,
+            Ipv6
+        }
+
+        /// <summary>
+        /// Indicates ipv4 or v6 format of the address
+        /// </summary>
+        public AddressFormat IpAddressFormat {  get; internal set; }
 
         /// <summary>
         /// The AWS region or GLOBAL for edge locations. Note that the CLOUDFRONT and ROUTE53 
