@@ -26,19 +26,11 @@ namespace Amazon.DNXCore.IntegrationTests
 
         [Trait(CategoryAttribute, "Glacier")]
         [Fact]
-
-        public async Task Createvault()
+        public async Task ListGlacierCalls()
         {
-            await Client.CreateVaultAsync(new CreateVaultRequest()
-            {
-                VaultName = testingVaultName
-            }).ConfigureAwait(false);
-
             Assert.NotNull(await Client.ListJobsAsync(new ListJobsRequest { VaultName = testingVaultName }).ConfigureAwait(false));
             Assert.NotNull(await Client.ListMultipartUploadsAsync(new Glacier.Model.ListMultipartUploadsRequest { VaultName = testingVaultName }).ConfigureAwait(false));
             Assert.NotNull(await Client.ListVaultsAsync(new ListVaultsRequest()).ConfigureAwait(false));
-
-            Client.DeleteVaultAsync(new DeleteVaultRequest { VaultName = testingVaultName }).Wait();
         }
 
         [Fact]
@@ -69,7 +61,7 @@ namespace Amazon.DNXCore.IntegrationTests
             }
             finally
             {
-                Client.DeleteArchiveAsync(new DeleteArchiveRequest { AccountId = accountID, VaultName = testingVaultName, ArchiveId = archiveID }).Wait();
+                await Client.DeleteArchiveAsync(new DeleteArchiveRequest { AccountId = accountID, VaultName = testingVaultName, ArchiveId = archiveID });
             }
         }
     }
