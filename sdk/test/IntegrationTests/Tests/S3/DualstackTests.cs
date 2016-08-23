@@ -83,15 +83,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // a bucket name is present.
                 string bucketName = null;
                 foreach (var bucket in listBucketsResponse.Buckets)
-                {       
-                    var bucketLocationResponse = s3Client.GetBucketLocation(bucket.BucketName);
-                    if (string.IsNullOrEmpty(bucketLocationResponse.Location) && s3Config.RegionEndpoint == RegionEndpoint.USEast1)
-                        bucketName = bucket.BucketName;
-                    else if (string.Equals(s3Config.RegionEndpoint.SystemName, bucketLocationResponse.Location, StringComparison.OrdinalIgnoreCase))
-                        bucketName = bucket.BucketName;
+                {
+                    try
+                    {
+                        var bucketLocationResponse = s3Client.GetBucketLocation(bucket.BucketName);
+                        if (string.IsNullOrEmpty(bucketLocationResponse.Location) && s3Config.RegionEndpoint == RegionEndpoint.USEast1)
+                            bucketName = bucket.BucketName;
+                        else if (string.Equals(s3Config.RegionEndpoint.SystemName, bucketLocationResponse.Location, StringComparison.OrdinalIgnoreCase))
+                            bucketName = bucket.BucketName;
 
-                    if (!string.IsNullOrEmpty(bucketName))
-                        break;
+                        if (!string.IsNullOrEmpty(bucketName))
+                            break;
+                    }
+                    catch(AmazonS3Exception e)
+                    {
+                        if (e.StatusCode != System.Net.HttpStatusCode.NotFound)
+                            throw;
+                    }
                 }
 
                 if (!string.IsNullOrEmpty(bucketName))
