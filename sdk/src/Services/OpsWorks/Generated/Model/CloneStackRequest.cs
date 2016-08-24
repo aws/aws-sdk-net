@@ -509,9 +509,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The cloned stack AWS region, such as "us-east-1". For more information about AWS regions,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>.
+        /// The cloned stack AWS region, such as "ap-northeast-2". For more information about
+        /// AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.
         /// </para>
         /// </summary>
         public string Region
