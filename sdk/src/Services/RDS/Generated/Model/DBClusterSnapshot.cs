@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         private List<string> _availabilityZones = new List<string>();
         private DateTime? _clusterCreateTime;
         private string _dbClusterIdentifier;
+        private string _dbClusterSnapshotArn;
         private string _dbClusterSnapshotIdentifier;
         private string _engine;
         private string _engineVersion;
@@ -137,6 +138,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterSnapshotArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB cluster snapshot.
+        /// </para>
+        /// </summary>
+        public string DBClusterSnapshotArn
+        {
+            get { return this._dbClusterSnapshotArn; }
+            set { this._dbClusterSnapshotArn = value; }
+        }
+
+        // Check to see if DBClusterSnapshotArn property is set
+        internal bool IsSetDBClusterSnapshotArn()
+        {
+            return this._dbClusterSnapshotArn != null;
         }
 
         /// <summary>

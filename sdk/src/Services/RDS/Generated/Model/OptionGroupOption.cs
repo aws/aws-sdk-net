@@ -156,8 +156,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupOptionSettings. 
         /// <para>
-        /// Specifies the option settings that are available (and the default value) for each
-        /// option in an option group.
+        /// The option settings that are available (and the default value) for each option in
+        /// an option group.
         /// </para>
         /// </summary>
         public List<OptionGroupOptionSetting> OptionGroupOptionSettings
@@ -175,7 +175,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupOptionVersions. 
         /// <para>
-        /// Specifies the versions that are available for the option.
+        /// The versions that are available for the option.
         /// </para>
         /// </summary>
         public List<OptionVersion> OptionGroupOptionVersions
@@ -193,7 +193,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionsDependedOn. 
         /// <para>
-        /// List of all options that are prerequisites for this option.
+        /// The options that are prerequisites for this option.
         /// </para>
         /// </summary>
         public List<string> OptionsDependedOn
@@ -211,9 +211,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Permanent. 
         /// <para>
-        /// A permanent option cannot be removed from the option group once the option group is
-        /// used, and it cannot be removed from the db instance after assigning an option group
-        /// with this permanent option.
+        /// Permanent options can never be removed from an option group. An option group containing
+        /// a permanent option can't be removed from a DB instance.
         /// </para>
         /// </summary>
         public bool Permanent
@@ -231,9 +230,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Persistent. 
         /// <para>
-        /// A persistent option cannot be removed from the option group once the option group
-        /// is used, but this option can be removed from the db instance while modifying the related
-        /// data and assigning another option group without this option.
+        /// Persistent options can't be removed from an option group while DB instances are associated
+        /// with the option group. If you disassociate all DB instances from the option group,
+        /// your can remove the persistent option from the option group.
         /// </para>
         /// </summary>
         public bool Persistent

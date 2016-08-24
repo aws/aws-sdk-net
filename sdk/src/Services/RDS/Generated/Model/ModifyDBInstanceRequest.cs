@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBInstance operation.
-    /// Modify settings for a DB instance. You can change one or more database configuration
+    /// Modifies settings for a DB instance. You can change one or more database configuration
     /// parameters by specifying these parameters and the new values in the request.
     /// </summary>
     public partial class ModifyDBInstanceRequest : AmazonRDSRequest

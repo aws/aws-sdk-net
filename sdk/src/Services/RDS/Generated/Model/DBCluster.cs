@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private int? _backupRetentionPeriod;
         private string _characterSetName;
         private string _databaseName;
+        private string _dbClusterArn;
         private string _dbClusterIdentifier;
         private List<DBClusterMember> _dbClusterMembers = new List<DBClusterMember>();
         private List<DBClusterOptionGroupStatus> _dbClusterOptionGroupMemberships = new List<DBClusterOptionGroupStatus>();
@@ -182,6 +183,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB cluster.
+        /// </para>
+        /// </summary>
+        public string DBClusterArn
+        {
+            get { return this._dbClusterArn; }
+            set { this._dbClusterArn = value; }
+        }
+
+        // Check to see if DBClusterArn property is set
+        internal bool IsSetDBClusterArn()
+        {
+            return this._dbClusterArn != null;
         }
 
         /// <summary>

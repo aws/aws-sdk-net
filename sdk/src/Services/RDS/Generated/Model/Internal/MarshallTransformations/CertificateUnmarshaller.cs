@@ -54,6 +54,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CertificateArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CertificateIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
