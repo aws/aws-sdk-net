@@ -1,3 +1,9 @@
+### 3.1.95.0 (2016-08-24 00:11 UTC)
+* OpsWorks (3.1.3.5)
+	* Documentation updates for expanded region support.
+* RDS (3.1.16.0)
+	* Addition of resource ARNs to Describe APIs.
+
 ### 3.1.94.0 (2016-08-19 02:24 UTC)
 * EC2 (3.1.20.0)
 	* Schema Update for Dedicated Host Reservations and API Update for EC2-SpotFleet: Adding new parameters to DescribeSpotFleerRequest API
