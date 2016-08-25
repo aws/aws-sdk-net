@@ -340,16 +340,19 @@ namespace Amazon.Runtime
             // If HttpClientHandler.AllowAutoRedirect is set to false (e.g. S3),
             // redirects are returned as responses.
             httpMessageHandler.AllowAutoRedirect = _clientConfig.AllowAutoRedirect;
+#if CORECLR
             var proxy = _clientConfig.GetWebProxy();
             if (proxy != null)
             {
                 httpMessageHandler.Proxy = proxy;
-                if(_clientConfig.ProxyCredentials != null)
-                {
-                    httpMessageHandler.Proxy.Credentials = _clientConfig.ProxyCredentials;
-                }
             }
-            
+#endif
+
+            if (httpMessageHandler.Proxy != null && _clientConfig.ProxyCredentials != null)
+            {
+                httpMessageHandler.Proxy.Credentials = _clientConfig.ProxyCredentials;
+            }
+
             var httpClient = new HttpClient(httpMessageHandler);
             if (_clientConfig.Timeout.HasValue)
             {

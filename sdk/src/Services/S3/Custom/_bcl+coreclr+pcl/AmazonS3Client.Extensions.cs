@@ -37,13 +37,13 @@ namespace Amazon.S3
     {
         internal void ConfigureProxy(HttpWebRequest httpRequest)
         {
-#if !CORECLR
+#if BCL
             if (!string.IsNullOrEmpty(Config.ProxyHost) && Config.ProxyPort != -1)
             {
                 WebProxy proxy = new WebProxy(Config.ProxyHost, Config.ProxyPort);
                 httpRequest.Proxy = proxy;
             }
-#else
+#elif CORECLR
             httpRequest.Proxy = Config.GetWebProxy();
 #endif
             if (httpRequest.Proxy != null && Config.ProxyCredentials != null)
