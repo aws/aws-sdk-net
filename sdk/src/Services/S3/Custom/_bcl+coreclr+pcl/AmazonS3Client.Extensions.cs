@@ -37,6 +37,7 @@ namespace Amazon.S3
     {
         internal void ConfigureProxy(HttpWebRequest httpRequest)
         {
+#if BCL||CORECLR
 #if BCL
             if (!string.IsNullOrEmpty(Config.ProxyHost) && Config.ProxyPort != -1)
             {
@@ -50,6 +51,7 @@ namespace Amazon.S3
             {
                 httpRequest.Proxy.Credentials = Config.ProxyCredentials;
             }
+#endif
         }
 
 
