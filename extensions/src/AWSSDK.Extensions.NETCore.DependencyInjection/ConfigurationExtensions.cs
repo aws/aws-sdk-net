@@ -21,7 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Amazon;
 
-namespace AWSSDK.Extensions.NETCore.DependencyInjection
+namespace Microsoft.Extensions.Configuration
 {
     /// <summary>
     /// This class adds extension methods to IConfiguration making it easier to pull out
@@ -29,6 +29,7 @@ namespace AWSSDK.Extensions.NETCore.DependencyInjection
     /// </summary>
     public static class ConfigurationExtensions
     {
+        public const string DEFAULT_CONFIG_SECTION = "AWS";
         /// <summary>
         /// Constructs an AWSOptions class with the options specifed in the "AWS" section in the IConfiguration object.
         /// </summary>
@@ -36,9 +37,20 @@ namespace AWSSDK.Extensions.NETCore.DependencyInjection
         /// <returns></returns>
         public static AWSOptions GetAWSOptions(this IConfiguration config)
         {
+            return GetAWSOptions(config, DEFAULT_CONFIG_SECTION);
+        }
+
+        /// <summary>
+        /// Constructs an AWSOptions class with the options specifed in the "AWS" section in the IConfiguration object.
+        /// </summary>
+        /// <param name="configSection">The config section to extract AWS options from.</param>
+        /// <param name="config"></param>
+        /// <returns></returns>, 
+        public static AWSOptions GetAWSOptions(this IConfiguration config, string configSection)
+        {
             var options = new AWSOptions();
 
-            var section = config.GetSection("AWS") ?? config;
+            var section = config.GetSection(configSection) ?? config;
             if (section == null)
                 return options;
 

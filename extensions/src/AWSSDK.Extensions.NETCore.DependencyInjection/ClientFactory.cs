@@ -29,8 +29,8 @@ namespace Amazon.Extensions.NETCore.DependencyInjection
     /// </summary>
     public class ClientFactory
     {
-        private static readonly Type[] EMPTY_TYPES = new Type[0];
-        private static readonly object[] EMPTY_PARAMETERS = new object[0];
+        private static readonly Type[] EMPTY_TYPES = Array.Empty<Type>();
+        private static readonly object[] EMPTY_PARAMETERS = Array.Empty<object>();
 
         Type _type;
 

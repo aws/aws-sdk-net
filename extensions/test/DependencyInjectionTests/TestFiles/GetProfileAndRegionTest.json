@@ -1,0 +1,6 @@
+﻿{
+  "AWS": {
+    "Profile": "myProfile",
+    "Region": "us-west-2"
+  }
+}
