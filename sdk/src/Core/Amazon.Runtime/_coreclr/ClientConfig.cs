@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -47,6 +47,8 @@ namespace Amazon.Runtime
         /// <summary>
         /// Unpacks the host, port and any credentials info into the instance's
         /// proxy-related fields.
+        /// Unlike the SetWebProxy implementation on .NET 3.5/4.5,the Host and the Port are not reconstructed from the 
+        /// input proxyuri
         /// </summary>
         /// <param name="proxy">The proxy details</param>
         public void SetWebProxy(IWebProxy proxy)
