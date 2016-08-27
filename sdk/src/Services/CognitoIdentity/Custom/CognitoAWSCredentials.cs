@@ -531,7 +531,7 @@ namespace Amazon.CognitoIdentity
             {
                 UpdateIdentity(cachedIdentity);
                 //update the credentials from cache
-                _currentState = GetCachedCredentials();
+                currentState = GetCachedCredentials();
             }
 
         }

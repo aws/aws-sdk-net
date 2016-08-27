@@ -94,6 +94,7 @@ namespace Amazon.Internal
             /// Gets the endpoint for a service in a region.
             /// </summary>
             /// <param name="serviceName">The services system name.</param>
+            /// <param name="dualStack">If true returns the endpoint for dualstack</param>
             /// <exception cref="System.ArgumentException">Thrown when the request service does not have a valid endpoint in the region.</exception>
             /// <returns></returns>
             public Amazon.RegionEndpoint.Endpoint GetEndpointForService(string serviceName, bool dualStack)

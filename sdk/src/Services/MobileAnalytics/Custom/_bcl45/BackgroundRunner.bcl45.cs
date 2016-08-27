@@ -41,7 +41,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             // Start background task if it is not started yet.
             if (0 == Interlocked.CompareExchange(ref _startFlag, 1, 0))
             {
-                DoWorkAsync(BackgroundSubmissionWaitTime * 1000);
+                var task = DoWorkAsync(BackgroundSubmissionWaitTime * 1000);
             }
         }
 

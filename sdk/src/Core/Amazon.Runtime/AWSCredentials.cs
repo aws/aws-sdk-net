@@ -1010,7 +1010,7 @@ namespace Amazon.Runtime
         }
 
 
-        protected CredentialsRefreshState _currentState = null;
+        protected CredentialsRefreshState currentState = null;
         private object _refreshLock = new object();
 
         #endregion
@@ -1052,11 +1052,11 @@ namespace Amazon.Runtime
                 // If credentials are expired, update
                 if (ShouldUpdate)
                 {
-                    _currentState = GenerateNewCredentials();
-                    UpdateToGeneratedCredentials(_currentState);
+                    currentState = GenerateNewCredentials();
+                    UpdateToGeneratedCredentials(currentState);
                 }
 
-                return _currentState.Credentials.Copy();
+                return currentState.Credentials.Copy();
             }
         }
 
@@ -1069,12 +1069,12 @@ namespace Amazon.Runtime
                 var state = await GenerateNewCredentialsAsync().ConfigureAwait(false);
                 lock (this._refreshLock)
                 {
-                    _currentState = state;
-                    UpdateToGeneratedCredentials(_currentState);
+                    currentState = state;
+                    UpdateToGeneratedCredentials(currentState);
                 }
             }
 
-            return _currentState.Credentials.Copy();
+            return currentState.Credentials.Copy();
         }
 #endif
 
@@ -1109,7 +1109,7 @@ namespace Amazon.Runtime
                 logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
                     DateTime.Now,
-                    _currentState.Expiration,
+                    currentState.Expiration,
                     PreemptExpiryTime);
             }
         }
@@ -1122,12 +1122,12 @@ namespace Amazon.Runtime
                 // should update if:
 
                 //  credentials have not been loaded yet
-                if (_currentState == null)
+                if (currentState == null)
                     return true;
 
                 //  it's past the expiration time
                 var now = DateTime.UtcNow;
-                var exp = _currentState.Expiration.ToUniversalTime();
+                var exp = currentState.Expiration.ToUniversalTime();
                 return (now > exp);
             }
         }
@@ -1161,7 +1161,7 @@ namespace Amazon.Runtime
         /// </summary>
         public virtual void ClearCredentials()
         {
-            _currentState = null;
+            currentState = null;
         }
 
         #endregion

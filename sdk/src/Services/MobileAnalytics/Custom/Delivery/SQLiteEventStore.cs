@@ -40,9 +40,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         private static object _lock = new object();
         private MobileAnalyticsManagerConfig _maConfig;
 
-
-        private bool _isDisposed;
-
         /// <summary>
         /// Constructor of <see cref="Amazon.MobileAnalytics.MobileAnalyticsManager.Internal.SQLiteEventStore"/>
         /// </summary>

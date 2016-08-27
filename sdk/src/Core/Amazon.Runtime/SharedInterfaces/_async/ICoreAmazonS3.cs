@@ -50,7 +50,7 @@ namespace Amazon.Runtime.SharedInterfaces
         /// Delete an object.
         /// </summary>
         /// <param name="bucketName"></param>
-        /// <param name="objectKey"></param>
+        /// <param name="objectKeys"></param>
         /// <param name="additionalProperties"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>

@@ -339,7 +339,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("AwsSdkRules", "CR1001:PreventHashAlgorithmCreateRule", Scope = "member", Target = "Amazon.Util.CryptoUtilFactory+CryptoUtil.#get_SHA256HashAlgorithmInstance()")]
 
 // Visible instance fields
-[module: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "Amazon.Runtime.RefreshingAWSCredentials.#_currentState")]
+[module: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "Amazon.Runtime.RefreshingAWSCredentials.#currentState")]
 
 // Indirect expose method with LinkDemands
 [module: SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Scope = "member", Target = "Amazon.Runtime.Internal.ClientContext.#.ctor(System.String,Amazon.Runtime.Internal.ClientContextConfig)")]

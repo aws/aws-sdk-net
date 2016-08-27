@@ -46,7 +46,13 @@ namespace Amazon.CloudFront
         [Flags]
         public enum Protocols
         {
+            /// <summary>
+            /// Http Protocol
+            /// </summary>
             Http,
+            /// <summary>
+            /// Https Protocol
+            /// </summary>
             Https
         }
 

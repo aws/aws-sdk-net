@@ -84,8 +84,7 @@ namespace Amazon.S3.Util
         /// </summary>
         /// <param name="bucketName">The bucket to be deleted.</param>
         /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <param name="token">token to check if the operation has been request to cancel.</param>
         /// <returns>An IAsyncCancelableResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDeleteS3BucketWithObjects. IAsyncCancelableResult can also 
         /// be used to cancel the operation while it's in progress.</returns>
@@ -111,8 +110,7 @@ namespace Amazon.S3.Util
         /// <param name="bucketName">The bucket to be deleted.</param>
         /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
         /// <param name="deleteOptions">Options to control the behavior of the delete operation.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <param name="token">token to check if the operation has been request to cancel.</param>
         /// <returns>An IAsyncCancelableResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDeleteS3BucketWithObjects. IAsyncCancelableResult can also 
         /// be used to cancel the operation while it's in progress.</returns>
@@ -133,8 +131,7 @@ namespace Amazon.S3.Util
         /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
         /// <param name="deleteOptions">>Options to control the behavior of the delete operation.</param>
         /// <param name="updateCallback">An callback that is invoked to send updates while delete operation is in progress.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback procedure using the AsyncState property.</param>
+        /// <param name="token">token to check if the operation has been request to cancel.</param>
         /// <returns>An IAsyncCancelableResult that can be used to poll or wait for results, or both; 
         /// this value is also needed when invoking EndDeleteS3BucketWithObjects. IAsyncCancelableResult can also 
         /// be used to cancel the operation while it's in progress.</returns>
@@ -155,6 +152,7 @@ namespace Amazon.S3.Util
         /// Invokes the DeleteS3BucketWithObjectsInternal method.
         /// </summary>
         /// <param name="state">The Request object that has all the data to complete the operation. </param>
+        /// <param name="token">token to request the operation to be cancelled.</param>
         private static  Task InvokeDeleteS3BucketWithObjects(object state,CancellationToken token)
         {
             var request = (S3DeleteBucketWithObjectsRequest)state;
@@ -177,9 +175,7 @@ namespace Amazon.S3.Util
         /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
         /// <param name="deleteOptions">Options to control the behavior of the delete operation.</param>
         /// <param name="updateCallback">The callback which is used to send updates about the delete operation.</param>
-        /// <param name="asyncCancelableResult">An IAsyncCancelableResult that can be used to poll or wait for results, or both; 
-        /// this value is also needed when invoking EndDeleteS3BucketWithObjects. IAsyncCancelableResult can also 
-        /// be used to cancel the operation while it's in progress.</param>
+        /// <param name="token">token to check if the operation has been request to cancel.</param>
         private static async Task DeleteS3BucketWithObjectsInternalAsync(IAmazonS3 s3Client, string bucketName,
             S3DeleteBucketWithObjectsOptions deleteOptions, Action<S3DeleteBucketWithObjectsUpdate> updateCallback,
             CancellationToken token)

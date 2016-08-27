@@ -85,7 +85,6 @@ namespace Amazon
         
         // for reading from awsconfigs.xml
         private static object _lock = new object();
-        private static bool configPresent = true;
         private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
 
         // New config section

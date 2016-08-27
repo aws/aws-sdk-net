@@ -45,7 +45,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// or garbage collected.</param>
         protected virtual void Dispose(bool disposing)
         {
-            
         }
 
         /// <summary>

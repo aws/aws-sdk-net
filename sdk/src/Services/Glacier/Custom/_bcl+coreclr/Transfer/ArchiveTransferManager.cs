@@ -26,6 +26,10 @@ using Amazon.Util;
 
 namespace Amazon.Glacier.Transfer
 {
+    /// <summary>
+    /// Provides a high level API for managing transfers to and from Amazon Glacier. This removes 
+    /// complexities such as breaking files into parts and computing check sums.
+    /// </summary>
     public partial class ArchiveTransferManager : IDisposable
     {
         #region Private/internal members

@@ -112,10 +112,33 @@ namespace Amazon.Glacier.Transfer
         #endregion
 
         #region Download
+
+        /// <summary>
+        /// <para>
+        /// Downloads an archive from Amazon Glacier from the specified vault for the
+        /// current user's account. Saves the archive to the specified file. 
+        /// </para>
+        ///
+        /// <para>
+        /// This method creates an Amazon SNS topic, and an Amazon SQS queue that is subscribed 
+        /// to that topic.  It then initiates the archive retrieval job and polls the queue
+        /// for the archive to be available.  This polling takes about 4 hours. Once the archive
+        /// is available, download will begin.
+        /// </para>
+        ///
+        /// <para>
+        /// Additional options can be set using the UploadDirectoryOptions object. For example, you
+        /// can set the FilesTransferProgress property to a delegate to track progress.  
+        /// </para>
+        /// </summary>
+        /// <param name="filePath">The file path to save the archive at.</param>
+        /// <param name="vaultName">The name of the vault to download the archive from.</param>
+        /// <param name="archiveId">The unique ID of the archive to download.</param>
         public void Download(string vaultName, string archiveId, string filePath)
         {
             Download(vaultName, archiveId, filePath, new DownloadOptions());
         }
+
         /// <summary>
         /// <para>
         /// Downloads an archive from Amazon Glacier from the specified vault for the
