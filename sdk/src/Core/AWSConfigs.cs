@@ -87,6 +87,10 @@ namespace Amazon
         private static object _lock = new object();
         private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
 
+#pragma warning disable 414
+        private static bool configPresent = true;
+#pragma warning restore 414
+
         // New config section
         private static RootConfig _rootConfig = new RootConfig();
 
