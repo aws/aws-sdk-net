@@ -38,8 +38,32 @@ namespace AWSSDK_CoreCLR.UnitTests
 
             Assert.Equal("sts.ap-northeast-2.amazonaws.com", RegionEndpoint.APNortheast2.GetEndpointForService("sts").Hostname);
         }
-    }
 
+        [Fact]
+        [Trait("Category", "Core")]
+        public void EnumerableAllRegionsTest()
+        {
+            int count = 0;
+            foreach (var endpoint in RegionEndpoint.EnumerableAllRegions)
+            {
+                if      (endpoint == RegionEndpoint.CNNorth1) count++;
+                else if (endpoint == RegionEndpoint.APNortheast1) count++;
+                else if (endpoint == RegionEndpoint.APNortheast2) count++;
+                else if (endpoint == RegionEndpoint.APSoutheast1) count++;
+                else if (endpoint == RegionEndpoint.APSoutheast2) count++;
+                else if (endpoint == RegionEndpoint.EUCentral1) count++;
+                else if (endpoint == RegionEndpoint.EUWest1) count++;
+                else if (endpoint == RegionEndpoint.USGovCloudWest1) count++;
+                else if (endpoint == RegionEndpoint.USEast1) count++;
+                else if (endpoint == RegionEndpoint.USWest1) count++;
+                else if (endpoint == RegionEndpoint.USWest2) count++;
+                else if (endpoint == RegionEndpoint.SAEast1) count++;
+            }
+
+            Assert.Equal(12, count);
+        }
+    }
+    
     public class EndpointCustomizationTestClass : IDisposable
     {
         private FileInfo tempEndpointCutomizationFile;
