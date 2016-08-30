@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-08-01.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-08-20.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -71,6 +71,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.QueryString = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("QueryStringCacheKeys", targetDepth))
+                    {
+                        var unmarshaller = QueryStringCacheKeysUnmarshaller.Instance;
+                        unmarshalledObject.QueryStringCacheKeys = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

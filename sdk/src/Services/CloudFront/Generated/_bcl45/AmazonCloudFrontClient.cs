@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-08-01.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-08-20.normal.json service model.
  */
 
 
@@ -346,6 +346,9 @@ namespace Amazon.CloudFront
         /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
         /// only clients that Support Server Name Indication (SNI).
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
@@ -397,6 +400,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
         /// You cannot create anymore origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
@@ -490,6 +496,9 @@ namespace Amazon.CloudFront
         /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
         /// only clients that Support Server Name Indication (SNI).
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
@@ -545,6 +554,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
         /// You cannot create anymore origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
@@ -2196,6 +2208,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
@@ -2249,6 +2264,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
         /// You cannot create anymore origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
