@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type containing information about the specified geo location.
+    /// A complex type that contains the response information for the specified geolocation
+    /// code.
     /// </summary>
     public partial class GetGeoLocationResponse : AmazonWebServiceResponse
     {
@@ -37,7 +38,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property GeoLocationDetails. 
         /// <para>
-        /// A complex type that contains the information about the specified geo location.
+        /// A complex type that contains the codes and full continent, country, and subdivision
+        /// names for the specified geolocation code.
         /// </para>
         /// </summary>
         public GeoLocationDetails GeoLocationDetails

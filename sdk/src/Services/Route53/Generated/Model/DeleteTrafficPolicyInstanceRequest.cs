@@ -34,12 +34,14 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To delete a traffic policy instance, send a <code>DELETE</code> request to the <code>/<i>Route
-    /// 53 API version</i>/trafficpolicy/<i>traffic policy instance ID</i></code> resource.
+    /// Send a <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy/<i>traffic
+    /// policy instance ID</i> </code> resource.
     /// </para>
-    ///  <important>When you delete a traffic policy instance, Amazon Route 53 also deletes
-    /// all of the resource record sets that were created when you created the traffic policy
-    /// instance.</important>
+    ///  <note> 
+    /// <para>
+    /// In the Amazon Route 53 console, traffic policy instances are known as policy records.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteTrafficPolicyInstanceRequest : AmazonRoute53Request
     {
@@ -50,9 +52,12 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The ID of the traffic policy instance that you want to delete. 
         /// </para>
-        ///  <important>When you delete a traffic policy instance, Amazon Route 53 also deletes
-        /// all of the resource record sets that were created when you created the traffic policy
-        /// instance.</important>
+        ///  <important> 
+        /// <para>
+        /// When you delete a traffic policy instance, Amazon Route 53 also deletes all of the
+        /// resource record sets that were created when you created the traffic policy instance.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string Id
         {

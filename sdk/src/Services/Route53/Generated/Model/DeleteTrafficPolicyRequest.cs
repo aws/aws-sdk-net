@@ -29,8 +29,13 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTrafficPolicy operation.
-    /// Deletes a traffic policy. To delete a traffic policy, send a <code>DELETE</code> request
-    /// to the <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
+    /// Deletes a traffic policy.
+    /// 
+    ///  
+    /// <para>
+    /// Send a <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
+    /// resource.
+    /// </para>
     /// </summary>
     public partial class DeleteTrafficPolicyRequest : AmazonRoute53Request
     {

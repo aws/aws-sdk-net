@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the count of health checks associated with the current
-    /// AWS account.
+    /// A complex type that contains the response to a <code>healthcheckcount</code> request.
     /// </summary>
     public partial class GetHealthCheckCountResponse : AmazonWebServiceResponse
     {

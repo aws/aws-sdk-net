@@ -29,7 +29,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChangeDetails operation.
-    /// This action returns the status and changes of a change batch request.
+    /// Returns the status and changes of a change batch request.
     /// </summary>
     public partial class GetChangeDetailsRequest : AmazonRoute53Request
     {
@@ -38,9 +38,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the change batch request. The value that you specify here is the value that
-        /// <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted
-        /// the request.
+        /// The ID of the change batch. This is the value that you specified in the <code>change
+        /// ID</code> parameter when you submitted the request.
         /// </para>
         /// </summary>
         public string Id

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains information about the status of the specified health
-    /// check.
+    /// A complex type that contains the response to a <code>GetHealthCheck</code> request.
     /// </summary>
     public partial class GetHealthCheckStatusResponse : AmazonWebServiceResponse
     {
@@ -39,7 +38,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property HealthCheckObservations. 
         /// <para>
         /// A list that contains one <code>HealthCheckObservation</code> element for each Amazon
-        /// Route 53 health checker.
+        /// Route 53 health checker that is reporting a status about the health check endpoint.
         /// </para>
         /// </summary>
         public List<HealthCheckObservation> HealthCheckObservations

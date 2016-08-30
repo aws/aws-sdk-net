@@ -41,14 +41,15 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The type of the resources.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// - The resource type for health checks is <code>healthcheck</code>.
+        /// The resource type for health checks is <code>healthcheck</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// - The resource type for hosted zones is <code>hostedzone</code>.
+        /// The resource type for hosted zones is <code>hostedzone</code>.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TagResourceType ResourceType
         {

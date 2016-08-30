@@ -29,8 +29,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChangeBatchesByRRSet operation.
-    /// This action gets the list of ChangeBatches in a given time period for a given hosted
-    /// zone and RRSet.
+    /// Gets the list of ChangeBatches in a given time period for a given hosted zone and
+    /// RRSet.
     /// </summary>
     public partial class ListChangeBatchesByRRSetRequest : AmazonRoute53Request
     {

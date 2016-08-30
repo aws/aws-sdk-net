@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response for the request.
+    /// This is the response object from the ListHostedZones operation.
     /// </summary>
     public partial class ListHostedZonesResponse : AmazonWebServiceResponse
     {
@@ -41,8 +41,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZones. 
         /// <para>
-        /// A complex type that contains information about the hosted zones associated with the
-        /// current AWS account.
+        /// A complex type that contains general information about the hosted zone.
         /// </para>
         /// </summary>
         public List<HostedZone> HostedZones
@@ -60,9 +59,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// If the request returned more than one page of results, submit another request and
-        /// specify the value of <code>NextMarker</code> from the last response in the <code>marker</code>
-        /// parameter to get the next page of results.
+        /// For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code>
+        /// is the value that you specified for the marker parameter in the request that produced
+        /// the current response.
         /// </para>
         /// </summary>
         public string Marker
@@ -80,13 +79,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// A flag indicating whether there are more hosted zones to be listed. If your results
-        /// were truncated, you can make a follow-up request for the next page of results by using
-        /// the <code>Marker</code> element.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code>
+        /// A flag indicating whether there are more hosted zones to be listed. If the response
+        /// was truncated, you can get the next group of <code>maxitems</code> hosted zones by
+        /// calling <code>ListHostedZones</code> again and specifying the value of the <code>NextMarker</code>
+        /// element in the marker parameter.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -104,10 +100,14 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// Indicates where to continue listing hosted zones. If <code>IsTruncated</code> is <code>true</code>,
-        /// make another request to <code>ListHostedZones</code> and include the value of the
-        /// <code>NextMarker</code> element in the <code>Marker</code> element to get the next
-        /// page of results.
+        /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code>
+        /// identifies the first hosted zone in the next group of <code>maxitems</code> hosted
+        /// zones. Call <code>ListHostedZones</code> again and specify the value of <code>NextMarker</code>
+        /// in the <code>marker</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
         /// </para>
         /// </summary>
         public string NextMarker
@@ -125,11 +125,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of hosted zones to be included in the response body. If the number
-        /// of hosted zones associated with this AWS account exceeds <code>MaxItems</code>, the
-        /// value of <code>IsTruncated</code> in the response is <code>true</code>. Call <code>ListHostedZones</code>
-        /// again and specify the value of <code>NextMarker</code> in the <code>Marker</code>
-        /// parameter to get the next page of results.
+        /// The value that you specified for the <code>maxitems</code> parameter in the call to
+        /// <code>ListHostedZones</code> that produced the current response.
         /// </para>
         /// </summary>
         public string MaxItems

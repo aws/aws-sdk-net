@@ -37,8 +37,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ChangeInfo. 
         /// <para>
-        /// A complex type that contains information about the specified change batch, including
-        /// the change batch ID, the status of the change, and the date and time of the request.
+        /// A complex type that contains information about the specified change batch.
         /// </para>
         /// </summary>
         public ChangeInfo ChangeInfo

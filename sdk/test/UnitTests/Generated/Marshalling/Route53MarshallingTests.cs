@@ -1413,6 +1413,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void TestDNSAnswerMarshallTest()
+        {
+            var operation = service_model.FindOperation("TestDNSAnswer");
+
+            var request = InstantiateClassGenerator.Execute<TestDNSAnswerRequest>();
+            var marshaller = new TestDNSAnswerRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("TestDNSAnswer", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as TestDNSAnswerResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void UpdateHealthCheckMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateHealthCheck");

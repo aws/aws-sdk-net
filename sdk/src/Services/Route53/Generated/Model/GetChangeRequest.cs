@@ -29,20 +29,21 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChange operation.
-    /// This action returns the current status of a change batch request. The status is one
-    /// of the following values:
+    /// Returns the current status of a change batch request. The status is one of the following
+    /// values:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// - <code>PENDING</code> indicates that the changes in this request have not replicated
+    ///  <code>PENDING</code> indicates that the changes in this request have not replicated
     /// to all Amazon Route 53 DNS servers. This is the initial status of all change batch
     /// requests.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// - <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route
+    ///  <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route
     /// 53 DNS servers. 
     /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetChangeRequest : AmazonRoute53Request
     {

@@ -31,7 +31,7 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the GetHealthCheckLastFailureReason operation.
     /// If you want to learn why a health check is currently failing or why it failed most
     /// recently (if at all), you can get the failure reason for the most recent failure.
-    /// Send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/healthcheck/<i>health
+    /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/healthcheck/<i>health
     /// check ID</i>/lastfailurereason</code> resource.
     /// </summary>
     public partial class GetHealthCheckLastFailureReasonRequest : AmazonRoute53Request
@@ -41,8 +41,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
         /// <para>
-        /// The ID of the health check for which you want to retrieve the reason for the most
-        /// recent failure.
+        /// The ID for the health check for which you want the last failure reason. When you created
+        /// the health check, <code>CreateHealthCheck</code> returned the ID in the response,
+        /// in the <code>HealthCheckId</code> element.
         /// </para>
         /// </summary>
         public string HealthCheckId

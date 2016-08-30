@@ -41,8 +41,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// This element contains an ID that you use when performing a <code>GetChange</code>
-        /// action to get detailed information about the change.
+        /// This element contains an ID that you use when performing a <a>GetChange</a> action
+        /// to get detailed information about the change.
         /// </para>
         /// </summary>
         public ChangeInfo ChangeInfo

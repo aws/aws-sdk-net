@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type containing the response information for the new hosted zone.
+    /// A complex type containing the response information for the hosted zone.
     /// </summary>
     public partial class CreateHostedZoneResponse : AmazonWebServiceResponse
     {
@@ -41,7 +41,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZone. 
         /// <para>
-        /// A complex type that contains identifying information about the hosted zone.
+        /// A complex type that contains general information about the hosted zone.
         /// </para>
         /// </summary>
         public HostedZone HostedZone
@@ -59,9 +59,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ChangeInfo. 
         /// <para>
-        /// A complex type that contains information about the request to create a hosted zone.
-        /// This includes an ID that you use when you call the <code>GetChange</code> action to
-        /// get the current status of the change request.
+        /// A complex type that describes the changes made to your hosted zone.
         /// </para>
         /// </summary>
         public ChangeInfo ChangeInfo
@@ -79,7 +77,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property DelegationSet. 
         /// <para>
-        /// A complex type that contains name server information.
+        /// A complex type that describes the name servers for this hosted zone.
         /// </para>
         /// </summary>
         public DelegationSet DelegationSet

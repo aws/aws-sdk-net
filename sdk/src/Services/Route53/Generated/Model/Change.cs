@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the information for each change in a change batch request.
+    /// The information for each resource record set that you want to change.
     /// </summary>
     public partial class Change
     {
@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates Change with the parameterized properties
         /// </summary>
-        /// <param name="action">The action to perform: <ul> <li><code>CREATE</code>: Creates a resource record set that has the specified values.</li> <li><CODE>DELETE</CODE>: Deletes a existing resource record set that has the specified values for <code>Name</code>, <code>Type</code>, <code>SetIdentifier</code> (for latency, weighted, geolocation, and failover resource record sets), and <code>TTL</code> (except alias resource record sets, for which the TTL is determined by the AWS resource that you're routing DNS queries to).</li> <li><code>UPSERT</code>: If a resource record set does not already exist, Amazon Route 53 creates it. If a resource record set does exist, Amazon Route 53 updates it with the values in the request. Amazon Route 53 can update an existing resource record set only when all of the following values match: <code>Name</code>, <code>Type</code>, and <code>SetIdentifier</code> (for weighted, latency, geolocation, and failover resource record sets).</li> </ul></param>
+        /// <param name="action">The action to perform: <ul> <li>  <code>CREATE</code>: Creates a resource record set that has the specified values. </li> <li>  <code>DELETE</code>: Deletes a existing resource record set that has the specified values for <code>Name</code>, <code>Type</code>, <code>SetIdentifier</code> (for latency, weighted, geolocation, and failover resource record sets), and <code>TTL</code> (except alias resource record sets, for which the TTL is determined by the AWS resource that you're routing DNS queries to). <important> To delete the resource record set that is associated with a traffic policy instance, use <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.  </important> </li> <li>  <code>UPSERT</code>: If a resource record set does not already exist, Amazon Route 53 creates it. If a resource record set does exist, Amazon Route 53 updates it with the values in the request. Amazon Route 53 can update an existing resource record set only when all of the following values match: <code>Name</code>, <code>Type</code>, and <code>SetIdentifier</code> (for weighted, latency, geolocation, and failover resource record sets). </li> </ul></param>
         /// <param name="resourceRecordSet">Information about the resource record set to create or delete.</param>
         public Change(ChangeAction action, ResourceRecordSet resourceRecordSet)
         {
@@ -56,17 +56,37 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The action to perform:
         /// </para>
-        ///  <ul> <li><code>CREATE</code>: Creates a resource record set that has the specified
-        /// values.</li> <li><CODE>DELETE</CODE>: Deletes a existing resource record set that
-        /// has the specified values for <code>Name</code>, <code>Type</code>, <code>SetIdentifier</code>
-        /// (for latency, weighted, geolocation, and failover resource record sets), and <code>TTL</code>
-        /// (except alias resource record sets, for which the TTL is determined by the AWS resource
-        /// that you're routing DNS queries to).</li> <li><code>UPSERT</code>: If a resource record
-        /// set does not already exist, Amazon Route 53 creates it. If a resource record set does
-        /// exist, Amazon Route 53 updates it with the values in the request. Amazon Route 53
-        /// can update an existing resource record set only when all of the following values match:
-        /// <code>Name</code>, <code>Type</code>, and <code>SetIdentifier</code> (for weighted,
-        /// latency, geolocation, and failover resource record sets).</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATE</code>: Creates a resource record set that has the specified values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE</code>: Deletes a existing resource record set that has the specified
+        /// values for <code>Name</code>, <code>Type</code>, <code>SetIdentifier</code> (for latency,
+        /// weighted, geolocation, and failover resource record sets), and <code>TTL</code> (except
+        /// alias resource record sets, for which the TTL is determined by the AWS resource that
+        /// you're routing DNS queries to).
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To delete the resource record set that is associated with a traffic policy instance,
+        /// use <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53will delete
+        /// the resource record set automatically. If you delete the resource record set by using
+        /// <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't automatically delete
+        /// the traffic policy instance, and you'll continue to be charged for it even though
+        /// it's no longer in use. 
+        /// </para>
+        ///  </important> </li> <li> 
+        /// <para>
+        ///  <code>UPSERT</code>: If a resource record set does not already exist, Amazon Route
+        /// 53 creates it. If a resource record set does exist, Amazon Route 53 updates it with
+        /// the values in the request. Amazon Route 53 can update an existing resource record
+        /// set only when all of the following values match: <code>Name</code>, <code>Type</code>,
+        /// and <code>SetIdentifier</code> (for weighted, latency, geolocation, and failover resource
+        /// record sets).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ChangeAction Action
         {

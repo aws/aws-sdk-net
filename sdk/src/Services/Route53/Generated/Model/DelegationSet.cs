@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains name server information.
+    /// A complex type that describes the name servers for this hosted zone.
     /// </summary>
     public partial class DelegationSet
     {
@@ -44,7 +44,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates DelegationSet with the parameterized properties
         /// </summary>
-        /// <param name="nameServers">A complex type that contains the authoritative name servers for the hosted zone. Use the method provided by your domain registrar to add an NS record to your domain for each <code>NameServer</code> that is assigned to your hosted zone.</param>
+        /// <param name="nameServers">A complex type that contains a list of the authoritative name servers for the hosted zone.</param>
         public DelegationSet(List<string> nameServers)
         {
             _nameServers = nameServers;
@@ -83,9 +83,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NameServers. 
         /// <para>
-        /// A complex type that contains the authoritative name servers for the hosted zone. Use
-        /// the method provided by your domain registrar to add an NS record to your domain for
-        /// each <code>NameServer</code> that is assigned to your hosted zone.
+        /// A complex type that contains a list of the authoritative name servers for the hosted
+        /// zone.
         /// </para>
         /// </summary>
         public List<string> NameServers
