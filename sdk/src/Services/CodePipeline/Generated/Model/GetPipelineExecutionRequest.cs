@@ -28,36 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a put action revision action.
+    /// Container for the parameters to the GetPipelineExecution operation.
+    /// Returns information about an execution of a pipeline, including details about artifacts,
+    /// the pipeline execution ID, and the name, version, and status of the pipeline.
     /// </summary>
-    public partial class PutActionRevisionResponse : AmazonWebServiceResponse
+    public partial class GetPipelineExecutionRequest : AmazonCodePipelineRequest
     {
-        private bool? _newRevision;
         private string _pipelineExecutionId;
-
-        /// <summary>
-        /// Gets and sets the property NewRevision. 
-        /// <para>
-        /// Indicates whether the artifact revision was previously used in an execution of the
-        /// specified pipeline.
-        /// </para>
-        /// </summary>
-        public bool NewRevision
-        {
-            get { return this._newRevision.GetValueOrDefault(); }
-            set { this._newRevision = value; }
-        }
-
-        // Check to see if NewRevision property is set
-        internal bool IsSetNewRevision()
-        {
-            return this._newRevision.HasValue; 
-        }
+        private string _pipelineName;
 
         /// <summary>
         /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The ID of the current workflow state of the pipeline.
+        /// The ID of the pipeline execution about which you want to get execution details.
         /// </para>
         /// </summary>
         public string PipelineExecutionId
@@ -70,6 +53,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetPipelineExecutionId()
         {
             return this._pipelineExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineName. 
+        /// <para>
+        /// The name of the pipeline about which you want to get execution details.
+        /// </para>
+        /// </summary>
+        public string PipelineName
+        {
+            get { return this._pipelineName; }
+            set { this._pipelineName = value; }
+        }
+
+        // Check to see if PipelineName property is set
+        internal bool IsSetPipelineName()
+        {
+            return this._pipelineName != null;
         }
 
     }

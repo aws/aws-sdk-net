@@ -33,7 +33,9 @@ namespace Amazon.CodePipeline.Model
     public partial class CurrentRevision
     {
         private string _changeIdentifier;
+        private DateTime? _created;
         private string _revision;
+        private string _revisionSummary;
 
         /// <summary>
         /// Gets and sets the property ChangeIdentifier. 
@@ -54,6 +56,25 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Created. 
+        /// <para>
+        /// The date and time when the most recent revision of the artifact was created, in timestamp
+        /// format.
+        /// </para>
+        /// </summary>
+        public DateTime Created
+        {
+            get { return this._created.GetValueOrDefault(); }
+            set { this._created = value; }
+        }
+
+        // Check to see if Created property is set
+        internal bool IsSetCreated()
+        {
+            return this._created.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
         /// The revision ID of the current version of an artifact.
@@ -69,6 +90,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetRevision()
         {
             return this._revision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevisionSummary. 
+        /// <para>
+        /// The summary of the most recent revision of the artifact.
+        /// </para>
+        /// </summary>
+        public string RevisionSummary
+        {
+            get { return this._revisionSummary; }
+            set { this._revisionSummary = value; }
+        }
+
+        // Check to see if RevisionSummary property is set
+        internal bool IsSetRevisionSummary()
+        {
+            return this._revisionSummary != null;
         }
 
     }

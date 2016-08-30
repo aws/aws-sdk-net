@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a start pipeline execution action.
+    /// Represents the output of a get pipeline execution action.
     /// </summary>
-    public partial class StartPipelineExecutionResponse : AmazonWebServiceResponse
+    public partial class GetPipelineExecutionResponse : AmazonWebServiceResponse
     {
-        private string _pipelineExecutionId;
+        private PipelineExecution _pipelineExecution;
 
         /// <summary>
-        /// Gets and sets the property PipelineExecutionId. 
+        /// Gets and sets the property PipelineExecution. 
         /// <para>
-        /// The unique system-generated ID of the pipeline execution that was started.
+        /// Represents information about the execution of a pipeline.
         /// </para>
         /// </summary>
-        public string PipelineExecutionId
+        public PipelineExecution PipelineExecution
         {
-            get { return this._pipelineExecutionId; }
-            set { this._pipelineExecutionId = value; }
+            get { return this._pipelineExecution; }
+            set { this._pipelineExecution = value; }
         }
 
-        // Check to see if PipelineExecutionId property is set
-        internal bool IsSetPipelineExecutionId()
+        // Check to see if PipelineExecution property is set
+        internal bool IsSetPipelineExecution()
         {
-            return this._pipelineExecutionId != null;
+            return this._pipelineExecution != null;
         }
 
     }

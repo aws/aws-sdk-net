@@ -28,48 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a put action revision action.
+    /// Represents information about an artifact revision.
     /// </summary>
-    public partial class PutActionRevisionResponse : AmazonWebServiceResponse
+    public partial class ArtifactRevisionInformation
     {
-        private bool? _newRevision;
-        private string _pipelineExecutionId;
+        private string _name;
+        private ArtifactRevision _revision;
 
         /// <summary>
-        /// Gets and sets the property NewRevision. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Indicates whether the artifact revision was previously used in an execution of the
-        /// specified pipeline.
+        /// The name of an artifact. This name might be system-generated, such as "MyApp", or
+        /// might be defined by the user when an action is created.
         /// </para>
         /// </summary>
-        public bool NewRevision
+        public string Name
         {
-            get { return this._newRevision.GetValueOrDefault(); }
-            set { this._newRevision = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if NewRevision property is set
-        internal bool IsSetNewRevision()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._newRevision.HasValue; 
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PipelineExecutionId. 
+        /// Gets and sets the property Revision. 
         /// <para>
-        /// The ID of the current workflow state of the pipeline.
+        /// Represents details about the ArtifactRevision object.
         /// </para>
         /// </summary>
-        public string PipelineExecutionId
+        public ArtifactRevision Revision
         {
-            get { return this._pipelineExecutionId; }
-            set { this._pipelineExecutionId = value; }
+            get { return this._revision; }
+            set { this._revision = value; }
         }
 
-        // Check to see if PipelineExecutionId property is set
-        internal bool IsSetPipelineExecutionId()
+        // Check to see if Revision property is set
+        internal bool IsSetRevision()
         {
-            return this._pipelineExecutionId != null;
+            return this._revision != null;
         }
 
     }
