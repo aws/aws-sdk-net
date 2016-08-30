@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// The version of the SSM agent running on your instance. 
+        /// The version of the SSM agent running on your Linux instance. 
         /// </para>
         /// </summary>
         public string AgentVersion
