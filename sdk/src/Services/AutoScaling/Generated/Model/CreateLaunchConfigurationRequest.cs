@@ -265,15 +265,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceMonitoring. 
         /// <para>
-        /// Enables detailed monitoring if it is disabled. Detailed monitoring is enabled by default.
-        /// </para>
-        ///  
-        /// <para>
-        /// When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute
-        /// and your account is charged a fee. When you disable detailed monitoring, by specifying
-        /// <code>False</code>, CloudWatch generates metrics every 5 minutes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
-        /// Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling User Guide</i>.
+        /// Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>)
+        /// for the Auto Scaling instances.
         /// </para>
         /// </summary>
         public InstanceMonitoring InstanceMonitoring

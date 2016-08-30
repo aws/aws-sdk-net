@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableMetricsCollection operation.
-    /// Disables monitoring of the specified metrics for the specified Auto Scaling group.
+    /// Disables group metrics for the specified Auto Scaling group.
     /// </summary>
     public partial class DisableMetricsCollectionRequest : AmazonAutoScalingRequest
     {

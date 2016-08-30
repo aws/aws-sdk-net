@@ -29,13 +29,9 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableMetricsCollection operation.
-    /// Enables monitoring of the specified metrics for the specified Auto Scaling group.
-    /// 
-    ///  
-    /// <para>
-    /// You can only enable metrics collection if <code>InstanceMonitoring</code> in the launch
-    /// configuration for the group is set to <code>True</code>.
-    /// </para>
+    /// Enables group metrics for the specified Auto Scaling group. For more information,
+    /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html">Monitoring
+    /// Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
     /// </summary>
     public partial class EnableMetricsCollectionRequest : AmazonAutoScalingRequest
     {
@@ -118,11 +114,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>GroupTotalInstances</code> 
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Note that the <code>GroupStandbyInstances</code> metric is not enabled by default.
-        /// You must explicitly request this metric.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> Metrics
         {
