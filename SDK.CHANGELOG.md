@@ -1,3 +1,20 @@
+### 3.1.96.0 (2016-08-30 21:02 UTC)
+* AutoScaling (3.1.4.1)
+	* Documentation update.
+* CloudFront (3.1.6.0)
+	* CloudFront is adding a Querystring Whitelist Option. Customers will be able to choose to forward certain querystring keys instead of a.) all of them or b.) none of them.
+* CodePipeline (3.1.4.0)
+	* CodePiepline has introduced a new feature to return pipeline execution details. Execution details consists of source revisions that are running in the pipeline. Customers will be able to tell what source revisions that are running through the stages in pipeline by fetching execution details of each stage.
+* Route53 (3.1.6.0)
+	* With this release, Route 53 will support the following new features: support for the NAPTR DNS record type, a new TestDNSAnswer API which enables customers to send a test query against a specific name server using spoofed delegation nameserver, resolver, and ECS IPs, and support metric-based health check in ap-south-1 region.
+* SimpleSystemsManagement (3.1.4.2)
+	* Documentation update.
+* Core 3.1.11.0
+	* Fixed issue with UnityWebRequest for Unity 5.4.
+Deprecated ClientConfig.ReadEntireResponse property.
+
+
+
 ### 3.1.95.0 (2016-08-24 00:11 UTC)
 * OpsWorks (3.1.3.5)
 	* Documentation updates for expanded region support.
