@@ -37,7 +37,7 @@ namespace Amazon.S3
     internal static class AmazonS3HttpUtil
     {
 #if AWS_ASYNC_API && PCL
-        internal static async Task<GetHeadResponse> GetHeadAsync(IAmazonS3 s3Client, ClientConfig config, string url, string header)
+        internal static async Task<GetHeadResponse> GetHeadAsync(IAmazonS3 s3Client, IClientConfig config, string url, string header)
         {
             if (s3Client != null)
             {
@@ -66,7 +66,7 @@ namespace Amazon.S3
             return null;
         }
 
-        private static HttpClient GetHttpClient(ClientConfig config)
+        private static HttpClient GetHttpClient(IClientConfig config)
         {
             var proxy = GetProxyIfAvailableAndConfigured(config);
             if (proxy == null)
@@ -86,7 +86,7 @@ namespace Amazon.S3
 #endif
 
 #if AWS_ASYNC_API && !PCL
-        internal static async Task<GetHeadResponse> GetHeadAsync(IAmazonS3 s3Client, ClientConfig config, string url, string header)
+        internal static async Task<GetHeadResponse> GetHeadAsync(IAmazonS3 s3Client, IClientConfig config, string url, string header)
         {
             HttpWebRequest httpRequest = GetHeadHttpRequest(config, url);
             try
@@ -103,9 +103,9 @@ namespace Amazon.S3
         }
 #endif
 
-        internal static GetHeadResponse GetHead(IAmazonS3 s3Client, ClientConfig config, string url, string header)
+        internal static GetHeadResponse GetHead(IAmazonS3 s3Client, IClientConfig config, string url, string header)
         {
-#if PCL
+#if PCL || CORECLR
             return GetHeadAsync(s3Client, config, url, header).GetAwaiter().GetResult();
 #else
             HttpWebRequest httpRequest = GetHeadHttpRequest(config, url);
@@ -123,7 +123,7 @@ namespace Amazon.S3
 #endif
         }
 
-        internal static HttpWebRequest GetHeadHttpRequest(ClientConfig config, string url)
+        internal static HttpWebRequest GetHeadHttpRequest(IClientConfig config, string url)
         {
             var httpRequest = WebRequest.Create(url) as HttpWebRequest;
             httpRequest.Method = "HEAD";
@@ -161,9 +161,9 @@ namespace Amazon.S3
             }
         }
 
-        private static void SetProxyIfAvailableAndConfigured(ClientConfig config, HttpWebRequest httpWebRequest)
+        private static void SetProxyIfAvailableAndConfigured(IClientConfig config, HttpWebRequest httpWebRequest)
         {
-#if BCL
+#if BCL || UNITY || CORECLR
             var proxy = GetProxyIfAvailableAndConfigured(config);
             if (proxy != null)
             {
@@ -172,20 +172,13 @@ namespace Amazon.S3
 #endif
         }
 
-        private static IWebProxy GetProxyIfAvailableAndConfigured(ClientConfig config)
+        private static IWebProxy GetProxyIfAvailableAndConfigured(IClientConfig config)
         {
-#if BCL
-            if (config != null && !string.IsNullOrEmpty(config.ProxyHost) && config.ProxyPort != -1)
-            {
-                WebProxy proxy = new WebProxy(config.ProxyHost, config.ProxyPort);
-                if (config.ProxyCredentials != null)
-                {
-                    proxy.Credentials = config.ProxyCredentials;
-                }
-                return proxy;
-            }
-#endif
+#if BCL || UNITY || CORECLR
+            return config.GetWebProxy();
+#else
             return null;
+#endif
         }
     }
 }
