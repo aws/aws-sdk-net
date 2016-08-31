@@ -20,7 +20,6 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 
 using Amazon.Runtime;
-
 using Amazon.Extensions.NETCore.Setup;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -36,8 +35,8 @@ namespace Microsoft.Extensions.DependencyInjection
         /// that will be used to construct Amazon service clients.
         /// </summary>
         /// <param name="collection"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
+        /// <param name="options">The default AWS options used to construct AWS service clients with.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection AddDefaultAWSOptions(this IServiceCollection collection, AWSOptions options)
         {
             collection.Add(new ServiceDescriptor(typeof(AWSOptions), options));
@@ -49,10 +48,10 @@ namespace Microsoft.Extensions.DependencyInjection
         /// created until it is requested. If the ServiceLifetime property is set to Singleon, the default, then the same
         /// instance will be reused for the lifetime of the process and the object should not be disposed.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
         /// <param name="collection"></param>
-        /// <param name="lifetime"></param>
-        /// <returns></returns>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
             return AddAWSService<T>(collection, null, lifetime);
@@ -63,11 +62,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// created until it is requested. If the ServiceLifetime property is set to Singleon, the default, then the same
         /// instance will be reused for the lifetime of the process and the object should not be disposed.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
         /// <param name="collection"></param>
-        /// <param name="options"></param>
-        /// <param name="lifetime"></param>
-        /// <returns></returns>
+        /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
             Func<IServiceProvider, object> factory =

@@ -42,7 +42,7 @@ namespace Microsoft.Extensions.Configuration
         /// Constructs an AWSOptions class with the options specifed in the "AWS" section in the IConfiguration object.
         /// </summary>
         /// <param name="config"></param>
-        /// <returns></returns>
+        /// <returns>The AWSOptions containing the values set in configuration system.</returns>
         public static AWSOptions GetAWSOptions(this IConfiguration config)
         {
             return GetAWSOptions(config, DEFAULT_CONFIG_SECTION);
@@ -51,9 +51,9 @@ namespace Microsoft.Extensions.Configuration
         /// <summary>
         /// Constructs an AWSOptions class with the options specifed in the "AWS" section in the IConfiguration object.
         /// </summary>
-        /// <param name="configSection">The config section to extract AWS options from.</param>
         /// <param name="config"></param>
-        /// <returns></returns>, 
+        /// <param name="configSection">The config section to extract AWS options from.</param>
+        /// <returns>The AWSOptions containing the values set in configuration system.</returns>
         public static AWSOptions GetAWSOptions(this IConfiguration config, string configSection)
         {
             var options = new AWSOptions();
@@ -81,7 +81,7 @@ namespace Microsoft.Extensions.Configuration
                         var value = Convert.ChangeType(element.Value, property.PropertyType);
                         property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { value });
                     }
-                    else if (property.PropertyType == typeof(TimeSpan))
+                    else if (property.PropertyType == typeof(TimeSpan) || property.PropertyType == typeof(Nullable<TimeSpan>))
                     {
                         var milliSeconds = Convert.ToInt64(element.Value);
                         var timespan = TimeSpan.FromMilliseconds(milliSeconds);

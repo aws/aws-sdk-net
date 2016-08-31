@@ -24,16 +24,35 @@ using Amazon.Extensions.NETCore.Setup;
 
 namespace Amazon.Extensions.NETCore.Setup
 {
+    /// <summary>
+    /// The options used to construct AWS service clients like the Amazon.S3.AmazonS3Client.
+    /// </summary>
     public class AWSOptions
     {
+        /// <summary>
+        /// The profile used to fetch AWS credentials for from the profile manager.
+        /// </summary>
         public string Profile { get; set; }
 
+        /// <summary>
+        /// The location of the registered profiles. Set if using the non standard locations for profile stores.
+        /// This is mostly used when running the application outside of an EC2 instance where the preferred 
+        /// IAM credentials are used and also not running under a logged on user.
+        /// </summary>
         public string ProfilesLocation { get; set; }
 
+        /// <summary>
+        /// The AWS region the service client should use when making service operations.
+        /// </summary>
         public RegionEndpoint Region { get; set; }
 
 
         private ClientConfig _defaultClientConfig;
+
+        /// <summary>
+        /// A default ClientConfig object. When service client is created any values set on the default ClientConfig
+        /// are copied to the service specific client config.
+        /// </summary>
         public ClientConfig DefaultClientConfig
         {
             get
@@ -53,24 +72,13 @@ namespace Amazon.Extensions.NETCore.Setup
             }
         }
 
-        public AWSOptions UseProfile(string profile)
-        {
-            this.Profile = profile;
-            return this;
-        }
-
-        public AWSOptions UseProfilesLocation(string profilesLocation)
-        {
-            this.ProfilesLocation = profilesLocation;
-            return this;
-        }
-
-        public AWSOptions UseRegion(RegionEndpoint region)
-        {
-            this.Region = region;
-            return this;
-        }
-
+        /// <summary>
+        /// Create a service client for the specified service interface using the options set in this instance.
+        /// For example if T is set to IAmazonS3 then the AmazonS3ServiceClient which implements IAmazonS3 is created
+        /// and returned.
+        /// </summary>
+        /// <typeparam name="T">The service interface that a service client will be created for.</typeparam>
+        /// <returns>The service client that implements the service interface.</returns>
         public T CreateServiceClient<T>() where T : IAmazonService
         {
             return (T)ClientFactory.CreateServiceClient(typeof(T), this);

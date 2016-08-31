@@ -21,6 +21,12 @@ namespace Amazon.Runtime
     /// </summary>
     public interface IAmazonService
     {
-        
+        /// <summary>
+        /// A readonly view of the configuration for the service client.
+        /// </summary>
+        IClientConfig Config
+        {
+            get;
+        }
     }
 }

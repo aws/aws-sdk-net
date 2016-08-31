@@ -118,6 +118,30 @@ namespace Amazon.Extensions.NETCore.Setup
             var constructor = configType.GetConstructor(EMPTY_TYPES);
             ClientConfig config = constructor.Invoke(EMPTY_PARAMETERS) as ClientConfig;
 
+            if(options.IsDefaultClientConfigSet)
+            {
+                var emptyArray = new object[0];
+                var singleArray = new object[1];
+
+                var clientConfigTypeInfo = typeof(ClientConfig).GetTypeInfo();
+                foreach(var property in clientConfigTypeInfo.DeclaredProperties)
+                {
+                    if(property.GetMethod != null && property.SetMethod != null)
+                    {
+                        // Skip RegionEndpoint because it is set below and calling the get method on the
+                        // property triggers the default region fallback mechanism.
+                        if (string.Equals(property.Name, "RegionEndpoint", StringComparison.Ordinal))
+                            continue;
+
+                        singleArray[0] = property.GetMethod.Invoke(options.DefaultClientConfig, emptyArray);
+                        if (singleArray[0] != null)
+                        {
+                            property.SetMethod.Invoke(config, singleArray);
+                        }
+                    }
+                }
+            }
+
             if (options != null)
             {
                 config.RegionEndpoint = options.Region;
