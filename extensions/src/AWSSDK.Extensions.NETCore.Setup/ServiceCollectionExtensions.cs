@@ -21,7 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Amazon.Runtime;
 
-using Amazon.Extensions.NETCore.DependencyInjection;
+using Amazon.Extensions.NETCore.Setup;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -38,7 +38,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="collection"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public static IServiceCollection AddAWSOptions(this IServiceCollection collection, AWSOptions options)
+        public static IServiceCollection AddDefaultAWSOptions(this IServiceCollection collection, AWSOptions options)
         {
             collection.Add(new ServiceDescriptor(typeof(AWSOptions), options));
             return collection;
@@ -55,8 +55,23 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns></returns>
         public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
+            return AddAWSService<T>(collection, null, lifetime);
+        }
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
+        /// created until it is requested. If the ServiceLifetime property is set to Singleon, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="collection"></param>
+        /// <param name="options"></param>
+        /// <param name="lifetime"></param>
+        /// <returns></returns>
+        public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
+        {
             Func<IServiceProvider, object> factory =
-                new ClientFactory(typeof(T)).CreateServiceFactory;
+                new ClientFactory(typeof(T), options).CreateServiceClient;
 
             var descriptor = new ServiceDescriptor(typeof(T), factory, lifetime);
             collection.Add(descriptor);

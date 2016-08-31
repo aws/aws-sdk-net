@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 using Amazon.Runtime;
 
-namespace AWSSDK.Extensions.NETCore.DependencyInjection
+namespace Amazon.Extensions.NETCore.Setup
 {
     internal class DefaultClientConfig : ClientConfig
     {

@@ -9,11 +9,11 @@ using Xunit;
 
 using Amazon;
 
-namespace DependencyInjectionTests
+namespace NETCore.SetupTests
 {
-    public class LoadOptionsTests
+    public class ConfigurationTests
     {
-        public LoadOptionsTests()
+        public ConfigurationTests()
         {
         }
 
@@ -28,6 +28,7 @@ namespace DependencyInjectionTests
 
             Assert.Equal(RegionEndpoint.USWest2, options.Region);
             Assert.Equal("myProfile", options.Profile);
+            
         }
     }
 }

@@ -22,25 +22,27 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Amazon.Runtime;
 
-namespace Amazon.Extensions.NETCore.DependencyInjection
+namespace Amazon.Extensions.NETCore.Setup
 {
     /// <summary>
     /// The factory class for creating AWS service clients from the AWS SDK for .NET.
     /// </summary>
-    public class ClientFactory
+    internal class ClientFactory
     {
         private static readonly Type[] EMPTY_TYPES = Array.Empty<Type>();
         private static readonly object[] EMPTY_PARAMETERS = Array.Empty<object>();
 
-        Type _type;
+        Type _serviceInterfaceType;
+        AWSOptions _awsOptions;
 
         /// <summary>
         /// Constructs an instance of the ClientFactory
         /// </summary>
         /// <param name="type">The type object for the Amazon service client interface, for example IAmazonS3.</param>
-        public ClientFactory(Type type)
+        internal ClientFactory(Type type, AWSOptions awsOptions)
         {
-            this._type = type;
+            _serviceInterfaceType = type;
+            _awsOptions = awsOptions;
         }
 
         /// <summary>
@@ -49,12 +51,23 @@ namespace Amazon.Extensions.NETCore.DependencyInjection
         /// </summary>
         /// <param name="provider">The dependency injection provider.</param>
         /// <returns>The AWS service client</returns>
-        public object CreateServiceFactory(IServiceProvider provider)
+        internal object CreateServiceClient(IServiceProvider provider)
         {
-            var options = provider.GetService<AWSOptions>();
+            var options = _awsOptions ?? provider.GetService<AWSOptions>();
+            return CreateServiceClient(_serviceInterfaceType, options);
+        }
+
+        /// <summary>
+        /// Creates the AWS service client that implements the service client interface. The AWSOptions object
+        /// will be searched for in the IServiceProvider.
+        /// </summary>
+        /// <param name="provider">The dependency injection provider.</param>
+        /// <returns>The AWS service client</returns>
+        internal static object CreateServiceClient(Type serviceInterfaceType, AWSOptions options)
+        {
             var credentials = CreateCredentials(options);
-            var config = CreateConfig(options);
-            var client = CreateClient(credentials, config);
+            var config = CreateConfig(serviceInterfaceType, options);
+            var client = CreateClient(serviceInterfaceType, credentials, config);
             return client;
         }
 
@@ -64,10 +77,10 @@ namespace Amazon.Extensions.NETCore.DependencyInjection
         /// <param name="credentials"></param>
         /// <param name="config"></param>
         /// <returns></returns>
-        private AmazonServiceClient CreateClient(AWSCredentials credentials, ClientConfig config)
+        private static AmazonServiceClient CreateClient(Type serviceInterfaceType, AWSCredentials credentials, ClientConfig config)
         {
-            var clientTypeName = _type.Namespace + "." + _type.Name.Substring(1) + "Client";
-            var clientType = _type.GetTypeInfo().Assembly.GetType(clientTypeName);
+            var clientTypeName = serviceInterfaceType.Namespace + "." + serviceInterfaceType.Name.Substring(1) + "Client";
+            var clientType = serviceInterfaceType.GetTypeInfo().Assembly.GetType(clientTypeName);
 
             var constructor = clientType.GetConstructor(new Type[] { typeof(AWSCredentials), config.GetType() });
             var client = constructor.Invoke(new object[] { credentials, config }) as AmazonServiceClient;
@@ -80,7 +93,7 @@ namespace Amazon.Extensions.NETCore.DependencyInjection
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        private AWSCredentials CreateCredentials(AWSOptions options)
+        private static AWSCredentials CreateCredentials(AWSOptions options)
         {
             if (options != null &&
                 !string.IsNullOrEmpty(options.Profile) &&
@@ -97,10 +110,10 @@ namespace Amazon.Extensions.NETCore.DependencyInjection
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        private ClientConfig CreateConfig(AWSOptions options)
+        private static ClientConfig CreateConfig(Type serviceInterfaceType, AWSOptions options)
         {
-            var configTypeName = _type.Namespace + "." + _type.Name.Substring(1) + "Config";
-            var configType = _type.GetTypeInfo().Assembly.GetType(configTypeName);
+            var configTypeName = serviceInterfaceType.Namespace + "." + serviceInterfaceType.Name.Substring(1) + "Config";
+            var configType = serviceInterfaceType.GetTypeInfo().Assembly.GetType(configTypeName);
 
             var constructor = configType.GetConstructor(EMPTY_TYPES);
             ClientConfig config = constructor.Invoke(EMPTY_PARAMETERS) as ClientConfig;

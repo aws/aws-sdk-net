@@ -20,9 +20,9 @@ using System.Threading.Tasks;
 using Amazon;
 using Amazon.Runtime;
 
-using AWSSDK.Extensions.NETCore.DependencyInjection;
+using Amazon.Extensions.NETCore.Setup;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Amazon.Extensions.NETCore.Setup
 {
     public class AWSOptions
     {
@@ -69,6 +69,11 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             this.Region = region;
             return this;
+        }
+
+        public T CreateServiceClient<T>() where T : IAmazonService
+        {
+            return (T)ClientFactory.CreateServiceClient(typeof(T), this);
         }
     }
 }

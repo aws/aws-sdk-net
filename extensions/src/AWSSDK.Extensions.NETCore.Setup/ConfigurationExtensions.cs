@@ -23,6 +23,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Amazon;
 using Amazon.Runtime;
 
+using Amazon.Extensions.NETCore.Setup;
+
 namespace Microsoft.Extensions.Configuration
 {
     /// <summary>
@@ -31,7 +33,11 @@ namespace Microsoft.Extensions.Configuration
     /// </summary>
     public static class ConfigurationExtensions
     {
+        /// <summary>
+        /// The default section where settings are read from the IConfiguration object. This is set to "AWS".
+        /// </summary>
         public const string DEFAULT_CONFIG_SECTION = "AWS";
+
         /// <summary>
         /// Constructs an AWSOptions class with the options specifed in the "AWS" section in the IConfiguration object.
         /// </summary>
@@ -52,7 +58,12 @@ namespace Microsoft.Extensions.Configuration
         {
             var options = new AWSOptions();
 
-            var section = config.GetSection(configSection) ?? config;
+            IConfiguration section;
+            if (string.IsNullOrEmpty(configSection))
+                section = config;
+            else
+                section = config.GetSection(configSection);
+
             if (section == null)
                 return options;
 
@@ -79,7 +90,11 @@ namespace Microsoft.Extensions.Configuration
                 }
                 catch(Exception e)
                 {
-
+                    throw new ConfigurationException($"Error reading value for property {element.Key}.", e)
+                    {
+                        PropertyName = element.Key,
+                        PropertyValue = element.Value
+                    };
                 }
             }
 
