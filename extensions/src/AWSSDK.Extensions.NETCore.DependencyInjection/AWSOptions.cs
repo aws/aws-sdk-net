@@ -18,19 +18,50 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Amazon;
+using Amazon.Runtime;
+
+using AWSSDK.Extensions.NETCore.DependencyInjection;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
     public class AWSOptions
     {
         public string Profile { get; set; }
+
         public string ProfilesLocation { get; set; }
 
         public RegionEndpoint Region { get; set; }
 
+
+        private ClientConfig _defaultClientConfig;
+        public ClientConfig DefaultClientConfig
+        {
+            get
+            {
+                if (this._defaultClientConfig == null)
+                    this._defaultClientConfig = new DefaultClientConfig();
+
+                return this._defaultClientConfig;
+            }
+        }
+
+        internal bool IsDefaultClientConfigSet
+        {
+            get
+            {
+                return this._defaultClientConfig != null;
+            }
+        }
+
         public AWSOptions UseProfile(string profile)
         {
             this.Profile = profile;
+            return this;
+        }
+
+        public AWSOptions UseProfilesLocation(string profilesLocation)
+        {
+            this.ProfilesLocation = profilesLocation;
             return this;
         }
 

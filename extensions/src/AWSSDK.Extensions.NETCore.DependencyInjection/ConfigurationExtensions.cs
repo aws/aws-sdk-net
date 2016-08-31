@@ -15,11 +15,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using Amazon;
+using Amazon.Runtime;
 
 namespace Microsoft.Extensions.Configuration
 {
@@ -54,8 +56,41 @@ namespace Microsoft.Extensions.Configuration
             if (section == null)
                 return options;
 
-            options.Profile = section["Profile"];
+            var clientConfigTypeInfo = typeof(ClientConfig).GetTypeInfo();
+            foreach(var element in section.GetChildren())
+            {
+                try
+                {
+                    var property = clientConfigTypeInfo.GetDeclaredProperty(element.Key);
+                    if (property == null || property.SetMethod == null)
+                        continue;
 
+                    if (property.PropertyType == typeof(string) || property.PropertyType.GetTypeInfo().IsPrimitive)
+                    {
+                        var value = Convert.ChangeType(element.Value, property.PropertyType);
+                        property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { value });
+                    }
+                    else if (property.PropertyType == typeof(TimeSpan))
+                    {
+                        var milliSeconds = Convert.ToInt64(element.Value);
+                        var timespan = TimeSpan.FromMilliseconds(milliSeconds);
+                        property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { timespan });
+                    }
+                }
+                catch(Exception e)
+                {
+
+                }
+            }
+
+            if (!string.IsNullOrEmpty(section["Profile"]))
+            {
+                options.Profile = section["Profile"];
+            }
+            if (!string.IsNullOrEmpty(section["ProfilesLocation"]))
+            {
+                options.ProfilesLocation = section["Profile"];
+            }
             if (!string.IsNullOrEmpty(section["Region"]))
             {
                 options.Region = RegionEndpoint.GetBySystemName(section["Region"]);
